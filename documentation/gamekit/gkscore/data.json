@@ -1,0 +1,100 @@
+{
+  "path": "/documentation/gamekit/gkscore",
+  "type": "Class",
+  "name": "GKScore",
+  "desc": "An object containing information for a score that was earned by the player.",
+  "items": [
+    {
+      "name": "init(leaderboardIdentifier: String)",
+      "desc": "Returns an initialized score object using the local player and the current date."
+    },
+    {
+      "name": "init(leaderboardIdentifier: String, player: GKPlayer)",
+      "desc": "Returns an initialized score object for the specified leaderboard and player."
+    },
+    {
+      "name": "var context: UInt64",
+      "desc": "An integer value used by your game."
+    },
+    {
+      "name": "var date: Date",
+      "desc": "The date and time when the score was earned."
+    },
+    {
+      "name": "var formattedValue: String?",
+      "desc": "Returns the player’s score as a localized string."
+    },
+    {
+      "name": "var leaderboardIdentifier: String",
+      "desc": "The identifier for the leaderboard."
+    },
+    {
+      "name": "var player: GKPlayer",
+      "desc": "The player who earned the score."
+    },
+    {
+      "name": "var rank: Int",
+      "desc": "The position of the score in the results of a leaderboard search."
+    },
+    {
+      "name": "var value: Int64",
+      "desc": "The score earned by the player."
+    },
+    {
+      "name": "class func report([GKLeaderboardScore], withEligibleChallenges: [GKChallenge], withCompletionHandler: ((Error?) -> Void)?)",
+      "desc": "Submits a list of scores and all eligible challenges."
+    },
+    {
+      "name": "class func report([GKScore], withCompletionHandler: ((Error?) -> Void)?)",
+      "desc": "Reports a list of scores to Game Center"
+    },
+    {
+      "name": "class func report([GKScore], withEligibleChallenges: [GKChallenge], withCompletionHandler: ((Error?) -> Void)?)",
+      "desc": "Submits a list of scores and all eligible challenges."
+    },
+    {
+      "name": "var shouldSetDefaultLeaderboard: Bool",
+      "desc": "A Boolean value that indicates whether this score should also update the default leaderboard."
+    },
+    {
+      "name": "func challengeComposeController(withMessage: String?, players: [GKPlayer]?, completionHandler: GKChallengeComposeCompletionBlock?) -> UIViewController",
+      "desc": "Provides a challenge compose view controller with pre-selected player identifiers and a preformatted, player-editable message."
+    },
+    {
+      "name": "var category: String?",
+      "desc": "The leaderboard that this score belongs to."
+    },
+    {
+      "name": "func challengeComposeController(withPlayers: [String]?, message: String?, completionHandler: GKChallengeComposeCompletionBlock?) -> UIViewController?",
+      "desc": "Provides a challenge compose view controller with pre-selected player identifiers and a preformatted, player-editable message."
+    },
+    {
+      "name": "init(category: String?)",
+      "desc": "Returns an initialized score object."
+    },
+    {
+      "name": "init?(leaderboardIdentifier: String, forPlayer: String)",
+      "desc": "Returns an initialized score object for the specified leaderboard and player."
+    },
+    {
+      "name": "func issueChallenge(toPlayers: [String]?, message: String?)",
+      "desc": "Issues a score challenge to a set of players."
+    },
+    {
+      "name": "var playerID: String?",
+      "desc": "The player identifier for the player that earned the score."
+    },
+    {
+      "name": "func report(completionHandler: ((Error?) -> Void)?)",
+      "desc": "Reports a score to Game Center."
+    }
+  ],
+  "declaration": "class GKScore : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "NSSecureCoding"
+  ]
+}

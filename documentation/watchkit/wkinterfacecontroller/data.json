@@ -1,0 +1,228 @@
+{
+  "path": "/documentation/watchkit/wkinterfacecontroller",
+  "type": "Class",
+  "name": "WKInterfaceController",
+  "desc": "A class that provides the infrastructure for managing the interface in a watchOS app.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Returns an initialized interface controller object."
+    },
+    {
+      "name": "func awake(withContext: Any?)",
+      "desc": "Initializes the interface controller with the specified context data."
+    },
+    {
+      "name": "func willActivate()",
+      "desc": "Called to let you know that the interface controller’s is active."
+    },
+    {
+      "name": "func didDeactivate()",
+      "desc": "Called to let you know that the interface controller is no longer active."
+    },
+    {
+      "name": "func didAppear()",
+      "desc": "Called to let you know that the interface controller’s content is now onscreen."
+    },
+    {
+      "name": "func willDisappear()",
+      "desc": "Called to let you know that the interface controller’s content is now offscreen."
+    },
+    {
+      "name": "func pushController(withName: String, context: Any?)",
+      "desc": "Pushes a new interface controller onto the screen."
+    },
+    {
+      "name": "func pop()",
+      "desc": "Pops the current interface controller from the screen."
+    },
+    {
+      "name": "func popToRootController()",
+      "desc": "Pops all interface controllers except the app’s initial interface controller."
+    },
+    {
+      "name": "func presentController(withName: String, context: Any?)",
+      "desc": "Presents a single interface controller modally."
+    },
+    {
+      "name": "func presentController(withNames: [String], contexts: [Any]?)",
+      "desc": "Presents a page-based interface modally."
+    },
+    {
+      "name": "func presentController(withNamesAndContexts: [(name: String, context: AnyObject)])",
+      "desc": "Presents a page-based interface modally."
+    },
+    {
+      "name": "func presentAlert(withTitle: String?, message: String?, preferredStyle: WKAlertControllerStyle, actions: [WKAlertAction])",
+      "desc": "Presents an alert or action sheet over the current interface controller."
+    },
+    {
+      "name": "enum WKAlertControllerStyle",
+      "desc": "Constants indicating the styles for standard system alerts."
+    },
+    {
+      "name": "func dismiss()",
+      "desc": "Dismisses the current interface controller from the screen."
+    },
+    {
+      "name": "class func reloadRootPageControllers(withNames: [String], contexts: [Any]?, orientation: WKPageOrientation, pageIndex: Int)",
+      "desc": "Loads the specified interface controllers and rebuilds the app’s page-based interface for the given scrolling orientation."
+    },
+    {
+      "name": "enum WKPageOrientation",
+      "desc": "Scrolling orientations for page-based interfaces."
+    },
+    {
+      "name": "class func reloadRootControllers(withNamesAndContexts: [(name: String, context: AnyObject)])",
+      "desc": "Loads the specified interface controllers and rebuilds the app’s page-based interface."
+    },
+    {
+      "name": "func becomeCurrentPage()",
+      "desc": "Displays the interface controller in the page-based interface."
+    },
+    {
+      "name": "func contextForSegue(withIdentifier: String) -> Any?",
+      "desc": "Returns the context object to pass to the specified interface controller when a button is tapped."
+    },
+    {
+      "name": "func contextsForSegue(withIdentifier: String) -> [Any]?",
+      "desc": "Returns the context objects to pass to a page-based set of interface controllers when a button is tapped."
+    },
+    {
+      "name": "func contextForSegue(withIdentifier: String, in: WKInterfaceTable, rowIndex: Int) -> Any?",
+      "desc": "Returns the context object to pass to the specified interface controller when a row in a table is tapped."
+    },
+    {
+      "name": "func contextsForSegue(withIdentifier: String, in: WKInterfaceTable, rowIndex: Int) -> [Any]?",
+      "desc": "Returns the context objects to pass to a page-based set of interface controllers when a row in a table is tapped."
+    },
+    {
+      "name": "func scroll(to: WKInterfaceObject, at: WKInterfaceScrollPosition, animated: Bool)",
+      "desc": "Scrolls the specified object to the given position onscreen."
+    },
+    {
+      "name": "enum WKInterfaceScrollPosition",
+      "desc": "Onscreen scroll positions."
+    },
+    {
+      "name": "func interfaceDidScrollToTop()",
+      "desc": "Tells the interface controller that the user has performed a scroll-to-top gesture (for example, tapping the status bar) and that the scrolling animation has finished."
+    },
+    {
+      "name": "func interfaceOffsetDidScrollToTop()",
+      "desc": "Tells the interface controller that the user has scrolled to the top of the interface and that the scrolling animation has finished."
+    },
+    {
+      "name": "func interfaceOffsetDidScrollToBottom()",
+      "desc": "Tells the interface controller that the user has scrolled to the bottom of the interface and that the scrolling animation has finished."
+    },
+    {
+      "name": "var isTableScrollingHapticFeedbackEnabled: Bool",
+      "desc": "A Boolean value that determines whether haptic feedback coordinates with the appearance of new rows as the user scrolls through a table."
+    },
+    {
+      "name": "var contentSafeAreaInsets: UIEdgeInsets",
+      "desc": "Insets that define the area where it’s safe to display content on the screen."
+    },
+    {
+      "name": "var systemMinimumLayoutMargins: NSDirectionalEdgeInsets",
+      "desc": "Leading and trailing insets that represent the minimum layout margins for text elements."
+    },
+    {
+      "name": "func animate(withDuration: TimeInterval, animations: () -> Void)",
+      "desc": "Animates changes to one or more interface objects over the specified duration."
+    },
+    {
+      "name": "func presentTextInputController(withSuggestions: [String]?, allowedInputMode: WKTextInputMode, completion: ([Any]?) -> Void)",
+      "desc": "Displays a modal interface for gathering text input from the user."
+    },
+    {
+      "name": "func presentTextInputControllerWithSuggestions(forLanguage: ((String) -> [Any]?)?, allowedInputMode: WKTextInputMode, completion: ([Any]?) -> Void)",
+      "desc": "Displays a modal interface for gathering language-specific text input from the user."
+    },
+    {
+      "name": "func dismissTextInputController()",
+      "desc": "Dismisses the text input controller without returning any text."
+    },
+    {
+      "name": "enum WKTextInputMode",
+      "desc": "The input modes supported by the text input controller."
+    },
+    {
+      "name": "func presentMediaPlayerController(with: URL, options: [AnyHashable : Any]?, completion: (Bool, TimeInterval, Error?) -> Void)",
+      "desc": "Displays a modal interface for playing the specified media file."
+    },
+    {
+      "name": "func dismissMediaPlayerController()",
+      "desc": "Dismisses the media interface controller."
+    },
+    {
+      "name": "func presentAudioRecorderController(withOutputURL: URL, preset: WKAudioRecorderPreset, options: [AnyHashable : Any]?, completion: (Bool, Error?) -> Void)",
+      "desc": "Display a standard interface for recording audio from the user’s Apple Watch."
+    },
+    {
+      "name": "enum WKAudioRecorderPreset",
+      "desc": "Constants indicating the quality of audio recordings."
+    },
+    {
+      "name": "func dismissAudioRecorderController()",
+      "desc": "Dismisses the audio recording interface controller."
+    },
+    {
+      "name": "func table(WKInterfaceTable, didSelectRowAt: Int)",
+      "desc": "Called to let you know that the user selected a row in the table."
+    },
+    {
+      "name": "func pickerDidFocus(WKInterfacePicker)",
+      "desc": "Called to let you know that the specified picker is now receiving input from the Digital Crown."
+    },
+    {
+      "name": "func pickerDidResignFocus(WKInterfacePicker)",
+      "desc": "Called to let you know that the specified picker is no longer receiving input from the Digital Crown."
+    },
+    {
+      "name": "func pickerDidSettle(WKInterfacePicker)",
+      "desc": "Called to let you know when the user settles on a value in a picker."
+    },
+    {
+      "name": "var crownSequencer: WKCrownSequencer",
+      "desc": "The object to use when directly tracking crown events."
+    },
+    {
+      "name": "func setTitle(String?)",
+      "desc": "Sets the title of the interface."
+    },
+    {
+      "name": "func update(NSUserActivity)",
+      "desc": "Registers the current user activity with the system."
+    },
+    {
+      "name": "func invalidateUserActivity()",
+      "desc": "Invalidates the most recent user activity."
+    },
+    {
+      "name": "func presentAddPassesController(withPasses: [PKPass], completion: () -> Void)",
+      "desc": "Displays a modal interface for presenting passes to the user."
+    },
+    {
+      "name": "func dismissAddPassesController()",
+      "desc": "Dismisses the pass interface controller"
+    },
+    {
+      "name": "var contentFrame: CGRect",
+      "desc": "The frame rectangle used to display your app’s content."
+    },
+    {
+      "name": "let WKAccessibilityVoiceOverStatusChanged: String",
+      "desc": "Posted by WatchKit when VoiceOver starts or stops. This notification does not include a parameter."
+    },
+    {
+      "name": "static let WKAccessibilityReduceMotionStatusDidChange: NSNotification.Name",
+      "desc": "Posted by WatchKit when reduced motion is enabled or disabled. This notification does not include a parameter."
+    }
+  ],
+  "declaration": "@MainActor class WKInterfaceController : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

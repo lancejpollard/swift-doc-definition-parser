@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/combine/fail",
+  "type": "Structure",
+  "name": "Fail",
+  "desc": "A publisher that immediately terminates with the specified error.",
+  "items": [
+    {
+      "name": "init(error: Failure)",
+      "desc": "Creates a publisher that immediately terminates with the specified failure."
+    },
+    {
+      "name": "init(outputType: Output.Type, failure: Failure)",
+      "desc": "Creates publisher with the given output type, that immediately terminates with the specified failure."
+    },
+    {
+      "name": "let error: Failure",
+      "desc": "The failure to send when terminating the publisher."
+    },
+    {
+      "name": "static func == (Fail<Output, Failure>, Fail<Output, Failure>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two publishers are equivalent."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    }
+  ],
+  "declaration": "struct Fail<Output, Failure> where Failure : Error",
+  "conformsTo": [
+    "Equatable",
+    "Publisher"
+  ]
+}

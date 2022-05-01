@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/imageio/cgmutableimagemetadata",
+  "type": "Class",
+  "name": "CGMutableImageMetadata",
+  "desc": "An opaque type for adding or modifying image metadata.",
+  "items": [
+    {
+      "name": "func CGImageMetadataCreateMutable() -> CGMutableImageMetadata",
+      "desc": "Creates an empty, mutable image metdata opaque type."
+    },
+    {
+      "name": "func CGImageMetadataCreateMutableCopy(CGImageMetadata) -> CGMutableImageMetadata?",
+      "desc": "Creates a deep, mutable copy of the specified metadata information."
+    },
+    {
+      "name": "func CGImageMetadataSetValueWithPath(CGMutableImageMetadata, CGImageMetadataTag?, CFString, CFTypeRef) -> Bool",
+      "desc": "Update the value of an existing metadata tag, or create a new tag using the specified information."
+    },
+    {
+      "name": "func CGImageMetadataSetValueMatchingImageProperty(CGMutableImageMetadata, CFString, CFString, CFTypeRef) -> Bool",
+      "desc": "Updates the value of the metadata tag assigned to the specified image property."
+    },
+    {
+      "name": "func CGImageMetadataSetTagWithPath(CGMutableImageMetadata, CGImageMetadataTag?, CFString, CGImageMetadataTag) -> Bool",
+      "desc": "Sets the tag at the specified path in the metadata object."
+    },
+    {
+      "name": "func CGImageMetadataRemoveTagWithPath(CGMutableImageMetadata, CGImageMetadataTag?, CFString) -> Bool",
+      "desc": "Removes the tag at the specified path from the metadata object."
+    },
+    {
+      "name": "func CGImageMetadataRegisterNamespaceForPrefix(CGMutableImageMetadata, CFString, CFString, UnsafeMutablePointer<Unmanaged<CFError>?>?) -> Bool",
+      "desc": "Registers the specified namespace and prefix with the metadata object."
+    }
+  ],
+  "declaration": "class CGMutableImageMetadata : CGImageMetadata",
+  "inheritsFrom": [
+    "CGImageMetadata"
+  ]
+}

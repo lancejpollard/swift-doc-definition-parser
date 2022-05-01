@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/webkit/webdocumentrepresentation",
+  "type": "Protocol",
+  "name": "WebDocumentRepresentation",
+  "desc": "This protocol is adopted by document representation classes that handle specific MIME types. You can implement your own document view classes and document representation classes to render data for specific MIME types, and register those classes using the WebFrame registerClass(_:representationClass:forMIMEType:) method.",
+  "items": [
+    {
+      "name": "func setDataSource(WebDataSource!)",
+      "desc": "Sets the receiver’s data source."
+    },
+    {
+      "name": "func receivedData(Data!, with: WebDataSource!)",
+      "desc": "Invoked when a data source has received some data."
+    },
+    {
+      "name": "func receivedError(Error!, with: WebDataSource!)",
+      "desc": "Invoked when a data source receives an error loading its content."
+    },
+    {
+      "name": "func finishedLoading(with: WebDataSource!)",
+      "desc": "Invoked when a data source finishes loading its content."
+    },
+    {
+      "name": "func canProvideDocumentSource() -> Bool",
+      "desc": "Returns whether the receiver can provide content source."
+    },
+    {
+      "name": "func documentSource() -> String!",
+      "desc": "Returns the receiver’s source as text."
+    },
+    {
+      "name": "func title() -> String!",
+      "desc": "Returns the receiver’s document title."
+    }
+  ],
+  "declaration": "protocol WebDocumentRepresentation",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

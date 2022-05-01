@@ -1,0 +1,55 @@
+{
+  "path": "/documentation/mapkit/mktileoverlay",
+  "type": "Class",
+  "name": "MKTileOverlay",
+  "desc": "An overlay that covers an area of the map with tiles of bitmap images.",
+  "items": [
+    {
+      "name": "init(urlTemplate: String?)",
+      "desc": "Initializes and returns a tile overlay object using the specified tile-access template."
+    },
+    {
+      "name": "var tileSize: CGSize",
+      "desc": "The size (in pixels) of your tile images."
+    },
+    {
+      "name": "var isGeometryFlipped: Bool",
+      "desc": "A Boolean value that indicates the orientation of tile indexes along the y axis."
+    },
+    {
+      "name": "var minimumZ: Int",
+      "desc": "The minimum zoom level supported by the tiles of this overlay object."
+    },
+    {
+      "name": "var maximumZ: Int",
+      "desc": "The maximum zoom level supported by the tiles of this overlay object."
+    },
+    {
+      "name": "var canReplaceMapContent: Bool",
+      "desc": "A Boolean value that indicates whether the tile content is fully opaque."
+    },
+    {
+      "name": "var urlTemplate: String?",
+      "desc": "The template for generating tile image URLs."
+    },
+    {
+      "name": "func url(forTilePath: MKTileOverlayPath) -> URL",
+      "desc": "Returns the URL to use to access the specified tile."
+    },
+    {
+      "name": "func loadTile(at: MKTileOverlayPath, result: (Data?, Error?) -> Void)",
+      "desc": "Loads the specified tile asynchronously."
+    },
+    {
+      "name": "struct MKTileOverlayPath",
+      "desc": "Use this structure to specify the index values for a single tile."
+    }
+  ],
+  "declaration": "class MKTileOverlay : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "MKOverlay"
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "path": "/documentation/foundation/propertylistserialization",
+  "type": "Class",
+  "name": "PropertyListSerialization",
+  "desc": "An object that converts between a property list and one of several serialized representations.",
+  "items": [
+    {
+      "name": "class func data(fromPropertyList: Any, format: PropertyListSerialization.PropertyListFormat, options: PropertyListSerialization.WriteOptions) -> Data",
+      "desc": "Returns an NSData object containing a given property list in a specified format."
+    },
+    {
+      "name": "class func writePropertyList(Any, to: OutputStream, format: PropertyListSerialization.PropertyListFormat, options: PropertyListSerialization.WriteOptions, error: NSErrorPointer) -> Int",
+      "desc": "Writes a property list to the specified stream."
+    },
+    {
+      "name": "typealias PropertyListSerialization.WriteOptions"
+    },
+    {
+      "name": "class func propertyList(from: Data, options: PropertyListSerialization.ReadOptions, format: UnsafeMutablePointer<PropertyListSerialization.PropertyListFormat>?) -> Any",
+      "desc": "Creates and returns a property list from the specified data."
+    },
+    {
+      "name": "class func propertyList(with: InputStream, options: PropertyListSerialization.ReadOptions, format: UnsafeMutablePointer<PropertyListSerialization.PropertyListFormat>?) -> Any",
+      "desc": "Creates and returns a property list by reading from the specified stream."
+    },
+    {
+      "name": "class func propertyList(Any, isValidFor: PropertyListSerialization.PropertyListFormat) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a given property list is valid for a given format."
+    },
+    {
+      "name": "struct PropertyListSerialization.MutabilityOptions",
+      "desc": "These constants specify mutability options in property lists."
+    },
+    {
+      "name": "enum PropertyListSerialization.PropertyListFormat",
+      "desc": "These constants are used to specify a property list serialization format."
+    },
+    {
+      "name": "typealias PropertyListSerialization.ReadOptions",
+      "desc": "The only read options supported are described in PropertyListSerialization.MutabilityOptions."
+    },
+    {
+      "name": "var NSPropertyListReadCorruptError: Int",
+      "desc": "Parsing of the property list failed."
+    },
+    {
+      "name": "var NSPropertyListReadUnknownVersionError: Int",
+      "desc": "The version number of the property list cannot be determined."
+    },
+    {
+      "name": "var NSPropertyListReadStreamError: Int",
+      "desc": "Reading of the property list failed."
+    },
+    {
+      "name": "var NSPropertyListWriteStreamError: Int",
+      "desc": "Writing to the property list failed."
+    },
+    {
+      "name": "var NSPropertyListWriteInvalidError: Int",
+      "desc": "Writing failed because of an invalid property list object, or an invalid property list type was specified."
+    },
+    {
+      "name": "var NSPropertyListErrorMinimum: Int",
+      "desc": "The start of the range of error codes reserved for property list errors."
+    },
+    {
+      "name": "var NSPropertyListErrorMaximum: Int",
+      "desc": "The end of the range of error codes reserved for property list errors."
+    }
+  ],
+  "declaration": "class PropertyListSerialization : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

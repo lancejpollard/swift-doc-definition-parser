@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/uikit/uicollectionviewdropdelegate",
+  "type": "Protocol",
+  "name": "UICollectionViewDropDelegate",
+  "desc": "The interface for handling drops in a collection view.",
+  "items": [
+    {
+      "name": "func collectionView(UICollectionView, canHandle: UIDropSession) -> Bool",
+      "desc": "Asks your delegate whether the collection view can accept a drop with the specified type of data."
+    },
+    {
+      "name": "func collectionView(UICollectionView, performDropWith: UICollectionViewDropCoordinator)",
+      "desc": "Tells your delegate to incorporate the drop data into the collection view."
+    },
+    {
+      "name": "func collectionView(UICollectionView, dropSessionDidUpdate: UIDropSession, withDestinationIndexPath: IndexPath?) -> UICollectionViewDropProposal",
+      "desc": "Tells your delegate that the position of the dragged data over the collection view changed."
+    },
+    {
+      "name": "func collectionView(UICollectionView, dropSessionDidEnter: UIDropSession)",
+      "desc": "Notifies you when dragged content enters the collection view’s bounds rectangle."
+    },
+    {
+      "name": "func collectionView(UICollectionView, dropSessionDidExit: UIDropSession)",
+      "desc": "Notifies you when dragged content exits the table view’s bounds rectangle."
+    },
+    {
+      "name": "func collectionView(UICollectionView, dropSessionDidEnd: UIDropSession)",
+      "desc": "Notifies you when the drag operation ends."
+    },
+    {
+      "name": "func collectionView(UICollectionView, dropPreviewParametersForItemAt: IndexPath) -> UIDragPreviewParameters?",
+      "desc": "Returns custom information about how to display the item at the specified location during the drop."
+    }
+  ],
+  "declaration": "@MainActor protocol UICollectionViewDropDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "path": "/documentation/mapkit/mkmaprect",
+  "type": "Structure",
+  "name": "MKMapRect",
+  "desc": "A rectangular area on a two-dimensional map projection.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Initializes the rectangle with an empty region."
+    },
+    {
+      "name": "init(origin: MKMapPoint, size: MKMapSize)",
+      "desc": "Initializes the map rect with the specified point and size."
+    },
+    {
+      "name": "init(x: Double, y: Double, width: Double, height: Double)",
+      "desc": "Creates a new MKMapRect structure from the specified values."
+    },
+    {
+      "name": "init(MKMapRect)",
+      "desc": "Returns the region that corresponds to the specified map rectangle."
+    },
+    {
+      "name": "static let null: MKMapRect",
+      "desc": "The null map rectangle."
+    },
+    {
+      "name": "static let world: MKMapRect",
+      "desc": "The map rectangle that represents the world in the two-dimensional map projection."
+    },
+    {
+      "name": "var origin: MKMapPoint",
+      "desc": "The origin point of the rectangle."
+    },
+    {
+      "name": "var size: MKMapSize",
+      "desc": "The width and height of the rectangle, starting from the origin point."
+    },
+    {
+      "name": "var minX: Double",
+      "desc": "Returns the minimum x-axis value of the specified rectangle."
+    },
+    {
+      "name": "var minY: Double",
+      "desc": "Returns the minimum y-axis value of the specified rectangle."
+    },
+    {
+      "name": "var midX: Double",
+      "desc": "Returns the mid-point along the x-axis of the specified rectangle."
+    },
+    {
+      "name": "var midY: Double",
+      "desc": "Returns the mid-point along the y-axis of the specified rectangle."
+    },
+    {
+      "name": "var maxX: Double",
+      "desc": "Returns the maximum x-axis value of the specified rectangle."
+    },
+    {
+      "name": "var maxY: Double",
+      "desc": "Returns the maximum y-axis value of the specified rectangle."
+    },
+    {
+      "name": "var width: Double",
+      "desc": "Returns the width of the map rectangle."
+    },
+    {
+      "name": "var height: Double",
+      "desc": "Returns the height of the map rectangle."
+    },
+    {
+      "name": "var isNull: Bool",
+      "desc": "Returns a Boolean indicating whether the specified rectangle is null."
+    },
+    {
+      "name": "func MKMapRectEqualToRect(MKMapRect, MKMapRect) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the two map rectangles are equal"
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "Returns a Boolean value indicating whether the specified rectangle has no area."
+    },
+    {
+      "name": "var spans180thMeridian: Bool",
+      "desc": "Returns a Boolean value that indicates whether the specified map rectangle crosses the 180th meridian."
+    },
+    {
+      "name": "var remainder: MKMapRect",
+      "desc": "Normalizes the portion of the specified rectangle that lies outside the world map boundaries."
+    },
+    {
+      "name": "func contains(MKMapPoint) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the specified map point lies within the rectangle."
+    },
+    {
+      "name": "func contains(MKMapRect) -> Bool",
+      "desc": "Returns Boolean value indicating whether one rectangle contains another."
+    },
+    {
+      "name": "func intersects(MKMapRect) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two rectangles intersect each other."
+    },
+    {
+      "name": "func union(MKMapRect) -> MKMapRect",
+      "desc": "Returns a rectangle representing the union of the two rectangles."
+    },
+    {
+      "name": "func intersection(MKMapRect) -> MKMapRect",
+      "desc": "Returns the rectangle representing the intersection of two rectangles."
+    },
+    {
+      "name": "func insetBy(dx: Double, dy: Double) -> MKMapRect",
+      "desc": "Returns the specified rectangle inset by the specified amounts."
+    },
+    {
+      "name": "func offsetBy(dx: Double, dy: Double) -> MKMapRect",
+      "desc": "Returns a rectangle whose origin point is shifted by the specified amount."
+    },
+    {
+      "name": "func MKMapRectDivide(MKMapRect, UnsafeMutablePointer<MKMapRect>, UnsafeMutablePointer<MKMapRect>, Double, CGRectEdge)",
+      "desc": "Divides the specified rectangle into two smaller rectangles."
+    },
+    {
+      "name": "func MKStringFromMapRect(MKMapRect) -> String",
+      "desc": "Returns a formatted string for the specified map rectangle."
+    }
+  ],
+  "declaration": "struct MKMapRect"
+}

@@ -1,0 +1,119 @@
+{
+  "path": "/documentation/mediaplayer/mpmusicplayercontroller",
+  "type": "Class",
+  "name": "MPMusicPlayerController",
+  "desc": "An object used to play audio media items from the device's Music app library.",
+  "items": [
+    {
+      "name": "class var applicationMusicPlayer: MPMusicPlayerController",
+      "desc": "Returns the application music player."
+    },
+    {
+      "name": "class var applicationQueuePlayer: MPMusicPlayerApplicationController",
+      "desc": "Returns the application queue music player."
+    },
+    {
+      "name": "class var systemMusicPlayer: MPMusicPlayerController & MPSystemMusicPlayerController",
+      "desc": "Returns the system music player, which controls the Music app’s state."
+    },
+    {
+      "name": "func setQueue(with: MPMediaQuery)",
+      "desc": "Sets a music player’s playback queue based on a media query."
+    },
+    {
+      "name": "func setQueue(with: MPMediaItemCollection)",
+      "desc": "Sets a music player’s playback queue using a media item collection."
+    },
+    {
+      "name": "func setQueue(with: [String])",
+      "desc": "Sets a music player's playback queue using with media items identified by the store identifiers."
+    },
+    {
+      "name": "func setQueue(with: MPMusicPlayerQueueDescriptor)",
+      "desc": "Set the music player's playback queue using media items that fit the queue descriptor properties."
+    },
+    {
+      "name": "func prepareToPlay(completionHandler: (Error?) -> Void)",
+      "desc": "Prepares a music player for playback."
+    },
+    {
+      "name": "var nowPlayingItem: MPMediaItem?",
+      "desc": "The currently-playing media item, or the media item, within a queue, that you have designated to begin playback with."
+    },
+    {
+      "name": "var indexOfNowPlayingItem: Int",
+      "desc": "The index of the now playing item in the current playback queue."
+    },
+    {
+      "name": "var playbackState: MPMusicPlaybackState",
+      "desc": "The current playback state of the music player."
+    },
+    {
+      "name": "var repeatMode: MPMusicRepeatMode",
+      "desc": "The current repeat mode of the music player."
+    },
+    {
+      "name": "var shuffleMode: MPMusicShuffleMode",
+      "desc": "The current shuffle mode of the music player."
+    },
+    {
+      "name": "enum MPMusicPlaybackState",
+      "desc": "The music player playback state modes."
+    },
+    {
+      "name": "enum MPMusicRepeatMode",
+      "desc": "The repeat modes for the media player."
+    },
+    {
+      "name": "enum MPMusicShuffleMode",
+      "desc": "The shuffle modes for the media player."
+    },
+    {
+      "name": "func skipToNextItem()",
+      "desc": "Starts playback of the next media item in the playback queue; or, the music player is not playing, designates the next media item as the next to be played."
+    },
+    {
+      "name": "func skipToBeginning()",
+      "desc": "Restarts playback at the beginning of the currently playing media item."
+    },
+    {
+      "name": "func skipToPreviousItem()",
+      "desc": "Starts playback of the previous media item in the playback queue; or, the music player is not playing, designates the previous media item as the next to be played."
+    },
+    {
+      "name": "func append(MPMusicPlayerQueueDescriptor)",
+      "desc": "Inserts the media items defined by the queue descriptor after the last media item in the current queue."
+    },
+    {
+      "name": "func prepend(MPMusicPlayerQueueDescriptor)",
+      "desc": "Inserts the media items defined by the queue descriptor into the current queue immediately after the currently playing media item."
+    },
+    {
+      "name": "func beginGeneratingPlaybackNotifications()",
+      "desc": "Starts the generation of playback notifications."
+    },
+    {
+      "name": "func endGeneratingPlaybackNotifications()",
+      "desc": "Ends the generation of playback notifications."
+    },
+    {
+      "name": "static let MPMusicPlayerControllerPlaybackStateDidChange: NSNotification.Name",
+      "desc": "Posted when the playback state changes programmatically or by user action."
+    },
+    {
+      "name": "static let MPMusicPlayerControllerNowPlayingItemDidChange: NSNotification.Name",
+      "desc": "Posted when the currently playing media item has changed."
+    },
+    {
+      "name": "static let MPMusicPlayerControllerVolumeDidChange: NSNotification.Name",
+      "desc": "Posted when the audio playback volume for the music player has changed."
+    }
+  ],
+  "declaration": "class MPMusicPlayerController : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "MPMediaPlayback"
+  ]
+}

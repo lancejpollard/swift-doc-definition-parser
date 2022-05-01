@@ -1,0 +1,99 @@
+{
+  "path": "/documentation/storekit/product/subscriptioninfo/renewalinfo",
+  "type": "Structure",
+  "name": "Product.SubscriptionInfo.RenewalInfo",
+  "desc": "The renewal information for an auto-renewable subscription.",
+  "items": [
+    {
+      "name": "let originalTransactionID: UInt64",
+      "desc": "The transaction identifier of the original purchase."
+    },
+    {
+      "name": "let currentProductID: String",
+      "desc": "The subscription product ID that the customer is subscribed to."
+    },
+    {
+      "name": "let autoRenewPreference: String?",
+      "desc": "The product ID of the subscription that will automatically renew."
+    },
+    {
+      "name": "let state: Product.SubscriptionInfo.RenewalState",
+      "desc": "The renewal state of the auto-renewable subscription."
+    },
+    {
+      "name": "let willAutoRenew: Bool",
+      "desc": "A Boolean value that indicates whether the subscription will automatically renew in the next period."
+    },
+    {
+      "name": "let expirationReason: Product.SubscriptionInfo.RenewalInfo.ExpirationReason?",
+      "desc": "The reason the subscription expired."
+    },
+    {
+      "name": "struct Product.SubscriptionInfo.RenewalInfo.ExpirationReason",
+      "desc": "The reasons for subscription expirations."
+    },
+    {
+      "name": "let isInBillingRetry: Bool"
+    },
+    {
+      "name": "let gracePeriodExpirationDate: Date?"
+    },
+    {
+      "name": "let offerID: String?",
+      "desc": "A string that identifies an offer applied to the next subscription period."
+    },
+    {
+      "name": "let offerType: Transaction.OfferType?",
+      "desc": "The subscription offer type for the next subscription period."
+    },
+    {
+      "name": "let deviceVerification: Data",
+      "desc": "The device verification value you use to verify whether the renewal information belongs to the device."
+    },
+    {
+      "name": "let deviceVerificationNonce: UUID",
+      "desc": "The UUID used to compute the device verification value."
+    },
+    {
+      "name": "let signedDate: Date",
+      "desc": "The date that the App Store signed the JWS renewal information."
+    },
+    {
+      "name": "let priceIncreaseStatus: Product.SubscriptionInfo.RenewalInfo.PriceIncreaseStatus",
+      "desc": "The status that indicates whether a customer has accepted a price increase to a subscription."
+    },
+    {
+      "name": "enum Product.SubscriptionInfo.RenewalInfo.PriceIncreaseStatus",
+      "desc": "Status values for a customer’s price increase consent."
+    },
+    {
+      "name": "var jsonRepresentation: Data",
+      "desc": "The raw JSON representation of the subscription renewal information."
+    },
+    {
+      "name": "var debugDescription: String"
+    },
+    {
+      "name": "static func != (Product.SubscriptionInfo.RenewalInfo, Product.SubscriptionInfo.RenewalInfo) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (Product.SubscriptionInfo.RenewalInfo, Product.SubscriptionInfo.RenewalInfo) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    }
+  ],
+  "declaration": "struct RenewalInfo",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "Equatable",
+    "Hashable"
+  ]
+}

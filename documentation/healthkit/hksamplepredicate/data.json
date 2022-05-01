@@ -1,0 +1,77 @@
+{
+  "path": "/documentation/healthkit/hksamplepredicate",
+  "type": "Generic Structure",
+  "name": "HKSamplePredicate",
+  "desc": "A predicate for queries that return a collection of matching sample objects.",
+  "items": [
+    {
+      "name": "static func audiogram(NSPredicate?) -> HKSamplePredicate<HKAudiogramSample>",
+      "desc": "Returns a sample predicate that matches audiogram samples."
+    },
+    {
+      "name": "static func categorySample(type: HKCategoryType, predicate: NSPredicate?) -> HKSamplePredicate<HKCategorySample>",
+      "desc": "Returns a sample predicate that matches category samples."
+    },
+    {
+      "name": "static func clinicalRecord(type: HKClinicalType, predicate: NSPredicate?) -> HKSamplePredicate<HKClinicalRecord>",
+      "desc": "Returns a sample predicate that matches clinical record samples."
+    },
+    {
+      "name": "static func correlation(type: HKCorrelationType, predicate: NSPredicate?) -> HKSamplePredicate<HKCorrelation>",
+      "desc": "Returns a sample predicate that matches samples that contain correlated data."
+    },
+    {
+      "name": "static func electrocardiogram(NSPredicate?) -> HKSamplePredicate<HKElectrocardiogram>",
+      "desc": "Returns a sample predicate that matches electrocardiogram samples."
+    },
+    {
+      "name": "static func heartbeatSeries(NSPredicate?) -> HKSamplePredicate<HKHeartbeatSeriesSample>",
+      "desc": "Returns a sample predicate that matches heartbeat series samples."
+    },
+    {
+      "name": "static func quantitySample(type: HKQuantityType, predicate: NSPredicate?) -> HKSamplePredicate<HKQuantitySample>",
+      "desc": "Returns a sample predicate that matches quantity samples."
+    },
+    {
+      "name": "static func sample(type: HKSampleType, predicate: NSPredicate?) -> HKSamplePredicate<HKSample>",
+      "desc": "Returns a sample predicate that matches samples."
+    },
+    {
+      "name": "static func workout(NSPredicate?) -> HKSamplePredicate<HKWorkout>",
+      "desc": "Returns a sample predicate that matches workout samples."
+    },
+    {
+      "name": "static func workoutRoute(NSPredicate?) -> HKSamplePredicate<HKWorkoutRoute>",
+      "desc": "Returns a sample predicate that matches samples containing workout route data."
+    },
+    {
+      "name": "let nsPredicate: NSPredicate?",
+      "desc": "An optional predicate that further restricts the results that the query returns."
+    },
+    {
+      "name": "let sampleType: HKSampleType",
+      "desc": "The type of samples that the query returns."
+    },
+    {
+      "name": "static func == (HKSamplePredicate<Sample>, HKSamplePredicate<Sample>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "static func != (HKSamplePredicate<Sample>, HKSamplePredicate<Sample>) -> Bool",
+      "desc": "Returns a Boolean value indicating that two values aren’t equal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Retrurns a hash value for the sample predicate."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    }
+  ],
+  "declaration": "struct HKSamplePredicate<Sample> where Sample : HKSample",
+  "conformsTo": [
+    "Equatable",
+    "Hashable"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/gamekit/gkturnbasedexchange",
+  "type": "Class",
+  "name": "GKTurnBasedExchange",
+  "desc": "Exchange request information sent between participants in a turn-based match.",
+  "items": [
+    {
+      "name": "var exchangeID: String",
+      "desc": "The identifier for the exchange request."
+    },
+    {
+      "name": "var sender: GKTurnBasedParticipant",
+      "desc": "The participant who sends the exchange request to recipients."
+    },
+    {
+      "name": "var recipients: [GKTurnBasedParticipant]",
+      "desc": "The participants who receives the exchange request."
+    },
+    {
+      "name": "var data: Data?",
+      "desc": "The game-specific exchange data that GameKit sends to participants."
+    },
+    {
+      "name": "var message: String?",
+      "desc": "A localized message from the sender to the recipients of an exchange request."
+    },
+    {
+      "name": "var sendDate: Date",
+      "desc": "The date that the sender initiates the exchange request."
+    },
+    {
+      "name": "var timeoutDate: Date?",
+      "desc": "The date that the recipients must reply by before the exchange request times out."
+    },
+    {
+      "name": "func reply(withLocalizableMessageKey: String, arguments: [String], data: Data, completionHandler: ((Error?) -> Void)?)",
+      "desc": "Replies to an exchange request on behalf of a recipient."
+    },
+    {
+      "name": "var replies: [GKTurnBasedExchangeReply]?",
+      "desc": "The replies from recipients of the exchange request."
+    },
+    {
+      "name": "var status: GKTurnBasedExchangeStatus",
+      "desc": "The status of the exchange request."
+    },
+    {
+      "name": "enum GKTurnBasedExchangeStatus",
+      "desc": "The status of an exchange or reply."
+    },
+    {
+      "name": "var completionDate: Date?",
+      "desc": "The date when all recipients of the exchange request reply."
+    },
+    {
+      "name": "func cancel(withLocalizableMessageKey: String, arguments: [String], completionHandler: ((Error?) -> Void)?)",
+      "desc": "Cancels an exchange request."
+    }
+  ],
+  "declaration": "class GKTurnBasedExchange : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

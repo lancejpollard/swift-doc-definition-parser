@@ -1,0 +1,128 @@
+{
+  "path": "/documentation/watchkit/wkinterfacedevice",
+  "type": "Class",
+  "name": "WKInterfaceDevice",
+  "desc": "An object that provides information about the user’s Apple Watch.",
+  "items": [
+    {
+      "name": "class func current() -> WKInterfaceDevice",
+      "desc": "Returns the shared device object."
+    },
+    {
+      "name": "var screenBounds: CGRect",
+      "desc": "The bounding rectangle of the screen."
+    },
+    {
+      "name": "var screenScale: CGFloat",
+      "desc": "The number of pixels per point for the current screen."
+    },
+    {
+      "name": "var name: String",
+      "desc": "The name assigned to the underlying device."
+    },
+    {
+      "name": "var model: String",
+      "desc": "The model information for the device."
+    },
+    {
+      "name": "var localizedModel: String",
+      "desc": "The localized version of the model information."
+    },
+    {
+      "name": "var wristLocation: WKInterfaceDeviceWristLocation",
+      "desc": "The wrist on which the user wears the Apple Watch."
+    },
+    {
+      "name": "enum WKInterfaceDeviceWristLocation",
+      "desc": "Constants indicating the wrist on which the user wears the Apple Watch."
+    },
+    {
+      "name": "var crownOrientation: WKInterfaceDeviceCrownOrientation",
+      "desc": "The side on which the crown is positioned."
+    },
+    {
+      "name": "enum WKInterfaceDeviceCrownOrientation",
+      "desc": "Constants indicating the crown orientation from the user’s perspective."
+    },
+    {
+      "name": "var preferredContentSizeCategory: String",
+      "desc": "The preferred font-sizing option."
+    },
+    {
+      "name": "var systemName: String",
+      "desc": "The name of the operating system."
+    },
+    {
+      "name": "var systemVersion: String",
+      "desc": "The version of the operating system."
+    },
+    {
+      "name": "var layoutDirection: WKInterfaceLayoutDirection",
+      "desc": "The layout direction of the user interface."
+    },
+    {
+      "name": "class func interfaceLayoutDirection(for: WKInterfaceSemanticContentAttribute) -> WKInterfaceLayoutDirection",
+      "desc": "Returns the user interface direction for the given semantic content attribute."
+    },
+    {
+      "name": "enum WKInterfaceSemanticContentAttribute",
+      "desc": "A semantic description of the view’s contents, used to determine whether the view should be flipped when switching between left-to-right and right-to-left layouts."
+    },
+    {
+      "name": "enum WKInterfaceLayoutDirection",
+      "desc": "Specifies the directional flow of the user interface."
+    },
+    {
+      "name": "var isBatteryMonitoringEnabled: Bool",
+      "desc": "A Boolean value that determines whether the app can monitor the device's battery."
+    },
+    {
+      "name": "var batteryLevel: Float",
+      "desc": "The battery's current percent charge."
+    },
+    {
+      "name": "var batteryState: WKInterfaceDeviceBatteryState",
+      "desc": "The device's battery state."
+    },
+    {
+      "name": "enum WKInterfaceDeviceBatteryState",
+      "desc": "The battery's charging state."
+    },
+    {
+      "name": "var waterResistanceRating: WKWaterResistanceRating",
+      "desc": "The Apple Watch water-resistance rating."
+    },
+    {
+      "name": "enum WKWaterResistanceRating",
+      "desc": "Values indicating the water-resistance rating."
+    },
+    {
+      "name": "var isWaterLockEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the water lock is enabled."
+    },
+    {
+      "name": "func enableWaterLock()",
+      "desc": "Disables the Apple Watch touch screen to prevent accidental taps while submerged."
+    },
+    {
+      "name": "func play(WKHapticType)",
+      "desc": "Gives haptic feedback to the user."
+    },
+    {
+      "name": "enum WKHapticType",
+      "desc": "Constant indicating the style of feedback to deliver using haptics."
+    },
+    {
+      "name": "var supportsAudioStreaming: Bool",
+      "desc": "A Boolean value that indicates whether the device supports audio streaming."
+    },
+    {
+      "name": "var identifierForVendor: UUID?",
+      "desc": "An alphanumeric string that uniquely identifies a device to the app’s vendor."
+    }
+  ],
+  "declaration": "class WKInterfaceDevice : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

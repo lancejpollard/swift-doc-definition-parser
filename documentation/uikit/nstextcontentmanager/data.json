@@ -1,0 +1,80 @@
+{
+  "path": "/documentation/uikit/nstextcontentmanager",
+  "type": "Class",
+  "name": "NSTextContentManager",
+  "desc": "An abstract class that defines the interface and a default implementation for managing the text document contents.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a new content manager."
+    },
+    {
+      "name": "init?(coder: NSCoder)",
+      "desc": "Creates a new content manager object from data in an unarchiver."
+    },
+    {
+      "name": "var automaticallySynchronizesToBackingStore: Bool",
+      "desc": "Determines whether to automatically synchronize with the backing store when an editing transaction finishes."
+    },
+    {
+      "name": "var hasEditingTransaction: Bool",
+      "desc": "Indicates there’s an active editing transaction from the primary text layout manager."
+    },
+    {
+      "name": "func performEditingTransaction(() -> Void)",
+      "desc": "Performs an editing transaction and invokes a block upon completion."
+    },
+    {
+      "name": "func recordEditAction(in: NSTextRange, newTextRange: NSTextRange)",
+      "desc": "Records information about an edit action to the transaction."
+    },
+    {
+      "name": "var primaryTextLayoutManager: NSTextLayoutManager?",
+      "desc": "The primary text layout manager for this content."
+    },
+    {
+      "name": "var textLayoutManagers: [NSTextLayoutManager]",
+      "desc": "The array of text layout managers associated with this text content manager."
+    },
+    {
+      "name": "var automaticallySynchronizesTextLayoutManagers: Bool",
+      "desc": "Determines if the framework should automatically synchronize all text layout managers when exiting an editing transaction."
+    },
+    {
+      "name": "func addTextLayoutManager(NSTextLayoutManager)",
+      "desc": "Adds the layout manager you provide to the list of layout managers."
+    },
+    {
+      "name": "func removeTextLayoutManager(NSTextLayoutManager)",
+      "desc": "Removes the layout manager you specifiy from the list of layout managers."
+    },
+    {
+      "name": "func synchronizeTextLayoutManagers(((Error?) -> Void)?)",
+      "desc": "Synchronizes changes to all nonprimary text layout managers."
+    },
+    {
+      "name": "var delegate: NSTextContentManagerDelegate?",
+      "desc": "The delegate for the content manager object."
+    },
+    {
+      "name": "protocol NSTextContentManagerDelegate",
+      "desc": "The optional methods that delegates of content manager objects implement for customizing or validating text elements."
+    },
+    {
+      "name": "struct NSTextContentManager.EnumerationOptions",
+      "desc": "Values that control the order in which the framework enumerates text elements."
+    },
+    {
+      "name": "func textElements(for: NSTextRange) -> [NSTextElement]",
+      "desc": "Returns an array of text elements that intersect with the range you specify."
+    }
+  ],
+  "declaration": "class NSTextContentManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding",
+    "NSTextElementProvider"
+  ]
+}

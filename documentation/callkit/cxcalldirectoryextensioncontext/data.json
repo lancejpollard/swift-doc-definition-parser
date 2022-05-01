@@ -1,0 +1,56 @@
+{
+  "path": "/documentation/callkit/cxcalldirectoryextensioncontext",
+  "type": "Class",
+  "name": "CXCallDirectoryExtensionContext",
+  "desc": "A programmatic interface for adding identification and blocking entries to a Call Directory app extension.",
+  "items": [
+    {
+      "name": "var delegate: CXCallDirectoryExtensionContextDelegate?",
+      "desc": "Sets a delegate that can handle request failures for the Call Directory extension context object."
+    },
+    {
+      "name": "func addIdentificationEntry(withNextSequentialPhoneNumber: CXCallDirectoryPhoneNumber, label: String)",
+      "desc": "Adds an identification entry with the specified phone number and label."
+    },
+    {
+      "name": "func addBlockingEntry(withNextSequentialPhoneNumber: CXCallDirectoryPhoneNumber)",
+      "desc": "Adds a blocking entry with the specified phone number."
+    },
+    {
+      "name": "func removeAllBlockingEntries()",
+      "desc": "Removes all stored blocking entries."
+    },
+    {
+      "name": "func removeAllIdentificationEntries()",
+      "desc": "Removes all stored identification entries."
+    },
+    {
+      "name": "func removeBlockingEntry(withPhoneNumber: CXCallDirectoryPhoneNumber)",
+      "desc": "Removes a blocking entry that contains the specified phone number."
+    },
+    {
+      "name": "func removeIdentificationEntry(withPhoneNumber: CXCallDirectoryPhoneNumber)",
+      "desc": "Removes an identification entry that contains the specified phone number."
+    },
+    {
+      "name": "var isIncremental: Bool",
+      "desc": "A Boolean value that indicates whether the request provides data incrementally."
+    },
+    {
+      "name": "func completeRequest(completionHandler: ((Bool) -> Void)?)",
+      "desc": "Completes the request to the extension context."
+    },
+    {
+      "name": "typealias CXCallDirectoryPhoneNumber",
+      "desc": "A value that represents a phone number consisting of a country calling code followed by a sequence of digits."
+    },
+    {
+      "name": "let CXCallDirectoryPhoneNumberMax: CXCallDirectoryPhoneNumber",
+      "desc": "The maximum allowable value for a phone number."
+    }
+  ],
+  "declaration": "class CXCallDirectoryExtensionContext : NSExtensionContext",
+  "inheritsFrom": [
+    "NSExtensionContext"
+  ]
+}

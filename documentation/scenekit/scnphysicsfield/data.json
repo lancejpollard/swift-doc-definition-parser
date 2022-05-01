@@ -1,0 +1,108 @@
+{
+  "path": "/documentation/scenekit/scnphysicsfield",
+  "type": "Class",
+  "name": "SCNPhysicsField",
+  "desc": "An object that applies forces, such as gravitation, electromagnetism, and turbulence, to physics bodies within a certain area of effect.",
+  "items": [
+    {
+      "name": "class func drag() -> SCNPhysicsField",
+      "desc": "Creates a field that slows any object in its area of effect with a force proportional to the object’s velocity."
+    },
+    {
+      "name": "class func vortex() -> SCNPhysicsField",
+      "desc": "Creates a field whose forces circulate around an axis."
+    },
+    {
+      "name": "class func radialGravity() -> SCNPhysicsField",
+      "desc": "Creates a field that accelerates objects toward its center."
+    },
+    {
+      "name": "class func linearGravity() -> SCNPhysicsField",
+      "desc": "Creates a field that accelerates objects in a specific direction."
+    },
+    {
+      "name": "class func noiseField(smoothness: CGFloat, animationSpeed: CGFloat) -> SCNPhysicsField",
+      "desc": "Creates a field that applies random forces to objects in its area of effect."
+    },
+    {
+      "name": "class func turbulenceField(smoothness: CGFloat, animationSpeed: CGFloat) -> SCNPhysicsField",
+      "desc": "Creates a field that applies random forces to objects in its area of effect, with magnitudes proportional to those objects’ velocities."
+    },
+    {
+      "name": "class func spring() -> SCNPhysicsField",
+      "desc": "Creates a field that pulls objects toward its center with a spring-like force."
+    },
+    {
+      "name": "class func electric() -> SCNPhysicsField",
+      "desc": "Creates a field that attracts or repels objects based on their electrical charge and on their distance from the field’s center."
+    },
+    {
+      "name": "class func magnetic() -> SCNPhysicsField",
+      "desc": "Creates a field that attracts or repels objects based on their electrical charge, velocity, and distance from the field’s axis."
+    },
+    {
+      "name": "class func customField(evaluationBlock: SCNFieldForceEvaluator) -> SCNPhysicsField",
+      "desc": "Creates a field that runs the specified block to determine the force a field applies to each object in its area of effect."
+    },
+    {
+      "name": "var halfExtent: SCNVector3",
+      "desc": "A location marking the end of the field’s area of effect."
+    },
+    {
+      "name": "var scope: SCNPhysicsFieldScope",
+      "desc": "The area affected by the field, either inside or outside its region."
+    },
+    {
+      "name": "var usesEllipsoidalExtent: Bool",
+      "desc": "A Boolean value that determines whether the field’s area of effect is shaped like a box or ellipsoid."
+    },
+    {
+      "name": "var offset: SCNVector3",
+      "desc": "The offset of the field’s center within its area of effect."
+    },
+    {
+      "name": "var direction: SCNVector3",
+      "desc": "The field’s directional axis."
+    },
+    {
+      "name": "var strength: CGFloat",
+      "desc": "A multiplier for the force that the field applies to objects in its area of effect."
+    },
+    {
+      "name": "var falloffExponent: CGFloat",
+      "desc": "An exponent that determines how the field’s strength diminishes with distance."
+    },
+    {
+      "name": "var minimumDistance: CGFloat",
+      "desc": "The minimum value for distance-based effects."
+    },
+    {
+      "name": "var isActive: Bool",
+      "desc": "A Boolean value that determines whether the field’s effect is enabled."
+    },
+    {
+      "name": "var isExclusive: Bool",
+      "desc": "A Boolean value that determines whether the field overrides other fields whose areas of effect it overlaps."
+    },
+    {
+      "name": "var categoryBitMask: Int",
+      "desc": "A mask that defines which categories this physics field belongs to."
+    },
+    {
+      "name": "typealias SCNFieldForceEvaluator",
+      "desc": "The signature for a block that SceneKit calls to determine the effect of a custom field on an object."
+    },
+    {
+      "name": "enum SCNPhysicsFieldScope",
+      "desc": "Options for defining the region of space affected by a physics field, used by the scope property."
+    }
+  ],
+  "declaration": "class SCNPhysicsField : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

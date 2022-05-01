@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/sirikit/inpaybillintentresponse",
+  "type": "Class",
+  "name": "INPayBillIntentResponse",
+  "desc": "Your app’s response to a request to pay a bill.DeprecatedThis intent is no longer available. You may define a custom intent instead. For more information, see Deprecated SiriKit Intent Domains.",
+  "items": [
+    {
+      "name": "init(code: INPayBillIntentResponseCode, userActivity: NSUserActivity?)",
+      "desc": "Initializes the response object with the specified code and user activity object."
+    },
+    {
+      "name": "var code: INPayBillIntentResponseCode",
+      "desc": "The code indicating whether you successfully handled the intent."
+    },
+    {
+      "name": "enum INPayBillIntentResponseCode",
+      "desc": "Constants indicating the state of the response."
+    },
+    {
+      "name": "var fromAccount: INPaymentAccount?",
+      "desc": "The user account providing the funds."
+    },
+    {
+      "name": "var billDetails: INBillDetails?",
+      "desc": "The details of the bill to pay."
+    },
+    {
+      "name": "var transactionAmount: INPaymentAmount?",
+      "desc": "The amount of money to transfer to the payee."
+    },
+    {
+      "name": "var transactionScheduledDate: INDateComponentsRange?",
+      "desc": "The date on which the transaction is to occur."
+    },
+    {
+      "name": "var transactionNote: String?",
+      "desc": "Notes to include with the transaction."
+    }
+  ],
+  "declaration": "class INPayBillIntentResponse : INIntentResponse",
+  "inheritsFrom": [
+    "INIntentResponse"
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "path": "/documentation/swift/binaryfloatingpoint",
+  "type": "Protocol",
+  "name": "BinaryFloatingPoint",
+  "desc": "A radix-2 (binary) floating-point type.",
+  "items": [
+    {
+      "name": "init(Float)",
+      "desc": "Creates a new instance from the given value, rounded to the closest possible representation."
+    },
+    {
+      "name": "init(Double)",
+      "desc": "Creates a new instance from the given value, rounded to the closest possible representation."
+    },
+    {
+      "name": "init(Float80)",
+      "desc": "Creates a new instance from the given value, rounded to the closest possible representation."
+    },
+    {
+      "name": "init<Source>(Source)",
+      "desc": "Creates a new instance from the given value, rounded to the closest possible representation."
+    },
+    {
+      "name": "init?<Source>(exactly: Source)",
+      "desc": "Creates a new instance from the given value, if it can be represented exactly."
+    },
+    {
+      "name": "static func random(in: ClosedRange<Self>) -> Self",
+      "desc": "Returns a random value within the specified range."
+    },
+    {
+      "name": "static func random(in: Range<Self>) -> Self",
+      "desc": "Returns a random value within the specified range."
+    },
+    {
+      "name": "static func random<T>(in: ClosedRange<Self>, using: inout T) -> Self",
+      "desc": "Returns a random value within the specified range, using the given generator as a source for randomness."
+    },
+    {
+      "name": "static func random<T>(in: Range<Self>, using: inout T) -> Self",
+      "desc": "Returns a random value within the specified range, using the given generator as a source for randomness."
+    },
+    {
+      "name": "var binade: Self",
+      "desc": "The floating-point value with the same sign and exponent as this value, but with a significand of 1.0."
+    },
+    {
+      "name": "var exponentBitPattern: Self.RawExponent",
+      "desc": "The raw encoding of the value’s exponent field."
+    },
+    {
+      "name": "var significandBitPattern: Self.RawSignificand",
+      "desc": "The raw encoding of the value’s significand field."
+    },
+    {
+      "name": "var significandWidth: Int",
+      "desc": "The number of bits required to represent the value’s significand."
+    },
+    {
+      "name": "static var exponentBitCount: Int",
+      "desc": "The number of bits used to represent the type’s exponent."
+    },
+    {
+      "name": "static var significandBitCount: Int",
+      "desc": "The available number of fractional significand bits."
+    },
+    {
+      "name": "init(sign: FloatingPointSign, exponentBitPattern: Self.RawExponent, significandBitPattern: Self.RawSignificand)",
+      "desc": "Creates a new instance from the specified sign and bit patterns."
+    },
+    {
+      "name": "associatedtype RawExponent",
+      "desc": "A type that represents the encoded exponent of a value."
+    },
+    {
+      "name": "associatedtype RawSignificand",
+      "desc": "A type that represents the encoded significand of a value."
+    },
+    {
+      "name": "init(String, format: FloatingPointFormatStyle<Self>.Percent, lenient: Bool)"
+    },
+    {
+      "name": "init(String, format: FloatingPointFormatStyle<Self>.Currency, lenient: Bool)"
+    },
+    {
+      "name": "init(String, format: FloatingPointFormatStyle<Self>, lenient: Bool)"
+    },
+    {
+      "name": "init<S>(S.ParseInput, strategy: S)"
+    },
+    {
+      "name": "init<S>(S.ParseInput, strategy: S)"
+    },
+    {
+      "name": "func formatted() -> String"
+    },
+    {
+      "name": "func formatted<S>(S) -> S.FormatOutput"
+    },
+    {
+      "name": "func formatted<S>(S) -> S.FormatOutput"
+    }
+  ],
+  "declaration": "protocol BinaryFloatingPoint",
+  "inheritsFrom": [
+    "ExpressibleByFloatLiteral",
+    "FloatingPoint"
+  ]
+}

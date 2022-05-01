@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/sirikit/insettaskattributeintenthandling",
+  "type": "Protocol",
+  "name": "INSetTaskAttributeIntentHandling",
+  "desc": "The handler interface for updating the attributes of an existing task.",
+  "items": [
+    {
+      "name": "func resolveTargetTask(for: INSetTaskAttributeIntent, with: (INTaskResolutionResult) -> Void)",
+      "desc": "Resolves which task the user wants to modify."
+    },
+    {
+      "name": "func resolveStatus(for: INSetTaskAttributeIntent, with: (INTaskStatusResolutionResult) -> Void)",
+      "desc": "Resolves the intended status of the task."
+    },
+    {
+      "name": "func resolveSpatialEventTrigger(for: INSetTaskAttributeIntent, with: (INSpatialEventTriggerResolutionResult) -> Void)",
+      "desc": "Resolves the location-based trigger to apply to the task."
+    },
+    {
+      "name": "func resolveTemporalEventTrigger(for: INSetTaskAttributeIntent, with: (INSetTaskAttributeTemporalEventTriggerResolutionResult) -> Void)",
+      "desc": "Resolves the time-based trigger to apply to the task."
+    },
+    {
+      "name": "func resolvePriority(for: INSetTaskAttributeIntent, with: (INTaskPriorityResolutionResult) -> Void)",
+      "desc": "Resolves the intended priority of the task."
+    },
+    {
+      "name": "func resolveTaskTitle(for: INSetTaskAttributeIntent, with: (INSpeakableStringResolutionResult) -> Void)",
+      "desc": "Resolves the intended title of the task."
+    },
+    {
+      "name": "func confirm(intent: INSetTaskAttributeIntent, completion: (INSetTaskAttributeIntentResponse) -> Void)",
+      "desc": "Confirms whether you can modify the task’s attributes."
+    },
+    {
+      "name": "func handle(intent: INSetTaskAttributeIntent, completion: (INSetTaskAttributeIntentResponse) -> Void)",
+      "desc": "Handles the modification of the attributes of a task."
+    }
+  ],
+  "declaration": "protocol INSetTaskAttributeIntentHandling",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

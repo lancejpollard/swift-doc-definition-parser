@@ -1,0 +1,29 @@
+{
+  "path": "/documentation/security/seckeyimportexportflags",
+  "type": "Structure",
+  "name": "SecKeyImportExportFlags",
+  "desc": "The import/export parameter structure flags.",
+  "items": [
+    {
+      "name": "init(rawValue: UInt32)",
+      "desc": "Initialize a key import/export flag structure."
+    },
+    {
+      "name": "static var importOnlyOne: SecKeyImportExportFlags",
+      "desc": "A flag that you set to prevent importing more than one private key."
+    },
+    {
+      "name": "static var securePassphrase: SecKeyImportExportFlags",
+      "desc": "A flag that indicates the user should be prompted for a passphrase on import or export."
+    },
+    {
+      "name": "static var noAccessControl: SecKeyImportExportFlags",
+      "desc": "A flag that indicates imported private keys have no access object attached to them."
+    }
+  ],
+  "declaration": "struct SecKeyImportExportFlags, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

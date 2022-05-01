@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/networkextension/nwudpsessionstate",
+  "type": "Enumeration",
+  "name": "NWUDPSessionState",
+  "desc": "No overview available.",
+  "items": [
+    {
+      "name": "case invalid",
+      "desc": "The session is in an invalid or uninitialized state."
+    },
+    {
+      "name": "case waiting",
+      "desc": "The session is waiting for better conditions before attempting to make the session ready."
+    },
+    {
+      "name": "case preparing",
+      "desc": "The remote endpoint is being resolved."
+    },
+    {
+      "name": "case ready",
+      "desc": "The session is ready for reading and writing data."
+    },
+    {
+      "name": "case failed",
+      "desc": "None of the currently resolved endpoints can be used at this time, either due to problems with the path or the client rejecting the endpoints."
+    },
+    {
+      "name": "case cancelled",
+      "desc": "The session has been cancelled by the client calling cancel."
+    }
+  ],
+  "declaration": "enum NWUDPSessionState : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

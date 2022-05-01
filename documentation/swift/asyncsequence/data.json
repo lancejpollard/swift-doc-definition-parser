@@ -1,0 +1,201 @@
+{
+  "path": "/documentation/swift/asyncsequence",
+  "type": "Protocol",
+  "name": "AsyncSequence",
+  "desc": "A type that provides asynchronous, sequential, iterated access to its elements.",
+  "items": [
+    {
+      "name": "func makeAsyncIterator() -> Self.AsyncIterator",
+      "desc": "Creates the asynchronous iterator that produces elements of this asynchronous sequence."
+    },
+    {
+      "name": "associatedtype AsyncIterator",
+      "desc": "The type of asynchronous iterator that produces elements of this asynchronous sequence."
+    },
+    {
+      "name": "protocol AsyncIteratorProtocol",
+      "desc": "A type that asynchronously supplies the values of a sequence one at a time."
+    },
+    {
+      "name": "associatedtype Element",
+      "desc": "The type of element produced by this asynchronous sequence."
+    },
+    {
+      "name": "func contains(Self.Element) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the asynchronous sequence contains the given element."
+    },
+    {
+      "name": "func contains(where: (Self.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the asynchronous sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func allSatisfy((Self.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether all elements produced by the asynchronous sequence satisfies the given predicate."
+    },
+    {
+      "name": "func first(where: (Self.Element) -> Bool) -> Self.Element?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func min() -> Self.Element?",
+      "desc": "Returns the minimum element in an asynchronous sequence of comparable elements."
+    },
+    {
+      "name": "func min(by: (Self.Element, Self.Element) -> Bool) -> Self.Element?",
+      "desc": "Returns the minimum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func max() -> Self.Element?",
+      "desc": "Returns the maximum element in an asynchronous sequence of comparable elements."
+    },
+    {
+      "name": "func max(by: (Self.Element, Self.Element) -> Bool) -> Self.Element?",
+      "desc": "Returns the maximum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func prefix(Int) -> AsyncPrefixSequence<Self>",
+      "desc": "Returns an asynchronous sequence, up to the specified maximum length, containing the initial elements of the base asynchronous sequence."
+    },
+    {
+      "name": "struct AsyncPrefixSequence",
+      "desc": "An asynchronous sequence, up to a specified maximum length, containing the initial elements of a base asynchronous sequence."
+    },
+    {
+      "name": "func prefix(while: (Self.Element) -> Bool) -> AsyncPrefixWhileSequence<Self>",
+      "desc": "Returns an asynchronous sequence, containing the initial, consecutive elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "struct AsyncPrefixWhileSequence",
+      "desc": "An asynchronous sequence, containing the initial, consecutive elements of the base sequence that satisfy a given predicate."
+    },
+    {
+      "name": "func prefix(while: (Self.Element) -> Bool) -> AsyncThrowingPrefixWhileSequence<Self>",
+      "desc": "Returns an asynchronous sequence, containing the initial, consecutive elements of the base sequence that satisfy the given error-throwing predicate."
+    },
+    {
+      "name": "struct AsyncThrowingPrefixWhileSequence",
+      "desc": "An asynchronous sequence, containing the initial, consecutive elements of the base sequence that satisfy the given error-throwing predicate."
+    },
+    {
+      "name": "func dropFirst(Int) -> AsyncDropFirstSequence<Self>",
+      "desc": "Omits a specified number of elements from the base asynchronous sequence, then passes through all remaining elements."
+    },
+    {
+      "name": "struct AsyncDropFirstSequence",
+      "desc": "An asynchronous sequence which omits a specified number of elements from the base asynchronous sequence, then passes through all remaining elements."
+    },
+    {
+      "name": "func drop(while: (Self.Element) -> Bool) -> AsyncDropWhileSequence<Self>",
+      "desc": "Omits elements from the base asynchronous sequence until a given closure returns false, after which it passes through all remaining elements."
+    },
+    {
+      "name": "struct AsyncDropWhileSequence",
+      "desc": "An asynchronous sequence which omits elements from the base sequence until a given closure returns false, after which it passes through all remaining elements."
+    },
+    {
+      "name": "func drop(while: (Self.Element) -> Bool) -> AsyncThrowingDropWhileSequence<Self>",
+      "desc": "Omits elements from the base sequence until a given error-throwing closure returns false, after which it passes through all remaining elements."
+    },
+    {
+      "name": "struct AsyncThrowingDropWhileSequence",
+      "desc": "An asynchronous sequence which omits elements from the base sequence until a given error-throwing closure returns false, after which it passes through all remaining elements."
+    },
+    {
+      "name": "func filter((Self.Element) -> Bool) -> AsyncFilterSequence<Self>",
+      "desc": "Creates an asynchronous sequence that contains, in order, the elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "struct AsyncFilterSequence",
+      "desc": "An asynchronous sequence that contains, in order, the elements of the base sequence that satisfy a given predicate."
+    },
+    {
+      "name": "func filter((Self.Element) -> Bool) -> AsyncThrowingFilterSequence<Self>",
+      "desc": "Creates an asynchronous sequence that contains, in order, the elements of the base sequence that satisfy the given error-throwing predicate."
+    },
+    {
+      "name": "struct AsyncThrowingFilterSequence",
+      "desc": "An asynchronous sequence that contains, in order, the elements of the base sequence that satisfy the given error-throwing predicate."
+    },
+    {
+      "name": "func map<Transformed>((Self.Element) -> Transformed) -> AsyncMapSequence<Self, Transformed>",
+      "desc": "Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "struct AsyncMapSequence",
+      "desc": "An asynchronous sequence that maps the given closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "func map<Transformed>((Self.Element) -> Transformed) -> AsyncThrowingMapSequence<Self, Transformed>",
+      "desc": "Creates an asynchronous sequence that maps the given error-throwing closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "struct AsyncThrowingMapSequence",
+      "desc": "An asynchronous sequence that maps the given error-throwing closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((Self.Element) -> ElementOfResult?) -> AsyncCompactMapSequence<Self, ElementOfResult>",
+      "desc": "Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "struct AsyncCompactMapSequence",
+      "desc": "An asynchronous sequence that maps a given closure over the asynchronous sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((Self.Element) -> ElementOfResult?) -> AsyncThrowingCompactMapSequence<Self, ElementOfResult>",
+      "desc": "Creates an asynchronous sequence that maps an error-throwing closure over the base sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "struct AsyncThrowingCompactMapSequence",
+      "desc": "An asynchronous sequence that maps an error-throwing closure over the base sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((Self.Element) -> SegmentOfResult) -> AsyncFlatMapSequence<Self, SegmentOfResult>",
+      "desc": "Creates an asynchronous sequence that concatenates the results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "struct AsyncFlatMapSequence",
+      "desc": "An asynchronous sequence that concatenates the results of calling a given transformation with each element of this sequence."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((Self.Element) -> SegmentOfResult) -> AsyncThrowingFlatMapSequence<Self, SegmentOfResult>",
+      "desc": "Creates an asynchronous sequence that concatenates the results of calling the given error-throwing transformation with each element of this sequence."
+    },
+    {
+      "name": "struct AsyncThrowingFlatMapSequence",
+      "desc": "An asynchronous sequence that concatenates the results of calling a given error-throwing transformation with each element of this sequence."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, Self.Element) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, Self.Element) -> Void) -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure, given a mutable initial value."
+    },
+    {
+      "name": "var characters: AsyncCharacterSequence<Self>",
+      "desc": "The contents of this sequence, as an asychronous sequence of characters."
+    },
+    {
+      "name": "struct AsyncCharacterSequence",
+      "desc": "An asychronous sequence of characters."
+    },
+    {
+      "name": "var unicodeScalars: AsyncUnicodeScalarSequence<Self>",
+      "desc": "The contents of this sequence, as an asychronous sequence of Unicode scalar values."
+    },
+    {
+      "name": "struct AsyncUnicodeScalarSequence",
+      "desc": "An asychronous sequence of Unicode scalar values."
+    },
+    {
+      "name": "var lines: AsyncLineSequence<Self>",
+      "desc": "The contents of this sequence, as an asychronous sequence of lines of text."
+    },
+    {
+      "name": "struct AsyncLineSequence",
+      "desc": "An asychronous sequence of lines of text."
+    }
+  ],
+  "declaration": "protocol AsyncSequence"
+}

@@ -1,0 +1,202 @@
+{
+  "path": "/documentation/accelerate/simd_float4x2",
+  "type": "Structure",
+  "name": "simd_float4x2",
+  "desc": "A matrix of four columns and two rows that contains single-precision values.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a new matrix."
+    },
+    {
+      "name": "init(Float)",
+      "desc": "Creates a new matrix with the specified scalar value on the main diagonal."
+    },
+    {
+      "name": "init(diagonal: SIMD2<Float>)",
+      "desc": "Creates a new matrix with the specified vector on the main diagonal."
+    },
+    {
+      "name": "init([SIMD2<Float>])",
+      "desc": "Creates a new matrix from an array."
+    },
+    {
+      "name": "init(SIMD2<Float>, SIMD2<Float>, SIMD2<Float>, SIMD2<Float>)",
+      "desc": "Creates a new matrix with the specified vectors as columns."
+    },
+    {
+      "name": "init(columns: (simd_float2, simd_float2, simd_float2, simd_float2))",
+      "desc": "Creates a new matrix with the specified columns."
+    },
+    {
+      "name": "init(rows: [SIMD4<Float>])",
+      "desc": "Creates a new matrix with the specified rows."
+    },
+    {
+      "name": "var transpose: float2x4",
+      "desc": "The transpose of the matrix."
+    },
+    {
+      "name": "var columns: (simd_float2, simd_float2, simd_float2, simd_float2)",
+      "desc": "The columns of the matrix."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A representation of the matrix that is suitable for debugging."
+    },
+    {
+      "name": "func simd_matrix(simd_float2, simd_float2, simd_float2, simd_float2) -> simd_float4x2",
+      "desc": "Returns a new matrix with the specified columns."
+    },
+    {
+      "name": "func simd_matrix_from_rows(simd_float4, simd_float4) -> simd_float4x2",
+      "desc": "Returns a new matrix with the specified rows."
+    },
+    {
+      "name": "func matrix_from_rows(SIMD4<Float>, SIMD4<Float>) -> simd_float4x2",
+      "desc": "Returns a new matrix with the specified rows."
+    },
+    {
+      "name": "func simd_add(simd_float4x2, simd_float4x2) -> simd_float4x2",
+      "desc": "Returns the sum of two matrices."
+    },
+    {
+      "name": "func simd_sub(simd_float4x2, simd_float4x2) -> simd_float4x2",
+      "desc": "Returns the difference of two matrices."
+    },
+    {
+      "name": "func matrix_scale(Float, simd_float4x2) -> simd_float4x2",
+      "desc": "Returns the product of a scalar value and a matrix."
+    },
+    {
+      "name": "func simd_mul(Float, simd_float4x2) -> simd_float4x2",
+      "desc": "Returns the product of a scalar value and a 4 x 2 matrix."
+    },
+    {
+      "name": "func simd_mul(simd_float2, simd_float4x2) -> simd_float4",
+      "desc": "Returns the product of a two-element vector and a 4 x 2 matrix."
+    },
+    {
+      "name": "func matrix_multiply(simd_float2, simd_float4x2) -> simd_float4",
+      "desc": "Returns the product of a two-element vector and a 4 x 2 matrix."
+    },
+    {
+      "name": "func simd_mul(simd_float4x2, simd_float4) -> simd_float2",
+      "desc": "Returns the product of a 4 x 2 matrix and a four-element vector."
+    },
+    {
+      "name": "func matrix_multiply(simd_float4x2, simd_float4) -> simd_float2",
+      "desc": "Returns the product of a 4 x 2 matrix and a four-element vector."
+    },
+    {
+      "name": "func simd_mul(simd_float2x2, simd_float4x2) -> simd_float4x2",
+      "desc": "Returns the product of a 2 x 2 matrix and a 4 x 2 matrix."
+    },
+    {
+      "name": "func matrix_multiply(simd_float2x2, simd_float4x2) -> simd_float4x2",
+      "desc": "Returns the product of a 2 x 2 matrix and a 4 x 2 matrix."
+    },
+    {
+      "name": "func simd_mul(simd_float3x2, simd_float4x3) -> simd_float4x2",
+      "desc": "Returns the product of a 3 x 2 matrix and a 4 x 3 matrix."
+    },
+    {
+      "name": "func matrix_multiply(simd_float3x2, simd_float4x3) -> simd_float4x2",
+      "desc": "Returns the product of a 3 x 2 matrix and a 4 x 3 matrix."
+    },
+    {
+      "name": "func simd_mul(simd_float4x2, simd_float4x4) -> simd_float4x2",
+      "desc": "Returns the product of a 4 x 2 matrix and a 4 x 4 matrix."
+    },
+    {
+      "name": "func matrix_multiply(simd_float4x2, simd_float4x4) -> simd_float4x2",
+      "desc": "Returns the product of a 4 x 2 matrix and a 4 x 4 matrix."
+    },
+    {
+      "name": "func simd_equal(simd_float4x2, simd_float4x2) -> simd_bool",
+      "desc": "Returns true if every element in a matrix is exactly equal to the corresponding element in a second matrix."
+    },
+    {
+      "name": "func simd_almost_equal_elements(simd_float4x2, simd_float4x2, Float) -> simd_bool",
+      "desc": "Returns true if every element in a matrix is within a specified tolerance to the corresponding element in a second matrix."
+    },
+    {
+      "name": "func simd_almost_equal_elements_relative(simd_float4x2, simd_float4x2, Float) -> simd_bool",
+      "desc": "Returns true if every element in a matrix is within a specified single-precision relative tolerance to the corresponding element in a second matrix."
+    },
+    {
+      "name": "func simd_linear_combination(Float, simd_float4x2, Float, simd_float4x2) -> simd_float4x2",
+      "desc": "Returns the linear combination of two scalar values and two matrices."
+    },
+    {
+      "name": "func simd_transpose(simd_float4x2) -> simd_float2x4",
+      "desc": "Returns the transpose of a matrix."
+    },
+    {
+      "name": "subscript(Int) -> SIMD2<Float>",
+      "desc": "Accesses the column at the specified position."
+    },
+    {
+      "name": "subscript(Int, Int) -> Float",
+      "desc": "Accesses the element at the specified position."
+    },
+    {
+      "name": "typealias float4x2",
+      "desc": "A type alias for a single-precision 4 x 2 matrix."
+    },
+    {
+      "name": "typealias matrix_float4x2",
+      "desc": "A type alias for a single-precision 4 x 2 matrix."
+    },
+    {
+      "name": "static func * (simd_float4x2, Float) -> simd_float4x2"
+    },
+    {
+      "name": "static func * (simd_float4x2, float4x4) -> float4x2"
+    },
+    {
+      "name": "static func * (simd_float4x2, float2x4) -> float2x2"
+    },
+    {
+      "name": "static func * (simd_float4x2, SIMD4<Float>) -> SIMD2<Float>"
+    },
+    {
+      "name": "static func * (SIMD2<Float>, simd_float4x2) -> SIMD4<Float>"
+    },
+    {
+      "name": "static func * (Float, simd_float4x2) -> simd_float4x2"
+    },
+    {
+      "name": "static func * (simd_float4x2, float3x4) -> float3x2"
+    },
+    {
+      "name": "static func *= (inout simd_float4x2, float4x4)"
+    },
+    {
+      "name": "static func *= (inout simd_float4x2, Float)"
+    },
+    {
+      "name": "static func + (simd_float4x2, simd_float4x2) -> simd_float4x2"
+    },
+    {
+      "name": "static func += (inout simd_float4x2, simd_float4x2)"
+    },
+    {
+      "name": "static func - (simd_float4x2) -> simd_float4x2"
+    },
+    {
+      "name": "static func - (simd_float4x2, simd_float4x2) -> simd_float4x2"
+    },
+    {
+      "name": "static func -= (inout simd_float4x2, simd_float4x2)"
+    },
+    {
+      "name": "static func == (simd_float4x2, simd_float4x2) -> Bool"
+    }
+  ],
+  "declaration": "struct simd_float4x2",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "Equatable"
+  ]
+}

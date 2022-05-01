@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/arkit/arscnviewdelegate",
+  "type": "Protocol",
+  "name": "ARSCNViewDelegate",
+  "desc": "Methods you can implement to mediate the automatic synchronization of SceneKit content with an AR session.",
+  "items": [
+    {
+      "name": "func renderer(SCNSceneRenderer, nodeFor: ARAnchor) -> SCNNode?",
+      "desc": "Asks the delegate to provide a SceneKit node corresponding to a newly added anchor."
+    },
+    {
+      "name": "func renderer(SCNSceneRenderer, didAdd: SCNNode, for: ARAnchor)",
+      "desc": "Tells the delegate that a SceneKit node corresponding to a new AR anchor has been added to the scene."
+    },
+    {
+      "name": "func renderer(SCNSceneRenderer, willUpdate: SCNNode, for: ARAnchor)",
+      "desc": "Tells the delegate that a SceneKit node's properties will be updated to match the current state of its corresponding anchor."
+    },
+    {
+      "name": "func renderer(SCNSceneRenderer, didUpdate: SCNNode, for: ARAnchor)",
+      "desc": "Tells the delegate that a SceneKit node's properties have been updated to match the current state of its corresponding anchor."
+    },
+    {
+      "name": "func renderer(SCNSceneRenderer, didRemove: SCNNode, for: ARAnchor)",
+      "desc": "Tells the delegate that the SceneKit node corresponding to a removed AR anchor has been removed from the scene."
+    }
+  ],
+  "declaration": "protocol ARSCNViewDelegate",
+  "inheritsFrom": [
+    "ARSessionObserver",
+    "SCNSceneRendererDelegate"
+  ]
+}

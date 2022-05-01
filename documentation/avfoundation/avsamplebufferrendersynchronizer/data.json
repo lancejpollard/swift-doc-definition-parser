@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/avfoundation/avsamplebufferrendersynchronizer",
+  "type": "Class",
+  "name": "AVSampleBufferRenderSynchronizer",
+  "desc": "An object used to synchronize multiple queued sample buffers to a single timeline.",
+  "items": [
+    {
+      "name": "var renderers: [AVQueuedSampleBufferRendering]",
+      "desc": "An array of queued sample buffer renderers currently attached to the synchronizer."
+    },
+    {
+      "name": "func addRenderer(AVQueuedSampleBufferRendering)",
+      "desc": "Adds a renderer to the list of renderers under the synchronizer's control."
+    },
+    {
+      "name": "func removeRenderer(AVQueuedSampleBufferRendering, at: CMTime, completionHandler: ((Bool) -> Void)?)",
+      "desc": "Removes a renderer from the synchronizer."
+    },
+    {
+      "name": "func currentTime() -> CMTime",
+      "desc": "Returns the current time of the synchronizer."
+    },
+    {
+      "name": "var timebase: CMTimebase",
+      "desc": "The synchronizer’s rendering timebase which determines how it interprets timestamps."
+    },
+    {
+      "name": "var rate: Float",
+      "desc": "The current playback rate."
+    },
+    {
+      "name": "func setRate(Float, time: CMTime)",
+      "desc": "Sets the renderer’s time and rate."
+    },
+    {
+      "name": "func setRate(Float, time: CMTime, atHostTime: CMTime)",
+      "desc": "Sets the playback rate and the relationship between the current time and host time."
+    },
+    {
+      "name": "class let rateDidChangeNotification: NSNotification.Name",
+      "desc": "The synchronizer’s rendering rate changed."
+    },
+    {
+      "name": "var delaysRateChangeUntilHasSufficientMediaData: Bool",
+      "desc": "A Boolean value that Indicates whether the playback should start immediately on rate change requests."
+    },
+    {
+      "name": "func addPeriodicTimeObserver(forInterval: CMTime, queue: DispatchQueue?, using: (CMTime) -> Void) -> Any",
+      "desc": "Requests invocation of a block during rendering at specified time intervals."
+    },
+    {
+      "name": "func addBoundaryTimeObserver(forTimes: [NSValue], queue: DispatchQueue?, using: () -> Void) -> Any",
+      "desc": "Requests invocation of a block when specified times are traversed during normal rendering."
+    },
+    {
+      "name": "func removeTimeObserver(Any)",
+      "desc": "Cancels the specified time observer."
+    }
+  ],
+  "declaration": "class AVSampleBufferRenderSynchronizer : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

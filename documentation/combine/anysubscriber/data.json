@@ -1,0 +1,59 @@
+{
+  "path": "/documentation/combine/anysubscriber",
+  "type": "Structure",
+  "name": "AnySubscriber",
+  "desc": "A type-erasing subscriber.",
+  "items": [
+    {
+      "name": "init<S>(S)",
+      "desc": "Creates a type-erasing subscriber to wrap an existing subscriber."
+    },
+    {
+      "name": "init(receiveSubscription: ((Subscription) -> Void)?, receiveValue: ((Input) -> Subscribers.Demand)?, receiveCompletion: ((Subscribers.Completion<Failure>) -> Void)?)",
+      "desc": "Creates a type-erasing subscriber that executes the provided closures."
+    },
+    {
+      "name": "func receive(Input) -> Subscribers.Demand",
+      "desc": "Tells the subscriber that the publisher has produced an element."
+    },
+    {
+      "name": "func receive() -> Subscribers.Demand",
+      "desc": "Tells the subscriber that a publisher of void elements is ready to receive further requests."
+    },
+    {
+      "name": "func receive(subscription: Subscription)",
+      "desc": "Tells the subscriber that it has successfully subscribed to the publisher and may request items."
+    },
+    {
+      "name": "func receive(completion: Subscribers.Completion<Failure>)",
+      "desc": "Tells the subscriber that the publisher has completed publishing, either normally or with an error."
+    },
+    {
+      "name": "let combineIdentifier: CombineIdentifier",
+      "desc": "A unique identifier for identifying publisher streams."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "The custom mirror for this instance."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual representation of this instance."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A custom playground description for this instance."
+    },
+    {
+      "name": "init<S>(S)"
+    }
+  ],
+  "declaration": "@frozen struct AnySubscriber<Input, Failure> where Failure : Error",
+  "conformsTo": [
+    "CustomCombineIdentifierConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "Subscriber"
+  ]
+}

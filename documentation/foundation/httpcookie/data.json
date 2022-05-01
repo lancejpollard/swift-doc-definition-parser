@@ -1,0 +1,92 @@
+{
+  "path": "/documentation/foundation/httpcookie",
+  "type": "Class",
+  "name": "HTTPCookie",
+  "desc": "A representation of an HTTP cookie.",
+  "items": [
+    {
+      "name": "class func cookies(withResponseHeaderFields: [String : String], for: URL) -> [HTTPCookie]",
+      "desc": "Creates an array of HTTP cookies that corresponds to the provided response header fields for the provided URL."
+    },
+    {
+      "name": "init?(properties: [HTTPCookiePropertyKey : Any])",
+      "desc": "Creates an HTTP cookie instance with the given cookie properties."
+    },
+    {
+      "name": "class func requestHeaderFields(with: [HTTPCookie]) -> [String : String]",
+      "desc": "Converts an array of cookies to a dictionary of header fields."
+    },
+    {
+      "name": "var domain: String",
+      "desc": "The domain of the cookie."
+    },
+    {
+      "name": "var path: String",
+      "desc": "The cookie’s path."
+    },
+    {
+      "name": "var portList: [NSNumber]?",
+      "desc": "The cookie’s port list."
+    },
+    {
+      "name": "var name: String",
+      "desc": "The cookie’s name."
+    },
+    {
+      "name": "var value: String",
+      "desc": "The cookie‘s string value."
+    },
+    {
+      "name": "var version: Int",
+      "desc": "The cookie’s version."
+    },
+    {
+      "name": "var expiresDate: Date?",
+      "desc": "The cookie’s expiration date."
+    },
+    {
+      "name": "var isSessionOnly: Bool",
+      "desc": "A Boolean value that indicates whether the cookie should be discarded at the end of the session (regardless of expiration date)."
+    },
+    {
+      "name": "var isHTTPOnly: Bool",
+      "desc": "A Boolean value that indicates whether the cookie should only be sent to HTTP servers."
+    },
+    {
+      "name": "var isSecure: Bool",
+      "desc": "A Boolean value that indicates whether the cookie may only be sent over secure channels."
+    },
+    {
+      "name": "var sameSitePolicy: HTTPCookieStringPolicy?",
+      "desc": "A Boolean value that indicates whether to restrict the cookie to requests sent back to the same site that created it."
+    },
+    {
+      "name": "struct HTTPCookieStringPolicy",
+      "desc": "Values that indicate whether to restrict the cookie to requests sent back to the same site that created it."
+    },
+    {
+      "name": "var properties: [HTTPCookiePropertyKey : Any]?",
+      "desc": "The cookie’s properties."
+    },
+    {
+      "name": "struct HTTPCookiePropertyKey",
+      "desc": "Constants that define the supported keys in a cookie attributes dictionary."
+    },
+    {
+      "name": "var comment: String?",
+      "desc": "The cookie’s comment string."
+    },
+    {
+      "name": "var commentURL: URL?",
+      "desc": "The cookie’s comment URL."
+    },
+    {
+      "name": "enum HTTPCookie.AcceptPolicy",
+      "desc": "Cookie acceptance policies implemented by the HTTPCookieStorage class."
+    }
+  ],
+  "declaration": "class HTTPCookie : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

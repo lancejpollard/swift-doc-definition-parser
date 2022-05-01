@@ -1,0 +1,112 @@
+{
+  "path": "/documentation/metal/mtlblitcommandencoder",
+  "type": "Protocol",
+  "name": "MTLBlitCommandEncoder",
+  "desc": "An encoder that encodes memory copying, filtering, and fill commands.",
+  "items": [
+    {
+      "name": "func copy(from: MTLBuffer, sourceOffset: Int, to: MTLBuffer, destinationOffset: Int, size: Int)",
+      "desc": "Encodes a command to copy data from a source buffer into a destination buffer."
+    },
+    {
+      "name": "func copy(from: MTLBuffer, sourceOffset: Int, sourceBytesPerRow: Int, sourceBytesPerImage: Int, sourceSize: MTLSize, to: MTLTexture, destinationSlice: Int, destinationLevel: Int, destinationOrigin: MTLOrigin)",
+      "desc": "Encodes a command to copy image data from a source buffer into a destination texture."
+    },
+    {
+      "name": "func copy(from: MTLTexture, sourceSlice: Int, sourceLevel: Int, sourceOrigin: MTLOrigin, sourceSize: MTLSize, to: MTLBuffer, destinationOffset: Int, destinationBytesPerRow: Int, destinationBytesPerImage: Int)",
+      "desc": "Encodes a command to copy image data from a slice of a source texture into a destination buffer."
+    },
+    {
+      "name": "func copy(from: MTLBuffer, sourceOffset: Int, sourceBytesPerRow: Int, sourceBytesPerImage: Int, sourceSize: MTLSize, to: MTLTexture, destinationSlice: Int, destinationLevel: Int, destinationOrigin: MTLOrigin, options: MTLBlitOption)",
+      "desc": "Encodes a command to copy image data from a source buffer into a destination texture."
+    },
+    {
+      "name": "func copy(from: MTLTexture, sourceSlice: Int, sourceLevel: Int, sourceOrigin: MTLOrigin, sourceSize: MTLSize, to: MTLBuffer, destinationOffset: Int, destinationBytesPerRow: Int, destinationBytesPerImage: Int, options: MTLBlitOption)",
+      "desc": "Encodes a command to copy image data from a slice of a source texture into a destination buffer."
+    },
+    {
+      "name": "func copy(from: MTLTexture, to: MTLTexture)",
+      "desc": "Encodes a command to copy a texture's data to another texture."
+    },
+    {
+      "name": "func copy(from: MTLTexture, sourceSlice: Int, sourceLevel: Int, to: MTLTexture, destinationSlice: Int, destinationLevel: Int, sliceCount: Int, levelCount: Int)",
+      "desc": "Encodes a command to copy a subset of texture data to another texture."
+    },
+    {
+      "name": "func copy(from: MTLTexture, sourceSlice: Int, sourceLevel: Int, sourceOrigin: MTLOrigin, sourceSize: MTLSize, to: MTLTexture, destinationSlice: Int, destinationLevel: Int, destinationOrigin: MTLOrigin)",
+      "desc": "Encodes a command to copy image data from a slice of a source texture into a slice of a destination texture."
+    },
+    {
+      "name": "func fill(buffer: MTLBuffer, range: Range<Int>, value: UInt8)",
+      "desc": "Fills a buffer with a constant value in each byte."
+    },
+    {
+      "name": "func generateMipmaps(for: MTLTexture)",
+      "desc": "Encodes a command to generate mipmaps for a texture from the base mipmap level up to the maximum level."
+    },
+    {
+      "name": "func copyIndirectCommandBuffer(MTLIndirectCommandBuffer, sourceRange: Range<Int>, destination: MTLIndirectCommandBuffer, destinationIndex: Int)",
+      "desc": "Encodes a command to copy commands from an indirect command buffer into another indirect command buffer."
+    },
+    {
+      "name": "func optimizeIndirectCommandBuffer(MTLIndirectCommandBuffer, range: Range<Int>)",
+      "desc": "Encodes a command to optimize a range in the indirect command buffer to improve performance."
+    },
+    {
+      "name": "func resetCommandsInBuffer(MTLIndirectCommandBuffer, range: Range<Int>)",
+      "desc": "Encodes a command to reset a range of commands in an indirect command buffer."
+    },
+    {
+      "name": "func synchronize(resource: MTLResource)",
+      "desc": "Encodes a command to synchronize the contents of a managed resource from the GPU to the CPU."
+    },
+    {
+      "name": "func synchronize(texture: MTLTexture, slice: Int, level: Int)",
+      "desc": "Encodes a command to synchronize part of a managed texture from the GPU to the CPU."
+    },
+    {
+      "name": "func updateFence(MTLFence)",
+      "desc": "Updates the given fence to capture all GPU work enqueued by the command encoder up to this specific point."
+    },
+    {
+      "name": "func waitForFence(MTLFence)",
+      "desc": "Prevents further GPU commands from being enqueued by the command encoder until the given fence is reached."
+    },
+    {
+      "name": "func optimizeContentsForGPUAccess(texture: MTLTexture)",
+      "desc": "Encodes a command to optimize a texture for better performance when the GPU accesses it."
+    },
+    {
+      "name": "func optimizeContentsForGPUAccess(texture: MTLTexture, slice: Int, level: Int)",
+      "desc": "Encodes a command to optimize part of a texture for better performance when the GPU accesses it."
+    },
+    {
+      "name": "func optimizeContentsForCPUAccess(texture: MTLTexture)",
+      "desc": "Encodes a command to optimize a texture for better performance when the CPU accesses it."
+    },
+    {
+      "name": "func optimizeContentsForCPUAccess(texture: MTLTexture, slice: Int, level: Int)",
+      "desc": "Encodes a command to optimize part of a texture for better performance when the CPU accesses it."
+    },
+    {
+      "name": "func sampleCounters(sampleBuffer: MTLCounterSampleBuffer, sampleIndex: Int, barrier: Bool)",
+      "desc": "Encodes a command to sample hardware counters at this point in the blit pass and store the samples into a counter sample buffer."
+    },
+    {
+      "name": "func resolveCounters(MTLCounterSampleBuffer, range: Range<Int>, destinationBuffer: MTLBuffer, destinationOffset: Int)",
+      "desc": "Resolves the data stored in a set of samples and copies it into a buffer."
+    },
+    {
+      "name": "func getTextureAccessCounters(MTLTexture, region: MTLRegion, mipLevel: Int, slice: Int, resetCounters: Bool, countersBuffer: MTLBuffer, countersBufferOffset: Int)",
+      "desc": "Retrieves information about texture access patterns from the GPU."
+    },
+    {
+      "name": "func resetTextureAccessCounters(MTLTexture, region: MTLRegion, mipLevel: Int, slice: Int)",
+      "desc": "Resets the GPU's texture access data."
+    }
+  ],
+  "declaration": "protocol MTLBlitCommandEncoder",
+  "inheritsFrom": [
+    "MTLCommandEncoder"
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "path": "/documentation/foundation/operationqueue",
+  "type": "Class",
+  "name": "OperationQueue",
+  "desc": "A queue that regulates the execution of operations.",
+  "items": [
+    {
+      "name": "class var main: OperationQueue",
+      "desc": "Returns the operation queue associated with the main thread."
+    },
+    {
+      "name": "class var current: OperationQueue?",
+      "desc": "Returns the operation queue that launched the current operation."
+    },
+    {
+      "name": "func addOperation(Operation)",
+      "desc": "Adds the specified operation to the receiver."
+    },
+    {
+      "name": "func addOperations([Operation], waitUntilFinished: Bool)",
+      "desc": "Adds the specified operations to the queue."
+    },
+    {
+      "name": "func addOperation(() -> Void)",
+      "desc": "Wraps the specified block in an operation and adds it to the receiver."
+    },
+    {
+      "name": "func addBarrierBlock(() -> Void)",
+      "desc": "Invokes a block when the queue finishes all enqueued operations, and prevents subsequent operations from starting until the block has completed."
+    },
+    {
+      "name": "func cancelAllOperations()",
+      "desc": "Cancels all queued and executing operations."
+    },
+    {
+      "name": "func waitUntilAllOperationsAreFinished()",
+      "desc": "Blocks the current thread until all the receiver’s queued and executing operations finish executing."
+    },
+    {
+      "name": "var qualityOfService: QualityOfService",
+      "desc": "The default service level to apply to operations that the queue invokes."
+    },
+    {
+      "name": "var maxConcurrentOperationCount: Int",
+      "desc": "The maximum number of queued operations that can run at the same time."
+    },
+    {
+      "name": "class let defaultMaxConcurrentOperationCount: Int",
+      "desc": "The default maximum number of operations to invoke concurrently in a queue."
+    },
+    {
+      "name": "var progress: Progress",
+      "desc": "An object that represents the total progress of the operations executing in the queue."
+    },
+    {
+      "name": "var isSuspended: Bool",
+      "desc": "A Boolean value indicating whether the queue is actively scheduling operations for execution."
+    },
+    {
+      "name": "var name: String?",
+      "desc": "The name of the operation queue."
+    },
+    {
+      "name": "var underlyingQueue: DispatchQueue?",
+      "desc": "The dispatch queue that the operation queue uses to invoke operations."
+    },
+    {
+      "name": "func schedule(after: OperationQueue.SchedulerTimeType, tolerance: OperationQueue.SchedulerTimeType.Stride, options: OperationQueue.SchedulerOptions?, () -> Void)",
+      "desc": "Performs the action at some time after the specified date, optionally taking into account tolerance if possible."
+    },
+    {
+      "name": "func schedule(after: OperationQueue.SchedulerTimeType, interval: OperationQueue.SchedulerTimeType.Stride, tolerance: OperationQueue.SchedulerTimeType.Stride, options: OperationQueue.SchedulerOptions?, () -> Void) -> Cancellable",
+      "desc": "Performs the action at some time after the specified date, at the specified frequency, optionally taking into account tolerance if possible."
+    },
+    {
+      "name": "func schedule(options: OperationQueue.SchedulerOptions?, () -> Void)",
+      "desc": "Performs the action at the next possible opportunity."
+    },
+    {
+      "name": "var now: OperationQueue.SchedulerTimeType",
+      "desc": "The operation queue’s definition of the current moment in time."
+    },
+    {
+      "name": "var minimumTolerance: OperationQueue.SchedulerTimeType.Stride",
+      "desc": "The minimum tolerance the dispatch queue scheduler allows."
+    },
+    {
+      "name": "struct OperationQueue.SchedulerTimeType",
+      "desc": "The scheduler time type the operation queue uses."
+    },
+    {
+      "name": "struct OperationQueue.SchedulerOptions",
+      "desc": "A type that defines options the operation queue accepts."
+    }
+  ],
+  "declaration": "class OperationQueue : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "ProgressReporting",
+    "Scheduler"
+  ]
+}

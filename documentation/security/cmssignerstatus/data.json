@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/security/cmssignerstatus",
+  "type": "Enumeration",
+  "name": "CMSSignerStatus",
+  "desc": "The constants that indicate the status of the signature and signer information in a signed message.",
+  "items": [
+    {
+      "name": "case unsigned",
+      "desc": "The message was not signed."
+    },
+    {
+      "name": "case valid",
+      "desc": "The message was signed and both the signature and the signer certificate have been verified."
+    },
+    {
+      "name": "case needsDetachedContent",
+      "desc": "The message was signed but has detached content. You must call the CMSDecoderSetDetachedContent(_:_:) function before ascertaining the signature status."
+    },
+    {
+      "name": "case invalidSignature",
+      "desc": "The message was signed but the signature is invalid."
+    },
+    {
+      "name": "case invalidCert",
+      "desc": "The message was signed but the signer's certificate could not be verified."
+    },
+    {
+      "name": "case invalidIndex",
+      "desc": "The specified value for the signer index (signerIndex parameter) is greater than the number of signers of the message minus one (signerIndex > (numSigners – 1))."
+    }
+  ],
+  "declaration": "enum CMSSignerStatus : UInt32, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

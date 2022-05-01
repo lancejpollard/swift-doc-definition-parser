@@ -1,0 +1,39 @@
+{
+  "path": "/documentation/applicationservices/opencpicparams",
+  "type": "Structure",
+  "name": "OpenCPicParams",
+  "desc": "No overview available.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(srcRect: Rect, hRes: Fixed, vRes: Fixed, version: Int16, reserved1: Int16, reserved2: Int32)"
+    },
+    {
+      "name": "var hRes: Fixed",
+      "desc": "The best horizontal resolution for the picture. A value of 0x0048000 specifies a horizontal resolution of 72 dpi."
+    },
+    {
+      "name": "var reserved1: Int16",
+      "desc": "Reserved; set to 0."
+    },
+    {
+      "name": "var reserved2: Int32",
+      "desc": "Reserved; set to 0."
+    },
+    {
+      "name": "var srcRect: Rect",
+      "desc": "The optimal bounding rectangle for the resolution indicated by the hRes and vRes fields. To display a picture at a resolution other than that specified in the hRes and vRes fields, your application should compute an appropriate destination rectangle by scaling the image’s width and height by the destination resolution divided by the source resolution."
+    },
+    {
+      "name": "var vRes: Fixed",
+      "desc": "The best vertical resolution for the picture. A value of 0x0048000 specifies a vertical resolution of 72 dpi."
+    },
+    {
+      "name": "var version: Int16",
+      "desc": "Always set this field to -2."
+    }
+  ],
+  "declaration": "struct OpenCPicParams"
+}

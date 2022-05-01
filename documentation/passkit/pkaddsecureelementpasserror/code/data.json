@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/passkit/pkaddsecureelementpasserror/code",
+  "type": "Enumeration",
+  "name": "PKAddSecureElementPassError.Code",
+  "desc": "Error codes for problems that occur when you add a secure element passes.",
+  "items": [
+    {
+      "name": "case deviceNotReadyError",
+      "desc": "The reader for the pass isn’t ready to start pairing."
+    },
+    {
+      "name": "case deviceNotSupportedError",
+      "desc": "The reader for the pass isn’t supported or has an invalid version."
+    },
+    {
+      "name": "case invalidConfigurationError",
+      "desc": "The configuration for the pass is invalid for either Wallet or the reader."
+    },
+    {
+      "name": "case unavailableError",
+      "desc": "Provisioning for secure element passes isn’t available on the device, or the app is missing the entitlement."
+    },
+    {
+      "name": "case userCanceledError",
+      "desc": "The user canceled adding the pass."
+    },
+    {
+      "name": "case unknownError",
+      "desc": "The system canceled adding the pass due to an unknown failure."
+    }
+  ],
+  "declaration": "enum PKAddSecureElementPassError.Code : Int, _ErrorCodeProtocol, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

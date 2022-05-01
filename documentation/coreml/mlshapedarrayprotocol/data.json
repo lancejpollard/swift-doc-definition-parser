@@ -1,0 +1,126 @@
+{
+  "path": "/documentation/coreml/mlshapedarrayprotocol",
+  "type": "Protocol",
+  "name": "MLShapedArrayProtocol",
+  "desc": "An interface that defines a shaped array type.",
+  "items": [
+    {
+      "name": "init<S>(scalars: S, shape: [Int])",
+      "desc": "Creates a shaped array type from an array of values."
+    },
+    {
+      "name": "init(repeating: Self.Scalar, shape: [Int])",
+      "desc": "Creates a shaped array type that initializes every element to the same value."
+    },
+    {
+      "name": "init(identityMatrixOfSize: Int)",
+      "desc": "Creates a shaped array type that’s an identity matrix of integers."
+    },
+    {
+      "name": "init(randomScalarsIn: Range<Self.Scalar>, shape: [Int])",
+      "desc": "Creates a shaped array type that initializes the elements to random integer values within a range."
+    },
+    {
+      "name": "init(bytesNoCopy: UnsafeRawPointer, shape: [Int], deallocator: Data.Deallocator)",
+      "desc": "Creates a shaped array type from a data pointer."
+    },
+    {
+      "name": "init(bytesNoCopy: UnsafeRawPointer, shape: [Int], strides: [Int], deallocator: Data.Deallocator)",
+      "desc": "Creates a shaped array type from a data pointer with memory strides."
+    },
+    {
+      "name": "init(unsafeUninitializedShape: [Int], initializingWith: (inout UnsafeMutableBufferPointer<Self.Scalar>, [Int]) -> Void)",
+      "desc": "Creates a shaped array type from a shape and a closure that initializes its memory."
+    },
+    {
+      "name": "init(MLMultiArray)",
+      "desc": "Creates a shaped array type from a multiarray."
+    },
+    {
+      "name": "init(converting: MLMultiArray)",
+      "desc": "Creates a shaped array type by converting a multiarray."
+    },
+    {
+      "name": "init<T>(converting: T)",
+      "desc": "Creates a shaped array type by converting another shaped array type."
+    },
+    {
+      "name": "var shape: [Int]",
+      "desc": "An integer array in which each element represents the size of the corresponding dimension."
+    },
+    {
+      "name": "var strides: [Int]",
+      "desc": "An integer array in which each element is the number of memory locations that spans the length of the corresponding dimension."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of elements in the shaped array’s first dimension."
+    },
+    {
+      "name": "var isScalar: Bool",
+      "desc": "A Boolean value that indicates whether the shaped array lacks a shape."
+    },
+    {
+      "name": "var scalarCount: Int",
+      "desc": "The total number of elements in the shaped array type."
+    },
+    {
+      "name": "var scalar: Self.Scalar?",
+      "desc": "A computed property that returns the first element when the shape isn’t empty, or sets the shaped array’s underlying scalar type."
+    },
+    {
+      "name": "var scalars: [Self.Scalar]",
+      "desc": "A computed property that generates a linear array that contains every element, or assigns the elements of an array to the shaped array’s elements."
+    },
+    {
+      "name": "func withUnsafeShapedBufferPointer<R>((UnsafeBufferPointer<Self.Scalar>, [Int], [Int]) -> R) -> R",
+      "desc": "Provides read-only access of the shaped array’s underlying memory to a closure."
+    },
+    {
+      "name": "subscript<C>(scalarAt: C) -> Self.Scalar",
+      "desc": "Accesses an element and a multidimensional location."
+    },
+    {
+      "name": "subscript<C>(C) -> MLShapedArraySlice<Self.Scalar>",
+      "desc": "Accesses a slice using a collection of integers, in which each element is an index in the corresponding dimension."
+    },
+    {
+      "name": "subscript<C>(C) -> MLShapedArraySlice<Self.Scalar>",
+      "desc": "Accesses a slice using a collection of integer ranges, in which each element is a range in the corresponding dimension."
+    },
+    {
+      "name": "func fill(with: Self.Scalar)",
+      "desc": "Assigns the shaped array’s elements to a value."
+    },
+    {
+      "name": "func fill<C>(with: C)",
+      "desc": "Assigns the shaped array’s elements to the elements in a collection, repeatedly, if necessary."
+    },
+    {
+      "name": "func withUnsafeMutableShapedBufferPointer<R>((inout UnsafeMutableBufferPointer<Self.Scalar>, [Int], [Int]) -> R) -> R",
+      "desc": "Provides read-write access of the shaped array’s underlying memory to a closure."
+    },
+    {
+      "name": "associatedtype Scalar",
+      "desc": "Represents the underlying scalar type of the shaped array type."
+    },
+    {
+      "name": "struct MLShapedArraySlice",
+      "desc": "A multidimensional subset of elements from a shaped array type."
+    },
+    {
+      "name": "protocol MLShapedArrayScalar",
+      "desc": "A type that associates a scalar with a shaped array."
+    },
+    {
+      "name": "protocol MLShapedArrayRangeExpression",
+      "desc": "An interface for a range expression, which you typically use with subscripts of shaped array types."
+    }
+  ],
+  "declaration": "protocol MLShapedArrayProtocol where Self.Index == Int",
+  "inheritsFrom": [
+    "ExpressibleByArrayLiteral",
+    "MutableCollection",
+    "RandomAccessCollection"
+  ]
+}

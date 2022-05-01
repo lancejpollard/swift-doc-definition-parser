@@ -1,0 +1,97 @@
+{
+  "path": "/documentation/swift/task",
+  "type": "Generic Structure",
+  "name": "Task",
+  "desc": "A unit of asynchronous work.",
+  "items": [
+    {
+      "name": "init(priority: TaskPriority?, operation: @Sendable () -> Success)",
+      "desc": "Runs the given nonthrowing operation asynchronously as part of a new top-level task on behalf of the current actor."
+    },
+    {
+      "name": "init(priority: TaskPriority?, operation: @Sendable () -> Success)",
+      "desc": "Runs the given throwing operation asynchronously as part of a new top-level task on behalf of the current actor."
+    },
+    {
+      "name": "static func detached(priority: TaskPriority?, operation: @Sendable () -> Success) -> Task<Success, Failure>",
+      "desc": "Runs the given throwing operation asynchronously as part of a new top-level task."
+    },
+    {
+      "name": "static func detached(priority: TaskPriority?, operation: @Sendable () -> Success) -> Task<Success, Failure>",
+      "desc": "Runs the given nonthrowing operation asynchronously as part of a new top-level task."
+    },
+    {
+      "name": "static var currentPriority: TaskPriority",
+      "desc": "The current task’s priority."
+    },
+    {
+      "name": "var value: Success",
+      "desc": "The result from a throwing task, after it completes."
+    },
+    {
+      "name": "var value: Success",
+      "desc": "The result from a nonthrowing task, after it completes."
+    },
+    {
+      "name": "var result: Result<Success, Failure>",
+      "desc": "The result or error from a throwing task, after it completes."
+    },
+    {
+      "name": "struct CancellationError",
+      "desc": "An error that indicates a task was canceled."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Indicates that the task should stop running."
+    },
+    {
+      "name": "var isCancelled: Bool",
+      "desc": "A Boolean value that indicates whether the task should stop executing."
+    },
+    {
+      "name": "static var isCancelled: Bool",
+      "desc": "A Boolean value that indicates whether the task should stop executing."
+    },
+    {
+      "name": "static func checkCancellation()",
+      "desc": "Throws an error if the task was canceled."
+    },
+    {
+      "name": "func withTaskCancellationHandler<T>(operation: () -> T, onCancel: @Sendable () -> Void) -> T",
+      "desc": "Execute an operation with a cancellation handler that’s immediately invoked if the current task is canceled."
+    },
+    {
+      "name": "func withTaskCancellationHandler<T>(handler: @Sendable () -> Void, operation: () -> T) -> T",
+      "desc": "Execute an operation with a cancellation handler that’s immediately invoked if the current task is canceled."
+    },
+    {
+      "name": "static func yield()",
+      "desc": "Suspends the current task and allows other tasks to execute."
+    },
+    {
+      "name": "static func sleep(nanoseconds: UInt64)",
+      "desc": "Suspends the current task for at least the given duration in nanoseconds."
+    },
+    {
+      "name": "static func == (Task<Success, Failure>, Task<Success, Failure>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "static func != (Task<Success, Failure>, Task<Success, Failure>) -> Bool"
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    }
+  ],
+  "declaration": "@frozen struct Task<Success, Failure> where Success : Sendable, Failure : Error",
+  "conformsTo": [
+    "Equatable",
+    "Hashable",
+    "Sendable"
+  ]
+}

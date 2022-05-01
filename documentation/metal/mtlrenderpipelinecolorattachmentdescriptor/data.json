@@ -1,0 +1,63 @@
+{
+  "path": "/documentation/metal/mtlrenderpipelinecolorattachmentdescriptor",
+  "type": "Class",
+  "name": "MTLRenderPipelineColorAttachmentDescriptor",
+  "desc": "A color render target that specifies the color configuration and color operations for a render pipeline.",
+  "items": [
+    {
+      "name": "var pixelFormat: MTLPixelFormat",
+      "desc": "The pixel format of the color attachment’s texture."
+    },
+    {
+      "name": "var writeMask: MTLColorWriteMask",
+      "desc": "A bitmask that restricts which color channels are written into the texture."
+    },
+    {
+      "name": "var isBlendingEnabled: Bool",
+      "desc": "A Boolean value that determines whether blending is enabled."
+    },
+    {
+      "name": "var alphaBlendOperation: MTLBlendOperation",
+      "desc": "The blend operation assigned for the alpha data."
+    },
+    {
+      "name": "var rgbBlendOperation: MTLBlendOperation",
+      "desc": "The blend operation assigned for the RGB data."
+    },
+    {
+      "name": "var destinationAlphaBlendFactor: MTLBlendFactor",
+      "desc": "The destination blend factor (DBF) used by the alpha blend operation."
+    },
+    {
+      "name": "var destinationRGBBlendFactor: MTLBlendFactor",
+      "desc": "The destination blend factor (DBF) used by the RGB blend operation."
+    },
+    {
+      "name": "var sourceAlphaBlendFactor: MTLBlendFactor",
+      "desc": "The source blend factor (SBF) used by the alpha blend operation."
+    },
+    {
+      "name": "var sourceRGBBlendFactor: MTLBlendFactor",
+      "desc": "The source blend factor (SBF) used by the RGB blend operation."
+    },
+    {
+      "name": "enum MTLBlendOperation",
+      "desc": "For every pixel, MTLBlendOperation determines how to combine and weight the source fragment values with the destination values. Some blend operations multiply the source values by a source blend factor (SBF), multiply the destination values by a destination blend factor (DBF), and then combine the results using addition or subtraction. Other blend operations use either a minimum or maximum function to determine the result."
+    },
+    {
+      "name": "enum MTLBlendFactor",
+      "desc": "The source and destination blend factors are often needed to complete specification of a blend operation. In most cases, the blend factor for both RGB values (F(rgb)) and alpha values (F(a)) are similar to one another, but in some cases, such as MTLBlendFactorSourceAlphaSaturated, the blend factor is slightly different. Four blend factors (MTLBlendFactorBlendColor, MTLBlendFactorOneMinusBlendColor, MTLBlendFactorBlendAlpha, and MTLBlendFactorOneMinusBlendAlpha) refer to a constant blend color value that is set by the setBlendColor(red:green:blue:alpha:) method of MTLRenderCommandEncoder."
+    },
+    {
+      "name": "struct MTLColorWriteMask",
+      "desc": "Values used to specify a mask to permit or restrict writing to color channels of a color value. The values red, green, blue, and alpha select one color channel each, and they can be bitwise combined."
+    }
+  ],
+  "declaration": "class MTLRenderPipelineColorAttachmentDescriptor : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

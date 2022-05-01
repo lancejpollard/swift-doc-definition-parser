@@ -1,0 +1,54 @@
+{
+  "path": "/documentation/scriptingbridge/sbobject",
+  "type": "Class",
+  "name": "SBObject",
+  "desc": "The SBObject class declares methods that can be invoked on any object in a scriptable application. It defines methods for getting elements and properties of an object, as well as setting a given object to a new value.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Initializes and returns an instance of an SBObject subclass."
+    },
+    {
+      "name": "init(data: Any)",
+      "desc": "Returns an instance of an SBObject subclass initialized with the given data."
+    },
+    {
+      "name": "init(properties: [AnyHashable : Any])",
+      "desc": "Returns an instance of an SBObject subclass initialized with the specified properties."
+    },
+    {
+      "name": "init(elementCode: DescType, properties: [String : Any]?, data: Any?)",
+      "desc": "Returns an instance of an SBObject subclass initialized with the specified properties and data and added to the designated element array."
+    },
+    {
+      "name": "func get() -> Any?",
+      "desc": "Forces evaluation of the receiver, causing the real object to be returned immediately."
+    },
+    {
+      "name": "func setTo(Any?)",
+      "desc": "Sets the receiver to a specified value."
+    },
+    {
+      "name": "func property(with: AnyClass, code: AEKeyword) -> SBObject",
+      "desc": "Returns an object of the designated scripting class representing the specified property of the receiver"
+    },
+    {
+      "name": "func property(withCode: AEKeyword) -> SBObject",
+      "desc": "Returns an object representing the specified property of the receiver."
+    },
+    {
+      "name": "func elementArray(withCode: DescType) -> SBElementArray",
+      "desc": "Returns an array containing every child of the receiver with the given class-type code."
+    },
+    {
+      "name": "func lastError() -> Error?"
+    }
+  ],
+  "declaration": "class SBObject : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding"
+  ]
+}

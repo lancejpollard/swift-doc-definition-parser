@@ -1,0 +1,50 @@
+{
+  "path": "/documentation/cloudkit/ckfetchrecordsoperation",
+  "type": "Class",
+  "name": "CKFetchRecordsOperation",
+  "desc": "An operation for retrieving records from a database.",
+  "items": [
+    {
+      "name": "init(recordIDs: [CKRecord.ID])",
+      "desc": "Creates a fetch operation for retrieving the records with the specified IDs."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates an empty fetch operation."
+    },
+    {
+      "name": "class func fetchCurrentUserRecordOperation() -> Self",
+      "desc": "Returns a fetch operation for retrieving the current user record."
+    },
+    {
+      "name": "var recordIDs: [CKRecord.ID]?",
+      "desc": "The record IDs of the records to fetch."
+    },
+    {
+      "name": "var desiredKeys: [CKRecord.FieldKey]?",
+      "desc": "The fields of the records to fetch."
+    },
+    {
+      "name": "var perRecordProgressBlock: ((CKRecord.ID, Double) -> Void)?",
+      "desc": "The closure to execute with progress information for individual records."
+    },
+    {
+      "name": "var perRecordCompletionBlock: ((CKRecord?, CKRecord.ID?, Error?) -> Void)?",
+      "desc": "The closure to execute when a record becomes available."
+    },
+    {
+      "name": "var fetchRecordsCompletionBlock: (([CKRecord.ID : CKRecord]?, Error?) -> Void)?",
+      "desc": "The closure to execute after CloudKit retrieves all of the records."
+    },
+    {
+      "name": "var fetchRecordsResultBlock: ((Result<Void, Error>) -> Void)?"
+    },
+    {
+      "name": "var perRecordResultBlock: ((CKRecord.ID, Result<CKRecord, Error>) -> Void)?"
+    }
+  ],
+  "declaration": "class CKFetchRecordsOperation : CKDatabaseOperation",
+  "inheritsFrom": [
+    "CKDatabaseOperation"
+  ]
+}

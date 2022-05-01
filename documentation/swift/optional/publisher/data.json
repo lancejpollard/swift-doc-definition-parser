@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/swift/optional/publisher",
+  "type": "Structure",
+  "name": "Optional.Publisher",
+  "desc": "The type of a Combine publisher that publishes the value of a Swift optional instance to each subscriber exactly once, if the instance has any value at all.",
+  "items": [
+    {
+      "name": "typealias Optional.Publisher.Output",
+      "desc": "The kind of value published by this publisher."
+    },
+    {
+      "name": "typealias Optional.Publisher.Failure",
+      "desc": "The kind of error this publisher might publish."
+    },
+    {
+      "name": "init(Optional<Wrapped>.Publisher.Output?)",
+      "desc": "Creates a publisher to emit the value of the optional, or to finish immediately if the optional doesn’t have a value."
+    },
+    {
+      "name": "let output: Optional<Wrapped>.Publisher.Output?",
+      "desc": "The output to deliver to each subscriber."
+    },
+    {
+      "name": "func receive<S>(subscriber: S)",
+      "desc": "Implements the Publisher protocol by accepting the subscriber and immediately publishing the optional’s value if it has one, or finishing normally if it doesn’t."
+    }
+  ],
+  "declaration": "struct Publisher",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

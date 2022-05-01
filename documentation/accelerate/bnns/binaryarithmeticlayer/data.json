@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/accelerate/bnns/binaryarithmeticlayer",
+  "type": "Class",
+  "name": "BNNS.BinaryArithmeticLayer",
+  "desc": "A layer object that wraps a binary arithmetic filter and manages its deinitialization.",
+  "items": [
+    {
+      "name": "init?(inputA: BNNSNDArrayDescriptor, inputADescriptorType: BNNS.DescriptorType, inputB: BNNSNDArrayDescriptor, inputBDescriptorType: BNNS.DescriptorType, output: BNNSNDArrayDescriptor, outputDescriptorType: BNNS.DescriptorType, function: BNNS.ArithmeticBinaryFunction, activation: BNNS.ActivationFunction, filterParameters: BNNSFilterParameters?)",
+      "desc": "Returns a new binary arithmetic layer."
+    },
+    {
+      "name": "enum BNNS.ArithmeticBinaryFunction",
+      "desc": "Constants that describe binary arithmetic functions."
+    },
+    {
+      "name": "enum BNNS.DescriptorType",
+      "desc": "Constants that describe the input and output types of an arithmetic operation."
+    },
+    {
+      "name": "func apply(batchSize: Int, inputA: BNNSNDArrayDescriptor, inputB: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor)",
+      "desc": "Applies the layer to a set of input array descriptors, writing the result to a set of output array descriptors."
+    },
+    {
+      "name": "func applyBackward(batchSize: Int, inputA: BNNSNDArrayDescriptor, inputB: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, outputGradient: BNNSNDArrayDescriptor, generatingInputAGradient: BNNSNDArrayDescriptor, generatingInputBGradient: BNNSNDArrayDescriptor)",
+      "desc": "Applies the layer backward to generate input gradients."
+    }
+  ],
+  "declaration": "class BinaryArithmeticLayer : BNNS.Layer",
+  "inheritsFrom": [
+    "BNNS.Layer"
+  ]
+}

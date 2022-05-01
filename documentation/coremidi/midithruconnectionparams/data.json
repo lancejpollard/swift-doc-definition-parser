@@ -1,0 +1,115 @@
+{
+  "path": "/documentation/coremidi/midithruconnectionparams",
+  "type": "Structure",
+  "name": "MIDIThruConnectionParams",
+  "desc": "A set of MIDI routings and transformations.",
+  "items": [
+    {
+      "name": "var noteNumber: MIDITransform",
+      "desc": "The transformation of MIDI note numbers."
+    },
+    {
+      "name": "var lowNote: UInt8",
+      "desc": "The note value below which the system filters out notes."
+    },
+    {
+      "name": "var highNote: UInt8",
+      "desc": "The note value above which the system filters out notes."
+    },
+    {
+      "name": "var velocity: MIDITransform",
+      "desc": "A note velocity transformation."
+    },
+    {
+      "name": "var lowVelocity: UInt8",
+      "desc": "The velocity value below which the system filters out notes."
+    },
+    {
+      "name": "var highVelocity: UInt8",
+      "desc": "The velocity value above which the system filters out notes."
+    },
+    {
+      "name": "var keyPressure: MIDITransform",
+      "desc": "The transformation of polyphonic key pressure events."
+    },
+    {
+      "name": "var channelPressure: MIDITransform",
+      "desc": "The transformation of MIDI monophonic channel pressure events."
+    },
+    {
+      "name": "var version: UInt32",
+      "desc": "The version number."
+    },
+    {
+      "name": "var numSources: UInt32",
+      "desc": "The number of valid sources."
+    },
+    {
+      "name": "var sources: (MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint)",
+      "desc": "All MIDI sources for this connection."
+    },
+    {
+      "name": "var numDestinations: UInt32",
+      "desc": "The number of valid destinations."
+    },
+    {
+      "name": "var destinations: (MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint)",
+      "desc": "All MIDI destinations for this connection."
+    },
+    {
+      "name": "var channelMap: (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8)",
+      "desc": "A mapping of MIDI channels."
+    },
+    {
+      "name": "var filterOutAllControls: UInt8",
+      "desc": "A value that indicates whether to filter out MIDI continuous control messages."
+    },
+    {
+      "name": "var filterOutBeatClock: UInt8",
+      "desc": "A value that indicates whether to filter out MIDI clock, play, stop, and resume messages."
+    },
+    {
+      "name": "var filterOutMTC: UInt8",
+      "desc": "A value that indicates whether to filter out MIDI Time Code messages."
+    },
+    {
+      "name": "var filterOutSysEx: UInt8",
+      "desc": "A value that indicates wheter to filter out system-exclusive messages."
+    },
+    {
+      "name": "var filterOutTuneRequest: UInt8",
+      "desc": "A value that specifies whether to filter out MIDI tune request messages."
+    },
+    {
+      "name": "var numControlTransforms: UInt16",
+      "desc": "The number of control transformations in the variable-length portion of the struct."
+    },
+    {
+      "name": "var numMaps: UInt16",
+      "desc": "The number of MIDI value maps in the variable-length portion of the struct."
+    },
+    {
+      "name": "var pitchBend: MIDITransform",
+      "desc": "The transformation of a MIDI pitch bend event."
+    },
+    {
+      "name": "var programChange: MIDITransform",
+      "desc": "A transformation of a MIDI program change event."
+    },
+    {
+      "name": "var reserved2: (UInt8, UInt8, UInt8)",
+      "desc": "A reserved value that must be 0."
+    },
+    {
+      "name": "var reserved3: (UInt16, UInt16, UInt16, UInt16)",
+      "desc": "A reserved value that must be 0."
+    },
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(version: UInt32, numSources: UInt32, sources: (MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint), numDestinations: UInt32, destinations: (MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint, MIDIThruConnectionEndpoint), channelMap: (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8), lowVelocity: UInt8, highVelocity: UInt8, lowNote: UInt8, highNote: UInt8, noteNumber: MIDITransform, velocity: MIDITransform, keyPressure: MIDITransform, channelPressure: MIDITransform, programChange: MIDITransform, pitchBend: MIDITransform, filterOutSysEx: UInt8, filterOutMTC: UInt8, filterOutBeatClock: UInt8, filterOutTuneRequest: UInt8, reserved2: (UInt8, UInt8, UInt8), filterOutAllControls: UInt8, numControlTransforms: UInt16, numMaps: UInt16, reserved3: (UInt16, UInt16, UInt16, UInt16))"
+    }
+  ],
+  "declaration": "struct MIDIThruConnectionParams"
+}

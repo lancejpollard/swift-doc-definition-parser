@@ -1,0 +1,42 @@
+{
+  "path": "/documentation/corenfc/nfcmifaretag",
+  "type": "Protocol",
+  "name": "NFCMiFareTag",
+  "desc": "An interface for interacting with a MIFARE® tag.",
+  "items": [
+    {
+      "name": "var mifareFamily: NFCMiFareFamily",
+      "desc": "The MIFARE product family identifier for the tag."
+    },
+    {
+      "name": "enum NFCMiFareFamily",
+      "desc": "Identifiers for the MIFARE product families."
+    },
+    {
+      "name": "var identifier: Data",
+      "desc": "The unique hardware identifier of the tag."
+    },
+    {
+      "name": "var historicalBytes: Data?",
+      "desc": "The historical bytes extracted from an Answer To Select response."
+    },
+    {
+      "name": "func sendMiFareCommand(commandPacket: Data, completionHandler: (Data, Error?) -> Void)",
+      "desc": "Sends a native MIFARE command to the tag."
+    },
+    {
+      "name": "func sendMiFareISO7816Command(NFCISO7816APDU, completionHandler: (Data, UInt8, UInt8, Error?) -> Void)",
+      "desc": "Sends an ISO 7816 command APDU to the tag and receives a response APDU."
+    },
+    {
+      "name": "func sendMiFareCommand(commandPacket: Data, resultHandler: (Result<Data, Error>) -> Void)"
+    },
+    {
+      "name": "func sendMiFareISO7816Command(NFCISO7816APDU, resultHandler: (Result<NFCISO7816ResponseAPDU, Error>) -> Void)"
+    }
+  ],
+  "declaration": "protocol NFCMiFareTag",
+  "inheritsFrom": [
+    "NFCNDEFTag"
+  ]
+}

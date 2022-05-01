@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/avfoundation/avassetreaderoutputcaptionadaptor",
+  "type": "Class",
+  "name": "AVAssetReaderOutputCaptionAdaptor",
+  "desc": "An object that reads caption group objects from an asset track that contains timed text.",
+  "items": [
+    {
+      "name": "init(assetReaderTrackOutput: AVAssetReaderTrackOutput)",
+      "desc": "Creates a caption adaptor that reads from a track output."
+    },
+    {
+      "name": "var assetReaderTrackOutput: AVAssetReaderTrackOutput",
+      "desc": "The associated asset reader track output."
+    },
+    {
+      "name": "var validationDelegate: AVAssetReaderCaptionValidationHandling?",
+      "desc": "A delegate object that handles callbacks to the caption adaptor."
+    },
+    {
+      "name": "protocol AVAssetReaderCaptionValidationHandling",
+      "desc": "A protocol that defines the methods for caption validation events."
+    },
+    {
+      "name": "func nextCaptionGroup() -> AVCaptionGroup?",
+      "desc": "Returns the next caption group."
+    },
+    {
+      "name": "func captionsNotPresentInPreviousGroups(in: AVCaptionGroup) -> [AVCaption]",
+      "desc": "Returns the set of captions in the caption group that weren’t vended by the adaptor."
+    }
+  ],
+  "declaration": "class AVAssetReaderOutputCaptionAdaptor : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/foundation/nsrunloop",
+  "type": "Class",
+  "name": "NSRunLoop",
+  "desc": "The programmatic interface to objects that manage input sources.",
+  "items": [
+    {
+      "name": "- limitDateForMode:",
+      "desc": "Performs one pass through the run loop in the specified mode and returns the date at which the next timer is scheduled to fire."
+    },
+    {
+      "name": "- getCFRunLoop",
+      "desc": "Returns the receiver's underlying CFRunLoop object."
+    },
+    {
+      "name": "- addTimer:forMode:",
+      "desc": "Registers a given timer with a given input mode."
+    },
+    {
+      "name": "- addPort:forMode:",
+      "desc": "Adds a port as an input source to the specified mode of the run loop."
+    },
+    {
+      "name": "- removePort:forMode:",
+      "desc": "Removes a port from the specified input mode of the run loop."
+    },
+    {
+      "name": "- run",
+      "desc": "Puts the receiver into a permanent loop, during which time it processes data from all attached input sources."
+    },
+    {
+      "name": "- runMode:beforeDate:",
+      "desc": "Runs the loop once, blocking for input in the specified mode until a given date."
+    },
+    {
+      "name": "- runUntilDate:",
+      "desc": "Runs the loop until the specified date, during which time it processes data from all attached input sources."
+    },
+    {
+      "name": "- acceptInputForMode:beforeDate:",
+      "desc": "Runs the loop once or until the specified date, accepting input only for the specified mode."
+    },
+    {
+      "name": "- performBlock:",
+      "desc": "Schedules a block that the run loop invokes."
+    },
+    {
+      "name": "- performInModes:block:",
+      "desc": "Schedules a block that the run loop invokes when it’s running in any of the specified modes."
+    },
+    {
+      "name": "- performSelector:target:argument:order:modes:",
+      "desc": "Schedules the sending of a message on the receiver."
+    },
+    {
+      "name": "- cancelPerformSelector:target:argument:",
+      "desc": "Cancels the sending of a previously scheduled message."
+    },
+    {
+      "name": "- cancelPerformSelectorsWithTarget:",
+      "desc": "Cancels all outstanding ordered performs scheduled with a given target."
+    }
+  ],
+  "declaration": "@interface NSRunLoop : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

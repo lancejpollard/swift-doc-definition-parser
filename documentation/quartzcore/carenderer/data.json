@@ -1,0 +1,51 @@
+{
+  "path": "/documentation/quartzcore/carenderer",
+  "type": "Class",
+  "name": "CARenderer",
+  "desc": "A layer that allows an application to render a layer tree into a Core OpenGL context.",
+  "items": [
+    {
+      "name": "init(mtlTexture: MTLTexture, options: [AnyHashable : Any]?)",
+      "desc": "Creates a layer renderer from a Metal texture."
+    },
+    {
+      "name": "var layer: CALayer?",
+      "desc": "The root layer of the layer-tree the receiver should render."
+    },
+    {
+      "name": "var bounds: CGRect",
+      "desc": "The bounds of the receiver."
+    },
+    {
+      "name": "func beginFrame(atTime: CFTimeInterval, timeStamp: UnsafeMutablePointer<CVTimeStamp>?)",
+      "desc": "Begin rendering a frame at the specified time."
+    },
+    {
+      "name": "func updateBounds() -> CGRect",
+      "desc": "Returns the bounds of the update region that contains all pixels that will be rendered by the current frame."
+    },
+    {
+      "name": "func addUpdate(CGRect)",
+      "desc": "Adds the rectangle to the update region of the current frame."
+    },
+    {
+      "name": "func render()",
+      "desc": "Render the update region of the current frame to the target context."
+    },
+    {
+      "name": "func nextFrameTime() -> CFTimeInterval",
+      "desc": "Returns the time at which the next update should happen."
+    },
+    {
+      "name": "func endFrame()",
+      "desc": "Release any data associated with the current frame."
+    },
+    {
+      "name": "func setDestination(MTLTexture)"
+    }
+  ],
+  "declaration": "class CARenderer : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

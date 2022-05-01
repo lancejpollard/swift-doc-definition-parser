@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/avfoundation/avmutablecompositiontrack",
+  "type": "Class",
+  "name": "AVMutableCompositionTrack",
+  "desc": "A mutable track in a composition that you use to insert, remove, and scale track segments without affecting their low-level representation.",
+  "items": [
+    {
+      "name": "var isEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the tracks is in an enabled state."
+    },
+    {
+      "name": "var naturalTimeScale: CMTimeScale",
+      "desc": "The time scale in which you can perform time-based operations without extra numerical conversion."
+    },
+    {
+      "name": "var languageCode: String?",
+      "desc": "The language associated with the track, as an ISO 639-2/T language code."
+    },
+    {
+      "name": "var extendedLanguageTag: String?",
+      "desc": "The language tag associated with the track, as an RFC 4646 language tag."
+    },
+    {
+      "name": "var preferredTransform: CGAffineTransform",
+      "desc": "The preferred transformation of the visual media data for display purposes."
+    },
+    {
+      "name": "var preferredVolume: Float",
+      "desc": "The volume the track prefers for its audible media data."
+    },
+    {
+      "name": "var segments: [AVCompositionTrackSegment]!",
+      "desc": "The track segments that a composition track contains."
+    },
+    {
+      "name": "func insertEmptyTimeRange(CMTimeRange)",
+      "desc": "Adds or extends an empty time range within the track."
+    },
+    {
+      "name": "func insertTimeRange(CMTimeRange, of: AVAssetTrack, at: CMTime)",
+      "desc": "Inserts a time range of media from a source track into a composition track."
+    },
+    {
+      "name": "func insertTimeRanges([NSValue], of: [AVAssetTrack], at: CMTime)",
+      "desc": "Inserts the time ranges of multiple source tracks into a track of a composition."
+    },
+    {
+      "name": "func removeTimeRange(CMTimeRange)",
+      "desc": "Removes a time range of media from a composition track."
+    },
+    {
+      "name": "func scaleTimeRange(CMTimeRange, toDuration: CMTime)",
+      "desc": "Changes the duration of a time range of the track."
+    },
+    {
+      "name": "func addTrackAssociation(to: AVCompositionTrack, type: AVAssetTrack.AssociationType)",
+      "desc": "Establishes a track association of a specific type between two tracks."
+    },
+    {
+      "name": "func removeTrackAssociation(to: AVCompositionTrack, type: AVAssetTrack.AssociationType)",
+      "desc": "Removes an association from a composition track."
+    },
+    {
+      "name": "func replaceFormatDescription(CMFormatDescription, with: CMFormatDescription?)",
+      "desc": "Replaces a format description with another or cancels a previous replacement."
+    },
+    {
+      "name": "func validateSegments([AVCompositionTrackSegment])",
+      "desc": "Returns a Boolean value that indicates whether a given array of track segments conform to the timing rules for a composition track."
+    }
+  ],
+  "declaration": "class AVMutableCompositionTrack : AVCompositionTrack",
+  "inheritsFrom": [
+    "AVCompositionTrack"
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "path": "/documentation/sms_and_call_reporting/ilmessagefiltererror",
+  "type": "Structure",
+  "name": "ILMessageFilterError",
+  "desc": "An error type that indicates problems with network requests and responses related to IdentityLookup APIs.",
+  "items": [
+    {
+      "name": "var errorCode: Int",
+      "desc": "The error code."
+    },
+    {
+      "name": "var errorUserInfo: [String : Any]",
+      "desc": "Additional details about an error."
+    },
+    {
+      "name": "var localizedDescription: String",
+      "desc": "A user-facing, localized string that describes the error."
+    },
+    {
+      "name": "static func != (ILMessageFilterError, ILMessageFilterError) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static var invalidNetworkURL: ILMessageFilterError.Code",
+      "desc": "The network request URL given by the ILMessageFilterExtensionNetworkURL key in the app extension's information property list file is either missing or invalid."
+    },
+    {
+      "name": "static var networkRequestFailed: ILMessageFilterError.Code",
+      "desc": "The network request failed; the NSUnderlyingErrorKey in the errorUserInfo dictionary may have additional details."
+    },
+    {
+      "name": "static var networkURLUnauthorized: ILMessageFilterError.Code",
+      "desc": "The app extension's containing app is not authorized to allow the app extension to defer network requests to the host specified in its information property list file."
+    },
+    {
+      "name": "static var redundantNetworkDeferral: ILMessageFilterError.Code",
+      "desc": "The app extension tried to defer a request to its network service more than once, which is not allowed."
+    },
+    {
+      "name": "static var system: ILMessageFilterError.Code",
+      "desc": "An unspecified system error occurred."
+    },
+    {
+      "name": "static var errorDomain: String",
+      "desc": "The error domain for this error."
+    },
+    {
+      "name": "let ILMessageFilterErrorDomain: String",
+      "desc": "The error domain for errors associated with the IdentityLookup APIs."
+    },
+    {
+      "name": "init(Code, userInfo: [String : Any])"
+    },
+    {
+      "name": "var code: Code"
+    },
+    {
+      "name": "var hashValue: Int"
+    },
+    {
+      "name": "var userInfo: [String : Any]"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "static func == (ILMessageFilterError, ILMessageFilterError) -> Bool"
+    },
+    {
+      "name": "enum ILMessageFilterError.Code",
+      "desc": "IdentityLookup error codes."
+    }
+  ],
+  "declaration": "struct ILMessageFilterError"
+}

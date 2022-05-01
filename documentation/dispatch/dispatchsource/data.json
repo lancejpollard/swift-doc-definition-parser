@@ -1,0 +1,147 @@
+{
+  "path": "/documentation/dispatch/dispatchsource",
+  "type": "Class",
+  "name": "DispatchSource",
+  "desc": "An object that coordinates the processing of specific low-level system events, such as file-system events, timers, and UNIX signals.",
+  "items": [
+    {
+      "name": "protocol DispatchSourceProtocol",
+      "desc": "Defines a common set of properties and methods that are shared with all dispatch source types."
+    },
+    {
+      "name": "class func makeTimerSource(flags: DispatchSource.TimerFlags, queue: DispatchQueue?) -> DispatchSourceTimer",
+      "desc": "Creates a new dispatch source object for monitoring timer events."
+    },
+    {
+      "name": "protocol DispatchSourceTimer",
+      "desc": "A dispatch source that submits the event handler block based on a timer."
+    },
+    {
+      "name": "struct DispatchSource.TimerFlags",
+      "desc": "Flags to use when configuring a timer dispatch source."
+    },
+    {
+      "name": "class func makeReadSource(fileDescriptor: Int32, queue: DispatchQueue?) -> DispatchSourceRead",
+      "desc": "Creates a new dispatch source object for reading bytes from the specified file."
+    },
+    {
+      "name": "class func makeWriteSource(fileDescriptor: Int32, queue: DispatchQueue?) -> DispatchSourceWrite",
+      "desc": "Creates a new dispatch source object for writing data to the specified file."
+    },
+    {
+      "name": "class func makeFileSystemObjectSource(fileDescriptor: Int32, eventMask: DispatchSource.FileSystemEvent, queue: DispatchQueue?) -> DispatchSourceFileSystemObject",
+      "desc": "Creates a new dispatch source object for monitoring file-system events."
+    },
+    {
+      "name": "protocol DispatchSourceRead",
+      "desc": "A dispatch source object for reading data from a file descriptor."
+    },
+    {
+      "name": "protocol DispatchSourceWrite",
+      "desc": "A dispatch source object for writing data to a file descriptor."
+    },
+    {
+      "name": "protocol DispatchSourceFileSystemObject",
+      "desc": "A dispatch source that monitors events associated with a file descriptor."
+    },
+    {
+      "name": "struct DispatchSource.FileSystemEvent",
+      "desc": "Events involving a change to a file system object."
+    },
+    {
+      "name": "class func makeProcessSource(identifier: pid_t, eventMask: DispatchSource.ProcessEvent, queue: DispatchQueue?) -> DispatchSourceProcess",
+      "desc": "Creates a new dispatch source object for monitoring the specified process."
+    },
+    {
+      "name": "protocol DispatchSourceProcess",
+      "desc": "A dispatch source that monitors an external process for events."
+    },
+    {
+      "name": "struct DispatchSource.ProcessEvent",
+      "desc": "Events related to a process."
+    },
+    {
+      "name": "class func makeMemoryPressureSource(eventMask: DispatchSource.MemoryPressureEvent, queue: DispatchQueue?) -> DispatchSourceMemoryPressure",
+      "desc": "Creates a new dispatch source object that monitors the system for changes in the memory pressure condition."
+    },
+    {
+      "name": "protocol DispatchSourceMemoryPressure",
+      "desc": "A dispatch source that monitors the system for changes in the memory pressure condition."
+    },
+    {
+      "name": "struct DispatchSource.MemoryPressureEvent",
+      "desc": "Memory pressure events."
+    },
+    {
+      "name": "class func makeSignalSource(signal: Int32, queue: DispatchQueue?) -> DispatchSourceSignal",
+      "desc": "Creates a new dispatch source object that monitors the arrival of a UNIX signal."
+    },
+    {
+      "name": "protocol DispatchSourceSignal",
+      "desc": "A dispatch source that monitors the current process for UNIX signals."
+    },
+    {
+      "name": "class func makeMachReceiveSource(port: mach_port_t, queue: DispatchQueue?) -> DispatchSourceMachReceive",
+      "desc": "Creates a new dispatch source object for monitoring a Mach port for pending messages."
+    },
+    {
+      "name": "class func makeMachSendSource(port: mach_port_t, eventMask: DispatchSource.MachSendEvent, queue: DispatchQueue?) -> DispatchSourceMachSend",
+      "desc": "A dispatch source that monitors a Mach port for dead name notifications."
+    },
+    {
+      "name": "protocol DispatchSourceMachReceive",
+      "desc": "A dispatch source that monitors a Mach port for pending messages."
+    },
+    {
+      "name": "protocol DispatchSourceMachSend",
+      "desc": "A dispatch source that monitors a Mach port for dead name notifications, indicating that a send right no longer has a corresponding receive right."
+    },
+    {
+      "name": "struct DispatchSource.MachSendEvent",
+      "desc": "Mach-related events."
+    },
+    {
+      "name": "class func makeUserDataAddSource(queue: DispatchQueue?) -> DispatchSourceUserDataAdd",
+      "desc": "Creates a new dispatch source object that you use to coalesce custom app data using an AND operator."
+    },
+    {
+      "name": "class func makeUserDataOrSource(queue: DispatchQueue?) -> DispatchSourceUserDataOr",
+      "desc": "Creates a new dispatch source object that you use to coalesce custom app data using an OR operator."
+    },
+    {
+      "name": "class func makeUserDataReplaceSource(queue: DispatchQueue?) -> DispatchSourceUserDataReplace",
+      "desc": "Creates a new dispatch source object that you use to track custom app data."
+    },
+    {
+      "name": "protocol DispatchSourceUserDataAdd",
+      "desc": "A dispatch source that coalesces data you provide using an AND operation."
+    },
+    {
+      "name": "protocol DispatchSourceUserDataOr",
+      "desc": "A dispatch source that coalesces data you provide using an OR operation."
+    },
+    {
+      "name": "protocol DispatchSourceUserDataReplace",
+      "desc": "A dispatch source that replaces any pending data with the new value you provide."
+    }
+  ],
+  "declaration": "class DispatchSource : DispatchObject",
+  "inheritsFrom": [
+    "DispatchObject"
+  ],
+  "conformsTo": [
+    "DispatchSourceFileSystemObject",
+    "DispatchSourceMachReceive",
+    "DispatchSourceMachSend",
+    "DispatchSourceMemoryPressure",
+    "DispatchSourceProcess",
+    "DispatchSourceRead",
+    "DispatchSourceSignal",
+    "DispatchSourceTimer",
+    "DispatchSourceUserDataAdd",
+    "DispatchSourceUserDataOr",
+    "DispatchSourceWrite",
+    "DispatchSourceProtocol",
+    "DispatchSourceUserDataReplace"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/networkextension/nenetworkrule",
+  "type": "Class",
+  "name": "NENetworkRule",
+  "desc": "A rule to match attributes of network traffic.",
+  "items": [
+    {
+      "name": "init(destinationNetwork: NWHostEndpoint, prefix: Int, protocol: NENetworkRule.`Protocol`)",
+      "desc": "Creates a rule that matches network traffic destined for a host within a specific network."
+    },
+    {
+      "name": "init(destinationHost: NWHostEndpoint, protocol: NENetworkRule.`Protocol`)",
+      "desc": "Creates a rule that matches network traffic destined for a host within a specific DNS domain."
+    },
+    {
+      "name": "init(remoteNetwork: NWHostEndpoint?, remotePrefix: Int, localNetwork: NWHostEndpoint?, localPrefix: Int, protocol: NENetworkRule.`Protocol`, direction: NETrafficDirection)",
+      "desc": "Creates a rule that matches traffic by remote network, local network, protocol, and direction."
+    },
+    {
+      "name": "var matchRemoteEndpoint: NWHostEndpoint?",
+      "desc": "The remote endpoint that the rule matches."
+    },
+    {
+      "name": "var matchRemotePrefix: Int",
+      "desc": "A number that specifies the remote sub-network that the rule matches."
+    },
+    {
+      "name": "var matchLocalNetwork: NWHostEndpoint?",
+      "desc": "The local network that the rule matches."
+    },
+    {
+      "name": "var matchLocalPrefix: Int",
+      "desc": "A number that specifies the local sub-network that the rule matches."
+    },
+    {
+      "name": "var matchProtocol: NENetworkRule.`Protocol`",
+      "desc": "The protocol that the rule matches."
+    },
+    {
+      "name": "enum NENetworkRule.Protocol",
+      "desc": "A type to represent network protocols used by routing rules."
+    },
+    {
+      "name": "var matchDirection: NETrafficDirection",
+      "desc": "The direction of network traffic that the rule matches."
+    },
+    {
+      "name": "enum NETrafficDirection",
+      "desc": "A type to represent the direction of network traffic."
+    }
+  ],
+  "declaration": "class NENetworkRule : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

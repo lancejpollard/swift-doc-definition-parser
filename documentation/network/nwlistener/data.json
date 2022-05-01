@@ -1,0 +1,90 @@
+{
+  "path": "/documentation/network/nwlistener",
+  "type": "Class",
+  "name": "NWListener",
+  "desc": "An object you use to listen for incoming network connections.",
+  "items": [
+    {
+      "name": "init(using: NWParameters, on: NWEndpoint.Port)",
+      "desc": "Initializes a network listener, with an optional local port."
+    },
+    {
+      "name": "func start(queue: DispatchQueue)",
+      "desc": "Registers for listening, and sets the queue on which all listener events are delivered."
+    },
+    {
+      "name": "var stateUpdateHandler: ((NWListener.State) -> Void)?",
+      "desc": "A handler that receives listener state updates."
+    },
+    {
+      "name": "enum NWListener.State",
+      "desc": "States indicating whether a listener is able to accept incoming connections."
+    },
+    {
+      "name": "var port: NWEndpoint.Port?",
+      "desc": "The port on which the listener can accept connections."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Stops listening for inbound connections."
+    },
+    {
+      "name": "var newConnectionHandler: ((NWConnection) -> Void)?",
+      "desc": "A handler that receives inbound connections."
+    },
+    {
+      "name": "var newConnectionLimit: Int",
+      "desc": "The remaining number of inbound connections to deliver before rejecting connections."
+    },
+    {
+      "name": "static let InfiniteConnectionLimit: Int",
+      "desc": "A static value to indicate that inbound connections should not be limited."
+    },
+    {
+      "name": "property list key NSBonjourServices",
+      "desc": "Bonjour service types browsed by the app."
+    },
+    {
+      "name": "property list key NSLocalNetworkUsageDescription",
+      "desc": "A message that tells the user why the app is requesting access to the local network."
+    },
+    {
+      "name": "var service: NWListener.Service?",
+      "desc": "A Bonjour service that advertises the listener on the local network."
+    },
+    {
+      "name": "struct NWListener.Service",
+      "desc": "A description used to advertise the Bonjour service that a listener provides."
+    },
+    {
+      "name": "var serviceRegistrationUpdateHandler: ((NWListener.ServiceRegistrationChange) -> Void)?",
+      "desc": "A handler that receives updates for the service endpoint being advertised."
+    },
+    {
+      "name": "enum NWListener.ServiceRegistrationChange",
+      "desc": "Changes to how a network listener's service is advertised."
+    },
+    {
+      "name": "let parameters: NWParameters",
+      "desc": "The parameters used to initialize the listener."
+    },
+    {
+      "name": "var queue: DispatchQueue?",
+      "desc": "The queue on which listener events are delivered."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "The description of the listener."
+    },
+    {
+      "name": "var newConnectionGroupHandler: ((NWConnectionGroup) -> Void)?"
+    },
+    {
+      "name": "var state: NWListener.State"
+    }
+  ],
+  "declaration": "final class NWListener",
+  "conformsTo": [
+    "CustomDebugStringConvertible"
+  ]
+}

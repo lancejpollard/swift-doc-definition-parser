@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/appkit/nsclipview",
+  "type": "Class",
+  "name": "NSClipView",
+  "desc": "An object that clips a document view to a scroll view's frame.",
+  "items": [
+    {
+      "name": "var documentView: NSView?",
+      "desc": "The clip view’s document view."
+    },
+    {
+      "name": "func scroll(to: NSPoint)",
+      "desc": "Changes the origin of the clip view’s bounds rectangle to newOrigin."
+    },
+    {
+      "name": "func autoscroll(with: NSEvent) -> Bool",
+      "desc": "Scrolls the clip view proportionally to theEvent’s distance outside of it."
+    },
+    {
+      "name": "func constrainBoundsRect(NSRect) -> NSRect",
+      "desc": "Constrains the bounds of the clip view while the user is magnifying and scrolling."
+    },
+    {
+      "name": "var contentInsets: NSEdgeInsets",
+      "desc": "The distance that the content view is inset from the enclosing scroll view."
+    },
+    {
+      "name": "var automaticallyAdjustsContentInsets: Bool",
+      "desc": "A Boolean value that indicates if the clip view automatically accounts for other scroll view subviews."
+    },
+    {
+      "name": "var documentRect: NSRect",
+      "desc": "The rectangle defining the document view’s frame, adjusted to the size of the clip view if the document view is smaller."
+    },
+    {
+      "name": "var documentVisibleRect: NSRect",
+      "desc": "The exposed rectangle of the clip view’s document view, in the document view’s own coordinate system."
+    },
+    {
+      "name": "var documentCursor: NSCursor?",
+      "desc": "The cursor object used when the pointer lies over the view."
+    },
+    {
+      "name": "var drawsBackground: Bool",
+      "desc": "A Boolean value that indicates if the clip view draws its background color."
+    },
+    {
+      "name": "var backgroundColor: NSColor",
+      "desc": "The color of the clip view’s background."
+    },
+    {
+      "name": "func viewBoundsChanged(Notification)",
+      "desc": "Handles an boundsDidChangeNotification, passed in the aNotification argument, by updating a containing NSScrollView based on the new bounds."
+    },
+    {
+      "name": "func viewFrameChanged(Notification)",
+      "desc": "Handles an frameDidChangeNotification, passed in the aNotification argument, by updating a containing NSScrollView based on the new frame."
+    }
+  ],
+  "declaration": "class NSClipView : NSView",
+  "inheritsFrom": [
+    "NSView"
+  ]
+}

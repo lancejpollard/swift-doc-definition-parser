@@ -1,0 +1,127 @@
+{
+  "path": "/documentation/watchconnectivity/wcerror",
+  "type": "Structure",
+  "name": "WCError",
+  "desc": "A structure that contains Watch Connectivity error information.",
+  "items": [
+    {
+      "name": "var errorCode: Int",
+      "desc": "The error’s code."
+    },
+    {
+      "name": "var errorUserInfo: [String : Any]",
+      "desc": "A dictionary that contains additional information about the error."
+    },
+    {
+      "name": "var localizedDescription: String",
+      "desc": "A localized description of the error."
+    },
+    {
+      "name": "static var errorDomain: String",
+      "desc": "The domain for errors associated with the Watch Connectivity framework."
+    },
+    {
+      "name": "static var genericError: WCError.Code",
+      "desc": "An error that occurs when there is an unknown problem."
+    },
+    {
+      "name": "static var sessionNotSupported: WCError.Code",
+      "desc": "An error indicating that the current device doesn’t support the use of session objects."
+    },
+    {
+      "name": "static var sessionMissingDelegate: WCError.Code",
+      "desc": "An error indicating that the WatchKit extension doesn’t have a valid extension delegate to process events."
+    },
+    {
+      "name": "static var sessionNotActivated: WCError.Code",
+      "desc": "An error indicating that the other device doesn’t have an active session."
+    },
+    {
+      "name": "static var deviceNotPaired: WCError.Code",
+      "desc": "An error indicating that the current device doesn’t have a paired counterpart."
+    },
+    {
+      "name": "static var watchAppNotInstalled: WCError.Code",
+      "desc": "An error indicating that the Watch app isn’t an installed app on the user’s Apple Watch."
+    },
+    {
+      "name": "static var notReachable: WCError.Code",
+      "desc": "An error indicating that the counterpart app isn’t reachable."
+    },
+    {
+      "name": "static var invalidParameter: WCError.Code",
+      "desc": "An error indicating that a parameter is invalid."
+    },
+    {
+      "name": "static var payloadTooLarge: WCError.Code",
+      "desc": "An error indicating an attempt to send an item that exceeds the maximum size limit."
+    },
+    {
+      "name": "static var payloadUnsupportedTypes: WCError.Code",
+      "desc": "An error indicating that a dictionary contains nonproperty list types."
+    },
+    {
+      "name": "static var messageReplyFailed: WCError.Code",
+      "desc": "An error that occurs when the system can’t return the reply."
+    },
+    {
+      "name": "static var messageReplyTimedOut: WCError.Code",
+      "desc": "An error that occurs when the counterpart app doesn’t return a reply in time."
+    },
+    {
+      "name": "static var fileAccessDenied: WCError.Code",
+      "desc": "An error indicating that the system can’t transfer a file because it is inaccessible."
+    },
+    {
+      "name": "static var deliveryFailed: WCError.Code",
+      "desc": "An error that occurs when the system can’t deliver the payload."
+    },
+    {
+      "name": "static var insufficientSpace: WCError.Code",
+      "desc": "An error indicating that there isn’t enough space on the receiving side to store the data."
+    },
+    {
+      "name": "static var sessionInactive: WCError.Code",
+      "desc": "An error indicating that the session is inactive."
+    },
+    {
+      "name": "static var transferTimedOut: WCError.Code",
+      "desc": "An error that occurs when the transfer reaches the timeout limit before it completes."
+    },
+    {
+      "name": "static var companionAppNotInstalled: WCError.Code",
+      "desc": "An error indicating that the companion hasn’t installed the app."
+    },
+    {
+      "name": "static var watchOnlyApp: WCError.Code",
+      "desc": "An error indicating that the app is a watch-only app."
+    },
+    {
+      "name": "static func != (WCError, WCError) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are unequal."
+    },
+    {
+      "name": "init(Code, userInfo: [String : Any])"
+    },
+    {
+      "name": "var code: Code"
+    },
+    {
+      "name": "var hashValue: Int"
+    },
+    {
+      "name": "var userInfo: [String : Any]"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "static func == (WCError, WCError) -> Bool"
+    },
+    {
+      "name": "enum WCError.Code",
+      "desc": "Constants for errors during a session."
+    }
+  ],
+  "declaration": "struct WCError"
+}

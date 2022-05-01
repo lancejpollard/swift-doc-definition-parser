@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/cloudkit/ckshare",
+  "type": "Class",
+  "name": "CKShare",
+  "desc": "A specialized record type that manages a collection of shared records.",
+  "items": [
+    {
+      "name": "init(coder: NSCoder)",
+      "desc": "Creates a share from a serialized instance."
+    },
+    {
+      "name": "init(rootRecord: CKRecord)",
+      "desc": "Creates a new share for the specified record."
+    },
+    {
+      "name": "init(rootRecord: CKRecord, shareID: CKRecord.ID)",
+      "desc": "Creates a new share for the specified record and record ID."
+    },
+    {
+      "name": "init(recordZoneID: CKRecordZone.ID)",
+      "desc": "Creates a new share for the specified record zone."
+    },
+    {
+      "name": "var owner: CKShare.Participant",
+      "desc": "The participant that represents the share’s owner."
+    },
+    {
+      "name": "var currentUserParticipant: CKShare.Participant?",
+      "desc": "The participant that represents the current user."
+    },
+    {
+      "name": "var participants: [CKShare.Participant]",
+      "desc": "An array that contains the share’s participants."
+    },
+    {
+      "name": "var url: URL?",
+      "desc": "The URL for inviting participants to the share."
+    },
+    {
+      "name": "var publicPermission: CKShare.ParticipantPermission",
+      "desc": "The permission for anyone with access to the share’s URL."
+    },
+    {
+      "name": "func addParticipant(CKShare.Participant)",
+      "desc": "Adds a participant to the share."
+    },
+    {
+      "name": "func removeParticipant(CKShare.Participant)",
+      "desc": "Removes a participant from the share."
+    },
+    {
+      "name": "class CKShare.Participant",
+      "desc": "An object that describes a user’s participation in a share."
+    },
+    {
+      "name": "class CKShare.Metadata",
+      "desc": "An object that describes a shared record’s metadata."
+    },
+    {
+      "name": "enum CKShare.SystemFieldKey",
+      "desc": "Constants that represent the system fields of a share."
+    }
+  ],
+  "declaration": "class CKShare : CKRecord",
+  "inheritsFrom": [
+    "CKRecord"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/avfoundation/avcaptureaudiodataoutput",
+  "type": "Class",
+  "name": "AVCaptureAudioDataOutput",
+  "desc": "A capture output that records audio and provides access to audio sample buffers as they are recorded.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an instance of audio data output."
+    },
+    {
+      "name": "var audioSettings: [String : Any]!",
+      "desc": "The settings used to decode or re-encode audio before it’s output."
+    },
+    {
+      "name": "func recommendedAudioSettingsForAssetWriter(writingTo: AVFileType) -> [String : Any]?",
+      "desc": "Specifies the recommended settings for use with an AVAssetWriterInput."
+    },
+    {
+      "name": "func setSampleBufferDelegate(AVCaptureAudioDataOutputSampleBufferDelegate?, queue: DispatchQueue?)",
+      "desc": "Sets the delegate that will accept captured buffers and the dispatch queue on which the delegate will be called."
+    },
+    {
+      "name": "var sampleBufferDelegate: AVCaptureAudioDataOutputSampleBufferDelegate?",
+      "desc": "The capture object’s delegate."
+    },
+    {
+      "name": "var sampleBufferCallbackQueue: DispatchQueue?",
+      "desc": "The queue on which delegate callbacks are invoked"
+    },
+    {
+      "name": "protocol AVCaptureAudioDataOutputSampleBufferDelegate",
+      "desc": "Methods for receiving audio sample data from an audio capture."
+    }
+  ],
+  "declaration": "class AVCaptureAudioDataOutput : AVCaptureOutput",
+  "inheritsFrom": [
+    "AVCaptureOutput"
+  ]
+}

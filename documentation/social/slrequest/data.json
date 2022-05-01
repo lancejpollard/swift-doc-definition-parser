@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/social/slrequest",
+  "type": "Class",
+  "name": "SLRequest",
+  "desc": "An object that you use to assemble an HTTP request for communicating with a social media service.",
+  "items": [
+    {
+      "name": "init!(forServiceType: String!, requestMethod: SLRequestMethod, url: URL!, parameters: [AnyHashable : Any]!)",
+      "desc": "Initializes a newly created request object with the specified properties."
+    },
+    {
+      "name": "func perform(handler: SLRequestHandler!)",
+      "desc": "Performs an asynchronous request and calls the specified handler when done."
+    },
+    {
+      "name": "typealias SLRequestHandler",
+      "desc": "The callback handler for a request."
+    },
+    {
+      "name": "var account: ACAccount!",
+      "desc": "Account information used to authenticate the request."
+    },
+    {
+      "name": "func preparedURLRequest() -> URLRequest!",
+      "desc": "Returns an authorized URL request that can be sent using an NSURLConnection object."
+    },
+    {
+      "name": "var requestMethod: SLRequestMethod",
+      "desc": "The method to use for this request."
+    },
+    {
+      "name": "enum SLRequestMethod",
+      "desc": "Indicates the request method used in the request."
+    },
+    {
+      "name": "var url: URL!",
+      "desc": "The destination URL for this request."
+    },
+    {
+      "name": "var parameters: [AnyHashable : Any]!",
+      "desc": "The parameters for this request."
+    },
+    {
+      "name": "func addMultipartData(Data!, withName: String!, type: String!, filename: String!)",
+      "desc": "Specifies a named multipart POST body for this request."
+    }
+  ],
+  "declaration": "class SLRequest : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

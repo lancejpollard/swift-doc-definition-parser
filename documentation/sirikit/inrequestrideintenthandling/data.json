@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/sirikit/inrequestrideintenthandling",
+  "type": "Protocol",
+  "name": "INRequestRideIntentHandling",
+  "desc": "The handler interface for booking a ride for the user.",
+  "items": [
+    {
+      "name": "func resolvePickupLocation(for: INRequestRideIntent, with: (INPlacemarkResolutionResult) -> Void)",
+      "desc": "Resolves the pickup location for the ride."
+    },
+    {
+      "name": "func resolveScheduledPickupTime(for: INRequestRideIntent, with: (INDateComponentsRangeResolutionResult) -> Void)",
+      "desc": "Resolves the pickup time for the ride."
+    },
+    {
+      "name": "func resolveDropOffLocation(for: INRequestRideIntent, with: (INPlacemarkResolutionResult) -> Void)",
+      "desc": "Resolves the drop-off location for the ride."
+    },
+    {
+      "name": "func resolveRideOptionName(for: INRequestRideIntent, with: (INSpeakableStringResolutionResult) -> Void)",
+      "desc": "Resolves the user’s selected ride option."
+    },
+    {
+      "name": "func resolvePartySize(for: INRequestRideIntent, with: (INIntegerResolutionResult) -> Void)",
+      "desc": "Resolves the number of passengers for the ride."
+    },
+    {
+      "name": "func confirm(intent: INRequestRideIntent, completion: (INRequestRideIntentResponse) -> Void)",
+      "desc": "Confirms that you can book the ride."
+    },
+    {
+      "name": "func handle(intent: INRequestRideIntent, completion: (INRequestRideIntentResponse) -> Void)",
+      "desc": "Handles the booking of the ride."
+    }
+  ],
+  "declaration": "protocol INRequestRideIntentHandling",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

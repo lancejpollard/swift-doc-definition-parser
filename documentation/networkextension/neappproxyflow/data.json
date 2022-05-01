@@ -1,0 +1,49 @@
+{
+  "path": "/documentation/networkextension/neappproxyflow",
+  "type": "Class",
+  "name": "NEAppProxyFlow",
+  "desc": "An abstract base class shared by NEAppProxyTCPFlow and NEAppProxyUDPFlow.",
+  "items": [
+    {
+      "name": "func open(withLocalEndpoint: NWHostEndpoint?, completionHandler: (Error?) -> Void)",
+      "desc": "Opens the flow, indicating to the system that the caller is ready to start receiving and sending data."
+    },
+    {
+      "name": "func closeReadWithError(Error?)",
+      "desc": "Close the flow for further read operations."
+    },
+    {
+      "name": "func closeWriteWithError(Error?)",
+      "desc": "Close the flow for further write operations."
+    },
+    {
+      "name": "var metaData: NEFlowMetaData",
+      "desc": "An NEFlowMetaData object containing information about the source app of the flow."
+    },
+    {
+      "name": "struct NEAppProxyFlowError"
+    },
+    {
+      "name": "let NEAppProxyErrorDomain: String"
+    },
+    {
+      "name": "enum NEAppProxyFlowError.Code"
+    },
+    {
+      "name": "var isBound: Bool"
+    },
+    {
+      "name": "var networkInterface: nw_interface_t?"
+    },
+    {
+      "name": "var remoteHostname: String?"
+    },
+    {
+      "name": "func setMetadata(nw_parameters_t)"
+    }
+  ],
+  "declaration": "class NEAppProxyFlow : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/scenekit/scntechnique",
+  "type": "Class",
+  "name": "SCNTechnique",
+  "desc": "A specification for augmenting or postprocessing SceneKit's rendering of a scene using additional drawing passes with custom Metal or OpenGL shaders.",
+  "items": [
+    {
+      "name": "init?(dictionary: [String : Any])",
+      "desc": "Creates a technique from a technique definition dictionary.,"
+    },
+    {
+      "name": "init?(bySequencingTechniques: [SCNTechnique])",
+      "desc": "Creates a new rendering technique that combines a series of techniques."
+    },
+    {
+      "name": "var dictionaryRepresentation: [String : Any]",
+      "desc": "The dictionary defining the rendering technique."
+    },
+    {
+      "name": "func handleBinding(ofSymbol: String, using: SCNBindingBlock?)",
+      "desc": "Specifies a block to be called before rendering using programs with the specified GLSL uniform variable or attribute name."
+    },
+    {
+      "name": "func setObject(Any?, forKeyedSubscript: NSCopying)",
+      "desc": "Sets a value for the specified shader variable or attribute name, using subscript syntax."
+    },
+    {
+      "name": "subscript(Any) -> Any?",
+      "desc": "Returns the value associated with the specified GLSL uniform variable or attribute name, using subscript syntax."
+    },
+    {
+      "name": "var library: MTLLibrary?"
+    }
+  ],
+  "declaration": "class SCNTechnique : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding",
+    "SCNAnimatable"
+  ]
+}

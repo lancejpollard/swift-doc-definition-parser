@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/exposurenotification/enexposureconfiguration",
+  "type": "Class",
+  "name": "ENExposureConfiguration",
+  "desc": "The object that contains parameters for configuring exposure notification risk scoring behavior.",
+  "items": [
+    {
+      "name": "var attenuationDurationThresholds: [NSNumber]",
+      "desc": "The configurable signal-loss thresholds for calculating exposure risk."
+    },
+    {
+      "name": "var immediateDurationWeight: Double",
+      "desc": "The weight assigned to a risk level indicating the duration of the user’s exposure at immediate distance."
+    },
+    {
+      "name": "var mediumDurationWeight: Double",
+      "desc": "The weight assigned to a risk level indicating the duration of the user’s exposure at medium distance."
+    },
+    {
+      "name": "var nearDurationWeight: Double",
+      "desc": "The weight assigned to a risk level indicating the duration of the user’s exposure at close distance."
+    },
+    {
+      "name": "var otherDurationWeight: Double",
+      "desc": "The weight assigned to a risk level indicating the duration of the user’s exposure at a large distance."
+    },
+    {
+      "name": "var daysSinceLastExposureThreshold: Int",
+      "desc": "The number of days to consider when calculating the risk level."
+    },
+    {
+      "name": "var infectiousnessForDaysSinceOnsetOfSymptoms: [NSNumber : NSNumber]?",
+      "desc": "The mapping between the days since onset of symptoms to the degree of infectiousness."
+    },
+    {
+      "name": "var infectiousnessHighWeight: Double",
+      "desc": "The weight to apply for severe infectiousness."
+    },
+    {
+      "name": "var infectiousnessStandardWeight: Double",
+      "desc": "The weight to apply for mild infectiousness."
+    },
+    {
+      "name": "let ENDaysSinceOnsetOfSymptomsUnknown: Int",
+      "desc": "A value used when the number of days since onset of symptoms is unknown."
+    },
+    {
+      "name": "var reportTypeConfirmedClinicalDiagnosisWeight: Double",
+      "desc": "The weight assigned to a risk level based on a confirmed clinical diagnosis."
+    },
+    {
+      "name": "var reportTypeConfirmedTestWeight: Double",
+      "desc": "The weight assigned to a risk level based on a confirmed test."
+    },
+    {
+      "name": "var reportTypeRecursiveWeight: Double",
+      "desc": "The weight assigned to a risk level based on an exposure to someone exposed to someone else."
+    },
+    {
+      "name": "var reportTypeSelfReportedWeight: Double",
+      "desc": "The weight assigned to a risk level based on a self-reported diagnoisis."
+    },
+    {
+      "name": "var reportTypeNoneMap: ENDiagnosisReportType",
+      "desc": "The report type to map an unknown diagnosis to."
+    }
+  ],
+  "declaration": "class ENExposureConfiguration : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

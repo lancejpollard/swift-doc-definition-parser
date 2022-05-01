@@ -1,0 +1,56 @@
+{
+  "path": "/documentation/metal/mtlcomputepipelinestate",
+  "type": "Protocol",
+  "name": "MTLComputePipelineState",
+  "desc": "An object that contains a compiled compute pipeline.",
+  "items": [
+    {
+      "name": "var maxTotalThreadsPerThreadgroup: Int",
+      "desc": "The maximum number of threads in a threadgroup that you can dispatch to the pipeline."
+    },
+    {
+      "name": "var threadExecutionWidth: Int",
+      "desc": "The number of threads that the GPU executes simultaneously."
+    },
+    {
+      "name": "var staticThreadgroupMemoryLength: Int",
+      "desc": "The length, in bytes, of statically allocated threadgroup memory."
+    },
+    {
+      "name": "var device: MTLDevice",
+      "desc": "The Metal device object that created the pipeline state."
+    },
+    {
+      "name": "var label: String?",
+      "desc": "A string that identifies the compute pipeline state object."
+    },
+    {
+      "name": "func imageblockMemoryLength(forDimensions: MTLSize) -> Int",
+      "desc": "Returns the imageblock memory length, in bytes, for the specified imageblock dimensions."
+    },
+    {
+      "name": "var supportIndirectCommandBuffers: Bool",
+      "desc": "A Boolean value that indicates whether the pipeline supports indirect command buffers."
+    },
+    {
+      "name": "func functionHandle(function: MTLFunction) -> MTLFunctionHandle?",
+      "desc": "Creates a function handle for a visible function."
+    },
+    {
+      "name": "func makeComputePipelineStateWithAdditionalBinaryFunctions(functions: [MTLFunction]) -> MTLComputePipelineState",
+      "desc": "Creates a new pipeline state object with additional callable functions."
+    },
+    {
+      "name": "func makeVisibleFunctionTable(descriptor: MTLVisibleFunctionTableDescriptor) -> MTLVisibleFunctionTable?",
+      "desc": "Creates a new visible function table."
+    },
+    {
+      "name": "func makeIntersectionFunctionTable(descriptor: MTLIntersectionFunctionTableDescriptor) -> MTLIntersectionFunctionTable?",
+      "desc": "Creates a new intersection function table."
+    }
+  ],
+  "declaration": "protocol MTLComputePipelineState",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

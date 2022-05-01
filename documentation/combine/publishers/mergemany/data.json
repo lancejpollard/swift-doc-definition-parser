@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/combine/publishers/mergemany",
+  "type": "Structure",
+  "name": "Publishers.MergeMany",
+  "desc": "A publisher created by applying the merge function to an arbitrary number of upstream publishers.",
+  "items": [
+    {
+      "name": "init(Upstream...)",
+      "desc": "Creates a publisher created by applying the merge function to an arbitrary number of upstream publishers."
+    },
+    {
+      "name": "init<S>(S)",
+      "desc": "Creates a publisher created by applying the merge function to a sequence of upstream publishers."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let publishers: [Upstream]",
+      "desc": "The array of upstream publishers that this publisher merges together."
+    },
+    {
+      "name": "static func == (Publishers.MergeMany<Upstream>, Publishers.MergeMany<Upstream>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two publishers are equivalent."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    }
+  ],
+  "declaration": "struct MergeMany<Upstream> where Upstream : Publisher",
+  "conformsTo": [
+    "Equatable",
+    "Publisher"
+  ]
+}

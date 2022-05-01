@@ -1,0 +1,88 @@
+{
+  "path": "/documentation/healthkit/hkstatistics",
+  "type": "Class",
+  "name": "HKStatistics",
+  "desc": "An object that represents the result of calculating the minimum, maximum, average, or sum over a set of samples from the HealthKit store.",
+  "items": [
+    {
+      "name": "var startDate: Date",
+      "desc": "The start of the time period included in these statistics."
+    },
+    {
+      "name": "var endDate: Date",
+      "desc": "The end of the time period included in these statistics."
+    },
+    {
+      "name": "var quantityType: HKQuantityType",
+      "desc": "The quantity type of the samples used to calculate these statistics."
+    },
+    {
+      "name": "var sources: [HKSource]?",
+      "desc": "An array containing all the sources contributing to these statistics."
+    },
+    {
+      "name": "func averageQuantity() -> HKQuantity?",
+      "desc": "Returns the average value from all the samples that match the query."
+    },
+    {
+      "name": "func averageQuantity(for: HKSource) -> HKQuantity?",
+      "desc": "Returns the average value from all the samples that match the query and that were created by the specified source."
+    },
+    {
+      "name": "func maximumQuantity() -> HKQuantity?",
+      "desc": "Returns the maximum value from all the samples that match the query."
+    },
+    {
+      "name": "func maximumQuantity(for: HKSource) -> HKQuantity?",
+      "desc": "Returns the maximum value from all the samples that match the query and that were created by the specified source."
+    },
+    {
+      "name": "func minimumQuantity() -> HKQuantity?",
+      "desc": "Returns the minimum value from all the samples that match the query."
+    },
+    {
+      "name": "func minimumQuantity(for: HKSource) -> HKQuantity?",
+      "desc": "Returns the minimum value from all the samples that match the query and that were created by the specified source."
+    },
+    {
+      "name": "func sumQuantity() -> HKQuantity?",
+      "desc": "Returns the sum of all the samples that match the query."
+    },
+    {
+      "name": "func sumQuantity(for: HKSource) -> HKQuantity?",
+      "desc": "Returns the sum of all the samples that match the query and that were created by the specified source."
+    },
+    {
+      "name": "func duration() -> HKQuantity?",
+      "desc": "Returns the total duration covering all the samples that match the query."
+    },
+    {
+      "name": "func duration(for: HKSource) -> HKQuantity?",
+      "desc": "Returns the total duration covering all the samples created by the specified source that also match the query."
+    },
+    {
+      "name": "func mostRecentQuantity() -> HKQuantity?",
+      "desc": "Returns the most recent value from all the samples that match the query."
+    },
+    {
+      "name": "func mostRecentQuantity(for: HKSource) -> HKQuantity?",
+      "desc": "Returns the most recent value from all the samples that match the query and were created by the specified source."
+    },
+    {
+      "name": "func mostRecentQuantityDateInterval() -> DateInterval?",
+      "desc": "Returns the date interval of the most recent sample that matches the query."
+    },
+    {
+      "name": "func mostRecentQuantityDateInterval(for: HKSource) -> DateInterval?",
+      "desc": "Returns the date interval of the most recent sample that matches the query and was created by the specified source."
+    }
+  ],
+  "declaration": "class HKStatistics : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

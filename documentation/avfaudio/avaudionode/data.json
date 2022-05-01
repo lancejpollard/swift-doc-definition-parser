@@ -1,0 +1,80 @@
+{
+  "path": "/documentation/avfaudio/avaudionode",
+  "type": "Class",
+  "name": "AVAudioNode",
+  "desc": "An object you use for audio generation, processing, or an I/O block.",
+  "items": [
+    {
+      "name": "typealias AVAudioNodeBus",
+      "desc": "The index of a bus on an audio node."
+    },
+    {
+      "name": "func inputFormat(forBus: AVAudioNodeBus) -> AVAudioFormat",
+      "desc": "Gets the input format for the bus you specify."
+    },
+    {
+      "name": "func name(forInputBus: AVAudioNodeBus) -> String?",
+      "desc": "Gets the name of the input bus you specify."
+    },
+    {
+      "name": "var numberOfInputs: Int",
+      "desc": "The number of input busses for the node."
+    },
+    {
+      "name": "func outputFormat(forBus: AVAudioNodeBus) -> AVAudioFormat",
+      "desc": "Retrieves the output format for the bus you specify."
+    },
+    {
+      "name": "func name(forOutputBus: AVAudioNodeBus) -> String?",
+      "desc": "Retrieves the name of the output bus you specify."
+    },
+    {
+      "name": "var numberOfOutputs: Int",
+      "desc": "The number of output busses for the node."
+    },
+    {
+      "name": "func installTap(onBus: AVAudioNodeBus, bufferSize: AVAudioFrameCount, format: AVAudioFormat?, block: AVAudioNodeTapBlock)",
+      "desc": "Installs an audio tap on a bus you specify to record, monitor, and observe the output of the node."
+    },
+    {
+      "name": "func removeTap(onBus: AVAudioNodeBus)",
+      "desc": "Removes an audio tap on a bus you specify."
+    },
+    {
+      "name": "typealias AVAudioNodeTapBlock",
+      "desc": "The block that receives copies of the output of an audio node."
+    },
+    {
+      "name": "var engine: AVAudioEngine?",
+      "desc": "The audio engine that manages the node, if any."
+    },
+    {
+      "name": "var lastRenderTime: AVAudioTime?",
+      "desc": "The most recent render time."
+    },
+    {
+      "name": "var auAudioUnit: AUAudioUnit",
+      "desc": "An audio unit object that wraps or underlies the implementation’s audio unit."
+    },
+    {
+      "name": "var latency: TimeInterval",
+      "desc": "The processing latency of the node, in seconds."
+    },
+    {
+      "name": "var outputPresentationLatency: TimeInterval",
+      "desc": "The maximum render pipeline latency downstream of the node, in seconds."
+    },
+    {
+      "name": "func reset()",
+      "desc": "Clears a unit’s previous processing state."
+    },
+    {
+      "name": "typealias AVAudioNodeCompletionHandler",
+      "desc": "A general callback handler for an audio node."
+    }
+  ],
+  "declaration": "class AVAudioNode : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

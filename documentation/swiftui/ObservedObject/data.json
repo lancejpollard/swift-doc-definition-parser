@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/swiftui/observedobject",
+  "type": "Structure",
+  "name": "ObservedObject",
+  "desc": "A property wrapper type that subscribes to an observable object and invalidates a view whenever the observable object changes.",
+  "items": [
+    {
+      "name": "init(wrappedValue: ObjectType)",
+      "desc": "Creates an observed object with an initial wrapped value."
+    },
+    {
+      "name": "init(initialValue: ObjectType)",
+      "desc": "Creates an observed object with an initial value."
+    },
+    {
+      "name": "var wrappedValue: ObjectType",
+      "desc": "The underlying value referenced by the observed object."
+    },
+    {
+      "name": "var projectedValue: ObservedObject<ObjectType>.Wrapper",
+      "desc": "A projection of the observed object that creates bindings to its properties using dynamic member lookup."
+    },
+    {
+      "name": "struct Wrapper",
+      "desc": "A wrapper of the underlying observable object that can create bindings to its properties using dynamic member lookup."
+    }
+  ],
+  "declaration": "@propertyWrapper @frozen struct ObservedObject<ObjectType> where ObjectType : ObservableObject",
+  "conformsTo": [
+    "DynamicProperty"
+  ]
+}

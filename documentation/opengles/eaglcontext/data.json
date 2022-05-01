@@ -1,0 +1,65 @@
+{
+  "path": "/documentation/opengles/eaglcontext",
+  "type": "Class",
+  "name": "EAGLContext",
+  "desc": "An EAGLContext object manages an OpenGL ES rendering context—the state information, commands, and resources needed to draw using OpenGL ES. To execute OpenGL ES commands, you need a current rendering context.",
+  "items": [
+    {
+      "name": "init?(api: EAGLRenderingAPI)",
+      "desc": "Initializes and returns a newly allocated rendering context with the specified version of the OpenGL ES rendering API."
+    },
+    {
+      "name": "init?(api: EAGLRenderingAPI, sharegroup: EAGLSharegroup)",
+      "desc": "Initializes and returns a newly allocated rendering context with the specified version of OpenGL ES rendering API and the specified sharegroup."
+    },
+    {
+      "name": "class func setCurrent(EAGLContext?) -> Bool",
+      "desc": "Makes the specified context the current rendering context for the calling thread."
+    },
+    {
+      "name": "func renderbufferStorage(Int, from: EAGLDrawable?) -> Bool",
+      "desc": "Binds a drawable object’s storage to an OpenGL ES renderbuffer object."
+    },
+    {
+      "name": "func presentRenderbuffer(Int) -> Bool",
+      "desc": "Displays a renderbuffer’s contents on screen."
+    },
+    {
+      "name": "var api: EAGLRenderingAPI",
+      "desc": "The OpenGL ES rendering API version supported by the context. (read-only)"
+    },
+    {
+      "name": "var sharegroup: EAGLSharegroup",
+      "desc": "The context’s sharegroup object. (read-only)"
+    },
+    {
+      "name": "var debugLabel: String?",
+      "desc": "A label describing the context for use in debugging."
+    },
+    {
+      "name": "class func current() -> EAGLContext?",
+      "desc": "Returns the current rendering context for the calling thread."
+    },
+    {
+      "name": "var isMultiThreaded: Bool",
+      "desc": "A Boolean value that determines whether OpenGL ES defers work to another thread."
+    },
+    {
+      "name": "enum EAGLRenderingAPI",
+      "desc": "Versions of OpenGL ES that a rendering context provides."
+    },
+    {
+      "name": "func presentRenderbuffer(Int, afterMinimumDuration: CFTimeInterval) -> Bool"
+    },
+    {
+      "name": "func presentRenderbuffer(Int, atTime: CFTimeInterval) -> Bool"
+    },
+    {
+      "name": "func texImageIOSurface(IOSurfaceRef, target: Int, internalFormat: Int, width: UInt32, height: UInt32, format: Int, type: Int, plane: UInt32) -> Bool"
+    }
+  ],
+  "declaration": "class EAGLContext : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

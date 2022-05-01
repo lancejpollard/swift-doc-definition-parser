@@ -1,0 +1,56 @@
+{
+  "path": "/documentation/network/nwlistener/service",
+  "type": "Structure",
+  "name": "NWListener.Service",
+  "desc": "A description used to advertise the Bonjour service that a listener provides.",
+  "items": [
+    {
+      "name": "init(name: String?, type: String, domain: String?, txtRecord: Data?)",
+      "desc": "Initializes a Bonjour service to advertise."
+    },
+    {
+      "name": "init(name: String?, type: String, domain: String?, txtRecord: NWTXTRecord)",
+      "desc": "Initializes a Bonjour service to advertise with a TXT record."
+    },
+    {
+      "name": "var noAutoRename: Bool",
+      "desc": "A Boolean that indicates whether the service prohibits automatic renaming in the event of a name conflict."
+    },
+    {
+      "name": "let name: String?",
+      "desc": "The Bonjour name of the service."
+    },
+    {
+      "name": "let type: String",
+      "desc": "The Bonjour type of the service."
+    },
+    {
+      "name": "let domain: String?",
+      "desc": "The Bonjour domain of the service."
+    },
+    {
+      "name": "var txtRecordObject: NWTXTRecord?",
+      "desc": "The TXT record to advertise with the service."
+    },
+    {
+      "name": "let txtRecord: Data?",
+      "desc": "The TXT record as a raw buffer to advertise with the service."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "The description of the service."
+    },
+    {
+      "name": "static func != (NWListener.Service, NWListener.Service) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (NWListener.Service, NWListener.Service) -> Bool"
+    }
+  ],
+  "declaration": "struct NWListener.Service",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "Equatable"
+  ]
+}

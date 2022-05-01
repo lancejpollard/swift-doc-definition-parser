@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/accelerate/bnns/fusedparameterslayer",
+  "type": "Class",
+  "name": "BNNS.FusedParametersLayer",
+  "desc": "A layer object that wraps a fused layer and manages its deinitialization.",
+  "items": [
+    {
+      "name": "init?(input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, fusedLayerParameters: [FusableLayerParameters], filterParameters: BNNSFilterParameters?)",
+      "desc": "Creates a new fused layer from an array of layer parameters."
+    },
+    {
+      "name": "init?(inputA: BNNSNDArrayDescriptor, inputB: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, fusedLayerParameters: [FusableLayerParameters], filterParameters: BNNSFilterParameters?)",
+      "desc": "Creates a new fused layer from an array of layer parameters, where the first layer accepts two inputs."
+    },
+    {
+      "name": "init?(inputA: BNNSNDArrayDescriptor, inputB: BNNSNDArrayDescriptor, inputC: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, fusedLayerParameters: [FusableLayerParameters], filterParameters: BNNSFilterParameters?)",
+      "desc": "Creates a new fused layer from an array of layer parameters, where the first layer accepts three inputs."
+    },
+    {
+      "name": "struct BNNS.FusedUnaryArithmeticParameters",
+      "desc": "A structure that contains the parameters for a fused unary arithmetic layer."
+    },
+    {
+      "name": "struct BNNS.FusedBinaryArithmeticParameters",
+      "desc": "A structure that contains the parameters for a fused binary arithmetic layer."
+    },
+    {
+      "name": "struct BNNS.FusedTernaryArithmeticParameters",
+      "desc": "A structure that contains the parameters for a fused ternary arithmetic layer."
+    },
+    {
+      "name": "struct BNNS.FusedConvolutionParameters",
+      "desc": "A structure that contains the parameters for a fused convolution layer."
+    },
+    {
+      "name": "struct BNNS.FusedQuantizationParameters",
+      "desc": "A structure that contains the parameters for a fused quantization layer."
+    },
+    {
+      "name": "struct BNNS.FusedDequantizationParameters",
+      "desc": "A structure that contains the parameters for a fused dequantization layer."
+    },
+    {
+      "name": "struct BNNS.FusedFullyConnectedParameters",
+      "desc": "A structure that contains the parameters for a fused fully connected layer."
+    },
+    {
+      "name": "struct BNNS.FusedNormalizationParameters",
+      "desc": "A structure that contains the parameters for a fused normalization layer."
+    },
+    {
+      "name": "func apply(batchSize: Int, inputA: BNNSNDArrayDescriptor, inputB: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, for: BNNS.LearningPhase)",
+      "desc": "Applies the layer to a set of input objects and writes the result to a set of output objects, where the first layer accepts two inputs."
+    },
+    {
+      "name": "func apply(batchSize: Int, inputA: BNNSNDArrayDescriptor, inputB: BNNSNDArrayDescriptor, inputC: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, for: BNNS.LearningPhase)",
+      "desc": "Applies the layer to a set of input objects and writes the result to a set of output objects, where the first layer accepts two inputs."
+    },
+    {
+      "name": "func applyBackward(batchSize: Int, inputA: BNNSNDArrayDescriptor, inputB: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, outputGradient: BNNSNDArrayDescriptor, generatingInputAGradient: BNNSNDArrayDescriptor, generatingInputBGradient: BNNSNDArrayDescriptor, generatingParameterGradients: [BNNSNDArrayDescriptor])",
+      "desc": "Applies the layer backward to generate input gradients, where the first layer accepts two inputs."
+    },
+    {
+      "name": "func applyBackward(batchSize: Int, inputA: BNNSNDArrayDescriptor, inputB: BNNSNDArrayDescriptor, inputC: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, outputGradient: BNNSNDArrayDescriptor, generatingInputAGradient: BNNSNDArrayDescriptor, generatingInputBGradient: BNNSNDArrayDescriptor, generatingInputCGradient: BNNSNDArrayDescriptor, generatingParameterGradients: [BNNSNDArrayDescriptor])",
+      "desc": "Applies the layer backward to generate input gradients, where the first layer accepts three inputs."
+    }
+  ],
+  "declaration": "class FusedParametersLayer : BNNS.FusedLayer",
+  "inheritsFrom": [
+    "BNNS.FusedLayer"
+  ]
+}

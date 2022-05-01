@@ -1,0 +1,63 @@
+{
+  "path": "/documentation/uikit/uitableviewdiffabledatasourcereference",
+  "type": "Class",
+  "name": "UITableViewDiffableDataSourceReference",
+  "desc": "The Swift representation of the Objective-C object you use to manage data and provide items for a table view.",
+  "items": [
+    {
+      "name": "init(tableView: UITableView, cellProvider: UITableViewDiffableDataSourceReferenceCellProvider)",
+      "desc": "Creates a diffable data source with the specified cell provider, and connects it to the specified table view."
+    },
+    {
+      "name": "typealias UITableViewDiffableDataSourceReferenceCellProvider",
+      "desc": "A closure that configures and returns a cell for a table view from its diffable data source."
+    },
+    {
+      "name": "func itemIdentifier(for: IndexPath) -> Any?",
+      "desc": "Returns an identifier for the item at the specified index path in the table view."
+    },
+    {
+      "name": "func indexPath(forItemIdentifier: Any) -> IndexPath?",
+      "desc": "Returns an index path for the item with the specified identifier in the table view."
+    },
+    {
+      "name": "func sectionIdentifier(for: Int) -> Any?",
+      "desc": "Returns an identifier for the section at the index you specify in the table view."
+    },
+    {
+      "name": "func index(forSectionIdentifier: Any) -> Int",
+      "desc": "Returns an index for the section with the identifier you specify in the table view."
+    },
+    {
+      "name": "func snapshot() -> NSDiffableDataSourceSnapshotReference",
+      "desc": "Returns a representation of the current state of the data in the table view."
+    },
+    {
+      "name": "func applySnapshot(NSDiffableDataSourceSnapshotReference, animatingDifferences: Bool)",
+      "desc": "Updates the UI to reflect the state of the data in the snapshot, optionally animating the UI changes."
+    },
+    {
+      "name": "func applySnapshot(NSDiffableDataSourceSnapshotReference, animatingDifferences: Bool, completion: (() -> Void)?)",
+      "desc": "Updates the UI to reflect the state of the data in the snapshot, optionally animating the UI changes and executing a completion handler."
+    },
+    {
+      "name": "func applySnapshot(usingReloadData: NSDiffableDataSourceSnapshotReference)",
+      "desc": "Resets the UI to reflect the state of the data in the snapshot without computing a diff or animating the changes."
+    },
+    {
+      "name": "func applySnapshot(usingReloadData: NSDiffableDataSourceSnapshotReference, completion: (() -> Void)?)",
+      "desc": "Resets the UI to reflect the state of the data in the snapshot without computing a diff or animating the changes, optionally executing a completion handler."
+    },
+    {
+      "name": "var defaultRowAnimation: UITableView.RowAnimation",
+      "desc": "The default type of animation to use when inserting or deleting rows."
+    }
+  ],
+  "declaration": "@MainActor class UITableViewDiffableDataSourceReference : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "UITableViewDataSource"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/appkit/nstypesettercontrolcharacteraction",
+  "type": "Structure",
+  "name": "NSTypesetterControlCharacterAction",
+  "desc": "The following constants are possible values returned by the actionForControlCharacter(at:) method to determine the action associated with a control character.",
+  "items": [
+    {
+      "name": "static var zeroAdvancementAction: NSTypesetterControlCharacterAction",
+      "desc": "Glyphs with this action are filtered out from layout (notShownAttribute == YES)."
+    },
+    {
+      "name": "static var whitespaceAction: NSTypesetterControlCharacterAction",
+      "desc": "The width for glyphs with this action are determined by boundingBox(forControlGlyphAt:for:proposedLineFragment:glyphPosition:characterIndex:), if the method is implemented; otherwise, same as NSTypesetterZeroAdvancementAction."
+    },
+    {
+      "name": "static var horizontalTabAction: NSTypesetterControlCharacterAction",
+      "desc": "Treated as tab character."
+    },
+    {
+      "name": "static var lineBreakAction: NSTypesetterControlCharacterAction",
+      "desc": "Causes line break."
+    },
+    {
+      "name": "static var paragraphBreakAction: NSTypesetterControlCharacterAction",
+      "desc": "Causes paragraph break; the value returned by firstLineHeadIndent is the advancement used for the following glyph."
+    },
+    {
+      "name": "static var containerBreakAction: NSTypesetterControlCharacterAction",
+      "desc": "Causes container break."
+    },
+    {
+      "name": "init(rawValue: UInt)"
+    }
+  ],
+  "declaration": "struct NSTypesetterControlCharacterAction, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

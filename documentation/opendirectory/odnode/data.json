@@ -1,0 +1,85 @@
+{
+  "path": "/documentation/opendirectory/odnode",
+  "type": "Class",
+  "name": "ODNode",
+  "desc": "An ODNode object serves as a Cocoa wrapper for an Open Directory node.",
+  "items": [
+    {
+      "name": "init(session: ODSession!, name: String!)",
+      "desc": "Creates a node object with a specified session and name."
+    },
+    {
+      "name": "init(session: ODSession!, type: ODNodeType)",
+      "desc": "Creates a node object with a specified session and type."
+    },
+    {
+      "name": "func customCall(Int, send: Data!) -> Data",
+      "desc": "Returns the result of a custom call to the node."
+    },
+    {
+      "name": "func nodeDetails(forKeys: [Any]!) -> [AnyHashable : Any]",
+      "desc": "Returns a dictionary containing details about a node."
+    },
+    {
+      "name": "var nodeName: String!",
+      "desc": "The node’s name."
+    },
+    {
+      "name": "func subnodeNames() -> [Any]",
+      "desc": "Returns the names of subnodes for the node."
+    },
+    {
+      "name": "func unreachableSubnodeNames() -> [Any]",
+      "desc": "Returns an array of the subnodes of a given node that are currently unreachable."
+    },
+    {
+      "name": "func setCredentialsWithRecordType(String!, recordName: String!, password: String!)",
+      "desc": "Sets credentials for interacting with the node."
+    },
+    {
+      "name": "func setCredentialsWithRecordType(String!, authenticationType: String!, authenticationItems: [Any]!, continueItems: AutoreleasingUnsafeMutablePointer<NSArray?>!, context: AutoreleasingUnsafeMutablePointer<AnyObject?>!)",
+      "desc": "Sets the credentials for interaction with the node using other types of authentication available to Open Directory."
+    },
+    {
+      "name": "func createRecord(withRecordType: String!, name: String!, attributes: [AnyHashable : Any]!) -> ODRecord",
+      "desc": "Creates a record in a specified node with specified properties."
+    },
+    {
+      "name": "func record(withRecordType: String!, name: String!, attributes: Any!) -> ODRecord",
+      "desc": "Returns a record from the node with a specified type and name."
+    },
+    {
+      "name": "func supportedAttributes(forRecordType: String!) -> [Any]",
+      "desc": "Returns an array of attribute types supported by the node’s records."
+    },
+    {
+      "name": "func supportedRecordTypes() -> [Any]",
+      "desc": "Returns an array of the record types supported by the node."
+    },
+    {
+      "name": "var configuration: ODConfiguration!"
+    },
+    {
+      "name": "func accountPolicies() -> [AnyHashable : Any]"
+    },
+    {
+      "name": "func addAccountPolicy([AnyHashable : Any]!, toCategory: String!)"
+    },
+    {
+      "name": "func customFunction(String!, payload: Any!) -> Any"
+    },
+    {
+      "name": "func passwordContentCheck(String!, forRecordName: String!)"
+    },
+    {
+      "name": "func removeAccountPolicy([AnyHashable : Any]!, fromCategory: String!)"
+    },
+    {
+      "name": "func setAccountPolicies([AnyHashable : Any]!)"
+    }
+  ],
+  "declaration": "class ODNode : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

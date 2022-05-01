@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/passkit/pkpaymentauthorizationstatus",
+  "type": "Enumeration",
+  "name": "PKPaymentAuthorizationStatus",
+  "desc": "General success and failure status for payment authorization.",
+  "items": [
+    {
+      "name": "case success",
+      "desc": "Merchant successfully authorized the transaction, or the transaction is expected to succeed."
+    },
+    {
+      "name": "case failure",
+      "desc": "Merchant failed to authorize the transaction."
+    },
+    {
+      "name": "case invalidBillingPostalAddress",
+      "desc": "Invalid or unusable billing address."
+    },
+    {
+      "name": "case invalidShippingPostalAddress",
+      "desc": "Invalid or unusable shipping address."
+    },
+    {
+      "name": "case invalidShippingContact",
+      "desc": "Invalid or incomplete shipping contact."
+    },
+    {
+      "name": "case pinRequired",
+      "desc": "Transaction requires PIN entry."
+    },
+    {
+      "name": "case pinIncorrect",
+      "desc": "Incorrect PIN entered."
+    },
+    {
+      "name": "case pinLockout",
+      "desc": "PIN retry limit exceeded."
+    }
+  ],
+  "declaration": "enum PKPaymentAuthorizationStatus : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

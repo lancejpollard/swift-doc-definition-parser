@@ -1,0 +1,56 @@
+{
+  "path": "/documentation/networkextension/nefiltercontrolprovider",
+  "type": "Class",
+  "name": "NEFilterControlProvider",
+  "desc": "The principal class for a filter control provider extension.",
+  "items": [
+    {
+      "name": "func handleNewFlow(NEFilterFlow, completionHandler: (NEFilterControlVerdict) -> Void)",
+      "desc": "Handle a request for new filtering rules."
+    },
+    {
+      "name": "func notifyRulesChanged()",
+      "desc": "Notify the Filter Data Provider that the filtering rules have changed on disk."
+    },
+    {
+      "name": "func handleRemediation(for: NEFilterFlow, completionHandler: (NEFilterControlVerdict) -> Void)",
+      "desc": "Handle a request for remediation from the user."
+    },
+    {
+      "name": "var remediationMap: [String : [String : NSObject]]?",
+      "desc": "A dictionary containing sets of strings used to customize the remediation portion of the block page."
+    },
+    {
+      "name": "let NEFilterProviderRemediationMapRemediationButtonTexts: String",
+      "desc": "A key in the remediationMap dictionary. The value of this key should be set to a dictionary that maps button text string identifiers to the text to display for the remediation URL link in the block page. The button text string identifiers are defined by the Filter Control Provider app extension."
+    },
+    {
+      "name": "let NEFilterProviderRemediationMapRemediationURLs: String",
+      "desc": "A key in the remediationMap dictionary. The value of this key should be set to a dictionary that maps URL identifiers to remediation URLs to be inserted into the block page. The URL identifiers are defined by the Filter Control Provider app extension."
+    },
+    {
+      "name": "var NEFilterProviderRemediationURLFlowURL: String",
+      "desc": "This string will be replaced with the full URL of the flow."
+    },
+    {
+      "name": "var NEFilterProviderRemediationURLFlowURLHostname: String",
+      "desc": "This string will be replaced with the hostname portion of the flow’s URL."
+    },
+    {
+      "name": "var NEFilterProviderRemediationURLOrganization: String",
+      "desc": "This string will be replaced with the value of the organization property set in the filter configuration."
+    },
+    {
+      "name": "var NEFilterProviderRemediationURLUsername: String",
+      "desc": "This string will be replaced with the value of the username property set in the filter configuration."
+    },
+    {
+      "name": "var urlAppendStringMap: [String : String]?",
+      "desc": "A dictionary containing strings to be appended to URLs."
+    }
+  ],
+  "declaration": "class NEFilterControlProvider : NEFilterProvider",
+  "inheritsFrom": [
+    "NEFilterProvider"
+  ]
+}

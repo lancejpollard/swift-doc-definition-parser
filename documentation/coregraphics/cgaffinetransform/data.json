@@ -1,0 +1,93 @@
+{
+  "path": "/documentation/coregraphics/cgaffinetransform",
+  "type": "Structure",
+  "name": "CGAffineTransform",
+  "desc": "An affine transformation matrix for use in drawing 2D graphics.",
+  "items": [
+    {
+      "name": "init(rotationAngle: CGFloat)",
+      "desc": "Returns an affine transformation matrix constructed from a rotation value you provide."
+    },
+    {
+      "name": "init(scaleX: CGFloat, y: CGFloat)",
+      "desc": "Returns an affine transformation matrix constructed from scaling values you provide."
+    },
+    {
+      "name": "init(translationX: CGFloat, y: CGFloat)",
+      "desc": "Returns an affine transformation matrix constructed from translation values you provide."
+    },
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(a: CGFloat, b: CGFloat, c: CGFloat, d: CGFloat, tx: CGFloat, ty: CGFloat)"
+    },
+    {
+      "name": "init(from: Decoder)"
+    },
+    {
+      "name": "var isIdentity: Bool",
+      "desc": "Checks whether an affine transform is the identity transform."
+    },
+    {
+      "name": "var a: CGFloat",
+      "desc": "The entry at position [1,1] in the matrix."
+    },
+    {
+      "name": "var b: CGFloat",
+      "desc": "The entry at position [1,2] in the matrix."
+    },
+    {
+      "name": "var c: CGFloat",
+      "desc": "The entry at position [2,1] in the matrix."
+    },
+    {
+      "name": "var d: CGFloat",
+      "desc": "The entry at position [2,2] in the matrix."
+    },
+    {
+      "name": "var tx: CGFloat",
+      "desc": "The entry at position [3,1] in the matrix."
+    },
+    {
+      "name": "var ty: CGFloat",
+      "desc": "The entry at position [3,2] in the matrix."
+    },
+    {
+      "name": "static var identity: CGAffineTransform",
+      "desc": "The identity transform."
+    },
+    {
+      "name": "func concatenating(CGAffineTransform) -> CGAffineTransform",
+      "desc": "Returns an affine transformation matrix constructed by combining two existing affine transforms."
+    },
+    {
+      "name": "func inverted() -> CGAffineTransform",
+      "desc": "Returns an affine transformation matrix constructed by inverting an existing affine transform."
+    },
+    {
+      "name": "func rotated(by: CGFloat) -> CGAffineTransform",
+      "desc": "Returns an affine transformation matrix constructed by rotating an existing affine transform."
+    },
+    {
+      "name": "func scaledBy(x: CGFloat, y: CGFloat) -> CGAffineTransform",
+      "desc": "Returns an affine transformation matrix constructed by scaling an existing affine transform."
+    },
+    {
+      "name": "func translatedBy(x: CGFloat, y: CGFloat) -> CGAffineTransform",
+      "desc": "Returns an affine transformation matrix constructed by translating an existing affine transform."
+    },
+    {
+      "name": "func encode(to: Encoder)"
+    },
+    {
+      "name": "static func == (CGAffineTransform, CGAffineTransform) -> Bool"
+    }
+  ],
+  "declaration": "struct CGAffineTransform",
+  "conformsTo": [
+    "Decodable",
+    "Encodable",
+    "Equatable"
+  ]
+}

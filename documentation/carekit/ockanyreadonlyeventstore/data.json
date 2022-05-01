@@ -1,0 +1,29 @@
+{
+  "path": "/documentation/carekit/ockanyreadonlyeventstore",
+  "type": "Protocol",
+  "name": "OCKAnyReadOnlyEventStore",
+  "desc": "A read-only custom store that fetches event data objects.",
+  "items": [
+    {
+      "name": "func fetchAnyEvent(forTask: OCKAnyTask, occurrence: Int, callbackQueue: DispatchQueue, completion: OCKResultClosure<OCKAnyEvent>)",
+      "desc": "Fetches a single occurrence of a specific task asynchronously from the store."
+    },
+    {
+      "name": "func fetchAnyEvents(taskID: String, query: OCKEventQuery, callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyEvent]>)",
+      "desc": "Fetches all occurrences of a specific task asynchronously from the store."
+    },
+    {
+      "name": "func fetchAdherence(query: OCKAdherenceQuery, callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAdherence]>)",
+      "desc": "Fetches all the events which match a query from a store, and calculates the percent of tasks completed for each day."
+    },
+    {
+      "name": "func fetchInsights(query: OCKInsightQuery, callbackQueue: DispatchQueue, completion: OCKResultClosure<[Double]>)",
+      "desc": "Fetches all the events which match a query from a store, and calculates a metric for a specific task."
+    }
+  ],
+  "declaration": "protocol OCKAnyReadOnlyEventStore",
+  "inheritsFrom": [
+    "OCKAnyReadOnlyOutcomeStore",
+    "OCKAnyReadOnlyTaskStore"
+  ]
+}

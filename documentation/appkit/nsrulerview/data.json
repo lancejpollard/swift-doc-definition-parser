@@ -1,0 +1,110 @@
+{
+  "path": "/documentation/appkit/nsrulerview",
+  "type": "Class",
+  "name": "NSRulerView",
+  "desc": "A ruler and the markers above or to the side of a scroll view’s document view.",
+  "items": [
+    {
+      "name": "init(scrollView: NSScrollView?, orientation: NSRulerView.Orientation)",
+      "desc": "Initializes a newly allocated NSRulerView to have orientation (NSHorizontalRuler or NSVerticalRuler) within aScrollView."
+    },
+    {
+      "name": "init(coder: NSCoder)"
+    },
+    {
+      "name": "class func registerUnit(withName: NSRulerView.UnitName, abbreviation: String, unitToPointsConversionFactor: CGFloat, stepUpCycle: [NSNumber], stepDownCycle: [NSNumber])",
+      "desc": "Registers a new unit of measurement with the NSRulerView class, making it available to all instances of NSRulerView."
+    },
+    {
+      "name": "var measurementUnits: NSRulerView.UnitName",
+      "desc": "The measurement units used by the ruler to unitName."
+    },
+    {
+      "name": "struct NSRulerView.UnitName"
+    },
+    {
+      "name": "var clientView: NSView?",
+      "desc": "The receiver’s client view, if it has one."
+    },
+    {
+      "name": "var accessoryView: NSView?",
+      "desc": "The receiver’s accessory view to aView."
+    },
+    {
+      "name": "var originOffset: CGFloat",
+      "desc": "The distance to the zero hash mark from the bounds origin of the NSScrollView’s document view (not of the receiver’s client view), in the document view’s coordinate system."
+    },
+    {
+      "name": "var markers: [NSRulerMarker]?",
+      "desc": "The receiver’s ruler markers to markers, removing any existing ruler markers and not consulting with the client view about the new markers."
+    },
+    {
+      "name": "func addMarker(NSRulerMarker)",
+      "desc": "Adds aMarker to the receiver, without consulting the client view for approval."
+    },
+    {
+      "name": "func removeMarker(NSRulerMarker)",
+      "desc": "Removes aMarker from the receiver, without consulting the client view for approval."
+    },
+    {
+      "name": "func trackMarker(NSRulerMarker, withMouseEvent: NSEvent) -> Bool",
+      "desc": "Tracks the mouse to add aMarker based on the initial mouse-down or mouse-dragged event theEvent."
+    },
+    {
+      "name": "func moveRulerline(fromLocation: CGFloat, toLocation: CGFloat)",
+      "desc": "Draws temporary lines in the ruler area."
+    },
+    {
+      "name": "func drawHashMarksAndLabels(in: NSRect)",
+      "desc": "Draws the receiver’s hash marks and labels in aRect, which is expressed in the receiver’s coordinate system."
+    },
+    {
+      "name": "func drawMarkers(in: NSRect)",
+      "desc": "Draws the receiver’s markers in aRect, which is expressed in the receiver’s coordinate system."
+    },
+    {
+      "name": "func invalidateHashMarks()",
+      "desc": "Forces recalculation of the hash mark spacing for the next time the receiver is displayed."
+    },
+    {
+      "name": "var scrollView: NSScrollView?",
+      "desc": "The NSScrollView that owns the receiver to scrollView, without retaining it."
+    },
+    {
+      "name": "var orientation: NSRulerView.Orientation",
+      "desc": "The orientation of the receiver to orientation."
+    },
+    {
+      "name": "enum NSRulerView.Orientation",
+      "desc": "These constants are defined to specify a ruler’s orientation and are used by orientation."
+    },
+    {
+      "name": "var reservedThicknessForAccessoryView: CGFloat",
+      "desc": "The room available for the receiver’s accessory view to thickness."
+    },
+    {
+      "name": "var reservedThicknessForMarkers: CGFloat",
+      "desc": "The room available for ruler markers to thickness."
+    },
+    {
+      "name": "var ruleThickness: CGFloat",
+      "desc": "The thickness of the area where ruler hash marks and labels are drawn."
+    },
+    {
+      "name": "var requiredThickness: CGFloat",
+      "desc": "The thickness needed for proper tiling of the receiver within an NSScrollView."
+    },
+    {
+      "name": "var baselineLocation: CGFloat",
+      "desc": "The location of the receiver’s baseline, in its own coordinate system."
+    },
+    {
+      "name": "var isFlipped: Bool",
+      "desc": "A Boolean that indicates if the ruler view's coordinate system is flipped."
+    }
+  ],
+  "declaration": "class NSRulerView : NSView",
+  "inheritsFrom": [
+    "NSView"
+  ]
+}

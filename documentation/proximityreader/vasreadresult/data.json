@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/proximityreader/vasreadresult",
+  "type": "Structure",
+  "name": "VASReadResult",
+  "desc": "The result of a request to read loyalty card information.",
+  "items": [
+    {
+      "name": "init(id: String, entries: [VASReadResult.ReadEntry])",
+      "desc": "Creates a new result object with the specified identifier and customer entries."
+    },
+    {
+      "name": "let entries: [VASReadResult.ReadEntry]",
+      "desc": "The list of loyalty reward card entries received from the customer."
+    },
+    {
+      "name": "struct ReadEntry",
+      "desc": "An object containing encrypted data associated with a customer’s loyalty or reward pass."
+    },
+    {
+      "name": "let id: String",
+      "desc": "A unique identifier string for the requested read operation."
+    },
+    {
+      "name": "typealias ID",
+      "desc": "A type representing the stable identity of the entity associated with an instance."
+    }
+  ],
+  "declaration": "struct VASReadResult",
+  "conformsTo": [
+    "Identifiable"
+  ]
+}

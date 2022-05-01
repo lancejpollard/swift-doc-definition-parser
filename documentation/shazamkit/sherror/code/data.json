@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/shazamkit/sherror/code",
+  "type": "Enumeration",
+  "name": "SHError.Code",
+  "desc": "Codes for the errors that Shazam produces.",
+  "items": [
+    {
+      "name": "case matchAttemptFailed",
+      "desc": "The error code to indicate when a Shazam Music catalog server issue prevents finding a match."
+    },
+    {
+      "name": "case signatureInvalid",
+      "desc": "The error code to indicate that the system is unable to generate a signature from the audio."
+    },
+    {
+      "name": "case signatureDurationInvalid",
+      "desc": "The error code to indicate that the length of the generated signature is too long or too short to make a match in the catalog."
+    },
+    {
+      "name": "case invalidAudioFormat",
+      "desc": "The error code to indicate an unsupported audio format."
+    },
+    {
+      "name": "case audioDiscontinuity",
+      "desc": "The error code to indicate the use of noncontiguous audio to request a match."
+    },
+    {
+      "name": "case customCatalogInvalidURL",
+      "desc": "The error code to indicate that the format for the custom catalog URL is invalid."
+    },
+    {
+      "name": "case customCatalogInvalid",
+      "desc": "The error code to indicate when the custom catalog fails to load due to an invalid format."
+    },
+    {
+      "name": "case mediaLibrarySyncFailed",
+      "desc": "The error code to indicate when the system fails to add one or more media items to the user’s Shazam library."
+    },
+    {
+      "name": "let SHErrorDomain: String",
+      "desc": "The error domain for specific errors for ShazamKit."
+    }
+  ],
+  "declaration": "enum SHError.Code : Int, _ErrorCodeProtocol, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/uikit/uigraphicsrenderer",
+  "type": "Class",
+  "name": "UIGraphicsRenderer",
+  "desc": "An abstract base class for creating graphics renderers.",
+  "items": [
+    {
+      "name": "init(bounds: CGRect)",
+      "desc": "Creates a new graphics renderer with the specified bounds and a default format."
+    },
+    {
+      "name": "init(bounds: CGRect, format: UIGraphicsRendererFormat)",
+      "desc": "Creates a new graphics renderer with the given bounds and format."
+    },
+    {
+      "name": "var allowsImageOutput: Bool",
+      "desc": "A Boolean value specifying whether the renderer can create output images."
+    },
+    {
+      "name": "var format: UIGraphicsRendererFormat",
+      "desc": "The format used to create the graphics renderer."
+    },
+    {
+      "name": "func runDrawingActions((UIGraphicsRendererContext) -> Void, completionActions: ((UIGraphicsRendererContext) -> Void)?)",
+      "desc": "Performs drawing actions on a Core Graphics context that the renderer prepares."
+    },
+    {
+      "name": "typealias UIGraphicsDrawingActions",
+      "desc": "A closure that executes a set of drawing instructions that the renderer applies to the Core Graphics context."
+    },
+    {
+      "name": "class func context(with: UIGraphicsRendererFormat) -> CGContext?",
+      "desc": "Creates a Core Graphics context configured according to the supplied format object."
+    },
+    {
+      "name": "class func prepare(CGContext, with: UIGraphicsRendererContext)",
+      "desc": "Applies the configuration specified in the renderer context to the Core Graphics context."
+    },
+    {
+      "name": "class func rendererContextClass() -> AnyClass",
+      "desc": "Specifies the drawing context class used by this graphics renderer."
+    }
+  ],
+  "declaration": "class UIGraphicsRenderer : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

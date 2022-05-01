@@ -1,0 +1,57 @@
+{
+  "path": "/documentation/swift_packages/package/dependency",
+  "type": "Class",
+  "name": "Package.Dependency",
+  "desc": "A package dependency of a Swift package.",
+  "items": [
+    {
+      "name": "static func package(url: String, from: Version) -> Package.Dependency",
+      "desc": "Adds a package dependency that uses the version requirement, starting with the given minimum version, going up to the next major version."
+    },
+    {
+      "name": "static func package(url: String, Range<Version>) -> Package.Dependency",
+      "desc": "Adds a package dependency starting with a specific minimum version, up to but not including a specified maximum version."
+    },
+    {
+      "name": "static func package(url: String, ClosedRange<Version>) -> Package.Dependency",
+      "desc": "Adds a package dependency starting with a specific minimum version, going up to and including a specific maximum version."
+    },
+    {
+      "name": "static func package(path: String) -> Package.Dependency",
+      "desc": "Adds a dependency to a local package on the filesystem."
+    },
+    {
+      "name": "struct Version",
+      "desc": "A version according to the semantic versioning specification."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes this value into the given encoder."
+    },
+    {
+      "name": "let kind: Package.Dependency.Kind"
+    },
+    {
+      "name": "static func package(name: String, path: String) -> Package.Dependency"
+    },
+    {
+      "name": "static func package(url: String, branch: String) -> Package.Dependency"
+    },
+    {
+      "name": "static func package(url: String, exact: Version) -> Package.Dependency"
+    },
+    {
+      "name": "static func package(url: String, revision: String) -> Package.Dependency"
+    },
+    {
+      "name": "enum Package.Dependency.Kind"
+    },
+    {
+      "name": "enum Package.Dependency.SourceControlRequirement"
+    }
+  ],
+  "declaration": "class Dependency",
+  "conformsTo": [
+    "Encodable"
+  ]
+}

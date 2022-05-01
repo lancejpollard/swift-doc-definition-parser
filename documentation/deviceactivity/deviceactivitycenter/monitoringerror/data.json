@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/deviceactivity/deviceactivitycenter/monitoringerror",
+  "type": "Enumeration",
+  "name": "DeviceActivityCenter.MonitoringError",
+  "desc": "Errors that may occur when starting to monitor an activity.",
+  "items": [
+    {
+      "name": "case excessiveActivities",
+      "desc": "The calling process is monitoring too many activities."
+    },
+    {
+      "name": "case intervalTooLong",
+      "desc": "The activity’s schedule has an interval that is too long."
+    },
+    {
+      "name": "case intervalTooShort",
+      "desc": "The activity’s schedule has an interval that is too short."
+    },
+    {
+      "name": "case invalidDateComponents",
+      "desc": "The schedule’s date range is invalid."
+    },
+    {
+      "name": "case unauthorized",
+      "desc": "The calling process isn’t authorized to monitor device activity."
+    },
+    {
+      "name": "var failureReason: String?",
+      "desc": "A localized message that describes the reason for the failure."
+    },
+    {
+      "name": "var helpAnchor: String?",
+      "desc": "A localized message that provides a help text if the user requests help."
+    },
+    {
+      "name": "var localizedDescription: String",
+      "desc": "A string that contains the localized description of the error."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values aren’t equal."
+    },
+    {
+      "name": "static func == (DeviceActivityCenter.MonitoringError, DeviceActivityCenter.MonitoringError) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "var errorDescription: String?",
+      "desc": "A localized message that describes what error occurred."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "var recoverySuggestion: String?",
+      "desc": "A localized message that describes how to recover from the failure."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    }
+  ],
+  "declaration": "enum MonitoringError",
+  "conformsTo": [
+    "Equatable",
+    "Error",
+    "Hashable",
+    "LocalizedError",
+    "Sendable"
+  ]
+}

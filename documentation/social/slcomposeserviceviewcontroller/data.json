@@ -1,0 +1,85 @@
+{
+  "path": "/documentation/social/slcomposeserviceviewcontroller",
+  "type": "Class",
+  "name": "SLComposeServiceViewController",
+  "desc": "A view controller that you present from your share app extension, allowing the user to compose social media posts.",
+  "items": [
+    {
+      "name": "func configurationItems() -> [Any]!",
+      "desc": "Returns configuration items to display in the compose view."
+    },
+    {
+      "name": "class SLComposeSheetConfigurationItem",
+      "desc": "An object that provides additional configuration details to use when configuring a composition interface."
+    },
+    {
+      "name": "func reloadConfigurationItems()",
+      "desc": "Reloads the list of configuration items."
+    },
+    {
+      "name": "var contentText: String!",
+      "desc": "A string that represents the text which the user entered into the compose view’s text view."
+    },
+    {
+      "name": "var placeholder: String!",
+      "desc": "A string that’s displayed in the compose view’s text view when the text view is empty."
+    },
+    {
+      "name": "var textView: UITextView!",
+      "desc": "The editable text view in the compose view."
+    },
+    {
+      "name": "func pushConfigurationViewController(UIViewController!)",
+      "desc": "Presents a configuration view controller that lets the user configure the post."
+    },
+    {
+      "name": "func popConfigurationViewController()",
+      "desc": "Dismisses the current configuration view controller."
+    },
+    {
+      "name": "func presentationAnimationDidFinish()",
+      "desc": "Tells the compose view controller that the presentation animation is finished."
+    },
+    {
+      "name": "func didSelectCancel()",
+      "desc": "Sent to the compose view after the cancel animation finishes."
+    },
+    {
+      "name": "func didSelectPost()",
+      "desc": "Sent to the compose view after the post animation finishes."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Starts the animated dismissal of the compose view."
+    },
+    {
+      "name": "var charactersRemaining: NSNumber!",
+      "desc": "The number of characters remaining in a custom character limit."
+    },
+    {
+      "name": "func isContentValid() -> Bool",
+      "desc": "A Boolean value that indicates whether the current content and attachments are valid."
+    },
+    {
+      "name": "func validateContent()",
+      "desc": "Performs validation of the current content and updates the state of the Post button, if appropriate."
+    },
+    {
+      "name": "func loadPreviewView() -> UIView!",
+      "desc": "Loads a view that displays a preview of the attachments in the extension context."
+    },
+    {
+      "name": "var autoCompletionViewController: UIViewController!",
+      "desc": "The view controller that manages an autocompletion view for suggesting common text completions while users type."
+    }
+  ],
+  "declaration": "class SLComposeServiceViewController : UIViewController",
+  "inheritsFrom": [
+    "NSViewController",
+    "UIViewController"
+  ],
+  "conformsTo": [
+    "NSTextViewDelegate",
+    "UITextViewDelegate"
+  ]
+}

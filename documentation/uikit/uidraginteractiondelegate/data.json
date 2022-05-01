@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/uikit/uidraginteractiondelegate",
+  "type": "Protocol",
+  "name": "UIDragInteractionDelegate",
+  "desc": "The interface for configuring and controlling a drag interaction.",
+  "items": [
+    {
+      "name": "func dragInteraction(UIDragInteraction, itemsForBeginning: UIDragSession) -> [UIDragItem]",
+      "desc": "Asks the delegate for the array of drag items for an impending drag interaction."
+    },
+    {
+      "name": "func dragInteraction(UIDragInteraction, itemsForAddingTo: UIDragSession, withTouchAt: CGPoint) -> [UIDragItem]",
+      "desc": "Asks the delegate for the drag items to add to an in-progress drag session, in response to a user gesture to add the items."
+    },
+    {
+      "name": "func dragInteraction(UIDragInteraction, sessionForAddingItems: [UIDragSession], withTouchAt: CGPoint) -> UIDragSession?",
+      "desc": "Asks the delegate which drag session to add drag items to when there is more than one in-progress session."
+    },
+    {
+      "name": "func dragInteraction(UIDragInteraction, willAnimateLiftWith: UIDragAnimating, session: UIDragSession)",
+      "desc": "Tells the delegate the system's lift animation is about to start."
+    },
+    {
+      "name": "func dragInteraction(UIDragInteraction, item: UIDragItem, willAnimateCancelWith: UIDragAnimating)",
+      "desc": "Tells the delegate the system's cancellation animation is about to start."
+    },
+    {
+      "name": "func dragInteraction(UIDragInteraction, sessionWillBegin: UIDragSession)",
+      "desc": "Tells the delegate the lift animation has finished and the user is starting to move the items across the screen."
+    },
+    {
+      "name": "func dragInteraction(UIDragInteraction, session: UIDragSession, willAdd: [UIDragItem], for: UIDragInteraction)",
+      "desc": "Tells the delegate an interaction is about to add items to a drag session."
+    },
+    {
+      "name": "func dragInteraction(UIDragInteraction, sessionDidMove: UIDragSession)",
+      "desc": "Tells the delegate the user moved the drag items to a new location on the screen."
+    },
+    {
+      "name": "func dragInteraction(UIDragInteraction, session: UIDragSession, willEndWith: UIDropOperation)",
+      "desc": "Tells the delegate the drag activity will end with the specified operation."
+    },
+    {
+      "name": "func dragInteraction(UIDragInteraction, session: UIDragSession, didEndWith: UIDropOperation)",
+      "desc": "Tells the delegate the drag activity and its related animations have finished."
+    },
+    {
+      "name": "func dragInteraction(UIDragInteraction, sessionDidTransferItems: UIDragSession)",
+      "desc": "Tells the delegate the destination view has received the data for the drag items."
+    },
+    {
+      "name": "func dragInteraction(UIDragInteraction, previewForLifting: UIDragItem, session: UIDragSession) -> UITargetedDragPreview?",
+      "desc": "Asks the delegate for the targeted drag item preview that will appear during the lift animation."
+    },
+    {
+      "name": "func dragInteraction(UIDragInteraction, previewForCancelling: UIDragItem, withDefault: UITargetedDragPreview) -> UITargetedDragPreview?",
+      "desc": "Asks the delegate for the targeted drag item preview to show during the cancellation animation."
+    },
+    {
+      "name": "func dragInteraction(UIDragInteraction, prefersFullSizePreviewsFor: UIDragSession) -> Bool",
+      "desc": "Asks the delegate whether the preview should appear in its original size or a scaled size."
+    },
+    {
+      "name": "func dragInteraction(UIDragInteraction, sessionIsRestrictedToDraggingApplication: UIDragSession) -> Bool",
+      "desc": "Asks the delegate whether the system should restrict the drag session to the app that started the session."
+    },
+    {
+      "name": "func dragInteraction(UIDragInteraction, sessionAllowsMoveOperation: UIDragSession) -> Bool",
+      "desc": "Asks the delegate whether the session allows the move operation."
+    }
+  ],
+  "declaration": "@MainActor protocol UIDragInteractionDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

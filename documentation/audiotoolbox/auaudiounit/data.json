@@ -1,0 +1,398 @@
+{
+  "path": "/documentation/audiotoolbox/auaudiounit",
+  "type": "Class",
+  "name": "AUAudioUnit",
+  "desc": "The AUAudioUnit class defines a host’s interface to an audio unit.",
+  "items": [
+    {
+      "name": "init(componentDescription: AudioComponentDescription)",
+      "desc": "Synchronously initializes a new audio unit object."
+    },
+    {
+      "name": "init(componentDescription: AudioComponentDescription, options: AudioComponentInstantiationOptions)",
+      "desc": "Synchronously initializes a new audio unit object."
+    },
+    {
+      "name": "class func instantiate(with: AudioComponentDescription, options: AudioComponentInstantiationOptions, completionHandler: (AUAudioUnit?, Error?) -> Void)",
+      "desc": "Asynchronously creates an audio unit instance."
+    },
+    {
+      "name": "var inputBusses: AUAudioUnitBusArray",
+      "desc": "An array containing the audio unit’s input connection points."
+    },
+    {
+      "name": "var outputBusses: AUAudioUnitBusArray",
+      "desc": "An array containing the audio unit’s output connection points."
+    },
+    {
+      "name": "class func registerSubclass(AnyClass, as: AudioComponentDescription, name: String, version: UInt32)",
+      "desc": "Registers an audio unit subclass."
+    },
+    {
+      "name": "func shouldChange(to: AVAudioFormat, for: AUAudioUnitBus) -> Bool",
+      "desc": "This is called when you set the format on a bus."
+    },
+    {
+      "name": "func setRenderResourcesAllocated(Bool)",
+      "desc": "Sets the Boolean value of the renderResourcesAllocated property."
+    },
+    {
+      "name": "var internalRenderBlock: AUInternalRenderBlock",
+      "desc": "The block which you must provide, via a getter, in order to implement rendering."
+    },
+    {
+      "name": "var midiOutputBufferSizeHint: Int"
+    },
+    {
+      "name": "typealias AUInternalRenderBlock",
+      "desc": "A block to render the audio unit."
+    },
+    {
+      "name": "var parameterTree: AUParameterTree?",
+      "desc": "An audio unit’s parameters, organized in a tree hierarchy."
+    },
+    {
+      "name": "var allParameterValues: Bool",
+      "desc": "Special read-only property for KVO."
+    },
+    {
+      "name": "func parametersForOverview(withCount: Int) -> [NSNumber]",
+      "desc": "Returns the audio unit’s most important parameters."
+    },
+    {
+      "name": "var musicalContextBlock: AUHostMusicalContextBlock?",
+      "desc": "A callback to the host for musical context information."
+    },
+    {
+      "name": "var transportStateBlock: AUHostTransportStateBlock?",
+      "desc": "A callback to the host for transport state information."
+    },
+    {
+      "name": "var contextName: String?",
+      "desc": "Information about the host context in which the audio unit is connected, for display in the audio unit’s view."
+    },
+    {
+      "name": "var supportsMPE: Bool",
+      "desc": "A Boolean value that indicates whether the audio unit supports multi-dimensional polyphonic expression."
+    },
+    {
+      "name": "typealias AUHostMusicalContextBlock",
+      "desc": "A block through which hosts provide musical tempo, time signature, and beat position."
+    },
+    {
+      "name": "typealias AUHostTransportStateBlock",
+      "desc": "A block through which hosts provide information about their transport state."
+    },
+    {
+      "name": "var isMusicDeviceOrEffect: Bool",
+      "desc": "Specifies whether an audio unit responds to MIDI events."
+    },
+    {
+      "name": "var virtualMIDICableCount: Int",
+      "desc": "The number of virtual MIDI cables implemented by a music device or effect."
+    },
+    {
+      "name": "var scheduleMIDIEventBlock: AUScheduleMIDIEventBlock?",
+      "desc": "A block used to schedule MIDI events."
+    },
+    {
+      "name": "var midiOutputEventBlock: AUMIDIOutputEventBlock?"
+    },
+    {
+      "name": "var midiOutputNames: [String]",
+      "desc": "The names of the MIDI outputs."
+    },
+    {
+      "name": "typealias AUScheduleMIDIEventBlock",
+      "desc": "A block to schedule MIDI events."
+    },
+    {
+      "name": "typealias AUMIDIOutputEventBlock"
+    },
+    {
+      "name": "var fullState: [String : Any]?",
+      "desc": "A persistable snapshot of the audio unit’s properties and parameters, suitable for saving as a user preset."
+    },
+    {
+      "name": "var fullStateForDocument: [String : Any]?",
+      "desc": "A persistable snapshot of the audio unit’s properties and parameters, suitable for saving in a user’s document."
+    },
+    {
+      "name": "var factoryPresets: [AUAudioUnitPreset]?",
+      "desc": "A collection of presets provided by the audio unit’s developer."
+    },
+    {
+      "name": "var currentPreset: AUAudioUnitPreset?",
+      "desc": "The audio unit’s last-selected preset."
+    },
+    {
+      "name": "var supportsUserPresets: Bool"
+    },
+    {
+      "name": "var userPresets: [AUAudioUnitPreset]"
+    },
+    {
+      "name": "func saveUserPreset(AUAudioUnitPreset)"
+    },
+    {
+      "name": "func deleteUserPreset(AUAudioUnitPreset)"
+    },
+    {
+      "name": "func presetState(for: AUAudioUnitPreset) -> [String : Any]"
+    },
+    {
+      "name": "func allocateRenderResources()",
+      "desc": "Allocates resources required to render audio."
+    },
+    {
+      "name": "func deallocateRenderResources()",
+      "desc": "Deallocates resources required to render audio."
+    },
+    {
+      "name": "func reset()",
+      "desc": "Resets transitory rendering state to its initial state."
+    },
+    {
+      "name": "var renderResourcesAllocated: Bool",
+      "desc": "Determines whether the audio unit has allocated render resources."
+    },
+    {
+      "name": "var renderBlock: AURenderBlock",
+      "desc": "The block that hosts use to ask the audio unit to render audio."
+    },
+    {
+      "name": "var scheduleParameterBlock: AUScheduleParameterBlock",
+      "desc": "The block that hosts use to schedule parameters."
+    },
+    {
+      "name": "var maximumFramesToRender: AUAudioFrameCount",
+      "desc": "The maximum number of frames that the audio unit can render at once."
+    },
+    {
+      "name": "func token(byAddingRenderObserver: AURenderObserver) -> Int",
+      "desc": "Adds a block to be called on each render cycle."
+    },
+    {
+      "name": "func removeRenderObserver(Int)",
+      "desc": "Removes an observer block previously added to the render cycle."
+    },
+    {
+      "name": "typealias AURenderObserver",
+      "desc": "A block called when an audio unit renders audio."
+    },
+    {
+      "name": "var latency: TimeInterval",
+      "desc": "The audio unit’s processing latency, in seconds."
+    },
+    {
+      "name": "var tailTime: TimeInterval",
+      "desc": "The audio unit’s tail time, in seconds."
+    },
+    {
+      "name": "var renderQuality: Int",
+      "desc": "Provides a trade-off between rendering quality and CPU load."
+    },
+    {
+      "name": "var shouldBypassEffect: Bool",
+      "desc": "Determines whether an effect should route input directly to output, without any processing."
+    },
+    {
+      "name": "var canProcessInPlace: Bool",
+      "desc": "Determines whether an audio unit can process in place."
+    },
+    {
+      "name": "var isRenderingOffline: Bool",
+      "desc": "Communicates to an audio unit that it is rendering offline."
+    },
+    {
+      "name": "var componentDescription: AudioComponentDescription",
+      "desc": "The component description with which the audio unit was created."
+    },
+    {
+      "name": "var component: AudioComponent",
+      "desc": "The component found in the component description with which the audio unit was created."
+    },
+    {
+      "name": "var componentName: String?",
+      "desc": "The audio unit’s component’s name."
+    },
+    {
+      "name": "var componentVersion: UInt32",
+      "desc": "The audio unit’s component’s version."
+    },
+    {
+      "name": "var audioUnitName: String?",
+      "desc": "The audio unit’s name, derived from the component’s name."
+    },
+    {
+      "name": "var audioUnitShortName: String?"
+    },
+    {
+      "name": "var manufacturerName: String?",
+      "desc": "The manufacturer’s name, derived from the component’s name."
+    },
+    {
+      "name": "var channelCapabilities: [NSNumber]?",
+      "desc": "Expresses valid combinations of input and output channels."
+    },
+    {
+      "name": "var channelMap: [NSNumber]?"
+    },
+    {
+      "name": "func profileState(forCable: UInt8, channel: MIDIChannelNumber) -> MIDICIProfileState"
+    },
+    {
+      "name": "func enable(MIDICIProfile, cable: UInt8, onChannel: MIDIChannelNumber)"
+    },
+    {
+      "name": "func disableProfile(MIDICIProfile, cable: UInt8, onChannel: MIDIChannelNumber)"
+    },
+    {
+      "name": "var profileChangedBlock: AUMIDICIProfileChangedBlock?"
+    },
+    {
+      "name": "var deviceID: AUAudioObjectID",
+      "desc": "Gets the I/O hardware device."
+    },
+    {
+      "name": "func setDeviceID(AUAudioObjectID)",
+      "desc": "Sets the I/O hardware device."
+    },
+    {
+      "name": "var canPerformInput: Bool",
+      "desc": "Determines whether the I/O device can perform input."
+    },
+    {
+      "name": "var canPerformOutput: Bool",
+      "desc": "Determines whether the I/O device can perform output."
+    },
+    {
+      "name": "var isInputEnabled: Bool",
+      "desc": "A flag enabling audio input from the unit."
+    },
+    {
+      "name": "var isOutputEnabled: Bool",
+      "desc": "A flag enabling audio output from the unit."
+    },
+    {
+      "name": "var inputHandler: AUInputHandler?",
+      "desc": "The block that the output unit will call to notify when input is available."
+    },
+    {
+      "name": "var outputProvider: AURenderPullInputBlock?",
+      "desc": "The block that the output unit will call to get audio to send to the output."
+    },
+    {
+      "name": "var deviceInputLatency: TimeInterval",
+      "desc": "The audio device’s input latency, in seconds."
+    },
+    {
+      "name": "var deviceOutputLatency: TimeInterval",
+      "desc": "The audio devic’s output latency, in seconds."
+    },
+    {
+      "name": "func startHardware()",
+      "desc": "Starts the audio hardware."
+    },
+    {
+      "name": "func stopHardware()",
+      "desc": "Stops the audio hardware."
+    },
+    {
+      "name": "typealias AURenderPullInputBlock",
+      "desc": "A block to supply audio input to a render block."
+    },
+    {
+      "name": "var providesUserInterface: Bool",
+      "desc": "A Boolean that indicates whether the audio unit provides a user interface, normally in the form of a view controller."
+    },
+    {
+      "name": "func supportedViewConfigurations([AUAudioUnitViewConfiguration]) -> IndexSet"
+    },
+    {
+      "name": "func select(AUAudioUnitViewConfiguration)"
+    },
+    {
+      "name": "var isRunning: Bool"
+    },
+    {
+      "name": "var isLoadedInProcess: Bool"
+    },
+    {
+      "name": "typealias AURenderBlock",
+      "desc": "A block to render the audio unit."
+    },
+    {
+      "name": "typealias AUInputHandler",
+      "desc": "A block to notify the host of an I/O unit that an input is available."
+    },
+    {
+      "name": "var kAUPresetNumberKey: String"
+    },
+    {
+      "name": "var kAUPresetCPULoadKey: String"
+    },
+    {
+      "name": "var kAUPresetDataKey: String"
+    },
+    {
+      "name": "var kAUPresetElementNameKey: String"
+    },
+    {
+      "name": "var kAUPresetExternalFileRefs: String"
+    },
+    {
+      "name": "var kAUPresetMASDataKey: String"
+    },
+    {
+      "name": "var kAUPresetManufacturerKey: String"
+    },
+    {
+      "name": "var kAUPresetNameKey: String"
+    },
+    {
+      "name": "var kAUPresetPartKey: String",
+      "desc": "If present, distinguishes a global preset that is set on the global scope from a part-based preset that is set on the part scope. The value of this key is defined by the audio unit it applies to."
+    },
+    {
+      "name": "var kAUPresetRenderQualityKey: String"
+    },
+    {
+      "name": "var kAUPresetSubtypeKey: String"
+    },
+    {
+      "name": "var kAUPresetTypeKey: String"
+    },
+    {
+      "name": "var kAUPresetVSTDataKey: String",
+      "desc": "VST state from a VST “bank.”"
+    },
+    {
+      "name": "var kAUPresetVSTPresetKey: String",
+      "desc": "VST state from a VST “preset.”"
+    },
+    {
+      "name": "var kAUPresetVersionKey: String"
+    },
+    {
+      "name": "var audioUnitMIDIProtocol: MIDIProtocolID"
+    },
+    {
+      "name": "var hostMIDIProtocol: MIDIProtocolID"
+    },
+    {
+      "name": "var midiOutputEventListBlock: AUMIDIEventListBlock?"
+    },
+    {
+      "name": "var scheduleMIDIEventListBlock: AUMIDIEventListBlock?"
+    },
+    {
+      "name": "func requestViewController(completionHandler: (UIViewController?) -> Void)",
+      "desc": "Requests an audio unit's custom view controller."
+    }
+  ],
+  "declaration": "class AUAudioUnit : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "path": "/documentation/appkit/nsbezierpath",
+  "type": "Class",
+  "name": "NSBezierPath",
+  "desc": "An object that can create paths using PostScript-style commands.",
+  "items": [
+    {
+      "name": "init(ovalIn: NSRect)",
+      "desc": "Creates and returns a new Bézier path object initialized with an oval path inscribed in the specified rectangle."
+    },
+    {
+      "name": "init(rect: NSRect)",
+      "desc": "Creates and returns a new Bézier path object initialized with a rectangular path."
+    },
+    {
+      "name": "init(roundedRect: NSRect, xRadius: CGFloat, yRadius: CGFloat)",
+      "desc": "Creates and returns a new Bézier path object initialized with a rounded rectangular path."
+    },
+    {
+      "name": "var flattened: NSBezierPath",
+      "desc": "A flattened version of the path object."
+    },
+    {
+      "name": "var reversed: NSBezierPath",
+      "desc": "A path containing the reversed contents of the current path object."
+    },
+    {
+      "name": "func move(to: NSPoint)",
+      "desc": "Moves the path’s current point to the specified location."
+    },
+    {
+      "name": "func line(to: NSPoint)",
+      "desc": "Appends a straight line to the path."
+    },
+    {
+      "name": "func curve(to: NSPoint, controlPoint1: NSPoint, controlPoint2: NSPoint)",
+      "desc": "Adds a Bezier cubic curve to the path."
+    },
+    {
+      "name": "func close()",
+      "desc": "Closes the most recently added subpath."
+    },
+    {
+      "name": "func relativeMove(to: NSPoint)",
+      "desc": "Moves the path’s current point to a new point whose location is the specified distance from the current point."
+    },
+    {
+      "name": "func relativeLine(to: NSPoint)",
+      "desc": "Appends a straight line segment to the path starting at the current point and moving towards the specified point, relative to the current location."
+    },
+    {
+      "name": "func relativeCurve(to: NSPoint, controlPoint1: NSPoint, controlPoint2: NSPoint)",
+      "desc": "Adds a Bezier cubic curve to the path from the current point to a new location, which is specified as a relative distance from the current point."
+    },
+    {
+      "name": "func append(NSBezierPath)",
+      "desc": "Appends the contents of the specified path object to the path."
+    },
+    {
+      "name": "func appendPoints(NSPointArray, count: Int)",
+      "desc": "Appends a series of line segments to the path."
+    },
+    {
+      "name": "func appendOval(in: NSRect)",
+      "desc": "Appends an oval path to the path, inscribing the oval in the specified rectangle."
+    },
+    {
+      "name": "func appendArc(from: NSPoint, to: NSPoint, radius: CGFloat)",
+      "desc": "Appends an arc to the path."
+    },
+    {
+      "name": "func appendArc(withCenter: NSPoint, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat)",
+      "desc": "Appends an arc of a circle to the path."
+    },
+    {
+      "name": "func appendArc(withCenter: NSPoint, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, clockwise: Bool)",
+      "desc": "Appends an arc of a circle to the path."
+    },
+    {
+      "name": "func appendRect(NSRect)",
+      "desc": "Appends a rectangular path to the path."
+    },
+    {
+      "name": "func appendRoundedRect(NSRect, xRadius: CGFloat, yRadius: CGFloat)",
+      "desc": "Appends a rounded rectangular path to the path."
+    },
+    {
+      "name": "func append(withCGGlyph: CGGlyph, in: NSFont)",
+      "desc": "Appends an outline of the specified glyph to the path."
+    },
+    {
+      "name": "func append(withCGGlyphs: UnsafePointer<CGGlyph>, count: Int, in: NSFont)",
+      "desc": "Appends the outlines of the specified glyphs to the path."
+    },
+    {
+      "name": "var windingRule: NSBezierPath.WindingRule",
+      "desc": "The winding rule used to fill the path."
+    },
+    {
+      "name": "var lineCapStyle: NSBezierPath.LineCapStyle",
+      "desc": "The line cap style for the path."
+    },
+    {
+      "name": "var lineJoinStyle: NSBezierPath.LineJoinStyle",
+      "desc": "The line join style for the path."
+    },
+    {
+      "name": "var lineWidth: CGFloat",
+      "desc": "The width of stroked path lines."
+    },
+    {
+      "name": "var miterLimit: CGFloat",
+      "desc": "The limit at which miter joins are converted to bevel joins."
+    },
+    {
+      "name": "var flatness: CGFloat",
+      "desc": "The accuracy with which curves are rendered."
+    },
+    {
+      "name": "func getLineDash(UnsafeMutablePointer<CGFloat>?, count: UnsafeMutablePointer<Int>?, phase: UnsafeMutablePointer<CGFloat>?)",
+      "desc": "Returns the line-stroking pattern for the receiver."
+    },
+    {
+      "name": "func setLineDash(UnsafePointer<CGFloat>?, count: Int, phase: CGFloat)",
+      "desc": "Sets the line-stroking pattern for the path."
+    },
+    {
+      "name": "class var defaultWindingRule: NSBezierPath.WindingRule",
+      "desc": "Returns the default winding rule used to fill all paths."
+    },
+    {
+      "name": "class var defaultLineCapStyle: NSBezierPath.LineCapStyle",
+      "desc": "Returns the default line cap style for all paths."
+    },
+    {
+      "name": "class var defaultLineJoinStyle: NSBezierPath.LineJoinStyle",
+      "desc": "Returns the default line join style for all paths."
+    },
+    {
+      "name": "class var defaultLineWidth: CGFloat",
+      "desc": "Returns the default line width for the all paths."
+    },
+    {
+      "name": "class var defaultMiterLimit: CGFloat",
+      "desc": "Returns the default miter limit for all paths."
+    },
+    {
+      "name": "class var defaultFlatness: CGFloat",
+      "desc": "The default flatness value for all paths."
+    },
+    {
+      "name": "func stroke()",
+      "desc": "Draws a line along the path using the current stroke color and drawing attributes."
+    },
+    {
+      "name": "func fill()",
+      "desc": "Paints the region enclosed by the path."
+    },
+    {
+      "name": "class func fill(NSRect)",
+      "desc": "Fills the specified rectangular path with the current fill color."
+    },
+    {
+      "name": "class func stroke(NSRect)",
+      "desc": "Strokes the path of the specified rectangle using the current stroke color and the default drawing attributes."
+    },
+    {
+      "name": "class func strokeLine(from: NSPoint, to: NSPoint)",
+      "desc": "Strokes a line between two points using the current stroke color and the default drawing attributes."
+    },
+    {
+      "name": "class func drawPackedGlyphs(UnsafePointer<CChar>, at: NSPoint)",
+      "desc": "Draws a set of packed glyphs at the specified point in the current coordinate system."
+    },
+    {
+      "name": "func addClip()",
+      "desc": "Intersects the area enclosed by the path with the clipping path of the current graphics context and makes the resulting shape the current clipping path."
+    },
+    {
+      "name": "func setClip()",
+      "desc": "Replaces the clipping path of the current graphics context with the area inside the path."
+    },
+    {
+      "name": "class func clip(NSRect)",
+      "desc": "Intersects the specified rectangle with the clipping path of the current graphics context and makes the resulting shape the current clipping path."
+    },
+    {
+      "name": "func contains(NSPoint) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the path contains the specified point."
+    },
+    {
+      "name": "var bounds: NSRect",
+      "desc": "The bounding box of the path."
+    },
+    {
+      "name": "var controlPointBounds: NSRect",
+      "desc": "The bounding box of the path, including any control points."
+    },
+    {
+      "name": "var currentPoint: NSPoint",
+      "desc": "The current point (the trailing point or ending point in the most recently added segment)."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value that indicates whether the path is empty."
+    },
+    {
+      "name": "func transform(using: AffineTransform)",
+      "desc": "Transforms all points in the path using the specified transform."
+    },
+    {
+      "name": "var elementCount: Int",
+      "desc": "The total number of path elements in the path."
+    },
+    {
+      "name": "func element(at: Int) -> NSBezierPath.ElementType",
+      "desc": "Returns the type of path element at the specified index."
+    },
+    {
+      "name": "func element(at: Int, associatedPoints: NSPointArray?) -> NSBezierPath.ElementType",
+      "desc": "Gets the element type and (and optionally) the associated points for the path element at the specified index."
+    },
+    {
+      "name": "func removeAllPoints()",
+      "desc": "Removes all path elements from the path, effectively clearing the path."
+    },
+    {
+      "name": "func setAssociatedPoints(NSPointArray?, at: Int)",
+      "desc": "Changes the points associated with the specified path element."
+    },
+    {
+      "name": "enum NSBezierPath.ElementType",
+      "desc": "Constants that specify basic path element commands."
+    },
+    {
+      "name": "enum NSBezierPath.LineJoinStyle",
+      "desc": "Constants that specify the shape of the joins between connected segments of a stroked path."
+    },
+    {
+      "name": "enum NSBezierPath.LineCapStyle",
+      "desc": "Constants that specify the shape of endpoints for an open path when it is stroked."
+    },
+    {
+      "name": "enum NSBezierPath.WindingRule",
+      "desc": "Constants that specify the winding rule a Bézier path uses."
+    }
+  ],
+  "declaration": "class NSBezierPath : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "path": "/documentation/coreservices/uckeystaterecord",
+  "type": "Structure",
+  "name": "UCKeyStateRecord",
+  "desc": "Determines dead-key state transitions in a 'uchr' resource.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(stateZeroCharData: UCKeyCharSeq, stateZeroNextState: UInt16, stateEntryCount: UInt16, stateEntryFormat: UInt16, stateEntryData: (UInt32))"
+    },
+    {
+      "name": "var stateEntryCount: UInt16",
+      "desc": "An unsigned 16-bit integer specifying the number of elements in the stateEntryData field’s array for a given dead-key state record."
+    },
+    {
+      "name": "var stateEntryData: (UInt32)",
+      "desc": "An array of dead-key state entries, whose size depends on their format, but which will always be a multiple of 4 bytes. Each entry maps from the current dead-key state to the Unicode character(s) that result when a given character key is pressed or to the next dead-key state, if any. The format of the entry is specified by the stateEntryFormat field to be either that of type UCKeyStateEntryTerminal or UCKeyStateEntryRange."
+    },
+    {
+      "name": "var stateEntryFormat: UInt16",
+      "desc": "An unsigned 16-bit integer specifying the format of the data in the stateEntryData field’s array. This should be 0 if the stateEntryCount field is set to 0. Currently available values are kUCKeyStateEntryTerminalFormat and kUCKeyStateEntryRangeFormat; see Key State Entry Formats for descriptions of these values."
+    },
+    {
+      "name": "var stateZeroCharData: UCKeyCharSeq",
+      "desc": "A value of type UCKeyCharSeq specifying the Unicode character(s) produced from a given key code while no dead-key state is in effect."
+    },
+    {
+      "name": "var stateZeroNextState: UInt16",
+      "desc": "An unsigned 16-bit integer specifying the dead-key state produced from a given key code when no previous dead-key state is in effect. If the UCKeyStateRecord structure does not initiate a dead-key state (but only provides terminators for other dead-key states), this will be 0. A non-zero value specifies the resulting new dead-key state and refers to the current state entry within the stateEntryData[] field for the following dead-key state record that is applied."
+    }
+  ],
+  "declaration": "struct UCKeyStateRecord"
+}

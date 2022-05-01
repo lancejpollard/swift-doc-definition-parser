@@ -1,0 +1,144 @@
+{
+  "path": "/documentation/appkit/nsprintoperation",
+  "type": "Class",
+  "name": "NSPrintOperation",
+  "desc": "An object that controls operations that generate Encapsulated PostScript (EPS) code, Portable Document Format (PDF) code, or print jobs.",
+  "items": [
+    {
+      "name": "class func epsOperation(with: NSView, inside: NSRect, to: NSMutableData?) -> NSPrintOperation",
+      "desc": "Creates and returns a new print operation object ready to control the copying of EPS graphics from the specified view."
+    },
+    {
+      "name": "class func epsOperation(with: NSView, inside: NSRect, to: NSMutableData, printInfo: NSPrintInfo) -> NSPrintOperation",
+      "desc": "Creates and returns a new print operation object ready to control the copying of EPS graphics from the specified view using the specified print settings."
+    },
+    {
+      "name": "class func epsOperation(with: NSView, inside: NSRect, toPath: String, printInfo: NSPrintInfo) -> NSPrintOperation",
+      "desc": "Creates and returns a new print operation object ready to control the copying of EPS graphics from the specified view and write the resulting data to the specified file."
+    },
+    {
+      "name": "class func pdfOperation(with: NSView, inside: NSRect, to: NSMutableData) -> NSPrintOperation",
+      "desc": "Creates and returns a new print operation object ready to control the copying of PDF graphics from the specified view."
+    },
+    {
+      "name": "class func pdfOperation(with: NSView, inside: NSRect, to: NSMutableData, printInfo: NSPrintInfo) -> NSPrintOperation",
+      "desc": "Creates and returns a new print operation object ready to control the copying of PDF graphics from the specified view using the specified print settings."
+    },
+    {
+      "name": "class func pdfOperation(with: NSView, inside: NSRect, toPath: String, printInfo: NSPrintInfo) -> NSPrintOperation",
+      "desc": "Creates and returns a new print operation object ready to control the copying of PDF graphics from the specified view and write the resulting data to the specified file."
+    },
+    {
+      "name": "init(view: NSView)",
+      "desc": "Creates and returns an print operation object ready to control the printing of the specified view."
+    },
+    {
+      "name": "init(view: NSView, printInfo: NSPrintInfo)",
+      "desc": "Creates and returns an print operation object ready to control the printing of the specified view using custom print settings."
+    },
+    {
+      "name": "class var current: NSPrintOperation?",
+      "desc": "The current print operation for this thread."
+    },
+    {
+      "name": "var isCopyingOperation: Bool",
+      "desc": "A Boolean value that indicates whether the print operation is an EPS or PDF copy operation."
+    },
+    {
+      "name": "var printInfo: NSPrintInfo",
+      "desc": "The printing information associated with the print operation."
+    },
+    {
+      "name": "class NSPrintInfo",
+      "desc": "An object that stores information that’s used to generate printed output."
+    },
+    {
+      "name": "var view: NSView?",
+      "desc": "The view object that generates the actual data for the print operation."
+    },
+    {
+      "name": "var preferredRenderingQuality: NSPrintOperation.RenderingQuality",
+      "desc": "The printing quality."
+    },
+    {
+      "name": "enum NSPrintOperation.RenderingQuality",
+      "desc": "Constants that specify the print quality in use."
+    },
+    {
+      "name": "func run() -> Bool",
+      "desc": "Runs the print operation on the current thread."
+    },
+    {
+      "name": "func runModal(for: NSWindow, delegate: Any?, didRun: Selector?, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Runs the print operation, calling your custom delegate method upon completion."
+    },
+    {
+      "name": "func cleanUp()",
+      "desc": "Called at the end of a print operation to remove the print operation as the current operation."
+    },
+    {
+      "name": "func deliverResult() -> Bool",
+      "desc": "Delivers the results of the print operation to the intended destination."
+    },
+    {
+      "name": "var showsPrintPanel: Bool",
+      "desc": "A Boolean value that determines whether the print operation displays a print panel."
+    },
+    {
+      "name": "var showsProgressPanel: Bool",
+      "desc": "A Boolean value that determines whether the print operation displays a progress panel."
+    },
+    {
+      "name": "var jobTitle: String?",
+      "desc": "The custom title of the print job."
+    },
+    {
+      "name": "var printPanel: NSPrintPanel",
+      "desc": "The print panel object to use during the operation."
+    },
+    {
+      "name": "var pdfPanel: NSPDFPanel",
+      "desc": "The PDF panel object to use during the operation."
+    },
+    {
+      "name": "var context: NSGraphicsContext?",
+      "desc": "The graphics context object used for generating output."
+    },
+    {
+      "name": "func createContext() -> NSGraphicsContext?",
+      "desc": "Creates the graphics context object used for drawing during the operation."
+    },
+    {
+      "name": "func destroyContext()",
+      "desc": "Destroys the print operation’s graphics context."
+    },
+    {
+      "name": "var currentPage: Int",
+      "desc": "The current page number being printed."
+    },
+    {
+      "name": "var pageRange: NSRange",
+      "desc": "The range of pages associated with the print operation."
+    },
+    {
+      "name": "var pageOrder: NSPrintOperation.PageOrder",
+      "desc": "The print order for the pages of the operation."
+    },
+    {
+      "name": "enum NSPrintOperation.PageOrder",
+      "desc": "Constants that specify the page order."
+    },
+    {
+      "name": "var canSpawnSeparateThread: Bool",
+      "desc": "A Boolean value that determines whether the print operation is allowed to spawn a separate printing thread."
+    },
+    {
+      "name": "static let printOperationExistsException: NSExceptionName",
+      "desc": "The name of an exception raised when there is already a print operation in process."
+    }
+  ],
+  "declaration": "@MainActor class NSPrintOperation : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

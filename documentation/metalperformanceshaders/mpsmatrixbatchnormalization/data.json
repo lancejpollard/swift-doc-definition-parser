@@ -1,0 +1,51 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsmatrixbatchnormalization",
+  "type": "Class",
+  "name": "MPSMatrixBatchNormalization",
+  "desc": "A batch normalization kernel that operates on matrices.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice)"
+    },
+    {
+      "name": "var computeStatistics: Bool"
+    },
+    {
+      "name": "var epsilon: Float"
+    },
+    {
+      "name": "var sourceInputFeatureChannels: Int"
+    },
+    {
+      "name": "var sourceNumberOfFeatureVectors: Int"
+    },
+    {
+      "name": "func copy(with: NSZone?, device: MTLDevice?) -> Self"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, inputMatrix: MPSMatrix, meanVector: MPSVector, varianceVector: MPSVector, gammaVector: MPSVector?, betaVector: MPSVector?, resultMatrix: MPSMatrix)"
+    },
+    {
+      "name": "func neuronParameterA() -> Float"
+    },
+    {
+      "name": "func neuronParameterB() -> Float"
+    },
+    {
+      "name": "func neuronParameterC() -> Float"
+    },
+    {
+      "name": "func neuronType() -> MPSCNNNeuronType"
+    },
+    {
+      "name": "func setNeuronType(MPSCNNNeuronType, parameterA: Float, parameterB: Float, parameterC: Float)"
+    }
+  ],
+  "declaration": "class MPSMatrixBatchNormalization : MPSMatrixUnaryKernel",
+  "inheritsFrom": [
+    "MPSMatrixUnaryKernel"
+  ]
+}

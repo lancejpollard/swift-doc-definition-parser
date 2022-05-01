@@ -1,0 +1,25 @@
+{
+  "path": "/documentation/uikit/uidropsession",
+  "type": "Protocol",
+  "name": "UIDropSession",
+  "desc": "The interface for querying a drop session about its state and associated drag items.",
+  "items": [
+    {
+      "name": "var localDragSession: UIDragSession?",
+      "desc": "The drag session that corresponds to this drop session, for in-app drag activities."
+    },
+    {
+      "name": "func loadObjects(ofClass: NSItemProviderReading.Type, completion: ([NSItemProviderReading]) -> Void) -> Progress",
+      "desc": "Creates and loads a new instance of the specified class for each drag item in the session."
+    },
+    {
+      "name": "var progressIndicatorStyle: UIDropSessionProgressIndicatorStyle",
+      "desc": "The drop-progress indicator style associated with the drop session."
+    }
+  ],
+  "declaration": "@MainActor protocol UIDropSession",
+  "inheritsFrom": [
+    "ProgressReporting",
+    "UIDragDropSession"
+  ]
+}

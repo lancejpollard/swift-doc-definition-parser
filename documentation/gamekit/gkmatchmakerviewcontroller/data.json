@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/gamekit/gkmatchmakerviewcontroller",
+  "type": "Class",
+  "name": "GKMatchmakerViewController",
+  "desc": "An interface that allows a player to invite other players to a real-time game and automatch to fill any empty slots.",
+  "items": [
+    {
+      "name": "init?(matchRequest: GKMatchRequest)",
+      "desc": "Creates a matchmaker view controller for the local player to start inviting other players."
+    },
+    {
+      "name": "init?(invite: GKInvite)",
+      "desc": "Creates a matchmaker view controller to present to a player who accepts an invitation."
+    },
+    {
+      "name": "var matchRequest: GKMatchRequest",
+      "desc": "The configuration for the desired match."
+    },
+    {
+      "name": "var canStartWithMinimumPlayers: Bool",
+      "desc": "A Boolean value that indicates whether your game can start after a minimum number of players join a match."
+    },
+    {
+      "name": "var matchmakingMode: GKMatchmakingMode",
+      "desc": "The mode that a multiplayer game uses to find players."
+    },
+    {
+      "name": "enum GKMatchmakingMode",
+      "desc": "Possible modes that a multiplayer game uses to find matches."
+    },
+    {
+      "name": "var matchmakerDelegate: GKMatchmakerViewControllerDelegate?",
+      "desc": "The object that handles matchmaker view controller changes."
+    },
+    {
+      "name": "protocol GKMatchmakerViewControllerDelegate",
+      "desc": "An object that handles when the status of matchmaking changes."
+    },
+    {
+      "name": "func addPlayers(to: GKMatch)",
+      "desc": "Invites additional players to join an existing match."
+    },
+    {
+      "name": "var isHosted: Bool",
+      "desc": "A Boolean value that indicates whether the match is hosted or peer-to-peer."
+    },
+    {
+      "name": "func setHostedPlayer(GKPlayer, didConnect: Bool)",
+      "desc": "Updates the connection status of a player in a hosted game."
+    }
+  ],
+  "declaration": "class GKMatchmakerViewController : UINavigationController",
+  "inheritsFrom": [
+    "NSViewController",
+    "UINavigationController"
+  ],
+  "conformsTo": [
+    "GKViewController"
+  ]
+}

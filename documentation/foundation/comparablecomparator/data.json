@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/foundation/comparablecomparator",
+  "type": "Generic Structure",
+  "name": "ComparableComparator",
+  "desc": "A comparator that compares types according to their conformance to the comparable protocol.",
+  "items": [
+    {
+      "name": "func compare(Compared, Compared) -> ComparisonResult",
+      "desc": "Provides the relative ordering of two elements."
+    },
+    {
+      "name": "var order: SortOrder",
+      "desc": "The sort order that the comparator uses to compare."
+    },
+    {
+      "name": "static func == (ComparableComparator<Compared>, ComparableComparator<Compared>) -> Bool",
+      "desc": "Indicates whether two comparators are equal."
+    },
+    {
+      "name": "static func != (ComparableComparator<Compared>, ComparableComparator<Compared>) -> Bool",
+      "desc": "Indicates whether two comparators are unequal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the comparator by feeding them into the specified hash function."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hashed value of the comparator."
+    }
+  ],
+  "declaration": "struct ComparableComparator<Compared> where Compared : Comparable",
+  "conformsTo": [
+    "SortComparator"
+  ]
+}

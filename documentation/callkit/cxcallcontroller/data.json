@@ -1,0 +1,47 @@
+{
+  "path": "/documentation/callkit/cxcallcontroller",
+  "type": "Class",
+  "name": "CXCallController",
+  "desc": "A programmatic interface for interacting with and observing calls.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Initializes a new call controller with a private, serial queue, which is used for calling completion blocks."
+    },
+    {
+      "name": "init(queue: DispatchQueue)",
+      "desc": "Initializes a new call controller with a specified queue, which is used for calling completion blocks."
+    },
+    {
+      "name": "var callObserver: CXCallObserver",
+      "desc": "Returns an observer for active calls."
+    },
+    {
+      "name": "func request(CXTransaction, completion: (Error?) -> Void)",
+      "desc": "Requests that the actions in the specified transaction be asynchronously performed by the telephony provider."
+    },
+    {
+      "name": "func requestTransaction(with: CXAction, completion: (Error?) -> Void)",
+      "desc": "Requests that the transaction that contains the specified action be asynchronously performed by the telephony provider."
+    },
+    {
+      "name": "func requestTransaction(with: [CXAction], completion: (Error?) -> Void)",
+      "desc": "Requests that the transaction that contains the specified actions be asynchronously performed by the telephony provider."
+    },
+    {
+      "name": "struct CXErrorCodeRequestTransactionError"
+    },
+    {
+      "name": "enum CXErrorCodeRequestTransactionError.Code",
+      "desc": "Error codes for the CallKit Constants error domain."
+    },
+    {
+      "name": "let CXErrorDomainRequestTransaction: String",
+      "desc": "Domain for errors when requesting a transaction from a call controller. See CallKit Constants for possible error codes."
+    }
+  ],
+  "declaration": "class CXCallController : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

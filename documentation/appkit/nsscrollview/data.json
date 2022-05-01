@@ -1,0 +1,241 @@
+{
+  "path": "/documentation/appkit/nsscrollview",
+  "type": "Class",
+  "name": "NSScrollView",
+  "desc": "A view that displays a portion of a document view and provides scroll bars that allow the user to move the document view within the scroll view.",
+  "items": [
+    {
+      "name": "class func frameSize(forContentSize: NSSize, horizontalScrollerClass: AnyClass?, verticalScrollerClass: AnyClass?, borderType: NSBorderType, controlSize: NSControl.ControlSize, scrollerStyle: NSScroller.Style) -> NSSize",
+      "desc": "Returns the frame size of a scroll view that contains a content view with the specified size."
+    },
+    {
+      "name": "class func contentSize(forFrameSize: NSSize, horizontalScrollerClass: AnyClass?, verticalScrollerClass: AnyClass?, borderType: NSBorderType, controlSize: NSControl.ControlSize, scrollerStyle: NSScroller.Style) -> NSSize",
+      "desc": "Returns the content size calculated from the frame size and the specified specifications."
+    },
+    {
+      "name": "var contentSize: NSSize",
+      "desc": "The size of the scroll view’s content view."
+    },
+    {
+      "name": "var documentVisibleRect: NSRect",
+      "desc": "The portion of the document view, in its own coordinate system, visible through the scroll view’s content view."
+    },
+    {
+      "name": "var backgroundColor: NSColor",
+      "desc": "The color of the content view’s background."
+    },
+    {
+      "name": "var drawsBackground: Bool",
+      "desc": "A Boolean that indicates whether the scroll view draws its background."
+    },
+    {
+      "name": "var borderType: NSBorderType",
+      "desc": "A value that specifies the appearance of the scroll view’s border."
+    },
+    {
+      "name": "var documentCursor: NSCursor?",
+      "desc": "The content view’s document cursor."
+    },
+    {
+      "name": "var contentView: NSClipView",
+      "desc": "The scroll view’s content view, the view that clips the document view."
+    },
+    {
+      "name": "var documentView: NSView?",
+      "desc": "The view the scroll view scrolls within its content view."
+    },
+    {
+      "name": "func addFloatingSubview(NSView, for: NSEvent.GestureAxis)",
+      "desc": "Adds a floating subview to the document view."
+    },
+    {
+      "name": "var horizontalScroller: NSScroller?",
+      "desc": "The scroll view’s horizontal scroller."
+    },
+    {
+      "name": "var hasHorizontalScroller: Bool",
+      "desc": "A Boolean that indicates whether the scroll view has a horizontal scroller."
+    },
+    {
+      "name": "var verticalScroller: NSScroller?",
+      "desc": "The scroll view’s vertical scroller."
+    },
+    {
+      "name": "var hasVerticalScroller: Bool",
+      "desc": "A Boolean that indicates whether the scroll view has a vertical scroller."
+    },
+    {
+      "name": "var autohidesScrollers: Bool",
+      "desc": "A Boolean that indicates whether the scroll view automatically hides its scroll bars when they are not needed."
+    },
+    {
+      "name": "class var rulerViewClass: AnyClass!",
+      "desc": "Returns the default class to be used for ruler objects in NSScrollViews."
+    },
+    {
+      "name": "var hasHorizontalRuler: Bool",
+      "desc": "A Boolean that indicates whether the scroll view keeps a horizontal ruler object."
+    },
+    {
+      "name": "var horizontalRulerView: NSRulerView?",
+      "desc": "The scroll view’s horizontal ruler view."
+    },
+    {
+      "name": "var hasVerticalRuler: Bool",
+      "desc": "A Boolean that indicates whether the scroll view keeps a vertical ruler object."
+    },
+    {
+      "name": "var verticalRulerView: NSRulerView?",
+      "desc": "The scroll view’s vertical ruler view."
+    },
+    {
+      "name": "var rulersVisible: Bool",
+      "desc": "A Boolean that indicates whether the scroll view displays its rulers."
+    },
+    {
+      "name": "var automaticallyAdjustsContentInsets: Bool",
+      "desc": "A Boolean that indicates whether the scroll view automatically adjusts its content insets."
+    },
+    {
+      "name": "var contentInsets: NSEdgeInsets",
+      "desc": "The distance that the scroll view’s subviews are inset from the enclosing scroll view during tiling."
+    },
+    {
+      "name": "var scrollerInsets: NSEdgeInsets",
+      "desc": "The distance the scrollers are inset from the edge of the scroll view."
+    },
+    {
+      "name": "var scrollerKnobStyle: NSScroller.KnobStyle",
+      "desc": "The knob style of scroll views that use the overlay scroller style."
+    },
+    {
+      "name": "var scrollerStyle: NSScroller.Style",
+      "desc": "The scroller style used by the scroll view."
+    },
+    {
+      "name": "var lineScroll: CGFloat",
+      "desc": "The scroll view’s line by line scroll amount."
+    },
+    {
+      "name": "var horizontalLineScroll: CGFloat",
+      "desc": "The scroll view’s horizontal line by line scroll amount."
+    },
+    {
+      "name": "var verticalLineScroll: CGFloat",
+      "desc": "The scroll view’s vertical line by line scroll amount."
+    },
+    {
+      "name": "var pageScroll: CGFloat",
+      "desc": "The amount of the document view kept visible when scrolling page by page."
+    },
+    {
+      "name": "var horizontalPageScroll: CGFloat",
+      "desc": "The amount of the document view kept visible when scrolling horizontally page by page."
+    },
+    {
+      "name": "var verticalPageScroll: CGFloat",
+      "desc": "The amount of the document view kept visible when scrolling vertically page by page."
+    },
+    {
+      "name": "var scrollsDynamically: Bool",
+      "desc": "A Boolean that indicates whether the scroll view redraws its document view while scrolling continuously."
+    },
+    {
+      "name": "func scrollWheel(with: NSEvent)",
+      "desc": "Scrolls the receiver up or down, in response to the user moving the mouse’s scroll wheel specified by theEvent."
+    },
+    {
+      "name": "func reflectScrolledClipView(NSClipView)",
+      "desc": "Adjusts the receiver’s scrollers to reflect the size and positioning of its content view."
+    },
+    {
+      "name": "func tile()",
+      "desc": "Lays out the components of the receiver: the content view, the scrollers, and the ruler views."
+    },
+    {
+      "name": "var findBarPosition: NSScrollView.FindBarPosition",
+      "desc": "The position of the find bar."
+    },
+    {
+      "name": "var usesPredominantAxisScrolling: Bool",
+      "desc": "A Boolean that indicates whether the scroll view uses a predominant scrolling axis for content."
+    },
+    {
+      "name": "var horizontalScrollElasticity: NSScrollView.Elasticity",
+      "desc": "The scroll view’s horizontal scrolling elasticity mode."
+    },
+    {
+      "name": "var verticalScrollElasticity: NSScrollView.Elasticity",
+      "desc": "The scroll view’s vertical scrolling elasticity mode."
+    },
+    {
+      "name": "func flashScrollers()",
+      "desc": "Flash the overlay scroll bars."
+    },
+    {
+      "name": "var allowsMagnification: Bool",
+      "desc": "Allows the user to magnify the scroll view."
+    },
+    {
+      "name": "var magnification: CGFloat",
+      "desc": "The amount by which the content is currently scaled."
+    },
+    {
+      "name": "func magnify(toFit: NSRect)",
+      "desc": "Magnifies the content view proportionally such that the given rectangle fits centered in the scroll view."
+    },
+    {
+      "name": "var maxMagnification: CGFloat",
+      "desc": "The maximum value to which the content can be magnified."
+    },
+    {
+      "name": "var minMagnification: CGFloat",
+      "desc": "The minimum value to which the content can be magnified."
+    },
+    {
+      "name": "func setMagnification(CGFloat, centeredAt: NSPoint)",
+      "desc": "Magnify the content by the given amount and center the result on the given point."
+    },
+    {
+      "name": "enum NSScrollView.Elasticity",
+      "desc": "These constants determine the elasticity behavior for an axis of the scrollview."
+    },
+    {
+      "name": "enum NSScrollView.FindBarPosition",
+      "desc": "These constants define the position of the find bar in relation to the scroll view."
+    },
+    {
+      "name": "class let willStartLiveMagnifyNotification: NSNotification.Name",
+      "desc": "Posted at the beginning of a magnify gesture."
+    },
+    {
+      "name": "class let didEndLiveMagnifyNotification: NSNotification.Name",
+      "desc": "Posted at the end of a magnify gesture."
+    },
+    {
+      "name": "class let willStartLiveScrollNotification: NSNotification.Name",
+      "desc": "Posted on the main thread at the beginning of user-initiated live scroll tracking (gesture scroll or scroller tracking, for example, thumb dragging)."
+    },
+    {
+      "name": "class let didLiveScrollNotification: NSNotification.Name",
+      "desc": "Posted on the main thread after changing the clipview bounds origin due to a user-initiated event."
+    },
+    {
+      "name": "class let didEndLiveScrollNotification: NSNotification.Name",
+      "desc": "Posted on the main thread at the end of live scroll tracking."
+    },
+    {
+      "name": "init?(coder: NSCoder)"
+    },
+    {
+      "name": "init(frame: NSRect)"
+    }
+  ],
+  "declaration": "class NSScrollView : NSView",
+  "inheritsFrom": [
+    "NSView"
+  ],
+  "conformsTo": [
+    "NSTextFinderBarContainer"
+  ]
+}

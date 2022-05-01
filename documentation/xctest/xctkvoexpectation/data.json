@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/xctest/xctkvoexpectation",
+  "type": "Class",
+  "name": "XCTKVOExpectation",
+  "desc": "An expectation that is fulfilled when a Key Value Observing (KVO) condition is met.",
+  "items": [
+    {
+      "name": "init(keyPath: String, object: Any)",
+      "desc": "Creates an expectation that is fulfilled by any KVO change to the specified key path of the observed object."
+    },
+    {
+      "name": "init(keyPath: String, object: Any, expectedValue: Any?)",
+      "desc": "Creates an expectation that is fulfilled when a KVO change causes the specified key path of the observed object to have an expected value."
+    },
+    {
+      "name": "init(keyPath: String, object: Any, expectedValue: Any?, options: NSKeyValueObservingOptions)",
+      "desc": "Creates an expectation that is fulfilled when a KVO change causes the specified key path of the observed object to have an expected value. Allows custom observation options to be provided by the caller."
+    },
+    {
+      "name": "var keyPath: String",
+      "desc": "The key path that is being observed for KVO changes."
+    },
+    {
+      "name": "var observedObject: Any",
+      "desc": "The object that is being observed for KVO changes."
+    },
+    {
+      "name": "var expectedValue: Any?",
+      "desc": "The value that the expectation is waiting for the observed key path to take."
+    },
+    {
+      "name": "var options: NSKeyValueObservingOptions",
+      "desc": "The NSKeyValueObservingOptions used when registering for observation."
+    },
+    {
+      "name": "var handler: XCTKVOExpectation.Handler?",
+      "desc": "An optional handler that performs custom evaluation of changes to the observed key path."
+    },
+    {
+      "name": "typealias XCTKVOExpectation.Handler",
+      "desc": "A custom handler to be called when a KVO change is observed for a specified key path."
+    }
+  ],
+  "declaration": "class XCTKVOExpectation : XCTestExpectation",
+  "inheritsFrom": [
+    "XCTestExpectation"
+  ]
+}

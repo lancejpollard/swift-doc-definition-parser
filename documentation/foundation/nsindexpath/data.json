@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/foundation/nsindexpath",
+  "type": "Class",
+  "name": "NSIndexPath",
+  "desc": "An object containing a list of indexes that bridges to IndexPath; use NSIndexPath when you need reference semantics or other Foundation-specific behavior.",
+  "items": [
+    {
+      "name": "init(index: Int)",
+      "desc": "Initializes an index path with a single node."
+    },
+    {
+      "name": "init(indexes: UnsafePointer<Int>?, length: Int)",
+      "desc": "Initializes an index path with the given nodes and length."
+    },
+    {
+      "name": "init(row: Int, section: Int)",
+      "desc": "Initializes an index path with the indexes of a specific row and section in a table view."
+    },
+    {
+      "name": "init(item: Int, section: Int)",
+      "desc": "Initializes an index path with the indexes of a specific item and section in a collection view."
+    },
+    {
+      "name": "var section: Int",
+      "desc": "An index number identifying a section in a table view or collection view."
+    },
+    {
+      "name": "var row: Int",
+      "desc": "An index number identifying a row in a section of a table view."
+    },
+    {
+      "name": "var item: Int",
+      "desc": "An index number identifying an item in a section of a collection view."
+    },
+    {
+      "name": "var length: Int",
+      "desc": "The number of nodes in the index path."
+    },
+    {
+      "name": "func adding(Int) -> IndexPath",
+      "desc": "Returns an index path containing the nodes in the receiving index path plus another given index."
+    },
+    {
+      "name": "func removingLastIndex() -> IndexPath",
+      "desc": "Returns an index path with the nodes in the receiving index path, excluding the last one."
+    },
+    {
+      "name": "func compare(IndexPath) -> ComparisonResult",
+      "desc": "Indicates the depth-first traversal order of the receiving index path and another index path."
+    },
+    {
+      "name": "func index(atPosition: Int) -> Int",
+      "desc": "Provides the value at a particular node in the index path."
+    },
+    {
+      "name": "func getIndexes(UnsafeMutablePointer<Int>, range: NSRange)",
+      "desc": "Copies the indexes stored in the index path from the positions specified by the position range into the specified indexes."
+    }
+  ],
+  "declaration": "class NSIndexPath : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/combine/passthroughsubject",
+  "type": "Class",
+  "name": "PassthroughSubject",
+  "desc": "A subject that broadcasts elements to downstream subscribers.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "func send(Output)",
+      "desc": "Sends a value to the subscriber."
+    },
+    {
+      "name": "func send()",
+      "desc": "Sends a void value to the subscriber."
+    },
+    {
+      "name": "func send(subscription: Subscription)",
+      "desc": "Sends a subscription to the subscriber."
+    },
+    {
+      "name": "func send(completion: Subscribers.Completion<Failure>)",
+      "desc": "Sends a completion signal to the subscriber."
+    }
+  ],
+  "declaration": "final class PassthroughSubject<Output, Failure> where Failure : Error",
+  "conformsTo": [
+    "Publisher",
+    "Subject"
+  ]
+}

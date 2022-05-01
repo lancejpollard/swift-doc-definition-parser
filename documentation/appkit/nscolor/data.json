@@ -1,0 +1,196 @@
+{
+  "path": "/documentation/appkit/nscolor",
+  "type": "Class",
+  "name": "NSColor",
+  "desc": "An object that stores color data and sometimes opacity (alpha value).",
+  "items": [
+    {
+      "name": "func withSystemEffect(NSColor.SystemEffect) -> NSColor",
+      "desc": "Returns a new color object that represents the current color modified to include the specified visual effect."
+    },
+    {
+      "name": "enum NSColor.SystemEffect",
+      "desc": "Constants for user interactions that change the appearance of a view or control."
+    },
+    {
+      "name": "func usingColorSpace(NSColorSpace) -> NSColor?",
+      "desc": "Creates a new color object representing the color of the current color object in the specified color space."
+    },
+    {
+      "name": "func blended(withFraction: CGFloat, of: NSColor) -> NSColor?",
+      "desc": "Creates a new color object whose component values are a weighted sum of the current color object and the specified color object's."
+    },
+    {
+      "name": "func withAlphaComponent(CGFloat) -> NSColor",
+      "desc": "Creates a new color object that has the same color space and component values as the current color object, but the specified alpha component."
+    },
+    {
+      "name": "func highlight(withLevel: CGFloat) -> NSColor?",
+      "desc": "Creates a new color object that represents a blend between the current color and the highlight color."
+    },
+    {
+      "name": "func shadow(withLevel: CGFloat) -> NSColor?",
+      "desc": "Creates a new color object that represents a blend between the current color and the shadow color."
+    },
+    {
+      "name": "class var ignoresAlpha: Bool",
+      "desc": "A Boolean value that indicates whether the app supports alpha."
+    },
+    {
+      "name": "init?(from: NSPasteboard)",
+      "desc": "Creates a color object from color data currently on the pasteboard."
+    },
+    {
+      "name": "func write(to: NSPasteboard)",
+      "desc": "Writes the color object’s data to the specified pasteboard."
+    },
+    {
+      "name": "func getCyan(UnsafeMutablePointer<CGFloat>?, magenta: UnsafeMutablePointer<CGFloat>?, yellow: UnsafeMutablePointer<CGFloat>?, black: UnsafeMutablePointer<CGFloat>?, alpha: UnsafeMutablePointer<CGFloat>?)",
+      "desc": "Returns the color object’s CMYK and opacity values."
+    },
+    {
+      "name": "func getHue(UnsafeMutablePointer<CGFloat>?, saturation: UnsafeMutablePointer<CGFloat>?, brightness: UnsafeMutablePointer<CGFloat>?, alpha: UnsafeMutablePointer<CGFloat>?)",
+      "desc": "Returns the color object’s HSB component and opacity values in the respective arguments."
+    },
+    {
+      "name": "func getRed(UnsafeMutablePointer<CGFloat>?, green: UnsafeMutablePointer<CGFloat>?, blue: UnsafeMutablePointer<CGFloat>?, alpha: UnsafeMutablePointer<CGFloat>?)",
+      "desc": "Returns the color object’s RGB component and opacity values in the respective arguments."
+    },
+    {
+      "name": "func getWhite(UnsafeMutablePointer<CGFloat>?, alpha: UnsafeMutablePointer<CGFloat>?)",
+      "desc": "Returns the grayscale and alpha values of the color."
+    },
+    {
+      "name": "var numberOfComponents: Int",
+      "desc": "The number of components in the color."
+    },
+    {
+      "name": "func getComponents(UnsafeMutablePointer<CGFloat>)",
+      "desc": "Returns the components of the color as an array."
+    },
+    {
+      "name": "var alphaComponent: CGFloat",
+      "desc": "The alpha (opacity) component value of the color."
+    },
+    {
+      "name": "var whiteComponent: CGFloat",
+      "desc": "The white component value of the color."
+    },
+    {
+      "name": "var redComponent: CGFloat",
+      "desc": "The red component value of the color."
+    },
+    {
+      "name": "var greenComponent: CGFloat",
+      "desc": "The green component value of the color."
+    },
+    {
+      "name": "var blueComponent: CGFloat",
+      "desc": "The blue component value of the color."
+    },
+    {
+      "name": "var cyanComponent: CGFloat",
+      "desc": "The cyan component value of the color."
+    },
+    {
+      "name": "var magentaComponent: CGFloat",
+      "desc": "The magenta component value of the color."
+    },
+    {
+      "name": "var yellowComponent: CGFloat",
+      "desc": "The yellow component value of the color."
+    },
+    {
+      "name": "var blackComponent: CGFloat",
+      "desc": "The black component value of the color."
+    },
+    {
+      "name": "var hueComponent: CGFloat",
+      "desc": "The hue component value of the color."
+    },
+    {
+      "name": "var saturationComponent: CGFloat",
+      "desc": "The saturation component value of the color."
+    },
+    {
+      "name": "var brightnessComponent: CGFloat",
+      "desc": "The brightness component value of the color."
+    },
+    {
+      "name": "var catalogNameComponent: NSColorList.Name",
+      "desc": "The catalog containing the color’s name."
+    },
+    {
+      "name": "var localizedCatalogNameComponent: String",
+      "desc": "The localized version of the catalog name containing the color."
+    },
+    {
+      "name": "var colorNameComponent: NSColor.Name",
+      "desc": "The name of the color."
+    },
+    {
+      "name": "var localizedColorNameComponent: String",
+      "desc": "The localized version of the color name."
+    },
+    {
+      "name": "var type: NSColor.ColorType",
+      "desc": "The type of the color object."
+    },
+    {
+      "name": "func usingType(NSColor.ColorType) -> NSColor?",
+      "desc": "Returns a version of the color object that is compatible with the specified color type."
+    },
+    {
+      "name": "enum NSColor.ColorType",
+      "desc": "Constants that indicate the color's type, and which methods may be called on the color object."
+    },
+    {
+      "name": "var colorSpace: NSColorSpace",
+      "desc": "The color space associated with the color."
+    },
+    {
+      "name": "struct NSColorSpaceName",
+      "desc": "Constants that specify color space names."
+    },
+    {
+      "name": "var cgColor: CGColor",
+      "desc": "The Core Graphics color object corresponding to the color."
+    },
+    {
+      "name": "func drawSwatch(in: NSRect)",
+      "desc": "Draws the current color in the specified rectangle."
+    },
+    {
+      "name": "func set()",
+      "desc": "Sets the color of subsequent drawing to the color that the color object represents."
+    },
+    {
+      "name": "func setFill()",
+      "desc": "Sets the fill color of subsequent drawing to the color object’s color."
+    },
+    {
+      "name": "func setStroke()",
+      "desc": "Sets the stroke color of subsequent drawing to the color object’s color."
+    },
+    {
+      "name": "class let systemColorsDidChangeNotification: NSNotification.Name",
+      "desc": "Sent when the system colors have changed, such as through a system control panel interface."
+    },
+    {
+      "name": "class var systemCyan: NSColor"
+    },
+    {
+      "name": "class var systemMint: NSColor"
+    }
+  ],
+  "declaration": "class NSColor : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSPasteboardReading",
+    "NSPasteboardWriting",
+    "NSSecureCoding"
+  ]
+}

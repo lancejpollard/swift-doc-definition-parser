@@ -1,0 +1,480 @@
+{
+  "path": "/documentation/uikit/nslayoutmanager",
+  "type": "Class",
+  "name": "NSLayoutManager",
+  "desc": "An object that coordinates the layout and display of text characters.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Initializes a newly created layout manager object."
+    },
+    {
+      "name": "init?(coder: NSCoder)",
+      "desc": "Creates a layout manager from data in an unarchiver."
+    },
+    {
+      "name": "var delegate: NSLayoutManagerDelegate?",
+      "desc": "The layout manager’s delegate."
+    },
+    {
+      "name": "protocol NSLayoutManagerDelegate",
+      "desc": "A set of optional methods that delegates of layout manager objects implement."
+    },
+    {
+      "name": "var textStorage: NSTextStorage?",
+      "desc": "The text storage object that contains the content to lay out."
+    },
+    {
+      "name": "func replaceTextStorage(NSTextStorage)",
+      "desc": "Replaces the layout manager's current text storage object with the specified object."
+    },
+    {
+      "name": "var allowsNonContiguousLayout: Bool",
+      "desc": "A Boolean value that indicates whether the layout manager allows noncontiguous layout."
+    },
+    {
+      "name": "var hasNonContiguousLayout: Bool",
+      "desc": "A Boolean value that indicates whether the layout manager currently has any areas of noncontiguous layout."
+    },
+    {
+      "name": "var showsInvisibleCharacters: Bool",
+      "desc": "A Boolean value that indicates whether to substitute visible glyphs for whitespace and other typically invisible characters."
+    },
+    {
+      "name": "var showsControlCharacters: Bool",
+      "desc": "A Boolean value that indicates whether the layout manager substitutes visible glyphs for control characters in the layout."
+    },
+    {
+      "name": "var usesFontLeading: Bool",
+      "desc": "A Boolean value that indicates whether the layout manager uses the leading of the font."
+    },
+    {
+      "name": "var backgroundLayoutEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the layout manager generates glyphs and lays them out when the app's run loop is idle."
+    },
+    {
+      "name": "var limitsLayoutForSuspiciousContents: Bool",
+      "desc": "A Boolean value that indicates whether the layout manager avoids laying out unusually long or suspicious input."
+    },
+    {
+      "name": "var usesDefaultHyphenation: Bool",
+      "desc": "A Boolean value that indicates whether the layout manager uses the default hyphenation rules to wrap lines."
+    },
+    {
+      "name": "var textContainers: [NSTextContainer]",
+      "desc": "The current text containers of the layout manager."
+    },
+    {
+      "name": "func addTextContainer(NSTextContainer)",
+      "desc": "Appends the specified text container to the series of text containers where the layout manager arranges text."
+    },
+    {
+      "name": "func insertTextContainer(NSTextContainer, at: Int)",
+      "desc": "Inserts a text container at the specified index in the list of text containers."
+    },
+    {
+      "name": "func removeTextContainer(at: Int)",
+      "desc": "Removes the text container at the specified index and invalidates the layout as necessary."
+    },
+    {
+      "name": "func setTextContainer(NSTextContainer, forGlyphRange: NSRange)",
+      "desc": "Associates a text container with the specified range of glyphs."
+    },
+    {
+      "name": "func textContainerChangedGeometry(NSTextContainer)",
+      "desc": "Invalidates the layout information, and possibly glyphs, for the specified text container and all subsequent text container objects."
+    },
+    {
+      "name": "func textContainerChangedTextView(NSTextContainer)",
+      "desc": "Updates the information necessary to manage text view objects for the specified text container."
+    },
+    {
+      "name": "func textContainer(forGlyphAt: Int, effectiveRange: NSRangePointer?) -> NSTextContainer?",
+      "desc": "Returns the text container that manages the layout for the specified glyph, causing layout to happen as necessary."
+    },
+    {
+      "name": "func textContainer(forGlyphAt: Int, effectiveRange: NSRangePointer?, withoutAdditionalLayout: Bool) -> NSTextContainer?",
+      "desc": "Returns the text container that manages the layout for the specified glyph."
+    },
+    {
+      "name": "func usedRect(for: NSTextContainer) -> CGRect",
+      "desc": "Returns the bounding rectangle for the glyphs in the specified text container."
+    },
+    {
+      "name": "func invalidateDisplay(forCharacterRange: NSRange)",
+      "desc": "Invalidates display for the specified character range."
+    },
+    {
+      "name": "func invalidateDisplay(forGlyphRange: NSRange)",
+      "desc": "Invalidates a range of glyphs, requiring new layout information, and updates the appropriate regions of any text views that display those glyphs."
+    },
+    {
+      "name": "func invalidateGlyphs(forCharacterRange: NSRange, changeInLength: Int, actualCharacterRange: NSRangePointer?)",
+      "desc": "Invalidates and adjusts the glyphs in the specified character range."
+    },
+    {
+      "name": "func invalidateLayout(forCharacterRange: NSRange, actualCharacterRange: NSRangePointer?)",
+      "desc": "Invalidates the layout information for the glyphs that map to the specified character range."
+    },
+    {
+      "name": "func processEditing(for: NSTextStorage, edited: NSTextStorage.EditActions, range: NSRange, changeInLength: Int, invalidatedRange: NSRange)",
+      "desc": "Notifies the layout manager when an edit action changes the contents of its text storage object."
+    },
+    {
+      "name": "func ensureGlyphs(forCharacterRange: NSRange)",
+      "desc": "Forces the layout manager to generate glyphs for the specified character range if it hasn’t already."
+    },
+    {
+      "name": "func ensureGlyphs(forGlyphRange: NSRange)",
+      "desc": "Forces the layout manager to generate glyphs for the specified glyph range if it hasn’t already."
+    },
+    {
+      "name": "func ensureLayout(forBoundingRect: CGRect, in: NSTextContainer)",
+      "desc": "Forces the layout manager to perform layout for the specified area in the specified text container if it hasn’t already."
+    },
+    {
+      "name": "func ensureLayout(forCharacterRange: NSRange)",
+      "desc": "Forces the layout manager to perform layout for the specified character range if it hasn’t already."
+    },
+    {
+      "name": "func ensureLayout(forGlyphRange: NSRange)",
+      "desc": "Forces the layout manager to perform layout for the specified glyph range if it hasn’t already."
+    },
+    {
+      "name": "func ensureLayout(for: NSTextContainer)",
+      "desc": "Forces the layout manager to perform layout for the specified text container if it hasn’t already."
+    },
+    {
+      "name": "var glyphGenerator: NSGlyphGenerator",
+      "desc": "The glyph generator that the layout manager uses."
+    },
+    {
+      "name": "func getGlyphs(in: NSRange, glyphs: UnsafeMutablePointer<CGGlyph>?, properties: UnsafeMutablePointer<NSLayoutManager.GlyphProperty>?, characterIndexes: UnsafeMutablePointer<Int>?, bidiLevels: UnsafeMutablePointer<UInt8>?) -> Int",
+      "desc": "Fills a passed-in buffer with a sequence of glyphs."
+    },
+    {
+      "name": "func cgGlyph(at: Int) -> CGGlyph",
+      "desc": "Returns the glyph at the specified index."
+    },
+    {
+      "name": "func cgGlyph(at: Int, isValidIndex: UnsafeMutablePointer<ObjCBool>?) -> CGGlyph",
+      "desc": "Returns the glyph at the specified index along with information about whether the glyph index is valid."
+    },
+    {
+      "name": "func setGlyphs(UnsafePointer<CGGlyph>, properties: UnsafePointer<NSLayoutManager.GlyphProperty>, characterIndexes: UnsafePointer<Int>, font: UIFont, forGlyphRange: NSRange)",
+      "desc": "Stores the initial glyphs and glyph properties for a character range."
+    },
+    {
+      "name": "func characterIndexForGlyph(at: Int) -> Int",
+      "desc": "Returns the index in the text storage for the first character of the specified glyph."
+    },
+    {
+      "name": "func glyphIndexForCharacter(at: Int) -> Int",
+      "desc": "Returns the index of the first glyph of the character at the specified index."
+    },
+    {
+      "name": "func isValidGlyphIndex(Int) -> Bool",
+      "desc": "Indicates whether the specified index refers to a valid glyph."
+    },
+    {
+      "name": "var numberOfGlyphs: Int",
+      "desc": "The number of glyphs in the layout manager."
+    },
+    {
+      "name": "func propertyForGlyph(at: Int) -> NSLayoutManager.GlyphProperty",
+      "desc": "Returns the glyph property of the glyph at the specified index."
+    },
+    {
+      "name": "struct NSLayoutManager.GlyphProperty",
+      "desc": "Glyph properties."
+    },
+    {
+      "name": "func setAttachmentSize(CGSize, forGlyphRange: NSRange)",
+      "desc": "Sets the size to use when drawing a glyph that represents an attachment."
+    },
+    {
+      "name": "func setDrawsOutsideLineFragment(Bool, forGlyphAt: Int)",
+      "desc": "Indicates whether the specified glyph exceeds the bounds of the line fragment for its layout."
+    },
+    {
+      "name": "func setExtraLineFragmentRect(CGRect, usedRect: CGRect, textContainer: NSTextContainer)",
+      "desc": "Sets the bounds and container for the extra line fragment."
+    },
+    {
+      "name": "func setLineFragmentRect(CGRect, forGlyphRange: NSRange, usedRect: CGRect)",
+      "desc": "Associates the line fragment bounds for the specified range of glyphs."
+    },
+    {
+      "name": "func setLocation(CGPoint, forStartOfGlyphRange: NSRange)",
+      "desc": "Sets the location for the first glyph in the specified range."
+    },
+    {
+      "name": "func setNotShownAttribute(Bool, forGlyphAt: Int)",
+      "desc": "Sets the visibility of the glyph at the specified index."
+    },
+    {
+      "name": "func attachmentSize(forGlyphAt: Int) -> CGSize",
+      "desc": "Returns the size of the attachment glyph at the specified index."
+    },
+    {
+      "name": "func drawsOutsideLineFragment(forGlyphAt: Int) -> Bool",
+      "desc": "Indicates whether the glyph draws outside its line fragment rectangle."
+    },
+    {
+      "name": "var extraLineFragmentRect: CGRect",
+      "desc": "The rectangle for the extra line fragment at the end of a document."
+    },
+    {
+      "name": "var extraLineFragmentTextContainer: NSTextContainer?",
+      "desc": "The text container for the extra line fragment rectangle."
+    },
+    {
+      "name": "var extraLineFragmentUsedRect: CGRect",
+      "desc": "The rectangle that encloses the insertion point in the extra line fragment rectangle."
+    },
+    {
+      "name": "func firstUnlaidCharacterIndex() -> Int",
+      "desc": "Returns the index for the first character in the layout manager that isn’t in the layout."
+    },
+    {
+      "name": "func firstUnlaidGlyphIndex() -> Int",
+      "desc": "Returns the index for the first glyph in the layout manager that isn’t in the layout."
+    },
+    {
+      "name": "func getFirstUnlaidCharacterIndex(UnsafeMutablePointer<Int>?, glyphIndex: UnsafeMutablePointer<Int>?)",
+      "desc": "Returns the indexes for the first character and glyph that have invalid layout information."
+    },
+    {
+      "name": "func lineFragmentRect(forGlyphAt: Int, effectiveRange: NSRangePointer?) -> CGRect",
+      "desc": "Returns the rectangle for the line fragment where the glyph lies and (optionally), by reference, the entire range of glyphs in that fragment."
+    },
+    {
+      "name": "func lineFragmentRect(forGlyphAt: Int, effectiveRange: NSRangePointer?, withoutAdditionalLayout: Bool) -> CGRect",
+      "desc": "Returns the line fragment rectangle that contains the glyph at the specified glyph index."
+    },
+    {
+      "name": "func lineFragmentUsedRect(forGlyphAt: Int, effectiveRange: NSRangePointer?) -> CGRect",
+      "desc": "Returns the usage rectangle for the line fragment and (optionally) returns the entire range of glyphs in that fragment."
+    },
+    {
+      "name": "func lineFragmentUsedRect(forGlyphAt: Int, effectiveRange: NSRangePointer?, withoutAdditionalLayout: Bool) -> CGRect",
+      "desc": "Returns the usage rectangle for the line fragment and (optionally) returns the entire range of glyphs in that fragment."
+    },
+    {
+      "name": "func location(forGlyphAt: Int) -> CGPoint",
+      "desc": "Returns the location for the specified glyph within its line fragment."
+    },
+    {
+      "name": "func notShownAttribute(forGlyphAt: Int) -> Bool",
+      "desc": "Indicates whether the glyph at the specified index has a visible representation."
+    },
+    {
+      "name": "func truncatedGlyphRange(inLineFragmentForGlyphAt: Int) -> NSRange",
+      "desc": "Returns the range of truncated glyphs for a line fragment that contains the specified index."
+    },
+    {
+      "name": "func boundingRect(forGlyphRange: NSRange, in: NSTextContainer) -> CGRect",
+      "desc": "Returns the bounding rectangle for the specified glyphs in a container."
+    },
+    {
+      "name": "func characterIndex(for: CGPoint, in: NSTextContainer, fractionOfDistanceBetweenInsertionPoints: UnsafeMutablePointer<CGFloat>?) -> Int",
+      "desc": "Returns the index of the character that lies beneath the specified point using the specified container's coordinate system."
+    },
+    {
+      "name": "func characterRange(forGlyphRange: NSRange, actualGlyphRange: NSRangePointer?) -> NSRange",
+      "desc": "Returns the range of characters that correspond to the glyphs in the specified glyph range."
+    },
+    {
+      "name": "func enumerateEnclosingRects(forGlyphRange: NSRange, withinSelectedGlyphRange: NSRange, in: NSTextContainer, using: (CGRect, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Enumerates enclosing rectangles for the specified glyph range in a text container."
+    },
+    {
+      "name": "func enumerateLineFragments(forGlyphRange: NSRange, using: (CGRect, CGRect, NSTextContainer, NSRange, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Enumerates line fragments intersecting with the specified glyph range."
+    },
+    {
+      "name": "func fractionOfDistanceThroughGlyph(for: CGPoint, in: NSTextContainer) -> CGFloat",
+      "desc": "Returns the fraction of the distance between the glyph at the specified point and the next glyph."
+    },
+    {
+      "name": "func getLineFragmentInsertionPoints(forCharacterAt: Int, alternatePositions: Bool, inDisplayOrder: Bool, positions: UnsafeMutablePointer<CGFloat>?, characterIndexes: UnsafeMutablePointer<Int>?) -> Int",
+      "desc": "Returns insertion points in bulk for a specified line fragment."
+    },
+    {
+      "name": "func glyphIndex(for: CGPoint, in: NSTextContainer) -> Int",
+      "desc": "Returns the index of the glyph at the specified location in a text container."
+    },
+    {
+      "name": "func glyphIndex(for: CGPoint, in: NSTextContainer, fractionOfDistanceThroughGlyph: UnsafeMutablePointer<CGFloat>?) -> Int",
+      "desc": "Returns the index of the glyph at the specified point using the container's coordinate system."
+    },
+    {
+      "name": "func glyphRange(forBoundingRect: CGRect, in: NSTextContainer) -> NSRange",
+      "desc": "Returns the smallest contiguous range for glyphs lying wholly or partially within the specified rectangle of the text container."
+    },
+    {
+      "name": "func glyphRange(forBoundingRectWithoutAdditionalLayout: CGRect, in: NSTextContainer) -> NSRange",
+      "desc": "Returns the smallest contiguous range for glyphs lying wholly or partially within the specified rectangle of the text container."
+    },
+    {
+      "name": "func glyphRange(for: NSTextContainer) -> NSRange",
+      "desc": "Returns the range of glyphs lying within the specified text container."
+    },
+    {
+      "name": "func glyphRange(forCharacterRange: NSRange, actualCharacterRange: NSRangePointer?) -> NSRange",
+      "desc": "Returns the range of glyphs that the specified range of characters generates."
+    },
+    {
+      "name": "func range(ofNominallySpacedGlyphsContaining: Int) -> NSRange",
+      "desc": "Returns the range of displayable glyphs that surround the glyph at the specified index."
+    },
+    {
+      "name": "func drawBackground(forGlyphRange: NSRange, at: CGPoint)",
+      "desc": "Draws background marks for the specified glyphs, which must lie completely within a single text container."
+    },
+    {
+      "name": "func drawGlyphs(forGlyphRange: NSRange, at: CGPoint)",
+      "desc": "Draws the specified glyphs, which must lie completely within a single text container."
+    },
+    {
+      "name": "func drawStrikethrough(forGlyphRange: NSRange, strikethroughType: NSUnderlineStyle, baselineOffset: CGFloat, lineFragmentRect: CGRect, lineFragmentGlyphRange: NSRange, containerOrigin: CGPoint)",
+      "desc": "Draws a strikethrough for the specified glyphs."
+    },
+    {
+      "name": "func drawUnderline(forGlyphRange: NSRange, underlineType: NSUnderlineStyle, baselineOffset: CGFloat, lineFragmentRect: CGRect, lineFragmentGlyphRange: NSRange, containerOrigin: CGPoint)",
+      "desc": "Draws underlining for the glyphs in a specified range."
+    },
+    {
+      "name": "func fillBackgroundRectArray(UnsafePointer<CGRect>, count: Int, forCharacterRange: NSRange, color: UIColor)",
+      "desc": "Fills background rectangles with a color."
+    },
+    {
+      "name": "func showCGGlyphs(UnsafePointer<CGGlyph>, positions: UnsafePointer<CGPoint>, count: Int, font: UIFont, textMatrix: CGAffineTransform, attributes: [NSAttributedString.Key : Any], in: CGContext)",
+      "desc": "Renders the glyphs at the specified positions, using the specified attributes."
+    },
+    {
+      "name": "func strikethroughGlyphRange(NSRange, strikethroughType: NSUnderlineStyle, lineFragmentRect: CGRect, lineFragmentGlyphRange: NSRange, containerOrigin: CGPoint)",
+      "desc": "Calculates and draws strikethrough for the specified glyphs."
+    },
+    {
+      "name": "func underlineGlyphRange(NSRange, underlineType: NSUnderlineStyle, lineFragmentRect: CGRect, lineFragmentGlyphRange: NSRange, containerOrigin: CGPoint)",
+      "desc": "Calculates subranges to underline for the specified glyphs and draws the underlining as appropriate."
+    },
+    {
+      "name": "func setLayoutRect(NSRect, for: NSTextBlock, glyphRange: NSRange)",
+      "desc": "Sets the layout rectangle that encloses the specified text block and glyph range."
+    },
+    {
+      "name": "func layoutRect(for: NSTextBlock, glyphRange: NSRange) -> NSRect",
+      "desc": "Returns the rectangle for the layout of the specified text block and glyph range."
+    },
+    {
+      "name": "func setBoundsRect(NSRect, for: NSTextBlock, glyphRange: NSRange)",
+      "desc": "Sets the bounding rectangle that encloses the specified text block and glyph range."
+    },
+    {
+      "name": "func boundsRect(for: NSTextBlock, glyphRange: NSRange) -> NSRect",
+      "desc": "Returns the bounding rectangle that encloses the specified text block and glyph range."
+    },
+    {
+      "name": "func layoutRect(for: NSTextBlock, at: Int, effectiveRange: NSRangePointer?) -> NSRect",
+      "desc": "Returns the rectangle for the layout of the specified text block and glyph."
+    },
+    {
+      "name": "func boundsRect(for: NSTextBlock, at: Int, effectiveRange: NSRangePointer?) -> NSRect",
+      "desc": "Returns the bounding rectangle for the specified text block and glyph."
+    },
+    {
+      "name": "var defaultAttachmentScaling: NSImageScaling",
+      "desc": "The default amount of scaling to apply when an attachment image is too large to fit in a text container."
+    },
+    {
+      "name": "func showAttachmentCell(NSCell, in: NSRect, characterIndex: Int)",
+      "desc": "Draws an attachment cell."
+    },
+    {
+      "name": "func rulerAccessoryView(for: NSTextView, paragraphStyle: NSParagraphStyle, ruler: NSRulerView, enabled: Bool) -> NSView?",
+      "desc": "Returns the accessory view that the text system uses for its ruler."
+    },
+    {
+      "name": "func rulerMarkers(for: NSTextView, paragraphStyle: NSParagraphStyle, ruler: NSRulerView) -> [NSRulerMarker]",
+      "desc": "Returns an array of text ruler objects for the current selection."
+    },
+    {
+      "name": "func layoutManagerOwnsFirstResponder(in: NSWindow) -> Bool",
+      "desc": "Indicates whether the first responder in the specified window is a text view for the layout manager."
+    },
+    {
+      "name": "var firstTextView: NSTextView?",
+      "desc": "The first text view in the layout manager’s series of text views."
+    },
+    {
+      "name": "var textViewForBeginningOfSelection: NSTextView?",
+      "desc": "The text view that contains the first glyph in the selection."
+    },
+    {
+      "name": "var typesetter: NSTypesetter",
+      "desc": "The current typesetter."
+    },
+    {
+      "name": "var typesetterBehavior: NSLayoutManager.TypesetterBehavior",
+      "desc": "The default typesetter behavior."
+    },
+    {
+      "name": "enum NSLayoutManager.TypesetterBehavior",
+      "desc": "Constants that determine the layout manager's behavior during layout."
+    },
+    {
+      "name": "func defaultLineHeight(for: NSFont) -> CGFloat",
+      "desc": "Returns the default line height for a line of text that uses a specified font."
+    },
+    {
+      "name": "func defaultBaselineOffset(for: NSFont) -> CGFloat",
+      "desc": "Returns the default baseline offset that the layout manager's typesetter uses for the specified font."
+    },
+    {
+      "name": "func addTemporaryAttributes([NSAttributedString.Key : Any], forCharacterRange: NSRange)",
+      "desc": "Appends one or more temporary attributes to the attributes dictionary of the specified character range."
+    },
+    {
+      "name": "func addTemporaryAttribute(NSAttributedString.Key, value: Any, forCharacterRange: NSRange)",
+      "desc": "Adds a temporary attribute to the characters in the specified range."
+    },
+    {
+      "name": "func setTemporaryAttributes([NSAttributedString.Key : Any], forCharacterRange: NSRange)",
+      "desc": "Sets one or more temporary attributes for the specified character range."
+    },
+    {
+      "name": "func removeTemporaryAttribute(NSAttributedString.Key, forCharacterRange: NSRange)",
+      "desc": "Removes a temporary attribute from the list of attributes for the specified character range."
+    },
+    {
+      "name": "func temporaryAttribute(NSAttributedString.Key, atCharacterIndex: Int, effectiveRange: NSRangePointer?) -> Any?",
+      "desc": "Returns the value for the temporary attribute of a character, and the range it applies to."
+    },
+    {
+      "name": "func temporaryAttribute(NSAttributedString.Key, atCharacterIndex: Int, longestEffectiveRange: NSRangePointer?, in: NSRange) -> Any?",
+      "desc": "Returns the value for the temporary attribute of a character, and the maximum range it applies to."
+    },
+    {
+      "name": "func temporaryAttributes(atCharacterIndex: Int, effectiveRange: NSRangePointer?) -> [NSAttributedString.Key : Any]",
+      "desc": "Returns the dictionary of temporary attributes for the specified character range."
+    },
+    {
+      "name": "func temporaryAttributes(atCharacterIndex: Int, longestEffectiveRange: NSRangePointer?, in: NSRange) -> [NSAttributedString.Key : Any]",
+      "desc": "Returns the temporary attributes for a character, and the maximum range they apply to."
+    },
+    {
+      "name": "enum NSLayoutManager.TextLayoutOrientation",
+      "desc": "Constants that describe the text layout orientation."
+    }
+  ],
+  "declaration": "class NSLayoutManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSGlyphStorage",
+    "NSSecureCoding"
+  ]
+}

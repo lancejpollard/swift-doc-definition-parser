@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsimagenormalizedhistogram",
+  "type": "Class",
+  "name": "MPSImageNormalizedHistogram",
+  "desc": "A filter that computes the normalized histogram of an image.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice, histogramInfo: UnsafePointer<MPSImageHistogramInfo>)"
+    },
+    {
+      "name": "var clipRectSource: MTLRegion"
+    },
+    {
+      "name": "var histogramInfo: MPSImageHistogramInfo"
+    },
+    {
+      "name": "var zeroHistogram: Bool"
+    },
+    {
+      "name": "func encode(to: MTLCommandBuffer, sourceTexture: MTLTexture, minmaxTexture: MTLTexture, histogram: MTLBuffer, histogramOffset: Int)"
+    },
+    {
+      "name": "func histogramSize(forSourceFormat: MTLPixelFormat) -> Int"
+    }
+  ],
+  "declaration": "class MPSImageNormalizedHistogram : MPSKernel",
+  "inheritsFrom": [
+    "MPSKernel"
+  ]
+}

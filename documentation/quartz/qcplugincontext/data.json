@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/quartz/qcplugincontext",
+  "type": "Protocol",
+  "name": "QCPlugInContext",
+  "desc": "The QCPlugInContext protocol defines methods that you use only from within the execution method (execute(_:atTime:withArguments:)) of a QCPlugIn object.",
+  "items": [
+    {
+      "name": "func cglContextObj() -> CGLContextObj!",
+      "desc": "Returns the destination CGL context to use for OpenGL rendering from within the execution method."
+    },
+    {
+      "name": "func userInfo() -> NSMutableDictionary!",
+      "desc": "Returns a mutable dictionary that contains information that can be shared between all instances of the QCPlugIn subclass, running in the same Quartz Composer context."
+    },
+    {
+      "name": "func bounds() -> NSRect",
+      "desc": "Returns the bounds of the rendering context."
+    },
+    {
+      "name": "func colorSpace() -> Unmanaged<CGColorSpace>!",
+      "desc": "Returns the color space used by the rendering context."
+    },
+    {
+      "name": "func outputImageProviderFromBuffer(withPixelFormat: String!, pixelsWide: Int, pixelsHigh: Int, baseAddress: UnsafeRawPointer!, bytesPerRow: Int, releaseCallback: QCPlugInBufferReleaseCallback!, releaseContext: UnsafeMutableRawPointer!, colorSpace: CGColorSpace!, shouldColorMatch: Bool) -> Any!",
+      "desc": "Returns an image provider from a single memory buffer."
+    },
+    {
+      "name": "func outputImageProviderFromTexture(withPixelFormat: String!, pixelsWide: Int, pixelsHigh: Int, name: GLuint, flipped: Bool, releaseCallback: QCPlugInTextureReleaseCallback!, releaseContext: UnsafeMutableRawPointer!, colorSpace: CGColorSpace!, shouldColorMatch: Bool) -> Any!",
+      "desc": "Returns an image provider from an OpenGL texture."
+    },
+    {
+      "name": "func compositionURL() -> URL!"
+    }
+  ],
+  "declaration": "protocol QCPlugInContext"
+}

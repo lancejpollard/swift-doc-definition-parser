@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/swift/anyindex",
+  "type": "Structure",
+  "name": "AnyIndex",
+  "desc": "A wrapper over an underlying index that hides the specific underlying type.",
+  "items": [
+    {
+      "name": "init<BaseIndex>(BaseIndex)",
+      "desc": "Creates a new index wrapping base."
+    },
+    {
+      "name": "static func != (AnyIndex, AnyIndex) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func ... (AnyIndex) -> PartialRangeThrough<AnyIndex>",
+      "desc": "Returns a partial range up to, and including, its upper bound."
+    },
+    {
+      "name": "static func ... (AnyIndex) -> PartialRangeFrom<AnyIndex>",
+      "desc": "Returns a partial range extending upward from a lower bound."
+    },
+    {
+      "name": "static func ... (AnyIndex, AnyIndex) -> ClosedRange<AnyIndex>",
+      "desc": "Returns a closed range that contains both of its bounds."
+    },
+    {
+      "name": "static func ..< (AnyIndex) -> PartialRangeUpTo<AnyIndex>",
+      "desc": "Returns a partial range up to, but not including, its upper bound."
+    },
+    {
+      "name": "static func ..< (AnyIndex, AnyIndex) -> Range<AnyIndex>",
+      "desc": "Returns a half-open range that contains its lower bound but not its upper bound."
+    },
+    {
+      "name": "static func < (AnyIndex, AnyIndex) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the first argument represents a position before the second argument."
+    },
+    {
+      "name": "static func <= (AnyIndex, AnyIndex) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than or equal to that of the second argument."
+    },
+    {
+      "name": "static func == (AnyIndex, AnyIndex) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two indices wrap equal underlying indices."
+    },
+    {
+      "name": "static func > (AnyIndex, AnyIndex) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than that of the second argument."
+    },
+    {
+      "name": "static func >= (AnyIndex, AnyIndex) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than or equal to that of the second argument."
+    }
+  ],
+  "declaration": "@frozen struct AnyIndex",
+  "conformsTo": [
+    "Comparable"
+  ]
+}

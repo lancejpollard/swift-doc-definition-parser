@@ -1,0 +1,65 @@
+{
+  "path": "/documentation/combine/subscribers/assign",
+  "type": "Class",
+  "name": "Subscribers.Assign",
+  "desc": "A simple subscriber that assigns received elements to a property indicated by a key path.",
+  "items": [
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this subscriber might receive."
+    },
+    {
+      "name": "init(object: Root, keyPath: ReferenceWritableKeyPath<Root, Input>)",
+      "desc": "Creates a subscriber to assign the value of a property indicated by a key path."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this subscriber might receive."
+    },
+    {
+      "name": "var object: Root?",
+      "desc": "The object that contains the property to assign."
+    },
+    {
+      "name": "let keyPath: ReferenceWritableKeyPath<Root, Input>",
+      "desc": "The key path that indicates the property to assign."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A mirror that reflects the subscriber."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual representation of this subscriber."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A custom playground description for this subscriber."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Cancel the activity."
+    },
+    {
+      "name": "func receive(Input) -> Subscribers.Demand",
+      "desc": "Tells the subscriber that the publisher has produced an element."
+    },
+    {
+      "name": "func receive(completion: Subscribers.Completion<Never>)",
+      "desc": "Tells the subscriber that the publisher has completed publishing, either normally or with an error."
+    },
+    {
+      "name": "func receive(subscription: Subscription)",
+      "desc": "Tells the subscriber that it has successfully subscribed to the publisher and may request items."
+    }
+  ],
+  "declaration": "final class Assign<Root, Input>",
+  "conformsTo": [
+    "Cancellable",
+    "CustomCombineIdentifierConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "Subscriber"
+  ]
+}

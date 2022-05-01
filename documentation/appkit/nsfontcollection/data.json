@@ -1,0 +1,101 @@
+{
+  "path": "/documentation/appkit/nsfontcollection",
+  "type": "Class",
+  "name": "NSFontCollection",
+  "desc": "A font collection, which is a group of font descriptors taken together as a single object.",
+  "items": [
+    {
+      "name": "init(descriptors: [NSFontDescriptor])",
+      "desc": "Returns a font collection matching the given descriptors."
+    },
+    {
+      "name": "init?(locale: Locale)",
+      "desc": "Returns a collection of fonts matching the given locale."
+    },
+    {
+      "name": "init?(name: NSFontCollection.Name)",
+      "desc": "Creates a named font collection object."
+    },
+    {
+      "name": "init?(name: NSFontCollection.Name, visibility: NSFontCollection.Visibility)",
+      "desc": "Creates a font collection with the specified name and font visibility."
+    },
+    {
+      "name": "class var withAllAvailableDescriptors: NSFontCollection",
+      "desc": "The font collection that matches all registered fonts."
+    },
+    {
+      "name": "class func rename(fromName: NSFontCollection.Name, visibility: NSFontCollection.Visibility, toName: NSFontCollection.Name)",
+      "desc": "Renames the font collection with the specified name and visibility to the second name specified."
+    },
+    {
+      "name": "class func show(NSFontCollection, withName: NSFontCollection.Name, visibility: NSFontCollection.Visibility)",
+      "desc": "Make the given font collection visible by giving it a name."
+    },
+    {
+      "name": "class func hide(withName: NSFontCollection.Name, visibility: NSFontCollection.Visibility)",
+      "desc": "Remove from view the named font collection with the specified visibility."
+    },
+    {
+      "name": "class var allFontCollectionNames: [NSFontCollection.Name]",
+      "desc": "Returns all named collections visible to this process."
+    },
+    {
+      "name": "struct NSFontCollection.Name",
+      "desc": "The constants represent the standard mutable collection names—these names are included in the list of allFontCollectionNames--they have special meaning to the Cocoa font system and should not be hidden or renamed."
+    },
+    {
+      "name": "struct NSFontCollection.Visibility",
+      "desc": "Constants that specify the visibility of font collections."
+    },
+    {
+      "name": "var matchingDescriptors: [NSFontDescriptor]?",
+      "desc": "An array of font descriptors matching the logical descriptors."
+    },
+    {
+      "name": "func matchingDescriptors(forFamily: String) -> [NSFontDescriptor]?",
+      "desc": "Returns an array of font descriptors matching the logical descriptors for the given font family."
+    },
+    {
+      "name": "func matchingDescriptors(forFamily: String, options: [NSFontCollectionMatchingOptionKey : NSNumber]?) -> [NSFontDescriptor]?",
+      "desc": "Returns an array of font descriptors matching the logical descriptors for the given font family and options."
+    },
+    {
+      "name": "func matchingDescriptors(options: [NSFontCollectionMatchingOptionKey : NSNumber]?) -> [NSFontDescriptor]?",
+      "desc": "Returns an array of font descriptors matching the logical descriptors with the given options."
+    },
+    {
+      "name": "struct NSFontCollectionMatchingOptionKey",
+      "desc": "These constants are used by the matchingDescriptors(options:) and matchingDescriptors(forFamily:options:) options dictionary parameters."
+    },
+    {
+      "name": "var queryDescriptors: [NSFontDescriptor]?",
+      "desc": "An array of font descriptors whose matching results produce the collection’s matching descriptors."
+    },
+    {
+      "name": "var exclusionDescriptors: [NSFontDescriptor]?",
+      "desc": "A list of query font descriptors whose matching results are excluded from the list of matching descriptors."
+    },
+    {
+      "name": "class let didChangeNotification: NSNotification.Name",
+      "desc": "Posted whenever a font collection is changed."
+    },
+    {
+      "name": "struct NSFontCollection.UserInfoKey",
+      "desc": "These constants are used as keys in the didChangeNotification userInfo dictionary to indicate the changes that have taken place."
+    },
+    {
+      "name": "struct NSFontCollection.ActionTypeKey",
+      "desc": "The following actions are possible values of the actionUserInfoKey in the didChangeNotification userInfo method."
+    }
+  ],
+  "declaration": "class NSFontCollection : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "NSCopying",
+    "NSMutableCopying"
+  ]
+}

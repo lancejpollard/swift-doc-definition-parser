@@ -1,0 +1,155 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsimage",
+  "type": "Class",
+  "name": "MPSImage",
+  "desc": "A texture that may have more than four channels for use in convolutional neural networks.",
+  "items": [
+    {
+      "name": "init(device: MTLDevice, imageDescriptor: MPSImageDescriptor)",
+      "desc": "Initializes an empty image."
+    },
+    {
+      "name": "class MPSImageDescriptor",
+      "desc": "A description of the attributes used to create an MPSImage."
+    },
+    {
+      "name": "init(texture: MTLTexture, featureChannels: Int)",
+      "desc": "Initializes an image from a texture. The user-allocated texture has been created for a specific number of feature channels and number of images."
+    },
+    {
+      "name": "init(parentImage: MPSImage, sliceRange: NSRange, featureChannels: Int)"
+    },
+    {
+      "name": "func setPurgeableState(MPSPurgeableState) -> MPSPurgeableState",
+      "desc": "Set (or query) the purgeable state of the image’s underlying texture."
+    },
+    {
+      "name": "enum MPSPurgeableState",
+      "desc": "The purgeable state of an image’s underlying texture."
+    },
+    {
+      "name": "func readBytes(UnsafeMutableRawPointer, dataLayout: MPSDataLayout, bytesPerRow: Int, region: MTLRegion, featureChannelInfo: MPSImageReadWriteParams, imageIndex: Int)"
+    },
+    {
+      "name": "func readBytes(UnsafeMutableRawPointer, dataLayout: MPSDataLayout, imageIndex: Int)"
+    },
+    {
+      "name": "func writeBytes(UnsafeRawPointer, dataLayout: MPSDataLayout, bytesPerRow: Int, region: MTLRegion, featureChannelInfo: MPSImageReadWriteParams, imageIndex: Int)"
+    },
+    {
+      "name": "func writeBytes(UnsafeRawPointer, dataLayout: MPSDataLayout, imageIndex: Int)"
+    },
+    {
+      "name": "struct MPSImageReadWriteParams",
+      "desc": "Parameters that control reading and writing of a particular set of feature channels."
+    },
+    {
+      "name": "enum MPSDataLayout",
+      "desc": "Options that define how buffer data is arranged."
+    },
+    {
+      "name": "class func defaultAllocator() -> MPSImageAllocator"
+    },
+    {
+      "name": "protocol MPSImageAllocator"
+    },
+    {
+      "name": "var device: MTLDevice",
+      "desc": "The device on which the image will be used."
+    },
+    {
+      "name": "var width: Int",
+      "desc": "The formal width of the image, in pixels."
+    },
+    {
+      "name": "var height: Int",
+      "desc": "The formal height of the image, in pixels."
+    },
+    {
+      "name": "var featureChannels: Int",
+      "desc": "The number of feature channels per pixel."
+    },
+    {
+      "name": "var numberOfImages: Int",
+      "desc": "The number of images for batch processing."
+    },
+    {
+      "name": "var textureType: MTLTextureType",
+      "desc": "The type of the underlying texture, typically MTLTextureType.type2D or MTLTextureType.type2DArray."
+    },
+    {
+      "name": "enum MTLTextureType",
+      "desc": "The dimension of each image, including whether multiple images are arranged into an array or a cube."
+    },
+    {
+      "name": "var pixelFormat: MTLPixelFormat",
+      "desc": "The pixel format of the underlying texture."
+    },
+    {
+      "name": "enum MTLPixelFormat",
+      "desc": "The data formats that describe the organization and characteristics of individual pixels in a texture."
+    },
+    {
+      "name": "var precision: Int",
+      "desc": "The number of bits of numeric precision available for each feature channel."
+    },
+    {
+      "name": "var usage: MTLTextureUsage",
+      "desc": "The intended usage of the underlying texture."
+    },
+    {
+      "name": "struct MTLTextureUsage",
+      "desc": "An enumeration for the various options that determine how you can use a texture."
+    },
+    {
+      "name": "var pixelSize: Int",
+      "desc": "The number of bytes from the first byte of one pixel to the first byte of the next pixel, in storage order. (Includes padding.)"
+    },
+    {
+      "name": "var texture: MTLTexture",
+      "desc": "The underlying texture."
+    },
+    {
+      "name": "protocol MTLTexture",
+      "desc": "A resource that holds formatted image data."
+    },
+    {
+      "name": "var label: String?",
+      "desc": "A string to help identify this object."
+    },
+    {
+      "name": "var featureChannelFormat: MPSImageFeatureChannelFormat"
+    },
+    {
+      "name": "var parent: MPSImage?"
+    },
+    {
+      "name": "func batchRepresentation() -> [MPSImage]"
+    },
+    {
+      "name": "func batchRepresentation(withSubRange: NSRange) -> [MPSImage]"
+    },
+    {
+      "name": "func readBytes(UnsafeMutableRawPointer, dataLayout: MPSDataLayout, bytesPerRow: Int, bytesPerImage: Int, region: MTLRegion, featureChannelInfo: MPSImageReadWriteParams, imageIndex: Int)"
+    },
+    {
+      "name": "func resourceSize() -> Int"
+    },
+    {
+      "name": "func subImage(withFeatureChannelRange: NSRange) -> MPSImage"
+    },
+    {
+      "name": "func synchronize(on: MTLCommandBuffer)"
+    },
+    {
+      "name": "func writeBytes(UnsafeRawPointer, dataLayout: MPSDataLayout, bytesPerColumn: Int, bytesPerRow: Int, bytesPerImage: Int, region: MTLRegion, featureChannelInfo: MPSImageReadWriteParams, imageIndex: Int)"
+    },
+    {
+      "name": "func writeBytes(UnsafeRawPointer, dataLayout: MPSDataLayout, bytesPerRow: Int, bytesPerImage: Int, region: MTLRegion, featureChannelInfo: MPSImageReadWriteParams, imageIndex: Int)"
+    }
+  ],
+  "declaration": "class MPSImage : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

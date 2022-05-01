@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/apple_news/article",
+  "type": "Object",
+  "name": "Article",
+  "desc": "See the fields returned by the article endpoints.",
+  "items": [
+    {
+      "name": "accessoryText",
+      "desc": "Text that appears alongside article headlines — author name, channel name, subtitle, and so on. Maximum length: 100 characters.Default value: metadata.authors from the Apple News Format article."
+    },
+    {
+      "name": "createdAt",
+      "desc": "The date and time the article was created."
+    },
+    {
+      "name": "document",
+      "desc": "The content of the article, as an Apple News Format document."
+    },
+    {
+      "name": "id",
+      "desc": "The unique identifier of the article."
+    },
+    {
+      "name": "isCandidateToBeFeatured",
+      "desc": "A Boolean value that indicates whether or not this article should be considered for featuring in News. Default value: false"
+    },
+    {
+      "name": "isPreview",
+      "desc": "A Boolean value that indicates whether this article should be public (live) or should be a preview that is only visible to members of your channel. Set isPreview to false to publish the article immediately and make it visible to all News users.If your channel has not yet been approved to publish articles in Apple News Format, setting isPreview to false results in an ONLY_PREVIEW_ALLOWED error. Default value: true if your channel has not yet been approved to publish articles in Apple News Format; false if your channel has been approved."
+    },
+    {
+      "name": "isSponsored",
+      "desc": "A Boolean value that indicates whether this article consists of sponsored content for promotional purposes. Sponsored content must be marked as such; channels that do not follow this policy may be suspended.When using isSponsored, if you do not want the sponsored article to appear in your channel’s feed, set sections to [] (an empty array).Default value: false"
+    },
+    {
+      "name": "links",
+      "desc": "The URL of the channel in which the article appears."
+    },
+    {
+      "name": "maturityRating",
+      "desc": "A string value that indicates the viewing audience for the content. The types of audiences or ratings are KIDS, MATURE, and GENERAL, or null if unspecified. A MATURE rating indicates explicit content that is only appropriate for a specific audience.Default value: null"
+    },
+    {
+      "name": "modifiedAt",
+      "desc": "The date and time this article was last modified."
+    },
+    {
+      "name": "revision",
+      "desc": "The current revision token for the article. The latest revision must be sent when issuing a request to Update an Article. The value of this field must match the latest revision from an earlier Create, Read, or Update Article call. This field prevents multiple users from updating an article simultaneously, which would result in data loss.Required: Yes"
+    },
+    {
+      "name": "shareUrl",
+      "desc": "The URL to the article within the News app. The shareUrl field applies only on devices with iOS 9 or later installed."
+    },
+    {
+      "name": "state",
+      "desc": "The current state of the article, which can be one of the following:PROCESSING: The article has been published and is in processing. LIVE: The article has been published, has finished processing, and is visible in the News app. PROCESSING_UPDATE: A previous version of the article is visible in the News app, and an update is currently in processing.TAKEN_DOWN: The article was previously visible in the News app, but was taken down. FAILED_PROCESSING: The article failed during processing and is not visible in the News app.FAILED_PROCESSING_UPDATE: A previous version of the article is visible in the News app, but an update failed during processing.DUPLICATE. The article is a duplicate of another article and is not visible in the News app."
+    },
+    {
+      "name": "title",
+      "desc": "The title of the article, as specified in the Apple News Format document."
+    },
+    {
+      "name": "type",
+      "desc": "Article"
+    },
+    {
+      "name": "warnings",
+      "desc": "A list of warning messages indicating nonfatal problems with the article."
+    }
+  ]
+}

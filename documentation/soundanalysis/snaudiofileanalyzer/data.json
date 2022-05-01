@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/soundanalysis/snaudiofileanalyzer",
+  "type": "Class",
+  "name": "SNAudioFileAnalyzer",
+  "desc": "An analyzer that runs sound classification requests on an audio file.",
+  "items": [
+    {
+      "name": "init(url: URL)",
+      "desc": "Creates a new audio file analyzer."
+    },
+    {
+      "name": "func add(SNRequest, withObserver: SNResultsObserving)",
+      "desc": "Adds a new analysis request to the audio file analyzer."
+    },
+    {
+      "name": "protocol SNRequest",
+      "desc": "A protocol that represents sound analysis requests."
+    },
+    {
+      "name": "protocol SNResultsObserving",
+      "desc": "The interface your app implements to receive the results of an analysis request."
+    },
+    {
+      "name": "func remove(SNRequest)",
+      "desc": "Removes an existing request from the audio file analyzer."
+    },
+    {
+      "name": "func removeAllRequests()",
+      "desc": "Removes all the sound analysis requests from the audio file analyzer."
+    },
+    {
+      "name": "func analyze()",
+      "desc": "Analyzes the audio file synchronously."
+    },
+    {
+      "name": "func analyze(completionHandler: (Bool) -> Void)",
+      "desc": "Analyzes the audio file asynchronously."
+    },
+    {
+      "name": "func cancelAnalysis()",
+      "desc": "Cancels all the asynchronous sound analysis requests the analyzer is currently processing."
+    }
+  ],
+  "declaration": "class SNAudioFileAnalyzer : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

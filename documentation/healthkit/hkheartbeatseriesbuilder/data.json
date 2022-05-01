@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/healthkit/hkheartbeatseriesbuilder",
+  "type": "Class",
+  "name": "HKHeartbeatSeriesBuilder",
+  "desc": "A builder object for incrementally building a heartbeat series.",
+  "items": [
+    {
+      "name": "init(healthStore: HKHealthStore, device: HKDevice?, start: Date)",
+      "desc": "Creates a new heartbeat series builder."
+    },
+    {
+      "name": "class var maximumCount: Int",
+      "desc": "The maximum number of heartbeats you can add to the sample."
+    },
+    {
+      "name": "func addHeartbeatWithTimeInterval(sinceSeriesStartDate: TimeInterval, precededByGap: Bool, completion: (Bool, Error?) -> Void)",
+      "desc": "Adds a heartbeat to the series."
+    },
+    {
+      "name": "func addMetadata([String : Any], completion: (Bool, Error?) -> Void)",
+      "desc": "Adds metadata to the sample."
+    },
+    {
+      "name": "func finishSeries(completion: (HKHeartbeatSeriesSample?, Error?) -> Void)",
+      "desc": "Finalizes the series and returns the resulting heartbeat series sample."
+    }
+  ],
+  "declaration": "class HKHeartbeatSeriesBuilder : HKSeriesBuilder",
+  "inheritsFrom": [
+    "HKSeriesBuilder"
+  ]
+}

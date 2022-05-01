@@ -1,0 +1,207 @@
+{
+  "path": "/documentation/foundation/nsdata",
+  "type": "Class",
+  "name": "NSData",
+  "desc": "A static byte buffer that bridges to Data; use NSData when you need reference semantics or other Foundation-specific behavior.",
+  "items": [
+    {
+      "name": "init(bytes: UnsafeRawPointer?, length: Int)",
+      "desc": "Initializes a data object filled with a given number of bytes copied from a given buffer."
+    },
+    {
+      "name": "init(bytesNoCopy: UnsafeMutableRawPointer, length: Int)",
+      "desc": "Initializes a data object filled with a given number of bytes of data from a given buffer."
+    },
+    {
+      "name": "init(bytesNoCopy: UnsafeMutableRawPointer, length: Int, deallocator: ((UnsafeMutableRawPointer, Int) -> Void)?)",
+      "desc": "Initializes a data object filled with a given number of bytes of data from a given buffer, with a custom deallocator block."
+    },
+    {
+      "name": "init(bytesNoCopy: UnsafeMutableRawPointer, length: Int, freeWhenDone: Bool)",
+      "desc": "Initializes a newly allocated data object by adding the given number of bytes from the given buffer."
+    },
+    {
+      "name": "init(data: Data)",
+      "desc": "Initializes a data object with the contents of another data object."
+    },
+    {
+      "name": "init?(contentsOfFile: String)",
+      "desc": "Initializes a data object with the content of the file at a given path."
+    },
+    {
+      "name": "init(contentsOfFile: String, options: NSData.ReadingOptions)",
+      "desc": "Initializes a data object with the content of the file at a given path."
+    },
+    {
+      "name": "init?(contentsOf: URL)",
+      "desc": "Initializes a data object with the data from the location specified by a given URL."
+    },
+    {
+      "name": "init(contentsOf: URL, options: NSData.ReadingOptions)",
+      "desc": "Initializes a data object with the data from the location specified by a given URL."
+    },
+    {
+      "name": "struct NSData.ReadingOptions",
+      "desc": "Options for methods used to read data objects."
+    },
+    {
+      "name": "func write(toFile: String, atomically: Bool) -> Bool",
+      "desc": "Writes the data object's bytes to the file specified by a given path."
+    },
+    {
+      "name": "func write(toFile: String, options: NSData.WritingOptions)",
+      "desc": "Writes the data object’s bytes to the file specified by a given path."
+    },
+    {
+      "name": "func write(to: URL, atomically: Bool) -> Bool",
+      "desc": "Writes the data object's bytes to the location specified by a given URL."
+    },
+    {
+      "name": "func write(to: URL, options: NSData.WritingOptions)",
+      "desc": "Writes the data object's bytes to the location specified by a given URL."
+    },
+    {
+      "name": "struct NSData.WritingOptions",
+      "desc": "Options for methods used to write data objects."
+    },
+    {
+      "name": "init?(base64Encoded: Data, options: NSData.Base64DecodingOptions)",
+      "desc": "Initializes a data object with the given Base64 encoded data."
+    },
+    {
+      "name": "init?(base64Encoded: String, options: NSData.Base64DecodingOptions)",
+      "desc": "Initializes a data object with the given Base64 encoded string."
+    },
+    {
+      "name": "func base64EncodedData(options: NSData.Base64EncodingOptions) -> Data",
+      "desc": "Creates a Base64, UTF-8 encoded data object from the string using the given options."
+    },
+    {
+      "name": "func base64EncodedString(options: NSData.Base64EncodingOptions) -> String",
+      "desc": "Creates a Base64 encoded string from the string using the given options."
+    },
+    {
+      "name": "struct NSData.Base64EncodingOptions",
+      "desc": "Options for methods used to Base64 encode data."
+    },
+    {
+      "name": "struct NSData.Base64DecodingOptions",
+      "desc": "Options to modify the decoding algorithm used to decode Base64 encoded data."
+    },
+    {
+      "name": "var bytes: UnsafeRawPointer",
+      "desc": "A pointer to the data object's contents."
+    },
+    {
+      "name": "func enumerateBytes((UnsafeRawPointer, NSRange, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Enumerates each range of bytes in the data object using a block."
+    },
+    {
+      "name": "func getBytes(UnsafeMutableRawPointer, length: Int)",
+      "desc": "Copies a number of bytes from the start of the data object into a given buffer."
+    },
+    {
+      "name": "func getBytes(UnsafeMutableRawPointer, range: NSRange)",
+      "desc": "Copies a range of bytes from the data object into a given buffer."
+    },
+    {
+      "name": "func subdata(with: NSRange) -> Data",
+      "desc": "Returns a new data object containing the data object's bytes that fall within the limits specified by a given range."
+    },
+    {
+      "name": "func range(of: Data, options: NSData.SearchOptions, in: NSRange) -> NSRange",
+      "desc": "Finds and returns the range of the first occurrence of the given data, within the given range, subject to given options."
+    },
+    {
+      "name": "struct NSData.SearchOptions",
+      "desc": "Options for method used to search data objects."
+    },
+    {
+      "name": "func isEqual(to: Data) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this data object is the same as another."
+    },
+    {
+      "name": "var length: Int",
+      "desc": "The number of bytes contained by the data object."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A string that contains a hexadecimal representation of the data object’s contents in a property list format."
+    },
+    {
+      "name": "func compressed(using: NSData.CompressionAlgorithm) -> Self",
+      "desc": "Returns a new data object by compressing the data object’s bytes."
+    },
+    {
+      "name": "func decompressed(using: NSData.CompressionAlgorithm) -> Self",
+      "desc": "Returns a new data object by decompressing data object’s bytes."
+    },
+    {
+      "name": "enum NSData.CompressionAlgorithm",
+      "desc": "An algorithm that indicates how to compress or decompress data."
+    },
+    {
+      "name": "var NSCompressionErrorMaximum: Int",
+      "desc": "The end of the range of error codes reserved for compression errors."
+    },
+    {
+      "name": "var NSCompressionErrorMinimum: Int",
+      "desc": "The start of the range of error codes reserved for compression errors."
+    },
+    {
+      "name": "var NSCompressionFailedError: Int",
+      "desc": "An error code value that indicates a failure to compress data using the provided algorithm."
+    },
+    {
+      "name": "var NSDecompressionFailedError: Int",
+      "desc": "An error code value that indicates a failure to decompress data using the provided algorithm."
+    },
+    {
+      "name": "typealias NSData.Element"
+    },
+    {
+      "name": "typealias NSData.Index"
+    },
+    {
+      "name": "typealias NSData.Indices"
+    },
+    {
+      "name": "typealias NSData.Iterator"
+    },
+    {
+      "name": "typealias NSData.Regions"
+    },
+    {
+      "name": "typealias NSData.SubSequence"
+    },
+    {
+      "name": "var endIndex: Int"
+    },
+    {
+      "name": "var regions: [Data]"
+    },
+    {
+      "name": "var startIndex: Int"
+    },
+    {
+      "name": "func firstRange<D, R>(of: D, in: R) -> Range<Int>?"
+    },
+    {
+      "name": "func lastRange<D, R>(of: D, in: R) -> Range<Int>?"
+    },
+    {
+      "name": "subscript(Int) -> UInt8"
+    }
+  ],
+  "declaration": "class NSData : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "CKRecordValueProtocol",
+    "DataProtocol",
+    "NSCopying",
+    "NSMutableCopying",
+    "NSSecureCoding"
+  ]
+}

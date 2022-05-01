@@ -1,0 +1,35 @@
+{
+  "path": "/documentation/carekit/ockcalendarcontroller",
+  "type": "Class",
+  "name": "OCKCalendarController",
+  "desc": "A controller object that handles updating a calendar.",
+  "items": [
+    {
+      "name": "init(dateInterval: DateInterval, storeManager: OCKSynchronizedStoreManager)",
+      "desc": "Creates a calendar controller that contains a specific date."
+    },
+    {
+      "name": "let dateInterval: DateInterval",
+      "desc": "The date interval for the week the calendar is displaying."
+    },
+    {
+      "name": "let storeManager: OCKSynchronizedStoreManager",
+      "desc": "The object that synchronizes between the store and controller."
+    },
+    {
+      "name": "func fetchAndObserveAdherence(usingAggregator: OCKAdherenceAggregator, errorHandler: ((OCKStoreError) -> Void)?)",
+      "desc": "Retrieves and observes adherence for each date in the calendar."
+    },
+    {
+      "name": "let objectWillChange: CurrentValueSubject<[OCKCompletionRingButton.CompletionState], Never>"
+    },
+    {
+      "name": "var store: OCKAnyEventStore"
+    }
+  ],
+  "declaration": "class OCKCalendarController",
+  "conformsTo": [
+    "OCKCalendarControllerProtocol",
+    "ObservableObject"
+  ]
+}

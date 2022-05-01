@@ -1,0 +1,104 @@
+{
+  "path": "/documentation/createml/mlrandomforestclassifier",
+  "type": "Structure",
+  "name": "MLRandomForestClassifier",
+  "desc": "A classifier based on a collection of decision trees trained on subsets of the data.",
+  "items": [
+    {
+      "name": "init(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]?, parameters: MLRandomForestClassifier.ModelParameters)",
+      "desc": "Creates a Random Forest Classifier from the feature columns in the training data to predict the categories in the target column."
+    },
+    {
+      "name": "struct MLRandomForestClassifier.ModelParameters",
+      "desc": "Parameters that affect the process of training a model."
+    },
+    {
+      "name": "let modelParameters: MLRandomForestClassifier.ModelParameters",
+      "desc": "The underlying parameters used when training the model."
+    },
+    {
+      "name": "var targetColumn: String",
+      "desc": "The name of the column you selected at initialization to define which categories the classifier predicts."
+    },
+    {
+      "name": "var featureColumns: [String]",
+      "desc": "The names of the columns you selected at initialization to train the classifier."
+    },
+    {
+      "name": "var trainingMetrics: MLClassifierMetrics",
+      "desc": "Measurements of the classifier’s performance on the training data set."
+    },
+    {
+      "name": "var validationMetrics: MLClassifierMetrics",
+      "desc": "Measurements of the classifier’s performance on the validation data set."
+    },
+    {
+      "name": "func evaluation(on: MLDataTable) -> MLClassifierMetrics",
+      "desc": "Evaluates the classifier on the provided labeled data."
+    },
+    {
+      "name": "func predictions(from: MLDataTable) -> MLUntypedColumn",
+      "desc": "Classifies the provided data into the target categories."
+    },
+    {
+      "name": "func write(to: URL, metadata: MLModelMetadata?)",
+      "desc": "Exports a Core ML model file for use in your app."
+    },
+    {
+      "name": "func write(toFile: String, metadata: MLModelMetadata?)",
+      "desc": "Exports a Core ML model file for use in your app."
+    },
+    {
+      "name": "var model: MLModel",
+      "desc": "The underlying Core ML model stored in memory."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the random forest classifier."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the random forest classifier that’s suitable for output during debugging."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the random forest classifier shown in a playground."
+    },
+    {
+      "name": "init(checkpoint: MLCheckpoint)"
+    },
+    {
+      "name": "init(trainingData: DataFrame, targetColumn: String, featureColumns: [String]?, parameters: MLRandomForestClassifier.ModelParameters)"
+    },
+    {
+      "name": "func evaluation(on: DataFrame) -> MLClassifierMetrics"
+    },
+    {
+      "name": "func predictions(from: DataFrame) -> AnyColumn"
+    },
+    {
+      "name": "static func makeTrainingSession(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]?, parameters: MLRandomForestClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLTrainingSession<MLRandomForestClassifier>"
+    },
+    {
+      "name": "static func makeTrainingSession(trainingData: DataFrame, targetColumn: String, featureColumns: [String]?, parameters: MLRandomForestClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLTrainingSession<MLRandomForestClassifier>"
+    },
+    {
+      "name": "static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) -> MLTrainingSession<MLRandomForestClassifier>"
+    },
+    {
+      "name": "static func resume(MLTrainingSession<MLRandomForestClassifier>) -> MLJob<MLRandomForestClassifier>"
+    },
+    {
+      "name": "static func train(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]?, parameters: MLRandomForestClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLJob<MLRandomForestClassifier>"
+    },
+    {
+      "name": "static func train(trainingData: DataFrame, targetColumn: String, featureColumns: [String]?, parameters: MLRandomForestClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLJob<MLRandomForestClassifier>"
+    }
+  ],
+  "declaration": "struct MLRandomForestClassifier",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomStringConvertible"
+  ]
+}

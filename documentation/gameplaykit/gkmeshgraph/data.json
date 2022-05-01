@@ -1,0 +1,67 @@
+{
+  "path": "/documentation/gameplaykit/gkmeshgraph",
+  "type": "Generic Class",
+  "name": "GKMeshGraph",
+  "desc": "A navigation graph for 2D game worlds that creates a space-filling network for smooth pathfinding around obstacles.",
+  "items": [
+    {
+      "name": "init(bufferRadius: Float, minCoordinate: vector_float2, maxCoordinate: vector_float2, nodeClass: AnyClass)",
+      "desc": "Initializes a graph to cover the specified area, using the specified node class."
+    },
+    {
+      "name": "init(bufferRadius: Float, minCoordinate: vector_float2, maxCoordinate: vector_float2)",
+      "desc": "Initializes a graph to cover the specified area."
+    },
+    {
+      "name": "var obstacles: [GKPolygonObstacle]",
+      "desc": "The list of obstacle objects in the graph, each of which describes a polygon-shaped impassable area."
+    },
+    {
+      "name": "func addObstacles([GKPolygonObstacle])",
+      "desc": "Adds new obstacles to the graph."
+    },
+    {
+      "name": "func removeObstacles([GKPolygonObstacle])",
+      "desc": "Removes the specified obstacle from the graph."
+    },
+    {
+      "name": "func connectUsingObstacles(node: NodeType)",
+      "desc": "Adds the specified node to the graph, connecting it to its nearest neighbors without creating connections that pass through obstacles or their buffer regions."
+    },
+    {
+      "name": "var bufferRadius: Float",
+      "desc": "The distance from obstacle edges that should also be considered impassable."
+    },
+    {
+      "name": "func triangulate()",
+      "desc": "Creates or updates the graph with a network of nodes that describes the open space around its obstacles."
+    },
+    {
+      "name": "var triangulationMode: GKMeshGraphTriangulationMode",
+      "desc": "A set of options for how to place graph nodes when triangulating the graph."
+    },
+    {
+      "name": "func triangle(at: Int) -> GKTriangle",
+      "desc": "The triangle definition at the specified index."
+    },
+    {
+      "name": "var triangleCount: Int",
+      "desc": "The number of triangles in the mesh."
+    },
+    {
+      "name": "struct GKMeshGraphTriangulationMode",
+      "desc": "Options for how to place graph nodes when generating the graph, used by the triangulationMode property."
+    },
+    {
+      "name": "struct GKTriangle",
+      "desc": "The definition of a triangle in the mesh, available with the triangle(at:) method."
+    },
+    {
+      "name": "func classForGenericArgument(at: Int) -> AnyClass"
+    }
+  ],
+  "declaration": "class GKMeshGraph<NodeType> : GKGraph where NodeType : GKGraphNode2D",
+  "inheritsFrom": [
+    "GKGraph"
+  ]
+}

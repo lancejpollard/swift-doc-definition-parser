@@ -1,0 +1,124 @@
+{
+  "path": "/documentation/system/filedescriptor",
+  "type": "Structure",
+  "name": "FileDescriptor",
+  "desc": "An abstract handle to an input or output data resource, such as a file or a socket.",
+  "items": [
+    {
+      "name": "init(rawValue: CInt)",
+      "desc": "Creates a strongly-typed file handle from a raw C file handle."
+    },
+    {
+      "name": "let rawValue: CInt",
+      "desc": "The raw C file handle."
+    },
+    {
+      "name": "typealias RawValue",
+      "desc": "The raw type that can be used to represent all values of the conforming type."
+    },
+    {
+      "name": "static func open(FilePath, FileDescriptor.AccessMode, options: FileDescriptor.OpenOptions, permissions: FilePermissions?, retryOnInterrupt: Bool) throws -> FileDescriptor",
+      "desc": "Opens or creates a file for reading or writing."
+    },
+    {
+      "name": "static func open(UnsafePointer<CChar>, FileDescriptor.AccessMode, options: FileDescriptor.OpenOptions, permissions: FilePermissions?, retryOnInterrupt: Bool) throws -> FileDescriptor",
+      "desc": "Opens or creates a file for reading or writing."
+    },
+    {
+      "name": "struct AccessMode",
+      "desc": "The desired read and write access for a newly opened file."
+    },
+    {
+      "name": "struct OpenOptions",
+      "desc": "Options that specify behavior for a newly-opened file."
+    },
+    {
+      "name": "func read(into: UnsafeMutableRawBufferPointer, retryOnInterrupt: Bool) throws -> Int",
+      "desc": "Reads bytes at the current file offset into a buffer."
+    },
+    {
+      "name": "func read(fromAbsoluteOffset: Int64, into: UnsafeMutableRawBufferPointer, retryOnInterrupt: Bool) throws -> Int",
+      "desc": "Reads bytes at the specified offset into a buffer."
+    },
+    {
+      "name": "func seek(offset: Int64, from: FileDescriptor.SeekOrigin) throws -> Int64",
+      "desc": "Reposition the offset for the given file descriptor."
+    },
+    {
+      "name": "struct SeekOrigin",
+      "desc": "Options for specifying what a file descriptor’s offset is relative to."
+    },
+    {
+      "name": "func write(UnsafeRawBufferPointer, retryOnInterrupt: Bool) throws -> Int",
+      "desc": "Writes the contents of a buffer at the current file offset."
+    },
+    {
+      "name": "func write(toAbsoluteOffset: Int64, UnsafeRawBufferPointer, retryOnInterrupt: Bool) throws -> Int",
+      "desc": "Writes the contents of a buffer at the specified offset."
+    },
+    {
+      "name": "func writeAll<S>(S) throws -> Int",
+      "desc": "Writes a sequence of bytes to the current offset and then updates the offset."
+    },
+    {
+      "name": "func writeAll<S>(toAbsoluteOffset: Int64, S) throws -> Int",
+      "desc": "Writes a sequence of bytes to the given offset."
+    },
+    {
+      "name": "func close() throws",
+      "desc": "Deletes a file descriptor."
+    },
+    {
+      "name": "func closeAfter<R>(() throws -> R) throws -> R",
+      "desc": "Runs a closure and then closes the file descriptor, even if an error occurs."
+    },
+    {
+      "name": "init(from: Decoder) throws",
+      "desc": "Creates a new instance by decoding from the given decoder, when the type’s RawValue is Int32."
+    },
+    {
+      "name": "func encode(to: Encoder) throws",
+      "desc": "Encodes this value into the given encoder, when the type’s RawValue is Int32."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": ""
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": ""
+    },
+    {
+      "name": "func duplicate(as: FileDescriptor?, retryOnInterrupt: Bool) throws -> FileDescriptor",
+      "desc": "Duplicate this file descriptor and return the newly created copy."
+    },
+    {
+      "name": "static var standardError: FileDescriptor",
+      "desc": "The standard error file descriptor, with a numeric value of 2."
+    },
+    {
+      "name": "static var standardInput: FileDescriptor",
+      "desc": "The standard input file descriptor, with a numeric value of 0."
+    },
+    {
+      "name": "static var standardOutput: FileDescriptor",
+      "desc": "The standard output file descriptor, with a numeric value of 1."
+    },
+    {
+      "name": "static func pipe() throws -> (readEnd: FileDescriptor, writeEnd: FileDescriptor)",
+      "desc": "Create a pipe, a unidirectional data channel which can be used for interprocess communication."
+    }
+  ],
+  "declaration": "@frozen struct FileDescriptor",
+  "conformsTo": [
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "Hashable",
+    "RawRepresentable",
+    "Sendable"
+  ]
+}

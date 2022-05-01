@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/foundation/urlsession/authchallengedisposition",
+  "type": "Enumeration",
+  "name": "URLSession.AuthChallengeDisposition",
+  "desc": "Constants passed by session or task delegates to the provided continuation block in response to an authentication challenge.",
+  "items": [
+    {
+      "name": "case useCredential",
+      "desc": "Use the specified credential, which may be nil."
+    },
+    {
+      "name": "case performDefaultHandling",
+      "desc": "Use the default handling for the challenge as though this delegate method were not implemented. The provided credential parameter is ignored."
+    },
+    {
+      "name": "case cancelAuthenticationChallenge",
+      "desc": "Cancel the entire request. The provided credential parameter is ignored."
+    },
+    {
+      "name": "case rejectProtectionSpace",
+      "desc": "Reject this challenge, and call the authentication delegate method again with the next authentication protection space. The provided credential parameter is ignored."
+    }
+  ],
+  "declaration": "enum AuthChallengeDisposition : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "path": "/documentation/scenekit/scnshadable",
+  "type": "Protocol",
+  "name": "SCNShadable",
+  "desc": "Methods for customizing SceneKit's rendering of geometry and materials using Metal or OpenGL shader programs.",
+  "items": [
+    {
+      "name": "var program: SCNProgram?",
+      "desc": "A program used when rendering the object."
+    },
+    {
+      "name": "var shaderModifiers: [SCNShaderModifierEntryPoint : String]?",
+      "desc": "A dictionary of GLSL source code snippets for customizing the shader programs provided by SceneKit."
+    },
+    {
+      "name": "func handleBinding(ofSymbol: String, handler: SCNBindingBlock?)",
+      "desc": "Specifies a block to be called before rendering with programs with the specified GLSL uniform variable or attribute name."
+    },
+    {
+      "name": "func handleUnbinding(ofSymbol: String, handler: SCNBindingBlock?)",
+      "desc": "Specifies a block to be called after rendering with programs with the specified GLSL uniform variable or attribute name."
+    },
+    {
+      "name": "typealias SCNBindingBlock",
+      "desc": "The signature for a block called for binding or unbinding a GLSL symbol in a custom program."
+    },
+    {
+      "name": "struct SCNShaderModifierEntryPoint",
+      "desc": "Keys for the shaderModifiers dictionary, each corresponding to an entry point in SceneKit’s shader programs where you can attach a custom GPU shader code snippet."
+    },
+    {
+      "name": "var minimumLanguageVersion: NSNumber?"
+    }
+  ],
+  "declaration": "protocol SCNShadable",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "path": "/documentation/carekit/ocknote",
+  "type": "Structure",
+  "name": "OCKNote",
+  "desc": "An object that provides additional information or context for objects and values.",
+  "items": [
+    {
+      "name": "init(author: String?, title: String?, content: String?)",
+      "desc": "Creates a new note with an optional author, title, and content."
+    },
+    {
+      "name": "var author: String?",
+      "desc": "The person who created the note."
+    },
+    {
+      "name": "var title: String?",
+      "desc": "The title for the note."
+    },
+    {
+      "name": "var content: String?",
+      "desc": "The content of the note."
+    },
+    {
+      "name": "var createdDate: Date? { get }",
+      "desc": "The date the database first persisted the object."
+    },
+    {
+      "name": "var updatedDate: Date? { get }",
+      "desc": "The most recent date when the store updated the object."
+    },
+    {
+      "name": "var groupIdentifier: String?",
+      "desc": "A user-defined group identifier that can be used both for querying and sorting results."
+    },
+    {
+      "name": "var tags: [String]?",
+      "desc": "A unique identifier used by the local database."
+    },
+    {
+      "name": "var localDatabaseID: OCKLocalVersionID? { get }",
+      "desc": "A unique identifier used by the local database."
+    },
+    {
+      "name": "var remoteID: String?",
+      "desc": "A string value that represents a unique identifier, which a remote database uses optionally."
+    },
+    {
+      "name": "var userInfo: [String : String]?",
+      "desc": "A dictionary of information that can be provided by developers to support their own unique use cases."
+    },
+    {
+      "name": "var source: String?",
+      "desc": "A string that specifies from where this object originated."
+    },
+    {
+      "name": "var asset: String?",
+      "desc": "A string that specifies the location of some asset associated with this object."
+    },
+    {
+      "name": "var notes: [OCKNote]?",
+      "desc": "An array of notes associated with this object."
+    },
+    {
+      "name": "var schemaVersion: OCKSemanticVersion? { get }",
+      "desc": "The semantic version of the database schema when you create this object."
+    },
+    {
+      "name": "var timezone: TimeZone",
+      "desc": "The time zone in which this record was created in."
+    },
+    {
+      "name": "static func != (OCKNote, OCKNote) -> Bool"
+    }
+  ],
+  "declaration": "struct OCKNote : Codable, Equatable, OCKObjectCompatible",
+  "conformsTo": [
+    "Decodable",
+    "Encodable",
+    "Equatable"
+  ]
+}

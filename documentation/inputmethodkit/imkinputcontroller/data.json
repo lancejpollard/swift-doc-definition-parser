@@ -1,0 +1,86 @@
+{
+  "path": "/documentation/inputmethodkit/imkinputcontroller",
+  "type": "Class",
+  "name": "IMKInputController",
+  "desc": "The IMKInputController class provides a base class for custom input controller classes. The IMKServer  class, which is allocated in the main function of an input method, creates an input controller object for each input session created by a client application. For every input session there is a corresponding IMKInputController object.",
+  "items": [
+    {
+      "name": "init!(server: IMKServer!, delegate: Any!, client: Any!)",
+      "desc": "Initializes the input control by setting the delegate."
+    },
+    {
+      "name": "func compositionAttributes(at: NSRange) -> NSMutableDictionary!",
+      "desc": "Returns a dictionary of text attributes."
+    },
+    {
+      "name": "func selectionRange() -> NSRange",
+      "desc": "Returns where the range of the selection that should be placed inside marked text."
+    },
+    {
+      "name": "func replacementRange() -> NSRange",
+      "desc": "Returns the range in the client document that the text should replace."
+    },
+    {
+      "name": "func mark(forStyle: Int, at: NSRange) -> [AnyHashable : Any]!",
+      "desc": "Returns a dictionary of text attributes that can mark a range of an attributed string to send to a client."
+    },
+    {
+      "name": "func setDelegate(Any!)",
+      "desc": "Sets the delegate for input controller object."
+    },
+    {
+      "name": "func server() -> IMKServer!",
+      "desc": "Returns the server object that manages the input controller."
+    },
+    {
+      "name": "func client() -> (IMKTextInput & NSObjectProtocol)!",
+      "desc": "Returns the client object associated with the input controller."
+    },
+    {
+      "name": "func annotationSelected(NSAttributedString!, forCandidate: NSAttributedString!)",
+      "desc": "Sends the selected candidate string and annotation string to the input controller."
+    },
+    {
+      "name": "func candidateSelectionChanged(NSAttributedString!)",
+      "desc": "Informs an input controller that the current candidate selection in the candidate window has changed."
+    },
+    {
+      "name": "func candidateSelected(NSAttributedString!)",
+      "desc": "Informs an input controller that a new candidate is selected."
+    },
+    {
+      "name": "func updateComposition()",
+      "desc": "Informs the input controller that the composition has changed."
+    },
+    {
+      "name": "func cancelComposition()",
+      "desc": "Stops the current composition and replaces marked text with the original text."
+    },
+    {
+      "name": "func hidePalettes()",
+      "desc": "Informs an input method that it should close any visible user interface."
+    },
+    {
+      "name": "func doCommand(by: Selector!, command: [AnyHashable : Any]!)",
+      "desc": "Passes commands that are not generated as part of the text input process."
+    },
+    {
+      "name": "func menu() -> NSMenu!",
+      "desc": "Returns a menu of commands that are specific to an input method."
+    },
+    {
+      "name": "func delegate() -> Any!"
+    },
+    {
+      "name": "func inputControllerWillClose()"
+    }
+  ],
+  "declaration": "class IMKInputController : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "IMKMouseHandling",
+    "IMKStateSetting"
+  ]
+}

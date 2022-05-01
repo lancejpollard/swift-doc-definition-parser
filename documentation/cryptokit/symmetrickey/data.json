@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/cryptokit/symmetrickey",
+  "type": "Structure",
+  "name": "SymmetricKey",
+  "desc": "A symmetric cryptographic key.",
+  "items": [
+    {
+      "name": "init<D>(data: D)",
+      "desc": "Creates a key from the given data."
+    },
+    {
+      "name": "init(size: SymmetricKeySize)",
+      "desc": "Generates a new random key of the given size."
+    },
+    {
+      "name": "struct SymmetricKeySize",
+      "desc": "The sizes that a symmetric cryptographic key can take."
+    },
+    {
+      "name": "var bitCount: Int",
+      "desc": "The number of bits in the key."
+    },
+    {
+      "name": "func withUnsafeBytes<R>((UnsafeRawBufferPointer) -> R) -> R",
+      "desc": "Invokes the given closure with a buffer pointer covering the raw bytes of the key."
+    },
+    {
+      "name": "static func == (SymmetricKey, SymmetricKey) -> Bool",
+      "desc": "Determines whether two symmetric keys are equal."
+    },
+    {
+      "name": "static func != (SymmetricKey, SymmetricKey) -> Bool",
+      "desc": "Determines whether two symmetric keys are not equal."
+    }
+  ],
+  "declaration": "struct SymmetricKey",
+  "conformsTo": [
+    "ContiguousBytes",
+    "Equatable"
+  ]
+}

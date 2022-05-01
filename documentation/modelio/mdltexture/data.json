@@ -1,0 +1,117 @@
+{
+  "path": "/documentation/modelio/mdltexture",
+  "type": "Class",
+  "name": "MDLTexture",
+  "desc": "A source of texel data to be used in rendering material surface appearances.",
+  "items": [
+    {
+      "name": "init?(named: String)",
+      "desc": "Loads the texture with the specified filename from the app’s main bundle."
+    },
+    {
+      "name": "init?(named: String, bundle: Bundle?)",
+      "desc": "Loads the texture with the specified filename from the specified bundle."
+    },
+    {
+      "name": "init?(cubeWithImagesNamed: [String])",
+      "desc": "Loads a cube texture from the specified image files in the app’s main bundle."
+    },
+    {
+      "name": "init?(cubeWithImagesNamed: [String], bundle: Bundle?)",
+      "desc": "Loads a cube texture from the specified image files in the specified bundle."
+    },
+    {
+      "name": "init(data: Data?, topLeftOrigin: Bool, name: String?, dimensions: vector_int2, rowStride: Int, channelCount: Int, channelEncoding: MDLTextureChannelEncoding, isCube: Bool)",
+      "desc": "Initializes a texture object with the specified image data and properties."
+    },
+    {
+      "name": "func write(to: URL) -> Bool",
+      "desc": "Exports the texture data to an image file at the specified URL."
+    },
+    {
+      "name": "func write(to: URL, type: CFString) -> Bool",
+      "desc": "Exports the texture data to an image file at the specified URL, of the specified type."
+    },
+    {
+      "name": "func imageFromTexture() -> Unmanaged<CGImage>?",
+      "desc": "Exports the texture data as a CoreGraphics image."
+    },
+    {
+      "name": "func texelDataWithTopLeftOrigin() -> Data?",
+      "desc": "Returns the texture’s image data, organized such that its first pixel represents the top-left corner of the image."
+    },
+    {
+      "name": "func texelDataWithBottomLeftOrigin() -> Data?",
+      "desc": "Returns the texture’s image data, organized such that its first pixel represents the bottom-left corner of the image."
+    },
+    {
+      "name": "func texelDataWithTopLeftOrigin(atMipLevel: Int, create: Bool) -> Data?",
+      "desc": "Returns the texture’s image data for the specified mipmap level, organized such that its first pixel represents the top-left corner of the image."
+    },
+    {
+      "name": "func texelDataWithBottomLeftOrigin(atMipLevel: Int, create: Bool) -> Data?",
+      "desc": "Returns the texture’s image data for the specified mipmap level, organized such that its first pixel represents the bottom-left corner of the image."
+    },
+    {
+      "name": "var dimensions: vector_int2",
+      "desc": "The width and height, in texels, of the texture image."
+    },
+    {
+      "name": "var rowStride: Int",
+      "desc": "The number of bytes between the first texel in a row of image data and the first texel in the next row."
+    },
+    {
+      "name": "var channelCount: Int",
+      "desc": "The number of channels per texel."
+    },
+    {
+      "name": "var channelEncoding: MDLTextureChannelEncoding",
+      "desc": "The data format for each channel value per texel."
+    },
+    {
+      "name": "var isCube: Bool",
+      "desc": "A Boolean value that indicates whether the texture is a cube textures."
+    },
+    {
+      "name": "var mipLevelCount: Int",
+      "desc": "The number of mipmap levels contained in the texture image data."
+    },
+    {
+      "name": "class func irradianceTextureCube(with: MDLTexture, name: String?, dimensions: vector_int2) -> Self",
+      "desc": "Generates an irradiance texture from the specified reflectance cube texture."
+    },
+    {
+      "name": "class func irradianceTextureCube(with: MDLTexture, name: String?, dimensions: vector_int2, roughness: Float) -> Self",
+      "desc": "Generates an irradiance texture from the specified reflectance cube texture, assuming a surface of the specified roughness."
+    },
+    {
+      "name": "enum MDLTextureChannelEncoding",
+      "desc": "Options for the data size and type of texel channel values, used by the channelEncoding property."
+    },
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init?(named: String, assetResolver: MDLAssetResolver)"
+    },
+    {
+      "name": "var hasAlphaValues: Bool"
+    },
+    {
+      "name": "func imageFromTexture(atLevel: Int) -> Unmanaged<CGImage>?"
+    },
+    {
+      "name": "func write(to: URL, level: Int) -> Bool"
+    },
+    {
+      "name": "func write(to: URL, type: CFString, level: Int) -> Bool"
+    }
+  ],
+  "declaration": "class MDLTexture : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "MDLNamed"
+  ]
+}

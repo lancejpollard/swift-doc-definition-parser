@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/networkextension/nehotspoteapsettings",
+  "type": "Class",
+  "name": "NEHotspotEAPSettings",
+  "desc": "Extensible Authentication Protocol settings for configuring WPA and WPA2 enterprise Wi-Fi networks.",
+  "items": [
+    {
+      "name": "var isTLSClientCertificateRequired: Bool",
+      "desc": "A Boolean value indicating whether a network requires two-factor authentication or allows zero-factor authentication."
+    },
+    {
+      "name": "var trustedServerNames: [String]",
+      "desc": "An array of server certificate common name strings used to verify a server’s certificate."
+    },
+    {
+      "name": "var supportedEAPTypes: [NSNumber]",
+      "desc": "An array of supported EAP types."
+    },
+    {
+      "name": "enum NEHotspotEAPSettings.EAPType",
+      "desc": "The EAP types that may be specified in supportedEAPTypes."
+    },
+    {
+      "name": "var username: String",
+      "desc": "The user name string for EAP authentication, encoded as UTF-8."
+    },
+    {
+      "name": "var password: String",
+      "desc": "The password component of the IEEE 802.1X authentication credential."
+    },
+    {
+      "name": "var preferredTLSVersion: NEHotspotEAPSettings.TLSVersion",
+      "desc": "The Transport Layer Security (TLS) version to use during a TLS authentication handshake."
+    },
+    {
+      "name": "enum NEHotspotEAPSettings.TLSVersion",
+      "desc": "The EAPTLS Version identifiers that may be specified by preferredTLSVersion."
+    },
+    {
+      "name": "var outerIdentity: String",
+      "desc": "The identity string to be used in the EAP-Identity/Response packet during outer EAP authentication."
+    },
+    {
+      "name": "var ttlsInnerAuthenticationType: NEHotspotEAPSettings.TTLSInnerAuthenticationType",
+      "desc": "The inner-layer authentication protocol used by a TTLS module."
+    },
+    {
+      "name": "enum NEHotspotEAPSettings.TTLSInnerAuthenticationType",
+      "desc": "The TTLS Inner Authentication Types that may be specified by NEHotspotEAPSettings.TTLSInnerAuthenticationType."
+    },
+    {
+      "name": "func setIdentity(SecIdentity) -> Bool",
+      "desc": "Sets the client identity for EAP authentication."
+    },
+    {
+      "name": "func setTrustedServerCertificates([Any]) -> Bool",
+      "desc": "Sets trusted EAP server certificates for an enterprise Wi-Fi or Hotspot 2.0 network."
+    }
+  ],
+  "declaration": "class NEHotspotEAPSettings : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

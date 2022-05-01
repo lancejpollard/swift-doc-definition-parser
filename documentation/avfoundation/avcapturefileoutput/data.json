@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/avfoundation/avcapturefileoutput",
+  "type": "Class",
+  "name": "AVCaptureFileOutput",
+  "desc": "The abstract superclass for capture outputs that can record captured data to a file.",
+  "items": [
+    {
+      "name": "var delegate: AVCaptureFileOutputDelegate?",
+      "desc": "The delegate object for the capture file output."
+    },
+    {
+      "name": "var maxRecordedDuration: CMTime",
+      "desc": "The longest duration allowed for the recording."
+    },
+    {
+      "name": "var maxRecordedFileSize: Int64",
+      "desc": "The maximum size, in bytes, of the data that should be recorded by the receiver."
+    },
+    {
+      "name": "var minFreeDiskSpaceLimit: Int64",
+      "desc": "The minimum amount of free space, in bytes, required for recording to continue on a given volume."
+    },
+    {
+      "name": "var outputFileURL: URL?",
+      "desc": "The URL to which output is directed."
+    },
+    {
+      "name": "var recordedDuration: CMTime",
+      "desc": "Indicates the duration of the media recorded to the current output file."
+    },
+    {
+      "name": "var recordedFileSize: Int64",
+      "desc": "Indicates the size, in bytes, of the data recorded to the current output file."
+    },
+    {
+      "name": "var isRecording: Bool",
+      "desc": "Indicates whether recording is in progress."
+    },
+    {
+      "name": "var isRecordingPaused: Bool",
+      "desc": "Indicates whether recording to the current output file is paused."
+    },
+    {
+      "name": "func startRecording(to: URL, recordingDelegate: AVCaptureFileOutputRecordingDelegate)",
+      "desc": "Starts recording media to the specified output URL."
+    },
+    {
+      "name": "func stopRecording()",
+      "desc": "Tells the receiver to stop recording to the current file."
+    },
+    {
+      "name": "func pauseRecording()",
+      "desc": "Pauses recording to the current output file."
+    },
+    {
+      "name": "func resumeRecording()",
+      "desc": "Resumes recording to the current output file after it was previously paused using pauseRecording()."
+    }
+  ],
+  "declaration": "class AVCaptureFileOutput : AVCaptureOutput",
+  "inheritsFrom": [
+    "AVCaptureOutput"
+  ]
+}

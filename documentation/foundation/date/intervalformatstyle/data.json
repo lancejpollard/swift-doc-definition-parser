@@ -1,0 +1,137 @@
+{
+  "path": "/documentation/foundation/date/intervalformatstyle",
+  "type": "Structure",
+  "name": "Date.IntervalFormatStyle",
+  "desc": "A format style that creates string representations of date intervals.",
+  "items": [
+    {
+      "name": "init(date: Date.IntervalFormatStyle.DateStyle?, time: Date.IntervalFormatStyle.TimeStyle?, locale: Locale, calendar: Calendar, timeZone: TimeZone)",
+      "desc": "Creates an instance using the provided date, time, locale, calendar, time zone, and capitalization context."
+    },
+    {
+      "name": "static var interval: Date.IntervalFormatStyle",
+      "desc": "A convenience factory variable to use as a base for custom date interval format styles."
+    },
+    {
+      "name": "func timeZone(Date.IntervalFormatStyle.Symbol.TimeZone) -> Date.IntervalFormatStyle",
+      "desc": "Modifies the date interval format style to use the specified time zone format."
+    },
+    {
+      "name": "func locale(Locale) -> Date.IntervalFormatStyle",
+      "desc": "Modifies the date interval format style to use the specified locale."
+    },
+    {
+      "name": "var calendar: Calendar",
+      "desc": "The calendar for formatting the date interval."
+    },
+    {
+      "name": "var locale: Locale",
+      "desc": "The locale for formatting the date and time interval components."
+    },
+    {
+      "name": "var timeZone: TimeZone",
+      "desc": "The time zone for formatting the date interval components."
+    },
+    {
+      "name": "func day() -> Date.IntervalFormatStyle",
+      "desc": "Modifies the date interval format style to include the day."
+    },
+    {
+      "name": "func hour(Date.IntervalFormatStyle.Symbol.Hour) -> Date.IntervalFormatStyle",
+      "desc": "Modifies the date interval format style to use the specified hour format style."
+    },
+    {
+      "name": "func minute() -> Date.IntervalFormatStyle",
+      "desc": "Modifies the date interval format style to include the minutes."
+    },
+    {
+      "name": "func month(Date.IntervalFormatStyle.Symbol.Month) -> Date.IntervalFormatStyle",
+      "desc": "Modifies the date interval format style to include the month."
+    },
+    {
+      "name": "func second() -> Date.IntervalFormatStyle",
+      "desc": "Modifies the date interval format style to include the seconds."
+    },
+    {
+      "name": "func weekday(Date.IntervalFormatStyle.Symbol.Weekday) -> Date.IntervalFormatStyle",
+      "desc": "Modifies the date interval format style to include the specified weekday style."
+    },
+    {
+      "name": "func year() -> Date.IntervalFormatStyle",
+      "desc": "Modifies the date interval format style to include the year."
+    },
+    {
+      "name": "func format(Range<Date>) -> String",
+      "desc": "Creates a locale-aware string representation from a relative date value."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates an instance by decoding from the specified decoder."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes the value into the specified encoder."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value of the style format."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the value by feeding them into the specified hasher."
+    },
+    {
+      "name": "static func != (Date.IntervalFormatStyle, Date.IntervalFormatStyle) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are unequal."
+    },
+    {
+      "name": "static func == (Date.IntervalFormatStyle, Date.IntervalFormatStyle) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are equal."
+    },
+    {
+      "name": "typealias Date.IntervalFormatStyle.DateStyle",
+      "desc": "The type that defines date interval styles that vary in length or in their included components."
+    },
+    {
+      "name": "typealias Date.IntervalFormatStyle.FormatInput",
+      "desc": "The type of data to format."
+    },
+    {
+      "name": "typealias Date.IntervalFormatStyle.FormatOutput",
+      "desc": "The type of the formatted data."
+    },
+    {
+      "name": "typealias Date.IntervalFormatStyle.Symbol",
+      "desc": "The type that supports customizing formatting templates using the date format style’s modifier functions, and constructing fixed-pattern date format strings."
+    },
+    {
+      "name": "typealias Date.IntervalFormatStyle.TimeStyle",
+      "desc": "The type that defines time styles that vary in length or in their included components."
+    },
+    {
+      "name": "static func currency<Value>(code: String) -> FloatingPointFormatStyle<Value>.Currency"
+    },
+    {
+      "name": "static func currency<V>(code: String) -> IntegerFormatStyle<V>.Currency"
+    },
+    {
+      "name": "static func list<MemberStyle, Base>(memberStyle: MemberStyle, type: ListFormatStyle<MemberStyle, Base>.ListType, width: ListFormatStyle<MemberStyle, Base>.Width) -> ListFormatStyle<MemberStyle, Base>"
+    },
+    {
+      "name": "static func list<Base>(type: ListFormatStyle<StringStyle, Base>.ListType, width: ListFormatStyle<StringStyle, Base>.Width) -> ListFormatStyle<StringStyle, Base>"
+    },
+    {
+      "name": "static func measurement(width: Measurement<UnitTemperature>.FormatStyle.UnitWidth, usage: MeasurementFormatUnitUsage<UnitTemperature>, hidesScaleName: Bool, numberFormatStyle: FloatingPointFormatStyle<Double>?) -> Measurement<UnitTemperature>.FormatStyle"
+    },
+    {
+      "name": "static func measurement<UnitType>(width: Measurement<UnitType>.FormatStyle.UnitWidth, usage: MeasurementFormatUnitUsage<UnitType>, numberFormatStyle: FloatingPointFormatStyle<Double>?) -> Measurement<UnitType>.FormatStyle"
+    }
+  ],
+  "declaration": "struct IntervalFormatStyle",
+  "conformsTo": [
+    "Decodable",
+    "Encodable",
+    "FormatStyle",
+    "Hashable"
+  ]
+}

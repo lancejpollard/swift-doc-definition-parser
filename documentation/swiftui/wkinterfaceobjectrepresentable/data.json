@@ -1,0 +1,39 @@
+{
+  "path": "/documentation/SwiftUI/WKInterfaceObjectRepresentable",
+  "type": "Protocol",
+  "name": "WKInterfaceObjectRepresentable",
+  "desc": "A view that represents a WatchKit interface object.",
+  "items": [
+    {
+      "name": "func makeWKInterfaceObject(context: Self.Context) -> Self.WKInterfaceObjectType",
+      "desc": "Creates a WatchKit interface object and configures its initial state."
+    },
+    {
+      "name": "func updateWKInterfaceObject(Self.WKInterfaceObjectType, context: Self.Context)",
+      "desc": "Updates the presented WatchKit interface object (and its coordinator) to the latest configuration."
+    },
+    {
+      "name": "typealias Context"
+    },
+    {
+      "name": "static func dismantleWKInterfaceObject(Self.WKInterfaceObjectType, coordinator: Self.Coordinator)",
+      "desc": "Cleans up the presented WatchKit interface object (and its coordinator) in anticipation of their removal."
+    },
+    {
+      "name": "func makeCoordinator() -> Self.Coordinator",
+      "desc": "Creates the custom instance that you use to communicate changes from your interface object to other parts of your SwiftUI interface."
+    },
+    {
+      "name": "associatedtype Coordinator = Void",
+      "desc": "A type to coordinate with the WatchKit interface object."
+    },
+    {
+      "name": "associatedtype WKInterfaceObjectType : WKInterfaceObject",
+      "desc": "The type of WatchKit interface object to be presented."
+    }
+  ],
+  "declaration": "protocol WKInterfaceObjectRepresentable : View where Self.Body == Never",
+  "inheritsFrom": [
+    "View"
+  ]
+}

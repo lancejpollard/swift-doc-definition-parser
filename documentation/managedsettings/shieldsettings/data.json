@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/managedsettings/shieldsettings",
+  "type": "Structure",
+  "name": "ShieldSettings",
+  "desc": "Constraints that indicate what apps and websites to cover with a shielding view.",
+  "items": [
+    {
+      "name": "var applications: Set<ApplicationToken>?",
+      "desc": "Applications for the system to cover with a shielding view."
+    },
+    {
+      "name": "static let applications: SettingMetadata<Set<ApplicationToken>>",
+      "desc": "The metadata for the configuration that specifies apps for the system to cover with a shielding view."
+    },
+    {
+      "name": "var webDomains: Set<WebDomainToken>?",
+      "desc": "Websites for the system to cover with a shielding view."
+    },
+    {
+      "name": "static let webDomains: SettingMetadata<Set<WebDomainToken>>",
+      "desc": "The metadata for the configuration that specifies websites for the system to shield."
+    },
+    {
+      "name": "enum ActivityCategoryPolicy",
+      "desc": "Policies available for shielding activities based on their category."
+    },
+    {
+      "name": "var applicationCategories: ShieldSettings.ActivityCategoryPolicy<Application>?",
+      "desc": "Categories of apps for the system to cover with a shielding view."
+    },
+    {
+      "name": "static let applicationCategories: SettingMetadata<ShieldSettings.ActivityCategoryPolicy<Application>>",
+      "desc": "The metadata for the configuration that specifies categories of apps for the system to cover with a shielding view."
+    },
+    {
+      "name": "var webDomainCategories: ShieldSettings.ActivityCategoryPolicy<WebDomain>?",
+      "desc": "Categories of websites for the system to cover with a shielding view."
+    },
+    {
+      "name": "static let webDomainCategories: SettingMetadata<ShieldSettings.ActivityCategoryPolicy<WebDomain>>",
+      "desc": "The metadata for the configuration that specifies categories of websites for the system to shield."
+    }
+  ],
+  "declaration": "struct ShieldSettings",
+  "conformsTo": [
+    "ManagedSettingsGroup"
+  ]
+}

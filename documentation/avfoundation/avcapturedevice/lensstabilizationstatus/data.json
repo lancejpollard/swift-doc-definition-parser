@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/avfoundation/avcapturedevice/lensstabilizationstatus",
+  "type": "Enumeration",
+  "name": "AVCaptureDevice.LensStabilizationStatus",
+  "desc": "Constants that indicate the status of optical image stabilization hardware during a bracketed photo capture.",
+  "items": [
+    {
+      "name": "case unsupported",
+      "desc": "Lens stabilization isn’t available on the device or device configuration that captured this photo."
+    },
+    {
+      "name": "case off",
+      "desc": "Lens stabilization isn’t specified for this photo capture."
+    },
+    {
+      "name": "case active",
+      "desc": "Lens stabilization was active for the full duration of the photo capture."
+    },
+    {
+      "name": "case outOfRange",
+      "desc": "Lens stabilization was enabled for the photo capture, but device motion or capture duration exceeded the stabilization module’s correction limits."
+    },
+    {
+      "name": "case unavailable",
+      "desc": "Lens stabilization was temporarily unavailable during the photo capture."
+    }
+  ],
+  "declaration": "enum LensStabilizationStatus : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/homekit/hmtimertrigger",
+  "type": "Class",
+  "name": "HMTimerTrigger",
+  "desc": "A trigger to activate an action set based on a periodic timer.",
+  "items": [
+    {
+      "name": "init(name: String, fireDate: Date, timeZone: TimeZone?, recurrence: DateComponents?, recurrenceCalendar: Calendar?)",
+      "desc": "Initializes a timer trigger with specified timing information."
+    },
+    {
+      "name": "var fireDate: Date",
+      "desc": "The time at which the trigger will next fire."
+    },
+    {
+      "name": "func updateFireDate(Date, completionHandler: (Error?) -> Void)",
+      "desc": "Updates the next fire date for the trigger."
+    },
+    {
+      "name": "var recurrence: DateComponents?",
+      "desc": "The interval on which to repeat firing the trigger."
+    },
+    {
+      "name": "func updateRecurrence(DateComponents?, completionHandler: (Error?) -> Void)",
+      "desc": "Updates the recurrence interval."
+    },
+    {
+      "name": "var recurrenceCalendar: Calendar?",
+      "desc": "The calendar in which the recurrence value is evaluated."
+    },
+    {
+      "name": "var timeZone: TimeZone?",
+      "desc": "The timezone in which to evaluate the fire time."
+    },
+    {
+      "name": "func updateTimeZone(TimeZone?, completionHandler: (Error?) -> Void)",
+      "desc": "Updates the trigger’s time zone."
+    }
+  ],
+  "declaration": "class HMTimerTrigger : HMTrigger",
+  "inheritsFrom": [
+    "HMTrigger"
+  ]
+}

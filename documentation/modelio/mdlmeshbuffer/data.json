@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/modelio/mdlmeshbuffer",
+  "type": "Protocol",
+  "name": "MDLMeshBuffer",
+  "desc": "The general interface for managing storage of vertex and index data used in loading, processing, and rendering meshes.",
+  "items": [
+    {
+      "name": "func fill(Data, offset: Int)",
+      "desc": "Writes the specified data into the buffer."
+    },
+    {
+      "name": "func map() -> MDLMeshBufferMap",
+      "desc": "Provides direct, read-only access to the buffer’s contents."
+    },
+    {
+      "name": "var length: Int",
+      "desc": "The data size of the buffer, in bytes."
+    },
+    {
+      "name": "var allocator: MDLMeshBufferAllocator",
+      "desc": "The allocator object that created the buffer."
+    },
+    {
+      "name": "var zone: MDLMeshBufferZone",
+      "desc": "The memory pool from which the buffer was created."
+    },
+    {
+      "name": "var type: MDLMeshBufferType",
+      "desc": "The type of data contained in a buffer."
+    },
+    {
+      "name": "enum MDLMeshBufferType",
+      "desc": "Options for the content of a mesh buffer, used by the type property and by MDLMeshBufferAllocator methods for creating buffers."
+    }
+  ],
+  "declaration": "protocol MDLMeshBuffer",
+  "inheritsFrom": [
+    "NSCopying",
+    "NSObjectProtocol"
+  ]
+}

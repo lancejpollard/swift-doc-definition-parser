@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpscnninstancenormalization",
+  "type": "Class",
+  "name": "MPSCNNInstanceNormalization",
+  "desc": "An instance normalization kernel.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice, dataSource: MPSCNNInstanceNormalizationDataSource)"
+    },
+    {
+      "name": "var dataSource: MPSCNNInstanceNormalizationDataSource"
+    },
+    {
+      "name": "var epsilon: Float"
+    },
+    {
+      "name": "func reloadGammaAndBeta(with: MTLCommandBuffer, gammaAndBetaState: MPSCNNNormalizationGammaAndBetaState)"
+    },
+    {
+      "name": "func reloadGammaAndBetaFromDataSource()"
+    },
+    {
+      "name": "func resultState(sourceImage: MPSImage, sourceStates: [MPSState]?, destinationImage: MPSImage) -> MPSCNNInstanceNormalizationGradientState?"
+    },
+    {
+      "name": "func temporaryResultState(commandBuffer: MTLCommandBuffer, sourceImage: MPSImage, sourceStates: [MPSState]?, destinationImage: MPSImage) -> MPSCNNInstanceNormalizationGradientState?"
+    }
+  ],
+  "declaration": "class MPSCNNInstanceNormalization : MPSCNNKernel",
+  "inheritsFrom": [
+    "MPSCNNKernel"
+  ]
+}

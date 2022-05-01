@@ -1,0 +1,78 @@
+{
+  "path": "/documentation/foundation/measurementformatunitusage",
+  "type": "Generic Structure",
+  "name": "MeasurementFormatUnitUsage",
+  "desc": "A type that provides the generalized usage for a formatted measurement.",
+  "items": [
+    {
+      "name": "static var general: MeasurementFormatUnitUsage<UnitType>",
+      "desc": "A general usage of the formatted measurement."
+    },
+    {
+      "name": "static var asProvided: MeasurementFormatUnitUsage<UnitType>",
+      "desc": "A usage of the formatted measurement that reflects the units that you used to create the measurement."
+    },
+    {
+      "name": "static var food: MeasurementFormatUnitUsage<UnitEnergy>",
+      "desc": "A usage of an energy measurement related to food."
+    },
+    {
+      "name": "static var workout: MeasurementFormatUnitUsage<UnitEnergy>",
+      "desc": "A usage of a energy measurement related to a workout."
+    },
+    {
+      "name": "static var person: MeasurementFormatUnitUsage<UnitLength>",
+      "desc": "A format usage of a length measurement for displaying a distance as it relates to people."
+    },
+    {
+      "name": "static var personHeight: MeasurementFormatUnitUsage<UnitLength>",
+      "desc": "A usage of a length measurement related to a person’s height."
+    },
+    {
+      "name": "static var road: MeasurementFormatUnitUsage<UnitLength>",
+      "desc": "A usage of a length measurement related to a road."
+    },
+    {
+      "name": "static var personWeight: MeasurementFormatUnitUsage<UnitMass>",
+      "desc": "A usage of a mass measurement related to a person’s weight."
+    },
+    {
+      "name": "static var person: MeasurementFormatUnitUsage<UnitTemperature>",
+      "desc": "A format usage of a temperature measurement for displaying a temperature as it relates to people."
+    },
+    {
+      "name": "static var weather: MeasurementFormatUnitUsage<UnitTemperature>",
+      "desc": "A usage of a temperature measurement related to the weather."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes the measurement format usage into the specified encoder."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a measurement format usage by decoding from the specified decoder."
+    },
+    {
+      "name": "static func != (MeasurementFormatUnitUsage<UnitType>, MeasurementFormatUnitUsage<UnitType>) -> Bool",
+      "desc": "Indicates whether two instances of measurement format usage are not equal."
+    },
+    {
+      "name": "static func == (MeasurementFormatUnitUsage<UnitType>, MeasurementFormatUnitUsage<UnitType>) -> Bool",
+      "desc": "Indicates whether two instances of measurement format usage are equal."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value of the measurement format unit usage."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the value by feeding them into the specified hasher."
+    }
+  ],
+  "declaration": "struct MeasurementFormatUnitUsage<UnitType> where UnitType : Dimension",
+  "conformsTo": [
+    "Decodable",
+    "Encodable",
+    "Hashable"
+  ]
+}

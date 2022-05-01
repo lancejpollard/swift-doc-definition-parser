@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/appkit/nsuserinterfaceitemsearching",
+  "type": "Protocol",
+  "name": "NSUserInterfaceItemSearching",
+  "desc": "A set of methods an app can implement to provide Spotlight for Help for its own custom help data.",
+  "items": [
+    {
+      "name": "func localizedTitles(forItem: Any) -> [String]",
+      "desc": "Returns an array of localized strings that will form the help menu item."
+    },
+    {
+      "name": "func showAllHelpTopics(forSearch: String)",
+      "desc": "If this method is implemented, a \"Show All Help Topics\" item will appear in the menu and this method is called when the user selects it."
+    },
+    {
+      "name": "func searchForItems(withSearch: String, resultLimit: Int, matchedItemHandler: ([Any]) -> Void)",
+      "desc": "Search for the specified items, with the result limit."
+    },
+    {
+      "name": "func performAction(forItem: Any)",
+      "desc": "Invoked when the user selects a search result in Help menu."
+    }
+  ],
+  "declaration": "protocol NSUserInterfaceItemSearching",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

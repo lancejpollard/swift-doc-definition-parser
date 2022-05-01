@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/gameplaykit/gknoisemap",
+  "type": "Class",
+  "name": "GKNoiseMap",
+  "desc": "A sample of procedural noise data from which you can read noise values directly or create noise textures.",
+  "items": [
+    {
+      "name": "init(GKNoise)",
+      "desc": "Initializes a noise map by sampling from the specified noise object."
+    },
+    {
+      "name": "init(GKNoise, size: vector_double2, origin: vector_double2, sampleCount: vector_int2, seamless: Bool)",
+      "desc": "Creates a noise map by sampling from the specified noise object."
+    },
+    {
+      "name": "init()",
+      "desc": "Initializes a noise map with a constant noise value of zero throughout."
+    },
+    {
+      "name": "func value(at: vector_int2) -> Float",
+      "desc": "Returns the value at the specified position in the noise map’s discrete sample grid."
+    },
+    {
+      "name": "func interpolatedValue(at: vector_float2) -> Float",
+      "desc": "Returns the value at the specified position in the noise map, interpolating results for positions not on the discrete sample grid."
+    },
+    {
+      "name": "func setValue(Float, at: vector_int2)",
+      "desc": "Sets the value at the specified position in the noise map."
+    },
+    {
+      "name": "var size: vector_double2",
+      "desc": "The size of the “slice” of noise samples contained in the noise map relative to the unit coordinate space of the noise object it was created from."
+    },
+    {
+      "name": "var origin: vector_double2",
+      "desc": "The position of the “slice” of noise samples contained in the noise map relative to the unit coordinate space of the noise object it was created from."
+    },
+    {
+      "name": "var sampleCount: vector_int2",
+      "desc": "The width and height of integer grid for which the noise map contains sampled noise values."
+    },
+    {
+      "name": "var isSeamless: Bool",
+      "desc": "A Boolean value indicating whether the noise map’s output can repeat seamlessly in all directions."
+    }
+  ],
+  "declaration": "class GKNoiseMap : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

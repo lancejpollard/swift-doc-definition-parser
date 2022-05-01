@@ -1,0 +1,107 @@
+{
+  "path": "/documentation/realitykit/textureresource",
+  "type": "Class",
+  "name": "TextureResource",
+  "desc": "A representation of a texture.",
+  "items": [
+    {
+      "name": "init(semantic: TextureResource.Semantic?, mipmapsMode: TextureResource.MipmapsMode)",
+      "desc": "Creates a new texture resource."
+    },
+    {
+      "name": "static func generate(from: CGImage, withName: String?, options: TextureResource.CreateOptions) -> TextureResource",
+      "desc": "Creates a texture resource from an in-memory Core Graphics image."
+    },
+    {
+      "name": "static func generateAsync(from: CGImage, withName: String?, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>",
+      "desc": "Asynchronously creates a texture resource from an in-memory Core Graphics image."
+    },
+    {
+      "name": "static func load(named: String, in: Bundle?) -> TextureResource",
+      "desc": "Loads a texture resource from a bundle."
+    },
+    {
+      "name": "static func load(named: String, in: Bundle?, options: TextureResource.CreateOptions) -> TextureResource",
+      "desc": "Loads a texture resource by name from a bundle."
+    },
+    {
+      "name": "static func load(contentsOf: URL, withName: String?, options: TextureResource.CreateOptions) -> TextureResource",
+      "desc": "Loads a texture resource from a URL with options."
+    },
+    {
+      "name": "static func load(contentsOf: URL, withName: String?) -> TextureResource",
+      "desc": "Loads a texture resource from a URL."
+    },
+    {
+      "name": "static func loadAsync(named: String, in: Bundle?) -> LoadRequest<TextureResource>",
+      "desc": "Loads a texture resource from a bundle asynchronously."
+    },
+    {
+      "name": "static func loadAsync(named: String, in: Bundle?, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>",
+      "desc": "Loads a texture resource by name asynchronously."
+    },
+    {
+      "name": "static func loadAsync(contentsOf: URL, withName: String?) -> LoadRequest<TextureResource>",
+      "desc": "Loads a texture resource from a URL asynchronously."
+    },
+    {
+      "name": "static func loadAsync(contentsOf: URL, withName: String?, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>",
+      "desc": "Loads a texture resource from a URL asynchronously with options."
+    },
+    {
+      "name": "struct TextureResource.CreateOptions",
+      "desc": "Texture resource creation options."
+    },
+    {
+      "name": "var height: Int",
+      "desc": "The texture’s height in pixels."
+    },
+    {
+      "name": "var width: Int",
+      "desc": "The texture’s width in pixels."
+    },
+    {
+      "name": "var mipmapLevelCount: Int",
+      "desc": "The number of mipmaps contained in this texture."
+    },
+    {
+      "name": "enum TextureResource.MipmapsMode",
+      "desc": "An enumeration used to specify how mipmaps are allocated and generated for this texture."
+    },
+    {
+      "name": "var semantic: TextureResource.Semantic?"
+    },
+    {
+      "name": "enum TextureResource.Semantic",
+      "desc": "An object used to specify the intended usage of a texture."
+    },
+    {
+      "name": "class TextureResource.Drawable"
+    },
+    {
+      "name": "class TextureResource.DrawableQueue"
+    },
+    {
+      "name": "var drawableQueue: TextureResource.DrawableQueue?"
+    },
+    {
+      "name": "func copy(to: MTLTexture)"
+    },
+    {
+      "name": "func copyAsync(to: MTLTexture, completionHandler: (Error?) -> Void)"
+    },
+    {
+      "name": "func replace(withDrawables: TextureResource.DrawableQueue)"
+    },
+    {
+      "name": "func replace(withImage: CGImage, options: TextureResource.CreateOptions)"
+    },
+    {
+      "name": "func replaceAsync(withImage: CGImage, options: TextureResource.CreateOptions) -> LoadRequest<TextureResource>"
+    }
+  ],
+  "declaration": "class TextureResource",
+  "conformsTo": [
+    "Resource"
+  ]
+}

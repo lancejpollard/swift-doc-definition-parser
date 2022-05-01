@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/networkextension/nehotspotconfigurationmanager",
+  "type": "Class",
+  "name": "NEHotspotConfigurationManager",
+  "desc": "A manager that applies and removes hotspot configurations of Wi-Fi networks.",
+  "items": [
+    {
+      "name": "class var shared: NEHotspotConfigurationManager",
+      "desc": "Instantiates NEHotspotConfigurationManager as a singleton, so it can be shared."
+    },
+    {
+      "name": "func apply(NEHotspotConfiguration, completionHandler: ((Error?) -> Void)?)",
+      "desc": "Adds or updates a Wi-Fi network configuration after prompting the user for permission, and then attempts to join the network under certain conditions."
+    },
+    {
+      "name": "func getConfiguredSSIDs(completionHandler: ([String]) -> Void)",
+      "desc": "Returns the SSIDs or the names of the Wi-Fi hotspot domains that your app has configured and invokes an optional completion handler."
+    },
+    {
+      "name": "func removeConfiguration(forHS20DomainName: String)",
+      "desc": "Removes a Wi-Fi hotspot configuration, identified by a Hotspot 2.0 domain name, that your app previously added."
+    },
+    {
+      "name": "func removeConfiguration(forSSID: String)",
+      "desc": "Removes a Wi-Fi configuration, identified by an SSID, that your app previously added."
+    },
+    {
+      "name": "let NEHotspotConfigurationErrorDomain: String",
+      "desc": "The domain string for errors involving hotspot configuration."
+    },
+    {
+      "name": "enum NEHotspotConfigurationError",
+      "desc": "Error values returned by hotspot configuration manager methods."
+    }
+  ],
+  "declaration": "class NEHotspotConfigurationManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

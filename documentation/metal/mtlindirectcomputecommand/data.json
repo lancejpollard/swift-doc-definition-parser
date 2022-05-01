@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/metal/mtlindirectcomputecommand",
+  "type": "Protocol",
+  "name": "MTLIndirectComputeCommand",
+  "desc": "A compute command in an indirect command buffer.",
+  "items": [
+    {
+      "name": "func setComputePipelineState(MTLComputePipelineState)",
+      "desc": "Sets the command’s compute pipeline state object."
+    },
+    {
+      "name": "func setImageblockWidth(Int, height: Int)",
+      "desc": "Sets the size, in pixels, of the imageblock."
+    },
+    {
+      "name": "func setKernelBuffer(MTLBuffer, offset: Int, at: Int)",
+      "desc": "Sets a buffer for the compute function."
+    },
+    {
+      "name": "func setThreadgroupMemoryLength(Int, index: Int)",
+      "desc": "Sets the size of a block of threadgroup memory."
+    },
+    {
+      "name": "func setStageInRegion(MTLRegion)",
+      "desc": "Sets the region of the stage-in attributes to apply to the compute kernel."
+    },
+    {
+      "name": "func setBarrier()",
+      "desc": "Adds a barrier to ensure that commands executed prior to this command are complete before this command executes."
+    },
+    {
+      "name": "func clearBarrier()",
+      "desc": "Removes any barrier set on the command."
+    },
+    {
+      "name": "func concurrentDispatchThreadgroups(MTLSize, threadsPerThreadgroup: MTLSize)",
+      "desc": "Encodes a compute command using a grid aligned to threadgroup boundaries."
+    },
+    {
+      "name": "func concurrentDispatchThreads(MTLSize, threadsPerThreadgroup: MTLSize)",
+      "desc": "Encodes a compute command using an arbitrarily sized grid."
+    },
+    {
+      "name": "func reset()",
+      "desc": "Resets the command to its default state."
+    }
+  ],
+  "declaration": "protocol MTLIndirectComputeCommand",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

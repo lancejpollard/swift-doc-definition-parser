@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/avfaudio/avaudiopcmbuffer",
+  "type": "Class",
+  "name": "AVAudioPCMBuffer",
+  "desc": "An object that represents an audio buffer you use with PCM audio formats.",
+  "items": [
+    {
+      "name": "init?(pcmFormat: AVAudioFormat, frameCapacity: AVAudioFrameCount)",
+      "desc": "Creates a PCM audio buffer instance for PCM audio data."
+    },
+    {
+      "name": "init?(pcmFormat: AVAudioFormat, bufferListNoCopy: UnsafePointer<AudioBufferList>, deallocator: ((UnsafePointer<AudioBufferList>) -> Void)?)",
+      "desc": "Creates a PCM audio buffer instance without copying samples, for PCM audio data, with a specified buffer list and a deallocator closure."
+    },
+    {
+      "name": "var frameLength: AVAudioFrameCount",
+      "desc": "The current number of valid sample frames in the buffer."
+    },
+    {
+      "name": "var floatChannelData: UnsafePointer<UnsafeMutablePointer<Float>>?",
+      "desc": "The buffer’s audio samples as floating point values."
+    },
+    {
+      "name": "var frameCapacity: AVAudioFrameCount",
+      "desc": "The buffer’s capacity, in audio sample frames."
+    },
+    {
+      "name": "var int16ChannelData: UnsafePointer<UnsafeMutablePointer<Int16>>?",
+      "desc": "The buffer’s 16-bit integer audio samples."
+    },
+    {
+      "name": "var int32ChannelData: UnsafePointer<UnsafeMutablePointer<Int32>>?",
+      "desc": "The buffer’s 32-bit integer audio samples."
+    },
+    {
+      "name": "var stride: Int",
+      "desc": "The buffer’s number of interleaved channels."
+    }
+  ],
+  "declaration": "class AVAudioPCMBuffer : AVAudioBuffer",
+  "inheritsFrom": [
+    "AVAudioBuffer"
+  ]
+}

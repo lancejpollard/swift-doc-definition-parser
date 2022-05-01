@@ -1,0 +1,69 @@
+{
+  "path": "/documentation/avfoundation/avasynchronouskeyvalueloading",
+  "type": "Protocol",
+  "name": "AVAsynchronousKeyValueLoading",
+  "desc": "A protocol for loading the media and metadata of an asset or asset track without blocking the calling thread.",
+  "items": [
+    {
+      "name": "func status<T>(of: AVAsyncProperty<Self, T>) -> AVAsyncProperty<Self, T>.Status",
+      "desc": "Returns a value that indicates the status of a property."
+    },
+    {
+      "name": "func load<T>(AVAsyncProperty<Self, T>) -> T",
+      "desc": "Loads a property asynchronously and returns the value."
+    },
+    {
+      "name": "func load<A, B>(AVAsyncProperty<Self, A>, AVAsyncProperty<Self, B>) -> (A, B)",
+      "desc": "Loads two properties asynchronously and returns the values."
+    },
+    {
+      "name": "func load<A, B, C>(AVAsyncProperty<Self, A>, AVAsyncProperty<Self, B>, AVAsyncProperty<Self, C>) -> (A, B, C)",
+      "desc": "Loads three properties asynchronously and returns the values."
+    },
+    {
+      "name": "func load<A, B, C, D>(AVAsyncProperty<Self, A>, AVAsyncProperty<Self, B>, AVAsyncProperty<Self, C>, AVAsyncProperty<Self, D>) -> (A, B, C, D)",
+      "desc": "Loads four properties asynchronously and returns the values."
+    },
+    {
+      "name": "func load<A, B, C, D, E>(AVAsyncProperty<Self, A>, AVAsyncProperty<Self, B>, AVAsyncProperty<Self, C>, AVAsyncProperty<Self, D>, AVAsyncProperty<Self, E>) -> (A, B, C, D, E)",
+      "desc": "Loads five properties asynchronously and returns the values."
+    },
+    {
+      "name": "func load<A, B, C, D, E, F>(AVAsyncProperty<Self, A>, AVAsyncProperty<Self, B>, AVAsyncProperty<Self, C>, AVAsyncProperty<Self, D>, AVAsyncProperty<Self, E>, AVAsyncProperty<Self, F>) -> (A, B, C, D, E, F)",
+      "desc": "Loads six properties asynchronously and returns the values."
+    },
+    {
+      "name": "func load<A, B, C, D, E, F, G>(AVAsyncProperty<Self, A>, AVAsyncProperty<Self, B>, AVAsyncProperty<Self, C>, AVAsyncProperty<Self, D>, AVAsyncProperty<Self, E>, AVAsyncProperty<Self, F>, AVAsyncProperty<Self, G>) -> (A, B, C, D, E, F, G)",
+      "desc": "Loads seven properties asynchronously and returns the values."
+    },
+    {
+      "name": "func load<A, B, C, D, E, F, G, H>(AVAsyncProperty<Self, A>, AVAsyncProperty<Self, B>, AVAsyncProperty<Self, C>, AVAsyncProperty<Self, D>, AVAsyncProperty<Self, E>, AVAsyncProperty<Self, F>, AVAsyncProperty<Self, G>, AVAsyncProperty<Self, H>) -> (A, B, C, D, E, F, G, H)",
+      "desc": "Loads eight properties asynchronously and returns the values."
+    },
+    {
+      "name": "class AVAsyncProperty",
+      "desc": "An asynchronous property that constrains its type and value."
+    },
+    {
+      "name": "class AVPartialAsyncProperty",
+      "desc": "An asynchronous property that constrains its type."
+    },
+    {
+      "name": "class AVAnyAsyncProperty",
+      "desc": "A base class for asynchronous properties."
+    },
+    {
+      "name": "func loadValuesAsynchronously(forKeys: [String], completionHandler: (() -> Void)?)",
+      "desc": "Tells the asset to load the values of all of the specified keys that aren’t already loaded."
+    },
+    {
+      "name": "func statusOfValue(forKey: String, error: NSErrorPointer) -> AVKeyValueStatus",
+      "desc": "Returns a status that indicates whether a property value is immediately available without blocking the calling thread."
+    },
+    {
+      "name": "enum AVKeyValueStatus",
+      "desc": "Values that indicate the loaded status of a property."
+    }
+  ],
+  "declaration": "protocol AVAsynchronousKeyValueLoading"
+}

@@ -1,0 +1,24 @@
+{
+  "path": "/documentation/combine/subscribers/completion",
+  "type": "Enumeration",
+  "name": "Subscribers.Completion",
+  "desc": "A signal that a publisher doesn’t produce additional elements, either due to normal completion or an error.",
+  "items": [
+    {
+      "name": "case finished",
+      "desc": "The publisher finished normally."
+    },
+    {
+      "name": "case failure(Failure)",
+      "desc": "The publisher stopped publishing due to the indicated error."
+    }
+  ],
+  "declaration": "@frozen enum Completion<Failure> where Failure : Error",
+  "conformsTo": [
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "Hashable",
+    "Sendable"
+  ]
+}

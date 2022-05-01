@@ -1,0 +1,268 @@
+{
+  "path": "/documentation/javascriptcore/jsvalue",
+  "type": "Class",
+  "name": "JSValue",
+  "desc": "A JavaScript value.",
+  "items": [
+    {
+      "name": "init!(object: Any!, in: JSContext!)",
+      "desc": "Creates a JavaScript value by converting the specified native object."
+    },
+    {
+      "name": "init!(bool: Bool, in: JSContext!)",
+      "desc": "Creates a JavaScript representation of the specified Boolean value."
+    },
+    {
+      "name": "init!(double: Double, in: JSContext!)",
+      "desc": "Creates a JavaScript representation of the specified floating-point value."
+    },
+    {
+      "name": "init!(int32: Int32, in: JSContext!)",
+      "desc": "Creates a JavaScript representation of the specified signed integer value."
+    },
+    {
+      "name": "init!(uInt32: UInt32, in: JSContext!)",
+      "desc": "Creates a JavaScript representation of the specified unsigned integer value."
+    },
+    {
+      "name": "init!(newObjectIn: JSContext!)",
+      "desc": "Creates a new, empty JavaScript object value."
+    },
+    {
+      "name": "init!(newArrayIn: JSContext!)",
+      "desc": "Creates a new, empty JavaScript array value."
+    },
+    {
+      "name": "init!(newRegularExpressionFromPattern: String!, flags: String!, in: JSContext!)",
+      "desc": "Creates a JavaScript regular expression value from the specified pattern."
+    },
+    {
+      "name": "init!(newErrorFromMessage: String!, in: JSContext!)",
+      "desc": "Creates a JavaScript error value with the specified error message."
+    },
+    {
+      "name": "init!(undefinedIn: JSContext!)",
+      "desc": "Creates a JavaScript undefined value."
+    },
+    {
+      "name": "init!(nullIn: JSContext!)",
+      "desc": "Creates a JavaScript null value."
+    },
+    {
+      "name": "init!(point: CGPoint, in: JSContext!)",
+      "desc": "Creates a JavaScript representation of the specified point."
+    },
+    {
+      "name": "init!(range: NSRange, in: JSContext!)",
+      "desc": "Creates a JavaScript representation of the specified range."
+    },
+    {
+      "name": "init!(rect: CGRect, in: JSContext!)",
+      "desc": "Creates a JavaScript representation of the specified rectangle."
+    },
+    {
+      "name": "init!(size: CGSize, in: JSContext!)",
+      "desc": "Creates a JavaScript representation of the specified width and height."
+    },
+    {
+      "name": "init!(newSymbolFromDescription: String!, in: JSContext!)",
+      "desc": "Creates a unique symbol object."
+    },
+    {
+      "name": "init!(newPromiseIn: JSContext!, fromExecutor: ((JSValue?, JSValue?) -> Void)!)",
+      "desc": "Creates a promise object using the specified executor callback."
+    },
+    {
+      "name": "init!(newPromiseRejectedWithReason: Any!, in: JSContext!)",
+      "desc": "Creates a rejected promise object with the specified value."
+    },
+    {
+      "name": "init!(newPromiseResolvedWithResult: Any!, in: JSContext!)",
+      "desc": "Creates a resolved promise object with the specified value."
+    },
+    {
+      "name": "func toObject() -> Any!",
+      "desc": "Converts the JavaScript value to a native object."
+    },
+    {
+      "name": "func toObjectOf(AnyClass!) -> Any!",
+      "desc": "Converts the JavaScript value to a native object of the specified class."
+    },
+    {
+      "name": "func toBool() -> Bool",
+      "desc": "Converts the JavaScript value to a native Boolean value."
+    },
+    {
+      "name": "func toDouble() -> Double",
+      "desc": "Converts the JavaScript value to a native floating-point value."
+    },
+    {
+      "name": "func toInt32() -> Int32",
+      "desc": "Converts the JavaScript value to a native signed integer value."
+    },
+    {
+      "name": "func toUInt32() -> UInt32",
+      "desc": "Converts the JavaScript value to a native unsigned integer value."
+    },
+    {
+      "name": "func toNumber() -> NSNumber!",
+      "desc": "Converts the JavaScript value to a NSNumber object."
+    },
+    {
+      "name": "func toString() -> String!",
+      "desc": "Converts the JavaScript value to a native string."
+    },
+    {
+      "name": "func toDate() -> Date!",
+      "desc": "Converts the JavaScript value to a date object."
+    },
+    {
+      "name": "func toArray() -> [Any]!",
+      "desc": "Converts the JavaScript value to an array."
+    },
+    {
+      "name": "func toDictionary() -> [AnyHashable : Any]!",
+      "desc": "Converts the JavaScript value to a dictionary."
+    },
+    {
+      "name": "func toPoint() -> CGPoint",
+      "desc": "Converts the value to a point structure."
+    },
+    {
+      "name": "func toRange() -> NSRange",
+      "desc": "Converts the value to a range."
+    },
+    {
+      "name": "func toRect() -> CGRect",
+      "desc": "Converts the value to a rectangle structure."
+    },
+    {
+      "name": "func toSize() -> CGSize",
+      "desc": "Converts the value to a size."
+    },
+    {
+      "name": "var isUndefined: Bool",
+      "desc": "A Boolean value that indicates whether the instance corresponds to the JavaScript undefined value."
+    },
+    {
+      "name": "var isNull: Bool",
+      "desc": "A Boolean value that indicates whether the instance corresponds to the JavaScript null value."
+    },
+    {
+      "name": "var isBoolean: Bool",
+      "desc": "A Boolean value that indicates whether the instance is a JavaScript Boolean value."
+    },
+    {
+      "name": "var isNumber: Bool",
+      "desc": "A Boolean value that indicates whether the instance is a JavaScript numeric value."
+    },
+    {
+      "name": "var isString: Bool",
+      "desc": "A Boolean value that indicates whether the instance is a JavaScript String object."
+    },
+    {
+      "name": "var isObject: Bool",
+      "desc": "A Boolean value that indicates whether the instance is a JavaScript object."
+    },
+    {
+      "name": "var isArray: Bool",
+      "desc": "A Boolean value that indicates whether the instance is a JavaScript array value."
+    },
+    {
+      "name": "var isDate: Bool",
+      "desc": "A Boolean value that indicates whether the instance is a JavaScript Date object."
+    },
+    {
+      "name": "var isSymbol: Bool",
+      "desc": "A Boolean value that indicates whether the instance is a symbol."
+    },
+    {
+      "name": "func isEqual(to: Any!) -> Bool",
+      "desc": "Compares the value to another for strict equality."
+    },
+    {
+      "name": "func isEqualWithTypeCoercion(to: Any!) -> Bool",
+      "desc": "Compares the value to another for equivalence, allowing type conversion."
+    },
+    {
+      "name": "func isInstance(of: Any!) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value is an instance of another JavaScript object value."
+    },
+    {
+      "name": "func call(withArguments: [Any]!) -> JSValue!",
+      "desc": "Invokes the value as a JavaScript function."
+    },
+    {
+      "name": "func construct(withArguments: [Any]!) -> JSValue!",
+      "desc": "Invokes the value as a JavaScript constructor."
+    },
+    {
+      "name": "func invokeMethod(String!, withArguments: [Any]!) -> JSValue!",
+      "desc": "Calls the named JavaScript method on the value."
+    },
+    {
+      "name": "func defineProperty(Any!, descriptor: Any!)",
+      "desc": "Defines a property on the JavaScript object value or modifies a property’s definition."
+    },
+    {
+      "name": "func hasProperty(Any!) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the JavaScript value has a defined property with the specified name."
+    },
+    {
+      "name": "func deleteProperty(Any!) -> Bool",
+      "desc": "Deletes the named property from the JavaScript object value."
+    },
+    {
+      "name": "func atIndex(Int) -> JSValue!",
+      "desc": "Returns the value at the specified numeric index in the JavaScript object value."
+    },
+    {
+      "name": "func setValue(Any!, at: Int)",
+      "desc": "Sets the value at the specified numeric index in the JavaScript object value."
+    },
+    {
+      "name": "func forProperty(Any!) -> JSValue!",
+      "desc": "Returns the value of the named property in the JavaScript object value."
+    },
+    {
+      "name": "func setValue(Any!, forProperty: Any!)",
+      "desc": "Sets the value of the named property in the JavaScript object value."
+    },
+    {
+      "name": "typealias JSValueProperty",
+      "desc": "A type that identifies a property of a JavaScript value."
+    },
+    {
+      "name": "var context: JSContext!",
+      "desc": "The JavaScript context hosting this value."
+    },
+    {
+      "name": "func objectAtIndexedSubscript(Int) -> JSValue!",
+      "desc": "Returns the value’s JavaScript property at the specified index, allowing subscript syntax."
+    },
+    {
+      "name": "func setObject(Any!, atIndexedSubscript: Int)",
+      "desc": "Sets the value’s JavaScript property at the specified index, allowing subscript syntax."
+    },
+    {
+      "name": "func objectForKeyedSubscript(Any!) -> JSValue!",
+      "desc": "Returns the value’s JavaScript property named with the specified key, allowing subscript syntax."
+    },
+    {
+      "name": "func setObject(Any!, forKeyedSubscript: Any!)",
+      "desc": "Sets the value’s JavaScript property named with the specified key, allowing subscript syntax."
+    },
+    {
+      "name": "var jsValueRef: JSValueRef!",
+      "desc": "Returns the C representation of the JavaScript value."
+    },
+    {
+      "name": "init!(jsValueRef: JSValueRef!, in: JSContext!)",
+      "desc": "Creates a JavaScript value object from the equivalent C representation."
+    }
+  ],
+  "declaration": "class JSValue : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

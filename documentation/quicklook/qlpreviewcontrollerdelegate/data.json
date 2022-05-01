@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/quicklook/qlpreviewcontrollerdelegate",
+  "type": "Protocol",
+  "name": "QLPreviewControllerDelegate",
+  "desc": "The delegate of a preview controller must adopt this protocol.",
+  "items": [
+    {
+      "name": "func previewController(QLPreviewController, frameFor: QLPreviewItem, inSourceView: AutoreleasingUnsafeMutablePointer<UIView?>) -> CGRect",
+      "desc": "Tells the delegate that the preview is about to be presented full screen or dismissed and asks for information to provide a zoom effect."
+    },
+    {
+      "name": "func previewController(QLPreviewController, transitionImageFor: QLPreviewItem, contentRect: UnsafeMutablePointer<CGRect>) -> UIImage?",
+      "desc": "Tells the delegate that the preview is about to be presented full screen or dismissed and asks for information to provide a smooth transition when zooming."
+    },
+    {
+      "name": "func previewController(QLPreviewController, transitionViewFor: QLPreviewItem) -> UIView?",
+      "desc": "Tells the delegate that the preview is about to be presented in full screen or dismissed and asks for information to provide a smooth transition when zooming."
+    },
+    {
+      "name": "func previewControllerWillDismiss(QLPreviewController)",
+      "desc": "Tells the delegate that the preview is about to close."
+    },
+    {
+      "name": "func previewControllerDidDismiss(QLPreviewController)",
+      "desc": "Tells the delegate that the preview was closed."
+    },
+    {
+      "name": "func previewController(QLPreviewController, shouldOpen: URL, for: QLPreviewItem) -> Bool",
+      "desc": "Tells the delegate that the preview controller is trying to open a URL."
+    },
+    {
+      "name": "func previewController(QLPreviewController, editingModeFor: QLPreviewItem) -> QLPreviewItemEditingMode",
+      "desc": "Returns a value that indicates how the preview controller handles edits to the content of the previewed file."
+    },
+    {
+      "name": "enum QLPreviewItemEditingMode",
+      "desc": "A set of values that represent the different modes for editing a file."
+    },
+    {
+      "name": "func previewController(QLPreviewController, didUpdateContentsOf: QLPreviewItem)",
+      "desc": "Tells the delegate that the content of a preview was updated successfully."
+    },
+    {
+      "name": "func previewController(QLPreviewController, didSaveEditedCopyOf: QLPreviewItem, at: URL)",
+      "desc": "Tells the delegate that the preview item’s edited content was successfully saved to a copy at the given URL."
+    }
+  ],
+  "declaration": "protocol QLPreviewControllerDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

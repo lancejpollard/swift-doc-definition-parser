@@ -1,0 +1,260 @@
+{
+  "path": "/documentation/coregraphics/cgeventfield",
+  "type": "Enumeration",
+  "name": "CGEventField",
+  "desc": "Constants used as keys to access specialized fields in low-level events.",
+  "items": [
+    {
+      "name": "case mouseEventNumber",
+      "desc": "Key to access an integer field that contains the mouse button event number. Matching mouse-down and mouse-up events will have the same event number."
+    },
+    {
+      "name": "case mouseEventClickState",
+      "desc": "Key to access an integer field that contains the mouse button click state. A click state of 1 represents a single click. A click state of 2 represents a double-click. A click state of 3 represents a triple-click."
+    },
+    {
+      "name": "case mouseEventPressure",
+      "desc": "Key to access a double field that contains the mouse button pressure. The pressure value may range from 0 to 1, with 0 representing the mouse being up. This value is commonly set by tablet pens mimicking a mouse."
+    },
+    {
+      "name": "case mouseEventButtonNumber",
+      "desc": "Key to access an integer field that contains the mouse button number. For information about the possible values, see CGMouseButton."
+    },
+    {
+      "name": "case mouseEventDeltaX",
+      "desc": "Key to access an integer field that contains the horizontal mouse delta since the last mouse movement event."
+    },
+    {
+      "name": "case mouseEventDeltaY",
+      "desc": "Key to access an integer field that contains the vertical mouse delta since the last mouse movement event."
+    },
+    {
+      "name": "case mouseEventInstantMouser",
+      "desc": "Key to access an integer field. The value is non-zero if the event should be ignored by the Inkwell subsystem."
+    },
+    {
+      "name": "case mouseEventSubtype",
+      "desc": "Key to access an integer field that encodes the mouse event subtype as a kCFNumberIntType."
+    },
+    {
+      "name": "case keyboardEventAutorepeat",
+      "desc": "Key to access an integer field, non-zero when this is an autorepeat of a key-down, and zero otherwise."
+    },
+    {
+      "name": "case keyboardEventKeycode",
+      "desc": "Key to access an integer field that contains the virtual keycode of the key-down or key-up event."
+    },
+    {
+      "name": "case keyboardEventKeyboardType",
+      "desc": "Key to access an integer field that contains the keyboard type identifier."
+    },
+    {
+      "name": "case scrollWheelEventDeltaAxis1",
+      "desc": "Key to access an integer field that contains scrolling data. This field typically contains the change in vertical position since the last scrolling event from a Mighty Mouse scroller or a single-wheel mouse scroller."
+    },
+    {
+      "name": "case scrollWheelEventDeltaAxis2",
+      "desc": "Key to access an integer field that contains scrolling data. This field typically contains the change in horizontal position since the last scrolling event from a Mighty Mouse scroller."
+    },
+    {
+      "name": "case scrollWheelEventDeltaAxis3",
+      "desc": "This field is not used."
+    },
+    {
+      "name": "case scrollWheelEventFixedPtDeltaAxis1",
+      "desc": "Key to access a field that contains scrolling data. The scrolling data represents a line-based or pixel-based change in vertical position since the last scrolling event from a Mighty Mouse scroller or a single-wheel mouse scroller. The scrolling data uses a fixed-point 16.16 signed integer format. For example, if the field contains a value of 1.0, the integer 0x00010000 is returned by CGEventGetIntegerValueField. If this key is passed to CGEventGetDoubleValueField, the fixed-point value is converted to a double value."
+    },
+    {
+      "name": "case scrollWheelEventFixedPtDeltaAxis2",
+      "desc": "Key to access a field that contains scrolling data. The scrolling data represents a line-based or pixel-based change in horizontal position since the last scrolling event from a Mighty Mouse scroller. The scrolling data uses a fixed-point 16.16 signed integer format. For example, if the field contains a value of 1.0, the integer 0x00010000 is returned by CGEventGetIntegerValueField. If this key is passed to CGEventGetDoubleValueField, the fixed-point value is converted to a double value."
+    },
+    {
+      "name": "case scrollWheelEventFixedPtDeltaAxis3",
+      "desc": "This field is not used."
+    },
+    {
+      "name": "case scrollWheelEventPointDeltaAxis1",
+      "desc": "Key to access an integer field that contains pixel-based scrolling data. The scrolling data represents the change in vertical position since the last scrolling event from a Mighty Mouse scroller or a single-wheel mouse scroller."
+    },
+    {
+      "name": "case scrollWheelEventPointDeltaAxis2",
+      "desc": "Key to access an integer field that contains pixel-based scrolling data. The scrolling data represents the change in horizontal position since the last scrolling event from a Mighty Mouse scroller."
+    },
+    {
+      "name": "case scrollWheelEventPointDeltaAxis3",
+      "desc": "This field is not used."
+    },
+    {
+      "name": "case scrollWheelEventInstantMouser",
+      "desc": "Key to access an integer field that indicates whether the event should be ignored by the Inkwell subsystem. If the value is non-zero, the event should be ignored."
+    },
+    {
+      "name": "case tabletEventPointX",
+      "desc": "Key to access an integer field that contains the absolute X coordinate in tablet space at full tablet resolution."
+    },
+    {
+      "name": "case tabletEventPointY",
+      "desc": "Key to access an integer field that contains the absolute Y coordinate in tablet space at full tablet resolution."
+    },
+    {
+      "name": "case tabletEventPointZ",
+      "desc": "Key to access an integer field that contains the absolute Z coordinate in tablet space at full tablet resolution."
+    },
+    {
+      "name": "case tabletEventPointButtons",
+      "desc": "Key to access an integer field that contains the tablet button state. Bit 0 is the first button, and a set bit represents a closed or pressed button. Up to 16 buttons are supported."
+    },
+    {
+      "name": "case tabletEventPointPressure",
+      "desc": "Key to access a double field that contains the tablet pen pressure. A value of 0.0 represents no pressure, and 1.0 represents maximum pressure."
+    },
+    {
+      "name": "case tabletEventTiltX",
+      "desc": "Key to access a double field that contains the horizontal tablet pen tilt. A value of 0.0 represents no tilt, and 1.0 represents maximum tilt."
+    },
+    {
+      "name": "case tabletEventTiltY",
+      "desc": "Key to access a double field that contains the vertical tablet pen tilt. A value of 0.0 represents no tilt, and 1.0 represents maximum tilt."
+    },
+    {
+      "name": "case tabletEventRotation",
+      "desc": "Key to access a double field that contains the tablet pen rotation."
+    },
+    {
+      "name": "case tabletEventTangentialPressure",
+      "desc": "Key to access a double field that contains the tangential pressure on the device. A value of 0.0 represents no pressure, and 1.0 represents maximum pressure."
+    },
+    {
+      "name": "case tabletEventDeviceID",
+      "desc": "Key to access an integer field that contains the system-assigned unique device ID."
+    },
+    {
+      "name": "case tabletEventVendor1",
+      "desc": "Key to access an integer field that contains a vendor-specified value."
+    },
+    {
+      "name": "case tabletEventVendor2",
+      "desc": "Key to access an integer field that contains a vendor-specified value."
+    },
+    {
+      "name": "case tabletEventVendor3",
+      "desc": "Key to access an integer field that contains a vendor-specified value."
+    },
+    {
+      "name": "case tabletProximityEventVendorID",
+      "desc": "Key to access an integer field that contains the vendor-defined ID, typically the USB vendor ID."
+    },
+    {
+      "name": "case tabletProximityEventTabletID",
+      "desc": "Key to access an integer field that contains the vendor-defined tablet ID, typically the USB product ID."
+    },
+    {
+      "name": "case tabletProximityEventPointerID",
+      "desc": "Key to access an integer field that contains the vendor-defined ID of the pointing device."
+    },
+    {
+      "name": "case tabletProximityEventDeviceID",
+      "desc": "Key to access an integer field that contains the system-assigned device ID."
+    },
+    {
+      "name": "case tabletProximityEventSystemTabletID",
+      "desc": "Key to access an integer field that contains the system-assigned unique tablet ID."
+    },
+    {
+      "name": "case tabletProximityEventVendorPointerType",
+      "desc": "Key to access an integer field that contains the vendor-assigned pointer type."
+    },
+    {
+      "name": "case tabletProximityEventVendorPointerSerialNumber",
+      "desc": "Key to access an integer field that contains the vendor-defined pointer serial number."
+    },
+    {
+      "name": "case tabletProximityEventVendorUniqueID",
+      "desc": "Key to access an integer field that contains the vendor-defined unique ID."
+    },
+    {
+      "name": "case tabletProximityEventCapabilityMask",
+      "desc": "Key to access an integer field that contains the device capabilities mask."
+    },
+    {
+      "name": "case tabletProximityEventPointerType",
+      "desc": "Key to access an integer field that contains the pointer type."
+    },
+    {
+      "name": "case tabletProximityEventEnterProximity",
+      "desc": "Key to access an integer field that indicates whether the pen is in proximity to the tablet. The value is non-zero if the pen is in proximity to the tablet and zero when leaving the tablet."
+    },
+    {
+      "name": "case eventTargetProcessSerialNumber",
+      "desc": "Key to access a field that contains the event target process serial number. The value is a 64-bit long word."
+    },
+    {
+      "name": "case eventTargetUnixProcessID",
+      "desc": "Key to access a field that contains the event target Unix process ID."
+    },
+    {
+      "name": "case eventSourceUnixProcessID",
+      "desc": "Key to access a field that contains the event source Unix process ID."
+    },
+    {
+      "name": "case eventSourceUserData",
+      "desc": "Key to access a field that contains the event source user-supplied data, up to 64 bits."
+    },
+    {
+      "name": "case eventSourceUserID",
+      "desc": "Key to access a field that contains the event source Unix effective UID."
+    },
+    {
+      "name": "case eventSourceGroupID",
+      "desc": "Key to access a field that contains the event source Unix effective GID."
+    },
+    {
+      "name": "case eventSourceStateID",
+      "desc": "Key to access a field that contains the event source state ID used to create this event."
+    },
+    {
+      "name": "case scrollWheelEventIsContinuous",
+      "desc": "Key to access an integer field that indicates whether a scrolling event contains continuous, pixel-based scrolling data. The value is non-zero when the scrolling data is pixel-based and zero when the scrolling data is line-based."
+    },
+    {
+      "name": "case mouseEventWindowUnderMousePointer"
+    },
+    {
+      "name": "case mouseEventWindowUnderMousePointerThatCanHandleThisEvent"
+    },
+    {
+      "name": "case scrollWheelEventMomentumPhase"
+    },
+    {
+      "name": "case scrollWheelEventScrollCount"
+    },
+    {
+      "name": "case scrollWheelEventScrollPhase"
+    },
+    {
+      "name": "case mouseEventWindowUnderMousePointer"
+    },
+    {
+      "name": "case mouseEventWindowUnderMousePointerThatCanHandleThisEvent"
+    },
+    {
+      "name": "case scrollWheelEventMomentumPhase"
+    },
+    {
+      "name": "case scrollWheelEventScrollCount"
+    },
+    {
+      "name": "case scrollWheelEventScrollPhase"
+    },
+    {
+      "name": "case eventUnacceleratedPointerMovementX"
+    },
+    {
+      "name": "case eventUnacceleratedPointerMovementY"
+    }
+  ],
+  "declaration": "enum CGEventField : UInt32, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

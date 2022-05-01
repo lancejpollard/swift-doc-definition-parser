@@ -1,0 +1,152 @@
+{
+  "path": "/documentation/realitykit/sampledanimation",
+  "type": "Generic Structure",
+  "name": "SampledAnimation",
+  "desc": "An animation that cycles through a series of frames at a constant interval.",
+  "items": [
+    {
+      "name": "init(frames: [Value], name: String, tweenMode: TweenMode, frameInterval: Float, isAdditive: Bool, bindTarget: BindTarget?, blendLayer: Int32, repeatMode: AnimationRepeatMode, fillMode: AnimationFillMode, trimStart: TimeInterval?, trimEnd: TimeInterval?, trimDuration: TimeInterval?, offset: TimeInterval, delay: TimeInterval, speed: Float)",
+      "desc": "Creates an animation with a collection of frames that represent incremental steps in the overall timeline."
+    },
+    {
+      "name": "init(jointNames: [String], frames: [Value], name: String, tweenMode: TweenMode, frameInterval: Float, isAdditive: Bool, isScaleAnimated: Bool, isRotationAnimated: Bool, isTranslationAnimated: Bool, bindTarget: BindTarget?, blendLayer: Int32, repeatMode: AnimationRepeatMode, fillMode: AnimationFillMode, trimStart: TimeInterval?, trimEnd: TimeInterval?, trimDuration: TimeInterval?, offset: TimeInterval, delay: TimeInterval, speed: Float)",
+      "desc": "Creates an animation that interpolates between two configurations of the given joints."
+    },
+    {
+      "name": "var name: String",
+      "desc": "A textual name for the animation."
+    },
+    {
+      "name": "var bindTarget: BindTarget",
+      "desc": "A textual name that identifies the particular property that animates."
+    },
+    {
+      "name": "var blendLayer: Int32",
+      "desc": "The order in which the framework composites the animation."
+    },
+    {
+      "name": "var jointNames: [String]",
+      "desc": "The names of the joints to animate."
+    },
+    {
+      "name": "var isRotationAnimated: Bool",
+      "desc": "A Boolean value that indicates whether the animation observes rotational changes in the entity’s transform."
+    },
+    {
+      "name": "var isScaleAnimated: Bool",
+      "desc": "A Boolean value that indicates whether the animation observes changes in the entity’s size."
+    },
+    {
+      "name": "var isTranslationAnimated: Bool",
+      "desc": "A Boolean value that indicates whether the animation observes translational changes in the entity's transform."
+    },
+    {
+      "name": "var additive: Bool",
+      "desc": "A Boolean value that indicates whether the animation builds on the current state of the target entity or resets the state before running."
+    },
+    {
+      "name": "var tweenMode: TweenMode",
+      "desc": "An option that determines how animation frames transition."
+    },
+    {
+      "name": "var frames: [JointTransforms]",
+      "desc": "An array of joint transforms in which each element represents a discrete state of the target entity at a given point in the animation's timeline."
+    },
+    {
+      "name": "var frames: [Transform]",
+      "desc": "An array of transforms in which each element represents a discrete state of the target entity at a given point in the animation’s timeline."
+    },
+    {
+      "name": "var frames: [Double]",
+      "desc": "An array of double-precision values in which each element represents a discrete state of the animated property at a given point in the animation’s timeline."
+    },
+    {
+      "name": "var frames: [Float]",
+      "desc": "An array of floating-point values in which each element represents a discrete state of the animated property at a given point in the animation’s timeline."
+    },
+    {
+      "name": "var frames: [simd_quatf]",
+      "desc": "An array of quaternions in which each element represents a discrete state of the animated property at a given point in the animation’s timeline."
+    },
+    {
+      "name": "var frames: [SIMD2<Float>]",
+      "desc": "An array of floating-point pairs in which each element represents a discrete state of the animated property at a given point in the animation’s timeline."
+    },
+    {
+      "name": "var frames: [SIMD3<Float>]",
+      "desc": "An array of floating-point triplets in which each element represents a discrete state of the animated property at a given point in the animation’s timeline."
+    },
+    {
+      "name": "var frames: [SIMD4<Float>]",
+      "desc": "An array of floating-point quadruples in which each element represents a discrete state of the animated property at a given point in the animation’s timeline."
+    },
+    {
+      "name": "var frameInterval: Float",
+      "desc": "The duration within the animation timeline for each frame in the frames array."
+    },
+    {
+      "name": "var start: TimeInterval",
+      "desc": "An integer multiple of the frame interval at which the animation plays."
+    },
+    {
+      "name": "var end: TimeInterval",
+      "desc": "An integer multiple of the frame interval at which the animation stops."
+    },
+    {
+      "name": "var speed: Float",
+      "desc": "A factor that changes the animation’s rate of playback."
+    },
+    {
+      "name": "var delay: TimeInterval",
+      "desc": "An amount of time that lapses before the animation plays."
+    },
+    {
+      "name": "var duration: TimeInterval",
+      "desc": "The total playback time of the animation."
+    },
+    {
+      "name": "var offset: TimeInterval",
+      "desc": "The time, in seconds, at which the animation begins within the duration."
+    },
+    {
+      "name": "var trimDuration: TimeInterval?",
+      "desc": "An optional duration that overrides the calculated duration."
+    },
+    {
+      "name": "var trimStart: TimeInterval?",
+      "desc": "The optional time, in seconds, at which the animation plays."
+    },
+    {
+      "name": "var trimEnd: TimeInterval?",
+      "desc": "The optional time, in seconds, at which the animation stops."
+    },
+    {
+      "name": "func trimmed(start: TimeInterval?, end: TimeInterval?, duration: TimeInterval?) -> SampledAnimation<Value>",
+      "desc": "Edits the animation duration according to the specified time."
+    },
+    {
+      "name": "var repeatMode: AnimationRepeatMode",
+      "desc": "An option that determines how the animation repeats."
+    },
+    {
+      "name": "var fillMode: AnimationFillMode",
+      "desc": "An option that determines which data displays outside of the normal duration."
+    },
+    {
+      "name": "func repeated(count: TimeInterval) -> SampledAnimation<Value>",
+      "desc": "Repeats an animation the number of times specified by a decimal number."
+    },
+    {
+      "name": "func repeated(count: Int) -> SampledAnimation<Value>",
+      "desc": "Repeats an animation the number of times specified by a whole number."
+    },
+    {
+      "name": "func repeatingForever() -> SampledAnimation<Value>",
+      "desc": "Shortens or lengthens the animation timeline."
+    }
+  ],
+  "declaration": "struct SampledAnimation<Value> where Value : AnimatableData",
+  "conformsTo": [
+    "AnimationDefinition"
+  ]
+}

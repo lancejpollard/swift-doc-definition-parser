@@ -1,0 +1,29 @@
+{
+  "path": "/documentation/coretext/ctrunstatus",
+  "type": "Structure",
+  "name": "CTRunStatus",
+  "desc": "A bitfield that represents the disposition of the run.",
+  "items": [
+    {
+      "name": "static var rightToLeft: CTRunStatus",
+      "desc": "The run proceeds from right to left."
+    },
+    {
+      "name": "static var nonMonotonic: CTRunStatus",
+      "desc": "The run isn't in strictly increasing or decreasing order."
+    },
+    {
+      "name": "static var hasNonIdentityMatrix: CTRunStatus",
+      "desc": "The run requires a specific text matrix to be set in the current Core Graphics context for proper drawing."
+    },
+    {
+      "name": "init(rawValue: UInt32)",
+      "desc": "Creates a run status structure with the specified raw value."
+    }
+  ],
+  "declaration": "struct CTRunStatus, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

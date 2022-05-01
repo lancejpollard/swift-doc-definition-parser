@@ -1,0 +1,73 @@
+{
+  "path": "/documentation/network/nw_endpoint_t",
+  "type": "Type Alias",
+  "name": "nw_endpoint_t",
+  "desc": "A local or remote endpoint in a network connection.",
+  "items": [
+    {
+      "name": "struct nw_endpoint_type_t",
+      "desc": "The type of a network endpoint, such as a host or a service."
+    },
+    {
+      "name": "func nw_endpoint_get_type(nw_endpoint_t) -> nw_endpoint_type_t",
+      "desc": "Accesses the type of a endpoint."
+    },
+    {
+      "name": "func nw_endpoint_create_host(UnsafePointer<CChar>, UnsafePointer<CChar>) -> nw_endpoint_t",
+      "desc": "Creates a network endpoint with a hostname and port, where the hostname may be interpreted as an IP address."
+    },
+    {
+      "name": "func nw_endpoint_get_hostname(nw_endpoint_t) -> UnsafePointer<CChar>",
+      "desc": "Accesses the hostname stored in an endpoint."
+    },
+    {
+      "name": "func nw_endpoint_get_port(nw_endpoint_t) -> UInt16",
+      "desc": "Accesses the port stored in an endpoint, in host-byte order."
+    },
+    {
+      "name": "func nw_endpoint_copy_port_string(nw_endpoint_t) -> UnsafeMutablePointer<CChar>",
+      "desc": "Copies the port of an endpoint as a string."
+    },
+    {
+      "name": "func nw_endpoint_create_address(UnsafePointer<sockaddr>) -> nw_endpoint_t",
+      "desc": "Creates a network endpoint with an address structure."
+    },
+    {
+      "name": "func nw_endpoint_get_address(nw_endpoint_t) -> UnsafePointer<sockaddr>",
+      "desc": "Accesses the address structure stored in an address endpoint."
+    },
+    {
+      "name": "func nw_endpoint_copy_address_string(nw_endpoint_t) -> UnsafeMutablePointer<CChar>",
+      "desc": "Copies the address of an endpoint as a string."
+    },
+    {
+      "name": "func nw_endpoint_copy_port_string(nw_endpoint_t) -> UnsafeMutablePointer<CChar>",
+      "desc": "Copies the port of an endpoint as a string."
+    },
+    {
+      "name": "func nw_endpoint_create_bonjour_service(UnsafePointer<CChar>, UnsafePointer<CChar>, UnsafePointer<CChar>) -> nw_endpoint_t",
+      "desc": "Creates a network endpoint with a Bonjour service name, type, and domain."
+    },
+    {
+      "name": "func nw_endpoint_get_bonjour_service_name(nw_endpoint_t) -> UnsafePointer<CChar>",
+      "desc": "Accesses the Bonjour service name stored in an endpoint."
+    },
+    {
+      "name": "func nw_endpoint_get_bonjour_service_type(nw_endpoint_t) -> UnsafePointer<CChar>",
+      "desc": "Accesses the Bonjour service type stored in an endpoint."
+    },
+    {
+      "name": "func nw_endpoint_get_bonjour_service_domain(nw_endpoint_t) -> UnsafePointer<CChar>",
+      "desc": "Accesses the Bonjour service domain stored in an endpoint."
+    },
+    {
+      "name": "func nw_endpoint_create_url(UnsafePointer<CChar>) -> nw_endpoint_t",
+      "desc": "Creates a network endpoint with a URL string."
+    },
+    {
+      "name": "func nw_endpoint_get_url(nw_endpoint_t) -> UnsafePointer<CChar>",
+      "desc": "Accesses the URL string stored in an endpoint."
+    }
+  ],
+  "declaration": "typealias nw_endpoint_t = OS_nw_endpoint"
+}

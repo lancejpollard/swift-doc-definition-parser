@@ -1,0 +1,62 @@
+{
+  "path": "/documentation/realitykit/entitytranslationgesturerecognizer",
+  "type": "Class",
+  "name": "EntityTranslationGestureRecognizer",
+  "desc": "A gesture recognizer that uses a pan gesture to move an entity.",
+  "items": [
+    {
+      "name": "init(target: Any?, action: Selector?)",
+      "desc": "Creates a translation gesture recognizer with a target instance and an action selector."
+    },
+    {
+      "name": "var entity: HasCollision?",
+      "desc": "The entity on which the recognizer operates."
+    },
+    {
+      "name": "func touchesBegan(Set<UITouch>, with: UIEvent)",
+      "desc": "Tells the recognizer that the user has touched the entity with one or more fingers."
+    },
+    {
+      "name": "func touchesMoved(Set<UITouch>, with: UIEvent)",
+      "desc": "Tells the gesture recognizer when one or more fingers move in the associated view."
+    },
+    {
+      "name": "func touchesCancelled(Set<UITouch>, with: UIEvent)",
+      "desc": "Tells the gesture recognizer that a system event (such as an incoming phone call) cancels a touch event."
+    },
+    {
+      "name": "func touchesEnded(Set<UITouch>, with: UIEvent)",
+      "desc": "Tells the gesture recognizer when one or more fingers lift from the associated view."
+    },
+    {
+      "name": "func translation(in: Entity?) -> SIMD3<Float>?",
+      "desc": "Gets the translation of the gesture in the space of the specified entity."
+    },
+    {
+      "name": "func setTranslation(SIMD3<Float>, in: Entity?)",
+      "desc": "Sets the translation of the gesture in the given entity’s coordinate space."
+    },
+    {
+      "name": "func velocity(in: Entity?) -> SIMD3<Float>",
+      "desc": "Gets the velocity of the translation gesture in the space of the specified entity."
+    },
+    {
+      "name": "func location(in: Entity?) -> SIMD3<Float>?",
+      "desc": "Gets the location of the translation gesture in the space of the specified entity."
+    },
+    {
+      "name": "func reset()",
+      "desc": "Resets internal state when a gesture recognition attempt completes."
+    },
+    {
+      "name": "func canPrevent(UIGestureRecognizer) -> Bool"
+    }
+  ],
+  "declaration": "@objc @MainActor class EntityTranslationGestureRecognizer : UIGestureRecognizer",
+  "inheritsFrom": [
+    "UIGestureRecognizer"
+  ],
+  "conformsTo": [
+    "EntityGestureRecognizer"
+  ]
+}

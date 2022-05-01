@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/foundation/nsmeasurement",
+  "type": "Class",
+  "name": "NSMeasurement",
+  "desc": "An object representing a numeric quantity with a unit of measure, for use when you need reference semantics or other Foundation-specific behavior.",
+  "items": [
+    {
+      "name": "init(doubleValue: Double, unit: Unit)",
+      "desc": "Initializes a new measurement with a specified double-precision floating-point value and unit."
+    },
+    {
+      "name": "var unit: Unit",
+      "desc": "The unit of measure."
+    },
+    {
+      "name": "var doubleValue: Double",
+      "desc": "The measurement value, represented as a double-precision floating-point number."
+    },
+    {
+      "name": "func canBeConverted(to: Unit) -> Bool",
+      "desc": "Indicates whether the measurement can be converted to the given unit."
+    },
+    {
+      "name": "func converting(to: Unit) -> Measurement<Unit>",
+      "desc": "Returns a measurement created by converting the receiver to the specified unit."
+    },
+    {
+      "name": "func adding(Measurement<Unit>) -> Measurement<Unit>",
+      "desc": "Returns a new measurement by adding the receiver to the specified measurement."
+    },
+    {
+      "name": "func subtracting(Measurement<Unit>) -> Measurement<Unit>",
+      "desc": "Returns a new measurement by subtracting the specified measurement from the receiver."
+    }
+  ],
+  "declaration": "class NSMeasurement : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

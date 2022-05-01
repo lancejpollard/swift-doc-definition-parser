@@ -1,0 +1,35 @@
+{
+  "path": "/documentation/gameplaykit/gkstatemachine",
+  "type": "Class",
+  "name": "GKStateMachine",
+  "desc": "A finite-state machine—a collection of state objects that each define logic for a particular state of gameplay and rules for transitioning between states.",
+  "items": [
+    {
+      "name": "init(states: [GKState])",
+      "desc": "Initializes a state machine with the specified states."
+    },
+    {
+      "name": "var currentState: GKState?",
+      "desc": "The state machine’s current state."
+    },
+    {
+      "name": "func canEnterState(AnyClass) -> Bool",
+      "desc": "Returns a Boolean value indicating whether it is valid for the state machine to transition from its current state to a state of the specified class."
+    },
+    {
+      "name": "func enter(AnyClass) -> Bool",
+      "desc": "Attempts to transition the state machine from its current state to a state of the specified class."
+    },
+    {
+      "name": "func update(deltaTime: TimeInterval)",
+      "desc": "Tells the current state object to perform per-frame updates."
+    },
+    {
+      "name": "func state<StateType>(forClass: StateType.Type) -> StateType?"
+    }
+  ],
+  "declaration": "class GKStateMachine : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

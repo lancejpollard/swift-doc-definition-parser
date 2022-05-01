@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/gamekit/gkachievement",
+  "type": "Class",
+  "name": "GKAchievement",
+  "desc": "An achievement you can award a player as they make progress toward and reach a goal in your game.",
+  "items": [
+    {
+      "name": "class func loadAchievements(completionHandler: (([GKAchievement]?, Error?) -> Void)?)",
+      "desc": "Loads the achievements that you previously reported the player making progress toward."
+    },
+    {
+      "name": "init(identifier: String)",
+      "desc": "Initializes an achievement for the local player."
+    },
+    {
+      "name": "init(identifier: String, player: GKPlayer)",
+      "desc": "Initializes an achievement for a player."
+    },
+    {
+      "name": "var identifier: String",
+      "desc": "The identifier for the achievement that you enter in App Store Connect."
+    },
+    {
+      "name": "var player: GKPlayer",
+      "desc": "The player who earned the achievement."
+    },
+    {
+      "name": "var percentComplete: Double",
+      "desc": "A percentage value that states how far the player has progressed on the achievement."
+    },
+    {
+      "name": "var isCompleted: Bool",
+      "desc": "A Boolean value that states whether the player has completed the achievement."
+    },
+    {
+      "name": "var lastReportedDate: Date",
+      "desc": "The last time your game reported progress on the achievement for the player."
+    },
+    {
+      "name": "class func report([GKAchievement], withCompletionHandler: ((Error?) -> Void)?)",
+      "desc": "Reports the progress of players toward one or more achievements to Game Center."
+    },
+    {
+      "name": "class func report([GKAchievement], withEligibleChallenges: [GKChallenge], withCompletionHandler: ((Error?) -> Void)?)",
+      "desc": "Reports the progress on achievements and limits the challenges those achievements may complete."
+    },
+    {
+      "name": "var showsCompletionBanner: Bool",
+      "desc": "A Boolean value that indicates whether GameKit displays a banner when the player completes the achievement."
+    },
+    {
+      "name": "class func resetAchievements(completionHandler: ((Error?) -> Void)?)",
+      "desc": "Resets the percentage completed for all of the player’s achievements."
+    },
+    {
+      "name": "func challengeComposeController(withMessage: String?, players: [GKPlayer], completionHandler: GKChallengeComposeCompletionBlock?) -> UIViewController",
+      "desc": "Provides a view controller that you present to the player to issue an achievement challenge."
+    },
+    {
+      "name": "func selectChallengeablePlayers([GKPlayer], withCompletionHandler: (([GKPlayer]?, Error?) -> Void)?)",
+      "desc": "Finds the subset of players who can earn an achievement."
+    }
+  ],
+  "declaration": "class GKAchievement : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "NSSecureCoding"
+  ]
+}

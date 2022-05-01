@@ -1,0 +1,63 @@
+{
+  "path": "/documentation/avfaudio/avaudiounitmidiinstrument",
+  "type": "Class",
+  "name": "AVAudioUnitMIDIInstrument",
+  "desc": "An object that represents music devices or remote instruments.",
+  "items": [
+    {
+      "name": "init(audioComponentDescription: AudioComponentDescription)",
+      "desc": "Creates a MIDI instrument audio unit with the component description you specify."
+    },
+    {
+      "name": "func sendController(UInt8, withValue: UInt8, onChannel: UInt8)",
+      "desc": "Sends a MIDI controller event to the instrument."
+    },
+    {
+      "name": "func sendMIDIEvent(UInt8, data1: UInt8)",
+      "desc": "Sends a MIDI event which contains one data byte to the instrument."
+    },
+    {
+      "name": "func sendMIDIEvent(UInt8, data1: UInt8, data2: UInt8)",
+      "desc": "Sends a MIDI event which contains two data bytes to the instrument."
+    },
+    {
+      "name": "func sendMIDISysExEvent(Data)",
+      "desc": "Sends a MIDI System Exclusive event to the instrument."
+    },
+    {
+      "name": "func sendPitchBend(UInt16, onChannel: UInt8)",
+      "desc": "Sends a MIDI Pitch Bend event to the instrument."
+    },
+    {
+      "name": "func sendPressure(UInt8, onChannel: UInt8)",
+      "desc": "Sends a MIDI channel pressure event to the instrument."
+    },
+    {
+      "name": "func sendPressure(forKey: UInt8, withValue: UInt8, onChannel: UInt8)",
+      "desc": "Sends a MIDI Polyphonic key pressure event to the instrument."
+    },
+    {
+      "name": "func sendProgramChange(UInt8, onChannel: UInt8)",
+      "desc": "Sends MIDI Program Change and Bank Select events to the instrument."
+    },
+    {
+      "name": "func sendProgramChange(UInt8, bankMSB: UInt8, bankLSB: UInt8, onChannel: UInt8)",
+      "desc": "Sends MIDI Program Change and Bank Select events to the instrument."
+    },
+    {
+      "name": "func startNote(UInt8, withVelocity: UInt8, onChannel: UInt8)",
+      "desc": "Sends a MIDI Note On event to the instrument."
+    },
+    {
+      "name": "func stopNote(UInt8, onChannel: UInt8)",
+      "desc": "Sends a MIDI Note Off event to the instrument."
+    }
+  ],
+  "declaration": "class AVAudioUnitMIDIInstrument : AVAudioUnit",
+  "inheritsFrom": [
+    "AVAudioUnit"
+  ],
+  "conformsTo": [
+    "AVAudioMixing"
+  ]
+}

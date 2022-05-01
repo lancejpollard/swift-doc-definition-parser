@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/proximityreader/paymentcardreadersession",
+  "type": "Class",
+  "name": "PaymentCardReaderSession",
+  "desc": "The object you use to start reading a contactless payment or loyalty card.",
+  "items": [
+    {
+      "name": "func readPaymentCard(PaymentCardTransactionRequest, eventHandler: ((PaymentCardReaderSession.Event) -> Void)?) async throws -> PaymentCardReadResult",
+      "desc": "Presents a sheet to read a contactless payment card for a purchase or a refund, and returns the encrypted card data."
+    },
+    {
+      "name": "func readPaymentCard(PaymentCardVerificationRequest, eventHandler: ((PaymentCardReaderSession.Event) -> Void)?) async throws -> PaymentCardReadResult",
+      "desc": "Presents a sheet to verify a contactless payment card, and returns the card data."
+    },
+    {
+      "name": "func readPaymentCard(PaymentCardTransactionRequest, vasRequest: VASRequest, stopOnVASResult: Bool, eventHandler: ((PaymentCardReaderSession.Event) -> Void)?) async throws -> (PaymentCardReadResult?, VASReadResult?)",
+      "desc": "Presents a sheet to read both contactless payments and loyalty cards for a purchase or refund, and returns the relevant card data."
+    },
+    {
+      "name": "func readVAS(VASRequest, eventHandler: ((PaymentCardReaderSession.Event) -> Void)?) async throws -> VASReadResult",
+      "desc": "Presents a sheet to read a loyalty card for Value Added Services (VAS), and returns the loyalty card data."
+    },
+    {
+      "name": "enum Event",
+      "desc": "Optional events you can observe during the card-reading process."
+    },
+    {
+      "name": "func cancelRead() async throws -> Bool",
+      "desc": "Dismiss the sheet that prompts someone to present their card for reading."
+    },
+    {
+      "name": "enum ReadError",
+      "desc": "Errors that can occur during a card read."
+    },
+    {
+      "name": "let id: String",
+      "desc": "A unique identifier for this object."
+    }
+  ],
+  "declaration": "class PaymentCardReaderSession"
+}

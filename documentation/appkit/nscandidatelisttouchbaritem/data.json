@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/appkit/nscandidatelisttouchbaritem",
+  "type": "Generic Class",
+  "name": "NSCandidateListTouchBarItem",
+  "desc": "A bar item that, along with its delegate, provides a list of textual suggestions for the current text view.",
+  "items": [
+    {
+      "name": "var client: (NSView & NSTextInputClient)?",
+      "desc": "The client object for the candidate list item."
+    },
+    {
+      "name": "var delegate: NSCandidateListTouchBarItemDelegate?",
+      "desc": "The delegate of the candidate list item."
+    },
+    {
+      "name": "protocol NSCandidateListTouchBarItemDelegate",
+      "desc": "A set of methods that a candidate list item delegate uses to enable selection state and list visibility."
+    },
+    {
+      "name": "func setCandidates([CandidateType], forSelectedRange: NSRange, in: String?)",
+      "desc": "Sets an array of candidate objects to be displayed in the candidate list bar item."
+    },
+    {
+      "name": "var candidates: [CandidateType]",
+      "desc": "The array of candidate objects previously set by setCandidates(_:forSelectedRange:in:)."
+    },
+    {
+      "name": "var attributedStringForCandidate: ((CandidateType, Int) -> NSAttributedString)?",
+      "desc": "A block that converts a candidate object into an attributed string for display in the candidate list item."
+    },
+    {
+      "name": "var allowsTextInputContextCandidates: Bool",
+      "desc": "A Boolean value that specifies whether a candidate list item displays candidates from text input providers."
+    },
+    {
+      "name": "var allowsCollapsing: Bool",
+      "desc": "A Boolean value that specifies whether the item can be collapsed."
+    },
+    {
+      "name": "var isCollapsed: Bool",
+      "desc": "A Boolean value that controls the visibility of the candidate list."
+    },
+    {
+      "name": "var isCandidateListVisible: Bool",
+      "desc": "A Boolean value that represents the visibility of this item's candidate list."
+    },
+    {
+      "name": "func update(withInsertionPointVisibility: Bool)",
+      "desc": "Updates the candidate list visibility configuration based on the client's insertion point state."
+    },
+    {
+      "name": "var customizationLabel: String!",
+      "desc": "The user-visible string identifying this item during bar customization."
+    }
+  ],
+  "declaration": "class NSCandidateListTouchBarItem<CandidateType> : NSTouchBarItem where CandidateType : AnyObject",
+  "inheritsFrom": [
+    "NSTouchBarItem"
+  ]
+}

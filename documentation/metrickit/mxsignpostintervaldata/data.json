@@ -1,0 +1,35 @@
+{
+  "path": "/documentation/metrickit/mxsignpostintervaldata",
+  "type": "Class",
+  "name": "MXSignpostIntervalData",
+  "desc": "A data object representing the captured data for a custom metric.",
+  "items": [
+    {
+      "name": "var histogrammedSignpostDuration: MXHistogram<UnitDuration>",
+      "desc": "A histogram of the different time intervals of a custom metric event."
+    },
+    {
+      "name": "var averageMemory: MXAverage<UnitInformationStorage>?",
+      "desc": "The average memory used during the logged intervals."
+    },
+    {
+      "name": "var cumulativeCPUTime: Measurement<UnitDuration>?",
+      "desc": "The total amount of CPU time used during the logged intervals."
+    },
+    {
+      "name": "var cumulativeLogicalWrites: Measurement<UnitInformationStorage>?",
+      "desc": "The total amount of data written to disk or other long term storage during the logged intervals."
+    },
+    {
+      "name": "var cumulativeHitchTimeRatio: Measurement<Unit>?",
+      "desc": "The ratio of the total time spent hitching to the total time spent animating during the logged intervals."
+    }
+  ],
+  "declaration": "class MXSignpostIntervalData : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

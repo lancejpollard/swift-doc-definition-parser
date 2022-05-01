@@ -1,0 +1,27 @@
+{
+  "path": "/documentation/coreaudiotypes/audiostreampacketdescription",
+  "type": "Structure",
+  "name": "AudioStreamPacketDescription",
+  "desc": "Describes one packet in a buffer of audio data where the sizes of the packets differ or where there is non-audio data between audio packets.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(mStartOffset: Int64, mVariableFramesInPacket: UInt32, mDataByteSize: UInt32)"
+    },
+    {
+      "name": "var mDataByteSize: UInt32",
+      "desc": "The number of bytes in the packet."
+    },
+    {
+      "name": "var mStartOffset: Int64",
+      "desc": "The number of bytes from the start of the buffer to the beginning of the packet. For example, if the data buffer contains 5 bytes of data, with one byte per packet, then mStartOffset for the last packet is 4 (that is, there are 4 bytes in the buffer before the start of the last packet."
+    },
+    {
+      "name": "var mVariableFramesInPacket: UInt32",
+      "desc": "The number of sample frames of data in the packet. For formats with a constant number of frames per packet, this field is set to 0."
+    }
+  ],
+  "declaration": "struct AudioStreamPacketDescription"
+}

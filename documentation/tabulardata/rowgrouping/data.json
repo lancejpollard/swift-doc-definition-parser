@@ -1,0 +1,117 @@
+{
+  "path": "/documentation/tabulardata/rowgrouping",
+  "type": "Structure",
+  "name": "RowGrouping",
+  "desc": "A collection of row selections that have the same value in a column.",
+  "items": [
+    {
+      "name": "init<D>(frame: D, columnName: String, timeUnit: Calendar.Component)",
+      "desc": "Creates a row grouping from a column with date or time elements."
+    },
+    {
+      "name": "init<D>(groups: [(GroupingKey?, D)], groupKeysColumnName: String)",
+      "desc": "Creates a row grouping from a list of groups."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of groups in the row grouping."
+    },
+    {
+      "name": "subscript(Int) -> (key: GroupingKey?, group: DataFrame.Slice)",
+      "desc": "Retrieves a group at an index."
+    },
+    {
+      "name": "func mapGroups((DataFrame.Slice) throws -> DataFrame) rethrows -> RowGrouping<GroupingKey>",
+      "desc": "Generates a row grouping that applies a transformation closure to each group in the original."
+    },
+    {
+      "name": "func randomSplit(by: Double) -> (Self, Self)",
+      "desc": "Generates two row groupings by randomly splitting the original with a proportion."
+    },
+    {
+      "name": "func randomSplit(by: Double, seed: Int?) -> (RowGrouping<GroupingKey>, RowGrouping<GroupingKey>)",
+      "desc": "Generates two row groupings by randomly splitting the original with a proportion and a seed number."
+    },
+    {
+      "name": "func counts() -> DataFrame",
+      "desc": "Generates a data frame with two columns, one that has a row for each group key and another for the number of rows in the group."
+    },
+    {
+      "name": "func counts(order: Order?) -> DataFrame",
+      "desc": "Generates a data frame with two columns, one that has a row for each group key and another for the number of rows in the group."
+    },
+    {
+      "name": "func sums<N>(String, N.Type, order: Order?) -> DataFrame",
+      "desc": "Generates a data frame that contains the sum of each group’s rows along a column you select by name."
+    },
+    {
+      "name": "func sums<N>(ColumnID<N>, order: Order?) -> DataFrame",
+      "desc": "Generates a data frame that contains the sum of each group’s rows along a column you select by column identifier."
+    },
+    {
+      "name": "func means<N>(String, N.Type, order: Order?) -> DataFrame",
+      "desc": "Generates a data frame that contains the average mean of each group’s rows along a column you select by name."
+    },
+    {
+      "name": "func means<N>(ColumnID<N>, order: Order?) -> DataFrame",
+      "desc": "Generates a data frame that contains the average mean of each group’s rows along a column you select by column identifier."
+    },
+    {
+      "name": "func minimums<N>(String, N.Type, order: Order?) -> DataFrame",
+      "desc": "Generates a data frame that contains the minimums of each group’s rows along a column you select by name."
+    },
+    {
+      "name": "func minimums<N>(ColumnID<N>, order: Order?) -> DataFrame",
+      "desc": "Generates a data frame that contains the minimums of each group’s rows along a column you select by column identifier."
+    },
+    {
+      "name": "func maximums<N>(String, N.Type, order: Order?) -> DataFrame",
+      "desc": "Generates a data frame that contains the maximums of each group’s rows along a column you select by name."
+    },
+    {
+      "name": "func maximums<N>(ColumnID<N>, order: Order?) -> DataFrame",
+      "desc": "Generates a data frame that contains the maximums of each group’s rows along a column you select by column identifier."
+    },
+    {
+      "name": "func aggregated<Element, Result>(on: ColumnID<Element>, into: String?, transform: (DiscontiguousColumnSlice<Element>) throws -> Result) rethrows -> DataFrame",
+      "desc": "Generates a data frame with a column for the group identifier and a column of values from the transform."
+    },
+    {
+      "name": "func aggregated<Element, Result>(on: [String], naming: (String) -> String, transform: (DiscontiguousColumnSlice<Element>) throws -> Result?) rethrows -> DataFrame",
+      "desc": "Generates a data frame by aggregating each group’s contents for each column you list by name."
+    },
+    {
+      "name": "func aggregated<Element, Result>(on: String..., naming: (String) -> String, transform: (DiscontiguousColumnSlice<Element>) throws -> Result?) rethrows -> DataFrame",
+      "desc": "Generates a data frame by aggregating each group’s contents for each column you select by name."
+    },
+    {
+      "name": "func ungrouped() -> DataFrame",
+      "desc": "Generates a data frame that contains all the rows from each group in the row grouping."
+    },
+    {
+      "name": "func summary() -> GroupSummaries",
+      "desc": "Generates a group summaries instance for the columns of the row grouping."
+    },
+    {
+      "name": "protocol GroupSummaries",
+      "desc": "A collection of group summaries."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the row grouping."
+    },
+    {
+      "name": "subscript(Any?...) -> DataFrame.Slice?",
+      "desc": "Retrieves a group slice by key."
+    }
+  ],
+  "declaration": "struct RowGrouping<GroupingKey> where GroupingKey : Hashable",
+  "conformsTo": [
+    "BidirectionalCollection",
+    "Collection",
+    "CustomStringConvertible",
+    "RandomAccessCollection",
+    "RowGroupingProtocol",
+    "Sequence"
+  ]
+}

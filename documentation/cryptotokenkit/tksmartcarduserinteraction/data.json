@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/cryptotokenkit/tksmartcarduserinteraction",
+  "type": "Class",
+  "name": "TKSmartCardUserInteraction",
+  "desc": "The base class for encapsulating user interaction with a Smart Card reader.",
+  "items": [
+    {
+      "name": "var delegate: TKSmartCardUserInteractionDelegate?",
+      "desc": "The delegate for observing events that occur during the user interaction."
+    },
+    {
+      "name": "protocol TKSmartCardUserInteractionDelegate",
+      "desc": "The interface implemented by a Smart Card user interaction delegate to handle user interaction events."
+    },
+    {
+      "name": "var initialTimeout: TimeInterval",
+      "desc": "The timeout, in seconds, for initial interaction. If set to 0, the reader-defined default timeout is used. 0 by default."
+    },
+    {
+      "name": "var interactionTimeout: TimeInterval",
+      "desc": "The timeout, in seconds, after the first key stroke. If set to 0, the reader-defined default timeout is used. 0 by default."
+    },
+    {
+      "name": "func run(reply: (Bool, Error?) -> Void)",
+      "desc": "Runs the user interaction and asynchronously receives a reply."
+    },
+    {
+      "name": "func cancel() -> Bool",
+      "desc": "Attempts to cancel an interaction started by calling run(reply:). For certain interactions, cancellation may not be available."
+    }
+  ],
+  "declaration": "class TKSmartCardUserInteraction : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

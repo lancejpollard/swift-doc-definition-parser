@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/avfoundation/avassetreaderoutput",
+  "type": "Class",
+  "name": "AVAssetReaderOutput",
+  "desc": "An abstract class that defines the interface to read media samples from an asset reader.",
+  "items": [
+    {
+      "name": "var alwaysCopiesSampleData: Bool",
+      "desc": "A Boolean value that indicates whether the output vends copied sample data."
+    },
+    {
+      "name": "var supportsRandomAccess: Bool",
+      "desc": "A Boolean value that indicates whether the output supports reconfiguring the time ranges it reads."
+    },
+    {
+      "name": "func reset(forReadingTimeRanges: [NSValue])",
+      "desc": "Restarts reading with a new set of time ranges."
+    },
+    {
+      "name": "func markConfigurationAsFinal()",
+      "desc": "Tells the output that it’s finished reconfiguring time ranges, and allows the asset reader to advance to a completed state."
+    },
+    {
+      "name": "func copyNextSampleBuffer() -> CMSampleBuffer?",
+      "desc": "Copies the next sample buffer from the output."
+    },
+    {
+      "name": "var mediaType: AVMediaType",
+      "desc": "The media type of samples that the output reads."
+    }
+  ],
+  "declaration": "class AVAssetReaderOutput : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

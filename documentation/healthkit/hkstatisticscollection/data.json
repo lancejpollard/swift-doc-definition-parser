@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/healthkit/hkstatisticscollection",
+  "type": "Class",
+  "name": "HKStatisticsCollection",
+  "desc": "An object that manages a collection of statistics, representing the results calculated over separate time intervals.",
+  "items": [
+    {
+      "name": "func statistics() -> [HKStatistics]",
+      "desc": "Returns an array of statistics objects representing the populated time intervals covered by the statistics collection query."
+    },
+    {
+      "name": "func statistics(for: Date) -> HKStatistics?",
+      "desc": "Returns the statistics object for the time interval that contains the provided date."
+    },
+    {
+      "name": "func enumerateStatistics(from: Date, to: Date, with: (HKStatistics, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Enumerates the statistics objects for all the time intervals from the start date until the end date."
+    },
+    {
+      "name": "func sources() -> Set<HKSource>",
+      "desc": "Returns a set containing all the sources that had samples matched by the statistics collection query."
+    }
+  ],
+  "declaration": "class HKStatisticsCollection : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

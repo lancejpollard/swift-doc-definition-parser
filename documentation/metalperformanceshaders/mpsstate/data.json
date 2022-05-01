@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsstate",
+  "type": "Class",
+  "name": "MPSState",
+  "desc": "An opaque data container for large storage in MPS CNN filters.",
+  "items": [
+    {
+      "name": "var isTemporary: Bool"
+    },
+    {
+      "name": "var label: String?"
+    },
+    {
+      "name": "var readCount: Int"
+    },
+    {
+      "name": "var resourceCount: Int"
+    },
+    {
+      "name": "init(device: MTLDevice, bufferSize: Int)"
+    },
+    {
+      "name": "init(device: MTLDevice, resourceList: MPSStateResourceList)"
+    },
+    {
+      "name": "init(device: MTLDevice, textureDescriptor: MTLTextureDescriptor)"
+    },
+    {
+      "name": "init(resource: MTLResource?)"
+    },
+    {
+      "name": "init(resources: [MTLResource]?)"
+    },
+    {
+      "name": "func bufferSize(at: Int) -> Int"
+    },
+    {
+      "name": "func destinationImageDescriptor(forSourceImages: [MPSImage], sourceStates: [MPSState]?, for: MPSKernel, suggestedDescriptor: MPSImageDescriptor) -> MPSImageDescriptor"
+    },
+    {
+      "name": "func resource(at: Int, allocateMemory: Bool) -> MTLResource?"
+    },
+    {
+      "name": "func resourceSize() -> Int"
+    },
+    {
+      "name": "func resourceType(at: Int) -> MPSStateResourceType"
+    },
+    {
+      "name": "func synchronize(on: MTLCommandBuffer)"
+    },
+    {
+      "name": "func textureInfo(at: Int) -> MPSStateTextureInfo"
+    },
+    {
+      "name": "class func temporaryState(with: MTLCommandBuffer) -> Self"
+    },
+    {
+      "name": "class func temporaryState(with: MTLCommandBuffer, bufferSize: Int) -> Self"
+    },
+    {
+      "name": "class func temporaryState(with: MTLCommandBuffer, resourceList: MPSStateResourceList) -> Self"
+    },
+    {
+      "name": "class func temporaryState(with: MTLCommandBuffer, textureDescriptor: MTLTextureDescriptor) -> Self"
+    }
+  ],
+  "declaration": "class MPSState : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "path": "/documentation/carekit/ockentityquery",
+  "type": "Protocol",
+  "name": "OCKEntityQuery",
+  "desc": "A protocol that customizes and sorts query results for non-ephemeral entities.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a new query with default properties."
+    },
+    {
+      "name": "init(OCKEntityQuery)",
+      "desc": "Creates a new query from any other entity query, and copies properties common to both queries."
+    },
+    {
+      "name": "init(dateInterval: DateInterval)",
+      "desc": "Creates a new query with a specific date interval."
+    },
+    {
+      "name": "init(for: Date)",
+      "desc": "Creates a query that spans the entire day on a specific date."
+    },
+    {
+      "name": "init(id: String)",
+      "desc": "Creates a query to retrieve an entity with the a specific unique identifier."
+    },
+    {
+      "name": "var dateInterval: DateInterval?",
+      "desc": "A date interval for entities that match the query."
+    },
+    {
+      "name": "var groupIdentifiers: [String]",
+      "desc": "An array of group identifers that match the query."
+    },
+    {
+      "name": "var ids: [String]",
+      "desc": "An array of unique identifiers that belong to the entities that match the query."
+    },
+    {
+      "name": "var limit: Int?",
+      "desc": "The maximum number of results the query returns."
+    },
+    {
+      "name": "var offset: Int",
+      "desc": "An integer value that indicates how much to offset the query results, and which can be used to paginate results."
+    },
+    {
+      "name": "var remoteIDs: [String]",
+      "desc": "An array of remote IDs for entities that match the query."
+    }
+  ],
+  "declaration": "protocol OCKEntityQuery"
+}

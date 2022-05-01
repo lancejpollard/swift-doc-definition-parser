@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/widgetkit/intenttimelineprovider",
+  "type": "Protocol",
+  "name": "IntentTimelineProvider",
+  "desc": "A type that advises WidgetKit when to update a user-configurable widget’s display.",
+  "items": [
+    {
+      "name": "func getSnapshot(for: Self.Intent, in: Self.Context, completion: (Self.Entry) -> Void)",
+      "desc": "Provides a timeline entry representing the current time and state of a widget."
+    },
+    {
+      "name": "func getTimeline(for: Self.Intent, in: Self.Context, completion: (Timeline<Self.Entry>) -> Void)",
+      "desc": "Provides an array of timeline entries for the current time and, optionally, any future times to update a widget."
+    },
+    {
+      "name": "func placeholder(in: Self.Context) -> Self.Entry",
+      "desc": ""
+    },
+    {
+      "name": "associatedtype Entry : TimelineEntry",
+      "desc": ""
+    },
+    {
+      "name": "associatedtype Intent : INIntent",
+      "desc": ""
+    },
+    {
+      "name": "typealias Context"
+    }
+  ],
+  "declaration": "protocol IntentTimelineProvider"
+}

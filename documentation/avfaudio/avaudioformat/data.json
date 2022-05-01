@@ -1,0 +1,95 @@
+{
+  "path": "/documentation/avfaudio/avaudioformat",
+  "type": "Class",
+  "name": "AVAudioFormat",
+  "desc": "An object that describes the representation of an audio format.",
+  "items": [
+    {
+      "name": "init(standardFormatWithSampleRate: Double, channelLayout: AVAudioChannelLayout)",
+      "desc": "Creates an audio format instance as a deinterleaved float with the specified sample rate and channel layout."
+    },
+    {
+      "name": "init?(standardFormatWithSampleRate: Double, channels: AVAudioChannelCount)",
+      "desc": "Creates an audio format instance with the specified sample rate and channel count."
+    },
+    {
+      "name": "init?(commonFormat: AVAudioCommonFormat, sampleRate: Double, channels: AVAudioChannelCount, interleaved: Bool)",
+      "desc": "Creates an audio format instance."
+    },
+    {
+      "name": "init(commonFormat: AVAudioCommonFormat, sampleRate: Double, interleaved: Bool, channelLayout: AVAudioChannelLayout)",
+      "desc": "Creates an audio format instance with the specified audio format, sample rate, interleaved state, and channel layout."
+    },
+    {
+      "name": "init?(settings: [String : Any])",
+      "desc": "Creates an audio format instance using the specified settings dictionary."
+    },
+    {
+      "name": "init?(streamDescription: UnsafePointer<AudioStreamBasicDescription>)",
+      "desc": "Creates an audio format instance from a stream description."
+    },
+    {
+      "name": "init?(streamDescription: UnsafePointer<AudioStreamBasicDescription>, channelLayout: AVAudioChannelLayout?)",
+      "desc": "Creates an audio format instance from a stream description and channel layout."
+    },
+    {
+      "name": "init(cmAudioFormatDescription: CMAudioFormatDescription)",
+      "desc": "Creates an audio format instance from a Core Media audio format description."
+    },
+    {
+      "name": "var streamDescription: UnsafePointer<AudioStreamBasicDescription>",
+      "desc": "The audio format properties of a stream of audio data."
+    },
+    {
+      "name": "func isEqual(Any) -> Bool",
+      "desc": "Indicates whether the audio format instance and a specified object are functionally equivalent."
+    },
+    {
+      "name": "var sampleRate: Double",
+      "desc": "The audio format sampling rate, in hertz."
+    },
+    {
+      "name": "var channelCount: AVAudioChannelCount",
+      "desc": "The number of channels of audio data."
+    },
+    {
+      "name": "var channelLayout: AVAudioChannelLayout?",
+      "desc": "The underlying audio channel layout."
+    },
+    {
+      "name": "var formatDescription: CMAudioFormatDescription",
+      "desc": "The audio format description to use with Core Media APIs."
+    },
+    {
+      "name": "var isInterleaved: Bool",
+      "desc": "A Boolean value that indicates whether the samples mix into one stream."
+    },
+    {
+      "name": "var isStandard: Bool",
+      "desc": "A Boolean value that indicates whether the format is in a deinterleaved native-endian float state."
+    },
+    {
+      "name": "var commonFormat: AVAudioCommonFormat",
+      "desc": "The common format identifier instance."
+    },
+    {
+      "name": "var settings: [String : Any]",
+      "desc": "A dictionary that represents the format as a dictionary using audio setting keys."
+    },
+    {
+      "name": "var magicCookie: Data?",
+      "desc": "An object that contains metadata that encoders and decoders require."
+    },
+    {
+      "name": "enum AVAudioCommonFormat",
+      "desc": "The format options that describe common audio formats."
+    }
+  ],
+  "declaration": "class AVAudioFormat : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

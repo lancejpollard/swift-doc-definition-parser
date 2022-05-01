@@ -1,0 +1,46 @@
+{
+  "path": "/documentation/cloudkit/ckfetchsharemetadataoperation",
+  "type": "Class",
+  "name": "CKFetchShareMetadataOperation",
+  "desc": "An operation that fetches metadata for one or more shares.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an empty fetch share metadata operation."
+    },
+    {
+      "name": "init(shareURLs: [URL])",
+      "desc": "Creates an operation for fetching the metadata for the specified shares."
+    },
+    {
+      "name": "var shareURLs: [URL]?",
+      "desc": "The URLs of the shares to fetch."
+    },
+    {
+      "name": "var shouldFetchRootRecord: Bool",
+      "desc": "A Boolean value that indicates whether to retrieve the root record."
+    },
+    {
+      "name": "var perShareMetadataBlock: ((URL, CKShare.Metadata?, Error?) -> Void)?",
+      "desc": "The closure to execute as the operation fetches individual shares."
+    },
+    {
+      "name": "var fetchShareMetadataCompletionBlock: ((Error?) -> Void)?",
+      "desc": "The closure to execute when the operation finishes."
+    },
+    {
+      "name": "var fetchShareMetadataResultBlock: ((Result<Void, Error>) -> Void)?"
+    },
+    {
+      "name": "var perShareMetadataResultBlock: ((URL, Result<CKShare.Metadata, Error>) -> Void)?"
+    },
+    {
+      "name": "var rootRecordDesiredKeys: [CKRecord.FieldKey]?",
+      "desc": "The fields to return when fetching the root record."
+    }
+  ],
+  "declaration": "class CKFetchShareMetadataOperation : CKOperation",
+  "inheritsFrom": [
+    "CKOperation"
+  ]
+}

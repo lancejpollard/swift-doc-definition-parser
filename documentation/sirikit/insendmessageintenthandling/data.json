@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/sirikit/insendmessageintenthandling",
+  "type": "Protocol",
+  "name": "INSendMessageIntentHandling",
+  "desc": "An interface to handle sending messages to one or more designated users.",
+  "items": [
+    {
+      "name": "func resolveRecipients(for: INSendMessageIntent, with: ([INSendMessageRecipientResolutionResult]) -> Void)",
+      "desc": "Resolves the user’s input when it isn’t clear who the recipients of the message are."
+    },
+    {
+      "name": "func resolveOutgoingMessageType(for: INSendMessageIntent, with: (INOutgoingMessageTypeResolutionResult) -> Void)",
+      "desc": "Determines what type of message to send."
+    },
+    {
+      "name": "func resolveContent(for: INSendMessageIntent, with: (INStringResolutionResult) -> Void)",
+      "desc": "Resolves the contents of the message."
+    },
+    {
+      "name": "func resolveSpeakableGroupName(for: INSendMessageIntent, with: (INSpeakableStringResolutionResult) -> Void)",
+      "desc": "Resolves the name of the group receiving the message."
+    },
+    {
+      "name": "func confirm(intent: INSendMessageIntent, completion: (INSendMessageIntentResponse) -> Void)",
+      "desc": "Confirms that you can send the message."
+    },
+    {
+      "name": "func handle(intent: INSendMessageIntent, completion: (INSendMessageIntentResponse) -> Void)",
+      "desc": "Sends the message to the specified recipients."
+    },
+    {
+      "name": "func resolveRecipients(for: INSendMessageIntent, with: ([INPersonResolutionResult]) -> Void)",
+      "desc": "Resolves the recipients of the message."
+    }
+  ],
+  "declaration": "protocol INSendMessageIntentHandling",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

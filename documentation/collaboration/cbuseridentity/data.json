@@ -1,0 +1,35 @@
+{
+  "path": "/documentation/collaboration/cbuseridentity",
+  "type": "Class",
+  "name": "CBUserIdentity",
+  "desc": "An object of the CBUserIdentity class represents a user identity and is used for accessing the attributes of a user identity from an identity authority. The principal attributes of CBUserIdentity are a POSIX user identifier (UID), password, and certificate.",
+  "items": [
+    {
+      "name": "func authenticate(withPassword: String) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the given password is correct for the identity."
+    },
+    {
+      "name": "var certificate: SecCertificate?",
+      "desc": "Returns the public authentication certificate associated with a user identity."
+    },
+    {
+      "name": "var posixUID: uid_t",
+      "desc": "Returns the POSIX UID of the identity."
+    },
+    {
+      "name": "init?(posixUID: uid_t, authority: CBIdentityAuthority)",
+      "desc": "Returns the user identity with the given POSIX UID in the specified identity authority."
+    },
+    {
+      "name": "var isEnabled: Bool"
+    }
+  ],
+  "declaration": "class CBUserIdentity : CBIdentity",
+  "inheritsFrom": [
+    "CBIdentity"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "NSCopying"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/system/filepath/component",
+  "type": "Structure",
+  "name": "FilePath.Component",
+  "desc": "Represents an individual, non-root component of a file path.",
+  "items": [
+    {
+      "name": "init?(String)",
+      "desc": "Create a file path component from a string."
+    },
+    {
+      "name": "init?(platformString: UnsafePointer<CInterop.PlatformChar>)",
+      "desc": "Creates a file path component by copying bytes from a null-terminated platform string."
+    },
+    {
+      "name": "var `extension`: String?",
+      "desc": "The extension of this file or directory component."
+    },
+    {
+      "name": "var kind: FilePath.Component.Kind",
+      "desc": "The kind of this component"
+    },
+    {
+      "name": "var stem: String",
+      "desc": "The non-extension portion of this file or directory component."
+    },
+    {
+      "name": "var string: String",
+      "desc": "Creates a string by interpreting the component’s content as UTF-8 on Unix and UTF-16 on Windows."
+    },
+    {
+      "name": "func withPlatformString<Result>((UnsafePointer<CInterop.PlatformChar>) throws -> Result) rethrows -> Result",
+      "desc": "Calls the given closure with a pointer to the contents of the file path component, represented as a null-terminated platform string."
+    },
+    {
+      "name": "enum Kind",
+      "desc": "Whether a component is a regular file or directory name, or a special directory . or .."
+    }
+  ],
+  "declaration": "struct Component",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "ExpressibleByExtendedGraphemeClusterLiteral",
+    "ExpressibleByStringLiteral",
+    "ExpressibleByUnicodeScalarLiteral",
+    "Hashable"
+  ]
+}

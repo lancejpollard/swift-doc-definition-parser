@@ -1,0 +1,95 @@
+{
+  "path": "/documentation/virtualization/vzvirtualmachineconfiguration",
+  "type": "Class",
+  "name": "VZVirtualMachineConfiguration",
+  "desc": "The environment attributes and list of devices to use during the configuration of macOS or Linux VMs.",
+  "items": [
+    {
+      "name": "var bootLoader: VZBootLoader?",
+      "desc": "The guest system to boot when the VM starts."
+    },
+    {
+      "name": "var cpuCount: Int",
+      "desc": "The number of CPUs you make available to the guest operating system."
+    },
+    {
+      "name": "class var minimumAllowedCPUCount: Int",
+      "desc": "The minimum number of CPUs you may configure for the VM."
+    },
+    {
+      "name": "class var maximumAllowedCPUCount: Int",
+      "desc": "The maximum number of CPUs you may configure for the VM."
+    },
+    {
+      "name": "var memorySize: UInt64",
+      "desc": "The amount of physical memory the guest operating system recognizes."
+    },
+    {
+      "name": "class var minimumAllowedMemorySize: UInt64",
+      "desc": "The minimum amount of memory that you may configure for the VM."
+    },
+    {
+      "name": "class var maximumAllowedMemorySize: UInt64",
+      "desc": "The maximum amount of memory that you may configure for the VM."
+    },
+    {
+      "name": "var memoryBalloonDevices: [VZMemoryBalloonDeviceConfiguration]",
+      "desc": "An array that you configure with a memory balloon device, used to update the memory in the VM."
+    },
+    {
+      "name": "var networkDevices: [VZNetworkDeviceConfiguration]",
+      "desc": "The array of network devices that you expose to the guest operating system."
+    },
+    {
+      "name": "var socketDevices: [VZSocketDeviceConfiguration]",
+      "desc": "The socket device that you use to implement port-based communication with the guest operating system."
+    },
+    {
+      "name": "var serialPorts: [VZSerialPortConfiguration]",
+      "desc": "The array of serial ports that you expose to the guest operating system."
+    },
+    {
+      "name": "var storageDevices: [VZStorageDeviceConfiguration]",
+      "desc": "The array of storage devices that you expose to the guest operating system."
+    },
+    {
+      "name": "var entropyDevices: [VZEntropyDeviceConfiguration]",
+      "desc": "The array of randomization devices that you expose to the guest operating system."
+    },
+    {
+      "name": "var audioDevices: [VZAudioDeviceConfiguration]",
+      "desc": "The list of audio devices."
+    },
+    {
+      "name": "var directorySharingDevices: [VZDirectorySharingDeviceConfiguration]",
+      "desc": "The list of directory sharing devices."
+    },
+    {
+      "name": "var graphicsDevices: [VZGraphicsDeviceConfiguration]",
+      "desc": "The list of graphics devices."
+    },
+    {
+      "name": "var keyboards: [VZKeyboardConfiguration]",
+      "desc": "The list of keyboards."
+    },
+    {
+      "name": "var platform: VZPlatformConfiguration",
+      "desc": "The hardware platform to use."
+    },
+    {
+      "name": "var pointingDevices: [VZPointingDeviceConfiguration]",
+      "desc": "The list of pointing devices."
+    },
+    {
+      "name": "func validate()",
+      "desc": "Validates the current configuration settings and reports any issues that might prevent the successful initialization of the VM."
+    }
+  ],
+  "declaration": "class VZVirtualMachineConfiguration : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

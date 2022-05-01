@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/system/filepath/root-swift.struct",
+  "type": "Structure",
+  "name": "FilePath.Root",
+  "desc": "Represents a root of a file path.",
+  "items": [
+    {
+      "name": "init?(String)",
+      "desc": "Create a file path root from a string."
+    },
+    {
+      "name": "init?(platformString: UnsafePointer<CInterop.PlatformChar>)",
+      "desc": "Creates a file path root by copying bytes from a null-terminated platform string."
+    },
+    {
+      "name": "var string: String",
+      "desc": "On Unix, this returns \"/\"."
+    },
+    {
+      "name": "func withPlatformString<Result>((UnsafePointer<CInterop.PlatformChar>) throws -> Result) rethrows -> Result",
+      "desc": "Calls the given closure with a pointer to the contents of the file path root, represented as a null-terminated platform string."
+    }
+  ],
+  "declaration": "struct Root",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "ExpressibleByExtendedGraphemeClusterLiteral",
+    "ExpressibleByStringLiteral",
+    "ExpressibleByUnicodeScalarLiteral",
+    "Hashable"
+  ]
+}

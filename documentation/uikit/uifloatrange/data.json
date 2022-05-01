@@ -1,0 +1,51 @@
+{
+  "path": "/documentation/uikit/uifloatrange",
+  "type": "Structure",
+  "name": "UIFloatRange",
+  "desc": "The range of motion for attached objects.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(minimum: CGFloat, maximum: CGFloat)",
+      "desc": "Returns a new float range structure from the given components."
+    },
+    {
+      "name": "static let infinite: UIFloatRange",
+      "desc": "A range whose range is minus infinity to infinity."
+    },
+    {
+      "name": "static let zero: UIFloatRange",
+      "desc": "A range whose minimum and maximum are both 0.0."
+    },
+    {
+      "name": "var maximum: CGFloat",
+      "desc": "The maximum range of motion for sliding and pin attachments. For sliding attachments, it represents the number of points to move along the axis of translation in the positive direction. For pin attachments, it represents the number of radians to rotate in the clockwise direction. This value must be greater than or equal to 0."
+    },
+    {
+      "name": "var minimum: CGFloat",
+      "desc": "The minimum range of motion for sliding and pin attachments. For sliding attachments, it represents the number of points to move along the axis of translation in the negative direction. For pin attachments, it represents the number of radians to rotate in the counter-clockwise direction. This value must be less than or equal to 0."
+    },
+    {
+      "name": "var isInfinite: Bool",
+      "desc": "Returns a Boolean indicating whether the specified float range is infinitely large."
+    },
+    {
+      "name": "static func == (UIFloatRange, UIFloatRange) -> Bool",
+      "desc": "Returns a Boolean indicating whether two float ranges are equivalent."
+    },
+    {
+      "name": "init(from: Decoder)"
+    },
+    {
+      "name": "func encode(to: Encoder)"
+    }
+  ],
+  "declaration": "struct UIFloatRange",
+  "conformsTo": [
+    "Decodable",
+    "Encodable",
+    "Equatable"
+  ]
+}

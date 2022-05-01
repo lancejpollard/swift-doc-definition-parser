@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/corebluetooth/cbcentralmanagerdelegate",
+  "type": "Protocol",
+  "name": "CBCentralManagerDelegate",
+  "desc": "A protocol that provides updates for the discovery and management of peripheral devices.",
+  "items": [
+    {
+      "name": "func centralManager(CBCentralManager, didConnect: CBPeripheral)",
+      "desc": "Tells the delegate that the central manager connected to a peripheral."
+    },
+    {
+      "name": "func centralManager(CBCentralManager, didDisconnectPeripheral: CBPeripheral, error: Error?)",
+      "desc": "Tells the delegate that the central manager disconnected from a peripheral."
+    },
+    {
+      "name": "func centralManager(CBCentralManager, didFailToConnect: CBPeripheral, error: Error?)",
+      "desc": "Tells the delegate the central manager failed to create a connection with a peripheral."
+    },
+    {
+      "name": "func centralManager(CBCentralManager, connectionEventDidOccur: CBConnectionEvent, for: CBPeripheral)",
+      "desc": "Tells the delegate that a connection event occurred which matches the registered options."
+    },
+    {
+      "name": "func centralManager(CBCentralManager, didDiscover: CBPeripheral, advertisementData: [String : Any], rssi: NSNumber)",
+      "desc": "Tells the delegate the central manager discovered a peripheral while scanning for devices."
+    },
+    {
+      "name": "func centralManagerDidUpdateState(CBCentralManager)",
+      "desc": "Tells the delegate the central manager’s state updated."
+    },
+    {
+      "name": "func centralManager(CBCentralManager, willRestoreState: [String : Any])",
+      "desc": "Tells the delegate the system is about to restore the central manager, as part of relaunching the app into the background."
+    },
+    {
+      "name": "func centralManager(CBCentralManager, didUpdateANCSAuthorizationFor: CBPeripheral)",
+      "desc": "Tells the delegate the authorization status changed for a ANCS-requiring connected peripheral."
+    }
+  ],
+  "declaration": "protocol CBCentralManagerDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/swiftui/commandgroup",
+  "type": "Structure",
+  "name": "CommandGroup",
+  "desc": "Command groups describe additional groupings of controls to add to existing command menus.",
+  "items": [
+    {
+      "name": "init(after: CommandGroupPlacement, addition: () -> Content)",
+      "desc": "A value describing the addition of the given views to the end of the indicated group."
+    },
+    {
+      "name": "init(before: CommandGroupPlacement, addition: () -> Content)",
+      "desc": "A value describing the addition of the given views to the beginning of the indicated group."
+    },
+    {
+      "name": "init(replacing: CommandGroupPlacement, addition: () -> Content)",
+      "desc": "A value describing the complete replacement of the contents of the indicated group with the given views."
+    },
+    {
+      "name": "var body: some Commands",
+      "desc": "The contents of the command hierarchy."
+    },
+    {
+      "name": "typealias Body",
+      "desc": "The type of commands that represents the body of this command hierarchy."
+    }
+  ],
+  "declaration": "struct CommandGroup<Content> where Content : View",
+  "conformsTo": [
+    "Commands"
+  ]
+}

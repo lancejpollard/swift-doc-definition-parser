@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/avfoundation/avdepthdata",
+  "type": "Class",
+  "name": "AVDepthData",
+  "desc": "A container for per-pixel distance or disparity information captured by compatible camera devices.",
+  "items": [
+    {
+      "name": "init(fromDictionaryRepresentation: [AnyHashable : Any])",
+      "desc": "Creates a depth data object from depth information such as that found in an image file."
+    },
+    {
+      "name": "func dictionaryRepresentation(forAuxiliaryDataType: AutoreleasingUnsafeMutablePointer<NSString?>?) -> [AnyHashable : Any]?",
+      "desc": "Returns a dictionary representation of the depth data suitable for writing into an image file."
+    },
+    {
+      "name": "var depthDataMap: CVPixelBuffer",
+      "desc": "A pixel buffer containing the depth data's per-pixel depth or disparity data map."
+    },
+    {
+      "name": "var depthDataType: OSType",
+      "desc": "The pixel format of the depth data map."
+    },
+    {
+      "name": "var isDepthDataFiltered: Bool",
+      "desc": "A Boolean value indicating whether the depth map contains temporally smoothed data."
+    },
+    {
+      "name": "var depthDataAccuracy: AVDepthData.Accuracy",
+      "desc": "The general accuracy of depth data map values."
+    },
+    {
+      "name": "enum AVDepthData.Accuracy",
+      "desc": "Values indicating the general accuracy of a depth data map."
+    },
+    {
+      "name": "var depthDataQuality: AVDepthData.Quality",
+      "desc": "The overall quality of the depth map."
+    },
+    {
+      "name": "enum AVDepthData.Quality",
+      "desc": "Values indicating the overall quality of a depth data map."
+    },
+    {
+      "name": "func applyingExifOrientation(CGImagePropertyOrientation) -> Self",
+      "desc": "Returns a derivative depth data object by mirroring or rotating it to the specified orientation."
+    },
+    {
+      "name": "func converting(toDepthDataType: OSType) -> Self",
+      "desc": "Returns a derivative depth data object by converting the depth data map to the specified data type."
+    },
+    {
+      "name": "var availableDepthDataTypes: [NSNumber]",
+      "desc": "The list of depth data formats to which this depth data can be converted."
+    },
+    {
+      "name": "func replacingDepthDataMap(with: CVPixelBuffer) -> Self",
+      "desc": "Returns a derivative depth data object by replacing the depth data map."
+    },
+    {
+      "name": "var cameraCalibrationData: AVCameraCalibrationData?",
+      "desc": "The imaging parameters with which this depth data was captured."
+    },
+    {
+      "name": "class AVCameraCalibrationData",
+      "desc": "Information about the camera characteristics used to capture images and depth data."
+    }
+  ],
+  "declaration": "class AVDepthData : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

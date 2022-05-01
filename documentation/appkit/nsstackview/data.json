@@ -1,0 +1,141 @@
+{
+  "path": "/documentation/appkit/nsstackview",
+  "type": "Class",
+  "name": "NSStackView",
+  "desc": "A view that arranges an array of views horizontally or vertically and updates their placement and sizing when the window size changes.",
+  "items": [
+    {
+      "name": "init(views: [NSView])",
+      "desc": "Creates and returns a stack view with a specified array of views."
+    },
+    {
+      "name": "var delegate: NSStackViewDelegate?",
+      "desc": "The delegate object for the stack view."
+    },
+    {
+      "name": "protocol NSStackViewDelegate",
+      "desc": "A set of methods you use to respond to a stack view detaching and reattaching views."
+    },
+    {
+      "name": "func addView(NSView, in: NSStackView.Gravity)",
+      "desc": "Adds a view to the end of the stack view gravity area."
+    },
+    {
+      "name": "func insertView(NSView, at: Int, in: NSStackView.Gravity)",
+      "desc": "Adds a view to a stack view gravity area at a specified index position."
+    },
+    {
+      "name": "func setViews([NSView], in: NSStackView.Gravity)",
+      "desc": "Specifies an array of views for a specified gravity area in the stack view, replacing any previous views in that area."
+    },
+    {
+      "name": "func removeView(NSView)",
+      "desc": "Removes a specified view from the stack view."
+    },
+    {
+      "name": "enum NSStackView.Gravity",
+      "desc": "The gravity areas available in a stack view."
+    },
+    {
+      "name": "func addArrangedSubview(NSView)",
+      "desc": "Adds the specified view to the end of the arranged subviews list."
+    },
+    {
+      "name": "func insertArrangedSubview(NSView, at: Int)",
+      "desc": "Adds the provided view to the array of arranged subviews at the specified index."
+    },
+    {
+      "name": "func removeArrangedSubview(NSView)",
+      "desc": "Removes the provided view from the stack’s array of arranged subviews."
+    },
+    {
+      "name": "var arrangedSubviews: [NSView]",
+      "desc": "The array of views arranged by the stack view."
+    },
+    {
+      "name": "var views: [NSView]",
+      "desc": "The array of views owned by the stack view."
+    },
+    {
+      "name": "func views(in: NSStackView.Gravity) -> [NSView]",
+      "desc": "Returns the array of views in the specified gravity area in the stack view."
+    },
+    {
+      "name": "var detachedViews: [NSView]",
+      "desc": "An array that contains the detached views from all the stack view’s gravity areas."
+    },
+    {
+      "name": "func clippingResistancePriority(for: NSLayoutConstraint.Orientation) -> NSLayoutConstraint.Priority",
+      "desc": "Returns the Auto Layout priority for resisting clipping of views in the stack view when Auto Layout attempts to reduce the stack view’s size."
+    },
+    {
+      "name": "func huggingPriority(for: NSLayoutConstraint.Orientation) -> NSLayoutConstraint.Priority",
+      "desc": "Returns the Auto Layout priority for the stack view to minimize its size to fit its contained views as closely as possible, for a specified user interface axis."
+    },
+    {
+      "name": "var orientation: NSUserInterfaceLayoutOrientation",
+      "desc": "The horizontal or vertical layout direction of the stack view."
+    },
+    {
+      "name": "enum NSUserInterfaceLayoutOrientation",
+      "desc": "The stack view layout directions, and user interface axes for hugging priority and clipping resistance."
+    },
+    {
+      "name": "var alignment: NSLayoutConstraint.Attribute",
+      "desc": "The view alignment within the stack view."
+    },
+    {
+      "name": "var spacing: CGFloat",
+      "desc": "The minimum spacing, in points, between adjacent views in the stack view."
+    },
+    {
+      "name": "class let useDefaultSpacing: CGFloat"
+    },
+    {
+      "name": "var edgeInsets: NSEdgeInsets",
+      "desc": "The geometric padding, in points, inside the stack view, surrounding its views."
+    },
+    {
+      "name": "var distribution: NSStackView.Distribution"
+    },
+    {
+      "name": "enum NSStackView.Distribution"
+    },
+    {
+      "name": "func customSpacing(after: NSView) -> CGFloat",
+      "desc": "Returns the custom spacing, in points, between a specified view in the stack view and the view that follows it."
+    },
+    {
+      "name": "func setCustomSpacing(CGFloat, after: NSView)",
+      "desc": "Specifies the custom spacing, in points, between a specified view and the view that follows it in the stack view."
+    },
+    {
+      "name": "func visibilityPriority(for: NSView) -> NSStackView.VisibilityPriority",
+      "desc": "Returns the visibility priority for a specified view in the stack view."
+    },
+    {
+      "name": "func setVisibilityPriority(NSStackView.VisibilityPriority, for: NSView)",
+      "desc": "Sets the Auto Layout priority for a view to remain attached to the stack view when Auto Layout reduces the stack view’s size."
+    },
+    {
+      "name": "struct NSStackView.VisibilityPriority",
+      "desc": "The various Auto Layout priorities for a view in the stack view to remain attached."
+    },
+    {
+      "name": "var detachesHiddenViews: Bool",
+      "desc": "A Boolean value that indicates whether the stack view removes hidden views from its view hierarchy."
+    },
+    {
+      "name": "func setClippingResistancePriority(NSLayoutConstraint.Priority, for: NSLayoutConstraint.Orientation)",
+      "desc": "Sets the Auto Layout priority for resisting clipping of views in the stack view when Auto Layout attempts to reduce the stack view’s size."
+    },
+    {
+      "name": "func setHuggingPriority(NSLayoutConstraint.Priority, for: NSLayoutConstraint.Orientation)",
+      "desc": "Sets the Auto Layout priority for the stack view to minimize its size, for a specified user interface axis."
+    }
+  ],
+  "declaration": "class NSStackView : NSView",
+  "inheritsFrom": [
+    "NSView"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "path": "/documentation/xctest/xcuielementquery",
+  "type": "Class",
+  "name": "XCUIElementQuery",
+  "desc": "An object that defines the search criteria a test uses to identify UI elements.",
+  "items": [
+    {
+      "name": "func children(matching: XCUIElement.ElementType) -> XCUIElementQuery",
+      "desc": "Returns a new query that matches all direct children of the requested type."
+    },
+    {
+      "name": "func descendants(matching: XCUIElement.ElementType) -> XCUIElementQuery",
+      "desc": "Returns a new query that matches all descendants of the requested type."
+    },
+    {
+      "name": "func containing(NSPredicate) -> XCUIElementQuery",
+      "desc": "Returns a new query that matches elements that contain a descendant that meets the logical conditions of the provided predicate."
+    },
+    {
+      "name": "func containing(XCUIElement.ElementType, identifier: String?) -> XCUIElementQuery",
+      "desc": "Returns a new query that matches elements that contain a descendant of the requested type and an identifying property that matches a provided identifier."
+    },
+    {
+      "name": "func matching(identifier: String) -> XCUIElementQuery",
+      "desc": "Returns a new query that matches elements that have an identifying property that matches a provided identifier."
+    },
+    {
+      "name": "func matching(NSPredicate) -> XCUIElementQuery",
+      "desc": "Returns a new query that matches elements that meet the logical conditions of the provided predicate."
+    },
+    {
+      "name": "func matching(XCUIElement.ElementType, identifier: String?) -> XCUIElementQuery",
+      "desc": "Returns a new query that matches elements of the requested type and have an identifying property that matches a provided identifier."
+    },
+    {
+      "name": "var allElementsBoundByAccessibilityElement: [XCUIElement]",
+      "desc": "Immediately evaluates the query and returns an array of elements bound to the resulting accessibility elements."
+    },
+    {
+      "name": "var allElementsBoundByIndex: [XCUIElement]",
+      "desc": "Immediately evaluates the query and returns an array of elements bound by the index of each result."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "Evaluates the query and returns the number of elements that match."
+    },
+    {
+      "name": "var element: XCUIElement",
+      "desc": "The query’s single matching element."
+    },
+    {
+      "name": "func element(boundBy: Int) -> XCUIElement",
+      "desc": "An element that uses an index into the query’s results to determine which underlying accessibility element to use."
+    },
+    {
+      "name": "func element(matching: NSPredicate) -> XCUIElement",
+      "desc": "An element that matches the predicate."
+    },
+    {
+      "name": "func element(matching: XCUIElement.ElementType, identifier: String?) -> XCUIElement",
+      "desc": "An element that matches the provided element type and identifier."
+    },
+    {
+      "name": "subscript(String) -> XCUIElement",
+      "desc": "Returns a descendant element matching the identifier specified by key."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "Provides debugging information about the query."
+    },
+    {
+      "name": "let XCUIIdentifierCloseWindow: String",
+      "desc": "The identifier for a window’s “close” button."
+    },
+    {
+      "name": "let XCUIIdentifierFullScreenWindow: String",
+      "desc": "The identifier for a window’s “full screen” button."
+    },
+    {
+      "name": "let XCUIIdentifierMinimizeWindow: String",
+      "desc": "The identifier for a window’s “minimize” button."
+    },
+    {
+      "name": "let XCUIIdentifierZoomWindow: String",
+      "desc": "The identifier for a window’s “zoom” button."
+    }
+  ],
+  "declaration": "class XCUIElementQuery : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "XCUIElementTypeQueryProvider"
+  ]
+}

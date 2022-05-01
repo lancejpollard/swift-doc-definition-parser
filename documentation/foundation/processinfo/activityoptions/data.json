@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/foundation/processinfo/activityoptions",
+  "type": "Structure",
+  "name": "ProcessInfo.ActivityOptions",
+  "desc": "Option flags used with beginActivity(options:reason:) and performActivity(options:reason:using:).",
+  "items": [
+    {
+      "name": "static var idleDisplaySleepDisabled: ProcessInfo.ActivityOptions",
+      "desc": "Flag to require the screen to stay powered on."
+    },
+    {
+      "name": "static var idleSystemSleepDisabled: ProcessInfo.ActivityOptions",
+      "desc": "Flag to prevent idle sleep."
+    },
+    {
+      "name": "static var suddenTerminationDisabled: ProcessInfo.ActivityOptions",
+      "desc": "Flag to prevent sudden termination."
+    },
+    {
+      "name": "static var automaticTerminationDisabled: ProcessInfo.ActivityOptions",
+      "desc": "Flag to prevent automatic termination."
+    },
+    {
+      "name": "static var userInitiated: ProcessInfo.ActivityOptions",
+      "desc": "Flag to indicate the app is performing a user-requested action."
+    },
+    {
+      "name": "static var userInitiatedAllowingIdleSystemSleep: ProcessInfo.ActivityOptions",
+      "desc": "Flag to indicate the app is performing a user-requested action, but that the system can sleep on idle."
+    },
+    {
+      "name": "static var background: ProcessInfo.ActivityOptions",
+      "desc": "Flag to indicate the app has initiated some kind of work, but not as the direct result of user request."
+    },
+    {
+      "name": "static var latencyCritical: ProcessInfo.ActivityOptions",
+      "desc": "Flag to indicate the activity requires the highest amount of timer and I/O precision available."
+    },
+    {
+      "name": "init(rawValue: UInt64)"
+    }
+  ],
+  "declaration": "struct ActivityOptions, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

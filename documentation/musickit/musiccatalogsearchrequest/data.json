@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/musickit/musiccatalogsearchrequest",
+  "type": "Structure",
+  "name": "MusicCatalogSearchRequest",
+  "desc": "A request that your app uses to fetch items from the Apple Music catalog using a search term.",
+  "items": [
+    {
+      "name": "init(term: String, types: [MusicCatalogSearchable.Type])",
+      "desc": "Creates a catalog search request for a specified search term and list of catalog searchable types."
+    },
+    {
+      "name": "var limit: Int?",
+      "desc": "A limit for the number of items to return in the catalog search response."
+    },
+    {
+      "name": "var offset: Int?",
+      "desc": "An offet for the request."
+    },
+    {
+      "name": "let term: String",
+      "desc": "The search term for the request."
+    },
+    {
+      "name": "var types: [MusicCatalogSearchable.Type]",
+      "desc": "The list of requested catalog searchable types."
+    },
+    {
+      "name": "func response() async throws -> MusicCatalogSearchResponse",
+      "desc": "Fetches items of the requested catalog searchable types that match the search term of the request."
+    }
+  ],
+  "declaration": "struct MusicCatalogSearchRequest"
+}

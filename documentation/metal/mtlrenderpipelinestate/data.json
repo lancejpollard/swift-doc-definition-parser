@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/metal/mtlrenderpipelinestate",
+  "type": "Protocol",
+  "name": "MTLRenderPipelineState",
+  "desc": "An object that contains graphics functions and configuration state to use in a render command.",
+  "items": [
+    {
+      "name": "var device: MTLDevice",
+      "desc": "The device object that created the pipeline state object."
+    },
+    {
+      "name": "var label: String?",
+      "desc": "A string that identifies the render pipeline state object."
+    },
+    {
+      "name": "var maxTotalThreadsPerThreadgroup: Int",
+      "desc": "The maximum number of threads that can be in a single threadgroup."
+    },
+    {
+      "name": "var threadgroupSizeMatchesTileSize: Bool",
+      "desc": "A Boolean value that indicates whether the pipeline state object requires a threadgroup size equal to the tile size."
+    },
+    {
+      "name": "var imageblockSampleLength: Int",
+      "desc": "The size, in bytes, of the render pipeline's imageblock for a single sample."
+    },
+    {
+      "name": "func imageblockMemoryLength(forDimensions: MTLSize) -> Int",
+      "desc": "Returns the imageblock memory length for the specified imageblock dimensions."
+    },
+    {
+      "name": "var supportIndirectCommandBuffers: Bool",
+      "desc": "A Boolean value that indicates whether you can encode commands into an indirect command buffer using the render pipeline."
+    },
+    {
+      "name": "func functionHandle(function: MTLFunction, stage: MTLRenderStages) -> MTLFunctionHandle?",
+      "desc": "Creates a function handle for a visible function."
+    },
+    {
+      "name": "func makeRenderPipelineState(additionalBinaryFunctions: MTLRenderPipelineFunctionsDescriptor) -> MTLRenderPipelineState",
+      "desc": "Creates a new pipeline state object with additional callable functions."
+    },
+    {
+      "name": "class MTLRenderPipelineFunctionsDescriptor",
+      "desc": "A collection of functions for updating a render pipeline."
+    },
+    {
+      "name": "func makeVisibleFunctionTable(descriptor: MTLVisibleFunctionTableDescriptor, stage: MTLRenderStages) -> MTLVisibleFunctionTable?",
+      "desc": "Creates a new visible function table."
+    },
+    {
+      "name": "func makeIntersectionFunctionTable(descriptor: MTLIntersectionFunctionTableDescriptor, stage: MTLRenderStages) -> MTLIntersectionFunctionTable?",
+      "desc": "Creates a new intersection function table."
+    },
+    {
+      "name": "class MTLVisibleFunctionTableDescriptor",
+      "desc": "A specification of how to create a visible function table."
+    },
+    {
+      "name": "class MTLIntersectionFunctionTableDescriptor",
+      "desc": "A specification of how to create an intersection function table."
+    }
+  ],
+  "declaration": "protocol MTLRenderPipelineState",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

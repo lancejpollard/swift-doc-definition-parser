@@ -1,0 +1,46 @@
+{
+  "path": "/documentation/musickit/musicitemcollection",
+  "type": "Structure",
+  "name": "MusicItemCollection",
+  "desc": "A collection of music items.",
+  "items": [
+    {
+      "name": "static func += (inout MusicItemCollection<MusicItemType>, MusicItemCollection<MusicItemType>)",
+      "desc": "Appends contents of a collection representing a next batch, in the right hand side, to the existing collection on the left hand side."
+    },
+    {
+      "name": "init<S>(S)",
+      "desc": ""
+    },
+    {
+      "name": "var hasNextBatch: Bool",
+      "desc": "A Boolean value that indicates whether the collection has information that allows it to fetch a subsequent batch of items."
+    },
+    {
+      "name": "var title: String?",
+      "desc": "An optional title for the collection."
+    },
+    {
+      "name": "func nextBatch(limit: Int?) async throws -> MusicItemCollection<MusicItemType>?",
+      "desc": "Fetches the next batch of items asynchronously."
+    },
+    {
+      "name": "func nextBatch(limit: Int?) async throws -> MusicItemCollection<MusicItemType>?",
+      "desc": "Fetches the next batch of items asynchronously."
+    }
+  ],
+  "declaration": "struct MusicItemCollection<MusicItemType> where MusicItemType : MusicItem",
+  "conformsTo": [
+    "BidirectionalCollection",
+    "Collection",
+    "CustomDebugStringConvertible",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "ExpressibleByArrayLiteral",
+    "Hashable",
+    "RandomAccessCollection",
+    "Sequence"
+  ]
+}

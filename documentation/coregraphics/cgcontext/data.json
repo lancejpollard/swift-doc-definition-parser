@@ -1,0 +1,548 @@
+{
+  "path": "/documentation/coregraphics/cgcontext",
+  "type": "Class",
+  "name": "CGContext",
+  "desc": "A Quartz 2D drawing environment.",
+  "items": [
+    {
+      "name": "init?(data: UnsafeMutableRawPointer?, width: Int, height: Int, bitsPerComponent: Int, bytesPerRow: Int, space: CGColorSpace, bitmapInfo: UInt32)",
+      "desc": "Creates a bitmap graphics context."
+    },
+    {
+      "name": "init?(data: UnsafeMutableRawPointer?, width: Int, height: Int, bitsPerComponent: Int, bytesPerRow: Int, space: CGColorSpace, bitmapInfo: UInt32, releaseCallback: CGBitmapContextReleaseDataCallback?, releaseInfo: UnsafeMutableRawPointer?)",
+      "desc": "Creates a bitmap graphics context with the specified callback function."
+    },
+    {
+      "name": "typealias CGBitmapContextReleaseDataCallback",
+      "desc": "A callback function used to release data associate with the bitmap context."
+    },
+    {
+      "name": "init?(CFURL, mediaBox: UnsafePointer<CGRect>?, CFDictionary?)",
+      "desc": "Creates a URL-based PDF graphics context."
+    },
+    {
+      "name": "init?(consumer: CGDataConsumer, mediaBox: UnsafePointer<CGRect>?, CFDictionary?)",
+      "desc": "Creates a PDF graphics context."
+    },
+    {
+      "name": "var userSpaceToDeviceSpaceTransform: CGAffineTransform",
+      "desc": "Returns an affine transform that maps user space coordinates to device space coordinates."
+    },
+    {
+      "name": "func convertToDeviceSpace(CGPoint) -> CGPoint",
+      "desc": "Returns a point that is transformed from user space coordinates to device space coordinates."
+    },
+    {
+      "name": "func convertToUserSpace(CGPoint) -> CGPoint",
+      "desc": "Returns a point that is transformed from device space coordinates to user space coordinates."
+    },
+    {
+      "name": "func convertToDeviceSpace(CGRect) -> CGRect",
+      "desc": "Returns a rectangle that is transformed from user space coordinate to device space coordinates."
+    },
+    {
+      "name": "func convertToUserSpace(CGRect) -> CGRect",
+      "desc": "Returns a rectangle that is transformed from device space coordinate to user space coordinates."
+    },
+    {
+      "name": "func convertToDeviceSpace(CGSize) -> CGSize",
+      "desc": "Returns a size that is transformed from user space coordinates to device space coordinates."
+    },
+    {
+      "name": "func convertToUserSpace(CGSize) -> CGSize",
+      "desc": "Returns a size that is transformed from device space coordinates to user space coordinates."
+    },
+    {
+      "name": "func beginPath()",
+      "desc": "Creates a new empty path in a graphics context."
+    },
+    {
+      "name": "func move(to: CGPoint)",
+      "desc": "Begins a new subpath at the specified point."
+    },
+    {
+      "name": "func addLine(to: CGPoint)",
+      "desc": "Appends a straight line segment from the current point to the specified point."
+    },
+    {
+      "name": "func addLines(between: [CGPoint])",
+      "desc": "Adds a sequence of connected straight-line segments to the current path."
+    },
+    {
+      "name": "func addRect(CGRect)",
+      "desc": "Adds a rectangular path to the current path."
+    },
+    {
+      "name": "func addRects([CGRect])",
+      "desc": "Adds a set of rectangular paths to the current path."
+    },
+    {
+      "name": "func addEllipse(in: CGRect)",
+      "desc": "Adds an ellipse that fits inside the specified rectangle."
+    },
+    {
+      "name": "func addArc(center: CGPoint, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, clockwise: Bool)",
+      "desc": "Adds an arc of a circle to the current path, specified with a radius and angles."
+    },
+    {
+      "name": "func addArc(tangent1End: CGPoint, tangent2End: CGPoint, radius: CGFloat)",
+      "desc": "Adds an arc of a circle to the current path, specified with a radius and two tangent lines."
+    },
+    {
+      "name": "func addCurve(to: CGPoint, control1: CGPoint, control2: CGPoint)",
+      "desc": "Adds a cubic Bézier curve to the current path, with the specified end point and control points."
+    },
+    {
+      "name": "func addQuadCurve(to: CGPoint, control: CGPoint)",
+      "desc": "Adds a quadratic Bézier curve to the current path, with the specified end point and control point."
+    },
+    {
+      "name": "func addPath(CGPath)",
+      "desc": "Adds a previously created path object to the current path in a graphics context."
+    },
+    {
+      "name": "func closePath()",
+      "desc": "Closes and terminates the current path’s subpath."
+    },
+    {
+      "name": "var path: CGPath?",
+      "desc": "Returns a path object built from the current path information in a graphics context."
+    },
+    {
+      "name": "func replacePathWithStrokedPath()",
+      "desc": "Replaces the path in the graphics context with the stroked version of the path."
+    },
+    {
+      "name": "var boundingBoxOfPath: CGRect",
+      "desc": "Returns the smallest rectangle that contains the current path."
+    },
+    {
+      "name": "var currentPointOfPath: CGPoint",
+      "desc": "Returns the current point in a non-empty path."
+    },
+    {
+      "name": "var isPathEmpty: Bool",
+      "desc": "Indicates whether the current path contains any subpaths."
+    },
+    {
+      "name": "func pathContains(CGPoint, mode: CGPathDrawingMode) -> Bool",
+      "desc": "Checks to see whether the specified point is contained in the current path."
+    },
+    {
+      "name": "func drawPath(using: CGPathDrawingMode)",
+      "desc": "Draws the current path using the provided drawing mode."
+    },
+    {
+      "name": "enum CGPathDrawingMode",
+      "desc": "Options for rendering a path."
+    },
+    {
+      "name": "func fillPath(using: CGPathFillRule)",
+      "desc": "Paints the area within the current path, as determined by the specified fill rule."
+    },
+    {
+      "name": "func strokePath()",
+      "desc": "Paints a line along the current path."
+    },
+    {
+      "name": "func clear(CGRect)",
+      "desc": "Paints a transparent rectangle."
+    },
+    {
+      "name": "func fill(CGRect)",
+      "desc": "Paints the area contained within the provided rectangle, using the fill color in the current graphics state."
+    },
+    {
+      "name": "func fill([CGRect])",
+      "desc": "Paints the areas contained within the provided rectangles, using the fill color in the current graphics state."
+    },
+    {
+      "name": "func fillEllipse(in: CGRect)",
+      "desc": "Paints the area of the ellipse that fits inside the provided rectangle, using the fill color in the current graphics state."
+    },
+    {
+      "name": "func stroke(CGRect)",
+      "desc": "Paints a rectangular path."
+    },
+    {
+      "name": "func stroke(CGRect, width: CGFloat)",
+      "desc": "Paints a rectangular path, using the specified line width."
+    },
+    {
+      "name": "func strokeEllipse(in: CGRect)",
+      "desc": "Strokes an ellipse that fits inside the specified rectangle."
+    },
+    {
+      "name": "func strokeLineSegments(between: [CGPoint])",
+      "desc": "Strokes a sequence of line segments."
+    },
+    {
+      "name": "func draw(CGImage, in: CGRect, byTiling: Bool)",
+      "desc": "Draws an image in the specified area."
+    },
+    {
+      "name": "func drawPDFPage(CGPDFPage)",
+      "desc": "Draws the content of a PDF page into the current graphics context."
+    },
+    {
+      "name": "var interpolationQuality: CGInterpolationQuality",
+      "desc": "Returns the current level of interpolation quality for a graphics context."
+    },
+    {
+      "name": "enum CGInterpolationQuality",
+      "desc": "Levels of interpolation quality for rendering an image."
+    },
+    {
+      "name": "func drawLinearGradient(CGGradient, start: CGPoint, end: CGPoint, options: CGGradientDrawingOptions)",
+      "desc": "Paints a gradient fill that varies along the line defined by the provided starting and ending points."
+    },
+    {
+      "name": "func drawRadialGradient(CGGradient, startCenter: CGPoint, startRadius: CGFloat, endCenter: CGPoint, endRadius: CGFloat, options: CGGradientDrawingOptions)",
+      "desc": "Paints a gradient fill that varies along the area defined by the provided starting and ending circles."
+    },
+    {
+      "name": "struct CGGradientDrawingOptions",
+      "desc": "Drawing locations for gradients."
+    },
+    {
+      "name": "func drawShading(CGShading)",
+      "desc": "Fills the clipping path of a context with the specified shading."
+    },
+    {
+      "name": "var textMatrix: CGAffineTransform",
+      "desc": "Returns the current text matrix."
+    },
+    {
+      "name": "var textPosition: CGPoint",
+      "desc": "Returns the location at which text is drawn."
+    },
+    {
+      "name": "func setCharacterSpacing(CGFloat)",
+      "desc": "Sets the current character spacing."
+    },
+    {
+      "name": "func setFont(CGFont)",
+      "desc": "Sets the platform font in a graphics context."
+    },
+    {
+      "name": "func setFontSize(CGFloat)",
+      "desc": "Sets the current font size."
+    },
+    {
+      "name": "func setTextDrawingMode(CGTextDrawingMode)",
+      "desc": "Sets the current text drawing mode."
+    },
+    {
+      "name": "enum CGTextDrawingMode",
+      "desc": "Modes for rendering text."
+    },
+    {
+      "name": "func setAllowsFontSmoothing(Bool)",
+      "desc": "Sets whether or not to allow font smoothing for a graphics context."
+    },
+    {
+      "name": "func setAllowsFontSubpixelPositioning(Bool)",
+      "desc": "Sets whether or not to allow subpixel positioning for a graphics context."
+    },
+    {
+      "name": "func setAllowsFontSubpixelQuantization(Bool)",
+      "desc": "Sets whether or not to allow subpixel quantization for a graphics context."
+    },
+    {
+      "name": "func setShouldSmoothFonts(Bool)",
+      "desc": "Enables or disables font smoothing in a graphics context."
+    },
+    {
+      "name": "func setShouldSubpixelPositionFonts(Bool)",
+      "desc": "Enables or disables subpixel positioning in a graphics context."
+    },
+    {
+      "name": "func setShouldSubpixelQuantizeFonts(Bool)",
+      "desc": "Enables or disables subpixel quantization in a graphics context."
+    },
+    {
+      "name": "func showGlyphs([CGGlyph], at: [CGPoint])",
+      "desc": "Draws a set of glyphs at a set of corresponding positions."
+    },
+    {
+      "name": "func draw(CGLayer, at: CGPoint)",
+      "desc": "Draws the contents of a layer object at the specified point."
+    },
+    {
+      "name": "func draw(CGLayer, in: CGRect)",
+      "desc": "Draws the contents of a layer object into the specified rectangle."
+    },
+    {
+      "name": "func setFillColor(CGColor)",
+      "desc": "Sets the current fill color in a graphics context, using a CGColor."
+    },
+    {
+      "name": "func setFillColor(UnsafePointer<CGFloat>)",
+      "desc": "Sets the current fill color."
+    },
+    {
+      "name": "func setFillColor(cyan: CGFloat, magenta: CGFloat, yellow: CGFloat, black: CGFloat, alpha: CGFloat)",
+      "desc": "Sets the current fill color to a value in the DeviceCMYK color space."
+    },
+    {
+      "name": "func setFillColor(gray: CGFloat, alpha: CGFloat)",
+      "desc": "Sets the current fill color to a value in the DeviceGray color space."
+    },
+    {
+      "name": "func setFillColor(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)",
+      "desc": "Sets the current fill color to a value in the DeviceRGB color space."
+    },
+    {
+      "name": "func setFillColorSpace(CGColorSpace)",
+      "desc": "Sets the fill color space in a graphics context."
+    },
+    {
+      "name": "func setShadow(offset: CGSize, blur: CGFloat)",
+      "desc": "Enables shadowing in a graphics context."
+    },
+    {
+      "name": "func setShadow(offset: CGSize, blur: CGFloat, color: CGColor?)",
+      "desc": "Enables shadowing with color a graphics context."
+    },
+    {
+      "name": "func setStrokeColor(CGColor)",
+      "desc": "Sets the current stroke color in a context, using a CGColor."
+    },
+    {
+      "name": "func setStrokeColor(UnsafePointer<CGFloat>)",
+      "desc": "Sets the current stroke color."
+    },
+    {
+      "name": "func setStrokeColor(cyan: CGFloat, magenta: CGFloat, yellow: CGFloat, black: CGFloat, alpha: CGFloat)",
+      "desc": "Sets the current stroke color to a value in the DeviceCMYK color space."
+    },
+    {
+      "name": "func setStrokeColor(gray: CGFloat, alpha: CGFloat)",
+      "desc": "Sets the current stroke color to a value in the DeviceGray color space."
+    },
+    {
+      "name": "func setStrokeColor(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)",
+      "desc": "Sets the current stroke color to a value in the DeviceRGB color space."
+    },
+    {
+      "name": "func setStrokeColorSpace(CGColorSpace)",
+      "desc": "Sets the stroke color space in a graphics context."
+    },
+    {
+      "name": "func setStrokePattern(CGPattern, colorComponents: UnsafePointer<CGFloat>)",
+      "desc": "Sets the stroke pattern in the specified graphics context."
+    },
+    {
+      "name": "func setAlpha(CGFloat)",
+      "desc": "Sets the opacity level for objects drawn in a graphics context."
+    },
+    {
+      "name": "func clip(using: CGPathFillRule)",
+      "desc": "Modifies the current clipping path."
+    },
+    {
+      "name": "func clip(to: CGRect)",
+      "desc": "Sets the clipping path to the intersection of the current clipping path with the area defined by the specified rectangle."
+    },
+    {
+      "name": "func clip(to: [CGRect])",
+      "desc": "Sets the clipping path to the intersection of the current clipping path with the region defined by an array of rectangles."
+    },
+    {
+      "name": "func clip(to: CGRect, mask: CGImage)",
+      "desc": "Maps a mask into the specified rectangle and intersects it with the current clipping area of the graphics context."
+    },
+    {
+      "name": "var boundingBoxOfClipPath: CGRect",
+      "desc": "Returns the bounding box of a clipping path."
+    },
+    {
+      "name": "func beginTransparencyLayer(in: CGRect, auxiliaryInfo: CFDictionary?)",
+      "desc": "Begins a transparency layer whose contents are bounded by the specified rectangle."
+    },
+    {
+      "name": "func beginTransparencyLayer(auxiliaryInfo: CFDictionary?)",
+      "desc": "Begins a transparency layer."
+    },
+    {
+      "name": "func endTransparencyLayer()",
+      "desc": "Ends a transparency layer."
+    },
+    {
+      "name": "var ctm: CGAffineTransform",
+      "desc": "Returns the current transformation matrix."
+    },
+    {
+      "name": "func rotate(by: CGFloat)",
+      "desc": "Rotates the user coordinate system in a context."
+    },
+    {
+      "name": "func scaleBy(x: CGFloat, y: CGFloat)",
+      "desc": "Changes the scale of the user coordinate system in a context."
+    },
+    {
+      "name": "func translateBy(x: CGFloat, y: CGFloat)",
+      "desc": "Changes the origin of the user coordinate system in a context."
+    },
+    {
+      "name": "func concatenate(CGAffineTransform)",
+      "desc": "Transforms the user coordinate system in a context using a specified matrix."
+    },
+    {
+      "name": "func setAllowsAntialiasing(Bool)",
+      "desc": "Sets whether or not to allow antialiasing for a graphics context."
+    },
+    {
+      "name": "func setFlatness(CGFloat)",
+      "desc": "Sets the accuracy of curved paths in a graphics context."
+    },
+    {
+      "name": "func setLineCap(CGLineCap)",
+      "desc": "Sets the style for the endpoints of lines drawn in a graphics context."
+    },
+    {
+      "name": "func setLineDash(phase: CGFloat, lengths: [CGFloat])",
+      "desc": "Sets the pattern for drawing dashed lines."
+    },
+    {
+      "name": "func setLineJoin(CGLineJoin)",
+      "desc": "Sets the style for the joins of connected lines in a graphics context."
+    },
+    {
+      "name": "func setLineWidth(CGFloat)",
+      "desc": "Sets the line width for a graphics context."
+    },
+    {
+      "name": "func setMiterLimit(CGFloat)",
+      "desc": "Sets the miter limit for the joins of connected lines in a graphics context."
+    },
+    {
+      "name": "func setPatternPhase(CGSize)",
+      "desc": "Sets the pattern phase of a context."
+    },
+    {
+      "name": "func setFillPattern(CGPattern, colorComponents: UnsafePointer<CGFloat>)",
+      "desc": "Sets the fill pattern in the specified graphics context."
+    },
+    {
+      "name": "func setShouldAntialias(Bool)",
+      "desc": "Sets antialiasing on or off for a graphics context."
+    },
+    {
+      "name": "func saveGState()",
+      "desc": "Pushes a copy of the current graphics state onto the graphics state stack for the context."
+    },
+    {
+      "name": "func restoreGState()",
+      "desc": "Sets the current graphics state to the state most recently saved."
+    },
+    {
+      "name": "func flush()",
+      "desc": "Forces all pending drawing operations in a window context to be rendered immediately to the destination device."
+    },
+    {
+      "name": "func synchronize()",
+      "desc": "Marks a window context for update."
+    },
+    {
+      "name": "func setBlendMode(CGBlendMode)",
+      "desc": "Sets how sample values are composited by a graphics context."
+    },
+    {
+      "name": "enum CGBlendMode",
+      "desc": "Compositing operations for images."
+    },
+    {
+      "name": "func setRenderingIntent(CGColorRenderingIntent)",
+      "desc": "Sets the rendering intent in the current graphics state."
+    },
+    {
+      "name": "var bitmapInfo: CGBitmapInfo",
+      "desc": "Obtains the bitmap information associated with a bitmap graphics context."
+    },
+    {
+      "name": "var alphaInfo: CGImageAlphaInfo",
+      "desc": "Returns the alpha information associated with the context, which indicates how a bitmap context handles the alpha component."
+    },
+    {
+      "name": "var bitsPerComponent: Int",
+      "desc": "Returns the bits per component of a bitmap context."
+    },
+    {
+      "name": "var bitsPerPixel: Int",
+      "desc": "Returns the bits per pixel of a bitmap context."
+    },
+    {
+      "name": "var bytesPerRow: Int",
+      "desc": "Returns the bytes per row of a bitmap context."
+    },
+    {
+      "name": "var colorSpace: CGColorSpace?",
+      "desc": "Returns the color space of a bitmap context."
+    },
+    {
+      "name": "var data: UnsafeMutableRawPointer?",
+      "desc": "Returns a pointer to the image data associated with a bitmap context."
+    },
+    {
+      "name": "var height: Int",
+      "desc": "Returns the height in pixels of a bitmap context."
+    },
+    {
+      "name": "var width: Int",
+      "desc": "Returns the width in pixels of a bitmap context."
+    },
+    {
+      "name": "func makeImage() -> CGImage?",
+      "desc": "Creates and returns a CGImage from the pixel data in a bitmap graphics context."
+    },
+    {
+      "name": "func beginPDFPage(CFDictionary?)",
+      "desc": "Begins a new page in a PDF graphics context."
+    },
+    {
+      "name": "func endPDFPage()",
+      "desc": "Ends the current page in the PDF graphics context."
+    },
+    {
+      "name": "func addDestination(CFString, at: CGPoint)",
+      "desc": "Sets a destination to jump to when a point in the current page of a PDF graphics context is clicked."
+    },
+    {
+      "name": "func setDestination(CFString, for: CGRect)",
+      "desc": "Sets a destination to jump to when a rectangle in the current PDF page is clicked."
+    },
+    {
+      "name": "func setURL(CFURL, for: CGRect)",
+      "desc": "Sets the URL associated with a rectangle in a PDF graphics context."
+    },
+    {
+      "name": "func addDocumentMetadata(CFData?)",
+      "desc": "Associates custom metadata with the PDF document."
+    },
+    {
+      "name": "func closePDF()",
+      "desc": "Closes a PDF document."
+    },
+    {
+      "name": "func beginPage(mediaBox: UnsafePointer<CGRect>?)",
+      "desc": "Starts a new page in a page-based graphics context."
+    },
+    {
+      "name": "func endPage()",
+      "desc": "Ends the current page in a page-based graphics context."
+    },
+    {
+      "name": "class var typeID: CFTypeID",
+      "desc": "Returns the type identifier for a graphics context."
+    },
+    {
+      "name": "enum CGPathFillRule",
+      "desc": "Rules for determining which regions are interior to a path, used by the fillPath(using:) and clip(using:) methods."
+    },
+    {
+      "name": "func resetClip()"
+    }
+  ],
+  "declaration": "class CGContext"
+}

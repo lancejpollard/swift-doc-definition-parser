@@ -1,0 +1,93 @@
+{
+  "path": "/documentation/professional_video_applications/fxpathapi_v3",
+  "type": "Protocol",
+  "name": "FxPathAPI_v3",
+  "desc": "An API that defines the methods to retrieve information about paths, shapes, and masks the user has drawn on an object.",
+  "items": [
+    {
+      "name": "func numberOfPaths(at: CMTime) -> Int",
+      "desc": "Provides the number of paths on the object to which your filter is applied, or on your generator."
+    },
+    {
+      "name": "func pathID(UnsafeMutablePointer<FxPathID?>!, for: Int)",
+      "desc": "Gets the unique ID of the path at the index requested."
+    },
+    {
+      "name": "func name(AutoreleasingUnsafeMutablePointer<NSString?>!, ofPath: FxPathID!)",
+      "desc": "Provides the name the user has entered for the path with the given ID."
+    },
+    {
+      "name": "func isPath(FxPathID!, open: UnsafeMutablePointer<ObjCBool>!, at: CMTime)",
+      "desc": "Tells whether the path is opened or closed."
+    },
+    {
+      "name": "func isPath(FxPathID!, inverted: UnsafeMutablePointer<ObjCBool>!, at: CMTime)",
+      "desc": "Tells whether the path is inverted or not."
+    },
+    {
+      "name": "func style(UnsafeMutablePointer<FxPathStyle>!, ofPath: FxPathID!)",
+      "desc": "Provides the style of the path — linear, bezier, or b-spline."
+    },
+    {
+      "name": "func length(UnsafeMutablePointer<Double>!, ofPath: FxPathID!, at: CMTime)",
+      "desc": "Provides you the length of the entire path."
+    },
+    {
+      "name": "func length(UnsafeMutablePointer<Double>!, ofSegment: Int, ofPath: FxPathID!, at: CMTime)",
+      "desc": "Provides the length of one segment of the entire path."
+    },
+    {
+      "name": "func number(ofVertices: UnsafeMutablePointer<Int>!, inPath: FxPathID!, at: CMTime)",
+      "desc": "Provides the number of vertices in the given path at the given time."
+    },
+    {
+      "name": "func vertex(UnsafeMutablePointer<FxVertex>!, at: Int, ofPath: FxPathID!, at: CMTime)",
+      "desc": "Provides information about a single vertex on the path at the given time."
+    },
+    {
+      "name": "func point(UnsafeMutablePointer<FxPoint2D>!, atPercentageOfDistance: Double, alongPath: FxPathID!, at: CMTime)",
+      "desc": "Provides a 2D point that contains the location of the point on the path, at a distance along the path's length equal to the value of percentDist."
+    },
+    {
+      "name": "func point(UnsafeMutablePointer<FxPoint2D>!, atPercentageOfParameter: Double, alongPath: FxPathID!, at: CMTime)",
+      "desc": "Provides a 2D point that contains the location of the point on the path, at a distance along the path's parametric distance equal to the percent value of percentParameter."
+    },
+    {
+      "name": "func blendMode(UnsafeMutablePointer<FxPathBlendMode>!, ofPath: FxPathID!)",
+      "desc": "Gets the blending mode for a given path."
+    },
+    {
+      "name": "func pathGeometryInfo(UnsafeMutablePointer<FxPathGeometryInfo>!, forPath: FxPathID!, at: CMTime)",
+      "desc": "Gets geometry information about a given path."
+    },
+    {
+      "name": "func setPath(FxPathID!, toColor: FxPathColor)",
+      "desc": "Sets the color the host app uses to draw the path with the given ID."
+    },
+    {
+      "name": "struct FxPathGeometryInfo",
+      "desc": "A struct that defines the geometry information of the path."
+    },
+    {
+      "name": "struct FxVertex",
+      "desc": "The properties of one vertex in a path."
+    },
+    {
+      "name": "typealias FxPathBlendMode",
+      "desc": "The type of blending the user selects for the mask that a particular path describes."
+    },
+    {
+      "name": "typealias FxPathColor",
+      "desc": "The colors that the host app uses to display a path."
+    },
+    {
+      "name": "typealias FxPathID",
+      "desc": "The unique identifier for a path."
+    },
+    {
+      "name": "typealias FxPathStyle",
+      "desc": "The style of the path, which is linear, bezier, or b-spline."
+    }
+  ],
+  "declaration": "protocol FxPathAPI_v3"
+}

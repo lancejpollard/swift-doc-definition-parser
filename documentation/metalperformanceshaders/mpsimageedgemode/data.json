@@ -1,0 +1,29 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsimageedgemode",
+  "type": "Enumeration",
+  "name": "MPSImageEdgeMode",
+  "desc": "The options used to control the edge behavior of an image filter when it reads outside the bounds of a source texture.",
+  "items": [
+    {
+      "name": "case zero",
+      "desc": "Out-of-bound pixels are set to (0.0, 0.0, 0.0, 1.0) for images without an alpha channel or (0.0, 0.0, 0.0, 0.0) for images with an alpha channel, as defined by their pixel format."
+    },
+    {
+      "name": "case clamp",
+      "desc": "Out-of-bound pixels are clamped to the nearest edge pixel."
+    },
+    {
+      "name": "case constant"
+    },
+    {
+      "name": "case mirror"
+    },
+    {
+      "name": "case mirrorWithEdge"
+    }
+  ],
+  "declaration": "enum MPSImageEdgeMode : UInt, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

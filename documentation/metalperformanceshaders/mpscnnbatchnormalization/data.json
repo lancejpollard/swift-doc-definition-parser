@@ -1,0 +1,54 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpscnnbatchnormalization",
+  "type": "Class",
+  "name": "MPSCNNBatchNormalization",
+  "desc": "A batch normalization kernel.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice, dataSource: MPSCNNBatchNormalizationDataSource)"
+    },
+    {
+      "name": "init(device: MTLDevice, dataSource: MPSCNNBatchNormalizationDataSource, fusedNeuronDescriptor: MPSNNNeuronDescriptor?)"
+    },
+    {
+      "name": "var dataSource: MPSCNNBatchNormalizationDataSource"
+    },
+    {
+      "name": "var epsilon: Float"
+    },
+    {
+      "name": "var numberOfFeatureChannels: Int"
+    },
+    {
+      "name": "func encode(to: MTLCommandBuffer, sourceImage: MPSImage, batchNormalizationState: MPSCNNBatchNormalizationState, destinationImage: MPSImage)"
+    },
+    {
+      "name": "func encodeBatch(to: MTLCommandBuffer, sourceImages: [MPSImage], batchNormalizationState: MPSCNNBatchNormalizationState, destinationImages: [MPSImage])"
+    },
+    {
+      "name": "func reloadGammaAndBeta(with: MTLCommandBuffer, gammaAndBetaState: MPSCNNNormalizationGammaAndBetaState)"
+    },
+    {
+      "name": "func reloadGammaAndBetaFromDataSource()"
+    },
+    {
+      "name": "func reloadMeanAndVariance(with: MTLCommandBuffer, meanAndVarianceState: MPSCNNNormalizationMeanAndVarianceState)"
+    },
+    {
+      "name": "func reloadMeanAndVarianceFromDataSource()"
+    },
+    {
+      "name": "func resultState(sourceImage: MPSImage, sourceStates: [MPSState]?, destinationImage: MPSImage) -> MPSCNNBatchNormalizationState?"
+    },
+    {
+      "name": "func temporaryResultState(commandBuffer: MTLCommandBuffer, sourceImage: MPSImage, sourceStates: [MPSState]?, destinationImage: MPSImage) -> MPSCNNBatchNormalizationState?"
+    }
+  ],
+  "declaration": "class MPSCNNBatchNormalization : MPSCNNKernel",
+  "inheritsFrom": [
+    "MPSCNNKernel"
+  ]
+}

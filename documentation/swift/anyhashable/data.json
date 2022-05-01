@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/swift/anyhashable",
+  "type": "Structure",
+  "name": "AnyHashable",
+  "desc": "A type-erased hashable value.",
+  "items": [
+    {
+      "name": "init<H>(H)",
+      "desc": "Creates a type-erased hashable value that wraps the given instance."
+    },
+    {
+      "name": "var base: Any",
+      "desc": "The value wrapped by this instance."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "The custom mirror for this instance."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual representation of this instance, suitable for debugging."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual representation of this instance."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "static func != (AnyHashable, AnyHashable) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (AnyHashable, AnyHashable) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two type-erased hashable instances wrap the same value."
+    }
+  ],
+  "declaration": "@frozen struct AnyHashable",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "Equatable",
+    "Hashable"
+  ]
+}

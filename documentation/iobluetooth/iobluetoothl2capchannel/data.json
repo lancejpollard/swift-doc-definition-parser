@@ -1,0 +1,94 @@
+{
+  "path": "/documentation/iobluetooth/iobluetoothl2capchannel",
+  "type": "Class",
+  "name": "IOBluetoothL2CAPChannel",
+  "desc": "An instance of IOBluetoothL2CAPChannel represents a single open L2CAP channel.",
+  "items": [
+    {
+      "name": "var psm: BluetoothL2CAPPSM",
+      "desc": "Returns the PSM for the target L2CAP channel."
+    },
+    {
+      "name": "var device: IOBluetoothDevice!",
+      "desc": "Returns the IOBluetoothDevice to which the target L2CAP channel is open."
+    },
+    {
+      "name": "var incomingMTU: BluetoothL2CAPMTU",
+      "desc": "Returns the current incoming MTU for the L2CAP channel."
+    },
+    {
+      "name": "var localChannelID: BluetoothL2CAPChannelID",
+      "desc": "Returns the local L2CAP channel ID for the target L2CAP channel."
+    },
+    {
+      "name": "var objectID: IOBluetoothObjectID",
+      "desc": "Returns the IOBluetoothObjectID of the given IOBluetoothL2CAPChannel."
+    },
+    {
+      "name": "var outgoingMTU: BluetoothL2CAPMTU",
+      "desc": "Returns the current outgoing MTU for the L2CAP channel."
+    },
+    {
+      "name": "var remoteChannelID: BluetoothL2CAPChannelID",
+      "desc": "Returns the remote L2CAP channel ID for the target L2CAP channel."
+    },
+    {
+      "name": "func close() -> IOReturn",
+      "desc": "Initiates the close process on an open L2CAP channel."
+    },
+    {
+      "name": "func delegate() -> Any!",
+      "desc": "Returns the currently assigned delegate"
+    },
+    {
+      "name": "func isIncoming() -> Bool",
+      "desc": "Returns TRUE if the channel is an incoming channel."
+    },
+    {
+      "name": "func register(forChannelCloseNotification: Any!, selector: Selector!) -> IOBluetoothUserNotification!",
+      "desc": "Allows a client to register for a channel close notification."
+    },
+    {
+      "name": "func requestRemoteMTU(BluetoothL2CAPMTU) -> IOReturn",
+      "desc": "Initiates the process to reconfigure the L2CAP channel with a new outgoing MTU."
+    },
+    {
+      "name": "func setDelegate(Any!) -> IOReturn",
+      "desc": "Allows an object to register itself as client of the L2CAP channel."
+    },
+    {
+      "name": "func setDelegate(Any!, withConfiguration: [AnyHashable : Any]!) -> IOReturn",
+      "desc": "Allows an object to register itself as client of the L2CAP channel."
+    },
+    {
+      "name": "func writeAsync(UnsafeMutableRawPointer!, length: UInt16, refcon: UnsafeMutableRawPointer!) -> IOReturn",
+      "desc": "Writes the given data over the target L2CAP channel asynchronously to the remote device."
+    },
+    {
+      "name": "func writeAsyncTrap(UnsafeMutableRawPointer!, length: UInt16, refcon: UnsafeMutableRawPointer!) -> IOReturn"
+    },
+    {
+      "name": "func writeSync(UnsafeMutableRawPointer!, length: UInt16) -> IOReturn",
+      "desc": "Writes the given data synchronously over the target L2CAP channel to the remote device."
+    },
+    {
+      "name": "class func register(forChannelOpenNotifications: Any!, selector: Selector!) -> IOBluetoothUserNotification!",
+      "desc": "Allows a client to register for L2CAP channel open notifications for any L2CAP channel."
+    },
+    {
+      "name": "class func register(forChannelOpenNotifications: Any!, selector: Selector!, withPSM: BluetoothL2CAPPSM, direction: IOBluetoothUserNotificationChannelDirection) -> IOBluetoothUserNotification!",
+      "desc": "Allows a client to register for L2CAP channel open notifications for certain types of L2CAP channels."
+    },
+    {
+      "name": "class func withObjectID(IOBluetoothObjectID) -> Self!",
+      "desc": "Returns the IObluetoothL2CAPChannel with the given IOBluetoothObjectID."
+    }
+  ],
+  "declaration": "class IOBluetoothL2CAPChannel : IOBluetoothObject",
+  "inheritsFrom": [
+    "IOBluetoothObject"
+  ],
+  "conformsTo": [
+    "PortDelegate"
+  ]
+}

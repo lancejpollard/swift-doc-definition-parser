@@ -1,0 +1,25 @@
+{
+  "path": "/documentation/realitykit/hasanchoring",
+  "type": "Protocol",
+  "name": "HasAnchoring",
+  "desc": "An interface that enables anchoring of virtual content to a real-world object in an AR scene.",
+  "items": [
+    {
+      "name": "var anchoring: AnchoringComponent",
+      "desc": "The component that describes how the virtual content is anchored to the real world."
+    },
+    {
+      "name": "struct AnchoringComponent",
+      "desc": "A description of how virtual content can be anchored to the real world."
+    },
+    {
+      "name": "var anchorIdentifier: UUID?",
+      "desc": "The identifier of the AR anchor to which the entity is anchored, or nil if it isn’t currently anchored."
+    },
+    {
+      "name": "func reanchor(AnchoringComponent.Target, preservingWorldTransform: Bool)",
+      "desc": "Changes the entity’s anchoring, preserving either the world transform or the local transform."
+    }
+  ],
+  "declaration": "protocol HasAnchoring : Entity"
+}

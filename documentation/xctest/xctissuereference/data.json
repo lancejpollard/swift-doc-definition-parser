@@ -1,0 +1,53 @@
+{
+  "path": "/documentation/xctest/xctissuereference",
+  "type": "Class",
+  "name": "XCTIssueReference",
+  "desc": "An object that supports issue bridging between Swift and Objective-C.",
+  "items": [
+    {
+      "name": "init(type: XCTIssueReference.IssueType, compactDescription: String)",
+      "desc": "Creates an issue with a compact description for a test failure."
+    },
+    {
+      "name": "init(type: XCTIssueReference.IssueType, compactDescription: String, detailedDescription: String?, sourceCodeContext: XCTSourceCodeContext, associatedError: Error?, attachments: [XCTAttachment])",
+      "desc": "Creates an issue for a test failure, with descriptions, source code location, error, and attachments."
+    },
+    {
+      "name": "enum XCTIssueReference.IssueType",
+      "desc": "Constants that indicate types of test failures, such as assertion failures, performance regressions, or thrown errors."
+    },
+    {
+      "name": "var type: XCTIssueReference.IssueType",
+      "desc": "A value for classifying an issue that occurs during testing."
+    },
+    {
+      "name": "var compactDescription: String",
+      "desc": "A concise description of the issue with no transient data, suitable for use in test run summaries and results aggregation across multiple test runs."
+    },
+    {
+      "name": "var detailedDescription: String?",
+      "desc": "A detailed description of the issue that may include transient data, such as numbers, object identifiers, and timestamps, to help diagnose the issue."
+    },
+    {
+      "name": "var sourceCodeContext: XCTSourceCodeContext",
+      "desc": "The source code location for the issue, including the filename, line number, and call stack."
+    },
+    {
+      "name": "var associatedError: Error?",
+      "desc": "An optional error to associate with a test issue."
+    },
+    {
+      "name": "var attachments: [XCTAttachment]",
+      "desc": "An array of data that augments a test issue, such as files, images, screenshots, data blobs, or ZIP files."
+    }
+  ],
+  "declaration": "class XCTIssueReference : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSMutableCopying",
+    "NSSecureCoding"
+  ]
+}

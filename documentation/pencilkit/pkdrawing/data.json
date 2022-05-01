@@ -1,0 +1,85 @@
+{
+  "path": "/documentation/pencilkit/pkdrawing",
+  "type": "Structure",
+  "name": "PKDrawing",
+  "desc": "A structure representing the drawing information captured by a canvas view.",
+  "items": [
+    {
+      "name": "init<S>(strokes: S)",
+      "desc": "Creates a drawing object and populates it with a sequence of strokes the user provides."
+    },
+    {
+      "name": "init(data: Data)",
+      "desc": "Creates a drawing object and populates it with previously drawn content."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates an empty drawing object."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a drawing object and populates it with previously drawn content stored on disk."
+    },
+    {
+      "name": "var bounds: CGRect",
+      "desc": "The smallest rectangle used to represent the content’s bounds, taking into account line widths of that content."
+    },
+    {
+      "name": "func image(from: CGRect, scale: CGFloat) -> UIImage",
+      "desc": "Returns an image object that contains the specified portion of the drawing."
+    },
+    {
+      "name": "func image(from: CGRect, scale: CGFloat) -> NSImage",
+      "desc": "Returns an image object that contains the specified portion of the drawing."
+    },
+    {
+      "name": "var strokes: [PKStroke]",
+      "desc": "The array of strokes that make up the drawing."
+    },
+    {
+      "name": "func dataRepresentation() -> Data",
+      "desc": "Returns a raw data representation of the rendered content."
+    },
+    {
+      "name": "let PKAppleDrawingTypeIdentifier: CFString",
+      "desc": "The uniform type identifier for data associated with a drawing object."
+    },
+    {
+      "name": "func transform(using: CGAffineTransform)",
+      "desc": "Applies the specified transform to the contents of this drawing."
+    },
+    {
+      "name": "func transformed(using: CGAffineTransform) -> PKDrawing",
+      "desc": "Applies the specified transform and returns a new drawing."
+    },
+    {
+      "name": "func append(PKDrawing)",
+      "desc": "Appends the contents of the specified drawing object to an existing drawing object that you provide."
+    },
+    {
+      "name": "func appending(PKDrawing) -> PKDrawing",
+      "desc": "Returns a new drawing created by appending the current drawing with another drawing you provide."
+    },
+    {
+      "name": "static func != (PKDrawing, PKDrawing) -> Bool",
+      "desc": "Returns a Boolean value that indates whether the two drawing objects aren’t equivalent."
+    },
+    {
+      "name": "static func == (PKDrawing, PKDrawing) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the two drawing objects are equivalent."
+    },
+    {
+      "name": "func encode(to: Encoder)"
+    },
+    {
+      "name": "class PKDrawingReference",
+      "desc": "A data structure that contains the drawing information captured by a canvas view."
+    }
+  ],
+  "declaration": "struct PKDrawing",
+  "conformsTo": [
+    "Decodable",
+    "Encodable",
+    "Equatable"
+  ]
+}

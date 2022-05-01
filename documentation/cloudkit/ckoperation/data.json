@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/cloudkit/ckoperation",
+  "type": "Class",
+  "name": "CKOperation",
+  "desc": "The abstract base class for all operations that execute in a database.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an operation."
+    },
+    {
+      "name": "var operationID: CKOperation.ID",
+      "desc": "A unique identifier for a long-lived operation."
+    },
+    {
+      "name": "typealias CKOperation.ID",
+      "desc": "A type that represents the ID of an operation."
+    },
+    {
+      "name": "var configuration: CKOperation.Configuration!",
+      "desc": "The operation’s configuration."
+    },
+    {
+      "name": "class CKOperation.Configuration",
+      "desc": "An object that describes how a CloudKit operation behaves."
+    },
+    {
+      "name": "var group: CKOperationGroup?",
+      "desc": "The operation’s group."
+    },
+    {
+      "name": "var longLivedOperationWasPersistedBlock: (() -> Void)?",
+      "desc": "The closure to execute when the server begins to store callbacks for the long-lived operation."
+    }
+  ],
+  "declaration": "class CKOperation : Operation",
+  "inheritsFrom": [
+    "Operation"
+  ]
+}

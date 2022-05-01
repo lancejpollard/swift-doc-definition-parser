@@ -1,0 +1,84 @@
+{
+  "path": "/documentation/coredata/nsmigrationmanager",
+  "type": "Class",
+  "name": "NSMigrationManager",
+  "desc": "A migration manager instance that performs a migration of data from one persistent store to another using a given mapping model.",
+  "items": [
+    {
+      "name": "init(sourceModel: NSManagedObjectModel, destinationModel: NSManagedObjectModel)",
+      "desc": "Initializes a migration manager instance with given source and destination models."
+    },
+    {
+      "name": "var destinationContext: NSManagedObjectContext",
+      "desc": "The managed object context the migration manager uses for writing the destination persistent store."
+    },
+    {
+      "name": "var destinationModel: NSManagedObjectModel",
+      "desc": "The destination model for the migration manager."
+    },
+    {
+      "name": "var mappingModel: NSMappingModel",
+      "desc": "The mapping model for the migration manager."
+    },
+    {
+      "name": "var sourceContext: NSManagedObjectContext",
+      "desc": "The managed object context the migration manager uses for reading the source persistent store."
+    },
+    {
+      "name": "var sourceModel: NSManagedObjectModel",
+      "desc": "The source model for the migration manager."
+    },
+    {
+      "name": "func destinationEntity(for: NSEntityMapping) -> NSEntityDescription?",
+      "desc": "Returns the entity description for the destination entity of a given entity mapping."
+    },
+    {
+      "name": "func sourceEntity(for: NSEntityMapping) -> NSEntityDescription?",
+      "desc": "Returns the entity description for the source entity of a given entity mapping."
+    },
+    {
+      "name": "var userInfo: [AnyHashable : Any]?",
+      "desc": "The user info for the migration manager."
+    },
+    {
+      "name": "var usesStoreSpecificMigrationManager: Bool",
+      "desc": "A Boolean value that indicates whether the migration manager tries to use a store specific migration manager to perform the migration."
+    },
+    {
+      "name": "func associate(sourceInstance: NSManagedObject, withDestinationInstance: NSManagedObject, for: NSEntityMapping)",
+      "desc": "Associates a given source managed object instance with an array of destination instances for a given property mapping."
+    },
+    {
+      "name": "func destinationInstances(forEntityMappingName: String, sourceInstances: [NSManagedObject]?) -> [NSManagedObject]",
+      "desc": "Returns the managed object instances created in the destination store for the named entity mapping for the given array of source instances."
+    },
+    {
+      "name": "func sourceInstances(forEntityMappingName: String, destinationInstances: [NSManagedObject]?) -> [NSManagedObject]",
+      "desc": "Returns the managed object instances in the source store used to create the given destination instances for the passed in property mapping."
+    },
+    {
+      "name": "func migrateStore(from: URL, type: NSPersistentStore.StoreType, options: [AnyHashable : Any]?, mapping: NSMappingModel, to: URL, type: NSPersistentStore.StoreType, options: [AnyHashable : Any]?)",
+      "desc": "Migrates the source store to the destination using the specified mapping model."
+    },
+    {
+      "name": "var migrationProgress: Float",
+      "desc": "A number between 0 and 1 that indicates the proportion of completeness of the migration."
+    },
+    {
+      "name": "var currentEntityMapping: NSEntityMapping",
+      "desc": "The entity mapping currently being processed."
+    },
+    {
+      "name": "func cancelMigrationWithError(Error)",
+      "desc": "Cancels the migration with a given error."
+    },
+    {
+      "name": "func reset()",
+      "desc": "Resets the association tables for the migration."
+    }
+  ],
+  "declaration": "class NSMigrationManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

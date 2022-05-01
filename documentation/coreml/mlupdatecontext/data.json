@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/coreml/mlupdatecontext",
+  "type": "Class",
+  "name": "MLUpdateContext",
+  "desc": "The context an update task provides to your app’s completion and update progress handlers.",
+  "items": [
+    {
+      "name": "var event: MLUpdateProgressEvent",
+      "desc": "The event type that triggered an update task to notify your app’s completion and update progress handlers."
+    },
+    {
+      "name": "struct MLUpdateProgressEvent",
+      "desc": "A type of event during a model update task."
+    },
+    {
+      "name": "var task: MLUpdateTask",
+      "desc": "The update task that generated the update context."
+    },
+    {
+      "name": "var parameters: [MLParameterKey : Any]",
+      "desc": "The parameters for the update task."
+    },
+    {
+      "name": "class MLParameterKey",
+      "desc": "The keys for the parameter dictionary in a model configuration or a model update context."
+    },
+    {
+      "name": "var metrics: [MLMetricKey : Any]",
+      "desc": "The training metrics of the model for the update task, contained in a dictionary."
+    },
+    {
+      "name": "class MLMetricKey",
+      "desc": "A key for the metrics dictionary in an update context."
+    },
+    {
+      "name": "var model: MLModel & MLWritable",
+      "desc": "The underlying Core ML model stored in memory."
+    },
+    {
+      "name": "protocol MLWritable",
+      "desc": "A set of methods that saves a machine learning type to the file system."
+    }
+  ],
+  "declaration": "class MLUpdateContext : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

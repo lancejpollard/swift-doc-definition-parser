@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/uikit/uicloudsharingcontroller",
+  "type": "Class",
+  "name": "UICloudSharingController",
+  "desc": "A view controller that presents standard screens for adding and removing people from a CloudKit share record.",
+  "items": [
+    {
+      "name": "init(preparationHandler: (UICloudSharingController, (CKShare?, CKContainer?, Error?) -> Void) -> Void)",
+      "desc": "Initializes the CloudKit sharing controller with a preparation handler intending to save a new share record."
+    },
+    {
+      "name": "init(share: CKShare, container: CKContainer)",
+      "desc": "Initializes the CloudKit sharing view controller with a CloudKit share record and container to manage participants and restrictions."
+    },
+    {
+      "name": "var delegate: UICloudSharingControllerDelegate?",
+      "desc": "A reference to an object that conforms to the CloudKit sharing controller delegate protocol."
+    },
+    {
+      "name": "protocol UICloudSharingControllerDelegate",
+      "desc": "The protocol you implement to provide additional information to, and receive notifications from, the CloudKit sharing controller."
+    },
+    {
+      "name": "var availablePermissions: UICloudSharingController.PermissionOptions",
+      "desc": "A combination of permission and access options made available to the user when viewing screens presented by the CloudKit sharing controller."
+    },
+    {
+      "name": "struct UICloudSharingController.PermissionOptions",
+      "desc": "A set of options that determine the permission options available to the user when viewing the Cloud sharing controller screens."
+    },
+    {
+      "name": "var share: CKShare?",
+      "desc": "A reference to the CloudKit share record used by the CloudKit sharing controller."
+    },
+    {
+      "name": "func activityItemSource() -> UIActivityItemSource",
+      "desc": "The activity item object that can be used by an activity view controller."
+    }
+  ],
+  "declaration": "@MainActor class UICloudSharingController : UIViewController",
+  "inheritsFrom": [
+    "UIViewController"
+  ]
+}

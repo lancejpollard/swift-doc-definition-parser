@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/combine/record/recording-swift.struct",
+  "type": "Structure",
+  "name": "Record.Recording",
+  "desc": "A recorded sequence of outputs, followed by a completion value.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Set up a recording in a state ready to receive output."
+    },
+    {
+      "name": "init(output: [Output], completion: Subscribers.Completion<Failure>)",
+      "desc": "Set up a complete recording with the specified output and completion."
+    },
+    {
+      "name": "var completion: Subscribers.Completion<Failure>",
+      "desc": "The completion which will be sent to a Subscriber."
+    },
+    {
+      "name": "var output: [Output]",
+      "desc": "The output which will be sent to a Subscriber."
+    },
+    {
+      "name": "func encode(into: Encoder) throws",
+      "desc": ""
+    },
+    {
+      "name": "func receive(Record<Output, Failure>.Recording.Input)",
+      "desc": "Add an output to the recording."
+    },
+    {
+      "name": "func receive(completion: Subscribers.Completion<Failure>)",
+      "desc": "Add a completion to the recording."
+    },
+    {
+      "name": "typealias Input"
+    }
+  ],
+  "declaration": "struct Recording",
+  "conformsTo": [
+    "Decodable",
+    "Encodable"
+  ]
+}

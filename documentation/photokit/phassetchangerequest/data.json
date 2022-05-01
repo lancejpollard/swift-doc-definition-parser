@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/photokit/phassetchangerequest",
+  "type": "Class",
+  "name": "PHAssetChangeRequest",
+  "desc": "A request to create, delete, change metadata for, or edit the content of a Photos asset, for use in a photo library change block.",
+  "items": [
+    {
+      "name": "class func creationRequestForAsset(from: UIImage) -> Self",
+      "desc": "Creates a request for adding a new image asset to the Photos library."
+    },
+    {
+      "name": "class func creationRequestForAssetFromImage(atFileURL: URL) -> Self?",
+      "desc": "Creates a request for adding a new image asset to the Photos library, using the image file at the specified URL."
+    },
+    {
+      "name": "class func creationRequestForAssetFromVideo(atFileURL: URL) -> Self?",
+      "desc": "Creates a request for adding a new video asset to the Photos library, using the video file at the specified URL."
+    },
+    {
+      "name": "var placeholderForCreatedAsset: PHObjectPlaceholder?",
+      "desc": "A placeholder object for the asset that the change request creates."
+    },
+    {
+      "name": "class func deleteAssets(NSFastEnumeration)",
+      "desc": "Requests that the specified assets be deleted."
+    },
+    {
+      "name": "init(for: PHAsset)",
+      "desc": "Creates a request for modifying the specified asset."
+    },
+    {
+      "name": "var creationDate: Date?",
+      "desc": "The date and time at which the asset claims to have been originally created."
+    },
+    {
+      "name": "var location: CLLocation?",
+      "desc": "The location information saved with the asset."
+    },
+    {
+      "name": "var isFavorite: Bool",
+      "desc": "A Boolean value that indicates whether the asset is marked as one of the user’s favorites."
+    },
+    {
+      "name": "var isHidden: Bool",
+      "desc": "A Boolean value that indicates whether the asset is hidden in collections."
+    },
+    {
+      "name": "var contentEditingOutput: PHContentEditingOutput?",
+      "desc": "The output of an asset content editing session."
+    },
+    {
+      "name": "func revertAssetContentToOriginal()",
+      "desc": "Request to revert any edits made to the asset’s content."
+    }
+  ],
+  "declaration": "class PHAssetChangeRequest : PHChangeRequest",
+  "inheritsFrom": [
+    "PHChangeRequest"
+  ]
+}

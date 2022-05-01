@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/devicecheck/dcappattestservice",
+  "type": "Class",
+  "name": "DCAppAttestService",
+  "desc": "A service that you use to validate the instance of your app running on a device.",
+  "items": [
+    {
+      "name": "class var shared: DCAppAttestService",
+      "desc": "The shared App Attest service that you use to validate your app."
+    },
+    {
+      "name": "var isSupported: Bool",
+      "desc": "A Boolean that indicates whether a particular device provides the App Attest service."
+    },
+    {
+      "name": "func generateKey(completionHandler: (String?, Error?) -> Void)",
+      "desc": "Creates a new cryptographic key for use with the App Attest service."
+    },
+    {
+      "name": "func attestKey(String, clientDataHash: Data, completionHandler: (Data?, Error?) -> Void)",
+      "desc": "Asks Apple to attest to the validity of a generated cryptographic key."
+    },
+    {
+      "name": "func generateAssertion(String, clientDataHash: Data, completionHandler: (Data?, Error?) -> Void)",
+      "desc": "Creates a block of data that demonstrates the legitimacy of an instance of your app running on a device."
+    }
+  ],
+  "declaration": "class DCAppAttestService : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/medialibrary/mlmediasource",
+  "type": "Class",
+  "name": "MLMediaSource",
+  "desc": "The MLMediaSource class identifies a specific provider of media. Conceptually, a media source respresents a single app, such as iTunes or Aperture. Each media source contains multiple groups of media objects—individual files containing a piece of media such as a photo, song, or movie.",
+  "items": [
+    {
+      "name": "var mediaSourceIdentifier: String",
+      "desc": "A unique identifier for the media source."
+    },
+    {
+      "name": "var mediaLibrary: MLMediaLibrary?",
+      "desc": "A pointer to the media library instance that loaded this media source."
+    },
+    {
+      "name": "var attributes: [String : Any]",
+      "desc": "A list of attributes describing the media source."
+    },
+    {
+      "name": "var rootMediaGroup: MLMediaGroup?",
+      "desc": "The base media group in the media source that contains all other groups within the source as descendant elements."
+    },
+    {
+      "name": "func mediaGroup(forIdentifier: String) -> MLMediaGroup?",
+      "desc": "Returns the media group with the specified identifier."
+    },
+    {
+      "name": "func mediaGroups(forIdentifiers: [String]) -> [String : MLMediaGroup]",
+      "desc": "Returns the media groups with the specified identifiers."
+    },
+    {
+      "name": "func mediaObject(forIdentifier: String) -> MLMediaObject?",
+      "desc": "Returns the media object with the specified identifier."
+    },
+    {
+      "name": "func mediaObjects(forIdentifiers: [String]) -> [String : MLMediaObject]",
+      "desc": "Returns the media objects with the specified identifiers."
+    }
+  ],
+  "declaration": "class MLMediaSource : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

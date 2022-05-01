@@ -1,0 +1,361 @@
+{
+  "path": "/documentation/combine/publishers",
+  "type": "Enumeration",
+  "name": "Publishers",
+  "desc": "A namespace for types that serve as publishers.",
+  "items": [
+    {
+      "name": "struct Sequence",
+      "desc": "A publisher that publishes a given sequence of elements."
+    },
+    {
+      "name": "struct Catch",
+      "desc": "A publisher that handles errors from an upstream publisher by replacing the failed publisher with another publisher."
+    },
+    {
+      "name": "struct ReceiveOn",
+      "desc": "A publisher that delivers elements to its downstream subscriber on a specific scheduler."
+    },
+    {
+      "name": "struct SubscribeOn",
+      "desc": "A publisher that receives elements from an upstream publisher on a specific scheduler."
+    },
+    {
+      "name": "struct Map",
+      "desc": "A publisher that transforms all elements from the upstream publisher with a provided closure."
+    },
+    {
+      "name": "struct TryMap",
+      "desc": "A publisher that transforms all elements from the upstream publisher with a provided error-throwing closure."
+    },
+    {
+      "name": "struct MapError",
+      "desc": "A publisher that converts any failure from the upstream publisher into a new error."
+    },
+    {
+      "name": "struct Scan",
+      "desc": "A publisher that transforms elements from the upstream publisher by providing the current element to a closure along with the last value returned by the closure."
+    },
+    {
+      "name": "struct TryScan",
+      "desc": "A publisher that transforms elements from the upstream publisher by providing the current element to a failable closure along with the last value returned by the closure."
+    },
+    {
+      "name": "struct SetFailureType",
+      "desc": "A publisher that appears to send a specified failure type."
+    },
+    {
+      "name": "struct Filter",
+      "desc": "A publisher that republishes all elements that match a provided closure."
+    },
+    {
+      "name": "struct TryFilter",
+      "desc": "A publisher that republishes all elements that match a provided error-throwing closure."
+    },
+    {
+      "name": "struct CompactMap",
+      "desc": "A publisher that republishes all non-nil results of calling a closure with each received element."
+    },
+    {
+      "name": "struct TryCompactMap",
+      "desc": "A publisher that republishes all non-nil results of calling an error-throwing closure with each received element."
+    },
+    {
+      "name": "struct RemoveDuplicates",
+      "desc": "A publisher that publishes only elements that don’t match the previous element."
+    },
+    {
+      "name": "struct TryRemoveDuplicates",
+      "desc": "A publisher that publishes only elements that don’t match the previous element, as evaluated by a provided error-throwing closure."
+    },
+    {
+      "name": "struct ReplaceEmpty",
+      "desc": "A publisher that replaces an empty stream with a provided element."
+    },
+    {
+      "name": "struct ReplaceError",
+      "desc": "A publisher that replaces any errors in the stream with a provided element."
+    },
+    {
+      "name": "struct Collect",
+      "desc": "A publisher that buffers items."
+    },
+    {
+      "name": "struct CollectByCount",
+      "desc": "A publisher that buffers a maximum number of items."
+    },
+    {
+      "name": "struct CollectByTime",
+      "desc": "A publisher that buffers and periodically publishes its items."
+    },
+    {
+      "name": "enum TimeGroupingStrategy",
+      "desc": "A strategy for collecting received elements."
+    },
+    {
+      "name": "struct IgnoreOutput",
+      "desc": "A publisher that ignores all upstream elements, but passes along the upstream publisher’s completion state (finished or failed)."
+    },
+    {
+      "name": "struct Reduce",
+      "desc": "A publisher that applies a closure to all received elements and produces an accumulated value when the upstream publisher finishes."
+    },
+    {
+      "name": "struct TryReduce",
+      "desc": "A publisher that applies an error-throwing closure to all received elements and produces an accumulated value when the upstream publisher finishes."
+    },
+    {
+      "name": "struct Count",
+      "desc": "A publisher that publishes the number of elements received from the upstream publisher."
+    },
+    {
+      "name": "struct Comparison",
+      "desc": "A publisher that republishes items from another publisher only if each new item is in increasing order from the previously-published item."
+    },
+    {
+      "name": "struct TryComparison",
+      "desc": "A publisher that republishes items from another publisher only if each new item is in increasing order from the previously-published item, and fails if the ordering logic throws an error."
+    },
+    {
+      "name": "struct Contains",
+      "desc": "A publisher that emits a Boolean value when it receives a specific element from its upstream publisher."
+    },
+    {
+      "name": "struct ContainsWhere",
+      "desc": "A publisher that emits a Boolean value upon receiving an element that satisfies the predicate closure."
+    },
+    {
+      "name": "struct TryContainsWhere",
+      "desc": "A publisher that emits a Boolean value upon receiving an element that satisfies the throwing predicate closure."
+    },
+    {
+      "name": "struct AllSatisfy",
+      "desc": "A publisher that publishes a single Boolean value that indicates whether all received elements pass a given predicate."
+    },
+    {
+      "name": "struct TryAllSatisfy",
+      "desc": "A publisher that publishes a single Boolean value that indicates whether all received elements pass a given error-throwing predicate."
+    },
+    {
+      "name": "struct DropUntilOutput",
+      "desc": "A publisher that ignores elements from the upstream publisher until it receives an element from second publisher."
+    },
+    {
+      "name": "struct Drop",
+      "desc": "A publisher that omits a specified number of elements before republishing later elements."
+    },
+    {
+      "name": "struct DropWhile",
+      "desc": "A publisher that omits elements from an upstream publisher until a given closure returns false."
+    },
+    {
+      "name": "struct TryDropWhile",
+      "desc": "A publisher that omits elements from an upstream publisher until a given error-throwing closure returns false."
+    },
+    {
+      "name": "struct Concatenate",
+      "desc": "A publisher that emits all of one publisher’s elements before those from another publisher."
+    },
+    {
+      "name": "struct PrefixWhile",
+      "desc": "A publisher that republishes elements while a predicate closure indicates publishing should continue."
+    },
+    {
+      "name": "struct TryPrefixWhile",
+      "desc": "A publisher that republishes elements while an error-throwing predicate closure indicates publishing should continue."
+    },
+    {
+      "name": "struct PrefixUntilOutput",
+      "desc": "A publisher that republishes elements until another publisher emits an element."
+    },
+    {
+      "name": "struct First",
+      "desc": "A publisher that publishes the first element of a stream, then finishes."
+    },
+    {
+      "name": "struct FirstWhere",
+      "desc": "A publisher that only publishes the first element of a stream to satisfy a predicate closure."
+    },
+    {
+      "name": "struct TryFirstWhere",
+      "desc": "A publisher that only publishes the first element of a stream to satisfy a throwing predicate closure."
+    },
+    {
+      "name": "struct Last",
+      "desc": "A publisher that waits until after the stream finishes, and then publishes the last element of the stream."
+    },
+    {
+      "name": "struct LastWhere",
+      "desc": "A publisher that waits until after the stream finishes and then publishes the last element of the stream that satisfies a predicate closure."
+    },
+    {
+      "name": "struct TryLastWhere",
+      "desc": "A publisher that waits until after the stream finishes and then publishes the last element of the stream that satisfies an error-throwing predicate closure."
+    },
+    {
+      "name": "struct Output",
+      "desc": "A publisher that publishes elements specified by a range in the sequence of published elements."
+    },
+    {
+      "name": "struct CombineLatest",
+      "desc": "A publisher that receives and combines the latest elements from two publishers."
+    },
+    {
+      "name": "struct CombineLatest3",
+      "desc": "A publisher that receives and combines the latest elements from three publishers."
+    },
+    {
+      "name": "struct CombineLatest4",
+      "desc": "A publisher that receives and combines the latest elements from four publishers."
+    },
+    {
+      "name": "struct Merge",
+      "desc": "A publisher created by applying the merge function to two upstream publishers."
+    },
+    {
+      "name": "struct Merge3",
+      "desc": "A publisher created by applying the merge function to three upstream publishers."
+    },
+    {
+      "name": "struct Merge4",
+      "desc": "A publisher created by applying the merge function to four upstream publishers."
+    },
+    {
+      "name": "struct Merge5",
+      "desc": "A publisher created by applying the merge function to five upstream publishers."
+    },
+    {
+      "name": "struct Merge6",
+      "desc": "A publisher created by applying the merge function to six upstream publishers."
+    },
+    {
+      "name": "struct Merge7",
+      "desc": "A publisher created by applying the merge function to seven upstream publishers."
+    },
+    {
+      "name": "struct Merge8",
+      "desc": "A publisher created by applying the merge function to eight upstream publishers."
+    },
+    {
+      "name": "struct MergeMany",
+      "desc": "A publisher created by applying the merge function to an arbitrary number of upstream publishers."
+    },
+    {
+      "name": "struct Zip",
+      "desc": "A publisher created by applying the zip function to two upstream publishers."
+    },
+    {
+      "name": "struct Zip3",
+      "desc": "A publisher created by applying the zip function to three upstream publishers."
+    },
+    {
+      "name": "struct Zip4",
+      "desc": "A publisher created by applying the zip function to four upstream publishers."
+    },
+    {
+      "name": "struct FlatMap",
+      "desc": "A publisher that transforms elements from an upstream publisher into a new publisher."
+    },
+    {
+      "name": "struct SwitchToLatest",
+      "desc": "A publisher that flattens nested publishers."
+    },
+    {
+      "name": "struct AssertNoFailure",
+      "desc": "A publisher that raises a fatal error upon receiving any failure, and otherwise republishes all received input."
+    },
+    {
+      "name": "struct Catch",
+      "desc": "A publisher that handles errors from an upstream publisher by replacing the failed publisher with another publisher."
+    },
+    {
+      "name": "struct TryCatch",
+      "desc": "A publisher that handles errors from an upstream publisher by replacing the failed publisher with another publisher or producing a new error."
+    },
+    {
+      "name": "struct Retry",
+      "desc": "A publisher that attempts to recreate its subscription to a failed upstream publisher."
+    },
+    {
+      "name": "struct MeasureInterval",
+      "desc": "A publisher that measures and emits the time interval between events received from an upstream publisher."
+    },
+    {
+      "name": "struct Debounce",
+      "desc": "A publisher that publishes elements only after a specified time interval elapses between events."
+    },
+    {
+      "name": "struct Delay",
+      "desc": "A publisher that delays delivery of elements and completion to the downstream receiver."
+    },
+    {
+      "name": "struct Throttle",
+      "desc": "A publisher that publishes either the most-recent or first element published by the upstream publisher in a specified time interval."
+    },
+    {
+      "name": "struct Timeout",
+      "desc": "A publisher that terminates publishing if the upstream publisher exceeds a specified time interval without producing an element."
+    },
+    {
+      "name": "struct Decode",
+      "desc": "A publisher that decodes elements received from an upstream publisher, using a given decoder."
+    },
+    {
+      "name": "struct Encode",
+      "desc": "A publisher that encodes elements received from an upstream publisher, using a given encoder."
+    },
+    {
+      "name": "struct MapKeyPath",
+      "desc": "A publisher that publishes the value of a key path."
+    },
+    {
+      "name": "struct MapKeyPath2",
+      "desc": "A publisher that publishes the values of two key paths as a tuple."
+    },
+    {
+      "name": "struct MapKeyPath3",
+      "desc": "A publisher that publishes the values of three key paths as a tuple."
+    },
+    {
+      "name": "class Multicast",
+      "desc": "A publisher that uses a subject to deliver elements to multiple subscribers."
+    },
+    {
+      "name": "class Share",
+      "desc": "A publisher that shares the output of an upstream publisher with multiple subscribers."
+    },
+    {
+      "name": "struct Buffer",
+      "desc": "A publisher that buffers elements from an upstream publisher."
+    },
+    {
+      "name": "enum BufferingStrategy",
+      "desc": "A strategy that handles exhaustion of a buffer’s capacity."
+    },
+    {
+      "name": "enum PrefetchStrategy",
+      "desc": "A strategy for filling a buffer."
+    },
+    {
+      "name": "class Autoconnect",
+      "desc": "A publisher that automatically connects to an upstream connectable publisher."
+    },
+    {
+      "name": "struct MakeConnectable",
+      "desc": "A publisher that provides explicit connectability to another publisher."
+    },
+    {
+      "name": "struct Breakpoint",
+      "desc": "A publisher that raises a debugger signal when a provided closure needs to stop the process in the debugger."
+    },
+    {
+      "name": "struct HandleEvents",
+      "desc": "A publisher that performs the specified closures when publisher events occur."
+    },
+    {
+      "name": "struct Print",
+      "desc": "A publisher that prints log messages for all publishing events, optionally prefixed with a given string."
+    }
+  ],
+  "declaration": "enum Publishers"
+}

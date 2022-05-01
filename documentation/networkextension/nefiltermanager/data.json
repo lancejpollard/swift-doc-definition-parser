@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/networkextension/nefiltermanager",
+  "type": "Class",
+  "name": "NEFilterManager",
+  "desc": "An object to create and manage a content filter’s configuration.",
+  "items": [
+    {
+      "name": "class func shared() -> NEFilterManager",
+      "desc": "Access the single instance of NEFilterManager."
+    },
+    {
+      "name": "func loadFromPreferences(completionHandler: (Error?) -> Void)",
+      "desc": "Load the filter configuration from the Network Extension preferences."
+    },
+    {
+      "name": "func saveToPreferences(completionHandler: (Error?) -> Void)",
+      "desc": "Save the filter configuration in the Network Extension preferences."
+    },
+    {
+      "name": "func removeFromPreferences(completionHandler: (Error?) -> Void)",
+      "desc": "Remove the filter configuration from the Network Extension preferences."
+    },
+    {
+      "name": "var isEnabled: Bool",
+      "desc": "A Boolean used to toggle the enabled state of the filter."
+    },
+    {
+      "name": "var providerConfiguration: NEFilterProviderConfiguration?",
+      "desc": "A NEFilterProviderConfiguration object containing the filter configuration settings."
+    },
+    {
+      "name": "var localizedDescription: String?",
+      "desc": "A string containing a description of the filter configuration."
+    },
+    {
+      "name": "var grade: NEFilterManager.Grade",
+      "desc": "The grade of the filter, which determines when it acts relative to other filters."
+    },
+    {
+      "name": "enum NEFilterManager.Grade",
+      "desc": "A type for the grade or priority of the filter."
+    },
+    {
+      "name": "static let NEFilterConfigurationDidChange: NSNotification.Name",
+      "desc": "Posted after the filter configuration stored in the Network Extension preferences changes."
+    }
+  ],
+  "declaration": "class NEFilterManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

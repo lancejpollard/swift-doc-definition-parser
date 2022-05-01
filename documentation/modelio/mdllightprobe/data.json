@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/modelio/mdllightprobe",
+  "type": "Class",
+  "name": "MDLLightProbe",
+  "desc": "A light source described in terms of the variations in color and intensity of its illumination in all directions.",
+  "items": [
+    {
+      "name": "init(reflectiveTexture: MDLTexture?, irradianceTexture: MDLTexture?)",
+      "desc": "Initializes a light probe with the specified cube map textures."
+    },
+    {
+      "name": "var reflectiveTexture: MDLTexture?",
+      "desc": "A cube map texture that contains a rendering of a scene as seen from the light probe’s position."
+    },
+    {
+      "name": "var irradianceTexture: MDLTexture?",
+      "desc": "A cube map texture that contains samples of the total light arriving at the light probe’s position from every direction."
+    },
+    {
+      "name": "func generateSphericalHarmonics(fromIrradiance: Int)",
+      "desc": "Generates spherical harmonics information based on the light probe’s irradiance texture."
+    },
+    {
+      "name": "var sphericalHarmonicsCoefficients: Data?",
+      "desc": "Data containing the spherical harmonics coefficients for the light."
+    },
+    {
+      "name": "var sphericalHarmonicsLevel: Int",
+      "desc": "The number of levels of spherical harmonics information in the light probe."
+    },
+    {
+      "name": "init?(textureSize: Int, forLocation: MDLTransform, lightsToConsider: [MDLLight], objectsToConsider: [MDLObject], reflectiveCubemap: MDLTexture?, irradianceCubemap: MDLTexture?)",
+      "desc": "Creates a light probe representing the shading environment at a specific point in a scene."
+    }
+  ],
+  "declaration": "class MDLLightProbe : MDLLight",
+  "inheritsFrom": [
+    "MDLLight"
+  ]
+}

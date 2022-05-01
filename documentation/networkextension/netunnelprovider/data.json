@@ -1,0 +1,46 @@
+{
+  "path": "/documentation/networkextension/netunnelprovider",
+  "type": "Class",
+  "name": "NETunnelProvider",
+  "desc": "An abstract base class shared by NEPacketTunnelProvider and NEAppProxyProvider.",
+  "items": [
+    {
+      "name": "var protocolConfiguration: NEVPNProtocol",
+      "desc": "The configuration of the current tunneling session."
+    },
+    {
+      "name": "var routingMethod: NETunnelProviderRoutingMethod",
+      "desc": "The method by which network traffic is routed to the tunnel."
+    },
+    {
+      "name": "var appRules: [NEAppRule]?",
+      "desc": "The app rules dictating which apps will use the current tunneling session."
+    },
+    {
+      "name": "func setTunnelNetworkSettings(NETunnelNetworkSettings?, completionHandler: ((Error?) -> Void)?)",
+      "desc": "Specify the network settings for the current tunneling session."
+    },
+    {
+      "name": "func handleAppMessage(Data, completionHandler: ((Data?) -> Void)?)",
+      "desc": "Handle messages sent by the tunnel provider extension’s containing app."
+    },
+    {
+      "name": "var reasserting: Bool",
+      "desc": "Indicate to the system that the tunnel is being re-established."
+    },
+    {
+      "name": "struct NETunnelProviderError"
+    },
+    {
+      "name": "let NETunnelProviderErrorDomain: String",
+      "desc": "The domain used for Tunnel Provider errors."
+    },
+    {
+      "name": "enum NETunnelProviderError.Code"
+    }
+  ],
+  "declaration": "class NETunnelProvider : NEProvider",
+  "inheritsFrom": [
+    "NEProvider"
+  ]
+}

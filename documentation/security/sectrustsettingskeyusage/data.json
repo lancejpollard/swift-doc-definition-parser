@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/security/sectrustsettingskeyusage",
+  "type": "Structure",
+  "name": "SecTrustSettingsKeyUsage",
+  "desc": "Allowed uses for the encryption key in a certificate.",
+  "items": [
+    {
+      "name": "init(rawValue: UInt32)",
+      "desc": "Initializes a trust settings key usage structure."
+    },
+    {
+      "name": "static var useSignature: SecTrustSettingsKeyUsage",
+      "desc": "The key can be used to sign data or verify a signature."
+    },
+    {
+      "name": "static var useEnDecryptData: SecTrustSettingsKeyUsage",
+      "desc": "The key can be used to encrypt or decrypt data."
+    },
+    {
+      "name": "static var useEnDecryptKey: SecTrustSettingsKeyUsage",
+      "desc": "The key can be used to encrypt or decrypt (wrap or unwrap) a key."
+    },
+    {
+      "name": "static var useSignCert: SecTrustSettingsKeyUsage",
+      "desc": "The key can be used to sign a certificate or verify a signature."
+    },
+    {
+      "name": "static var useSignRevocation: SecTrustSettingsKeyUsage",
+      "desc": "The key can be used to sign an OCSP (online certificate status protocol) message or CRL (certificate verification list), or to verify a signature."
+    },
+    {
+      "name": "static var useKeyExchange: SecTrustSettingsKeyUsage",
+      "desc": "The key is a private key that has been shared using a key exchange protocol, such as Diffie-Hellman key exchange."
+    },
+    {
+      "name": "static var useAny: SecTrustSettingsKeyUsage",
+      "desc": "The key can be used for any purpose."
+    }
+  ],
+  "declaration": "struct SecTrustSettingsKeyUsage, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "path": "/documentation/musickit/playlist",
+  "type": "Structure",
+  "name": "Playlist",
+  "desc": "A music item that represents a playlist.",
+  "items": [
+    {
+      "name": "static func == (Playlist, Playlist) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "var artwork: Artwork?",
+      "desc": "The artwork for the playlist."
+    },
+    {
+      "name": "var curatorName: String?",
+      "desc": "The display name for the playlist’s curator."
+    },
+    {
+      "name": "var featuredArtists: MusicItemCollection<Artist>?",
+      "desc": "A collection of featured artists for this playlist."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "let id: MusicItemID",
+      "desc": "The unique identifier for the playlist."
+    },
+    {
+      "name": "var isChart: Bool?",
+      "desc": "A Boolean value that indicates whether the playlist represents a popularity chart."
+    },
+    {
+      "name": "var kind: Playlist.Kind?",
+      "desc": "The kind of playlist."
+    },
+    {
+      "name": "var lastModifiedDate: Date?",
+      "desc": "The playlist’s most recent modification date."
+    },
+    {
+      "name": "var moreByCurator: MusicItemCollection<Playlist>?",
+      "desc": "A collection of additional playlists by the same curator."
+    },
+    {
+      "name": "var name: String",
+      "desc": "The name of the playlist."
+    },
+    {
+      "name": "var playParameters: PlayParameters?",
+      "desc": "The parameters to use to play the tracks in the playlist."
+    },
+    {
+      "name": "var shortDescription: String?",
+      "desc": "An abbreviated description to show inline or when the playlist appears alongside other content."
+    },
+    {
+      "name": "var standardDescription: String?",
+      "desc": "A description to show when the playlist is prominently displayed."
+    },
+    {
+      "name": "var tracks: MusicItemCollection<Track>?",
+      "desc": "The tracks in the playlist."
+    },
+    {
+      "name": "var url: URL?",
+      "desc": "The URL for the playlist."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "typealias ID",
+      "desc": "A type representing the stable identity of the entity associated with an instance."
+    },
+    {
+      "name": "enum Kind",
+      "desc": "The available kinds of playlists."
+    }
+  ],
+  "declaration": "struct Playlist",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "FilterableMusicItem",
+    "Hashable",
+    "Identifiable",
+    "MusicCatalogSearchable",
+    "MusicItem",
+    "MusicPropertyContainer",
+    "PlayableMusicItem"
+  ]
+}

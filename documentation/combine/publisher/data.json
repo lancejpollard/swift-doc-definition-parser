@@ -1,0 +1,504 @@
+{
+  "path": "/documentation/combine/publisher",
+  "type": "Protocol",
+  "name": "Publisher",
+  "desc": "Declares that a type can transmit a sequence of values over time.",
+  "items": [
+    {
+      "name": "associatedtype Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "associatedtype Failure : Error",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "func receive<S>(subscriber: S)",
+      "desc": "Attaches the specified subscriber to this publisher."
+    },
+    {
+      "name": "func subscribe<S>(S)",
+      "desc": "Attaches the specified subscriber to this publisher."
+    },
+    {
+      "name": "func subscribe<S>(S) -> AnyCancellable",
+      "desc": "Attaches the specified subject to this publisher."
+    },
+    {
+      "name": "func map<T>((Self.Output) -> T) -> Publishers.Map<Self, T>",
+      "desc": "Transforms all elements from the upstream publisher with a provided closure."
+    },
+    {
+      "name": "func tryMap<T>((Self.Output) throws -> T) -> Publishers.TryMap<Self, T>",
+      "desc": "Transforms all elements from the upstream publisher with a provided error-throwing closure."
+    },
+    {
+      "name": "func mapError<E>((Self.Failure) -> E) -> Publishers.MapError<Self, E>",
+      "desc": "Converts any failure from the upstream publisher into a new error."
+    },
+    {
+      "name": "func replaceNil<T>(with: T) -> Publishers.Map<Self, T>",
+      "desc": "Replaces nil elements in the stream with the provided element."
+    },
+    {
+      "name": "func scan<T>(T, (T, Self.Output) -> T) -> Publishers.Scan<Self, T>",
+      "desc": "Transforms elements from the upstream publisher by providing the current element to a closure along with the last value returned by the closure."
+    },
+    {
+      "name": "func tryScan<T>(T, (T, Self.Output) throws -> T) -> Publishers.TryScan<Self, T>",
+      "desc": "Transforms elements from the upstream publisher by providing the current element to an error-throwing closure along with the last value returned by the closure."
+    },
+    {
+      "name": "func setFailureType<E>(to: E.Type) -> Publishers.SetFailureType<Self, E>",
+      "desc": "Changes the failure type declared by the upstream publisher."
+    },
+    {
+      "name": "func filter((Self.Output) -> Bool) -> Publishers.Filter<Self>",
+      "desc": "Republishes all elements that match a provided closure."
+    },
+    {
+      "name": "func tryFilter((Self.Output) throws -> Bool) -> Publishers.TryFilter<Self>",
+      "desc": "Republishes all elements that match a provided error-throwing closure."
+    },
+    {
+      "name": "func compactMap<T>((Self.Output) -> T?) -> Publishers.CompactMap<Self, T>",
+      "desc": "Calls a closure with each received element and publishes any returned optional that has a value."
+    },
+    {
+      "name": "func tryCompactMap<T>((Self.Output) throws -> T?) -> Publishers.TryCompactMap<Self, T>",
+      "desc": "Calls an error-throwing closure with each received element and publishes any returned optional that has a value."
+    },
+    {
+      "name": "func removeDuplicates() -> Publishers.RemoveDuplicates<Self>",
+      "desc": "Publishes only elements that don’t match the previous element."
+    },
+    {
+      "name": "func removeDuplicates(by: (Self.Output, Self.Output) -> Bool) -> Publishers.RemoveDuplicates<Self>",
+      "desc": "Publishes only elements that don’t match the previous element, as evaluated by a provided closure."
+    },
+    {
+      "name": "func tryRemoveDuplicates(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryRemoveDuplicates<Self>",
+      "desc": "Publishes only elements that don’t match the previous element, as evaluated by a provided error-throwing closure."
+    },
+    {
+      "name": "func replaceEmpty(with: Self.Output) -> Publishers.ReplaceEmpty<Self>",
+      "desc": "Replaces an empty stream with the provided element."
+    },
+    {
+      "name": "func replaceError(with: Self.Output) -> Publishers.ReplaceError<Self>",
+      "desc": "Replaces any errors in the stream with the provided element."
+    },
+    {
+      "name": "func collect() -> Publishers.Collect<Self>",
+      "desc": "Collects all received elements, and emits a single array of the collection when the upstream publisher finishes."
+    },
+    {
+      "name": "func collect(Int) -> Publishers.CollectByCount<Self>",
+      "desc": "Collects up to the specified number of elements, and then emits a single array of the collection."
+    },
+    {
+      "name": "func collect<S>(Publishers.TimeGroupingStrategy<S>, options: S.SchedulerOptions?) -> Publishers.CollectByTime<Self, S>",
+      "desc": "Collects elements by a given time-grouping strategy, and emits a single array of the collection."
+    },
+    {
+      "name": "enum TimeGroupingStrategy",
+      "desc": "A strategy for collecting received elements."
+    },
+    {
+      "name": "func ignoreOutput() -> Publishers.IgnoreOutput<Self>",
+      "desc": "Ignores all upstream elements, but passes along the upstream publisher’s completion state (finished or failed)."
+    },
+    {
+      "name": "func reduce<T>(T, (T, Self.Output) -> T) -> Publishers.Reduce<Self, T>",
+      "desc": "Applies a closure that collects each element of a stream and publishes a final result upon completion."
+    },
+    {
+      "name": "func tryReduce<T>(T, (T, Self.Output) throws -> T) -> Publishers.TryReduce<Self, T>",
+      "desc": "Applies an error-throwing closure that collects each element of a stream and publishes a final result upon completion."
+    },
+    {
+      "name": "func count() -> Publishers.Count<Self>",
+      "desc": "Publishes the number of elements received from the upstream publisher."
+    },
+    {
+      "name": "func max() -> Publishers.Comparison<Self>",
+      "desc": "Publishes the maximum value received from the upstream publisher, after it finishes."
+    },
+    {
+      "name": "func max(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>",
+      "desc": "Publishes the maximum value received from the upstream publisher, using the provided ordering closure."
+    },
+    {
+      "name": "func tryMax(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>",
+      "desc": "Publishes the maximum value received from the upstream publisher, using the provided error-throwing closure to order the items."
+    },
+    {
+      "name": "func min() -> Publishers.Comparison<Self>",
+      "desc": "Publishes the minimum value received from the upstream publisher, after it finishes."
+    },
+    {
+      "name": "func min(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>",
+      "desc": "Publishes the minimum value received from the upstream publisher, after it finishes."
+    },
+    {
+      "name": "func tryMin(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>",
+      "desc": "Publishes the minimum value received from the upstream publisher, using the provided error-throwing closure to order the items."
+    },
+    {
+      "name": "func contains(Self.Output) -> Publishers.Contains<Self>",
+      "desc": "Publishes a Boolean value upon receiving an element equal to the argument."
+    },
+    {
+      "name": "func contains(where: (Self.Output) -> Bool) -> Publishers.ContainsWhere<Self>",
+      "desc": "Publishes a Boolean value upon receiving an element that satisfies the predicate closure."
+    },
+    {
+      "name": "func tryContains(where: (Self.Output) throws -> Bool) -> Publishers.TryContainsWhere<Self>",
+      "desc": "Publishes a Boolean value upon receiving an element that satisfies the throwing predicate closure."
+    },
+    {
+      "name": "func allSatisfy((Self.Output) -> Bool) -> Publishers.AllSatisfy<Self>",
+      "desc": "Publishes a single Boolean value that indicates whether all received elements pass a given predicate."
+    },
+    {
+      "name": "func tryAllSatisfy((Self.Output) throws -> Bool) -> Publishers.TryAllSatisfy<Self>",
+      "desc": "Publishes a single Boolean value that indicates whether all received elements pass a given error-throwing predicate."
+    },
+    {
+      "name": "func drop<P>(untilOutputFrom: P) -> Publishers.DropUntilOutput<Self, P>",
+      "desc": "Ignores elements from the upstream publisher until it receives an element from a second publisher."
+    },
+    {
+      "name": "func dropFirst(Int) -> Publishers.Drop<Self>",
+      "desc": "Omits the specified number of elements before republishing subsequent elements."
+    },
+    {
+      "name": "func drop(while: (Self.Output) -> Bool) -> Publishers.DropWhile<Self>",
+      "desc": "Omits elements from the upstream publisher until a given closure returns false, before republishing all remaining elements."
+    },
+    {
+      "name": "func tryDrop(while: (Self.Output) throws -> Bool) -> Publishers.TryDropWhile<Self>",
+      "desc": "Omits elements from the upstream publisher until an error-throwing closure returns false, before republishing all remaining elements."
+    },
+    {
+      "name": "func append(Self.Output...) -> Publishers.Concatenate<Self, Publishers.Sequence<[Self.Output], Self.Failure>>",
+      "desc": "Appends a publisher’s output with the specified elements."
+    },
+    {
+      "name": "func append<S>(S) -> Publishers.Concatenate<Self, Publishers.Sequence<S, Self.Failure>>",
+      "desc": "Appends a publisher’s output with the specified sequence."
+    },
+    {
+      "name": "func append<P>(P) -> Publishers.Concatenate<Self, P>",
+      "desc": "Appends the output of this publisher with the elements emitted by the given publisher."
+    },
+    {
+      "name": "func prepend(Self.Output...) -> Publishers.Concatenate<Publishers.Sequence<[Self.Output], Self.Failure>, Self>",
+      "desc": "Prefixes a publisher’s output with the specified values."
+    },
+    {
+      "name": "func prepend<S>(S) -> Publishers.Concatenate<Publishers.Sequence<S, Self.Failure>, Self>",
+      "desc": "Prefixes a publisher’s output with the specified sequence."
+    },
+    {
+      "name": "func prepend<P>(P) -> Publishers.Concatenate<P, Self>",
+      "desc": "Prefixes the output of this publisher with the elements emitted by the given publisher."
+    },
+    {
+      "name": "func prefix(Int) -> Publishers.Output<Self>",
+      "desc": "Republishes elements up to the specified maximum count."
+    },
+    {
+      "name": "func prefix(while: (Self.Output) -> Bool) -> Publishers.PrefixWhile<Self>",
+      "desc": "Republishes elements while a predicate closure indicates publishing should continue."
+    },
+    {
+      "name": "func tryPrefix(while: (Self.Output) throws -> Bool) -> Publishers.TryPrefixWhile<Self>",
+      "desc": "Republishes elements while an error-throwing predicate closure indicates publishing should continue."
+    },
+    {
+      "name": "func prefix<P>(untilOutputFrom: P) -> Publishers.PrefixUntilOutput<Self, P>",
+      "desc": "Republishes elements until another publisher emits an element."
+    },
+    {
+      "name": "func first() -> Publishers.First<Self>",
+      "desc": "Publishes the first element of a stream, then finishes."
+    },
+    {
+      "name": "func first(where: (Self.Output) -> Bool) -> Publishers.FirstWhere<Self>",
+      "desc": "Publishes the first element of a stream to satisfy a predicate closure, then finishes normally."
+    },
+    {
+      "name": "func tryFirst(where: (Self.Output) throws -> Bool) -> Publishers.TryFirstWhere<Self>",
+      "desc": "Publishes the first element of a stream to satisfy a throwing predicate closure, then finishes normally."
+    },
+    {
+      "name": "func last() -> Publishers.Last<Self>",
+      "desc": "Publishes the last element of a stream, after the stream finishes."
+    },
+    {
+      "name": "func last(where: (Self.Output) -> Bool) -> Publishers.LastWhere<Self>",
+      "desc": "Publishes the last element of a stream that satisfies a predicate closure, after upstream finishes."
+    },
+    {
+      "name": "func tryLast(where: (Self.Output) throws -> Bool) -> Publishers.TryLastWhere<Self>",
+      "desc": "Publishes the last element of a stream that satisfies an error-throwing predicate closure, after the stream finishes."
+    },
+    {
+      "name": "func output(at: Int) -> Publishers.Output<Self>",
+      "desc": "Publishes a specific element, indicated by its index in the sequence of published elements."
+    },
+    {
+      "name": "func output<R>(in: R) -> Publishers.Output<Self>",
+      "desc": "Publishes elements specified by their range in the sequence of published elements."
+    },
+    {
+      "name": "func combineLatest<P, T>(P, (Self.Output, P.Output) -> T) -> Publishers.Map<Publishers.CombineLatest<Self, P>, T>",
+      "desc": "cancellable = pub1 .combineLatest(pub2) { (first, second) in return first * second } .sink { print(“Result: ($0).”) }"
+    },
+    {
+      "name": "func combineLatest<P>(P) -> Publishers.CombineLatest<Self, P>",
+      "desc": "Subscribes to an additional publisher and publishes a tuple upon receiving output from either publisher."
+    },
+    {
+      "name": "func combineLatest<P, Q, T>(P, Q, (Self.Output, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.CombineLatest3<Self, P, Q>, T>",
+      "desc": "Subscribes to two additional publishers and invokes a closure upon receiving output from any of the publishers."
+    },
+    {
+      "name": "func combineLatest<P, Q>(P, Q) -> Publishers.CombineLatest3<Self, P, Q>",
+      "desc": "Subscribes to two additional publishers and publishes a tuple upon receiving output from any of the publishers."
+    },
+    {
+      "name": "func combineLatest<P, Q, R, T>(P, Q, R, (Self.Output, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.CombineLatest4<Self, P, Q, R>, T>",
+      "desc": "Subscribes to three additional publishers and invokes a closure upon receiving output from any of the publishers."
+    },
+    {
+      "name": "func combineLatest<P, Q, R>(P, Q, R) -> Publishers.CombineLatest4<Self, P, Q, R>",
+      "desc": "Subscribes to three additional publishers and publishes a tuple upon receiving output from any of the publishers."
+    },
+    {
+      "name": "func merge(with: Self) -> Publishers.MergeMany<Self>",
+      "desc": "Combines elements from this publisher with those from another publisher of the same type, delivering an interleaved sequence of elements."
+    },
+    {
+      "name": "func merge<P>(with: P) -> Publishers.Merge<Self, P>",
+      "desc": "Combines elements from this publisher with those from another publisher, delivering an interleaved sequence of elements."
+    },
+    {
+      "name": "func merge<B, C>(with: B, C) -> Publishers.Merge3<Self, B, C>",
+      "desc": "Combines elements from this publisher with those from two other publishers, delivering an interleaved sequence of elements."
+    },
+    {
+      "name": "func merge<B, C, D>(with: B, C, D) -> Publishers.Merge4<Self, B, C, D>",
+      "desc": "Combines elements from this publisher with those from three other publishers, delivering an interleaved sequence of elements."
+    },
+    {
+      "name": "func merge<B, C, D, E>(with: B, C, D, E) -> Publishers.Merge5<Self, B, C, D, E>",
+      "desc": "Combines elements from this publisher with those from four other publishers, delivering an interleaved sequence of elements."
+    },
+    {
+      "name": "func merge<B, C, D, E, F>(with: B, C, D, E, F) -> Publishers.Merge6<Self, B, C, D, E, F>",
+      "desc": "Combines elements from this publisher with those from five other publishers, delivering an interleaved sequence of elements."
+    },
+    {
+      "name": "func merge<B, C, D, E, F, G>(with: B, C, D, E, F, G) -> Publishers.Merge7<Self, B, C, D, E, F, G>",
+      "desc": "Combines elements from this publisher with those from six other publishers, delivering an interleaved sequence of elements."
+    },
+    {
+      "name": "func merge<B, C, D, E, F, G, H>(with: B, C, D, E, F, G, H) -> Publishers.Merge8<Self, B, C, D, E, F, G, H>",
+      "desc": "Combines elements from this publisher with those from seven other publishers, delivering an interleaved sequence of elements."
+    },
+    {
+      "name": "func zip<P>(P) -> Publishers.Zip<Self, P>",
+      "desc": "Combines elements from another publisher and deliver pairs of elements as tuples."
+    },
+    {
+      "name": "func zip<P, T>(P, (Self.Output, P.Output) -> T) -> Publishers.Map<Publishers.Zip<Self, P>, T>",
+      "desc": "Combines elements from another publisher and delivers a transformed output."
+    },
+    {
+      "name": "func zip<P, Q>(P, Q) -> Publishers.Zip3<Self, P, Q>",
+      "desc": "Combines elements from two other publishers and delivers groups of elements as tuples."
+    },
+    {
+      "name": "func zip<P, Q, T>(P, Q, (Self.Output, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.Zip3<Self, P, Q>, T>",
+      "desc": "Combines elements from two other publishers and delivers a transformed output."
+    },
+    {
+      "name": "func zip<P, Q, R>(P, Q, R) -> Publishers.Zip4<Self, P, Q, R>",
+      "desc": "Combines elements from three other publishers and delivers groups of elements as tuples."
+    },
+    {
+      "name": "func zip<P, Q, R, T>(P, Q, R, (Self.Output, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.Zip4<Self, P, Q, R>, T>",
+      "desc": "Combines elements from three other publishers and delivers a transformed output."
+    },
+    {
+      "name": "func flatMap<T, P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<P, Self>",
+      "desc": "Transforms all elements from an upstream publisher into a new publisher up to a maximum number of publishers you specify."
+    },
+    {
+      "name": "func flatMap<P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<P, Publishers.SetFailureType<Self, P.Failure>>",
+      "desc": "Transforms all elements from an upstream publisher into a new publisher up to a maximum number of publishers you specify."
+    },
+    {
+      "name": "func flatMap<P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<P, Self>",
+      "desc": "Transforms all elements from an upstream publisher into a new publisher up to a maximum number of publishers you specify."
+    },
+    {
+      "name": "func flatMap<P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<Publishers.SetFailureType<P, Self.Failure>, Self>",
+      "desc": "Transforms all elements from an upstream publisher into a new publisher up to a maximum number of publishers you specify."
+    },
+    {
+      "name": "func switchToLatest() -> Publishers.SwitchToLatest<Self.Output, Self>",
+      "desc": "Republishes elements sent by the most recently received publisher."
+    },
+    {
+      "name": "func switchToLatest() -> Publishers.SwitchToLatest<Self.Output, Publishers.SetFailureType<Self, Self.Output.Failure>>",
+      "desc": "Republishes elements sent by the most recently received publisher."
+    },
+    {
+      "name": "func switchToLatest() -> Publishers.SwitchToLatest<Publishers.SetFailureType<Self.Output, Self.Failure>, Publishers.Map<Self, Publishers.SetFailureType<Self.Output, Self.Failure>>>",
+      "desc": "Republishes elements sent by the most recently received publisher."
+    },
+    {
+      "name": "func switchToLatest() -> Publishers.SwitchToLatest<Self.Output, Self>",
+      "desc": "Republishes elements sent by the most recently received publisher."
+    },
+    {
+      "name": "func assertNoFailure(String, file: StaticString, line: UInt) -> Publishers.AssertNoFailure<Self>",
+      "desc": "Raises a fatal error when its upstream publisher fails, and otherwise republishes all received input."
+    },
+    {
+      "name": "func `catch`<P>((Self.Failure) -> P) -> Publishers.Catch<Self, P>",
+      "desc": "Handles errors from an upstream publisher by replacing it with another publisher."
+    },
+    {
+      "name": "func tryCatch<P>((Self.Failure) throws -> P) -> Publishers.TryCatch<Self, P>",
+      "desc": "Handles errors from an upstream publisher by either replacing it with another publisher or throwing a new error."
+    },
+    {
+      "name": "func retry(Int) -> Publishers.Retry<Self>",
+      "desc": "Attempts to recreate a failed subscription with the upstream publisher up to the number of times you specify."
+    },
+    {
+      "name": "func measureInterval<S>(using: S, options: S.SchedulerOptions?) -> Publishers.MeasureInterval<Self, S>",
+      "desc": "Measures and emits the time interval between events received from an upstream publisher."
+    },
+    {
+      "name": "func debounce<S>(for: S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Debounce<Self, S>",
+      "desc": "Publishes elements only after a specified time interval elapses between events."
+    },
+    {
+      "name": "func delay<S>(for: S.SchedulerTimeType.Stride, tolerance: S.SchedulerTimeType.Stride?, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Delay<Self, S>",
+      "desc": "Delays delivery of all output to the downstream receiver by a specified amount of time on a particular scheduler."
+    },
+    {
+      "name": "func throttle<S>(for: S.SchedulerTimeType.Stride, scheduler: S, latest: Bool) -> Publishers.Throttle<Self, S>",
+      "desc": "Publishes either the most-recent or first element published by the upstream publisher in the specified time interval."
+    },
+    {
+      "name": "func timeout<S>(S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?, customError: (() -> Self.Failure)?) -> Publishers.Timeout<Self, S>",
+      "desc": "Terminates publishing if the upstream publisher exceeds the specified time interval without producing an element."
+    },
+    {
+      "name": "func encode<Coder>(encoder: Coder) -> Publishers.Encode<Self, Coder>",
+      "desc": "Encodes the output from upstream using a specified encoder."
+    },
+    {
+      "name": "func decode<Item, Coder>(type: Item.Type, decoder: Coder) -> Publishers.Decode<Self, Item, Coder>",
+      "desc": "Decodes the output from the upstream using a specified decoder."
+    },
+    {
+      "name": "func map<T>(KeyPath<Self.Output, T>) -> Publishers.MapKeyPath<Self, T>",
+      "desc": "Publishes the value of a key path."
+    },
+    {
+      "name": "func map<T0, T1>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>) -> Publishers.MapKeyPath2<Self, T0, T1>",
+      "desc": "Publishes the values of two key paths as a tuple."
+    },
+    {
+      "name": "func map<T0, T1, T2>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>, KeyPath<Self.Output, T2>) -> Publishers.MapKeyPath3<Self, T0, T1, T2>",
+      "desc": "Publishes the values of three key paths as a tuple."
+    },
+    {
+      "name": "func multicast<S>(() -> S) -> Publishers.Multicast<Self, S>",
+      "desc": "Applies a closure to create a subject that delivers elements to subscribers."
+    },
+    {
+      "name": "func multicast<S>(subject: S) -> Publishers.Multicast<Self, S>",
+      "desc": "Provides a subject to deliver elements to multiple subscribers."
+    },
+    {
+      "name": "func share() -> Publishers.Share<Self>",
+      "desc": "Shares the output of an upstream publisher with multiple subscribers."
+    },
+    {
+      "name": "func buffer(size: Int, prefetch: Publishers.PrefetchStrategy, whenFull: Publishers.BufferingStrategy<Self.Failure>) -> Publishers.Buffer<Self>",
+      "desc": "Buffers elements received from an upstream publisher."
+    },
+    {
+      "name": "enum PrefetchStrategy",
+      "desc": "A strategy for filling a buffer."
+    },
+    {
+      "name": "enum BufferingStrategy",
+      "desc": "A strategy that handles exhaustion of a buffer’s capacity."
+    },
+    {
+      "name": "func eraseToAnyPublisher() -> AnyPublisher<Self.Output, Self.Failure>",
+      "desc": "Wraps this publisher with a type eraser."
+    },
+    {
+      "name": "func subscribe<S>(on: S, options: S.SchedulerOptions?) -> Publishers.SubscribeOn<Self, S>",
+      "desc": "Specifies the scheduler on which to perform subscribe, cancel, and request operations."
+    },
+    {
+      "name": "func receive<S>(on: S, options: S.SchedulerOptions?) -> Publishers.ReceiveOn<Self, S>",
+      "desc": "Specifies the scheduler on which to receive elements from the publisher."
+    },
+    {
+      "name": "func makeConnectable() -> Publishers.MakeConnectable<Self>",
+      "desc": "Creates a connectable wrapper around the publisher."
+    },
+    {
+      "name": "func assign<Root>(to: ReferenceWritableKeyPath<Root, Self.Output>, on: Root) -> AnyCancellable",
+      "desc": "Assigns each element from a publisher to a property on an object."
+    },
+    {
+      "name": "func assign(to: inout Published<Self.Output>.Publisher)",
+      "desc": "Republishes elements received from a publisher, by assigning them to a property marked as a publisher."
+    },
+    {
+      "name": "func sink(receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void), receiveValue: ((Self.Output) -> Void)) -> AnyCancellable",
+      "desc": "Attaches a subscriber with closure-based behavior."
+    },
+    {
+      "name": "func sink(receiveValue: ((Self.Output) -> Void)) -> AnyCancellable",
+      "desc": "Attaches a subscriber with closure-based behavior to a publisher that never fails."
+    },
+    {
+      "name": "var values: AsyncPublisher<Self>",
+      "desc": ""
+    },
+    {
+      "name": "var values: AsyncThrowingPublisher<Self>"
+    },
+    {
+      "name": "func breakpoint(receiveSubscription: ((Subscription) -> Bool)?, receiveOutput: ((Self.Output) -> Bool)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Bool)?) -> Publishers.Breakpoint<Self>",
+      "desc": "Raises a debugger signal when a provided closure needs to stop the process in the debugger."
+    },
+    {
+      "name": "func breakpointOnError() -> Publishers.Breakpoint<Self>",
+      "desc": "Raises a debugger signal upon receiving a failure."
+    },
+    {
+      "name": "func handleEvents(receiveSubscription: ((Subscription) -> Void)?, receiveOutput: ((Self.Output) -> Void)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void)?, receiveCancel: (() -> Void)?, receiveRequest: ((Subscribers.Demand) -> Void)?) -> Publishers.HandleEvents<Self>",
+      "desc": "Performs the specified closures when publisher events occur."
+    },
+    {
+      "name": "func print(String, to: TextOutputStream?) -> Publishers.Print<Self>",
+      "desc": "Prints log messages for all publishing events."
+    }
+  ],
+  "declaration": "protocol Publisher"
+}

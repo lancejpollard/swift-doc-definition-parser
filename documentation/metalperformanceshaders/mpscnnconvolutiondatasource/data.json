@@ -1,0 +1,58 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpscnnconvolutiondatasource",
+  "type": "Protocol",
+  "name": "MPSCNNConvolutionDataSource",
+  "desc": "The protocol that provides convolution filter weights and bias terms.",
+  "items": [
+    {
+      "name": "func biasTerms() -> UnsafeMutablePointer<Float>?"
+    },
+    {
+      "name": "func dataType() -> MPSDataType"
+    },
+    {
+      "name": "func descriptor() -> MPSCNNConvolutionDescriptor"
+    },
+    {
+      "name": "func label() -> String?"
+    },
+    {
+      "name": "func load() -> Bool"
+    },
+    {
+      "name": "func lookupTableForUInt8Kernel() -> UnsafeMutablePointer<Float>"
+    },
+    {
+      "name": "func purge()"
+    },
+    {
+      "name": "func rangesForUInt8Kernel() -> UnsafeMutablePointer<vector_float2>"
+    },
+    {
+      "name": "func weights() -> UnsafeMutableRawPointer"
+    },
+    {
+      "name": "func copy(with: NSZone?, device: MTLDevice?) -> Self"
+    },
+    {
+      "name": "func kernelWeightsDataType() -> MPSDataType"
+    },
+    {
+      "name": "func update(with: MTLCommandBuffer, gradientState: MPSCNNConvolutionGradientState, sourceState: MPSCNNConvolutionWeightsAndBiasesState) -> MPSCNNConvolutionWeightsAndBiasesState?"
+    },
+    {
+      "name": "func update(with: MPSCNNConvolutionGradientState, sourceState: MPSCNNConvolutionWeightsAndBiasesState) -> Bool"
+    },
+    {
+      "name": "func weightsLayout() -> MPSCNNConvolutionWeightsLayout"
+    },
+    {
+      "name": "func weightsQuantizationType() -> MPSCNNWeightsQuantizationType"
+    }
+  ],
+  "declaration": "protocol MPSCNNConvolutionDataSource",
+  "inheritsFrom": [
+    "NSCopying",
+    "NSObjectProtocol"
+  ]
+}

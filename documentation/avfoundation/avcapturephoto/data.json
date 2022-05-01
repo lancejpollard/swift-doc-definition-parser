@@ -1,0 +1,108 @@
+{
+  "path": "/documentation/avfoundation/avcapturephoto",
+  "type": "Class",
+  "name": "AVCapturePhoto",
+  "desc": "A container for image data from a photo capture output.",
+  "items": [
+    {
+      "name": "var resolvedSettings: AVCaptureResolvedPhotoSettings",
+      "desc": "The settings object that was used to request this photo capture."
+    },
+    {
+      "name": "var photoCount: Int",
+      "desc": "The 1-based index of this photo capture relative to other results from the same capture request."
+    },
+    {
+      "name": "var timestamp: CMTime",
+      "desc": "The time at which the image was captured."
+    },
+    {
+      "name": "var isRawPhoto: Bool",
+      "desc": "A Boolean value indicating whether this photo object contains RAW format data."
+    },
+    {
+      "name": "var pixelBuffer: CVPixelBuffer?",
+      "desc": "The uncompressed or RAW image sample buffer for the photo, if requested."
+    },
+    {
+      "name": "var embeddedThumbnailPhotoFormat: [String : Any]?",
+      "desc": "A dictionary describing the data format for a preview-sized image accompanying the captured photo."
+    },
+    {
+      "name": "var previewPixelBuffer: CVPixelBuffer?",
+      "desc": "The pixel data for a preview-sized version of the photo, if requested."
+    },
+    {
+      "name": "var depthData: AVDepthData?",
+      "desc": "Depth or disparity map data captured with the photo."
+    },
+    {
+      "name": "class AVDepthData",
+      "desc": "A container for per-pixel distance or disparity information captured by compatible camera devices."
+    },
+    {
+      "name": "var cameraCalibrationData: AVCameraCalibrationData?",
+      "desc": "Calibration information for the camera device that captured the photo."
+    },
+    {
+      "name": "class AVCameraCalibrationData",
+      "desc": "Information about the camera characteristics used to capture images and depth data."
+    },
+    {
+      "name": "var sourceDeviceType: AVCaptureDevice.DeviceType?",
+      "desc": "The type of device that captured the photo."
+    },
+    {
+      "name": "var metadata: [String : Any]",
+      "desc": "A dictionary of metadata describing the captured image."
+    },
+    {
+      "name": "var portraitEffectsMatte: AVPortraitEffectsMatte?",
+      "desc": "The portrait effects matte captured with the photo."
+    },
+    {
+      "name": "func fileDataRepresentation(with: AVCapturePhotoFileDataRepresentationCustomizer) -> Data?",
+      "desc": "Gets a customized representation of the photo data."
+    },
+    {
+      "name": "protocol AVCapturePhotoFileDataRepresentationCustomizer",
+      "desc": "A protocol that defines the methods to implement to customize the packaging of photo data."
+    },
+    {
+      "name": "func fileDataRepresentation() -> Data?",
+      "desc": "Generates and returns a flat data representation of the photo and its attachments."
+    },
+    {
+      "name": "func cgImageRepresentation() -> CGImage?",
+      "desc": "Extracts and returns the captured photo's primary image as a Core Graphics image object."
+    },
+    {
+      "name": "func previewCGImageRepresentation() -> CGImage?",
+      "desc": "Extracts and returns the captured photo's preview image as a Core Graphics image object."
+    },
+    {
+      "name": "var bracketSettings: AVCaptureBracketedStillImageSettings?",
+      "desc": "The variations available for bracketed capture settings for this photo."
+    },
+    {
+      "name": "var sequenceCount: Int",
+      "desc": "The 1-based index of this photo in a bracketed capture sequence."
+    },
+    {
+      "name": "var lensStabilizationStatus: AVCaptureDevice.LensStabilizationStatus",
+      "desc": "Information about the use of lens stabilization during bracketed photo capture."
+    },
+    {
+      "name": "enum AVCaptureDevice.LensStabilizationStatus",
+      "desc": "Constants that indicate the status of optical image stabilization hardware during a bracketed photo capture."
+    },
+    {
+      "name": "func semanticSegmentationMatte(for: AVSemanticSegmentationMatte.MatteType) -> AVSemanticSegmentationMatte?",
+      "desc": "Retrieves the semantic segmentation matte associated with this photo."
+    }
+  ],
+  "declaration": "class AVCapturePhoto : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

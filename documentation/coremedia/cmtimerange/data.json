@@ -1,0 +1,80 @@
+{
+  "path": "/documentation/coremedia/cmtimerange",
+  "type": "Structure",
+  "name": "CMTimeRange",
+  "desc": "A structure that represents a time range.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an empty time range at zero."
+    },
+    {
+      "name": "init(start: CMTime, duration: CMTime)",
+      "desc": "Creates a valid time range with a start time and duration."
+    },
+    {
+      "name": "init(start: CMTime, end: CMTime)",
+      "desc": "Creates a valid time range from a start and end time."
+    },
+    {
+      "name": "var start: CMTime",
+      "desc": "The start time of the time range."
+    },
+    {
+      "name": "var end: CMTime",
+      "desc": "The end time of the time range."
+    },
+    {
+      "name": "var duration: CMTime",
+      "desc": "The duration of the time range."
+    },
+    {
+      "name": "var isValid: Bool",
+      "desc": "A Boolean value that indicates whether the time range is valid."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value that indicates whether the time range is empty."
+    },
+    {
+      "name": "var isIndefinite: Bool",
+      "desc": "A Boolean value that indicates whether the time range is indefinite."
+    },
+    {
+      "name": "func containsTime(CMTime) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the time range contains a time."
+    },
+    {
+      "name": "func containsTimeRange(CMTimeRange) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the time range contains another time range."
+    },
+    {
+      "name": "func intersection(CMTimeRange) -> CMTimeRange",
+      "desc": "Returns a new time range with the time elements that are common to both this time range and the given time range."
+    },
+    {
+      "name": "func union(CMTimeRange) -> CMTimeRange",
+      "desc": "Returns a new time range with the time elements of both this time range and the given time range."
+    },
+    {
+      "name": "static func == (CMTimeRange, CMTimeRange) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two time ranges are equal."
+    },
+    {
+      "name": "static func != (CMTimeRange, CMTimeRange) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two times aren’t equal."
+    },
+    {
+      "name": "static let zero: CMTimeRange",
+      "desc": "A constant for generating an empty time range at zero."
+    },
+    {
+      "name": "static let invalid: CMTimeRange",
+      "desc": "A constant for generating an invalid time range."
+    }
+  ],
+  "declaration": "struct CMTimeRange",
+  "conformsTo": [
+    "Equatable"
+  ]
+}

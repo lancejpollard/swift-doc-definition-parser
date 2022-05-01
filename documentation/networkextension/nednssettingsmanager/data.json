@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/networkextension/nednssettingsmanager",
+  "type": "Class",
+  "name": "NEDNSSettingsManager",
+  "desc": "An object you use to create and manage a DNS settings configuration.",
+  "items": [
+    {
+      "name": "class func shared() -> NEDNSSettingsManager",
+      "desc": "Access the single instance of a DNS settings manager."
+    },
+    {
+      "name": "func loadFromPreferences(completionHandler: (Error?) -> Void)",
+      "desc": "Load your DNS settings configuration from the system networking preferences."
+    },
+    {
+      "name": "func saveToPreferences(completionHandler: (Error?) -> Void)",
+      "desc": "Save your DNS settings configuration to the system networking preferences."
+    },
+    {
+      "name": "func removeFromPreferences(completionHandler: (Error?) -> Void)",
+      "desc": "Remove your DNS settings configuration from the system networking preferences."
+    },
+    {
+      "name": "var isEnabled: Bool",
+      "desc": "A Boolean you use to query the enabled state of the DNS settings configuration."
+    },
+    {
+      "name": "var dnsSettings: NEDNSSettings?",
+      "desc": "An object that contains the configuration settings for a DNS server."
+    },
+    {
+      "name": "var localizedDescription: String?",
+      "desc": "A string that contains the display name of the DNS settings configuration."
+    },
+    {
+      "name": "var onDemandRules: [NEOnDemandRule]?",
+      "desc": "A list of ordered rules that defines the networks on which the DNS settings will apply."
+    }
+  ],
+  "declaration": "class NEDNSSettingsManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

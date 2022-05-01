@@ -1,0 +1,402 @@
+{
+  "path": "/documentation/foundation/decimal",
+  "type": "Structure",
+  "name": "Decimal",
+  "desc": "A structure representing a base-10 number.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a decimal initialized to 0."
+    },
+    {
+      "name": "init(sign: FloatingPointSign, exponent: Int, significand: Decimal)",
+      "desc": "Creates a decimal initialized with the given sign, exponent, and significand."
+    },
+    {
+      "name": "init(_exponent: Int32, _length: UInt32, _isNegative: UInt32, _isCompact: UInt32, _reserved: UInt32, _mantissa: (UInt16, UInt16, UInt16, UInt16, UInt16, UInt16, UInt16, UInt16))",
+      "desc": "Creates a decimal initialized according to the provided characteristics."
+    },
+    {
+      "name": "init(Double)",
+      "desc": "Creates and initializes a decimal with the provided floating point value."
+    },
+    {
+      "name": "init(floatLiteral: Double)",
+      "desc": "Creates and initializes a decimal with the provided floating point value."
+    },
+    {
+      "name": "init?<T>(exactly: T)",
+      "desc": "Creates a new decimal value exactly representing the provided integer."
+    },
+    {
+      "name": "init(Int)",
+      "desc": "Creates and initializes a decimal with the provided integer value."
+    },
+    {
+      "name": "init(Int8)",
+      "desc": "Creates and initializes a decimal with the provided integer value."
+    },
+    {
+      "name": "init(Int16)",
+      "desc": "Creates and initializes a decimal with the provided integer value."
+    },
+    {
+      "name": "init(Int32)",
+      "desc": "Creates and initializes a decimal with the provided integer value."
+    },
+    {
+      "name": "init(Int64)",
+      "desc": "Creates and initializes a decimal with the provided integer value."
+    },
+    {
+      "name": "init(integerLiteral: Int)",
+      "desc": "Creates and initializes a decimal with the provided integer value."
+    },
+    {
+      "name": "init(UInt)",
+      "desc": "Creates and initializes a decimal with the provided unsigned integer value."
+    },
+    {
+      "name": "init(UInt8)",
+      "desc": "Creates and initializes a decimal with the provided unsigned integer value."
+    },
+    {
+      "name": "init(UInt16)",
+      "desc": "Creates and initializes a decimal with the provided unsigned integer value."
+    },
+    {
+      "name": "init(UInt32)",
+      "desc": "Creates and initializes a decimal with the provided unsigned integer value."
+    },
+    {
+      "name": "init(UInt64)",
+      "desc": "Creates and initializes a decimal with the provided unsigned integer value."
+    },
+    {
+      "name": "init(signOf: Decimal, magnitudeOf: Decimal)",
+      "desc": "Creates and initializes a decimal with the sign and magnitude of the given decimals."
+    },
+    {
+      "name": "func NSDecimalCopy(UnsafeMutablePointer<Decimal>, UnsafePointer<Decimal>)",
+      "desc": "Copies the value of a decimal number."
+    },
+    {
+      "name": "func NSDecimalString(UnsafePointer<Decimal>, Any?) -> String",
+      "desc": "Returns a string representation of the decimal value appropriate for the specified locale."
+    },
+    {
+      "name": "static func * (Decimal, Decimal) -> Decimal",
+      "desc": "Multiplies two decimal numbers."
+    },
+    {
+      "name": "static func *= (inout Decimal, Decimal)",
+      "desc": "Multiplies two decimal numbers, storing the result in the first number."
+    },
+    {
+      "name": "static func + (Decimal, Decimal) -> Decimal",
+      "desc": "Adds two decimal numbers."
+    },
+    {
+      "name": "static func += (inout Decimal, Decimal)",
+      "desc": "Adds two decimal numbers, storing the result in the first number."
+    },
+    {
+      "name": "static func - (Decimal, Decimal) -> Decimal",
+      "desc": "Subtracts one decimal number from another."
+    },
+    {
+      "name": "static func -= (inout Decimal, Decimal)",
+      "desc": "Subtracts one decimal number from another, storing the result in the first number."
+    },
+    {
+      "name": "static func / (Decimal, Decimal) -> Decimal",
+      "desc": "Divides one decimal number by another."
+    },
+    {
+      "name": "static func /= (inout Decimal, Decimal)",
+      "desc": "Divides one decimal number by another, storing the result in the first number."
+    },
+    {
+      "name": "func pow(Decimal, Int) -> Decimal",
+      "desc": "Returns a decimal number raised to a given power."
+    },
+    {
+      "name": "func negate()",
+      "desc": "Negates this decimal."
+    },
+    {
+      "name": "func NSDecimalCompact(UnsafeMutablePointer<Decimal>)",
+      "desc": "Compacts the decimal structure for efficiency."
+    },
+    {
+      "name": "func NSDecimalAdd(UnsafeMutablePointer<Decimal>, UnsafePointer<Decimal>, UnsafePointer<Decimal>, NSDecimalNumber.RoundingMode) -> NSDecimalNumber.CalculationError",
+      "desc": "Adds two decimal values."
+    },
+    {
+      "name": "func NSDecimalSubtract(UnsafeMutablePointer<Decimal>, UnsafePointer<Decimal>, UnsafePointer<Decimal>, NSDecimalNumber.RoundingMode) -> NSDecimalNumber.CalculationError",
+      "desc": "Subtracts one decimal value from another."
+    },
+    {
+      "name": "func NSDecimalDivide(UnsafeMutablePointer<Decimal>, UnsafePointer<Decimal>, UnsafePointer<Decimal>, NSDecimalNumber.RoundingMode) -> NSDecimalNumber.CalculationError",
+      "desc": "Divides one decimal value by another."
+    },
+    {
+      "name": "func NSDecimalMultiply(UnsafeMutablePointer<Decimal>, UnsafePointer<Decimal>, UnsafePointer<Decimal>, NSDecimalNumber.RoundingMode) -> NSDecimalNumber.CalculationError",
+      "desc": "Multiplies two decimal numbers together."
+    },
+    {
+      "name": "func NSDecimalMultiplyByPowerOf10(UnsafeMutablePointer<Decimal>, UnsafePointer<Decimal>, Int16, NSDecimalNumber.RoundingMode) -> NSDecimalNumber.CalculationError",
+      "desc": "Multiplies a decimal by the specified power of 10."
+    },
+    {
+      "name": "func NSDecimalRound(UnsafeMutablePointer<Decimal>, UnsafePointer<Decimal>, Int, NSDecimalNumber.RoundingMode)",
+      "desc": "Rounds off the decimal value."
+    },
+    {
+      "name": "func NSDecimalPower(UnsafeMutablePointer<Decimal>, UnsafePointer<Decimal>, Int, NSDecimalNumber.RoundingMode) -> NSDecimalNumber.CalculationError",
+      "desc": "Raises the decimal value to the specified power."
+    },
+    {
+      "name": "func NSDecimalNormalize(UnsafeMutablePointer<Decimal>, UnsafeMutablePointer<Decimal>, NSDecimalNumber.RoundingMode) -> NSDecimalNumber.CalculationError",
+      "desc": "Normalizes the internal format of two decimal numbers to simplify later operations."
+    },
+    {
+      "name": "typealias Decimal.RoundingMode",
+      "desc": "An alias for an enumeration that specifies possible rounding modes."
+    },
+    {
+      "name": "enum NSDecimalNumber.RoundingMode",
+      "desc": "These constants specify rounding behaviors."
+    },
+    {
+      "name": "typealias Decimal.CalculationError",
+      "desc": "An alias for a type that specifies possible calculation errors."
+    },
+    {
+      "name": "enum NSDecimalNumber.CalculationError",
+      "desc": "Calculation error constants used to describe an error in exceptionDuringOperation(_:error:leftOperand:rightOperand:)."
+    },
+    {
+      "name": "var sign: FloatingPointSign",
+      "desc": "The sign of the decimal."
+    },
+    {
+      "name": "var exponent: Int",
+      "desc": "The exponent of the decimal."
+    },
+    {
+      "name": "var significand: Decimal",
+      "desc": "The significand of the decimal."
+    },
+    {
+      "name": "var magnitude: Decimal",
+      "desc": "The magnitude of this decimal."
+    },
+    {
+      "name": "var floatingPointClass: FloatingPointClassification",
+      "desc": "The IEEE 754 class of this type."
+    },
+    {
+      "name": "var isCanonical: Bool",
+      "desc": "A Boolean value indicating whether the representation of this decimal is canonical."
+    },
+    {
+      "name": "var isFinite: Bool",
+      "desc": "A Boolean value indicating whether this decimal is zero, subnormal, or normal (not infinity or NaN)."
+    },
+    {
+      "name": "var isInfinite: Bool",
+      "desc": "A Boolean value indicating whether this decimal is infinity."
+    },
+    {
+      "name": "var isNaN: Bool",
+      "desc": "A Boolean value indicating whether this decimal is NaN."
+    },
+    {
+      "name": "var isNormal: Bool",
+      "desc": "A Boolean value indicating whether this decimal is normal (not zero, subnormal, infinity, or NaN)."
+    },
+    {
+      "name": "var isSignMinus: Bool",
+      "desc": "A Boolean value indicating whether this decimal has a negative sign."
+    },
+    {
+      "name": "var isSignaling: Bool",
+      "desc": "A Boolean value indicating whether this decimal is a signaling NaN."
+    },
+    {
+      "name": "var isSignalingNaN: Bool",
+      "desc": "A Boolean value indicating whether this decimal is a signaling NaN."
+    },
+    {
+      "name": "var isSubnormal: Bool",
+      "desc": "A Boolean value indicating whether this decimal is subnormal."
+    },
+    {
+      "name": "var isZero: Bool",
+      "desc": "A Boolean value indicating whether this value is zero."
+    },
+    {
+      "name": "var nextDown: Decimal",
+      "desc": "The greatest representable value that is less than this decimal."
+    },
+    {
+      "name": "var nextUp: Decimal",
+      "desc": "The least representable value that is greater than this decimal."
+    },
+    {
+      "name": "var ulp: Decimal",
+      "desc": "The unit in the last place of the decimal."
+    },
+    {
+      "name": "static let greatestFiniteMagnitude: Decimal",
+      "desc": "The decimal that contains the largest possible non-infinite magnitude for the underlying representation."
+    },
+    {
+      "name": "static let leastFiniteMagnitude: Decimal",
+      "desc": "The decimal that contains the smallest possible non-infinite magnitude for the underlying representation."
+    },
+    {
+      "name": "static let leastNonzeroMagnitude: Decimal",
+      "desc": "The decimal value that represents the smallest possible non-zero value for the underlying representation."
+    },
+    {
+      "name": "static let leastNormalMagnitude: Decimal",
+      "desc": "The decimal value that represents the smallest possible normal magnitude for the underlying representation."
+    },
+    {
+      "name": "static let pi: Decimal",
+      "desc": "The mathematical constant pi."
+    },
+    {
+      "name": "static var nan: Decimal",
+      "desc": "The value that represents \"not a number.\""
+    },
+    {
+      "name": "static var quietNaN: Decimal",
+      "desc": "A quiet representation of not-a-number."
+    },
+    {
+      "name": "static var radix: Int",
+      "desc": "The radix used by decimal numbers."
+    },
+    {
+      "name": "var NSDecimalMaxSize: Int32",
+      "desc": "The maximum size of Decimal."
+    },
+    {
+      "name": "var NSDecimalNoScale: Int32",
+      "desc": "Specifies that the number of digits allowed after the decimal separator in a decimal number should not be limited."
+    },
+    {
+      "name": "static func < (Decimal, Decimal) -> Bool",
+      "desc": "Returns a Boolean value indicating whether one decimal number is strictly less than another."
+    },
+    {
+      "name": "static func == (Decimal, Decimal) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two decimal numbers are equal."
+    },
+    {
+      "name": "func isEqual(to: Decimal) -> Bool",
+      "desc": "Indicates whether this decimal is equal to the specified one."
+    },
+    {
+      "name": "func isLess(than: Decimal) -> Bool",
+      "desc": "Indicates whether this decimal is less than the specified one."
+    },
+    {
+      "name": "func isLessThanOrEqualTo(Decimal) -> Bool",
+      "desc": "Indicates whether this decimal is less than or equal to the specified one."
+    },
+    {
+      "name": "func isTotallyOrdered(belowOrEqualTo: Decimal) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this instance should precede the given value in an ascending sort."
+    },
+    {
+      "name": "func distance(to: Decimal) -> Decimal",
+      "desc": "Returns the distance from this value to the specified value."
+    },
+    {
+      "name": "func advanced(by: Decimal) -> Decimal",
+      "desc": "Returns a new value advanced by the given distance."
+    },
+    {
+      "name": "func NSDecimalCompare(UnsafePointer<Decimal>, UnsafePointer<Decimal>) -> ComparisonResult",
+      "desc": "Compares two decimal values."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes this decimal value into the given encoder."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a new decimal value by decoding from the given decoder."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual description of the decimal."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The computed hash value for the decimal."
+    },
+    {
+      "name": "class NSDecimalNumber",
+      "desc": "An object for representing and performing arithmetic on base-10 numbers that bridges to Decimal; use NSDecimalNumber when you need reference semantics or other Foundation-specific behavior."
+    },
+    {
+      "name": "typealias Decimal.FloatLiteralType"
+    },
+    {
+      "name": "typealias Decimal.IntegerLiteralType"
+    },
+    {
+      "name": "typealias Decimal.Magnitude"
+    },
+    {
+      "name": "typealias Decimal.Stride"
+    },
+    {
+      "name": "init(String, format: Decimal.FormatStyle.Percent, lenient: Bool)"
+    },
+    {
+      "name": "init(String, format: Decimal.FormatStyle.Currency, lenient: Bool)"
+    },
+    {
+      "name": "init(String, format: Decimal.FormatStyle, lenient: Bool)"
+    },
+    {
+      "name": "init<S>(S.ParseInput, strategy: S)"
+    },
+    {
+      "name": "init?(string: String, locale: Locale?)"
+    },
+    {
+      "name": "func formatted() -> String"
+    },
+    {
+      "name": "func formatted<S>(S) -> S.FormatOutput"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "struct Decimal.FormatStyle"
+    },
+    {
+      "name": "struct Decimal.ParseStrategy"
+    }
+  ],
+  "declaration": "Declarationstruct Decimal",
+  "conformsTo": [
+    "Comparable",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "ExpressibleByFloatLiteral",
+    "ExpressibleByIntegerLiteral",
+    "Hashable",
+    "SignedNumeric",
+    "Strideable"
+  ]
+}

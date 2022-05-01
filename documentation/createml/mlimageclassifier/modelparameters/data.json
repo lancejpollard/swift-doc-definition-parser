@@ -1,0 +1,82 @@
+{
+  "path": "/documentation/createml/mlimageclassifier/modelparameters",
+  "type": "Structure",
+  "name": "MLImageClassifier.ModelParameters",
+  "desc": "Parameters that affect the process of training an image classifier model.",
+  "items": [
+    {
+      "name": "init(featureExtractor: MLImageClassifier.FeatureExtractorType, validation: MLImageClassifier.ModelParameters.ValidationData, maxIterations: Int, augmentationOptions: MLImageClassifier.ImageAugmentationOptions)",
+      "desc": "Creates a new set of training parameters for an image classifier with a validation dataset."
+    },
+    {
+      "name": "init(featureExtractor: MLImageClassifier.FeatureExtractorType, validationData: MLImageClassifier.DataSource, maxIterations: Int, augmentationOptions: MLImageClassifier.ImageAugmentationOptions)",
+      "desc": "Creates a new set of image classifier parameters with validation data represented by a data source."
+    },
+    {
+      "name": "init(featureExtractor: MLImageClassifier.FeatureExtractorType, validationData: [String : [URL]]?, maxIterations: Int, augmentationOptions: MLImageClassifier.ImageAugmentationOptions)",
+      "desc": "Creates a new set of image classifier parameters with validation data represented by a dictionary."
+    },
+    {
+      "name": "var featureExtractor: MLImageClassifier.FeatureExtractorType",
+      "desc": "The underlying base model the training session uses to extract image features as it trains an image classifier."
+    },
+    {
+      "name": "var validation: MLImageClassifier.ModelParameters.ValidationData",
+      "desc": "The image classifier’s validation dataset."
+    },
+    {
+      "name": "var maxIterations: Int",
+      "desc": "The maximum number of iterations the training session can use."
+    },
+    {
+      "name": "var augmentationOptions: MLImageClassifier.ImageAugmentationOptions",
+      "desc": "The variations the training session uses to generate more variety in the training dataset."
+    },
+    {
+      "name": "var validationData: [String : [URL]]?",
+      "desc": "A set of images that the training process uses for validation."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the model parameters."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the model parameters that’s suitable for output during debugging."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the model parameters shown in a playground."
+    },
+    {
+      "name": "enum MLImageClassifier.FeatureExtractorType",
+      "desc": "The underlying base model that extracts image features for image classifier training session."
+    },
+    {
+      "name": "enum MLImageClassifier.ModelParameters.ValidationData",
+      "desc": "The source of a validation dataset for an image classifier."
+    },
+    {
+      "name": "struct MLImageClassifier.ImageAugmentationOptions",
+      "desc": "The variations that the training process can use to generate more training data from the training data you provide."
+    },
+    {
+      "name": "init(validation: MLImageClassifier.ModelParameters.ValidationData, maxIterations: Int, augmentation: MLImageClassifier.ImageAugmentationOptions, algorithm: MLImageClassifier.ModelParameters.ModelAlgorithmType)"
+    },
+    {
+      "name": "var algorithm: MLImageClassifier.ModelParameters.ModelAlgorithmType"
+    },
+    {
+      "name": "enum MLImageClassifier.ModelParameters.ClassifierType"
+    },
+    {
+      "name": "enum MLImageClassifier.ModelParameters.ModelAlgorithmType"
+    }
+  ],
+  "declaration": "struct ModelParameters",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomStringConvertible"
+  ]
+}

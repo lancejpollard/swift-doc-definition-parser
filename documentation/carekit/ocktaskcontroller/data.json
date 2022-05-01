@@ -1,0 +1,71 @@
+{
+  "path": "/documentation/carekit/ocktaskcontroller",
+  "type": "Class",
+  "name": "OCKTaskController",
+  "desc": "A controller object that watches, and updates tasks.",
+  "items": [
+    {
+      "name": "init(storeManager: OCKSynchronizedStoreManager)",
+      "desc": "Creates a new task controller."
+    },
+    {
+      "name": "let objectWillChange: CurrentValueSubject<OCKTaskEvents?, Never>",
+      "desc": "A publisher that publishes a contact when it changes in the store."
+    },
+    {
+      "name": "var store: OCKAnyOutcomeStore",
+      "desc": "A reference to the store that fetches and updates events."
+    },
+    {
+      "name": "let storeManager: OCKSynchronizedStoreManager",
+      "desc": "The object that synchronizes between the store and controller."
+    },
+    {
+      "name": "func appendOutcomeValue(withType: OCKOutcomeValueUnderlyingType, at: IndexPath, completion: ((Result<OCKAnyOutcome, Error>) -> Void)?)",
+      "desc": "Adds an outcome value to the array of outcomes for an event."
+    },
+    {
+      "name": "func eventFor(indexPath: IndexPath) -> OCKAnyEvent?",
+      "desc": "Returns the event at a specific index path from a task view controllers' collection view."
+    },
+    {
+      "name": "func initiateDetailsViewController(forIndexPath: IndexPath) -> OCKDetailViewController",
+      "desc": "Returns a detail view controller to display for the task the user selected."
+    },
+    {
+      "name": "func initiateDeletionForOutcomeValue(atIndex: Int, eventIndexPath: IndexPath, deletionCompletion: ((Result<OCKAnyOutcome, Error>) -> Void)?) -> UIAlertController",
+      "desc": "Returns an alert controller with localized text, to confirm deleting an outcome."
+    },
+    {
+      "name": "func makeOutcomeFor(event: OCKAnyEvent, withValues: [OCKOutcomeValue]) -> OCKAnyOutcome",
+      "desc": "Creates and returns an outcome for a specific event."
+    },
+    {
+      "name": "func setEvent(atIndexPath: IndexPath, isComplete: Bool, completion: ((Result<OCKAnyOutcome, Error>) -> Void)?)",
+      "desc": "Sets a specific event for a task view controller, and creates an outcome value if the task is complete."
+    },
+    {
+      "name": "func fetchAndObserveEvents(forTask: OCKAnyTask, eventQuery: OCKEventQuery, errorHandler: ((Error) -> Void)?)",
+      "desc": "Retrieves and observes events using a specific task, and match a query."
+    },
+    {
+      "name": "func fetchAndObserveEvents(forTaskID: String, eventQuery: OCKEventQuery, errorHandler: ((Error) -> Void)?)",
+      "desc": "Retrieves and observes events using a specific task identifier, and match a query, ."
+    },
+    {
+      "name": "func fetchAndObserveEvents(forTaskIDs: [String], eventQuery: OCKEventQuery, errorHandler: ((Error) -> Void)?)",
+      "desc": "Retrieves and observes events using an array of specific task identifiers, and match a query, ."
+    },
+    {
+      "name": "func validatedEvent(forIndexPath: IndexPath) -> OCKAnyEvent"
+    },
+    {
+      "name": "func validatedViewModel() -> OCKTaskEvents"
+    }
+  ],
+  "declaration": "class OCKTaskController",
+  "conformsTo": [
+    "OCKTaskControllerProtocol",
+    "ObservableObject"
+  ]
+}

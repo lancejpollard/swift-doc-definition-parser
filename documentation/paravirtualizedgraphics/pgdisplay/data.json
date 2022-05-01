@@ -1,0 +1,75 @@
+{
+  "path": "/documentation/paravirtualizedgraphics/pgdisplay",
+  "type": "Protocol",
+  "name": "PGDisplay",
+  "desc": "An object that provides display functionality to the guest operating system in a way that the host-side virtual machine app can intercept.",
+  "items": [
+    {
+      "name": "var modeList: [PGDisplayMode]",
+      "desc": "The list of display modes that the virtual display supports."
+    },
+    {
+      "name": "var cursorPosition: PGDisplayCoord_t",
+      "desc": "The current cursor location in the guest environment."
+    },
+    {
+      "name": "var guestPresentCount: Int",
+      "desc": "The number of frame presents that the guest has generated since object creation."
+    },
+    {
+      "name": "var hostPresentCount: Int",
+      "desc": "The number of unique frames that the host has encoded since object creation."
+    },
+    {
+      "name": "var minimumTextureUsage: MTLTextureUsage",
+      "desc": "The Metal texture usage flags necessary for any texture that can be a destination for frame data."
+    },
+    {
+      "name": "func encodeCurrentFrame(to: MTLCommandBuffer, texture: MTLTexture, region: MTLRegion) -> Bool",
+      "desc": "Encodes Metal commands to process the current frame and write it to a texture."
+    },
+    {
+      "name": "var name: String?",
+      "desc": "The display’s name that you specified at creation time."
+    },
+    {
+      "name": "var serialNum: UInt32",
+      "desc": "The display’s serial number that you specified at creation time."
+    },
+    {
+      "name": "var port: Int",
+      "desc": "The display’s accelerator port that you specified at creation time."
+    },
+    {
+      "name": "var sizeInMillimeters: NSSize",
+      "desc": "The display’s virtual dimensions, in millimeters, that you specified at creation time."
+    },
+    {
+      "name": "var queue: DispatchQueue?",
+      "desc": "The queue that the framework uses when dispatching messages to any of the display’s registered handlers."
+    },
+    {
+      "name": "var cursorGlyphHandler: PGDisplayCursorGlyphHandler?",
+      "desc": "A handler that the framework calls to change the cursor’s appearance."
+    },
+    {
+      "name": "var cursorShowHandler: PGDisplayCursorShowHandler?",
+      "desc": "A handler that the framework calls to change the cursor’s visibility."
+    },
+    {
+      "name": "var modeChangeHandler: PGDisplayModeChangeHandler?",
+      "desc": "A handler that the framework calls to change the virtual display’s graphics mode."
+    },
+    {
+      "name": "var newFrameEventHandler: PGDisplayNewFrameEventHandler?",
+      "desc": "A handler that the framework calls when the guest environment has a new frame to display."
+    },
+    {
+      "name": "var cursorMoveHandler: PGDisplayCursorMoveHandler?"
+    }
+  ],
+  "declaration": "protocol PGDisplay",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

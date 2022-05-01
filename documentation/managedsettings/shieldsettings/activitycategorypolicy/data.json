@@ -1,0 +1,31 @@
+{
+  "path": "/documentation/managedsettings/shieldsettings/activitycategorypolicy",
+  "type": "Enumeration",
+  "name": "ShieldSettings.ActivityCategoryPolicy",
+  "desc": "Policies available for shielding activities based on their category.",
+  "items": [
+    {
+      "name": "case none",
+      "desc": "A policy that indicates the device doesn’t shield any content."
+    },
+    {
+      "name": "case all(except: Set<Token<Activity>>)",
+      "desc": "A policy that indicates the device shields all apps and websites, except content that you specify."
+    },
+    {
+      "name": "case specific(Set<ActivityCategoryToken>, except: Set<Token<Activity>>)",
+      "desc": "A policy that indicates the device shields specific categories of activity, with some exceptions."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    },
+    {
+      "name": "static func == (ShieldSettings.ActivityCategoryPolicy<Activity>, ShieldSettings.ActivityCategoryPolicy<Activity>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are equal."
+    }
+  ],
+  "declaration": "enum ActivityCategoryPolicy<Activity>",
+  "conformsTo": [
+    "Equatable"
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "path": "/documentation/storekit/skpaymentqueue",
+  "type": "Class",
+  "name": "SKPaymentQueue",
+  "desc": "A queue of payment transactions to be processed by the App Store.",
+  "items": [
+    {
+      "name": "class func canMakePayments() -> Bool",
+      "desc": "Indicates whether the user is allowed to make payments."
+    },
+    {
+      "name": "var storefront: SKStorefront?",
+      "desc": "The current App Store storefront for the payment queue."
+    },
+    {
+      "name": "class func `default`() -> Self",
+      "desc": "Returns the default payment queue instance."
+    },
+    {
+      "name": "func add(SKPaymentTransactionObserver)",
+      "desc": "Adds an observer to the payment queue."
+    },
+    {
+      "name": "var transactionObservers: [SKPaymentTransactionObserver]",
+      "desc": "An array of all active payment queue observers."
+    },
+    {
+      "name": "func remove(SKPaymentTransactionObserver)",
+      "desc": "Removes an observer from the payment queue."
+    },
+    {
+      "name": "var delegate: SKPaymentQueueDelegate?",
+      "desc": "A delegate that provides information needed to complete transactions."
+    },
+    {
+      "name": "var transactions: [SKPaymentTransaction]",
+      "desc": "Returns an array of pending transactions."
+    },
+    {
+      "name": "func add(SKPayment)",
+      "desc": "Adds a payment request to the queue."
+    },
+    {
+      "name": "func finishTransaction(SKPaymentTransaction)",
+      "desc": "Notifies the App Store that the app finished processing the transaction."
+    },
+    {
+      "name": "func restoreCompletedTransactions()",
+      "desc": "Asks the payment queue to restore previously completed purchases."
+    },
+    {
+      "name": "func restoreCompletedTransactions(withApplicationUsername: String?)",
+      "desc": "Asks the payment queue to restore previously completed purchases, providing an opaque identifier for the user’s account."
+    },
+    {
+      "name": "func showPriceConsentIfNeeded()",
+      "desc": "Asks the system to display the price consent sheet if the user has not yet responded to a subscription price increase."
+    },
+    {
+      "name": "func presentCodeRedemptionSheet()",
+      "desc": "Displays a sheet that enables users to redeem subscription offer codes that you configure in App Store Connect."
+    },
+    {
+      "name": "func start([SKDownload])",
+      "desc": "Adds a set of downloads to the download list."
+    },
+    {
+      "name": "func cancel([SKDownload])",
+      "desc": "Removes a set of downloads from the download list."
+    },
+    {
+      "name": "func pause([SKDownload])",
+      "desc": "Pauses a set of downloads."
+    },
+    {
+      "name": "func resume([SKDownload])",
+      "desc": "Resumes a set of downloads."
+    }
+  ],
+  "declaration": "class SKPaymentQueue : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

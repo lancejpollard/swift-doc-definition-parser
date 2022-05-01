@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/swiftui/focusstate",
+  "type": "Structure",
+  "name": "FocusState",
+  "desc": "A property wrapper type that can read and write a value that SwiftUI updates as the placement of focus within the scene changes.",
+  "items": [
+    {
+      "name": "init<T>()",
+      "desc": "Creates a focus state that binds to an optional type."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates a focus state that binds to a Boolean."
+    },
+    {
+      "name": "var projectedValue: FocusState<Value>.Binding",
+      "desc": "A projection of the focus state value that returns a binding."
+    },
+    {
+      "name": "struct Binding",
+      "desc": "A property wrapper type that can read and write a value that indicates the current focus location."
+    },
+    {
+      "name": "var wrappedValue: Value",
+      "desc": "The current state value, taking into account whatever bindings might be in effect due to the current location of focus."
+    }
+  ],
+  "declaration": "@frozen @propertyWrapper struct FocusState<Value> where Value : Hashable",
+  "conformsTo": [
+    "DynamicProperty"
+  ]
+}

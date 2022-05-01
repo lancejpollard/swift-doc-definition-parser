@@ -1,0 +1,51 @@
+{
+  "path": "/documentation/cryptotokenkit/tktokenkeychainkey",
+  "type": "Class",
+  "name": "TKTokenKeychainKey",
+  "desc": "A token's key as stored in the keychain.",
+  "items": [
+    {
+      "name": "init?(certificate: SecCertificate?, objectID: TKToken.ObjectID)",
+      "desc": "Initializes a token keychain key with data from the specified certificate reference and a given object ID."
+    },
+    {
+      "name": "var keyType: String",
+      "desc": "The type of the key. Currently, only kSecAttrKeyTypeRSA and kSecAttrKeyTypeECSECPrimeRandom are supported values."
+    },
+    {
+      "name": "var keySizeInBits: Int"
+    },
+    {
+      "name": "var applicationTag: Data?",
+      "desc": "The private tag data."
+    },
+    {
+      "name": "var publicKeyData: Data?",
+      "desc": "The public key data."
+    },
+    {
+      "name": "var publicKeyHash: Data?",
+      "desc": "The SHA1 hash of the raw public key."
+    },
+    {
+      "name": "var canDecrypt: Bool",
+      "desc": "Whether the key can be used to decrypt data."
+    },
+    {
+      "name": "var canSign: Bool",
+      "desc": "Whether the key can be used to sign data."
+    },
+    {
+      "name": "var canPerformKeyExchange: Bool",
+      "desc": "Whether the key can be used to perform Diffie-Hellman style cryptographic key exchange."
+    },
+    {
+      "name": "var isSuitableForLogin: Bool",
+      "desc": "Whether the key can be used for system login."
+    }
+  ],
+  "declaration": "class TKTokenKeychainKey : TKTokenKeychainItem",
+  "inheritsFrom": [
+    "TKTokenKeychainItem"
+  ]
+}

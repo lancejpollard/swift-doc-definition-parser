@@ -1,0 +1,117 @@
+{
+  "path": "/documentation/carekit/ockcontactviewcontroller",
+  "type": "Generic Class",
+  "name": "OCKContactViewController",
+  "desc": "A view controller that displays a contact view and synchronizes with a store.",
+  "items": [
+    {
+      "name": "init(contact: OCKAnyContact, storeManager: OCKSynchronizedStoreManager)",
+      "desc": "Creates a new contact view controller with a specific contact."
+    },
+    {
+      "name": "init(contactID: String, storeManager: OCKSynchronizedStoreManager)",
+      "desc": "Creates a new contact view controller with a specific contact identifier."
+    },
+    {
+      "name": "init(controller: Controller, viewSynchronizer: ViewSynchronizer)",
+      "desc": "Creates a new contact view controller with a specific controller and synchronizer."
+    },
+    {
+      "name": "init(query: OCKAnyContactQuery, storeManager: OCKSynchronizedStoreManager)",
+      "desc": "Creates a new contact view controller with a specific contact query."
+    },
+    {
+      "name": "init(viewSynchronizer: ViewSynchronizer, contact: OCKAnyContact, storeManager: OCKSynchronizedStoreManager)",
+      "desc": "Creates a new contact view controller with a specific synchronizer and contact."
+    },
+    {
+      "name": "init(viewSynchronizer: ViewSynchronizer, contactID: String, storeManager: OCKSynchronizedStoreManager)",
+      "desc": "Creates a new contact view controller with a specific synchronizer and contact identifier."
+    },
+    {
+      "name": "init(viewSynchronizer: ViewSynchronizer, query: OCKAnyContactQuery, storeManager: OCKSynchronizedStoreManager)",
+      "desc": "Creates a new contact view controller with a specific synchronizer and contact query."
+    },
+    {
+      "name": "var delegate: OCKContactViewControllerDelegate?",
+      "desc": "The object that handles important events in a contact view controller."
+    },
+    {
+      "name": "func didSelectContactView(UIView & OCKContactDisplayable)",
+      "desc": "Notifies the delegate that you have selected a contact view."
+    },
+    {
+      "name": "var contactView: ViewSynchronizer.View",
+      "desc": "The view that displays contact data."
+    },
+    {
+      "name": "let controller: Controller",
+      "desc": "An object that handles interacting with data from the store."
+    },
+    {
+      "name": "let viewSynchronizer: ViewSynchronizer",
+      "desc": "An object that handles updating the view when data in the store changes."
+    },
+    {
+      "name": "func contactView(UIView & OCKContactDisplayable, senderDidInitiateAddressLookup: Any?)",
+      "desc": "Presents a map with a marker for the location of the contact's address."
+    },
+    {
+      "name": "func contactView(UIView & OCKContactDisplayable, senderDidInitiateCall: Any?)",
+      "desc": "Presents an alert to call the contact."
+    },
+    {
+      "name": "func contactView(UIView & OCKContactDisplayable, senderDidInitiateEmail: Any?)",
+      "desc": "Presents the UI to email the contact."
+    },
+    {
+      "name": "func contactView(UIView & OCKContactDisplayable, senderDidInitiateMessage: Any?)",
+      "desc": "Presents the UI to message the contact."
+    },
+    {
+      "name": "func mailComposeController(MFMailComposeViewController, didFinishWith: MFMailComposeResult, error: Error?)",
+      "desc": "Notifies the delegate that the user has completed email composition."
+    },
+    {
+      "name": "func messageComposeViewController(MFMessageComposeViewController, didFinishWith: MessageComposeResult)",
+      "desc": "Notifies the delegate that the user has completed message composition."
+    },
+    {
+      "name": "var hashValue: Int"
+    },
+    {
+      "name": "func contains(UIFocusEnvironment) -> Bool"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "func viewDidLoad()"
+    },
+    {
+      "name": "static func != (OCKContactViewController<Controller, ViewSynchronizer>, OCKContactViewController<Controller, ViewSynchronizer>) -> Bool"
+    },
+    {
+      "name": "static func == (NSObject, NSObject) -> Bool"
+    },
+    {
+      "name": "struct OCKContactViewController.KeyValueObservingPublisher"
+    }
+  ],
+  "declaration": "class OCKContactViewController<Controller, ViewSynchronizer> : UIViewController where Controller : OCKContactControllerProtocol, ViewSynchronizer : OCKContactViewSynchronizerProtocol",
+  "inheritsFrom": [
+    "UIViewController"
+  ],
+  "conformsTo": [
+    "CVarArg",
+    "Equatable",
+    "Hashable",
+    "MFMailComposeViewControllerDelegate",
+    "MFMessageComposeViewControllerDelegate",
+    "NSExtensionRequestHandling",
+    "OCKContactViewDelegate",
+    "UIPasteConfigurationSupporting",
+    "UIStateRestoring",
+    "UIUserActivityRestoring"
+  ]
+}

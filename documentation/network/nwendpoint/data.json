@@ -1,0 +1,70 @@
+{
+  "path": "/documentation/network/nwendpoint",
+  "type": "Enumeration",
+  "name": "NWEndpoint",
+  "desc": "A local or remote endpoint in a network connection.",
+  "items": [
+    {
+      "name": "case hostPort(host: NWEndpoint.Host, port: NWEndpoint.Port)",
+      "desc": "An endpoint represented as a host and port, with the host including both names and addresses."
+    },
+    {
+      "name": "case service(name: String, type: String, domain: String, interface: NWInterface?)",
+      "desc": "An endpoint represented as a Bonjour service."
+    },
+    {
+      "name": "case url(URL)",
+      "desc": "An endpoint represented as a URL, with host and port values inferred from the URL."
+    },
+    {
+      "name": "case unix(path: String)",
+      "desc": "An endpoint represented as a UNIX domain path."
+    },
+    {
+      "name": "enum NWEndpoint.Host",
+      "desc": "A name or address that identifies a network endpoint."
+    },
+    {
+      "name": "struct NWEndpoint.Port",
+      "desc": "A port number you use along with a host to identify a network endpoint."
+    },
+    {
+      "name": "protocol IPAddress",
+      "desc": "An abstract protocol you use to interact with IP addresses."
+    },
+    {
+      "name": "struct IPv4Address",
+      "desc": "A structure containing an IPv4 address."
+    },
+    {
+      "name": "struct IPv6Address",
+      "desc": "A structure containing an IPv6 address."
+    },
+    {
+      "name": "var interface: NWInterface?",
+      "desc": "The optional interface associated with this endpoint, such as the interface on which it was discovered."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "The description of this endpoint."
+    },
+    {
+      "name": "static func != (NWEndpoint, NWEndpoint) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "var hashValue: Int"
+    },
+    {
+      "name": "static func == (NWEndpoint, NWEndpoint) -> Bool"
+    }
+  ],
+  "declaration": "enum NWEndpoint",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "Hashable"
+  ]
+}

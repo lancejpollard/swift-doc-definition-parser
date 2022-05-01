@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/swiftui/viewmodifier",
+  "type": "Protocol",
+  "name": "ViewModifier",
+  "desc": "A modifier that you apply to a view or another view modifier, producing a different version of the original value.",
+  "items": [
+    {
+      "name": "func body(content: Self.Content) -> Self.Body",
+      "desc": "Gets the current body of the caller."
+    },
+    {
+      "name": "typealias Content",
+      "desc": "The content view type passed to body()."
+    },
+    {
+      "name": "associatedtype Body : View",
+      "desc": "The type of view representing the body."
+    },
+    {
+      "name": "func animation(Animation?) -> some ViewModifier",
+      "desc": "Returns a new version of the modifier that will apply animation to all animatable values within the modifier."
+    },
+    {
+      "name": "func concat<T>(T) -> ModifiedContent<Self, T>",
+      "desc": "Returns a new modifier that is the result of concatenating self with modifier."
+    },
+    {
+      "name": "func transaction((inout Transaction) -> Void) -> some ViewModifier",
+      "desc": "Returns a new version of the modifier that will apply the transaction mutation function transform to all transactions within the modifier."
+    }
+  ],
+  "declaration": "protocol ViewModifier"
+}

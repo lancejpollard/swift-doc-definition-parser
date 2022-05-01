@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/carekit/ockadherenceaggregator",
+  "type": "Enumeration",
+  "name": "OCKAdherenceAggregator",
+  "desc": "Methods that compute an adherence value, given an array of events.",
+  "items": [
+    {
+      "name": "case outcomeExists",
+      "desc": "A case that returns an average completion value, based on whether an outcome for each event exists."
+    },
+    {
+      "name": "case percentOfOutcomeValuesThatExist",
+      "desc": "A case that returns an average completion value, based on the percentage for each event, divided by the number of outcomes values."
+    },
+    {
+      "name": "case compareTargetValues",
+      "desc": "A case that returns an average completion value, based on whether or not all target values have been met."
+    },
+    {
+      "name": "case percentOfTargetValuesMet",
+      "desc": "A case that returns an average completion value, based on how many target values have been met."
+    },
+    {
+      "name": "case custom(([OCKAnyEvent]) -> OCKAdherence)",
+      "desc": "A case that returns an average completion value, based on a closure you provide."
+    },
+    {
+      "name": "func aggregate(events: [OCKAnyEvent]) -> OCKAdherence",
+      "desc": "Aggregates an array of events into an adherence score."
+    }
+  ],
+  "declaration": "enum OCKAdherenceAggregator"
+}

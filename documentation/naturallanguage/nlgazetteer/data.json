@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/naturallanguage/nlgazetteer",
+  "type": "Class",
+  "name": "NLGazetteer",
+  "desc": "A collection of terms and their labels, which take precedence over a word tagger.",
+  "items": [
+    {
+      "name": "init(contentsOf: URL)",
+      "desc": "Creates a Natural Language gazetteer from a model created with the Create ML framework."
+    },
+    {
+      "name": "init(data: Data)",
+      "desc": "Creates a gazetteer from a data instance."
+    },
+    {
+      "name": "init(dictionary: [String : [String]], language: NLLanguage?)",
+      "desc": "Creates a gazetteer from a set of labels for terms represented by a dictionary."
+    },
+    {
+      "name": "class func write([String : [String]], language: NLLanguage?, to: URL)",
+      "desc": "Creates a gazetteer from a set of labels for terms represented by a dictionary and saves the gazetteer to a file."
+    },
+    {
+      "name": "func label(for: String) -> String?",
+      "desc": "Retrieves the label for the given term."
+    },
+    {
+      "name": "var data: Data",
+      "desc": "The gazetteer represented as a data instance."
+    },
+    {
+      "name": "var language: NLLanguage?",
+      "desc": "The language of the gazetteer."
+    }
+  ],
+  "declaration": "class NLGazetteer : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

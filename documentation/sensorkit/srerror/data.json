@@ -1,0 +1,77 @@
+{
+  "path": "/documentation/sensorkit/srerror",
+  "type": "Structure",
+  "name": "SRError",
+  "desc": "An error that SensorKit reports.",
+  "items": [
+    {
+      "name": "init(Code, userInfo: [String : Any])",
+      "desc": "Initializes an error."
+    },
+    {
+      "name": "static func == (SRError, SRError) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are equal."
+    },
+    {
+      "name": "static func != (SRError, SRError) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are unequal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the value by feeding them into the specified hasher."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "var userInfo: [String : Any]",
+      "desc": "The user info dictionary."
+    },
+    {
+      "name": "var errorUserInfo: [String : Any]",
+      "desc": "The error user info dictionary."
+    },
+    {
+      "name": "var localizedDescription: String",
+      "desc": "A string that indicates the localized description of the error."
+    },
+    {
+      "name": "static var errorDomain: String",
+      "desc": "A string that indicates the Core Foundation error domain."
+    },
+    {
+      "name": "var errorCode: Int",
+      "desc": "An integer value for an error."
+    },
+    {
+      "name": "var code: Code",
+      "desc": "A code that indicates the cause of the error."
+    },
+    {
+      "name": "enum SRError.Code",
+      "desc": "The kinds of problems that stop a recording or a fetch."
+    },
+    {
+      "name": "static var promptDeclined: SRError.Code",
+      "desc": "Occurs when the user cancels the sensor approval workflow."
+    },
+    {
+      "name": "static var dataInaccessible: SRError.Code",
+      "desc": "Occurs when the app can't access the sensor's data."
+    },
+    {
+      "name": "static var fetchRequestInvalid: SRError.Code",
+      "desc": "Occurs when the app misconfigures a fetch request."
+    },
+    {
+      "name": "static var invalidEntitlement: SRError.Code",
+      "desc": "Occurs when the app lacks the required entitlement."
+    },
+    {
+      "name": "static var noAuthorization: SRError.Code",
+      "desc": "Occurs when the user declines sensor access in the Settings app."
+    }
+  ],
+  "declaration": "struct SRError"
+}

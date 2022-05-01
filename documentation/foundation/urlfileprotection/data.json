@@ -1,0 +1,35 @@
+{
+  "path": "/documentation/foundation/urlfileprotection",
+  "type": "Structure",
+  "name": "URLFileProtection",
+  "desc": "Protection level values that can be associated with a URL resource key.",
+  "items": [
+    {
+      "name": "init(rawValue: String)",
+      "desc": "Creates a URL file protection type value."
+    },
+    {
+      "name": "static let complete: URLFileProtection",
+      "desc": "The file is stored in an encrypted format on disk and cannot be read from or written to while the device is locked or booting."
+    },
+    {
+      "name": "static let completeUnlessOpen: URLFileProtection",
+      "desc": "The file is stored in an encrypted format on disk after it is closed."
+    },
+    {
+      "name": "static let completeUntilFirstUserAuthentication: URLFileProtection",
+      "desc": "The file is stored in an encrypted format on disk and cannot be accessed until after the device has booted."
+    },
+    {
+      "name": "static let none: URLFileProtection",
+      "desc": "The file has no special protections associated with it."
+    }
+  ],
+  "declaration": "struct URLFileProtection, @unchecked Sendable",
+  "conformsTo": [
+    "Equatable",
+    "Hashable",
+    "RawRepresentable",
+    "Sendable"
+  ]
+}

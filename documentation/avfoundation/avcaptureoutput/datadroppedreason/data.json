@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/avfoundation/avcaptureoutput/datadroppedreason",
+  "type": "Enumeration",
+  "name": "AVCaptureOutput.DataDroppedReason",
+  "desc": "Information about why capture data was not delivered.",
+  "items": [
+    {
+      "name": "case none",
+      "desc": "No data was dropped."
+    },
+    {
+      "name": "case lateData",
+      "desc": "Data was dropped because the capture output is configured to do so when its delegate queue is blocked and new data is waiting to be delivered."
+    },
+    {
+      "name": "case outOfBuffers",
+      "desc": "Data was dropped because the capture output's internal pool of memory buffers was exhausted."
+    },
+    {
+      "name": "case discontinuity",
+      "desc": "Data was dropped because the device providing the data experienced a discontinuity, and an unknown number of data objects have been lost."
+    }
+  ],
+  "declaration": "enum DataDroppedReason : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

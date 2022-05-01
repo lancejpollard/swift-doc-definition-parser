@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/coremotion/cmattitudereferenceframe",
+  "type": "Structure",
+  "name": "CMAttitudeReferenceFrame",
+  "desc": "Enum constants for indicating the reference frames from which all attitude samples are referenced.",
+  "items": [
+    {
+      "name": "static var xArbitraryZVertical: CMAttitudeReferenceFrame",
+      "desc": "Describes a reference frame in which the Z axis is vertical and the X axis points in an arbitrary direction in the horizontal plane."
+    },
+    {
+      "name": "static var xArbitraryCorrectedZVertical: CMAttitudeReferenceFrame",
+      "desc": "Describes the same reference frame as xArbitraryZVertical except that the magnetometer, when available and calibrated, is used to improve long-term yaw accuracy. Using this constant instead of xArbitraryZVertical results in increased CPU usage."
+    },
+    {
+      "name": "static var xMagneticNorthZVertical: CMAttitudeReferenceFrame",
+      "desc": "Describes a reference frame in which the Z axis is vertical and the X axis points toward magnetic north. Note that using this reference frame may require device movement to calibrate the magnetometer."
+    },
+    {
+      "name": "static var xTrueNorthZVertical: CMAttitudeReferenceFrame",
+      "desc": "Describes a reference frame in which the Z axis is vertical and the X axis points toward true north. Note that using this reference frame may require device movement to calibrate the magnetometer. It also requires the location to be available in order to calculate the difference between magnetic and true north."
+    },
+    {
+      "name": "init(rawValue: UInt)"
+    }
+  ],
+  "declaration": "struct CMAttitudeReferenceFrame, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

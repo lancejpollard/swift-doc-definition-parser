@@ -1,0 +1,160 @@
+{
+  "path": "/documentation/eventkit/ekeventstore",
+  "type": "Class",
+  "name": "EKEventStore",
+  "desc": "An object that accesses the user’s calendar events and reminders and supports the scheduling of new events.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a new event store."
+    },
+    {
+      "name": "init(sources: [EKSource])",
+      "desc": "Creates an event store that contains data for the specified sources."
+    },
+    {
+      "name": "var eventStoreIdentifier: String",
+      "desc": "The unique identifier for the event store."
+    },
+    {
+      "name": "func requestAccess(to: EKEntityType, completion: EKEventStoreRequestAccessCompletionHandler)",
+      "desc": "Prompts the user to grant or deny access to event or reminder data."
+    },
+    {
+      "name": "class func authorizationStatus(for: EKEntityType) -> EKAuthorizationStatus",
+      "desc": "Determines the authorization status for the given entity type."
+    },
+    {
+      "name": "enum EKAuthorizationStatus",
+      "desc": "The current authorization status for a specific entity type."
+    },
+    {
+      "name": "typealias EKEventStoreRequestAccessCompletionHandler",
+      "desc": "The signature for a closure that EventKit calls when requesting access to event and reminder data."
+    },
+    {
+      "name": "var sources: [EKSource]",
+      "desc": "An unordered array of objects that represent accounts containing calendars."
+    },
+    {
+      "name": "var delegateSources: [EKSource]",
+      "desc": "The event sources delegated to the user."
+    },
+    {
+      "name": "func source(withIdentifier: String) -> EKSource?",
+      "desc": "Locates an event source with the specified identifier."
+    },
+    {
+      "name": "func commit()",
+      "desc": "Commits all unsaved changes to the event store."
+    },
+    {
+      "name": "func reset()",
+      "desc": "Reverts the event store to its saved state."
+    },
+    {
+      "name": "func refreshSourcesIfNecessary()",
+      "desc": "Pulls new data from remote sources, if necessary."
+    },
+    {
+      "name": "var defaultCalendarForNewEvents: EKCalendar?",
+      "desc": "The calendar that events are added to by default, as specified by user settings."
+    },
+    {
+      "name": "func defaultCalendarForNewReminders() -> EKCalendar?",
+      "desc": "Identifies the calendar that reminders are added to by default, as specified by user settings."
+    },
+    {
+      "name": "func calendars(for: EKEntityType) -> [EKCalendar]",
+      "desc": "Identifies the calendars that support a given entity type, such as reminders or events."
+    },
+    {
+      "name": "func calendar(withIdentifier: String) -> EKCalendar?",
+      "desc": "Locates a calendar with the specified identifier."
+    },
+    {
+      "name": "func saveCalendar(EKCalendar, commit: Bool)",
+      "desc": "Saves a calendar to the event store by either committing or batching the changes."
+    },
+    {
+      "name": "func removeCalendar(EKCalendar, commit: Bool)",
+      "desc": "Removes a calendar from the event store by either committing or batching the changes."
+    },
+    {
+      "name": "func event(withIdentifier: String) -> EKEvent?",
+      "desc": "Locates the first occurrence of an event with a given identifier."
+    },
+    {
+      "name": "func calendarItem(withIdentifier: String) -> EKCalendarItem?",
+      "desc": "Locates an event’s first occurrence or a reminder with the specified identifier."
+    },
+    {
+      "name": "func calendarItems(withExternalIdentifier: String) -> [EKCalendarItem]",
+      "desc": "Locates all reminders or the first occurrences of all events with the specified external identifier."
+    },
+    {
+      "name": "func remove(EKEvent, span: EKSpan)",
+      "desc": "Removes an event from the event store."
+    },
+    {
+      "name": "func remove(EKEvent, span: EKSpan, commit: Bool)",
+      "desc": "Removes an event or recurring events from the event store by either committing or batching the changes."
+    },
+    {
+      "name": "func remove(EKReminder, commit: Bool)",
+      "desc": "Removes a reminder from the event store by either committing or batching the changes."
+    },
+    {
+      "name": "func save(EKEvent, span: EKSpan)",
+      "desc": "Saves changes to an event permanently."
+    },
+    {
+      "name": "func save(EKEvent, span: EKSpan, commit: Bool)",
+      "desc": "Saves an event or recurring events to the event store by either committing or batching the changes."
+    },
+    {
+      "name": "func save(EKReminder, commit: Bool)",
+      "desc": "Saves changes to a reminder by either committing or batching the changes."
+    },
+    {
+      "name": "func enumerateEvents(matching: NSPredicate, using: EKEventSearchCallback)",
+      "desc": "Finds all events that match a given predicate and calls a given callback for each event found."
+    },
+    {
+      "name": "func events(matching: NSPredicate) -> [EKEvent]",
+      "desc": "Finds all events that match a given predicate."
+    },
+    {
+      "name": "func fetchReminders(matching: NSPredicate, completion: ([EKReminder]?) -> Void) -> Any",
+      "desc": "Fetches reminders matching a given predicate."
+    },
+    {
+      "name": "func cancelFetchRequest(Any)",
+      "desc": "Cancels the request to fetch reminders."
+    },
+    {
+      "name": "func predicateForEvents(withStart: Date, end: Date, calendars: [EKCalendar]?) -> NSPredicate",
+      "desc": "Creates a predicate to identify events that fall within a given date range."
+    },
+    {
+      "name": "func predicateForReminders(in: [EKCalendar]?) -> NSPredicate",
+      "desc": "Creates a predicate to identify all reminders in a collection of calendars."
+    },
+    {
+      "name": "func predicateForCompletedReminders(withCompletionDateStarting: Date?, ending: Date?, calendars: [EKCalendar]?) -> NSPredicate",
+      "desc": "Creates a predicate to identify all completed reminders that fall within a given date range."
+    },
+    {
+      "name": "func predicateForIncompleteReminders(withDueDateStarting: Date?, ending: Date?, calendars: [EKCalendar]?) -> NSPredicate",
+      "desc": "Creates a predicate to identify all incomplete reminders that fall within a given date range."
+    },
+    {
+      "name": "typealias EKEventSearchCallback",
+      "desc": "The signature for a closure that operates on events when enumerating them."
+    }
+  ],
+  "declaration": "class EKEventStore : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

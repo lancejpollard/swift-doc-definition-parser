@@ -1,0 +1,278 @@
+{
+  "path": "/documentation/appkit/nsimage",
+  "type": "Class",
+  "name": "NSImage",
+  "desc": "A high-level interface for manipulating image data.",
+  "items": [
+    {
+      "name": "init?(named: NSImage.Name)",
+      "desc": "Returns the image object associated with the specified name."
+    },
+    {
+      "name": "init?(systemSymbolName: String, accessibilityDescription: String?)",
+      "desc": "Creates a symbol image with the system symbol name and accessibility description that you specify."
+    },
+    {
+      "name": "func setName(NSImage.Name?) -> Bool",
+      "desc": "Registers the image object under the specified name."
+    },
+    {
+      "name": "func name() -> NSImage.Name?",
+      "desc": "Returns the name associated with the image, if any."
+    },
+    {
+      "name": "typealias NSImage.Name",
+      "desc": "Named images, defined by the system or you, for use in your app."
+    },
+    {
+      "name": "init(imageLiteralResourceName: String)",
+      "desc": "Creates an image initialized with the specified resource name."
+    },
+    {
+      "name": "init(size: NSSize, flipped: Bool, drawingHandler: (NSRect) -> Bool)",
+      "desc": "Creates and returns an image object whose contents are drawn using the specified block."
+    },
+    {
+      "name": "init?(byReferencingFile: String)",
+      "desc": "Initializes and returns an image object using the specified file."
+    },
+    {
+      "name": "init(byReferencing: URL)",
+      "desc": "Initializes and returns an image object using the specified URL."
+    },
+    {
+      "name": "init?(contentsOfFile: String)",
+      "desc": "Initializes and returns an image object with the contents of the specified file."
+    },
+    {
+      "name": "init?(contentsOf: URL)",
+      "desc": "Initializes and returns an image object with the contents of the specified URL."
+    },
+    {
+      "name": "init?(data: Data)",
+      "desc": "Initializes and returns an image object using the provided image data."
+    },
+    {
+      "name": "init?(dataIgnoringOrientation: Data)",
+      "desc": "Initializes and returns an image object using the provided image data and ignoring the EXIF orientation tags."
+    },
+    {
+      "name": "init(cgImage: CGImage, size: NSSize)",
+      "desc": "Creates a new image using the contents of the provided image."
+    },
+    {
+      "name": "init?(pasteboard: NSPasteboard)",
+      "desc": "Initializes and returns an image object with data from the specified pasteboard."
+    },
+    {
+      "name": "init(coder: NSCoder)",
+      "desc": "Initializes and returns an image object from data in an unarchiver."
+    },
+    {
+      "name": "init(size: NSSize)",
+      "desc": "Initializes and returns an image object with the specified dimensions."
+    },
+    {
+      "name": "func applying(NSImage.SymbolConfiguration) -> Self",
+      "desc": "Creates a configuration object by applying the values from the configuration you specify."
+    },
+    {
+      "name": "func withSymbolConfiguration(NSImage.SymbolConfiguration) -> NSImage?",
+      "desc": "Creates a new symbol image with the specified configuration."
+    },
+    {
+      "name": "class NSImage.SymbolConfiguration",
+      "desc": "An object that contains the specific font, style, and weight attributes to apply to a symbol image."
+    },
+    {
+      "name": "var symbolConfiguration: NSImage.SymbolConfiguration",
+      "desc": "The configuration details for a symbol image."
+    },
+    {
+      "name": "var delegate: NSImageDelegate?",
+      "desc": "The image’s delegate object."
+    },
+    {
+      "name": "protocol NSImageDelegate",
+      "desc": "A set of optional methods that you can use to respond to drawing failures and manage incremental loads."
+    },
+    {
+      "name": "var size: NSSize",
+      "desc": "The size of the image."
+    },
+    {
+      "name": "var isTemplate: Bool",
+      "desc": "A Boolean value that determines whether the image represents a template image."
+    },
+    {
+      "name": "class func canInit(with: NSPasteboard) -> Bool",
+      "desc": "Tests whether the image can create an instance of itself using pasteboard data."
+    },
+    {
+      "name": "class var imageTypes: [String]",
+      "desc": "Returns an array of UTI strings identifying the image types supported by the registered image representation objects, either directly or through a user-installed filter service."
+    },
+    {
+      "name": "class var imageUnfilteredTypes: [String]",
+      "desc": "Returns an array of UTI strings identifying the image types supported directly by the registered image representation objects."
+    },
+    {
+      "name": "func addRepresentation(NSImageRep)",
+      "desc": "Adds the specified image representation object to the image."
+    },
+    {
+      "name": "func addRepresentations([NSImageRep])",
+      "desc": "Adds an array of image representation objects to the image."
+    },
+    {
+      "name": "var representations: [NSImageRep]",
+      "desc": "An array containing all of the image object’s image representations."
+    },
+    {
+      "name": "func removeRepresentation(NSImageRep)",
+      "desc": "Removes and releases the specified image representation."
+    },
+    {
+      "name": "func bestRepresentation(for: NSRect, context: NSGraphicsContext?, hints: [NSImageRep.HintKey : Any]?) -> NSImageRep?",
+      "desc": "Returns the best representation of the image for the specified rectangle using the provided hints."
+    },
+    {
+      "name": "struct NSImageRep.HintKey",
+      "desc": "Constants for the keys to include in a hints dictionary when drawing the image."
+    },
+    {
+      "name": "enum NSImage.LayoutDirection",
+      "desc": "Constants that describe the layout direction for the image."
+    },
+    {
+      "name": "var prefersColorMatch: Bool",
+      "desc": "A Boolean value that indicates whether the image prefers to choose image representations using color-matching or resolution-matching."
+    },
+    {
+      "name": "var usesEPSOnResolutionMismatch: Bool",
+      "desc": "A Boolean value that indicates whether EPS representations are preferred when no other representations match the resolution of the device."
+    },
+    {
+      "name": "var matchesOnMultipleResolution: Bool",
+      "desc": "A Boolean value that indicates whether image representations whose resolution is an integral multiple of the device resolution are a match."
+    },
+    {
+      "name": "func draw(in: NSRect)",
+      "desc": "Draws the image in the specified rectangle."
+    },
+    {
+      "name": "func draw(at: NSPoint, from: NSRect, operation: NSCompositingOperation, fraction: CGFloat)",
+      "desc": "Draws all or part of the image at the specified point in the current coordinate system."
+    },
+    {
+      "name": "func draw(in: NSRect, from: NSRect, operation: NSCompositingOperation, fraction: CGFloat)",
+      "desc": "Draws all or part of the image in the specified rectangle in the current coordinate system."
+    },
+    {
+      "name": "func draw(in: NSRect, from: NSRect, operation: NSCompositingOperation, fraction: CGFloat, respectFlipped: Bool, hints: [NSImageRep.HintKey : Any]?)",
+      "desc": "Draws all or part of the image in the specified rectangle respecting the hints and the orientation of the current coordinate system."
+    },
+    {
+      "name": "func drawRepresentation(NSImageRep, in: NSRect) -> Bool",
+      "desc": "Draws the image using the specified image representation object."
+    },
+    {
+      "name": "enum NSCompositingOperation",
+      "desc": "Constants that describe compositing operators in terms of source and destination images, each having an opaque and transparent region."
+    },
+    {
+      "name": "var isValid: Bool",
+      "desc": "A Boolean value that indicates whether it is possible to draw an image representation."
+    },
+    {
+      "name": "var backgroundColor: NSColor",
+      "desc": "The background color for the image."
+    },
+    {
+      "name": "var capInsets: NSEdgeInsets",
+      "desc": "The cap insets for the image."
+    },
+    {
+      "name": "var resizingMode: NSImage.ResizingMode",
+      "desc": "The resizing mode for the image."
+    },
+    {
+      "name": "enum NSImage.ResizingMode",
+      "desc": "Constants that describe the resizing mode for the image."
+    },
+    {
+      "name": "func lockFocus()",
+      "desc": "Prepares the image to receive drawing commands."
+    },
+    {
+      "name": "func lockFocusFlipped(Bool)",
+      "desc": "Prepares the image to receive drawing commands using the specified flipped state."
+    },
+    {
+      "name": "func unlockFocus()",
+      "desc": "Removes the focus from the image."
+    },
+    {
+      "name": "var alignmentRect: NSRect",
+      "desc": "A rectangle that you can use to position the image during layout."
+    },
+    {
+      "name": "var cacheMode: NSImage.CacheMode",
+      "desc": "The image’s caching mode."
+    },
+    {
+      "name": "func recache()",
+      "desc": "Invalidates and frees offscreen caches of all image representations."
+    },
+    {
+      "name": "enum NSImage.CacheMode",
+      "desc": "Constants that specify the caching policy on a per-image basis."
+    },
+    {
+      "name": "var tiffRepresentation: Data?",
+      "desc": "A data object containing TIFF data for all of the image representations in the image."
+    },
+    {
+      "name": "func tiffRepresentation(using: NSBitmapImageRep.TIFFCompression, factor: Float) -> Data?",
+      "desc": "Returns a data object that contains TIFF data with the specified compression settings for all of the image representations in the image."
+    },
+    {
+      "name": "func cgImage(forProposedRect: UnsafeMutablePointer<NSRect>?, context: NSGraphicsContext?, hints: [NSImageRep.HintKey : Any]?) -> CGImage?",
+      "desc": "Returns a Core Graphics image based on the contents of the current image object."
+    },
+    {
+      "name": "func cancelIncrementalLoad()",
+      "desc": "Cancels the current download operation, if any, for an incrementally loaded image."
+    },
+    {
+      "name": "func hitTest(NSRect, withDestinationRect: NSRect, context: NSGraphicsContext?, hints: [NSImageRep.HintKey : Any]?, flipped: Bool) -> Bool",
+      "desc": "Returns whether the destination rectangle would intersect a non-transparent portion of the image."
+    },
+    {
+      "name": "var accessibilityDescription: String?",
+      "desc": "The image’s accessibility description."
+    },
+    {
+      "name": "func layerContents(forContentsScale: CGFloat) -> Any",
+      "desc": "Returns an object that may be used as the contents of a layer."
+    },
+    {
+      "name": "func recommendedLayerContentsScale(CGFloat) -> CGFloat",
+      "desc": "Returns the recommended layer contents scale for this image."
+    },
+    {
+      "name": "var matchesOnlyOnBestFittingAxis: Bool",
+      "desc": "A Boolean value that indicates whether the image matches only on the best fitting axis."
+    }
+  ],
+  "declaration": "class NSImage : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSPasteboardReading",
+    "NSPasteboardWriting",
+    "NSSecureCoding"
+  ]
+}

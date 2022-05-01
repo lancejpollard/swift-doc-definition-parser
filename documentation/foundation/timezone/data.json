@@ -1,0 +1,122 @@
+{
+  "path": "/documentation/foundation/timezone",
+  "type": "Structure",
+  "name": "TimeZone",
+  "desc": "Information about standard time conventions associated with a specific geopolitical region.",
+  "items": [
+    {
+      "name": "static var autoupdatingCurrent: TimeZone",
+      "desc": "The time zone currently used by the system, automatically updating to the user’s current preference."
+    },
+    {
+      "name": "static var current: TimeZone",
+      "desc": "The time zone currently used by the system."
+    },
+    {
+      "name": "init?(secondsFromGMT: Int)",
+      "desc": "Returns a time zone initialized with a specific number of seconds from GMT."
+    },
+    {
+      "name": "static var knownTimeZoneIdentifiers: [String]",
+      "desc": "Returns an array of strings listing the identifier of all the time zones known to the system."
+    },
+    {
+      "name": "static var abbreviationDictionary: [String : String]",
+      "desc": "Returns the mapping of abbreviations to time zone identifiers."
+    },
+    {
+      "name": "var identifier: String",
+      "desc": "The geopolitical region identifier that identifies the time zone."
+    },
+    {
+      "name": "func abbreviation(for: Date) -> String?",
+      "desc": "Returns the abbreviation for the time zone at a given date."
+    },
+    {
+      "name": "func secondsFromGMT(for: Date) -> Int",
+      "desc": "The current difference in seconds between the time zone and Greenwich Mean Time."
+    },
+    {
+      "name": "static var timeZoneDataVersion: String",
+      "desc": "Returns the time zone data version."
+    },
+    {
+      "name": "func isDaylightSavingTime(for: Date) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the receiver uses daylight saving time at a given date."
+    },
+    {
+      "name": "func daylightSavingTimeOffset(for: Date) -> TimeInterval",
+      "desc": "Returns the daylight saving time offset for a given date."
+    },
+    {
+      "name": "var nextDaylightSavingTimeTransition: Date?",
+      "desc": "The date of the next (after the current instant) daylight saving time transition for the time zone."
+    },
+    {
+      "name": "func nextDaylightSavingTimeTransition(after: Date) -> Date?",
+      "desc": "Returns the next daylight saving time transition after a given date."
+    },
+    {
+      "name": "static func != (TimeZone, TimeZone) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (TimeZone, TimeZone) -> Bool",
+      "desc": "Indicates whether two time zones are the same."
+    },
+    {
+      "name": "func localizedName(for: NSTimeZone.NameStyle, locale: Locale?) -> String?",
+      "desc": "Returns the name of the receiver localized for a given locale."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual description of the time zone."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual description of the time zone suitable for debugging."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A mirror that reflects the time zone."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The computed hash value of the time zone."
+    },
+    {
+      "name": "class NSTimeZone",
+      "desc": "Information about local time conventions that bridges to TimeZone; use NSTimeZone when you need reference semantics or other Foundation-specific behavior."
+    },
+    {
+      "name": "typealias TimeZone.ReferenceType",
+      "desc": "An alias for this value type's equivalent reference type."
+    },
+    {
+      "name": "init?(abbreviation: String)"
+    },
+    {
+      "name": "init(from: Decoder)"
+    },
+    {
+      "name": "init?(identifier: String)"
+    },
+    {
+      "name": "func encode(to: Encoder)"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    }
+  ],
+  "declaration": "struct TimeZone",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "Hashable",
+    "ReferenceConvertible"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "path": "/documentation/avfoundation/avmutablecomposition",
+  "type": "Class",
+  "name": "AVMutableComposition",
+  "desc": "An object that you use to create a new composition from existing assets.",
+  "items": [
+    {
+      "name": "init(urlAssetInitializationOptions: [String : Any]?)",
+      "desc": "Returns a new mutable composition that uses the specified initialization options."
+    },
+    {
+      "name": "static var tracks: AVAsyncProperty<Root, [AVMutableCompositionTrack]>",
+      "desc": "The tracks that a composition contains."
+    },
+    {
+      "name": "func loadTrack(withTrackID: CMPersistentTrackID, completionHandler: (AVMutableCompositionTrack?, Error?) -> Void)",
+      "desc": "Loads a track that contains the specified identifier."
+    },
+    {
+      "name": "func loadTracks(withMediaType: AVMediaType, completionHandler: ([AVMutableCompositionTrack]?, Error?) -> Void)",
+      "desc": "Loads tracks that contain media of a specified type."
+    },
+    {
+      "name": "func loadTracks(withMediaCharacteristic: AVMediaCharacteristic, completionHandler: ([AVMutableCompositionTrack]?, Error?) -> Void)",
+      "desc": "Loads tracks that contain media of a specified characteristic."
+    },
+    {
+      "name": "var tracks: [AVMutableCompositionTrack]",
+      "desc": "The tracks that a composition contains."
+    },
+    {
+      "name": "func track(withTrackID: CMPersistentTrackID) -> AVMutableCompositionTrack?",
+      "desc": "Returns a track that contains the specified identifier."
+    },
+    {
+      "name": "func tracks(withMediaType: AVMediaType) -> [AVMutableCompositionTrack]",
+      "desc": "Returns tracks that contain media of a specified type."
+    },
+    {
+      "name": "func tracks(withMediaCharacteristic: AVMediaCharacteristic) -> [AVMutableCompositionTrack]",
+      "desc": "Returns tracks that contain media of a specified characteristic."
+    },
+    {
+      "name": "func mutableTrack(compatibleWith: AVAssetTrack) -> AVMutableCompositionTrack?",
+      "desc": "Returns a composition track into which you can insert any time range of the specified asset track."
+    },
+    {
+      "name": "func addMutableTrack(withMediaType: AVMediaType, preferredTrackID: CMPersistentTrackID) -> AVMutableCompositionTrack?",
+      "desc": "Adds an empty track to a composition."
+    },
+    {
+      "name": "func removeTrack(AVCompositionTrack)",
+      "desc": "Removes a specified track from the composition."
+    },
+    {
+      "name": "func insertEmptyTimeRange(CMTimeRange)",
+      "desc": "Adds or extends an empty time range within all tracks of the composition."
+    },
+    {
+      "name": "func insertTimeRange(CMTimeRange, of: AVAsset, at: CMTime)",
+      "desc": "Inserts all the tracks within a given time range of a specified asset into the receiver."
+    },
+    {
+      "name": "func removeTimeRange(CMTimeRange)",
+      "desc": "Removes a specified time range from all tracks of the composition."
+    },
+    {
+      "name": "func scaleTimeRange(CMTimeRange, toDuration: CMTime)",
+      "desc": "Changes the duration of all tracks in a given time range."
+    },
+    {
+      "name": "var naturalSize: CGSize",
+      "desc": "The encoded or authored size of the visual portion of the asset."
+    }
+  ],
+  "declaration": "class AVMutableComposition : AVComposition",
+  "inheritsFrom": [
+    "AVComposition"
+  ]
+}

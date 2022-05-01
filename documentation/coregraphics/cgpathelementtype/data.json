@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/coregraphics/cgpathelementtype",
+  "type": "Enumeration",
+  "name": "CGPathElementType",
+  "desc": "The type of element found in a path.",
+  "items": [
+    {
+      "name": "case moveToPoint",
+      "desc": "The path element that starts a new subpath. The element holds a single point for the destination. See the function moveTo(_:x:y:)."
+    },
+    {
+      "name": "case addLineToPoint",
+      "desc": "The path element that adds a line from the current point to a new point. The element holds a single point for the destination. See the function addLineTo(_:x:y:)."
+    },
+    {
+      "name": "case addQuadCurveToPoint",
+      "desc": "The path element that adds a quadratic curve from the current point to the specified point. The element holds a control point and a destination point. See the function addQuadCurve(_:cpx:cpy:endingAtX:y:)."
+    },
+    {
+      "name": "case addCurveToPoint",
+      "desc": "The path element that adds a cubic curve from the current point to the specified point. The element holds two control points and a destination point. See the function addCurve(_:cp1x:cp1y:cp2x:cp2y:endingAtX:y:)."
+    },
+    {
+      "name": "case closeSubpath",
+      "desc": "The path element that closes and completes a subpath. The element does not contain any points. See the function closeSubpath()."
+    }
+  ],
+  "declaration": "enum CGPathElementType : Int32, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

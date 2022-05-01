@@ -1,0 +1,215 @@
+{
+  "path": "/documentation/uikit/uipasteboard",
+  "type": "Class",
+  "name": "UIPasteboard",
+  "desc": "An object that helps a user share data from one place to another within your app, and from your app to other apps.",
+  "items": [
+    {
+      "name": "class var general: UIPasteboard",
+      "desc": "Returns the systemwide general pasteboard, which is used for general copy-paste operations"
+    },
+    {
+      "name": "init?(name: UIPasteboard.Name, create: Bool)",
+      "desc": "Returns a pasteboard identified by name, optionally creating it if it doesn’t exist."
+    },
+    {
+      "name": "class func withUniqueName() -> UIPasteboard",
+      "desc": "Returns an app pasteboard identified by a unique system-generated name."
+    },
+    {
+      "name": "class func remove(withName: UIPasteboard.Name)",
+      "desc": "Invalidates the designated app pasteboard."
+    },
+    {
+      "name": "var name: UIPasteboard.Name",
+      "desc": "The name of the pasteboard."
+    },
+    {
+      "name": "var changeCount: Int",
+      "desc": "The number of times the pasteboard’s contents have changed."
+    },
+    {
+      "name": "struct UIPasteboard.DetectionPattern",
+      "desc": "An object that represents a pattern to detect on the pasteboard, such as a URL, text, or number."
+    },
+    {
+      "name": "var types: [String]",
+      "desc": "Returns the types of the first item on the pasteboard."
+    },
+    {
+      "name": "func types(forItemSet: IndexSet?) -> [[String]]?",
+      "desc": "Returns an array of representation types for each specified pasteboard item."
+    },
+    {
+      "name": "func contains(pasteboardTypes: [String]) -> Bool",
+      "desc": "Returns whether the pasteboard holds data of the specified representation type."
+    },
+    {
+      "name": "func contains(pasteboardTypes: [String], inItemSet: IndexSet?) -> Bool",
+      "desc": "Returns whether the specified pasteboard items contain data of the given representation types."
+    },
+    {
+      "name": "func itemSet(withPasteboardTypes: [String]) -> IndexSet?",
+      "desc": "Returns an index set identifying pasteboard items having the specified representation types."
+    },
+    {
+      "name": "var numberOfItems: Int",
+      "desc": "Returns the number of items in the pasteboard"
+    },
+    {
+      "name": "var items: [[String : Any]]",
+      "desc": "The pasteboard items on the pasteboard."
+    },
+    {
+      "name": "func addItems([[String : Any]])",
+      "desc": "Appends pasteboard items to the current contents of the pasteboard."
+    },
+    {
+      "name": "func setItems([[String : Any]], options: [UIPasteboard.OptionsKey : Any])",
+      "desc": "Adds an array of items to a pasteboard, and sets privacy options for all the items on the pasteboard."
+    },
+    {
+      "name": "func data(forPasteboardType: String) -> Data?",
+      "desc": "Returns the data in the pasteboard for the given representation type."
+    },
+    {
+      "name": "func data(forPasteboardType: String, inItemSet: IndexSet?) -> [Data]?",
+      "desc": "Returns the data objects in the indicated pasteboard items that have the given representation type."
+    },
+    {
+      "name": "func setData(Data, forPasteboardType: String)",
+      "desc": "Puts data in the pasteboard for the specified representation type."
+    },
+    {
+      "name": "func value(forPasteboardType: String) -> Any?",
+      "desc": "Returns an object in the pasteboard for the given representation type."
+    },
+    {
+      "name": "func values(forPasteboardType: String, inItemSet: IndexSet?) -> [Any]?",
+      "desc": "Returns the objects in the indicated pasteboard items that have the given representation type."
+    },
+    {
+      "name": "func setValue(Any, forPasteboardType: String)",
+      "desc": "Puts an object in the pasteboard for the specified representation type."
+    },
+    {
+      "name": "var string: String?",
+      "desc": "The string value of the first pasteboard item."
+    },
+    {
+      "name": "var strings: [String]?",
+      "desc": "An array of strings in all pasteboard items."
+    },
+    {
+      "name": "var image: UIImage?",
+      "desc": "The image object of the first pasteboard item."
+    },
+    {
+      "name": "var images: [UIImage]?",
+      "desc": "An array of image objects in all pasteboard items."
+    },
+    {
+      "name": "var url: URL?",
+      "desc": "The URL object of the first pasteboard item."
+    },
+    {
+      "name": "var urls: [URL]?",
+      "desc": "An array of URL objects in all pasteboard items."
+    },
+    {
+      "name": "var color: UIColor?",
+      "desc": "The color object of the first pasteboard item."
+    },
+    {
+      "name": "var colors: [UIColor]?",
+      "desc": "An array of color objects in all pasteboard items."
+    },
+    {
+      "name": "var hasColors: Bool",
+      "desc": "Returns a Boolean value indicating whether or not the colors property contains a nonempty array."
+    },
+    {
+      "name": "var hasImages: Bool",
+      "desc": "Returns a Boolean value indicating whether or not the images property contains a nonempty array."
+    },
+    {
+      "name": "var hasStrings: Bool",
+      "desc": "Returns a Boolean value indicating whether or not the strings property contains a nonempty array."
+    },
+    {
+      "name": "var hasURLs: Bool",
+      "desc": "Returns a Boolean value indicating whether or not the urls property contains a nonempty array."
+    },
+    {
+      "name": "var itemProviders: [NSItemProvider]",
+      "desc": "An array of item providers for the pasteboard."
+    },
+    {
+      "name": "func setItemProviders([NSItemProvider], localOnly: Bool, expirationDate: Date?)",
+      "desc": "Sets and configures an explicit array of item providers for the pasteboard."
+    },
+    {
+      "name": "func setObjects([NSItemProviderWriting])",
+      "desc": "Sets an array of item providers for the pasteboard, based on a specified array of objects."
+    },
+    {
+      "name": "func setObjects<T>([T])",
+      "desc": "Sets an array of item providers for the pasteboard, based on a specified array of objects."
+    },
+    {
+      "name": "func setObjects([NSItemProviderWriting], localOnly: Bool, expirationDate: Date?)",
+      "desc": "Sets and configures an array of item providers for the pasteboard, based on a specified array of objects."
+    },
+    {
+      "name": "func setObjects<T>([T], localOnly: Bool, expirationDate: Date?)",
+      "desc": "Sets and configures an array of item providers for the pasteboard, based on a specified array of objects."
+    },
+    {
+      "name": "struct UIPasteboard.Name",
+      "desc": "Constants that identify the name of a pasteboard."
+    },
+    {
+      "name": "struct UIPasteboard.OptionsKey",
+      "desc": "Options for describing pasteboard privacy. Use these options with the setItems(_:options:) method. Options that you set apply to all the items on a pasteboard."
+    },
+    {
+      "name": "class let changedNotification: NSNotification.Name",
+      "desc": "Posted by a pasteboard object when its contents change."
+    },
+    {
+      "name": "class let removedNotification: NSNotification.Name",
+      "desc": "Posted by a pasteboard object just before an app removes it."
+    },
+    {
+      "name": "func detectPatterns(for: Set<PartialKeyPath<UIPasteboard.DetectedValues>>, completionHandler: (Result<Set<PartialKeyPath<UIPasteboard.DetectedValues>>, Error>) -> ())"
+    },
+    {
+      "name": "func detectPatterns(for: Set<PartialKeyPath<UIPasteboard.DetectedValues>>, inItemSet: IndexSet?, completionHandler: (Result<[Set<PartialKeyPath<UIPasteboard.DetectedValues>>], Error>) -> ())"
+    },
+    {
+      "name": "func detectValues(for: Set<PartialKeyPath<UIPasteboard.DetectedValues>>, completionHandler: (Result<UIPasteboard.DetectedValues, Error>) -> ())"
+    },
+    {
+      "name": "func detectValues(for: Set<PartialKeyPath<UIPasteboard.DetectedValues>>, inItemSet: IndexSet?, completionHandler: (Result<[UIPasteboard.DetectedValues], Error>) -> ())"
+    },
+    {
+      "name": "func detectedPatterns(for: Set<PartialKeyPath<UIPasteboard.DetectedValues>>) -> Set<PartialKeyPath<UIPasteboard.DetectedValues>>"
+    },
+    {
+      "name": "func detectedPatterns(for: Set<PartialKeyPath<UIPasteboard.DetectedValues>>, inItemSet: IndexSet?) -> [Set<PartialKeyPath<UIPasteboard.DetectedValues>>]"
+    },
+    {
+      "name": "func detectedValues(for: Set<PartialKeyPath<UIPasteboard.DetectedValues>>) -> UIPasteboard.DetectedValues"
+    },
+    {
+      "name": "func detectedValues(for: Set<PartialKeyPath<UIPasteboard.DetectedValues>>, inItemSet: IndexSet?) -> [UIPasteboard.DetectedValues]"
+    },
+    {
+      "name": "struct UIPasteboard.DetectedValues"
+    }
+  ],
+  "declaration": "class UIPasteboard : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

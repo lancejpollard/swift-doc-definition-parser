@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/metal/mtllibrary",
+  "type": "Protocol",
+  "name": "MTLLibrary",
+  "desc": "A collection of Metal shader functions.",
+  "items": [
+    {
+      "name": "var installName: String?",
+      "desc": "The installation name for a dynamic library."
+    },
+    {
+      "name": "var type: MTLLibraryType",
+      "desc": "The library’s basic type."
+    },
+    {
+      "name": "enum MTLLibraryType",
+      "desc": "A set of options for Metal library types."
+    },
+    {
+      "name": "var functionNames: [String]",
+      "desc": "The names of all public functions in the library."
+    },
+    {
+      "name": "func makeFunction(name: String) -> MTLFunction?",
+      "desc": "Creates an object that represents a shader function in the library."
+    },
+    {
+      "name": "func makeFunction(name: String, constantValues: MTLFunctionConstantValues, completionHandler: (MTLFunction?, Error?) -> Void)",
+      "desc": "Asynchronously creates a specialized shader function."
+    },
+    {
+      "name": "func makeFunction(name: String, constantValues: MTLFunctionConstantValues) -> MTLFunction",
+      "desc": "Synchronously creates a specialized shader function."
+    },
+    {
+      "name": "func makeFunction(descriptor: MTLFunctionDescriptor, completionHandler: (MTLFunction?, Error?) -> Void)",
+      "desc": "Asynchronously creates an object representing a shader function, using the specified descriptor."
+    },
+    {
+      "name": "func makeFunction(descriptor: MTLFunctionDescriptor) -> MTLFunction",
+      "desc": "Synchronously creates an object representing a shader function, using the specified descriptor."
+    },
+    {
+      "name": "func makeIntersectionFunction(descriptor: MTLIntersectionFunctionDescriptor, completionHandler: (MTLFunction?, Error?) -> Void)",
+      "desc": "Asynchronously creates an object representing a ray-tracing intersection function, using the specified descriptor."
+    },
+    {
+      "name": "func makeIntersectionFunction(descriptor: MTLIntersectionFunctionDescriptor) -> MTLFunction",
+      "desc": "Synchronously creates an object representing a ray-tracing intersection function, using the specified descriptor."
+    },
+    {
+      "name": "var device: MTLDevice",
+      "desc": "The Metal device object that created the library."
+    },
+    {
+      "name": "var label: String?",
+      "desc": "A string that identifies the library."
+    }
+  ],
+  "declaration": "protocol MTLLibrary",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

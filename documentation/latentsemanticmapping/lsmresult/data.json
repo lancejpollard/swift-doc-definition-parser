@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/latentsemanticmapping/lsmresult",
+  "type": "Class",
+  "name": "LSMResult",
+  "desc": "A result of a lookup in a map.",
+  "items": [
+    {
+      "name": "func LSMResultCreate(CFAllocator?, LSMMap, LSMText, CFIndex, CFOptionFlags) -> Unmanaged<LSMResult>",
+      "desc": "Returns the categories or words that best match when a text is mapped into a map, in decreasing order of likelihood."
+    },
+    {
+      "name": "func LSMResultGetCount(LSMResult) -> CFIndex",
+      "desc": "Returns the number of results."
+    },
+    {
+      "name": "func LSMResultGetCategory(LSMResult, CFIndex) -> LSMCategory",
+      "desc": "Returns the category of the specified result."
+    },
+    {
+      "name": "func LSMResultGetScore(LSMResult, CFIndex) -> Float",
+      "desc": "Returns the likelihood of the specified result."
+    },
+    {
+      "name": "func LSMResultCopyToken(LSMResult, CFIndex) -> Unmanaged<CFData>?",
+      "desc": "Returns the token for the n-th best (zero-based) result."
+    },
+    {
+      "name": "func LSMResultCopyTokenCluster(LSMResult, CFIndex) -> Unmanaged<CFArray>?",
+      "desc": "Returns the cluster of tokens for the n-th best (zero-based) result."
+    },
+    {
+      "name": "func LSMResultCopyWord(LSMResult, CFIndex) -> Unmanaged<CFString>?",
+      "desc": "Returns the word for the n-th best (zero-based) result."
+    },
+    {
+      "name": "func LSMResultCopyWordCluster(LSMResult, CFIndex) -> Unmanaged<CFArray>?",
+      "desc": "Returns the cluster of words for the n-th best (zero-based) result."
+    },
+    {
+      "name": "func LSMResultGetTypeID() -> CFTypeID",
+      "desc": "Returns the Core Foundation type identifier for Latent Semantic Mapping results."
+    }
+  ],
+  "declaration": "class LSMResult"
+}

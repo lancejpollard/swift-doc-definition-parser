@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/accelerate/vdsp/vectorizablefloat",
+  "type": "Structure",
+  "name": "vDSP.VectorizableFloat",
+  "desc": "A structure that represents a single-precision real value for biquadratic filtering and discrete Fourier transforms.",
+  "items": [
+    {
+      "name": "typealias vDSP.VectorizableFloat.Scalar"
+    },
+    {
+      "name": "static func applyMulti(setup: vDSP_biquadm_SetupD, pInputs: UnsafeMutablePointer<UnsafePointer<vDSP.VectorizableFloat.Scalar>>, pOutputs: UnsafeMutablePointer<UnsafeMutablePointer<vDSP.VectorizableFloat.Scalar>>, count: vDSP_Length)"
+    },
+    {
+      "name": "static func applySingle<U, V>(source: U, destination: inout V, delays: UnsafeMutablePointer<vDSP.VectorizableFloat.Scalar>, setup: vDSP_biquad_Setup, sectionCount: vDSP_Length, count: vDSP_Length)"
+    },
+    {
+      "name": "static func destroySetup(channelCount: UInt, biquadSetup: OpaquePointer)"
+    },
+    {
+      "name": "static func makeBiquadSetup(channelCount: UInt, coefficients: [Double], sectionCount: UInt) -> OpaquePointer?"
+    }
+  ],
+  "declaration": "struct VectorizableFloat",
+  "conformsTo": [
+    "vDSP_BiquadFunctions",
+    "vDSP_DFTFunctions"
+  ]
+}

@@ -1,0 +1,646 @@
+{
+  "path": "/documentation/swift/substring",
+  "type": "Structure",
+  "name": "Substring",
+  "desc": "A slice of a string.",
+  "items": [
+    {
+      "name": "typealias Substring.Element",
+      "desc": "A type representing the sequence’s elements."
+    },
+    {
+      "name": "typealias Substring.ExtendedGraphemeClusterLiteralType",
+      "desc": "A type that represents an extended grapheme cluster literal."
+    },
+    {
+      "name": "typealias Substring.Index",
+      "desc": "A type that represents a position in the collection."
+    },
+    {
+      "name": "typealias Substring.Indices",
+      "desc": "A type that represents the indices that are valid for subscripting the collection, in ascending order."
+    },
+    {
+      "name": "typealias Substring.Iterator",
+      "desc": "A type that provides the collection’s iteration interface and encapsulates its iteration state."
+    },
+    {
+      "name": "typealias Substring.StringInterpolation",
+      "desc": "The type each segment of a string literal containing interpolations should be appended to."
+    },
+    {
+      "name": "typealias Substring.StringLiteralType",
+      "desc": "A type that represents a string literal."
+    },
+    {
+      "name": "typealias Substring.SubSequence",
+      "desc": "A collection representing a contiguous subrange of this collection’s elements. The subsequence shares indices with the original collection."
+    },
+    {
+      "name": "typealias Substring.UnicodeScalarLiteralType",
+      "desc": "A type that represents a Unicode scalar literal."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates an empty substring."
+    },
+    {
+      "name": "init(String)",
+      "desc": "Instantiates an instance of the conforming type from a string representation."
+    },
+    {
+      "name": "init<S>(S)",
+      "desc": "Creates a new instance of a collection containing the elements of a sequence."
+    },
+    {
+      "name": "init<S>(S)",
+      "desc": "Creates a new instance of a collection containing the elements of a sequence."
+    },
+    {
+      "name": "init(Substring.UnicodeScalarView)",
+      "desc": "Creates a Substring having the given content."
+    },
+    {
+      "name": "init(Substring.UTF8View)",
+      "desc": "Creates a Substring having the given content."
+    },
+    {
+      "name": "init(Substring.UTF16View)",
+      "desc": "Creates a Substring having the given content."
+    },
+    {
+      "name": "init(cString: UnsafePointer<CChar>)",
+      "desc": "Creates a string from the null-terminated, UTF-8 encoded sequence of bytes at the given pointer."
+    },
+    {
+      "name": "init<C, Encoding>(decoding: C, as: Encoding.Type)",
+      "desc": "Creates a string from the given Unicode code units in the specified encoding."
+    },
+    {
+      "name": "init<Encoding>(decodingCString: UnsafePointer<Encoding.CodeUnit>, as: Encoding.Type)",
+      "desc": "Creates a string from the null-terminated sequence of bytes at the given pointer."
+    },
+    {
+      "name": "init(extendedGraphemeClusterLiteral: String)",
+      "desc": "Creates an instance initialized to the given value."
+    },
+    {
+      "name": "init(repeating: Character, count: Int)",
+      "desc": "Creates a new collection containing the specified number of a single, repeated value."
+    },
+    {
+      "name": "init(stringInterpolation: DefaultStringInterpolation)",
+      "desc": "Creates a new instance from an interpolated string literal."
+    },
+    {
+      "name": "init(stringLiteral: String)",
+      "desc": "Creates an instance initialized to the given string value."
+    },
+    {
+      "name": "init(unicodeScalarLiteral: String)",
+      "desc": "Creates an instance initialized to the given value."
+    },
+    {
+      "name": "var base: String",
+      "desc": "Returns the underlying string from which this substring was derived."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of elements in the collection."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "The custom mirror for this instance."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual representation of this instance, suitable for debugging."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual representation of this instance."
+    },
+    {
+      "name": "var endIndex: Substring.Index",
+      "desc": "The collection’s “past the end” position—that is, the position one greater than the last valid subscript argument."
+    },
+    {
+      "name": "var first: Character?",
+      "desc": "The first element of the collection."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "var indices: DefaultIndices<Substring>",
+      "desc": "The indices that are valid for subscripting the collection, in ascending order."
+    },
+    {
+      "name": "var isContiguousUTF8: Bool",
+      "desc": "Returns whether this string is capable of providing access to validly-encoded UTF-8 contents in contiguous memory in O(1) time."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value indicating whether the collection is empty."
+    },
+    {
+      "name": "var last: Character?",
+      "desc": "The last element of the collection."
+    },
+    {
+      "name": "var lazy: LazySequence<Substring>",
+      "desc": "A sequence containing the same elements as this sequence, but on which some operations, such as map and filter, are implemented lazily."
+    },
+    {
+      "name": "var startIndex: Substring.Index",
+      "desc": "The position of the first element in a nonempty collection."
+    },
+    {
+      "name": "var underestimatedCount: Int",
+      "desc": "A value less than or equal to the number of elements in the collection."
+    },
+    {
+      "name": "var unicodeScalars: Substring.UnicodeScalarView"
+    },
+    {
+      "name": "var utf16: Substring.UTF16View"
+    },
+    {
+      "name": "var utf8: Substring.UTF8View"
+    },
+    {
+      "name": "func allSatisfy((Character) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether every element of a sequence satisfies a given predicate."
+    },
+    {
+      "name": "func append(Character)",
+      "desc": "Adds an element to the end of the collection."
+    },
+    {
+      "name": "func append<S>(contentsOf: S)",
+      "desc": "Adds the elements of a sequence or collection to the end of this collection."
+    },
+    {
+      "name": "func append<S>(contentsOf: S)",
+      "desc": "Adds the elements of a sequence or collection to the end of this collection."
+    },
+    {
+      "name": "func applying(CollectionDifference<Character>) -> Substring?",
+      "desc": "Applies the given difference to this collection."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((Character) -> ElementOfResult?) -> [ElementOfResult]",
+      "desc": "Returns an array containing the non-nil results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func contains(Character) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence contains the given element."
+    },
+    {
+      "name": "func contains(where: (Character) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func difference<C>(from: C) -> CollectionDifference<Character>",
+      "desc": "Returns the difference needed to produce this collection’s ordered elements from the given collection."
+    },
+    {
+      "name": "func difference<C>(from: C, by: (C.Element, Character) -> Bool) -> CollectionDifference<Character>",
+      "desc": "Returns the difference needed to produce this collection’s ordered elements from the given collection, using the given predicate as an equivalence test."
+    },
+    {
+      "name": "func distance(from: Substring.Index, to: Substring.Index) -> Int",
+      "desc": "Returns the distance between two indices."
+    },
+    {
+      "name": "func drop(while: (Character) -> Bool) -> Substring",
+      "desc": "Returns a subsequence by skipping elements while predicate returns true and returning the remaining elements."
+    },
+    {
+      "name": "func dropFirst(Int) -> Substring",
+      "desc": "Returns a subsequence containing all but the given number of initial elements."
+    },
+    {
+      "name": "func dropLast(Int) -> Substring",
+      "desc": "Returns a subsequence containing all but the specified number of final elements."
+    },
+    {
+      "name": "func elementsEqual<OtherSequence>(OtherSequence) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this sequence and another sequence contain the same elements in the same order."
+    },
+    {
+      "name": "func elementsEqual<OtherSequence>(OtherSequence, by: (Character, OtherSequence.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this sequence and another sequence contain equivalent elements in the same order, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func enumerated() -> EnumeratedSequence<Substring>",
+      "desc": "Returns a sequence of pairs (n, x), where n represents a consecutive integer starting at zero and x represents an element of the sequence."
+    },
+    {
+      "name": "func filter((Substring.Element) -> Bool) -> String"
+    },
+    {
+      "name": "func first(where: (Character) -> Bool) -> Character?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func firstIndex(of: Character) -> String.Index?",
+      "desc": "Returns the first index where the specified value appears in the collection."
+    },
+    {
+      "name": "func firstIndex(where: (Character) -> Bool) -> String.Index?",
+      "desc": "Returns the first index in which an element of the collection satisfies the given predicate."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((Character) -> SegmentOfResult) -> [SegmentOfResult.Element]",
+      "desc": "Returns an array containing the concatenated results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func forEach((Character) -> Void)",
+      "desc": "Calls the given closure on each element in the sequence in the same order as a for-in loop."
+    },
+    {
+      "name": "func formIndex(inout String.Index, offsetBy: Int)",
+      "desc": "Offsets the given index by the specified distance."
+    },
+    {
+      "name": "func formIndex(inout String.Index, offsetBy: Int, limitedBy: String.Index) -> Bool",
+      "desc": "Offsets the given index by the specified distance, or so that it equals the given limiting index."
+    },
+    {
+      "name": "func formIndex(after: inout String.Index)",
+      "desc": "Replaces the given index with its successor."
+    },
+    {
+      "name": "func formIndex(before: inout String.Index)",
+      "desc": "Replaces the given index with its predecessor."
+    },
+    {
+      "name": "func hasPrefix<Prefix>(Prefix) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the string begins with the specified prefix."
+    },
+    {
+      "name": "func hasSuffix<Suffix>(Suffix) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the string ends with the specified suffix."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "func index(Substring.Index, offsetBy: Int) -> Substring.Index",
+      "desc": "Returns an index that is the specified distance from the given index."
+    },
+    {
+      "name": "func index(Substring.Index, offsetBy: Int, limitedBy: Substring.Index) -> Substring.Index?",
+      "desc": "Returns an index that is the specified distance from the given index, unless that distance is beyond a given limiting index."
+    },
+    {
+      "name": "func index(after: Substring.Index) -> Substring.Index",
+      "desc": "Returns the position immediately after the given index."
+    },
+    {
+      "name": "func index(before: Substring.Index) -> Substring.Index",
+      "desc": "Returns the position immediately before the given index."
+    },
+    {
+      "name": "func insert(Character, at: String.Index)",
+      "desc": "Inserts a new element into the collection at the specified position."
+    },
+    {
+      "name": "func insert<C>(contentsOf: C, at: String.Index)",
+      "desc": "Inserts the elements of a sequence into the collection at the specified position."
+    },
+    {
+      "name": "func last(where: (Character) -> Bool) -> Character?",
+      "desc": "Returns the last element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func lastIndex(of: Character) -> String.Index?",
+      "desc": "Returns the last index where the specified value appears in the collection."
+    },
+    {
+      "name": "func lastIndex(where: (Character) -> Bool) -> String.Index?",
+      "desc": "Returns the index of the last element in the collection that matches the given predicate."
+    },
+    {
+      "name": "func lexicographicallyPrecedes<OtherSequence>(OtherSequence) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the less-than operator (<) to compare elements."
+    },
+    {
+      "name": "func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Character, Character) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the given predicate to compare elements."
+    },
+    {
+      "name": "func lowercased() -> String"
+    },
+    {
+      "name": "func makeContiguousUTF8()",
+      "desc": "If this string is not contiguous, make it so. If this mutates the substring, it will invalidate any pre-existing indices."
+    },
+    {
+      "name": "func makeIterator() -> IndexingIterator<Substring>",
+      "desc": "Returns an iterator over the elements of the collection."
+    },
+    {
+      "name": "func map<T>((Character) -> T) -> [T]",
+      "desc": "Returns an array containing the results of mapping the given closure over the sequence’s elements."
+    },
+    {
+      "name": "func max() -> Character?",
+      "desc": "Returns the maximum element in the sequence."
+    },
+    {
+      "name": "func max(by: (Character, Character) -> Bool) -> Character?",
+      "desc": "Returns the maximum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func min() -> Character?",
+      "desc": "Returns the minimum element in the sequence."
+    },
+    {
+      "name": "func min(by: (Character, Character) -> Bool) -> Character?",
+      "desc": "Returns the minimum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func popFirst() -> Character?",
+      "desc": "Removes and returns the first element of the collection."
+    },
+    {
+      "name": "func popLast() -> Character?",
+      "desc": "Removes and returns the last element of the collection."
+    },
+    {
+      "name": "func prefix(Int) -> Substring",
+      "desc": "Returns a subsequence, up to the specified maximum length, containing the initial elements of the collection."
+    },
+    {
+      "name": "func prefix(through: String.Index) -> Substring",
+      "desc": "Returns a subsequence from the start of the collection through the specified position."
+    },
+    {
+      "name": "func prefix(upTo: String.Index) -> Substring",
+      "desc": "Returns a subsequence from the start of the collection up to, but not including, the specified position."
+    },
+    {
+      "name": "func prefix(while: (Character) -> Bool) -> Substring",
+      "desc": "Returns a subsequence containing the initial elements until predicate returns false and skipping the remaining elements."
+    },
+    {
+      "name": "func randomElement() -> Character?",
+      "desc": "Returns a random element of the collection."
+    },
+    {
+      "name": "func randomElement<T>(using: inout T) -> Character?",
+      "desc": "Returns a random element of the collection, using the given generator as a source for randomness."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, Character) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, Character) -> ()) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "func remove(at: String.Index) -> Character",
+      "desc": "Removes and returns the element at the specified position."
+    },
+    {
+      "name": "func removeAll(keepingCapacity: Bool)",
+      "desc": "Removes all elements from the collection."
+    },
+    {
+      "name": "func removeAll(where: (Character) -> Bool)",
+      "desc": "Removes all the elements that satisfy the given predicate."
+    },
+    {
+      "name": "func removeFirst() -> Character",
+      "desc": "Removes and returns the first element of the collection."
+    },
+    {
+      "name": "func removeFirst(Int)",
+      "desc": "Removes the specified number of elements from the beginning of the collection."
+    },
+    {
+      "name": "func removeLast() -> Character",
+      "desc": "Removes and returns the last element of the collection."
+    },
+    {
+      "name": "func removeLast(Int)",
+      "desc": "Removes the specified number of elements from the end of the collection."
+    },
+    {
+      "name": "func removeSubrange(Range<String.Index>)",
+      "desc": "Removes the elements in the specified subrange from the collection."
+    },
+    {
+      "name": "func removeSubrange<R>(R)",
+      "desc": "Removes the elements in the specified subrange from the collection."
+    },
+    {
+      "name": "func replaceSubrange(Range<Substring.Index>, with: Substring)"
+    },
+    {
+      "name": "func replaceSubrange<C>(Range<Substring.Index>, with: C)",
+      "desc": "Replaces the specified subrange of elements with the given collection."
+    },
+    {
+      "name": "func replaceSubrange<C, R>(R, with: C)",
+      "desc": "Replaces the specified subrange of elements with the given collection."
+    },
+    {
+      "name": "func reserveCapacity(Int)",
+      "desc": "Prepares the collection to store the specified number of elements, when doing so is appropriate for the underlying type."
+    },
+    {
+      "name": "func reversed() -> ReversedCollection<Substring>",
+      "desc": "Returns a view presenting the elements of the collection in reverse order."
+    },
+    {
+      "name": "func shuffled() -> [Character]",
+      "desc": "Returns the elements of the sequence, shuffled."
+    },
+    {
+      "name": "func shuffled<T>(using: inout T) -> [Character]",
+      "desc": "Returns the elements of the sequence, shuffled using the given generator as a source for randomness."
+    },
+    {
+      "name": "func sorted() -> [Character]",
+      "desc": "Returns the elements of the sequence, sorted."
+    },
+    {
+      "name": "func sorted(by: (Character, Character) -> Bool) -> [Character]",
+      "desc": "Returns the elements of the sequence, sorted using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Character) -> Bool) -> [Substring]",
+      "desc": "Returns the longest possible subsequences of the collection, in order, that don’t contain elements satisfying the given predicate."
+    },
+    {
+      "name": "func split(separator: Character, maxSplits: Int, omittingEmptySubsequences: Bool) -> [Substring]",
+      "desc": "Returns the longest possible subsequences of the collection, in order, around elements equal to the given element."
+    },
+    {
+      "name": "func starts<PossiblePrefix>(with: PossiblePrefix) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the initial elements of the sequence are the same as the elements in another sequence."
+    },
+    {
+      "name": "func starts<PossiblePrefix>(with: PossiblePrefix, by: (Character, PossiblePrefix.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the initial elements of the sequence are equivalent to the elements in another sequence, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func suffix(Int) -> Substring",
+      "desc": "Returns a subsequence, up to the given maximum length, containing the final elements of the collection."
+    },
+    {
+      "name": "func suffix(from: String.Index) -> Substring",
+      "desc": "Returns a subsequence from the specified position to the end of the collection."
+    },
+    {
+      "name": "func uppercased() -> String"
+    },
+    {
+      "name": "func withCString<Result>((UnsafePointer<CChar>) -> Result) -> Result",
+      "desc": "Calls the given closure with a pointer to the contents of the string, represented as a null-terminated sequence of UTF-8 code units."
+    },
+    {
+      "name": "func withCString<Result, TargetEncoding>(encodedAs: TargetEncoding.Type, (UnsafePointer<TargetEncoding.CodeUnit>) -> Result) -> Result",
+      "desc": "Calls the given closure with a pointer to the contents of the string, represented as a null-terminated sequence of code units."
+    },
+    {
+      "name": "func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<Character>) -> R) -> R?",
+      "desc": "Executes a closure on the sequence’s contiguous storage."
+    },
+    {
+      "name": "func withUTF8<R>((UnsafeBufferPointer<UInt8>) -> R) -> R",
+      "desc": "Runs body over the content of this substring in contiguous memory. If this substring is not contiguous, this will first make it contiguous, which will also speed up subsequent access. If this mutates the substring, it will invalidate any pre-existing indices."
+    },
+    {
+      "name": "func write(String)",
+      "desc": "Appends the given string to the stream."
+    },
+    {
+      "name": "func write<Target>(to: inout Target)",
+      "desc": "Writes a textual representation of this instance into the given output stream."
+    },
+    {
+      "name": "subscript(Substring.Index) -> Character",
+      "desc": "Accesses the element at the specified position."
+    },
+    {
+      "name": "subscript(Range<Substring.Index>) -> Substring",
+      "desc": "Accesses a contiguous subrange of the collection’s elements."
+    },
+    {
+      "name": "subscript<R>(R) -> Substring",
+      "desc": "Accesses the contiguous subrange of the collection’s elements specified by a range expression."
+    },
+    {
+      "name": "subscript((UnboundedRange_) -> ()) -> Substring"
+    },
+    {
+      "name": "static func != (Substring, Substring) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func != <RHS>(Substring, RHS) -> Bool"
+    },
+    {
+      "name": "static func + <Other>(Other, Substring) -> Substring",
+      "desc": "Creates a new collection by concatenating the elements of a sequence and a collection."
+    },
+    {
+      "name": "static func + <Other>(Substring, Other) -> Substring",
+      "desc": "Creates a new collection by concatenating the elements of a collection and a sequence."
+    },
+    {
+      "name": "static func + <Other>(Substring, Other) -> Substring",
+      "desc": "Creates a new collection by concatenating the elements of two collections."
+    },
+    {
+      "name": "static func += <Other>(inout Substring, Other)",
+      "desc": "Appends the elements of a sequence to a range-replaceable collection."
+    },
+    {
+      "name": "static func ... (Substring) -> PartialRangeFrom<Substring>",
+      "desc": "Returns a partial range extending upward from a lower bound."
+    },
+    {
+      "name": "static func ... (Substring) -> PartialRangeThrough<Substring>",
+      "desc": "Returns a partial range up to, and including, its upper bound."
+    },
+    {
+      "name": "static func ... (Substring, Substring) -> ClosedRange<Substring>",
+      "desc": "Returns a closed range that contains both of its bounds."
+    },
+    {
+      "name": "static func ..< (Substring) -> PartialRangeUpTo<Substring>",
+      "desc": "Returns a partial range up to, but not including, its upper bound."
+    },
+    {
+      "name": "static func ..< (Substring, Substring) -> Range<Substring>",
+      "desc": "Returns a half-open range that contains its lower bound but not its upper bound."
+    },
+    {
+      "name": "static func < <RHS>(Substring, RHS) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than that of the second argument."
+    },
+    {
+      "name": "static func <= (Substring, Substring) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than or equal to that of the second argument."
+    },
+    {
+      "name": "static func <= <RHS>(Substring, RHS) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than or equal to that of the second argument."
+    },
+    {
+      "name": "static func == <RHS>(Substring, RHS) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "static func > (Substring, Substring) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than that of the second argument."
+    },
+    {
+      "name": "static func > <RHS>(Substring, RHS) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than that of the second argument."
+    },
+    {
+      "name": "static func >= (Substring, Substring) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than or equal to that of the second argument."
+    },
+    {
+      "name": "static func >= <RHS>(Substring, RHS) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than or equal to that of the second argument."
+    },
+    {
+      "name": "static func ~= (Substring, String) -> Bool"
+    },
+    {
+      "name": "struct Substring.UTF16View"
+    },
+    {
+      "name": "struct Substring.UTF8View"
+    },
+    {
+      "name": "struct Substring.UnicodeScalarView"
+    }
+  ],
+  "declaration": "@frozen struct Substring",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "ExpressibleByExtendedGraphemeClusterLiteral",
+    "ExpressibleByStringLiteral",
+    "ExpressibleByUnicodeScalarLiteral",
+    "LosslessStringConvertible",
+    "RangeReplaceableCollection",
+    "Sendable",
+    "StringProtocol",
+    "TextOutputStream",
+    "TextOutputStreamable"
+  ]
+}

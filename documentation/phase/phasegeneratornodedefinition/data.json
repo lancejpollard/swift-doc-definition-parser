@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/phase/phasegeneratornodedefinition",
+  "type": "Class",
+  "name": "PHASEGeneratorNodeDefinition",
+  "desc": "A base class for nodes that provide audio data to generate sound.",
+  "items": [
+    {
+      "name": "func setCalibrationMode(calibrationMode: PHASECalibrationMode, level: Double)",
+      "desc": "Selects a loudness correction strategy and reference level."
+    },
+    {
+      "name": "var calibrationMode: PHASECalibrationMode",
+      "desc": "A sound pressure level strategy for loudness correction."
+    },
+    {
+      "name": "var level: Double",
+      "desc": "The node's loudness."
+    },
+    {
+      "name": "var mixerDefinition: PHASEMixerDefinition",
+      "desc": "An object that combines audio layers for the node's output."
+    },
+    {
+      "name": "var group: PHASEGroup?",
+      "desc": "A group this node conforms to for gain and rate control."
+    },
+    {
+      "name": "var rate: Double",
+      "desc": "A playback speed for the node's audio."
+    },
+    {
+      "name": "var rateMetaParameterDefinition: PHASENumberMetaParameterDefinition?",
+      "desc": "A meta parameter that dynamically changes the audio's rate."
+    },
+    {
+      "name": "var gainMetaParameterDefinition: PHASENumberMetaParameterDefinition?",
+      "desc": "A meta parameter that dynamically changes the audio’s loudness."
+    }
+  ],
+  "declaration": "class PHASEGeneratorNodeDefinition : PHASESoundEventNodeDefinition",
+  "inheritsFrom": [
+    "PHASESoundEventNodeDefinition"
+  ]
+}

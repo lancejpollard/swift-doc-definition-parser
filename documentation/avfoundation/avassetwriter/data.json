@@ -1,0 +1,152 @@
+{
+  "path": "/documentation/avfoundation/avassetwriter",
+  "type": "Class",
+  "name": "AVAssetWriter",
+  "desc": "An object that writes media data to a container file.",
+  "items": [
+    {
+      "name": "init(url: URL, fileType: AVFileType)",
+      "desc": "Returns a new object that writes media data to a container file at the output URL."
+    },
+    {
+      "name": "init(outputURL: URL, fileType: AVFileType)",
+      "desc": "Creates an object that writes media data to a container file at the output URL."
+    },
+    {
+      "name": "init(contentType: UTType)",
+      "desc": "Creates an object that outputs segment data in a specified container format."
+    },
+    {
+      "name": "var inputs: [AVAssetWriterInput]",
+      "desc": "The inputs an asset writer contains."
+    },
+    {
+      "name": "var availableMediaTypes: [AVMediaType]",
+      "desc": "The media types the asset writer supports adding as inputs."
+    },
+    {
+      "name": "func canApply(outputSettings: [String : Any]?, forMediaType: AVMediaType) -> Bool",
+      "desc": "Determines whether the output file format supports the output settings for a specific media type."
+    },
+    {
+      "name": "func canAdd(AVAssetWriterInput) -> Bool",
+      "desc": "Determines whether the asset writer supports adding the input."
+    },
+    {
+      "name": "func add(AVAssetWriterInput)",
+      "desc": "Adds an input to an asset writer."
+    },
+    {
+      "name": "var inputGroups: [AVAssetWriterInputGroup]",
+      "desc": "The input groups an asset writer contains."
+    },
+    {
+      "name": "func canAdd(AVAssetWriterInputGroup) -> Bool",
+      "desc": "Determines whether the asset writer supports adding the input group."
+    },
+    {
+      "name": "func add(AVAssetWriterInputGroup)",
+      "desc": "Adds an input group to an asset writer."
+    },
+    {
+      "name": "var metadata: [AVMetadataItem]",
+      "desc": "An array of metadata items to write to the output file."
+    },
+    {
+      "name": "var shouldOptimizeForNetworkUse: Bool",
+      "desc": "A Boolean value that indicates whether to write the output file to make it more suitable for playback over a network."
+    },
+    {
+      "name": "var directoryForTemporaryFiles: URL?",
+      "desc": "A directory to contain temporary files that the export process generates."
+    },
+    {
+      "name": "var movieFragmentInterval: CMTime",
+      "desc": "The interval at which to write movie fragments."
+    },
+    {
+      "name": "var initialMovieFragmentSequenceNumber: Int",
+      "desc": "The sequence number of the initial movie fragment."
+    },
+    {
+      "name": "var producesCombinableFragments: Bool",
+      "desc": "A Boolean value that indicates whether the asset writer outputs movie fragments suitable for combining with others."
+    },
+    {
+      "name": "var overallDurationHint: CMTime",
+      "desc": "A hint of the final duration of the output file."
+    },
+    {
+      "name": "var movieTimeScale: CMTimeScale",
+      "desc": "The time scale of the movie."
+    },
+    {
+      "name": "func startWriting() -> Bool",
+      "desc": "Tells the writer to start writing its output."
+    },
+    {
+      "name": "func startSession(atSourceTime: CMTime)",
+      "desc": "Starts an asset-writing session."
+    },
+    {
+      "name": "func endSession(atSourceTime: CMTime)",
+      "desc": "Finishes an asset-writing session."
+    },
+    {
+      "name": "func finishWriting(completionHandler: () -> Void)",
+      "desc": "Marks all unfinished inputs as finished and completes the writing of the output file."
+    },
+    {
+      "name": "func cancelWriting()",
+      "desc": "Cancels the creation of the output file."
+    },
+    {
+      "name": "var status: AVAssetWriter.Status",
+      "desc": "The status of writing samples to the output file."
+    },
+    {
+      "name": "enum AVAssetWriter.Status",
+      "desc": "Values that indicate the state of an asset writer."
+    },
+    {
+      "name": "var error: Error?",
+      "desc": "An error object that describes an asset-writing failure."
+    },
+    {
+      "name": "var delegate: AVAssetWriterDelegate?",
+      "desc": "A delegate object that responds to asset-writing events."
+    },
+    {
+      "name": "protocol AVAssetWriterDelegate",
+      "desc": "A delegate protocol that defines the methods to implement to respond to asset-writing events."
+    },
+    {
+      "name": "var preferredOutputSegmentInterval: CMTime",
+      "desc": "The interval of output segments that you prefer."
+    },
+    {
+      "name": "var initialSegmentStartTime: CMTime",
+      "desc": "The start time of the initial segment."
+    },
+    {
+      "name": "var outputFileTypeProfile: AVFileTypeProfile?",
+      "desc": "A profile for the output file type."
+    },
+    {
+      "name": "func flushSegment()",
+      "desc": "Closes the current segment and outputs it to a delegate method."
+    },
+    {
+      "name": "var outputURL: URL",
+      "desc": "The location of the container file that the writer outputs."
+    },
+    {
+      "name": "var outputFileType: AVFileType",
+      "desc": "The type of container file that the writer outputs."
+    }
+  ],
+  "declaration": "class AVAssetWriter : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

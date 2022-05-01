@@ -1,0 +1,88 @@
+{
+  "path": "/documentation/realitykit/blendtreeanimation",
+  "type": "Generic Structure",
+  "name": "BlendTreeAnimation",
+  "desc": "A collection of animations on the same property that the framework blends to a single animation.",
+  "items": [
+    {
+      "name": "init(BlendTreeNode, name: String, isAdditive: Bool, bindTarget: BindTarget?, blendLayer: Int32, repeatMode: AnimationRepeatMode, fillMode: AnimationFillMode, trimStart: TimeInterval?, trimEnd: TimeInterval?, trimDuration: TimeInterval?, offset: TimeInterval, delay: TimeInterval, speed: Float)",
+      "desc": "Creates a unique animation from a combination of other animations in the form of a tree."
+    },
+    {
+      "name": "var root: BlendTreeNode",
+      "desc": "The first node in a tree of animations."
+    },
+    {
+      "name": "var name: String",
+      "desc": "A textual name for the animation."
+    },
+    {
+      "name": "var bindTarget: BindTarget",
+      "desc": "A textual name that identifies the particular property that animates."
+    },
+    {
+      "name": "var blendLayer: Int32",
+      "desc": "The order in which the framework composites the animation."
+    },
+    {
+      "name": "var isAdditive: Bool",
+      "desc": "A Boolean value that indicates whether the animation builds on the current state of the target entity or resets the state before running."
+    },
+    {
+      "name": "var speed: Float",
+      "desc": "A factor that increases or decreases the animation’s rate of playback."
+    },
+    {
+      "name": "var delay: TimeInterval",
+      "desc": "An amount of time that lapses before the animation plays."
+    },
+    {
+      "name": "var duration: TimeInterval",
+      "desc": "The total playback time of the animation."
+    },
+    {
+      "name": "var offset: TimeInterval",
+      "desc": "The time, in seconds, at which the animation begins within the duration."
+    },
+    {
+      "name": "var trimDuration: TimeInterval?",
+      "desc": "An optional duration that overrides the calculated duration."
+    },
+    {
+      "name": "var trimStart: TimeInterval?",
+      "desc": "The optional time, in seconds, at which the source animation plays."
+    },
+    {
+      "name": "var trimEnd: TimeInterval?",
+      "desc": "The optional time, in seconds, at which the source animation stops."
+    },
+    {
+      "name": "func trimmed(start: TimeInterval?, end: TimeInterval?, duration: TimeInterval?) -> BlendTreeAnimation<Value>",
+      "desc": "Edits the animation duration according to the specified time."
+    },
+    {
+      "name": "var repeatMode: AnimationRepeatMode",
+      "desc": "An option that determines how the animation repeats."
+    },
+    {
+      "name": "var fillMode: AnimationFillMode",
+      "desc": "An option that determines which data displays outside of the normal duration."
+    },
+    {
+      "name": "func repeated(count: TimeInterval) -> BlendTreeAnimation<Value>",
+      "desc": "Repeats an animation the number of times specified by an irrational number."
+    },
+    {
+      "name": "func repeated(count: Int) -> BlendTreeAnimation<Value>",
+      "desc": "Repeats an animation the number of times specified by a whole number."
+    },
+    {
+      "name": "func repeatingForever() -> BlendTreeAnimation<Value>",
+      "desc": "Repeats an animation an indefinite number of times."
+    }
+  ],
+  "declaration": "struct BlendTreeAnimation<Value> where Value : AnimatableData",
+  "conformsTo": [
+    "AnimationDefinition"
+  ]
+}

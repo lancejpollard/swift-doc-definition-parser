@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/corespotlight/cssearchquery",
+  "type": "Class",
+  "name": "CSSearchQuery",
+  "desc": "The criteria to apply when searching previously indexed app content.",
+  "items": [
+    {
+      "name": "let CSSearchQueryString: String",
+      "desc": "Provides the key within the NSUserActivity object’s userInfo dictionary for which the value is the string that represents the user’s current query."
+    },
+    {
+      "name": "let CSQueryContinuationActionType: String",
+      "desc": "Indicates that the activity type to continue is a search or query."
+    },
+    {
+      "name": "init(queryString: String, attributes: [String]?)",
+      "desc": "Initializes and returns a query object with the specified query string and item attributes."
+    },
+    {
+      "name": "var protectionClasses: [FileProtectionType]",
+      "desc": "An array of data protection classes that correspond to the protection classes associated with the indexed items."
+    },
+    {
+      "name": "func start()",
+      "desc": "Asynchronously queries the index for items that match the query object’s specifications."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Cancels a query operation."
+    },
+    {
+      "name": "var isCancelled: Bool",
+      "desc": "A Boolean value that indicates if the query has been cancelled."
+    },
+    {
+      "name": "var completionHandler: ((Error?) -> Void)?",
+      "desc": "The block to execute when the query completes."
+    },
+    {
+      "name": "var foundItemCount: Int",
+      "desc": "The number of items found so far."
+    },
+    {
+      "name": "var foundItemsHandler: (([CSSearchableItem]) -> Void)?",
+      "desc": "The block to execute when the query finds a new batch of matching items."
+    }
+  ],
+  "declaration": "class CSSearchQuery : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

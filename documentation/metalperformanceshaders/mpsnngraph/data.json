@@ -1,0 +1,95 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsnngraph",
+  "type": "Class",
+  "name": "MPSNNGraph",
+  "desc": "An optimized representation of a graph of neural network image and filter nodes.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init?(device: MTLDevice, resultImage: MPSNNImageNode, resultImageIsNeeded: Bool)"
+    },
+    {
+      "name": "init?(device: MTLDevice, resultImages: [MPSNNImageNode], resultsAreNeeded: UnsafeMutablePointer<ObjCBool>?)"
+    },
+    {
+      "name": "var destinationImageAllocator: MPSImageAllocator"
+    },
+    {
+      "name": "protocol MPSImageAllocator"
+    },
+    {
+      "name": "var intermediateImageHandles: [MPSHandle]?"
+    },
+    {
+      "name": "var outputStateIsTemporary: Bool"
+    },
+    {
+      "name": "var resultHandle: MPSHandle?"
+    },
+    {
+      "name": "var resultStateHandles: [MPSHandle]?"
+    },
+    {
+      "name": "var sourceImageHandles: [MPSHandle]"
+    },
+    {
+      "name": "var sourceStateHandles: [MPSHandle]?"
+    },
+    {
+      "name": "var format: MPSImageFeatureChannelFormat"
+    },
+    {
+      "name": "var resultImageIsNeeded: Bool"
+    },
+    {
+      "name": "func encode(to: MTLCommandBuffer, sourceImages: [MPSImage]) -> MPSImage?"
+    },
+    {
+      "name": "func encode(to: MTLCommandBuffer, sourceImages: [MPSImage], sourceStates: [MPSState]?, intermediateImages: NSMutableArray?, destinationStates: NSMutableArray?) -> MPSImage?"
+    },
+    {
+      "name": "class MPSState",
+      "desc": "An opaque data container for large storage in MPS CNN filters."
+    },
+    {
+      "name": "class MPSNNBinaryGradientState",
+      "desc": "A class representing the state of a gradient binary kernel when it was encoded."
+    },
+    {
+      "name": "class MPSNNGradientState",
+      "desc": "A class representing the state of a gradient kernel when it was encoded."
+    },
+    {
+      "name": "func executeAsync(withSourceImages: [MPSImage], completionHandler: MPSNNGraphCompletionHandler) -> MPSImage"
+    },
+    {
+      "name": "typealias MPSNNGraphCompletionHandler",
+      "desc": "A notification when an asynchronous graph execution has finished."
+    },
+    {
+      "name": "func encodeBatch(to: MTLCommandBuffer, sourceImages: [[MPSImage]], sourceStates: [[MPSState]]?) -> [MPSImage]?"
+    },
+    {
+      "name": "func encodeBatch(to: MTLCommandBuffer, sourceImages: [[MPSImage]], sourceStates: [[MPSState]]?, intermediateImages: NSMutableArray?, destinationStates: NSMutableArray?) -> [MPSImage]?"
+    },
+    {
+      "name": "func readCountForSourceImage(at: Int) -> Int"
+    },
+    {
+      "name": "func readCountForSourceState(at: Int) -> Int"
+    },
+    {
+      "name": "func reloadFromDataSources()"
+    }
+  ],
+  "declaration": "class MPSNNGraph : MPSKernel",
+  "inheritsFrom": [
+    "MPSKernel"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

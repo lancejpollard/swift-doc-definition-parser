@@ -1,0 +1,25 @@
+{
+  "path": "/documentation/xctest/xctmetric",
+  "type": "Protocol",
+  "name": "XCTMetric",
+  "desc": "A protocol that defines the methods that objects must provide when gathering metrics during performance tests.",
+  "items": [
+    {
+      "name": "func willBeginMeasuring()",
+      "desc": "A method that XCTest calls when it's ready to begin running the measured code."
+    },
+    {
+      "name": "func didStopMeasuring()",
+      "desc": "A method that XCTest calls when it has finished running the measured code."
+    },
+    {
+      "name": "func reportMeasurements(from: XCTPerformanceMeasurementTimestamp, to: XCTPerformanceMeasurementTimestamp) -> [XCTPerformanceMeasurement]",
+      "desc": "Reports the measurements gathered for a metric between specific timestamps."
+    }
+  ],
+  "declaration": "protocol XCTMetric",
+  "inheritsFrom": [
+    "NSCopying",
+    "NSObjectProtocol"
+  ]
+}

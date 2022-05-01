@@ -1,0 +1,243 @@
+{
+  "path": "/documentation/iobluetooth/iobluetoothdevice",
+  "type": "Class",
+  "name": "IOBluetoothDevice",
+  "desc": "An instance of IOBluetoothDevice represents a single remote Bluetooth device.",
+  "items": [
+    {
+      "name": "init!(address: UnsafePointer<BluetoothDeviceAddress>!)",
+      "desc": "Returns the IOBluetoothDevice object for the given BluetoothDeviceAddress"
+    },
+    {
+      "name": "init!(addressString: String!)",
+      "desc": "Returns the IOBluetoothDevice object for the given BluetoothDeviceAddress"
+    },
+    {
+      "name": "var addressString: String!",
+      "desc": "Get a string representation of the Bluetooth device address for the target device. The format of the string is the same as returned by IOBluetoothNSStringFromDeviceAddress()."
+    },
+    {
+      "name": "var classOfDevice: BluetoothClassOfDevice",
+      "desc": "Gets the full class of device value for the remote device."
+    },
+    {
+      "name": "var connectionHandle: BluetoothConnectionHandle",
+      "desc": "Get the connection handle for the baseband connection."
+    },
+    {
+      "name": "var deviceClassMajor: BluetoothDeviceClassMajor",
+      "desc": "Get the major device class of the device."
+    },
+    {
+      "name": "var deviceClassMinor: BluetoothDeviceClassMinor",
+      "desc": "Get the minor service class of the device."
+    },
+    {
+      "name": "var isHandsFreeAudioGateway: Bool"
+    },
+    {
+      "name": "var isHandsFreeDevice: Bool"
+    },
+    {
+      "name": "var lastNameUpdate: Date!",
+      "desc": "Get the date/time of the last successful remote name request."
+    },
+    {
+      "name": "var name: String!",
+      "desc": "Get the human readable name of the remote device."
+    },
+    {
+      "name": "var nameOrAddress: String!",
+      "desc": "Get the human readable name of the remote device. If the name is not present, it will return a string containing the device's address."
+    },
+    {
+      "name": "var serviceClassMajor: BluetoothServiceClassMajor",
+      "desc": "Get the major service class of the device."
+    },
+    {
+      "name": "var services: [Any]!",
+      "desc": "Gets an array of service records for the device."
+    },
+    {
+      "name": "func rssi() -> BluetoothHCIRSSIValue",
+      "desc": "Get the RSSI device (if connected), above or below the golden range. If the RSSI is within the golden range, a value of 0 is returned. For the actual RSSI value, use getRawRSSI. For more information, see the Bluetooth 4.0 Core Specification."
+    },
+    {
+      "name": "func addToFavorites() -> IOReturn",
+      "desc": "Adds the target device to the user's favorite devices list."
+    },
+    {
+      "name": "func awakeAfter(using: NSCoder!) -> Any!"
+    },
+    {
+      "name": "func closeConnection() -> IOReturn",
+      "desc": "Close down the baseband connection to the device."
+    },
+    {
+      "name": "func getAddress() -> UnsafePointer<BluetoothDeviceAddress>!",
+      "desc": "Get the Bluetooth device address for the target device."
+    },
+    {
+      "name": "func getClockOffset() -> BluetoothClockOffset",
+      "desc": "Get the clock offset value of the device."
+    },
+    {
+      "name": "func getEncryptionMode() -> BluetoothHCIEncryptionMode",
+      "desc": "Get the encryption mode for the baseband connection."
+    },
+    {
+      "name": "func getLastInquiryUpdate() -> Date!",
+      "desc": "Get the date/time of the last time the device was returned during an inquiry."
+    },
+    {
+      "name": "func getLastServicesUpdate() -> Date!",
+      "desc": "Get the date/time of the last SDP query."
+    },
+    {
+      "name": "func getLinkType() -> BluetoothLinkType",
+      "desc": "Get the link type for the baseband connection."
+    },
+    {
+      "name": "func getPageScanMode() -> BluetoothPageScanMode",
+      "desc": "Get the page scan mode for the device."
+    },
+    {
+      "name": "func getPageScanPeriodMode() -> BluetoothPageScanPeriodMode",
+      "desc": "Get the value of the page scan period mode for the device."
+    },
+    {
+      "name": "func getPageScanRepetitionMode() -> BluetoothPageScanRepetitionMode",
+      "desc": "Get the value of the page scan repetition mode for the device."
+    },
+    {
+      "name": "func getServiceRecord(for: IOBluetoothSDPUUID!) -> IOBluetoothSDPServiceRecord!",
+      "desc": "Search for a service record containing the given UUID."
+    },
+    {
+      "name": "func handsFreeAudioGatewayServiceRecord() -> IOBluetoothSDPServiceRecord!"
+    },
+    {
+      "name": "func handsFreeDeviceServiceRecord() -> IOBluetoothSDPServiceRecord!"
+    },
+    {
+      "name": "func isConnected() -> Bool",
+      "desc": "Indicates whether a baseband connection to the device exists."
+    },
+    {
+      "name": "func isFavorite() -> Bool",
+      "desc": "Reports whether the target device is a favorite for the user."
+    },
+    {
+      "name": "func isIncoming() -> Bool",
+      "desc": "Returns TRUE if the device connection was generated by the remote host."
+    },
+    {
+      "name": "func isPaired() -> Bool",
+      "desc": "Returns whether the target device is paired."
+    },
+    {
+      "name": "func openConnection() -> IOReturn",
+      "desc": "Create a baseband connection to the device."
+    },
+    {
+      "name": "func openConnection(Any!) -> IOReturn",
+      "desc": "Create a baseband connection to the device."
+    },
+    {
+      "name": "func openConnection(Any!, withPageTimeout: BluetoothHCIPageTimeout, authenticationRequired: Bool) -> IOReturn",
+      "desc": "Create a baseband connection to the device."
+    },
+    {
+      "name": "func openL2CAPChannelAsync(AutoreleasingUnsafeMutablePointer<IOBluetoothL2CAPChannel?>!, withPSM: BluetoothL2CAPPSM, delegate: Any!) -> IOReturn",
+      "desc": "Opens a new L2CAP channel to the target device. Returns immediately after starting the opening process."
+    },
+    {
+      "name": "func openL2CAPChannelAsync(AutoreleasingUnsafeMutablePointer<IOBluetoothL2CAPChannel?>!, withPSM: BluetoothL2CAPPSM, withConfiguration: [AnyHashable : Any]!, delegate: Any!) -> IOReturn",
+      "desc": "Opens a new L2CAP channel to the target device. Returns immediately after starting the opening process."
+    },
+    {
+      "name": "func openL2CAPChannelSync(AutoreleasingUnsafeMutablePointer<IOBluetoothL2CAPChannel?>!, withPSM: BluetoothL2CAPPSM, delegate: Any!) -> IOReturn",
+      "desc": "Opens a new L2CAP channel to the target device. Returns only after the channel is opened."
+    },
+    {
+      "name": "func openL2CAPChannelSync(AutoreleasingUnsafeMutablePointer<IOBluetoothL2CAPChannel?>!, withPSM: BluetoothL2CAPPSM, withConfiguration: [AnyHashable : Any]!, delegate: Any!) -> IOReturn",
+      "desc": "Opens a new L2CAP channel to the target device. Returns only after the channel is opened."
+    },
+    {
+      "name": "func openRFCOMMChannelAsync(AutoreleasingUnsafeMutablePointer<IOBluetoothRFCOMMChannel?>!, withChannelID: BluetoothRFCOMMChannelID, delegate: Any!) -> IOReturn",
+      "desc": "Opens a new RFCOMM channel to the target device. Returns immediately."
+    },
+    {
+      "name": "func openRFCOMMChannelSync(AutoreleasingUnsafeMutablePointer<IOBluetoothRFCOMMChannel?>!, withChannelID: BluetoothRFCOMMChannelID, delegate: Any!) -> IOReturn",
+      "desc": "Opens a new RFCOMM channel to the target device. Returns only once the channel is open or failed to open."
+    },
+    {
+      "name": "func performSDPQuery(Any!) -> IOReturn",
+      "desc": "Performs an SDP query on the target device."
+    },
+    {
+      "name": "func performSDPQuery(Any!, uuids: [Any]!) -> IOReturn",
+      "desc": "Performs an SDP query on the target device with the specified service UUIDs."
+    },
+    {
+      "name": "func rawRSSI() -> BluetoothHCIRSSIValue",
+      "desc": "Get the raw RSSI device (if connected)."
+    },
+    {
+      "name": "func recentAccessDate() -> Date!",
+      "desc": "Returns the date/time of the most recent access of the target device."
+    },
+    {
+      "name": "func register(forDisconnectNotification: Any!, selector: Selector!) -> IOBluetoothUserNotification!",
+      "desc": "Allows a client to register for device disconnect notification."
+    },
+    {
+      "name": "func remoteNameRequest(Any!) -> IOReturn",
+      "desc": "Issues a remote name request to the target device."
+    },
+    {
+      "name": "func remoteNameRequest(Any!, withPageTimeout: BluetoothHCIPageTimeout) -> IOReturn",
+      "desc": "Issues a remote name request to the target device."
+    },
+    {
+      "name": "func removeFromFavorites() -> IOReturn",
+      "desc": "Removes the target device from the user's favorite devices list."
+    },
+    {
+      "name": "func requestAuthentication() -> IOReturn",
+      "desc": "Requests that the existing baseband connection be authenticated."
+    },
+    {
+      "name": "func sendL2CAPEchoRequest(UnsafeMutableRawPointer!, length: UInt16) -> IOReturn",
+      "desc": "Send an echo request over the L2CAP connection to a remote device."
+    },
+    {
+      "name": "func setSupervisionTimeout(UInt16) -> IOReturn",
+      "desc": "Sets the connection supervision timeout."
+    },
+    {
+      "name": "class func favoriteDevices() -> [Any]!",
+      "desc": "Gets an array of the user's favorite devices."
+    },
+    {
+      "name": "class func pairedDevices() -> [Any]!",
+      "desc": "Gets an array of all of the paired devices on the system."
+    },
+    {
+      "name": "class func recentDevices(UInt) -> [Any]!",
+      "desc": "Gets an array of recently used Bluetooth devices."
+    },
+    {
+      "name": "class func register(forConnectNotifications: Any!, selector: Selector!) -> IOBluetoothUserNotification!",
+      "desc": "Allows a client to register for device connect notifications for any connection."
+    }
+  ],
+  "declaration": "class IOBluetoothDevice : IOBluetoothObject",
+  "inheritsFrom": [
+    "IOBluetoothObject"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "NSSecureCoding"
+  ]
+}

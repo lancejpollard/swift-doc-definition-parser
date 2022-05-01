@@ -1,0 +1,684 @@
+{
+  "path": "/documentation/foundation/indexpath",
+  "type": "Structure",
+  "name": "IndexPath",
+  "desc": "A list of indexes that together represent the path to a specific location in a tree of nested arrays.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an empty index path."
+    },
+    {
+      "name": "init(index: IndexPath.Element)",
+      "desc": "Creates an index path with a single element."
+    },
+    {
+      "name": "init(arrayLiteral: IndexPath.Element...)",
+      "desc": "Creates an index path from an array literal."
+    },
+    {
+      "name": "init(indexes: Array<IndexPath.Element>)",
+      "desc": "Creates an index path from an array of elements."
+    },
+    {
+      "name": "init<ElementSequence>(indexes: ElementSequence)",
+      "desc": "Creates an index path from a sequence of integers."
+    },
+    {
+      "name": "typealias IndexPath.Element",
+      "desc": "A type that represents one node of an index path."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A mirror that reflects the index path."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual description of the index path suitable for debugging."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual description of the index path."
+    },
+    {
+      "name": "var endIndex: IndexPath.Index",
+      "desc": "One past the index of the last node in the index path."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The computed hash value for the index path."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value indicating whether the collection is empty."
+    },
+    {
+      "name": "var item: Int",
+      "desc": "The value of the item element of the index path."
+    },
+    {
+      "name": "var lazy: LazySequence<IndexPath>",
+      "desc": "A sequence containing the same elements as this sequence, but on which some operations, such as map and filter, are implemented lazily."
+    },
+    {
+      "name": "var row: Int",
+      "desc": "The value of the row element of the index path."
+    },
+    {
+      "name": "var section: Int",
+      "desc": "The value of the section element of the index path."
+    },
+    {
+      "name": "var startIndex: IndexPath.Index",
+      "desc": "The index of the first node in the index path."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value indicating whether the collection is empty."
+    },
+    {
+      "name": "subscript(IndexPath.Index) -> IndexPath.Element",
+      "desc": "Accesses one of the index path's nodes."
+    },
+    {
+      "name": "subscript(Range<IndexPath.Index>) -> IndexPath",
+      "desc": "Accesses a contiguous subrange of the index path's nodes."
+    },
+    {
+      "name": "static func != (IndexPath, IndexPath) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func + (IndexPath, IndexPath) -> IndexPath",
+      "desc": "Combines the elements of two index paths into a single index path."
+    },
+    {
+      "name": "static func += (inout IndexPath, IndexPath)",
+      "desc": "Appends the elements of another index path to this index path."
+    },
+    {
+      "name": "static func < (IndexPath, IndexPath) -> Bool",
+      "desc": "Returns a Boolean that is true if the first index path is less than the second when comparing elements in depth-first traversal order."
+    },
+    {
+      "name": "static func == (IndexPath, IndexPath) -> Bool",
+      "desc": "Returns a Boolean that is true if all nodes of the first index path are equal to those of the second in order."
+    },
+    {
+      "name": "func removeFirst() -> Int",
+      "desc": "Removes and returns the first element of the collection."
+    },
+    {
+      "name": "func removeFirst(Int)",
+      "desc": "Removes the specified number of elements from the beginning of the collection."
+    },
+    {
+      "name": "func removeLast() -> Int",
+      "desc": "Removes and returns the last element of the collection."
+    },
+    {
+      "name": "func removeLast(Int)",
+      "desc": "Removes the given number of elements from the end of the collection."
+    },
+    {
+      "name": "func popFirst() -> Int?",
+      "desc": "Removes and returns the first element of the collection."
+    },
+    {
+      "name": "func popLast() -> Int?",
+      "desc": "Removes and returns the last element of the collection."
+    },
+    {
+      "name": "func max() -> Int?",
+      "desc": "Returns the maximum element in the sequence."
+    },
+    {
+      "name": "func min() -> Int?",
+      "desc": "Returns the minimum element in the sequence."
+    },
+    {
+      "name": "func append(IndexPath)",
+      "desc": "Appends the nodes of another index path to this one."
+    },
+    {
+      "name": "func append(Array<IndexPath.Element>)",
+      "desc": "Appends an array of elements to this index path as additional nodes."
+    },
+    {
+      "name": "func append(IndexPath.Element)",
+      "desc": "Appends a single element to this index path as a new node."
+    },
+    {
+      "name": "func appending(IndexPath.Element) -> IndexPath",
+      "desc": "Returns a new index path containing the elements of this one plus the given element."
+    },
+    {
+      "name": "func appending(IndexPath) -> IndexPath",
+      "desc": "Returns a new index path containing the elements of this one plus those of another index path."
+    },
+    {
+      "name": "func appending(Array<IndexPath.Element>) -> IndexPath",
+      "desc": "Returns a new index path containing the elements of this one plus an array of additional elements."
+    },
+    {
+      "name": "func compare(IndexPath) -> ComparisonResult",
+      "desc": "Compares this index path to another in depth-first traversal order."
+    },
+    {
+      "name": "func dropFirst(Int) -> IndexPath",
+      "desc": "Returns a subsequence containing all but the given number of initial elements."
+    },
+    {
+      "name": "func dropLast() -> IndexPath",
+      "desc": "Return a new index path containing all but the last element."
+    },
+    {
+      "name": "func dropLast(Int) -> IndexPath",
+      "desc": "Returns a subsequence containing all but the specified number of final elements."
+    },
+    {
+      "name": "func elementsEqual<OtherSequence>(OtherSequence) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this sequence and another sequence contain the same elements in the same order."
+    },
+    {
+      "name": "func enumerated() -> EnumeratedSequence<IndexPath>",
+      "desc": "Returns a sequence of pairs (n, x), where n represents a consecutive integer starting at zero and x represents an element of the sequence."
+    },
+    {
+      "name": "func index(after: IndexPath.Index) -> IndexPath.Index",
+      "desc": "Returns the index that follows the given index."
+    },
+    {
+      "name": "func index(before: IndexPath.Index) -> IndexPath.Index",
+      "desc": "Returns the index that precedes the given index."
+    },
+    {
+      "name": "func lexicographicallyPrecedes<OtherSequence>(OtherSequence) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the less-than operator (<) to compare elements."
+    },
+    {
+      "name": "func makeIterator() -> IndexingIterator<IndexPath>",
+      "desc": "Returns an iterator over the nodes of the index path."
+    },
+    {
+      "name": "func max() -> Int?",
+      "desc": "Returns the maximum element in the sequence."
+    },
+    {
+      "name": "func min() -> Int?",
+      "desc": "Returns the minimum element in the sequence."
+    },
+    {
+      "name": "func popFirst() -> Int?",
+      "desc": "Removes and returns the first element of the collection."
+    },
+    {
+      "name": "func popLast() -> Int?",
+      "desc": "Removes and returns the last element of the collection."
+    },
+    {
+      "name": "func prefix(Int) -> IndexPath",
+      "desc": "Returns a subsequence, up to the specified maximum length, containing the initial elements of the collection."
+    },
+    {
+      "name": "func prefix(through: Array<Int>.Index) -> IndexPath",
+      "desc": "Returns a subsequence from the start of the collection through the specified position."
+    },
+    {
+      "name": "func prefix(upTo: Array<Int>.Index) -> IndexPath",
+      "desc": "Returns a subsequence from the start of the collection up to, but not including, the specified position."
+    },
+    {
+      "name": "func removeFirst() -> Int",
+      "desc": "Removes and returns the first element of the collection."
+    },
+    {
+      "name": "func removeFirst(Int)",
+      "desc": "Removes the specified number of elements from the beginning of the collection."
+    },
+    {
+      "name": "func removeLast() -> Int",
+      "desc": "Removes and returns the last element of the collection."
+    },
+    {
+      "name": "func removeLast(Int)",
+      "desc": "Removes the given number of elements from the end of the collection."
+    },
+    {
+      "name": "func reversed() -> ReversedCollection<IndexPath>",
+      "desc": "Returns a view presenting the elements of the collection in reverse order."
+    },
+    {
+      "name": "func sorted() -> [Int]",
+      "desc": "Returns the elements of the sequence, sorted."
+    },
+    {
+      "name": "func starts<PossiblePrefix>(with: PossiblePrefix) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the initial elements of the sequence are the same as the elements in another sequence."
+    },
+    {
+      "name": "func suffix(Int) -> IndexPath",
+      "desc": "Returns a subsequence, up to the given maximum length, containing the final elements of the collection."
+    },
+    {
+      "name": "func suffix(from: Array<Int>.Index) -> IndexPath",
+      "desc": "Returns a subsequence from the specified position to the end of the collection."
+    },
+    {
+      "name": "func dropFirst(Int) -> IndexPath",
+      "desc": "Returns a subsequence containing all but the given number of initial elements."
+    },
+    {
+      "name": "func dropLast() -> IndexPath",
+      "desc": "Return a new index path containing all but the last element."
+    },
+    {
+      "name": "func dropLast(Int) -> IndexPath",
+      "desc": "Returns a subsequence containing all but the specified number of final elements."
+    },
+    {
+      "name": "var lazy: LazySequence<IndexPath>",
+      "desc": "A sequence containing the same elements as this sequence, but on which some operations, such as map and filter, are implemented lazily."
+    },
+    {
+      "name": "func enumerated() -> EnumeratedSequence<IndexPath>",
+      "desc": "Returns a sequence of pairs (n, x), where n represents a consecutive integer starting at zero and x represents an element of the sequence."
+    },
+    {
+      "name": "func makeIterator() -> IndexingIterator<IndexPath>",
+      "desc": "Returns an iterator over the nodes of the index path."
+    },
+    {
+      "name": "func sorted() -> [Int]",
+      "desc": "Returns the elements of the sequence, sorted."
+    },
+    {
+      "name": "func reversed() -> ReversedCollection<IndexPath>",
+      "desc": "Returns a view presenting the elements of the collection in reverse order."
+    },
+    {
+      "name": "func compare(IndexPath) -> ComparisonResult",
+      "desc": "Compares this index path to another in depth-first traversal order."
+    },
+    {
+      "name": "func lexicographicallyPrecedes<OtherSequence>(OtherSequence) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the less-than operator (<) to compare elements."
+    },
+    {
+      "name": "static func < (IndexPath, IndexPath) -> Bool",
+      "desc": "Returns a Boolean that is true if the first index path is less than the second when comparing elements in depth-first traversal order."
+    },
+    {
+      "name": "static func == (IndexPath, IndexPath) -> Bool",
+      "desc": "Returns a Boolean that is true if all nodes of the first index path are equal to those of the second in order."
+    },
+    {
+      "name": "func starts<PossiblePrefix>(with: PossiblePrefix) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the initial elements of the sequence are the same as the elements in another sequence."
+    },
+    {
+      "name": "func elementsEqual<OtherSequence>(OtherSequence) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this sequence and another sequence contain the same elements in the same order."
+    },
+    {
+      "name": "typealias IndexPath.Index",
+      "desc": "A type that points to a particular node in an index path, similar to an array index."
+    },
+    {
+      "name": "var startIndex: IndexPath.Index",
+      "desc": "The index of the first node in the index path."
+    },
+    {
+      "name": "var endIndex: IndexPath.Index",
+      "desc": "One past the index of the last node in the index path."
+    },
+    {
+      "name": "func index(after: IndexPath.Index) -> IndexPath.Index",
+      "desc": "Returns the index that follows the given index."
+    },
+    {
+      "name": "func index(before: IndexPath.Index) -> IndexPath.Index",
+      "desc": "Returns the index that precedes the given index."
+    },
+    {
+      "name": "typealias IndexPath.Indices",
+      "desc": "A type that represents a group of nodes in an index path."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual description of the index path."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual description of the index path suitable for debugging."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A mirror that reflects the index path."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The computed hash value for the index path."
+    },
+    {
+      "name": "class NSIndexPath",
+      "desc": "An object containing a list of indexes that bridges to IndexPath; use NSIndexPath when you need reference semantics or other Foundation-specific behavior."
+    },
+    {
+      "name": "typealias IndexPath.ReferenceType",
+      "desc": "An alias for this value type's equivalent reference type."
+    },
+    {
+      "name": "typealias IndexPath.ArrayLiteralElement"
+    },
+    {
+      "name": "typealias IndexPath.Iterator"
+    },
+    {
+      "name": "typealias IndexPath.SubSequence"
+    },
+    {
+      "name": "init(from: Decoder)"
+    },
+    {
+      "name": "init(item: Int, section: Int)",
+      "desc": "Creates an index path that references an item in a particular section."
+    },
+    {
+      "name": "init(row: Int, section: Int)",
+      "desc": "Creates an index path that references a row in a particular section."
+    },
+    {
+      "name": "var count: Int"
+    },
+    {
+      "name": "var first: Int?",
+      "desc": "The first element of the collection."
+    },
+    {
+      "name": "var indices: DefaultIndices<IndexPath>",
+      "desc": "The indices that are valid for subscripting the collection, in ascending order."
+    },
+    {
+      "name": "var last: Int?",
+      "desc": "The last element of the collection."
+    },
+    {
+      "name": "var publisher: Publishers.Sequence<IndexPath, Never>"
+    },
+    {
+      "name": "var underestimatedCount: Int",
+      "desc": "A value less than or equal to the number of elements in the collection."
+    },
+    {
+      "name": "func allSatisfy((Int) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether every element of a sequence satisfies a given predicate."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((Int) -> ElementOfResult?) -> [ElementOfResult]",
+      "desc": "Returns an array containing the non-nil results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func compare<Comparator>(Comparator.Compared, Comparator.Compared) -> ComparisonResult"
+    },
+    {
+      "name": "func contains(Int) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence contains the given element."
+    },
+    {
+      "name": "func contains(where: (Int) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func difference<C>(from: C) -> CollectionDifference<Int>",
+      "desc": "Returns the difference needed to produce this collection’s ordered elements from the given collection."
+    },
+    {
+      "name": "func difference<C>(from: C, by: (C.Element, Int) -> Bool) -> CollectionDifference<Int>",
+      "desc": "Returns the difference needed to produce this collection’s ordered elements from the given collection, using the given predicate as an equivalence test."
+    },
+    {
+      "name": "func distance(from: Array<Int>.Index, to: Array<Int>.Index) -> Int",
+      "desc": "Returns the distance between two indices."
+    },
+    {
+      "name": "func drop(while: (Int) -> Bool) -> IndexPath",
+      "desc": "Returns a subsequence by skipping elements while predicate returns true and returning the remaining elements."
+    },
+    {
+      "name": "func elementsEqual<OtherSequence>(OtherSequence, by: (Int, OtherSequence.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this sequence and another sequence contain equivalent elements in the same order, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func encode(to: Encoder)"
+    },
+    {
+      "name": "func filter((Int) -> Bool) -> [Int]",
+      "desc": "Returns an array containing, in order, the elements of the sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func first(where: (Int) -> Bool) -> Int?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func firstIndex(of: Int) -> Array<Int>.Index?",
+      "desc": "Returns the first index where the specified value appears in the collection."
+    },
+    {
+      "name": "func firstIndex(where: (Int) -> Bool) -> Array<Int>.Index?",
+      "desc": "Returns the first index in which an element of the collection satisfies the given predicate."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((Int) -> SegmentOfResult) -> [SegmentOfResult.Element]",
+      "desc": "Returns an array containing the concatenated results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func forEach((Int) -> Void)",
+      "desc": "Calls the given closure on each element in the sequence in the same order as a for-in loop."
+    },
+    {
+      "name": "func formIndex(inout Array<Int>.Index, offsetBy: Int)",
+      "desc": "Offsets the given index by the specified distance."
+    },
+    {
+      "name": "func formIndex(inout Array<Int>.Index, offsetBy: Int, limitedBy: Array<Int>.Index) -> Bool",
+      "desc": "Offsets the given index by the specified distance, or so that it equals the given limiting index."
+    },
+    {
+      "name": "func formIndex(after: inout Array<Int>.Index)",
+      "desc": "Replaces the given index with its successor."
+    },
+    {
+      "name": "func formIndex(before: inout Array<Int>.Index)",
+      "desc": "Replaces the given index with its predecessor."
+    },
+    {
+      "name": "func formatted<S>(S) -> S.FormatOutput"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "func index(Array<Int>.Index, offsetBy: Int) -> Array<Int>.Index",
+      "desc": "Returns an index that is the specified distance from the given index."
+    },
+    {
+      "name": "func index(Array<Int>.Index, offsetBy: Int, limitedBy: Array<Int>.Index) -> Array<Int>.Index?",
+      "desc": "Returns an index that is the specified distance from the given index, unless that distance is beyond a given limiting index."
+    },
+    {
+      "name": "func last(where: (Int) -> Bool) -> Int?",
+      "desc": "Returns the last element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func lastIndex(of: Int) -> Array<Int>.Index?",
+      "desc": "Returns the last index where the specified value appears in the collection."
+    },
+    {
+      "name": "func lastIndex(where: (Int) -> Bool) -> Array<Int>.Index?",
+      "desc": "Returns the index of the last element in the collection that matches the given predicate."
+    },
+    {
+      "name": "func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Int, Int) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the given predicate to compare elements."
+    },
+    {
+      "name": "func map<T>((Int) -> T) -> [T]",
+      "desc": "Returns an array containing the results of mapping the given closure over the sequence’s elements."
+    },
+    {
+      "name": "func max(by: (Int, Int) -> Bool) -> Int?",
+      "desc": "Returns the maximum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func min(by: (Int, Int) -> Bool) -> Int?",
+      "desc": "Returns the minimum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func partition(by: (Int) -> Bool) -> Array<Int>.Index",
+      "desc": "Reorders the elements of the collection such that all the elements that match the given predicate are after all the elements that don’t match."
+    },
+    {
+      "name": "func prefix(while: (Int) -> Bool) -> IndexPath",
+      "desc": "Returns a subsequence containing the initial elements until predicate returns false and skipping the remaining elements."
+    },
+    {
+      "name": "func randomElement() -> Int?",
+      "desc": "Returns a random element of the collection."
+    },
+    {
+      "name": "func randomElement<T>(using: inout T) -> Int?",
+      "desc": "Returns a random element of the collection, using the given generator as a source for randomness."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, Int) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, Int) -> ()) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "func reverse()",
+      "desc": "Reverses the elements of the collection in place."
+    },
+    {
+      "name": "func shuffle()",
+      "desc": "Shuffles the collection in place."
+    },
+    {
+      "name": "func shuffle<T>(using: inout T)",
+      "desc": "Shuffles the collection in place, using the given generator as a source for randomness."
+    },
+    {
+      "name": "func shuffled() -> [Int]",
+      "desc": "Returns the elements of the sequence, shuffled."
+    },
+    {
+      "name": "func shuffled<T>(using: inout T) -> [Int]",
+      "desc": "Returns the elements of the sequence, shuffled using the given generator as a source for randomness."
+    },
+    {
+      "name": "func sort()",
+      "desc": "Sorts the collection in place."
+    },
+    {
+      "name": "func sort(by: (Int, Int) -> Bool)",
+      "desc": "Sorts the collection in place, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func sort<Comparator>(using: Comparator)"
+    },
+    {
+      "name": "func sort<S, Comparator>(using: S)"
+    },
+    {
+      "name": "func sorted(by: (Int, Int) -> Bool) -> [Int]",
+      "desc": "Returns the elements of the sequence, sorted using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func sorted<Comparator>(using: Comparator) -> [Int]"
+    },
+    {
+      "name": "func sorted<S, Comparator>(using: S) -> [Int]"
+    },
+    {
+      "name": "func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Int) -> Bool) -> [IndexPath]",
+      "desc": "Returns the longest possible subsequences of the collection, in order, that don’t contain elements satisfying the given predicate."
+    },
+    {
+      "name": "func split(separator: Int, maxSplits: Int, omittingEmptySubsequences: Bool) -> [IndexPath]",
+      "desc": "Returns the longest possible subsequences of the collection, in order, around elements equal to the given element."
+    },
+    {
+      "name": "func starts<PossiblePrefix>(with: PossiblePrefix, by: (Int, PossiblePrefix.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the initial elements of the sequence are equivalent to the elements in another sequence, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func swapAt(Array<Int>.Index, Array<Int>.Index)",
+      "desc": "Exchanges the values at the specified indices of the collection."
+    },
+    {
+      "name": "func withContiguousMutableStorageIfAvailable<R>((inout UnsafeMutableBufferPointer<Int>) -> R) -> R?",
+      "desc": "Executes a closure on the collection’s contiguous storage."
+    },
+    {
+      "name": "func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<Int>) -> R) -> R?",
+      "desc": "Executes a closure on the sequence’s contiguous storage."
+    },
+    {
+      "name": "subscript<R>(R) -> IndexPath"
+    },
+    {
+      "name": "subscript((UnboundedRange_) -> ()) -> IndexPath"
+    },
+    {
+      "name": "subscript<R>(R) -> IndexPath",
+      "desc": "Accesses the contiguous subrange of the collection’s elements specified by a range expression."
+    },
+    {
+      "name": "static func ... (IndexPath) -> PartialRangeFrom<IndexPath>",
+      "desc": "Returns a partial range extending upward from a lower bound."
+    },
+    {
+      "name": "static func ... (IndexPath) -> PartialRangeThrough<IndexPath>",
+      "desc": "Returns a partial range up to, and including, its upper bound."
+    },
+    {
+      "name": "static func ... (IndexPath, IndexPath) -> ClosedRange<IndexPath>",
+      "desc": "Returns a closed range that contains both of its bounds."
+    },
+    {
+      "name": "static func ..< (IndexPath) -> PartialRangeUpTo<IndexPath>",
+      "desc": "Returns a partial range up to, but not including, its upper bound."
+    },
+    {
+      "name": "static func ..< (IndexPath, IndexPath) -> Range<IndexPath>",
+      "desc": "Returns a half-open range that contains its lower bound but not its upper bound."
+    },
+    {
+      "name": "static func <= (IndexPath, IndexPath) -> Bool"
+    },
+    {
+      "name": "static func > (IndexPath, IndexPath) -> Bool"
+    },
+    {
+      "name": "static func >= (IndexPath, IndexPath) -> Bool"
+    }
+  ],
+  "declaration": "struct IndexPath",
+  "conformsTo": [
+    "Comparable",
+    "CustomDebugStringConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "ExpressibleByArrayLiteral",
+    "Hashable",
+    "MutableCollection",
+    "RandomAccessCollection",
+    "ReferenceConvertible"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "path": "/documentation/uikit/uipickerview",
+  "type": "Class",
+  "name": "UIPickerView",
+  "desc": "A view that uses a spinning-wheel or slot-machine metaphor to show one or more sets of values.",
+  "items": [
+    {
+      "name": "var dataSource: UIPickerViewDataSource?",
+      "desc": "The data source for the picker view."
+    },
+    {
+      "name": "protocol UIPickerViewDataSource",
+      "desc": "The UIPickerViewDataSource protocol must be adopted by an object that mediates between a UIPickerView object and your application’s data model for that picker view. The data source provides the picker view with the number of components, and the number of rows in each component, for displaying the picker view data. Both methods in this protocol are required."
+    },
+    {
+      "name": "var delegate: UIPickerViewDelegate?",
+      "desc": "The delegate for the picker view."
+    },
+    {
+      "name": "protocol UIPickerViewDelegate",
+      "desc": "The delegate of a UIPickerView object must adopt this protocol and implement at least some of its methods to provide the picker view with the data it needs to construct itself."
+    },
+    {
+      "name": "var numberOfComponents: Int",
+      "desc": "Gets the number of components for the picker view."
+    },
+    {
+      "name": "func numberOfRows(inComponent: Int) -> Int",
+      "desc": "Returns the number of rows for a component."
+    },
+    {
+      "name": "func rowSize(forComponent: Int) -> CGSize",
+      "desc": "Returns the size of a row for a component."
+    },
+    {
+      "name": "func reloadAllComponents()",
+      "desc": "Reloads all components of the picker view."
+    },
+    {
+      "name": "func reloadComponent(Int)",
+      "desc": "Reloads a particular component of the picker view."
+    },
+    {
+      "name": "func selectRow(Int, inComponent: Int, animated: Bool)",
+      "desc": "Selects a row in a specified component of the picker view."
+    },
+    {
+      "name": "func selectedRow(inComponent: Int) -> Int",
+      "desc": "Returns the index of the selected row in a given component."
+    },
+    {
+      "name": "func view(forRow: Int, forComponent: Int) -> UIView?",
+      "desc": "Returns the view used by the picker view for a given row and component."
+    }
+  ],
+  "declaration": "@MainActor class UIPickerView : UIView",
+  "inheritsFrom": [
+    "UIView"
+  ],
+  "conformsTo": [
+    "NSCoding"
+  ]
+}

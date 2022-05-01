@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/gameplaykit/gkbehavior",
+  "type": "Class",
+  "name": "GKBehavior",
+  "desc": "A set of goals that together influence the movement of an agent.",
+  "items": [
+    {
+      "name": "init(goal: GKGoal, weight: Float)",
+      "desc": "Creates a behavior with a single goal."
+    },
+    {
+      "name": "init(goals: [GKGoal])",
+      "desc": "Creates a behavior with the specified goals."
+    },
+    {
+      "name": "init(goals: [GKGoal], andWeights: [NSNumber])",
+      "desc": "Creates a behavior with the specified goals and weights."
+    },
+    {
+      "name": "init(weightedGoals: [GKGoal : NSNumber])",
+      "desc": "Creates a behavior with the specified mapping of goals to their weights."
+    },
+    {
+      "name": "func setWeight(Float, for: GKGoal)",
+      "desc": "Sets the weight for the specified goal’s influence on agents, adding that goal to the behavior if not already present."
+    },
+    {
+      "name": "func weight(for: GKGoal) -> Float",
+      "desc": "Returns the weight for the specified goal’s influence on agents."
+    },
+    {
+      "name": "func remove(GKGoal)",
+      "desc": "Removes the specified goal from the behavior."
+    },
+    {
+      "name": "func removeAllGoals()",
+      "desc": "Removes all goals from the behavior."
+    },
+    {
+      "name": "var goalCount: Int",
+      "desc": "The number of goals in the behavior."
+    },
+    {
+      "name": "subscript(GKGoal) -> NSNumber!",
+      "desc": "Returns the weight associated with the goal specified by subscript syntax."
+    },
+    {
+      "name": "subscript(Int) -> GKGoal",
+      "desc": "Returns the goal at the specified index in the behavior’s list of goals."
+    }
+  ],
+  "declaration": "class GKBehavior : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSFastEnumeration"
+  ]
+}

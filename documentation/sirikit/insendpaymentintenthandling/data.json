@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/sirikit/insendpaymentintenthandling",
+  "type": "Protocol",
+  "name": "INSendPaymentIntentHandling",
+  "desc": "The handler interface for transferring money from the current user’s account to a different user’s account.",
+  "items": [
+    {
+      "name": "func resolvePayee(for: INSendPaymentIntent, with: (INSendPaymentPayeeResolutionResult) -> Void)",
+      "desc": "Resolves the recipient for a payment."
+    },
+    {
+      "name": "func resolveCurrencyAmount(for: INSendPaymentIntent, with: (INSendPaymentCurrencyAmountResolutionResult) -> Void)",
+      "desc": "Resolves the amount of currency to transfer."
+    },
+    {
+      "name": "func resolveNote(for: INSendPaymentIntent, with: (INStringResolutionResult) -> Void)",
+      "desc": "Resolves the notes associated with the transaction."
+    },
+    {
+      "name": "func confirm(intent: INSendPaymentIntent, completion: (INSendPaymentIntentResponse) -> Void)",
+      "desc": "Confirms the transaction and details."
+    },
+    {
+      "name": "func handle(intent: INSendPaymentIntent, completion: (INSendPaymentIntentResponse) -> Void)",
+      "desc": "Handles transferring the money between accounts."
+    }
+  ],
+  "declaration": "protocol INSendPaymentIntentHandling",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

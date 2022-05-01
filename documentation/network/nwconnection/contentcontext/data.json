@@ -1,0 +1,57 @@
+{
+  "path": "/documentation/network/nwconnection/contentcontext",
+  "type": "Class",
+  "name": "NWConnection.ContentContext",
+  "desc": "An object that represents a message to send or receive, containing protocol metadata and send properties.",
+  "items": [
+    {
+      "name": "static let defaultMessage: NWConnection.ContentContext",
+      "desc": "A static context representing a message with default properties."
+    },
+    {
+      "name": "static let finalMessage: NWConnection.ContentContext",
+      "desc": "A static context that's marked as the final message in a connection."
+    },
+    {
+      "name": "static let defaultStream: NWConnection.ContentContext",
+      "desc": "A static context representing the total stream of bytes on a connection."
+    },
+    {
+      "name": "init(identifier: String, expiration: UInt64, priority: Double, isFinal: Bool, antecedent: NWConnection.ContentContext?, metadata: [NWProtocolMetadata]?)",
+      "desc": "Initializes a custom message context."
+    },
+    {
+      "name": "let identifier: String",
+      "desc": "The identifier of the message, used for debugging."
+    },
+    {
+      "name": "var protocolMetadata: [NWProtocolMetadata]",
+      "desc": "An array of protocol metadata used to configure per-message or per-packet properties."
+    },
+    {
+      "name": "class NWProtocolMetadata",
+      "desc": "The abstract superclass for specifying metadata about a network protocol."
+    },
+    {
+      "name": "let antecedent: NWConnection.ContentContext?",
+      "desc": "An optional message context that must be sent before the context you are sending."
+    },
+    {
+      "name": "let expirationMilliseconds: UInt64",
+      "desc": "A number of milliseconds after which sending the data associated with this context must begin, otherwise the data is discarded."
+    },
+    {
+      "name": "let relativePriority: Double",
+      "desc": "A relative value of priority used to reorder contexts when sending."
+    },
+    {
+      "name": "let isFinal: Bool",
+      "desc": "A Boolean indicating whether this context represents the final message being sent or received."
+    },
+    {
+      "name": "func protocolMetadata(definition: NWProtocolDefinition) -> NWProtocolMetadata?",
+      "desc": "Retreives the metadata associated with a specific protocol."
+    }
+  ],
+  "declaration": "class NWConnection.ContentContext"
+}

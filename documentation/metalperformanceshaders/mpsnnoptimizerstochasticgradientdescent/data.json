@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsnnoptimizerstochasticgradientdescent",
+  "type": "Class",
+  "name": "MPSNNOptimizerStochasticGradientDescent",
+  "desc": "An optimization layer that performs a gradient descent with an optional momentum update.",
+  "items": [
+    {
+      "name": "init(device: MTLDevice, learningRate: Float)"
+    },
+    {
+      "name": "init(device: MTLDevice, momentumScale: Float, useNesterovMomentum: Bool, optimizerDescriptor: MPSNNOptimizerDescriptor)"
+    },
+    {
+      "name": "init(device: MTLDevice, momentumScale: Float, useNestrovMomentum: Bool, optimizerDescriptor: MPSNNOptimizerDescriptor)"
+    },
+    {
+      "name": "var momentumScale: Float"
+    },
+    {
+      "name": "var useNesterovMomentum: Bool"
+    },
+    {
+      "name": "var useNestrovMomentum: Bool"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, batchNormalizationGradientState: MPSCNNBatchNormalizationState, batchNormalizationSourceState: MPSCNNBatchNormalizationState, inputMomentumVectors: [MPSVector]?, resultState: MPSCNNNormalizationGammaAndBetaState)"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, batchNormalizationState: MPSCNNBatchNormalizationState, inputMomentumVectors: [MPSVector]?, resultState: MPSCNNNormalizationGammaAndBetaState)"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, convolutionGradientState: MPSCNNConvolutionGradientState, convolutionSourceState: MPSCNNConvolutionWeightsAndBiasesState, inputMomentumVectors: [MPSVector]?, resultState: MPSCNNConvolutionWeightsAndBiasesState)"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, inputGradientMatrix: MPSMatrix, inputValuesMatrix: MPSMatrix, inputMomentumMatrix: MPSMatrix?, resultValuesMatrix: MPSMatrix)"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, inputGradientVector: MPSVector, inputValuesVector: MPSVector, inputMomentumVector: MPSVector?, resultValuesVector: MPSVector)"
+    }
+  ],
+  "declaration": "class MPSNNOptimizerStochasticGradientDescent : MPSNNOptimizer",
+  "inheritsFrom": [
+    "MPSNNOptimizer"
+  ]
+}

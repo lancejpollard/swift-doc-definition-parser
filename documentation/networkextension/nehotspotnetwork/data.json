@@ -1,0 +1,58 @@
+{
+  "path": "/documentation/networkextension/nehotspotnetwork",
+  "type": "Class",
+  "name": "NEHotspotNetwork",
+  "desc": "Information about a Wi-Fi network associated with a command or a response.",
+  "items": [
+    {
+      "name": "var ssid: String",
+      "desc": "The SSID for the Wi-Fi network."
+    },
+    {
+      "name": "var bssid: String",
+      "desc": "The BSSID for the Wi-Fi network."
+    },
+    {
+      "name": "var signalStrength: Double",
+      "desc": "The recent signal strength for the Wi-Fi network."
+    },
+    {
+      "name": "var isSecure: Bool",
+      "desc": "Indicates whether the network is secure"
+    },
+    {
+      "name": "var didAutoJoin: Bool",
+      "desc": "Indicates whether the network was joined automatically or was joined explicitly by the user."
+    },
+    {
+      "name": "var didJustJoin: Bool",
+      "desc": "Indicates whether the network was just joined."
+    },
+    {
+      "name": "var isChosenHelper: Bool",
+      "desc": "Indicates whether the calling Hotspot Helper is the chosen helper for this network."
+    },
+    {
+      "name": "func setConfidence(NEHotspotHelperConfidence)",
+      "desc": "Indicate the level of confidence in being able to handle the network."
+    },
+    {
+      "name": "enum NEHotspotHelperConfidence",
+      "desc": "A type that indicates the hotspot helper’s confidence in its ability to handle the network."
+    },
+    {
+      "name": "func setPassword(String)",
+      "desc": "Provide the password for a protected network."
+    },
+    {
+      "name": "var securityType: NEHotspotNetworkSecurityType"
+    },
+    {
+      "name": "class func fetchCurrent(completionHandler: (NEHotspotNetwork?) -> Void)"
+    }
+  ],
+  "declaration": "class NEHotspotNetwork : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

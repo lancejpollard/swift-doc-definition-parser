@@ -1,0 +1,84 @@
+{
+  "path": "/documentation/foundation/nsregularexpression",
+  "type": "Class",
+  "name": "NSRegularExpression",
+  "desc": "An immutable representation of a compiled regular expression that you apply to Unicode strings.",
+  "items": [
+    {
+      "name": "init(pattern: String, options: NSRegularExpression.Options)",
+      "desc": "Returns an initialized NSRegularExpression instance with the specified regular expression pattern and options."
+    },
+    {
+      "name": "var pattern: String",
+      "desc": "Returns the regular expression pattern."
+    },
+    {
+      "name": "var options: NSRegularExpression.Options",
+      "desc": "Returns the options used when the regular expression option was created."
+    },
+    {
+      "name": "var numberOfCaptureGroups: Int",
+      "desc": "Returns the number of capture groups in the regular expression."
+    },
+    {
+      "name": "func numberOfMatches(in: String, options: NSRegularExpression.MatchingOptions, range: NSRange) -> Int",
+      "desc": "Returns the number of matches of the regular expression within the specified range of the string."
+    },
+    {
+      "name": "func enumerateMatches(in: String, options: NSRegularExpression.MatchingOptions, range: NSRange, using: (NSTextCheckingResult?, NSRegularExpression.MatchingFlags, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Enumerates the string allowing the Block to handle each regular expression match."
+    },
+    {
+      "name": "func matches(in: String, options: NSRegularExpression.MatchingOptions, range: NSRange) -> [NSTextCheckingResult]",
+      "desc": "Returns an array containing all the matches of the regular expression in the string."
+    },
+    {
+      "name": "func firstMatch(in: String, options: NSRegularExpression.MatchingOptions, range: NSRange) -> NSTextCheckingResult?",
+      "desc": "Returns the first match of the regular expression within the specified range of the string."
+    },
+    {
+      "name": "func rangeOfFirstMatch(in: String, options: NSRegularExpression.MatchingOptions, range: NSRange) -> NSRange",
+      "desc": "Returns the range of the first match of the regular expression within the specified range of the string."
+    },
+    {
+      "name": "func replaceMatches(in: NSMutableString, options: NSRegularExpression.MatchingOptions, range: NSRange, withTemplate: String) -> Int",
+      "desc": "Replaces regular expression matches within the mutable string using the template string."
+    },
+    {
+      "name": "func stringByReplacingMatches(in: String, options: NSRegularExpression.MatchingOptions, range: NSRange, withTemplate: String) -> String",
+      "desc": "Returns a new string containing matching regular expressions replaced with the template string."
+    },
+    {
+      "name": "class func escapedTemplate(for: String) -> String",
+      "desc": "Returns a template string by adding backslash escapes as necessary to protect any characters that would match as pattern metacharacters"
+    },
+    {
+      "name": "class func escapedPattern(for: String) -> String",
+      "desc": "Returns a string by adding backslash escapes as necessary to protect any characters that would match as pattern metacharacters."
+    },
+    {
+      "name": "func replacementString(for: NSTextCheckingResult, in: String, offset: Int, template: String) -> String",
+      "desc": "Used to perform template substitution for a single result for clients implementing their own replace functionality."
+    },
+    {
+      "name": "struct NSRegularExpression.Options",
+      "desc": "These constants define the regular expression options. These constants are used by the property options, regularExpressionWithPattern:options:error:, and init(pattern:options:)."
+    },
+    {
+      "name": "struct NSRegularExpression.MatchingFlags",
+      "desc": "Set by the Block as the matching progresses, completes, or fails. Used by the method enumerateMatches(in:options:range:using:)."
+    },
+    {
+      "name": "struct NSRegularExpression.MatchingOptions",
+      "desc": "The matching options constants specify the reporting, completion and matching rules to the expression matching methods. These constants are used by all methods that search for, or replace values, using a regular expression."
+    }
+  ],
+  "declaration": "class NSRegularExpression : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

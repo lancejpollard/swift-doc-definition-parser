@@ -1,0 +1,39 @@
+{
+  "path": "/documentation/swiftui/accessibilityfocusstate",
+  "type": "Structure",
+  "name": "AccessibilityFocusState",
+  "desc": "A property wrapper type that can read and write a value that SwiftUI updates as the focus of any active accessibility technology, such as VoiceOver, changes.",
+  "items": [
+    {
+      "name": "struct Binding"
+    },
+    {
+      "name": "init<T>()",
+      "desc": "Creates a new accessibility focus state of the type you provide."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates a new accessibility focus state for a Boolean value."
+    },
+    {
+      "name": "init<T>(for: AccessibilityTechnologies)",
+      "desc": "Creates a new accessibility focus state of the type and using the accessibility technologies you specify."
+    },
+    {
+      "name": "init(for: AccessibilityTechnologies)",
+      "desc": "Creates a new accessibility focus state for a Boolean value, using the accessibility technologies you specify."
+    },
+    {
+      "name": "var projectedValue: AccessibilityFocusState<Value>.Binding",
+      "desc": "A projection of the state value that can be used to establish bindings between view content and accessibility focus placement."
+    },
+    {
+      "name": "var wrappedValue: Value",
+      "desc": "The current state value, taking into account whatever bindings might be in effect due to the current location of focus."
+    }
+  ],
+  "declaration": "@propertyWrapper @frozen struct AccessibilityFocusState<Value> where Value : Hashable",
+  "conformsTo": [
+    "DynamicProperty"
+  ]
+}

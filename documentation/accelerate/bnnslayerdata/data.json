@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/accelerate/bnnslayerdata",
+  "type": "Structure",
+  "name": "BNNSLayerData",
+  "desc": "A structure containing common layer parameters.DeprecatedUse BNNSNDArrayDescriptor instead.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(data: UnsafeRawPointer?, data_type: BNNSDataType, data_scale: Float, data_bias: Float, data_table: UnsafePointer<Float>?)",
+      "desc": "Returns a new layer data structure."
+    },
+    {
+      "name": "init(data: UnsafeRawPointer?, data_type: BNNSDataType, data_scale: Float, data_bias: Float)"
+    },
+    {
+      "name": "var data: UnsafeRawPointer?",
+      "desc": "Pointer to layer values (weights, bias), layout and size are specific to each layer."
+    },
+    {
+      "name": "var data_bias: Float",
+      "desc": "Conversion bias for values, used for integer data types only, ignored for indexed and float data types."
+    },
+    {
+      "name": "var data_scale: Float",
+      "desc": "Conversion scale for values, used for integer data types only, ignored for indexed and float data types."
+    },
+    {
+      "name": "var data_table: UnsafePointer<Float>?",
+      "desc": "Conversion table (256 values) for indexed floating point data, used for indexed data types only."
+    },
+    {
+      "name": "var data_type: BNNSDataType",
+      "desc": "Storage data type for the values stored in data."
+    },
+    {
+      "name": "static var zero: BNNSLayerData"
+    },
+    {
+      "name": "static func indexed8(data: UnsafePointer<Int8>?, data_table: UnsafePointer<Float>) -> BNNSLayerData"
+    }
+  ],
+  "declaration": "struct BNNSLayerData"
+}

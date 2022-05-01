@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/swiftui/simultaneousgesture",
+  "type": "Structure",
+  "name": "SimultaneousGesture",
+  "desc": "A gesture containing two gestures that can happen at the same time with neither of them preceding the other.",
+  "items": [
+    {
+      "name": "init(First, Second)",
+      "desc": "Creates a gesture with two gestures that can receive updates or succeed independently of each other."
+    },
+    {
+      "name": "var first: First",
+      "desc": "The first of two gestures that can happen simultaneously."
+    },
+    {
+      "name": "var second: Second",
+      "desc": "The second of two gestures that can happen simultaneously."
+    },
+    {
+      "name": "typealias Body",
+      "desc": "The type of gesture representing the body of Self."
+    },
+    {
+      "name": "struct Value",
+      "desc": "The value of a simultaneous gesture that indicates which of its two gestures receives events."
+    }
+  ],
+  "declaration": "@frozen struct SimultaneousGesture<First, Second> where First : Gesture, Second : Gesture",
+  "conformsTo": [
+    "Gesture"
+  ]
+}

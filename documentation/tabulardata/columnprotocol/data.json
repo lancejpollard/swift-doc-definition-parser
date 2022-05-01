@@ -1,0 +1,166 @@
+{
+  "path": "/documentation/tabulardata/columnprotocol",
+  "type": "Protocol",
+  "name": "ColumnProtocol",
+  "desc": "A type that represents a column.",
+  "items": [
+    {
+      "name": "var name: String",
+      "desc": "The name of the column."
+    },
+    {
+      "name": "static func + (Self, Self) -> Column<Self.Element>",
+      "desc": "Generates a column by adding each element in a column type to the corresponding elements of another."
+    },
+    {
+      "name": "func + <L, R>(L, R) -> Column<L.Element>",
+      "desc": "Generates a column by adding each element in a column type to the corresponding elements of an optional column type."
+    },
+    {
+      "name": "func + <L, R>(L, R) -> Column<R.Element>",
+      "desc": "Generates a column by adding each element in an optional column type to the corresponding elements of a column type."
+    },
+    {
+      "name": "static func - (Self, Self) -> Column<Self.Element>",
+      "desc": "Generates a column by subtracting each element in a column type from the corresponding elements of another."
+    },
+    {
+      "name": "func - <L, R>(L, R) -> Column<L.Element>",
+      "desc": "Generates a column by subtracting each element in an optional column type from the corresponding elements of a column type."
+    },
+    {
+      "name": "func - <L, R>(L, R) -> Column<R.Element>",
+      "desc": "Generates a column by subtracting each element in a column type from the corresponding elements of an optional column."
+    },
+    {
+      "name": "static func * (Self, Self) -> Column<Self.Element>",
+      "desc": "Generates a column by multiplying each element in a column type by the corresponding elements of another."
+    },
+    {
+      "name": "func * <L, R>(L, R) -> Column<L.Element>",
+      "desc": "Generates a column by multiplying each element in a column type by the corresponding elements of an optional column type."
+    },
+    {
+      "name": "func * <L, R>(L, R) -> Column<R.Element>",
+      "desc": "Generates a column by multiplying each element in an optional column type by the corresponding elements of a column type."
+    },
+    {
+      "name": "static func / (Self, Self) -> Column<Self.Element>",
+      "desc": "Generates an integer column by dividing each element in a column type by the corresponding elements of another."
+    },
+    {
+      "name": "func / <L, R>(L, R) -> Column<L.Element>",
+      "desc": "Generates an integer column by dividing each element in a column type by the corresponding elements of an optional column type."
+    },
+    {
+      "name": "func / <L, R>(L, R) -> Column<R.Element>",
+      "desc": "Generates an integer column by dividing each element in an optional column type by the corresponding elements of a column type."
+    },
+    {
+      "name": "static func / (Self, Self) -> Column<Self.Element>",
+      "desc": "Generates a floating-point column by dividing each element in a column type by the corresponding elements of another."
+    },
+    {
+      "name": "func / <L, R>(L, R) -> Column<L.Element>",
+      "desc": "Generates a floating-point column by dividing each element in a column type by the corresponding elements of an optional column type."
+    },
+    {
+      "name": "func / <L, R>(L, R) -> Column<R.Element>",
+      "desc": "Generates a floating-point column by dividing each element in an optional column type by the corresponding elements of a column type."
+    },
+    {
+      "name": "static func + (Self, Self.Element) -> Column<Self.Element>",
+      "desc": "Generates a column by adding a value to each element in a column."
+    },
+    {
+      "name": "static func + (Self.Element, Self) -> Column<Self.Element>",
+      "desc": "Generates a column by adding each element in a column to a value."
+    },
+    {
+      "name": "static func - (Self.Element, Self) -> Column<Self.Element>",
+      "desc": "Generates a column by subtracting each element in a column from a value."
+    },
+    {
+      "name": "static func - (Self, Self.Element) -> Column<Self.Element>",
+      "desc": "Generates a column by subtracting a value from each element in a column."
+    },
+    {
+      "name": "static func * (Self, Self.Element) -> Column<Self.Element>",
+      "desc": "Generates a column by multiplying each element in a column by a value."
+    },
+    {
+      "name": "static func * (Self.Element, Self) -> Column<Self.Element>",
+      "desc": "Generates a column by multiplying a value by each element in a column."
+    },
+    {
+      "name": "static func / (Self, Self.Element) -> Column<Self.Element>",
+      "desc": "Generates an integer column by dividing each element in a column by a value."
+    },
+    {
+      "name": "static func / (Self.Element, Self) -> Column<Self.Element>",
+      "desc": "Generates an integer column by dividing a value by each element in a column."
+    },
+    {
+      "name": "static func / (Self, Self.Element) -> Column<Self.Element>",
+      "desc": "Generates a floating-point column by dividing each element in a column by a value."
+    },
+    {
+      "name": "static func / (Self.Element, Self) -> Column<Self.Element>",
+      "desc": "Generates a floating-point column by dividing a value by each element in a column."
+    },
+    {
+      "name": "static func == (Self, Self.Element) -> [Bool]",
+      "desc": "Returns a Boolean array that indicates whether the corresponding element of a column type is equal to a value."
+    },
+    {
+      "name": "static func == (Self.Element, Self) -> [Bool]",
+      "desc": "Returns a Boolean array that indicates whether the value is equal to the corresponding element of a column type."
+    },
+    {
+      "name": "static func != (Self, Self.Element) -> [Bool]",
+      "desc": "Returns a Boolean array that indicates whether the corresponding element of a column type isn’t equal to a value."
+    },
+    {
+      "name": "static func != (Self.Element, Self) -> [Bool]",
+      "desc": "Returns a Boolean array that indicates whether the value isn’t equal to the corresponding element of a column type."
+    },
+    {
+      "name": "static func < (Self, Self.Element) -> [Bool]",
+      "desc": "Returns a Boolean array that indicates whether the corresponding element of a column type is less than a value."
+    },
+    {
+      "name": "static func < (Self.Element, Self) -> [Bool]",
+      "desc": "Returns a Boolean array that indicates whether the value is less than the corresponding element of a column type."
+    },
+    {
+      "name": "static func <= (Self, Self.Element) -> [Bool]",
+      "desc": "Returns a Boolean array that indicates whether the corresponding element of a column type is less than or equal to a value."
+    },
+    {
+      "name": "static func <= (Self.Element, Self) -> [Bool]",
+      "desc": "Returns a Boolean array that indicates whether the value is less than or equal to the corresponding element of a column type."
+    },
+    {
+      "name": "static func > (Self, Self.Element) -> [Bool]",
+      "desc": "Returns a Boolean array that indicates whether the corresponding element of a column type is greater than a value."
+    },
+    {
+      "name": "static func > (Self.Element, Self) -> [Bool]",
+      "desc": "Returns a Boolean array that indicates whether the value is greater than the corresponding element of a column type."
+    },
+    {
+      "name": "static func >= (Self.Element, Self) -> [Bool]",
+      "desc": "Returns a Boolean array that indicates whether the value is greater than or equal to the corresponding element of a column type."
+    },
+    {
+      "name": "static func >= (Self, Self.Element) -> [Bool]",
+      "desc": "Returns a Boolean array that indicates whether the corresponding element of a column type is greater than or equal to a value."
+    }
+  ],
+  "declaration": "protocol ColumnProtocol : BidirectionalCollection",
+  "inheritsFrom": [
+    "BidirectionalCollection",
+    "Collection",
+    "Sequence"
+  ]
+}

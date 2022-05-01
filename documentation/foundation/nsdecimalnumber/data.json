@@ -1,0 +1,148 @@
+{
+  "path": "/documentation/foundation/nsdecimalnumber",
+  "type": "Class",
+  "name": "NSDecimalNumber",
+  "desc": "An object for representing and performing arithmetic on base-10 numbers that bridges to Decimal; use NSDecimalNumber when you need reference semantics or other Foundation-specific behavior.",
+  "items": [
+    {
+      "name": "class var one: NSDecimalNumber",
+      "desc": "A decimal number equivalent to the number 1.0."
+    },
+    {
+      "name": "class var zero: NSDecimalNumber",
+      "desc": "A decimal number equivalent to the number 0.0."
+    },
+    {
+      "name": "class var notANumber: NSDecimalNumber",
+      "desc": "A decimal number that specifies no number."
+    },
+    {
+      "name": "init(decimal: Decimal)",
+      "desc": "Initializes a decimal number to represent a given decimal."
+    },
+    {
+      "name": "init(mantissa: UInt64, exponent: Int16, isNegative: Bool)",
+      "desc": "Initializes a decimal number using the given mantissa, exponent, and sign."
+    },
+    {
+      "name": "init(string: String?)",
+      "desc": "Initializes a decimal number so that its value is equivalent to that in a given numeric string."
+    },
+    {
+      "name": "init(string: String?, locale: Any?)",
+      "desc": "Initializes a decimal number so that its value is equivalent to that in a given numeric string, interpreted using a given locale."
+    },
+    {
+      "name": "func adding(NSDecimalNumber) -> NSDecimalNumber",
+      "desc": "Adds this number to another given number."
+    },
+    {
+      "name": "func subtracting(NSDecimalNumber) -> NSDecimalNumber",
+      "desc": "Subtracts another given number from this one."
+    },
+    {
+      "name": "func multiplying(by: NSDecimalNumber) -> NSDecimalNumber",
+      "desc": "Multiplies the number by another given number."
+    },
+    {
+      "name": "func dividing(by: NSDecimalNumber) -> NSDecimalNumber",
+      "desc": "Divides the number by another given number."
+    },
+    {
+      "name": "func raising(toPower: Int) -> NSDecimalNumber",
+      "desc": "Raises the number to a given power."
+    },
+    {
+      "name": "func multiplying(byPowerOf10: Int16) -> NSDecimalNumber",
+      "desc": "Multiplies the number by 10 raised to the given power."
+    },
+    {
+      "name": "func adding(NSDecimalNumber, withBehavior: NSDecimalNumberBehaviors?) -> NSDecimalNumber",
+      "desc": "Adds this number to another given number using the specified behavior."
+    },
+    {
+      "name": "func subtracting(NSDecimalNumber, withBehavior: NSDecimalNumberBehaviors?) -> NSDecimalNumber",
+      "desc": "Subtracts this a given number from this one using the specified behavior."
+    },
+    {
+      "name": "func multiplying(by: NSDecimalNumber, withBehavior: NSDecimalNumberBehaviors?) -> NSDecimalNumber",
+      "desc": "Multiplies this number by another given number using the specified behavior."
+    },
+    {
+      "name": "func dividing(by: NSDecimalNumber, withBehavior: NSDecimalNumberBehaviors?) -> NSDecimalNumber",
+      "desc": "Divides this number by another given number using the specified behavior."
+    },
+    {
+      "name": "func raising(toPower: Int, withBehavior: NSDecimalNumberBehaviors?) -> NSDecimalNumber",
+      "desc": "Raises the number to a given power using the specified behavior."
+    },
+    {
+      "name": "func multiplying(byPowerOf10: Int16, withBehavior: NSDecimalNumberBehaviors?) -> NSDecimalNumber",
+      "desc": "Multiplies the number by 10 raised to the given power using the specified behavior."
+    },
+    {
+      "name": "func rounding(accordingToBehavior: NSDecimalNumberBehaviors?) -> NSDecimalNumber",
+      "desc": "Returns a rounded version of the decimal number using the specified rounding behavior."
+    },
+    {
+      "name": "class var defaultBehavior: NSDecimalNumberBehaviors",
+      "desc": "The way arithmetic methods round off and handle error conditions."
+    },
+    {
+      "name": "protocol NSDecimalNumberBehaviors",
+      "desc": "A protocol that declares three methods that control the discretionary aspects of working with decimal numbers."
+    },
+    {
+      "name": "class NSDecimalNumberHandler",
+      "desc": "A class that adopts the decimal number behaviors protocol."
+    },
+    {
+      "name": "var decimalValue: Decimal",
+      "desc": "The decimal number’s value, expressed as an Decimal structure."
+    },
+    {
+      "name": "var doubleValue: Double",
+      "desc": "The decimal number’s closest approximate double value."
+    },
+    {
+      "name": "func description(withLocale: Any?) -> String",
+      "desc": "Returns a string representation of the decimal number appropriate for the specified locale."
+    },
+    {
+      "name": "var objCType: UnsafePointer<CChar>",
+      "desc": "A C string containing the Objective-C type for the data contained in the decimal number object."
+    },
+    {
+      "name": "func compare(NSNumber) -> ComparisonResult",
+      "desc": "Compares this decimal number and another."
+    },
+    {
+      "name": "class var maximum: NSDecimalNumber",
+      "desc": "Returns the largest possible value of a decimal number."
+    },
+    {
+      "name": "class var minimum: NSDecimalNumber",
+      "desc": "Returns the smallest possible value of a decimal number."
+    },
+    {
+      "name": "static let decimalNumberExactnessException: NSExceptionName",
+      "desc": "The exception raised if there is an exactness error."
+    },
+    {
+      "name": "static let decimalNumberOverflowException: NSExceptionName",
+      "desc": "The exception raised on overflow."
+    },
+    {
+      "name": "static let decimalNumberUnderflowException: NSExceptionName",
+      "desc": "The exception raised on underflow."
+    },
+    {
+      "name": "static let decimalNumberDivideByZeroException: NSExceptionName",
+      "desc": "The exception raised on divide by zero."
+    }
+  ],
+  "declaration": "class NSDecimalNumber : NSNumber",
+  "inheritsFrom": [
+    "NSNumber"
+  ]
+}

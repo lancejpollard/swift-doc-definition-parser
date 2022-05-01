@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/apple_news/articledocument",
+  "type": "Object",
+  "name": "ArticleDocument",
+  "desc": "The root object of an Apple News article, that contains required properties, metadata, content, layout, and styles.",
+  "items": [
+    {
+      "name": "components",
+      "desc": "An array of components that form the content of this article. Components have different roles and types, such as Photo and Music."
+    },
+    {
+      "name": "componentTextStyles",
+      "desc": "The component text styles that can be referred to by components in this document. Each article.json file must have, at minimum, a default component text style named default. Defaults by component role can also be set. See Defining and Applying Text Styles."
+    },
+    {
+      "name": "identifier",
+      "desc": "A unique, publisher-provided identifier for this article. This identifier must remain constant; it cannot change when the article is updated. See PublisherArticleIdentifier.This identifier can include the following:Up to 64 characters Uppercase and lowercase lettersNumbers HyphensUnderscores"
+    },
+    {
+      "name": "language",
+      "desc": "A code that indicates the language of the article. Use the IANA.org language subtag registry to find the appropriate code; e.g., en for English, or the more specific en-GB for English (U.K.) or en-US for English (U.S.)."
+    },
+    {
+      "name": "layout",
+      "desc": "The article’s column system. Apple News Format layouts make it possible to recreate print design on iPhone, iPad, iPod touch and Mac. Layout information is also used to calculate relative positioning and size for these devices. See Planning the Layout for Your Article."
+    },
+    {
+      "name": "title",
+      "desc": "The article title or headline. Should be plain text; formatted text (HTML or Markdown) is not supported."
+    },
+    {
+      "name": "version",
+      "desc": "The version of Apple News Format used in the JSON document. The value of the version property must not be earlier than the version number of any property that is used anywhere in the article. See Apple News Format Version History."
+    },
+    {
+      "name": "advertisingSettings",
+      "desc": "An advertisement to be inserted at a position that is both possible and optimal. You can specify what bannerType you want to have automatically inserted. Note. This property is deprecated. Use the AdvertisementAutoPlacement object instead."
+    },
+    {
+      "name": "autoplacement",
+      "desc": "The metadata, appearance, and placement of advertising and related content components within Apple News Format articles."
+    },
+    {
+      "name": "colorScheme",
+      "desc": "The colorScheme object that you use for automatic Dark Mode behavior."
+    },
+    {
+      "name": "componentLayouts",
+      "desc": "The article-level ComponentLayout objects that can be referred to by their key within the ComponentLayouts object. See Positioning the Content in Your Article."
+    },
+    {
+      "name": "componentStyles",
+      "desc": "The component styles that can be referred to by components within this document. See Enhancing Your Articles with Styles."
+    },
+    {
+      "name": "documentStyle",
+      "desc": "An object containing the background color of the article."
+    },
+    {
+      "name": "metadata",
+      "desc": "The article's metadata, such as publication date, ad campaign data, and other information that is not part of the core article content."
+    },
+    {
+      "name": "subtitle",
+      "desc": "The article subtitle. Should be plain text; formatted text (HTML or Markdown) is not supported."
+    },
+    {
+      "name": "textFormat",
+      "desc": "The global text format to apply to Text components and FormattedText objects.If the textFormat property is not specified, the format of Text components and formattedText objects defaults to none. If the textFormat property is specified, the format of Text components and formattedText objects defaults to the value of this property. To override the textFormat value, use the format property in the Text component or the formattedText object."
+    },
+    {
+      "name": "textStyles",
+      "desc": "The TextStyle objects available to use inline for text in Text components. See Using HTML with Apple News Format, Using Markdown with Apple News Format, and InlineTextStyle."
+    }
+  ]
+}

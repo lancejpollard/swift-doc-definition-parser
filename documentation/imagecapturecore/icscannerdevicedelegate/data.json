@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/imagecapturecore/icscannerdevicedelegate",
+  "type": "Protocol",
+  "name": "ICScannerDeviceDelegate",
+  "desc": "Methods for determining availability, selecting a functional unit, and performing scans on connected scanners.",
+  "items": [
+    {
+      "name": "func scannerDeviceDidBecomeAvailable(ICScannerDevice)",
+      "desc": "Tells the client when another client closes the current open session on the scanner."
+    },
+    {
+      "name": "func scannerDevice(ICScannerDevice, didSelect: ICScannerFunctionalUnit, error: Error?)",
+      "desc": "Tells the client when a functional unit is selected on the scanner."
+    },
+    {
+      "name": "func scannerDevice(ICScannerDevice, didCompleteOverviewScanWithError: Error?)",
+      "desc": "Tells the client when the scanner completes an overview scan."
+    },
+    {
+      "name": "func scannerDevice(ICScannerDevice, didCompleteScanWithError: Error?)",
+      "desc": "Tells the client when the scanner completes a scan."
+    },
+    {
+      "name": "func scannerDevice(ICScannerDevice, didScanTo: ICScannerBandData)",
+      "desc": "Tells the client when the scanner receives the requested scan progress notification and a band of data is sent for each notification received."
+    },
+    {
+      "name": "func scannerDevice(ICScannerDevice, didScanTo: URL)",
+      "desc": "Tells the client when the scanner receives the requested scan."
+    }
+  ],
+  "declaration": "protocol ICScannerDeviceDelegate",
+  "inheritsFrom": [
+    "ICDeviceDelegate"
+  ]
+}

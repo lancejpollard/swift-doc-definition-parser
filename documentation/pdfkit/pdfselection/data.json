@@ -1,0 +1,80 @@
+{
+  "path": "/documentation/pdfkit/pdfselection",
+  "type": "Class",
+  "name": "PDFSelection",
+  "desc": "A PDFSelection object identifies a contiguous or noncontiguous selection of text in a PDF document.",
+  "items": [
+    {
+      "name": "init(document: PDFDocument)",
+      "desc": "Returns an empty PDFSelection object."
+    },
+    {
+      "name": "var pages: [PDFPage]",
+      "desc": "Returns the array of pages contained in the selection."
+    },
+    {
+      "name": "var string: String?",
+      "desc": "Returns an NSString object representing the text contained in the selection (may contain linefeed characters)."
+    },
+    {
+      "name": "var attributedString: NSAttributedString?",
+      "desc": "Returns an NSAttributedString object representing the text contained in the selection (may contain linefeed characters)."
+    },
+    {
+      "name": "func bounds(for: PDFPage) -> CGRect",
+      "desc": "Returns the bounds of the selection on the specified page."
+    },
+    {
+      "name": "func selectionsByLine() -> [PDFSelection]",
+      "desc": "Returns an array of selections, one for each line of text covered by the receiver."
+    },
+    {
+      "name": "var color: UIColor?",
+      "desc": "Sets the color used for the drawing of a selection in both active and inactive states."
+    },
+    {
+      "name": "func add(PDFSelection)",
+      "desc": "Adds the specified selection to the receiving selection."
+    },
+    {
+      "name": "func add([PDFSelection])",
+      "desc": "Adds the specified array of selections to the receiving selection."
+    },
+    {
+      "name": "func extend(atEnd: Int)",
+      "desc": "Extends the selection from its end toward the end of the document."
+    },
+    {
+      "name": "func extend(atStart: Int)",
+      "desc": "Extends the selection from its start toward the beginning of the document."
+    },
+    {
+      "name": "func draw(for: PDFPage, active: Bool)",
+      "desc": "Calls draw(for:with:active:) with a default value for box parameter."
+    },
+    {
+      "name": "func draw(for: PDFPage, with: PDFDisplayBox, active: Bool)",
+      "desc": "Draws the selection relative to the origin of the specified box in page space."
+    },
+    {
+      "name": "var color: UIColor?",
+      "desc": "Sets the color used for the drawing of a selection in both active and inactive states."
+    },
+    {
+      "name": "func extendForLineBoundaries()"
+    },
+    {
+      "name": "func numberOfTextRanges(on: PDFPage) -> Int"
+    },
+    {
+      "name": "func range(at: Int, on: PDFPage) -> NSRange"
+    }
+  ],
+  "declaration": "class PDFSelection : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

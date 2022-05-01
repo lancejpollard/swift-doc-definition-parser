@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/uikit/uitextpasteitem",
+  "type": "Protocol",
+  "name": "UITextPasteItem",
+  "desc": "The interface for obtaining information about, and interacting with, a text item for pasting or dropping.",
+  "items": [
+    {
+      "name": "var itemProvider: NSItemProvider",
+      "desc": "The item provider for the item being pasted or dropped."
+    },
+    {
+      "name": "var localObject: Any?",
+      "desc": "The custom local object that the copy or drag source optionally attached to the drag item."
+    },
+    {
+      "name": "var defaultAttributes: [NSAttributedString.Key : Any]",
+      "desc": "The dictionary of default attributes that the system applies, during pasting or dropping, to plaintext strings from an item provider."
+    },
+    {
+      "name": "func setResult(string: String)",
+      "desc": "Sets a text paste item’s textual value to a specified plaintext string from the item provider."
+    },
+    {
+      "name": "func setResult(attributedString: NSAttributedString)",
+      "desc": "Sets a text paste item’s textual value to a specified attributed string from the item provider."
+    },
+    {
+      "name": "func setResult(attachment: NSTextAttachment)",
+      "desc": "Sets a text paste item’s attachment value to a specified value."
+    },
+    {
+      "name": "func setDefaultResult()",
+      "desc": "Sets the text paste item's value to the default value based on the item provider's data."
+    },
+    {
+      "name": "func setNoResult()",
+      "desc": "Sets the text paste item’s textual value to not include data from the item provider."
+    }
+  ],
+  "declaration": "@MainActor protocol UITextPasteItem",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

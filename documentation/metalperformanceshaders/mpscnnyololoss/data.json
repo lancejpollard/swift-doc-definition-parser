@@ -1,0 +1,75 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpscnnyololoss",
+  "type": "Class",
+  "name": "MPSCNNYOLOLoss",
+  "desc": "A kernel that computes the YOLO loss and loss gradient between specified predictions and labels.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice, lossDescriptor: MPSCNNYOLOLossDescriptor)"
+    },
+    {
+      "name": "var anchorBoxes: Data"
+    },
+    {
+      "name": "var lossClasses: MPSCNNLoss"
+    },
+    {
+      "name": "var lossConfidence: MPSCNNLoss"
+    },
+    {
+      "name": "var lossWH: MPSCNNLoss"
+    },
+    {
+      "name": "var lossXY: MPSCNNLoss"
+    },
+    {
+      "name": "var maxIOUForObjectAbsence: Float"
+    },
+    {
+      "name": "var minIOUForObjectPresence: Float"
+    },
+    {
+      "name": "var numberOfAnchorBoxes: Int"
+    },
+    {
+      "name": "var reduceAcrossBatch: Bool"
+    },
+    {
+      "name": "var reductionType: MPSCNNReductionType"
+    },
+    {
+      "name": "var scaleClass: Float"
+    },
+    {
+      "name": "var scaleNoObject: Float"
+    },
+    {
+      "name": "var scaleObject: Float"
+    },
+    {
+      "name": "var scaleWH: Float"
+    },
+    {
+      "name": "var scaleXY: Float"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, sourceImage: MPSImage, labels: MPSCNNLossLabels) -> MPSImage"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, sourceImage: MPSImage, labels: MPSCNNLossLabels, destinationImage: MPSImage)"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, sourceImages: [MPSImage], labels: [MPSCNNLossLabels]) -> [MPSImage]"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, sourceImages: [MPSImage], labels: [MPSCNNLossLabels], destinationImages: [MPSImage])"
+    }
+  ],
+  "declaration": "class MPSCNNYOLOLoss : MPSCNNKernel",
+  "inheritsFrom": [
+    "MPSCNNKernel"
+  ]
+}

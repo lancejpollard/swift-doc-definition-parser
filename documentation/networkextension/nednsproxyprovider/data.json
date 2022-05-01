@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/networkextension/nednsproxyprovider",
+  "type": "Class",
+  "name": "NEDNSProxyProvider",
+  "desc": "The principal class for a DNS proxy provider app extension.",
+  "items": [
+    {
+      "name": "func startProxy(options: [String : Any]?, completionHandler: (Error?) -> Void)",
+      "desc": "Starts the DNS proxy."
+    },
+    {
+      "name": "func stopProxy(with: NEProviderStopReason, completionHandler: () -> Void)",
+      "desc": "Stops the DNS proxy."
+    },
+    {
+      "name": "func cancelProxyWithError(Error?)",
+      "desc": "Cancels the DNS proxy."
+    },
+    {
+      "name": "func handleNewFlow(NEAppProxyFlow) -> Bool",
+      "desc": "Handles a new flow of DNS traffic."
+    },
+    {
+      "name": "func handleNewUDPFlow(NEAppProxyUDPFlow, initialRemoteEndpoint: NWEndpoint) -> Bool",
+      "desc": "Handles a new flow of UDP traffic."
+    },
+    {
+      "name": "var systemDNSSettings: [NEDNSSettings]?",
+      "desc": "The current system DNS settings."
+    }
+  ],
+  "declaration": "class NEDNSProxyProvider : NEProvider",
+  "inheritsFrom": [
+    "NEProvider"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/avfoundation/avcapturevideopreviewlayer",
+  "type": "Class",
+  "name": "AVCaptureVideoPreviewLayer",
+  "desc": "A Core Animation layer that displays the video as it’s captured.",
+  "items": [
+    {
+      "name": "init(session: AVCaptureSession)",
+      "desc": "Initializes a preview layer with a given capture session."
+    },
+    {
+      "name": "init(sessionWithNoConnection: AVCaptureSession)",
+      "desc": "Initializes a preview layer using a given capture session but without making any connections."
+    },
+    {
+      "name": "var videoGravity: AVLayerVideoGravity",
+      "desc": "Indicates how the layer displays the video content within its bounds."
+    },
+    {
+      "name": "var isPreviewing: Bool",
+      "desc": "A Boolean value that indicates whether the layer is rendering video frames from its source."
+    },
+    {
+      "name": "var session: AVCaptureSession?",
+      "desc": "The previewed capture session."
+    },
+    {
+      "name": "var connection: AVCaptureConnection?",
+      "desc": "The capture connection describing the AVCaptureInputPort to which the preview layer is connected."
+    },
+    {
+      "name": "func setSessionWithNoConnection(AVCaptureSession)",
+      "desc": "Attaches the layer to a given session without implicitly forming a connection."
+    },
+    {
+      "name": "func captureDevicePointConverted(fromLayerPoint: CGPoint) -> CGPoint",
+      "desc": "Converts a point from layer coordinates to the coordinate space of the capture device."
+    },
+    {
+      "name": "func layerPointConverted(fromCaptureDevicePoint: CGPoint) -> CGPoint",
+      "desc": "Converts a point from the coordinate space of the capture device to the coordinate space of the layer."
+    },
+    {
+      "name": "func layerRectConverted(fromMetadataOutputRect: CGRect) -> CGRect",
+      "desc": "Converts a rectangle in the coordinate system used for metadata outputs to one in the preview layer’s coordinate system."
+    },
+    {
+      "name": "func metadataOutputRectConverted(fromLayerRect: CGRect) -> CGRect",
+      "desc": "Converts a rectangle in the preview layer’s coordinate system to one in the coordinate system used for metadata outputs."
+    },
+    {
+      "name": "func transformedMetadataObject(for: AVMetadataObject) -> AVMetadataObject?",
+      "desc": "Converts a metadata object’s visual properties to layer coordinates."
+    }
+  ],
+  "declaration": "class AVCaptureVideoPreviewLayer : CALayer",
+  "inheritsFrom": [
+    "CALayer"
+  ]
+}

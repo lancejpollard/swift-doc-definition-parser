@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/realitykit/hasphysicsbody",
+  "type": "Protocol",
+  "name": "HasPhysicsBody",
+  "desc": "An interface that enables physics simulations based on the rules of Newtonian mechanics.",
+  "items": [
+    {
+      "name": "var physicsBody: PhysicsBodyComponent?",
+      "desc": "A component that is used for physics simulations of the model entity in accordance with the laws of Newtonian mechanics."
+    },
+    {
+      "name": "struct PhysicsBodyComponent",
+      "desc": "A component that defines an entity’s behavior in physics body simulations."
+    },
+    {
+      "name": "func addForce(SIMD3<Float>, relativeTo: Entity?)",
+      "desc": "Applies a force to the physics body at its center of mass."
+    },
+    {
+      "name": "func addForce(SIMD3<Float>, at: SIMD3<Float>, relativeTo: Entity?)",
+      "desc": "Applies a force to the physics body at the specified position."
+    },
+    {
+      "name": "func addTorque(SIMD3<Float>, relativeTo: Entity?)",
+      "desc": "Applies a torque to the physics body at its center of mass."
+    },
+    {
+      "name": "func clearForcesAndTorques()",
+      "desc": "Clears all forces previously added to the physics body."
+    },
+    {
+      "name": "func applyLinearImpulse(SIMD3<Float>, relativeTo: Entity?)",
+      "desc": "Applies an impulse to the physics body at its center of mass."
+    },
+    {
+      "name": "func applyAngularImpulse(SIMD3<Float>, relativeTo: Entity?)",
+      "desc": "Applies an angular (torque) impulse to the physics body at its center of mass."
+    },
+    {
+      "name": "func applyImpulse(SIMD3<Float>, at: SIMD3<Float>, relativeTo: Entity?)",
+      "desc": "Applies an impulse to the physics body at the specified position."
+    },
+    {
+      "name": "func resetPhysicsTransform(recursive: Bool)",
+      "desc": "Resets the position, orientation, and velocities of the simulated physics body."
+    }
+  ],
+  "declaration": "protocol HasPhysicsBody",
+  "inheritsFrom": [
+    "HasCollision"
+  ]
+}

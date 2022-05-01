@@ -1,0 +1,192 @@
+{
+  "path": "/documentation/cloudkit/ckcontainer",
+  "type": "Class",
+  "name": "CKContainer",
+  "desc": "A conduit to your app’s databases.",
+  "items": [
+    {
+      "name": "class func `default`() -> CKContainer",
+      "desc": "Returns the app’s default container."
+    },
+    {
+      "name": "init(identifier: String)",
+      "desc": "Creates a container for the specified identifier."
+    },
+    {
+      "name": "var privateCloudDatabase: CKDatabase",
+      "desc": "The user’s private database."
+    },
+    {
+      "name": "var publicCloudDatabase: CKDatabase",
+      "desc": "The app’s public database."
+    },
+    {
+      "name": "var sharedCloudDatabase: CKDatabase",
+      "desc": "The database that contains shared data."
+    },
+    {
+      "name": "func database(with: CKDatabase.Scope) -> CKDatabase",
+      "desc": "Returns the database with the specified scope."
+    },
+    {
+      "name": "var containerIdentifier: String?",
+      "desc": "The container’s unique identifier."
+    },
+    {
+      "name": "func accountStatus(completionHandler: (CKAccountStatus, Error?) -> Void)",
+      "desc": "Determines whether the system can access the user’s iCloud account."
+    },
+    {
+      "name": "enum CKAccountStatus",
+      "desc": "Constants that indicate the availability of the user’s iCloud account."
+    },
+    {
+      "name": "func requestApplicationPermission(CKContainer.ApplicationPermissions, completionHandler: CKContainer.ApplicationPermissionBlock)",
+      "desc": "Prompts the user to authorize the specified permission."
+    },
+    {
+      "name": "func status(forApplicationPermission: CKContainer.ApplicationPermissions, completionHandler: CKContainer.ApplicationPermissionBlock)",
+      "desc": "Determines the authorization status of the specified permission."
+    },
+    {
+      "name": "enum CKContainer.Application",
+      "desc": "A collection of types for app permissions."
+    },
+    {
+      "name": "struct CKContainer.ApplicationPermissions",
+      "desc": "Constants that represent the permissions that a user grants."
+    },
+    {
+      "name": "typealias CKContainer.ApplicationPermissionBlock",
+      "desc": "A closure that processes the outcome of a permissions request."
+    },
+    {
+      "name": "enum CKContainer.ApplicationPermissionStatus",
+      "desc": "Constants that represent the status of a permission."
+    },
+    {
+      "name": "func add(CKOperation)",
+      "desc": "Adds an operation to the container’s queue."
+    },
+    {
+      "name": "func discoverAllIdentities(completionHandler: ([CKUserIdentity]?, Error?) -> Void)",
+      "desc": "Fetches all user identities that match entries in the user’s Contacts."
+    },
+    {
+      "name": "func discoverUserIdentity(withEmailAddress: String, completionHandler: (CKUserIdentity?, Error?) -> Void)",
+      "desc": "Fetches the user identity for the specified email address."
+    },
+    {
+      "name": "func discoverUserIdentity(withPhoneNumber: String, completionHandler: (CKUserIdentity?, Error?) -> Void)",
+      "desc": "Fetches the user identity for the specified phone number."
+    },
+    {
+      "name": "func discoverUserIdentity(withUserRecordID: CKRecord.ID, completionHandler: (CKUserIdentity?, Error?) -> Void)",
+      "desc": "Fetches the user identity for the specified user record ID."
+    },
+    {
+      "name": "func fetchShareParticipant(withEmailAddress: String, completionHandler: (CKShare.Participant?, Error?) -> Void)",
+      "desc": "Fetches the share participant with the specified email address."
+    },
+    {
+      "name": "func fetchShareParticipant(withPhoneNumber: String, completionHandler: (CKShare.Participant?, Error?) -> Void)",
+      "desc": "Fetches the share participant with the specified phone number."
+    },
+    {
+      "name": "func fetchShareParticipant(withUserRecordID: CKRecord.ID, completionHandler: (CKShare.Participant?, Error?) -> Void)",
+      "desc": "Fetches the share participant with the specified user record ID."
+    },
+    {
+      "name": "func fetchUserRecordID(completionHandler: (CKRecord.ID?, Error?) -> Void)",
+      "desc": "Fetches the user record ID of the current user."
+    },
+    {
+      "name": "let CKCurrentUserDefaultName: String",
+      "desc": "A constant that provides the current user’s default name."
+    },
+    {
+      "name": "func fetchAllLongLivedOperationIDs(completionHandler: ([CKOperation.ID]?, Error?) -> Void)",
+      "desc": "Fetches the IDs of any long-lived operations that are running."
+    },
+    {
+      "name": "func fetchLongLivedOperation(withID: CKOperation.ID, completionHandler: (CKOperation?, Error?) -> Void)",
+      "desc": "Fetches the long-lived operation for the specified operation ID."
+    },
+    {
+      "name": "func fetchShareMetadata(with: URL, completionHandler: (CKShare.Metadata?, Error?) -> Void)",
+      "desc": "Fetches the share metadata for the specified share URL."
+    },
+    {
+      "name": "func accept(CKShare.Metadata, completionHandler: (CKShare?, Error?) -> Void)",
+      "desc": "Accepts the specified share metadata."
+    },
+    {
+      "name": "static let CKAccountChanged: NSNotification.Name",
+      "desc": "A notification that a container posts when the status of an iCloud account changes."
+    },
+    {
+      "name": "func accept([CKShare.Metadata]) -> [CKShare.Metadata : Result<CKShare, Error>]"
+    },
+    {
+      "name": "func accept([CKShare.Metadata], completionHandler: (Result<[CKShare.Metadata : Result<CKShare, Error>], Error>) -> Void)"
+    },
+    {
+      "name": "func allLongLivedOperationIDs() -> [CKOperation.ID]"
+    },
+    {
+      "name": "func configuredWith<R>(configuration: CKOperation.Configuration?, group: CKOperationGroup?, body: (CKContainer) -> R) -> R"
+    },
+    {
+      "name": "func configuredWith<R>(configuration: CKOperation.Configuration?, group: CKOperationGroup?, body: (CKContainer) -> R) -> R"
+    },
+    {
+      "name": "func discoverUserIdentities(forEmailAddresses: [String], completionHandler: (Result<[String : CKUserIdentity], Error>) -> Void)"
+    },
+    {
+      "name": "func discoverUserIdentities(forPhoneNumbers: [String], completionHandler: (Result<[String : CKUserIdentity], Error>) -> Void)"
+    },
+    {
+      "name": "func discoverUserIdentities(forUserRecordIDs: [CKRecord.ID], completionHandler: (Result<[CKRecord.ID : CKUserIdentity], Error>) -> Void)"
+    },
+    {
+      "name": "func fetchShareMetadatas(for: [URL], completionHandler: (Result<[URL : Result<CKShare.Metadata, Error>], Error>) -> Void)"
+    },
+    {
+      "name": "func fetchShareParticipants(forEmailAddresses: [String], completionHandler: (Result<[String : Result<CKShare.Participant, Error>], Error>) -> Void)"
+    },
+    {
+      "name": "func fetchShareParticipants(forPhoneNumbers: [String], completionHandler: (Result<[String : Result<CKShare.Participant, Error>], Error>) -> Void)"
+    },
+    {
+      "name": "func fetchShareParticipants(forUserRecordIDs: [CKRecord.ID], completionHandler: (Result<[CKRecord.ID : Result<CKShare.Participant, Error>], Error>) -> Void)"
+    },
+    {
+      "name": "func longLivedOperation(for: CKOperation.ID) -> CKOperation?"
+    },
+    {
+      "name": "func shareMetadatas(for: [URL]) -> [URL : Result<CKShare.Metadata, Error>]"
+    },
+    {
+      "name": "func shareParticipants(forEmailAddresses: [String]) -> [String : Result<CKShare.Participant, Error>]"
+    },
+    {
+      "name": "func shareParticipants(forPhoneNumbers: [String]) -> [String : Result<CKShare.Participant, Error>]"
+    },
+    {
+      "name": "func shareParticipants(forUserRecordIDs: [CKRecord.ID]) -> [CKRecord.ID : Result<CKShare.Participant, Error>]"
+    },
+    {
+      "name": "func userIdentities(forEmailAddresses: [String]) -> [String : CKUserIdentity]"
+    },
+    {
+      "name": "func userIdentities(forPhoneNumbers: [String]) -> [String : CKUserIdentity]"
+    },
+    {
+      "name": "func userIdentities(forUserRecordIDs: [CKRecord.ID]) -> [CKRecord.ID : CKUserIdentity]"
+    }
+  ],
+  "declaration": "class CKContainer : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

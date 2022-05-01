@@ -1,0 +1,80 @@
+{
+  "path": "/documentation/appkit/nsgradient",
+  "type": "Class",
+  "name": "NSGradient",
+  "desc": "An object that can draw gradient fill colors",
+  "items": [
+    {
+      "name": "init?(starting: NSColor, ending: NSColor)",
+      "desc": "Initializes a newly allocated gradient object with two colors."
+    },
+    {
+      "name": "init?(colors: [NSColor])",
+      "desc": "Initializes a newly allocated gradient object with an array of colors."
+    },
+    {
+      "name": "init?(colorsAndLocations: (NSColor, CGFloat)...)",
+      "desc": "Initializes a newly allocated gradient object with a comma-separated list of arguments."
+    },
+    {
+      "name": "init?(colors: [NSColor], atLocations: UnsafePointer<CGFloat>?, colorSpace: NSColorSpace)",
+      "desc": "Initializes a newly allocated gradient object with the specified colors, color locations, and color space."
+    },
+    {
+      "name": "init(coder: NSCoder)",
+      "desc": "Creates a gradient from data in an unarchiver."
+    },
+    {
+      "name": "func draw(from: NSPoint, to: NSPoint, options: NSGradient.DrawingOptions)",
+      "desc": "Draws a linear gradient between the specified start and end points."
+    },
+    {
+      "name": "func draw(in: NSRect, angle: CGFloat)",
+      "desc": "Fills the specified rectangle with a linear gradient."
+    },
+    {
+      "name": "func draw(in: NSBezierPath, angle: CGFloat)",
+      "desc": "Fills the specified path with a linear gradient."
+    },
+    {
+      "name": "func draw(fromCenter: NSPoint, radius: CGFloat, toCenter: NSPoint, radius: CGFloat, options: NSGradient.DrawingOptions)",
+      "desc": "Draws a radial gradient between the specified circles."
+    },
+    {
+      "name": "func draw(in: NSRect, relativeCenterPosition: NSPoint)",
+      "desc": "Draws a radial gradient starting at the center of the specified rectangle."
+    },
+    {
+      "name": "func draw(in: NSBezierPath, relativeCenterPosition: NSPoint)",
+      "desc": "Draws a radial gradient starting at the center point of the specified path."
+    },
+    {
+      "name": "var colorSpace: NSColorSpace",
+      "desc": "The color space of the colors associated with the gradient."
+    },
+    {
+      "name": "var numberOfColorStops: Int",
+      "desc": "The number of color stops associated with the gradient."
+    },
+    {
+      "name": "func getColor(AutoreleasingUnsafeMutablePointer<NSColor>?, location: UnsafeMutablePointer<CGFloat>?, at: Int)",
+      "desc": "Returns information about the color stop at the specified index in the receiver’s color array."
+    },
+    {
+      "name": "func interpolatedColor(atLocation: CGFloat) -> NSColor",
+      "desc": "Returns the color of the rendered gradient at the specified relative location."
+    },
+    {
+      "name": "struct NSGradient.DrawingOptions",
+      "desc": "Constants that specify gradient drawing options."
+    }
+  ],
+  "declaration": "class NSGradient : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

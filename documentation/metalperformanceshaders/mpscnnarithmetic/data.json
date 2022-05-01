@@ -1,0 +1,39 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpscnnarithmetic",
+  "type": "Class",
+  "name": "MPSCNNArithmetic",
+  "desc": "The base class for arithmetic operators.",
+  "items": [
+    {
+      "name": "var bias: Float"
+    },
+    {
+      "name": "var maximumValue: Float"
+    },
+    {
+      "name": "var minimumValue: Float"
+    },
+    {
+      "name": "var primaryScale: Float"
+    },
+    {
+      "name": "var primaryStrideInFeatureChannels: Int"
+    },
+    {
+      "name": "var secondaryScale: Float"
+    },
+    {
+      "name": "var secondaryStrideInFeatureChannels: Int"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, primaryImage: MPSImage, secondaryImage: MPSImage, destinationState: MPSCNNArithmeticGradientState, destinationImage: MPSImage)"
+    },
+    {
+      "name": "func encodeBatch(commandBuffer: MTLCommandBuffer, primaryImages: [MPSImage], secondaryImages: [MPSImage], destinationStates: [MPSCNNArithmeticGradientState], destinationImages: [MPSImage])"
+    }
+  ],
+  "declaration": "class MPSCNNArithmetic : MPSCNNBinaryKernel",
+  "inheritsFrom": [
+    "MPSCNNBinaryKernel"
+  ]
+}

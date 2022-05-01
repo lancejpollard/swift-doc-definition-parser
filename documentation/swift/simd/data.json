@@ -1,0 +1,545 @@
+{
+  "path": "/documentation/swift/simd",
+  "type": "Protocol",
+  "name": "SIMD",
+  "desc": "A SIMD vector of a fixed number of elements.",
+  "items": [
+    {
+      "name": "associatedtype MaskStorage",
+      "desc": "The mask type resulting from pointwise comparisons of this vector type."
+    },
+    {
+      "name": "init<S>(S)",
+      "desc": "Creates a vector from the given sequence."
+    },
+    {
+      "name": "init(repeating: Self.Scalar)",
+      "desc": "A vector with the specified value in all lanes."
+    },
+    {
+      "name": "var indices: Range<Int>",
+      "desc": "The valid indices for subscripting the vector."
+    },
+    {
+      "name": "var leadingZeroBitCount: Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "var nonzeroBitCount: Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "var trailingZeroBitCount: Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static var one: Self",
+      "desc": "A vector with one in all lanes."
+    },
+    {
+      "name": "static var one: Self",
+      "desc": "A vector with one in all lanes."
+    },
+    {
+      "name": "static var zero: Self",
+      "desc": "A vector with zero in all lanes."
+    },
+    {
+      "name": "static var zero: Self",
+      "desc": "A vector with zero in all lanes."
+    },
+    {
+      "name": "func addProduct(Self.Scalar, Self)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "func addProduct(Self, Self.Scalar)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "func addProduct(Self, Self)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "func addingProduct(Self.Scalar, Self) -> Self",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "func addingProduct(Self, Self.Scalar) -> Self",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "func addingProduct(Self, Self) -> Self",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "func clamp(lowerBound: Self, upperBound: Self)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "func clamp(lowerBound: Self, upperBound: Self)",
+      "desc": "Available when Scalar conforms to Comparable."
+    },
+    {
+      "name": "func clamped(lowerBound: Self, upperBound: Self) -> Self",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "func clamped(lowerBound: Self, upperBound: Self) -> Self",
+      "desc": "Available when Scalar conforms to Comparable."
+    },
+    {
+      "name": "func formSquareRoot()",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "func max() -> Self.Scalar",
+      "desc": "The greatest scalar in the vector."
+    },
+    {
+      "name": "func max() -> Self.Scalar",
+      "desc": "The greatest element in the vector."
+    },
+    {
+      "name": "func min() -> Self.Scalar",
+      "desc": "The least scalar in the vector."
+    },
+    {
+      "name": "func min() -> Self.Scalar",
+      "desc": "The least element in the vector."
+    },
+    {
+      "name": "func replace(with: Self.Scalar, where: SIMDMask<Self.MaskStorage>)",
+      "desc": "Replaces elements of this vector with other in the lanes where mask is true."
+    },
+    {
+      "name": "func replace(with: Self, where: SIMDMask<Self.MaskStorage>)",
+      "desc": "Replaces elements of this vector with elements of other in the lanes where mask is true."
+    },
+    {
+      "name": "func replacing(with: Self.Scalar, where: SIMDMask<Self.MaskStorage>) -> Self",
+      "desc": "Returns a copy of this vector, with elements other in the lanes where mask is true."
+    },
+    {
+      "name": "func replacing(with: Self, where: SIMDMask<Self.MaskStorage>) -> Self",
+      "desc": "Returns a copy of this vector, with elements replaced by elements of other in the lanes where mask is true."
+    },
+    {
+      "name": "func round(FloatingPointRoundingRule)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "func rounded(FloatingPointRoundingRule) -> Self",
+      "desc": "A vector formed by rounding each lane of the source vector to an integral value according to the specified rounding rule."
+    },
+    {
+      "name": "func squareRoot() -> Self",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "func sum() -> Self.Scalar",
+      "desc": "The sum of the scalars in the vector."
+    },
+    {
+      "name": "func wrappedSum() -> Self.Scalar",
+      "desc": "Returns the sum of the scalars in the vector, computed with wrapping addition."
+    },
+    {
+      "name": "static func random(in: ClosedRange<Self.Scalar>) -> Self",
+      "desc": "Returns a vector with random values from within the specified range in all lanes."
+    },
+    {
+      "name": "static func random(in: Range<Self.Scalar>) -> Self",
+      "desc": "Returns a vector with random values from within the specified range in all lanes."
+    },
+    {
+      "name": "static func random<T>(in: ClosedRange<Self.Scalar>, using: inout T) -> Self",
+      "desc": "Returns a vector with random values from within the specified range in all lanes, using the given generator as a source for randomness."
+    },
+    {
+      "name": "static func random<T>(in: Range<Self.Scalar>, using: inout T) -> Self",
+      "desc": "Returns a vector with random values from within the specified range in all lanes, using the given generator as a source for randomness."
+    },
+    {
+      "name": "static func % (Self.Scalar, Self) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func % (Self, Self.Scalar) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func % (Self, Self) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func %= (inout Self, Self.Scalar)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func %= (inout Self, Self)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func & (Self.Scalar, Self) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func & (Self, Self.Scalar) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func & (Self, Self) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &* (Self.Scalar, Self) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &* (Self, Self.Scalar) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &* (Self, Self) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &*= (inout Self, Self.Scalar)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &*= (inout Self, Self)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &+ (Self.Scalar, Self) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &+ (Self, Self.Scalar) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &+ (Self, Self) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &+= (inout Self, Self.Scalar)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &+= (inout Self, Self)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &- (Self.Scalar, Self) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &- (Self, Self.Scalar) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &- (Self, Self) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &-= (inout Self, Self.Scalar)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &-= (inout Self, Self)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &<< (Self.Scalar, Self) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &<< (Self, Self.Scalar) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &<< (Self, Self) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &<<= (inout Self, Self.Scalar)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &<<= (inout Self, Self)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &= (inout Self, Self.Scalar)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &= (inout Self, Self)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &>> (Self.Scalar, Self) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &>> (Self, Self.Scalar) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &>> (Self, Self) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &>>= (inout Self, Self.Scalar)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &>>= (inout Self, Self)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func * (Self.Scalar, Self) -> Self",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func * (Self, Self.Scalar) -> Self",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func * (Self, Self) -> Self",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func *= (inout Self, Self.Scalar)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func *= (inout Self, Self)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func + (Self.Scalar, Self) -> Self",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func + (Self, Self.Scalar) -> Self",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func + (Self, Self) -> Self",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func += (inout Self, Self.Scalar)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func += (inout Self, Self)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func += (inout Self, Self)",
+      "desc": "Available when Self conforms to AdditiveArithmetic and Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func - (Self) -> Self",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func - (Self.Scalar, Self) -> Self",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func - (Self, Self.Scalar) -> Self",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func - (Self, Self) -> Self",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func -= (inout Self, Self.Scalar)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func -= (inout Self, Self)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func -= (inout Self, Self)",
+      "desc": "Available when Self conforms to AdditiveArithmetic and Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func .!= (Self.Scalar, Self) -> SIMDMask<Self.MaskStorage>",
+      "desc": "Returns a vector mask with the result of a pointwise inequality comparison."
+    },
+    {
+      "name": "static func .!= (Self, Self.Scalar) -> SIMDMask<Self.MaskStorage>",
+      "desc": "Returns a vector mask with the result of a pointwise inequality comparison."
+    },
+    {
+      "name": "static func .!= (Self, Self) -> SIMDMask<Self.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise inequality comparison."
+    },
+    {
+      "name": "static func .< (Self.Scalar, Self) -> SIMDMask<Self.MaskStorage>",
+      "desc": "Returns a vector mask with the result of a pointwise less than comparison."
+    },
+    {
+      "name": "static func .< (Self, Self.Scalar) -> SIMDMask<Self.MaskStorage>",
+      "desc": "Returns a vector mask with the result of a pointwise less than comparison."
+    },
+    {
+      "name": "static func .< (Self, Self) -> SIMDMask<Self.MaskStorage>",
+      "desc": "Returns a vector mask with the result of a pointwise less than comparison."
+    },
+    {
+      "name": "static func .<= (Self.Scalar, Self) -> SIMDMask<Self.MaskStorage>",
+      "desc": "Returns a vector mask with the result of a pointwise less than or equal comparison."
+    },
+    {
+      "name": "static func .<= (Self, Self.Scalar) -> SIMDMask<Self.MaskStorage>",
+      "desc": "Returns a vector mask with the result of a pointwise less than or equal comparison."
+    },
+    {
+      "name": "static func .<= (Self, Self) -> SIMDMask<Self.MaskStorage>",
+      "desc": "Returns a vector mask with the result of a pointwise less than or equal comparison."
+    },
+    {
+      "name": "static func .== (Self.Scalar, Self) -> SIMDMask<Self.MaskStorage>",
+      "desc": "Returns a vector mask with the result of a pointwise equality comparison."
+    },
+    {
+      "name": "static func .== (Self, Self.Scalar) -> SIMDMask<Self.MaskStorage>",
+      "desc": "Returns a vector mask with the result of a pointwise equality comparison."
+    },
+    {
+      "name": "static func .== (Self, Self) -> SIMDMask<Self.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise equality comparison."
+    },
+    {
+      "name": "static func .> (Self.Scalar, Self) -> SIMDMask<Self.MaskStorage>",
+      "desc": "Returns a vector mask with the result of a pointwise greater than comparison."
+    },
+    {
+      "name": "static func .> (Self, Self.Scalar) -> SIMDMask<Self.MaskStorage>",
+      "desc": "Returns a vector mask with the result of a pointwise greater than comparison."
+    },
+    {
+      "name": "static func .> (Self, Self) -> SIMDMask<Self.MaskStorage>",
+      "desc": "Returns a vector mask with the result of a pointwise greater than comparison."
+    },
+    {
+      "name": "static func .>= (Self.Scalar, Self) -> SIMDMask<Self.MaskStorage>",
+      "desc": "Returns a vector mask with the result of a pointwise greater than or equal comparison."
+    },
+    {
+      "name": "static func .>= (Self, Self.Scalar) -> SIMDMask<Self.MaskStorage>",
+      "desc": "Returns a vector mask with the result of a pointwise greater than or equal comparison."
+    },
+    {
+      "name": "static func .>= (Self, Self) -> SIMDMask<Self.MaskStorage>",
+      "desc": "Returns a vector mask with the result of a pointwise greater than or equal comparison."
+    },
+    {
+      "name": "static func / (Self.Scalar, Self) -> Self",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func / (Self, Self.Scalar) -> Self",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func / (Self, Self) -> Self",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func / (Self.Scalar, Self) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func / (Self, Self.Scalar) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func / (Self, Self) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func /= (inout Self, Self.Scalar)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func /= (inout Self, Self)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func /= (inout Self, Self.Scalar)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func /= (inout Self, Self)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func == (Self, Self) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two vectors are equal."
+    },
+    {
+      "name": "static func ^ (Self.Scalar, Self) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func ^ (Self, Self.Scalar) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func ^ (Self, Self) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func ^= (inout Self, Self.Scalar)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func ^= (inout Self, Self)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func | (Self.Scalar, Self) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func | (Self, Self.Scalar) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func | (Self, Self) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func |= (inout Self, Self.Scalar)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func |= (inout Self, Self)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func ~ (Self) -> Self",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    }
+  ],
+  "declaration": "protocol SIMD",
+  "inheritsFrom": [
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "ExpressibleByArrayLiteral",
+    "Hashable",
+    "SIMDStorage"
+  ]
+}

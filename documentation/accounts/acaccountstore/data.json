@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/accounts/acaccountstore",
+  "type": "Class",
+  "name": "ACAccountStore",
+  "desc": "The object you use to request, manage, and store the user’s account information.",
+  "items": [
+    {
+      "name": "func requestAccessToAccounts(with: ACAccountType!, options: [AnyHashable : Any]!, completion: ACAccountStoreRequestAccessCompletionHandler!)",
+      "desc": "Obtains permission to access protected user properties."
+    },
+    {
+      "name": "typealias ACAccountStoreRequestAccessCompletionHandler",
+      "desc": "Specifies a handler to call when access is granted or denied."
+    },
+    {
+      "name": "var accounts: NSArray!",
+      "desc": "The accounts managed by this account store."
+    },
+    {
+      "name": "func account(withIdentifier: String!) -> ACAccount!",
+      "desc": "Returns the account with the specified identifier."
+    },
+    {
+      "name": "func accounts(with: ACAccountType!) -> [Any]!",
+      "desc": "Returns all accounts of the specified type."
+    },
+    {
+      "name": "func accountType(withAccountTypeIdentifier: String!) -> ACAccountType!",
+      "desc": "Returns an account type that matches the specified identifier."
+    },
+    {
+      "name": "func saveAccount(ACAccount!, withCompletionHandler: ACAccountStoreSaveCompletionHandler!)",
+      "desc": "Saves an account to the Accounts database."
+    },
+    {
+      "name": "typealias ACAccountStoreSaveCompletionHandler",
+      "desc": "Specifies a handler to call when an Accounts database operation is complete."
+    },
+    {
+      "name": "func renewCredentials(for: ACAccount!, completion: ACAccountStoreCredentialRenewalHandler!)",
+      "desc": "Renews account credentials when the credentials are no longer valid."
+    },
+    {
+      "name": "typealias ACAccountStoreCredentialRenewalHandler",
+      "desc": "Specifies a handler to call when credentials are renewed."
+    },
+    {
+      "name": "enum ACAccountCredentialRenewResult",
+      "desc": "Status codes of credential renewal requests."
+    },
+    {
+      "name": "func removeAccount(ACAccount!, withCompletionHandler: ACAccountStoreRemoveCompletionHandler!)",
+      "desc": "Removes an account from the account store."
+    },
+    {
+      "name": "typealias ACAccountStoreRemoveCompletionHandler",
+      "desc": "Specifies a handler to call when an account is removed from the store."
+    },
+    {
+      "name": "static let ACAccountStoreDidChange: NSNotification.Name",
+      "desc": "Posted when the accounts managed by this account store changed in the database."
+    }
+  ],
+  "declaration": "class ACAccountStore : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

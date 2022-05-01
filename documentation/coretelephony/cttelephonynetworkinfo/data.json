@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/coretelephony/cttelephonynetworkinfo",
+  "type": "Class",
+  "name": "CTTelephonyNetworkInfo",
+  "desc": "An object that provides notifications of changes to the user’s cellular service provider.",
+  "items": [
+    {
+      "name": "var serviceCurrentRadioAccessTechnology: [String : String]?",
+      "desc": "A dictionary containing the current radio access technology registered to each service."
+    },
+    {
+      "name": "var serviceSubscriberCellularProviders: [String : CTCarrier]?",
+      "desc": "A dictionary that contains carrier information about each service."
+    },
+    {
+      "name": "var serviceSubscriberCellularProvidersDidUpdateNotifier: ((String) -> Void)?",
+      "desc": "A block dispatched when there are updates to the user’s cellular provider information for any service."
+    },
+    {
+      "name": "var dataServiceIdentifier: String?",
+      "desc": "The identifier of the service that’s currently providing data."
+    },
+    {
+      "name": "var delegate: CTTelephonyNetworkInfoDelegate?",
+      "desc": "An object that the system notifies when the data service identifier changes."
+    }
+  ],
+  "declaration": "class CTTelephonyNetworkInfo : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

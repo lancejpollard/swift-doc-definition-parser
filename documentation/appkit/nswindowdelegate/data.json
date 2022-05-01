@@ -1,0 +1,216 @@
+{
+  "path": "/documentation/appkit/nswindowdelegate",
+  "type": "Protocol",
+  "name": "NSWindowDelegate",
+  "desc": "A set of optional methods that a window’s delegate can implement to respond to events, such as window resizing, moving, exposing, and minimizing.",
+  "items": [
+    {
+      "name": "func window(NSWindow, willPositionSheet: NSWindow, using: NSRect) -> NSRect",
+      "desc": "Tells the delegate that the window is about to show a sheet at the specified location, giving it the opportunity to return a custom location for the attachment of the sheet to the window."
+    },
+    {
+      "name": "func windowWillBeginSheet(Notification)",
+      "desc": "Notifies the delegate that the window is about to open a sheet."
+    },
+    {
+      "name": "func windowDidEndSheet(Notification)",
+      "desc": "Tells the delegate that the window has closed a sheet."
+    },
+    {
+      "name": "func windowWillResize(NSWindow, to: NSSize) -> NSSize",
+      "desc": "Tells the delegate that the window is being resized (whether by the user or through one of the setFrame... methods other than setFrame(_:display:))."
+    },
+    {
+      "name": "func windowDidResize(Notification)",
+      "desc": "Tells the delegate that the window has been resized."
+    },
+    {
+      "name": "func windowWillStartLiveResize(Notification)",
+      "desc": "Tells the delegate that the window is about to be live resized."
+    },
+    {
+      "name": "func windowDidEndLiveResize(Notification)",
+      "desc": "Tells the delegate that a live resize operation on the window has ended."
+    },
+    {
+      "name": "func windowWillMiniaturize(Notification)",
+      "desc": "Tells the delegate that the window is about to be minimized."
+    },
+    {
+      "name": "func windowDidMiniaturize(Notification)",
+      "desc": "Tells the delegate that the window has been minimized."
+    },
+    {
+      "name": "func windowDidDeminiaturize(Notification)",
+      "desc": "Tells the delegate that the window has been deminimized."
+    },
+    {
+      "name": "func windowWillUseStandardFrame(NSWindow, defaultFrame: NSRect) -> NSRect",
+      "desc": "Called by NSWindow’s zoom(_:) method while determining the frame a window may be zoomed to."
+    },
+    {
+      "name": "func windowShouldZoom(NSWindow, toFrame: NSRect) -> Bool",
+      "desc": "Asks the delegate whether the specified window should zoom to the specified frame."
+    },
+    {
+      "name": "func window(NSWindow, willUseFullScreenContentSize: NSSize) -> NSSize",
+      "desc": "Called to allow the delegate to modify the full-screen content size."
+    },
+    {
+      "name": "func window(NSWindow, willUseFullScreenPresentationOptions: NSApplication.PresentationOptions) -> NSApplication.PresentationOptions",
+      "desc": "Returns the presentation options the window uses when transitioning to full-screen mode."
+    },
+    {
+      "name": "func windowWillEnterFullScreen(Notification)",
+      "desc": "The window is about to enter full-screen mode."
+    },
+    {
+      "name": "func windowDidEnterFullScreen(Notification)",
+      "desc": "The window has entered full-screen mode."
+    },
+    {
+      "name": "func windowWillExitFullScreen(Notification)",
+      "desc": "The window is about to exit full-screen mode."
+    },
+    {
+      "name": "func windowDidExitFullScreen(Notification)",
+      "desc": "The window has left full-screen mode."
+    },
+    {
+      "name": "func customWindowsToEnterFullScreen(for: NSWindow) -> [NSWindow]?",
+      "desc": "Called when the window is about to enter full-screen mode."
+    },
+    {
+      "name": "func customWindowsToEnterFullScreen(for: NSWindow, on: NSScreen) -> [NSWindow]?",
+      "desc": "Called when the window is about to enter full-screen mode."
+    },
+    {
+      "name": "func window(NSWindow, startCustomAnimationToEnterFullScreenWithDuration: TimeInterval)",
+      "desc": "This method is called to start the window animation into full-screen mode, including transitioning to a new space."
+    },
+    {
+      "name": "func window(NSWindow, startCustomAnimationToEnterFullScreenOn: NSScreen, withDuration: TimeInterval)",
+      "desc": "This method is called to start the window animation into full-screen mode, including transitioning to a new space."
+    },
+    {
+      "name": "func windowDidFailToEnterFullScreen(NSWindow)",
+      "desc": "Called if the window failed to enter full-screen mode."
+    },
+    {
+      "name": "func customWindowsToExitFullScreen(for: NSWindow) -> [NSWindow]?",
+      "desc": "Called when the window is about to exit full-screen mode."
+    },
+    {
+      "name": "func window(NSWindow, startCustomAnimationToExitFullScreenWithDuration: TimeInterval)",
+      "desc": "This method is called to start the window animation out of full-screen mode, including transitioning back to the desktop space."
+    },
+    {
+      "name": "func windowDidFailToExitFullScreen(NSWindow)",
+      "desc": "Called if the window failed to exit full-screen mode."
+    },
+    {
+      "name": "func windowWillMove(Notification)",
+      "desc": "Tells the delegate that the window is about to move."
+    },
+    {
+      "name": "func windowDidMove(Notification)",
+      "desc": "Tells the delegate that the window has moved."
+    },
+    {
+      "name": "func windowDidChangeScreen(Notification)",
+      "desc": "Tells the delegate that the window has changed screens."
+    },
+    {
+      "name": "func windowDidChangeScreenProfile(Notification)",
+      "desc": "Tells the delegate that the window has changed screen display profiles."
+    },
+    {
+      "name": "func windowDidChangeBackingProperties(Notification)",
+      "desc": "Tells the delegate that the window backing properties changed."
+    },
+    {
+      "name": "func windowShouldClose(NSWindow) -> Bool",
+      "desc": "Tells the delegate that the user has attempted to close a window or the window has received a performClose(_:) message."
+    },
+    {
+      "name": "func windowWillClose(Notification)",
+      "desc": "Tells the delegate that the window is about to close."
+    },
+    {
+      "name": "func windowDidBecomeKey(Notification)",
+      "desc": "Tells the delegate that the window has become the key window."
+    },
+    {
+      "name": "func windowDidResignKey(Notification)",
+      "desc": "Tells the delegate that the window has resigned key window status."
+    },
+    {
+      "name": "func windowDidBecomeMain(Notification)",
+      "desc": "Tells the delegate that the window has become main."
+    },
+    {
+      "name": "func windowDidResignMain(Notification)",
+      "desc": "Tells the delegate that the window has resigned main window status."
+    },
+    {
+      "name": "func windowWillReturnFieldEditor(NSWindow, to: Any?) -> Any?",
+      "desc": "Tells the delegate that the field editor for a text-displaying object has been requested."
+    },
+    {
+      "name": "func windowDidUpdate(Notification)",
+      "desc": "Tells the delegate that the window received an update() message."
+    },
+    {
+      "name": "func windowDidExpose(Notification)",
+      "desc": "Tells the delegate that the window has been exposed."
+    },
+    {
+      "name": "func windowDidChangeOcclusionState(Notification)",
+      "desc": "Tells the delegate that the window changed its occlusion state."
+    },
+    {
+      "name": "func window(NSWindow, shouldDragDocumentWith: NSEvent, from: NSPoint, with: NSPasteboard) -> Bool",
+      "desc": "Asks the delegate whether a user can drag the document icon from the window’s title bar."
+    },
+    {
+      "name": "func windowWillReturnUndoManager(NSWindow) -> UndoManager?",
+      "desc": "Tells the delegate that the window’s undo manager has been requested. Returns the appropriate undo manager for the window."
+    },
+    {
+      "name": "func window(NSWindow, shouldPopUpDocumentPathMenu: NSMenu) -> Bool",
+      "desc": "Asks the delegate whether the window displays the title pop-up menu in response to a Command-click or Control-click on its title."
+    },
+    {
+      "name": "func window(NSWindow, willEncodeRestorableState: NSCoder)",
+      "desc": "Tells the delegate the window is about to add its restorable state to a given archiver."
+    },
+    {
+      "name": "func window(NSWindow, didDecodeRestorableState: NSCoder)",
+      "desc": "Tells the delegate the window is has extracted its restorable state from a given archiver."
+    },
+    {
+      "name": "func window(NSWindow, willResizeForVersionBrowserWithMaxPreferredSize: NSSize, maxAllowedSize: NSSize) -> NSSize",
+      "desc": "Tells the delegate the window will resize for presentation during version browsing."
+    },
+    {
+      "name": "func windowWillEnterVersionBrowser(Notification)",
+      "desc": "Tells the delegate the window is about to enter version browsing."
+    },
+    {
+      "name": "func windowDidEnterVersionBrowser(Notification)",
+      "desc": "Tells the delegate that the window has entered version browsing."
+    },
+    {
+      "name": "func windowWillExitVersionBrowser(Notification)",
+      "desc": "Tells the delegate that the window is about to leave version browsing."
+    },
+    {
+      "name": "func windowDidExitVersionBrowser(Notification)",
+      "desc": "Tells the delegate that the window has left version browsing."
+    }
+  ],
+  "declaration": "protocol NSWindowDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

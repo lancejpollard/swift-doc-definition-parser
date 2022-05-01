@@ -1,0 +1,80 @@
+{
+  "path": "/documentation/coredata/nsentitymapping",
+  "type": "Class",
+  "name": "NSEntityMapping",
+  "desc": "A mapping instance that specifies how to map an entity from a source to a destination managed object model.",
+  "items": [
+    {
+      "name": "var sourceEntityName: String?",
+      "desc": "The source entity name for the entity mapping."
+    },
+    {
+      "name": "var sourceEntityVersionHash: Data?",
+      "desc": "The version hash of the source entity for the entity mapping."
+    },
+    {
+      "name": "var sourceExpression: NSExpression?",
+      "desc": "The source expression for the entity mapping."
+    },
+    {
+      "name": "var destinationEntityName: String?",
+      "desc": "The destination entity name for the entity mapping."
+    },
+    {
+      "name": "var destinationEntityVersionHash: Data?",
+      "desc": "The version hash for the destination entity for the entity mapping."
+    },
+    {
+      "name": "var name: String!",
+      "desc": "The name of the entity mapping."
+    },
+    {
+      "name": "var mappingType: NSEntityMappingType",
+      "desc": "The mapping type for the entity mapping."
+    },
+    {
+      "name": "var entityMigrationPolicyClassName: String?",
+      "desc": "The class name of the migration policy for the entity mapping."
+    },
+    {
+      "name": "var attributeMappings: [NSPropertyMapping]?",
+      "desc": "The array of attribute mappings for the entity mapping."
+    },
+    {
+      "name": "var relationshipMappings: [NSPropertyMapping]?",
+      "desc": "The array of relationship mappings for the entity mapping."
+    },
+    {
+      "name": "var userInfo: [AnyHashable : Any]?",
+      "desc": "The user info dictionary for the entity mapping."
+    },
+    {
+      "name": "case undefinedEntityMappingType",
+      "desc": "Specifies that the developer handles destination instance creation."
+    },
+    {
+      "name": "case customEntityMappingType",
+      "desc": "Specifies a custom mapping."
+    },
+    {
+      "name": "case addEntityMappingType",
+      "desc": "Specifies that this is a new entity in the destination model."
+    },
+    {
+      "name": "case removeEntityMappingType",
+      "desc": "Specifies that this entity is not present in the destination model."
+    },
+    {
+      "name": "case copyEntityMappingType",
+      "desc": "Specifies that source instances are migrated as-is."
+    },
+    {
+      "name": "case transformEntityMappingType",
+      "desc": "Specifies that entity exists in source and destination and is mapped."
+    }
+  ],
+  "declaration": "class NSEntityMapping : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

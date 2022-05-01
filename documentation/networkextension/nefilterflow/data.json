@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/networkextension/nefilterflow",
+  "type": "Class",
+  "name": "NEFilterFlow",
+  "desc": "The abstract base class for types that represent flows of network data.",
+  "items": [
+    {
+      "name": "var url: URL?",
+      "desc": "The flow’s HTTP URL."
+    },
+    {
+      "name": "var identifier: UUID",
+      "desc": "The unique identifier of the flow."
+    },
+    {
+      "name": "var direction: NETrafficDirection",
+      "desc": "The initial direction of the flow: incoming or outgoing."
+    },
+    {
+      "name": "enum NETrafficDirection",
+      "desc": "A type to represent the direction of network traffic."
+    },
+    {
+      "name": "var sourceAppUniqueIdentifier: Data?",
+      "desc": "A byte string that uniquely identifies the binary for each build of the app that is the source of the flow."
+    },
+    {
+      "name": "var sourceAppIdentifier: String?",
+      "desc": "A string containing the identifier of the source app of the flow."
+    },
+    {
+      "name": "var sourceAppVersion: String?",
+      "desc": "The short version string of the app that is the source of the flow."
+    },
+    {
+      "name": "var sourceAppAuditToken: Data?",
+      "desc": "The audit token of the source application of the flow."
+    },
+    {
+      "name": "var NEFilterFlowBytesMax: UInt64",
+      "desc": "The maximum number of bytes to be passed or peeked for a flow."
+    }
+  ],
+  "declaration": "class NEFilterFlow : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

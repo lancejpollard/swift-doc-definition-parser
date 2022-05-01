@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/classkitcatalogapi/context/data",
+  "type": "Object",
+  "name": "Context.Data",
+  "desc": "The data that makes up a context.",
+  "items": [
+    {
+      "name": "customTypeName",
+      "desc": "A name that the system presents to the user if you choose the custom context type. The API ignores this field if the type field is anything besides custom. For the equivalent property in your app, see customTypeName."
+    },
+    {
+      "name": "displayOrder",
+      "desc": "The position of a context relative to its siblings. For the equivalent property in your app, see displayOrder."
+    },
+    {
+      "name": "identifierPath",
+      "desc": "The identifier path, given as an array of strings, that locates the context within the data store’s context hierarchy. Each string in the array represents a context, starting from the main app context, through any ancestor contexts, down to the child context. For the equivalent property in your app, see identifierPath.Like in your app, limit identifier paths to a maximum of eight entries, and 256 total characters.Unlike in your app, when communicating with the ClassKit Catalog API, you must explicitly specify the main app context as part of the identifier path."
+    },
+    {
+      "name": "isAssignable",
+      "desc": "A Boolean that indicates whether teachers can assign the context as a task. For the equivalent property in your app, see isAssignable."
+    },
+    {
+      "name": "progressReportingCapabilities",
+      "desc": "The kinds of progress reporting that the context can perform. For the equivalent property in your app, see progressReportingCapabilities.If you don’t include a duration capability when creating a context, the system adds one with an empty details field."
+    },
+    {
+      "name": "suggestedAge",
+      "desc": "The range of ages, measured in years, for which you deem a context’s content suitable. For the equivalent property in your app, see suggestedAge.Format the age range as an array with two integers, the first of which indicates a lower bound (set to 0 to indicate no lower bound), and the second of which indicates an upper bound (set to the maximum value of 2^63-2 to indicate no upper bound). For example, for ages 4 to 6, set the value to [4, 6].If you don’t set a value for this field, the system assumes suitability for all ages."
+    },
+    {
+      "name": "suggestedCompletionTime",
+      "desc": "A suggested time range to complete a task, measured in minutes. For the equivalent property in your app, see suggestedCompletionTime.Format the completion time range as an array with two integers, the first of which indicates a lower bound (set to 0 to indicate no lower bound), and the second of which indicates an upper bound (set to the maximum value of 2^63-2 to indicate no upper bound). For example, for a completion time of 10 to 15 minutes, set the value to [10, 15]."
+    },
+    {
+      "name": "summary",
+      "desc": "An optional, user-visible description of the context. For the equivalent property in your app, see summary."
+    },
+    {
+      "name": "thumbnailId",
+      "desc": "An identifier for the thumbnail associated with the context. To access a thumbnail in your app, see thumbnail.When creating a context, provide an identifier, and then use the same identifier when you upload the corresponding thumbnail image with a call to Create or Replace a Thumbnail."
+    },
+    {
+      "name": "title",
+      "desc": "The name of the context as it appears to users, which must contain at least one non-whitespace character. For the equivalent property in your app, see title."
+    },
+    {
+      "name": "topic",
+      "desc": "The area of study to which a context relates. For the equivalent property in your app, see topic."
+    },
+    {
+      "name": "type",
+      "desc": "The kind of content a context represents. For the equivalent property in your app, see type."
+    },
+    {
+      "name": "universalLinkURL",
+      "desc": "A URL that leads to the content in your app associated with the current context. For the equivalent property in your app, see universalLinkURL."
+    }
+  ]
+}

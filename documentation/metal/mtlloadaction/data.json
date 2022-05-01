@@ -1,0 +1,24 @@
+{
+  "path": "/documentation/metal/mtlloadaction",
+  "type": "Enumeration",
+  "name": "MTLLoadAction",
+  "desc": "Types of actions performed for an attachment at the start of a rendering pass.",
+  "items": [
+    {
+      "name": "case dontCare",
+      "desc": "The GPU has permission to discard the existing contents of the attachment at the start of the render pass, replacing them with arbitrary data."
+    },
+    {
+      "name": "case load",
+      "desc": "The GPU preserves the existing contents of the attachment at the start of the render pass."
+    },
+    {
+      "name": "case clear",
+      "desc": "The GPU writes a value to every pixel in the attachment at the start of the render pass."
+    }
+  ],
+  "declaration": "enum MTLLoadAction : UInt, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

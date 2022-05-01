@@ -1,0 +1,111 @@
+{
+  "path": "/documentation/network/ipv6address",
+  "type": "Structure",
+  "name": "IPv6Address",
+  "desc": "A structure containing an IPv6 address.",
+  "items": [
+    {
+      "name": "init?(String)",
+      "desc": "Initializes an IPv6 address with a string."
+    },
+    {
+      "name": "init?(Data, NWInterface?)",
+      "desc": "Initializes an IPv6 address with data."
+    },
+    {
+      "name": "var asIPv4: IPv4Address?",
+      "desc": "Extracts the IPv4 address contained within the IPv6 address, if the IPv6 address is an IPv4-mapped or IPv4-compatible address."
+    },
+    {
+      "name": "var rawValue: Data",
+      "desc": "The raw data of an IPv6 address."
+    },
+    {
+      "name": "let interface: NWInterface?",
+      "desc": "The IPv6 scoped interface associated with this address."
+    },
+    {
+      "name": "var multicastScope: IPv6Address.Scope?",
+      "desc": "The IPv6 multicast scope of the address."
+    },
+    {
+      "name": "enum IPv6Address.Scope",
+      "desc": "An IPv6 multicast scope."
+    },
+    {
+      "name": "var isAny: Bool",
+      "desc": "A Boolean indicating whether the address is the unspecified address (::)."
+    },
+    {
+      "name": "var is6to4: Bool",
+      "desc": "A Boolean indicating whether the address is a 6to4 address."
+    },
+    {
+      "name": "var isIPv4Compatabile: Bool",
+      "desc": "A Boolean indicating whether the address is IPv4-compatible."
+    },
+    {
+      "name": "var isIPv4Mapped: Bool",
+      "desc": "A Boolean indicating whether the address is an IPv4-mapped address."
+    },
+    {
+      "name": "var isLinkLocal: Bool",
+      "desc": "A Boolean indicating whether this address is in a link-local range."
+    },
+    {
+      "name": "var isLoopback: Bool",
+      "desc": "A Boolean indicating whether this address is a loopback address for the local device."
+    },
+    {
+      "name": "var isMulticast: Bool",
+      "desc": "A Boolean indicating whether this address is a multicast address."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "The description of the IP address."
+    },
+    {
+      "name": "static let any: IPv6Address",
+      "desc": "The unspecified address (::)."
+    },
+    {
+      "name": "static let broadcast: IPv6Address",
+      "desc": "The unspecified broadcast address (::)."
+    },
+    {
+      "name": "static let loopback: IPv6Address",
+      "desc": "The device's loopback address (::1)."
+    },
+    {
+      "name": "static let nodeLocalNodes: IPv6Address",
+      "desc": "The multicast address for all local nodes (ff01::1)."
+    },
+    {
+      "name": "static let linkLocalNodes: IPv6Address",
+      "desc": "The multicast address for all link-local nodes (ff02::1)."
+    },
+    {
+      "name": "static let linkLocalRouters: IPv6Address",
+      "desc": "The multicast address for all link-local routers (ff02::2)."
+    },
+    {
+      "name": "static func == (IPv6Address, IPv6Address) -> Bool"
+    },
+    {
+      "name": "static func != (IPv6Address, IPv6Address) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "var hashValue: Int"
+    }
+  ],
+  "declaration": "struct IPv6Address",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "Hashable",
+    "IPAddress"
+  ]
+}

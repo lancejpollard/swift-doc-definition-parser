@@ -1,0 +1,128 @@
+{
+  "path": "/documentation/modelio/mdlcamera",
+  "type": "Class",
+  "name": "MDLCamera",
+  "desc": "A point of view for rendering a 3D scene, along with a set of parameters describing an intended appearance for rendering.",
+  "items": [
+    {
+      "name": "func frameBoundingBox(MDLAxisAlignedBoundingBox, setNearAndFar: Bool)",
+      "desc": "Moves the camera such that the specified bounding box lies entirely within the camera’s field of view."
+    },
+    {
+      "name": "func look(at: vector_float3)",
+      "desc": "Orients the camera to face toward the specified point."
+    },
+    {
+      "name": "func look(at: vector_float3, from: vector_float3)",
+      "desc": "Sets the camera’s position and orients the camera to face toward the specified point."
+    },
+    {
+      "name": "var projectionMatrix: matrix_float4x4",
+      "desc": "A transformation matrix that determines the extent of a scene visible to the camera."
+    },
+    {
+      "name": "var projection: MDLCameraProjection",
+      "desc": "The style of projection transform used by the camera."
+    },
+    {
+      "name": "enum MDLCameraProjection",
+      "desc": "Options for camera projection styles, used by the projection property."
+    },
+    {
+      "name": "var nearVisibilityDistance: Float",
+      "desc": "The camera's near depth limit."
+    },
+    {
+      "name": "var farVisibilityDistance: Float",
+      "desc": "The camera’s far depth limit."
+    },
+    {
+      "name": "var fieldOfView: Float",
+      "desc": "The camera’s field of view, in degrees."
+    },
+    {
+      "name": "func ray(to: vector_int2, forViewPort: vector_int2) -> vector_float3",
+      "desc": "Returns a point, in 3D world coordinates, corresponding to the specified 2D view coordinates."
+    },
+    {
+      "name": "var worldToMetersConversionScale: Float",
+      "desc": "The scale factor to meters from the world coordinate system containing the camera."
+    },
+    {
+      "name": "var barrelDistortion: Float",
+      "desc": "The first coefficient for determining the radial distortion applied to pixels rendered using the camera."
+    },
+    {
+      "name": "var fisheyeDistortion: Float",
+      "desc": "The second coefficient for determining the radial distortion applied to pixels rendered using the camera."
+    },
+    {
+      "name": "var opticalVignetting: Float",
+      "desc": "The amount of radial light attenuation around the edges of an image rendered using the camera."
+    },
+    {
+      "name": "var chromaticAberration: Float",
+      "desc": "The amount of radial color shift around the edges of an image rendered using the camera."
+    },
+    {
+      "name": "var focalLength: Float",
+      "desc": "The focal length, in millimeters, of the camera’s simulated lens."
+    },
+    {
+      "name": "var fStop: Float",
+      "desc": "The relative aperture ratio of the camera’s simulated lens."
+    },
+    {
+      "name": "var apertureBladeCount: Int",
+      "desc": "The number of blades in the camera’s simulated aperture."
+    },
+    {
+      "name": "func bokehKernel(withSize: vector_int2) -> MDLTexture",
+      "desc": "Creates and returns a texture, based on the camera’s aperture blade count, to be used in rendering out-of-focus highlights in a scene."
+    },
+    {
+      "name": "var maximumCircleOfConfusion: Float",
+      "desc": "The maximum diameter, in millimeters on the imaging plane, at which light from a point source should appear in an image rendered using the camera."
+    },
+    {
+      "name": "var focusDistance: Float",
+      "desc": "The distance, in meters, at which the lens is focused."
+    },
+    {
+      "name": "var shutterOpenInterval: TimeInterval",
+      "desc": "The duration, in seconds, for which the camera’s simulated shutter is open during each frame."
+    },
+    {
+      "name": "var sensorVerticalAperture: Float",
+      "desc": "The height, in millimeters, of the camera’s simulated imaging surface."
+    },
+    {
+      "name": "var sensorAspect: Float",
+      "desc": "The ratio of width to height for the camera’s simulated imaging surface."
+    },
+    {
+      "name": "var sensorEnlargement: vector_float2",
+      "desc": "The horizontal and vertical scale factors that determine the active region of the sensor."
+    },
+    {
+      "name": "var sensorShift: vector_float2",
+      "desc": "The horizontal and vertical offsets, in millimeters, of the center of the camera image relative to the center of the simulated lens."
+    },
+    {
+      "name": "var flash: vector_float3",
+      "desc": "Red, green, and blue factors to be used in brightening darker areas of the camera’s image."
+    },
+    {
+      "name": "var exposure: vector_float3",
+      "desc": "Red, green, and blue factors that scale each color channel in the camera’s image."
+    },
+    {
+      "name": "var exposureCompression: vector_float2",
+      "desc": "Two parameters that determine the brightness compression curve for colors in the camera’s image."
+    }
+  ],
+  "declaration": "class MDLCamera : MDLObject",
+  "inheritsFrom": [
+    "MDLObject"
+  ]
+}

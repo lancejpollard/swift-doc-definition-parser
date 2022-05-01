@@ -1,0 +1,47 @@
+{
+  "path": "/documentation/appkit/nscontroller",
+  "type": "Class",
+  "name": "NSController",
+  "desc": "An abstract class that implements the NSEditor and NSEditorRegistration informal protocols required for controller classes.",
+  "items": [
+    {
+      "name": "func objectDidBeginEditing(NSEditor)",
+      "desc": "Invoked to inform the receiver that editor has uncommitted changes that can affect the receiver."
+    },
+    {
+      "name": "func objectDidEndEditing(NSEditor)",
+      "desc": "Invoked to inform the receiver that editor has committed or discarded its changes."
+    },
+    {
+      "name": "func commitEditing() -> Bool",
+      "desc": "Causes the receiver to attempt to commit any pending edits, returning true if successful or no edits were pending."
+    },
+    {
+      "name": "func commitEditing(withDelegate: Any?, didCommit: Selector?, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Attempts to commit any pending changes in known editors of the receiver."
+    },
+    {
+      "name": "func discardEditing()",
+      "desc": "Discards any pending changes by registered editors."
+    },
+    {
+      "name": "var isEditing: Bool",
+      "desc": "A Boolean value indicating if any editors are registered with the controller."
+    },
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init?(coder: NSCoder)"
+    }
+  ],
+  "declaration": "class NSController : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "NSEditor",
+    "NSEditorRegistration"
+  ]
+}

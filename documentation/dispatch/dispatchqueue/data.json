@@ -1,0 +1,186 @@
+{
+  "path": "/documentation/dispatch/dispatchqueue",
+  "type": "Class",
+  "name": "DispatchQueue",
+  "desc": "An object that manages the execution of tasks serially or concurrently on your app's main thread or on a background thread.",
+  "items": [
+    {
+      "name": "class var main: DispatchQueue",
+      "desc": "The dispatch queue associated with the main thread of the current process."
+    },
+    {
+      "name": "class func global(qos: DispatchQoS.QoSClass) -> DispatchQueue",
+      "desc": "Returns the global system queue with the specified quality-of-service class."
+    },
+    {
+      "name": "init(label: String, qos: DispatchQoS, attributes: DispatchQueue.Attributes, autoreleaseFrequency: DispatchQueue.AutoreleaseFrequency, target: DispatchQueue?)",
+      "desc": "Creates a new dispatch queue to which you can submit blocks."
+    },
+    {
+      "name": "enum DispatchQoS.QoSClass",
+      "desc": "Quality-of-service classes that specify the priorities for executing tasks."
+    },
+    {
+      "name": "struct DispatchQueue.Attributes",
+      "desc": "Attributes that define the behavior of a dispatch queue."
+    },
+    {
+      "name": "enum DispatchQueue.AutoreleaseFrequency",
+      "desc": "Constants indicating the frequency with which a dispatch queue autoreleases objects."
+    },
+    {
+      "name": "class OS_dispatch_queue_main",
+      "desc": "A system-provided dispatch queue that schedules tasks for serial execution on the app's main thread."
+    },
+    {
+      "name": "class OS_dispatch_queue_global",
+      "desc": "A system-provided dispatch queue that schedules tasks for concurrent execution."
+    },
+    {
+      "name": "class OS_dispatch_queue_serial",
+      "desc": "A custom dispatch queue that schedules tasks for serial execution on an arbitrary thread."
+    },
+    {
+      "name": "class OS_dispatch_queue_concurrent",
+      "desc": "A custom dispatch queue that schedules tasks for concurrent execution."
+    },
+    {
+      "name": "typealias dispatch_queue_main_t",
+      "desc": "A dispatch queue that is bound to the app's main thread and executes tasks serially on that thread."
+    },
+    {
+      "name": "typealias dispatch_queue_global_t",
+      "desc": "A dispatch queue that executes tasks concurrently using threads from the global thread pool."
+    },
+    {
+      "name": "typealias dispatch_queue_serial_t",
+      "desc": "A dispatch queue that executes tasks serially in first-in, first-out (FIFO) order."
+    },
+    {
+      "name": "typealias dispatch_queue_concurrent_t",
+      "desc": "A dispatch queue that executes tasks concurrently and in any order, respecting any barriers that may be in place."
+    },
+    {
+      "name": "func async(execute: DispatchWorkItem)",
+      "desc": "Schedules a work item for immediate execution, and returns immediately."
+    },
+    {
+      "name": "func asyncAfter(deadline: DispatchTime, execute: DispatchWorkItem)",
+      "desc": "Schedules a work item for execution at the specified time, and returns immediately."
+    },
+    {
+      "name": "func asyncAfter(deadline: DispatchTime, qos: DispatchQoS, flags: DispatchWorkItemFlags, execute: () -> Void)",
+      "desc": "Schedules a block for execution using the specified attributes, and returns immediately."
+    },
+    {
+      "name": "func asyncAfter(wallDeadline: DispatchWallTime, execute: DispatchWorkItem)",
+      "desc": "Schedules a work item for execution after the specified time, and returns immediately."
+    },
+    {
+      "name": "func asyncAfter(wallDeadline: DispatchWallTime, qos: DispatchQoS, flags: DispatchWorkItemFlags, execute: () -> Void)",
+      "desc": "Schedules a block for execution using the specified attributes, and returns immediately."
+    },
+    {
+      "name": "func sync(execute: DispatchWorkItem)",
+      "desc": "Submits a work item for execution on the current queue and returns after that block finishes executing."
+    },
+    {
+      "name": "func sync(execute: () -> Void)",
+      "desc": "Submits a block object for execution and returns after that block finishes executing."
+    },
+    {
+      "name": "func sync<T>(execute: () -> T) -> T",
+      "desc": "Submits a work item for execution and returns the results from that item after it finishes executing."
+    },
+    {
+      "name": "func sync<T>(flags: DispatchWorkItemFlags, execute: () -> T) -> T",
+      "desc": "Submits a work item for execution using the specified attributes and returns the results from that item after it finishes executing."
+    },
+    {
+      "name": "class func concurrentPerform(iterations: Int, execute: (Int) -> Void)",
+      "desc": "Submits a single block to the dispatch queue and causes the block to be executed the specified number of times."
+    },
+    {
+      "name": "func async(group: DispatchGroup, execute: DispatchWorkItem)",
+      "desc": "Schedules a work item asynchronously for execution and associates it with the specified dispatch group."
+    },
+    {
+      "name": "func async(group: DispatchGroup?, qos: DispatchQoS, flags: DispatchWorkItemFlags, execute: () -> Void)",
+      "desc": "Schedules a block asynchronously for execution and optionally associates it with a dispatch group."
+    },
+    {
+      "name": "var label: String",
+      "desc": "The label you assigned to the dispatch queue at creation time."
+    },
+    {
+      "name": "var qos: DispatchQoS",
+      "desc": "The quality-of-service level assgined to the queue."
+    },
+    {
+      "name": "func setTarget(queue: DispatchQueue?)",
+      "desc": "Specifies the dispatch queue on which to perform work associated with the current object."
+    },
+    {
+      "name": "func setSpecific<T>(key: DispatchSpecificKey<T>, value: T?)",
+      "desc": "Sets the key/value data for the specified dispatch queue."
+    },
+    {
+      "name": "func getSpecific<T>(key: DispatchSpecificKey<T>) -> T?",
+      "desc": "Returns the value for the key associated with this dispatch queue."
+    },
+    {
+      "name": "class func getSpecific<T>(key: DispatchSpecificKey<T>) -> T?",
+      "desc": "Returns the value for the key associated with the current execution context."
+    },
+    {
+      "name": "class DispatchSpecificKey",
+      "desc": "A key associated with a specific contextual value on a dispatch queue."
+    },
+    {
+      "name": "func dispatchMain() -> Never",
+      "desc": "Executes blocks submitted to the main queue."
+    },
+    {
+      "name": "func schedule(options: DispatchQueue.SchedulerOptions?, () -> Void)",
+      "desc": "Performs the action at some time after the specified date, using the scheduler’s minimum tolerance."
+    },
+    {
+      "name": "func schedule(after: DispatchQueue.SchedulerTimeType, tolerance: DispatchQueue.SchedulerTimeType.Stride, options: DispatchQueue.SchedulerOptions?, () -> Void)",
+      "desc": "Performs the action at some time after the specified date, using the specified tolerance and options."
+    },
+    {
+      "name": "func schedule(after: DispatchQueue.SchedulerTimeType, interval: DispatchQueue.SchedulerTimeType.Stride, tolerance: DispatchQueue.SchedulerTimeType.Stride, options: DispatchQueue.SchedulerOptions?, () -> Void) -> Cancellable",
+      "desc": "Performs the action at some time after the specified date, at the specified frequency, using the specified tolerance and options."
+    },
+    {
+      "name": "var minimumTolerance: DispatchQueue.SchedulerTimeType.Stride",
+      "desc": "The minimum tolerance allowed by the dispatch queue scheduler."
+    },
+    {
+      "name": "var now: DispatchQueue.SchedulerTimeType",
+      "desc": "The dispatch queue scheduler’s definition of the current moment in time."
+    },
+    {
+      "name": "struct DispatchQueue.SchedulerTimeType",
+      "desc": "The scheduler time type used by the dispatch queue."
+    },
+    {
+      "name": "struct DispatchQueue.SchedulerOptions",
+      "desc": "A set of options that affect the operation of the dispatch queue scheduler."
+    },
+    {
+      "name": "enum DispatchQueue.GlobalQueuePriority",
+      "desc": "Legacy constants for queue priorities."
+    },
+    {
+      "name": "func asyncAndWait(execute: DispatchWorkItem)"
+    }
+  ],
+  "declaration": "class DispatchQueue : DispatchObject",
+  "inheritsFrom": [
+    "DispatchObject"
+  ],
+  "conformsTo": [
+    "Scheduler"
+  ]
+}

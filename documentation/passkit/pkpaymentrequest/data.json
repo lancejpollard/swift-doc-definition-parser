@@ -1,0 +1,160 @@
+{
+  "path": "/documentation/passkit/pkpaymentrequest",
+  "type": "Class",
+  "name": "PKPaymentRequest",
+  "desc": "An object that represents a request for payment, including information about payment processing capabilities, the payment amount, and shipping information.",
+  "items": [
+    {
+      "name": "class func availableNetworks() -> [PKPaymentNetwork]",
+      "desc": "Returns the list of available payment methods that are supported by Apple Pay."
+    },
+    {
+      "name": "var supportedNetworks: [PKPaymentNetwork]",
+      "desc": "The payment methods that you support."
+    },
+    {
+      "name": "struct PKPaymentNetwork",
+      "desc": "A type that represents a payment method."
+    },
+    {
+      "name": "var merchantIdentifier: String",
+      "desc": "Your merchant identifier."
+    },
+    {
+      "name": "var merchantCapabilities: PKMerchantCapability",
+      "desc": "A bit field of the payment processing protocols and card types that you support."
+    },
+    {
+      "name": "struct PKMerchantCapability",
+      "desc": "Capabilities for processing payment."
+    },
+    {
+      "name": "var countryCode: String",
+      "desc": "The merchant’s two-letter ISO 3166 country code."
+    },
+    {
+      "name": "var supportedCountries: Set<String>?",
+      "desc": "A list of ISO 3166 country codes to limit payments to cards from specific countries or regions."
+    },
+    {
+      "name": "var currencyCode: String",
+      "desc": "The three-letter ISO 4217 currency code."
+    },
+    {
+      "name": "var paymentSummaryItems: [PKPaymentSummaryItem]",
+      "desc": "An array of payment summary item objects that summarize the amount of the payment."
+    },
+    {
+      "name": "class PKPaymentSummaryItem",
+      "desc": "An object that defines a summary item in a payment request—for example, total, tax, discount, or grand total."
+    },
+    {
+      "name": "class PKDeferredPaymentSummaryItem",
+      "desc": "An object that defines a summary item for a payment that’s charged at a later date, such as a pre-order."
+    },
+    {
+      "name": "class PKRecurringPaymentSummaryItem",
+      "desc": "An object that defines a summary item for a payment that occurs repeatedly at a specified interval, such as a subscription."
+    },
+    {
+      "name": "var requiredBillingContactFields: Set<PKContactField>",
+      "desc": "A list of fields that you need for a billing contact in order to process the transaction."
+    },
+    {
+      "name": "var requiredShippingContactFields: Set<PKContactField>",
+      "desc": "A list of fields that you need for a shipping contact in order to process the transaction."
+    },
+    {
+      "name": "struct PKContactField",
+      "desc": "The fields that describe a contact."
+    },
+    {
+      "name": "var billingContact: PKContact?",
+      "desc": "A prepopulated billing address."
+    },
+    {
+      "name": "var shippingContact: PKContact?",
+      "desc": "A prepopulated shipping address."
+    },
+    {
+      "name": "class PKContact",
+      "desc": "An object that encapsulates contact information needed for billing and shipping."
+    },
+    {
+      "name": "var shippingMethods: [PKShippingMethod]?",
+      "desc": "An array of shipping method objects that describe the supported shipping methods."
+    },
+    {
+      "name": "class PKShippingMethod",
+      "desc": "An object that defines a shipping method for delivering physical goods."
+    },
+    {
+      "name": "var shippingType: PKShippingType",
+      "desc": "The type of shipping used by this request."
+    },
+    {
+      "name": "var shippingContactEditingMode: PKShippingContactEditingMode",
+      "desc": "A value that indicates if the shipping mode prevents the user editing the shipping address."
+    },
+    {
+      "name": "enum PKShippingType",
+      "desc": "Complete list of valid shipping types."
+    },
+    {
+      "name": "enum PKShippingContactEditingMode",
+      "desc": "Constants that indicate if the shipping mode prevents the user editing fields of the shipping address."
+    },
+    {
+      "name": "var couponCode: String?",
+      "desc": "The initial coupon code for the payment request."
+    },
+    {
+      "name": "var supportsCouponCode: Bool",
+      "desc": "A Boolean value that determines whether the payment sheet displays the coupon code field."
+    },
+    {
+      "name": "var applicationData: Data?",
+      "desc": "Application-specific data or state."
+    },
+    {
+      "name": "class func paymentBillingAddressInvalidError(withKey: String, localizedDescription: String?) -> Error",
+      "desc": "Creates a billing address error with the supplied key and user-facing error message."
+    },
+    {
+      "name": "class func paymentContactInvalidError(withContactField: PKContactField, localizedDescription: String?) -> Error",
+      "desc": "Creates a contact error with the supplied field and user-facing error message."
+    },
+    {
+      "name": "class func paymentShippingAddressInvalidError(withKey: String, localizedDescription: String?) -> Error",
+      "desc": "Creates a shipping address error with the supplied key and user-facing error message."
+    },
+    {
+      "name": "class func paymentShippingAddressUnserviceableError(withLocalizedDescription: String?) -> Error",
+      "desc": "Creates an error for an unserviceable address, with the supplied user-facing error message."
+    },
+    {
+      "name": "static func paymentCouponCodeInvalidError(localizedDescription: String?) -> Error",
+      "desc": "Returns an error object that indicates an invalid coupon."
+    },
+    {
+      "name": "static func paymentCouponCodeExpiredError(localizedDescription: String?) -> Error",
+      "desc": "Returns an error object that indicates an expired coupon."
+    },
+    {
+      "name": "var requiredBillingAddressFields: PKAddressField",
+      "desc": "A bit field of billing address fields that you need in order to process the transaction."
+    },
+    {
+      "name": "var requiredShippingAddressFields: PKAddressField",
+      "desc": "A bit field of shipping address fields that you need in order to process the transaction."
+    },
+    {
+      "name": "struct PKAddressField",
+      "desc": "Billing or shipping address fields."
+    }
+  ],
+  "declaration": "class PKPaymentRequest : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

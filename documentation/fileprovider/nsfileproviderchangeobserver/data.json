@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/fileprovider/nsfileproviderchangeobserver",
+  "type": "Protocol",
+  "name": "NSFileProviderChangeObserver",
+  "desc": "An observer that receives changes and deletions during enumeration.",
+  "items": [
+    {
+      "name": "func didDeleteItems(withIdentifiers: [NSFileProviderItemIdentifier])",
+      "desc": "Tells the observer that the specified items have been deleted."
+    },
+    {
+      "name": "func didUpdate([NSFileProviderItemProtocol])",
+      "desc": "Tells the observer that the specified items have been updated."
+    },
+    {
+      "name": "func finishEnumeratingChanges(upTo: NSFileProviderSyncAnchor, moreComing: Bool)",
+      "desc": "Tells the observer that all of the changes have been enumerated up to the specified sync anchor."
+    },
+    {
+      "name": "func finishEnumeratingWithError(Error)",
+      "desc": "Tells the observer that an error occurred during change notification."
+    },
+    {
+      "name": "var suggestedBatchSize: Int",
+      "desc": "The batch size that the system recommends."
+    }
+  ],
+  "declaration": "protocol NSFileProviderChangeObserver",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

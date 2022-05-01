@@ -1,0 +1,82 @@
+{
+  "path": "/documentation/foundation/nsscriptobjectspecifier",
+  "type": "Class",
+  "name": "NSScriptObjectSpecifier",
+  "desc": "An abstract class used to represent natural language expressions.",
+  "items": [
+    {
+      "name": "init?(descriptor: NSAppleEventDescriptor)",
+      "desc": "Returns a new object specifier for an Apple event descriptor."
+    },
+    {
+      "name": "init(containerClassDescription: NSScriptClassDescription, containerSpecifier: NSScriptObjectSpecifier?, key: String)",
+      "desc": "Returns an NSScriptObjectSpecifier object initialized with the given attributes."
+    },
+    {
+      "name": "init(containerSpecifier: NSScriptObjectSpecifier, key: String)",
+      "desc": "Returns an NSScriptObjectSpecifier object initialized with a given container specifier and key."
+    },
+    {
+      "name": "func indicesOfObjectsByEvaluating(withContainer: Any, count: UnsafeMutablePointer<Int>) -> UnsafeMutablePointer<Int>?",
+      "desc": "This primitive method must be overridden by subclasses to return a pointer to an array of indices identifying objects in the key of a given container that are identified by the receiver of the message."
+    },
+    {
+      "name": "var objectsByEvaluatingSpecifier: Any?",
+      "desc": "Returns the actual object represented by the nested series of object specifiers."
+    },
+    {
+      "name": "func objectsByEvaluating(withContainers: Any) -> Any?",
+      "desc": "Returns the actual object or objects specified by the receiver as evaluated in the context of given container object."
+    },
+    {
+      "name": "var containerClassDescription: NSScriptClassDescription?",
+      "desc": "Sets the class description of the receiver’s container specifier to a given specifier."
+    },
+    {
+      "name": "var containerIsObjectBeingTested: Bool",
+      "desc": "Sets whether the receiver’s container should be an object involved in a filter reference or the top-level object."
+    },
+    {
+      "name": "var containerIsRangeContainerObject: Bool",
+      "desc": "Sets whether the receiver’s container is to be the container for a range specifier or a top-level object."
+    },
+    {
+      "name": "var container: NSScriptObjectSpecifier?",
+      "desc": "Sets the container specifier of the receiver."
+    },
+    {
+      "name": "var child: NSScriptObjectSpecifier?",
+      "desc": "Sets the receiver’s child reference."
+    },
+    {
+      "name": "var key: String",
+      "desc": "Sets the key of the receiver."
+    },
+    {
+      "name": "var keyClassDescription: NSScriptClassDescription?",
+      "desc": "Returns the class description of the objects specified by the receiver."
+    },
+    {
+      "name": "var evaluationError: NSScriptObjectSpecifier?",
+      "desc": "Returns the object specifier in which an evaluation error occurred."
+    },
+    {
+      "name": "var evaluationErrorNumber: Int",
+      "desc": "Sets the value of the evaluation error."
+    },
+    {
+      "name": "var descriptor: NSAppleEventDescriptor?",
+      "desc": "Returns an Apple event descriptor that represents the receiver."
+    },
+    {
+      "name": "init?(coder: NSCoder)"
+    }
+  ],
+  "declaration": "class NSScriptObjectSpecifier : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "path": "/documentation/iousbhost/iousbhostisochronousframe",
+  "type": "Structure",
+  "name": "IOUSBHostIsochronousFrame",
+  "desc": "A structure that represents a single frame in an isochronous transfer.",
+  "items": [
+    {
+      "name": "var status: IOReturn",
+      "desc": "The completion status for an individual frame."
+    },
+    {
+      "name": "var requestCount: UInt32",
+      "desc": "The number of requested bytes to transfer for the frame."
+    },
+    {
+      "name": "var completeCount: UInt32",
+      "desc": "The number of bytes that the system actually transferred for the frame."
+    },
+    {
+      "name": "var timeStamp: IOUSBHostTime",
+      "desc": "The observed time for the frame’s completion."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates a new frame structure."
+    },
+    {
+      "name": "init(status: IOReturn, requestCount: UInt32, completeCount: UInt32, reserved: UInt32, timeStamp: IOUSBHostTime)"
+    },
+    {
+      "name": "var reserved: UInt32"
+    }
+  ],
+  "declaration": "struct IOUSBHostIsochronousFrame"
+}

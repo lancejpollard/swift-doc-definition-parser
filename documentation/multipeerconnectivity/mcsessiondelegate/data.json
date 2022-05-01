@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/multipeerconnectivity/mcsessiondelegate",
+  "type": "Protocol",
+  "name": "MCSessionDelegate",
+  "desc": "The MCSessionDelegate protocol defines methods that a delegate of the MCSession class can implement to handle session-related events. For more information, see MCSession.",
+  "items": [
+    {
+      "name": "func session(MCSession, didReceive: Data, fromPeer: MCPeerID)",
+      "desc": "Indicates that an NSData object has been received from a nearby peer."
+    },
+    {
+      "name": "func session(MCSession, didStartReceivingResourceWithName: String, fromPeer: MCPeerID, with: Progress)",
+      "desc": "Indicates that the local peer began receiving a resource from a nearby peer."
+    },
+    {
+      "name": "func session(MCSession, didFinishReceivingResourceWithName: String, fromPeer: MCPeerID, at: URL?, withError: Error?)",
+      "desc": "Indicates that the local peer finished receiving a resource from a nearby peer."
+    },
+    {
+      "name": "func session(MCSession, didReceive: InputStream, withName: String, fromPeer: MCPeerID)",
+      "desc": "Called when a nearby peer opens a byte stream connection to the local peer."
+    },
+    {
+      "name": "func session(MCSession, peer: MCPeerID, didChange: MCSessionState)",
+      "desc": "Called when the state of a nearby peer changes."
+    },
+    {
+      "name": "func session(MCSession, didReceiveCertificate: [Any]?, fromPeer: MCPeerID, certificateHandler: (Bool) -> Void)",
+      "desc": "Called to validate the client certificate provided by a peer when the connection is first established."
+    }
+  ],
+  "declaration": "protocol MCSessionDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

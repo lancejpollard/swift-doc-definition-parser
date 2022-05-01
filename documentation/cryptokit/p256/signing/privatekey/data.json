@@ -1,0 +1,61 @@
+{
+  "path": "/documentation/cryptokit/p256/signing/privatekey",
+  "type": "Structure",
+  "name": "P256.Signing.PrivateKey",
+  "desc": "A P-256 private key used to create cryptographic signatures.",
+  "items": [
+    {
+      "name": "init<Bytes>(rawRepresentation: Bytes)",
+      "desc": "Creates a P-256 private key for signing from a data representation of the key."
+    },
+    {
+      "name": "init(compactRepresentable: Bool)",
+      "desc": "Creates a random P-256 private key for signing."
+    },
+    {
+      "name": "init<Bytes>(derRepresentation: Bytes)",
+      "desc": "Creates a P-256 private key for signing from a Distinguished Encoding Rules (DER) encoded representation of the key."
+    },
+    {
+      "name": "init(pemRepresentation: String)",
+      "desc": "Creates a P-256 private key for signing from a Privacy-Enhanced Mail (PEM) representation of the key."
+    },
+    {
+      "name": "init<Bytes>(x963Representation: Bytes)",
+      "desc": "Creates a P-256 private key for signing from an ANSI x9.63 representation of the key."
+    },
+    {
+      "name": "var rawRepresentation: Data",
+      "desc": "A representation of the private key as a collection of bytes."
+    },
+    {
+      "name": "var derRepresentation: Data",
+      "desc": "A Distinguished Encoding Rules (DER) encoded representation of the private key."
+    },
+    {
+      "name": "var pemRepresentation: String",
+      "desc": "A Privacy-Enhanced Mail (PEM) representation of the private key."
+    },
+    {
+      "name": "var x963Representation: Data",
+      "desc": "An ANSI x9.63 representation of the private key."
+    },
+    {
+      "name": "var publicKey: P256.Signing.PublicKey",
+      "desc": "The corresponding public key."
+    },
+    {
+      "name": "func signature<D>(for: D) -> P256.Signing.ECDSASignature",
+      "desc": "Generates an elliptic curve digital signature algorithm (ECDSA) signature of the given data over the P-256 elliptic curve, using SHA-256 as a hash function."
+    },
+    {
+      "name": "func signature<D>(for: D) -> P256.Signing.ECDSASignature",
+      "desc": "Generates an Elliptic Curve Digital Signature Algorithm (ECDSA) signature of the digest you provide over the P-256 elliptic curve."
+    },
+    {
+      "name": "struct P256.Signing.ECDSASignature",
+      "desc": "A P-256 elliptic curve digital signature algorithm (ECDSA) signature."
+    }
+  ],
+  "declaration": "struct P256.Signing.PrivateKey"
+}

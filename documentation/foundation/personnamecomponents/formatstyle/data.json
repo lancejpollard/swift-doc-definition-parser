@@ -1,0 +1,111 @@
+{
+  "path": "/documentation/foundation/personnamecomponents/formatstyle",
+  "type": "Structure",
+  "name": "PersonNameComponents.FormatStyle",
+  "desc": "A type used to format a person’s name with a style appropriate for the given locale.",
+  "items": [
+    {
+      "name": "init(style: PersonNameComponents.FormatStyle.Style, locale: Locale)",
+      "desc": "Creates an instance using the provided format style and locale."
+    },
+    {
+      "name": "static func name(style: Style) -> PersonNameComponents.FormatStyle",
+      "desc": "Creates a person name components format style using the provided format style."
+    },
+    {
+      "name": "init(String)",
+      "desc": "Creates a person name components object from a given string."
+    },
+    {
+      "name": "init<S>(S.ParseInput, strategy: S)",
+      "desc": "Creates a person name components object from a given string by applying the provided parsing strategy."
+    },
+    {
+      "name": "var parseStrategy: PersonNameComponents.ParseStrategy",
+      "desc": "The strategy used to parse a string into person name components."
+    },
+    {
+      "name": "typealias PersonNameComponents.FormatStyle.Strategy",
+      "desc": "The strategy used to parse the input data."
+    },
+    {
+      "name": "var style: PersonNameComponents.FormatStyle.Style",
+      "desc": "Specifies the style of the formatted result."
+    },
+    {
+      "name": "enum PersonNameComponents.FormatStyle.Style",
+      "desc": "The type that represents the style of the formatted result."
+    },
+    {
+      "name": "var locale: Locale",
+      "desc": "The locale to use when formatting the person name components."
+    },
+    {
+      "name": "var attributed: PersonNameComponents.AttributedStyle",
+      "desc": "The style used to create a locale-aware attributed string representation of an instance of person name components."
+    },
+    {
+      "name": "func locale(Locale) -> PersonNameComponents.FormatStyle",
+      "desc": "Modifies the person name components format style to use the specified locale."
+    },
+    {
+      "name": "func format(PersonNameComponents) -> String",
+      "desc": "Creates a string representation from a person name components value."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a new instance by decoding from the given decoder."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes this value into the given encoder."
+    },
+    {
+      "name": "typealias PersonNameComponents.FormatStyle.FormatInput",
+      "desc": "The type of data to format."
+    },
+    {
+      "name": "typealias PersonNameComponents.FormatStyle.FormatOutput",
+      "desc": "The type of the formatted data."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value of the style format."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "static func != (PersonNameComponents.FormatStyle, PersonNameComponents.FormatStyle) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are not equal."
+    },
+    {
+      "name": "static func == (PersonNameComponents.FormatStyle, PersonNameComponents.FormatStyle) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are equal."
+    },
+    {
+      "name": "static func currency<Value>(code: String) -> FloatingPointFormatStyle<Value>.Currency"
+    },
+    {
+      "name": "static func currency<V>(code: String) -> IntegerFormatStyle<V>.Currency"
+    },
+    {
+      "name": "static func list<MemberStyle, Base>(memberStyle: MemberStyle, type: ListFormatStyle<MemberStyle, Base>.ListType, width: ListFormatStyle<MemberStyle, Base>.Width) -> ListFormatStyle<MemberStyle, Base>"
+    },
+    {
+      "name": "static func list<Base>(type: ListFormatStyle<StringStyle, Base>.ListType, width: ListFormatStyle<StringStyle, Base>.Width) -> ListFormatStyle<StringStyle, Base>"
+    },
+    {
+      "name": "static func measurement(width: Measurement<UnitTemperature>.FormatStyle.UnitWidth, usage: MeasurementFormatUnitUsage<UnitTemperature>, hidesScaleName: Bool, numberFormatStyle: FloatingPointFormatStyle<Double>?) -> Measurement<UnitTemperature>.FormatStyle"
+    },
+    {
+      "name": "static func measurement<UnitType>(width: Measurement<UnitType>.FormatStyle.UnitWidth, usage: MeasurementFormatUnitUsage<UnitType>, numberFormatStyle: FloatingPointFormatStyle<Double>?) -> Measurement<UnitType>.FormatStyle"
+    }
+  ],
+  "declaration": "struct FormatStyle",
+  "conformsTo": [
+    "FormatStyle",
+    "ParseableFormatStyle"
+  ]
+}

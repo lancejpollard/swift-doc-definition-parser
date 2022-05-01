@@ -1,0 +1,163 @@
+{
+  "path": "/documentation/photokit/phasset",
+  "type": "Class",
+  "name": "PHAsset",
+  "desc": "A representation of an image, video, or Live Photo in the Photos library.",
+  "items": [
+    {
+      "name": "class func fetchAssets(in: PHAssetCollection, options: PHFetchOptions?) -> PHFetchResult<PHAsset>",
+      "desc": "Retrieves assets from the specified asset collection."
+    },
+    {
+      "name": "class func fetchAssets(with: PHAssetMediaType, options: PHFetchOptions?) -> PHFetchResult<PHAsset>",
+      "desc": "Retrieves assets with the specified media type."
+    },
+    {
+      "name": "class func fetchAssets(withLocalIdentifiers: [String], options: PHFetchOptions?) -> PHFetchResult<PHAsset>",
+      "desc": "Retrieves assets with the specified local-device-specific unique identifiers."
+    },
+    {
+      "name": "class func fetchKeyAssets(in: PHAssetCollection, options: PHFetchOptions?) -> PHFetchResult<PHAsset>?",
+      "desc": "Retrieves assets marked as key assets in the specified asset collection."
+    },
+    {
+      "name": "class func fetchAssets(with: PHFetchOptions?) -> PHFetchResult<PHAsset>",
+      "desc": "Retrieves all assets matching the specified options."
+    },
+    {
+      "name": "class func fetchAssets(withBurstIdentifier: String, options: PHFetchOptions?) -> PHFetchResult<PHAsset>",
+      "desc": "Retrieves assets with the specified burst photo sequence identifier."
+    },
+    {
+      "name": "var mediaType: PHAssetMediaType",
+      "desc": "The type of the asset, such as video or audio."
+    },
+    {
+      "name": "enum PHAssetMediaType",
+      "desc": "Constants identifying the general type of an asset, such as image or video."
+    },
+    {
+      "name": "var mediaSubtypes: PHAssetMediaSubtype",
+      "desc": "The subtypes of the asset, identifying special kinds of assets such as panoramic photo or high-framerate video."
+    },
+    {
+      "name": "struct PHAssetMediaSubtype",
+      "desc": "Constants identifying specific variations of asset media, such as panorama or screenshot photos and time lapse or high frame rate video."
+    },
+    {
+      "name": "var sourceType: PHAssetSourceType",
+      "desc": "The means by which the asset entered the user’s Photos library."
+    },
+    {
+      "name": "struct PHAssetSourceType",
+      "desc": "Means by which an asset enters the Photos library, used by the PHAssetSourceType property."
+    },
+    {
+      "name": "var pixelWidth: Int",
+      "desc": "The width, in pixels, of the asset’s image or video data."
+    },
+    {
+      "name": "var pixelHeight: Int",
+      "desc": "The height, in pixels, of the asset’s image or video data."
+    },
+    {
+      "name": "var creationDate: Date?",
+      "desc": "The date and time at which the asset was originally created."
+    },
+    {
+      "name": "var modificationDate: Date?",
+      "desc": "The date and time at which the asset was last modified."
+    },
+    {
+      "name": "var location: CLLocation?",
+      "desc": "The location information saved with the asset."
+    },
+    {
+      "name": "var duration: TimeInterval",
+      "desc": "The duration, in seconds, of the video asset."
+    },
+    {
+      "name": "var isFavorite: Bool",
+      "desc": "A Boolean value that indicates whether the user has marked the asset as a favorite."
+    },
+    {
+      "name": "var isHidden: Bool",
+      "desc": "A Boolean value that indicates whether the user has hidden the asset."
+    },
+    {
+      "name": "var playbackStyle: PHAsset.PlaybackStyle",
+      "desc": "An enumerated value that describes how to present an asset to the user."
+    },
+    {
+      "name": "enum PHAsset.PlaybackStyle",
+      "desc": "An enumeration of asset playback styles that dictate how to present an asset to the user."
+    },
+    {
+      "name": "class PHContentEditingInput",
+      "desc": "A container that provides information about and access to the image, video, or Live Photo content of an asset to be edited."
+    },
+    {
+      "name": "class PHContentEditingOutput",
+      "desc": "A container to which you provide the results of editing the photo, video, or Live Photo content of a Photos asset."
+    },
+    {
+      "name": "class PHAdjustmentData",
+      "desc": "A description of the edits made to an asset's photo, video, or Live Photo content, which allows your app to reconstruct or revert the effects of prior editing sessions."
+    },
+    {
+      "name": "class PHContentEditingInputRequestOptions",
+      "desc": "A set of options affecting the delivery of image or video data when you request to edit the content of a Photos asset."
+    },
+    {
+      "name": "class PHLivePhotoEditingContext",
+      "desc": "An editing session for modifying the photo, video, and audio content of a Live Photo."
+    },
+    {
+      "name": "protocol PHLivePhotoFrame",
+      "desc": "A container that provides image content for a single frame of a Live Photo in an editing context."
+    },
+    {
+      "name": "func canPerform(PHAssetEditOperation) -> Bool",
+      "desc": "Returns whether the asset supports the specified editing operation."
+    },
+    {
+      "name": "enum PHAssetEditOperation",
+      "desc": "Values identifying possible actions an asset can support, used by the canPerform(_:) method."
+    },
+    {
+      "name": "func requestContentEditingInput(with: PHContentEditingInputRequestOptions?, completionHandler: (PHContentEditingInput?, [AnyHashable : Any]) -> Void) -> PHContentEditingInputRequestID",
+      "desc": "Requests asset information for beginning a content editing session."
+    },
+    {
+      "name": "func cancelContentEditingInputRequest(PHContentEditingInputRequestID)",
+      "desc": "Cancels a request for editing the asset’s content."
+    },
+    {
+      "name": "typealias PHContentEditingInputRequestID",
+      "desc": "An identifier for an asset content editing session."
+    },
+    {
+      "name": "var burstIdentifier: String?",
+      "desc": "The unique identifier shared by photo assets from the same burst sequence."
+    },
+    {
+      "name": "var burstSelectionTypes: PHAssetBurstSelectionType",
+      "desc": "The selection type of the asset in a burst photo sequence."
+    },
+    {
+      "name": "struct PHAssetBurstSelectionType",
+      "desc": "Bit mask values indicating whether and how an asset is marked as a favorite member of a burst photo sequence. Used by the burstSelectionTypes property."
+    },
+    {
+      "name": "var representsBurst: Bool",
+      "desc": "A Boolean value that indicates whether the asset is the representative photo from a burst photo sequence."
+    },
+    {
+      "name": "var adjustmentFormatIdentifier: NSString?"
+    }
+  ],
+  "declaration": "class PHAsset : PHObject",
+  "inheritsFrom": [
+    "PHObject"
+  ]
+}

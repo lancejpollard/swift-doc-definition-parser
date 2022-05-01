@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/metal/mtltessellationfactorstepfunction",
+  "type": "Enumeration",
+  "name": "MTLTessellationFactorStepFunction",
+  "desc": "Options for specifying the step function that determines the tessellation factors for a patch from the tessellation factor buffer.",
+  "items": [
+    {
+      "name": "case constant",
+      "desc": "A constant step function. For all instances, the tessellation factor for all patches in a patch draw call is at the offset location in the tessellation factor buffer."
+    },
+    {
+      "name": "case perPatch",
+      "desc": "A per-patch step function. For all instances, the tessellation factor for all patches in a patch draw call is at the offset + (drawPatchIndex * tessellationFactorStride) location in the tessellation factor buffer."
+    },
+    {
+      "name": "case perInstance",
+      "desc": "A per-instance step function. For a given instance ID, the tessellation factor for a patch in a patch draw call is at the offset + (instanceID * instanceStride) location in the tessellation factor buffer."
+    },
+    {
+      "name": "case perPatchAndPerInstance",
+      "desc": "A per-patch and per-instance step function. For a given instance ID, the tessellation factor for a patch in a patch draw call is at the offset + (drawPatchIndex * tessellationFactorStride + instanceID * instanceStride) location in the tessellation factor buffer."
+    }
+  ],
+  "declaration": "enum MTLTessellationFactorStepFunction : UInt, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

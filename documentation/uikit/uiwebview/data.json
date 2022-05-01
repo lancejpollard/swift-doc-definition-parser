@@ -1,0 +1,148 @@
+{
+  "path": "/documentation/uikit/uiwebview",
+  "type": "Class",
+  "name": "UIWebView",
+  "desc": "A view that embeds web content in your app.",
+  "items": [
+    {
+      "name": "var delegate: UIWebViewDelegate?",
+      "desc": "The receiver’s delegate."
+    },
+    {
+      "name": "protocol UIWebViewDelegate",
+      "desc": "The UIWebViewDelegate protocol defines methods that a delegate of a UIWebView object can optionally implement to intervene when web content is loaded."
+    },
+    {
+      "name": "func load(Data, mimeType: String, textEncodingName: String, baseURL: URL)",
+      "desc": "Sets the main page contents, MIME type, content encoding, and base URL."
+    },
+    {
+      "name": "func loadHTMLString(String, baseURL: URL?)",
+      "desc": "Sets the main page content and base URL."
+    },
+    {
+      "name": "func loadRequest(URLRequest)",
+      "desc": "Connects to a given URL by initiating an asynchronous client request."
+    },
+    {
+      "name": "var request: URLRequest?",
+      "desc": "The URL request identifying the location of the content to load."
+    },
+    {
+      "name": "var isLoading: Bool",
+      "desc": "A Boolean value indicating whether the receiver is done loading content."
+    },
+    {
+      "name": "func stopLoading()",
+      "desc": "Stops the loading of any web content managed by the receiver."
+    },
+    {
+      "name": "func reload()",
+      "desc": "Reloads the current page."
+    },
+    {
+      "name": "var canGoBack: Bool",
+      "desc": "A Boolean value indicating whether the receiver can move backward."
+    },
+    {
+      "name": "var canGoForward: Bool",
+      "desc": "A Boolean value indicating whether the receiver can move forward."
+    },
+    {
+      "name": "func goBack()",
+      "desc": "Loads the previous location in the back-forward list."
+    },
+    {
+      "name": "func goForward()",
+      "desc": "Loads the next location in the back-forward list."
+    },
+    {
+      "name": "var allowsLinkPreview: Bool",
+      "desc": "A Boolean value that determines whether pressing on a link displays a preview of the destination for the link."
+    },
+    {
+      "name": "var scalesPageToFit: Bool",
+      "desc": "A Boolean value determining whether the webpage scales to fit the view and the user can change the scale."
+    },
+    {
+      "name": "var scrollView: UIScrollView",
+      "desc": "The scroll view associated with the web view."
+    },
+    {
+      "name": "var suppressesIncrementalRendering: Bool",
+      "desc": "A Boolean value indicating whether the web view suppresses content rendering until it is fully loaded into memory."
+    },
+    {
+      "name": "var keyboardDisplayRequiresUserAction: Bool",
+      "desc": "A Boolean value indicating whether web content can programmatically display the keyboard."
+    },
+    {
+      "name": "var dataDetectorTypes: UIDataDetectorTypes",
+      "desc": "The types of data converted to clickable URLs in the web view’s content."
+    },
+    {
+      "name": "func stringByEvaluatingJavaScript(from: String) -> String?",
+      "desc": "Returns the result of running a JavaScript script. Although this method is not deprecated, best practice is to use the evaluateJavaScript(_:completionHandler:) method of the WKWebView class instead."
+    },
+    {
+      "name": "var allowsInlineMediaPlayback: Bool",
+      "desc": "A Boolean value that determines whether HTML5 videos play inline or use the native full-screen controller."
+    },
+    {
+      "name": "var mediaPlaybackRequiresUserAction: Bool",
+      "desc": "A Boolean value that determines whether HTML5 videos can play automatically or require the user to start playing them."
+    },
+    {
+      "name": "var mediaPlaybackAllowsAirPlay: Bool",
+      "desc": "A Boolean value that determines whether Air Play is allowed from this view."
+    },
+    {
+      "name": "var allowsPictureInPictureMediaPlayback: Bool",
+      "desc": "A Boolean value that determines whether Picture in Picture playback is allowed from this view."
+    },
+    {
+      "name": "var gapBetweenPages: CGFloat",
+      "desc": "The size of the gap, in points, between pages."
+    },
+    {
+      "name": "var pageCount: Int",
+      "desc": "The number of pages produced by the layout of the web view."
+    },
+    {
+      "name": "var pageLength: CGFloat",
+      "desc": "The size of each page, in points, in the direction that the pages flow."
+    },
+    {
+      "name": "var paginationBreakingMode: UIWebView.PaginationBreakingMode",
+      "desc": "The manner in which column- or page-breaking occurs."
+    },
+    {
+      "name": "var paginationMode: UIWebView.PaginationMode",
+      "desc": "The layout of content in the web view."
+    },
+    {
+      "name": "enum UIWebView.NavigationType",
+      "desc": "Constant indicating the user’s action."
+    },
+    {
+      "name": "enum UIWebView.PaginationBreakingMode",
+      "desc": "The manner in which column- or page-breaking occurs."
+    },
+    {
+      "name": "enum UIWebView.PaginationMode",
+      "desc": "The layout of content in the web view, which determines the direction that the pages flow."
+    },
+    {
+      "name": "struct UIDataDetectorTypes",
+      "desc": "Constants that define the types of information to detect in text-based content."
+    }
+  ],
+  "declaration": "@MainActor class UIWebView : UIView",
+  "inheritsFrom": [
+    "UIView"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "UIScrollViewDelegate"
+  ]
+}

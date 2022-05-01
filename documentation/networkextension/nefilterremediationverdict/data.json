@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/networkextension/nefilterremediationverdict",
+  "type": "Class",
+  "name": "NEFilterRemediationVerdict",
+  "desc": "The result from a filter data provider after the user requests remediation for a blocked flow.",
+  "items": [
+    {
+      "name": "class func allow() -> NEFilterRemediationVerdict",
+      "desc": "Create a verdict that indicates to the system that the Filter Data Provider will allow the flow to pass to its final destination when/if the flow is requested again."
+    },
+    {
+      "name": "class func drop() -> NEFilterRemediationVerdict",
+      "desc": "Create a verdict that indicates to the system that the Filter Data Provider will continue to block the flow of network data if/when the flow is requested again."
+    },
+    {
+      "name": "class func needRules() -> NEFilterRemediationVerdict",
+      "desc": "Create a verdict that indicates to the system that the Filter Data Provider needs the filtering rules to be updated before it can make a remediation decision about the current flow of network data."
+    }
+  ],
+  "declaration": "class NEFilterRemediationVerdict : NEFilterVerdict",
+  "inheritsFrom": [
+    "NEFilterVerdict"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

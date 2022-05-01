@@ -1,0 +1,89 @@
+{
+  "path": "/documentation/realitykit/meshresource",
+  "type": "Class",
+  "name": "MeshResource",
+  "desc": "A high-level representation of a collection of vertices and edges that define a shape.",
+  "items": [
+    {
+      "name": "var expectedMaterialCount: Int",
+      "desc": "The number of material entries required to render the mesh resource."
+    },
+    {
+      "name": "var bounds: BoundingBox",
+      "desc": "A box that bounds the mesh."
+    },
+    {
+      "name": "struct BoundingBox",
+      "desc": "An axis-aligned bounding box."
+    },
+    {
+      "name": "static func generateBox(size: Float, cornerRadius: Float) -> MeshResource",
+      "desc": "Creates a new box mesh with sides of equal length."
+    },
+    {
+      "name": "static func generateBox(size: SIMD3<Float>, cornerRadius: Float) -> MeshResource",
+      "desc": "Creates a new box mesh with the given dimensions."
+    },
+    {
+      "name": "static func generateBox(width: Float, height: Float, depth: Float, cornerRadius: Float, splitFaces: Bool) -> MeshResource",
+      "desc": "Creates a new box mesh with the given dimensions and other characteristics."
+    },
+    {
+      "name": "static func generatePlane(width: Float, height: Float, cornerRadius: Float) -> MeshResource",
+      "desc": "Creates a new rectangle mesh with the specified dimensions in the entity’s XY-plane."
+    },
+    {
+      "name": "static func generatePlane(width: Float, depth: Float, cornerRadius: Float) -> MeshResource",
+      "desc": "Creates a new rectangle mesh with the specified dimensions in the entity’s XZ-plane."
+    },
+    {
+      "name": "static func generateSphere(radius: Float) -> MeshResource",
+      "desc": "Creates a new sphere mesh with the specified radius."
+    },
+    {
+      "name": "static func generateText(String, extrusionDepth: Float, font: MeshResource.Font, containerFrame: CGRect, alignment: CTTextAlignment, lineBreakMode: CTLineBreakMode) -> MeshResource",
+      "desc": "Generates a 3D mesh for rendering static text."
+    },
+    {
+      "name": "typealias MeshResource.Font",
+      "desc": "A platform-specific type that represents a font for use in generating a text mesh."
+    },
+    {
+      "name": "var contents: MeshResource.Contents"
+    },
+    {
+      "name": "func replace(with: MeshResource.Contents)"
+    },
+    {
+      "name": "func replaceAsync(with: MeshResource.Contents) -> LoadRequest<MeshResource>"
+    },
+    {
+      "name": "static func generate(from: MeshResource.Contents) -> MeshResource"
+    },
+    {
+      "name": "static func generate(from: [MeshDescriptor]) -> MeshResource"
+    },
+    {
+      "name": "static func generateAsync(from: MeshResource.Contents) -> LoadRequest<MeshResource>"
+    },
+    {
+      "name": "static func generateAsync(from: [MeshDescriptor]) -> LoadRequest<MeshResource>"
+    },
+    {
+      "name": "struct MeshResource.Contents"
+    },
+    {
+      "name": "struct MeshResource.Instance"
+    },
+    {
+      "name": "struct MeshResource.Model"
+    },
+    {
+      "name": "struct MeshResource.Part"
+    }
+  ],
+  "declaration": "class MeshResource",
+  "conformsTo": [
+    "Resource"
+  ]
+}

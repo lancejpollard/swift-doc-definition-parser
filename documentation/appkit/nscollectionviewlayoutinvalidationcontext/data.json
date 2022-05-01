@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/appkit/nscollectionviewlayoutinvalidationcontext",
+  "type": "Class",
+  "name": "NSCollectionViewLayoutInvalidationContext",
+  "desc": "An object that identifies the portions of your layout that need to be updated.",
+  "items": [
+    {
+      "name": "var invalidateEverything: Bool",
+      "desc": "A Boolean that indicates whether all layout data should be marked as invalid."
+    },
+    {
+      "name": "var invalidateDataSourceCounts: Bool",
+      "desc": "A Boolean that indicates whether the layout object should ask for new section and item counts."
+    },
+    {
+      "name": "var contentOffsetAdjustment: NSPoint",
+      "desc": "The delta value to add to the collection view’s content offset."
+    },
+    {
+      "name": "var contentSizeAdjustment: NSSize",
+      "desc": "The delta value to add to the collection view’s content size."
+    },
+    {
+      "name": "func invalidateItems(at: Set<IndexPath>)",
+      "desc": "Marks the specified items as invalid so that their layout information can be updated."
+    },
+    {
+      "name": "func invalidateSupplementaryElements(ofKind: NSCollectionView.SupplementaryElementKind, at: Set<IndexPath>)",
+      "desc": "Marks the specified supplementary views as invalid so that their layout information can be updated."
+    },
+    {
+      "name": "func invalidateDecorationElements(ofKind: NSCollectionView.DecorationElementKind, at: Set<IndexPath>)",
+      "desc": "Marks the specified decoration views as invalid so that their layout information can be updated."
+    },
+    {
+      "name": "var invalidatedItemIndexPaths: Set<IndexPath>?",
+      "desc": "The set of items whose layout attributes are invalid."
+    },
+    {
+      "name": "var invalidatedSupplementaryIndexPaths: [NSCollectionView.SupplementaryElementKind : Set<IndexPath>]?",
+      "desc": "A dictionary containing the supplementary views whose layout attributes are invalid."
+    },
+    {
+      "name": "var invalidatedDecorationIndexPaths: [NSCollectionView.DecorationElementKind : Set<IndexPath>]?",
+      "desc": "A dictionary containing the decoration views whose layout attributes are invalid."
+    }
+  ],
+  "declaration": "class NSCollectionViewLayoutInvalidationContext : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

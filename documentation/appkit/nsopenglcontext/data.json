@@ -1,0 +1,79 @@
+{
+  "path": "/documentation/appkit/nsopenglcontext",
+  "type": "Class",
+  "name": "NSOpenGLContext",
+  "desc": "An object that represents an OpenGL graphics context, into which all OpenGL calls are rendered.DeprecatedThe OpenGL API is deprecated. Use Metal and MetalKit instead.",
+  "items": [
+    {
+      "name": "init?(format: NSOpenGLPixelFormat, share: NSOpenGLContext?)",
+      "desc": "Returns an OpenGL context object initialized with the specified pixel format information."
+    },
+    {
+      "name": "init?(cglContextObj: CGLContextObj)",
+      "desc": "Initializes and returns an OpenGL context object using an existing CGL context."
+    },
+    {
+      "name": "class func clearCurrentContext()",
+      "desc": "Clears the current context."
+    },
+    {
+      "name": "class var current: NSOpenGLContext?",
+      "desc": "Returns the current OpenGL graphics context."
+    },
+    {
+      "name": "func makeCurrentContext()",
+      "desc": "Sets the context as the current OpenGL context object."
+    },
+    {
+      "name": "var view: NSView?",
+      "desc": "Returns the OpenGL context’s view."
+    },
+    {
+      "name": "func clearDrawable()",
+      "desc": "Disassociates the OpenGL context from its viewport."
+    },
+    {
+      "name": "func update()",
+      "desc": "Updates the OpenGL context’s drawable object."
+    },
+    {
+      "name": "func flushBuffer()",
+      "desc": "Copies the back buffer to the front buffer of the OpenGL context."
+    },
+    {
+      "name": "func setValues(UnsafePointer<GLint>, for: NSOpenGLContext.Parameter)",
+      "desc": "Sets the value of the specified parameter."
+    },
+    {
+      "name": "func getValues(UnsafeMutablePointer<GLint>, for: NSOpenGLContext.Parameter)",
+      "desc": "Returns the value of the requested parameter."
+    },
+    {
+      "name": "var currentVirtualScreen: GLint",
+      "desc": "Returns the current virtual screen for the OpenGL context."
+    },
+    {
+      "name": "var cglContextObj: CGLContextObj?",
+      "desc": "Returns the low-level, platform-specific Core OpenGL (CGL) context object represented by the receiver."
+    },
+    {
+      "name": "var pixelFormat: NSOpenGLPixelFormat",
+      "desc": "The pixel format of the OpenGL context."
+    },
+    {
+      "name": "static var openGLVersion: (major: GLint, minor: GLint)",
+      "desc": "The version of OpenGL."
+    },
+    {
+      "name": "enum NSOpenGLContext.Parameter",
+      "desc": "Constants that specify context parameters."
+    }
+  ],
+  "declaration": "class NSOpenGLContext : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSLocking"
+  ]
+}

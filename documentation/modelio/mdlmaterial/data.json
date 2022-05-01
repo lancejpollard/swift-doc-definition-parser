@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/modelio/mdlmaterial",
+  "type": "Class",
+  "name": "MDLMaterial",
+  "desc": "A collection of material properties that together describe the intended surface appearance for rendering a 3D object.",
+  "items": [
+    {
+      "name": "init(name: String, scatteringFunction: MDLScatteringFunction)",
+      "desc": "Initializes a material"
+    },
+    {
+      "name": "var scatteringFunction: MDLScatteringFunction",
+      "desc": "The collection of material properties that define the material’s response to light."
+    },
+    {
+      "name": "func propertyNamed(String) -> MDLMaterialProperty?",
+      "desc": "Returns the material property with the specified name."
+    },
+    {
+      "name": "func property(with: MDLMaterialSemantic) -> MDLMaterialProperty?",
+      "desc": "Returns the material property for the specified material semantic."
+    },
+    {
+      "name": "func setProperty(MDLMaterialProperty)",
+      "desc": "Adds a new material property to or replaces an existing material property in the material."
+    },
+    {
+      "name": "func remove(MDLMaterialProperty)",
+      "desc": "Removes the specified material property from the material."
+    },
+    {
+      "name": "func removeAllProperties()",
+      "desc": "Removes all material properties from the material."
+    },
+    {
+      "name": "var base: MDLMaterial?",
+      "desc": "Another material object from which this material’s properties are derived."
+    },
+    {
+      "name": "subscript(String) -> MDLMaterialProperty?",
+      "desc": "Returns the material property with the specified name, for use with subscript syntax."
+    },
+    {
+      "name": "subscript(Int) -> MDLMaterialProperty?",
+      "desc": "Returns the material property at the specified index in the material, for use with subscript syntax."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of material properties in the material."
+    },
+    {
+      "name": "var name: String",
+      "desc": "A descriptive name for the material."
+    },
+    {
+      "name": "var materialFace: MDLMaterialFace"
+    },
+    {
+      "name": "func loadTextures(using: MDLAssetResolver)"
+    },
+    {
+      "name": "func properties(with: MDLMaterialSemantic) -> [MDLMaterialProperty]"
+    },
+    {
+      "name": "func resolveTextures(with: MDLAssetResolver)"
+    }
+  ],
+  "declaration": "class MDLMaterial : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "MDLNamed",
+    "NSFastEnumeration"
+  ]
+}

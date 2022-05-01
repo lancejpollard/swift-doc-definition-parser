@@ -1,0 +1,96 @@
+{
+  "path": "/documentation/virtualization/vzvirtualmachine",
+  "type": "Class",
+  "name": "VZVirtualMachine",
+  "desc": "An object that manages the overall state and configuration of your VM.",
+  "items": [
+    {
+      "name": "init(configuration: VZVirtualMachineConfiguration)",
+      "desc": "Creates the VM and configures it with the specified data."
+    },
+    {
+      "name": "init(configuration: VZVirtualMachineConfiguration, queue: DispatchQueue)",
+      "desc": "Creates and configures the VM with the specified data and dispatch queue."
+    },
+    {
+      "name": "class var isSupported: Bool",
+      "desc": "A Boolean value that indicates whether the system supports virtualization."
+    },
+    {
+      "name": "var delegate: VZVirtualMachineDelegate?",
+      "desc": "A custom object you use to determine when the VM stops."
+    },
+    {
+      "name": "protocol VZVirtualMachineDelegate",
+      "desc": "The methods you use to respond to changes in the state of the VM."
+    },
+    {
+      "name": "func start(completionHandler: (Result<Void, Error>) -> Void)",
+      "desc": "Starts the VM and notifies the specified completion handler if startup was successful."
+    },
+    {
+      "name": "func stop(completionHandler: (Error?) -> Void)",
+      "desc": "Stops a VM that’s in either a running or paused state."
+    },
+    {
+      "name": "func pause(completionHandler: (Result<Void, Error>) -> Void)",
+      "desc": "Pauses a running VM and notifies the specified completion handler of the results."
+    },
+    {
+      "name": "func requestStop()",
+      "desc": "Asks the guest operating system to stop running."
+    },
+    {
+      "name": "func resume(completionHandler: (Result<Void, Error>) -> Void)",
+      "desc": "Resumes a paused VM and notifies the specified completion handler of the results."
+    },
+    {
+      "name": "var memoryBalloonDevices: [VZMemoryBalloonDevice]",
+      "desc": "The array of devices that you use to adjust the amount of memory available to the guest system."
+    },
+    {
+      "name": "var networkDevices: [VZNetworkDevice]",
+      "desc": "The list of network devices configured on this VM."
+    },
+    {
+      "name": "var socketDevices: [VZSocketDevice]",
+      "desc": "The array of socket devices that the VM configured for use."
+    },
+    {
+      "name": "var directorySharingDevices: [VZDirectorySharingDevice]",
+      "desc": "The list of directory sharing devices configured on this VM."
+    },
+    {
+      "name": "var state: VZVirtualMachine.State",
+      "desc": "The current execution state of the VM."
+    },
+    {
+      "name": "enum VZVirtualMachine.State",
+      "desc": "The execution states of the VM."
+    },
+    {
+      "name": "var canStart: Bool",
+      "desc": "A Boolean value that indicates whether you can start the VM."
+    },
+    {
+      "name": "var canPause: Bool",
+      "desc": "A Boolean value that indicates whether you can pause the VM."
+    },
+    {
+      "name": "var canResume: Bool",
+      "desc": "A Boolean value that indicates whether you can resume the VM."
+    },
+    {
+      "name": "var canStop: Bool",
+      "desc": "A Boolean value that indicates whether you can stop the VM."
+    },
+    {
+      "name": "var canRequestStop: Bool",
+      "desc": "A Boolean value that indicates whether you can ask the guest operating system to stop running."
+    }
+  ],
+  "declaration": "class VZVirtualMachine : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

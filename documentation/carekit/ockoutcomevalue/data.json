@@ -1,0 +1,130 @@
+{
+  "path": "/documentation/carekit/ockoutcomevalue",
+  "type": "Structure",
+  "name": "OCKOutcomeValue",
+  "desc": "An object that represents a measurement that a user gives in response to a task.",
+  "items": [
+    {
+      "name": "init(OCKOutcomeValueUnderlyingType, units: String?)",
+      "desc": "Creates an outcome value with a value, and optionally the units for the measurement."
+    },
+    {
+      "name": "var index: Int?",
+      "desc": "The index of the outcome value."
+    },
+    {
+      "name": "var kind: String?",
+      "desc": "A string that specifes what the outcome measures."
+    },
+    {
+      "name": "var units: String?",
+      "desc": "The units for the outcome value measurement."
+    },
+    {
+      "name": "var value: OCKOutcomeValueUnderlyingType",
+      "desc": "The underlying value of the outcome."
+    },
+    {
+      "name": "var type: OCKOutcomeValueType",
+      "desc": "The underlying type of the outcome value."
+    },
+    {
+      "name": "enum OCKOutcomeValueType",
+      "desc": "The types of values that can be saved to the store."
+    },
+    {
+      "name": "var createdDate: Date? { get }",
+      "desc": "The date the database first persisted the object."
+    },
+    {
+      "name": "var updatedDate: Date? { get }",
+      "desc": "The most recent date when the store updated the object."
+    },
+    {
+      "name": "var groupIdentifier: String?",
+      "desc": "A user-defined group identifier that can be used both for querying and sorting results."
+    },
+    {
+      "name": "var tags: [String]?",
+      "desc": "An array of user-defined tags that can be used to sort or classify objects or values."
+    },
+    {
+      "name": "var localDatabaseID: OCKLocalVersionID? { get }",
+      "desc": "A unique identifier used by the local database."
+    },
+    {
+      "name": "var remoteID: String?",
+      "desc": "A string value that represents a unique identifier, which a remote database uses optionally."
+    },
+    {
+      "name": "var userInfo: [String : String]?",
+      "desc": "A dictionary of information that can be provided by developers to support their own unique use cases."
+    },
+    {
+      "name": "var source: String?",
+      "desc": "A string that specifies from where this object originated."
+    },
+    {
+      "name": "var asset: String?",
+      "desc": "A string that specifies the location of some asset associated with this object."
+    },
+    {
+      "name": "var notes: [OCKNote]?",
+      "desc": "An array of notes associated with this object."
+    },
+    {
+      "name": "var schemaVersion: OCKSemanticVersion? { get }",
+      "desc": "The semantic version of the database schema when you create this object."
+    },
+    {
+      "name": "var timezone: TimeZone",
+      "desc": "The time zone in which this record was created in."
+    },
+    {
+      "name": "var integerValue: Int?",
+      "desc": "The value of the outcome as an integer."
+    },
+    {
+      "name": "var doubleValue: Double?",
+      "desc": "The value of the outcome as a floating point number."
+    },
+    {
+      "name": "var booleanValue: Bool?",
+      "desc": "The value of the outcome as a Boolean."
+    },
+    {
+      "name": "var stringValue: String?",
+      "desc": "The value of the outcome as text."
+    },
+    {
+      "name": "var dataValue: Data?",
+      "desc": "The value of the outcome as binary data."
+    },
+    {
+      "name": "var dateValue: Date?",
+      "desc": "The value of the outcome as a date."
+    },
+    {
+      "name": "init(from: Decoder)"
+    },
+    {
+      "name": "var description: String"
+    },
+    {
+      "name": "func encode(to: Encoder)"
+    },
+    {
+      "name": "static func != (OCKOutcomeValue, OCKOutcomeValue) -> Bool"
+    },
+    {
+      "name": "static func == (OCKOutcomeValue, OCKOutcomeValue) -> Bool"
+    }
+  ],
+  "declaration": "struct OCKOutcomeValue : Codable, Equatable, OCKObjectCompatible, CustomStringConvertible",
+  "conformsTo": [
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/modelio/mdllight",
+  "type": "Class",
+  "name": "MDLLight",
+  "desc": "The abstract superclass for objects that describe light sources in a scene.",
+  "items": [
+    {
+      "name": "func irradiance(atPoint: vector_float3) -> Unmanaged<CGColor>",
+      "desc": "Returns the radiance of the light as received at a specific point in the same scene."
+    },
+    {
+      "name": "func irradiance(atPoint: vector_float3, colorSpace: CGColorSpace) -> Unmanaged<CGColor>",
+      "desc": "Returns the radiance of the light as received at a specific point in the same scene, expressed using the specified color space."
+    },
+    {
+      "name": "var lightType: MDLLightType",
+      "desc": "The type of the light."
+    },
+    {
+      "name": "var colorSpace: String",
+      "desc": "The name of the Core Graphics color space to be used for interpreting the light's color information."
+    },
+    {
+      "name": "enum MDLLightType",
+      "desc": "Options for the shape and style of illumination provided by a light, used by the lightType property."
+    }
+  ],
+  "declaration": "class MDLLight : MDLObject",
+  "inheritsFrom": [
+    "MDLObject"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "path": "/documentation/createml/mlsoundclassifier/modelparameters",
+  "type": "Structure",
+  "name": "MLSoundClassifier.ModelParameters",
+  "desc": "Parameters that affect the process of training a sound-classifier model.",
+  "items": [
+    {
+      "name": "init(validation: MLSoundClassifier.ModelParameters.ValidationData, maxIterations: Int, overlapFactor: Double)",
+      "desc": "Creates a new set of training parameters for a sound classifier with a validation dataset."
+    },
+    {
+      "name": "init(validation: MLSoundClassifier.ModelParameters.ValidationData, maxIterations: Int, overlapFactor: Double, algorithm: MLSoundClassifier.ModelParameters.ModelAlgorithmType)",
+      "desc": "Creates a new set of training parameters for a sound classifier with a validation dataset and a training algorithm."
+    },
+    {
+      "name": "init(validation: MLSoundClassifier.ModelParameters.ValidationData, maxIterations: Int, overlapFactor: Double, algorithm: MLSoundClassifier.ModelParameters.ModelAlgorithmType, featureExtractionTimeWindowSize: TimeInterval)",
+      "desc": "Creates a new set of training parameters for a sound classifier with a validation dataset, a training algorithm, and a time-window size."
+    },
+    {
+      "name": "var validation: MLSoundClassifier.ModelParameters.ValidationData",
+      "desc": "The sound classifier’s validation dataset."
+    },
+    {
+      "name": "var maxIterations: Int",
+      "desc": "The largest number of iterations the training session can use."
+    },
+    {
+      "name": "var overlapFactor: Double",
+      "desc": "The proportion of overlap that the training session uses to analyze two consecutive windows in the audio data."
+    },
+    {
+      "name": "var algorithm: MLSoundClassifier.ModelParameters.ModelAlgorithmType",
+      "desc": "The algorithm the training session uses to train the sound classifier."
+    },
+    {
+      "name": "var featureExtractionTimeWindowSize: TimeInterval",
+      "desc": "A time duration, in seconds, the training session uses for each audio sample it reads from an audio file in a dataset."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the model parameters."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the model parameters that’s suitable for output during debugging."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the parameters in a playground."
+    },
+    {
+      "name": "enum MLSoundClassifier.ModelParameters.ValidationData",
+      "desc": "The source of a validation dataset for a sound classifier."
+    },
+    {
+      "name": "enum MLSoundClassifier.ModelParameters.ModelAlgorithmType",
+      "desc": "The algorithm options to train a sound classifier."
+    }
+  ],
+  "declaration": "struct ModelParameters",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomStringConvertible"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "path": "/documentation/swift/asyncstream/continuation/bufferingpolicy",
+  "type": "Enumeration",
+  "name": "AsyncStream.Continuation.BufferingPolicy",
+  "desc": "A strategy that handles exhaustion of a buffer’s capacity.",
+  "items": [
+    {
+      "name": "case unbounded",
+      "desc": "Continue to add to the buffer, without imposing a limit on the number of buffered elements."
+    },
+    {
+      "name": "case bufferingOldest(Int)",
+      "desc": "When the buffer is full, discard the newly received element."
+    },
+    {
+      "name": "case bufferingNewest(Int)",
+      "desc": "When the buffer is full, discard the oldest element in the buffer."
+    }
+  ],
+  "declaration": "enum AsyncStream<Element>.Continuation.BufferingPolicy"
+}

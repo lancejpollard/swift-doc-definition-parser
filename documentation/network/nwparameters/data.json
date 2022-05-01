@@ -1,0 +1,156 @@
+{
+  "path": "/documentation/network/nwparameters",
+  "type": "Class",
+  "name": "NWParameters",
+  "desc": "An object that stores the protocols to use for connections, options for sending data, and network path constraints.",
+  "items": [
+    {
+      "name": "class var tls: NWParameters",
+      "desc": "A set of default parameters for connections and listeners that use TLS and TCP."
+    },
+    {
+      "name": "class var tcp: NWParameters",
+      "desc": "A set of default parameters for connections and listeners that use TCP."
+    },
+    {
+      "name": "class var dtls: NWParameters",
+      "desc": "A set of default parameters for connections and listeners that use DTLS and UDP."
+    },
+    {
+      "name": "class var udp: NWParameters",
+      "desc": "A set of default parameters for connections and listeners that use UDP."
+    },
+    {
+      "name": "init(tls: NWProtocolTLS.Options?, tcp: NWProtocolTCP.Options)",
+      "desc": "Initializes parameters for TLS connections and listeners with custom TLS and TCP options."
+    },
+    {
+      "name": "init(dtls: NWProtocolTLS.Options?, udp: NWProtocolUDP.Options)",
+      "desc": "Initializes parameters for DTLS connections and listeners with custom DTLS and UDP options."
+    },
+    {
+      "name": "init()",
+      "desc": "Initializes parameters for connections, listeners, and browsers with no protocols specified."
+    },
+    {
+      "name": "init(customIPProtocolNumber: UInt8)",
+      "desc": "Initializes parameters for connections and listeners using a custom IP protocol."
+    },
+    {
+      "name": "func copy() -> NWParameters",
+      "desc": "Performs a deep copy of a parameters object."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A summarized description of the parameters."
+    },
+    {
+      "name": "var defaultProtocolStack: NWParameters.ProtocolStack",
+      "desc": "The protocol stack used by connections and listeners."
+    },
+    {
+      "name": "class NWParameters.ProtocolStack",
+      "desc": "An ordered set of protocol options that define the protocols that connections and listeners use."
+    },
+    {
+      "name": "class NWProtocol",
+      "desc": "The abstract superclass used by Network framework protocols and by custom network protocols that you define."
+    },
+    {
+      "name": "var requiredInterfaceType: NWInterface.InterfaceType",
+      "desc": "An interface type to require on connections and listeners."
+    },
+    {
+      "name": "var requiredInterface: NWInterface?",
+      "desc": "A specific interface to require on connections, listeners, and browsers."
+    },
+    {
+      "name": "var requiredLocalEndpoint: NWEndpoint?",
+      "desc": "A specific local IP address and port to use for connections and listeners."
+    },
+    {
+      "name": "var prohibitConstrainedPaths: Bool",
+      "desc": "A Boolean that prevents connections, listeners, and browsers from using network paths marked as constrained by Low Data Mode."
+    },
+    {
+      "name": "var prohibitExpensivePaths: Bool",
+      "desc": "A Boolean that prevents connections, listeners, and browsers from using network paths marked as expensive."
+    },
+    {
+      "name": "var prohibitedInterfaceTypes: [NWInterface.InterfaceType]?",
+      "desc": "A list of interface types that connections, listeners, and browsers will not use."
+    },
+    {
+      "name": "var prohibitedInterfaces: [NWInterface]?",
+      "desc": "A list of specific interfaces that connections and listeners will not use."
+    },
+    {
+      "name": "var multipathServiceType: NWParameters.MultipathServiceType",
+      "desc": "An option to allow connections to use multipath protocols."
+    },
+    {
+      "name": "enum NWParameters.MultipathServiceType",
+      "desc": "Modes in which a connection can support multipath protocols."
+    },
+    {
+      "name": "var serviceClass: NWParameters.ServiceClass",
+      "desc": "A level of service quality for connections to use."
+    },
+    {
+      "name": "enum NWParameters.ServiceClass",
+      "desc": "Levels of service quality that can be used with a connection."
+    },
+    {
+      "name": "var allowFastOpen: Bool",
+      "desc": "A Boolean that enables sending application data with protocol handshakes."
+    },
+    {
+      "name": "var expiredDNSBehavior: NWParameters.ExpiredDNSBehavior",
+      "desc": "A behavior that defines how expired DNS answers will be used."
+    },
+    {
+      "name": "enum NWParameters.ExpiredDNSBehavior",
+      "desc": "Options for configuring how expired DNS answers should be used."
+    },
+    {
+      "name": "var preferNoProxies: Bool",
+      "desc": "A Boolean that indicates that connections should ignore proxies when they are enabled on the system."
+    },
+    {
+      "name": "var includePeerToPeer: Bool",
+      "desc": "A Boolean that enables peer-to-peer link technologies for connections and listeners."
+    },
+    {
+      "name": "var allowLocalEndpointReuse: Bool",
+      "desc": "A Boolean that allows reusing local addresses and ports across connections."
+    },
+    {
+      "name": "var acceptLocalOnly: Bool",
+      "desc": "A Boolean that restricts listeners to only accepting connections from the local link."
+    },
+    {
+      "name": "func setPrivacyContext(NWParameters.PrivacyContext)",
+      "desc": "Associates a privacy context with any connections or listeners that use the parameters."
+    },
+    {
+      "name": "class NWParameters.PrivacyContext",
+      "desc": "An object that defines the privacy requirements for a set of connections."
+    },
+    {
+      "name": "init(quic: NWProtocolQUIC.Options)"
+    },
+    {
+      "name": "var attribution: NWParameters.Attribution"
+    },
+    {
+      "name": "class func quic(alpn: [String]) -> NWParameters"
+    },
+    {
+      "name": "enum NWParameters.Attribution"
+    }
+  ],
+  "declaration": "final class NWParameters",
+  "conformsTo": [
+    "CustomDebugStringConvertible"
+  ]
+}

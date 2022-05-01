@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/swiftui/gesturestate",
+  "type": "Structure",
+  "name": "GestureState",
+  "desc": "A property wrapper type that updates a property while the user performs a gesture and resets the property back to its initial state when the gesture ends.",
+  "items": [
+    {
+      "name": "init(initialValue: Value)",
+      "desc": "Creates a view state that’s derived from a gesture with an initial value."
+    },
+    {
+      "name": "init(initialValue: Value, reset: (Value, inout Transaction) -> Void)",
+      "desc": "Creates a view state that’s derived from a gesture with an initial state value and a closure that provides a transaction to reset it."
+    },
+    {
+      "name": "init(initialValue: Value, resetTransaction: Transaction)",
+      "desc": "Creates a view state that’s derived from a gesture with an initial state value and a transaction to reset it."
+    },
+    {
+      "name": "init(reset: (Value, inout Transaction) -> Void)",
+      "desc": "Creates a view state that’s derived from a gesture with a closure that provides a transaction to reset it."
+    },
+    {
+      "name": "init(resetTransaction: Transaction)",
+      "desc": "Creates a view state that’s derived from a gesture with a transaction to reset it."
+    },
+    {
+      "name": "init(wrappedValue: Value)",
+      "desc": "Creates a view state that’s derived from a gesture."
+    },
+    {
+      "name": "init(wrappedValue: Value, reset: (Value, inout Transaction) -> Void)",
+      "desc": "Creates a view state that’s derived from a gesture with a wrapped state value and a closure that provides a transaction to reset it."
+    },
+    {
+      "name": "init(wrappedValue: Value, resetTransaction: Transaction)",
+      "desc": "Creates a view state that’s derived from a gesture with a wrapped state value and a transaction to reset it."
+    },
+    {
+      "name": "var wrappedValue: Value",
+      "desc": "The wrapped value referenced by the gesture state property."
+    },
+    {
+      "name": "var projectedValue: GestureState<Value>",
+      "desc": "A binding to the gesture state property."
+    }
+  ],
+  "declaration": "@propertyWrapper @frozen struct GestureState<Value>",
+  "conformsTo": [
+    "DynamicProperty"
+  ]
+}

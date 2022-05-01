@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/quartz/ikfilterbrowserpanel",
+  "type": "Class",
+  "name": "IKFilterBrowserPanel",
+  "desc": "The IKFilterBrowserPanel class provides a user interface that allows users to browse Core Image filters (CIFilter), to preview a filter, and to get additional information about the filter, such as its description.",
+  "items": [
+    {
+      "name": "func filterName() -> String!",
+      "desc": "Returns the name of the filter that is currently selected in the filter browser."
+    },
+    {
+      "name": "func filterBrowserView(options: [AnyHashable : Any]!) -> IKFilterBrowserView!",
+      "desc": "Returns a view that contains a filter browser."
+    },
+    {
+      "name": "func begin(options: [AnyHashable : Any]!, modelessDelegate: Any!, didEnd: Selector!, contextInfo: UnsafeMutableRawPointer!)",
+      "desc": "Displays the filter browser in a new utility window, unless the filter browser is already open."
+    },
+    {
+      "name": "func beginSheet(options: [AnyHashable : Any]!, modalFor: NSWindow!, modalDelegate: Any!, didEnd: Selector!, contextInfo: UnsafeMutableRawPointer!)",
+      "desc": "Displays the filter browser in a sheet—that is, a dialog that is attached to its parent window and must be dismissed by the user."
+    },
+    {
+      "name": "func runModal(options: [AnyHashable : Any]!) -> Int32",
+      "desc": "Displays the filter browser in a modal dialog that must be dismissed by the user but that is not attached to a window."
+    },
+    {
+      "name": "func finish(Any!)",
+      "desc": "Closes a filter browser view."
+    },
+    {
+      "name": "class func filterBrowserPanel(withStyleMask: UInt32) -> Any!",
+      "desc": "Creates a shared instance of the IKFilterBrowserPanel class."
+    },
+    {
+      "name": "static let IKFilterBrowserWillPreviewFilter: NSNotification.Name",
+      "desc": "Posted before showing a filter preview, allowing an application to set the parameters of a filter."
+    },
+    {
+      "name": "static let IKFilterBrowserFilterSelected: NSNotification.Name",
+      "desc": "Posted when the user clicks a filter name in the filter browser."
+    },
+    {
+      "name": "static let IKFilterBrowserFilterDoubleClick: NSNotification.Name",
+      "desc": "Posted when the user double-clicks a filter in the filter browser."
+    }
+  ],
+  "declaration": "class IKFilterBrowserPanel : NSPanel",
+  "inheritsFrom": [
+    "NSPanel"
+  ]
+}

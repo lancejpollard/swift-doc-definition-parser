@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/avfoundation/avcaptureoutput",
+  "type": "Class",
+  "name": "AVCaptureOutput",
+  "desc": "The abstract superclass for objects that output the media recorded in a capture session.",
+  "items": [
+    {
+      "name": "var connections: [AVCaptureConnection]",
+      "desc": "The capture output object’s connections."
+    },
+    {
+      "name": "func connection(with: AVMediaType) -> AVCaptureConnection?",
+      "desc": "Returns the first connection in the connections array with an input port of a specified media type."
+    },
+    {
+      "name": "enum AVCaptureOutput.DataDroppedReason",
+      "desc": "Information about why capture data was not delivered."
+    },
+    {
+      "name": "func transformedMetadataObject(for: AVMetadataObject, connection: AVCaptureConnection) -> AVMetadataObject?",
+      "desc": "Converts the visual properties of an AVMetadataObject to the output’s coordinates."
+    },
+    {
+      "name": "func metadataOutputRectConverted(fromOutputRect: CGRect) -> CGRect",
+      "desc": "Converts a rectangle in the capture output object’s coordinate system to one in the coordinate system used for metadata outputs."
+    },
+    {
+      "name": "func outputRectConverted(fromMetadataOutputRect: CGRect) -> CGRect",
+      "desc": "Converts a rectangle in the coordinate system used for metadata outputs to one in the capture output object’s coordinate system."
+    }
+  ],
+  "declaration": "class AVCaptureOutput : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "path": "/documentation/coreimage/ciimageprocessorinput",
+  "type": "Protocol",
+  "name": "CIImageProcessorInput",
+  "desc": "A container of image data and information for use in a custom image processor.",
+  "items": [
+    {
+      "name": "var baseAddress: UnsafeRawPointer",
+      "desc": "A pointer to the image data in CPU memory to be processed."
+    },
+    {
+      "name": "var metalTexture: MTLTexture?",
+      "desc": "A Metal texture containing the image data to be processed."
+    },
+    {
+      "name": "var pixelBuffer: CVPixelBuffer?",
+      "desc": "A CoreVideo pixel buffer containing the image data to be processed."
+    },
+    {
+      "name": "var surface: IOSurfaceRef",
+      "desc": "An IOSurface object containing the image data to be processed."
+    },
+    {
+      "name": "var region: CGRect",
+      "desc": "The area within the input image to be processed."
+    },
+    {
+      "name": "var bytesPerRow: Int",
+      "desc": "The number of bytes per row of pixels in the input image data."
+    },
+    {
+      "name": "var format: CIFormat",
+      "desc": "The per-pixel data format of the image to be processed."
+    }
+  ],
+  "declaration": "protocol CIImageProcessorInput"
+}

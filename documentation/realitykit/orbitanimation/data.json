@@ -1,0 +1,104 @@
+{
+  "path": "/documentation/realitykit/orbitanimation",
+  "type": "Structure",
+  "name": "OrbitAnimation",
+  "desc": "An animation that revolves an entity around its origin.",
+  "items": [
+    {
+      "name": "init(name: String, duration: TimeInterval, axis: SIMD3<Float>, startTransform: Transform, spinClockwise: Bool, orientToPath: Bool, rotationCount: Float, bindTarget: BindTarget?, blendLayer: Int32, repeatMode: AnimationRepeatMode, fillMode: AnimationFillMode, isAdditive: Bool, trimStart: TimeInterval?, trimEnd: TimeInterval?, trimDuration: TimeInterval?, offset: TimeInterval, delay: TimeInterval, speed: Float)",
+      "desc": "Creates an animation that revolves an entity around its origin."
+    },
+    {
+      "name": "var startTransform: Transform",
+      "desc": "The pose of the orbiting object at the start of the animation."
+    },
+    {
+      "name": "var axis: SIMD3<Float>",
+      "desc": "A 3D vector that points in the direction of the axis around which to rotate."
+    },
+    {
+      "name": "var name: String",
+      "desc": "A textual name for the animation."
+    },
+    {
+      "name": "var bindTarget: BindTarget",
+      "desc": "A textual name that identifies the particular property that animates."
+    },
+    {
+      "name": "var blendLayer: Int32",
+      "desc": "The order in which the framework composites the animation."
+    },
+    {
+      "name": "var rotationCount: Float",
+      "desc": "The number of times to rotate the target entity before stopping."
+    },
+    {
+      "name": "var spinClockwise: Bool",
+      "desc": "A Boolean value that indicates whether the object orbits the center point in the clockwise direction."
+    },
+    {
+      "name": "var orientToPath: Bool",
+      "desc": "A Boolean value that indicates whether the orbiting object updates its orientation during the animation to orient itself along the rotation path."
+    },
+    {
+      "name": "var additive: Bool",
+      "desc": "A Boolean value that indicates whether the animation builds on the current state of the target entity or resets the state before running."
+    },
+    {
+      "name": "var speed: Float",
+      "desc": "A factor that changes the animation’s rate of playback."
+    },
+    {
+      "name": "var delay: TimeInterval",
+      "desc": "An amount of time that lapses before the animation plays."
+    },
+    {
+      "name": "var duration: TimeInterval",
+      "desc": "The elapsed time for one complete rotation."
+    },
+    {
+      "name": "var offset: TimeInterval",
+      "desc": "The time, in seconds, at which the animation begins within the duration."
+    },
+    {
+      "name": "var trimDuration: TimeInterval?",
+      "desc": "An optional duration that overrides the calculated duration."
+    },
+    {
+      "name": "var trimStart: TimeInterval?",
+      "desc": "The optional time, in seconds, at which the animation plays."
+    },
+    {
+      "name": "var trimEnd: TimeInterval?",
+      "desc": "The optional time, in seconds, at which the animation stops."
+    },
+    {
+      "name": "func trimmed(start: TimeInterval?, end: TimeInterval?, duration: TimeInterval?) -> OrbitAnimation",
+      "desc": "Edits the animation duration according to the specified time."
+    },
+    {
+      "name": "var repeatMode: AnimationRepeatMode",
+      "desc": "An option that determines how the animation repeats."
+    },
+    {
+      "name": "var fillMode: AnimationFillMode",
+      "desc": "An option that determines which data displays outside of the normal duration."
+    },
+    {
+      "name": "func repeated(count: TimeInterval) -> OrbitAnimation",
+      "desc": "Repeats an animation the number of times specified by a decimal number."
+    },
+    {
+      "name": "func repeated(count: Int) -> OrbitAnimation",
+      "desc": "Repeats an animation the number of times specified by a whole number."
+    },
+    {
+      "name": "func repeatingForever() -> OrbitAnimation",
+      "desc": "Repeats an animation an indefinite number of times."
+    }
+  ],
+  "declaration": "struct OrbitAnimation",
+  "conformsTo": [
+    "AnimationDefinition"
+  ]
+}

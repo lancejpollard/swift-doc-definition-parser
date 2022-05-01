@@ -1,0 +1,71 @@
+{
+  "path": "/documentation/mlcompute/mlcconvolutiondescriptor",
+  "type": "Class",
+  "name": "MLCConvolutionDescriptor",
+  "desc": "A configuration object you use to create a convolution or fully connected layer.",
+  "items": [
+    {
+      "name": "init(type: MLCConvolutionType, kernelSizes: (height: Int, width: Int), inputFeatureChannelCount: Int, outputFeatureChannelCount: Int, groupCount: Int, strides: (y: Int, x: Int), dilationRates: (y: Int, x: Int), paddingPolicy: MLCPaddingPolicy)",
+      "desc": "Creates a descriptor for the type, sizes, number of feature channels, group count, strides, dilation rates, and padding policy you specify."
+    },
+    {
+      "name": "init(transposeWithKernelWidth: Int, kernelHeight: Int, inputFeatureChannelCount: Int, outputFeatureChannelCount: Int)",
+      "desc": "Creates a descriptor for convolution transpose with the kernel sizes and number of feature channels you specify."
+    },
+    {
+      "name": "init(depthwiseWithKernelWidth: Int, kernelHeight: Int, inputFeatureChannelCount: Int, channelMultiplier: Int)",
+      "desc": "Creates a descriptor for depthwise convolution with the kernel sizes, number of input feature channels, and channel multiplier you specify."
+    },
+    {
+      "name": "enum MLCConvolutionType",
+      "desc": "The convolution type specified for a convolution layer."
+    },
+    {
+      "name": "var convolutionType: MLCConvolutionType",
+      "desc": "The type of convolution."
+    },
+    {
+      "name": "var kernelSizes: (height: Int, width: Int)",
+      "desc": "A tuple that contains the kernel sizes for height and width."
+    },
+    {
+      "name": "var inputFeatureChannelCount: Int",
+      "desc": "The number of feature channels in the input tensor."
+    },
+    {
+      "name": "var outputFeatureChannelCount: Int",
+      "desc": "The number of feature channels in the output tensor."
+    },
+    {
+      "name": "var strides: (y: Int, x: Int)",
+      "desc": "A tuple that contains the kernel strides for y and x."
+    },
+    {
+      "name": "var dilationRates: (y: Int, x: Int)",
+      "desc": "A tuple that contains the dilation rates for y and x."
+    },
+    {
+      "name": "var groupCount: Int",
+      "desc": "The number of groups."
+    },
+    {
+      "name": "var paddingPolicy: MLCPaddingPolicy",
+      "desc": "The padding policy."
+    },
+    {
+      "name": "var isConvolutionTranspose: Bool",
+      "desc": "A Boolean that indicates whether this is a convolution transpose."
+    },
+    {
+      "name": "var usesDepthwiseConvolution: Bool",
+      "desc": "A Boolean that indicates whether you use depthwise convolution."
+    }
+  ],
+  "declaration": "class MLCConvolutionDescriptor : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

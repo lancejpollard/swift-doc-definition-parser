@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/avfoundation/avassetdownloaddelegate",
+  "type": "Protocol",
+  "name": "AVAssetDownloadDelegate",
+  "desc": "A protocol that defines the methods to implement to respond to asset-download events.",
+  "items": [
+    {
+      "name": "func urlSession(URLSession, assetDownloadTask: AVAssetDownloadTask, didResolve: AVMediaSelection)",
+      "desc": "Tells the delegate that a download task resolved the media selection to download, including any automatic selections."
+    },
+    {
+      "name": "func urlSession(URLSession, assetDownloadTask: AVAssetDownloadTask, didLoad: CMTimeRange, totalTimeRangesLoaded: [NSValue], timeRangeExpectedToLoad: CMTimeRange)",
+      "desc": "Tells the delegate that a download task loaded a new time range."
+    },
+    {
+      "name": "func urlSession(URLSession, assetDownloadTask: AVAssetDownloadTask, didFinishDownloadingTo: URL)",
+      "desc": "Tells the delegate that a download task finished downloading the requested asset."
+    },
+    {
+      "name": "func urlSession(URLSession, assetDownloadTask: AVAssetDownloadTask, willDownloadVariants: [AVAssetVariant])",
+      "desc": "Tells the delegate that a download task completed variant selection."
+    },
+    {
+      "name": "func urlSession(URLSession, aggregateAssetDownloadTask: AVAggregateAssetDownloadTask, willDownloadTo: URL)",
+      "desc": "Tells the delegate the final location of the asset when the download completes."
+    },
+    {
+      "name": "func urlSession(URLSession, aggregateAssetDownloadTask: AVAggregateAssetDownloadTask, didLoad: CMTimeRange, totalTimeRangesLoaded: [NSValue], timeRangeExpectedToLoad: CMTimeRange, for: AVMediaSelection)",
+      "desc": "Tells the delegate that the aggregate down task loaded a new time range."
+    },
+    {
+      "name": "func urlSession(URLSession, aggregateAssetDownloadTask: AVAggregateAssetDownloadTask, didCompleteFor: AVMediaSelection)",
+      "desc": "Tells the delegate that a child task finished downloading a media selection."
+    }
+  ],
+  "declaration": "protocol AVAssetDownloadDelegate",
+  "inheritsFrom": [
+    "URLSessionTaskDelegate"
+  ]
+}

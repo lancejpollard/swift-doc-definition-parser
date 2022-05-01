@@ -1,0 +1,53 @@
+{
+  "path": "/documentation/uikit/uimenubuilder",
+  "type": "Protocol",
+  "name": "UIMenuBuilder",
+  "desc": "An interface for adding and removing menus from a menu system.",
+  "items": [
+    {
+      "name": "var system: UIMenuSystem",
+      "desc": "The menu system that the menu builder modifies."
+    },
+    {
+      "name": "func menu(for: UIMenu.Identifier) -> UIMenu?",
+      "desc": "Gets the menu for the specified menu identifier."
+    },
+    {
+      "name": "func action(for: UIAction.Identifier) -> UIAction?",
+      "desc": "Gets the action for the specified action identifier."
+    },
+    {
+      "name": "func command(for: Selector, propertyList: Any?) -> UICommand?",
+      "desc": "Gets the command for the specified selector and property list."
+    },
+    {
+      "name": "func insertChild(UIMenu, atStartOfMenu: UIMenu.Identifier)",
+      "desc": "Adds a child menu as the first element of the specified parent menu."
+    },
+    {
+      "name": "func insertChild(UIMenu, atEndOfMenu: UIMenu.Identifier)",
+      "desc": "Adds a child menu as the last element of the specified parent menu."
+    },
+    {
+      "name": "func insertSibling(UIMenu, beforeMenu: UIMenu.Identifier)",
+      "desc": "Inserts a sibling menu before the specified menu."
+    },
+    {
+      "name": "func insertSibling(UIMenu, afterMenu: UIMenu.Identifier)",
+      "desc": "Inserts a sibling menu after the specified menu."
+    },
+    {
+      "name": "func replace(menu: UIMenu.Identifier, with: UIMenu)",
+      "desc": "Replaces the specified menu with a new menu."
+    },
+    {
+      "name": "func replaceChildren(ofMenu: UIMenu.Identifier, from: ([UIMenuElement]) -> [UIMenuElement])",
+      "desc": "Replaces the elements in a menu with the elements returned by the specified handler block."
+    },
+    {
+      "name": "func remove(menu: UIMenu.Identifier)",
+      "desc": "Removes a menu from the menu system."
+    }
+  ],
+  "declaration": "@MainActor protocol UIMenuBuilder"
+}

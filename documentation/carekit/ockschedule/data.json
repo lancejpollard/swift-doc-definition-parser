@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/carekit/ockschedule",
+  "type": "Structure",
+  "name": "OCKSchedule",
+  "desc": "A compositon of any number of other schedulable objects.",
+  "items": [
+    {
+      "name": "init(composing: [OCKSchedule])",
+      "desc": "Creates a new schedule by combining an array of other schedule objects."
+    },
+    {
+      "name": "init(composing: [OCKScheduleElement])",
+      "desc": "Creates a new schedule by combining an array of schedule element objects."
+    },
+    {
+      "name": "static func dailyAtTime(hour: Int, minutes: Int, start: Date, end: Date?, text: String?, duration: OCKScheduleElement.Duration, targetValues: [OCKOutcomeValue]) -> OCKSchedule",
+      "desc": "Creates a schedule that happens every day, once per day, at a fixed time."
+    },
+    {
+      "name": "static func weeklyAtTime(weekday: Int, hours: Int, minutes: Int, start: Date, end: Date?, targetValues: [OCKOutcomeValue], text: String?, duration: OCKScheduleElement.Duration) -> OCKSchedule",
+      "desc": "Creates a schedule that happens every week, once per week, at a fixed day and time."
+    },
+    {
+      "name": "func offset(by: DateComponents) -> OCKSchedule",
+      "desc": "Creates a new schedule by offsetting a schedule using a specific date component."
+    },
+    {
+      "name": "let elements: [OCKScheduleElement]",
+      "desc": "The components that make up the schedule."
+    },
+    {
+      "name": "func startDate() -> Date",
+      "desc": "The date of the first event of the schedule."
+    },
+    {
+      "name": "func endDate() -> Date?",
+      "desc": "The date of the last event of the schedule, or nil if the schedule has an infinite length."
+    },
+    {
+      "name": "func events(from: Date, to: Date) -> [OCKScheduleEvent]",
+      "desc": "Returns an array of events that occur between the specified start and end dates."
+    },
+    {
+      "name": "func event(forOccurrenceIndex: Int) -> OCKScheduleEvent?",
+      "desc": "Returns the Nth occurrence of a schedule element."
+    },
+    {
+      "name": "subscript(Int) -> OCKScheduleEvent"
+    },
+    {
+      "name": "static func != (OCKSchedule, OCKSchedule) -> Bool"
+    }
+  ],
+  "declaration": "struct OCKSchedule : Codable, Equatable",
+  "conformsTo": [
+    "Decodable",
+    "Encodable",
+    "Equatable"
+  ]
+}

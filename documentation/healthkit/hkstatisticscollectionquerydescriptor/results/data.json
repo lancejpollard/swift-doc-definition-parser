@@ -1,0 +1,104 @@
+{
+  "path": "/documentation/healthkit/hkstatisticscollectionquerydescriptor/results",
+  "type": "Structure",
+  "name": "HKStatisticsCollectionQueryDescriptor.Results",
+  "desc": "An asynchronous sequence that emits updates from a statistics collection query.",
+  "items": [
+    {
+      "name": "func makeAsyncIterator() -> HKStatisticsCollectionQueryDescriptor.Results.Iterator",
+      "desc": "Creates the asynchronous iterator that produces results from this asynchronous sequence."
+    },
+    {
+      "name": "struct HKStatisticsCollectionQueryDescriptor.Results.Iterator",
+      "desc": "An iterator for statistics collection query results."
+    },
+    {
+      "name": "struct HKStatisticsCollectionQueryDescriptor.Result",
+      "desc": "A collection of results."
+    },
+    {
+      "name": "typealias HKStatisticsCollectionQueryDescriptor.Results.AsyncIterator",
+      "desc": "An iterator that returns results from an asynchronous sequence."
+    },
+    {
+      "name": "typealias HKStatisticsCollectionQueryDescriptor.Results.Element",
+      "desc": "A set of results returned by an active summary query."
+    },
+    {
+      "name": "func contains(where: (HKStatisticsCollectionQueryDescriptor.Result) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the asynchronous sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func allSatisfy((HKStatisticsCollectionQueryDescriptor.Result) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether all elements produced by the asynchronous sequence satisfies the given predicate."
+    },
+    {
+      "name": "func first(where: (HKStatisticsCollectionQueryDescriptor.Result) -> Bool) -> HKStatisticsCollectionQueryDescriptor.Result?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func max(by: (HKStatisticsCollectionQueryDescriptor.Result, HKStatisticsCollectionQueryDescriptor.Result) -> Bool) -> HKStatisticsCollectionQueryDescriptor.Result?",
+      "desc": "Returns the maximum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func min(by: (HKStatisticsCollectionQueryDescriptor.Result, HKStatisticsCollectionQueryDescriptor.Result) -> Bool) -> HKStatisticsCollectionQueryDescriptor.Result?",
+      "desc": "Returns the minimum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func prefix(Int) -> AsyncPrefixSequence<HKStatisticsCollectionQueryDescriptor.Results>",
+      "desc": "Returns an asynchronous sequence, up to the specified maximum length, containing the initial elements of the base asynchronous sequence."
+    },
+    {
+      "name": "func prefix(while: (HKStatisticsCollectionQueryDescriptor.Result) -> Bool) -> AsyncPrefixWhileSequence<HKStatisticsCollectionQueryDescriptor.Results>",
+      "desc": "Returns an asynchronous sequence, containing the initial, consecutive elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func drop(while: (HKStatisticsCollectionQueryDescriptor.Result) -> Bool) -> AsyncDropWhileSequence<HKStatisticsCollectionQueryDescriptor.Results>",
+      "desc": "Omits elements from the base asynchronous sequence until a given closure returns false, after which it passes through all remaining elements."
+    },
+    {
+      "name": "func dropFirst(Int) -> AsyncDropFirstSequence<HKStatisticsCollectionQueryDescriptor.Results>",
+      "desc": "Omits a specified number of elements from the base asynchronous sequence, then passes through all remaining elements."
+    },
+    {
+      "name": "func filter((HKStatisticsCollectionQueryDescriptor.Result) -> Bool) -> AsyncFilterSequence<HKStatisticsCollectionQueryDescriptor.Results>",
+      "desc": "Creates an asynchronous sequence that contains, in order, the elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func map<Transformed>((HKStatisticsCollectionQueryDescriptor.Result) -> Transformed) -> AsyncMapSequence<HKStatisticsCollectionQueryDescriptor.Results, Transformed>",
+      "desc": "Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "func map<Transformed>((HKStatisticsCollectionQueryDescriptor.Result) -> Transformed) -> AsyncThrowingMapSequence<HKStatisticsCollectionQueryDescriptor.Results, Transformed>",
+      "desc": "Creates an asynchronous sequence that maps the given error-throwing closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, HKStatisticsCollectionQueryDescriptor.Result) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, HKStatisticsCollectionQueryDescriptor.Result) -> Void) -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure, given a mutable initial value."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((HKStatisticsCollectionQueryDescriptor.Result) -> ElementOfResult?) -> AsyncCompactMapSequence<HKStatisticsCollectionQueryDescriptor.Results, ElementOfResult>",
+      "desc": "Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((HKStatisticsCollectionQueryDescriptor.Result) -> ElementOfResult?) -> AsyncThrowingCompactMapSequence<HKStatisticsCollectionQueryDescriptor.Results, ElementOfResult>",
+      "desc": "Creates an asynchronous sequence that maps an error-throwing closure over the base sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((HKStatisticsCollectionQueryDescriptor.Result) -> SegmentOfResult) -> AsyncThrowingFlatMapSequence<HKStatisticsCollectionQueryDescriptor.Results, SegmentOfResult>",
+      "desc": "Creates an asynchronous sequence that concatenates the results of calling the given error-throwing transformation with each element of this sequence."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((HKStatisticsCollectionQueryDescriptor.Result) -> SegmentOfResult) -> AsyncFlatMapSequence<HKStatisticsCollectionQueryDescriptor.Results, SegmentOfResult>",
+      "desc": "Creates an asynchronous sequence that concatenates the results of calling the given transformation with each element of this sequence."
+    }
+  ],
+  "declaration": "struct Results",
+  "conformsTo": [
+    "AsyncSequence"
+  ]
+}

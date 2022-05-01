@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/mapkit/mkoverlay",
+  "type": "Protocol",
+  "name": "MKOverlay",
+  "desc": "An interface for associating content with a specific map region.",
+  "items": [
+    {
+      "name": "var coordinate: CLLocationCoordinate2D",
+      "desc": "The approximate center point of the overlay area."
+    },
+    {
+      "name": "var boundingMapRect: MKMapRect",
+      "desc": "The projected rectangle that encompasses the overlay."
+    },
+    {
+      "name": "func intersects(MKMapRect) -> Bool",
+      "desc": "Returns a Boolean indicating whether the specified rectangle intersects the receiver’s shape."
+    },
+    {
+      "name": "func canReplaceMapContent() -> Bool",
+      "desc": "Returns a Boolean indicating whether the overlay content replaces the underlying map content."
+    }
+  ],
+  "declaration": "protocol MKOverlay",
+  "inheritsFrom": [
+    "MKAnnotation"
+  ]
+}

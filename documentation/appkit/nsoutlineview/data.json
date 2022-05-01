@@ -1,0 +1,171 @@
+{
+  "path": "/documentation/appkit/nsoutlineview",
+  "type": "Class",
+  "name": "NSOutlineView",
+  "desc": "A view that uses a row-and-column format to display hierarchical data like directories and files that can be expanded and collapsed.",
+  "items": [
+    {
+      "name": "var dataSource: NSOutlineViewDataSource?",
+      "desc": "The object that provides the data displayed by the receiver."
+    },
+    {
+      "name": "var stronglyReferencesItems: Bool",
+      "desc": "A Boolean value that indicates whether the outline view retains and releases the objects returned from its data source."
+    },
+    {
+      "name": "func isExpandable(Any?) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a given item is expandable."
+    },
+    {
+      "name": "func isItemExpanded(Any?) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a given item is expanded."
+    },
+    {
+      "name": "func expandItem(Any?)",
+      "desc": "Expands a given item."
+    },
+    {
+      "name": "func expandItem(Any?, expandChildren: Bool)",
+      "desc": "Expands a specified item and, optionally, its children."
+    },
+    {
+      "name": "func collapseItem(Any?)",
+      "desc": "Collapses a given item."
+    },
+    {
+      "name": "func collapseItem(Any?, collapseChildren: Bool)",
+      "desc": "Collapses a given item and, optionally, its children."
+    },
+    {
+      "name": "func reloadItem(Any?)",
+      "desc": "Reloads and redisplays the data for the given item."
+    },
+    {
+      "name": "func reloadItem(Any?, reloadChildren: Bool)",
+      "desc": "Reloads a given item and, optionally, its children."
+    },
+    {
+      "name": "func item(atRow: Int) -> Any?",
+      "desc": "Returns the item associated with a given row."
+    },
+    {
+      "name": "func row(forItem: Any?) -> Int",
+      "desc": "Returns the row associated with a given item."
+    },
+    {
+      "name": "var outlineTableColumn: NSTableColumn?",
+      "desc": "The table column in which hierarchical data is displayed."
+    },
+    {
+      "name": "var autoresizesOutlineColumn: Bool",
+      "desc": "A Boolean value that indicates whether the outline view resizes its outline column when the user expands or collapses items."
+    },
+    {
+      "name": "func level(forItem: Any?) -> Int",
+      "desc": "Returns the indentation level for a given item."
+    },
+    {
+      "name": "func level(forRow: Int) -> Int",
+      "desc": "Returns the indentation level for a given row."
+    },
+    {
+      "name": "var indentationPerLevel: CGFloat",
+      "desc": "The per-level indentation, measured in points."
+    },
+    {
+      "name": "var indentationMarkerFollowsCell: Bool",
+      "desc": "A Boolean value indicating whether the indentation marker symbol displayed in the outline column should be indented along with the cell contents."
+    },
+    {
+      "name": "var autosaveExpandedItems: Bool",
+      "desc": "A Boolean value indicating whether the expanded items are automatically saved across launches of the app."
+    },
+    {
+      "name": "func setDropItem(Any?, dropChildIndex: Int)",
+      "desc": "Used to “retarget” a proposed drop."
+    },
+    {
+      "name": "func shouldCollapseAutoExpandedItems(forDeposited: Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether auto-expanded items should return to their original collapsed state."
+    },
+    {
+      "name": "func parent(forItem: Any?) -> Any?",
+      "desc": "Returns the parent for a given item."
+    },
+    {
+      "name": "func childIndex(forItem: Any) -> Int",
+      "desc": "Returns the child index of the specified item within its parent."
+    },
+    {
+      "name": "func child(Int, ofItem: Any?) -> Any?",
+      "desc": "Returns the specified child of an item."
+    },
+    {
+      "name": "func numberOfChildren(ofItem: Any?) -> Int",
+      "desc": "Returns the number of children for the specified parent item."
+    },
+    {
+      "name": "func frameOfOutlineCell(atRow: Int) -> NSRect",
+      "desc": "Returns the frame of the outline cell for a given row."
+    },
+    {
+      "name": "var delegate: NSOutlineViewDelegate?",
+      "desc": "The outline view’s delegate."
+    },
+    {
+      "name": "func insertItems(at: IndexSet, inParent: Any?, withAnimation: NSTableView.AnimationOptions)",
+      "desc": "Inserts new items at the given indexes in the given parent with the specified optional animations."
+    },
+    {
+      "name": "func moveItem(at: Int, inParent: Any?, to: Int, inParent: Any?)",
+      "desc": "Moves an item at a given index in the given parent to a new index in a new parent."
+    },
+    {
+      "name": "func removeItems(at: IndexSet, inParent: Any?, withAnimation: NSTableView.AnimationOptions)",
+      "desc": "Removes items at the given indexes in the given parent with the specified optional animations."
+    },
+    {
+      "name": "var userInterfaceLayoutDirection: NSUserInterfaceLayoutDirection",
+      "desc": "The user interface layout direction."
+    },
+    {
+      "name": "class let columnDidMoveNotification: NSNotification.Name",
+      "desc": "Posted whenever a column is moved by user action in an NSOutlineView object."
+    },
+    {
+      "name": "class let columnDidResizeNotification: NSNotification.Name",
+      "desc": "Posted whenever a column is resized in an NSOutlineView object."
+    },
+    {
+      "name": "class let itemDidCollapseNotification: NSNotification.Name",
+      "desc": "Posted whenever an item is collapsed in an NSOutlineView object."
+    },
+    {
+      "name": "class let itemDidExpandNotification: NSNotification.Name",
+      "desc": "Posted whenever an item is expanded in an NSOutlineView object."
+    },
+    {
+      "name": "class let itemWillCollapseNotification: NSNotification.Name",
+      "desc": "Posted before an item is collapsed (after the user clicks the arrow but before the item is collapsed)."
+    },
+    {
+      "name": "class let itemWillExpandNotification: NSNotification.Name",
+      "desc": "Posted before an item is expanded (after the user clicks the arrow but before the item is collapsed)."
+    },
+    {
+      "name": "class let selectionDidChangeNotification: NSNotification.Name",
+      "desc": "Posted after the outline view's selection changes."
+    },
+    {
+      "name": "class let selectionIsChangingNotification: NSNotification.Name",
+      "desc": "Posted as the outline view’s selection changes (while the mouse button is still down)."
+    }
+  ],
+  "declaration": "class NSOutlineView : NSTableView",
+  "inheritsFrom": [
+    "NSTableView"
+  ],
+  "conformsTo": [
+    "NSAccessibilityOutline"
+  ]
+}

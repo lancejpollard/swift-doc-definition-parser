@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/combine/publishers/map",
+  "type": "Structure",
+  "name": "Publishers.Map",
+  "desc": "A publisher that transforms all elements from the upstream publisher with a provided closure.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, transform: (Upstream.Output) -> Output)",
+      "desc": "Creates a publisher that transforms all elements from the upstream publisher with a provided closure."
+    },
+    {
+      "name": "struct Output",
+      "desc": "A publisher that publishes elements specified by a range in the sequence of published elements."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    },
+    {
+      "name": "let transform: (Upstream.Output) -> Output",
+      "desc": "The closure that transforms elements from the upstream publisher."
+    }
+  ],
+  "declaration": "struct Map<Upstream, Output> where Upstream : Publisher",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

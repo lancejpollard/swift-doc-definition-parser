@@ -1,0 +1,59 @@
+{
+  "path": "/documentation/avfoundation/avsamplebufferaudiorenderer",
+  "type": "Class",
+  "name": "AVSampleBufferAudioRenderer",
+  "desc": "An object used to decompress audio and play compressed or uncompressed audio.",
+  "items": [
+    {
+      "name": "var status: AVQueuedSampleBufferRenderingStatus",
+      "desc": "The status of the audio renderer."
+    },
+    {
+      "name": "enum AVQueuedSampleBufferRenderingStatus",
+      "desc": "The statuses for sample buffer rendering."
+    },
+    {
+      "name": "func flush(fromSourceTime: CMTime, completionHandler: (Bool) -> Void)",
+      "desc": "Flushes queued sample buffers with presentation time stamps later than or equal to the specified time."
+    },
+    {
+      "name": "let AVSampleBufferAudioRendererFlushTimeKey: String",
+      "desc": "The key that indicates the presentation timestamp of the first queued sample that was flushed."
+    },
+    {
+      "name": "var audioTimePitchAlgorithm: AVAudioTimePitchAlgorithm",
+      "desc": "The processing algorithm used to manage audio pitch at different rates."
+    },
+    {
+      "name": "struct AVAudioTimePitchAlgorithm",
+      "desc": "An algorithm used to set the audio pitch as the rate changes."
+    },
+    {
+      "name": "var allowedAudioSpatializationFormats: AVAudioSpatializationFormats",
+      "desc": "The source audio channel layouts the audio renderer supports for spatialization."
+    },
+    {
+      "name": "var volume: Float",
+      "desc": "The current audio volume for the audio renderer."
+    },
+    {
+      "name": "var isMuted: Bool",
+      "desc": "A Boolean value that indicates whether audio for the renderer is in a muted state."
+    },
+    {
+      "name": "var audioOutputDeviceUniqueID: String?",
+      "desc": "The unique identifier of the output device used to play audio."
+    },
+    {
+      "name": "var error: Error?",
+      "desc": "The error that caused the renderer to no longer render sample buffers."
+    }
+  ],
+  "declaration": "class AVSampleBufferAudioRenderer : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "AVQueuedSampleBufferRendering"
+  ]
+}

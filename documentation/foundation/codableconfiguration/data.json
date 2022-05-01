@@ -1,0 +1,55 @@
+{
+  "path": "/documentation/foundation/codableconfiguration",
+  "type": "Generic Structure",
+  "name": "CodableConfiguration",
+  "desc": "A property wrapper that makes a type codable, by supplying a configuration that provides additional information for serialization.",
+  "items": [
+    {
+      "name": "init(wrappedValue: T)",
+      "desc": "Creates a codable configuration wrapper for the given value."
+    },
+    {
+      "name": "init(wrappedValue: T, from: ConfigurationProvider.Type)",
+      "desc": "Creates a codable configuration wrapper for the given value, using the given configuration provider type."
+    },
+    {
+      "name": "init(wrappedValue: T, from: KeyPath<AttributeScopes, ConfigurationProvider.Type>)",
+      "desc": "Creates a codable configuration wrapper for the given value, using given configuration provider type identified by key path."
+    },
+    {
+      "name": "var wrappedValue: T",
+      "desc": "The underlying value to make codable, using data from the configuration provider."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a new instance by decoding from the given decoder."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes the value into the given encoder."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "static func == (CodableConfiguration<T, ConfigurationProvider>, CodableConfiguration<T, ConfigurationProvider>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two codable configurations are equal."
+    },
+    {
+      "name": "static func != (CodableConfiguration<T, ConfigurationProvider>, CodableConfiguration<T, ConfigurationProvider>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two codable configurations are unequal."
+    }
+  ],
+  "declaration": "@propertyWrapper struct CodableConfiguration<T, ConfigurationProvider> where T : DecodableWithConfiguration, T : EncodableWithConfiguration, ConfigurationProvider : DecodingConfigurationProviding, ConfigurationProvider : EncodingConfigurationProviding, T.DecodingConfiguration == ConfigurationProvider.DecodingConfiguration, T.EncodingConfiguration == ConfigurationProvider.EncodingConfiguration",
+  "conformsTo": [
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "Hashable"
+  ]
+}

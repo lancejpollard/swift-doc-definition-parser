@@ -1,0 +1,51 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsmatrixfullyconnected",
+  "type": "Class",
+  "name": "MPSMatrixFullyConnected",
+  "desc": "A kernel for applying a fully connected neural network layer.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice)"
+    },
+    {
+      "name": "var alpha: Double"
+    },
+    {
+      "name": "var sourceInputFeatureChannels: Int"
+    },
+    {
+      "name": "var sourceNumberOfFeatureVectors: Int"
+    },
+    {
+      "name": "var sourceOutputFeatureChannels: Int"
+    },
+    {
+      "name": "func copy(with: NSZone?, device: MTLDevice?) -> Self"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, inputMatrix: MPSMatrix, weightMatrix: MPSMatrix, biasVector: MPSVector?, resultMatrix: MPSMatrix)"
+    },
+    {
+      "name": "func neuronParameterA() -> Float"
+    },
+    {
+      "name": "func neuronParameterB() -> Float"
+    },
+    {
+      "name": "func neuronParameterC() -> Float"
+    },
+    {
+      "name": "func neuronType() -> MPSCNNNeuronType"
+    },
+    {
+      "name": "func setNeuronType(MPSCNNNeuronType, parameterA: Float, parameterB: Float, parameterC: Float)"
+    }
+  ],
+  "declaration": "class MPSMatrixFullyConnected : MPSMatrixBinaryKernel",
+  "inheritsFrom": [
+    "MPSMatrixBinaryKernel"
+  ]
+}

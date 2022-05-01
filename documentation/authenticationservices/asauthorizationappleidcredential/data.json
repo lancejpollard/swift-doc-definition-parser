@@ -1,0 +1,51 @@
+{
+  "path": "/documentation/authenticationservices/asauthorizationappleidcredential",
+  "type": "Class",
+  "name": "ASAuthorizationAppleIDCredential",
+  "desc": "A credential that results from a successful Apple ID authentication.",
+  "items": [
+    {
+      "name": "var identityToken: Data?",
+      "desc": "A JSON Web Token (JWT) that securely communicates information about the user to the app."
+    },
+    {
+      "name": "var authorizationCode: Data?",
+      "desc": "A token that the app uses to interact with the server."
+    },
+    {
+      "name": "var state: String?",
+      "desc": "An arbitrary string that your app provides to the request that generates the credential."
+    },
+    {
+      "name": "var user: String",
+      "desc": "An identifier for the authenticated user."
+    },
+    {
+      "name": "var authorizedScopes: [ASAuthorization.Scope]",
+      "desc": "The contact information the user authorized your app to access."
+    },
+    {
+      "name": "var fullName: PersonNameComponents?",
+      "desc": "The user’s name."
+    },
+    {
+      "name": "var email: String?",
+      "desc": "The user’s email address."
+    },
+    {
+      "name": "var realUserStatus: ASUserDetectionStatus",
+      "desc": "A value that indicates whether the user appears to be a real person."
+    },
+    {
+      "name": "enum ASUserDetectionStatus",
+      "desc": "Possible values for the real user indicator."
+    }
+  ],
+  "declaration": "class ASAuthorizationAppleIDCredential : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "ASAuthorizationCredential"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "path": "/documentation/coreaudiotypes/audiotimestamp",
+  "type": "Structure",
+  "name": "AudioTimeStamp",
+  "desc": "Holds multiple representations of a time stamp.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(mSampleTime: Float64, mHostTime: UInt64, mRateScalar: Float64, mWordClockTime: UInt64, mSMPTETime: SMPTETime, mFlags: AudioTimeStampFlags, mReserved: UInt32)"
+    },
+    {
+      "name": "var mFlags: AudioTimeStampFlags",
+      "desc": "A set of flags indicating which representations of the time are valid; see Audio Time Stamp Flags and Audio Time Stamp Flag Combination Constant."
+    },
+    {
+      "name": "var mHostTime: UInt64",
+      "desc": "The host machine's time base (see CoreAudio/HostTime.h)."
+    },
+    {
+      "name": "var mRateScalar: Float64",
+      "desc": "The ratio of actual host ticks per sample frame to the nominal host ticks per sample frame."
+    },
+    {
+      "name": "var mReserved: UInt32",
+      "desc": "Pads the structure out to force an even 8-byte alignment."
+    },
+    {
+      "name": "var mSMPTETime: SMPTETime",
+      "desc": "The SMPTE time (see SMPTETime)."
+    },
+    {
+      "name": "var mSampleTime: Float64",
+      "desc": "The absolute sample frame time."
+    },
+    {
+      "name": "var mWordClockTime: UInt64",
+      "desc": "The word clock time."
+    }
+  ],
+  "declaration": "struct AudioTimeStamp"
+}

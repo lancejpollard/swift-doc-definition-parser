@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpscnnbinaryconvolution",
+  "type": "Class",
+  "name": "MPSCNNBinaryConvolution",
+  "desc": "A convolution kernel with binary weights and an input image using binary approximations.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice, convolutionData: MPSCNNConvolutionDataSource, outputBiasTerms: UnsafePointer<Float>?, outputScaleTerms: UnsafePointer<Float>?, inputBiasTerms: UnsafePointer<Float>?, inputScaleTerms: UnsafePointer<Float>?, type: MPSCNNBinaryConvolutionType, flags: MPSCNNBinaryConvolutionFlags)",
+      "desc": "Initializes a binary convolution kernel."
+    },
+    {
+      "name": "init(device: MTLDevice, convolutionData: MPSCNNConvolutionDataSource, scaleValue: Float, type: MPSCNNBinaryConvolutionType, flags: MPSCNNBinaryConvolutionFlags)",
+      "desc": "Initializes a binary convolution kernel."
+    },
+    {
+      "name": "protocol MPSCNNConvolutionDataSource",
+      "desc": "The protocol that provides convolution filter weights and bias terms."
+    },
+    {
+      "name": "enum MPSCNNBinaryConvolutionType",
+      "desc": "Options that defines what operations are used to perform binary convolution."
+    },
+    {
+      "name": "enum MPSCNNBinaryConvolutionFlags",
+      "desc": "Options used to control binary convolution kernels."
+    },
+    {
+      "name": "var inputFeatureChannels: Int"
+    },
+    {
+      "name": "var outputFeatureChannels: Int"
+    }
+  ],
+  "declaration": "class MPSCNNBinaryConvolution : MPSCNNKernel",
+  "inheritsFrom": [
+    "MPSCNNKernel"
+  ]
+}

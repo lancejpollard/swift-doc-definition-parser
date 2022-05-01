@@ -1,0 +1,66 @@
+{
+  "path": "/documentation/createml/mlgazetteer",
+  "type": "Structure",
+  "name": "MLGazetteer",
+  "desc": "A collection of terms and their labels, which augments a tagger that analyzes natural language text.",
+  "items": [
+    {
+      "name": "init(dictionary: [String : [String]], parameters: MLGazetteer.ModelParameters)",
+      "desc": "Creates a gazetteer from a set of labels for terms represented by a dictionary."
+    },
+    {
+      "name": "init(labeledData: MLDataTable, textColumn: String, labelColumn: String, parameters: MLGazetteer.ModelParameters)",
+      "desc": "Creates a gazetteer from a set of labels for terms represented by a data table."
+    },
+    {
+      "name": "struct MLGazetteer.ModelParameters",
+      "desc": "The parameters that configure a gazetteer."
+    },
+    {
+      "name": "let modelParameters: MLGazetteer.ModelParameters",
+      "desc": "The configuration parameters that the gazetteer used during initialization."
+    },
+    {
+      "name": "func prediction(from: String) -> String",
+      "desc": "Retrieves the label for the given term."
+    },
+    {
+      "name": "func predictions(from: [String]) -> [String]",
+      "desc": "Retrieves the labels for the given terms."
+    },
+    {
+      "name": "func predictions(from: MLDataColumn<String>) -> MLDataColumn<String>",
+      "desc": "Retrieves the labels for the terms represented in a data table."
+    },
+    {
+      "name": "func write(to: URL, metadata: MLModelMetadata?)",
+      "desc": "Exports the gazetteer contained within a Core ML model file at the given URL."
+    },
+    {
+      "name": "func write(toFile: String, metadata: MLModelMetadata?)",
+      "desc": "Exports the gazetteer contained within a Core ML model file at the given file path."
+    },
+    {
+      "name": "var model: MLModel",
+      "desc": "The gazetteer contained within a Core ML model file stored in memory."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the gazetteer."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the gazetteer that’s suitable for output during debugging."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the gazetteer shown in a playground."
+    }
+  ],
+  "declaration": "struct MLGazetteer",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomStringConvertible"
+  ]
+}

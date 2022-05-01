@@ -1,0 +1,149 @@
+{
+  "path": "/documentation/foundation/scanner",
+  "type": "Class",
+  "name": "Scanner",
+  "desc": "A string parser that scans for substrings or characters in a character set, and for numeric values from decimal, hexadecimal, and floating-point representations.",
+  "items": [
+    {
+      "name": "class func localizedScanner(with: String) -> Any",
+      "desc": "Returns an NSScanner object that scans a given string according to the user’s default locale."
+    },
+    {
+      "name": "init(string: String)",
+      "desc": "Returns an NSScanner object initialized to scan a given string."
+    },
+    {
+      "name": "var string: String",
+      "desc": "The string the scanner will scan."
+    },
+    {
+      "name": "var scanLocation: Int",
+      "desc": "The character position at which the receiver will begin its next scanning operation."
+    },
+    {
+      "name": "var caseSensitive: Bool",
+      "desc": "Flag that indicates whether the receiver distinguishes case in the characters it scans."
+    },
+    {
+      "name": "var charactersToBeSkipped: CharacterSet?",
+      "desc": "Character set containing the characters the scanner ignores when looking for a scannable element."
+    },
+    {
+      "name": "var locale: Any?",
+      "desc": "The locale to use when scanning."
+    },
+    {
+      "name": "func scanCharacters(from: CharacterSet, into: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool",
+      "desc": "Scans the string as long as characters from a given character set are encountered, accumulating characters into a string that’s returned by reference."
+    },
+    {
+      "name": "func scanUpToCharacters(from: CharacterSet, into: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool",
+      "desc": "Scans the string until a character from a given character set is encountered, accumulating characters into a string that’s returned by reference."
+    },
+    {
+      "name": "func scanString(String, into: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool",
+      "desc": "Scans a given string, returning an equivalent string object by reference if a match is found."
+    },
+    {
+      "name": "func scanUpTo(String, into: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool",
+      "desc": "Scans the string until a given string is encountered, accumulating characters into a string that’s returned by reference."
+    },
+    {
+      "name": "func scanDecimal(UnsafeMutablePointer<Decimal>?) -> Bool",
+      "desc": "Scans for an NSDecimal value, returning a found value by reference."
+    },
+    {
+      "name": "func scanDouble(UnsafeMutablePointer<Double>?) -> Bool",
+      "desc": "Scans for a double value, returning a found value by reference."
+    },
+    {
+      "name": "func scanFloat(UnsafeMutablePointer<Float>?) -> Bool",
+      "desc": "Scans for a float value, returning a found value by reference."
+    },
+    {
+      "name": "func scanHexDouble(UnsafeMutablePointer<Double>?) -> Bool",
+      "desc": "Scans for a double value from a hexadecimal representation, returning a found value by reference."
+    },
+    {
+      "name": "func scanHexFloat(UnsafeMutablePointer<Float>?) -> Bool",
+      "desc": "Scans for a double value from a hexadecimal representation, returning a found value by reference."
+    },
+    {
+      "name": "func scanHexInt32(UnsafeMutablePointer<UInt32>?) -> Bool",
+      "desc": "Scans for an unsigned value from a hexadecimal representation, returning a found value by reference."
+    },
+    {
+      "name": "func scanHexInt64(UnsafeMutablePointer<UInt64>?) -> Bool",
+      "desc": "Scans for a long long value from a hexadecimal representation, returning a found value by reference."
+    },
+    {
+      "name": "func scanInt(UnsafeMutablePointer<Int>?) -> Bool",
+      "desc": "Scans for an NSInteger value from a decimal representation, returning a found value by reference"
+    },
+    {
+      "name": "func scanInt32(UnsafeMutablePointer<Int32>?) -> Bool",
+      "desc": "Scans for an int value from a decimal representation, returning a found value by reference."
+    },
+    {
+      "name": "func scanInt64(UnsafeMutablePointer<Int64>?) -> Bool",
+      "desc": "Scans for a long long value from a decimal representation, returning a found value by reference."
+    },
+    {
+      "name": "func scanUnsignedLongLong(UnsafeMutablePointer<UInt64>?) -> Bool",
+      "desc": "Scans for an unsigned long long value from a decimal representation, returning a found value by reference."
+    },
+    {
+      "name": "var isAtEnd: Bool",
+      "desc": "Flag that indicates whether the receiver has exhausted all significant characters."
+    },
+    {
+      "name": "var currentIndex: String.Index"
+    },
+    {
+      "name": "func scanCharacter() -> Character?"
+    },
+    {
+      "name": "func scanCharacters(from: CharacterSet) -> String?"
+    },
+    {
+      "name": "func scanDecimal() -> Decimal?"
+    },
+    {
+      "name": "func scanDouble(representation: Scanner.NumberRepresentation) -> Double?"
+    },
+    {
+      "name": "func scanFloat(representation: Scanner.NumberRepresentation) -> Float?"
+    },
+    {
+      "name": "func scanInt(representation: Scanner.NumberRepresentation) -> Int?"
+    },
+    {
+      "name": "func scanInt32(representation: Scanner.NumberRepresentation) -> Int32?"
+    },
+    {
+      "name": "func scanInt64(representation: Scanner.NumberRepresentation) -> Int64?"
+    },
+    {
+      "name": "func scanString(String) -> String?"
+    },
+    {
+      "name": "func scanUInt64(representation: Scanner.NumberRepresentation) -> UInt64?"
+    },
+    {
+      "name": "func scanUpToCharacters(from: CharacterSet) -> String?"
+    },
+    {
+      "name": "func scanUpToString(String) -> String?"
+    },
+    {
+      "name": "enum Scanner.NumberRepresentation"
+    }
+  ],
+  "declaration": "class Scanner : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

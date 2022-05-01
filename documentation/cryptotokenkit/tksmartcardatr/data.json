@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/cryptotokenkit/tksmartcardatr",
+  "type": "Class",
+  "name": "TKSmartCardATR",
+  "desc": "A parsed ATR (Answer To Reset) message from a Smart Card.",
+  "items": [
+    {
+      "name": "init?(bytes: Data)",
+      "desc": "Initializes a TKSmartCardATR object from a provided data object."
+    },
+    {
+      "name": "init?(source: () -> Int32)",
+      "desc": "Initializes a TKSmartCardATR object from a provided data source."
+    },
+    {
+      "name": "var protocols: [NSNumber]",
+      "desc": "An array of protocols indicated in the ATR"
+    },
+    {
+      "name": "var bytes: Data",
+      "desc": "The ATR message data."
+    },
+    {
+      "name": "var historicalBytes: Data",
+      "desc": "The ATR historical bytes, not including interface bytes or the TCK (check byte)."
+    },
+    {
+      "name": "var historicalRecords: [TKCompactTLVRecord]?",
+      "desc": "A list of compact TLV records parsed from historical bytes."
+    },
+    {
+      "name": "func interfaceGroup(at: Int) -> TKSmartCardATR.InterfaceGroup?",
+      "desc": "Returns the interface group at the specified index."
+    },
+    {
+      "name": "func interfaceGroup(for: TKSmartCardProtocol) -> TKSmartCardATR.InterfaceGroup?",
+      "desc": "Returns the interface group with the specified protocol."
+    },
+    {
+      "name": "class TKSmartCardATR.InterfaceGroup",
+      "desc": "A single interface-bytes group for a Smart Card ATR (Answer to Reset)."
+    }
+  ],
+  "declaration": "class TKSmartCardATR : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

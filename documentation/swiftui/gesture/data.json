@@ -1,0 +1,53 @@
+{
+  "path": "/documentation/swiftui/gesture",
+  "type": "Protocol",
+  "name": "Gesture",
+  "desc": "An instance that matches a sequence of events to a gesture, and returns a stream of values for each of its states.",
+  "items": [
+    {
+      "name": "var body: Self.Body",
+      "desc": "The content and behavior of the gesture."
+    },
+    {
+      "name": "associatedtype Body : Gesture",
+      "desc": "The type of gesture representing the body of Self."
+    },
+    {
+      "name": "func updating<State>(GestureState<State>, body: (Self.Value, inout State, inout Transaction) -> Void) -> GestureStateGesture<Self, State>",
+      "desc": "Updates the provided gesture state property as the gesture’s value changes."
+    },
+    {
+      "name": "func onChanged((Self.Value) -> Void) -> _ChangedGesture<Self>",
+      "desc": "Adds an action to perform when the gesture’s value changes."
+    },
+    {
+      "name": "func onEnded((Self.Value) -> Void) -> _EndedGesture<Self>",
+      "desc": "Adds an action to perform when the gesture ends."
+    },
+    {
+      "name": "associatedtype Value",
+      "desc": "The type representing the gesture’s value."
+    },
+    {
+      "name": "func simultaneously<Other>(with: Other) -> SimultaneousGesture<Self, Other>",
+      "desc": "Combines a gesture with another gesture to create a new gesture that recognizes both gestures at the same time."
+    },
+    {
+      "name": "func sequenced<Other>(before: Other) -> SequenceGesture<Self, Other>",
+      "desc": "Sequences a gesture with another one to create a new gesture, which results in the second gesture only receiving events after the first gesture succeeds."
+    },
+    {
+      "name": "func exclusively<Other>(before: Other) -> ExclusiveGesture<Self, Other>",
+      "desc": "Combines two gestures exclusively to create a new gesture where only one gesture succeeds, giving precedence to the first gesture."
+    },
+    {
+      "name": "func modifiers(EventModifiers) -> _ModifiersGesture<Self>",
+      "desc": "Combines a gesture with keyboard modifiers."
+    },
+    {
+      "name": "func map<T>((Self.Value) -> T) -> _MapGesture<Self, T>",
+      "desc": "Returns a gesture that’s the result of mapping the given closure over the gesture."
+    }
+  ],
+  "declaration": "protocol Gesture"
+}

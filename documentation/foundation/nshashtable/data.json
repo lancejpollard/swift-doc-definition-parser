@@ -1,0 +1,109 @@
+{
+  "path": "/documentation/foundation/nshashtable",
+  "type": "Generic Class",
+  "name": "NSHashTable",
+  "desc": "A collection similar to a set, but with broader range of available memory semantics.",
+  "items": [
+    {
+      "name": "init(options: NSPointerFunctions.Options, capacity: Int)",
+      "desc": "Returns a hash table initialized with the given attributes."
+    },
+    {
+      "name": "init(pointerFunctions: NSPointerFunctions, capacity: Int)",
+      "desc": "Returns a hash table initialized with the given functions and capacity."
+    },
+    {
+      "name": "class func weakObjects() -> NSHashTable<ObjectType>",
+      "desc": "Returns a new hash table for storing weak references to its contents."
+    },
+    {
+      "name": "init(options: NSPointerFunctions.Options)",
+      "desc": "Returns a hash table with given pointer functions options."
+    },
+    {
+      "name": "var anyObject: ObjectType?",
+      "desc": "One of the objects in the hash table."
+    },
+    {
+      "name": "var allObjects: [ObjectType]",
+      "desc": "The hash table’s members."
+    },
+    {
+      "name": "var setRepresentation: Set<AnyHashable>",
+      "desc": "A set that contains the hash table’s members."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of elements in the hash table."
+    },
+    {
+      "name": "func contains(ObjectType?) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the hash table contains a given object."
+    },
+    {
+      "name": "func member(ObjectType?) -> ObjectType?",
+      "desc": "Determines whether the hash table contains a given object, and returns that object if it is present"
+    },
+    {
+      "name": "func objectEnumerator() -> NSEnumerator",
+      "desc": "Returns an enumerator object that lets you access each object in the hash table."
+    },
+    {
+      "name": "func add(ObjectType?)",
+      "desc": "Adds a given object to the hash table."
+    },
+    {
+      "name": "func remove(ObjectType?)",
+      "desc": "Removes a given object from the hash table."
+    },
+    {
+      "name": "func removeAllObjects()",
+      "desc": "Removes all objects from the hash table."
+    },
+    {
+      "name": "func intersect(NSHashTable<ObjectType>)",
+      "desc": "Removes from the receiving hash table each element that isn’t a member of another given hash table."
+    },
+    {
+      "name": "func intersects(NSHashTable<ObjectType>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a given hash table intersects with the receiving hash table."
+    },
+    {
+      "name": "func isSubset(of: NSHashTable<ObjectType>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether every element in the receiving hash table is also present in another given hash table."
+    },
+    {
+      "name": "func isEqual(to: NSHashTable<ObjectType>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a given hash table is equal to the receiving hash table."
+    },
+    {
+      "name": "func minus(NSHashTable<ObjectType>)",
+      "desc": "Removes each element in another given hash table from the receiving hash table, if present."
+    },
+    {
+      "name": "func union(NSHashTable<ObjectType>)",
+      "desc": "Adds each element in another given hash table to the receiving hash table, if not present."
+    },
+    {
+      "name": "var pointerFunctions: NSPointerFunctions",
+      "desc": "The pointer functions for the hash table."
+    },
+    {
+      "name": "class NSPointerFunctions",
+      "desc": "An instance of NSPointerFunctions defines callout functions appropriate for managing a pointer reference held somewhere else."
+    },
+    {
+      "name": "typealias NSHashTableOptions",
+      "desc": "Components in a bit-field to specify the behavior of elements in an NSHashTable object."
+    }
+  ],
+  "declaration": "class NSHashTable<ObjectType> : NSObject where ObjectType : AnyObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSFastEnumeration",
+    "NSSecureCoding"
+  ]
+}

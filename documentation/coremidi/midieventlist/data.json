@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/coremidi/midieventlist",
+  "type": "Structure",
+  "name": "MIDIEventList",
+  "desc": "A variable-length list of MIDI event packets.",
+  "items": [
+    {
+      "name": "var `protocol`: MIDIProtocolID",
+      "desc": "The MIDI protocol variant of the events in the list."
+    },
+    {
+      "name": "var numPackets: UInt32",
+      "desc": "The number of MIDI event packet structures in the list."
+    },
+    {
+      "name": "var packet: (MIDIEventPacket)",
+      "desc": "An array of variable-length MIDI event packet structures."
+    },
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(protocol: MIDIProtocolID, numPackets: UInt32, packet: (MIDIEventPacket))"
+    },
+    {
+      "name": "static func sizeInBytes(pktList: UnsafePointer<MIDIEventList>) -> Int"
+    },
+    {
+      "name": "class MIDIEventList.Builder"
+    },
+    {
+      "name": "struct MIDIEventList.UnsafeSequence"
+    }
+  ],
+  "declaration": "struct MIDIEventList"
+}

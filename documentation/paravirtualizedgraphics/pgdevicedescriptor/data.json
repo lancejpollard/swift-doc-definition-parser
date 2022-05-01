@@ -1,0 +1,92 @@
+{
+  "path": "/documentation/paravirtualizedgraphics/pgdevicedescriptor",
+  "type": "Class",
+  "name": "PGDeviceDescriptor",
+  "desc": "A description of the paravirtualized graphics device to create.",
+  "items": [
+    {
+      "name": "var device: MTLDevice?",
+      "desc": "The Metal device object to use to back the virtual graphics device."
+    },
+    {
+      "name": "var createTask: PGCreateTask?",
+      "desc": "A handler that the framework calls to create a task object."
+    },
+    {
+      "name": "var destroyTask: PGDestroyTask?",
+      "desc": "A handler that the framework calls to destroy a task object."
+    },
+    {
+      "name": "typealias PGCreateTask",
+      "desc": "The block signature for a routine that creates a task."
+    },
+    {
+      "name": "typealias PGDestroyTask",
+      "desc": "The block signature for a routine that destroys a task."
+    },
+    {
+      "name": "var mapMemory: PGMapMemory?",
+      "desc": "A handler that the framework calls to map memory into the virtual machine."
+    },
+    {
+      "name": "var unmapMemory: PGUnmapMemory?",
+      "desc": "A handler that the framework calls to unmap memory from the virtual machine."
+    },
+    {
+      "name": "var readMemory: PGReadMemory?",
+      "desc": "A handler that the framework calls to read data from the guest’s memory."
+    },
+    {
+      "name": "typealias PGMapMemory",
+      "desc": "The block signature for a routine that maps guest physical memory into a task."
+    },
+    {
+      "name": "typealias PGUnmapMemory",
+      "desc": "The block signature for a routine that unmaps guest physical memory from a task."
+    },
+    {
+      "name": "typealias PGReadMemory",
+      "desc": "The block signature for a routine that copies data from guest physical memory into host memory."
+    },
+    {
+      "name": "struct PGPhysicalMemoryRange_s",
+      "desc": "A range in the guest virtual machine’s physical memory address space."
+    },
+    {
+      "name": "var addTraceRange: PGAddTraceRange?",
+      "desc": "A handler that the framework calls to add a trace range."
+    },
+    {
+      "name": "var removeTraceRange: PGRemoveTraceRange?",
+      "desc": "A handler that the framework calls to remove a trace range."
+    },
+    {
+      "name": "typealias PGAddTraceRange",
+      "desc": "The block signature for a routine that adds a trace range."
+    },
+    {
+      "name": "typealias PGRemoveTraceRange",
+      "desc": "The block signature for a routine that removes a trace range."
+    },
+    {
+      "name": "typealias PGTraceRangeHandler",
+      "desc": "The block signature for a routine that handles trace requests."
+    },
+    {
+      "name": "var raiseInterrupt: PGRaiseInterrupt?",
+      "desc": "A handler that the system calls to raise an interrupt in the guest environment."
+    },
+    {
+      "name": "typealias PGRaiseInterrupt",
+      "desc": "The block signature for a routine that raises interrupts in the guest environment."
+    },
+    {
+      "name": "var mmioLength: Int",
+      "desc": "The length in bytes of the memory-mapped IO section."
+    }
+  ],
+  "declaration": "class PGDeviceDescriptor : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

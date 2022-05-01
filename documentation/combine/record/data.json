@@ -1,0 +1,34 @@
+{
+  "path": "/documentation/combine/record",
+  "type": "Structure",
+  "name": "Record",
+  "desc": "A publisher that allows for recording a series of inputs and a completion, for later playback to each subscriber.",
+  "items": [
+    {
+      "name": "init(output: [Output], completion: Subscribers.Completion<Failure>)",
+      "desc": "Creates a record publisher to publish the provided elements, followed by the provided completion value."
+    },
+    {
+      "name": "init(record: (inout Record<Output, Failure>.Recording) -> Void)",
+      "desc": "Creates a publisher to interactively record a series of outputs and a completion."
+    },
+    {
+      "name": "init(recording: Record<Output, Failure>.Recording)",
+      "desc": "Creates a record publisher from an existing recording."
+    },
+    {
+      "name": "let recording: Record<Output, Failure>.Recording",
+      "desc": "The recorded output and completion."
+    },
+    {
+      "name": "struct Recording",
+      "desc": "A recorded sequence of outputs, followed by a completion value."
+    }
+  ],
+  "declaration": "struct Record<Output, Failure> where Failure : Error",
+  "conformsTo": [
+    "Decodable",
+    "Encodable",
+    "Publisher"
+  ]
+}

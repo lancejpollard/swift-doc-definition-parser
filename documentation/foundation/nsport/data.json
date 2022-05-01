@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/foundation/nsport",
+  "type": "Class",
+  "name": "NSPort",
+  "desc": "An abstract class that represents a communication channel.",
+  "items": [
+    {
+      "name": "+ port",
+      "desc": "Creates and returns a new NSPort object capable of both sending and receiving messages."
+    },
+    {
+      "name": "- invalidate",
+      "desc": "Marks the receiver as invalid and posts an NSPortDidBecomeInvalidNotification to the default notification center."
+    },
+    {
+      "name": "- setDelegate:",
+      "desc": "Sets the receiver’s delegate to a given object."
+    },
+    {
+      "name": "- delegate",
+      "desc": "Returns the receiver’s delegate."
+    },
+    {
+      "name": "- sendBeforeDate:components:from:reserved:",
+      "desc": "This method is provided for subclasses that have custom types of NSPort."
+    },
+    {
+      "name": "- sendBeforeDate:msgid:components:from:reserved:",
+      "desc": "This method is provided for subclasses that have custom types of NSPort."
+    },
+    {
+      "name": "- removeFromRunLoop:forMode:",
+      "desc": "This method should be implemented by a subclass to stop monitoring of a port when removed from a give run loop in a given input mode."
+    },
+    {
+      "name": "- scheduleInRunLoop:forMode:",
+      "desc": "This method should be implemented by a subclass to set up monitoring of a port when added to a given run loop in a given input mode."
+    }
+  ],
+  "declaration": "@interface NSPort : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "NSCopying"
+  ]
+}

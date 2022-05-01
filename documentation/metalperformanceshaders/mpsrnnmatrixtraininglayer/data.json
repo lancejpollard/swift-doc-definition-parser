@@ -1,0 +1,63 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsrnnmatrixtraininglayer",
+  "type": "Class",
+  "name": "MPSRNNMatrixTrainingLayer",
+  "desc": "A layer for training recurrent neural networks on Metal Performance Shaders matrices.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice, rnnDescriptor: MPSRNNDescriptor, trainableWeights: NSMutableArray)"
+    },
+    {
+      "name": "var accumulateWeightGradients: Bool"
+    },
+    {
+      "name": "var inputFeatureChannels: Int"
+    },
+    {
+      "name": "var outputFeatureChannels: Int"
+    },
+    {
+      "name": "var recurrentOutputIsTemporary: Bool"
+    },
+    {
+      "name": "var storeAllIntermediateStates: Bool"
+    },
+    {
+      "name": "var trainingStateIsTemporary: Bool"
+    },
+    {
+      "name": "func copy(with: NSZone?, device: MTLDevice?) -> Self"
+    },
+    {
+      "name": "func createTemporaryWeightGradientMatrices(NSMutableArray, dataType: MPSDataType, commandBuffer: MTLCommandBuffer)"
+    },
+    {
+      "name": "func createWeightGradientMatrices(NSMutableArray, dataType: MPSDataType)"
+    },
+    {
+      "name": "func createWeightMatrices(NSMutableArray)"
+    },
+    {
+      "name": "func encodeCopyWeights(commandBuffer: MTLCommandBuffer, weights: [MPSMatrix], matrixId: MPSRNNMatrixId, matrix: MPSMatrix, copyFromWeightsToMatrix: Bool, matrixOffset: MTLOrigin)"
+    },
+    {
+      "name": "func encodeForwardSequence(commandBuffer: MTLCommandBuffer, sourceMatrices: [MPSMatrix], destinationMatrices: [MPSMatrix], trainingStates: NSMutableArray, weights: [MPSMatrix])"
+    },
+    {
+      "name": "func encodeForwardSequence(commandBuffer: MTLCommandBuffer, sourceMatrices: [MPSMatrix], sourceOffsets: UnsafeMutablePointer<Int>?, destinationMatrices: [MPSMatrix], destinationOffsets: UnsafeMutablePointer<Int>?, trainingStates: NSMutableArray, recurrentInputState: MPSRNNRecurrentMatrixState?, recurrentOutputStates: NSMutableArray?, weights: [MPSMatrix])"
+    },
+    {
+      "name": "func encodeGradientSequence(commandBuffer: MTLCommandBuffer, forwardSources: [MPSMatrix], forwardSourceOffsets: UnsafeMutablePointer<Int>?, sourceGradients: [MPSMatrix], sourceOffsets: UnsafeMutablePointer<Int>?, destinationGradients: [MPSMatrix]?, destinationOffsets: UnsafeMutablePointer<Int>?, weightGradients: [MPSMatrix]?, trainingStates: [MPSRNNMatrixTrainingState], recurrentInputState: MPSRNNRecurrentMatrixState?, recurrentOutputStates: NSMutableArray?, weights: [MPSMatrix])"
+    },
+    {
+      "name": "func encodeGradientSequence(commandBuffer: MTLCommandBuffer, forwardSources: [MPSMatrix], sourceGradients: [MPSMatrix], destinationGradients: [MPSMatrix]?, weightGradients: [MPSMatrix]?, trainingStates: [MPSRNNMatrixTrainingState], weights: [MPSMatrix])"
+    }
+  ],
+  "declaration": "class MPSRNNMatrixTrainingLayer : MPSKernel",
+  "inheritsFrom": [
+    "MPSKernel"
+  ]
+}

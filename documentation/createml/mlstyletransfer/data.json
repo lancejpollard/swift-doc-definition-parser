@@ -1,0 +1,73 @@
+{
+  "path": "/documentation/createml/mlstyletransfer",
+  "type": "Structure",
+  "name": "MLStyleTransfer",
+  "desc": "A model you train to apply an image’s style to other images or videos.",
+  "items": [
+    {
+      "name": "static func train(trainingData: MLStyleTransfer.DataSource, parameters: MLStyleTransfer.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLJob<MLStyleTransfer>",
+      "desc": "Begins an asynchronous style transfer model-training session."
+    },
+    {
+      "name": "static func makeTrainingSession(trainingData: MLStyleTransfer.DataSource, parameters: MLStyleTransfer.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLTrainingSession<MLStyleTransfer>",
+      "desc": "Creates an asynchronous training session for a style transfer model."
+    },
+    {
+      "name": "static func resume(MLTrainingSession<MLStyleTransfer>) -> MLJob<MLStyleTransfer>",
+      "desc": "Begins or continues an asynchronous style transfer model-training session."
+    },
+    {
+      "name": "static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) -> MLTrainingSession<MLStyleTransfer>",
+      "desc": "Creates an asynchronous training session for a style transfer model by restoring an existing training session’s state from its parameters."
+    },
+    {
+      "name": "init(checkpoint: MLCheckpoint)",
+      "desc": "Creates a style transfer model from a training session checkpoint."
+    },
+    {
+      "name": "init(trainingData: MLStyleTransfer.DataSource, parameters: MLStyleTransfer.ModelParameters)",
+      "desc": "Creates a style transfer model with a training dataset represented by a data source."
+    },
+    {
+      "name": "func stylize(image: CGImage) -> CGImage?",
+      "desc": "Applies the style the model learned to an image."
+    },
+    {
+      "name": "func write(to: URL, metadata: MLModelMetadata?)",
+      "desc": "Exports the style transfer model as a Core ML model file to a location in the file system."
+    },
+    {
+      "name": "func write(toFile: String, metadata: MLModelMetadata?)",
+      "desc": "Exports the style transfer model as a Core ML model file to the file path."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the style transfer model."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the style transfer model that’s suitable for output during debugging."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the style transfer model shown in a playground."
+    },
+    {
+      "name": "enum MLStyleTransfer.DataSource",
+      "desc": "A data source for a style transfer model."
+    },
+    {
+      "name": "struct MLStyleTransfer.ModelParameters",
+      "desc": "Parameters that affect the training process of a style transfer model."
+    },
+    {
+      "name": "static func downloadAssets()"
+    }
+  ],
+  "declaration": "struct MLStyleTransfer",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomStringConvertible"
+  ]
+}

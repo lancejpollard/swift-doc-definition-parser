@@ -1,0 +1,144 @@
+{
+  "path": "/documentation/gamekit/gkturnbasedmatch",
+  "type": "Class",
+  "name": "GKTurnBasedMatch",
+  "desc": "An object that encapsulates the match data for games where players take turns.",
+  "items": [
+    {
+      "name": "class func find(for: GKMatchRequest, withCompletionHandler: (GKTurnBasedMatch?, Error?) -> Void)",
+      "desc": "Creates a new match or finds an existing match that needs a player."
+    },
+    {
+      "name": "func acceptInvite(completionHandler: ((GKTurnBasedMatch?, Error?) -> Void)?)",
+      "desc": "Accepts an invitation for the local player to join a turn-based match."
+    },
+    {
+      "name": "func declineInvite(completionHandler: ((Error?) -> Void)?)",
+      "desc": "Declines an invitation for the local player to join a turn-based match."
+    },
+    {
+      "name": "func rematch(completionHandler: ((GKTurnBasedMatch?, Error?) -> Void)?)",
+      "desc": "Creates a new turn-based match with the same participants from an existing match."
+    },
+    {
+      "name": "var matchID: String",
+      "desc": "A unique identifier for the turn-based match."
+    },
+    {
+      "name": "var creationDate: Date",
+      "desc": "The date that Game Center created the match."
+    },
+    {
+      "name": "var participants: [GKTurnBasedParticipant]",
+      "desc": "The players that participate in a turn-based match."
+    },
+    {
+      "name": "var currentParticipant: GKTurnBasedParticipant?",
+      "desc": "The participant whose turn it is."
+    },
+    {
+      "name": "var status: GKTurnBasedMatch.Status",
+      "desc": "The state of the match, such as whether the match is open or has ended."
+    },
+    {
+      "name": "enum GKTurnBasedMatch.Status",
+      "desc": "The states of a match from when it’s created to when it ends."
+    },
+    {
+      "name": "var matchData: Data?",
+      "desc": "The game-specific data that you store in Game Center and pass between participants through a match object."
+    },
+    {
+      "name": "var matchDataMaximumSize: Int",
+      "desc": "The maximum size of the match data."
+    },
+    {
+      "name": "func loadMatchData(completionHandler: ((Data?, Error?) -> Void)?)",
+      "desc": "Fetches your game-specific data that you store in Game Center when ending a turn, saving a turn, or leaving a match."
+    },
+    {
+      "name": "func endTurn(withNextParticipants: [GKTurnBasedParticipant], turnTimeout: TimeInterval, match: Data, completionHandler: ((Error?) -> Void)?)",
+      "desc": "Passes the turn from the current participant to the next participant."
+    },
+    {
+      "name": "func saveCurrentTurn(withMatch: Data, completionHandler: ((Error?) -> Void)?)",
+      "desc": "Saves your match data in Game Center without ending the turn."
+    },
+    {
+      "name": "func participantQuitInTurn(with: GKTurnBasedMatch.Outcome, nextParticipants: [GKTurnBasedParticipant], turnTimeout: TimeInterval, match: Data, completionHandler: ((Error?) -> Void)?)",
+      "desc": "Forfeits the match on behalf of the local player when it’s their turn."
+    },
+    {
+      "name": "func participantQuitOutOfTurn(with: GKTurnBasedMatch.Outcome, withCompletionHandler: ((Error?) -> Void)?)",
+      "desc": "Forfeits the match on behalf of the local player when it’s not their turn."
+    },
+    {
+      "name": "enum GKTurnBasedMatch.Outcome",
+      "desc": "The state of a participant when they forfeit a match or when a match ends."
+    },
+    {
+      "name": "func endMatchInTurn(withMatch: Data, completionHandler: ((Error?) -> Void)?)",
+      "desc": "Ends the match."
+    },
+    {
+      "name": "func endMatchInTurn(withMatch: Data, leaderboardScores: [GKLeaderboardScore], achievements: [Any], completionHandler: (Error?) -> Void)",
+      "desc": "Ends the match while submitting scores and achievements for all of the participants."
+    },
+    {
+      "name": "var message: String?",
+      "desc": "A message from the current participant to all other participants when you end a turn, forfeit a match, or end a match."
+    },
+    {
+      "name": "func setLocalizableMessageWithKey(String, arguments: [String]?)",
+      "desc": "Sends a localized message from the current participant to all other participants when you end a turn, forfeit a match, or end a match."
+    },
+    {
+      "name": "func sendReminder(to: [GKTurnBasedParticipant], localizableMessageKey: String, arguments: [String], completionHandler: ((Error?) -> Void)?)",
+      "desc": "Sends a reminder from one participant to a specific set of other participants."
+    },
+    {
+      "name": "func sendExchange(to: [GKTurnBasedParticipant], data: Data, localizableMessageKey: String, arguments: [String], timeout: TimeInterval, completionHandler: ((GKTurnBasedExchange?, Error?) -> Void)?)",
+      "desc": "Sends an exchange request that contains your game data to one or more participants."
+    },
+    {
+      "name": "var exchangeDataMaximumSize: Int",
+      "desc": "The maximum size of the exchange data."
+    },
+    {
+      "name": "var exchangeMaxInitiatedExchangesPerPlayer: Int",
+      "desc": "The maximum number of exchanges the local player can initiate."
+    },
+    {
+      "name": "var activeExchanges: [GKTurnBasedExchange]?",
+      "desc": "The exchanges that the local player needs to accept or reject."
+    },
+    {
+      "name": "var completedExchanges: [GKTurnBasedExchange]?",
+      "desc": "The exchange requests that all recipients replied to and the current participant needs to save."
+    },
+    {
+      "name": "var exchanges: [GKTurnBasedExchange]?",
+      "desc": "The exchange requests that are active or complete."
+    },
+    {
+      "name": "func saveMergedMatch(Data, withResolvedExchanges: [GKTurnBasedExchange], completionHandler: ((Error?) -> Void)?)",
+      "desc": "Saves match data for completed exchanges without ending the turn."
+    },
+    {
+      "name": "class func load(withID: String, withCompletionHandler: ((GKTurnBasedMatch?, Error?) -> Void)?)",
+      "desc": "Loads a specific match with the specified identifier."
+    },
+    {
+      "name": "class func loadMatches(completionHandler: (([GKTurnBasedMatch]?, Error?) -> Void)?)",
+      "desc": "Fetches the turn-based matches from Game Center that the local player participates in."
+    },
+    {
+      "name": "func remove(completionHandler: ((Error?) -> Void)?)",
+      "desc": "Removes a match from Game Center that the local player participants in."
+    }
+  ],
+  "declaration": "class GKTurnBasedMatch : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

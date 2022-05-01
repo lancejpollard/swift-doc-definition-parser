@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/avfaudio/avaudiotime",
+  "type": "Class",
+  "name": "AVAudioTime",
+  "desc": "An object you use to represent a moment in time.",
+  "items": [
+    {
+      "name": "init(audioTimeStamp: UnsafePointer<AudioTimeStamp>, sampleRate: Double)",
+      "desc": "Creates an audio time object with the specified timestamp and sample rate."
+    },
+    {
+      "name": "init(hostTime: UInt64)",
+      "desc": "Creates an audio time object with the specified host time."
+    },
+    {
+      "name": "init(hostTime: UInt64, sampleTime: AVAudioFramePosition, atRate: Double)",
+      "desc": "Creates an audio time object with the specified host time, sample time, and sample rate."
+    },
+    {
+      "name": "init(sampleTime: AVAudioFramePosition, atRate: Double)",
+      "desc": "Creates an audio time object with the specified timestamp and sample rate."
+    },
+    {
+      "name": "func extrapolateTime(fromAnchor: AVAudioTime) -> AVAudioTime?",
+      "desc": "Creates an audio time object by converting between host time and sample time."
+    },
+    {
+      "name": "var hostTime: UInt64",
+      "desc": "The host time."
+    },
+    {
+      "name": "var isHostTimeValid: Bool",
+      "desc": "A Boolean value that indicates whether the host time value is valid."
+    },
+    {
+      "name": "class func hostTime(forSeconds: TimeInterval) -> UInt64",
+      "desc": "Converts seconds to host time."
+    },
+    {
+      "name": "class func seconds(forHostTime: UInt64) -> TimeInterval",
+      "desc": "Converts host time to seconds."
+    },
+    {
+      "name": "var sampleRate: Double",
+      "desc": "The sampling rate that the sample time property expresses."
+    },
+    {
+      "name": "var sampleTime: AVAudioFramePosition",
+      "desc": "The time as a number of audio samples that the current audio device tracks."
+    },
+    {
+      "name": "var isSampleTimeValid: Bool",
+      "desc": "A Boolean value that indicates whether the sample time and sample rate properties are in a valid state."
+    },
+    {
+      "name": "var audioTimeStamp: AudioTimeStamp",
+      "desc": "The time as an audio timestamp."
+    }
+  ],
+  "declaration": "class AVAudioTime : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

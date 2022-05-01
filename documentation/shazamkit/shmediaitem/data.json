@@ -1,0 +1,84 @@
+{
+  "path": "/documentation/shazamkit/shmediaitem",
+  "type": "Class",
+  "name": "SHMediaItem",
+  "desc": "An object that represents the metadata for a reference signature.",
+  "items": [
+    {
+      "name": "init(properties: [SHMediaItemProperty : Any])",
+      "desc": "Creates a media item object with a dictionary of properties and their associated values."
+    },
+    {
+      "name": "subscript(SHMediaItemProperty) -> Any",
+      "desc": "Accesses the property for the specified key for reading."
+    },
+    {
+      "name": "struct SHMediaItemProperty",
+      "desc": "Constants for the media item property names."
+    },
+    {
+      "name": "var title: String?",
+      "desc": "A title for the media item."
+    },
+    {
+      "name": "var subtitle: String?",
+      "desc": "A subtitle for the media item."
+    },
+    {
+      "name": "var artist: String?",
+      "desc": "The name of the artist for the media item, such as the performer of a song."
+    },
+    {
+      "name": "var artworkURL: URL?",
+      "desc": "The URL for artwork for the media item, such as an album cover."
+    },
+    {
+      "name": "var videoURL: URL?",
+      "desc": "The URL for a video for the media item, such as a music video."
+    },
+    {
+      "name": "var genres: [String]",
+      "desc": "An array of genre names for the media item."
+    },
+    {
+      "name": "var explicitContent: Bool",
+      "desc": "A Boolean value that indicates whether the media item contains explicit content."
+    },
+    {
+      "name": "var isrc: String?",
+      "desc": "The International Standard Recording Code (ISRC) for the media item."
+    },
+    {
+      "name": "var songs: [Song]",
+      "desc": "An array of MusicKit song objects that represent the song."
+    },
+    {
+      "name": "var appleMusicURL: URL?",
+      "desc": "A link to the Apple Music page that contains the full information for the song."
+    },
+    {
+      "name": "var appleMusicID: String?",
+      "desc": "The Apple Music ID for the song."
+    },
+    {
+      "name": "var webURL: URL?",
+      "desc": "A link to the Shazam Music catalog page that contains the full information for the song."
+    },
+    {
+      "name": "var shazamID: String?",
+      "desc": "The Shazam ID for the song."
+    },
+    {
+      "name": "class func fetch(shazamID: String, completionHandler: (SHMediaItem?, Error?) -> Void)",
+      "desc": "Requests the media item for the song with the specified Shazam ID."
+    }
+  ],
+  "declaration": "class SHMediaItem : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

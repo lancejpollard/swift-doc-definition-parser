@@ -1,0 +1,35 @@
+{
+  "path": "/documentation/mailkit/meoutgoingmessageencodingstatus",
+  "type": "Class",
+  "name": "MEOutgoingMessageEncodingStatus",
+  "desc": "An object that contains information about security measures the user can apply when composing a message.",
+  "items": [
+    {
+      "name": "init(canSign: Bool, canEncrypt: Bool, securityError: Error?, addressesFailingEncryption: [MEEmailAddress])",
+      "desc": "Creates an object that describes whether the message security handler can encrypt or sign an outgoing message."
+    },
+    {
+      "name": "var canSign: Bool",
+      "desc": "A Boolean value that indicates the message security handler can digitally sign the outgoing message."
+    },
+    {
+      "name": "var canEncrypt: Bool",
+      "desc": "A Boolean value that indicates the message security handler can encrypt the outgoing message."
+    },
+    {
+      "name": "var securityError: Error?",
+      "desc": "An error that the message encoder encountered while determining the encoding status for the outgoing message."
+    },
+    {
+      "name": "var addressesFailingEncryption: [MEEmailAddress]",
+      "desc": "An array of email addresses that prevent the message security handler from signing the message."
+    }
+  ],
+  "declaration": "class MEOutgoingMessageEncodingStatus : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

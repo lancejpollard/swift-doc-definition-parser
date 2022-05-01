@@ -1,0 +1,168 @@
+{
+  "path": "/documentation/appkit/nsarraycontroller",
+  "type": "Class",
+  "name": "NSArrayController",
+  "desc": "A bindings-compatible controller that manages a collection of objects.",
+  "items": [
+    {
+      "name": "var sortDescriptors: [NSSortDescriptor]",
+      "desc": "An array of NSSortDescriptor objects, used by the receiver to arrange its content."
+    },
+    {
+      "name": "func arrange([Any]) -> [Any]",
+      "desc": "Returns a given array, appropriately sorted and filtered."
+    },
+    {
+      "name": "var arrangedObjects: Any",
+      "desc": "An array containing the receiver’s content objects arranged using arrange(_:)."
+    },
+    {
+      "name": "func rearrangeObjects()",
+      "desc": "Triggers filtering of the receiver’s content."
+    },
+    {
+      "name": "func add(Any?)",
+      "desc": "Creates and adds a new object to the receiver’s content and arranged objects."
+    },
+    {
+      "name": "var avoidsEmptySelection: Bool",
+      "desc": "A Boolean value that indicates whether the receiver requires that the content array attempt to maintain a selection"
+    },
+    {
+      "name": "var preservesSelection: Bool",
+      "desc": "A Boolean value that indicates whether the receiver will attempt to preserve the current selection when the content changes"
+    },
+    {
+      "name": "var alwaysUsesMultipleValuesMarker: Bool",
+      "desc": "A Boolean value that indicates whether the receiver always returns the multiple values marker when multiple objects are selected"
+    },
+    {
+      "name": "var selectionIndex: Int",
+      "desc": "The index of the first object in the receiver’s selection"
+    },
+    {
+      "name": "func setSelectionIndex(Int) -> Bool",
+      "desc": "Sets the receiver’s selection to the given index, and returns a Boolean value that indicates whether the selection was changed."
+    },
+    {
+      "name": "var selectsInsertedObjects: Bool",
+      "desc": "A Boolean value that indicates whether the receiver automatically selects inserted objects"
+    },
+    {
+      "name": "func setSelectionIndexes(IndexSet) -> Bool",
+      "desc": "Sets the receiver’s selection indexes and returns a Boolean value that indicates whether the selection changed."
+    },
+    {
+      "name": "var selectionIndexes: IndexSet",
+      "desc": "An index set containing the indexes of the receiver’s currently selected objects in the content array"
+    },
+    {
+      "name": "func addSelectionIndexes(IndexSet) -> Bool",
+      "desc": "Adds the objects at the specified indexes in the receiver’s content array to the current selection, returning true if the selection was changed."
+    },
+    {
+      "name": "func removeSelectionIndexes(IndexSet) -> Bool",
+      "desc": "Removes the object as the specified indexes from the receiver’s current selection, returning true if the selection was changed."
+    },
+    {
+      "name": "func setSelectedObjects([Any]) -> Bool",
+      "desc": "Sets objects as the receiver’s current selection, returning true if the selection was changed."
+    },
+    {
+      "name": "var selectedObjects: [Any]!",
+      "desc": "An array containing the receiver’s selected objects"
+    },
+    {
+      "name": "func addSelectedObjects([Any]) -> Bool",
+      "desc": "Adds objects from the receiver’s content array to the current selection, returning true if the selection was changed."
+    },
+    {
+      "name": "func removeSelectedObjects([Any]) -> Bool",
+      "desc": "Removes objects from the receiver’s current selection, returning true if the selection was changed."
+    },
+    {
+      "name": "func selectNext(Any?)",
+      "desc": "Selects the next object, relative to the current selection, in the receiver’s arranged content."
+    },
+    {
+      "name": "var canSelectNext: Bool",
+      "desc": "A Boolean value indicating whether the next object, relative to the current selection, in the receiver’s content array can be selected"
+    },
+    {
+      "name": "func selectPrevious(Any?)",
+      "desc": "Selects the previous object, relative to the current selection, in the receiver’s arranged content."
+    },
+    {
+      "name": "var canSelectPrevious: Bool",
+      "desc": "A Boolean value indicating whether the previous object, relative to the current selection, in the receiver’s content array can be selected"
+    },
+    {
+      "name": "var canInsert: Bool",
+      "desc": "Returns a Boolean value that indicates whether an object can be inserted into the receiver’s content collection."
+    },
+    {
+      "name": "func insert(Any?)",
+      "desc": "Creates a new object and inserts it into the receiver’s content array."
+    },
+    {
+      "name": "func addObject(Any)",
+      "desc": "Adds object to the receiver’s content collection and the arranged objects array."
+    },
+    {
+      "name": "func add(contentsOf: [Any])",
+      "desc": "Adds objects to the receiver’s content collection."
+    },
+    {
+      "name": "func insert(Any, atArrangedObjectIndex: Int)",
+      "desc": "Inserts object into the receiver’s arranged objects array at the location specified by index, and adds it to the receiver’s content collection."
+    },
+    {
+      "name": "func insert(contentsOf: [Any], atArrangedObjectIndexes: IndexSet)",
+      "desc": "Inserts objects into the receiver’s arranged objects array at the locations specified in indexes, and adds it to the receiver’s content collection."
+    },
+    {
+      "name": "func remove(atArrangedObjectIndex: Int)",
+      "desc": "Removes the object at the specified index in the receiver’s arranged objects from the receiver’s content array."
+    },
+    {
+      "name": "func remove(atArrangedObjectIndexes: IndexSet)",
+      "desc": "Removes the objects at the specified indexes in the receiver’s arranged objects from the content array."
+    },
+    {
+      "name": "func remove(Any?)",
+      "desc": "Removes the receiver’s selected objects from the content collection."
+    },
+    {
+      "name": "func removeObject(Any)",
+      "desc": "Removes object from the receiver’s content collection."
+    },
+    {
+      "name": "func remove(contentsOf: [Any])",
+      "desc": "Removes objects from the receiver’s content collection."
+    },
+    {
+      "name": "var clearsFilterPredicateOnInsertion: Bool",
+      "desc": "A Boolean value that indicates whether the receiver automatically clears an existing filter predicate when new items are inserted or added to the content"
+    },
+    {
+      "name": "var filterPredicate: NSPredicate?",
+      "desc": "A predicate used by the receiver to filter the array controller contents"
+    },
+    {
+      "name": "var automaticallyRearrangesObjects: Bool",
+      "desc": "A Boolean that indicates if the receiver automatically rearranges its content to correspond to the current sort descriptors and filter predicates"
+    },
+    {
+      "name": "var automaticRearrangementKeyPaths: [String]?",
+      "desc": "An array of key paths that trigger automatic content sorting or filtering"
+    },
+    {
+      "name": "func didChangeArrangementCriteria()",
+      "desc": "Invoked when any criteria for arranging objects change."
+    }
+  ],
+  "declaration": "class NSArrayController : NSObjectController",
+  "inheritsFrom": [
+    "NSObjectController"
+  ]
+}

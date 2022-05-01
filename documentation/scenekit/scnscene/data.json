@@ -1,0 +1,115 @@
+{
+  "path": "/documentation/scenekit/scnscene",
+  "type": "Class",
+  "name": "SCNScene",
+  "desc": "A container for the node hierarchy and global properties that together form a displayable 3D scene.",
+  "items": [
+    {
+      "name": "init?(named: String)",
+      "desc": "Loads a scene from a file with the specified name in the app’s main bundle."
+    },
+    {
+      "name": "init?(named: String, inDirectory: String?, options: [SCNSceneSource.LoadingOption : Any]?)",
+      "desc": "Loads a scene from a file with the specified name in a specific subdirectory of the app’s main bundle."
+    },
+    {
+      "name": "init(url: URL, options: [SCNSceneSource.LoadingOption : Any]?)",
+      "desc": "Loads a scene from the specified URL."
+    },
+    {
+      "name": "var isPaused: Bool",
+      "desc": "A Boolean value that determines whether to run actions, animations, particle systems, and physics simulations in the scene graph."
+    },
+    {
+      "name": "var rootNode: SCNNode",
+      "desc": "The root node of the scene graph."
+    },
+    {
+      "name": "var background: SCNMaterialProperty",
+      "desc": "A background to be rendered before the rest of the scene."
+    },
+    {
+      "name": "var lightingEnvironment: SCNMaterialProperty",
+      "desc": "A cube map texture that depicts the environment surrounding the scene’s contents, used for advanced lighting effects."
+    },
+    {
+      "name": "func attribute(forKey: String) -> Any?",
+      "desc": "Returns the scene attribute for the specified key."
+    },
+    {
+      "name": "func setAttribute(Any?, forKey: String)",
+      "desc": "Sets a scene attribute for the specified key."
+    },
+    {
+      "name": "struct SCNScene.Attribute"
+    },
+    {
+      "name": "func write(to: URL, options: [String : Any]?, delegate: SCNSceneExportDelegate?, progressHandler: SCNSceneExportProgressHandler?) -> Bool",
+      "desc": "Exports the scene and its contents to a file at the specified URL."
+    },
+    {
+      "name": "protocol SCNSceneExportDelegate",
+      "desc": "Methods you can implement to participate in the process of exporting a scene to a file."
+    },
+    {
+      "name": "var fogStartDistance: CGFloat",
+      "desc": "The distance from a point of view at which the scene’s contents begin to be obscured by fog. Animatable."
+    },
+    {
+      "name": "var fogEndDistance: CGFloat",
+      "desc": "The distance from a point of view at which the scene’s contents are completely obscured by fog. Animatable."
+    },
+    {
+      "name": "var fogDensityExponent: CGFloat",
+      "desc": "The transition curve for the fog’s intensity between its start and end distances. Animatable."
+    },
+    {
+      "name": "var fogColor: Any",
+      "desc": "The color of the fog effect to be rendered with the scene. Animatable."
+    },
+    {
+      "name": "var physicsWorld: SCNPhysicsWorld",
+      "desc": "The physics simulation associated with the scene."
+    },
+    {
+      "name": "func addParticleSystem(SCNParticleSystem, transform: SCNMatrix4)",
+      "desc": "Attaches a particle system to the scene, using the specified transform."
+    },
+    {
+      "name": "var particleSystems: [SCNParticleSystem]?",
+      "desc": "The particle systems attached to the scene."
+    },
+    {
+      "name": "func removeParticleSystem(SCNParticleSystem)",
+      "desc": "Removes a particle system attached to the scene."
+    },
+    {
+      "name": "func removeAllParticleSystems()",
+      "desc": "Removes any particle systems directly attached to the scene."
+    },
+    {
+      "name": "typealias SCNSceneExportProgressHandler",
+      "desc": "The signature for the block that SceneKit calls during scene export."
+    },
+    {
+      "name": "var screenSpaceReflectionMaximumDistance: CGFloat"
+    },
+    {
+      "name": "var screenSpaceReflectionSampleCount: Int"
+    },
+    {
+      "name": "var screenSpaceReflectionStride: CGFloat"
+    },
+    {
+      "name": "var wantsScreenSpaceReflection: Bool"
+    }
+  ],
+  "declaration": "class SCNScene : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "GKSceneRootNodeType",
+    "NSSecureCoding"
+  ]
+}

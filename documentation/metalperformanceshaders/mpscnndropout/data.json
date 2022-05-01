@@ -1,0 +1,39 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpscnndropout",
+  "type": "Class",
+  "name": "MPSCNNDropout",
+  "desc": "A dropout filter.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice, keepProbability: Float, seed: Int, maskStrideInPixels: MTLSize)"
+    },
+    {
+      "name": "var keepProbability: Float"
+    },
+    {
+      "name": "var maskStrideInPixels: MTLSize"
+    },
+    {
+      "name": "var seed: Int"
+    },
+    {
+      "name": "func resultState(sourceImage: MPSImage, sourceStates: [MPSState]?, destinationImage: MPSImage) -> MPSCNNDropoutGradientState?"
+    },
+    {
+      "name": "func resultStateBatch(sourceImage: [MPSImage], sourceStates: [[MPSState]]?, destinationImage: [MPSImage]) -> MPSCNNDropoutGradientState?"
+    },
+    {
+      "name": "func temporaryResultState(commandBuffer: MTLCommandBuffer, sourceImage: MPSImage, sourceStates: [MPSState]?, destinationImage: MPSImage) -> MPSCNNDropoutGradientState?"
+    },
+    {
+      "name": "func temporaryResultStateBatch(commandBuffer: MTLCommandBuffer, sourceImage: [MPSImage], sourceStates: [[MPSState]]?, destinationImage: [MPSImage]) -> [MPSCNNDropoutGradientState]?"
+    }
+  ],
+  "declaration": "class MPSCNNDropout : MPSCNNKernel",
+  "inheritsFrom": [
+    "MPSCNNKernel"
+  ]
+}

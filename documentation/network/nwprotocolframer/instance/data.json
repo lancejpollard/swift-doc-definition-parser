@@ -1,0 +1,90 @@
+{
+  "path": "/documentation/network/nwprotocolframer/instance",
+  "type": "Class",
+  "name": "NWProtocolFramer.Instance",
+  "desc": "An object that represents a single instance of your custom protocol running in a connection.",
+  "items": [
+    {
+      "name": "func parseOutput(minimumIncompleteLength: Int, maximumLength: Int, parse: (UnsafeMutableRawBufferPointer?, Bool) -> Int) -> Bool",
+      "desc": "Examines the content of output data while inside your output handler."
+    },
+    {
+      "name": "func writeOutput(data: Data)",
+      "desc": "Sends arbitrary output data from your protocol to the next protocol."
+    },
+    {
+      "name": "func writeOutputNoCopy(length: Int)",
+      "desc": "Sends a specific number of bytes from a message while inside your output handler."
+    },
+    {
+      "name": "func passThroughOutput()",
+      "desc": "Indicates that your protocol no longer needs to handle output data."
+    },
+    {
+      "name": "func parseInput(minimumIncompleteLength: Int, maximumLength: Int, parse: (UnsafeMutableRawBufferPointer?, Bool) -> Int) -> Bool",
+      "desc": "Examines the content of input data while in your input handler."
+    },
+    {
+      "name": "func deliverInput(data: Data, message: NWProtocolFramer.Message, isComplete: Bool)",
+      "desc": "Delivers an inbound message containing arbitrary data from your protocol to the application."
+    },
+    {
+      "name": "func deliverInputNoCopy(length: Int, message: NWProtocolFramer.Message, isComplete: Bool) -> Bool",
+      "desc": "Delivers an inbound message containing a specific number of next received bytes."
+    },
+    {
+      "name": "func passThroughInput()",
+      "desc": "Indicates that your protocol no longer needs to handle input data."
+    },
+    {
+      "name": "func markReady()",
+      "desc": "Indicates to a connection that your protocol's handshake is complete."
+    },
+    {
+      "name": "func markFailed(error: NWError?)",
+      "desc": "Indicates to a connection that your protocol has encountered an error, or has gracefully closed."
+    },
+    {
+      "name": "func prependApplicationProtocol(options: NWProtocolOptions)",
+      "desc": "Dynamically adds another protocol that will run above your protocol after your protocol calls markReady()."
+    },
+    {
+      "name": "var remote: NWEndpoint?",
+      "desc": "The remote endpoint of the connection in which your protocol is running."
+    },
+    {
+      "name": "var local: NWEndpoint?",
+      "desc": "The local endpoint of the connection in which your protocol is running."
+    },
+    {
+      "name": "var parameters: NWParameters?",
+      "desc": "The parameters of the connection in which your protocol is running."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "The description of the connection in which your protocol is running."
+    },
+    {
+      "name": "func async(execute: () -> Void)",
+      "desc": "Requests that a block be executed on the connection's internal scheduling context."
+    },
+    {
+      "name": "func scheduleWakeup(wakeupTime: NWProtocolFramer.Instance.WakeupTime)",
+      "desc": "Requests that wakeup(framer:) be called on your protocol at a specific time in the future."
+    },
+    {
+      "name": "enum NWProtocolFramer.Instance.WakeupTime",
+      "desc": "Times at which to schedule a protocol wakeup."
+    },
+    {
+      "name": "var options: NWProtocolFramer.Options"
+    },
+    {
+      "name": "func writeOutput<Output>(data: Output)"
+    }
+  ],
+  "declaration": "final class NWProtocolFramer.Instance",
+  "conformsTo": [
+    "CustomDebugStringConvertible"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "path": "/documentation/audiotoolbox/auparameterevent",
+  "type": "Structure",
+  "name": "AUParameterEvent",
+  "desc": "A structure that describes a scheduled parameter event.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(next: UnsafeMutablePointer<AURenderEvent>?, eventSampleTime: AUEventSampleTime, eventType: AURenderEventType, reserved: (UInt8, UInt8, UInt8), rampDurationSampleFrames: AUAudioFrameCount, parameterAddress: AUParameterAddress, value: AUValue)"
+    },
+    {
+      "name": "var eventSampleTime: AUEventSampleTime",
+      "desc": "The sample time at which the event is scheduled to occur."
+    },
+    {
+      "name": "var eventType: AURenderEventType",
+      "desc": "The type of render event. Must be AURenderEventType.parameter or AURenderEventType.parameterRamp."
+    },
+    {
+      "name": "var next: UnsafeMutablePointer<AURenderEvent>?",
+      "desc": "The next event in a linked list of events."
+    },
+    {
+      "name": "var parameterAddress: AUParameterAddress",
+      "desc": "The parameter to change."
+    },
+    {
+      "name": "var rampDurationSampleFrames: AUAudioFrameCount",
+      "desc": "The ramp duration, in sample frames. Must be 0 for a non-ramped event; otherwise, must be greater than 0 for a ramped event."
+    },
+    {
+      "name": "var reserved: (UInt8, UInt8, UInt8)",
+      "desc": "Reserved field. Must be 0."
+    },
+    {
+      "name": "var value: AUValue",
+      "desc": "For a non-ramped event, this is the new parameter value. For a ramped event, this is the parameter value at the end of the ramp."
+    }
+  ],
+  "declaration": "struct AUParameterEvent"
+}

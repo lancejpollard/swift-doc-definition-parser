@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/network/nwpathmonitor",
+  "type": "Class",
+  "name": "NWPathMonitor",
+  "desc": "An observer that you use to monitor and react to network changes.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Initializes a path monitor to observe all available interface types."
+    },
+    {
+      "name": "init(requiredInterfaceType: NWInterface.InterfaceType)",
+      "desc": "Initializes a path monitor to observe a specific interface type."
+    },
+    {
+      "name": "init(prohibitedInterfaceTypes: [NWInterface.InterfaceType])",
+      "desc": "Initializes a path monitor to observe interface types that are not explicitly prohibited."
+    },
+    {
+      "name": "func start(queue: DispatchQueue)",
+      "desc": "Starts monitoring path changes, and sets a queue on which to deliver path events."
+    },
+    {
+      "name": "var queue: DispatchQueue?",
+      "desc": "The queue on which path events are delivered."
+    },
+    {
+      "name": "var currentPath: NWPath",
+      "desc": "The currently available network path observed by the path monitor."
+    },
+    {
+      "name": "var pathUpdateHandler: ((NWPath) -> Void)?",
+      "desc": "A handler that receives network path updates."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Stops receiving network path updates."
+    }
+  ],
+  "declaration": "final class NWPathMonitor"
+}

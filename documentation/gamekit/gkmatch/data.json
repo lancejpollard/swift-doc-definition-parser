@@ -1,0 +1,56 @@
+{
+  "path": "/documentation/gamekit/gkmatch",
+  "type": "Class",
+  "name": "GKMatch",
+  "desc": "A peer-to-peer network between a group of players that sign into Game Center.",
+  "items": [
+    {
+      "name": "var delegate: GKMatchDelegate?",
+      "desc": "The delegate that handles communication between players in a match."
+    },
+    {
+      "name": "protocol GKMatchDelegate",
+      "desc": "An object that receives connection status and data transmitted in a multiplayer game."
+    },
+    {
+      "name": "var expectedPlayerCount: Int",
+      "desc": "The remaining number of players invited but not yet connected to the match."
+    },
+    {
+      "name": "var players: [GKPlayer]",
+      "desc": "The players that join the match."
+    },
+    {
+      "name": "func chooseBestHostingPlayer(completionHandler: (GKPlayer?) -> Void)",
+      "desc": "Determines the best player in the game to act as the server for a client-server topology."
+    },
+    {
+      "name": "func send(Data, to: [GKPlayer], dataMode: GKMatch.SendDataMode)",
+      "desc": "Transmits data to one or more players connected to the match."
+    },
+    {
+      "name": "func sendData(toAllPlayers: Data, with: GKMatch.SendDataMode)",
+      "desc": "Transmits data to all players connected to the match."
+    },
+    {
+      "name": "enum GKMatch.SendDataMode",
+      "desc": "The mechanism used to transmit data to other players."
+    },
+    {
+      "name": "func voiceChat(withName: String) -> GKVoiceChat?",
+      "desc": "Joins the local player to a voice channel."
+    },
+    {
+      "name": "func disconnect()",
+      "desc": "Disconnects the local player from the match."
+    },
+    {
+      "name": "func rematch(completionHandler: ((GKMatch?, Error?) -> Void)?)",
+      "desc": "Creates a new match with the players from an existing match."
+    }
+  ],
+  "declaration": "class GKMatch : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

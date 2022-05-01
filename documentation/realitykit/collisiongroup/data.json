@@ -1,0 +1,129 @@
+{
+  "path": "/documentation/realitykit/collisiongroup",
+  "type": "Structure",
+  "name": "CollisionGroup",
+  "desc": "A bitmask that defines the collision group to which an entity belongs.",
+  "items": [
+    {
+      "name": "static let `default`: CollisionGroup",
+      "desc": "The default collision group for objects."
+    },
+    {
+      "name": "static let all: CollisionGroup",
+      "desc": "The collision group that represents all groups."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates an empty option set."
+    },
+    {
+      "name": "init(rawValue: UInt32)",
+      "desc": "Creates a collision group from a raw value."
+    },
+    {
+      "name": "init<S>(S)",
+      "desc": "Creates a new set from a finite sequence of items."
+    },
+    {
+      "name": "init(arrayLiteral: CollisionGroup...)",
+      "desc": "Creates a set containing the elements of the given array literal."
+    },
+    {
+      "name": "static func != (CollisionGroup, CollisionGroup) -> Bool",
+      "desc": "Compares two collision groups for inequality, return true if they are different."
+    },
+    {
+      "name": "typealias CollisionGroup.Element",
+      "desc": "The type of element that this option set can hold."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value that indicates whether the set has no elements."
+    },
+    {
+      "name": "let rawValue: UInt32",
+      "desc": "The raw value for this collision group."
+    },
+    {
+      "name": "func contains(CollisionGroup) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a given element is a member of the option set."
+    },
+    {
+      "name": "func formIntersection(CollisionGroup)",
+      "desc": "Removes all elements of this option set that are not also present in the given set."
+    },
+    {
+      "name": "func formSymmetricDifference(CollisionGroup)",
+      "desc": "Replaces this set with a new set containing all elements contained in either this set or the given set, but not in both."
+    },
+    {
+      "name": "func formUnion(CollisionGroup)",
+      "desc": "Inserts the elements of another set into this option set."
+    },
+    {
+      "name": "func insert(CollisionGroup) -> (inserted: Bool, memberAfterInsert: CollisionGroup)",
+      "desc": "Adds the given element to the option set if it is not already a member."
+    },
+    {
+      "name": "func intersection(CollisionGroup) -> CollisionGroup",
+      "desc": "Returns a new option set with only the elements contained in both this set and the given set."
+    },
+    {
+      "name": "func isDisjoint(with: CollisionGroup) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the set has no members in common with the given set."
+    },
+    {
+      "name": "func isStrictSubset(of: CollisionGroup) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether this set is a strict subset of the given set."
+    },
+    {
+      "name": "func isStrictSuperset(of: CollisionGroup) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether this set is a strict superset of the given set."
+    },
+    {
+      "name": "func isSubset(of: CollisionGroup) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the set is a subset of another set."
+    },
+    {
+      "name": "func isSuperset(of: CollisionGroup) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the set is a superset of the given set."
+    },
+    {
+      "name": "func remove(CollisionGroup) -> CollisionGroup?",
+      "desc": "Removes the given element and all elements subsumed by it."
+    },
+    {
+      "name": "func subtract(CollisionGroup)",
+      "desc": "Removes the elements of the given set from this set."
+    },
+    {
+      "name": "func subtracting(CollisionGroup) -> CollisionGroup",
+      "desc": "Returns a new set containing the elements of this set that do not occur in the given set."
+    },
+    {
+      "name": "func symmetricDifference(CollisionGroup) -> CollisionGroup",
+      "desc": "Returns a new option set with the elements contained in this set or in the given set, but not in both."
+    },
+    {
+      "name": "func union(CollisionGroup) -> CollisionGroup",
+      "desc": "Returns a new option set of the elements contained in this set, in the given set, or in both."
+    },
+    {
+      "name": "func update(with: CollisionGroup) -> CollisionGroup?",
+      "desc": "Inserts the given element into the set."
+    },
+    {
+      "name": "typealias CollisionGroup.ArrayLiteralElement"
+    },
+    {
+      "name": "typealias CollisionGroup.RawValue"
+    },
+    {
+      "name": "static let sceneUnderstanding: CollisionGroup"
+    }
+  ],
+  "declaration": "struct CollisionGroup",
+  "conformsTo": [
+    "OptionSet"
+  ]
+}

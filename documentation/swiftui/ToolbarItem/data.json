@@ -1,0 +1,34 @@
+{
+  "path": "/documentation/swiftui/toolbaritem",
+  "type": "Structure",
+  "name": "ToolbarItem",
+  "desc": "A model that represents an item which can be placed in the toolbar or navigation bar.",
+  "items": [
+    {
+      "name": "init(id: String, placement: ToolbarItemPlacement, showsByDefault: Bool, content: () -> Content)",
+      "desc": "Creates a toolbar item with the specified placement and content, which allows for user customization."
+    },
+    {
+      "name": "init(placement: ToolbarItemPlacement, content: () -> Content)",
+      "desc": "Creates a toolbar item with the specified placement and content."
+    },
+    {
+      "name": "var id: ID",
+      "desc": "The stable identity of the entity associated with this instance."
+    },
+    {
+      "name": "var id: ObjectIdentifier",
+      "desc": "The stable identity of the entity associated with this instance."
+    },
+    {
+      "name": "typealias Body",
+      "desc": "The type of content representing the body of this toolbar content."
+    }
+  ],
+  "declaration": "struct ToolbarItem<ID, Content> where Content : View",
+  "conformsTo": [
+    "CustomizableToolbarContent",
+    "Identifiable",
+    "ToolbarContent"
+  ]
+}

@@ -1,0 +1,366 @@
+{
+  "path": "/documentation/appkit/nsbrowser",
+  "type": "Class",
+  "name": "NSBrowser",
+  "desc": "An interface that displays a hierarchically organized list of data items that can be navigated and selected.",
+  "items": [
+    {
+      "name": "var reusesColumns: Bool",
+      "desc": "A Boolean that indicates whether the browser reuses matrix objects after their columns are unloaded."
+    },
+    {
+      "name": "var maxVisibleColumns: Int",
+      "desc": "The maximum number of visible columns."
+    },
+    {
+      "name": "var autohidesScroller: Bool",
+      "desc": "A Boolean that indicates whether the browser automatically hides its scroller."
+    },
+    {
+      "name": "var backgroundColor: NSColor",
+      "desc": "The browser’s background color."
+    },
+    {
+      "name": "var minColumnWidth: CGFloat",
+      "desc": "The minimum column width, in pixels."
+    },
+    {
+      "name": "var separatesColumns: Bool",
+      "desc": "A Boolean that indicates whether columns are separated by bezeled borders."
+    },
+    {
+      "name": "var takesTitleFromPreviousColumn: Bool",
+      "desc": "A Boolean that indicates whether a column takes its title from the selected cell in the previous column."
+    },
+    {
+      "name": "func tile()",
+      "desc": "Adjusts the various subviews of the browser—scrollers, columns, titles, and so on—without redrawing."
+    },
+    {
+      "name": "var delegate: NSBrowserDelegate?",
+      "desc": "The browser’s delegate."
+    },
+    {
+      "name": "class var cellClass: AnyClass",
+      "desc": "Returns the NSBrowserCell class."
+    },
+    {
+      "name": "func setCellClass(AnyClass)",
+      "desc": "Sets the class of the cell to be used by the matrices in the columns of the browser."
+    },
+    {
+      "name": "var cellPrototype: Any!",
+      "desc": "The prototype NSCell for displaying items in the matrices in the columns of the browser."
+    },
+    {
+      "name": "var allowsBranchSelection: Bool",
+      "desc": "A Boolean that indicates whether the user can select branch items."
+    },
+    {
+      "name": "var allowsEmptySelection: Bool",
+      "desc": "A Boolean that indicates whether there can be nothing selected."
+    },
+    {
+      "name": "var allowsMultipleSelection: Bool",
+      "desc": "A Boolean that indicates whether the user can select multiple items."
+    },
+    {
+      "name": "func selectedRowIndexes(inColumn: Int) -> IndexSet?",
+      "desc": "Provides the indexes of the selected rows in a given column of the browser."
+    },
+    {
+      "name": "func selectRowIndexes(IndexSet, inColumn: Int)",
+      "desc": "Specifies the selected rows in a given column of the browser."
+    },
+    {
+      "name": "var allowsTypeSelect: Bool",
+      "desc": "A Boolean that indicates whether the browser allows keystroke-based selection (type select)."
+    },
+    {
+      "name": "func selectedCell(inColumn: Int) -> Any?",
+      "desc": "Returns the last (lowest) cell selected in the given column."
+    },
+    {
+      "name": "var selectedCells: [NSCell]?",
+      "desc": "All cells selected in the rightmost column."
+    },
+    {
+      "name": "func selectAll(Any?)",
+      "desc": "Selects all cells in the last column of the browser."
+    },
+    {
+      "name": "func selectedRow(inColumn: Int) -> Int",
+      "desc": "Returns the row index of the selected cell in the specified column."
+    },
+    {
+      "name": "func selectRow(Int, inColumn: Int)",
+      "desc": "Selects the cell at the specified row and column index."
+    },
+    {
+      "name": "var selectionIndexPath: IndexPath?",
+      "desc": "The index path of the item selected in the browser."
+    },
+    {
+      "name": "var selectionIndexPaths: [IndexPath]",
+      "desc": "An array containing the index paths of all items selected in the browser."
+    },
+    {
+      "name": "func loadedCell(atRow: Int, column: Int) -> Any?",
+      "desc": "Loads, if necessary, and returns the cell at the specified row and column location."
+    },
+    {
+      "name": "func editItem(at: IndexPath, with: NSEvent?, select: Bool)",
+      "desc": "Begins editing the item at the specified path."
+    },
+    {
+      "name": "func item(at: IndexPath) -> Any?",
+      "desc": "Returns the item at the specified index path."
+    },
+    {
+      "name": "func item(atRow: Int, inColumn: Int) -> Any?",
+      "desc": "Returns the item located at the specified row and column."
+    },
+    {
+      "name": "func indexPath(forColumn: Int) -> IndexPath",
+      "desc": "Returns the index path of the item whose children are displayed in the given column."
+    },
+    {
+      "name": "func isLeafItem(Any?) -> Bool",
+      "desc": "Returns whether the specified item is a leaf item."
+    },
+    {
+      "name": "func parentForItems(inColumn: Int) -> Any?",
+      "desc": "Returns the item that contains the children located in the specified column."
+    },
+    {
+      "name": "func path() -> String",
+      "desc": "Returns a string representing the browser’s current path."
+    },
+    {
+      "name": "func setPath(String) -> Bool",
+      "desc": "Sets the path to be displayed by the browser."
+    },
+    {
+      "name": "func path(toColumn: Int) -> String",
+      "desc": "Returns a string representing the path from the first column up to, but not including, the column at the given index."
+    },
+    {
+      "name": "var pathSeparator: String",
+      "desc": "The path separator."
+    },
+    {
+      "name": "func addColumn()",
+      "desc": "Adds a column to the right of the last column."
+    },
+    {
+      "name": "var selectedColumn: Int",
+      "desc": "The index of the last column with a selected item."
+    },
+    {
+      "name": "var lastColumn: Int",
+      "desc": "The index of the last column loaded."
+    },
+    {
+      "name": "var firstVisibleColumn: Int",
+      "desc": "The index of the first visible column."
+    },
+    {
+      "name": "var numberOfVisibleColumns: Int",
+      "desc": "The number of visible columns."
+    },
+    {
+      "name": "var lastVisibleColumn: Int",
+      "desc": "The index of the last visible column."
+    },
+    {
+      "name": "func validateVisibleColumns()",
+      "desc": "Validates the browser’s visible columns."
+    },
+    {
+      "name": "var isLoaded: Bool",
+      "desc": "A Boolean that indicates whether column 0 is loaded."
+    },
+    {
+      "name": "func loadColumnZero()",
+      "desc": "Loads column 0; unloads previously loaded columns."
+    },
+    {
+      "name": "func reloadColumn(Int)",
+      "desc": "Reloads the given column."
+    },
+    {
+      "name": "func title(ofColumn: Int) -> String?",
+      "desc": "Returns the title displayed for the given column."
+    },
+    {
+      "name": "func setTitle(String, ofColumn: Int)",
+      "desc": "Sets the title of the given column."
+    },
+    {
+      "name": "var isTitled: Bool",
+      "desc": "A Boolean that indicates whether columns display titles."
+    },
+    {
+      "name": "func drawTitle(ofColumn: Int, in: NSRect)",
+      "desc": "Draws the title for the specified column within the given rectangle."
+    },
+    {
+      "name": "var titleHeight: CGFloat",
+      "desc": "The height of the column titles for the browser."
+    },
+    {
+      "name": "func titleFrame(ofColumn: Int) -> NSRect",
+      "desc": "Returns the bounds of the title frame for the specified column."
+    },
+    {
+      "name": "func noteHeightOfRowsWithIndexesChanged(IndexSet, inColumn: Int)",
+      "desc": "Immediately retiles the browser’s columns using row heights specified by the browser’s delegate."
+    },
+    {
+      "name": "func reloadData(forRowIndexes: IndexSet, inColumn: Int)",
+      "desc": "Updates the rows in the column with the specified column index with indexes in the specified set."
+    },
+    {
+      "name": "var hasHorizontalScroller: Bool",
+      "desc": "A Boolean that indicates whether the browser has a horizontal scroller."
+    },
+    {
+      "name": "func scrollColumnToVisible(Int)",
+      "desc": "Scrolls to make the specified column visible."
+    },
+    {
+      "name": "func scrollColumnsLeft(by: Int)",
+      "desc": "Scrolls columns left by the specified number of columns."
+    },
+    {
+      "name": "func scrollColumnsRight(by: Int)",
+      "desc": "Scrolls columns right by the specified number of columns."
+    },
+    {
+      "name": "func scrollRowToVisible(Int, inColumn: Int)",
+      "desc": "Scrolls the specified row to be visible within the specified column."
+    },
+    {
+      "name": "func setDraggingSourceOperationMask(NSDragOperation, forLocal: Bool)",
+      "desc": "Specifies the drag-operation mask for dragging operations with local or external destinations."
+    },
+    {
+      "name": "func canDragRows(with: IndexSet, inColumn: Int, with: NSEvent) -> Bool",
+      "desc": "Indicates whether the browser can attempt to initiate a drag of the given rows for the given event."
+    },
+    {
+      "name": "func draggingImageForRows(with: IndexSet, inColumn: Int, with: NSEvent, offset: NSPointPointer?) -> NSImage?",
+      "desc": "Provides an image to represent dragged rows during a drag operation on the browser."
+    },
+    {
+      "name": "func frame(ofColumn: Int) -> NSRect",
+      "desc": "Returns the rectangle containing the given column."
+    },
+    {
+      "name": "func frame(ofInsideOfColumn: Int) -> NSRect",
+      "desc": "Returns the rectangle containing the specified column, not including borders."
+    },
+    {
+      "name": "func frame(ofRow: Int, inColumn: Int) -> NSRect",
+      "desc": "Returns the frame of the cell at the specified location, including the expandable arrow."
+    },
+    {
+      "name": "func getRow(UnsafeMutablePointer<Int>?, column: UnsafeMutablePointer<Int>?, for: NSPoint) -> Bool",
+      "desc": "Gets the row and column coordinates for the specified point, if a cell exists at that point."
+    },
+    {
+      "name": "var doubleAction: Selector?",
+      "desc": "The browser’s double-click action method."
+    },
+    {
+      "name": "var sendsActionOnArrowKeys: Bool",
+      "desc": "A Boolean that indicates whether pressing an arrow key causes an action message to be sent."
+    },
+    {
+      "name": "func sendAction() -> Bool",
+      "desc": "Sends the action message to the target."
+    },
+    {
+      "name": "func doClick(Any?)",
+      "desc": "Responds to (single) mouse clicks in a column of the browser."
+    },
+    {
+      "name": "func doDoubleClick(Any?)",
+      "desc": "Responds to double clicks in a column of the browser."
+    },
+    {
+      "name": "var clickedColumn: Int",
+      "desc": "The column number of the cell that the user clicked to display a context menu."
+    },
+    {
+      "name": "var clickedRow: Int",
+      "desc": "The row number of the cell that the user clicked to display a context menu."
+    },
+    {
+      "name": "class func removeSavedColumns(withAutosaveName: NSBrowser.ColumnsAutosaveName)",
+      "desc": "Removes the column configuration data stored under the given name from the application’s user defaults."
+    },
+    {
+      "name": "var columnsAutosaveName: NSBrowser.ColumnsAutosaveName",
+      "desc": "The name used to automatically save the browser’s column configuration."
+    },
+    {
+      "name": "typealias NSBrowser.ColumnsAutosaveName"
+    },
+    {
+      "name": "func columnContentWidth(forColumnWidth: CGFloat) -> CGFloat",
+      "desc": "Returns the content width for a given column width."
+    },
+    {
+      "name": "func columnWidth(forColumnContentWidth: CGFloat) -> CGFloat",
+      "desc": "Returns the column width for the width of the given column’s content."
+    },
+    {
+      "name": "var columnResizingType: NSBrowser.ColumnResizingType",
+      "desc": "A constant indicating the browser’s column resizing type."
+    },
+    {
+      "name": "var prefersAllColumnUserResizing: Bool",
+      "desc": "A Boolean that indicates whether the browser is set to resize all columns simultaneously rather than resizing a single column at a time."
+    },
+    {
+      "name": "func width(ofColumn: Int) -> CGFloat",
+      "desc": "Returns the width of the specified column."
+    },
+    {
+      "name": "func setWidth(CGFloat, ofColumn: Int)",
+      "desc": "Sets the width of the specified column."
+    },
+    {
+      "name": "func defaultColumnWidth() -> CGFloat",
+      "desc": "Returns the default column width of the browser’s columns."
+    },
+    {
+      "name": "func setDefaultColumnWidth(CGFloat)",
+      "desc": "Sets the default column width for new browser columns that do not otherwise have an initial width from defaults or the browser’s delegate."
+    },
+    {
+      "name": "var rowHeight: CGFloat",
+      "desc": "The height of the browser’s rows."
+    },
+    {
+      "name": "enum NSBrowser.ColumnResizingType",
+      "desc": "Types of browser column resizing."
+    },
+    {
+      "name": "enum NSBrowser.DropOperation",
+      "desc": "The type used to specify the drop type of a drag-and-drop operation. See browser(_:validateDrop:proposedRow:column:dropOperation:) for more information."
+    },
+    {
+      "name": "class let columnConfigurationDidChangeNotification: NSNotification.Name",
+      "desc": "Notifies the delegate when the width of a browser column has changed."
+    },
+    {
+      "name": "func selectedCell() -> Any?"
+    }
+  ],
+  "declaration": "class NSBrowser : NSControl",
+  "inheritsFrom": [
+    "NSControl"
+  ]
+}

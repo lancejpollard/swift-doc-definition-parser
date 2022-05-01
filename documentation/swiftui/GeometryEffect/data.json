@@ -1,0 +1,21 @@
+{
+  "path": "/documentation/swiftui/geometryeffect",
+  "type": "Protocol",
+  "name": "GeometryEffect",
+  "desc": "An effect that changes the visual appearance of a view, largely without changing its ancestors or descendants.",
+  "items": [
+    {
+      "name": "func effectValue(size: CGSize) -> ProjectionTransform",
+      "desc": "Returns the current value of the effect."
+    },
+    {
+      "name": "func ignoredByLayout() -> _IgnoredByLayoutEffect<Self>",
+      "desc": "Returns an effect that produces the same geometry transform as this effect, but only applies the transform while rendering its view."
+    }
+  ],
+  "declaration": "protocol GeometryEffect : Animatable, ViewModifier where Self.Body == Never",
+  "inheritsFrom": [
+    "Animatable",
+    "ViewModifier"
+  ]
+}

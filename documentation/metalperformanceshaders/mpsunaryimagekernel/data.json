@@ -1,0 +1,61 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsunaryimagekernel",
+  "type": "Class",
+  "name": "MPSUnaryImageKernel",
+  "desc": "A kernel that consumes one texture and produces one texture.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice)"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, inPlaceTexture: UnsafeMutablePointer<MTLTexture>, fallbackCopyAllocator: MPSCopyAllocator?) -> Bool",
+      "desc": "This method attempts to apply a kernel in place on a texture."
+    },
+    {
+      "name": "typealias MPSCopyAllocator",
+      "desc": "A block to make a copy of a source texture for filters that can only execute out of place."
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, sourceImage: MPSImage, destinationImage: MPSImage)"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, sourceTexture: MTLTexture, destinationTexture: MTLTexture)",
+      "desc": "Encodes a kernel into a command buffer, out of place."
+    },
+    {
+      "name": "func sourceRegion(destinationSize: MTLSize) -> MPSRegion",
+      "desc": "Determines the region of the source texture that will be read for an encode operation."
+    },
+    {
+      "name": "var offset: MPSOffset",
+      "desc": "The position of the destination clip rectangle origin relative to the source buffer."
+    },
+    {
+      "name": "struct MPSOffset",
+      "desc": "A signed coordinate with x, y, and z components."
+    },
+    {
+      "name": "var clipRect: MTLRegion",
+      "desc": "An optional clip rectangle to use when writing data. Only the pixels in the rectangle will be overwritten."
+    },
+    {
+      "name": "struct MPSRegion",
+      "desc": "A region of an image."
+    },
+    {
+      "name": "var edgeMode: MPSImageEdgeMode",
+      "desc": "The edge mode to use when texture reads stray off the edge of an image."
+    },
+    {
+      "name": "enum MPSImageEdgeMode",
+      "desc": "The options used to control the edge behavior of an image filter when it reads outside the bounds of a source texture."
+    }
+  ],
+  "declaration": "class MPSUnaryImageKernel : MPSKernel",
+  "inheritsFrom": [
+    "MPSKernel"
+  ]
+}

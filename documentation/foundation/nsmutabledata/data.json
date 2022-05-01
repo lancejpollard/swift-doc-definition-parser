@@ -1,0 +1,84 @@
+{
+  "path": "/documentation/foundation/nsmutabledata",
+  "type": "Class",
+  "name": "NSMutableData",
+  "desc": "A dynamic byte buffer that bridges to Data; use NSMutableData when you need reference semantics or other Foundation-specific behavior.",
+  "items": [
+    {
+      "name": "init?(capacity: Int)",
+      "desc": "Returns an initialized mutable data object capable of holding the specified number of bytes."
+    },
+    {
+      "name": "init?(length: Int)",
+      "desc": "Initializes and returns a mutable data object containing a given number of zeroed bytes."
+    },
+    {
+      "name": "var mutableBytes: UnsafeMutableRawPointer",
+      "desc": "A pointer to the data contained by the mutable data object."
+    },
+    {
+      "name": "var length: Int",
+      "desc": "The number of bytes contained in the mutable data object."
+    },
+    {
+      "name": "func append(UnsafeRawPointer, length: Int)",
+      "desc": "Appends to the receiver a given number of bytes from a given buffer."
+    },
+    {
+      "name": "func append(Data)",
+      "desc": "Appends the content of another data object to the receiver."
+    },
+    {
+      "name": "func increaseLength(by: Int)",
+      "desc": "Increases the length of the receiver by a given number of bytes."
+    },
+    {
+      "name": "func replaceBytes(in: NSRange, withBytes: UnsafeRawPointer)",
+      "desc": "Replaces with a given set of bytes a given range within the contents of the receiver."
+    },
+    {
+      "name": "func replaceBytes(in: NSRange, withBytes: UnsafeRawPointer?, length: Int)",
+      "desc": "Replaces with a given set of bytes a given range within the contents of the receiver."
+    },
+    {
+      "name": "func resetBytes(in: NSRange)",
+      "desc": "Replaces with zeroes the contents of the receiver in a given range."
+    },
+    {
+      "name": "func setData(Data)",
+      "desc": "Replaces the entire contents of the receiver with the contents of another data object."
+    },
+    {
+      "name": "func compress(using: NSData.CompressionAlgorithm)",
+      "desc": "Compresses the data object’s bytes using an algorithm that you specify."
+    },
+    {
+      "name": "func decompress(using: NSData.CompressionAlgorithm)",
+      "desc": "Decompresses the data object’s bytes."
+    },
+    {
+      "name": "enum NSData.CompressionAlgorithm",
+      "desc": "An algorithm that indicates how to compress or decompress data."
+    },
+    {
+      "name": "var NSCompressionErrorMaximum: Int",
+      "desc": "The end of the range of error codes reserved for compression errors."
+    },
+    {
+      "name": "var NSCompressionErrorMinimum: Int",
+      "desc": "The start of the range of error codes reserved for compression errors."
+    },
+    {
+      "name": "var NSCompressionFailedError: Int",
+      "desc": "An error code value that indicates a failure to compress data using the provided algorithm."
+    },
+    {
+      "name": "var NSDecompressionFailedError: Int",
+      "desc": "An error code value that indicates a failure to decompress data using the provided algorithm."
+    }
+  ],
+  "declaration": "class NSMutableData : NSData",
+  "inheritsFrom": [
+    "NSData"
+  ]
+}

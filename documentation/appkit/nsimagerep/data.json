@@ -1,0 +1,144 @@
+{
+  "path": "/documentation/appkit/nsimagerep",
+  "type": "Class",
+  "name": "NSImageRep",
+  "desc": "A semiabstract superclass that provides subclasses that you use to draw an image from a particular type of source data.",
+  "items": [
+    {
+      "name": "class func imageReps(withContentsOfFile: String) -> [NSImageRep]?",
+      "desc": "Creates and returns an array of image representation objects initialized using the contents of the specified file."
+    },
+    {
+      "name": "class func imageReps(with: NSPasteboard) -> [NSImageRep]?",
+      "desc": "Creates and returns an array of image representation objects initialized using the contents of the pasteboard."
+    },
+    {
+      "name": "class func imageReps(withContentsOf: URL) -> [NSImageRep]?",
+      "desc": "Creates and returns an array of image representation objects initialized using the contents of the specified URL."
+    },
+    {
+      "name": "init?(contentsOfFile: String)",
+      "desc": "Creates and returns an image representation object using the contents of the specified file."
+    },
+    {
+      "name": "init?(pasteboard: NSPasteboard)",
+      "desc": "Creates and returns an image representation object using the contents of the specified pasteboard."
+    },
+    {
+      "name": "init?(contentsOf: URL)",
+      "desc": "Creates and returns an image representation object using the data at the specified URL."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates and returns an image representation object."
+    },
+    {
+      "name": "init?(coder: NSCoder)",
+      "desc": "Creates and returns an image representation object from data in an unarchiver."
+    },
+    {
+      "name": "class func canInit(with: Data) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the image representation can initialize itself from the specified data."
+    },
+    {
+      "name": "class func canInit(with: NSPasteboard) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the receiver can initialize itself from the data on the specified pasteboard."
+    },
+    {
+      "name": "class var imageTypes: [String]",
+      "desc": "Returns an array of UTI strings identifying the image types supported by the image representation, either directly or through a user-installed filter service."
+    },
+    {
+      "name": "class var imageUnfilteredTypes: [String]",
+      "desc": "Returns an array of UTI strings identifying the image types supported directly by the ime representation."
+    },
+    {
+      "name": "var size: NSSize",
+      "desc": "The size of the image representation, measured in points in the user coordinate space."
+    },
+    {
+      "name": "var bitsPerSample: Int",
+      "desc": "The number of bits per sample in the object (if the object is a planar image, this property contains the number of bits per sample per plane)."
+    },
+    {
+      "name": "var colorSpaceName: NSColorSpaceName",
+      "desc": "The name of the color space used by the image data."
+    },
+    {
+      "name": "var hasAlpha: Bool",
+      "desc": "A Boolean value that indicates whether the image data has an alpha channel."
+    },
+    {
+      "name": "var isOpaque: Bool",
+      "desc": "A Boolean value that indicates whether the image is opaque."
+    },
+    {
+      "name": "var pixelsHigh: Int",
+      "desc": "The height of the image, measured in pixels."
+    },
+    {
+      "name": "var pixelsWide: Int",
+      "desc": "The width of the image, measured in pixels."
+    },
+    {
+      "name": "var layoutDirection: NSImage.LayoutDirection",
+      "desc": "The layout direction for the image."
+    },
+    {
+      "name": "func cgImage(forProposedRect: UnsafeMutablePointer<NSRect>?, context: NSGraphicsContext?, hints: [NSImageRep.HintKey : Any]?) -> CGImage?",
+      "desc": "Returns a Core Graphics image object that captures the drawing of the image."
+    },
+    {
+      "name": "func draw() -> Bool",
+      "desc": "Implemented by subclasses to draw the image in the current coordinate system."
+    },
+    {
+      "name": "func draw(at: NSPoint) -> Bool",
+      "desc": "Draws the image representation’s image data at the specified point in the current coordinate system."
+    },
+    {
+      "name": "func draw(in: NSRect) -> Bool",
+      "desc": "Draws the image, scaling it (as needed) to fit the specified rectangle."
+    },
+    {
+      "name": "func draw(in: NSRect, from: NSRect, operation: NSCompositingOperation, fraction: CGFloat, respectFlipped: Bool, hints: [NSImageRep.HintKey : Any]?) -> Bool",
+      "desc": "Draws all or part of the image in the specified rectangle in the current coordinate system."
+    },
+    {
+      "name": "struct NSImageRep.HintKey",
+      "desc": "Constants for the keys to include in a hints dictionary when drawing the image."
+    },
+    {
+      "name": "class func `class`(forType: String) -> AnyClass?",
+      "desc": "Returns the image representation subclass that handles image data for the specified UTI."
+    },
+    {
+      "name": "class func `class`(for: Data) -> AnyClass?",
+      "desc": "Returns the image representation subclass that handles the specified type of data."
+    },
+    {
+      "name": "class var registeredClasses: [AnyClass]",
+      "desc": "Returns an array containing the registered image representation classes."
+    },
+    {
+      "name": "class func registerClass(AnyClass)",
+      "desc": "Adds the specified class to the registry of available image representation subclasses."
+    },
+    {
+      "name": "class func unregisterClass(AnyClass)",
+      "desc": "Removes the specified image representation subclass from the registry of available image representations."
+    },
+    {
+      "name": "class let registryDidChangeNotification: NSNotification.Name",
+      "desc": "Posted whenever the image representation class registry changes."
+    }
+  ],
+  "declaration": "class NSImageRep : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "NSCopying"
+  ]
+}

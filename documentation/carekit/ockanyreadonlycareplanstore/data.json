@@ -1,0 +1,21 @@
+{
+  "path": "/documentation/carekit/ockanyreadonlycareplanstore",
+  "type": "Protocol",
+  "name": "OCKAnyReadOnlyCarePlanStore",
+  "desc": "A read-only custom store that fetches care plan data objects.",
+  "items": [
+    {
+      "name": "var carePlanDelegate: OCKCarePlanStoreDelegate?",
+      "desc": "The object that handles callbacks from a care plan store when the contents of the care plan store change."
+    },
+    {
+      "name": "func fetchAnyCarePlan(withID: String, callbackQueue: DispatchQueue, completion: OCKResultClosure<OCKAnyCarePlan>)",
+      "desc": "Fetches a care plan asynchronously from the store."
+    },
+    {
+      "name": "func fetchAnyCarePlans(query: OCKAnyCarePlanQuery, callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyCarePlan]>)",
+      "desc": "Fetches an array of care plans asynchronously from the store."
+    }
+  ],
+  "declaration": "protocol OCKAnyReadOnlyCarePlanStore : AnyObject"
+}

@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/webkit/wkdownloaddelegate",
+  "type": "Protocol",
+  "name": "WKDownloadDelegate",
+  "desc": "A protocol you implement to track download progress and handle redirects, authentication challenges, and failures.",
+  "items": [
+    {
+      "name": "func download(WKDownload, decideDestinationUsing: URLResponse, suggestedFilename: String, completionHandler: (URL?) -> Void)",
+      "desc": "Asks the delegate to provide a file destination where the system should write the download data."
+    },
+    {
+      "name": "func downloadDidFinish(WKDownload)",
+      "desc": "Tells the delegate that the download finished."
+    },
+    {
+      "name": "func download(WKDownload, didFailWithError: Error, resumeData: Data?)",
+      "desc": "Tells the delegate that the download failed, with error information and data you can use to restart the download."
+    },
+    {
+      "name": "func download(WKDownload, didReceive: URLAuthenticationChallenge, completionHandler: (URLSession.AuthChallengeDisposition, URLCredential?) -> Void)",
+      "desc": "Asks the delegate to respond to an authentication challenge."
+    },
+    {
+      "name": "enum WKDownload.RedirectPolicy",
+      "desc": "An enumeration with cases that indicate whether to proceed with a redirect."
+    },
+    {
+      "name": "func download(WKDownload, willPerformHTTPRedirection: HTTPURLResponse, newRequest: URLRequest, decisionHandler: (WKDownload.RedirectPolicy) -> Void)",
+      "desc": "Asks the delegate to respond to the download’s redirect response."
+    },
+    {
+      "name": "enum WKDownload.RedirectPolicy",
+      "desc": "An enumeration with cases that indicate whether to proceed with a redirect."
+    }
+  ],
+  "declaration": "protocol WKDownloadDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

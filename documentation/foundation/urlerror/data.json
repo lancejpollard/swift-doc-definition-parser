@@ -1,0 +1,275 @@
+{
+  "path": "/documentation/foundation/urlerror",
+  "type": "Structure",
+  "name": "URLError",
+  "desc": "Error codes returned by URL loading APIs.",
+  "items": [
+    {
+      "name": "var errorCode: Int",
+      "desc": "The error code within the domain."
+    },
+    {
+      "name": "var errorUserInfo: [String : Any]",
+      "desc": "The error’s user-info dictionary."
+    },
+    {
+      "name": "var localizedDescription: String",
+      "desc": "A string containing the localized description of the error."
+    },
+    {
+      "name": "var failingURL: URL?",
+      "desc": "The URL which caused a load to fail."
+    },
+    {
+      "name": "var failureURLPeerTrust: SecTrust?",
+      "desc": "The state of a failed SSL handshake."
+    },
+    {
+      "name": "var failureURLString: String?",
+      "desc": "The string for the URL which caused a load to fail."
+    },
+    {
+      "name": "var downloadTaskResumeData: Data?",
+      "desc": "An opaque data object used to resume a failed download task."
+    },
+    {
+      "name": "var backgroundTaskCancelledReason: URLError.BackgroundTaskCancelledReason?",
+      "desc": "The reason for canceling a background task."
+    },
+    {
+      "name": "enum URLError.BackgroundTaskCancelledReason",
+      "desc": "An enumeration of reasons used to explain the cancellation of a background task."
+    },
+    {
+      "name": "var networkUnavailableReason: URLError.NetworkUnavailableReason?",
+      "desc": "The reason the network was unavailable for a task."
+    },
+    {
+      "name": "enum URLError.NetworkUnavailableReason",
+      "desc": "An enumeration of reasons explaining why a task couldn’t satisfy networking constraints."
+    },
+    {
+      "name": "static var errorDomain: String",
+      "desc": "The domain of the URL error."
+    },
+    {
+      "name": "static var appTransportSecurityRequiresSecureConnection: URLError.Code",
+      "desc": "App Transport Security disallowed a connection because there is no secure network connection."
+    },
+    {
+      "name": "static var backgroundSessionInUseByAnotherProcess: URLError.Code",
+      "desc": "An app or app extension attempted to connect to a background session that is already connected to a process."
+    },
+    {
+      "name": "static var backgroundSessionRequiresSharedContainer: URLError.Code",
+      "desc": "The shared container identifier of the URL session configuration is needed but hasn’t been set."
+    },
+    {
+      "name": "static var backgroundSessionWasDisconnected: URLError.Code",
+      "desc": "The app is suspended or exits while a background data task is processing."
+    },
+    {
+      "name": "static var badServerResponse: URLError.Code",
+      "desc": "The URL Loading System received bad data from the server."
+    },
+    {
+      "name": "static var badURL: URLError.Code",
+      "desc": "A malformed URL prevented a URL request from being initiated."
+    },
+    {
+      "name": "static var callIsActive: URLError.Code",
+      "desc": "A connection was attempted while a phone call is active on a network that doesn’t support simultaneous phone and data communication, such as EDGE or GPRS."
+    },
+    {
+      "name": "static var cancelled: URLError.Code",
+      "desc": "An asynchronous load has been canceled."
+    },
+    {
+      "name": "static var cannotCloseFile: URLError.Code",
+      "desc": "A download task couldn’t close the downloaded file on disk."
+    },
+    {
+      "name": "static var cannotConnectToHost: URLError.Code",
+      "desc": "An attempt to connect to a host failed."
+    },
+    {
+      "name": "static var cannotCreateFile: URLError.Code",
+      "desc": "A download task couldn’t create the downloaded file on disk because of an I/O failure."
+    },
+    {
+      "name": "static var cannotDecodeContentData: URLError.Code",
+      "desc": "Content data received during a connection request had an unknown content encoding."
+    },
+    {
+      "name": "static var cannotDecodeRawData: URLError.Code",
+      "desc": "Content data received during a connection request couldn’t be decoded for a known content encoding."
+    },
+    {
+      "name": "static var cannotFindHost: URLError.Code",
+      "desc": "The host name for a URL couldn’t be resolved."
+    },
+    {
+      "name": "static var cannotLoadFromNetwork: URLError.Code",
+      "desc": "A request to load an item only from the cache could not be satisfied."
+    },
+    {
+      "name": "static var cannotMoveFile: URLError.Code",
+      "desc": "A download task was unable to move a downloaded file on disk."
+    },
+    {
+      "name": "static var cannotOpenFile: URLError.Code",
+      "desc": "A download task was unable to open the downloaded file on disk."
+    },
+    {
+      "name": "static var cannotParseResponse: URLError.Code",
+      "desc": "A task couldn’t parse a response."
+    },
+    {
+      "name": "static var cannotRemoveFile: URLError.Code",
+      "desc": "A download task was unable to remove a downloaded file from disk."
+    },
+    {
+      "name": "static var cannotWriteToFile: URLError.Code",
+      "desc": "A download task was unable to write to the downloaded file on disk."
+    },
+    {
+      "name": "static var clientCertificateRejected: URLError.Code",
+      "desc": "A server certificate was rejected."
+    },
+    {
+      "name": "static var clientCertificateRequired: URLError.Code",
+      "desc": "A client certificate was required to authenticate an SSL connection during a request."
+    },
+    {
+      "name": "static var dataLengthExceedsMaximum: URLError.Code",
+      "desc": "The length of the resource data exceeds the maximum allowed."
+    },
+    {
+      "name": "static var dataNotAllowed: URLError.Code",
+      "desc": "The cellular network disallowed a connection."
+    },
+    {
+      "name": "static var dnsLookupFailed: URLError.Code",
+      "desc": "The host address couldn’t be found via DNS lookup."
+    },
+    {
+      "name": "static var downloadDecodingFailedMidStream: URLError.Code",
+      "desc": "A download task failed to decode an encoded file during the download."
+    },
+    {
+      "name": "static var downloadDecodingFailedToComplete: URLError.Code",
+      "desc": "A download task failed to decode an encoded file after downloading."
+    },
+    {
+      "name": "static var fileDoesNotExist: URLError.Code",
+      "desc": "The specified file doesn’t exist."
+    },
+    {
+      "name": "static var fileIsDirectory: URLError.Code",
+      "desc": "A request for an FTP file resulted in the server responding that the file is not a plain file, but a directory."
+    },
+    {
+      "name": "static var httpTooManyRedirects: URLError.Code",
+      "desc": "A redirect loop has been detected or the threshold for number of allowable redirects has been exceeded (currently 16)."
+    },
+    {
+      "name": "static var internationalRoamingOff: URLError.Code",
+      "desc": "The attempted connection required activating a data context while roaming, but international roaming is disabled."
+    },
+    {
+      "name": "static var networkConnectionLost: URLError.Code",
+      "desc": "A client or server connection was severed in the middle of an in-progress load."
+    },
+    {
+      "name": "static var noPermissionsToReadFile: URLError.Code",
+      "desc": "A resource couldn’t be read because of insufficient permissions."
+    },
+    {
+      "name": "static var notConnectedToInternet: URLError.Code",
+      "desc": "A network resource was requested, but an internet connection hasn’t been established and can’t be established automatically."
+    },
+    {
+      "name": "static var redirectToNonExistentLocation: URLError.Code",
+      "desc": "A redirect was specified by way of server response code, but the server didn’t accompany this code with a redirect URL."
+    },
+    {
+      "name": "static var requestBodyStreamExhausted: URLError.Code",
+      "desc": "A body stream is needed but the client didn’t provide one."
+    },
+    {
+      "name": "static var resourceUnavailable: URLError.Code",
+      "desc": "A requested resource couldn’t be retrieved."
+    },
+    {
+      "name": "static var serverCertificateHasBadDate: URLError.Code",
+      "desc": "A server certificate is expired, or is not yet valid."
+    },
+    {
+      "name": "static var serverCertificateHasUnknownRoot: URLError.Code",
+      "desc": "A server certificate wasn’t signed by any root server."
+    },
+    {
+      "name": "static var serverCertificateNotYetValid: URLError.Code",
+      "desc": "A server certificate isn’t valid yet."
+    },
+    {
+      "name": "static var serverCertificateUntrusted: URLError.Code",
+      "desc": "A server certificate was signed by a root server that isn’t trusted."
+    },
+    {
+      "name": "static var secureConnectionFailed: URLError.Code",
+      "desc": "An attempt to establish a secure connection failed for reasons that can’t be expressed more specifically."
+    },
+    {
+      "name": "static var timedOut: URLError.Code",
+      "desc": "An asynchronous operation timed out."
+    },
+    {
+      "name": "static var unknown: URLError.Code",
+      "desc": "The URL Loading System encountered an error that it can’t interpret."
+    },
+    {
+      "name": "static var unsupportedURL: URLError.Code",
+      "desc": "A properly formed URL couldn’t be handled by the framework."
+    },
+    {
+      "name": "static var userAuthenticationRequired: URLError.Code",
+      "desc": "Authentication is required to access a resource."
+    },
+    {
+      "name": "static var userCancelledAuthentication: URLError.Code",
+      "desc": "An asynchronous request for authentication has been canceled by the user."
+    },
+    {
+      "name": "static var zeroByteResource: URLError.Code",
+      "desc": "A server reported that a URL has a non-zero content length, but terminated the network connection gracefully without sending any data."
+    },
+    {
+      "name": "struct URLError.Code"
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "static func != (URLError, URLError) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are unequal."
+    },
+    {
+      "name": "init(Code, userInfo: [String : Any])"
+    },
+    {
+      "name": "var code: Code"
+    },
+    {
+      "name": "var userInfo: [String : Any]"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "static func == (URLError, URLError) -> Bool"
+    }
+  ],
+  "declaration": "struct URLError"
+}

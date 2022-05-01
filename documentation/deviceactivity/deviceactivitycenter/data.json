@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/deviceactivity/deviceactivitycenter",
+  "type": "Structure",
+  "name": "DeviceActivityCenter",
+  "desc": "A class that enables an application’s extension to start monitoring scheduled device activity.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an activity center to manage which device activities your application monitors."
+    },
+    {
+      "name": "func startMonitoring(DeviceActivityName, during: DeviceActivitySchedule, events: [DeviceActivityEvent.Name : DeviceActivityEvent]) throws",
+      "desc": "Starts monitoring the specified device activity."
+    },
+    {
+      "name": "func stopMonitoring([DeviceActivityName])",
+      "desc": "Stops monitoring the specified device activities."
+    },
+    {
+      "name": "var activities: [DeviceActivityName]",
+      "desc": "The activities that the application’s extension currently monitors."
+    },
+    {
+      "name": "func events(for: DeviceActivityName) -> [DeviceActivityEvent.Name : DeviceActivityEvent]",
+      "desc": "Fetches the events of a device activity."
+    },
+    {
+      "name": "func schedule(for: DeviceActivityName) -> DeviceActivitySchedule?",
+      "desc": "Fetches the schedule of a device activity."
+    }
+  ],
+  "declaration": "struct DeviceActivityCenter"
+}

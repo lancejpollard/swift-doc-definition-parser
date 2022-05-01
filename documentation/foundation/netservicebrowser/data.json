@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/foundation/netservicebrowser",
+  "type": "Class",
+  "name": "NetServiceBrowser",
+  "desc": "A network service browser that finds published services on a network using multicast DNS.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Initializes an allocated NetServiceBrowser object."
+    },
+    {
+      "name": "var delegate: NetServiceBrowserDelegate?",
+      "desc": "The delegate object for this instance."
+    },
+    {
+      "name": "var includesPeerToPeer: Bool",
+      "desc": "Whether to browse over peer-to-peer Bluetooth and Wi-Fi, if available. false, by default."
+    },
+    {
+      "name": "func searchForBrowsableDomains()",
+      "desc": "Initiates a search for domains visible to the host. This method returns immediately."
+    },
+    {
+      "name": "func searchForRegistrationDomains()",
+      "desc": "Initiates a search for domains in which the host may register services."
+    },
+    {
+      "name": "func searchForServices(ofType: String, inDomain: String)",
+      "desc": "Starts a search for services of a particular type within a specific domain."
+    },
+    {
+      "name": "func stop()",
+      "desc": "Halts a currently running search or resolution."
+    },
+    {
+      "name": "func schedule(in: RunLoop, forMode: RunLoop.Mode)",
+      "desc": "Adds the receiver to the specified run loop."
+    },
+    {
+      "name": "func remove(from: RunLoop, forMode: RunLoop.Mode)",
+      "desc": "Removes the receiver from the specified run loop."
+    }
+  ],
+  "declaration": "class NetServiceBrowser : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

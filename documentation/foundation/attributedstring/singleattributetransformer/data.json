@@ -1,0 +1,25 @@
+{
+  "path": "/documentation/foundation/attributedstring/singleattributetransformer",
+  "type": "Generic Structure",
+  "name": "AttributedString.SingleAttributeTransformer",
+  "desc": "A type that transforms an attribute by altering its range or value, or by replacing it entirely.",
+  "items": [
+    {
+      "name": "var range: Range<AttributedString.Index>",
+      "desc": "The range of the attribute in the attributed string."
+    },
+    {
+      "name": "var value: T.Value?",
+      "desc": "The value of the attribute."
+    },
+    {
+      "name": "func replace<U>(with: U.Type, value: U.Value)",
+      "desc": "Replaces an attribute with a different attribute."
+    },
+    {
+      "name": "func replace<U>(with: KeyPath<AttributeDynamicLookup, U>, value: U.Value)",
+      "desc": "Replaces an attribute with a different attribute that a key path identifies."
+    }
+  ],
+  "declaration": "struct AttributedString.SingleAttributeTransformer<T> where T : AttributedStringKey"
+}

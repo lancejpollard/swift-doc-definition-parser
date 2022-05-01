@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/mailkit/mecomposesessionhandler",
+  "type": "Protocol",
+  "name": "MEComposeSessionHandler",
+  "desc": "An object that participates in the composition of mail messages, and annotates recipient tokens.",
+  "items": [
+    {
+      "name": "class MEComposeSession",
+      "desc": "An object that represents a single mail compose window."
+    },
+    {
+      "name": "func mailComposeSessionDidBegin(MEComposeSession)",
+      "desc": "Informs the handler when the user opens a compose window."
+    },
+    {
+      "name": "func mailComposeSessionDidEnd(MEComposeSession)",
+      "desc": "Informs the handler when the user closes a compose window."
+    },
+    {
+      "name": "struct MEComposeSessionError",
+      "desc": "An error that indicates the compose session is in an erroneous state."
+    },
+    {
+      "name": "func annotateAddressesForSession(MEComposeSession, completion: ([MEEmailAddress : MEAddressAnnotation]) -> Void)",
+      "desc": "Indicates whether recipients in the compose window are valid or not."
+    },
+    {
+      "name": "class MEAddressAnnotation",
+      "desc": "An object that indicates the validity of an email address."
+    },
+    {
+      "name": "func viewController(for: MEComposeSession) -> MEExtensionViewController",
+      "desc": "Provides a custom view controller to display as part of the compose window."
+    },
+    {
+      "name": "func additionalHeaders(for: MEComposeSession) -> [String : [String]]",
+      "desc": "Provides custom headers to include in the outgoing message."
+    },
+    {
+      "name": "func allowMessageSendForSession(MEComposeSession, completion: (Error?) -> Void)",
+      "desc": "Confirms that the message is ready for delivery."
+    }
+  ],
+  "declaration": "protocol MEComposeSessionHandler",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

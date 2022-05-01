@@ -1,0 +1,39 @@
+{
+  "path": "/documentation/swift/mainactor",
+  "type": "Class",
+  "name": "MainActor",
+  "desc": "A singleton actor whose executor is equivalent to the main dispatch queue.",
+  "items": [
+    {
+      "name": "typealias MainActor.ActorType",
+      "desc": "The type of the shared actor instance that will be used to provide mutually-exclusive access to declarations annotated with the given global actor type."
+    },
+    {
+      "name": "var unownedExecutor: UnownedSerialExecutor",
+      "desc": "Retrieve the executor for this actor as an optimized, unowned reference."
+    },
+    {
+      "name": "static let shared: MainActor",
+      "desc": "The shared actor instance that will be used to provide mutually-exclusive access to declarations annotated with the given global actor type."
+    },
+    {
+      "name": "static var sharedUnownedExecutor: UnownedSerialExecutor",
+      "desc": "The shared executor instance that will be used to provide mutually-exclusive access for the global actor."
+    },
+    {
+      "name": "static var sharedUnownedExecutor: UnownedSerialExecutor",
+      "desc": "The shared executor instance that will be used to provide mutually-exclusive access for the global actor."
+    },
+    {
+      "name": "func enqueue(UnownedJob)"
+    },
+    {
+      "name": "static func run<T>(resultType: T.Type, body: @MainActor @Sendable () -> T) -> T",
+      "desc": "Execute the given body closure on the main actor."
+    }
+  ],
+  "declaration": "@globalActor final actor MainActor",
+  "conformsTo": [
+    "GlobalActor"
+  ]
+}

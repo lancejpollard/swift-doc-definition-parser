@@ -1,0 +1,29 @@
+{
+  "path": "/documentation/coregraphics/cgdisplaystreamupdate",
+  "type": "Class",
+  "name": "CGDisplayStreamUpdate",
+  "desc": "A reference to frame update’s metadata.",
+  "items": [
+    {
+      "name": "init?(mergedUpdateFirstUpdate: CGDisplayStreamUpdate?, secondUpdate: CGDisplayStreamUpdate?)",
+      "desc": "Combines two updates into a new update that includes the metadata for both source updates."
+    },
+    {
+      "name": "var dropCount: Int",
+      "desc": "Returns the number of frames that have been dropped since the last call to your update handler."
+    },
+    {
+      "name": "class var typeID: CFTypeID",
+      "desc": "Returns the type identifier of a Quartz display stream update."
+    },
+    {
+      "name": "func getMovedRectsDelta(dx: UnsafeMutablePointer<CGFloat>, dy: UnsafeMutablePointer<CGFloat>)",
+      "desc": "Return the movement delta values for a single update."
+    },
+    {
+      "name": "func getRects(CGDisplayStreamUpdateRectType, rectCount: UnsafeMutablePointer<Int>) -> UnsafePointer<CGRect>?",
+      "desc": "Returns an array of rectangles that describe where the frame has changed since the previous frame."
+    }
+  ],
+  "declaration": "class CGDisplayStreamUpdate"
+}

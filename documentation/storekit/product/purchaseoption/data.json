@@ -1,0 +1,70 @@
+{
+  "path": "/documentation/storekit/product/purchaseoption",
+  "type": "Structure",
+  "name": "Product.PurchaseOption",
+  "desc": "Optional settings for a product purchase.",
+  "items": [
+    {
+      "name": "static func appAccountToken(UUID) -> Product.PurchaseOption",
+      "desc": "Set a UUID to associate the purchase with an account in your system."
+    },
+    {
+      "name": "static func promotionalOffer(offerID: String, keyID: String, nonce: UUID, signature: Data, timestamp: Int) -> Product.PurchaseOption",
+      "desc": "Apply a promotional offer for an auto-renewable subscription."
+    },
+    {
+      "name": "static func quantity(Int) -> Product.PurchaseOption",
+      "desc": "Indicate the quantity of items the customer is purchasing."
+    },
+    {
+      "name": "static func onStorefrontChange(shouldContinuePurchase: (Storefront) -> Bool) -> Product.PurchaseOption",
+      "desc": "Indicate whether a transaction needs to continue if the App Store storefront changes on the device during the transaction."
+    },
+    {
+      "name": "static func simulatesAskToBuyInSandbox(Bool) -> Product.PurchaseOption",
+      "desc": "Simulate an Ask to Buy scenario when testing your app in the sandbox environment."
+    },
+    {
+      "name": "static func custom(key: String, value: Data) -> Product.PurchaseOption",
+      "desc": "Add data for a custom key to a purchase."
+    },
+    {
+      "name": "static func custom(key: String, value: String) -> Product.PurchaseOption",
+      "desc": "Add a string for a custom key to a purchase."
+    },
+    {
+      "name": "static func custom(key: String, value: Bool) -> Product.PurchaseOption",
+      "desc": "Add a Boolean value for a custom key to a purchase."
+    },
+    {
+      "name": "static func custom(key: String, value: Double) -> Product.PurchaseOption",
+      "desc": "Add a number for a custom key to a purchase."
+    },
+    {
+      "name": "static func != (Product.PurchaseOption, Product.PurchaseOption) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (Product.PurchaseOption, Product.PurchaseOption) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A debug description of the purchase option."
+    }
+  ],
+  "declaration": "struct PurchaseOption",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "Equatable",
+    "Hashable"
+  ]
+}

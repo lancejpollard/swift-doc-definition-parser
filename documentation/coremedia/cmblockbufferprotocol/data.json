@@ -1,0 +1,63 @@
+{
+  "path": "/documentation/coremedia/cmblockbufferprotocol",
+  "type": "Protocol",
+  "name": "CMBlockBufferProtocol",
+  "desc": "A protocol for objects that operate on a range of a block buffer.",
+  "items": [
+    {
+      "name": "func copyDataBytes(to: UnsafeMutableRawBufferPointer)"
+    },
+    {
+      "name": "func dataBytes() -> Data"
+    },
+    {
+      "name": "func fillDataBytes(with: UInt8)"
+    },
+    {
+      "name": "func replaceDataBytes(with: UnsafeRawBufferPointer)"
+    },
+    {
+      "name": "var isContiguous: Bool"
+    },
+    {
+      "name": "func makeContiguous(allocator: CMBlockBuffer.CustomBlockAllocator, deallocator: CMBlockBuffer.CustomBlockDeallocator, flags: CMBlockBuffer.Flags) -> CMBlockBuffer"
+    },
+    {
+      "name": "func makeContiguous(allocator: CFAllocator?, flags: CMBlockBuffer.Flags) -> CMBlockBuffer"
+    },
+    {
+      "name": "func withContiguousStorage<R>((UnsafeRawBufferPointer) -> R) -> R"
+    },
+    {
+      "name": "var dataLength: Int"
+    },
+    {
+      "name": "var startIndex: Int"
+    },
+    {
+      "name": "var endIndex: Int"
+    },
+    {
+      "name": "var owner: CMBlockBuffer"
+    },
+    {
+      "name": "subscript(ClosedRange<Int>) -> CMBlockBuffer.Slice"
+    },
+    {
+      "name": "subscript(Range<Int>) -> CMBlockBuffer.Slice"
+    },
+    {
+      "name": "subscript(PartialRangeFrom<Int>) -> CMBlockBuffer.Slice"
+    },
+    {
+      "name": "subscript(PartialRangeUpTo<Int>) -> CMBlockBuffer.Slice"
+    },
+    {
+      "name": "subscript(PartialRangeThrough<Int>) -> CMBlockBuffer.Slice"
+    },
+    {
+      "name": "subscript((UnboundedRange_) -> ()) -> CMBlockBuffer.Slice"
+    }
+  ],
+  "declaration": "protocol CMBlockBufferProtocol"
+}

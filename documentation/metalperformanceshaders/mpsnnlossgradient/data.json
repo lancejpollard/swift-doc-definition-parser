@@ -1,0 +1,51 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsnnlossgradient",
+  "type": "Class",
+  "name": "MPSNNLossGradient",
+  "desc": "No overview available.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice, lossDescriptor: MPSCNNLossDescriptor)"
+    },
+    {
+      "name": "var computeLabelGradients: Bool"
+    },
+    {
+      "name": "var delta: Float"
+    },
+    {
+      "name": "var epsilon: Float"
+    },
+    {
+      "name": "var labelSmoothing: Float"
+    },
+    {
+      "name": "var lossType: MPSCNNLossType"
+    },
+    {
+      "name": "var numberOfClasses: Int"
+    },
+    {
+      "name": "var reduceAcrossBatch: Bool"
+    },
+    {
+      "name": "var reductionType: MPSCNNReductionType"
+    },
+    {
+      "name": "var weight: Float"
+    },
+    {
+      "name": "func encodeBatch(commandBuffer: MTLCommandBuffer, sourceGradients: [MPSImage], sourceImages: [MPSImage], labels: [MPSImage], weights: [MPSImage]?, sourceStates: [MPSState]?) -> [MPSImage]"
+    },
+    {
+      "name": "func encodeBatch(commandBuffer: MTLCommandBuffer, sourceGradients: [MPSImage], sourceImages: [MPSImage], labels: [MPSImage], weights: [MPSImage]?, sourceStates: [MPSState]?, destinationGradients: [MPSImage])"
+    }
+  ],
+  "declaration": "class MPSNNLossGradient : MPSCNNBinaryKernel",
+  "inheritsFrom": [
+    "MPSCNNBinaryKernel"
+  ]
+}

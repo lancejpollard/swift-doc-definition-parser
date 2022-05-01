@@ -1,0 +1,17 @@
+{
+  "path": "/documentation/combine/publishers/timegroupingstrategy",
+  "type": "Enumeration",
+  "name": "Publishers.TimeGroupingStrategy",
+  "desc": "A strategy for collecting received elements.",
+  "items": [
+    {
+      "name": "case byTime(Context, Context.SchedulerTimeType.Stride)",
+      "desc": "A grouping that collects and periodically publishes items."
+    },
+    {
+      "name": "case byTimeOrCount(Context, Context.SchedulerTimeType.Stride, Int)",
+      "desc": "A grouping that collects and publishes items periodically or when a buffer reaches a maximum size."
+    }
+  ],
+  "declaration": "enum TimeGroupingStrategy<Context> where Context : Scheduler"
+}

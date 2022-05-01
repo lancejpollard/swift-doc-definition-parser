@@ -1,0 +1,34 @@
+{
+  "path": "/documentation/corespotlight/cssearchableindexdelegate",
+  "type": "Protocol",
+  "name": "CSSearchableIndexDelegate",
+  "desc": "A protocol defining methods a delegate object or app extension uses to handle communication from the on-device index.",
+  "items": [
+    {
+      "name": "func data(for: CSSearchableIndex, itemIdentifier: String, typeIdentifier: String) -> Data"
+    },
+    {
+      "name": "func fileURL(for: CSSearchableIndex, itemIdentifier: String, typeIdentifier: String, inPlace: Bool) -> URL"
+    },
+    {
+      "name": "func searchableIndex(CSSearchableIndex, reindexAllSearchableItemsWithAcknowledgementHandler: () -> Void)",
+      "desc": "Tells the delegate to reindex all searchable data and clear all local state information."
+    },
+    {
+      "name": "func searchableIndex(CSSearchableIndex, reindexSearchableItemsWithIdentifiers: [String], acknowledgementHandler: () -> Void)",
+      "desc": "Tells the delegate to reindex the searchable items associated with the specified identifiers."
+    },
+    {
+      "name": "func searchableIndexDidThrottle(CSSearchableIndex)",
+      "desc": "Tells the delegate that indexing is being throttled."
+    },
+    {
+      "name": "func searchableIndexDidFinishThrottle(CSSearchableIndex)",
+      "desc": "Tells the delegate that the index throttling has finished."
+    }
+  ],
+  "declaration": "protocol CSSearchableIndexDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

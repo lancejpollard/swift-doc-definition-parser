@@ -1,0 +1,78 @@
+{
+  "path": "/documentation/swiftui/animation",
+  "type": "Structure",
+  "name": "Animation",
+  "desc": "No overview available.",
+  "items": [
+    {
+      "name": "static let `default`: Animation"
+    },
+    {
+      "name": "static var linear: Animation"
+    },
+    {
+      "name": "static func linear(duration: Double) -> Animation"
+    },
+    {
+      "name": "static var easeIn: Animation"
+    },
+    {
+      "name": "static func easeIn(duration: Double) -> Animation"
+    },
+    {
+      "name": "static var easeOut: Animation"
+    },
+    {
+      "name": "static func easeOut(duration: Double) -> Animation"
+    },
+    {
+      "name": "static var easeInOut: Animation"
+    },
+    {
+      "name": "static func easeInOut(duration: Double) -> Animation"
+    },
+    {
+      "name": "static func spring(response: Double, dampingFraction: Double, blendDuration: Double) -> Animation",
+      "desc": "A persistent spring animation. When mixed with other spring() or interactiveSpring() animations on the same property, each animation will be replaced by their successor, preserving velocity from one animation to the next. Optionally blends the response values between springs over a time period."
+    },
+    {
+      "name": "static func interactiveSpring(response: Double, dampingFraction: Double, blendDuration: Double) -> Animation",
+      "desc": "A convenience for a spring() animation with a lower response value, intended for driving interactive animations."
+    },
+    {
+      "name": "static func interpolatingSpring(mass: Double, stiffness: Double, damping: Double, initialVelocity: Double) -> Animation",
+      "desc": "An interpolating spring animation that uses a damped spring model to produce values in the range [0, 1] that are then used to interpolate within the [from, to] range of the animated property. Preserves velocity across overlapping animations by adding the effects of each animation."
+    },
+    {
+      "name": "static func timingCurve(Double, Double, Double, Double, duration: Double) -> Animation"
+    },
+    {
+      "name": "func delay(Double) -> Animation"
+    },
+    {
+      "name": "func repeatCount(Int, autoreverses: Bool) -> Animation"
+    },
+    {
+      "name": "func repeatForever(autoreverses: Bool) -> Animation"
+    },
+    {
+      "name": "func speed(Double) -> Animation",
+      "desc": "Returns an animation that has its speed multiplied by speed. For example, if you had oneSecondAnimation.speed(0.25), it would be at 25% of its normal speed, so you would have an animation that would last 4 seconds."
+    },
+    {
+      "name": "static func == (Animation, Animation) -> Bool",
+      "desc": "Indicates whether two animations are equal."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool",
+      "desc": "Indicates whether two animations are unequal."
+    }
+  ],
+  "declaration": "@frozen struct Animation",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "Equatable"
+  ]
+}

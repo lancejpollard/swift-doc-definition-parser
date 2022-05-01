@@ -1,0 +1,84 @@
+{
+  "path": "/documentation/gamecontroller/gcphysicalinputprofile",
+  "type": "Class",
+  "name": "GCPhysicalInputProfile",
+  "desc": "The base class for controller profiles that support physical buttons, thumbsticks, and directional pads.",
+  "items": [
+    {
+      "name": "var device: GCDevice?",
+      "desc": "The physical device that the profile represents."
+    },
+    {
+      "name": "var lastEventTimestamp: TimeInterval",
+      "desc": "The time of the most recent change to an element’s value in the profile."
+    },
+    {
+      "name": "var elements: [String : GCControllerElement]",
+      "desc": "The elements in the profile as key-value pairs for lookup by name."
+    },
+    {
+      "name": "var buttons: [String : GCControllerButtonInput]",
+      "desc": "The buttons in the profile as key-value pairs for lookup by name."
+    },
+    {
+      "name": "var axes: [String : GCControllerAxisInput]",
+      "desc": "The axes in the profile as key-value pairs for lookup by name."
+    },
+    {
+      "name": "var dpads: [String : GCControllerDirectionPad]",
+      "desc": "The directional pads in the profile as key-value pairs for lookup by name."
+    },
+    {
+      "name": "var touchpads: [String : GCControllerTouchpad]",
+      "desc": "The touchpads in the profile as key-value pairs for lookup by name."
+    },
+    {
+      "name": "subscript(String) -> GCControllerElement?",
+      "desc": "Returns the element that the key specifies."
+    },
+    {
+      "name": "var allElements: Set<GCControllerElement>",
+      "desc": "The elements in the profile."
+    },
+    {
+      "name": "var allButtons: Set<GCControllerButtonInput>",
+      "desc": "The buttons in the profile."
+    },
+    {
+      "name": "var allAxes: Set<GCControllerAxisInput>",
+      "desc": "The axes in the profile."
+    },
+    {
+      "name": "var allDpads: Set<GCControllerDirectionPad>",
+      "desc": "The directional pads in the profile."
+    },
+    {
+      "name": "var allTouchpads: Set<GCControllerTouchpad>",
+      "desc": "The touchpads in the profile."
+    },
+    {
+      "name": "func capture() -> Self",
+      "desc": "Returns a snapshot of the profile with its current element values."
+    },
+    {
+      "name": "func setStateFromPhysicalInput(GCPhysicalInputProfile)",
+      "desc": "Copies the input values from a specified physical input profile to a snapshot of the profile."
+    },
+    {
+      "name": "var hasRemappedElements: Bool",
+      "desc": "A Boolean value that indicates whether the user remaps elements in this profile."
+    },
+    {
+      "name": "func mappedElementAlias(forPhysicalInputName: String) -> String",
+      "desc": "Returns the name of the input element to which the user remaps the given physical element."
+    },
+    {
+      "name": "func mappedPhysicalInputNames(forElementAlias: String) -> Set<String>",
+      "desc": "Returns the physical input elements to which the user remaps the given input element."
+    }
+  ],
+  "declaration": "class GCPhysicalInputProfile : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

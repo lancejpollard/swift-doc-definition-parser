@@ -1,0 +1,83 @@
+{
+  "path": "/documentation/uikit/uipageviewcontroller",
+  "type": "Class",
+  "name": "UIPageViewController",
+  "desc": "A container view controller that manages navigation between pages of content, where a child view controller manages each page.",
+  "items": [
+    {
+      "name": "init(transitionStyle: UIPageViewController.TransitionStyle, navigationOrientation: UIPageViewController.NavigationOrientation, options: [UIPageViewController.OptionsKey : Any]?)",
+      "desc": "Initializes a newly created page view controller."
+    },
+    {
+      "name": "init?(coder: NSCoder)"
+    },
+    {
+      "name": "struct UIPageViewController.OptionsKey",
+      "desc": "Keys for creating the page view controller."
+    },
+    {
+      "name": "var dataSource: UIPageViewControllerDataSource?",
+      "desc": "The object that provides view controllers."
+    },
+    {
+      "name": "protocol UIPageViewControllerDataSource",
+      "desc": "The UIPageViewControllerDataSource protocol is adopted by an object that provides view controllers to the page view controller on an as-needed basis, in response to navigation gestures."
+    },
+    {
+      "name": "var delegate: UIPageViewControllerDelegate?",
+      "desc": "The delegate object."
+    },
+    {
+      "name": "protocol UIPageViewControllerDelegate",
+      "desc": "The delegate of a page view controller must adopt the UIPageViewControllerDelegate protocol. These methods allow the delegate to receive a notification when the device orientation changes and when the user navigates to a new page. For page-curl style transitions, the delegate can provide a different spine location in response to a change in the interface orientation."
+    },
+    {
+      "name": "func setViewControllers([UIViewController]?, direction: UIPageViewController.NavigationDirection, animated: Bool, completion: ((Bool) -> Void)?)",
+      "desc": "Sets the view controllers to be displayed."
+    },
+    {
+      "name": "enum UIPageViewController.NavigationDirection",
+      "desc": "Directions for page-turn transitions."
+    },
+    {
+      "name": "var viewControllers: [UIViewController]?",
+      "desc": "The view controllers displayed by the page view controller."
+    },
+    {
+      "name": "var gestureRecognizers: [UIGestureRecognizer]",
+      "desc": "An array of UIGestureRecognizer objects that are configured to handle user interaction."
+    },
+    {
+      "name": "var navigationOrientation: UIPageViewController.NavigationOrientation",
+      "desc": "The direction along which navigation occurs."
+    },
+    {
+      "name": "enum UIPageViewController.NavigationOrientation",
+      "desc": "Orientations for page-turn transitions."
+    },
+    {
+      "name": "var spineLocation: UIPageViewController.SpineLocation",
+      "desc": "The location of the spine."
+    },
+    {
+      "name": "enum UIPageViewController.SpineLocation",
+      "desc": "Locations for the spine."
+    },
+    {
+      "name": "var transitionStyle: UIPageViewController.TransitionStyle",
+      "desc": "The style used to transition between view controllers."
+    },
+    {
+      "name": "enum UIPageViewController.TransitionStyle",
+      "desc": "Styles for the page-turn transition."
+    },
+    {
+      "name": "var isDoubleSided: Bool",
+      "desc": "A Boolean value that indicates whether content appears on the back of pages."
+    }
+  ],
+  "declaration": "@MainActor class UIPageViewController : UIViewController",
+  "inheritsFrom": [
+    "UIViewController"
+  ]
+}

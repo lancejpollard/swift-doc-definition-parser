@@ -1,0 +1,96 @@
+{
+  "path": "/documentation/foundation/nsconnection",
+  "type": "Class",
+  "name": "NSConnection",
+  "desc": "An object that manages the communication between objects in different threads or between a thread and a process running on a local or remote system.",
+  "items": [
+    {
+      "name": "+ defaultConnection",
+      "desc": "Returns the default NSConnection object for the current thread."
+    },
+    {
+      "name": "+ connectionWithReceivePort:sendPort:",
+      "desc": "Returns an NSConnection object that communicates using given send and receive ports."
+    },
+    {
+      "name": "- initWithReceivePort:sendPort:",
+      "desc": "Returns an NSConnection object initialized with given send and receive ports."
+    },
+    {
+      "name": "- runInNewThread",
+      "desc": "Creates and starts a new NSThread object and then runs the receiving connection in the new thread."
+    },
+    {
+      "name": "- enableMultipleThreads",
+      "desc": "Configures the receiver to allow requests from multiple threads to the remote object, without requiring each thread to each maintain its own connection."
+    },
+    {
+      "name": "- addRunLoop:",
+      "desc": "Adds the specified run loop to the list of run loops the receiver monitors and from which it responds to requests."
+    },
+    {
+      "name": "- removeRunLoop:",
+      "desc": "Removes a given NSRunLoop object from the list of run loops the receiver monitors and from which it responds to requests."
+    },
+    {
+      "name": "+ serviceConnectionWithName:rootObject:usingNameServer:",
+      "desc": "Creates and returns a new connection object representing a vended service on the specified port name server."
+    },
+    {
+      "name": "+ serviceConnectionWithName:rootObject:",
+      "desc": "Creates and returns a new connection object representing a vended service on the default system port name server."
+    },
+    {
+      "name": "- registerName:",
+      "desc": "Registers the specified service using with the default system port name server."
+    },
+    {
+      "name": "- registerName:withNameServer:",
+      "desc": "Registers a service with the specified port name server."
+    },
+    {
+      "name": "+ connectionWithRegisteredName:host:",
+      "desc": "Returns the NSConnection object whose send port links it to the NSConnection object registered with the default NSPortNameServer under a given name on a given host."
+    },
+    {
+      "name": "+ connectionWithRegisteredName:host:usingNameServer:",
+      "desc": "Returns the NSConnection object whose send port links it to the NSConnection object registered under a given name with a given server on a given host."
+    },
+    {
+      "name": "+ rootProxyForConnectionWithRegisteredName:host:",
+      "desc": "Returns a proxy for the root object of the NSConnection object registered with the default NSPortNameServer under a given name on a given host."
+    },
+    {
+      "name": "+ rootProxyForConnectionWithRegisteredName:host:usingNameServer:",
+      "desc": "Returns a proxy for the root object of the NSConnection object registered with server under name on a given host."
+    },
+    {
+      "name": "+ currentConversation",
+      "desc": "Returns a token object representing any conversation in progress in the current thread."
+    },
+    {
+      "name": "+ allConnections",
+      "desc": "Returns all valid NSConnection objects in the process."
+    },
+    {
+      "name": "- addRequestMode:",
+      "desc": "Adds mode to the set of run-loop input modes that the receiver uses for connection requests."
+    },
+    {
+      "name": "- removeRequestMode:",
+      "desc": "Removes mode from the set of run-loop input modes the receiver uses for connection requests."
+    },
+    {
+      "name": "- invalidate",
+      "desc": "Invalidates the receiver."
+    },
+    {
+      "name": "- dispatchWithComponents:",
+      "desc": "Allows subclasses to ask a connection object to dispatch component data."
+    }
+  ],
+  "declaration": "@interface NSConnection : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

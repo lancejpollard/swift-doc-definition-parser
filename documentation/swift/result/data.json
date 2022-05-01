@@ -1,0 +1,69 @@
+{
+  "path": "/documentation/swift/result",
+  "type": "Generic Enumeration",
+  "name": "Result",
+  "desc": "A value that represents either a success or a failure, including an associated value in each case.",
+  "items": [
+    {
+      "name": "case success(Success)",
+      "desc": "A success, storing a Success value."
+    },
+    {
+      "name": "case failure(Failure)",
+      "desc": "A failure, storing a Failure value."
+    },
+    {
+      "name": "init(catching: () -> Success)",
+      "desc": "Creates a new result by evaluating a throwing closure, capturing the returned value as a success, or any thrown error as a failure."
+    },
+    {
+      "name": "func get() -> Success",
+      "desc": "Returns the success value as a throwing expression."
+    },
+    {
+      "name": "func map<NewSuccess>((Success) -> NewSuccess) -> Result<NewSuccess, Failure>",
+      "desc": "Returns a new result, mapping any success value using the given transformation."
+    },
+    {
+      "name": "func mapError<NewFailure>((Failure) -> NewFailure) -> Result<Success, NewFailure>",
+      "desc": "Returns a new result, mapping any failure value using the given transformation."
+    },
+    {
+      "name": "func flatMap<NewSuccess>((Success) -> Result<NewSuccess, Failure>) -> Result<NewSuccess, Failure>",
+      "desc": "Returns a new result, mapping any success value using the given transformation and unwrapping the produced result."
+    },
+    {
+      "name": "func flatMapError<NewFailure>((Failure) -> Result<Success, NewFailure>) -> Result<Success, NewFailure>",
+      "desc": "Returns a new result, mapping any failure value using the given transformation and unwrapping the produced result."
+    },
+    {
+      "name": "static func == (Result<Success, Failure>, Result<Success, Failure>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "static func != (Result<Success, Failure>, Result<Success, Failure>) -> Bool",
+      "desc": "Available when Success conforms to Equatable and Failure conforms to Equatable."
+    },
+    {
+      "name": "var publisher: Result<Success, Failure>.Publisher",
+      "desc": "A Combine publisher that publishes this instance’s result to each subscriber exactly once, or fails immediately if the result indicates failure."
+    },
+    {
+      "name": "struct Result.Publisher",
+      "desc": "The type of a Combine publisher that publishes this instance’s result to each subscriber exactly once, or fails immediately if the result indicates failure."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    }
+  ],
+  "declaration": "@frozen enum Result<Success, Failure> where Failure : Error",
+  "conformsTo": [
+    "Equatable",
+    "Hashable"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "path": "/documentation/modelio/mdlphotometriclight",
+  "type": "Class",
+  "name": "MDLPhotometricLight",
+  "desc": "A light source whose shape, direction, and intensity of illumination are determined by a photometric profile.",
+  "items": [
+    {
+      "name": "init?(iesProfile: URL)",
+      "desc": "Initializes a light from photometry data in the file at the specified URL."
+    },
+    {
+      "name": "func generateCubemap(fromLight: Int)",
+      "desc": "Generates a cube map texture from the light’s photometry data."
+    },
+    {
+      "name": "var lightCubeMap: MDLTexture?",
+      "desc": "A cube map texture describing the light’s intensity in all directions."
+    },
+    {
+      "name": "func generateSphericalHarmonics(fromLight: Int)",
+      "desc": "Generates spherical harmonics information based on the light’s photometry data."
+    },
+    {
+      "name": "var sphericalHarmonicsCoefficients: Data?",
+      "desc": "Data containing spherical harmonics coefficients that describe the light’s intensity in all directions."
+    },
+    {
+      "name": "var sphericalHarmonicsLevel: Int",
+      "desc": "The number of levels of generated spherical harmonics information."
+    },
+    {
+      "name": "func generateTexture(Int) -> MDLTexture"
+    }
+  ],
+  "declaration": "class MDLPhotometricLight : MDLPhysicallyPlausibleLight",
+  "inheritsFrom": [
+    "MDLPhysicallyPlausibleLight"
+  ]
+}

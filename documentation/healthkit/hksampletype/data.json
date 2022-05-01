@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/healthkit/hksampletype",
+  "type": "Class",
+  "name": "HKSampleType",
+  "desc": "An abstract superclass for all classes that identify a specific type of sample when working with the HealthKit store.",
+  "items": [
+    {
+      "name": "var isMinimumDurationRestricted: Bool",
+      "desc": "A Boolean value that indicates whether samples of this type have a minimum time interval between the start and end dates."
+    },
+    {
+      "name": "var minimumAllowedDuration: TimeInterval",
+      "desc": "The minimum duration if the sample type has a restricted duration."
+    },
+    {
+      "name": "var isMaximumDurationRestricted: Bool",
+      "desc": "A Boolean value that indicates whether samples of this type have a maximum time interval between the start and end dates."
+    },
+    {
+      "name": "var maximumAllowedDuration: TimeInterval",
+      "desc": "The maximum duration if the sample type has a restricted duration."
+    },
+    {
+      "name": "var allowsRecalibrationForEstimates: Bool",
+      "desc": "A Boolean value that indicates whether HealthKit supports recalibrating the prediction algorithm used to produce estimates for this sample type."
+    }
+  ],
+  "declaration": "class HKSampleType : HKObjectType",
+  "inheritsFrom": [
+    "HKObjectType"
+  ]
+}

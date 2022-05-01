@@ -1,0 +1,126 @@
+{
+  "path": "/documentation/carekit/ocktask",
+  "type": "Structure",
+  "name": "OCKTask",
+  "desc": "An object that represents some task or action a patient needs to perform.",
+  "items": [
+    {
+      "name": "init(id: String, title: String?, carePlanID: OCKLocalVersionID?, schedule: OCKSchedule)",
+      "desc": "Creates a task object with an identifer, schedule, and optional title and care plan."
+    },
+    {
+      "name": "var title: String?",
+      "desc": "A title that represents the task to the patient."
+    },
+    {
+      "name": "var schedule: OCKSchedule",
+      "desc": "The dates and times when the task occurs."
+    },
+    {
+      "name": "var carePlanID: OCKLocalVersionID?",
+      "desc": "The version ID in the local database of the care plan to which the task belongs."
+    },
+    {
+      "name": "var instructions: String?",
+      "desc": "Instructions that describe how a user perfoms the task."
+    },
+    {
+      "name": "var impactsAdherence: Bool",
+      "desc": "A Boolean that indicates whether completion of this task will be factored into the patient’s overall adherence."
+    },
+    {
+      "name": "enum OCKAdherence",
+      "desc": "A set of cases that indicate a patient's progress at completing tasks."
+    },
+    {
+      "name": "enum OCKAdherenceAggregator",
+      "desc": "Methods that compute an adherence value, given an array of events."
+    },
+    {
+      "name": "var createdDate: Date? { get }",
+      "desc": "The date the database first persisted the object."
+    },
+    {
+      "name": "var updatedDate: Date? { get }",
+      "desc": "The most recent date when the store updated the object."
+    },
+    {
+      "name": "var groupIdentifier: String?",
+      "desc": "A user-defined group identifier that can be used both for querying and sorting results."
+    },
+    {
+      "name": "var tags: [String]?",
+      "desc": "An array of user-defined tags that can be used to sort or classify objects or values."
+    },
+    {
+      "name": "var localDatabaseID: OCKLocalVersionID? { get }",
+      "desc": "A unique identifier used by the local database."
+    },
+    {
+      "name": "var remoteID: String?",
+      "desc": "A string value that represents a unique identifier, which a remote database uses optionally."
+    },
+    {
+      "name": "var userInfo: [String : String]?",
+      "desc": "A dictionary of information that developers can provide to support their own unique use cases."
+    },
+    {
+      "name": "var source: String?",
+      "desc": "A string that specifies from where this object originated."
+    },
+    {
+      "name": "var asset: String?",
+      "desc": "A string that specifies the location of some asset associated with this object."
+    },
+    {
+      "name": "var notes: [OCKNote]?",
+      "desc": "An array of notes associated with this object."
+    },
+    {
+      "name": "var schemaVersion: OCKSemanticVersion? { get }",
+      "desc": "The semantic version of the database schema when you create this object."
+    },
+    {
+      "name": "var timezone: TimeZone",
+      "desc": "The time zone in which this record was created in."
+    },
+    {
+      "name": "let id: String",
+      "desc": "A human-readable unique identifier that is never shown to a user."
+    },
+    {
+      "name": "var previousVersionID: OCKLocalVersionID? { get }",
+      "desc": "A database-generated identifier that uniquely identifies the previous version of this object or value."
+    },
+    {
+      "name": "var nextVersionID: OCKLocalVersionID? { get }",
+      "desc": "A database-generated identifier that uniquely identifies the next version of this object or value."
+    },
+    {
+      "name": "var effectiveDate: Date",
+      "desc": "The date when the current version of the object begins to take precedence over the previous version."
+    },
+    {
+      "name": "var deletedDate: Date? { get }",
+      "desc": "The date when this object was marked deleted from the store."
+    },
+    {
+      "name": "func belongs(to: OCKAnyCarePlan) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a task belongs to a specific care plan."
+    },
+    {
+      "name": "var id: ObjectIdentifier"
+    },
+    {
+      "name": "static func != (OCKTask, OCKTask) -> Bool"
+    }
+  ],
+  "declaration": "struct OCKTask : Codable, Equatable, Identifiable, OCKAnyVersionableTask, OCKAnyMutableTask, OCKVersionedObjectCompatible",
+  "conformsTo": [
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "Identifiable",
+    "OCKAnyVersionableTask"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "path": "/documentation/SwiftUI/WidgetConfiguration",
+  "type": "Protocol",
+  "name": "WidgetConfiguration",
+  "desc": "A type that describes a widget’s content.",
+  "items": [
+    {
+      "name": "var body: Self.Body",
+      "desc": "The content and behavior of this widget."
+    },
+    {
+      "name": "associatedtype Body : WidgetConfiguration",
+      "desc": "The type of widget configuration representing the body of this configuration."
+    },
+    {
+      "name": "func configurationDisplayName<S>(S) -> some WidgetConfiguration",
+      "desc": "Sets the name shown for a widget when a user adds or edits it using the specified string."
+    },
+    {
+      "name": "func configurationDisplayName(Text) -> some WidgetConfiguration",
+      "desc": "Sets the name shown for a widget when a user adds or edits it using the contents of a text view."
+    },
+    {
+      "name": "func configurationDisplayName(LocalizedStringKey) -> some WidgetConfiguration",
+      "desc": "Sets the localized name shown for a widget when a user adds or edits the widget."
+    },
+    {
+      "name": "func description(Text) -> some WidgetConfiguration",
+      "desc": "Sets the description shown for a widget when a user adds or edits it using the contents of a text view."
+    },
+    {
+      "name": "func description<S>(S) -> some WidgetConfiguration",
+      "desc": "Sets the description shown for a widget when a user adds or edits it using the specified string."
+    },
+    {
+      "name": "func description(LocalizedStringKey) -> some WidgetConfiguration",
+      "desc": "Sets the localized description shown for a widget when a user adds or edits the widget."
+    },
+    {
+      "name": "func onBackgroundURLSessionEvents(matching: ((String) -> Bool)?, ((String, () -> Void) -> Void)) -> some WidgetConfiguration",
+      "desc": "Adds an action to perform when events related to a URL session identified by a closure are waiting to be processed."
+    },
+    {
+      "name": "func onBackgroundURLSessionEvents(matching: String, ((String, () -> Void) -> Void)) -> some WidgetConfiguration",
+      "desc": "Adds an action to perform when events related to a URL session with a matching identifier are waiting to be processed."
+    },
+    {
+      "name": "func supportedFamilies([WidgetFamily]) -> some WidgetConfiguration",
+      "desc": "Sets the sizes that a widget supports."
+    }
+  ],
+  "declaration": "protocol WidgetConfiguration"
+}

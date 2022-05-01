@@ -1,0 +1,96 @@
+{
+  "path": "/documentation/coreimage/cifilter",
+  "type": "Class",
+  "name": "CIFilter",
+  "desc": "An image processor that produces an image by manipulating one or more input images or by generating new image data.",
+  "items": [
+    {
+      "name": "init?(name: String)",
+      "desc": "Creates a CIFilter object for a specific kind of filter."
+    },
+    {
+      "name": "init?(name: String, parameters: [String : Any]?)",
+      "desc": "Creates a CIFilter object for a specific kind of filter and initializes the input values."
+    },
+    {
+      "name": "class func filterNames(inCategories: [String]?) -> [String]",
+      "desc": "Returns an array of all published filter names that match all the specified categories."
+    },
+    {
+      "name": "class func filterNames(inCategory: String?) -> [String]",
+      "desc": "Returns an array of all published filter names in the specified category."
+    },
+    {
+      "name": "class func registerName(String, constructor: CIFilterConstructor, classAttributes: [String : Any])",
+      "desc": "Publishes a custom filter that is not packaged as an image unit."
+    },
+    {
+      "name": "var name: String",
+      "desc": "A name associated with a filter."
+    },
+    {
+      "name": "var isEnabled: Bool",
+      "desc": "A Boolean value that determines whether the filter is enabled. Animatable."
+    },
+    {
+      "name": "var attributes: [String : Any]",
+      "desc": "A dictionary of key-value pairs that describe the filter."
+    },
+    {
+      "name": "var inputKeys: [String]",
+      "desc": "The names of all input parameters to the filter."
+    },
+    {
+      "name": "var outputKeys: [String]",
+      "desc": "The names of all output parameters from the filter."
+    },
+    {
+      "name": "var outputImage: CIImage?",
+      "desc": "Returns a CIImage object that encapsulates the operations configured in the filter."
+    },
+    {
+      "name": "func setDefaults()",
+      "desc": "Sets all input values for a filter to default values."
+    },
+    {
+      "name": "func apply(CIKernel, arguments: [Any]?, options: [String : Any]?) -> CIImage?",
+      "desc": "Produces a CIImage object by applying arguments to a kernel function and using options to control how the kernel function is evaluated."
+    },
+    {
+      "name": "class func localizedName(forFilterName: String) -> String?",
+      "desc": "Returns the localized name for the specified filter name."
+    },
+    {
+      "name": "class func localizedName(forCategory: String) -> String",
+      "desc": "Returns the localized name for the specified filter category."
+    },
+    {
+      "name": "class func localizedDescription(forFilterName: String) -> String?",
+      "desc": "Returns the localized description of a filter for display in the user interface."
+    },
+    {
+      "name": "class func localizedReferenceDocumentation(forFilterName: String) -> URL?",
+      "desc": "Returns the location of the localized reference documentation that describes the filter."
+    },
+    {
+      "name": "func view(forUIConfiguration: [AnyHashable : Any]!, excludedKeys: [Any]!) -> IKFilterUIView!",
+      "desc": "Returns a filter view for the filter."
+    },
+    {
+      "name": "class func serializedXMP(from: [CIFilter], inputImageExtent: CGRect) -> Data?",
+      "desc": "Serializes filter parameters into XMP form that is suitable for embedding in an image."
+    },
+    {
+      "name": "class func filterArray(fromSerializedXMP: Data, inputImageExtent: CGRect, error: NSErrorPointer) -> [CIFilter]",
+      "desc": "Returns an array of filter objects de-serialized from XMP data."
+    }
+  ],
+  "declaration": "class CIFilter : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

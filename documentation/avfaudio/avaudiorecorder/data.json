@@ -1,0 +1,104 @@
+{
+  "path": "/documentation/avfaudio/avaudiorecorder",
+  "type": "Class",
+  "name": "AVAudioRecorder",
+  "desc": "An object that records audio data to a file.",
+  "items": [
+    {
+      "name": "init(url: URL, settings: [String : Any])",
+      "desc": "Creates an audio recorder with settings."
+    },
+    {
+      "name": "init(url: URL, format: AVAudioFormat)",
+      "desc": "Creates an audio recorder with an audio format."
+    },
+    {
+      "name": "func prepareToRecord() -> Bool",
+      "desc": "Creates an audio file and prepares the system for recording."
+    },
+    {
+      "name": "func record() -> Bool",
+      "desc": "Starts or resumes audio recording."
+    },
+    {
+      "name": "func record(atTime: TimeInterval) -> Bool",
+      "desc": "Records audio starting at a specific time."
+    },
+    {
+      "name": "func record(forDuration: TimeInterval) -> Bool",
+      "desc": "Records audio for the indicated duration of time."
+    },
+    {
+      "name": "func record(atTime: TimeInterval, forDuration: TimeInterval) -> Bool",
+      "desc": "Records audio starting at a specific time for the indicated duration."
+    },
+    {
+      "name": "func pause()",
+      "desc": "Pauses an audio recording."
+    },
+    {
+      "name": "func stop()",
+      "desc": "Stops recording and closes the audio file."
+    },
+    {
+      "name": "var isRecording: Bool",
+      "desc": "A Boolean value that indicates whether the audio recorder is recording."
+    },
+    {
+      "name": "func deleteRecording() -> Bool",
+      "desc": "Deletes a recorded audio file."
+    },
+    {
+      "name": "var currentTime: TimeInterval",
+      "desc": "The time, in seconds, since the beginning of the recording."
+    },
+    {
+      "name": "var deviceCurrentTime: TimeInterval",
+      "desc": "The time, in seconds, of the host audio device."
+    },
+    {
+      "name": "var channelAssignments: [AVAudioSessionChannelDescription]?",
+      "desc": "An array of channel descriptions associated with the audio recorder."
+    },
+    {
+      "name": "var isMeteringEnabled: Bool",
+      "desc": "A Boolean value that indicates whether you’ve enabled the recorder to generate audio-level metering data."
+    },
+    {
+      "name": "func updateMeters()",
+      "desc": "Refreshes the average and peak power values for all channels of an audio recorder."
+    },
+    {
+      "name": "func averagePower(forChannel: Int) -> Float",
+      "desc": "Returns the average power, in decibels full-scale (dBFS), for an audio channel."
+    },
+    {
+      "name": "func peakPower(forChannel: Int) -> Float",
+      "desc": "Returns the peak power, in decibels full-scale (dBFS), for an audio channel."
+    },
+    {
+      "name": "var delegate: AVAudioRecorderDelegate?",
+      "desc": "The delegate object for the audio recorder."
+    },
+    {
+      "name": "protocol AVAudioRecorderDelegate",
+      "desc": "A protocol that defines the methods to respond to audio recording events and encoding errors."
+    },
+    {
+      "name": "var url: URL",
+      "desc": "The URL to which the recorder writes its data."
+    },
+    {
+      "name": "var format: AVAudioFormat",
+      "desc": "The format of the recorded audio."
+    },
+    {
+      "name": "var settings: [String : Any]",
+      "desc": "The settings that describe the format of the recorded audio."
+    }
+  ],
+  "declaration": "class AVAudioRecorder : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

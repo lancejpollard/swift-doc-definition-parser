@@ -1,0 +1,100 @@
+{
+  "path": "/documentation/coredata/nspersistentcloudkitcontainer",
+  "type": "Class",
+  "name": "NSPersistentCloudKitContainer",
+  "desc": "A container that encapsulates the Core Data stack in your app, and mirrors select persistent stores to a CloudKit private database.",
+  "items": [
+    {
+      "name": "func record(for: NSManagedObjectID) -> CKRecord?",
+      "desc": "Returns the CloudKit record for the specified managed object ID."
+    },
+    {
+      "name": "func records(for: [NSManagedObjectID]) -> [NSManagedObjectID : CKRecord]",
+      "desc": "Returns a dictionary that contains the CloudKit records for the specified managed object IDs."
+    },
+    {
+      "name": "func recordID(for: NSManagedObjectID) -> CKRecordID?",
+      "desc": "Returns the CloudKit record ID for the specified managed object ID."
+    },
+    {
+      "name": "func recordIDs(for: [NSManagedObjectID]) -> [NSManagedObjectID : CKRecordID]",
+      "desc": "Returns a dictionary that contains the CloudKit record IDs for the specified managed object IDs."
+    },
+    {
+      "name": "func canUpdateRecord(forManagedObjectWith: NSManagedObjectID) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the user can modify the managed object’s underlying CloudKit record."
+    },
+    {
+      "name": "func canDeleteRecord(forManagedObjectWith: NSManagedObjectID) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the user can delete the managed object’s underlying CloudKit record."
+    },
+    {
+      "name": "func canModifyManagedObjects(in: NSPersistentStore) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the user can modify the specified persistent store."
+    },
+    {
+      "name": "func acceptShareInvitations(from: [CKShare.Metadata], into: NSPersistentStore, completion: (([CKShare.Metadata]?, Error?) -> Void)?)",
+      "desc": "Accepts one or more invitations to participate in sharing using the specified metadata."
+    },
+    {
+      "name": "func fetchParticipants(matching: [CKUserIdentity.LookupInfo], into: NSPersistentStore, completion: ([CKShare.Participant]?, Error?) -> Void)",
+      "desc": "Fetches all participants that match the specified critieria."
+    },
+    {
+      "name": "func fetchShares(in: NSPersistentStore?) -> [CKShare]",
+      "desc": "Returns an array that contains all share records in the specified persistent store."
+    },
+    {
+      "name": "func fetchShares(matching: [NSManagedObjectID]) -> [NSManagedObjectID : CKShare]",
+      "desc": "Returns a dictionary that contains the share records that CloudKit associates with specified managed object IDs."
+    },
+    {
+      "name": "func persistUpdatedShare(CKShare, in: NSPersistentStore, completion: ((CKShare?, Error?) -> Void)?)",
+      "desc": "Saves the share record and schedules it for export to iCloud."
+    },
+    {
+      "name": "func share([NSManagedObject], to: CKShare?, completion: (Set<NSManagedObjectID>?, CKShare?, CKContainer?, Error?) -> Void)",
+      "desc": "Associates the specified managed objects with a new or existing share record."
+    },
+    {
+      "name": "func purgeObjectsAndRecordsInZone(with: CKRecordZone.ID, in: NSPersistentStore?, completion: ((CKRecordZone.ID?, Error?) -> Void)?)",
+      "desc": "Deletes all CloudKit records in the specified record zone, along with their corresponding managed objects."
+    },
+    {
+      "name": "func initializeCloudKitSchema(options: NSPersistentCloudKitContainerSchemaInitializationOptions)",
+      "desc": "Creates the CloudKit schema for all stores in the container that manage a CloudKit database."
+    },
+    {
+      "name": "struct NSPersistentCloudKitContainerSchemaInitializationOptions",
+      "desc": "Options that control the behavior when promoting the container’s schema to CloudKit."
+    },
+    {
+      "name": "class NSPersistentCloudKitContainer.Event",
+      "desc": "An object that represents activity in a persistent CloudKit container."
+    },
+    {
+      "name": "enum NSPersistentCloudKitContainer.EventType",
+      "desc": "The type of event in a persistent CloudKit container, either setup, import, or export."
+    },
+    {
+      "name": "class NSPersistentCloudKitContainerEventRequest",
+      "desc": "A request to fetch setup, import, or export events in a persistent CloudKit container."
+    },
+    {
+      "name": "class NSPersistentCloudKitContainerEventResult",
+      "desc": "The result of a request to fetch persistent CloudKit container events."
+    },
+    {
+      "name": "class let eventChangedNotification: NSNotification.Name",
+      "desc": "A notification that contains details about an event in a persistent CloudKit container."
+    },
+    {
+      "name": "class let eventNotificationUserInfoKey: String",
+      "desc": "The user info dictionary key for the persistent CloudKit container event."
+    }
+  ],
+  "declaration": "class NSPersistentCloudKitContainer : NSPersistentContainer",
+  "inheritsFrom": [
+    "NSPersistentContainer"
+  ]
+}

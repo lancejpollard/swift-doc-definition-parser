@@ -1,0 +1,29 @@
+{
+  "path": "/documentation/musickit/musiccatalogresourcerequest",
+  "type": "Structure",
+  "name": "MusicCatalogResourceRequest",
+  "desc": "A request that your app uses to fetch items from the Apple Music catalog using a filter.",
+  "items": [
+    {
+      "name": "init<Value>(matching: KeyPath<MusicItemType.FilterType, Value>, equalTo: Value)",
+      "desc": "Creates a request to fetch items using a filter that matches a specific value."
+    },
+    {
+      "name": "init<Value>(matching: KeyPath<MusicItemType.FilterType, Value>, memberOf: [Value])",
+      "desc": "Creates a request to fetch items using a filter that matches any value from an array of possible values."
+    },
+    {
+      "name": "var limit: Int?",
+      "desc": "A limit for the number of items to return in the catalog resource response."
+    },
+    {
+      "name": "var properties: [PartialMusicAsyncProperty<MusicItemType>]",
+      "desc": "A list of properties which the resource request will fetch for each music item in the response."
+    },
+    {
+      "name": "func response() async throws -> MusicCatalogResourceResponse<MusicItemType>",
+      "desc": "Fetches items from the Apple Music catalog that match a specific filter."
+    }
+  ],
+  "declaration": "struct MusicCatalogResourceRequest<MusicItemType> where MusicItemType : MusicItem, MusicItemType : Decodable"
+}

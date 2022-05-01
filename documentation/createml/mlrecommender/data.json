@@ -1,0 +1,73 @@
+{
+  "path": "/documentation/createml/mlrecommender",
+  "type": "Structure",
+  "name": "MLRecommender",
+  "desc": "A model you train to make recommendations based on item similarity, grouping, and, optionally, item ratings.",
+  "items": [
+    {
+      "name": "init(trainingData: MLDataTable, userColumn: String, itemColumn: String, ratingColumn: String?, parameters: MLRecommender.ModelParameters)",
+      "desc": "Creates a recommender from a data table containing columns for recommendation items, item groupings, and, optionally, item ratings."
+    },
+    {
+      "name": "struct MLRecommender.ModelParameters",
+      "desc": "Parameters that affect the process of training a recommender model."
+    },
+    {
+      "name": "let modelParameters: MLRecommender.ModelParameters",
+      "desc": "The configuration parameters that the recommender used for training during initialization."
+    },
+    {
+      "name": "var userIdentifierColumn: String",
+      "desc": "The name of the column you selected at initialization to define the user identifiers."
+    },
+    {
+      "name": "var itemIdentifierColumn: String",
+      "desc": "The name of the column you selected at initialization to define the item identifiers."
+    },
+    {
+      "name": "var ratingColumn: String?",
+      "desc": "The name of the column you selected at initialization to define the ratings."
+    },
+    {
+      "name": "func evaluation(on: MLDataTable, userColumn: String, itemColumn: String, ratingColumn: String?, cutoffs: [Int], excludingObserved: Bool) -> MLRecommenderMetrics",
+      "desc": "Generates metrics describing the recommender’s performance on labeled items in a data table."
+    },
+    {
+      "name": "struct MLRecommenderMetrics",
+      "desc": "Metrics you use to evaluate a recommender’s performance."
+    },
+    {
+      "name": "func recommendations<T>(fromUsers: MLDataColumn<T>, maxCount: Int, restrictingToItems: MLDataColumn<T>?, excluding: MLDataTable?, excludingObserved: Bool) -> MLDataTable",
+      "desc": "Retrieves the highest scored items for the given column of users, based on item similarity and the rating column."
+    },
+    {
+      "name": "func recommendations(fromUsers: [MLIdentifier], maxCount: Int, restrictingToItems: [MLIdentifier]?, excluding: MLDataTable?, excludingObserved: Bool) -> MLDataTable",
+      "desc": "Retrieves the highest scored item for the given array of users, based on item similarity and the rating column."
+    },
+    {
+      "name": "protocol MLIdentifier",
+      "desc": "A type the Create ML framework can use as a machine learning identifier."
+    },
+    {
+      "name": "func getSimilarItems<T>(fromItems: MLDataColumn<T>, maxCount: Int) -> MLDataTable",
+      "desc": "Returns the top ranked similar items based on the model’s similarity type."
+    },
+    {
+      "name": "func getSimilarItems(fromItems: [MLIdentifier], maxCount: Int) -> MLDataTable",
+      "desc": "Returns the top ranked similar items based on the model’s similarity type."
+    },
+    {
+      "name": "func write(to: URL, metadata: MLModelMetadata?)",
+      "desc": "Exports the recommender as a Core ML model file at the given URL."
+    },
+    {
+      "name": "func write(toFile: String, metadata: MLModelMetadata?)",
+      "desc": "Exports the recommender as a Core ML model file at the given file path."
+    },
+    {
+      "name": "var model: MLModel",
+      "desc": "The underlying Core ML model of the recommender stored in memory."
+    }
+  ],
+  "declaration": "struct MLRecommender"
+}

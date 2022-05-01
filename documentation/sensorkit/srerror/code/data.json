@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/sensorkit/srerror/code",
+  "type": "Enumeration",
+  "name": "SRError.Code",
+  "desc": "The kinds of problems that stop a recording or a fetch.",
+  "items": [
+    {
+      "name": "case promptDeclined",
+      "desc": "Occurs when the user cancels the sensor approval workflow."
+    },
+    {
+      "name": "case dataInaccessible",
+      "desc": "Occurs when the app can’t access the sensor’s data."
+    },
+    {
+      "name": "case fetchRequestInvalid",
+      "desc": "Occurs when the app misconfigures a fetch request."
+    },
+    {
+      "name": "case invalidEntitlement",
+      "desc": "Occurs when the app lacks the required entitlement."
+    },
+    {
+      "name": "case noAuthorization",
+      "desc": "Occurs when the user declines sensor access in the Settings app."
+    }
+  ],
+  "declaration": "enum SRError.Code : Int, _ErrorCodeProtocol, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

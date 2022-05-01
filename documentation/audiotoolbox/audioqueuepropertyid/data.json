@@ -1,0 +1,61 @@
+{
+  "path": "/documentation/audiotoolbox/audioqueuepropertyid",
+  "type": "Type Alias",
+  "name": "AudioQueuePropertyID",
+  "desc": "Identifiers for audio queue properties.",
+  "items": [
+    {
+      "name": "var kAudioQueueProperty_IsRunning: AudioQueuePropertyID",
+      "desc": "Value is a read-only UInt32 value indicating whether or not the audio queue is running. A nonzero value means running; 0 means stopped. A notification is sent when the associated audio queue starts or stops, which may occur sometime after the AudioQueueStart(_:_:) or AudioQueueStop(_:_:) function is called."
+    },
+    {
+      "name": "var kAudioQueueDeviceProperty_SampleRate: AudioQueuePropertyID",
+      "desc": "Value is a read-only Float64 value representing the sampling rate of the audio hardware device associated with an audio queue."
+    },
+    {
+      "name": "var kAudioQueueDeviceProperty_NumberChannels: AudioQueuePropertyID",
+      "desc": "Value is a read-only UInt32 value representing the number of channels in the audio hardware device associated with an audio queue."
+    },
+    {
+      "name": "var kAudioQueueProperty_CurrentDevice: AudioQueuePropertyID",
+      "desc": "Value is a read-write CFString object representing the unique identifier (UID) of the audio hardware device associated with an audio queue."
+    },
+    {
+      "name": "var kAudioQueueProperty_MagicCookie: AudioQueuePropertyID",
+      "desc": "Value is a read/write void pointer to a block of memory, which you set up, containing an audio format magic cookie. If the audio format you are playing or recording to requires a magic cookie, you must set a value for this property before enqueuing any buffers."
+    },
+    {
+      "name": "var kAudioQueueProperty_MaximumOutputPacketSize: AudioQueuePropertyID",
+      "desc": "Value is a read-onlyUInt32 value that is the size, in bytes, of the largest single packet of data in the output format. Primarily useful when encoding VBR compressed data."
+    },
+    {
+      "name": "var kAudioQueueProperty_StreamDescription: AudioQueuePropertyID",
+      "desc": "Value is a read-only AudioStreamBasicDescription structure, indicating an audio queue’s data format. Primarily useful for obtaining a complete ASBD when recording, in cases where you initially specify a sample rate of 0."
+    },
+    {
+      "name": "var kAudioQueueProperty_ChannelLayout: AudioQueuePropertyID",
+      "desc": "Value is a read/write AudioChannelLayout structure that describes an audio queue channel layout. The number of channels in the layout must match the number of channels in the audio format. This property is typically not used in the case of one or two channel audio. For more than two channels (such as in the case of 5.1 surround sound), you may need to specify a channel layout to indicate channel order, such as left, then center, then right."
+    },
+    {
+      "name": "var kAudioQueueProperty_EnableLevelMetering: AudioQueuePropertyID",
+      "desc": "Value is a read/write UInt32 value that indicates whether audio level metering is enabled for an audio queue. 0 = metering off, 1 = metering on."
+    },
+    {
+      "name": "var kAudioQueueProperty_CurrentLevelMeter: AudioQueuePropertyID",
+      "desc": "Value is a read-only array of AudioQueueLevelMeterState structures, one array element per audio channel. The member values in the structure are in the range 0 (for silence) to 1 (indicating maximum level)."
+    },
+    {
+      "name": "var kAudioQueueProperty_CurrentLevelMeterDB: AudioQueuePropertyID",
+      "desc": "Value is a read-only array of AudioQueueLevelMeterState structures, one array element per audio channel. The member values in the structure are in decibels."
+    },
+    {
+      "name": "var kAudioQueueProperty_DecodeBufferSizeFrames: AudioQueuePropertyID",
+      "desc": "Value is a read/write UInt32 value that is the size of the buffer into which a playback (output) audio queue decodes buffers. A larger buffer provides more reliability and better long-term performance at the expense of memory and decreased responsiveness in some situations."
+    },
+    {
+      "name": "var kAudioQueueProperty_ConverterError: AudioQueuePropertyID",
+      "desc": "Value is a read-only UInt32 value that indicates the most recent error (if any) encountered by the audio queue’s internal encoding/decoding process."
+    }
+  ],
+  "declaration": "typealias AudioQueuePropertyID = UInt32"
+}

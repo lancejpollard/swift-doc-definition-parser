@@ -1,0 +1,92 @@
+{
+  "path": "/documentation/appkit/nstabviewcontroller",
+  "type": "Class",
+  "name": "NSTabViewController",
+  "desc": "A container view controller that manages a tab view interface, which organizes multiple pages of content but displays only one page at a time.",
+  "items": [
+    {
+      "name": "var tabStyle: NSTabViewController.TabStyle",
+      "desc": "The style used to display the tabs."
+    },
+    {
+      "name": "var tabView: NSTabView",
+      "desc": "The tab view that manages the views of the interface."
+    },
+    {
+      "name": "var transitionOptions: NSViewController.TransitionOptions",
+      "desc": "The animation options to use when switching between tabs."
+    },
+    {
+      "name": "var canPropagateSelectedChildViewControllerTitle: Bool",
+      "desc": "A Boolean value indicating whether the tab view controller gets its title from the selected child view controller."
+    },
+    {
+      "name": "var tabViewItems: [NSTabViewItem]",
+      "desc": "The array of tab view items used to manage each of the child view controllers."
+    },
+    {
+      "name": "func tabViewItem(for: NSViewController) -> NSTabViewItem?",
+      "desc": "Returns the tab view item for the specified child view controller."
+    },
+    {
+      "name": "func addTabViewItem(NSTabViewItem)",
+      "desc": "Adds the specified tab to the end of the tab view controller’s list of tabs."
+    },
+    {
+      "name": "func insertTabViewItem(NSTabViewItem, at: Int)",
+      "desc": "Inserts a tab view into the tab view controller’s list of tabs."
+    },
+    {
+      "name": "func removeTabViewItem(NSTabViewItem)",
+      "desc": "Removes the specified tab view item from the tab view controller."
+    },
+    {
+      "name": "var selectedTabViewItemIndex: Int",
+      "desc": "The index of the selected tab."
+    },
+    {
+      "name": "func viewDidLoad()",
+      "desc": "Called after the view controller’s view has been loaded into memory."
+    },
+    {
+      "name": "func tabView(NSTabView, shouldSelect: NSTabViewItem?) -> Bool",
+      "desc": "Asks the tab view controller if the specified tab should be selected."
+    },
+    {
+      "name": "func tabView(NSTabView, willSelect: NSTabViewItem?)",
+      "desc": "Informs the tab view controller that the specified tab is about to be selected."
+    },
+    {
+      "name": "func tabView(NSTabView, didSelect: NSTabViewItem?)",
+      "desc": "Informs the tab view controller that the specified tab was selected."
+    },
+    {
+      "name": "func toolbar(NSToolbar, itemForItemIdentifier: NSToolbarItem.Identifier, willBeInsertedIntoToolbar: Bool) -> NSToolbarItem?",
+      "desc": "Returns the toolbar item for the specified identifier."
+    },
+    {
+      "name": "func toolbarAllowedItemIdentifiers(NSToolbar) -> [NSToolbarItem.Identifier]",
+      "desc": "Returns the array of identifier strings for the allowed toolbar items."
+    },
+    {
+      "name": "func toolbarDefaultItemIdentifiers(NSToolbar) -> [NSToolbarItem.Identifier]",
+      "desc": "Returns the array of identifier strings for the default toolbar items."
+    },
+    {
+      "name": "func toolbarSelectableItemIdentifiers(NSToolbar) -> [NSToolbarItem.Identifier]",
+      "desc": "Returns the array of identifier strings for the selectable toolbar items"
+    },
+    {
+      "name": "enum NSTabViewController.TabStyle",
+      "desc": "Tab control style options for a tab view controller."
+    }
+  ],
+  "declaration": "class NSTabViewController : NSViewController",
+  "inheritsFrom": [
+    "NSViewController"
+  ],
+  "conformsTo": [
+    "NSTabViewDelegate",
+    "NSToolbarDelegate"
+  ]
+}

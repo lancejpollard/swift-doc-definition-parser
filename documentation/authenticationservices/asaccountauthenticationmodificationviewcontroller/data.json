@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/authenticationservices/asaccountauthenticationmodificationviewcontroller",
+  "type": "Class",
+  "name": "ASAccountAuthenticationModificationViewController",
+  "desc": "A view controller that can upgrade user passwords to strong passwords, or convert accounts to use Sign in with Apple.",
+  "items": [
+    {
+      "name": "func convertAccountToSignInWithAppleWithoutUserInteraction(for: ASCredentialServiceIdentifier, existingCredential: ASPasswordCredential, userInfo: [AnyHashable : Any]?)",
+      "desc": "Converts an account’s authentication mechanism from using passwords to using Sign in with Apple."
+    },
+    {
+      "name": "func prepareInterfaceToConvertAccountToSignInWithApple(for: ASCredentialServiceIdentifier, existingCredential: ASPasswordCredential, userInfo: [AnyHashable : Any]?)",
+      "desc": "Prepares the view controller’s interface that displays when converting an account that uses password authentication to use Sign in with Apple."
+    },
+    {
+      "name": "property list key ASAccountAuthenticationModificationSupportsUpgradeToSignInWithApple",
+      "desc": "A Boolean value that indicates whether the extension supports upgrading from using password authentication to using Sign in with Apple."
+    },
+    {
+      "name": "func changePasswordWithoutUserInteraction(for: ASCredentialServiceIdentifier, existingCredential: ASPasswordCredential, newPassword: String, userInfo: [AnyHashable : Any]?)",
+      "desc": "Upgrades a user’s weak password to a strong password."
+    },
+    {
+      "name": "func prepareInterfaceToChangePassword(for: ASCredentialServiceIdentifier, existingCredential: ASPasswordCredential, newPassword: String, userInfo: [AnyHashable : Any]?)",
+      "desc": "Prepares the view controller’s interface that displays when upgrading from a weak password to a strong password."
+    },
+    {
+      "name": "property list key ASAccountAuthenticationModificationSupportsStrongPasswordUpgrade",
+      "desc": "A Boolean value that indicates whether the extension supports upgrading a user’s password to a strong password."
+    },
+    {
+      "name": "property list key ASAccountAuthenticationModificationPasswordGenerationRequirements",
+      "desc": "The rules the system satisfies when generating a strong password for your extension during an automatic upgrade."
+    },
+    {
+      "name": "property list key ASAccountAuthenticationModificationOptOutOfSecurityPromptsOnSignIn",
+      "desc": "A Boolean value that indicates the system shouldn’t show security recommendation prompts when users sign in using the app."
+    },
+    {
+      "name": "func cancelRequest()",
+      "desc": "Cancels a request that the user initiated."
+    },
+    {
+      "name": "protocol ASAccountAuthenticationModificationControllerDelegate",
+      "desc": "An interface you implement for receiving success and failure statuses about modification of an account’s authentication properties."
+    },
+    {
+      "name": "protocol ASAccountAuthenticationModificationControllerPresentationContextProviding",
+      "desc": "An interface you implement to coordinate presentation of the user interface when modifying an account’s authentication properties."
+    },
+    {
+      "name": "var extensionContext: ASAccountAuthenticationModificationExtensionContext",
+      "desc": "The context your account authentication modification extension uses to provide information to the system."
+    }
+  ],
+  "declaration": "class ASAccountAuthenticationModificationViewController : UIViewController",
+  "inheritsFrom": [
+    "UIViewController"
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "path": "/documentation/appkit/nsfont",
+  "type": "Class",
+  "name": "NSFont",
+  "desc": "The representation of a font in an app.",
+  "items": [
+    {
+      "name": "init?(name: String, size: CGFloat)",
+      "desc": "Creates a font object for the specified font name and font size."
+    },
+    {
+      "name": "init?(descriptor: NSFontDescriptor, size: CGFloat)",
+      "desc": "Returns a font object for the specified font descriptor and font size."
+    },
+    {
+      "name": "init?(descriptor: NSFontDescriptor, textTransform: AffineTransform?)",
+      "desc": "Returns a font object for the specified font descriptor and text transform."
+    },
+    {
+      "name": "init?(name: String, matrix: UnsafePointer<CGFloat>)",
+      "desc": "Returns a font object for the specified font name and matrix."
+    },
+    {
+      "name": "class func userFont(ofSize: CGFloat) -> NSFont?",
+      "desc": "Returns the font used by default for documents and other text under the user’s control (that is, text whose font the user can normally change), in the specified size."
+    },
+    {
+      "name": "class func userFixedPitchFont(ofSize: CGFloat) -> NSFont?",
+      "desc": "Returns the font used by default for documents and other text under the user’s control (that is, text whose font the user can normally change), when that font should be fixed-pitch, in the specified size."
+    },
+    {
+      "name": "class func preferredFont(forTextStyle: NSFont.TextStyle, options: [NSFont.TextStyleOptionKey : Any]) -> NSFont",
+      "desc": "Returns the font associated with the text style."
+    },
+    {
+      "name": "class func systemFont(ofSize: CGFloat) -> NSFont",
+      "desc": "Returns the standard system font with the specified size."
+    },
+    {
+      "name": "class func systemFont(ofSize: CGFloat, weight: NSFont.Weight) -> NSFont",
+      "desc": "Returns the standard system font with the specified size and weight."
+    },
+    {
+      "name": "class func boldSystemFont(ofSize: CGFloat) -> NSFont",
+      "desc": "Returns the standard system font in boldface type with the specified size."
+    },
+    {
+      "name": "class func monospacedSystemFont(ofSize: CGFloat, weight: NSFont.Weight) -> NSFont",
+      "desc": "Returns a monospace version of the system font with the specified size and weight."
+    },
+    {
+      "name": "class func monospacedDigitSystemFont(ofSize: CGFloat, weight: NSFont.Weight) -> NSFont",
+      "desc": "Returns a version of the standard system font that contains monospaced digit glyphs."
+    },
+    {
+      "name": "class var systemFontSize: CGFloat",
+      "desc": "Returns the size of the standard system font."
+    },
+    {
+      "name": "class var smallSystemFontSize: CGFloat",
+      "desc": "Returns the size of the standard small system font."
+    },
+    {
+      "name": "struct NSFont.Weight",
+      "desc": "System-defined font-weight values."
+    },
+    {
+      "name": "struct NSFont.TextStyle",
+      "desc": "Constants that specify the preferred text styles you use with fonts."
+    },
+    {
+      "name": "struct NSFont.TextStyleOptionKey",
+      "desc": "The options that you apply when requesting the font or font descriptor of a preferred text style."
+    },
+    {
+      "name": "class func labelFont(ofSize: CGFloat) -> NSFont",
+      "desc": "Returns the font used for standard interface labels in the specified size."
+    },
+    {
+      "name": "class func messageFont(ofSize: CGFloat) -> NSFont",
+      "desc": "Returns the font used for standard interface items, such as button labels, menu items, and so on, in the specified size."
+    },
+    {
+      "name": "class func menuBarFont(ofSize: CGFloat) -> NSFont",
+      "desc": "Returns the font used for menu bar items, in the specified size."
+    },
+    {
+      "name": "class func menuFont(ofSize: CGFloat) -> NSFont",
+      "desc": "Returns the font used for menu items, in the specified size."
+    },
+    {
+      "name": "class func controlContentFont(ofSize: CGFloat) -> NSFont",
+      "desc": "Returns the font used for the content of controls in the specified size."
+    },
+    {
+      "name": "class func titleBarFont(ofSize: CGFloat) -> NSFont",
+      "desc": "Returns the font used for window title bars, in the specified size."
+    },
+    {
+      "name": "class func paletteFont(ofSize: CGFloat) -> NSFont",
+      "desc": "Returns the font used for palette window title bars, in the specified size."
+    },
+    {
+      "name": "class func toolTipsFont(ofSize: CGFloat) -> NSFont",
+      "desc": "Returns the font used for tool tips labels, in the specified size."
+    },
+    {
+      "name": "class var labelFontSize: CGFloat",
+      "desc": "Returns the size of the standard label font."
+    },
+    {
+      "name": "class func systemFontSize(for: NSControl.ControlSize) -> CGFloat",
+      "desc": "Returns the font size used for the specified control size."
+    },
+    {
+      "name": "func set()",
+      "desc": "Sets this font as the font for the current graphics context."
+    },
+    {
+      "name": "func set(in: NSGraphicsContext)",
+      "desc": "Sets this font as the font for the specified graphics context."
+    },
+    {
+      "name": "var pointSize: CGFloat",
+      "desc": "The point size of the font."
+    },
+    {
+      "name": "var coveredCharacterSet: CharacterSet",
+      "desc": "The character set containing all of the nominal characters that the font can render."
+    },
+    {
+      "name": "var fontDescriptor: NSFontDescriptor",
+      "desc": "The font descriptor object for the font."
+    },
+    {
+      "name": "var isFixedPitch: Bool",
+      "desc": "A Boolean value indicating whether all glyphs in the font have the same advancement."
+    },
+    {
+      "name": "var mostCompatibleStringEncoding: UInt",
+      "desc": "The string encoding that works best with the font."
+    },
+    {
+      "name": "var numberOfGlyphs: Int",
+      "desc": "The number of glyphs in the font."
+    },
+    {
+      "name": "typealias NSGlyph",
+      "desc": "The type used to specify glyphs."
+    },
+    {
+      "name": "var NSControlGlyph: Int",
+      "desc": "The reserved code for a control glyph."
+    },
+    {
+      "name": "var NSNullGlyph: Int",
+      "desc": "The reserved code for a null glyph."
+    },
+    {
+      "name": "var displayName: String?",
+      "desc": "The name of the font, including family and face names, to use when displaying the font information to the user."
+    },
+    {
+      "name": "var familyName: String?",
+      "desc": "The family name of the font—for example, “Times” or “Helvetica.”"
+    },
+    {
+      "name": "var fontName: String",
+      "desc": "The full name of the font, as used in PostScript language code—for example, “Times-Roman” or “Helvetica-Oblique.”"
+    },
+    {
+      "name": "class func setUser(NSFont?)",
+      "desc": "Sets the font used by default for documents and other text under the user’s control to the specified font."
+    },
+    {
+      "name": "class func setUserFixedPitch(NSFont?)",
+      "desc": "Sets the font used by default for documents and other text under the user’s control, when that font should be fixed-pitch, to the specified font."
+    },
+    {
+      "name": "var isVertical: Bool",
+      "desc": "A Boolean value indicating whether the font is a vertical font."
+    },
+    {
+      "name": "var vertical: NSFont",
+      "desc": "A vertical version of the font."
+    },
+    {
+      "name": "class let antialiasThresholdChangedNotification: NSNotification.Name",
+      "desc": "Posted after the threshold for antialiasing changes."
+    },
+    {
+      "name": "class let fontSetChangedNotification: NSNotification.Name",
+      "desc": "Posted after the currently-set font changes."
+    },
+    {
+      "name": "func withSize(CGFloat) -> NSFont"
+    }
+  ],
+  "declaration": "class NSFont : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

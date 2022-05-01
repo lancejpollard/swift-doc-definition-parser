@@ -1,0 +1,83 @@
+{
+  "path": "/documentation/foundation/nsextensioncontext",
+  "type": "Class",
+  "name": "NSExtensionContext",
+  "desc": "The host app context from which an app extension is invoked.",
+  "items": [
+    {
+      "name": "func cancelRequest(withError: Error)",
+      "desc": "Tells the host app to cancel the app extension request, with a supplied error."
+    },
+    {
+      "name": "func completeRequest(returningItems: [Any]?, completionHandler: ((Bool) -> Void)?)",
+      "desc": "Tells the host app to complete the app extension request with an array of result items."
+    },
+    {
+      "name": "func open(URL, completionHandler: ((Bool) -> Void)?)",
+      "desc": "Asks the system to open a URL on behalf of the currently running app extension."
+    },
+    {
+      "name": "var inputItems: [Any]",
+      "desc": "The list of input NSExtensionItem objects associated with the context."
+    },
+    {
+      "name": "func mediaPlayingStarted()",
+      "desc": "Tells the system that the Notification Content app extension began playing a media file."
+    },
+    {
+      "name": "func mediaPlayingPaused()",
+      "desc": "Tells the system that the Notification Content app extension stopped playing a media file."
+    },
+    {
+      "name": "var intent: INIntent?",
+      "desc": "Metadata for populating your share extensions interface."
+    },
+    {
+      "name": "var hostedViewMinimumAllowedSize: CGSize",
+      "desc": "The minimum size for a Siri hosted view."
+    },
+    {
+      "name": "var hostedViewMaximumAllowedSize: CGSize",
+      "desc": "The maximum size for a Siri hosted view."
+    },
+    {
+      "name": "func interfaceParametersDescription() -> String",
+      "desc": "Returns a human-readable string describing the data that SiriKit displays to the user when you handle an intent."
+    },
+    {
+      "name": "static let NSExtensionHostDidBecomeActive: NSNotification.Name",
+      "desc": "Posted when the extension’s host app moves from the inactive to the active state."
+    },
+    {
+      "name": "static let NSExtensionHostWillResignActive: NSNotification.Name",
+      "desc": "Posted when the extension’s host app moves from the active to the inactive state."
+    },
+    {
+      "name": "static let NSExtensionHostDidEnterBackground: NSNotification.Name",
+      "desc": "Posted when the extension’s host app begins running in the background."
+    },
+    {
+      "name": "static let NSExtensionHostWillEnterForeground: NSNotification.Name",
+      "desc": "Posted when the extension’s host app begins running in the foreground."
+    },
+    {
+      "name": "var notificationActions: [UNNotificationAction]"
+    },
+    {
+      "name": "func completeRequest(withBroadcast: URL, setupInfo: [String : NSCoding & NSObjectProtocol]?)"
+    },
+    {
+      "name": "func dismissNotificationContentExtension()"
+    },
+    {
+      "name": "func loadBroadcastingApplicationInfo(completion: (String, String, UIImage?) -> Void)"
+    },
+    {
+      "name": "func performNotificationDefaultAction()"
+    }
+  ],
+  "declaration": "class NSExtensionContext : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

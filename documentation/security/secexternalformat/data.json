@@ -1,0 +1,71 @@
+{
+  "path": "/documentation/security/secexternalformat",
+  "type": "Enumeration",
+  "name": "SecExternalFormat",
+  "desc": "The external format of a keychain item.",
+  "items": [
+    {
+      "name": "case formatUnknown"
+    },
+    {
+      "name": "case formatOpenSSL",
+      "desc": "Format for asymmetric (public/private) keys. OpenSSL is an open source toolkit for Secure Sockets Layer (SSL) and Transport Layer Security (TLS). Also known as X.509 for public keys."
+    },
+    {
+      "name": "case formatSSH",
+      "desc": "OpenSSH 1 format for asymmetric (public/private) keys. OpenSSH is an OpenBSD implementation of the Secure Shell (SSH) protocol."
+    },
+    {
+      "name": "case formatBSAFE",
+      "desc": "Format for asymmetric keys. BSAFE is a standard from RSA Security for encryption, digital signatures, and privacy."
+    },
+    {
+      "name": "case formatSSHv2",
+      "desc": "OpenSSH 2 format for public keys. OpenSSH version 2 private keys are in format kSecFormatOpenSSL or kSecFormatWrappedOpenSSL. OpenSSH is an OpenBSD implementation of the Secure Shell (SSH) protocol."
+    },
+    {
+      "name": "case formatRawKey",
+      "desc": "Format for symmetric keys. Raw, unformatted key bits. This is the default for symmetric keys."
+    },
+    {
+      "name": "case formatWrappedPKCS8",
+      "desc": "Format for wrapped symmetric and private keys. PKCS8 is the Private-Key Information Syntax Standard from RSA Security."
+    },
+    {
+      "name": "case formatWrappedOpenSSL",
+      "desc": "Format for wrapped symmetric and private keys. OpenSSL is an open-source toolkit for Secure Sockets Layer (SSL) and Transport Layer Security (TLS)."
+    },
+    {
+      "name": "case formatWrappedSSH",
+      "desc": "OpenSSH 1 format for wrapped symmetric and private keys. OpenSSH is an OpenBSD implementation of the Secure Shell (SSH) protocol."
+    },
+    {
+      "name": "case formatWrappedLSH",
+      "desc": "Not supported."
+    },
+    {
+      "name": "case formatX509Cert",
+      "desc": "Format for certificates. DER (distinguished encoding rules) encoded. X.509 is a standard for digital certificates from the International Telecommunication Union (ITU). This is the default for certificates."
+    },
+    {
+      "name": "case formatPEMSequence",
+      "desc": "Sequence of certificates and keys with PEM armor. PEM armor refers to a way of expressing binary data as an ASCII string so that it can be transferred over text-only channels such as email. This is the default format for multiple items."
+    },
+    {
+      "name": "case formatPKCS7",
+      "desc": "Sequence of certificates, no PEM armor. PKCS7 is the Cryptographic Message Syntax Standard from RSA Security, Inc."
+    },
+    {
+      "name": "case formatPKCS12",
+      "desc": "Set of certificates and private keys. PKCS12 is the Personal Information Exchange Syntax from RSA Security, Inc."
+    },
+    {
+      "name": "case formatNetscapeCertSequence",
+      "desc": "Set of certificates in the Netscape Certificate Sequence format."
+    }
+  ],
+  "declaration": "enum SecExternalFormat : UInt32, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

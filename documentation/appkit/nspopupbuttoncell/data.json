@@ -1,0 +1,178 @@
+{
+  "path": "/documentation/appkit/nspopupbuttoncell",
+  "type": "Class",
+  "name": "NSPopUpButtonCell",
+  "desc": "The NSPopUpButtonCell class defines the visual appearance of pop-up buttons that display pop-up or pull-down menus. Pop-up menus present the user with a set of choices, much the way radio buttons do, but using much less space. Pull-down menus also provide a set of choices but present the information in a slightly different way, usually to provide a set of commands from which the user can choose.",
+  "items": [
+    {
+      "name": "init(textCell: String, pullsDown: Bool)",
+      "desc": "Returns an NSPopUpButtonCell object initialized with the specified title."
+    },
+    {
+      "name": "var menu: NSMenu?",
+      "desc": "The pop-up button’s associated menu."
+    },
+    {
+      "name": "var pullsDown: Bool",
+      "desc": "A Boolean value that indicates the behavior of the button’s menu."
+    },
+    {
+      "name": "var autoenablesItems: Bool",
+      "desc": "A Boolean value that indicates if the button automatically enables and disables its items every time a user event occurs."
+    },
+    {
+      "name": "var preferredEdge: NSRectEdge",
+      "desc": "The edge of the cell from which the menu should pop out when screen conditions are restrictive."
+    },
+    {
+      "name": "var usesItemFromMenu: Bool",
+      "desc": "A Boolean value that indicates if the control uses an item from the menu for its own title."
+    },
+    {
+      "name": "var altersStateOfSelectedItem: Bool",
+      "desc": "A Boolean value that indicates if the pop-up button links the state of the selected menu item to the current selection."
+    },
+    {
+      "name": "var arrowPosition: NSPopUpButton.ArrowPosition",
+      "desc": "The position of the arrow displayed on the button."
+    },
+    {
+      "name": "func addItem(withTitle: String)",
+      "desc": "Adds an item with the specified title to the end of the menu."
+    },
+    {
+      "name": "func addItems(withTitles: [String])",
+      "desc": "Adds multiple items to the end of the menu."
+    },
+    {
+      "name": "func insertItem(withTitle: String, at: Int)",
+      "desc": "Inserts an item at the specified position in the menu."
+    },
+    {
+      "name": "func removeItem(withTitle: String)",
+      "desc": "Removes the item with the specified title from the menu."
+    },
+    {
+      "name": "func removeItem(at: Int)",
+      "desc": "Removes the item at the specified index."
+    },
+    {
+      "name": "func removeAllItems()",
+      "desc": "Removes all items in the receiver’s item menu."
+    },
+    {
+      "name": "var itemArray: [NSMenuItem]",
+      "desc": "An array of NSMenuItem objects that represent the items in the menu."
+    },
+    {
+      "name": "var numberOfItems: Int",
+      "desc": "The number of items in the menu."
+    },
+    {
+      "name": "func index(of: NSMenuItem) -> Int",
+      "desc": "Returns the index of the specified menu item."
+    },
+    {
+      "name": "func indexOfItem(withTitle: String) -> Int",
+      "desc": "Returns the index of the item with the specified title."
+    },
+    {
+      "name": "func indexOfItem(withTag: Int) -> Int",
+      "desc": "Returns the index of the menu item with the specified tag."
+    },
+    {
+      "name": "func indexOfItem(withRepresentedObject: Any?) -> Int",
+      "desc": "Returns the index of the menu item that holds the specified represented object."
+    },
+    {
+      "name": "func indexOfItem(withTarget: Any?, andAction: Selector?) -> Int",
+      "desc": "Returns the index of the menu item with the specified target and action."
+    },
+    {
+      "name": "func item(at: Int) -> NSMenuItem?",
+      "desc": "Returns the menu item at the specified index."
+    },
+    {
+      "name": "func item(withTitle: String) -> NSMenuItem?",
+      "desc": "Returns the menu item with the specified title."
+    },
+    {
+      "name": "var lastItem: NSMenuItem?",
+      "desc": "The last item in the menu."
+    },
+    {
+      "name": "func select(NSMenuItem?)",
+      "desc": "Selects the specified menu item."
+    },
+    {
+      "name": "func selectItem(at: Int)",
+      "desc": "Selects the item in the menu at the specified index."
+    },
+    {
+      "name": "func selectItem(withTag: Int) -> Bool",
+      "desc": "Selects the menu item with the specified tag."
+    },
+    {
+      "name": "func selectItem(withTitle: String)",
+      "desc": "Selects the item with the specified title."
+    },
+    {
+      "name": "func setTitle(String?)",
+      "desc": "Sets the string displayed in the receiver when the user isn’t pressing the mouse button."
+    },
+    {
+      "name": "var selectedItem: NSMenuItem?",
+      "desc": "The menu item last selected by the user."
+    },
+    {
+      "name": "var indexOfSelectedItem: Int",
+      "desc": "The index of the item last selected by the user."
+    },
+    {
+      "name": "func synchronizeTitleAndSelectedItem()",
+      "desc": "Synchronizes the pop-up button’s displayed item with the currently selected menu item."
+    },
+    {
+      "name": "func itemTitle(at: Int) -> String",
+      "desc": "Returns the title of the item at the specified index."
+    },
+    {
+      "name": "var itemTitles: [String]",
+      "desc": "An array of NSString objects containing the titles of every item in the menu."
+    },
+    {
+      "name": "var titleOfSelectedItem: String?",
+      "desc": "The title of the item last selected by the user."
+    },
+    {
+      "name": "func attachPopUp(withFrame: NSRect, in: NSView)",
+      "desc": "Sets up the receiver to display a menu."
+    },
+    {
+      "name": "func dismissPopUp()",
+      "desc": "Dismisses the pop-up button’s menu by ordering its window out."
+    },
+    {
+      "name": "func performClick(withFrame: NSRect, in: NSView)",
+      "desc": "Displays the receiver’s menu and track mouse events in it."
+    },
+    {
+      "name": "enum NSPopUpButton.ArrowPosition",
+      "desc": "These constants are defined for use with the arrowPosition property."
+    },
+    {
+      "name": "class let willPopUpNotification: NSNotification.Name",
+      "desc": "This notification is posted just before a pop-up menu is attached to its window frame."
+    },
+    {
+      "name": "init(coder: NSCoder)"
+    }
+  ],
+  "declaration": "class NSPopUpButtonCell : NSMenuItemCell",
+  "inheritsFrom": [
+    "NSMenuItemCell"
+  ],
+  "conformsTo": [
+    "NSMenuItemValidation"
+  ]
+}

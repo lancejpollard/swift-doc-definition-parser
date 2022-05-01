@@ -1,0 +1,49 @@
+{
+  "path": "/documentation/playgroundbluetooth/playgroundbluetoothcentralmanager",
+  "type": "Class",
+  "name": "PlaygroundBluetoothCentralManager",
+  "desc": "A streamlined interface for connecting the central manager for the current playground page to nearby Bluetooth peripherals.",
+  "items": [
+    {
+      "name": "init(services: [CBUUID]?, queue: DispatchQueue)",
+      "desc": "Creates a central manager that supports communicating with Bluetooth peripherals."
+    },
+    {
+      "name": "var delegate: PlaygroundBluetoothCentralManagerDelegate?",
+      "desc": "A delegate that can receive messages from the central manager by adopting the PlaygroundBluetoothCentralManagerDelegate protocol."
+    },
+    {
+      "name": "var scanning: Bool",
+      "desc": "A Boolean value that determines whether the central manager is scanning for peripherals."
+    },
+    {
+      "name": "func connect(to: CBPeripheral, timeout: TimeInterval?, callback: ((CBPeripheral, Error?) -> Void)?)",
+      "desc": "Attempts to connect the central manager to the specified peripheral."
+    },
+    {
+      "name": "func connect(toPeripheralWithUUID: UUID, timeout: TimeInterval, callback: ((CBPeripheral?, Error?) -> Void)?)",
+      "desc": "Attempts to connect the central manager to a peripheral with the specified unique identifier."
+    },
+    {
+      "name": "func connectToLastConnectedPeripheral(timeout: TimeInterval, callback: ((CBPeripheral?, Error?) -> Void)?) -> Bool",
+      "desc": "Attempts to reconnect the central manager to the most recently connected peripheral."
+    },
+    {
+      "name": "enum PlaygroundBluetoothCentralManager.ConnectionError",
+      "desc": "The errors you may encounter when connecting a peripheral to the central manager for the current playground page."
+    },
+    {
+      "name": "func disconnect(from: CBPeripheral)",
+      "desc": "Disconnects the central manager from the specified, connected peripheral."
+    },
+    {
+      "name": "var connectedPeripherals: [CBPeripheral]",
+      "desc": "An array of the peripherals currently connected to the central manager."
+    },
+    {
+      "name": "var state: CBManagerState",
+      "desc": "The current state of the central manager."
+    }
+  ],
+  "declaration": "class PlaygroundBluetoothCentralManager"
+}

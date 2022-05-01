@@ -1,0 +1,124 @@
+{
+  "path": "/documentation/foundation/attributedsubstring",
+  "type": "Structure",
+  "name": "AttributedSubstring",
+  "desc": "A portion of an attributed string.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an empty attributed substring."
+    },
+    {
+      "name": "func setAttributes(AttributeContainer)",
+      "desc": "Sets the attributed substring’s attributes to those in a specified attribute container."
+    },
+    {
+      "name": "func settingAttributes(AttributeContainer) -> AttributedString",
+      "desc": "Returns an attributed string by setting the attributed string’s attributes to those in a specified attribute container."
+    },
+    {
+      "name": "func mergeAttributes(AttributeContainer, mergePolicy: AttributedString.AttributeMergePolicy)",
+      "desc": "Merges the attributed string’s attributes with those in a specified attribute container."
+    },
+    {
+      "name": "func mergingAttributes(AttributeContainer, mergePolicy: AttributedString.AttributeMergePolicy) -> AttributedString",
+      "desc": "Returns an attributed string by merging the attributed string’s attributes with those in a specified attribute container."
+    },
+    {
+      "name": "enum AttributedString.AttributeMergePolicy",
+      "desc": "An enumeration of behaviors to apply when merging attributes."
+    },
+    {
+      "name": "func replaceAttributes(AttributeContainer, with: AttributeContainer)",
+      "desc": "Replaces the attributed substring’s attributes with those in a specified attribute container."
+    },
+    {
+      "name": "func replacingAttributes(AttributeContainer, with: AttributeContainer) -> AttributedString",
+      "desc": "Returns an attributed string by replacing occurrences of attributes in one attribute container with those in another attribute container."
+    },
+    {
+      "name": "func range<T>(of: T, options: String.CompareOptions, locale: Locale?) -> Range<AttributedString.Index>?",
+      "desc": "Returns the range of a substring in the attributed substring, if it exists."
+    },
+    {
+      "name": "subscript<R>(R) -> AttributedSubstring",
+      "desc": "Returns a substring of the attributed substring that a range indicates."
+    },
+    {
+      "name": "var characters: AttributedString.CharacterView",
+      "desc": "The characters of the attributed string, as a view into the underlying string."
+    },
+    {
+      "name": "struct AttributedString.CharacterView",
+      "desc": "A view into the underlying storage of the attributed string, as Unicode characters."
+    },
+    {
+      "name": "var unicodeScalars: AttributedString.UnicodeScalarView",
+      "desc": "The Unicode scalars of the attributed string, as a view into the underlying string."
+    },
+    {
+      "name": "struct AttributedString.UnicodeScalarView",
+      "desc": "A view into the underlying storage of the attributed string, as Unicode scalars."
+    },
+    {
+      "name": "var runs: AttributedString.Runs",
+      "desc": "The attributed runs of the attributed string, as a view into the underlying string."
+    },
+    {
+      "name": "struct AttributedString.Runs",
+      "desc": "An iterable view into segments of the attributed string, each of which indicates where a run of identical attributes begins or ends."
+    },
+    {
+      "name": "var base: AttributedString",
+      "desc": "Returns the underlying attributed string that the attributed substring derives from."
+    },
+    {
+      "name": "subscript<K>(K.Type) -> K.Value?",
+      "desc": "Returns an attribute value that corresponds to an attributed string key."
+    },
+    {
+      "name": "subscript<K>(dynamicMember: KeyPath<AttributeDynamicLookup, K>) -> K.Value?",
+      "desc": "Returns an attribute value that a key path indicates."
+    },
+    {
+      "name": "enum AttributeDynamicLookup",
+      "desc": "A type to support dynamic member lookup of attributes and containers."
+    },
+    {
+      "name": "subscript<S>(dynamicMember: KeyPath<AttributeScopes, S.Type>) -> ScopedAttributeContainer<S>",
+      "desc": "Returns a scoped attribute container that a key path indicates."
+    },
+    {
+      "name": "struct ScopedAttributeContainer",
+      "desc": "An attribute container that allows dynamic member lookup of its contents within the specified attribute scope."
+    },
+    {
+      "name": "static func == (AttributedSubstring, AttributedSubstring) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two attributed substrings are equal."
+    },
+    {
+      "name": "static func == <RHS>(AttributedSubstring, RHS) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether an attributed substring and another attributed string or substring are equal."
+    },
+    {
+      "name": "static func != (AttributedSubstring, AttributedSubstring) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two attributed substrings are not equal."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual representation of the instance."
+    }
+  ],
+  "declaration": "@dynamicMemberLookup struct AttributedSubstring",
+  "conformsTo": [
+    "AttributedStringProtocol"
+  ]
+}

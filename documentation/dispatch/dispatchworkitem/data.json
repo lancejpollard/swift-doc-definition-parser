@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/dispatch/dispatchworkitem",
+  "type": "Class",
+  "name": "DispatchWorkItem",
+  "desc": "The work you want to perform, encapsulated in a way that lets you attach a completion handle or execution dependencies.",
+  "items": [
+    {
+      "name": "init(qos: DispatchQoS, flags: DispatchWorkItemFlags, block: () -> Void)",
+      "desc": "Creates a new dispatch work item from an existing block and assigns it the specified quality-of-service class."
+    },
+    {
+      "name": "struct DispatchWorkItemFlags",
+      "desc": "A set of behaviors for a work item, such as its quality-of-service class and whether to create a barrier or spawn a new detached thread."
+    },
+    {
+      "name": "func perform()",
+      "desc": "Executes the work item's block synchronously on the current thread."
+    },
+    {
+      "name": "func notify(queue: DispatchQueue, execute: DispatchWorkItem)",
+      "desc": "Schedules the execution of the specified work item after the completion of the current work item."
+    },
+    {
+      "name": "func notify(qos: DispatchQoS, flags: DispatchWorkItemFlags, queue: DispatchQueue, execute: () -> Void)",
+      "desc": "Schedules the execution of the specified work item, with the specified quality-of-service, after the completion of the current work item."
+    },
+    {
+      "name": "func wait()",
+      "desc": "Causes the caller to wait synchronously until the dispatch work item finishes executing."
+    },
+    {
+      "name": "func wait(timeout: DispatchTime) -> DispatchTimeoutResult",
+      "desc": "Causes the caller to wait synchronously until the dispatch work item finishes executing, or until the specified time elapses."
+    },
+    {
+      "name": "func wait(wallTimeout: DispatchWallTime) -> DispatchTimeoutResult",
+      "desc": "Causes the caller to wait synchronously until the dispatch work item finishes executing, or until the specified time elapses."
+    },
+    {
+      "name": "struct DispatchTime",
+      "desc": "A point in time relative to the default clock, with nanosecond precision."
+    },
+    {
+      "name": "struct DispatchWallTime",
+      "desc": "An absolute point in time according to the wall clock, with microsecond precision."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Cancels the current work item asynchronously."
+    },
+    {
+      "name": "var isCancelled: Bool",
+      "desc": "A Boolean value indicating whether the work item has been canceled."
+    },
+    {
+      "name": "init(flags: DispatchWorkItemFlags, block: () -> Void)"
+    }
+  ],
+  "declaration": "class DispatchWorkItem"
+}

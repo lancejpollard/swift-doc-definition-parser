@@ -1,0 +1,95 @@
+{
+  "path": "/documentation/swift/binaryinteger",
+  "type": "Protocol",
+  "name": "BinaryInteger",
+  "desc": "An integer type with a binary representation.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a new value equal to zero."
+    },
+    {
+      "name": "init<T>(T)",
+      "desc": "Creates a new instance from the given integer."
+    },
+    {
+      "name": "init<T>(clamping: T)",
+      "desc": "Creates a new instance with the representable value that’s closest to the given integer."
+    },
+    {
+      "name": "init<T>(truncatingIfNeeded: T)",
+      "desc": "Creates a new instance from the bit pattern of the given instance by sign-extending or truncating to fit this type."
+    },
+    {
+      "name": "init<T>(T)",
+      "desc": "Creates an integer from the given floating-point value, rounding toward zero."
+    },
+    {
+      "name": "init?<T>(exactly: T)",
+      "desc": "Creates an integer from the given floating-point value, if it can be represented exactly."
+    },
+    {
+      "name": "func quotientAndRemainder(dividingBy: Self) -> (quotient: Self, remainder: Self)",
+      "desc": "Returns the quotient and remainder of this value divided by the given value."
+    },
+    {
+      "name": "func isMultiple(of: Self) -> Bool",
+      "desc": "Returns true if this value is a multiple of the given value, and false otherwise."
+    },
+    {
+      "name": "func signum() -> Self",
+      "desc": "Returns -1 if this value is negative and 1 if it’s positive; otherwise, 0."
+    },
+    {
+      "name": "static var isSigned: Bool",
+      "desc": "A Boolean value indicating whether this type is a signed integer type."
+    },
+    {
+      "name": "var bitWidth: Int",
+      "desc": "The number of bits in the current binary representation of this value."
+    },
+    {
+      "name": "var trailingZeroBitCount: Int",
+      "desc": "The number of trailing zeros in this value’s binary representation."
+    },
+    {
+      "name": "var words: Self.Words",
+      "desc": "A collection containing the words of this value’s binary representation, in order from the least significant to most significant."
+    },
+    {
+      "name": "associatedtype Words",
+      "desc": "A type that represents the words of a binary integer."
+    },
+    {
+      "name": "init(String, format: IntegerFormatStyle<Self>.Percent, lenient: Bool)"
+    },
+    {
+      "name": "init(String, format: IntegerFormatStyle<Self>.Currency, lenient: Bool)"
+    },
+    {
+      "name": "init(String, format: IntegerFormatStyle<Self>, lenient: Bool)"
+    },
+    {
+      "name": "init<S>(S.ParseInput, strategy: S)"
+    },
+    {
+      "name": "init<S>(S.ParseInput, strategy: S)"
+    },
+    {
+      "name": "func formatted() -> String"
+    },
+    {
+      "name": "func formatted<S>(S) -> S.FormatOutput"
+    },
+    {
+      "name": "func formatted<S>(S) -> S.FormatOutput"
+    }
+  ],
+  "declaration": "protocol BinaryInteger where Self.Magnitude : BinaryInteger, Self.Magnitude == Self.Magnitude.Magnitude",
+  "inheritsFrom": [
+    "CustomStringConvertible",
+    "Hashable",
+    "Numeric",
+    "Strideable"
+  ]
+}

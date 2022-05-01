@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/cryptokit/aes/gcm",
+  "type": "Enumeration",
+  "name": "AES.GCM",
+  "desc": "The Advanced Encryption Standard (AES) Galois Counter Mode (GCM) cipher suite.",
+  "items": [
+    {
+      "name": "struct AES.GCM.SealedBox",
+      "desc": "A secure container for your data that you can access using a cipher."
+    },
+    {
+      "name": "struct AES.GCM.Nonce",
+      "desc": "A value used once during a cryptographic operation and then discarded."
+    },
+    {
+      "name": "static func seal<Plaintext>(Plaintext, using: SymmetricKey, nonce: AES.GCM.Nonce?) -> AES.GCM.SealedBox",
+      "desc": "Secures the given plaintext message with encryption and an authentication tag."
+    },
+    {
+      "name": "static func seal<Plaintext, AuthenticatedData>(Plaintext, using: SymmetricKey, nonce: AES.GCM.Nonce?, authenticating: AuthenticatedData) -> AES.GCM.SealedBox",
+      "desc": "Secures the given plaintext message with encryption and an authentication tag that covers both the encrypted data and additional data."
+    },
+    {
+      "name": "static func open(AES.GCM.SealedBox, using: SymmetricKey) -> Data",
+      "desc": "Decrypts the message and verifies its authenticity."
+    },
+    {
+      "name": "static func open<AuthenticatedData>(AES.GCM.SealedBox, using: SymmetricKey, authenticating: AuthenticatedData) -> Data",
+      "desc": "Decrypts the message and verifies the authenticity of both the encrypted message and additional data."
+    }
+  ],
+  "declaration": "enum GCM"
+}

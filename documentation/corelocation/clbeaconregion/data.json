@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/corelocation/clbeaconregion",
+  "type": "Class",
+  "name": "CLBeaconRegion",
+  "desc": "A region used to detect the presence of iBeacon devices.",
+  "items": [
+    {
+      "name": "init(beaconIdentityConstraint: CLBeaconIdentityConstraint, identifier: String)",
+      "desc": "Initializes and returns a region object that targets beacons that satisfy the specified beacon identity constraints."
+    },
+    {
+      "name": "init(uuid: UUID, identifier: String)",
+      "desc": "Initializes and returns a region object that targets beacons with the specified UUID."
+    },
+    {
+      "name": "init(uuid: UUID, major: CLBeaconMajorValue, identifier: String)",
+      "desc": "Initializes and returns a region object that targets beacons with the specified UUID and major value."
+    },
+    {
+      "name": "init(uuid: UUID, major: CLBeaconMajorValue, minor: CLBeaconMinorValue, identifier: String)",
+      "desc": "Initializes and returns a region object that targets beacons with the specified UUID, major, and minor values."
+    },
+    {
+      "name": "var uuid: UUID",
+      "desc": "The UUID value from the beacon identity constraint that defines the beacon region."
+    },
+    {
+      "name": "var major: NSNumber?",
+      "desc": "The major value from the beacon identity constraint that defines the beacon region."
+    },
+    {
+      "name": "var minor: NSNumber?",
+      "desc": "The minor value from the beacon identity constraint that defines the beacon region."
+    },
+    {
+      "name": "var beaconIdentityConstraint: CLBeaconIdentityConstraint",
+      "desc": "The beacon identity constraint that defines the beacon region."
+    },
+    {
+      "name": "var notifyEntryStateOnDisplay: Bool",
+      "desc": "A Boolean value that indicates whether Core Location sends beacon notifications when the device’s display is on."
+    },
+    {
+      "name": "func peripheralData(withMeasuredPower: NSNumber?) -> NSMutableDictionary",
+      "desc": "Retrieves data that you can use to advertise the current device as a beacon."
+    },
+    {
+      "name": "typealias CLBeaconMajorValue",
+      "desc": "The most significant value in a beacon."
+    },
+    {
+      "name": "typealias CLBeaconMinorValue",
+      "desc": "The least significant value in a beacon."
+    }
+  ],
+  "declaration": "class CLBeaconRegion : CLRegion",
+  "inheritsFrom": [
+    "CLRegion"
+  ]
+}

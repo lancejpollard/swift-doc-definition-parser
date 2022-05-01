@@ -1,0 +1,542 @@
+{
+  "path": "/documentation/objectivec/nsobject",
+  "type": "Class",
+  "name": "NSObject",
+  "desc": "The root class of most Objective-C class hierarchies, from which subclasses inherit a basic interface to the runtime system and the ability to behave as Objective-C objects.",
+  "items": [
+    {
+      "name": "class func initialize()",
+      "desc": "Initializes the class before it receives its first message."
+    },
+    {
+      "name": "class func load()",
+      "desc": "Invoked whenever a class or category is added to the Objective-C runtime; implement this method to perform class-specific behavior upon loading."
+    },
+    {
+      "name": "init()",
+      "desc": "Implemented by subclasses to initialize a new object (the receiver) immediately after memory for it has been allocated."
+    },
+    {
+      "name": "func copy() -> Any",
+      "desc": "Returns the object returned by copy(with:)."
+    },
+    {
+      "name": "func mutableCopy() -> Any",
+      "desc": "Returns the object returned by mutableCopy(with:) where the zone is nil."
+    },
+    {
+      "name": "class func superclass() -> AnyClass?",
+      "desc": "Returns the class object for the receiver’s superclass."
+    },
+    {
+      "name": "class func isSubclass(of: AnyClass) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the receiving class is a subclass of, or identical to, a given class."
+    },
+    {
+      "name": "class func instancesRespond(to: Selector!) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether instances of the receiver are capable of responding to a given selector."
+    },
+    {
+      "name": "class func conforms(to: Protocol) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the target conforms to a given protocol."
+    },
+    {
+      "name": "func method(for: Selector!) -> IMP!",
+      "desc": "Locates and returns the address of the receiver’s implementation of a method so it can be called as a function."
+    },
+    {
+      "name": "class func instanceMethod(for: Selector!) -> IMP!",
+      "desc": "Locates and returns the address of the implementation of the instance method identified by a given selector."
+    },
+    {
+      "name": "class func description() -> String",
+      "desc": "Returns a string that represents the contents of the receiving class."
+    },
+    {
+      "name": "var autoContentAccessingProxy: Any",
+      "desc": "A proxy for the receiving object"
+    },
+    {
+      "name": "func perform(Selector, with: Any?, afterDelay: TimeInterval)",
+      "desc": "Invokes a method of the receiver on the current thread using the default mode after a delay."
+    },
+    {
+      "name": "func perform(Selector, with: Any?, afterDelay: TimeInterval, inModes: [RunLoop.Mode])",
+      "desc": "Invokes a method of the receiver on the current thread using the specified modes after a delay."
+    },
+    {
+      "name": "func performSelector(onMainThread: Selector, with: Any?, waitUntilDone: Bool)",
+      "desc": "Invokes a method of the receiver on the main thread using the default mode."
+    },
+    {
+      "name": "func performSelector(onMainThread: Selector, with: Any?, waitUntilDone: Bool, modes: [String]?)",
+      "desc": "Invokes a method of the receiver on the main thread using the specified modes."
+    },
+    {
+      "name": "func perform(Selector, on: Thread, with: Any?, waitUntilDone: Bool)",
+      "desc": "Invokes a method of the receiver on the specified thread using the default mode."
+    },
+    {
+      "name": "func perform(Selector, on: Thread, with: Any?, waitUntilDone: Bool, modes: [String]?)",
+      "desc": "Invokes a method of the receiver on the specified thread using the specified modes."
+    },
+    {
+      "name": "func performSelector(inBackground: Selector, with: Any?)",
+      "desc": "Invokes a method of the receiver on a new background thread."
+    },
+    {
+      "name": "class func cancelPreviousPerformRequests(withTarget: Any)",
+      "desc": "Cancels perform requests previously registered with the perform(_:with:afterDelay:) instance method."
+    },
+    {
+      "name": "class func cancelPreviousPerformRequests(withTarget: Any, selector: Selector, object: Any?)",
+      "desc": "Cancels perform requests previously registered with perform(_:with:afterDelay:)."
+    },
+    {
+      "name": "func forwardingTarget(for: Selector!) -> Any?",
+      "desc": "Returns the object to which unrecognized messages should first be directed."
+    },
+    {
+      "name": "class func resolveClassMethod(Selector!) -> Bool",
+      "desc": "Dynamically provides an implementation for a given selector for a class method."
+    },
+    {
+      "name": "class func resolveInstanceMethod(Selector!) -> Bool",
+      "desc": "Dynamically provides an implementation for a given selector for an instance method."
+    },
+    {
+      "name": "func doesNotRecognizeSelector(Selector!)",
+      "desc": "Handles messages the receiver doesn’t recognize."
+    },
+    {
+      "name": "func awakeAfter(using: NSCoder) -> Any?",
+      "desc": "Overridden by subclasses to substitute another object in place of the object that was decoded and subsequently received this message."
+    },
+    {
+      "name": "var classForArchiver: AnyClass?",
+      "desc": "The class to substitute for the receiver's own class during archiving."
+    },
+    {
+      "name": "var classForCoder: AnyClass",
+      "desc": "Overridden by subclasses to substitute a class other than its own during coding."
+    },
+    {
+      "name": "var classForKeyedArchiver: AnyClass?",
+      "desc": "Subclasses to substitute a new class for instances during keyed archiving."
+    },
+    {
+      "name": "class func classFallbacksForKeyedArchiver() -> [String]",
+      "desc": "Overridden to return the names of classes that can be used to decode objects if their class is unavailable."
+    },
+    {
+      "name": "class func classForKeyedUnarchiver() -> AnyClass",
+      "desc": "Overridden by subclasses to substitute a new class during keyed unarchiving."
+    },
+    {
+      "name": "func replacementObject(for: NSCoder) -> Any?",
+      "desc": "Overridden by subclasses to substitute another object for itself during encoding."
+    },
+    {
+      "name": "func replacementObject(for: NSKeyedArchiver) -> Any?",
+      "desc": "Overridden by subclasses to substitute another object for itself during keyed archiving."
+    },
+    {
+      "name": "class func setVersion(Int)",
+      "desc": "Sets the receiver's version number."
+    },
+    {
+      "name": "class func version() -> Int",
+      "desc": "Returns the version number assigned to the class."
+    },
+    {
+      "name": "var attributeKeys: [String]",
+      "desc": "An array of NSString objects containing the names of immutable values that instances of the receiver's class contain."
+    },
+    {
+      "name": "var classDescription: NSClassDescription",
+      "desc": "An object containing information about the attributes and relationships of the receiver’s class."
+    },
+    {
+      "name": "func inverse(forRelationshipKey: String) -> String?",
+      "desc": "For a given key that defines the name of the relationship from the receiver’s class to another class, returns the name of the relationship from the other class to the receiver’s class."
+    },
+    {
+      "name": "var toManyRelationshipKeys: [String]",
+      "desc": "An array containing the keys for the to-many relationship properties of the receiver."
+    },
+    {
+      "name": "var toOneRelationshipKeys: [String]",
+      "desc": "The keys for the to-one relationship properties of the receiver, if any."
+    },
+    {
+      "name": "var classCode: FourCharCode",
+      "desc": "The receiver's Apple event type code, as stored in the NSScriptClassDescription object for the object’s class."
+    },
+    {
+      "name": "var className: String",
+      "desc": "A string containing the name of the class."
+    },
+    {
+      "name": "func copyScriptingValue(Any, forKey: String, withProperties: [String : Any]) -> Any?",
+      "desc": "Creates and returns one or more scripting objects to be inserted into the specified relationship by copying the passed-in value and setting the properties in the copied object or objects."
+    },
+    {
+      "name": "func newScriptingObject(of: AnyClass, forValueForKey: String, withContentsValue: Any?, properties: [String : Any]) -> Any?",
+      "desc": "Creates and returns an instance of a scriptable class, setting its contents and properties, for insertion into the relationship identified by the key."
+    },
+    {
+      "name": "var scriptingProperties: [String : Any]?",
+      "desc": "An NSString-keyed dictionary of the receiver's scriptable properties."
+    },
+    {
+      "name": "func scriptingValue(for: NSScriptObjectSpecifier) -> Any?",
+      "desc": "Given an object specifier, returns the specified object or objects in the receiving container."
+    },
+    {
+      "name": "struct NSObject.KeyValueObservingPublisher",
+      "desc": "A Combine publisher that produces a new element whenever the observed value changes."
+    },
+    {
+      "name": "var accessibilityNotifiesWhenDestroyed: Bool",
+      "desc": "A Boolean value that indicates whether a custom accessibility object sends a notification when its corresponding UI element is destroyed."
+    },
+    {
+      "name": "var hashValue: Int"
+    },
+    {
+      "name": "var isSelectable: Bool"
+    },
+    {
+      "name": "var objectSpecifier: NSScriptObjectSpecifier?",
+      "desc": "Returns an object specifier for the receiver."
+    },
+    {
+      "name": "class var accessInstanceVariablesDirectly: Bool",
+      "desc": "Returns a Boolean value that indicates whether the key-value coding methods should access the corresponding instance variable directly on finding no accessor method for a property."
+    },
+    {
+      "name": "func acceptsPreviewPanelControl(QLPreviewPanel!) -> Bool"
+    },
+    {
+      "name": "func actionProperty() -> String!",
+      "desc": "Sent to the delegate to request the property the action applies to."
+    },
+    {
+      "name": "func attemptRecovery(fromError: Error, optionIndex: Int) -> Bool",
+      "desc": "Implemented to attempt a recovery from an error noted in an application-modal dialog."
+    },
+    {
+      "name": "func attemptRecovery(fromError: Error, optionIndex: Int, delegate: Any?, didRecoverSelector: Selector?, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Implemented to attempt a recovery from an error noted in a document-modal sheet."
+    },
+    {
+      "name": "func authorizationViewCreatedAuthorization(SFAuthorizationView!)",
+      "desc": "Sent to the delegate to indicate the authorization object has been created or changed. If you have saved a copy of the authorization object for your own purposes, you should discard it and call authorization() for a new authorization object."
+    },
+    {
+      "name": "func authorizationViewDidAuthorize(SFAuthorizationView!)",
+      "desc": "Sent to the delegate to indicate the user was authorized and the authorization view was changed to unlocked."
+    },
+    {
+      "name": "func authorizationViewDidDeauthorize(SFAuthorizationView!)",
+      "desc": "Sent to the delegate to indicate the user was deauthorized and the authorization view was changed to locked."
+    },
+    {
+      "name": "func authorizationViewDidHide(SFAuthorizationView!)",
+      "desc": "Sent to the delegate to indicate that the view’s visibility has changed."
+    },
+    {
+      "name": "func authorizationViewReleasedAuthorization(SFAuthorizationView!)",
+      "desc": "Sent to the delegate to indicate that deauthorization is about to occur."
+    },
+    {
+      "name": "func authorizationViewShouldDeauthorize(SFAuthorizationView!) -> Bool",
+      "desc": "Sent to the delegate when a user clicks the open lock icon."
+    },
+    {
+      "name": "func awakeFromNib()",
+      "desc": "Prepares the receiver for service after it has been loaded from an Interface Builder archive, or nib file."
+    },
+    {
+      "name": "func beginPreviewPanelControl(QLPreviewPanel!)"
+    },
+    {
+      "name": "func candidates(Any!) -> [Any]!",
+      "desc": "Returns an array of candidates."
+    },
+    {
+      "name": "func certificatePanelShowHelp(SFCertificatePanel!) -> Bool",
+      "desc": "Implements custom help behavior for the modal panel."
+    },
+    {
+      "name": "func chooseIdentityPanelShowHelp(SFChooseIdentityPanel!) -> Bool",
+      "desc": "Implements custom help behavior for the modal panel."
+    },
+    {
+      "name": "func commitComposition(Any!)",
+      "desc": "Informs the controller that the composition should be committed."
+    },
+    {
+      "name": "func composedString(Any!) -> Any!",
+      "desc": "Return the current composed string."
+    },
+    {
+      "name": "func compositionParameterView(QCCompositionParameterView!, didChangeParameterWithKey: String!)",
+      "desc": "Called after an input parameter in the composition parameter view has been edited."
+    },
+    {
+      "name": "func compositionParameterView(QCCompositionParameterView!, shouldDisplayParameterWithKey: String!, attributes: [AnyHashable : Any]!) -> Bool",
+      "desc": "Allows you to define which composition parameters are visible in the user interface when the composition parameter view refreshes."
+    },
+    {
+      "name": "func compositionPickerView(QCCompositionPickerView!, didSelect: QCComposition!)",
+      "desc": "Performs custom tasks when the selected composition in the composition picker view changes."
+    },
+    {
+      "name": "func compositionPickerViewDidStartAnimating(QCCompositionPickerView!)",
+      "desc": "Performs custom tasks when the composition picker view starts animating a composition."
+    },
+    {
+      "name": "func compositionPickerViewWillStopAnimating(QCCompositionPickerView!)",
+      "desc": "Performs custom tasks when the composition picker view stops animating a composition."
+    },
+    {
+      "name": "func didCommand(by: Selector!, client: Any!) -> Bool",
+      "desc": "Processes a command generated by user action such as typing certain keys or pressing the mouse button."
+    },
+    {
+      "name": "func doesContain(Any) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the receiver contains a given object."
+    },
+    {
+      "name": "func endPreviewPanelControl(QLPreviewPanel!)"
+    },
+    {
+      "name": "func exceptionHandler(NSExceptionHandler!, shouldHandle: NSException!, mask: Int) -> Bool",
+      "desc": "Implemented by the delegate to evaluate whether the delegating NSExceptionHandler instance should handle a given exception."
+    },
+    {
+      "name": "func exceptionHandler(NSExceptionHandler!, shouldLogException: NSException!, mask: Int) -> Bool",
+      "desc": "Implemented by the delegate to evaluate whether the delegating NSExceptionHandler instance should log a given exception."
+    },
+    {
+      "name": "func fileTransferServicesAbortComplete(OBEXFileTransferServices!, error: OBEXError)"
+    },
+    {
+      "name": "func fileTransferServicesConnectionComplete(OBEXFileTransferServices!, error: OBEXError)"
+    },
+    {
+      "name": "func fileTransferServicesCopyRemoteFileComplete(OBEXFileTransferServices!, error: OBEXError)"
+    },
+    {
+      "name": "func fileTransferServicesCopyRemoteFileProgress(OBEXFileTransferServices!, transferProgress: [AnyHashable : Any]!)"
+    },
+    {
+      "name": "func fileTransferServicesCreateFolderComplete(OBEXFileTransferServices!, error: OBEXError, folder: String!)"
+    },
+    {
+      "name": "func fileTransferServicesDisconnectionComplete(OBEXFileTransferServices!, error: OBEXError)"
+    },
+    {
+      "name": "func fileTransferServicesFilePreparationComplete(OBEXFileTransferServices!, error: OBEXError)"
+    },
+    {
+      "name": "func fileTransferServicesPathChangeComplete(OBEXFileTransferServices!, error: OBEXError, finalPath: String!)"
+    },
+    {
+      "name": "func fileTransferServicesRemoveItemComplete(OBEXFileTransferServices!, error: OBEXError, removedItem: String!)"
+    },
+    {
+      "name": "func fileTransferServicesRetrieveFolderListingComplete(OBEXFileTransferServices!, error: OBEXError, listing: [Any]!)"
+    },
+    {
+      "name": "func fileTransferServicesSendFileComplete(OBEXFileTransferServices!, error: OBEXError)"
+    },
+    {
+      "name": "func fileTransferServicesSendFileProgress(OBEXFileTransferServices!, transferProgress: [AnyHashable : Any]!)"
+    },
+    {
+      "name": "func handle(NSEvent!, client: Any!) -> Bool",
+      "desc": "Handles key down and mouse events."
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "func imageBrowser(IKImageBrowserView!, backgroundWasRightClickedWith: NSEvent!)",
+      "desc": "Performs custom tasks when the user right-clicks the image browser view background."
+    },
+    {
+      "name": "func imageBrowser(IKImageBrowserView!, cellWasDoubleClickedAt: Int)",
+      "desc": "Performs custom tasks when the user double-clicks an item in the image browser view."
+    },
+    {
+      "name": "func imageBrowser(IKImageBrowserView!, cellWasRightClickedAt: Int, with: NSEvent!)",
+      "desc": "Performs custom tasks when the user right-clicks an item in the image browser view."
+    },
+    {
+      "name": "func imageBrowser(IKImageBrowserView!, groupAt: Int) -> [AnyHashable : Any]!",
+      "desc": "Returns the group at the specified index."
+    },
+    {
+      "name": "func imageBrowser(IKImageBrowserView!, itemAt: Int) -> Any!",
+      "desc": "Returns an object for the item in an image browser view that corresponds to the specified index."
+    },
+    {
+      "name": "func imageBrowser(IKImageBrowserView!, moveItemsAt: IndexSet!, to: Int) -> Bool",
+      "desc": "Signals that the specified items should be moved to the specified destination."
+    },
+    {
+      "name": "func imageBrowser(IKImageBrowserView!, removeItemsAt: IndexSet!)",
+      "desc": "Signals that a remove operation should be applied to the specified items."
+    },
+    {
+      "name": "func imageBrowser(IKImageBrowserView!, writeItemsAt: IndexSet!, to: NSPasteboard!) -> Int",
+      "desc": "Signals that a drag should begin."
+    },
+    {
+      "name": "func imageBrowserSelectionDidChange(IKImageBrowserView!)",
+      "desc": "Performs custom tasks when the selection changes."
+    },
+    {
+      "name": "func imageRepresentation() -> Any!",
+      "desc": "Returns the image to display."
+    },
+    {
+      "name": "func imageRepresentationType() -> String!",
+      "desc": "Returns the representation type of the image to display."
+    },
+    {
+      "name": "func imageSubtitle() -> String!",
+      "desc": "Returns the display subtitle of the image."
+    },
+    {
+      "name": "func imageTitle() -> String!",
+      "desc": "Returns the display title of the image."
+    },
+    {
+      "name": "func imageUID() -> String!",
+      "desc": "Returns a unique string that identifies the data source item."
+    },
+    {
+      "name": "func imageVersion() -> Int",
+      "desc": "Returns the version of the item."
+    },
+    {
+      "name": "func indicesOfObjects(byEvaluatingObjectSpecifier: NSScriptObjectSpecifier) -> [NSNumber]?",
+      "desc": "Returns the indices of the specified container objects."
+    },
+    {
+      "name": "func inputText(String!, client: Any!) -> Bool",
+      "desc": "Handles key down events that do not map to an action method."
+    },
+    {
+      "name": "func inputText(String!, key: Int, modifiers: Int, client: Any!) -> Bool",
+      "desc": "Receives Unicode, the key code that generated it, and any modifier flags."
+    },
+    {
+      "name": "func isCaseInsensitiveLike(String) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether receiver is considered to be “like” a given string when the case of characters in the receiver is ignored."
+    },
+    {
+      "name": "func isEqual(to: Any?) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the receiver is equal to another given object."
+    },
+    {
+      "name": "func isGreaterThan(Any?) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the receiver is greater than another given object."
+    },
+    {
+      "name": "func isGreaterThanOrEqual(to: Any?) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the receiver is greater than or equal to another given object."
+    },
+    {
+      "name": "func isLessThan(Any?) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the receiver is less than another given object."
+    },
+    {
+      "name": "func isLessThanOrEqual(to: Any?) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the receiver is less than or equal to another given object."
+    },
+    {
+      "name": "func isLike(String) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the receiver is \"like\" another given object."
+    },
+    {
+      "name": "func isNotEqual(to: Any?) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the receiver is not equal to another given object."
+    },
+    {
+      "name": "func numberOfGroups(inImageBrowser: IKImageBrowserView!) -> Int",
+      "desc": "Returns the number of groups in an image browser view."
+    },
+    {
+      "name": "func numberOfItems(inImageBrowser: IKImageBrowserView!) -> Int",
+      "desc": "Returns the number of records managed by the data source object."
+    },
+    {
+      "name": "func originalString(Any!) -> NSAttributedString!",
+      "desc": "Return the string that consists of the precomposed Unicode characters."
+    },
+    {
+      "name": "func performAction(for: ABPerson!, identifier: String!)",
+      "desc": "Sent to the delegate to perform the action."
+    },
+    {
+      "name": "func prepareForInterfaceBuilder()",
+      "desc": "Called when a designable object is created in Interface Builder."
+    },
+    {
+      "name": "func provideImageData(UnsafeMutableRawPointer, bytesPerRow: Int, origin: Int, Int, size: Int, Int, userInfo: Any?)",
+      "desc": "Supplies data to a CIImage object."
+    },
+    {
+      "name": "func quartzFilterManager(QuartzFilterManager!, didAdd: QuartzFilter!)"
+    },
+    {
+      "name": "func quartzFilterManager(QuartzFilterManager!, didModifyFilter: QuartzFilter!)"
+    },
+    {
+      "name": "func quartzFilterManager(QuartzFilterManager!, didRemove: QuartzFilter!)"
+    },
+    {
+      "name": "func quartzFilterManager(QuartzFilterManager!, didSelect: QuartzFilter!)"
+    },
+    {
+      "name": "func readLinkQuality(forDeviceComplete: Any!, device: IOBluetoothDevice!, info: UnsafeMutablePointer<BluetoothHCILinkQualityInfo>!, error: IOReturn)"
+    },
+    {
+      "name": "func readRSSI(forDeviceComplete: Any!, device: IOBluetoothDevice!, info: UnsafeMutablePointer<BluetoothHCIRSSIInfo>!, error: IOReturn)"
+    },
+    {
+      "name": "func saveOptions(IKSaveOptions!, shouldShowUTType: String!) -> Bool",
+      "desc": "Called to determine if the specified uniform type identifier should be shown in the save panel."
+    },
+    {
+      "name": "func shouldEnableAction(for: ABPerson!, identifier: String!) -> Bool",
+      "desc": "Sent to the delegate to determine whether the action should be enabled."
+    },
+    {
+      "name": "func title(for: ABPerson!, identifier: String!) -> String!",
+      "desc": "Sent to the delegate to request the title of the menu item for the action."
+    },
+    {
+      "name": "class func debugDescription() -> String"
+    },
+    {
+      "name": "class func hash() -> Int"
+    },
+    {
+      "name": "static func == (NSObject, NSObject) -> Bool"
+    }
+  ],
+  "declaration": "class NSObject",
+  "conformsTo": [
+    "CVarArg",
+    "CustomDebugStringConvertible",
+    "CustomStringConvertible",
+    "Equatable",
+    "Hashable",
+    "NSObjectProtocol"
+  ]
+}

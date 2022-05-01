@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/foundation/nscalendar/options",
+  "type": "Structure",
+  "name": "NSCalendar.Options",
+  "desc": "The options for arithmetic operations involving calendars.",
+  "items": [
+    {
+      "name": "init(rawValue: UInt)"
+    },
+    {
+      "name": "static var wrapComponents: NSCalendar.Options",
+      "desc": "Specifies that the components specified for an NSDateComponents object should be incremented and wrap around to zero/one on overflow, but should not cause higher units to be incremented."
+    },
+    {
+      "name": "static var matchStrictly: NSCalendar.Options",
+      "desc": "Specifies that the operation should travel as far forward or backward as necessary looking for a match."
+    },
+    {
+      "name": "static var searchBackwards: NSCalendar.Options",
+      "desc": "Specifies that the operation should travel backwards to find the previous match before the given date."
+    },
+    {
+      "name": "static var matchPreviousTimePreservingSmallerUnits: NSCalendar.Options",
+      "desc": "Specifies that, when there is no matching time before the end of the next instance of the next highest unit specified in the given NSDateComponents object, this method uses the previous existing value of the missing unit and preserves the lower units' values."
+    },
+    {
+      "name": "static var matchNextTimePreservingSmallerUnits: NSCalendar.Options",
+      "desc": "Specifies that, when there is no matching time before the end of the next instance of the next highest unit specified in the given NSDateComponents object, this method uses the next existing value of the missing unit and preserves the lower units' values."
+    },
+    {
+      "name": "static var matchNextTime: NSCalendar.Options",
+      "desc": "Specifies that, when there is no matching time before the end of the next instance of the next highest unit specified in the given NSDateComponents object, this method uses the next existing value of the missing unit and does not preserve the lower units' values."
+    },
+    {
+      "name": "static var matchFirst: NSCalendar.Options",
+      "desc": "Specifies that, if there are two or more matching times, the operation should return the first occurrence."
+    },
+    {
+      "name": "static var matchLast: NSCalendar.Options",
+      "desc": "Specifies that, if there are two or more matching times, the operation should return the last occurrence."
+    }
+  ],
+  "declaration": "struct Options, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

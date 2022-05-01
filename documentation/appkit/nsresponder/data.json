@@ -1,0 +1,294 @@
+{
+  "path": "/documentation/appkit/nsresponder",
+  "type": "Class",
+  "name": "NSResponder",
+  "desc": "An abstract class that forms the basis of event and command processing in AppKit.",
+  "items": [
+    {
+      "name": "var acceptsFirstResponder: Bool",
+      "desc": "A Boolean value that indicates whether the responder accepts first responder status."
+    },
+    {
+      "name": "func becomeFirstResponder() -> Bool",
+      "desc": "Notifies the receiver that it’s about to become first responder in its NSWindow."
+    },
+    {
+      "name": "func resignFirstResponder() -> Bool",
+      "desc": "Notifies the receiver that it’s been asked to relinquish its status as first responder in its window."
+    },
+    {
+      "name": "func validateProposedFirstResponder(NSResponder, for: NSEvent?) -> Bool",
+      "desc": "Allows controls to determine when they should become first responder."
+    },
+    {
+      "name": "var nextResponder: NSResponder?",
+      "desc": "The next responder after this one, or nil if it has none."
+    },
+    {
+      "name": "func mouseDown(with: NSEvent)",
+      "desc": "Informs the receiver that the user has pressed the left mouse button."
+    },
+    {
+      "name": "func mouseDragged(with: NSEvent)",
+      "desc": "Informs the receiver that the user has moved the mouse with the left button pressed."
+    },
+    {
+      "name": "func mouseUp(with: NSEvent)",
+      "desc": "Informs the receiver that the user has released the left mouse button."
+    },
+    {
+      "name": "func mouseMoved(with: NSEvent)",
+      "desc": "Informs the receiver that the mouse has moved."
+    },
+    {
+      "name": "func mouseEntered(with: NSEvent)",
+      "desc": "Informs the receiver that the cursor has entered a tracking rectangle."
+    },
+    {
+      "name": "func mouseExited(with: NSEvent)",
+      "desc": "Informs the receiver that the cursor has exited a tracking rectangle."
+    },
+    {
+      "name": "func rightMouseDown(with: NSEvent)",
+      "desc": "Informs the receiver that the user has pressed the right mouse button."
+    },
+    {
+      "name": "func rightMouseDragged(with: NSEvent)",
+      "desc": "Informs the receiver that the user has moved the mouse with the right button pressed."
+    },
+    {
+      "name": "func rightMouseUp(with: NSEvent)",
+      "desc": "Informs the receiver that the user has released the right mouse button."
+    },
+    {
+      "name": "func otherMouseDown(with: NSEvent)",
+      "desc": "Informs the receiver that the user has pressed a mouse button other than the left or right one."
+    },
+    {
+      "name": "func otherMouseDragged(with: NSEvent)",
+      "desc": "Informs the receiver that the user has moved the mouse with a button other than the left or right button pressed."
+    },
+    {
+      "name": "func otherMouseUp(with: NSEvent)",
+      "desc": "Informs the receiver that the user has released a mouse button other than the left or right button."
+    },
+    {
+      "name": "func keyDown(with: NSEvent)",
+      "desc": "Informs the receiver that the user has pressed a key."
+    },
+    {
+      "name": "func keyUp(with: NSEvent)",
+      "desc": "Informs the receiver that the user has released a key."
+    },
+    {
+      "name": "func interpretKeyEvents([NSEvent])",
+      "desc": "Handles a series of key events."
+    },
+    {
+      "name": "func performKeyEquivalent(with: NSEvent) -> Bool",
+      "desc": "Handle a key equivalent."
+    },
+    {
+      "name": "func flushBufferedKeyEvents()",
+      "desc": "Clears any unprocessed key events when overridden by subclasses."
+    },
+    {
+      "name": "func pressureChange(with: NSEvent)",
+      "desc": "Indicates a pressure change as the result of a user input event on a system that supports pressure sensitivity."
+    },
+    {
+      "name": "func cursorUpdate(with: NSEvent)",
+      "desc": "Informs the receiver that the mouse cursor has moved into a cursor rectangle."
+    },
+    {
+      "name": "func flagsChanged(with: NSEvent)",
+      "desc": "Informs the receiver that the user has pressed or released a modifier key (Shift, Control, and so on)."
+    },
+    {
+      "name": "func tabletPoint(with: NSEvent)",
+      "desc": "Informs the receiver that a tablet-point event has occurred."
+    },
+    {
+      "name": "func tabletProximity(with: NSEvent)",
+      "desc": "Informs the receiver that a tablet-proximity event has occurred."
+    },
+    {
+      "name": "func helpRequested(NSEvent)",
+      "desc": "Displays context-sensitive help for the receiver if help has been registered."
+    },
+    {
+      "name": "func scrollWheel(with: NSEvent)",
+      "desc": "Informs the receiver that the mouse’s scroll wheel has moved."
+    },
+    {
+      "name": "func quickLook(with: NSEvent)",
+      "desc": "Performs a Quick Look on the content at the location specified by the supplied event."
+    },
+    {
+      "name": "func changeMode(with: NSEvent)",
+      "desc": "Informs the responder that performed a double-tap on the side of an Apple Pencil."
+    },
+    {
+      "name": "func supplementalTarget(forAction: Selector, sender: Any?) -> Any?",
+      "desc": "Finds a target for an action method."
+    },
+    {
+      "name": "protocol NSStandardKeyBindingResponding",
+      "desc": "Methods that responder subclasses implement to support key binding commands, such as inserting tabs and newlines, or moving the insertion point."
+    },
+    {
+      "name": "class func allowedClasses(forRestorableStateKeyPath: String) -> [AnyClass]",
+      "desc": "Returns the classes that support secure coding."
+    },
+    {
+      "name": "func encodeRestorableState(with: NSCoder)",
+      "desc": "Saves the interface-related state of the responder."
+    },
+    {
+      "name": "func encodeRestorableState(with: NSCoder, backgroundQueue: OperationQueue)",
+      "desc": "Saves the interface-related state of the responder to a keyed archiver either synchronously or asynchronously on the given operation queue."
+    },
+    {
+      "name": "func restoreState(with: NSCoder)",
+      "desc": "Restores the interface-related state of the responder."
+    },
+    {
+      "name": "class var restorableStateKeyPaths: [String]",
+      "desc": "Returns an array of key paths representing the restorable attributes of the responder."
+    },
+    {
+      "name": "func invalidateRestorableState()",
+      "desc": "Marks the responder’s interface-related state as dirty."
+    },
+    {
+      "name": "var userActivity: NSUserActivity?",
+      "desc": "An object encapsulating a user activity supported by this responder."
+    },
+    {
+      "name": "func updateUserActivityState(NSUserActivity)",
+      "desc": "Updates the state of the given user activity."
+    },
+    {
+      "name": "func presentError(Error) -> Bool",
+      "desc": "Presents an error alert to the user as an application-modal dialog."
+    },
+    {
+      "name": "func presentError(Error, modalFor: NSWindow, delegate: Any?, didPresent: Selector?, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Presents an error alert to the user as a document-modal sheet attached to document window."
+    },
+    {
+      "name": "func willPresentError(Error) -> Error",
+      "desc": "Returns a custom version of the supplied error object that’s more suitable for presentation in alert sheets and dialogs."
+    },
+    {
+      "name": "func tryToPerform(Selector, with: Any?) -> Bool",
+      "desc": "Attempts to perform the method indicated by an action with a specified argument."
+    },
+    {
+      "name": "var menu: NSMenu?",
+      "desc": "Returns the responder’s menu."
+    },
+    {
+      "name": "func validRequestor(forSendType: NSPasteboard.PasteboardType?, returnType: NSPasteboard.PasteboardType?) -> Any?",
+      "desc": "Overridden by subclasses to determine what services are available."
+    },
+    {
+      "name": "var undoManager: UndoManager?",
+      "desc": "The undo manager for this responder."
+    },
+    {
+      "name": "func shouldBeTreatedAsInkEvent(NSEvent) -> Bool",
+      "desc": "Indicates whether a pen-down event should be treated as an ink event."
+    },
+    {
+      "name": "func noResponder(for: Selector)",
+      "desc": "Handles the case where an event or action message falls off the end of the responder chain."
+    },
+    {
+      "name": "func beginGesture(with: NSEvent)",
+      "desc": "Informs the receiver that the user has begun a touch gesture."
+    },
+    {
+      "name": "func endGesture(with: NSEvent)",
+      "desc": "Informs the receiver that the user has ended a touch gesture."
+    },
+    {
+      "name": "func magnify(with: NSEvent)",
+      "desc": "Informs the receiver that the user has begun a pinch gesture."
+    },
+    {
+      "name": "func rotate(with: NSEvent)",
+      "desc": "Informs the receiver that the user has begun a rotation gesture."
+    },
+    {
+      "name": "func swipe(with: NSEvent)",
+      "desc": "Informs the receiver that the user has begun a swipe gesture."
+    },
+    {
+      "name": "func touchesBegan(with: NSEvent)",
+      "desc": "Informs the receiver that new set of touches has been recognized."
+    },
+    {
+      "name": "func touchesMoved(with: NSEvent)",
+      "desc": "Informs the receiver that one or more touches has moved."
+    },
+    {
+      "name": "func touchesCancelled(with: NSEvent)",
+      "desc": "Informs the receiver that tracking of touches has been cancelled for any reason."
+    },
+    {
+      "name": "func touchesEnded(with: NSEvent)",
+      "desc": "Returns that a set of touches have been removed."
+    },
+    {
+      "name": "func wantsForwardedScrollEvents(for: NSEvent.GestureAxis) -> Bool",
+      "desc": "Returns whether to forward elastic scrolling gesture events up the responder."
+    },
+    {
+      "name": "func smartMagnify(with: NSEvent)",
+      "desc": "Informs the receiver that the user performed a smart zoom gesture."
+    },
+    {
+      "name": "func wantsScrollEventsForSwipeTracking(on: NSEvent.GestureAxis) -> Bool",
+      "desc": "Implement this method to track gesture scroll events such as a swipe."
+    },
+    {
+      "name": "enum NSEvent.GestureAxis",
+      "desc": "The gesture tracking axis."
+    },
+    {
+      "name": "var touchBar: NSTouchBar?",
+      "desc": "The NSTouchBar object associated with the responder."
+    },
+    {
+      "name": "func makeTouchBar() -> NSTouchBar?",
+      "desc": "Your custom subclass of the NSResponder class should override this method to create and configure your subclass’s default NSTouchBar object."
+    },
+    {
+      "name": "func performTextFinderAction(Any?)",
+      "desc": "Performs all find oriented actions."
+    },
+    {
+      "name": "func newWindowForTab(Any?)",
+      "desc": "Creates a new window to show as a tab in a tabbed window."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates a new responder object."
+    },
+    {
+      "name": "init?(coder: NSCoder)",
+      "desc": "Creates a new responder object with data in an unarchiver."
+    }
+  ],
+  "declaration": "@MainActor class NSResponder : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "NSStandardKeyBindingResponding",
+    "NSTouchBarProvider",
+    "NSUserActivityRestoring"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "path": "/documentation/soundanalysis/snclassifysoundrequest",
+  "type": "Class",
+  "name": "SNClassifySoundRequest",
+  "desc": "A request that classifies sound using a Core ML model.",
+  "items": [
+    {
+      "name": "init(mlModel: MLModel)",
+      "desc": "Creates a request that uses a custom sound classification model."
+    },
+    {
+      "name": "init(classifierIdentifier: SNClassifierIdentifier)",
+      "desc": "Creates a request that uses the framework’s built-in sound classification model."
+    },
+    {
+      "name": "struct SNClassifierIdentifier",
+      "desc": "An identifier that represents the versions of the framework’s sound classifier."
+    },
+    {
+      "name": "var overlapFactor: Double",
+      "desc": "The amount of overlap between successive analysis windows when the model operates on a fixed-size audio block."
+    },
+    {
+      "name": "var windowDuration: CMTime",
+      "desc": "The duration of the audio buffer the request sends to the underlying sound classifier for each prediction."
+    },
+    {
+      "name": "var knownClassifications: [String]",
+      "desc": "A string array that contains every prediction label in the request’s underlying sound classifier model."
+    },
+    {
+      "name": "enum SNTimeDurationConstraint",
+      "desc": "Defines the time duration windows the request’s underlying sound classifier accepts with a range, or an array, of durations."
+    },
+    {
+      "name": "var windowDurationConstraint: SNTimeDurationConstraint",
+      "desc": "A range or list of sound duration times the request’s underlying sound classifier supports."
+    }
+  ],
+  "declaration": "class SNClassifySoundRequest : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "SNRequest"
+  ]
+}

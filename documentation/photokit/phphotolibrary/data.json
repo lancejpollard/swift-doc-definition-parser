@@ -1,0 +1,118 @@
+{
+  "path": "/documentation/photokit/phphotolibrary",
+  "type": "Class",
+  "name": "PHPhotoLibrary",
+  "desc": "An object that manages access and changes to the user’s photo library.",
+  "items": [
+    {
+      "name": "class func authorizationStatus(for: PHAccessLevel) -> PHAuthorizationStatus",
+      "desc": "Returns the app’s authorization to access the user’s photo library for the specified access level."
+    },
+    {
+      "name": "class func requestAuthorization(for: PHAccessLevel, handler: (PHAuthorizationStatus) -> Void)",
+      "desc": "Prompts the user to grant the app permission to access the photo library."
+    },
+    {
+      "name": "enum PHAccessLevel",
+      "desc": "The app’s level of access to the user’s photo library."
+    },
+    {
+      "name": "enum PHAuthorizationStatus",
+      "desc": "Information about your app’s authorization to access the user’s photo library."
+    },
+    {
+      "name": "class func shared() -> PHPhotoLibrary",
+      "desc": "Retrieves the shared photo library object."
+    },
+    {
+      "name": "func presentLimitedLibraryPicker(from: UIViewController)",
+      "desc": "Prompts the user to update their limited library selection."
+    },
+    {
+      "name": "func presentLimitedLibraryPicker(from: UIViewController, completionHandler: ([String]) -> Void)",
+      "desc": "Prompts the user to update their limited library selection with a callback providing newly selected identifiers."
+    },
+    {
+      "name": "func performChanges(() -> Void, completionHandler: ((Bool, Error?) -> Void)?)",
+      "desc": "Asynchronously runs a block that requests changes to the photo library."
+    },
+    {
+      "name": "func performChangesAndWait(() -> Void)",
+      "desc": "Synchronously runs a block that requests changes to be performed in the photo library."
+    },
+    {
+      "name": "class PHChangeRequest",
+      "desc": "The abstract base class of the framework’s photo library change requests."
+    },
+    {
+      "name": "class PHAssetChangeRequest",
+      "desc": "A request to create, delete, change metadata for, or edit the content of a Photos asset, for use in a photo library change block."
+    },
+    {
+      "name": "class PHAssetCollectionChangeRequest",
+      "desc": "A request to create, delete, or modify a Photos asset collection, for use in a photo library change block."
+    },
+    {
+      "name": "class PHCollectionListChangeRequest",
+      "desc": "A request to create, delete, or modify a Photos collection list, for use in a photo library change block."
+    },
+    {
+      "name": "class PHObjectPlaceholder",
+      "desc": "A read-only proxy object that represents a Photos asset or collection to create."
+    },
+    {
+      "name": "func register(PHPhotoLibraryChangeObserver)",
+      "desc": "Registers an object to receive messages when objects in the photo library change."
+    },
+    {
+      "name": "func unregisterChangeObserver(PHPhotoLibraryChangeObserver)",
+      "desc": "Unregisters an object so that it no longer receives change messages."
+    },
+    {
+      "name": "protocol PHPhotoLibraryChangeObserver",
+      "desc": "A protocol to adopt to have the system notify your app of changes to the photo library."
+    },
+    {
+      "name": "class PHChange",
+      "desc": "A description of a change that occurred in the photo library."
+    },
+    {
+      "name": "class PHObjectChangeDetails",
+      "desc": "A description of changes that occurred in an asset or collection object."
+    },
+    {
+      "name": "class PHFetchResultChangeDetails",
+      "desc": "A description of changes that occurred in the set of asset or collection objects listed in a fetch result."
+    },
+    {
+      "name": "func register(PHPhotoLibraryAvailabilityObserver)",
+      "desc": "Registers an object to observe changes to the photo library’s availability."
+    },
+    {
+      "name": "func unregisterAvailabilityObserver(PHPhotoLibraryAvailabilityObserver)",
+      "desc": "Unregisters an object from observing changes to the photo library’s availability."
+    },
+    {
+      "name": "protocol PHPhotoLibraryAvailabilityObserver",
+      "desc": "A protocol to adopt to have the system notify your app when the availability of a photo library changes."
+    },
+    {
+      "name": "var unavailabilityReason: Error?",
+      "desc": "An error that describes the reason the photo library isn’t available."
+    },
+    {
+      "name": "class PHCloudIdentifier",
+      "desc": "An object that identifies an asset or collection that syncs through iCloud Photos."
+    },
+    {
+      "name": "func cloudIdentifierMappings(forLocalIdentifiers: [String]) -> [String : Result<PHCloudIdentifier, Error>]"
+    },
+    {
+      "name": "func localIdentifierMappings(for: [PHCloudIdentifier]) -> [PHCloudIdentifier : Result<String, Error>]"
+    }
+  ],
+  "declaration": "class PHPhotoLibrary : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/soundanalysis/snaudiostreamanalyzer",
+  "type": "Class",
+  "name": "SNAudioStreamAnalyzer",
+  "desc": "An object you create to analyze a stream of audio data and provide the results to your app.",
+  "items": [
+    {
+      "name": "init(format: AVAudioFormat)",
+      "desc": "Creates a new audio stream analyzer."
+    },
+    {
+      "name": "func add(SNRequest, withObserver: SNResultsObserving)",
+      "desc": "Adds a new analysis request to the audio stream analyzer."
+    },
+    {
+      "name": "protocol SNRequest",
+      "desc": "A protocol that represents sound analysis requests."
+    },
+    {
+      "name": "protocol SNResultsObserving",
+      "desc": "The interface your app implements to receive the results of an analysis request."
+    },
+    {
+      "name": "func remove(SNRequest)",
+      "desc": "Removes an existing request from the audio stream analyzer."
+    },
+    {
+      "name": "func removeAllRequests()",
+      "desc": "Removes all the sound analysis requests from the audio stream analyzer."
+    },
+    {
+      "name": "func analyze(AVAudioBuffer, atAudioFramePosition: AVAudioFramePosition)",
+      "desc": "Adds a new audio buffer to the analyzer’s larger stream buffer."
+    },
+    {
+      "name": "func completeAnalysis()",
+      "desc": "Notifies the analyzer when it receives the final audio buffer."
+    }
+  ],
+  "declaration": "class SNAudioStreamAnalyzer : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

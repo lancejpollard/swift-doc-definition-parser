@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/combine/immediatescheduler",
+  "type": "Structure",
+  "name": "ImmediateScheduler",
+  "desc": "A scheduler for performing synchronous actions.",
+  "items": [
+    {
+      "name": "struct SchedulerTimeType",
+      "desc": "The time type used by the immediate scheduler."
+    },
+    {
+      "name": "typealias SchedulerOptions",
+      "desc": "A type that defines options accepted by the immediate scheduler."
+    },
+    {
+      "name": "var minimumTolerance: ImmediateScheduler.SchedulerTimeType.Stride",
+      "desc": "The minimum tolerance allowed by the immediate scheduler."
+    },
+    {
+      "name": "var now: ImmediateScheduler.SchedulerTimeType",
+      "desc": "The immediate scheduler’s definition of the current moment in time."
+    },
+    {
+      "name": "static let shared: ImmediateScheduler",
+      "desc": "The shared instance of the immediate scheduler."
+    },
+    {
+      "name": "func schedule(() -> Void)",
+      "desc": "Performs the action at the next possible opportunity, without options."
+    },
+    {
+      "name": "func schedule(after: Self.SchedulerTimeType, () -> Void)",
+      "desc": "Performs the action at some time after the specified date, using the scheduler’s minimum tolerance."
+    },
+    {
+      "name": "func schedule(after: Self.SchedulerTimeType, interval: Self.SchedulerTimeType.Stride, () -> Void) -> Cancellable",
+      "desc": "Performs the action at some time after the specified date, at the specified frequency, using minimum tolerance possible for this Scheduler."
+    },
+    {
+      "name": "func schedule(after: Self.SchedulerTimeType, interval: Self.SchedulerTimeType.Stride, tolerance: Self.SchedulerTimeType.Stride, () -> Void) -> Cancellable",
+      "desc": "Performs the action at some time after the specified date, at the specified frequency, taking into account tolerance if possible."
+    },
+    {
+      "name": "func schedule(after: ImmediateScheduler.SchedulerTimeType, interval: ImmediateScheduler.SchedulerTimeType.Stride, tolerance: ImmediateScheduler.SchedulerTimeType.Stride, options: ImmediateScheduler.SchedulerOptions?, () -> Void) -> Cancellable",
+      "desc": "Performs the action at some time after the specified date, at the specified frequency, optionally taking into account tolerance if possible."
+    },
+    {
+      "name": "func schedule(after: Self.SchedulerTimeType, tolerance: Self.SchedulerTimeType.Stride, () -> Void)",
+      "desc": "Performs the action at some time after the specified date."
+    },
+    {
+      "name": "func schedule(after: ImmediateScheduler.SchedulerTimeType, tolerance: ImmediateScheduler.SchedulerTimeType.Stride, options: ImmediateScheduler.SchedulerOptions?, () -> Void)",
+      "desc": "Performs the action at some time after the specified date."
+    },
+    {
+      "name": "func schedule(options: ImmediateScheduler.SchedulerOptions?, () -> Void)",
+      "desc": "Performs the action at the next possible opportunity."
+    }
+  ],
+  "declaration": "struct ImmediateScheduler",
+  "conformsTo": [
+    "Scheduler"
+  ]
+}

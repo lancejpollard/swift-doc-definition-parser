@@ -1,0 +1,149 @@
+{
+  "path": "/documentation/coredata/nspersistentstorecoordinator",
+  "type": "Class",
+  "name": "NSPersistentStoreCoordinator",
+  "desc": "A coordinator that uses the model to help contexts and persistent stores communicate.",
+  "items": [
+    {
+      "name": "init(managedObjectModel: NSManagedObjectModel)",
+      "desc": "Creates a persistent store coordinator with the specified managed object model."
+    },
+    {
+      "name": "var managedObjectModel: NSManagedObjectModel",
+      "desc": "The coordinator’s managed object model."
+    },
+    {
+      "name": "var name: String?",
+      "desc": "The coordinator’s name."
+    },
+    {
+      "name": "var persistentStores: [NSPersistentStore]",
+      "desc": "The persistent stores associated with the coordinator."
+    },
+    {
+      "name": "class func registerStoreClass(AnyClass?, type: NSPersistentStore.StoreType)",
+      "desc": "Registers a persistent store subclass using the specified store type."
+    },
+    {
+      "name": "class var registeredStoreTypes: [String : NSValue]",
+      "desc": "A dictionary of registered store types."
+    },
+    {
+      "name": "func persistentStore(for: URL) -> NSPersistentStore?",
+      "desc": "Returns the persistent store for the specified URL."
+    },
+    {
+      "name": "func setURL(URL, for: NSPersistentStore) -> Bool",
+      "desc": "Sets the URL for a specified persistent store."
+    },
+    {
+      "name": "func url(for: NSPersistentStore) -> URL",
+      "desc": "Returns the URL for a specified persistent store."
+    },
+    {
+      "name": "let NSStoreTypeKey: String",
+      "desc": "The metadata key that identifies the store type."
+    },
+    {
+      "name": "let NSStoreUUIDKey: String",
+      "desc": "The metadata key that contains the store’s UUID."
+    },
+    {
+      "name": "class func metadataForPersistentStore(type: NSPersistentStore.StoreType, at: URL, options: [AnyHashable : Any]?) -> [String : Any]",
+      "desc": "Returns metadata for a specific type of persistent store at the provided location."
+    },
+    {
+      "name": "class func setMetadata([String : Any]?, type: NSPersistentStore.StoreType, at: URL, options: [AnyHashable : Any]?)",
+      "desc": "Adds metadata to a specific type of persistent store at the provided location."
+    },
+    {
+      "name": "func metadata(for: NSPersistentStore) -> [String : Any]",
+      "desc": "Returns the metadata for the specified persistent store."
+    },
+    {
+      "name": "func setMetadata([String : Any]?, for: NSPersistentStore)",
+      "desc": "Adds metadata to the specified persistent store."
+    },
+    {
+      "name": "func addPersistentStore(type: NSPersistentStore.StoreType, configuration: String?, at: URL, options: [AnyHashable : Any]?) -> NSPersistentStore",
+      "desc": "Adds a specific type of persistent store at the provided location."
+    },
+    {
+      "name": "func addPersistentStore(with: NSPersistentStoreDescription, completionHandler: (NSPersistentStoreDescription, Error?) -> Void)",
+      "desc": "Creates a persistent store using the provided description and adds it to the coordinator."
+    },
+    {
+      "name": "func destroyPersistentStore(at: URL, type: NSPersistentStore.StoreType, options: [AnyHashable : Any]?)",
+      "desc": "Deletes a specific type of persistent store at the provided location."
+    },
+    {
+      "name": "func migratePersistentStore(NSPersistentStore, to: URL, options: [AnyHashable : Any]?, type: NSPersistentStore.StoreType) -> NSPersistentStore",
+      "desc": "Changes the location and, if necessary, the store type of the specified persistent store."
+    },
+    {
+      "name": "func remove(NSPersistentStore)",
+      "desc": "Removes the specified persistent store from the coordinator."
+    },
+    {
+      "name": "func replacePersistentStore(at: URL, destinationOptions: [AnyHashable : Any]?, withPersistentStoreFrom: URL, sourceOptions: [AnyHashable : Any]?, type: NSPersistentStore.StoreType)",
+      "desc": "Replaces one persistent store with another."
+    },
+    {
+      "name": "static let NSPersistentStoreCoordinatorStoresDidChange: NSNotification.Name",
+      "desc": "A notification that posts when a coordinator adds, removes, or updates a persistent store."
+    },
+    {
+      "name": "static let NSPersistentStoreCoordinatorStoresWillChange: NSNotification.Name",
+      "desc": "A notification that posts immediately before the coordinator updates its collection of stores."
+    },
+    {
+      "name": "static let NSPersistentStoreCoordinatorWillRemoveStore: NSNotification.Name",
+      "desc": "A notification that posts immediately before a coordinator removes a persistent store."
+    },
+    {
+      "name": "func execute(NSPersistentStoreRequest, with: NSManagedObjectContext) -> Any",
+      "desc": "Executes a request on each of the coordinator’s persistent stores."
+    },
+    {
+      "name": "func perform(() -> Void)",
+      "desc": "Asynchronously executes the closure on the coordinator's queue."
+    },
+    {
+      "name": "func performAndWait(() -> Void)",
+      "desc": "Executes the closure on the coordinator's queue and waits for it to finish."
+    },
+    {
+      "name": "let NSPersistentHistoryTrackingKey: String",
+      "desc": "The key to enable persistent history tracking."
+    },
+    {
+      "name": "func currentPersistentHistoryToken(fromStores: [Any]?) -> NSPersistentHistoryToken?",
+      "desc": "Returns a single persistent history token for the specified persistent stores."
+    },
+    {
+      "name": "class NSCoreDataCoreSpotlightDelegate",
+      "desc": "A set of methods that enable integration with Core Spotlight."
+    },
+    {
+      "name": "let NSCoreDataCoreSpotlightExporter: String",
+      "desc": "The key that specifies a CoreSpotlight delegate."
+    },
+    {
+      "name": "func managedObjectID(forURIRepresentation: URL) -> NSManagedObjectID?",
+      "desc": "Returns the actual object ID for the specified URI representation of that ID."
+    },
+    {
+      "name": "func perform<T>(() -> T) -> T"
+    },
+    {
+      "name": "func performAndWait<T>(() -> T) -> T"
+    }
+  ],
+  "declaration": "class NSPersistentStoreCoordinator : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSLocking"
+  ]
+}

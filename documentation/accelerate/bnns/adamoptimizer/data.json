@@ -1,0 +1,80 @@
+{
+  "path": "/documentation/accelerate/bnns/adamoptimizer",
+  "type": "Structure",
+  "name": "BNNS.AdamOptimizer",
+  "desc": "An optimizer that uses the Adam optimization algorithm.",
+  "items": [
+    {
+      "name": "init(learningRate: Float, beta1: Float, beta2: Float, timeStep: Float, epsilon: Float, gradientScale: Float, regularizationScale: Float, clipsGradientsTo: ClosedRange<Float>?, regularizationFunction: BNNSOptimizerRegularizationFunction)",
+      "desc": "Returns a new Adam optimizer object."
+    },
+    {
+      "name": "init(learningRate: Float, beta1: Float, beta2: Float, timeStep: Float, epsilon: Float, gradientScale: Float, regularizationScale: Float, gradientClipping: BNNS.GradientClipping, regularizationFunction: BNNSOptimizerRegularizationFunction, usesAMSGrad: Bool)",
+      "desc": "Returns a new Adam optimizer object with gradient clipped by value or clipped by norm."
+    },
+    {
+      "name": "var learningRate: Float",
+      "desc": "A value that specifies the learning rate."
+    },
+    {
+      "name": "var beta1: Float",
+      "desc": "A value that specifies the first-moment constant, in the range 0 to 1."
+    },
+    {
+      "name": "var beta2: Float",
+      "desc": "A value that specifies the second-moment constant, in the range 0 to 1."
+    },
+    {
+      "name": "var timeStep: Float",
+      "desc": "A value that’s at least 1 and represents the optimizer’s current time."
+    },
+    {
+      "name": "var epsilon: Float",
+      "desc": "The epsilon value you use to improve numerical stability."
+    },
+    {
+      "name": "var gradientScale: Float",
+      "desc": "A value that specifies the gradient scaling factor."
+    },
+    {
+      "name": "var regularizationScale: Float",
+      "desc": "A value that specifies the regularization scaling factor."
+    },
+    {
+      "name": "var gradientBounds: ClosedRange<Float>?",
+      "desc": "The values for the minimum and maximum gradients."
+    },
+    {
+      "name": "var gradientClipping: BNNS.GradientClipping",
+      "desc": "The gradient clipping."
+    },
+    {
+      "name": "var regularizationFunction: BNNSOptimizerRegularizationFunction",
+      "desc": "The variable that specifies the regularization function."
+    },
+    {
+      "name": "var usesAMSGrad: Bool",
+      "desc": "A Boolean value that specifies whether to use the AMSGrad variant."
+    },
+    {
+      "name": "var accumulatorCountMultiplier: Int",
+      "desc": "The number of accumulators required for each parameter."
+    },
+    {
+      "name": "var bnnsOptimizerFunction: BNNSOptimizerFunction",
+      "desc": "The underlying optimizer function structure."
+    },
+    {
+      "name": "enum BNNS.GradientClipping",
+      "desc": "Constants that describe clipping functions."
+    },
+    {
+      "name": "func step(parameters: [BNNSNDArrayDescriptor], gradients: [BNNSNDArrayDescriptor], accumulators: [BNNSNDArrayDescriptor], filterParameters: BNNSFilterParameters?)",
+      "desc": "Applies a single optimization step to one or more parameters."
+    }
+  ],
+  "declaration": "struct AdamOptimizer",
+  "conformsTo": [
+    "BNNSOptimizer"
+  ]
+}

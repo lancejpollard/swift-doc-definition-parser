@@ -1,0 +1,31 @@
+{
+  "path": "/documentation/combine/publishers/tryfirstwhere",
+  "type": "Structure",
+  "name": "Publishers.TryFirstWhere",
+  "desc": "A publisher that only publishes the first element of a stream to satisfy a throwing predicate closure.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, predicate: (Publishers.TryFirstWhere<Upstream>.Output) throws -> Bool)"
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    },
+    {
+      "name": "let predicate: (Publishers.TryFirstWhere<Upstream>.Output) throws -> Bool",
+      "desc": "The error-throwing closure that determines whether to publish an element."
+    }
+  ],
+  "declaration": "struct TryFirstWhere<Upstream> where Upstream : Publisher",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

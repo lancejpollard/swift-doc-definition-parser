@@ -1,0 +1,118 @@
+{
+  "path": "/documentation/iobluetooth/obexsession",
+  "type": "Class",
+  "name": "OBEXSession",
+  "desc": "Object representing an OBEX connection to a remote target.",
+  "items": [
+    {
+      "name": "struct OBEXTransportEvent"
+    },
+    {
+      "name": "typealias OBEXTransportEventType"
+    },
+    {
+      "name": "func obexAbort(UnsafeMutableRawPointer!, optionalHeadersLength: Int, eventSelector: Selector!, selectorTarget: Any!, refCon: UnsafeMutableRawPointer!) -> OBEXError",
+      "desc": "Send an OBEX Abort command to the session's target."
+    },
+    {
+      "name": "func obexAbortResponse(OBEXOpCode, optionalHeaders: UnsafeMutableRawPointer!, optionalHeadersLength: Int, eventSelector: Selector!, selectorTarget: Any!, refCon: UnsafeMutableRawPointer!) -> OBEXError",
+      "desc": "Send an abort response to a session’s target."
+    },
+    {
+      "name": "func obexConnect(OBEXFlags, maxPacketLength: OBEXMaxPacketLength, optionalHeaders: UnsafeMutableRawPointer!, optionalHeadersLength: Int, eventSelector: Selector!, selectorTarget: Any!, refCon: UnsafeMutableRawPointer!) -> OBEXError",
+      "desc": "Initiate an OBEX connection to a device. Causes underlying transport (Bluetooth, et al) to attempt to connect to a remote device. After success, an OBEX connect packet is sent to establish the OBEX Connection."
+    },
+    {
+      "name": "func obexConnectResponse(OBEXOpCode, flags: OBEXFlags, maxPacketLength: OBEXMaxPacketLength, optionalHeaders: UnsafeMutableRawPointer!, optionalHeadersLength: Int, eventSelector: Selector!, selectorTarget: Any!, refCon: UnsafeMutableRawPointer!) -> OBEXError",
+      "desc": "Send a connect response to a session's target."
+    },
+    {
+      "name": "func obexDisconnect(UnsafeMutableRawPointer!, optionalHeadersLength: Int, eventSelector: Selector!, selectorTarget: Any!, refCon: UnsafeMutableRawPointer!) -> OBEXError",
+      "desc": "Send an OBEX Disconnect command to the session's target. THIS DOES NOT necessarily close the underlying transport connection. Deleting the session will ensure that closure."
+    },
+    {
+      "name": "func obexDisconnectResponse(OBEXOpCode, optionalHeaders: UnsafeMutableRawPointer!, optionalHeadersLength: Int, eventSelector: Selector!, selectorTarget: Any!, refCon: UnsafeMutableRawPointer!) -> OBEXError",
+      "desc": "Send a disconnect response to a session's target."
+    },
+    {
+      "name": "func obexGet(Bool, headers: UnsafeMutableRawPointer!, headersLength: Int, eventSelector: Selector!, selectorTarget: Any!, refCon: UnsafeMutableRawPointer!) -> OBEXError",
+      "desc": "Send an OBEX Get command to the session's target."
+    },
+    {
+      "name": "func obexGetResponse(OBEXOpCode, optionalHeaders: UnsafeMutableRawPointer!, optionalHeadersLength: Int, eventSelector: Selector!, selectorTarget: Any!, refCon: UnsafeMutableRawPointer!) -> OBEXError",
+      "desc": "Send a get response to a session's target."
+    },
+    {
+      "name": "func obexPut(Bool, headersData: UnsafeMutableRawPointer!, headersDataLength: Int, bodyData: UnsafeMutableRawPointer!, bodyDataLength: Int, eventSelector: Selector!, selectorTarget: Any!, refCon: UnsafeMutableRawPointer!) -> OBEXError",
+      "desc": "Send an OBEX Put command to the session's target."
+    },
+    {
+      "name": "func obexPutResponse(OBEXOpCode, optionalHeaders: UnsafeMutableRawPointer!, optionalHeadersLength: Int, eventSelector: Selector!, selectorTarget: Any!, refCon: UnsafeMutableRawPointer!) -> OBEXError",
+      "desc": "Send a put response to a session's target."
+    },
+    {
+      "name": "func obexSetPath(OBEXFlags, constants: OBEXConstants, optionalHeaders: UnsafeMutableRawPointer!, optionalHeadersLength: Int, eventSelector: Selector!, selectorTarget: Any!, refCon: UnsafeMutableRawPointer!) -> OBEXError",
+      "desc": "Send an OBEX SetPath command to the session's target."
+    },
+    {
+      "name": "func obexSetPathResponse(OBEXOpCode, optionalHeaders: UnsafeMutableRawPointer!, optionalHeadersLength: Int, eventSelector: Selector!, selectorTarget: Any!, refCon: UnsafeMutableRawPointer!) -> OBEXError",
+      "desc": "Send a set path response to a session's target."
+    },
+    {
+      "name": "func clientHandleIncomingData(UnsafeMutablePointer<OBEXTransportEvent>!)",
+      "desc": "Tranport subclasses need to invoke this from their own data-receive handlers. For example, when data is received over a Bluetooth RFCOMM channel in the IOBluetoothOBEXSession, it in turn calls this to dispatch the data. If you do not handle this case, your server session will not work, guaranteed."
+    },
+    {
+      "name": "func closeTransportConnection() -> OBEXError",
+      "desc": "You must override this - it will be called when the transport connection should be shutdown."
+    },
+    {
+      "name": "func getAvailableCommandPayloadLength(OBEXOpCode) -> OBEXMaxPacketLength",
+      "desc": "Determine the maximum amount of data you can send in a particular command as an OBEX client session."
+    },
+    {
+      "name": "func getAvailableCommandResponsePayloadLength(OBEXOpCode) -> OBEXMaxPacketLength",
+      "desc": "Determine the maximum amount of data you can send in a particular command response as an OBEX server session."
+    },
+    {
+      "name": "func getMaxPacketLength() -> OBEXMaxPacketLength",
+      "desc": "Gets current max packet length."
+    },
+    {
+      "name": "func hasOpenOBEXConnection() -> Bool",
+      "desc": "Has a successful connect packet been sent and received? This API tells you so."
+    },
+    {
+      "name": "func hasOpenTransportConnection() -> Bool",
+      "desc": "You must override this - it will be called periodically to determine if a transport connection is open or not."
+    },
+    {
+      "name": "func openTransportConnection(Selector!, selectorTarget: Any!, refCon: UnsafeMutableRawPointer!) -> OBEXError",
+      "desc": "Opens a transport connection to a device. A Bluetooth connection is one example of a transport."
+    },
+    {
+      "name": "func sendData(toTransport: UnsafeMutableRawPointer!, dataLength: Int) -> OBEXError",
+      "desc": "You must override this to send data over your transport. This does nothing by default, it will return a kOBEXUnsupportedError."
+    },
+    {
+      "name": "func serverHandleIncomingData(UnsafeMutablePointer<OBEXTransportEvent>!)",
+      "desc": "Tranport subclasses need to invoke this from their own data-receive handlers. For example, when data is received over a Bluetooth RFCOMM channel in the IOBluetoothOBEXSession, it in turn calls this to dispatch the data. If you do not handle this case, your server session will not work, guaranteed."
+    },
+    {
+      "name": "func setEventCallback(OBEXSessionEventCallback!)",
+      "desc": "Sets the C-API callback used when the session recieves data."
+    },
+    {
+      "name": "func setEventRefCon(UnsafeMutableRawPointer!)",
+      "desc": "Sets the C-API callback refCon used when the session recieves data."
+    },
+    {
+      "name": "func setEventSelector(Selector!, target: Any!, refCon: UnsafeMutableRawPointer!)",
+      "desc": "Allow you to set a selector to be called when events occur on the OBEX session."
+    }
+  ],
+  "declaration": "class OBEXSession : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

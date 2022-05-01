@@ -1,0 +1,71 @@
+{
+  "path": "/documentation/swift/randomaccesscollection",
+  "type": "Protocol",
+  "name": "RandomAccessCollection",
+  "desc": "A collection that supports efficient random-access index traversal.",
+  "items": [
+    {
+      "name": "associatedtype Element"
+    },
+    {
+      "name": "associatedtype Index"
+    },
+    {
+      "name": "associatedtype Indices",
+      "desc": "A type that represents the indices that are valid for subscripting the collection, in ascending order."
+    },
+    {
+      "name": "associatedtype SubSequence",
+      "desc": "A collection that represents a contiguous subrange of the collection’s elements."
+    },
+    {
+      "name": "var endIndex: Self.Index"
+    },
+    {
+      "name": "var indices: Self.Indices",
+      "desc": "The indices that are valid for subscripting the collection, in ascending order."
+    },
+    {
+      "name": "var startIndex: Self.Index"
+    },
+    {
+      "name": "func distance(from: Self.Index, to: Self.Index) -> Int",
+      "desc": "Returns the distance between two indices."
+    },
+    {
+      "name": "func formIndex(after: inout Self.Index)",
+      "desc": "Replaces the given index with its successor."
+    },
+    {
+      "name": "func formIndex(before: inout Self.Index)",
+      "desc": "Replaces the given index with its predecessor."
+    },
+    {
+      "name": "func index(Self.Index, offsetBy: Int) -> Self.Index",
+      "desc": "Returns an index that is the specified distance from the given index."
+    },
+    {
+      "name": "func index(Self.Index, offsetBy: Int, limitedBy: Self.Index) -> Self.Index?",
+      "desc": "Returns an index that is the specified distance from the given index, unless that distance is beyond a given limiting index."
+    },
+    {
+      "name": "func index(after: Self.Index) -> Self.Index",
+      "desc": "Returns the position immediately after the given index."
+    },
+    {
+      "name": "func index(before: Self.Index) -> Self.Index",
+      "desc": "Returns the position immediately before the given index."
+    },
+    {
+      "name": "subscript(Self.Index) -> Self.Element"
+    },
+    {
+      "name": "subscript(Range<Self.Index>) -> Self.SubSequence",
+      "desc": "Accesses a contiguous subrange of the collection’s elements."
+    }
+  ],
+  "declaration": "protocol RandomAccessCollection where Self.Indices : RandomAccessCollection, Self.SubSequence : RandomAccessCollection",
+  "inheritsFrom": [
+    "BidirectionalCollection"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "path": "/documentation/avfoundation/avcontentkeyrequest",
+  "type": "Class",
+  "name": "AVContentKeyRequest",
+  "desc": "An object that encapsulates information about a content decryption key request issued from a content key session object.",
+  "items": [
+    {
+      "name": "func makeStreamingContentKeyRequestData(forApp: Data, contentIdentifier: Data?, options: [String : Any]?, completionHandler: (Data?, Error?) -> Void)",
+      "desc": "Obtains encrypted key request data for a specific combination of app and content."
+    },
+    {
+      "name": "let AVContentKeyRequestProtocolVersionsKey: String",
+      "desc": "A key that specifies the versions of the content protection protocol supported by the application."
+    },
+    {
+      "name": "let AVContentKeyRequestRequiresValidationDataInSecureTokenKey: String",
+      "desc": "A key that requires the secure token to have extended validation data."
+    },
+    {
+      "name": "func respondByRequestingPersistableContentKeyRequestAndReturnError()",
+      "desc": "Tells the receiver that the app requires a persistable content key request object for processing."
+    },
+    {
+      "name": "func processContentKeyResponse(AVContentKeyResponse)",
+      "desc": "Sends the specified content key response to the receiver for processing."
+    },
+    {
+      "name": "func processContentKeyResponseError(Error)",
+      "desc": "Tells the receiver that the app was unable to obtain a content key response."
+    },
+    {
+      "name": "var identifier: Any?",
+      "desc": "The identifier for the content key."
+    },
+    {
+      "name": "var canProvidePersistableContentKey: Bool",
+      "desc": "The content key request used to create a persistable content key or respond to a previous request with a persistable content key."
+    },
+    {
+      "name": "var error: Error?",
+      "desc": "The error description for a failed key request."
+    },
+    {
+      "name": "var initializationData: Data?",
+      "desc": "The data used to obtain a key response."
+    },
+    {
+      "name": "var renewsExpiringResponseData: Bool",
+      "desc": "A Boolean value that indicates whether the content key request renews previously provided response data."
+    },
+    {
+      "name": "var status: AVContentKeyRequest.Status",
+      "desc": "The current state of the content key request."
+    },
+    {
+      "name": "enum AVContentKeyRequest.Status",
+      "desc": "The status for a content key request."
+    },
+    {
+      "name": "var contentKey: AVContentKey?",
+      "desc": "The generated content key."
+    },
+    {
+      "name": "var contentKeySpecifier: AVContentKeySpecifier",
+      "desc": "The requested content key specifier."
+    },
+    {
+      "name": "var options: [String : Any]",
+      "desc": "A dictionary of options used to initialize key loading."
+    },
+    {
+      "name": "struct AVContentKeyRequest.RetryReason",
+      "desc": "The reason for asking the client to retry a content key request."
+    }
+  ],
+  "declaration": "class AVContentKeyRequest : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

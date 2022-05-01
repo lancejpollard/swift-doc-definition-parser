@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/networkextension/nepackettunnelprovider",
+  "type": "Class",
+  "name": "NEPacketTunnelProvider",
+  "desc": "The principal class for a packet tunnel provider app extension.",
+  "items": [
+    {
+      "name": "func startTunnel(options: [String : NSObject]?, completionHandler: (Error?) -> Void)",
+      "desc": "Start the network tunnel."
+    },
+    {
+      "name": "func stopTunnel(with: NEProviderStopReason, completionHandler: () -> Void)",
+      "desc": "Stop the network tunnel."
+    },
+    {
+      "name": "func cancelTunnelWithError(Error?)",
+      "desc": "Stop the network tunnel from the Packet Tunnel Provider."
+    },
+    {
+      "name": "var packetFlow: NEPacketTunnelFlow",
+      "desc": "A NEPacketTunnelFlow object which is used to receive IP packets routed to the tunnel’s virtual interface and inject IP packets into the networking stack via the tunnel’s virtual interface."
+    },
+    {
+      "name": "func createTCPConnectionThroughTunnel(to: NWEndpoint, enableTLS: Bool, tlsParameters: NWTLSParameters?, delegate: Any?) -> NWTCPConnection",
+      "desc": "Create a TCP connection through the current tunnel."
+    },
+    {
+      "name": "func createUDPSessionThroughTunnel(to: NWEndpoint, from: NWHostEndpoint?) -> NWUDPSession",
+      "desc": "Create a UDP session through the current tunnel."
+    }
+  ],
+  "declaration": "class NEPacketTunnelProvider : NETunnelProvider",
+  "inheritsFrom": [
+    "NETunnelProvider"
+  ]
+}

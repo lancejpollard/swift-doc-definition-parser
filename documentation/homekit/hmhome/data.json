@@ -1,0 +1,200 @@
+{
+  "path": "/documentation/homekit/hmhome",
+  "type": "Class",
+  "name": "HMHome",
+  "desc": "The primary unit of living space, typically composed of rooms organized into zones.",
+  "items": [
+    {
+      "name": "var delegate: HMHomeDelegate?",
+      "desc": "A delegate that receives updates on the state of the home."
+    },
+    {
+      "name": "protocol HMHomeDelegate",
+      "desc": "An interface that communicates changes to a home’s configuration."
+    },
+    {
+      "name": "var name: String",
+      "desc": "The name the user gives to the home."
+    },
+    {
+      "name": "func updateName(String, completionHandler: (Error?) -> Void)",
+      "desc": "Updates the name of the home."
+    },
+    {
+      "name": "var uniqueIdentifier: UUID",
+      "desc": "A unique identifier for the home."
+    },
+    {
+      "name": "var isPrimary: Bool",
+      "desc": "A Boolean value that indicates whether this is the primary home for its home manager."
+    },
+    {
+      "name": "var rooms: [HMRoom]",
+      "desc": "An array of the rooms created and managed by the user."
+    },
+    {
+      "name": "func roomForEntireHome() -> HMRoom",
+      "desc": "A room that represents all parts of the home that don’t have a more specific room to represent them."
+    },
+    {
+      "name": "func addRoom(withName: String, completionHandler: (HMRoom?, Error?) -> Void)",
+      "desc": "Creates a new room with the specified name."
+    },
+    {
+      "name": "func removeRoom(HMRoom, completionHandler: (Error?) -> Void)",
+      "desc": "Removes a room from the home."
+    },
+    {
+      "name": "class HMRoom",
+      "desc": "The smallest subdivision of a home’s space."
+    },
+    {
+      "name": "var zones: [HMZone]",
+      "desc": "An array of all the zones in the home."
+    },
+    {
+      "name": "func addZone(withName: String, completionHandler: (HMZone?, Error?) -> Void)",
+      "desc": "Adds a new zone to the home."
+    },
+    {
+      "name": "func removeZone(HMZone, completionHandler: (Error?) -> Void)",
+      "desc": "Removes a zone from the home."
+    },
+    {
+      "name": "class HMZone",
+      "desc": "A collection of rooms that users think of as a single area, like upstairs or downstairs."
+    },
+    {
+      "name": "var accessories: [HMAccessory]",
+      "desc": "The collection of accessories that are part of the home."
+    },
+    {
+      "name": "func addAccessory(HMAccessory, completionHandler: (Error?) -> Void)",
+      "desc": "Adds a new accessory to the home."
+    },
+    {
+      "name": "func assignAccessory(HMAccessory, to: HMRoom, completionHandler: (Error?) -> Void)",
+      "desc": "Assigns an accessory to a different room."
+    },
+    {
+      "name": "func removeAccessory(HMAccessory, completionHandler: (Error?) -> Void)",
+      "desc": "Removes an accessory from the home."
+    },
+    {
+      "name": "func unblockAccessory(HMAccessory, completionHandler: (Error?) -> Void)",
+      "desc": "Unblocks a blocked accessory."
+    },
+    {
+      "name": "class HMAccessory",
+      "desc": "A home automation accessory, like a garage door opener or a thermostat."
+    },
+    {
+      "name": "func servicesWithTypes([String]) -> [HMService]?",
+      "desc": "Returns an array of all services provided by accessories in the home that match the specified types."
+    },
+    {
+      "name": "var serviceGroups: [HMServiceGroup]",
+      "desc": "An array of all service groups in the home."
+    },
+    {
+      "name": "func addServiceGroup(withName: String, completionHandler: (HMServiceGroup?, Error?) -> Void)",
+      "desc": "Adds a service group to the home."
+    },
+    {
+      "name": "func removeServiceGroup(HMServiceGroup, completionHandler: (Error?) -> Void)",
+      "desc": "Removes a service group from the home."
+    },
+    {
+      "name": "class HMServiceGroup",
+      "desc": "A collection of accessory services."
+    },
+    {
+      "name": "var homeHubState: HMHomeHubState",
+      "desc": "The state of the home hub."
+    },
+    {
+      "name": "enum HMHomeHubState",
+      "desc": "The possible states of the home hub."
+    },
+    {
+      "name": "var actionSets: [HMActionSet]",
+      "desc": "An array of the action sets in the home."
+    },
+    {
+      "name": "func addActionSet(withName: String, completionHandler: (HMActionSet?, Error?) -> Void)",
+      "desc": "Adds a new action set to the home."
+    },
+    {
+      "name": "func removeActionSet(HMActionSet, completionHandler: (Error?) -> Void)",
+      "desc": "Removes an action set from the home."
+    },
+    {
+      "name": "func executeActionSet(HMActionSet, completionHandler: (Error?) -> Void)",
+      "desc": "Executes all the actions in a specified action set."
+    },
+    {
+      "name": "func builtinActionSet(ofType: String) -> HMActionSet?",
+      "desc": "Retrieves the builtin action set for the specified type."
+    },
+    {
+      "name": "class HMActionSet",
+      "desc": "A collection of actions that you trigger as a group."
+    },
+    {
+      "name": "var triggers: [HMTrigger]",
+      "desc": "An array of triggers defined in the home."
+    },
+    {
+      "name": "func addTrigger(HMTrigger, completionHandler: (Error?) -> Void)",
+      "desc": "Adds a trigger to the home."
+    },
+    {
+      "name": "func removeTrigger(HMTrigger, completionHandler: (Error?) -> Void)",
+      "desc": "Removes a trigger from the home."
+    },
+    {
+      "name": "class HMTimerTrigger",
+      "desc": "A trigger to activate an action set based on a periodic timer."
+    },
+    {
+      "name": "class HMEventTrigger",
+      "desc": "A trigger to activate an action set based on a set of events and optional conditions."
+    },
+    {
+      "name": "class HMTrigger",
+      "desc": "An abstract base class for triggering actions based on a set of conditions."
+    },
+    {
+      "name": "func manageUsers(completionHandler: (Error?) -> Void)",
+      "desc": "Presents a view controller to manage users of the home."
+    },
+    {
+      "name": "var currentUser: HMUser",
+      "desc": "The current HomeKit user."
+    },
+    {
+      "name": "class HMUser",
+      "desc": "A person in the home who may have access to control accessories and services in the home."
+    },
+    {
+      "name": "func homeAccessControl(for: HMUser) -> HMHomeAccessControl",
+      "desc": "Retrieves the access level of a user associated with the home."
+    },
+    {
+      "name": "class HMHomeAccessControl",
+      "desc": "The access privileges of a user associated with a home."
+    },
+    {
+      "name": "class HMAccessControl",
+      "desc": "An abstract superclass for accessing user privileges."
+    },
+    {
+      "name": "let HMUserFailedAccessoriesKey: String",
+      "desc": "The key for retrieving details of what accessories failed to add or remove a user."
+    }
+  ],
+  "declaration": "class HMHome : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

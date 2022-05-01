@@ -1,0 +1,162 @@
+{
+  "path": "/documentation/scenekit/scnmaterial",
+  "type": "Class",
+  "name": "SCNMaterial",
+  "desc": "A set of shading attributes that define the appearance of a geometry's surface when rendered.",
+  "items": [
+    {
+      "name": "var name: String?",
+      "desc": "A name associated with the material."
+    },
+    {
+      "name": "var lightingModel: SCNMaterial.LightingModel",
+      "desc": "The lighting formula that SceneKit uses to render the material."
+    },
+    {
+      "name": "struct SCNMaterial.LightingModel",
+      "desc": "Constants specifying the lighting and shading algorithm to use for rendering a material."
+    },
+    {
+      "name": "var diffuse: SCNMaterialProperty",
+      "desc": "An object that manages the material’s diffuse response to lighting."
+    },
+    {
+      "name": "var metalness: SCNMaterialProperty",
+      "desc": "An object that provides color values to determine how metallic the material’s surface appears."
+    },
+    {
+      "name": "var roughness: SCNMaterialProperty",
+      "desc": "An object that provides color values to determine the apparent smoothness of the surface."
+    },
+    {
+      "name": "var normal: SCNMaterialProperty",
+      "desc": "An object that defines the nominal orientation of the surface at each point for use in lighting."
+    },
+    {
+      "name": "var displacement: SCNMaterialProperty"
+    },
+    {
+      "name": "var emission: SCNMaterialProperty",
+      "desc": "An object that defines the color emitted by each point on a surface."
+    },
+    {
+      "name": "var selfIllumination: SCNMaterialProperty",
+      "desc": "An object that provides color values representing the global illumination of the surface."
+    },
+    {
+      "name": "var ambientOcclusion: SCNMaterialProperty",
+      "desc": "An object that provides color values to be multiplied with the ambient light affecting the material."
+    },
+    {
+      "name": "var diffuse: SCNMaterialProperty",
+      "desc": "An object that manages the material’s diffuse response to lighting."
+    },
+    {
+      "name": "var ambient: SCNMaterialProperty",
+      "desc": "An object that manages the material’s response to ambient lighting."
+    },
+    {
+      "name": "var specular: SCNMaterialProperty",
+      "desc": "An object that manages the material’s specular response to lighting."
+    },
+    {
+      "name": "var reflective: SCNMaterialProperty",
+      "desc": "An object that defines the reflected color for each point on a surface."
+    },
+    {
+      "name": "var multiply: SCNMaterialProperty",
+      "desc": "An object that provides color values that are multiplied with pixels in a material after all other shading is complete."
+    },
+    {
+      "name": "var transparent: SCNMaterialProperty",
+      "desc": "An object that determines the opacity of each point in a material."
+    },
+    {
+      "name": "var shininess: CGFloat",
+      "desc": "The sharpness of specular highlights. Animatable."
+    },
+    {
+      "name": "var fresnelExponent: CGFloat",
+      "desc": "A factor affecting the material’s reflectivity. Animatable."
+    },
+    {
+      "name": "var locksAmbientWithDiffuse: Bool",
+      "desc": "A Boolean value that determines whether the material responds identically to both ambient and diffuse lighting. Animatable."
+    },
+    {
+      "name": "var transparency: CGFloat",
+      "desc": "The uniform transparency of the material. Animatable."
+    },
+    {
+      "name": "var transparencyMode: SCNTransparencyMode",
+      "desc": "The mode SceneKit uses to calculate transparency for the material."
+    },
+    {
+      "name": "enum SCNTransparencyMode",
+      "desc": "The modes SceneKit uses to calculate the opacity of pixels rendered with a material, used by the transparencyMode property."
+    },
+    {
+      "name": "var blendMode: SCNBlendMode",
+      "desc": "The mode that determines how pixel colors rendered using this material blend with other pixel colors in the rendering target."
+    },
+    {
+      "name": "enum SCNBlendMode",
+      "desc": "Modes that describe how SceneKit blends source colors rendered using a material with destination colors already in a rendering target, used by the blendMode property."
+    },
+    {
+      "name": "var isLitPerPixel: Bool",
+      "desc": "A Boolean value that determines whether SceneKit performs lighting calculations per vertex or per pixel. Animatable."
+    },
+    {
+      "name": "var isDoubleSided: Bool",
+      "desc": "A Boolean value that determines whether SceneKit renders both front and back faces of a surface."
+    },
+    {
+      "name": "var cullMode: SCNCullMode",
+      "desc": "The mode determining which faces of a surface SceneKit renders. Animatable."
+    },
+    {
+      "name": "enum SCNCullMode",
+      "desc": "The modes SceneKit uses to determine which polygons to render in a surface, used by the cullMode property."
+    },
+    {
+      "name": "var fillMode: SCNFillMode"
+    },
+    {
+      "name": "enum SCNFillMode"
+    },
+    {
+      "name": "var writesToDepthBuffer: Bool",
+      "desc": "A Boolean value that determines whether SceneKit produces depth information when rendering the material."
+    },
+    {
+      "name": "var readsFromDepthBuffer: Bool",
+      "desc": "A Boolean value that determines whether SceneKit uses depth information when rendering the material."
+    },
+    {
+      "name": "var colorBufferWriteMask: SCNColorMask"
+    },
+    {
+      "name": "struct SCNColorMask"
+    },
+    {
+      "name": "var clearCoat: SCNMaterialProperty"
+    },
+    {
+      "name": "var clearCoatNormal: SCNMaterialProperty"
+    },
+    {
+      "name": "var clearCoatRoughness: SCNMaterialProperty"
+    }
+  ],
+  "declaration": "class SCNMaterial : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding",
+    "SCNAnimatable",
+    "SCNShadable"
+  ]
+}

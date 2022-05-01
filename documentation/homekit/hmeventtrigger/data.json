@@ -1,0 +1,120 @@
+{
+  "path": "/documentation/homekit/hmeventtrigger",
+  "type": "Class",
+  "name": "HMEventTrigger",
+  "desc": "A trigger to activate an action set based on a set of events and optional conditions.",
+  "items": [
+    {
+      "name": "init(name: String, events: [HMEvent], predicate: NSPredicate?)",
+      "desc": "Creates a new event trigger with the specified name, events, and predicate."
+    },
+    {
+      "name": "init(name: String, events: [HMEvent], end: [HMEvent]?, recurrences: [DateComponents]?, predicate: NSPredicate?)",
+      "desc": "Creates a new event trigger with the specified name, events, end events, recurrences, and predicate."
+    },
+    {
+      "name": "var triggerActivationState: HMEventTriggerActivationState",
+      "desc": "The current activation state of the trigger."
+    },
+    {
+      "name": "enum HMEventTriggerActivationState",
+      "desc": "The activation state of an event trigger."
+    },
+    {
+      "name": "var events: [HMEvent]",
+      "desc": "The events that activate the trigger."
+    },
+    {
+      "name": "func updateEvents([HMEvent], completionHandler: (Error?) -> Void)",
+      "desc": "Updates the set of trigger events."
+    },
+    {
+      "name": "class HMEvent",
+      "desc": "The abstract base class for a HomeKit event."
+    },
+    {
+      "name": "var endEvents: [HMEvent]",
+      "desc": "The events associated with the end of scene represented by this trigger."
+    },
+    {
+      "name": "func updateEndEvents([HMEvent], completionHandler: (Error?) -> Void)",
+      "desc": "Updates the set of end events associated with the event trigger."
+    },
+    {
+      "name": "var recurrences: [DateComponents]?",
+      "desc": "Specifies the days on which the trigger can execute."
+    },
+    {
+      "name": "func updateRecurrences([DateComponents]?, completionHandler: (Error?) -> Void)",
+      "desc": "Updates the days of the week the trigger can repeat."
+    },
+    {
+      "name": "var executeOnce: Bool",
+      "desc": "A Boolean that can execute the trigger many times."
+    },
+    {
+      "name": "func updateExecuteOnce(Bool, completionHandler: (Error?) -> Void)",
+      "desc": "Updates the repetition status of the event trigger."
+    },
+    {
+      "name": "var predicate: NSPredicate?",
+      "desc": "The predicate to evaluate before executing the scene associated with the event trigger."
+    },
+    {
+      "name": "func updatePredicate(NSPredicate?, completionHandler: (Error?) -> Void)",
+      "desc": "Replaces the predicate used to evaluate execution of the scene associated with the event trigger."
+    },
+    {
+      "name": "class func predicateForEvaluatingTriggerOccurring(beforeSignificantEvent: HMSignificantTimeEvent) -> NSPredicate",
+      "desc": "Creates a predicate that evaluates whether the event occurred before a significant event."
+    },
+    {
+      "name": "class func predicateForEvaluatingTriggerOccurring(afterSignificantEvent: HMSignificantTimeEvent) -> NSPredicate",
+      "desc": "Creates a predicate that evaluates whether the event occurred after a significant event."
+    },
+    {
+      "name": "class func predicate(forEvaluatingTriggerOccurringBetweenSignificantEvent: HMSignificantTimeEvent, secondSignificantEvent: HMSignificantTimeEvent) -> NSPredicate",
+      "desc": "Creates a predicate that evaluates whether the event occurred between two significant events."
+    },
+    {
+      "name": "class func predicateForEvaluatingTrigger(occurringBefore: DateComponents) -> NSPredicate",
+      "desc": "Creates a predicate that evaluates whether the event occurred before the specified time."
+    },
+    {
+      "name": "class func predicateForEvaluatingTrigger(occurringOn: DateComponents) -> NSPredicate",
+      "desc": "Creates a predicate that evaluates whether the event occurred at the specified time."
+    },
+    {
+      "name": "class func predicateForEvaluatingTrigger(occurringAfter: DateComponents) -> NSPredicate",
+      "desc": "Creates a predicate that evaluates whether the event occurred at or after the specified time."
+    },
+    {
+      "name": "class func predicateForEvaluatingTriggerOccurringBetweenDate(with: DateComponents, secondDateWith: DateComponents) -> NSPredicate",
+      "desc": "Creates a predicate that evaluates whether the event occurred between the specified times."
+    },
+    {
+      "name": "class func predicateForEvaluatingTrigger(HMCharacteristic, relatedBy: NSComparisonPredicate.Operator, toValue: Any) -> NSPredicate",
+      "desc": "Creates a predicate that evaluates whether a characteristic value relates to the specified value."
+    },
+    {
+      "name": "class func predicateForEvaluatingTrigger(withPresence: HMPresenceEvent) -> NSPredicate",
+      "desc": "Creates a predicate that evaluates the current user presence against that specified in the presence event."
+    },
+    {
+      "name": "let HMCharacteristicKeyPath: String",
+      "desc": "Specifies the key path for a characteristic in an NSPredicate."
+    },
+    {
+      "name": "let HMCharacteristicValueKeyPath: String",
+      "desc": "Specifies the key path for a characteristic value in an NSPredicate."
+    },
+    {
+      "name": "let HMPresenceKeyPath: String",
+      "desc": "Specifies the key path for a presence event in an NSPredicate."
+    }
+  ],
+  "declaration": "class HMEventTrigger : HMTrigger",
+  "inheritsFrom": [
+    "HMTrigger"
+  ]
+}

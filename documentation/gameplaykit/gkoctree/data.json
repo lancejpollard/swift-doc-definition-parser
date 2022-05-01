@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/gameplaykit/gkoctree",
+  "type": "Generic Class",
+  "name": "GKOctree",
+  "desc": "A data structure for organizing objects based on their locations in a three-dimensional space.",
+  "items": [
+    {
+      "name": "init(boundingBox: GKBox, minimumCellSize: Float)",
+      "desc": "Initializes an octree with the specified dimensions."
+    },
+    {
+      "name": "func add(ElementType, at: vector_float3) -> GKOctreeNode",
+      "desc": "Adds an object to the tree corresponding to the specified point in 3D space."
+    },
+    {
+      "name": "func add(ElementType, in: GKBox) -> GKOctreeNode",
+      "desc": "Adds an object to the tree corresponding to the specified volume of 3D space."
+    },
+    {
+      "name": "func remove(ElementType, using: GKOctreeNode) -> Bool",
+      "desc": "Removes the specified object from the tree, using a reference to its containing node."
+    },
+    {
+      "name": "func remove(ElementType) -> Bool",
+      "desc": "Searches for the specified object and removes it from the tree."
+    },
+    {
+      "name": "func elements(at: vector_float3) -> [ElementType]",
+      "desc": "Returns all objects whose corresponding locations overlap the specified point."
+    },
+    {
+      "name": "func elements(in: GKBox) -> [ElementType]",
+      "desc": "Returns all objects whose corresponding locations overlap the specified volume."
+    },
+    {
+      "name": "struct GKBox",
+      "desc": "The definition of an axis-aligned rectangular bounding volume addressed by the tree."
+    }
+  ],
+  "declaration": "class GKOctree<ElementType> : NSObject where ElementType : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

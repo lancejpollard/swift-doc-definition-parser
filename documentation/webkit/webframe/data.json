@@ -1,0 +1,100 @@
+{
+  "path": "/documentation/webkit/webframe",
+  "type": "Class",
+  "name": "WebFrame",
+  "desc": "A WebFrame object encapsulates the data displayed in a WebFrameView object. There is one WebFrame object per frame displayed in a WebView. An entire webpage is represented by a hierarchy of WebFrame objects in which the root object is called the main frame.",
+  "items": [
+    {
+      "name": "init!(name: String!, webFrameView: WebFrameView!, webView: WebView!)",
+      "desc": "Initializes the receiver with a frame name, web frame view, and controlling web view."
+    },
+    {
+      "name": "func load(URLRequest!)",
+      "desc": "Connects to a given URL by initiating an asynchronous client request."
+    },
+    {
+      "name": "func reload()",
+      "desc": "Reloads the initial request passed as an argument to load(_:)."
+    },
+    {
+      "name": "func reloadFromOrigin()",
+      "desc": "Performs an end-to-end revalidation using cache-validating conditionals if possible."
+    },
+    {
+      "name": "func stopLoading()",
+      "desc": "Stops any pending loads on the receiver’s data source, and those of its children."
+    },
+    {
+      "name": "func loadAlternateHTMLString(String!, baseURL: URL!, forUnreachableURL: URL!)",
+      "desc": "Loads alternate content for a frame whose URL is unreachable."
+    },
+    {
+      "name": "func loadHTMLString(String!, baseURL: URL!)",
+      "desc": "Sets the main page contents and base URL."
+    },
+    {
+      "name": "func load(Data!, mimeType: String!, textEncodingName: String!, baseURL: URL!)",
+      "desc": "Sets the main page contents, MIME type, content encoding, and base URL."
+    },
+    {
+      "name": "func load(WebArchive!)",
+      "desc": "Loads an archive into the web frame."
+    },
+    {
+      "name": "var dataSource: WebDataSource?",
+      "desc": "The committed data source."
+    },
+    {
+      "name": "var provisionalDataSource: WebDataSource!",
+      "desc": "The provisional data source, or nil if either a load request is not in progress or a load request has completed."
+    },
+    {
+      "name": "var parent: WebFrame!",
+      "desc": "The web frame’s parent web frame."
+    },
+    {
+      "name": "var childFrames: [Any]!",
+      "desc": "The frames of the web frame’s immediate children."
+    },
+    {
+      "name": "var frameView: WebFrameView!",
+      "desc": "The web frame’s view object."
+    },
+    {
+      "name": "var webView: WebView!",
+      "desc": "The view object that manages the web frame."
+    },
+    {
+      "name": "func findNamed(String!) -> WebFrame!",
+      "desc": "Returns a web frame that matches the given name."
+    },
+    {
+      "name": "var name: String!",
+      "desc": "The web frame’s name."
+    },
+    {
+      "name": "var domDocument: DOMDocument!",
+      "desc": "The web frame’s DOM document."
+    },
+    {
+      "name": "var frameElement: DOMHTMLElement!",
+      "desc": "The web view’s DOM frame element."
+    },
+    {
+      "name": "var globalContext: JSGlobalContextRef!",
+      "desc": "The global JavaScript execution context for bridging between the WebKit and JavaScriptCore C API."
+    },
+    {
+      "name": "var javaScriptContext: JSContext!",
+      "desc": "The frame's global JavaScript execution context."
+    },
+    {
+      "name": "var windowObject: WebScriptObject!",
+      "desc": "The JavaScript window object."
+    }
+  ],
+  "declaration": "class WebFrame : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/nearbyinteraction/nisession",
+  "type": "Class",
+  "name": "NISession",
+  "desc": "An object that identifies a unique connection between two peer devices.",
+  "items": [
+    {
+      "name": "class var isSupported: Bool",
+      "desc": "A flag that indicates whether the device supports nearby interaction."
+    },
+    {
+      "name": "var discoveryToken: NIDiscoveryToken?",
+      "desc": "A temporary, random identifier for a device."
+    },
+    {
+      "name": "class NIDiscoveryToken",
+      "desc": "An object that uniquely identifies a peer participating in an interaction session."
+    },
+    {
+      "name": "func run(NIConfiguration)",
+      "desc": "Starts a session with a nearby peer."
+    },
+    {
+      "name": "var configuration: NIConfiguration?",
+      "desc": "The configuration run by the session."
+    },
+    {
+      "name": "var delegateQueue: DispatchQueue?",
+      "desc": "The dispatch queue on which the session invokes delegate callbacks."
+    },
+    {
+      "name": "var delegate: NISessionDelegate?",
+      "desc": "An object that NI notifies of session events."
+    },
+    {
+      "name": "protocol NISessionDelegate",
+      "desc": "An object that monitors and reacts to session updates."
+    },
+    {
+      "name": "func pause()",
+      "desc": "Stops sending distance and direction updates to the peer."
+    },
+    {
+      "name": "func invalidate()",
+      "desc": "Stops a running session."
+    }
+  ],
+  "declaration": "class NISession : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

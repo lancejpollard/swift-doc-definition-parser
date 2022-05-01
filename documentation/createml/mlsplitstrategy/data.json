@@ -1,0 +1,24 @@
+{
+  "path": "/documentation/createml/mlsplitstrategy",
+  "type": "Enumeration",
+  "name": "MLSplitStrategy",
+  "desc": "Data partitioning approaches, typically for creating a validation dataset from a training dataset.",
+  "items": [
+    {
+      "name": "case automatic",
+      "desc": "Create ML automatically decides how much of your training dataset it uses for a validation dataset."
+    },
+    {
+      "name": "case fixed(ratio: Double, seed: Int?)",
+      "desc": "Create ML uses a portion of your training dataset to create a validation dataset based on the ratio."
+    },
+    {
+      "name": "func timestampSeed() -> Int",
+      "desc": "Creates a deterministic number from the current system time to seed random-number generators."
+    },
+    {
+      "name": "func resolve(count: Int) -> (ratio: Double, seed: Int)"
+    }
+  ],
+  "declaration": "enum MLSplitStrategy"
+}

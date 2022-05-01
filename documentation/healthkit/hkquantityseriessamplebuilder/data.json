@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/healthkit/hkquantityseriessamplebuilder",
+  "type": "Class",
+  "name": "HKQuantitySeriesSampleBuilder",
+  "desc": "A builder object for incrementally building a sample that contains multiple quantities.",
+  "items": [
+    {
+      "name": "init(healthStore: HKHealthStore, quantityType: HKQuantityType, startDate: Date, device: HKDevice?)",
+      "desc": "Creates a new quantity series builder."
+    },
+    {
+      "name": "var quantityType: HKQuantityType",
+      "desc": "The quantity type for the series."
+    },
+    {
+      "name": "var startDate: Date",
+      "desc": "The starting date and time for the sample."
+    },
+    {
+      "name": "var device: HKDevice?",
+      "desc": "The device providing the data."
+    },
+    {
+      "name": "func insert(HKQuantity, at: Date)",
+      "desc": "Adds a new quantity to the series at the provided date and time."
+    },
+    {
+      "name": "func insert(HKQuantity, for: DateInterval)",
+      "desc": "Adds a new quantity to the series with the provided date interval."
+    },
+    {
+      "name": "func discard()",
+      "desc": "Discards all previously collected data and invalidates the builder."
+    },
+    {
+      "name": "func finishSeries(metadata: [String : Any]?, completion: ([HKQuantitySample]?, Error?) -> Void)",
+      "desc": "Finalizes the series and returns the resulting quantity samples."
+    },
+    {
+      "name": "func finishSeries(metadata: [String : Any]?, endDate: Date?, completion: ([HKQuantitySample]?, Error?) -> Void)",
+      "desc": "Finalizes the series with the provided end date, and returns the resulting quantity samples."
+    }
+  ],
+  "declaration": "class HKQuantitySeriesSampleBuilder : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

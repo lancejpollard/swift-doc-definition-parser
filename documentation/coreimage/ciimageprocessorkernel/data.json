@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/coreimage/ciimageprocessorkernel",
+  "type": "Class",
+  "name": "CIImageProcessorKernel",
+  "desc": "The abstract class you extend to create custom image processors that can integrate with Core Image workflows.",
+  "items": [
+    {
+      "name": "class var outputFormat: CIFormat",
+      "desc": "The processor's output pixel format."
+    },
+    {
+      "name": "class var outputIsOpaque: Bool",
+      "desc": "Boolean determining whether or not processor outputs an opaque image."
+    },
+    {
+      "name": "class var synchronizeInputs: Bool",
+      "desc": "Tells whether or not processor input should be synchronized for CPU access."
+    },
+    {
+      "name": "class func apply(withExtent: CGRect, inputs: [CIImage]?, arguments: [String : Any]?) -> CIImage",
+      "desc": "Method to override when applying a custom image processor kernel to an image and returning the result."
+    },
+    {
+      "name": "class func formatForInput(at: Int32) -> CIFormat",
+      "desc": "Method to override for returning the image processing kernel's input pixel format."
+    },
+    {
+      "name": "class func process(with: [CIImageProcessorInput]?, arguments: [String : Any]?, output: CIImageProcessorOutput)",
+      "desc": "Method to override for customizing the kernel's image processing."
+    },
+    {
+      "name": "class func roi(forInput: Int32, arguments: [String : Any]?, outputRect: CGRect) -> CGRect",
+      "desc": "Method to override for determining specific region of input image required to process in rendering a specified region of the output image."
+    }
+  ],
+  "declaration": "class CIImageProcessorKernel : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

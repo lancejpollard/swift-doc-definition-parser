@@ -1,0 +1,55 @@
+{
+  "path": "/documentation/mailkit/memessagesecurityhandler",
+  "type": "Protocol",
+  "name": "MEMessageSecurityHandler",
+  "desc": "An object that digitally signs or encrypts messages the user sends and receives.",
+  "items": [
+    {
+      "name": "protocol MEMessageEncoder",
+      "desc": "An object that encrypts or digitally signs outgoing messages."
+    },
+    {
+      "name": "class MEEncodedOutgoingMessage",
+      "desc": "An object that contains the signed or encrypted representation of a message’s RFC 2822 data."
+    },
+    {
+      "name": "class MEOutgoingMessageEncodingStatus",
+      "desc": "An object that contains information about security measures the user can apply when composing a message."
+    },
+    {
+      "name": "class MEMessageEncodingResult",
+      "desc": "An object that contains a signed or encrypted message, or errors that indicate failure to encode the message."
+    },
+    {
+      "name": "protocol MEMessageDecoder",
+      "desc": "An object that decrypts messages and provides details about digital signatures."
+    },
+    {
+      "name": "class MEDecodedMessage",
+      "desc": "An object that contains the RFC 2822 data for a message, without encryption or digital signatures."
+    },
+    {
+      "name": "class MEMessageSigner",
+      "desc": "An object that contains details about the person who signed a message."
+    },
+    {
+      "name": "class MEMessageSecurityInformation",
+      "desc": "An object that contains details about a message’s content, such as if it’s encrypted and who digitally signed it."
+    },
+    {
+      "name": "func extensionViewController(signers: [MEMessageSigner]) -> MEExtensionViewController?",
+      "desc": "Returns a view controller that displays details about a message’s digital signature."
+    },
+    {
+      "name": "func extensionViewController(messageContext: Data) -> MEExtensionViewController?"
+    },
+    {
+      "name": "func primaryActionClicked(forMessageContext: Data, completionHandler: (MEExtensionViewController?) -> Void)"
+    }
+  ],
+  "declaration": "protocol MEMessageSecurityHandler",
+  "inheritsFrom": [
+    "MEMessageDecoder",
+    "MEMessageEncoder"
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "path": "/documentation/network/nwconnection",
+  "type": "Class",
+  "name": "NWConnection",
+  "desc": "A bidirectional data connection between a local endpoint and a remote endpoint.",
+  "items": [
+    {
+      "name": "init(host: NWEndpoint.Host, port: NWEndpoint.Port, using: NWParameters)",
+      "desc": "Initializes a new connection to a host and port."
+    },
+    {
+      "name": "init(to: NWEndpoint, using: NWParameters)",
+      "desc": "Initializes a new connection to a remote endpoint."
+    },
+    {
+      "name": "func start(queue: DispatchQueue)",
+      "desc": "Starts establishing a connection, and sets the queue on which to deliver all connection events."
+    },
+    {
+      "name": "func restart()",
+      "desc": "Restarts a connection that is in the waiting state."
+    },
+    {
+      "name": "var state: NWConnection.State",
+      "desc": "The current state of the connection."
+    },
+    {
+      "name": "enum NWConnection.State",
+      "desc": "States indicating whether a connection can be used to send and receive data."
+    },
+    {
+      "name": "var stateUpdateHandler: ((NWConnection.State) -> Void)?",
+      "desc": "A handler that receives connection state updates."
+    },
+    {
+      "name": "func send(content: Data?, contentContext: NWConnection.ContentContext, isComplete: Bool, completion: NWConnection.SendCompletion)",
+      "desc": "Sends data on a connection."
+    },
+    {
+      "name": "func send<Content>(content: Content?, contentContext: NWConnection.ContentContext, isComplete: Bool, completion: NWConnection.SendCompletion)",
+      "desc": "Sends data on a connection using a custom Data type."
+    },
+    {
+      "name": "enum NWConnection.SendCompletion",
+      "desc": "A completion handler that indicates when the connection has finished processing sent content."
+    },
+    {
+      "name": "func receive(minimumIncompleteLength: Int, maximumLength: Int, completion: (Data?, NWConnection.ContentContext?, Bool, NWError?) -> Void)",
+      "desc": "Schedules a single receive completion handler, with a range indicating how many bytes the handler can receive at one time."
+    },
+    {
+      "name": "func receiveMessage(completion: (Data?, NWConnection.ContentContext?, Bool, NWError?) -> Void)",
+      "desc": "Schedules a single receive completion handler for a complete message, as opposed to a range of bytes."
+    },
+    {
+      "name": "func batch(() -> Void)",
+      "desc": "Defines a block in which calls to send and receive are processed as a batch to improve performance."
+    },
+    {
+      "name": "class NWConnection.ContentContext",
+      "desc": "An object that represents a message to send or receive, containing protocol metadata and send properties."
+    },
+    {
+      "name": "var maximumDatagramSize: Int",
+      "desc": "The maximum size of a datagram message that can be sent on a connection."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Cancels the connection and gracefully disconnects any established network protocols."
+    },
+    {
+      "name": "func forceCancel()",
+      "desc": "Cancels the connection and immediately disconnects any established network protocols."
+    },
+    {
+      "name": "func cancelCurrentEndpoint()",
+      "desc": "Causes the current endpoint to be rejected, allowing the connection to try another resolved address."
+    },
+    {
+      "name": "var currentPath: NWPath?",
+      "desc": "The network path the connection is using."
+    },
+    {
+      "name": "var pathUpdateHandler: ((NWPath) -> Void)?",
+      "desc": "A handler that receives network path updates."
+    },
+    {
+      "name": "var viabilityUpdateHandler: ((Bool) -> Void)?",
+      "desc": "A handler that receives updates when data can be sent and received."
+    },
+    {
+      "name": "var betterPathUpdateHandler: ((Bool) -> Void)?",
+      "desc": "A handler that receives updates when an alternative network path is preferred over the current path."
+    },
+    {
+      "name": "func requestEstablishmentReport(queue: DispatchQueue, completion: (NWConnection.EstablishmentReport?) -> Void)",
+      "desc": "Requests a copy of the connection's establishment report once the connection is in the ready state."
+    },
+    {
+      "name": "struct NWConnection.EstablishmentReport",
+      "desc": "A report that provides metrics about the establishment of a connection."
+    },
+    {
+      "name": "func startDataTransferReport() -> NWConnection.PendingDataTransferReport",
+      "desc": "Begins a new data transfer report, which can later be collected."
+    },
+    {
+      "name": "class NWConnection.PendingDataTransferReport",
+      "desc": "An outstanding data transfer report that has yet to be collected."
+    },
+    {
+      "name": "struct NWConnection.DataTransferReport",
+      "desc": "A report that provides metrics about data being sent and received on a connection."
+    },
+    {
+      "name": "func metadata(definition: NWProtocolDefinition) -> NWProtocolMetadata?",
+      "desc": "Retrieves the connection-wide metadata for a specific protocol."
+    },
+    {
+      "name": "class NWProtocolMetadata",
+      "desc": "The abstract superclass for specifying metadata about a network protocol."
+    },
+    {
+      "name": "let endpoint: NWEndpoint",
+      "desc": "The remote endpoint with which the connection was initialized."
+    },
+    {
+      "name": "let parameters: NWParameters",
+      "desc": "The parameters with which the connection was initialized."
+    },
+    {
+      "name": "var queue: DispatchQueue?",
+      "desc": "The queue on which connection events are delivered."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "The description of the connection."
+    },
+    {
+      "name": "init?(from: NWConnectionGroup, to: NWEndpoint?, using: NWProtocolOptions?)"
+    },
+    {
+      "name": "init?(message: NWConnectionGroup.Message)"
+    },
+    {
+      "name": "func receiveDiscontiguous(minimumIncompleteLength: Int, maximumLength: Int, completion: (DispatchData?, NWConnection.ContentContext?, Bool, NWError?) -> Void)"
+    },
+    {
+      "name": "func receiveMessageDiscontiguous(completion: (DispatchData?, NWConnection.ContentContext?, Bool, NWError?) -> Void)"
+    }
+  ],
+  "declaration": "final class NWConnection",
+  "conformsTo": [
+    "CustomDebugStringConvertible"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/dispatch/dispatchgroup",
+  "type": "Class",
+  "name": "DispatchGroup",
+  "desc": "A group of tasks that you monitor as a single unit.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a new group to which you can assign block objects."
+    },
+    {
+      "name": "func notify(qos: DispatchQoS, flags: DispatchWorkItemFlags, queue: DispatchQueue, execute: () -> Void)",
+      "desc": "Schedules the submission of a block with the specified attributes to a queue when all tasks in the current group have finished executing."
+    },
+    {
+      "name": "func notify(queue: DispatchQueue, work: DispatchWorkItem)",
+      "desc": "Schedules the submission of a block to a queue when all tasks in the current group have finished executing."
+    },
+    {
+      "name": "func wait()",
+      "desc": "Waits synchronously for the previously submitted work to finish."
+    },
+    {
+      "name": "func wait(timeout: DispatchTime) -> DispatchTimeoutResult",
+      "desc": "Waits synchronously for the previously submitted work to complete, and returns if the work is not completed before the specified timeout period has elapsed."
+    },
+    {
+      "name": "func wait(wallTimeout: DispatchWallTime) -> DispatchTimeoutResult",
+      "desc": "Waits synchronously for the previously submitted work to complete, and returns if the work is not completed before the specified timeout period has elapsed."
+    },
+    {
+      "name": "func enter()",
+      "desc": "Explicitly indicates that a block has entered the group."
+    },
+    {
+      "name": "func leave()",
+      "desc": "Explicitly indicates that a block in the group finished executing."
+    }
+  ],
+  "declaration": "class DispatchGroup : DispatchObject",
+  "inheritsFrom": [
+    "DispatchObject"
+  ]
+}

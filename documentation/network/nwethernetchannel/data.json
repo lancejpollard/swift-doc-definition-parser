@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/network/nwethernetchannel",
+  "type": "Class",
+  "name": "NWEthernetChannel",
+  "desc": "An object you use to send and receive custom Ethernet frames.",
+  "items": [
+    {
+      "name": "init(on: NWInterface, etherType: UInt16)",
+      "desc": "Initializes an Ethernet channel on a specific interface with a custom Ethernet type."
+    },
+    {
+      "name": "func start(queue: DispatchQueue)",
+      "desc": "Starts the process of registering the channel, and sets the queue on which all channel events are delivered."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Unregisters the channel from the interface."
+    },
+    {
+      "name": "var state: NWEthernetChannel.State",
+      "desc": "The current state of the channel."
+    },
+    {
+      "name": "enum NWEthernetChannel.State",
+      "desc": "States indicating whether an Ethernet channel is able to send and receive frames."
+    },
+    {
+      "name": "var stateUpdateHandler: ((NWEthernetChannel.State) -> Void)?",
+      "desc": "A handler that delivers channel state updates."
+    },
+    {
+      "name": "func send(content: Data, to: NWEthernetChannel.EthernetAddress, vlanTag: UInt16, completion: (NWError?) -> Void)",
+      "desc": "Sends a single Ethernet frame over a channel to a specific Ethernet address."
+    },
+    {
+      "name": "var receiveHandler: ((Data, UInt16, NWEthernetChannel.EthernetAddress, NWEthernetChannel.EthernetAddress) -> Void)?",
+      "desc": "A handler that delivers inbound Ethernet frames."
+    },
+    {
+      "name": "struct NWEthernetChannel.EthernetAddress",
+      "desc": "A 48-bit Ethernet address."
+    },
+    {
+      "name": "let etherType: UInt16",
+      "desc": "The custom Ethernet type with which the channel was initialized."
+    },
+    {
+      "name": "let interface: NWInterface",
+      "desc": "The interface with which the channel was initialized."
+    },
+    {
+      "name": "var queue: DispatchQueue?",
+      "desc": "The queue on which channel events will be delivered."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "The description of the Ethernet channel."
+    }
+  ],
+  "declaration": "final class NWEthernetChannel",
+  "conformsTo": [
+    "CustomDebugStringConvertible"
+  ]
+}

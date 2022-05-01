@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/accelerate/bnns/lossreduction",
+  "type": "Enumeration",
+  "name": "BNNS.LossReduction",
+  "desc": "An enumeration that describes loss reduction functions.",
+  "items": [
+    {
+      "name": "case none",
+      "desc": "Returns the loss without any reduction."
+    },
+    {
+      "name": "case reductionMean",
+      "desc": "Sums the loss of all samples in the batch and divides by the number of samples."
+    },
+    {
+      "name": "case sum",
+      "desc": "Sums the loss of all samples in the batch."
+    },
+    {
+      "name": "case weightedMean",
+      "desc": "Sums the loss of all samples in the batch and divides by the sum of all weights."
+    },
+    {
+      "name": "case zeroWeightMean",
+      "desc": "Sums the loss of all samples in the batch and divides by the number of non-zero weights."
+    },
+    {
+      "name": "var bnnsLossReductionFunction: BNNSLossReductionFunction",
+      "desc": "The underlying loss reduction function structure."
+    },
+    {
+      "name": "static func != (BNNS.LossReduction, BNNS.LossReduction) -> Bool"
+    },
+    {
+      "name": "static func == (BNNS.LossReduction, BNNS.LossReduction) -> Bool"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "var hashValue: Int"
+    }
+  ],
+  "declaration": "enum LossReduction"
+}

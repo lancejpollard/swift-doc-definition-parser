@@ -1,0 +1,42 @@
+{
+  "path": "/documentation/network/nwethernetchannel/state",
+  "type": "Enumeration",
+  "name": "NWEthernetChannel.State",
+  "desc": "States indicating whether an Ethernet channel is able to send and receive frames.",
+  "items": [
+    {
+      "name": "case setup",
+      "desc": "The channel has been initialized but not started."
+    },
+    {
+      "name": "case waiting(NWError)",
+      "desc": "The channel is waiting for its interface to become available."
+    },
+    {
+      "name": "case preparing",
+      "desc": "The channel is registering with the interface."
+    },
+    {
+      "name": "case ready",
+      "desc": "The channel is able to send and receive Ethernet frames."
+    },
+    {
+      "name": "case failed(NWError)",
+      "desc": "The channel has encountered a fatal error."
+    },
+    {
+      "name": "case cancelled",
+      "desc": "The channel has been canceled."
+    },
+    {
+      "name": "static func != (NWEthernetChannel.State, NWEthernetChannel.State) -> Bool"
+    },
+    {
+      "name": "static func == (NWEthernetChannel.State, NWEthernetChannel.State) -> Bool"
+    }
+  ],
+  "declaration": "enum NWEthernetChannel.State",
+  "conformsTo": [
+    "Equatable"
+  ]
+}

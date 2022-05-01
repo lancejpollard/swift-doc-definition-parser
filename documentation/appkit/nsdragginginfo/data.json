@@ -1,0 +1,88 @@
+{
+  "path": "/documentation/appkit/nsdragginginfo",
+  "type": "Protocol",
+  "name": "NSDraggingInfo",
+  "desc": "A set of methods that supply information about a dragging session.",
+  "items": [
+    {
+      "name": "var draggingPasteboard: NSPasteboard",
+      "desc": "Returns the pasteboard object that holds the data being dragged."
+    },
+    {
+      "name": "var draggingSequenceNumber: Int",
+      "desc": "Returns a number that uniquely identifies the dragging session."
+    },
+    {
+      "name": "var draggingSource: Any?",
+      "desc": "Returns the source, or owner, of the dragged data."
+    },
+    {
+      "name": "var draggingSourceOperationMask: NSDragOperation",
+      "desc": "Information about the dragging operation and the data it contains."
+    },
+    {
+      "name": "var draggingLocation: NSPoint",
+      "desc": "Returns the current location of the mouse pointer in the base coordinate system of the destination object’s window."
+    },
+    {
+      "name": "var draggingDestinationWindow: NSWindow?",
+      "desc": "Returns the destination window for the dragging operation."
+    },
+    {
+      "name": "var numberOfValidItemsForDrop: Int",
+      "desc": "Specifies the number of valid items for a drop operation."
+    },
+    {
+      "name": "var draggedImageLocation: NSPoint",
+      "desc": "Returns the current location of the dragged image’s origin."
+    },
+    {
+      "name": "func slideDraggedImage(to: NSPoint)",
+      "desc": "Slides the image to a specified location."
+    },
+    {
+      "name": "var animatesToDestination: Bool",
+      "desc": "Returns whether the dragging formation animates while the drag is over this destination."
+    },
+    {
+      "name": "var draggingFormation: NSDraggingFormation",
+      "desc": "Returns the dragging formation while the drag is over this destination."
+    },
+    {
+      "name": "func enumerateDraggingItems(options: NSDraggingItemEnumerationOptions, for: NSView?, classes: [AnyClass], searchOptions: [NSPasteboard.ReadingOptionKey : Any], using: (NSDraggingItem, Int, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Enumerates through each dragging item."
+    },
+    {
+      "name": "var springLoadingHighlight: NSSpringLoadingHighlight",
+      "desc": "Highlighting style to be displayed by your app’s user interface during a spring-loading operation."
+    },
+    {
+      "name": "func resetSpringLoading()",
+      "desc": "Resets a spring-loading operation to its initial state."
+    },
+    {
+      "name": "struct NSDragOperation",
+      "desc": "These constants are used by draggingSourceOperationMask."
+    },
+    {
+      "name": "struct NSDraggingItemEnumerationOptions",
+      "desc": "These constants specify the enumerateDraggingItems(options:for:classes:searchOptions:using:) options for the options parameter."
+    },
+    {
+      "name": "enum NSSpringLoadingHighlight",
+      "desc": "These constants indicate a highlighting style to be displayed by your app’s user interface during a spring-loading operation. One of these constant values will be provided by the springLoadingHighlight method."
+    },
+    {
+      "name": "enum NSDraggingFormation",
+      "desc": "These constants control the visual format of multiple items being dragged."
+    },
+    {
+      "name": "enum NSDraggingContext",
+      "desc": "These parameters specify whether a drag terminates within or outside the application."
+    }
+  ],
+  "declaration": "protocol NSDraggingInfo",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

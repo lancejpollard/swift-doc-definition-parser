@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/accelerate/quadrature-smu",
+  "type": "Structure",
+  "name": "Quadrature",
+  "desc": "A structure that approximates the definite integral of a function over a finite interval.",
+  "items": [
+    {
+      "name": "init(integrator: Quadrature.Integrator, absoluteTolerance: Double, relativeTolerance: Double)",
+      "desc": "Initializes and returns a quadrature instance."
+    },
+    {
+      "name": "var absoluteTolerance: Double",
+      "desc": "The requested absolute tolerance on the result."
+    },
+    {
+      "name": "var relativeTolerance: Double",
+      "desc": "The requested relative tolerance on the result."
+    },
+    {
+      "name": "func integrate(over: ClosedRange<Double>, integrand: (Double) -> Double) -> Result<(integralResult: Double, estimatedAbsoluteError: Double), Quadrature.Error>",
+      "desc": "Performs the integration over the supplied scalar function."
+    },
+    {
+      "name": "func integrate(over: ClosedRange<Double>, integrand: (UnsafeBufferPointer<Double>, UnsafeMutableBufferPointer<Double>) -> ()) -> Result<(integralResult: Double, estimatedAbsoluteError: Double), Quadrature.Error>",
+      "desc": "Performs the integration over the supplied vector function."
+    },
+    {
+      "name": "struct Quadrature.QAGPointsPerInterval",
+      "desc": "Constants that specify the number of points per interval for the globally adaptive integrator."
+    },
+    {
+      "name": "enum Quadrature.Error",
+      "desc": "Errors thrown by the Quadrature structure."
+    },
+    {
+      "name": "enum Quadrature.Integrator",
+      "desc": "Constants that define different integrators."
+    }
+  ],
+  "declaration": "struct Quadrature"
+}

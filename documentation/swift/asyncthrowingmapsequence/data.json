@@ -1,0 +1,112 @@
+{
+  "path": "/documentation/swift/asyncthrowingmapsequence",
+  "type": "Generic Structure",
+  "name": "AsyncThrowingMapSequence",
+  "desc": "An asynchronous sequence that maps the given error-throwing closure over the asynchronous sequence’s elements.",
+  "items": [
+    {
+      "name": "typealias AsyncThrowingMapSequence.AsyncIterator",
+      "desc": "The type of iterator that produces elements of the sequence."
+    },
+    {
+      "name": "typealias AsyncThrowingMapSequence.Element",
+      "desc": "The type of element produced by this asynchronous sequence."
+    },
+    {
+      "name": "func allSatisfy((Transformed) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether all elements produced by the asynchronous sequence satisfies the given predicate."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((Transformed) -> ElementOfResult?) -> AsyncThrowingCompactMapSequence<AsyncThrowingMapSequence<Base, Transformed>, ElementOfResult>",
+      "desc": "Creates an asynchronous sequence that maps an error-throwing closure over the base sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((Transformed) -> ElementOfResult?) -> AsyncCompactMapSequence<AsyncThrowingMapSequence<Base, Transformed>, ElementOfResult>",
+      "desc": "Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "func contains(Transformed) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the asynchronous sequence contains the given element."
+    },
+    {
+      "name": "func contains(where: (Transformed) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the asynchronous sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func drop(while: (Transformed) -> Bool) -> AsyncDropWhileSequence<AsyncThrowingMapSequence<Base, Transformed>>",
+      "desc": "Omits elements from the base asynchronous sequence until a given closure returns false, after which it passes through all remaining elements."
+    },
+    {
+      "name": "func dropFirst(Int) -> AsyncDropFirstSequence<AsyncThrowingMapSequence<Base, Transformed>>",
+      "desc": "Omits a specified number of elements from the base asynchronous sequence, then passes through all remaining elements."
+    },
+    {
+      "name": "func filter((Transformed) -> Bool) -> AsyncFilterSequence<AsyncThrowingMapSequence<Base, Transformed>>",
+      "desc": "Creates an asynchronous sequence that contains, in order, the elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func first(where: (Transformed) -> Bool) -> Transformed?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((Transformed) -> SegmentOfResult) -> AsyncThrowingFlatMapSequence<AsyncThrowingMapSequence<Base, Transformed>, SegmentOfResult>",
+      "desc": "Creates an asynchronous sequence that concatenates the results of calling the given error-throwing transformation with each element of this sequence."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((Transformed) -> SegmentOfResult) -> AsyncFlatMapSequence<AsyncThrowingMapSequence<Base, Transformed>, SegmentOfResult>",
+      "desc": "Creates an asynchronous sequence that concatenates the results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func makeAsyncIterator() -> AsyncThrowingMapSequence<Base, Transformed>.Iterator",
+      "desc": "Creates the asynchronous iterator that produces elements of this asynchronous sequence."
+    },
+    {
+      "name": "func map<Transformed>((Transformed) -> Transformed) -> AsyncThrowingMapSequence<AsyncThrowingMapSequence<Base, Transformed>, Transformed>",
+      "desc": "Creates an asynchronous sequence that maps the given error-throwing closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "func map<Transformed>((Transformed) -> Transformed) -> AsyncMapSequence<AsyncThrowingMapSequence<Base, Transformed>, Transformed>",
+      "desc": "Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "func max() -> Transformed?",
+      "desc": "Returns the maximum element in an asynchronous sequence of comparable elements."
+    },
+    {
+      "name": "func max(by: (Transformed, Transformed) -> Bool) -> Transformed?",
+      "desc": "Returns the maximum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func min() -> Transformed?",
+      "desc": "Returns the minimum element in an asynchronous sequence of comparable elements."
+    },
+    {
+      "name": "func min(by: (Transformed, Transformed) -> Bool) -> Transformed?",
+      "desc": "Returns the minimum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func prefix(Int) -> AsyncPrefixSequence<AsyncThrowingMapSequence<Base, Transformed>>",
+      "desc": "Returns an asynchronous sequence, up to the specified maximum length, containing the initial elements of the base asynchronous sequence."
+    },
+    {
+      "name": "func prefix(while: (Transformed) -> Bool) -> AsyncPrefixWhileSequence<AsyncThrowingMapSequence<Base, Transformed>>",
+      "desc": "Returns an asynchronous sequence, containing the initial, consecutive elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, Transformed) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, Transformed) -> Void) -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure, given a mutable initial value."
+    },
+    {
+      "name": "struct AsyncThrowingMapSequence.Iterator",
+      "desc": "The iterator that produces elements of the map sequence."
+    }
+  ],
+  "declaration": "struct AsyncThrowingMapSequence<Base, Transformed> where Base : AsyncSequence",
+  "conformsTo": [
+    "AsyncSequence"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "path": "/documentation/coreimage/cifiltergenerator",
+  "type": "Class",
+  "name": "CIFilterGenerator",
+  "desc": "An object that creates and configures chains of individual image filters.",
+  "items": [
+    {
+      "name": "init?(contentsOf: URL)",
+      "desc": "Initializes a filter generator object with the contents of a filter generator file."
+    },
+    {
+      "name": "func connect(Any, withKey: String?, to: Any, withKey: String)",
+      "desc": "Adds an object to the filter chain."
+    },
+    {
+      "name": "func disconnectObject(Any, withKey: String, to: Any, withKey: String)",
+      "desc": "Removes the connection between two objects in the filter chain."
+    },
+    {
+      "name": "var exportedKeys: [AnyHashable : Any]",
+      "desc": "Returns an array of the exported keys."
+    },
+    {
+      "name": "func exportKey(String, from: Any, withName: String?)",
+      "desc": "Exports an input or output key of an object in the filter chain."
+    },
+    {
+      "name": "func removeExportedKey(String)",
+      "desc": "Removes a key that was previously exported."
+    },
+    {
+      "name": "func setAttributes([AnyHashable : Any], forExportedKey: String)",
+      "desc": "Sets a dictionary of attributes for an exported key."
+    },
+    {
+      "name": "var classAttributes: [AnyHashable : Any]",
+      "desc": "The class attributes associated with the filter."
+    },
+    {
+      "name": "func write(to: URL, atomically: Bool) -> Bool",
+      "desc": "Archives a filter generator object to a filter generator file."
+    },
+    {
+      "name": "func registerFilterName(String)",
+      "desc": "Registers the name associated with a filter chain."
+    },
+    {
+      "name": "func filter() -> CIFilter",
+      "desc": "Creates a filter object based on the filter chain."
+    }
+  ],
+  "declaration": "class CIFilterGenerator : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "CIFilterConstructor",
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

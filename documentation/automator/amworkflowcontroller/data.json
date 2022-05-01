@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/automator/amworkflowcontroller",
+  "type": "Class",
+  "name": "AMWorkflowController",
+  "desc": "An object that lets you manage an Automator workflow in your app.",
+  "items": [
+    {
+      "name": "var workflow: AMWorkflow?",
+      "desc": "The controller's workflow."
+    },
+    {
+      "name": "var workflowView: AMWorkflowView?",
+      "desc": "The controller's workflow view."
+    },
+    {
+      "name": "var delegate: AMWorkflowControllerDelegate?",
+      "desc": "The controller's delegate."
+    },
+    {
+      "name": "protocol AMWorkflowControllerDelegate",
+      "desc": "A set of optional methods that a delegate of a workflow controller implements."
+    },
+    {
+      "name": "func pause(Any)",
+      "desc": "Pauses a workflow that's running."
+    },
+    {
+      "name": "func reset(Any)",
+      "desc": "Stops a workflow, clears any action results, and resets the workflow back to an un-run state."
+    },
+    {
+      "name": "func run(Any)",
+      "desc": "Runs the associated workflow, after first clearing any results stored by its actions during any previous run."
+    },
+    {
+      "name": "func step(Any)",
+      "desc": "In a paused workflow, runs the next action in the workflow and then pauses again."
+    },
+    {
+      "name": "func stop(Any)",
+      "desc": "Stops the associated workflow."
+    },
+    {
+      "name": "var canRun: Bool",
+      "desc": "A Boolean value that indicates whether the controller's workflow is able to run."
+    },
+    {
+      "name": "var isPaused: Bool",
+      "desc": "A Boolean value that indicates whether the controller's workflow is currently paused."
+    },
+    {
+      "name": "var isRunning: Bool",
+      "desc": "A Boolean value that indicates whether the controller's workflow is currently running."
+    }
+  ],
+  "declaration": "class AMWorkflowController : NSController",
+  "inheritsFrom": [
+    "NSController"
+  ]
+}

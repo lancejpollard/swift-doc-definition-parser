@@ -1,0 +1,422 @@
+{
+  "path": "/documentation/carekit/ockstore",
+  "type": "Class",
+  "name": "OCKStore",
+  "desc": "The database where you store all CareKit data.",
+  "items": [
+    {
+      "name": "init(name: String, type: OCKCoreDataStoreType)",
+      "desc": "Creates a new store with a name and store type."
+    },
+    {
+      "name": "enum OCKCoreDataStoreType",
+      "desc": "The types that determine where your app stores its data."
+    },
+    {
+      "name": "let name: String",
+      "desc": "The name of the store."
+    },
+    {
+      "name": "var configuration: OCKStoreConfiguration",
+      "desc": "The variable you change to enable or disable versioning of database entitites."
+    },
+    {
+      "name": "struct OCKStoreConfiguration",
+      "desc": "An object that supplies options, which can be applied to a store."
+    },
+    {
+      "name": "var taskDelegate: OCKTaskStoreDelegate?",
+      "desc": "The object that handles callbacks from a task store when the contents of the task store change."
+    },
+    {
+      "name": "var outcomeDelegate: OCKOutcomeStoreDelegate?",
+      "desc": "The object that handles callbacks from an outcome store when the contents of the outcome store change."
+    },
+    {
+      "name": "var patientDelegate: OCKPatientStoreDelegate?",
+      "desc": "The object that handles callbacks from a patient store when the contents of the patient store change."
+    },
+    {
+      "name": "var carePlanDelegate: OCKCarePlanStoreDelegate?",
+      "desc": "The object that handles callbacks from a care plan store when the contents of the care plan store change."
+    },
+    {
+      "name": "var contactDelegate: OCKContactStoreDelegate?",
+      "desc": "The object that handles callbacks from a contact store when the contents of the contact store change."
+    },
+    {
+      "name": "func shouldHandleCarePlan(OCKAnyCarePlan) -> Bool",
+      "desc": "Returns a Boolean value to indicate whether the store can handle adding, updating, and deleting a specific care plan."
+    },
+    {
+      "name": "func shouldHandleCarePlanQuery(query: OCKAnyCarePlanQuery) -> Bool",
+      "desc": "Returns a Boolean value to indicate whether the store can handle fetching for a certain query."
+    },
+    {
+      "name": "enum OCKStoreError",
+      "desc": "The errors the store emits when there is problem during a transaction."
+    },
+    {
+      "name": "func addTask(OCKTask, callbackQueue: DispatchQueue, completion: ((Result<OCKTask, OCKStoreError>) -> Void)?)",
+      "desc": "Adds a task asynchronously to the store."
+    },
+    {
+      "name": "func addTasks([OCKTask], callbackQueue: DispatchQueue, completion: ((Result<[OCKTask], OCKStoreError>) -> Void)?)",
+      "desc": "Adds an array of tasks asynchronously to the store."
+    },
+    {
+      "name": "func updateTask(OCKTask, callbackQueue: DispatchQueue, completion: ((Result<OCKTask, OCKStoreError>) -> Void)?)",
+      "desc": "Updates a task asynchronously in the store."
+    },
+    {
+      "name": "func updateTasks([OCKTask], callbackQueue: DispatchQueue, completion: ((Result<[OCKTask], OCKStoreError>) -> Void)?)",
+      "desc": "Updates an array of tasks asynchronously in the store."
+    },
+    {
+      "name": "func deleteTask(OCKTask, callbackQueue: DispatchQueue, completion: ((Result<OCKTask, OCKStoreError>) -> Void)?)",
+      "desc": "Deletes a task asynchronously from the store."
+    },
+    {
+      "name": "func deleteTasks([OCKTask], callbackQueue: DispatchQueue, completion: ((Result<[OCKTask], OCKStoreError>) -> Void)?)",
+      "desc": "Deletes an array of tasks asynchronously from the store."
+    },
+    {
+      "name": "func fetchTask(withID: String, callbackQueue: DispatchQueue, completion: (Result<OCKTask, OCKStoreError>) -> Void)",
+      "desc": "Fetches a task asynchronously from the store."
+    },
+    {
+      "name": "func fetchTasks(query: OCKTaskQuery, callbackQueue: DispatchQueue, completion: (Result<[OCKTask], OCKStoreError>) -> Void)",
+      "desc": "Fetches an array of tasks asynchronously from the store."
+    },
+    {
+      "name": "func addAnyTask(OCKAnyTask, callbackQueue: DispatchQueue, completion: OCKResultClosure<OCKAnyTask>?)",
+      "desc": "Adds a task asynchronously to the store."
+    },
+    {
+      "name": "func addAnyTasks([OCKAnyTask], callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyTask]>?)",
+      "desc": "Adds an array of tasks asynchronously to the store."
+    },
+    {
+      "name": "func updateAnyTask(OCKAnyTask, callbackQueue: DispatchQueue, completion: OCKResultClosure<OCKAnyTask>?)",
+      "desc": "Updates a task asynchronously in the store."
+    },
+    {
+      "name": "func updateAnyTasks([OCKAnyTask], callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyTask]>?)",
+      "desc": "Updates an array of tasks asynchronously in the store."
+    },
+    {
+      "name": "func deleteAnyTask(OCKAnyTask, callbackQueue: DispatchQueue, completion: OCKResultClosure<OCKAnyTask>?)",
+      "desc": "Deletes a task asynchronously from the store."
+    },
+    {
+      "name": "func deleteAnyTasks([OCKAnyTask], callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyTask]>?)",
+      "desc": "Deletes an array of tasks asynchronously from the store."
+    },
+    {
+      "name": "func fetchAnyTask(withID: String, callbackQueue: DispatchQueue, completion: OCKResultClosure<OCKAnyTask>)",
+      "desc": "Fetches a task asynchronously from the store."
+    },
+    {
+      "name": "func fetchAnyTasks(query: OCKAnyTaskQuery, callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyTask]>)",
+      "desc": "Fetches an array of tasks asynchronously from the store."
+    },
+    {
+      "name": "func fetchEvent(forTask: OCKTask, occurrence: Int, callbackQueue: DispatchQueue, completion: (Result<OCKEvent<OCKTask, OCKOutcome>, OCKStoreError>) -> Void)",
+      "desc": "Fetches a single occurrence of a specific task asynchronously from the store."
+    },
+    {
+      "name": "func fetchEvents(taskID: String, query: OCKEventQuery, callbackQueue: DispatchQueue, completion: (Result<[OCKEvent<OCKTask, OCKOutcome>], OCKStoreError>) -> Void)",
+      "desc": "Fetches all occurrences of a specific task asynchronously from the store."
+    },
+    {
+      "name": "func fetchAdherence(query: OCKAdherenceQuery, callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAdherence]>)",
+      "desc": "Fetches all the events which match a query from a store, and calculates the percent of tasks completed for each day."
+    },
+    {
+      "name": "func fetchInsights(query: OCKInsightQuery, callbackQueue: DispatchQueue, completion: OCKResultClosure<[Double]>)",
+      "desc": "Fetches all the events which match a query from a store, and calculates a metric for a specific task."
+    },
+    {
+      "name": "func fetchAnyEvent(forTask: OCKAnyTask, occurrence: Int, callbackQueue: DispatchQueue, completion: OCKResultClosure<OCKAnyEvent>)",
+      "desc": "Fetches a single occurrence of a specific task asynchronously from the store."
+    },
+    {
+      "name": "func fetchAnyEvents(taskID: String, query: OCKEventQuery, callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyEvent]>)",
+      "desc": "Fetches all occurrences of a specific task asynchronously from the store."
+    },
+    {
+      "name": "func addOutcome(OCKOutcome, callbackQueue: DispatchQueue, completion: ((Result<OCKOutcome, OCKStoreError>) -> Void)?)",
+      "desc": "Adds an outcome asynchronously to the store."
+    },
+    {
+      "name": "func addOutcomes([OCKOutcome], callbackQueue: DispatchQueue, completion: ((Result<[OCKOutcome], OCKStoreError>) -> Void)?)",
+      "desc": "Adds an array of outcomes asynchronously to the store."
+    },
+    {
+      "name": "func updateOutcome(OCKOutcome, callbackQueue: DispatchQueue, completion: ((Result<OCKOutcome, OCKStoreError>) -> Void)?)",
+      "desc": "Updates an outcome asynchronously in the store."
+    },
+    {
+      "name": "func updateOutcomes([OCKOutcome], callbackQueue: DispatchQueue, completion: ((Result<[OCKOutcome], OCKStoreError>) -> Void)?)",
+      "desc": "Updates an array of outcomes asynchronously in the store."
+    },
+    {
+      "name": "func deleteOutcome(OCKOutcome, callbackQueue: DispatchQueue, completion: ((Result<OCKOutcome, OCKStoreError>) -> Void)?)",
+      "desc": "Deletes an outcome asynchronously from the store."
+    },
+    {
+      "name": "func deleteOutcomes([OCKOutcome], callbackQueue: DispatchQueue, completion: ((Result<[OCKOutcome], OCKStoreError>) -> Void)?)",
+      "desc": "Deletes an array of outcomes asynchronously from the store."
+    },
+    {
+      "name": "func fetchOutcome(query: OCKOutcomeQuery, callbackQueue: DispatchQueue, completion: (Result<OCKOutcome, OCKStoreError>) -> Void)",
+      "desc": "Fetches an outcome asynchronously from the store."
+    },
+    {
+      "name": "func fetchOutcomes(query: OCKOutcomeQuery, callbackQueue: DispatchQueue, completion: (Result<[OCKOutcome], OCKStoreError>) -> Void)",
+      "desc": "Fetches an array of outcomes asynchronously from the store."
+    },
+    {
+      "name": "func addAnyOutcome(OCKAnyOutcome, callbackQueue: DispatchQueue, completion: OCKResultClosure<OCKAnyOutcome>?)",
+      "desc": "Adds an outcome asynchronously to the store."
+    },
+    {
+      "name": "func addAnyOutcomes([OCKAnyOutcome], callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyOutcome]>?)",
+      "desc": "Adds an array of outcomes asynchronously to the store."
+    },
+    {
+      "name": "func updateAnyOutcome(OCKAnyOutcome, callbackQueue: DispatchQueue, completion: OCKResultClosure<OCKAnyOutcome>?)",
+      "desc": "Updates an outcome asynchronously in the store."
+    },
+    {
+      "name": "func updateAnyOutcomes([OCKAnyOutcome], callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyOutcome]>?)",
+      "desc": "Updates an array of outcomes asynchronously in the store."
+    },
+    {
+      "name": "func deleteAnyOutcome(OCKAnyOutcome, callbackQueue: DispatchQueue, completion: OCKResultClosure<OCKAnyOutcome>?)",
+      "desc": "Deletes an outcome asynchronously from the store."
+    },
+    {
+      "name": "func deleteAnyOutcomes([OCKAnyOutcome], callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyOutcome]>?)",
+      "desc": "Deletes an array of outcomes asynchronously from the store."
+    },
+    {
+      "name": "func fetchAnyOutcome(query: OCKAnyOutcomeQuery, callbackQueue: DispatchQueue, completion: OCKResultClosure<OCKAnyOutcome>)",
+      "desc": "Fetches an outcome asynchronously from the store."
+    },
+    {
+      "name": "func fetchAnyOutcomes(query: OCKAnyOutcomeQuery, callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyOutcome]>)",
+      "desc": "Fetches an array of outcomes asynchronously from the store."
+    },
+    {
+      "name": "func addPatient(OCKPatient, callbackQueue: DispatchQueue, completion: ((Result<OCKPatient, OCKStoreError>) -> Void)?)",
+      "desc": "Adds a patient asynchronously to the store."
+    },
+    {
+      "name": "func addPatients([OCKPatient], callbackQueue: DispatchQueue, completion: ((Result<[OCKPatient], OCKStoreError>) -> Void)?)",
+      "desc": "Adds an array of patients asynchronously to the store."
+    },
+    {
+      "name": "func updatePatient(OCKPatient, callbackQueue: DispatchQueue, completion: ((Result<OCKPatient, OCKStoreError>) -> Void)?)",
+      "desc": "Updates a patient asynchronously in the store."
+    },
+    {
+      "name": "func updatePatients([OCKPatient], callbackQueue: DispatchQueue, completion: ((Result<[OCKPatient], OCKStoreError>) -> Void)?)",
+      "desc": "Updates an array of patients asynchronously in the store."
+    },
+    {
+      "name": "func deletePatient(OCKPatient, callbackQueue: DispatchQueue, completion: ((Result<OCKPatient, OCKStoreError>) -> Void)?)",
+      "desc": "Deletes a patient asynchronously from the store."
+    },
+    {
+      "name": "func deletePatients([OCKPatient], callbackQueue: DispatchQueue, completion: ((Result<[OCKPatient], OCKStoreError>) -> Void)?)",
+      "desc": "Deletes an array of patients asynchronously from the store."
+    },
+    {
+      "name": "func fetchPatient(withID: String, callbackQueue: DispatchQueue, completion: (Result<OCKPatient, OCKStoreError>) -> Void)",
+      "desc": "Fetches a patient asynchronously from the store."
+    },
+    {
+      "name": "func fetchPatients(query: OCKPatientQuery, callbackQueue: DispatchQueue, completion: (Result<[OCKPatient], OCKStoreError>) -> Void)",
+      "desc": "Fetches an array of patients asynchronously from the store."
+    },
+    {
+      "name": "func addAnyPatient(OCKAnyPatient, callbackQueue: DispatchQueue, completion: OCKResultClosure<OCKAnyPatient>?)",
+      "desc": "Adds a patient asynchronously to the store."
+    },
+    {
+      "name": "func addAnyPatients([OCKAnyPatient], callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyPatient]>?)",
+      "desc": "Adds an array of patients asynchronously to the store."
+    },
+    {
+      "name": "func updateAnyPatient(OCKAnyPatient, callbackQueue: DispatchQueue, completion: OCKResultClosure<OCKAnyPatient>?)",
+      "desc": "Updates a patient asynchronously in the store."
+    },
+    {
+      "name": "func updateAnyPatients([OCKAnyPatient], callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyPatient]>?)",
+      "desc": "Updates an array of patients asynchronously in the store."
+    },
+    {
+      "name": "func deleteAnyPatient(OCKAnyPatient, callbackQueue: DispatchQueue, completion: OCKResultClosure<OCKAnyPatient>?)",
+      "desc": "Deletes a patient asynchronously from the store."
+    },
+    {
+      "name": "func deleteAnyPatients([OCKAnyPatient], callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyPatient]>?)",
+      "desc": "Deletes an array of patients asynchronously from the store."
+    },
+    {
+      "name": "func fetchAnyPatient(withID: String, callbackQueue: DispatchQueue, completion: OCKResultClosure<OCKAnyPatient>)",
+      "desc": "Fetches a patient asynchronously from the store."
+    },
+    {
+      "name": "func fetchAnyPatients(query: OCKAnyPatientQuery, callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyPatient]>)",
+      "desc": "Fetches an array of patients asynchronously from the store."
+    },
+    {
+      "name": "func addCarePlan(OCKCarePlan, callbackQueue: DispatchQueue, completion: ((Result<OCKCarePlan, OCKStoreError>) -> Void)?)",
+      "desc": "Adds a care plan asynchronously to the store."
+    },
+    {
+      "name": "func addCarePlans([OCKCarePlan], callbackQueue: DispatchQueue, completion: ((Result<[OCKCarePlan], OCKStoreError>) -> Void)?)",
+      "desc": "Adds an array of care plans asynchronously to the store."
+    },
+    {
+      "name": "func updateCarePlan(OCKCarePlan, callbackQueue: DispatchQueue, completion: ((Result<OCKCarePlan, OCKStoreError>) -> Void)?)",
+      "desc": "Updates a care plan asynchronously in the store."
+    },
+    {
+      "name": "func updateCarePlans([OCKCarePlan], callbackQueue: DispatchQueue, completion: ((Result<[OCKCarePlan], OCKStoreError>) -> Void)?)",
+      "desc": "Updates an array of care plans asynchronously in the store."
+    },
+    {
+      "name": "func deleteCarePlan(OCKCarePlan, callbackQueue: DispatchQueue, completion: ((Result<OCKCarePlan, OCKStoreError>) -> Void)?)",
+      "desc": "Deletes a care plan asynchronously from the store."
+    },
+    {
+      "name": "func deleteCarePlans([OCKCarePlan], callbackQueue: DispatchQueue, completion: ((Result<[OCKCarePlan], OCKStoreError>) -> Void)?)",
+      "desc": "Deletes an array of care plans asynchronously from the store."
+    },
+    {
+      "name": "func fetchCarePlan(withID: String, callbackQueue: DispatchQueue, completion: (Result<OCKCarePlan, OCKStoreError>) -> Void)",
+      "desc": "Fetches a care plan asynchronously from the store."
+    },
+    {
+      "name": "func fetchCarePlans(query: OCKCarePlanQuery, callbackQueue: DispatchQueue, completion: (Result<[OCKCarePlan], OCKStoreError>) -> Void)",
+      "desc": "Fetches an array of care plans asynchronously from the store."
+    },
+    {
+      "name": "func addAnyCarePlan(OCKAnyCarePlan, callbackQueue: DispatchQueue, completion: OCKResultClosure<OCKAnyCarePlan>?)",
+      "desc": "Adds a care plan asynchronously to the store."
+    },
+    {
+      "name": "func addAnyCarePlans([OCKAnyCarePlan], callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyCarePlan]>?)",
+      "desc": "Adds an array of care plans asynchronously to the store."
+    },
+    {
+      "name": "func updateAnyCarePlan(OCKAnyCarePlan, callbackQueue: DispatchQueue, completion: OCKResultClosure<OCKAnyCarePlan>?)",
+      "desc": "Updates a care plan asynchronously in the store."
+    },
+    {
+      "name": "func updateAnyCarePlans([OCKAnyCarePlan], callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyCarePlan]>?)",
+      "desc": "Updates an array of care plans asynchronously in the store."
+    },
+    {
+      "name": "func deleteAnyCarePlan(OCKAnyCarePlan, callbackQueue: DispatchQueue, completion: OCKResultClosure<OCKAnyCarePlan>?)",
+      "desc": "Deletes a care plan asynchronously from the store."
+    },
+    {
+      "name": "func deleteAnyCarePlans([OCKAnyCarePlan], callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyCarePlan]>?)",
+      "desc": "Deletes an array of care plans asynchronously from the store."
+    },
+    {
+      "name": "func fetchAnyCarePlan(withID: String, callbackQueue: DispatchQueue, completion: OCKResultClosure<OCKAnyCarePlan>)",
+      "desc": "Fetches a care plan asynchronously from the store."
+    },
+    {
+      "name": "func fetchAnyCarePlans(query: OCKAnyCarePlanQuery, callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyCarePlan]>)",
+      "desc": "Fetches an array of care plans asynchronously from the store."
+    },
+    {
+      "name": "func addContact(OCKContact, callbackQueue: DispatchQueue, completion: ((Result<OCKContact, OCKStoreError>) -> Void)?)",
+      "desc": "Adds a contact asynchronously to the store."
+    },
+    {
+      "name": "func addContacts([OCKContact], callbackQueue: DispatchQueue, completion: ((Result<[OCKContact], OCKStoreError>) -> Void)?)",
+      "desc": "Adds an array of contacts asynchronously to the store."
+    },
+    {
+      "name": "func updateContact(OCKContact, callbackQueue: DispatchQueue, completion: ((Result<OCKContact, OCKStoreError>) -> Void)?)",
+      "desc": "Updates a contact asynchronously in the store."
+    },
+    {
+      "name": "func updateContacts([OCKContact], callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKContact]>?)",
+      "desc": "Updates an array of contacts asynchronously in the store."
+    },
+    {
+      "name": "func deleteContact(OCKContact, callbackQueue: DispatchQueue, completion: ((Result<OCKContact, OCKStoreError>) -> Void)?)",
+      "desc": "Deletes a contact asynchronously from the store."
+    },
+    {
+      "name": "func deleteContacts([OCKContact], callbackQueue: DispatchQueue, completion: ((Result<[OCKContact], OCKStoreError>) -> Void)?)",
+      "desc": "Deletes an array of contacts asynchronously from the store."
+    },
+    {
+      "name": "func fetchContact(withID: String, callbackQueue: DispatchQueue, completion: (Result<OCKContact, OCKStoreError>) -> Void)",
+      "desc": "Fetches a contact asynchronously from the store."
+    },
+    {
+      "name": "func fetchContacts(query: OCKContactQuery, callbackQueue: DispatchQueue, completion: (Result<[OCKContact], OCKStoreError>) -> Void)",
+      "desc": "Fetches an array of contact asynchronously from the store."
+    },
+    {
+      "name": "func addAnyContact(OCKAnyContact, callbackQueue: DispatchQueue, completion: OCKResultClosure<OCKAnyContact>?)",
+      "desc": "Adds a contact asynchronously to the store."
+    },
+    {
+      "name": "func addAnyContacts([OCKAnyContact], callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyContact]>?)",
+      "desc": "Adds an array of contacts asynchronously to the store."
+    },
+    {
+      "name": "func updateAnyContact(OCKAnyContact, callbackQueue: DispatchQueue, completion: OCKResultClosure<OCKAnyContact>?)",
+      "desc": "Updates a contact asynchronously in the store."
+    },
+    {
+      "name": "func updateAnyContacts([OCKAnyContact], callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyContact]>?)",
+      "desc": "Updates an array of contacts asynchronously in the store."
+    },
+    {
+      "name": "func deleteAnyContact(OCKAnyContact, callbackQueue: DispatchQueue, completion: OCKResultClosure<OCKAnyContact>?)",
+      "desc": "Deletes a contact asynchronously from the store."
+    },
+    {
+      "name": "func deleteAnyContacts([OCKAnyContact], callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyContact]>?)",
+      "desc": "Deletes an array of contacts asynchronously from the store."
+    },
+    {
+      "name": "func fetchAnyContact(withID: String, callbackQueue: DispatchQueue, completion: OCKResultClosure<OCKAnyContact>)",
+      "desc": "Fetches a contact asynchronously from the store."
+    },
+    {
+      "name": "func fetchAnyContacts(query: OCKAnyContactQuery, callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyContact]>)",
+      "desc": "Fetches an array of contact asynchronously from the store."
+    },
+    {
+      "name": "typealias OCKStore.Task"
+    },
+    {
+      "name": "static func != (OCKStore, OCKStore) -> Bool"
+    },
+    {
+      "name": "static func == (OCKStore, OCKStore) -> Bool",
+      "desc": "Two instances of `OCKStore` are considered to be equal if they have the same name and store type."
+    }
+  ],
+  "declaration": "class OCKStore : OCKStoreProtocol, OCKCoreDataStoreProtocol, Equatable",
+  "conformsTo": [
+    "Equatable",
+    "OCKCarePlanStore",
+    "OCKContactStore",
+    "OCKEventStore",
+    "OCKPatientStore"
+  ]
+}

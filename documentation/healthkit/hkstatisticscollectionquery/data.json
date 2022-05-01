@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/healthkit/hkstatisticscollectionquery",
+  "type": "Class",
+  "name": "HKStatisticsCollectionQuery",
+  "desc": "A query that performs multiple statistics queries over a series of fixed-length time intervals.",
+  "items": [
+    {
+      "name": "init(quantityType: HKQuantityType, quantitySamplePredicate: NSPredicate?, options: HKStatisticsOptions, anchorDate: Date, intervalComponents: DateComponents)",
+      "desc": "Initializes a statistics collection query to perform the specified calculations over a set of time intervals."
+    },
+    {
+      "name": "var initialResultsHandler: ((HKStatisticsCollectionQuery, HKStatisticsCollection?, Error?) -> Void)?",
+      "desc": "The results handler for the query’s initial results."
+    },
+    {
+      "name": "var statisticsUpdateHandler: ((HKStatisticsCollectionQuery, HKStatistics?, HKStatisticsCollection?, Error?) -> Void)?",
+      "desc": "The results handler for monitoring updates to the HealthKit store."
+    },
+    {
+      "name": "var anchorDate: Date",
+      "desc": "The anchor date for the collection’s time intervals."
+    },
+    {
+      "name": "var intervalComponents: DateComponents",
+      "desc": "The date components that define the time interval for each statistics object in the collection."
+    },
+    {
+      "name": "var options: HKStatisticsOptions",
+      "desc": "A list of options that define the type of statistical calculations performed and the way in which data from multiple sources are merged."
+    }
+  ],
+  "declaration": "class HKStatisticsCollectionQuery : HKQuery",
+  "inheritsFrom": [
+    "HKQuery"
+  ]
+}

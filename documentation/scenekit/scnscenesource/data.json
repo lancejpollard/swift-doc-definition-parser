@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/scenekit/scnscenesource",
+  "type": "Class",
+  "name": "SCNSceneSource",
+  "desc": "An object that manages the data-reading tasks associated with loading scene contents from a file or data.",
+  "items": [
+    {
+      "name": "init?(url: URL, options: [SCNSceneSource.LoadingOption : Any]?)",
+      "desc": "Initializes a scene source for reading the scene graph from a specified file."
+    },
+    {
+      "name": "init?(data: Data, options: [SCNSceneSource.LoadingOption : Any]?)",
+      "desc": "Initializes a scene source for reading the scene graph contained in an NSData object."
+    },
+    {
+      "name": "func scene(options: [SCNSceneSource.LoadingOption : Any]?, statusHandler: SCNSceneSourceStatusHandler?) -> SCNScene?",
+      "desc": "Loads the entire scene graph from the scene source and calls the specified block to provide progress information."
+    },
+    {
+      "name": "func scene(options: [SCNSceneSource.LoadingOption : Any]?) -> SCNScene",
+      "desc": "Instantiates a scene from the scene source with the specified options."
+    },
+    {
+      "name": "func identifiersOfEntries(withClass: AnyClass) -> [String]",
+      "desc": "Returns the identifiers for all objects in the scene source of the specified class."
+    },
+    {
+      "name": "func entryWithIdentifier<T>(String, withClass: T.Type) -> T?",
+      "desc": "Loads and returns a specific object in the scene source."
+    },
+    {
+      "name": "func entries(passingTest: (Any, String, UnsafeMutablePointer<ObjCBool>) -> Bool) -> [Any]",
+      "desc": "Loads and returns all objects in the scene source that pass the test in a given block."
+    },
+    {
+      "name": "var url: URL?",
+      "desc": "The URL identifying the file from which the scene source was created."
+    },
+    {
+      "name": "var data: Data?",
+      "desc": "The data object from which the scene source loads scene content."
+    },
+    {
+      "name": "func property(forKey: String) -> Any?",
+      "desc": "Returns metadata about the scene."
+    },
+    {
+      "name": "struct SCNSceneSource.LoadingOption",
+      "desc": "Options for creating scene sources and loading the scenes they contain."
+    },
+    {
+      "name": "typealias SCNSceneSourceStatusHandler",
+      "desc": "The signature for the block that SceneKit calls periodically to report progress while loading a scene."
+    },
+    {
+      "name": "enum SCNSceneSourceStatus",
+      "desc": "Constants identifying phases of SceneKit’s scene loading process, used in a SCNSceneSourceStatusHandler block."
+    }
+  ],
+  "declaration": "class SCNSceneSource : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/combine/publishers/first",
+  "type": "Structure",
+  "name": "Publishers.First",
+  "desc": "A publisher that publishes the first element of a stream, then finishes.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream)",
+      "desc": "Creates a publisher that publishes the first element of a stream, then finishes."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    },
+    {
+      "name": "static func == (Publishers.First<Upstream>, Publishers.First<Upstream>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two first publishers have equal upstream publishers."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    }
+  ],
+  "declaration": "struct First<Upstream> where Upstream : Publisher",
+  "conformsTo": [
+    "Equatable",
+    "Publisher"
+  ]
+}

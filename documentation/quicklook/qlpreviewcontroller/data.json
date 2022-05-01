@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/quicklook/qlpreviewcontroller",
+  "type": "Class",
+  "name": "QLPreviewController",
+  "desc": "A specialized view controller for previewing an item.",
+  "items": [
+    {
+      "name": "var dataSource: QLPreviewControllerDataSource?",
+      "desc": "The preview controller’s data source."
+    },
+    {
+      "name": "protocol QLPreviewControllerDataSource",
+      "desc": "The data source for a preview controller must adopt this protocol to provide preview items to the controller."
+    },
+    {
+      "name": "var delegate: QLPreviewControllerDelegate?",
+      "desc": "The preview controller’s delegate object."
+    },
+    {
+      "name": "protocol QLPreviewControllerDelegate",
+      "desc": "The delegate of a preview controller must adopt this protocol."
+    },
+    {
+      "name": "class func canPreview(QLPreviewItem) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the preview controller can display an item."
+    },
+    {
+      "name": "var currentPreviewItem: QLPreviewItem?",
+      "desc": "The item currently displayed in the Quick Look preview controller."
+    },
+    {
+      "name": "var currentPreviewItemIndex: Int",
+      "desc": "The index within the preview item navigation list of the item currently displayed in the Quick Look preview controller."
+    },
+    {
+      "name": "func refreshCurrentPreviewItem()",
+      "desc": "Asks the Quick Look preview controller to recompute the display of the current preview item."
+    },
+    {
+      "name": "func reloadData()",
+      "desc": "Asks the preview controller to reload its data from its data source."
+    }
+  ],
+  "declaration": "class QLPreviewController : UIViewController",
+  "inheritsFrom": [
+    "UIViewController"
+  ]
+}

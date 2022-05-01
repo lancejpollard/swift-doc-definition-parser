@@ -1,0 +1,43 @@
+{
+  "path": "/documentation/gamecontroller/gcmouse",
+  "type": "Class",
+  "name": "GCMouse",
+  "desc": "An object that represents a physical mouse connected to a device.",
+  "items": [
+    {
+      "name": "class func mice() -> [GCMouse]",
+      "desc": "Returns any mice that the user connects to the device."
+    },
+    {
+      "name": "static let GCMouseDidConnect: NSNotification.Name",
+      "desc": "A notification that posts after a mouse connects to the device."
+    },
+    {
+      "name": "static let GCMouseDidDisconnect: NSNotification.Name",
+      "desc": "A notification that posts after a mouse disconnects from the device."
+    },
+    {
+      "name": "class var current: GCMouse?",
+      "desc": "The most recent mouse that the user connects."
+    },
+    {
+      "name": "static let GCMouseDidBecomeCurrent: NSNotification.Name",
+      "desc": "A notification that posts when a mouse becomes the most recent mouse that the user connects."
+    },
+    {
+      "name": "static let GCMouseDidStopBeingCurrent: NSNotification.Name",
+      "desc": "A notification that posts when a mouse stops being the most recent mouse that the user connects."
+    },
+    {
+      "name": "var mouseInput: GCMouseInput?",
+      "desc": "The controller profile for the mouse device."
+    }
+  ],
+  "declaration": "class GCMouse : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "GCDevice"
+  ]
+}

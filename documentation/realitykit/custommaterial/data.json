@@ -1,0 +1,176 @@
+{
+  "path": "/documentation/realitykit/custommaterial",
+  "type": "Structure",
+  "name": "CustomMaterial",
+  "desc": "A material that works with custom Metal shader functions.",
+  "items": [
+    {
+      "name": "init(from: Material, geometryModifier: CustomMaterial.GeometryModifier)",
+      "desc": "Creates a custom material from an existing material and a geometry modifier."
+    },
+    {
+      "name": "init(from: Material, surfaceShader: CustomMaterial.SurfaceShader, geometryModifier: CustomMaterial.GeometryModifier?)",
+      "desc": "Creates a custom material from an existing material, surface shader, and geometry modifier."
+    },
+    {
+      "name": "init(surfaceShader: CustomMaterial.SurfaceShader, geometryModifier: CustomMaterial.GeometryModifier?, lightingModel: CustomMaterial.LightingModel)",
+      "desc": "Creates a custom material from a lighting model, surface shader, and geometry modifier."
+    },
+    {
+      "name": "var lightingModel: CustomMaterial.LightingModel",
+      "desc": "The lighting model that the material uses."
+    },
+    {
+      "name": "enum CustomMaterial.LightingModel",
+      "desc": "An object that defines how the framework renders a custom material."
+    },
+    {
+      "name": "struct CustomMaterial.SurfaceShader",
+      "desc": "The custom material’s surface shader function."
+    },
+    {
+      "name": "struct CustomMaterial.GeometryModifier",
+      "desc": "The custom material’s optional shader function that can manipulate an entity’s vertex data."
+    },
+    {
+      "name": "var baseColor: CustomMaterial.BaseColor",
+      "desc": "The color of an entity unmodified by lighting."
+    },
+    {
+      "name": "struct CustomMaterial.BaseColor",
+      "desc": "An object that defines an entity’s base color."
+    },
+    {
+      "name": "var roughness: CustomMaterial.Roughness",
+      "desc": "The amount the surface of the 3D object scatters reflected light."
+    },
+    {
+      "name": "struct CustomMaterial.Roughness",
+      "desc": "An object that defines how the surface of an entity scatters the light it reflects."
+    },
+    {
+      "name": "var metallic: CustomMaterial.Metallic",
+      "desc": "The reflectiveness of an entity."
+    },
+    {
+      "name": "struct CustomMaterial.Metallic",
+      "desc": "An object that defines an entity’s reflectiveness."
+    },
+    {
+      "name": "var custom: CustomMaterial.Custom",
+      "desc": "User-defined properties for the material’s shader functions."
+    },
+    {
+      "name": "struct CustomMaterial.Custom",
+      "desc": "An object that defines the custom properties for the material."
+    },
+    {
+      "name": "struct CustomMaterial.CustomMaterialTexture",
+      "desc": "A texture object that you use to create custom materials."
+    },
+    {
+      "name": "var normal: CustomMaterial.Normal",
+      "desc": "A texture map that stores fine surface details for the entity."
+    },
+    {
+      "name": "struct CustomMaterial.Normal",
+      "desc": "An object that stores fine surface details for an entity in an image texture."
+    },
+    {
+      "name": "var emissiveColor: CustomMaterial.EmissiveColor",
+      "desc": "The color of light this material emits."
+    },
+    {
+      "name": "struct CustomMaterial.EmissiveColor",
+      "desc": "An object that defines the color of the light an entity emits."
+    },
+    {
+      "name": "var opacityThreshold: Float?",
+      "desc": "The minimum opacity value to treat as fully opaque."
+    },
+    {
+      "name": "var blending: CustomMaterial.Blending",
+      "desc": "The transparency of an entity."
+    },
+    {
+      "name": "enum CustomMaterial.Blending",
+      "desc": "An object that specifies the transparency of an entity."
+    },
+    {
+      "name": "struct CustomMaterial.Opacity",
+      "desc": "An object that defines the transparency options for a custom material."
+    },
+    {
+      "name": "var ambientOcclusion: CustomMaterial.AmbientOcclusion",
+      "desc": "The ambient light exposure for a material."
+    },
+    {
+      "name": "struct CustomMaterial.AmbientOcclusion",
+      "desc": "An object that defines an entity’s exposure to ambient light."
+    },
+    {
+      "name": "var specular: CustomMaterial.Specular",
+      "desc": "The bright highlights to apply to the entity."
+    },
+    {
+      "name": "struct CustomMaterial.Specular",
+      "desc": "An object that defines the specular highlights of an entity."
+    },
+    {
+      "name": "var clearcoat: CustomMaterial.Clearcoat",
+      "desc": "The transparent highlights that simulate a clear, shiny coating on an entity."
+    },
+    {
+      "name": "struct CustomMaterial.Clearcoat",
+      "desc": "An object that defines the intensity of an entity’s clear, shiny coating."
+    },
+    {
+      "name": "var clearcoatRoughness: CustomMaterial.ClearcoatRoughness",
+      "desc": "The degree to which an entity’s clear, shiny coating scatters light to create soft highlights."
+    },
+    {
+      "name": "struct CustomMaterial.ClearcoatRoughness",
+      "desc": "An object that defines the degree to which an entity’s clear, shiny coating scatters light to create soft highlights."
+    },
+    {
+      "name": "var textureCoordinateTransform: CustomMaterial.TextureCoordinateTransform",
+      "desc": "A two-dimensional transformation RealityKit applies to the entity’s primary texture coordinates."
+    },
+    {
+      "name": "var secondaryTextureCoordinateTransform: CustomMaterial.TextureCoordinateTransform",
+      "desc": "A two-dimensional transformation RealityKit applies to the entity’s secondary texture coordinates."
+    },
+    {
+      "name": "struct MaterialParameterTypes.TextureCoordinateTransform",
+      "desc": "An object that defines a transformation the framework applies to a material’s UV-mapped textures."
+    },
+    {
+      "name": "typealias CustomMaterial.TextureCoordinateTransform",
+      "desc": "The object type that custom material use to hold UV texture coordinates."
+    },
+    {
+      "name": "var faceCulling: CustomMaterial.FaceCulling",
+      "desc": "A process in which the system specifies polygons to remove before rendering a scene."
+    },
+    {
+      "name": "enum MaterialParameterTypes.FaceCulling",
+      "desc": "An object that defines how the system removes polygons before rendering a scene."
+    },
+    {
+      "name": "typealias CustomMaterial.FaceCulling",
+      "desc": "The type of object used to control the removal of polygons that aren’t visible to the user."
+    },
+    {
+      "name": "typealias CustomMaterial.Parameters",
+      "desc": "The parameter type that custom materials uses for properties the framework passes to shader functions."
+    },
+    {
+      "name": "typealias CustomMaterial.Texture",
+      "desc": "The object type that custom materials use to hold texture properties."
+    }
+  ],
+  "declaration": "struct CustomMaterial",
+  "conformsTo": [
+    "Material"
+  ]
+}

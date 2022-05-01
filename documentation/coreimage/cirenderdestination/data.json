@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/coreimage/cirenderdestination",
+  "type": "Class",
+  "name": "CIRenderDestination",
+  "desc": "A specification for configuring all attributes of a render task's destination and issuing asynchronous render tasks.",
+  "items": [
+    {
+      "name": "init(pixelBuffer: CVPixelBuffer)",
+      "desc": "Creates a render destination based on a Core Video pixel buffer."
+    },
+    {
+      "name": "init(ioSurface: IOSurface)",
+      "desc": "Creates a render destination based on an IOSurface object."
+    },
+    {
+      "name": "init(mtlTexture: MTLTexture, commandBuffer: MTLCommandBuffer?)",
+      "desc": "Creates a render destination based on a Metal texture."
+    },
+    {
+      "name": "init(width: Int, height: Int, pixelFormat: MTLPixelFormat, commandBuffer: MTLCommandBuffer?, mtlTextureProvider: (() -> MTLTexture)?)",
+      "desc": "Creates a render destination based on a Metal texture with specified pixel format."
+    },
+    {
+      "name": "init(glTexture: UInt32, target: UInt32, width: Int, height: Int)",
+      "desc": "Creates a render destination based on an OpenGL texture."
+    },
+    {
+      "name": "init(bitmapData: UnsafeMutableRawPointer, width: Int, height: Int, bytesPerRow: Int, format: CIFormat)",
+      "desc": "Creates a render destination based on a client-managed buffer."
+    },
+    {
+      "name": "var alphaMode: CIRenderDestinationAlphaMode",
+      "desc": "The render destination's representation of alpha (transparency) values."
+    },
+    {
+      "name": "enum CIRenderDestinationAlphaMode",
+      "desc": "Different ways of representing alpha."
+    },
+    {
+      "name": "var blendKernel: CIBlendKernel?",
+      "desc": "The destination's blend kernel."
+    },
+    {
+      "name": "var blendsInDestinationColorSpace: Bool",
+      "desc": "Indicator of whether to blend in the destination's color space."
+    },
+    {
+      "name": "var colorSpace: CGColorSpace?",
+      "desc": "The destination's color space."
+    },
+    {
+      "name": "var width: Int",
+      "desc": "The render destination's row width."
+    },
+    {
+      "name": "var height: Int",
+      "desc": "The render destination's buffer height."
+    },
+    {
+      "name": "var isClamped: Bool",
+      "desc": "Indicator of whether or not the destination clamps."
+    },
+    {
+      "name": "var isDithered: Bool",
+      "desc": "Indicator of whether or not the destination dithers."
+    },
+    {
+      "name": "var isFlipped: Bool",
+      "desc": "Indicator of whether the destination is flipped."
+    }
+  ],
+  "declaration": "class CIRenderDestination : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

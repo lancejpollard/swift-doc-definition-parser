@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/combine/publishers/drop",
+  "type": "Structure",
+  "name": "Publishers.Drop",
+  "desc": "A publisher that omits a specified number of elements before republishing later elements.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, count: Int)",
+      "desc": "Creates a publisher that omits a specified number of elements before republishing later elements."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    },
+    {
+      "name": "let count: Int",
+      "desc": "The number of elements to drop."
+    },
+    {
+      "name": "static func == (Publishers.Drop<Upstream>, Publishers.Drop<Upstream>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two publishers are equivalent."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    }
+  ],
+  "declaration": "struct Drop<Upstream> where Upstream : Publisher",
+  "conformsTo": [
+    "Equatable",
+    "Publisher"
+  ]
+}

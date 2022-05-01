@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/authenticationservices/asauthorizationcontroller",
+  "type": "Class",
+  "name": "ASAuthorizationController",
+  "desc": "A controller that manages authorization requests created by a provider.",
+  "items": [
+    {
+      "name": "init(authorizationRequests: [ASAuthorizationRequest])",
+      "desc": "Creates a controller from a collection of authorization requests."
+    },
+    {
+      "name": "class ASAuthorizationRequest",
+      "desc": "A base class for different kinds of authorization requests."
+    },
+    {
+      "name": "var authorizationRequests: [ASAuthorizationRequest]",
+      "desc": "The authorization requests that the controller manages."
+    },
+    {
+      "name": "var customAuthorizationMethods: [ASAuthorizationCustomMethod]",
+      "desc": "An array of custom authorization methods for the user to choose."
+    },
+    {
+      "name": "var presentationContextProvider: ASAuthorizationControllerPresentationContextProviding?",
+      "desc": "A delegate that provides a display context in which the system can present an authorization interface to the user."
+    },
+    {
+      "name": "protocol ASAuthorizationControllerPresentationContextProviding",
+      "desc": "An interface the controller uses to ask a delegate for a presentation context."
+    },
+    {
+      "name": "func performRequests()",
+      "desc": "Starts the specified authorization flows during controller initialization."
+    },
+    {
+      "name": "var delegate: ASAuthorizationControllerDelegate?",
+      "desc": "A delegate that the authorization controller informs about the success or failure of an authorization attempt."
+    },
+    {
+      "name": "func authorizationController(ASAuthorizationController, didCompleteWithCustomMethod: ASAuthorizationCustomMethod)",
+      "desc": "Informs the delegate when authorization completes, and specifies the custom method the user selected."
+    },
+    {
+      "name": "protocol ASAuthorizationControllerDelegate",
+      "desc": "An interface for providing information about the outcome of an authorization request."
+    }
+  ],
+  "declaration": "class ASAuthorizationController : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

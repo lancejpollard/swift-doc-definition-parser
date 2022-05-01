@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/dispatch/dispatchio",
+  "type": "Class",
+  "name": "DispatchIO",
+  "desc": "An object that manages operations on a file descriptor using either stream-based or random-access semantics.",
+  "items": [
+    {
+      "name": "init(type: DispatchIO.StreamType, fileDescriptor: Int32, queue: DispatchQueue, cleanupHandler: (Int32) -> Void)",
+      "desc": "Creates a new I/O channel that accesses the specified file descriptor."
+    },
+    {
+      "name": "init?(type: DispatchIO.StreamType, path: UnsafePointer<Int8>, oflag: Int32, mode: mode_t, queue: DispatchQueue, cleanupHandler: (Int32) -> Void)",
+      "desc": "Creates a new I/O channel that accesses the file at the specified path, potentially creating that file in the process."
+    },
+    {
+      "name": "init(type: DispatchIO.StreamType, io: DispatchIO, queue: DispatchQueue, cleanupHandler: (Int32) -> Void)",
+      "desc": "Creates a new I/O channel from an existing I/O channel."
+    },
+    {
+      "name": "enum DispatchIO.StreamType",
+      "desc": "The semantics for accessing the contents of a file descriptor."
+    },
+    {
+      "name": "func read(offset: off_t, length: Int, queue: DispatchQueue, ioHandler: (Bool, DispatchData?, Int32) -> Void)",
+      "desc": "Schedules an asynchronous read operation on the specified channel."
+    },
+    {
+      "name": "class func read(fromFileDescriptor: Int32, maxLength: Int, runningHandlerOn: DispatchQueue, handler: (DispatchData, Int32) -> Void)",
+      "desc": "Schedules an asynchronous read operation using the specified file descriptor."
+    },
+    {
+      "name": "func write(offset: off_t, data: DispatchData, queue: DispatchQueue, ioHandler: (Bool, DispatchData?, Int32) -> Void)",
+      "desc": "Schedules an asynchronous write operation for the specified channel."
+    },
+    {
+      "name": "class func write(toFileDescriptor: Int32, data: DispatchData, runningHandlerOn: DispatchQueue, handler: (DispatchData?, Int32) -> Void)",
+      "desc": "Schedules an asynchronous write operation to the specified file descriptor."
+    },
+    {
+      "name": "func close(flags: DispatchIO.CloseFlags)",
+      "desc": "Closes the channel to new read and write operations."
+    },
+    {
+      "name": "struct DispatchIO.CloseFlags",
+      "desc": "Additional flags to use when closing an I/O channel."
+    },
+    {
+      "name": "var fileDescriptor: Int32",
+      "desc": "Returns the file descriptor associated with the specified channel."
+    },
+    {
+      "name": "func setLimit(highWater: Int)",
+      "desc": "Sets the maximum number of bytes to process before enqueueing a handler block."
+    },
+    {
+      "name": "func setLimit(lowWater: Int)",
+      "desc": "Sets the minimum number of bytes to process before enqueueing a handler block."
+    },
+    {
+      "name": "func setInterval(interval: DispatchTimeInterval, flags: DispatchIO.IntervalFlags)",
+      "desc": "Sets the interval, in nanoseconds, at which to invoke the I/O handlers for the channel."
+    },
+    {
+      "name": "struct DispatchIO.IntervalFlags",
+      "desc": "The desired delivery behavior for interval events."
+    },
+    {
+      "name": "func barrier(execute: () -> Void)",
+      "desc": "Schedules a barrier operation on the specified channel."
+    }
+  ],
+  "declaration": "class DispatchIO : DispatchObject",
+  "inheritsFrom": [
+    "DispatchObject"
+  ]
+}

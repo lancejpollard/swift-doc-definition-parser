@@ -1,0 +1,173 @@
+{
+  "path": "/documentation/uikit/uidocument",
+  "type": "Class",
+  "name": "UIDocument",
+  "desc": "An abstract base class for managing discrete portions of your app's data.",
+  "items": [
+    {
+      "name": "init(fileURL: URL)",
+      "desc": "Returns a document object initialized with its file-system location."
+    },
+    {
+      "name": "var fileURL: URL",
+      "desc": "The file URL with which the document was initialized."
+    },
+    {
+      "name": "var localizedName: String",
+      "desc": "The localized name of the document."
+    },
+    {
+      "name": "var fileType: String?",
+      "desc": "The file type of the document."
+    },
+    {
+      "name": "var fileModificationDate: Date?",
+      "desc": "The date and time the document file was last modified."
+    },
+    {
+      "name": "var documentState: UIDocument.State",
+      "desc": "Returns the current state of the document."
+    },
+    {
+      "name": "var progress: Progress?",
+      "desc": "The upload or download progress of a document."
+    },
+    {
+      "name": "func close(completionHandler: ((Bool) -> Void)?)",
+      "desc": "Asynchronously closes the document after saving any changes."
+    },
+    {
+      "name": "func contents(forType: String) -> Any",
+      "desc": "Override this method to return the document data to be saved."
+    },
+    {
+      "name": "func save(to: URL, for: UIDocument.SaveOperation, completionHandler: ((Bool) -> Void)?)",
+      "desc": "Saves document data to the specified location in the application sandbox."
+    },
+    {
+      "name": "func writeContents(Any, andAttributes: [AnyHashable : Any]?, safelyTo: URL, for: UIDocument.SaveOperation)",
+      "desc": "Ensures that document data is written safely to a specified location in the application sandbox."
+    },
+    {
+      "name": "func writeContents(Any, to: URL, for: UIDocument.SaveOperation, originalContentsURL: URL?)",
+      "desc": "Writes the document data to disk at the sandbox location indicated by a file URL."
+    },
+    {
+      "name": "var savingFileType: String?",
+      "desc": "Returns the file type to use for saving a document."
+    },
+    {
+      "name": "func fileAttributesToWrite(to: URL, for: UIDocument.SaveOperation) -> [AnyHashable : Any]",
+      "desc": "Returns a dictionary of file attributes to associate with the document file when writing or updating it."
+    },
+    {
+      "name": "func fileNameExtension(forType: String?, saveOperation: UIDocument.SaveOperation) -> String",
+      "desc": "Returns a file extension to append to the file URL of the document file being written."
+    },
+    {
+      "name": "func open(completionHandler: ((Bool) -> Void)?)",
+      "desc": "Opens a document asynchronously."
+    },
+    {
+      "name": "func load(fromContents: Any, ofType: String?)",
+      "desc": "Override this method to load the document data into the app’s data model."
+    },
+    {
+      "name": "func read(from: URL)",
+      "desc": "Reads the document data in a file at a specified location in the application sandbox."
+    },
+    {
+      "name": "func performAsynchronousFileAccess(() -> Void)",
+      "desc": "Schedules a document-reading or document-writing operation on a concurrent background queue."
+    },
+    {
+      "name": "func revert(toContentsOf: URL, completionHandler: ((Bool) -> Void)?)",
+      "desc": "Reverts a document to the most recent document data stored on-disk."
+    },
+    {
+      "name": "func disableEditing()",
+      "desc": "Overridden to disable editing when it is unsafe to make changes to a document."
+    },
+    {
+      "name": "func enableEditing()",
+      "desc": "Overridden to enable editing when it is safe again to make changes to a document."
+    },
+    {
+      "name": "var hasUnsavedChanges: Bool",
+      "desc": "Returns whether the document has any unsaved changes."
+    },
+    {
+      "name": "func updateChangeCount(UIDocument.ChangeKind)",
+      "desc": "Update the change counter by indicating the kind of change."
+    },
+    {
+      "name": "var undoManager: UndoManager!",
+      "desc": "The undo manager for the document."
+    },
+    {
+      "name": "func changeCountToken(for: UIDocument.SaveOperation) -> Any",
+      "desc": "Overridden to return a change token for a specific save operation."
+    },
+    {
+      "name": "func updateChangeCount(withToken: Any, for: UIDocument.SaveOperation)",
+      "desc": "Overridden to update the change count with reference to a change-count token passed in by UIKit."
+    },
+    {
+      "name": "func autosave(completionHandler: ((Bool) -> Void)?)",
+      "desc": "Called by UIKit to initiate automatic saving of documents with unsaved changes."
+    },
+    {
+      "name": "var userActivity: NSUserActivity?",
+      "desc": "An object encapsulating a user activity supported by this document."
+    },
+    {
+      "name": "func restoreUserActivityState(NSUserActivity)",
+      "desc": "Restores the state needed to continue the given user activity."
+    },
+    {
+      "name": "func updateUserActivityState(NSUserActivity)",
+      "desc": "Updates the state of the given user activity."
+    },
+    {
+      "name": "func handleError(Error, userInteractionPermitted: Bool)",
+      "desc": "Called or overridden to handle an error that occurs during an attempt to read, save, or revert a document."
+    },
+    {
+      "name": "func finishedHandlingError(Error, recovered: Bool)",
+      "desc": "Tells UIKit that you have finished handled the error."
+    },
+    {
+      "name": "func userInteractionNoLongerPermitted(forError: Error)",
+      "desc": "Sent when it is no longer safe to proceed without immediately handling the error."
+    },
+    {
+      "name": "enum UIDocument.ChangeKind",
+      "desc": "Constants for specifying the kind of change to a document."
+    },
+    {
+      "name": "enum UIDocument.SaveOperation",
+      "desc": "Constants for specifying the type of save operation."
+    },
+    {
+      "name": "struct UIDocument.State",
+      "desc": "The document state."
+    },
+    {
+      "name": "class let userActivityURLKey: String",
+      "desc": "The key that identifies the document associated with a user activity."
+    },
+    {
+      "name": "class let stateChangedNotification: NSNotification.Name",
+      "desc": "Posted by the document object when there is a change in the state of the document."
+    }
+  ],
+  "declaration": "@MainActor class UIDocument : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSFilePresenter",
+    "ProgressReporting",
+    "UIUserActivityRestoring"
+  ]
+}

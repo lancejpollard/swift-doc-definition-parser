@@ -1,0 +1,73 @@
+{
+  "path": "/documentation/storekit/product/subscriptioninfo",
+  "type": "Structure",
+  "name": "Product.SubscriptionInfo",
+  "desc": "Information about an auto-renewable subscription such as its status, period, subscription group, and subscription offer details.",
+  "items": [
+    {
+      "name": "var status: [Product.SubscriptionInfo.Status]",
+      "desc": "An array that contains status information for a subscription group, including renewal and transaction information."
+    },
+    {
+      "name": "static func status(for: String) -> [Product.SubscriptionInfo.Status]",
+      "desc": "Gets the subscription status given a subscription group identifier."
+    },
+    {
+      "name": "struct Product.SubscriptionInfo.Status",
+      "desc": "The renewal status information for an auto-renewable subscription."
+    },
+    {
+      "name": "let subscriptionGroupID: String",
+      "desc": "The group identifier for this subscription."
+    },
+    {
+      "name": "let subscriptionPeriod: Product.SubscriptionPeriod",
+      "desc": "The duration of time between subscription renewals."
+    },
+    {
+      "name": "struct Product.SubscriptionPeriod",
+      "desc": "Values that represent the duration of time between subscription renewals."
+    },
+    {
+      "name": "var isEligibleForIntroOffer: Bool",
+      "desc": "A Boolean value that indicates whether the customer is eligible for an introductory offer."
+    },
+    {
+      "name": "static func isEligibleForIntroOffer(for: String) -> Bool",
+      "desc": "Returns a Boolean value that determines the customer's eligibility for an introductory offer within the provided subscription group."
+    },
+    {
+      "name": "let introductoryOffer: Product.SubscriptionOffer?",
+      "desc": "Information about the introductory offer available for this auto-renewable subscription."
+    },
+    {
+      "name": "let promotionalOffers: [Product.SubscriptionOffer]",
+      "desc": "An array of promotional offers available for the auto-renewable subscription."
+    },
+    {
+      "name": "struct Product.SubscriptionOffer",
+      "desc": "Information about a subscription offer that you configured in App Store Connect."
+    },
+    {
+      "name": "static func != (Product.SubscriptionInfo, Product.SubscriptionInfo) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (Product.SubscriptionInfo, Product.SubscriptionInfo) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    }
+  ],
+  "declaration": "struct SubscriptionInfo",
+  "conformsTo": [
+    "Equatable",
+    "Hashable"
+  ]
+}

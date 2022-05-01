@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/accelerate/bnns/convolutionlayer",
+  "type": "Class",
+  "name": "BNNS.ConvolutionLayer",
+  "desc": "A layer object that wraps a convolution filter and manages its deinitialization.",
+  "items": [
+    {
+      "name": "init?(type: BNNS.ConvolutionType, input: BNNSNDArrayDescriptor, weights: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, bias: BNNSNDArrayDescriptor?, padding: BNNS.ConvolutionPadding, activation: BNNS.ActivationFunction, groupCount: Int, stride: (x: Int, y: Int), dilationStride: (x: Int, y: Int), filterParameters: BNNSFilterParameters?)",
+      "desc": "Returns a new convolution layer."
+    },
+    {
+      "name": "enum BNNS.ConvolutionType",
+      "desc": "Constants that describe convolution types."
+    },
+    {
+      "name": "enum BNNS.ConvolutionPadding",
+      "desc": "Constants that describe convolution padding modes."
+    },
+    {
+      "name": "func applyBackward(batchSize: Int, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, outputGradient: BNNSNDArrayDescriptor, generatingInputGradient: BNNSNDArrayDescriptor, generatingWeightsGradient: BNNSNDArrayDescriptor?, generatingBiasGradient: BNNSNDArrayDescriptor?)",
+      "desc": "Applies the layer backward to generate input gradients."
+    }
+  ],
+  "declaration": "class ConvolutionLayer : BNNS.UnaryLayer",
+  "inheritsFrom": [
+    "BNNS.UnaryLayer"
+  ]
+}

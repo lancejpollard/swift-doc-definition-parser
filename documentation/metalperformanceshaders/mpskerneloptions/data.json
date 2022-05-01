@@ -1,0 +1,39 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpskerneloptions",
+  "type": "Structure",
+  "name": "MPSKernelOptions",
+  "desc": "The options used when creating a kernel.",
+  "items": [
+    {
+      "name": "static var none: MPSKernelOptions",
+      "desc": "The default option for the kernel. Kernels created with this option will not skip any API validation and will not use reduced precision."
+    },
+    {
+      "name": "static var skipAPIValidation: MPSKernelOptions",
+      "desc": "A property that directs the kernel to perform or skip argument validation."
+    },
+    {
+      "name": "static var allowReducedPrecision: MPSKernelOptions",
+      "desc": "When possible, kernels use a higher-precision data representation internally than the destination storage format to avoid excessive accumulation of computational rounding error in the result. This option advises the kernel that the destination storage format already has too much precision for what is ultimately required downstream, and the kernel may use reduced precision internally when it determines that a less precise result would yield better performance. When enabled, the performance win is often small and the precision of the result may vary by hardware and OS."
+    },
+    {
+      "name": "static var disableInternalTiling: MPSKernelOptions",
+      "desc": "Some kernels may automatically split up their work internally into multiple tiles. This improves performance on larger textures and reduces the amount of memory needed by the framework for temporary storage. However, if you are using your own tiling scheme to achieve similar results, your tile sizes and the framework’s choice of tile sizes may interfere with one another, causing the framework to subdivide your tiles for its own use inefficiently. Use this option to force the framework to process your data tile as a single chunk."
+    },
+    {
+      "name": "static var insertDebugGroups: MPSKernelOptions",
+      "desc": "Enabling this option will cause various kernel encode methods to call the pushDebugGroup(_:) and popDebugGroup() methods. The debug string will be drawn from the kernel’s label property, if available, or the name of the class otherwise."
+    },
+    {
+      "name": "init(rawValue: UInt)"
+    },
+    {
+      "name": "static var verbose: MPSKernelOptions"
+    }
+  ],
+  "declaration": "struct MPSKernelOptions, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

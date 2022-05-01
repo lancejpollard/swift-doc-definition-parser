@@ -1,0 +1,63 @@
+{
+  "path": "/documentation/foundation/urlprotectionspace",
+  "type": "Class",
+  "name": "URLProtectionSpace",
+  "desc": "A server or an area on a server, commonly referred to as a realm, that requires authentication.",
+  "items": [
+    {
+      "name": "init(host: String, port: Int, protocol: String?, realm: String?, authenticationMethod: String?)",
+      "desc": "Creates a protection space object from the given host, port, protocol, realm, and authentication method."
+    },
+    {
+      "name": "init(proxyHost: String, port: Int, type: String?, realm: String?, authenticationMethod: String?)",
+      "desc": "Creates a protection space object representing a proxy server."
+    },
+    {
+      "name": "var authenticationMethod: String",
+      "desc": "The authentication method used by the receiver."
+    },
+    {
+      "name": "var distinguishedNames: [Data]?",
+      "desc": "The acceptable certificate-issuing authorities for client certificate authentication."
+    },
+    {
+      "name": "var host: String",
+      "desc": "The receiver’s host."
+    },
+    {
+      "name": "var port: Int",
+      "desc": "The receiver’s port."
+    },
+    {
+      "name": "var `protocol`: String?",
+      "desc": "The receiver’s protocol."
+    },
+    {
+      "name": "var proxyType: String?",
+      "desc": "The receiver's proxy type."
+    },
+    {
+      "name": "var realm: String?",
+      "desc": "The receiver’s authentication realm"
+    },
+    {
+      "name": "var receivesCredentialSecurely: Bool",
+      "desc": "A Boolean value that indicates whether the credentials for the protection space can be sent securely."
+    },
+    {
+      "name": "var serverTrust: SecTrust?",
+      "desc": "A representation of the server’s SSL transaction state."
+    },
+    {
+      "name": "func isProxy() -> Bool"
+    }
+  ],
+  "declaration": "class URLProtectionSpace : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

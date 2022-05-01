@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/uikit/uitableviewdropdelegate",
+  "type": "Protocol",
+  "name": "UITableViewDropDelegate",
+  "desc": "The interface for handling drops in a table view.",
+  "items": [
+    {
+      "name": "func tableView(UITableView, canHandle: UIDropSession) -> Bool",
+      "desc": "Asks your delegate whether it can accept the specified type of data."
+    },
+    {
+      "name": "func tableView(UITableView, dropPreviewParametersForRowAt: IndexPath) -> UIDragPreviewParameters?",
+      "desc": "Returns custom information about how to display the row at the specified location during the drop."
+    },
+    {
+      "name": "func tableView(UITableView, performDropWith: UITableViewDropCoordinator)",
+      "desc": "Incorporates the dropped data into your data structures and updates the table."
+    },
+    {
+      "name": "func tableView(UITableView, dropSessionDidUpdate: UIDropSession, withDestinationIndexPath: IndexPath?) -> UITableViewDropProposal",
+      "desc": "Proposes how to handle a drop at the specified location in the table view."
+    },
+    {
+      "name": "func tableView(UITableView, dropSessionDidEnter: UIDropSession)",
+      "desc": "Called when dragged content enters the table view's bounds rectangle."
+    },
+    {
+      "name": "func tableView(UITableView, dropSessionDidExit: UIDropSession)",
+      "desc": "Called when dragged content exits the table view's bounds rectangle."
+    },
+    {
+      "name": "func tableView(UITableView, dropSessionDidEnd: UIDropSession)",
+      "desc": "Called to notify you when the drag operation ends."
+    }
+  ],
+  "declaration": "@MainActor protocol UITableViewDropDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

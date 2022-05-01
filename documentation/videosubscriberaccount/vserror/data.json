@@ -1,0 +1,83 @@
+{
+  "path": "/documentation/videosubscriberaccount/vserror",
+  "type": "Structure",
+  "name": "VSError",
+  "desc": "Error information in the framework error domain.",
+  "items": [
+    {
+      "name": "var errorCode: Int",
+      "desc": "The error code."
+    },
+    {
+      "name": "var errorUserInfo: [String : Any]",
+      "desc": "The user-info dictionary."
+    },
+    {
+      "name": "var localizedDescription: String",
+      "desc": "A string that contains the localized description of the error."
+    },
+    {
+      "name": "static var accessNotGranted: VSError.Code",
+      "desc": "The user hasn’t granted access to their subscription information."
+    },
+    {
+      "name": "static var errorDomain: String",
+      "desc": "A string that contains the error domain."
+    },
+    {
+      "name": "static var invalidVerificationToken: VSError.Code",
+      "desc": "The user’s subscription provider rejected the verification token that the app sent with the request."
+    },
+    {
+      "name": "static var providerRejected: VSError.Code",
+      "desc": "The user’s subscription provider didn’t allow the request to proceed."
+    },
+    {
+      "name": "static var rejected: VSError.Code",
+      "desc": "The system rejected the request."
+    },
+    {
+      "name": "static var serviceTemporarilyUnavailable: VSError.Code",
+      "desc": "The request failed due to a timeout or unreachable host, but a subsequent attempt might succeed."
+    },
+    {
+      "name": "static var unsupported: VSError.Code",
+      "desc": "The provider doesn’t support the feature the user requested in the device’s current region."
+    },
+    {
+      "name": "static var unsupportedProvider: VSError.Code",
+      "desc": "The system doesn’t support the user’s subscription provider."
+    },
+    {
+      "name": "static var userCancelled: VSError.Code",
+      "desc": "The user canceled the request."
+    },
+    {
+      "name": "enum VSError.Code",
+      "desc": "Error codes in the framework error domain."
+    },
+    {
+      "name": "static func != (VSError, VSError) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are not equal."
+    },
+    {
+      "name": "static func == (VSError, VSError) -> Bool"
+    },
+    {
+      "name": "init(Code, userInfo: [String : Any])"
+    },
+    {
+      "name": "var code: Code"
+    },
+    {
+      "name": "var hashValue: Int"
+    },
+    {
+      "name": "var userInfo: [String : Any]"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    }
+  ],
+  "declaration": "struct VSError"
+}

@@ -1,0 +1,75 @@
+{
+  "path": "/documentation/carekit/ockdailypageviewcontroller",
+  "type": "Class",
+  "name": "OCKDailyPageViewController",
+  "desc": "A view controller that displays a calendar in the header, and a page view controller in the body.",
+  "items": [
+    {
+      "name": "init(storeManager: OCKSynchronizedStoreManager, adherenceAggregator: OCKAdherenceAggregator)",
+      "desc": "Creates a view controller that contains a synchronized calendar with a tasks collection."
+    },
+    {
+      "name": "let storeManager: OCKSynchronizedStoreManager",
+      "desc": "The object that provides synchronization between the store and view controller."
+    },
+    {
+      "name": "func dailyPageViewController(OCKDailyPageViewController, didFailWithError: Error)",
+      "desc": "Notifies the delegate when your app encounters an unhandled error in a daily page view controller."
+    },
+    {
+      "name": "func dailyPageViewController(OCKDailyPageViewController, prepare: OCKListViewController, for: Date)",
+      "desc": "Notifies the delegate that the view controller that displays daily tasks is about to be presented."
+    },
+    {
+      "name": "func pageViewController(UIPageViewController, viewControllerBefore: UIViewController) -> UIViewController?",
+      "desc": "Returns a view controller for the date previous to the currently selected date."
+    },
+    {
+      "name": "func pageViewController(UIPageViewController, viewControllerAfter: UIViewController) -> UIViewController?",
+      "desc": "Returns a view controller for the date after the currently selected date."
+    },
+    {
+      "name": "func pageViewController(UIPageViewController, didFinishAnimating: Bool, previousViewControllers: [UIViewController], transitionCompleted: Bool)",
+      "desc": "Notifies the delegate when a gesture-initiated transition ends in the page view controller."
+    },
+    {
+      "name": "func weekCalendarPageViewController(OCKWeekCalendarPageViewController, didChangeDateInterval: DateInterval)",
+      "desc": "Notifies the delegate of a change in the calendar's date interval."
+    },
+    {
+      "name": "func weekCalendarPageViewController(OCKWeekCalendarPageViewController, didEncounterError: Error)",
+      "desc": "Notifies the delegate when your app encounters an unhandled error in a week calendar page view controller."
+    },
+    {
+      "name": "func weekCalendarPageViewController(OCKWeekCalendarPageViewController, didSelectDate: Date, previousDate: Date)",
+      "desc": "Notifies the delegate of a change in the selected date."
+    },
+    {
+      "name": "func loadView()"
+    },
+    {
+      "name": "func viewDidLoad()"
+    },
+    {
+      "name": "func viewSafeAreaInsetsDidChange()"
+    }
+  ],
+  "declaration": "class OCKDailyPageViewController : UIViewController",
+  "inheritsFrom": [
+    "UIViewController"
+  ],
+  "conformsTo": [
+    "CVarArg",
+    "Equatable",
+    "Hashable",
+    "NSExtensionRequestHandling",
+    "OCKDailyPageViewControllerDataSource",
+    "OCKDailyPageViewControllerDelegate",
+    "OCKWeekCalendarPageViewControllerDelegate",
+    "UIPageViewControllerDataSource",
+    "UIPageViewControllerDelegate",
+    "UIPasteConfigurationSupporting",
+    "UIStateRestoring",
+    "UIUserActivityRestoring"
+  ]
+}

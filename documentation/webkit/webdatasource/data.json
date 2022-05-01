@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/webkit/webdatasource",
+  "type": "Class",
+  "name": "WebDataSource",
+  "desc": "WebDataSource encapsulates the web content to be displayed in a web frame view. A WebDataSource object has a representation object, conforming to the WebDocumentRepresentation protocol, that holds the data in an appropriate format depending on the MIME type. You can extend WebKit to support new MIME types by implementing your own view and representation classes, and specifying the mapping between them using the  registerClass(_:representationClass:forMIMEType:) WebView class method.",
+  "items": [
+    {
+      "name": "init!(request: URLRequest!)",
+      "desc": "initializes a data source with a URL request."
+    },
+    {
+      "name": "var data: Data!",
+      "desc": "The raw data that represents the data source’s content."
+    },
+    {
+      "name": "var isLoading: Bool",
+      "desc": "A Boolean that indicates whether the data source is loading its content."
+    },
+    {
+      "name": "var pageTitle: String!",
+      "desc": "The title of the data source’s page."
+    },
+    {
+      "name": "var representation: WebDocumentRepresentation!",
+      "desc": "The data source’s representation depending on its MIME type."
+    },
+    {
+      "name": "var textEncodingName: String!",
+      "desc": "The text encoding for the data source’s web view, if set, or the text encoding of the response."
+    },
+    {
+      "name": "var initialRequest: URLRequest!",
+      "desc": "A reference to the original request that was used to load the web content."
+    },
+    {
+      "name": "var request: NSMutableURLRequest!",
+      "desc": "The request that was used to create the data source."
+    },
+    {
+      "name": "var response: URLResponse!",
+      "desc": "The response for this data source."
+    },
+    {
+      "name": "var webFrame: WebFrame!",
+      "desc": "The web frame that represents this data source."
+    },
+    {
+      "name": "var unreachableURL: URL!",
+      "desc": "The data source’s unreachable URL."
+    },
+    {
+      "name": "var webArchive: WebArchive!",
+      "desc": "A web archive representing the data source, its subresources, and subframes."
+    },
+    {
+      "name": "var mainResource: WebResource!",
+      "desc": "AWebResource object representing the data source."
+    },
+    {
+      "name": "func addSubresource(WebResource!)",
+      "desc": "Adds a resource to the data source’s list of subresources."
+    },
+    {
+      "name": "func subresource(for: URL!) -> WebResource!",
+      "desc": "Returns a subresource for the given URL."
+    },
+    {
+      "name": "var subresources: [Any]!",
+      "desc": "The data source’s subresources that have finished downloading."
+    }
+  ],
+  "declaration": "class WebDataSource : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

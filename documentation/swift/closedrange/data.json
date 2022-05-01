@@ -1,0 +1,104 @@
+{
+  "path": "/documentation/swift/closedrange",
+  "type": "Generic Structure",
+  "name": "ClosedRange",
+  "desc": "An interval from a lower bound up to, and including, an upper bound.",
+  "items": [
+    {
+      "name": "static func ... (Self, Self) -> ClosedRange<Self>",
+      "desc": "Returns a closed range that contains both of its bounds."
+    },
+    {
+      "name": "func relative<C>(to: C) -> Range<Bound>",
+      "desc": "Returns the range of indices described by this range expression within the given collection."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value indicating whether the range contains no elements."
+    },
+    {
+      "name": "let lowerBound: Bound",
+      "desc": "The range’s lower bound."
+    },
+    {
+      "name": "let upperBound: Bound",
+      "desc": "The range’s upper bound."
+    },
+    {
+      "name": "func contains(Bound) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the given element is contained within the range."
+    },
+    {
+      "name": "static func ~= (ClosedRange<Bound>, Bound) -> Bool",
+      "desc": "Returns a Boolean value indicating whether a value is included in a range."
+    },
+    {
+      "name": "func clamped(to: ClosedRange<Bound>) -> ClosedRange<Bound>",
+      "desc": "Returns a copy of this range clamped to the given limiting range."
+    },
+    {
+      "name": "static func == (ClosedRange<Bound>, ClosedRange<Bound>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two ranges are equal."
+    },
+    {
+      "name": "static func != (ClosedRange<Bound>, ClosedRange<Bound>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "func overlaps(Range<Bound>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this range and the given range contain an element in common."
+    },
+    {
+      "name": "func overlaps(ClosedRange<Bound>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this range and the given range contain an element in common."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual representation of the range."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual representation of the range, suitable for debugging."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "The custom mirror for this instance."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes this value into the given encoder."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a new instance by decoding from the given decoder."
+    },
+    {
+      "name": "init(uncheckedBounds: (lower: Bound, upper: Bound))",
+      "desc": "Creates an instance with the given bounds."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "func relative(toShapedArrayAxis: Range<Int>) -> Range<Int>",
+      "desc": "Available when Bound is Int."
+    }
+  ],
+  "declaration": "@frozen struct ClosedRange<Bound> where Bound : Comparable",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "Hashable",
+    "MLShapedArrayRangeExpression",
+    "RangeExpression"
+  ]
+}

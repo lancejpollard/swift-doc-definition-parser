@@ -1,0 +1,114 @@
+{
+  "path": "/documentation/createml/mlactivityclassifier",
+  "type": "Structure",
+  "name": "MLActivityClassifier",
+  "desc": "A model you train to classify motion sensor data.",
+  "items": [
+    {
+      "name": "static func train(trainingData: MLActivityClassifier.DataSource, featureColumns: [String], labelColumn: String, recordingFileColumn: String, parameters: MLActivityClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLJob<MLActivityClassifier>",
+      "desc": "Begins an asynchronous activity classifier training session with a training dataset represented by a data source."
+    },
+    {
+      "name": "static func train(trainingData: MLDataTable, featureColumns: [String], labelColumn: String, recordingFileColumn: String, parameters: MLActivityClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLJob<MLActivityClassifier>",
+      "desc": "Begins an asynchronous activity classifier training session with a training dataset represented by a data table."
+    },
+    {
+      "name": "static func makeTrainingSession(trainingData: MLDataTable, featureColumns: [String], labelColumn: String, recordingFileColumn: String, parameters: MLActivityClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLTrainingSession<MLActivityClassifier>",
+      "desc": "Creates an asynchronous training session for an activity classifier."
+    },
+    {
+      "name": "static func resume(MLTrainingSession<MLActivityClassifier>) -> MLJob<MLActivityClassifier>",
+      "desc": "Begins or continues an asynchronous activity classifier training session."
+    },
+    {
+      "name": "static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) -> MLTrainingSession<MLActivityClassifier>",
+      "desc": "Creates an asynchronous training session for an activity classifier by restoring an existing training session’s state from its parameters."
+    },
+    {
+      "name": "init(checkpoint: MLCheckpoint)",
+      "desc": "Creates an activity classifier from a training session checkpoint."
+    },
+    {
+      "name": "init(trainingData: MLActivityClassifier.DataSource, featureColumns: [String], labelColumn: String?, recordingFileColumn: String?, parameters: MLActivityClassifier.ModelParameters)",
+      "desc": "Creates an activity classifier with a training dataset represented by a data source."
+    },
+    {
+      "name": "init(trainingData: MLDataTable, featureColumns: [String], labelColumn: String, recordingFileColumn: String, parameters: MLActivityClassifier.ModelParameters)",
+      "desc": "Creates an activity classifier with a training dataset represented by a data table."
+    },
+    {
+      "name": "var trainingMetrics: MLClassifierMetrics",
+      "desc": "Measurements of the activity classifier’s performance on the training dataset."
+    },
+    {
+      "name": "var validationMetrics: MLClassifierMetrics",
+      "desc": "Measurements of the activity classifier’s performance on the validation dataset."
+    },
+    {
+      "name": "func evaluation(on: MLActivityClassifier.DataSource, featureColumns: [String], labelColumn: String?, recordingFileColumn: String?) -> MLClassifierMetrics",
+      "desc": "Generates metrics describing the activity classifier’s performance on labeled activities in a data source."
+    },
+    {
+      "name": "func evaluation(on: MLDataTable, featureColumns: [String], labelColumn: String, recordingFileColumn: String) -> MLClassifierMetrics",
+      "desc": "Generates metrics describing the activity classifier’s performance on labeled activities in a data table."
+    },
+    {
+      "name": "func predictions(from: MLDataTable, perWindowPrediction: Bool?) -> [String]",
+      "desc": "Generates predictions for the activities the classifier recognizes in the data table."
+    },
+    {
+      "name": "func write(to: URL, metadata: MLModelMetadata?)",
+      "desc": "Exports the activity classifier as a Core ML model file to a location in the file system."
+    },
+    {
+      "name": "func write(toFile: String, metadata: MLModelMetadata?)",
+      "desc": "Exports the activity classifier as a Core ML model file to the file path."
+    },
+    {
+      "name": "var model: MLModel",
+      "desc": "The underlying Core ML model of the activity classifier stored in memory."
+    },
+    {
+      "name": "let modelParameters: MLActivityClassifier.ModelParameters",
+      "desc": "The model configuration parameters the activity classifier used during its training session."
+    },
+    {
+      "name": "var featureColumns: [String]",
+      "desc": "The names of the feature columns the activity classifier used during its training session."
+    },
+    {
+      "name": "var labelColumn: String",
+      "desc": "The name of the label column the activity classifier used during its training session."
+    },
+    {
+      "name": "var recordingFileColumn: String",
+      "desc": "The name of the column that contains the data files the activity classifier used during its training session."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the activity classifier."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the activity classifier that’s suitable for output during debugging."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the activity classifier shown in a playground."
+    },
+    {
+      "name": "enum MLActivityClassifier.DataSource",
+      "desc": "A data source for an activity classifier."
+    },
+    {
+      "name": "struct MLActivityClassifier.ModelParameters",
+      "desc": "Model training parameters that direct the training process for an activity classifier model."
+    }
+  ],
+  "declaration": "struct MLActivityClassifier",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomStringConvertible"
+  ]
+}

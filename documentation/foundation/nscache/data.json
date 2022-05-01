@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/foundation/nscache",
+  "type": "Generic Class",
+  "name": "NSCache",
+  "desc": "A mutable collection you use to temporarily store transient key-value pairs that are subject to eviction when resources are low.",
+  "items": [
+    {
+      "name": "var name: String",
+      "desc": "The name of the cache."
+    },
+    {
+      "name": "var countLimit: Int",
+      "desc": "The maximum number of objects the cache should hold."
+    },
+    {
+      "name": "var totalCostLimit: Int",
+      "desc": "The maximum total cost that the cache can hold before it starts evicting objects."
+    },
+    {
+      "name": "var evictsObjectsWithDiscardedContent: Bool",
+      "desc": "Whether the cache will automatically evict discardable-content objects whose content has been discarded."
+    },
+    {
+      "name": "protocol NSDiscardableContent",
+      "desc": "You implement this protocol when a class’s objects have subcomponents that can be discarded when not being used, thereby giving an application a smaller memory footprint."
+    },
+    {
+      "name": "var delegate: NSCacheDelegate?",
+      "desc": "The cache’s delegate."
+    },
+    {
+      "name": "protocol NSCacheDelegate",
+      "desc": "The delegate of an NSCache object implements this protocol to perform specialized actions when an object is about to be evicted or removed from the cache."
+    },
+    {
+      "name": "func object(forKey: KeyType) -> ObjectType?",
+      "desc": "Returns the value associated with a given key."
+    },
+    {
+      "name": "func setObject(ObjectType, forKey: KeyType)",
+      "desc": "Sets the value of the specified key in the cache."
+    },
+    {
+      "name": "func setObject(ObjectType, forKey: KeyType, cost: Int)",
+      "desc": "Sets the value of the specified key in the cache, and associates the key-value pair with the specified cost."
+    },
+    {
+      "name": "func removeObject(forKey: KeyType)",
+      "desc": "Removes the value of the specified key in the cache."
+    },
+    {
+      "name": "func removeAllObjects()",
+      "desc": "Empties the cache."
+    }
+  ],
+  "declaration": "class NSCache<KeyType, ObjectType> : NSObject where KeyType : AnyObject, ObjectType : AnyObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

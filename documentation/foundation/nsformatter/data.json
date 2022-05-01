@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/foundation/nsformatter",
+  "type": "Class",
+  "name": "NSFormatter",
+  "desc": "An abstract class that declares an interface for objects that create, interpret, and validate the textual representation of values.",
+  "items": [
+    {
+      "name": "- stringForObjectValue:",
+      "desc": "The default implementation of this method raises an exception."
+    },
+    {
+      "name": "- attributedStringForObjectValue:withDefaultAttributes:",
+      "desc": "The default implementation returns nil to indicate that the formatter object does not provide an attributed string."
+    },
+    {
+      "name": "- editingStringForObjectValue:",
+      "desc": "The default implementation of this method invokes stringForObjectValue:."
+    },
+    {
+      "name": "- getObjectValue:forString:errorDescription:",
+      "desc": "The default implementation of this method raises an exception."
+    },
+    {
+      "name": "- isPartialStringValid:newEditingString:errorDescription:",
+      "desc": "Returns a Boolean value that indicates whether a partial string is valid."
+    },
+    {
+      "name": "- isPartialStringValid:proposedSelectedRange:originalString:originalSelectedRange:errorDescription:",
+      "desc": "This method should be implemented in subclasses that want to validate user changes to a string in a field, where the user changes are not necessarily at the end of the string, and preserve the selection (or set a different one, such as selecting the erroneous part of the string the user has typed)."
+    }
+  ],
+  "declaration": "@interface NSFormatter : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "NSCopying"
+  ]
+}

@@ -1,0 +1,320 @@
+{
+  "path": "/documentation/foundation/characterset",
+  "type": "Structure",
+  "name": "CharacterSet",
+  "desc": "A set of Unicode character values for use in search operations.",
+  "items": [
+    {
+      "name": "static var alphanumerics: CharacterSet",
+      "desc": "Returns a character set containing the characters in Unicode General Categories L*, M*, and N*."
+    },
+    {
+      "name": "static var capitalizedLetters: CharacterSet",
+      "desc": "Returns a character set containing the characters in Unicode General Category Lt."
+    },
+    {
+      "name": "static var controlCharacters: CharacterSet",
+      "desc": "Returns a character set containing the characters in Unicode General Category Cc and Cf."
+    },
+    {
+      "name": "static var decimalDigits: CharacterSet",
+      "desc": "Returns a character set containing the characters in the category of Decimal Numbers."
+    },
+    {
+      "name": "static var decomposables: CharacterSet",
+      "desc": "Returns a character set containing individual Unicode characters that can also be represented as composed character sequences (such as for letters with accents), by the definition of “standard decomposition” in version 3.2 of the Unicode character encoding standard."
+    },
+    {
+      "name": "static var illegalCharacters: CharacterSet",
+      "desc": "Returns a character set containing values in the category of Non-Characters or that have not yet been defined in version 3.2 of the Unicode standard."
+    },
+    {
+      "name": "static var letters: CharacterSet",
+      "desc": "Returns a character set containing the characters in Unicode General Category L* & M*."
+    },
+    {
+      "name": "static var lowercaseLetters: CharacterSet",
+      "desc": "Returns a character set containing the characters in Unicode General Category Ll."
+    },
+    {
+      "name": "static var newlines: CharacterSet",
+      "desc": "Returns a character set containing the newline characters (U+000A ~ U+000D, U+0085, U+2028, and U+2029)."
+    },
+    {
+      "name": "static var nonBaseCharacters: CharacterSet",
+      "desc": "Returns a character set containing the characters in Unicode General Category M*."
+    },
+    {
+      "name": "static var punctuationCharacters: CharacterSet",
+      "desc": "Returns a character set containing the characters in Unicode General Category P*."
+    },
+    {
+      "name": "static var symbols: CharacterSet",
+      "desc": "Returns a character set containing the characters in Unicode General Category S*."
+    },
+    {
+      "name": "static var uppercaseLetters: CharacterSet",
+      "desc": "Returns a character set containing the characters in Unicode General Category Lu and Lt."
+    },
+    {
+      "name": "static var whitespaces: CharacterSet",
+      "desc": "Returns a character set containing the characters in Unicode General Category Zs and CHARACTER TABULATION (U+0009)."
+    },
+    {
+      "name": "static var whitespacesAndNewlines: CharacterSet",
+      "desc": "Returns a character set containing characters in Unicode General Category Z*, U+000A ~ U+000D, and U+0085."
+    },
+    {
+      "name": "static var urlFragmentAllowed: CharacterSet",
+      "desc": "Returns the character set for characters allowed in a fragment URL component."
+    },
+    {
+      "name": "static var urlHostAllowed: CharacterSet",
+      "desc": "Returns the character set for characters allowed in a host URL subcomponent."
+    },
+    {
+      "name": "static var urlPasswordAllowed: CharacterSet",
+      "desc": "Returns the character set for characters allowed in a password URL subcomponent."
+    },
+    {
+      "name": "static var urlPathAllowed: CharacterSet",
+      "desc": "Returns the character set for characters allowed in a path URL component."
+    },
+    {
+      "name": "static var urlQueryAllowed: CharacterSet",
+      "desc": "Returns the character set for characters allowed in a query URL component."
+    },
+    {
+      "name": "static var urlUserAllowed: CharacterSet",
+      "desc": "Returns the character set for characters allowed in a user URL subcomponent."
+    },
+    {
+      "name": "init()",
+      "desc": "Initialize an empty instance."
+    },
+    {
+      "name": "var bitmapRepresentation: Data",
+      "desc": "Returns a representation of the CharacterSet in binary format."
+    },
+    {
+      "name": "func invert()",
+      "desc": "Invert the contents of the CharacterSet."
+    },
+    {
+      "name": "var inverted: CharacterSet",
+      "desc": "Returns an inverted copy of the receiver."
+    },
+    {
+      "name": "func formIntersection(CharacterSet)",
+      "desc": "Sets the value to an intersection of the CharacterSet with another CharacterSet."
+    },
+    {
+      "name": "func formSymmetricDifference(CharacterSet)",
+      "desc": "Sets the value to an exclusive or of the CharacterSet with another CharacterSet."
+    },
+    {
+      "name": "func formUnion(CharacterSet)",
+      "desc": "Sets the value to a union of the CharacterSet with another CharacterSet."
+    },
+    {
+      "name": "func hasMember(inPlane: UInt8) -> Bool",
+      "desc": "Returns true if the CharacterSet has a member in the specified plane."
+    },
+    {
+      "name": "func insert(charactersIn: String)",
+      "desc": "Insert the values from the specified string into the CharacterSet."
+    },
+    {
+      "name": "func intersection(CharacterSet) -> CharacterSet",
+      "desc": "Returns an intersection of the CharacterSet with another CharacterSet."
+    },
+    {
+      "name": "func invert()",
+      "desc": "Invert the contents of the CharacterSet."
+    },
+    {
+      "name": "func isDisjoint(with: CharacterSet) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the set has no members in common with the given set."
+    },
+    {
+      "name": "func isStrictSubset(of: CharacterSet) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether this set is a strict subset of the given set."
+    },
+    {
+      "name": "func isStrictSuperset(of: CharacterSet) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether this set is a strict superset of the given set."
+    },
+    {
+      "name": "func isSubset(of: CharacterSet) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the set is a subset of another set."
+    },
+    {
+      "name": "func isSuperset(of: CharacterSet) -> Bool",
+      "desc": "Returns true if self is a superset of other."
+    },
+    {
+      "name": "func remove(charactersIn: String)",
+      "desc": "Remove the values from the specified string from the CharacterSet."
+    },
+    {
+      "name": "func subtracting(CharacterSet) -> CharacterSet",
+      "desc": "Returns a CharacterSet created by removing elements in other from self."
+    },
+    {
+      "name": "func symmetricDifference(CharacterSet) -> CharacterSet",
+      "desc": "Returns an exclusive or of the CharacterSet with another CharacterSet."
+    },
+    {
+      "name": "func union(CharacterSet) -> CharacterSet",
+      "desc": "Returns a union of the CharacterSet with another CharacterSet."
+    },
+    {
+      "name": "func insert(charactersIn: String)",
+      "desc": "Insert the values from the specified string into the CharacterSet."
+    },
+    {
+      "name": "func remove(charactersIn: String)",
+      "desc": "Remove the values from the specified string from the CharacterSet."
+    },
+    {
+      "name": "func subtracting(CharacterSet) -> CharacterSet",
+      "desc": "Returns a CharacterSet created by removing elements in other from self."
+    },
+    {
+      "name": "func hasMember(inPlane: UInt8) -> Bool",
+      "desc": "Returns true if the CharacterSet has a member in the specified plane."
+    },
+    {
+      "name": "func isDisjoint(with: CharacterSet) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the set has no members in common with the given set."
+    },
+    {
+      "name": "func isStrictSubset(of: CharacterSet) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether this set is a strict subset of the given set."
+    },
+    {
+      "name": "func isStrictSuperset(of: CharacterSet) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether this set is a strict superset of the given set."
+    },
+    {
+      "name": "func isSubset(of: CharacterSet) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the set is a subset of another set."
+    },
+    {
+      "name": "func isSuperset(of: CharacterSet) -> Bool",
+      "desc": "Returns true if self is a superset of other."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value that indicates whether the set has no elements."
+    },
+    {
+      "name": "static func != (CharacterSet, CharacterSet) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (CharacterSet, CharacterSet) -> Bool",
+      "desc": "Returns true if the two CharacterSets are equal."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual description of the character set."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual description of the character set suitable for debugging."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The computed hash value for the date interval."
+    },
+    {
+      "name": "class NSCharacterSet",
+      "desc": "An object representing a fixed set of Unicode character values that bridges to a CharacterSet; use NSCharacterSet when you need reference semantics or other Foundation-specific behavior."
+    },
+    {
+      "name": "class NSMutableCharacterSet",
+      "desc": "An object representing a mutable set of Unicode character values that bridges to CharacterSet; use NSMutableCharacterSet when you need reference semantics or other Foundation-specific behavior."
+    },
+    {
+      "name": "typealias CharacterSet.ReferenceType",
+      "desc": "An alias for this value type's equivalent reference type."
+    },
+    {
+      "name": "typealias CharacterSet.ArrayLiteralElement"
+    },
+    {
+      "name": "typealias CharacterSet.Element"
+    },
+    {
+      "name": "init<S>(S)",
+      "desc": "Creates a new set from a finite sequence of items."
+    },
+    {
+      "name": "init(arrayLiteral: Unicode.Scalar...)",
+      "desc": "Creates a set containing the elements of the given array literal."
+    },
+    {
+      "name": "init(bitmapRepresentation: Data)"
+    },
+    {
+      "name": "init(charactersIn: Range<Unicode.Scalar>)"
+    },
+    {
+      "name": "init(charactersIn: ClosedRange<Unicode.Scalar>)"
+    },
+    {
+      "name": "init(charactersIn: String)"
+    },
+    {
+      "name": "init?(contentsOfFile: String)"
+    },
+    {
+      "name": "init(from: Decoder)"
+    },
+    {
+      "name": "func contains(Unicode.Scalar) -> Bool"
+    },
+    {
+      "name": "func encode(to: Encoder)"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "func insert(Unicode.Scalar) -> (inserted: Bool, memberAfterInsert: Unicode.Scalar)"
+    },
+    {
+      "name": "func insert(charactersIn: ClosedRange<Unicode.Scalar>)"
+    },
+    {
+      "name": "func insert(charactersIn: Range<Unicode.Scalar>)"
+    },
+    {
+      "name": "func remove(Unicode.Scalar) -> Unicode.Scalar?"
+    },
+    {
+      "name": "func remove(charactersIn: ClosedRange<Unicode.Scalar>)"
+    },
+    {
+      "name": "func remove(charactersIn: Range<Unicode.Scalar>)"
+    },
+    {
+      "name": "func subtract(CharacterSet)"
+    },
+    {
+      "name": "func update(with: Unicode.Scalar) -> Unicode.Scalar?"
+    }
+  ],
+  "declaration": "struct CharacterSet",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "Hashable",
+    "ReferenceConvertible",
+    "SetAlgebra"
+  ]
+}

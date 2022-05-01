@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/coredata/nsincrementalstorenode",
+  "type": "Class",
+  "name": "NSIncrementalStoreNode",
+  "desc": "A concrete class used to represent basic nodes in a Core Data incremental store.",
+  "items": [
+    {
+      "name": "init(objectID: NSManagedObjectID, withValues: [String : Any], version: UInt64)",
+      "desc": "Returns an object initialized with the given values."
+    },
+    {
+      "name": "var objectID: NSManagedObjectID",
+      "desc": "The object ID that identifies the data stored by the receiver."
+    },
+    {
+      "name": "func update(withValues: [String : Any], version: UInt64)",
+      "desc": "Update the values and version to reflect new data being saved to or loaded from the external store."
+    },
+    {
+      "name": "func value(for: NSPropertyDescription) -> Any?",
+      "desc": "Returns the value for the given property."
+    },
+    {
+      "name": "var version: UInt64",
+      "desc": "The version of data in the receiver."
+    }
+  ],
+  "declaration": "class NSIncrementalStoreNode : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

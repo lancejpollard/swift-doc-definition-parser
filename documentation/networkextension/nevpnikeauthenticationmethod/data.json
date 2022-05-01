@@ -1,0 +1,24 @@
+{
+  "path": "/documentation/networkextension/nevpnikeauthenticationmethod",
+  "type": "Enumeration",
+  "name": "NEVPNIKEAuthenticationMethod",
+  "desc": "Internet Key Exchange (IKE) authentication methods used to authenticate with the IPSec server.",
+  "items": [
+    {
+      "name": "case none",
+      "desc": "Do not authenticate with the IPSec server. Note that extended authentication may still be performed if the useExtendedAuthentication property is set. This value is only valid for IKE version 2 (IKEv2)"
+    },
+    {
+      "name": "case certificate",
+      "desc": "Use a certificate and private key as the authentication credential. The certificate and private key set in the identityReference or identityData property will be used."
+    },
+    {
+      "name": "case sharedSecret",
+      "desc": "Use a shared secret as the authentication credential. The shared secret set in the sharedSecretReference property will be used."
+    }
+  ],
+  "declaration": "enum NEVPNIKEAuthenticationMethod : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

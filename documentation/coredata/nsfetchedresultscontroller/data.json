@@ -1,0 +1,88 @@
+{
+  "path": "/documentation/coredata/nsfetchedresultscontroller",
+  "type": "Generic Class",
+  "name": "NSFetchedResultsController",
+  "desc": "A controller that you use to  manage the results of a Core Data fetch request and to display data to the user.",
+  "items": [
+    {
+      "name": "init(fetchRequest: NSFetchRequest<ResultType>, managedObjectContext: NSManagedObjectContext, sectionNameKeyPath: String?, cacheName: String?)",
+      "desc": "Returns a fetch request controller initialized using the given arguments."
+    },
+    {
+      "name": "func performFetch()",
+      "desc": "Executes the controller’s fetch request."
+    },
+    {
+      "name": "var fetchRequest: NSFetchRequest<ResultType>",
+      "desc": "The fetch request used to do the fetching."
+    },
+    {
+      "name": "var managedObjectContext: NSManagedObjectContext",
+      "desc": "The managed object context used to fetch objects."
+    },
+    {
+      "name": "var sectionNameKeyPath: String?",
+      "desc": "The key path of the attribute that determines which section the fetched entity belongs to."
+    },
+    {
+      "name": "var cacheName: String?",
+      "desc": "The name of the file used to cache section information."
+    },
+    {
+      "name": "var delegate: NSFetchedResultsControllerDelegate?",
+      "desc": "The object that is notified when the fetched results changed."
+    },
+    {
+      "name": "class func deleteCache(withName: String?)",
+      "desc": "Deletes the cached section information with the given name."
+    },
+    {
+      "name": "var fetchedObjects: [ResultType]?",
+      "desc": "The results of the fetch."
+    },
+    {
+      "name": "func object(at: IndexPath) -> ResultType",
+      "desc": "Returns the object at the given index path in the fetch results."
+    },
+    {
+      "name": "func indexPath(forObject: ResultType) -> IndexPath?",
+      "desc": "Returns the index path of a given object."
+    },
+    {
+      "name": "var sections: [NSFetchedResultsSectionInfo]?",
+      "desc": "The sections for the fetch results."
+    },
+    {
+      "name": "func section(forSectionIndexTitle: String, at: Int) -> Int",
+      "desc": "Returns the section number for a given section title and index in the section index."
+    },
+    {
+      "name": "func sectionIndexTitle(forSectionName: String) -> String?",
+      "desc": "Returns the corresponding section index entry for a given section name."
+    },
+    {
+      "name": "var sectionIndexTitles: [String]",
+      "desc": "The array of section index titles."
+    },
+    {
+      "name": "protocol NSFetchedResultsControllerDelegate",
+      "desc": "A delegate protocol that describes the methods that will be called by the associated fetched results controller when the fetch results have changed."
+    },
+    {
+      "name": "protocol NSFetchedResultsSectionInfo",
+      "desc": "A protocol that defines the interface for section objects vended by a fetched results controller."
+    },
+    {
+      "name": "struct NSFetchRequestResultType",
+      "desc": "Constants that specify the possible result types a fetch request can return."
+    },
+    {
+      "name": "enum NSFetchedResultsChangeType",
+      "desc": "Constants that specify the possible types of changes that are reported."
+    }
+  ],
+  "declaration": "class NSFetchedResultsController<ResultType> : NSObject where ResultType : NSFetchRequestResult",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/uikit/uitextinputtokenizer",
+  "type": "Protocol",
+  "name": "UITextInputTokenizer",
+  "desc": "A tokenizer, which is an object that allows the text input system to evaluate text units of different granularities.",
+  "items": [
+    {
+      "name": "func isPosition(UITextPosition, atBoundary: UITextGranularity, inDirection: UITextDirection) -> Bool",
+      "desc": "Return whether a text position is at a boundary of a text unit of a specified granularity in a specified direction."
+    },
+    {
+      "name": "func isPosition(UITextPosition, withinTextUnit: UITextGranularity, inDirection: UITextDirection) -> Bool",
+      "desc": "Return whether a text position is within a text unit of a specified granularity in a specified direction."
+    },
+    {
+      "name": "func position(from: UITextPosition, toBoundary: UITextGranularity, inDirection: UITextDirection) -> UITextPosition?",
+      "desc": "Return the next text position at a boundary of a text unit of the given granularity in a given direction."
+    },
+    {
+      "name": "func rangeEnclosingPosition(UITextPosition, with: UITextGranularity, inDirection: UITextDirection) -> UITextRange?",
+      "desc": "Return the range for the text enclosing a text position in a text unit of a given granularity in a given direction."
+    },
+    {
+      "name": "struct UITextDirection",
+      "desc": "The direction of the text."
+    },
+    {
+      "name": "enum UITextGranularity",
+      "desc": "The granularity of a unit of text."
+    }
+  ],
+  "declaration": "@MainActor protocol UITextInputTokenizer",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

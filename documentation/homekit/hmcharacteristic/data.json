@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/homekit/hmcharacteristic",
+  "type": "Class",
+  "name": "HMCharacteristic",
+  "desc": "A specific characteristic of a service, like the brightness of a dimmable light, or its color temperature.",
+  "items": [
+    {
+      "name": "var uniqueIdentifier: UUID",
+      "desc": "A unique identifier for the characteristic."
+    },
+    {
+      "name": "var localizedDescription: String",
+      "desc": "The localized description of the characteristic."
+    },
+    {
+      "name": "var properties: [String]",
+      "desc": "An array of properties that describe the characteristic."
+    },
+    {
+      "name": "var characteristicType: String",
+      "desc": "The type of the characteristic."
+    },
+    {
+      "name": "var value: Any?",
+      "desc": "The current value of the characteristic."
+    },
+    {
+      "name": "func readValue(completionHandler: (Error?) -> Void)",
+      "desc": "Reads the value for the characteristic."
+    },
+    {
+      "name": "func writeValue(Any?, completionHandler: (Error?) -> Void)",
+      "desc": "Modifies the value of the characteristic."
+    },
+    {
+      "name": "func updateAuthorizationData(Data?, completionHandler: (Error?) -> Void)",
+      "desc": "Sets or clears authorization data used when writing to the characteristic."
+    },
+    {
+      "name": "var metadata: HMCharacteristicMetadata?",
+      "desc": "Metadata about the units and other properties of the characteristic."
+    },
+    {
+      "name": "class HMCharacteristicMetadata",
+      "desc": "Metadata that describes a characteristic’s value and that may be useful for presentation purposes."
+    },
+    {
+      "name": "func enableNotification(Bool, completionHandler: (Error?) -> Void)",
+      "desc": "Enables or disables notifications for changes in the value of the characteristic."
+    },
+    {
+      "name": "var isNotificationEnabled: Bool",
+      "desc": "A Boolean indicating whether the characteristic has been set to send notifications."
+    },
+    {
+      "name": "var service: HMService?",
+      "desc": "The service that contains this characteristic."
+    }
+  ],
+  "declaration": "class HMCharacteristic : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

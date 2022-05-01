@@ -1,0 +1,29 @@
+{
+  "path": "/documentation/professional_video_applications/fxanalyzer",
+  "type": "Protocol",
+  "name": "FxAnalyzer",
+  "desc": "A protocol you implement in your plug-in to analyze frames that the plug-in is applied to.",
+  "items": [
+    {
+      "name": "func desiredAnalysisTimeRange(UnsafeMutablePointer<CMTimeRange>!, forInputWith: CMTimeRange)",
+      "desc": "Requests the specified time range of frames you want to analyze."
+    },
+    {
+      "name": "func setupAnalysis(for: CMTimeRange, frameDuration: CMTime)",
+      "desc": "Completes any setup work before starting the frame analysis."
+    },
+    {
+      "name": "func analyzeFrame(FxImageTile!, at: CMTime)",
+      "desc": "Analyzes the next frame."
+    },
+    {
+      "name": "func cleanupAnalysis()",
+      "desc": "Completes any necessary cleanup work after your plug-in's frame analysis."
+    },
+    {
+      "name": "typealias FxAnalysisState",
+      "desc": "The possible states of frame analysis, as reported by the host application when queried with analysisStateForEffect()."
+    }
+  ],
+  "declaration": "protocol FxAnalyzer"
+}

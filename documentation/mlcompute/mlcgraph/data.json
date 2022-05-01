@@ -1,0 +1,84 @@
+{
+  "path": "/documentation/mlcompute/mlcgraph",
+  "type": "Class",
+  "name": "MLCGraph",
+  "desc": "A graph of layers you use to build a training or inference graph.",
+  "items": [
+    {
+      "name": "func node(with: MLCLayer, source: MLCTensor) -> MLCTensor?",
+      "desc": "Adds the layer and source tensor that you specify to the graph."
+    },
+    {
+      "name": "func node(with: MLCLayer, sources: [MLCTensor]) -> MLCTensor?",
+      "desc": "Adds the layer and source tensors that you specify to the graph."
+    },
+    {
+      "name": "func node(with: MLCLayer, sources: [MLCTensor], disableUpdate: Bool) -> MLCTensor?",
+      "desc": "Adds the layer, source tensors, and option to disable optimizer updates that you specify to the graph."
+    },
+    {
+      "name": "func node(with: MLCLayer, sources: [MLCTensor], lossLabels: [MLCTensor]) -> MLCTensor?",
+      "desc": "Adds the layer, sources, and loss labels tensors that you specify to the graph."
+    },
+    {
+      "name": "func split(source: MLCTensor, splitCount: Int, dimension: Int) -> [MLCTensor]?",
+      "desc": "Adds a new split layer to the graph using the source tensor, number of splits, and dimension to split the source tensor that you specify."
+    },
+    {
+      "name": "func split(source: MLCTensor, splitSectionLengths: [Int], dimension: Int) -> [MLCTensor]?",
+      "desc": "Adds a new split layer to the graph using the source tensor, lengths of each split section, and dimension to split the source tensor that you specify."
+    },
+    {
+      "name": "func concatenate(sources: [MLCTensor], dimension: Int) -> MLCTensor?",
+      "desc": "Adds a new concatenation layer to the graph using the source tensors and concatenation dimension you specify."
+    },
+    {
+      "name": "func reshape(shape: [Int], source: MLCTensor) -> MLCTensor?",
+      "desc": "Adds a new reshape layer to the graph using the shape and source tensor you specify."
+    },
+    {
+      "name": "func gather(withDimension: Int, source: MLCTensor, indices: MLCTensor) -> MLCTensor?",
+      "desc": "Adds a gather layer to the graph using the source tensor, dimension along which to index, and the indices you specify."
+    },
+    {
+      "name": "func scatter(withDimension: Int, source: MLCTensor, indices: MLCTensor, copyFrom: MLCTensor, reductionType: MLCReductionType) -> MLCTensor?",
+      "desc": "Adds a scatter layer to the graph."
+    },
+    {
+      "name": "func transpose(dimensions: [Int], source: MLCTensor) -> MLCTensor?",
+      "desc": "Adds a new transpose layer to the graph using the dimensions and source tensor you specify."
+    },
+    {
+      "name": "func bindAndWriteData([String : MLCTensorData], forInputs: [String : MLCTensor], to: MLCDevice, batchSize: Int, synchronous: Bool) -> Bool",
+      "desc": "Associates the given data with the input tensors, and if the device is a GPU, also copies the data to the device memory."
+    },
+    {
+      "name": "func bindAndWriteData([String : MLCTensorData], forInputs: [String : MLCTensor], to: MLCDevice, synchronous: Bool) -> Bool",
+      "desc": "Associates the given data with the input tensors, and if the device is a GPU, also copies the data to the device memory."
+    },
+    {
+      "name": "func sourceTensors(for: MLCLayer) -> [MLCTensor]",
+      "desc": "Gets the source tensors for a layer in the training graph."
+    },
+    {
+      "name": "func resultTensors(for: MLCLayer) -> [MLCTensor]",
+      "desc": "Gets the result tensors for a layer in the training graph."
+    },
+    {
+      "name": "var device: MLCDevice?",
+      "desc": "The device you’ll use for compiling and executing a graph."
+    },
+    {
+      "name": "var layers: [MLCLayer]",
+      "desc": "An array that contains the layers in the graph."
+    },
+    {
+      "name": "var summarizedDOTDescription: String",
+      "desc": "A DOT representation of the graph."
+    }
+  ],
+  "declaration": "class MLCGraph : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

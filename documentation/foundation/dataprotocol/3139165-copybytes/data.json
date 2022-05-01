@@ -1,0 +1,21 @@
+{
+  "path": "/documentation/foundation/dataprotocol/3139165-copybytes",
+  "type": "Generic Instance Method",
+  "name": "copyBytes(to:from:)",
+  "desc": "Copies a range of the bytes from the type into a raw memory buffer.Required. Default implementations provided.",
+  "items": [
+    {
+      "name": "func copyBytes<DestinationType, R>(to: UnsafeMutableBufferPointer<DestinationType>, from: R)",
+      "desc": "Copies a range of the bytes from the type into a typed memory buffer."
+    },
+    {
+      "name": "func copyBytes<DestinationType, R>(to: UnsafeMutableBufferPointer<DestinationType>, from: R) -> Int",
+      "desc": "Copies a range of the bytes from the type into a typed memory buffer."
+    },
+    {
+      "name": "func copyBytes<R>(to: UnsafeMutableRawBufferPointer, from: R) -> Int",
+      "desc": "Copies a range of the bytes from the type into a raw memory buffer."
+    }
+  ],
+  "declaration": "@discardableResult func copyBytes<R>(to: UnsafeMutableRawBufferPointer, from: R) -> Int where R : RangeExpression, Self.Index == R.Bound"
+}

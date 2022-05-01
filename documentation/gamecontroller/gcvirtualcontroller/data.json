@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/gamecontroller/gcvirtualcontroller",
+  "type": "Class",
+  "name": "GCVirtualController",
+  "desc": "A software emulation of a real controller that you configure specifically for your game.",
+  "items": [
+    {
+      "name": "init(configuration: GCVirtualController.Configuration)",
+      "desc": "Creates a new virtual controller using the configuration you specify."
+    },
+    {
+      "name": "class GCVirtualController.Configuration",
+      "desc": "The configuration of a virtual controller."
+    },
+    {
+      "name": "func updateConfiguration(forElement: String, configuration: (GCVirtualController.ElementConfiguration) -> GCVirtualController.ElementConfiguration)",
+      "desc": "Changes the configuration for one of the virtual controller’s input elements."
+    },
+    {
+      "name": "class GCVirtualController.ElementConfiguration",
+      "desc": "The properties of a virtual controller’s element that you can customize."
+    },
+    {
+      "name": "func connect(replyHandler: ((Error?) -> Void)?)",
+      "desc": "Connects the virtual controller to the device and displays it on the screen."
+    },
+    {
+      "name": "func disconnect()",
+      "desc": "Disconnects the virtual controller from the device and removes it from the screen."
+    },
+    {
+      "name": "var controller: GCController?",
+      "desc": "The underlying controller object that you use to access input elements."
+    }
+  ],
+  "declaration": "class GCVirtualController : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

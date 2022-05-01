@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/shazamkit/shsession",
+  "type": "Class",
+  "name": "SHSession",
+  "desc": "An object that manages matching a specific audio recording when a segment of that recording is part of captured sound.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a new session object for matching songs in the Shazam Music catalog."
+    },
+    {
+      "name": "init(catalog: SHCatalog)",
+      "desc": "Creates a new session for matching audio in a custom catalog."
+    },
+    {
+      "name": "func match(SHSignature)",
+      "desc": "Searches for the query signature in the reference signatures that the session catalog contains."
+    },
+    {
+      "name": "func matchStreamingBuffer(AVAudioPCMBuffer, at: AVAudioTime?)",
+      "desc": "Converts the audio in the buffer to a signature, and searches the reference signatures in the session catalog."
+    },
+    {
+      "name": "var delegate: SHSessionDelegate?",
+      "desc": "The object that the session calls with the result of a match request."
+    },
+    {
+      "name": "var catalog: SHCatalog",
+      "desc": "The catalog object containing the reference signatures and their associated metadata that the session uses to perform matches."
+    }
+  ],
+  "declaration": "class SHSession : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

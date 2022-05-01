@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/accelerate/bnns/normalizationlayer",
+  "type": "Class",
+  "name": "BNNS.NormalizationLayer",
+  "desc": "A layer object that wraps a normalization filter and manages its deinitialization.",
+  "items": [
+    {
+      "name": "init?(type: BNNS.NormalizationType, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, beta: BNNSNDArrayDescriptor, gamma: BNNSNDArrayDescriptor, momentum: Float, epsilon: Float, activation: BNNS.ActivationFunction, filterParameters: BNNSFilterParameters?)",
+      "desc": "Returns a new normalization layer."
+    },
+    {
+      "name": "enum BNNS.NormalizationType",
+      "desc": "Constants that describe normalization types."
+    },
+    {
+      "name": "func apply(batchSize: Int, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, for: BNNS.LearningPhase)",
+      "desc": "Applies the layer to a set of input objects, writing the result to a set of output objects."
+    },
+    {
+      "name": "func applyBackward(batchSize: Int, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, outputGradient: BNNSNDArrayDescriptor, generatingInputGradient: BNNSNDArrayDescriptor, generatingBetaGradient: BNNSNDArrayDescriptor?, generatingGammaGradient: BNNSNDArrayDescriptor?)",
+      "desc": "Applies the layer backward to generate input gradients."
+    },
+    {
+      "name": "enum BNNS.LearningPhase",
+      "desc": "Constants that describe the learning phase of a normalization operation."
+    }
+  ],
+  "declaration": "class NormalizationLayer : BNNS.Layer",
+  "inheritsFrom": [
+    "BNNS.Layer"
+  ]
+}

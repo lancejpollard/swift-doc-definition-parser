@@ -1,0 +1,80 @@
+{
+  "path": "/documentation/foundation/nspointerfunctions/options",
+  "type": "Structure",
+  "name": "NSPointerFunctions.Options",
+  "desc": "Defines the memory and personality options for an NSPointerFunctions object.",
+  "items": [
+    {
+      "name": "static var machVirtualMemory: NSPointerFunctions.Options",
+      "desc": "Use Mach memory."
+    },
+    {
+      "name": "static var mallocMemory: NSPointerFunctions.Options",
+      "desc": "Use free() on removal, calloc() on copy in."
+    },
+    {
+      "name": "static var opaqueMemory: NSPointerFunctions.Options",
+      "desc": "Take no action when pointers are deleted."
+    },
+    {
+      "name": "static var strongMemory: NSPointerFunctions.Options",
+      "desc": "Use strong write-barriers to backing store; use garbage-collected memory on copy-in."
+    },
+    {
+      "name": "static var weakMemory: NSPointerFunctions.Options",
+      "desc": "Uses weak read and write barriers appropriate for ARC or GC. Using NSPointerFunctionsWeakMemory object references will turn to NULL on last release."
+    },
+    {
+      "name": "let NSMapTableStrongMemory: NSPointerFunctions.Options",
+      "desc": "Equivalent to strongMemory."
+    },
+    {
+      "name": "let NSMapTableWeakMemory: NSPointerFunctions.Options",
+      "desc": "Equivalent to weakMemory."
+    },
+    {
+      "name": "static var cStringPersonality: NSPointerFunctions.Options",
+      "desc": "Use a string hash and strcmp; C-string '%s' style description."
+    },
+    {
+      "name": "static var integerPersonality: NSPointerFunctions.Options",
+      "desc": "Use unshifted value as hash and equality."
+    },
+    {
+      "name": "static var objectPersonality: NSPointerFunctions.Options",
+      "desc": "Use hash and isEqual methods for hashing and equality comparisons, use the description method for a description."
+    },
+    {
+      "name": "static var objectPointerPersonality: NSPointerFunctions.Options",
+      "desc": "Use shifted pointer for the hash value and direct comparison to determine equality; use the description method for a description."
+    },
+    {
+      "name": "static var opaquePersonality: NSPointerFunctions.Options",
+      "desc": "Use shifted pointer for the hash value and direct comparison to determine equality."
+    },
+    {
+      "name": "static var structPersonality: NSPointerFunctions.Options",
+      "desc": "Use a memory hash and memcmp (using a size function that you must set—see sizeFunction)."
+    },
+    {
+      "name": "let NSMapTableObjectPointerPersonality: NSPointerFunctions.Options",
+      "desc": "Equivalent to objectPointerPersonality."
+    },
+    {
+      "name": "static var copyIn: NSPointerFunctions.Options",
+      "desc": "Use the memory acquire function to allocate and copy items on input (see acquireFunction)."
+    },
+    {
+      "name": "let NSMapTableCopyIn: NSPointerFunctions.Options",
+      "desc": "Equivalent to copyIn."
+    },
+    {
+      "name": "init(rawValue: UInt)"
+    }
+  ],
+  "declaration": "struct Options, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

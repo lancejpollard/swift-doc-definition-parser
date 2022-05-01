@@ -1,0 +1,55 @@
+{
+  "path": "/documentation/coredata/nspersistenthistorychange",
+  "type": "Class",
+  "name": "NSPersistentHistoryChange",
+  "desc": "A change representing the insertion, update, or deletion of a managed object in the persistent store.",
+  "items": [
+    {
+      "name": "class var fetchRequest: NSFetchRequest<NSFetchRequestResult>?",
+      "desc": "A fetch request that has the persistent history change as the entity."
+    },
+    {
+      "name": "class var entityDescription: NSEntityDescription?",
+      "desc": "The entity description of the persistent history change entity."
+    },
+    {
+      "name": "class func entityDescription(with: NSManagedObjectContext) -> NSEntityDescription?",
+      "desc": "Requests an entity description for the managed object type affected by the change using the provided context."
+    },
+    {
+      "name": "var changeID: Int64",
+      "desc": "The change’s numeric identifier."
+    },
+    {
+      "name": "var changeType: NSPersistentHistoryChangeType",
+      "desc": "The type of change to the managed object in the persistent store."
+    },
+    {
+      "name": "enum NSPersistentHistoryChangeType",
+      "desc": "The types of changes to managed objects reflected in persistent history."
+    },
+    {
+      "name": "var changedObjectID: NSManagedObjectID",
+      "desc": "The identifier of the managed object that changed."
+    },
+    {
+      "name": "var tombstone: [AnyHashable : Any]?",
+      "desc": "A dictionary of attributes marked for preservation after deletion, and their values when deleted."
+    },
+    {
+      "name": "var transaction: NSPersistentHistoryTransaction?",
+      "desc": "The persistent history transaction containing this change."
+    },
+    {
+      "name": "var updatedProperties: Set<NSPropertyDescription>?",
+      "desc": "The set of properties that were updated on the managed object."
+    }
+  ],
+  "declaration": "class NSPersistentHistoryChange : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

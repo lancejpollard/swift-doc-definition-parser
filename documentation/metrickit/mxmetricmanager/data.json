@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/metrickit/mxmetricmanager",
+  "type": "Class",
+  "name": "MXMetricManager",
+  "desc": "The shared object that registers you to receive metrics, creates logs for custom metrics, and gives access to past reports.",
+  "items": [
+    {
+      "name": "class var shared: MXMetricManager",
+      "desc": "An object that returns the shared metrics manager instance."
+    },
+    {
+      "name": "func add(MXMetricManagerSubscriber)",
+      "desc": "Registers to receive a daily report of app metrics from the metrics manager."
+    },
+    {
+      "name": "func remove(MXMetricManagerSubscriber)",
+      "desc": "Unsubscribes from daily reports of app metrics."
+    },
+    {
+      "name": "var pastPayloads: [MXMetricPayload]",
+      "desc": "Returns an array of the daily metrics reports generated since the last allocation of the shared manager instance."
+    },
+    {
+      "name": "var pastDiagnosticPayloads: [MXDiagnosticPayload]",
+      "desc": "Returns an array of the diagnostic reports generated since the last allocation of the shared manager instance."
+    },
+    {
+      "name": "class func makeLogHandle(category: String) -> OSLog",
+      "desc": "Returns a log handle used for writing custom metric events."
+    }
+  ],
+  "declaration": "class MXMetricManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

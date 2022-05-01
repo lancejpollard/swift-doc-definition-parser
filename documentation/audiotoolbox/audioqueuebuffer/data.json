@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/audiotoolbox/audioqueuebuffer",
+  "type": "Structure",
+  "name": "AudioQueueBuffer",
+  "desc": "Defines an audio queue buffer.",
+  "items": [
+    {
+      "name": "init(mAudioDataBytesCapacity: UInt32, mAudioData: UnsafeMutableRawPointer, mAudioDataByteSize: UInt32, mUserData: UnsafeMutableRawPointer?, mPacketDescriptionCapacity: UInt32, mPacketDescriptions: UnsafeMutablePointer<AudioStreamPacketDescription>?, mPacketDescriptionCount: UInt32)"
+    },
+    {
+      "name": "var mAudioData: UnsafeMutableRawPointer { get }",
+      "desc": "The audio data owned the audio queue buffer. The buffer address cannot be changed."
+    },
+    {
+      "name": "var mAudioDataByteSize: UInt32",
+      "desc": "The number of bytes of valid audio data in the audio queue buffer’s mAudioData field, initially set to 0. Your callback must set this value for a playback audio queue; for recording, the recording audio queue sets the value."
+    },
+    {
+      "name": "var mAudioDataBytesCapacity: UInt32 { get }",
+      "desc": "The size of the audio queue buffer, in bytes. This size is set when a buffer is allocated and cannot be changed."
+    },
+    {
+      "name": "var mPacketDescriptionCapacity: UInt32 { get }",
+      "desc": "The maximum number of packet descriptions that can be stored in the mPacketDescriptions field."
+    },
+    {
+      "name": "var mPacketDescriptionCount: UInt32",
+      "desc": "The number of valid packet descriptions in the buffer. You set this value when providing buffers for playback. The audio queue sets this value when returning buffers from a recording queue."
+    },
+    {
+      "name": "var mPacketDescriptions: UnsafeMutablePointer<AudioStreamPacketDescription>? { get }",
+      "desc": "An array of AudioStreamPacketDescription structures for the buffer."
+    },
+    {
+      "name": "var mUserData: UnsafeMutableRawPointer?",
+      "desc": "The custom data structure you specify, for use by your callback function, when creating a recording or playback audio queue."
+    }
+  ],
+  "declaration": "struct AudioQueueBuffer"
+}

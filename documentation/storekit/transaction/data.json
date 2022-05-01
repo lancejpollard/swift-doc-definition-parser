@@ -1,0 +1,106 @@
+{
+  "path": "/documentation/storekit/transaction",
+  "type": "Structure",
+  "name": "Transaction",
+  "desc": "Information that represents the customer’s purchase of a product in your app.",
+  "items": [
+    {
+      "name": "static var updates: Transaction.Transactions",
+      "desc": "The asynchronous sequence that emits a transaction when the system creates or updates transactions."
+    },
+    {
+      "name": "struct Transaction.Transactions",
+      "desc": "An asynchronous sequence of transactions."
+    },
+    {
+      "name": "static func latest(for: String) -> VerificationResult<Transaction>?",
+      "desc": "Gets the user’s latest transaction for an in-app purchase."
+    },
+    {
+      "name": "static var all: Transaction.Transactions",
+      "desc": "A sequence that emits all the transactions for the user, for your app."
+    },
+    {
+      "name": "static var currentEntitlements: Transaction.Transactions",
+      "desc": "A sequence of the latest transactions that entitle a user to in-app purchases and subscriptions."
+    },
+    {
+      "name": "static func currentEntitlement(for: String) -> VerificationResult<Transaction>?",
+      "desc": "Gets the latest transactions that entitle the user to a specified product."
+    },
+    {
+      "name": "func finish()",
+      "desc": "Indicates to the App Store that the app delivered the purchased content or enabled the service to finish the transaction."
+    },
+    {
+      "name": "static var unfinished: Transaction.Transactions",
+      "desc": "A sequence that emits unfinished transactions for the user."
+    },
+    {
+      "name": "let deviceVerification: Data",
+      "desc": "The device verification value you use to verify whether the transaction belongs to the device."
+    },
+    {
+      "name": "let deviceVerificationNonce: UUID",
+      "desc": "The UUID used to compute the device verification value."
+    },
+    {
+      "name": "let signedDate: Date",
+      "desc": "The date that the App Store signed the JWS transaction."
+    },
+    {
+      "name": "var jsonRepresentation: Data",
+      "desc": "The raw JSON representation of the transaction information."
+    },
+    {
+      "name": "func beginRefundRequest(in: UIWindowScene) -> Transaction.RefundRequestStatus",
+      "desc": "Present the refund request sheet for the transaction in a window scene."
+    },
+    {
+      "name": "func beginRefundRequest(in: NSViewController) -> Transaction.RefundRequestStatus",
+      "desc": "Present the refund request sheet for the transaction in a view controller."
+    },
+    {
+      "name": "static func beginRefundRequest(for: UInt64, in: UIWindowScene) -> Transaction.RefundRequestStatus",
+      "desc": "Present the refund request sheet for the specified transaction in a window scene."
+    },
+    {
+      "name": "static func beginRefundRequest(for: UInt64, in: NSViewController) -> Transaction.RefundRequestStatus",
+      "desc": "Present the refund request sheet for the specified transaction in a view controller."
+    },
+    {
+      "name": "enum Transaction.RefundRequestError",
+      "desc": "The error codes for refund requests."
+    },
+    {
+      "name": "enum Transaction.RefundRequestStatus",
+      "desc": "The status codes for refund requests."
+    },
+    {
+      "name": "static func != (Transaction, Transaction) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (Transaction, Transaction) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "var debugDescription: String"
+    }
+  ],
+  "declaration": "struct Transaction",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "Equatable",
+    "Hashable",
+    "Identifiable"
+  ]
+}

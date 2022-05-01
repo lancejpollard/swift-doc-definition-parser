@@ -1,0 +1,35 @@
+{
+  "path": "/documentation/mapkit/mkmultipoint",
+  "type": "Class",
+  "name": "MKMultiPoint",
+  "desc": "An abstract class that defines the common behavior shared by open and closed polygon overlays.",
+  "items": [
+    {
+      "name": "func points() -> UnsafeMutablePointer<MKMapPoint>",
+      "desc": "Returns an array of map points associated with the shape."
+    },
+    {
+      "name": "var pointCount: Int",
+      "desc": "The number of points associated with the shape."
+    },
+    {
+      "name": "func location(atPointIndex: Int) -> CGFloat",
+      "desc": "Translates a point index into a unit distance along the shape."
+    },
+    {
+      "name": "func locations(at: IndexSet) -> [CGFloat]",
+      "desc": "Translates a point index into a unit distance along the shape."
+    },
+    {
+      "name": "func getCoordinates(UnsafeMutablePointer<CLLocationCoordinate2D>, range: NSRange)",
+      "desc": "Retrieves one or more points associated with the shape and converts them to coordinate values."
+    }
+  ],
+  "declaration": "class MKMultiPoint : MKShape",
+  "inheritsFrom": [
+    "MKShape"
+  ],
+  "conformsTo": [
+    "MKGeoJSONObject"
+  ]
+}

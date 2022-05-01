@@ -1,0 +1,39 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsnnoptimizerrmsprop",
+  "type": "Class",
+  "name": "MPSNNOptimizerRMSProp",
+  "desc": "An optimization layer that performs a root mean square propagation update.",
+  "items": [
+    {
+      "name": "init(device: MTLDevice, decay: Double, epsilon: Float, optimizerDescriptor: MPSNNOptimizerDescriptor)"
+    },
+    {
+      "name": "init(device: MTLDevice, learningRate: Float)"
+    },
+    {
+      "name": "var decay: Double"
+    },
+    {
+      "name": "var epsilon: Float"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, batchNormalizationGradientState: MPSCNNBatchNormalizationState, batchNormalizationSourceState: MPSCNNBatchNormalizationState, inputSumOfSquaresVectors: [MPSVector]?, resultState: MPSCNNNormalizationGammaAndBetaState)"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, batchNormalizationState: MPSCNNBatchNormalizationState, inputSumOfSquaresVectors: [MPSVector]?, resultState: MPSCNNNormalizationGammaAndBetaState)"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, convolutionGradientState: MPSCNNConvolutionGradientState, convolutionSourceState: MPSCNNConvolutionWeightsAndBiasesState, inputSumOfSquaresVectors: [MPSVector]?, resultState: MPSCNNConvolutionWeightsAndBiasesState)"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, inputGradientMatrix: MPSMatrix, inputValuesMatrix: MPSMatrix, inputSumOfSquaresMatrix: MPSMatrix, resultValuesMatrix: MPSMatrix)"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, inputGradientVector: MPSVector, inputValuesVector: MPSVector, inputSumOfSquaresVector: MPSVector, resultValuesVector: MPSVector)"
+    }
+  ],
+  "declaration": "class MPSNNOptimizerRMSProp : MPSNNOptimizer",
+  "inheritsFrom": [
+    "MPSNNOptimizer"
+  ]
+}

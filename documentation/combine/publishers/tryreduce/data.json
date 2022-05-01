@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/combine/publishers/tryreduce",
+  "type": "Structure",
+  "name": "Publishers.TryReduce",
+  "desc": "A publisher that applies an error-throwing closure to all received elements and produces an accumulated value when the upstream publisher finishes.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, initial: Output, nextPartialResult: (Output, Upstream.Output) throws -> Output)",
+      "desc": "Creates a publisher that applies an error-throwing closure to all received elements and produces an accumulated value when the upstream publisher finishes."
+    },
+    {
+      "name": "struct Output",
+      "desc": "A publisher that publishes elements specified by a range in the sequence of published elements."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    },
+    {
+      "name": "let initial: Output",
+      "desc": "The initial value provided on the first-use of the closure."
+    },
+    {
+      "name": "let nextPartialResult: (Output, Upstream.Output) throws -> Output",
+      "desc": "An error-throwing closure that takes the previously-accumulated value and the next element from the upstream to produce a new value."
+    }
+  ],
+  "declaration": "struct TryReduce<Upstream, Output> where Upstream : Publisher",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "path": "/documentation/tabulardata/anycolumn",
+  "type": "Structure",
+  "name": "AnyColumn",
+  "desc": "A type-erased column.",
+  "items": [
+    {
+      "name": "var name: String",
+      "desc": "The name of the column."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of elements in the column."
+    },
+    {
+      "name": "var wrappedElementType: Any.Type",
+      "desc": "The underlying type of the column’s elements."
+    },
+    {
+      "name": "func isNil(at: Int) -> Bool",
+      "desc": "Returns a Boolean that indicates whether the element at the index is missing."
+    },
+    {
+      "name": "var prototype: AnyColumnPrototype",
+      "desc": "A prototype that creates type-erased columns with the same underlying type as the column slice."
+    },
+    {
+      "name": "func assumingType<T>(T.Type) -> Column<T>",
+      "desc": "Returns the underlying typed column."
+    },
+    {
+      "name": "func append(Any?)",
+      "desc": "Appends an optional element to the column."
+    },
+    {
+      "name": "func append(contentsOf: AnyColumn)",
+      "desc": "Appends the contents of another column to the column."
+    },
+    {
+      "name": "func append(contentsOf: AnyColumnSlice)",
+      "desc": "Appends the contents of a column slice to the column."
+    },
+    {
+      "name": "func remove(at: Int)",
+      "desc": "Removes an element from the column."
+    },
+    {
+      "name": "subscript(Int) -> Any?",
+      "desc": "Accesses an element at an index."
+    },
+    {
+      "name": "subscript(Range<Int>) -> AnyColumnSlice",
+      "desc": "Accesses a contiguous subrange of the elements."
+    },
+    {
+      "name": "func distinct() -> AnyColumnSlice",
+      "desc": "Generates a column slice that contains unique elements."
+    },
+    {
+      "name": "subscript<C>(C) -> AnyColumnSlice",
+      "desc": "Returns a slice of the column by selecting elements with a collection of Booleans."
+    },
+    {
+      "name": "func encode<T, Encoder>(T.Type, using: Encoder) throws",
+      "desc": "Encodes each element of the column."
+    },
+    {
+      "name": "func encoded<T, Encoder>(T.Type, using: Encoder) throws -> AnyColumn",
+      "desc": "Generates a column by encoding each element’s value."
+    },
+    {
+      "name": "func decode<T, Decoder>(T.Type, using: Decoder) throws",
+      "desc": "Decodes the data in each element of the column."
+    },
+    {
+      "name": "func decoded<T, Decoder>(T.Type, using: Decoder) throws -> AnyColumn",
+      "desc": "Decodes data for each element of the column."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the column."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the column suitable for debugging."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A mirror that reflects the column."
+    },
+    {
+      "name": "static func == (AnyColumn, AnyColumn) -> Bool",
+      "desc": "Returns a Boolean that indicates whether the columns are equal."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool",
+      "desc": "Returns a Boolean that indicates whether the columns are unequal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the column by feeding them into a hasher."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "var missingCount: Int",
+      "desc": "The number of missing elements in the column."
+    }
+  ],
+  "declaration": "struct AnyColumn",
+  "conformsTo": [
+    "AnyColumnProtocol",
+    "BidirectionalCollection",
+    "Collection",
+    "CustomDebugStringConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "Equatable",
+    "Hashable",
+    "MutableCollection",
+    "RandomAccessCollection",
+    "Sequence"
+  ]
+}

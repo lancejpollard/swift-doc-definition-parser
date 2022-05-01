@@ -1,0 +1,106 @@
+{
+  "path": "/documentation/createml/mltextclassifier",
+  "type": "Structure",
+  "name": "MLTextClassifier",
+  "desc": "A model you train to classify natural language text.",
+  "items": [
+    {
+      "name": "init(trainingData: [String : [String]], parameters: MLTextClassifier.ModelParameters)",
+      "desc": "Creates a classifier from a training set in a dictionary."
+    },
+    {
+      "name": "init(trainingData: MLDataTable, textColumn: String, labelColumn: String, parameters: MLTextClassifier.ModelParameters)",
+      "desc": "Creates a classifier from a training set in a data table."
+    },
+    {
+      "name": "init(trainingData: MLTextClassifier.DataSource, parameters: MLTextClassifier.ModelParameters)",
+      "desc": "Creates a classifier from a training set in a set of directories."
+    },
+    {
+      "name": "enum MLTextClassifier.DataSource",
+      "desc": "A data source for a text classifier."
+    },
+    {
+      "name": "struct MLTextClassifier.ModelParameters",
+      "desc": "Parameters that specify model training parameters and validation data."
+    },
+    {
+      "name": "let modelParameters: MLTextClassifier.ModelParameters",
+      "desc": "The configuration parameters that the text classifier used for training during initialization."
+    },
+    {
+      "name": "var trainingMetrics: MLClassifierMetrics",
+      "desc": "Measurements of the classifier’s performance on the training data set."
+    },
+    {
+      "name": "var validationMetrics: MLClassifierMetrics",
+      "desc": "Measurements of the classifier’s performance on the validation data set."
+    },
+    {
+      "name": "func evaluation(on: MLTextClassifier.DataSource) -> MLClassifierMetrics",
+      "desc": "Evaluates the classifier with a test data source."
+    },
+    {
+      "name": "func evaluation(on: MLDataTable, textColumn: String, labelColumn: String) -> MLClassifierMetrics",
+      "desc": "Evaluates the classifier with a test data table."
+    },
+    {
+      "name": "func evaluation(on: [String : [String]]) -> MLClassifierMetrics",
+      "desc": "Evaluates the classifier with a test dictionary."
+    },
+    {
+      "name": "func prediction(from: String) -> String",
+      "desc": "Classifies a string with a label."
+    },
+    {
+      "name": "func predictions(from: [String]) -> [String]",
+      "desc": "Classifies an array of strings with labels."
+    },
+    {
+      "name": "func predictions(from: MLDataColumn<String>) -> MLDataColumn<String>",
+      "desc": "Classifies a data column with labels."
+    },
+    {
+      "name": "func predictionWithConfidence(from: String) -> [String : Double]",
+      "desc": "Predicts multiple possible labels and their confidence scores for the specified string."
+    },
+    {
+      "name": "func predictionsWithConfidence(from: [String]) -> [[String : Double]]",
+      "desc": "Predicts multiple possible labels and their confidence scores for each string in the specified array."
+    },
+    {
+      "name": "func predictionsWithConfidence(from: MLDataColumn<String>) -> MLDataColumn<[String : Double]>",
+      "desc": "Predicts multiple possible labels and their confidence scores for each string in the specified data column."
+    },
+    {
+      "name": "func write(to: URL, metadata: MLModelMetadata?)",
+      "desc": "Exports the text classifier as a Core ML model file at the specified URL."
+    },
+    {
+      "name": "func write(toFile: String, metadata: MLModelMetadata?)",
+      "desc": "Exports the text classifier as a Core ML model file at the specified file path."
+    },
+    {
+      "name": "var model: MLModel",
+      "desc": "The underlying Core ML model of the text classifier."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the text classifier."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the text classifier that’s suitable for output during debugging."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the text classifier in a playground."
+    }
+  ],
+  "declaration": "struct MLTextClassifier",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomStringConvertible"
+  ]
+}

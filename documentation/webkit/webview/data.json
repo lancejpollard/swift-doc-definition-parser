@@ -1,0 +1,506 @@
+{
+  "path": "/documentation/webkit/webview",
+  "type": "Class",
+  "name": "WebView",
+  "desc": "WebView is the core view class in the WebKit framework that manages interactions between the WebFrame and WebFrameView classes. To embed web content in your application, you just create a WebView object, attach it to a window, and send a load(_:) message to its main frame.",
+  "items": [
+    {
+      "name": "class func registerURLScheme(asLocal: String!)",
+      "desc": "Adds the specified URL scheme to the list of local schemes."
+    },
+    {
+      "name": "class func registerClass(AnyClass!, representationClass: AnyClass!, forMIMEType: String!)",
+      "desc": "Specifies the view and representation objects to be used for specific MIME types."
+    },
+    {
+      "name": "init!(frame: NSRect, frameName: String!, groupName: String!)",
+      "desc": "Initializes the receiver with a frame rectangle, frame name, and group name."
+    },
+    {
+      "name": "func close()",
+      "desc": "Closes the web view when it’s no longer needed."
+    },
+    {
+      "name": "var shouldCloseWithWindow: Bool",
+      "desc": "A Boolean that indicates whether the web view should close when its window or host window closes."
+    },
+    {
+      "name": "var mainFrame: WebFrame!",
+      "desc": "The main frame, the root of the web frame hierarchy for this page."
+    },
+    {
+      "name": "func stopLoading(Any?)",
+      "desc": "An action method that stops the loading of any web frame content managed by the receiver."
+    },
+    {
+      "name": "func takeStringURLFrom(Any?)",
+      "desc": "Sets the receiver’s current location by obtaining a URL string from the sender."
+    },
+    {
+      "name": "func reload(Any?)",
+      "desc": "An action method that reloads the current page."
+    },
+    {
+      "name": "func reloadFromOrigin(Any?)",
+      "desc": "Action method that performs an end-to-end revalidation using cache-validating conditionals if possible."
+    },
+    {
+      "name": "var estimatedProgress: Double",
+      "desc": "An estimate, as a percentage, of the amount of content that is currently loaded."
+    },
+    {
+      "name": "var drawsBackground: Bool",
+      "desc": "A Boolean that indicates whether the web view draws a background."
+    },
+    {
+      "name": "var shouldUpdateWhileOffscreen: Bool",
+      "desc": "A Boolean that inidicates whether the web view should update even when it is not in a window that is currently visible."
+    },
+    {
+      "name": "func setMaintainsBackForwardList(Bool)",
+      "desc": "Sets whether to use a back-forward list."
+    },
+    {
+      "name": "var backForwardList: WebBackForwardList!",
+      "desc": "The receiver’s back-forward list."
+    },
+    {
+      "name": "var canGoBack: Bool",
+      "desc": "A Boolean that indicates whether the previous location can be loaded."
+    },
+    {
+      "name": "func goBack() -> Bool",
+      "desc": "Loads the previous location in the back-forward list."
+    },
+    {
+      "name": "func goBack(Any?)",
+      "desc": "An action method that loads the previous location in the back-forward list."
+    },
+    {
+      "name": "var canGoForward: Bool",
+      "desc": "A Boolean that indicates whether the next location can be loaded."
+    },
+    {
+      "name": "func goForward() -> Bool",
+      "desc": "Loads the next location in the back-forward list."
+    },
+    {
+      "name": "func goForward(Any?)",
+      "desc": "An action method that loads the next location in the back-forward list."
+    },
+    {
+      "name": "func go(toBackForwardItem: WebHistoryItem!) -> Bool",
+      "desc": "Loads a specific location from the back-forward list and sets it as the current item."
+    },
+    {
+      "name": "var canMakeTextLarger: Bool",
+      "desc": "A Boolean that indicates whether the text can be made larger."
+    },
+    {
+      "name": "func makeTextLarger(Any?)",
+      "desc": "Action method that increases the text size by one unit."
+    },
+    {
+      "name": "var canMakeTextSmaller: Bool",
+      "desc": "A Boolean that indicates whether the text can be made smaller."
+    },
+    {
+      "name": "func makeTextSmaller(Any?)",
+      "desc": "Action method that reduces the text size by one unit."
+    },
+    {
+      "name": "var downloadDelegate: WebDownloadDelegate!",
+      "desc": "The receiver’s download delegate."
+    },
+    {
+      "name": "var frameLoadDelegate: WebFrameLoadDelegate!",
+      "desc": "The receiver’s frame load delegate."
+    },
+    {
+      "name": "var policyDelegate: WebPolicyDelegate!",
+      "desc": "The receiver's policy delegate."
+    },
+    {
+      "name": "var resourceLoadDelegate: WebResourceLoadDelegate!",
+      "desc": "The receiver’s resource load delegate."
+    },
+    {
+      "name": "var uiDelegate: WebUIDelegate!",
+      "desc": "The receiver's user interface delegate."
+    },
+    {
+      "name": "var hostWindow: NSWindow!",
+      "desc": "The receiver’s host window."
+    },
+    {
+      "name": "var preferences: WebPreferences!",
+      "desc": "The receiver’s preferences."
+    },
+    {
+      "name": "var preferencesIdentifier: String!",
+      "desc": "The identifier of the receiver’s preferences."
+    },
+    {
+      "name": "var isLoading: Bool",
+      "desc": "A Boolean that indicates whether the web view is loading content."
+    },
+    {
+      "name": "var selectedFrame: WebFrame!",
+      "desc": "The frame with the active selection."
+    },
+    {
+      "name": "var mainFrameURL: String!",
+      "desc": "The URL that the main frame loads."
+    },
+    {
+      "name": "var mainFrameTitle: String!",
+      "desc": "The HTML title of the loaded page."
+    },
+    {
+      "name": "var mainFrameIcon: NSImage!",
+      "desc": "The site’s favicon."
+    },
+    {
+      "name": "var mainFrameDocument: DOMDocument!",
+      "desc": "The DOM document for the main frame."
+    },
+    {
+      "name": "class func canShowMIMEType(String!) -> Bool",
+      "desc": "Returns whether the receiver can display content of a given MIME type."
+    },
+    {
+      "name": "class func mimeTypesShownAsHTML() -> [Any]!",
+      "desc": "Returns a list of MIME types that WebKit renders as HTML."
+    },
+    {
+      "name": "class func setMIMETypesShownAsHTML([Any]!)",
+      "desc": "Sets the MIME types that WebKit attempts to render as HTML."
+    },
+    {
+      "name": "class func canShowMIMEType(asHTML: String!) -> Bool",
+      "desc": "Returns whether the receiver interprets a MIME type as HTML."
+    },
+    {
+      "name": "var supportsTextEncoding: Bool",
+      "desc": "A Boolean that indicates whether the document view supports different text encodings."
+    },
+    {
+      "name": "var customTextEncodingName: String!",
+      "desc": "The custom text encoding name."
+    },
+    {
+      "name": "var textSizeMultiplier: Float",
+      "desc": "The font size multiplier for text displayed in web frame view objects managed by the receiver."
+    },
+    {
+      "name": "func search(for: String!, direction: Bool, caseSensitive: Bool, wrap: Bool) -> Bool",
+      "desc": "Searches a document view for a string and highlights it if it is found."
+    },
+    {
+      "name": "var groupName: String!",
+      "desc": "The receiver’s group name."
+    },
+    {
+      "name": "func userAgent(for: URL!) -> String!",
+      "desc": "Returns the appropriate user-agent string for a given URL."
+    },
+    {
+      "name": "var applicationNameForUserAgent: String!",
+      "desc": "The receiver’s application name that is used in the user-agent string."
+    },
+    {
+      "name": "var customUserAgent: String!",
+      "desc": "The receiver’s custom user-agent string."
+    },
+    {
+      "name": "func stringByEvaluatingJavaScript(from: String!) -> String!",
+      "desc": "Returns the result of running a script."
+    },
+    {
+      "name": "class func url(from: NSPasteboard!) -> URL!",
+      "desc": "Returns a URL from the specified pasteboard."
+    },
+    {
+      "name": "class func urlTitle(from: NSPasteboard!) -> String!",
+      "desc": "Returns the title of a URL from the specified pasteboard."
+    },
+    {
+      "name": "func pasteboardTypes(forElement: [AnyHashable : Any]!) -> [Any]!",
+      "desc": "Returns an array of pasteboard types for an element."
+    },
+    {
+      "name": "var pasteboardTypesForSelection: [Any]!",
+      "desc": "An array of pasteboard types that can be used for the current selection of the receiver."
+    },
+    {
+      "name": "func writeElement([AnyHashable : Any]!, withPasteboardTypes: [Any]!, to: NSPasteboard!)",
+      "desc": "Writes an element to the pasteboard using a list of types."
+    },
+    {
+      "name": "func writeSelection(withPasteboardTypes: [Any]!, to: NSPasteboard!)",
+      "desc": "Writes the receiver’s current selection to a pasteboard using a list of types."
+    },
+    {
+      "name": "func element(at: NSPoint) -> [AnyHashable : Any]!",
+      "desc": "Returns a dictionary description of the element at a given point in the receiver’s coordinates."
+    },
+    {
+      "name": "func moveDragCaret(to: NSPoint)",
+      "desc": "Moves the drag caret that indicates the destination of a drag operation to a given point."
+    },
+    {
+      "name": "func removeDragCaret()",
+      "desc": "Removes the drag caret that indicates the destination of a drag operation."
+    },
+    {
+      "name": "func copy(Any?)",
+      "desc": "Action method that copies the selected content to the general pasteboard."
+    },
+    {
+      "name": "func copyFont(Any?)",
+      "desc": "An action method that copies font information onto the font pasteboard."
+    },
+    {
+      "name": "func cut(Any?)",
+      "desc": "An action method that deletes selected content and puts it on the general pasteboard."
+    },
+    {
+      "name": "func delete(Any?)",
+      "desc": "An action method that deletes the selected content."
+    },
+    {
+      "name": "func paste(Any?)",
+      "desc": "An action method that pastes content from the pasteboard at the insertion point or over the selection."
+    },
+    {
+      "name": "func pasteFont(Any?)",
+      "desc": "An action method that pastes font information from the font pasteboard."
+    },
+    {
+      "name": "func pasteAsPlainText(Any?)",
+      "desc": "An action method that pastes pasteboard content as plain text."
+    },
+    {
+      "name": "func pasteAsRichText(Any?)",
+      "desc": "An action method that pastes pasteboard content into the receiver as rich text, maintaining its attributes."
+    },
+    {
+      "name": "func alignCenter(Any?)",
+      "desc": "An action method that applies center alignment to selected content or all content if there’s no selection."
+    },
+    {
+      "name": "func alignJustified(Any?)",
+      "desc": "An action method that applies full justification to selected content or all content if there’s no selection."
+    },
+    {
+      "name": "func alignLeft(Any?)",
+      "desc": "An action method that applies left justification to selected content or all content if there’s no selection."
+    },
+    {
+      "name": "func alignRight(Any?)",
+      "desc": "An action method that applies right justification to selected content or all content if there is no selection."
+    },
+    {
+      "name": "func changeFont(Any?)",
+      "desc": "An action method that changes the font of the selection, or all content if there is no selection."
+    },
+    {
+      "name": "func changeAttributes(Any?)",
+      "desc": "An action method that changes the attributes of the current selection."
+    },
+    {
+      "name": "func changeDocumentBackgroundColor(Any?)",
+      "desc": "Sets the background color of the selected content."
+    },
+    {
+      "name": "func changeColor(Any?)",
+      "desc": "Sets the color of the selected content."
+    },
+    {
+      "name": "func checkSpelling(Any?)",
+      "desc": "An action method that searches for a misspelled word in the receiver."
+    },
+    {
+      "name": "func showGuessPanel(Any?)",
+      "desc": "An action method that shows a spelling correction panel."
+    },
+    {
+      "name": "func performFindPanelAction(Any?)",
+      "desc": "An action method that opens the Find menu and Find panel."
+    },
+    {
+      "name": "func startSpeaking(Any?)",
+      "desc": "An action method that starts speaking the selected text or all text if there’s no selection."
+    },
+    {
+      "name": "func stopSpeaking(Any?)",
+      "desc": "An action method that stops speaking that is in progress."
+    },
+    {
+      "name": "var isEditable: Bool",
+      "desc": "A Boolean that indicates whether the user is allowed to edit the document."
+    },
+    {
+      "name": "var smartInsertDeleteEnabled: Bool",
+      "desc": "A Boolean that indicates whether smart-space insertion and deletion is enabled."
+    },
+    {
+      "name": "var isContinuousSpellCheckingEnabled: Bool",
+      "desc": "A Boolean that indicates whether the web view has continuous spell-checking enabled."
+    },
+    {
+      "name": "var spellCheckerDocumentTag: Int",
+      "desc": "The spell-checker document tag for this document."
+    },
+    {
+      "name": "var undoManager: UndoManager!",
+      "desc": "The receiver’s undo manager."
+    },
+    {
+      "name": "var editingDelegate: WebEditingDelegate!",
+      "desc": "The receiver’s editing delegate."
+    },
+    {
+      "name": "func editableDOMRange(for: NSPoint) -> DOMRange!",
+      "desc": "Returns the editable DOM object located at a given point."
+    },
+    {
+      "name": "func replaceSelection(with: DOMNode!)",
+      "desc": "Replaces the receiver’s current selection with the specified DOM node."
+    },
+    {
+      "name": "func replaceSelection(withText: String!)",
+      "desc": "Replaces the current selection with a string of text."
+    },
+    {
+      "name": "func replaceSelection(withMarkupString: String!)",
+      "desc": "Replaces the current selection with mixed text and markup."
+    },
+    {
+      "name": "func replaceSelection(with: WebArchive!)",
+      "desc": "Replaces the current selection with an archive's contents."
+    },
+    {
+      "name": "func deleteSelection()",
+      "desc": "Deletes the receiver’s current selection unless it’s collapsed."
+    },
+    {
+      "name": "func moveToBeginningOfSentence(Any?)",
+      "desc": "Moves the insertion point to the beginning of the current sentence."
+    },
+    {
+      "name": "func moveToBeginningOfSentenceAndModifySelection(Any?)",
+      "desc": "Moves the insertion point and extends the selection to the beginning of the current sentence."
+    },
+    {
+      "name": "func moveToEndOfSentence(Any?)",
+      "desc": "Moves the insertion point to the end of the current sentence."
+    },
+    {
+      "name": "func moveToEndOfSentenceAndModifySelection(Any?)",
+      "desc": "Moves the insertion point and extends the selection to the end of the current sentence."
+    },
+    {
+      "name": "func selectSentence(Any?)",
+      "desc": "Selects the entire sentence around the insertion point."
+    },
+    {
+      "name": "func toggleContinuousSpellChecking(Any?)",
+      "desc": "Toggles whether continuous spell checking is available."
+    },
+    {
+      "name": "func toggleSmartInsertDelete(Any?)",
+      "desc": "Toggles whether spaces around selected words are inserted or deleted to preserve proper spacing and punctuation."
+    },
+    {
+      "name": "var canMakeTextStandardSize: Bool",
+      "desc": "A Boolean that indicates whether the current text size is a multiple of 1."
+    },
+    {
+      "name": "func makeTextStandardSize(Any?)",
+      "desc": "Resets the text size to a multiple of 1."
+    },
+    {
+      "name": "var maintainsInactiveSelection: Bool",
+      "desc": "A Boolean that indicates whether the selection is maintained when focus is lost."
+    },
+    {
+      "name": "var selectedDOMRange: DOMRange!",
+      "desc": "The range of the current selection."
+    },
+    {
+      "name": "func setSelectedDOMRange(DOMRange!, affinity: NSSelectionAffinity)",
+      "desc": "Selects a range of nodes."
+    },
+    {
+      "name": "var selectionAffinity: NSSelectionAffinity",
+      "desc": "The current selection affinity."
+    },
+    {
+      "name": "func computedStyle(for: DOMElement!, pseudoElement: String!) -> DOMCSSStyleDeclaration!",
+      "desc": "Returns the computed style of an element and its pseudo element."
+    },
+    {
+      "name": "var mediaStyle: String!",
+      "desc": "The receiver’s CSS media property."
+    },
+    {
+      "name": "var typingStyle: DOMCSSStyleDeclaration!",
+      "desc": "The receiver’s CSS typing style."
+    },
+    {
+      "name": "func styleDeclaration(withText: String!) -> DOMCSSStyleDeclaration!",
+      "desc": "Returns the CSS style declaration for the specified text."
+    },
+    {
+      "name": "func applyStyle(DOMCSSStyleDeclaration!)",
+      "desc": "Applies the CSS typing style to the current selection."
+    },
+    {
+      "name": "var windowScriptObject: WebScriptObject!",
+      "desc": "The receiver’s window object from the scripting environment."
+    },
+    {
+      "name": "static let WebViewDidBeginEditing: NSNotification.Name",
+      "desc": "Posted when a web view begins any operation that changes its contents in response to user editing."
+    },
+    {
+      "name": "static let WebViewDidChange: NSNotification.Name",
+      "desc": "Posted when a web view performs any operation that changes its contents in response to user editing."
+    },
+    {
+      "name": "static let WebViewDidChangeSelection: NSNotification.Name",
+      "desc": "Posted when a web view changes its typing selection."
+    },
+    {
+      "name": "static let WebViewDidChangeTypingStyle: NSNotification.Name",
+      "desc": "Posted when a web view changes its typing style."
+    },
+    {
+      "name": "static let WebViewDidEndEditing: NSNotification.Name",
+      "desc": "Posted when a web view ends any operation that changes its contents in response to user editing."
+    },
+    {
+      "name": "static let WebViewProgressEstimateChanged: NSNotification.Name",
+      "desc": "Posted by a WebView object when the estimated progress value of a load changes."
+    },
+    {
+      "name": "static let WebViewProgressFinished: NSNotification.Name",
+      "desc": "Posted by a WebView object when the load has finished."
+    },
+    {
+      "name": "static let WebViewProgressStarted: NSNotification.Name",
+      "desc": "Posted by a WebView object when a load begins, including a load that is initiated in a subframe."
+    },
+    {
+      "name": "func overWrite(Any?)"
+    }
+  ],
+  "declaration": "class WebView : NSView",
+  "inheritsFrom": [
+    "NSView"
+  ],
+  "conformsTo": [
+    "NSUserInterfaceValidations"
+  ]
+}

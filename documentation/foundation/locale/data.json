@@ -1,0 +1,244 @@
+{
+  "path": "/documentation/foundation/locale",
+  "type": "Structure",
+  "name": "Locale",
+  "desc": "Information about linguistic, cultural, and technological conventions for use in formatting data for presentation.",
+  "items": [
+    {
+      "name": "init(identifier: String)",
+      "desc": "Creates a locale with the specified identifier."
+    },
+    {
+      "name": "static var autoupdatingCurrent: Locale",
+      "desc": "A locale which tracks the user’s current preferences."
+    },
+    {
+      "name": "static var current: Locale",
+      "desc": "A locale representing the user's region settings at the time the property is read."
+    },
+    {
+      "name": "static var availableIdentifiers: [String]",
+      "desc": "A list of available identifiers."
+    },
+    {
+      "name": "static var isoRegionCodes: [String]",
+      "desc": "A list of available region codes."
+    },
+    {
+      "name": "static var isoLanguageCodes: [String]",
+      "desc": "A list of available language codes."
+    },
+    {
+      "name": "static var isoCurrencyCodes: [String]",
+      "desc": "A list of available currency codes."
+    },
+    {
+      "name": "static var commonISOCurrencyCodes: [String]",
+      "desc": "A list of common currency codes."
+    },
+    {
+      "name": "static func canonicalIdentifier(from: String) -> String",
+      "desc": "Returns a canonical identifier from the given string."
+    },
+    {
+      "name": "static func components(fromIdentifier: String) -> [String : String]",
+      "desc": "Returns a dictionary that splits an identifier into its component pieces."
+    },
+    {
+      "name": "static func identifier(fromComponents: [String : String]) -> String",
+      "desc": "Constructs an identifier from a dictionary of components."
+    },
+    {
+      "name": "static func canonicalLanguageIdentifier(from: String) -> String",
+      "desc": "Returns a canonical language identifier from the given string."
+    },
+    {
+      "name": "static func identifier(fromWindowsLocaleCode: Int) -> String?",
+      "desc": "Returns the locale identifier from a given Windows locale code, or nil if it could not be converted."
+    },
+    {
+      "name": "static func windowsLocaleCode(fromIdentifier: String) -> Int?",
+      "desc": "Returns the Windows locale code from a given identifier, or nil if it could not be converted."
+    },
+    {
+      "name": "var identifier: String",
+      "desc": "The identifier of the locale."
+    },
+    {
+      "name": "var calendar: Calendar",
+      "desc": "The calendar for the locale, or the Gregorian calendar as a fallback."
+    },
+    {
+      "name": "var regionCode: String?",
+      "desc": "The region code of the locale, or nil if it has none."
+    },
+    {
+      "name": "var languageCode: String?",
+      "desc": "The language code of the locale, or nil if has none."
+    },
+    {
+      "name": "var scriptCode: String?",
+      "desc": "The script code of the locale, or nil if has none."
+    },
+    {
+      "name": "var variantCode: String?",
+      "desc": "The variant code for the locale, or nil if it has none."
+    },
+    {
+      "name": "var exemplarCharacterSet: CharacterSet?",
+      "desc": "The exemplar character set for the locale, or nil if has none."
+    },
+    {
+      "name": "var collationIdentifier: String?",
+      "desc": "The collation identifier for the locale, or nil if it has none."
+    },
+    {
+      "name": "var collatorIdentifier: String?",
+      "desc": "The collator identifier of the locale."
+    },
+    {
+      "name": "var usesMetricSystem: Bool",
+      "desc": "A Boolean that is true if the locale uses the metric system."
+    },
+    {
+      "name": "var decimalSeparator: String?",
+      "desc": "The decimal separator of the locale."
+    },
+    {
+      "name": "var groupingSeparator: String?",
+      "desc": "The grouping separator of the locale."
+    },
+    {
+      "name": "var currencyCode: String?",
+      "desc": "The currency code of the locale."
+    },
+    {
+      "name": "var currencySymbol: String?",
+      "desc": "The currency symbol of the locale."
+    },
+    {
+      "name": "var quotationBeginDelimiter: String?",
+      "desc": "The quotation begin delimiter of the locale."
+    },
+    {
+      "name": "var quotationEndDelimiter: String?",
+      "desc": "The quotation end delimiter of the locale."
+    },
+    {
+      "name": "var alternateQuotationBeginDelimiter: String?",
+      "desc": "The alternate quotation begin delimiter of the locale."
+    },
+    {
+      "name": "var alternateQuotationEndDelimiter: String?",
+      "desc": "The alternate quotation end delimiter of the locale."
+    },
+    {
+      "name": "func localizedString(for: Calendar.Identifier) -> String?",
+      "desc": "Returns a localized string for a specified calendar."
+    },
+    {
+      "name": "func localizedString(forCollationIdentifier: String) -> String?",
+      "desc": "Returns a localized string for a specified ICU collation identifier."
+    },
+    {
+      "name": "func localizedString(forCollatorIdentifier: String) -> String?",
+      "desc": "Returns a localized string for a specified ICU collator identifier."
+    },
+    {
+      "name": "func localizedString(forCurrencyCode: String) -> String?",
+      "desc": "Returns a localized string for a specified ISO 4217 currency code."
+    },
+    {
+      "name": "func localizedString(forIdentifier: String) -> String?",
+      "desc": "Returns a localized string for a specified locale identifier."
+    },
+    {
+      "name": "func localizedString(forLanguageCode: String) -> String?",
+      "desc": "Returns a localized string for a specified language code."
+    },
+    {
+      "name": "func localizedString(forRegionCode: String) -> String?",
+      "desc": "Returns a localized string for a specified region code."
+    },
+    {
+      "name": "func localizedString(forScriptCode: String) -> String?",
+      "desc": "Returns a localized string for a specified script code."
+    },
+    {
+      "name": "func localizedString(forVariantCode: String) -> String?",
+      "desc": "Returns a localized string for a specified variant code."
+    },
+    {
+      "name": "static var preferredLanguages: [String]",
+      "desc": "A list of the user’s preferred languages."
+    },
+    {
+      "name": "static func characterDirection(forLanguage: String) -> Locale.LanguageDirection",
+      "desc": "Returns the character direction for a specified language code."
+    },
+    {
+      "name": "static func lineDirection(forLanguage: String) -> Locale.LanguageDirection",
+      "desc": "Returns the line direction for a specified language code."
+    },
+    {
+      "name": "typealias Locale.LanguageDirection",
+      "desc": "An alias for the standard set of language directions."
+    },
+    {
+      "name": "enum NSLocale.LanguageDirection",
+      "desc": "The directions that a language may take across a page of text."
+    },
+    {
+      "name": "static func != (Locale, Locale) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (Locale, Locale) -> Bool",
+      "desc": "Returns a Boolean indicating whether two locales are identical."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual description of the locale."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual description of the locale suitable for debugging."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A mirror that reflects the locale."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The computed hash value for the locale."
+    },
+    {
+      "name": "class NSLocale",
+      "desc": "An object representing information about linguistic, cultural, and technological conventions that bridges to Locale; use NSLocale when you need reference semantics or other Foundation-specific behavior."
+    },
+    {
+      "name": "typealias Locale.ReferenceType",
+      "desc": "An alias for this value type's equivalent reference type."
+    },
+    {
+      "name": "init(from: Decoder)"
+    },
+    {
+      "name": "func encode(to: Encoder)"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    }
+  ],
+  "declaration": "struct Locale",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "Hashable",
+    "ReferenceConvertible"
+  ]
+}

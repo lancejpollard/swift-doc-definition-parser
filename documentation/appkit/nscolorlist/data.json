@@ -1,0 +1,75 @@
+{
+  "path": "/documentation/appkit/nscolorlist",
+  "type": "Class",
+  "name": "NSColorList",
+  "desc": "An ordered list of color objects, identified by keys.",
+  "items": [
+    {
+      "name": "init(name: NSColorList.Name)",
+      "desc": "Initializes and returns a color list, registering it under the specified name if it isn’t in use already."
+    },
+    {
+      "name": "init?(name: NSColorList.Name, fromFile: String?)",
+      "desc": "Initializes and returns a color list from the specified file, registering it under the specified name if it isn’t in use already."
+    },
+    {
+      "name": "class var availableColorLists: [NSColorList]",
+      "desc": "Returns an array of all color lists found in the standard color list directories."
+    },
+    {
+      "name": "init?(named: NSColorList.Name)",
+      "desc": "Searches the available color lists array and returns the color list with the specified name."
+    },
+    {
+      "name": "var name: NSColorList.Name?",
+      "desc": "The name of the color list."
+    },
+    {
+      "name": "typealias NSColorList.Name",
+      "desc": "The name assigned to a color list."
+    },
+    {
+      "name": "var isEditable: Bool",
+      "desc": "A Boolean value that indicates whether the color list can be modified."
+    },
+    {
+      "name": "var allKeys: [NSColor.Name]",
+      "desc": "An array of the keys by which the color objects are stored in the color list."
+    },
+    {
+      "name": "func color(withKey: NSColor.Name) -> NSColor?",
+      "desc": "Returns the color object associated with the specified key."
+    },
+    {
+      "name": "func insertColor(NSColor, key: NSColor.Name, at: Int)",
+      "desc": "Inserts the specified color at the specified location in the color list."
+    },
+    {
+      "name": "func removeColor(withKey: NSColor.Name)",
+      "desc": "Removes the color associated with the specified key from the color list."
+    },
+    {
+      "name": "func setColor(NSColor, forKey: NSColor.Name)",
+      "desc": "Associates the specified color object with the specified key."
+    },
+    {
+      "name": "func write(to: URL?)",
+      "desc": "Saves the color list to the file at the specified URL."
+    },
+    {
+      "name": "func removeFile()",
+      "desc": "Removes the file from which the list was created, if the file is in a standard search path and owned by the user."
+    },
+    {
+      "name": "class let didChangeNotification: NSNotification.Name",
+      "desc": "Posted whenever a color list changes."
+    }
+  ],
+  "declaration": "class NSColorList : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

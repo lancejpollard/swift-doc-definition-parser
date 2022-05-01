@@ -1,0 +1,94 @@
+{
+  "path": "/documentation/createml/mlhandposeclassifier",
+  "type": "Structure",
+  "name": "MLHandPoseClassifier",
+  "desc": "A task that creates a hand pose classification model by training with images of people’s hands that you provide.",
+  "items": [
+    {
+      "name": "static func train(trainingData: MLHandPoseClassifier.DataSource, parameters: MLHandPoseClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLJob<MLHandPoseClassifier>",
+      "desc": "Begins an asynchronous hand pose classifier’s training session."
+    },
+    {
+      "name": "static func makeTrainingSession(trainingData: MLHandPoseClassifier.DataSource, parameters: MLHandPoseClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLTrainingSession<MLHandPoseClassifier>",
+      "desc": "Creates an asynchronous hand pose classifier’s training session."
+    },
+    {
+      "name": "static func resume(MLTrainingSession<MLHandPoseClassifier>) -> MLJob<MLHandPoseClassifier>",
+      "desc": "Begins or continues an asynchronous hand pose classifier’s training session."
+    },
+    {
+      "name": "static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) -> MLTrainingSession<MLHandPoseClassifier>",
+      "desc": "Recreates an asynchronous hand pose classifier’s training session by restoring its saved state from the file system."
+    },
+    {
+      "name": "init(checkpoint: MLCheckpoint)",
+      "desc": "Creates a hand pose classifier from a training session checkpoint."
+    },
+    {
+      "name": "init(trainingData: MLHandPoseClassifier.DataSource, parameters: MLHandPoseClassifier.ModelParameters)",
+      "desc": "Creates a hand pose classifier by starting a synchronous training session."
+    },
+    {
+      "name": "var trainingMetrics: MLClassifierMetrics",
+      "desc": "Measurements of the hand pose classifier’s performance on the training dataset."
+    },
+    {
+      "name": "var validationMetrics: MLClassifierMetrics",
+      "desc": "Measurements of the hand pose classifier’s performance on the validation dataset."
+    },
+    {
+      "name": "func evaluation(on: MLHandPoseClassifier.DataSource) -> MLClassifierMetrics",
+      "desc": "Generates metrics that describe the hand pose classifier’s performance with a dataset of labeled images."
+    },
+    {
+      "name": "func prediction(from: URL) -> [(label: String, confidence: Double)]",
+      "desc": "Generates a hand pose prediction for an image."
+    },
+    {
+      "name": "func predictions(from: [URL]) -> [[(label: String, confidence: Double)]]",
+      "desc": "Generates an array of hand pose predictions for each image in a URL array."
+    },
+    {
+      "name": "func write(to: URL, metadata: MLModelMetadata?)",
+      "desc": "Exports the hand pose classifier as a Core ML model file to a file system URL."
+    },
+    {
+      "name": "func write(toFile: String, metadata: MLModelMetadata?)",
+      "desc": "Exports the hand pose classifier as a Core ML model file to a file system path."
+    },
+    {
+      "name": "var model: MLModel",
+      "desc": "The underlying Core ML model of the hand pose classifier stored in memory."
+    },
+    {
+      "name": "let modelParameters: MLHandPoseClassifier.ModelParameters",
+      "desc": "The hand pose model’s configuration parameters."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the hand pose classifier."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the hand pose classifier suitable for debugging."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the hand pose classifier that’s viewable in a playground."
+    },
+    {
+      "name": "enum MLHandPoseClassifier.DataSource",
+      "desc": "A hand pose classifier dataset that contains annotated images or hand joint location data."
+    },
+    {
+      "name": "struct MLHandPoseClassifier.ModelParameters",
+      "desc": "A set of parameters that affect the training process of a hand pose classifier task."
+    }
+  ],
+  "declaration": "struct MLHandPoseClassifier",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomStringConvertible"
+  ]
+}

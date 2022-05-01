@@ -1,0 +1,220 @@
+{
+  "path": "/documentation/appkit/nscontrol",
+  "type": "Class",
+  "name": "NSControl",
+  "desc": "A specialized view, such as a button or text field, that notifies your app of relevant events using the target-action design pattern.",
+  "items": [
+    {
+      "name": "init(frame: NSRect)",
+      "desc": "Initializes a control with the specified frame rectangle."
+    },
+    {
+      "name": "init?(coder: NSCoder)",
+      "desc": "Initializes a control with data in an unarchiver."
+    },
+    {
+      "name": "var isEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the receiver reacts to mouse events."
+    },
+    {
+      "name": "var doubleValue: Double",
+      "desc": "The value of the receiver’s cell as a double-precision floating-point number."
+    },
+    {
+      "name": "var floatValue: Float",
+      "desc": "The value of the receiver’s cell as a single-precision floating-point number."
+    },
+    {
+      "name": "var intValue: Int32",
+      "desc": "The value of the receiver’s cell as an integer."
+    },
+    {
+      "name": "var integerValue: Int",
+      "desc": "The value of the receiver’s cell as an NSInteger value."
+    },
+    {
+      "name": "var objectValue: Any?",
+      "desc": "The value of the receiver’s cell as an Objective-C object."
+    },
+    {
+      "name": "var stringValue: String",
+      "desc": "The value of the receiver’s cell as an NSString object."
+    },
+    {
+      "name": "var attributedStringValue: NSAttributedString",
+      "desc": "The value of the receiver’s cell as an attributed string."
+    },
+    {
+      "name": "func takeDoubleValueFrom(Any?)",
+      "desc": "Sets the value of the receiver’s cell to a double-precision floating-point value obtained from the specified object."
+    },
+    {
+      "name": "func takeFloatValueFrom(Any?)",
+      "desc": "Sets the value of the receiver’s cell to a single-precision floating-point value obtained from the specified object."
+    },
+    {
+      "name": "func takeIntValueFrom(Any?)",
+      "desc": "Sets the value of the receiver’s cell to an integer value obtained from the specified object."
+    },
+    {
+      "name": "func takeIntegerValueFrom(Any?)",
+      "desc": "Sets the value of the receiver’s cell to an NSInteger value obtained from the specified object."
+    },
+    {
+      "name": "func takeObjectValueFrom(Any?)",
+      "desc": "Sets the value of the receiver’s cell to the object value obtained from the specified object."
+    },
+    {
+      "name": "func takeStringValueFrom(Any?)",
+      "desc": "Sets the value of the receiver’s cell to the string value obtained from the specified object."
+    },
+    {
+      "name": "var alignment: NSTextAlignment",
+      "desc": "The alignment mode of the text in the receiver’s cell."
+    },
+    {
+      "name": "var font: NSFont?",
+      "desc": "The font used to draw text in the receiver’s cell."
+    },
+    {
+      "name": "var lineBreakMode: NSLineBreakMode",
+      "desc": "The line break mode to use for text in the control’s cell."
+    },
+    {
+      "name": "var usesSingleLineMode: Bool",
+      "desc": "A Boolean value that indicates whether the text in the control’s cell uses single line mode."
+    },
+    {
+      "name": "var formatter: Formatter?",
+      "desc": "The receiver’s formatter."
+    },
+    {
+      "name": "var baseWritingDirection: NSWritingDirection",
+      "desc": "The initial writing direction used to determine the actual writing direction for text."
+    },
+    {
+      "name": "func draw(withExpansionFrame: NSRect, in: NSView)",
+      "desc": "Performs custom expansion tool tip drawing."
+    },
+    {
+      "name": "var allowsExpansionToolTips: Bool",
+      "desc": "A Boolean value that indicates whether expansion tool tips are shown when the control is hovered over."
+    },
+    {
+      "name": "func expansionFrame(withFrame: NSRect) -> NSRect",
+      "desc": "The frame in which a tool tip can be displayed, if needed."
+    },
+    {
+      "name": "func abortEditing() -> Bool",
+      "desc": "Terminates the current editing operation and discards any edited text."
+    },
+    {
+      "name": "func currentEditor() -> NSText?",
+      "desc": "Returns the current field editor for the control."
+    },
+    {
+      "name": "func validateEditing()",
+      "desc": "Validates changes to any user-typed text."
+    },
+    {
+      "name": "func edit(withFrame: NSRect, editor: NSText, delegate: Any?, event: NSEvent)",
+      "desc": "Begins editing of the receiver’s text using the specified field editor."
+    },
+    {
+      "name": "func endEditing(NSText)",
+      "desc": "Ends the editing of text in the receiver using the specified field editor."
+    },
+    {
+      "name": "func select(withFrame: NSRect, editor: NSText, delegate: Any?, start: Int, length: Int)",
+      "desc": "Selects the specified text range in the receiver's field editor."
+    },
+    {
+      "name": "class let textDidBeginEditingNotification: NSNotification.Name",
+      "desc": "Sent when a control with editable cells begins an edit session."
+    },
+    {
+      "name": "class let textDidChangeNotification: NSNotification.Name",
+      "desc": "Sent when the text in the receiving control changes."
+    },
+    {
+      "name": "class let textDidEndEditingNotification: NSNotification.Name",
+      "desc": "Sent when a control with editable cells ends an editing session."
+    },
+    {
+      "name": "var controlSize: NSControl.ControlSize",
+      "desc": "The size of the control."
+    },
+    {
+      "name": "enum NSControl.ControlSize",
+      "desc": "A constant for specifying a cell’s size."
+    },
+    {
+      "name": "func sizeThatFits(NSSize) -> NSSize",
+      "desc": "Asks the control to calculate and return the size that best fits the specified size."
+    },
+    {
+      "name": "func sizeToFit()",
+      "desc": "Resizes the receiver’s frame so that it’s the minimum size needed to contain its cell."
+    },
+    {
+      "name": "var isHighlighted: Bool",
+      "desc": "A Boolean value that indicates whether the cell is highlighted."
+    },
+    {
+      "name": "enum NSControl.ImagePosition",
+      "desc": "A constant for specifying the position of a button’s image relative to its title."
+    },
+    {
+      "name": "struct NSControl.StateValue",
+      "desc": "A constant that indicates whether a control is on, off, or in a mixed state."
+    },
+    {
+      "name": "var action: Selector?",
+      "desc": "The default action-message selector associated with the control."
+    },
+    {
+      "name": "var target: AnyObject?",
+      "desc": "The target object that receives action messages from the cell."
+    },
+    {
+      "name": "var isContinuous: Bool",
+      "desc": "A Boolean value indicating whether the receiver’s cell sends its action message continuously to its target during mouse tracking."
+    },
+    {
+      "name": "func sendAction(Selector?, to: Any?) -> Bool",
+      "desc": "Causes the specified action to be sent to the target."
+    },
+    {
+      "name": "func sendAction(on: NSEvent.EventTypeMask) -> Int",
+      "desc": "Sets the conditions on which the receiver sends action messages to its target."
+    },
+    {
+      "name": "var tag: Int",
+      "desc": "The tag identifying the receiver (not the tag of the receiver’s cell)."
+    },
+    {
+      "name": "func performClick(Any?)",
+      "desc": "Simulates a single mouse click on the receiver."
+    },
+    {
+      "name": "var refusesFirstResponder: Bool",
+      "desc": "A Boolean value indicating whether the receiver refuses the first responder role."
+    },
+    {
+      "name": "func mouseDown(with: NSEvent)",
+      "desc": "Informs the receiver that the user has pressed the left mouse button."
+    },
+    {
+      "name": "var ignoresMultiClick: Bool",
+      "desc": "A Boolean value indicating whether the receiver ignores multiple clicks made in rapid succession."
+    },
+    {
+      "name": "func invalidateIntrinsicContentSize(for: NSCell)",
+      "desc": "Notifies the control that the intrinsic content size for its cell is no longer valid."
+    }
+  ],
+  "declaration": "class NSControl : NSView",
+  "inheritsFrom": [
+    "NSView"
+  ]
+}

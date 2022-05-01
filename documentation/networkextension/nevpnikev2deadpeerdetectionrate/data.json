@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/networkextension/nevpnikev2deadpeerdetectionrate",
+  "type": "Enumeration",
+  "name": "NEVPNIKEv2DeadPeerDetectionRate",
+  "desc": "No overview available.",
+  "items": [
+    {
+      "name": "case none",
+      "desc": "Do not perform dead peer detection."
+    },
+    {
+      "name": "case low",
+      "desc": "Run dead peer detection once every 30 minutes. If the peer does not respond, retry 5 times at 1 second intervals before declaring the peer dead and terminating the session."
+    },
+    {
+      "name": "case medium",
+      "desc": "Run dead peer detection once every 10 minutes. If the peer does not respond, retry 5 times at 1 second intervals before declaring the peer dead and terminating the session."
+    },
+    {
+      "name": "case high",
+      "desc": "Run dead peer detection once every 1 minute. If the peer does not respond, retry 5 times at 1 second intervals before declaring the peer dead and terminating the session."
+    }
+  ],
+  "declaration": "enum NEVPNIKEv2DeadPeerDetectionRate : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

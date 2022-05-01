@@ -1,0 +1,84 @@
+{
+  "path": "/documentation/foundation/urlprotocol",
+  "type": "Class",
+  "name": "URLProtocol",
+  "desc": "An abstract class that handles the loading of protocol-specific URL data.",
+  "items": [
+    {
+      "name": "init(request: URLRequest, cachedResponse: CachedURLResponse?, client: URLProtocolClient?)",
+      "desc": "Creates a URL protocol instance to handle the request."
+    },
+    {
+      "name": "init(task: URLSessionTask, cachedResponse: CachedURLResponse?, client: URLProtocolClient?)",
+      "desc": "Creates a URL protocol instance to handle the task."
+    },
+    {
+      "name": "class func registerClass(AnyClass) -> Bool",
+      "desc": "Attempts to register a subclass of URLProtocol, making it visible to the URL loading system."
+    },
+    {
+      "name": "class func unregisterClass(AnyClass)",
+      "desc": "Unregisters the specified subclass of URLProtocol."
+    },
+    {
+      "name": "class func canInit(with: URLRequest) -> Bool",
+      "desc": "Determines whether the protocol subclass can handle the specified request."
+    },
+    {
+      "name": "class func canInit(with: URLSessionTask) -> Bool",
+      "desc": "Determines whether the protocol subclass can handle the specified task."
+    },
+    {
+      "name": "class func property(forKey: String, in: URLRequest) -> Any?",
+      "desc": "Fetches the property associated with the specified key in the specified request."
+    },
+    {
+      "name": "class func setProperty(Any, forKey: String, in: NSMutableURLRequest)",
+      "desc": "Sets the property associated with the specified key in the specified request."
+    },
+    {
+      "name": "class func removeProperty(forKey: String, in: NSMutableURLRequest)",
+      "desc": "Removes the property associated with the specified key in the specified request."
+    },
+    {
+      "name": "class func canonicalRequest(for: URLRequest) -> URLRequest",
+      "desc": "Returns a canonical version of the specified request."
+    },
+    {
+      "name": "class func requestIsCacheEquivalent(URLRequest, to: URLRequest) -> Bool",
+      "desc": "A Boolean value indicating whether two requests are equivalent for cache purposes."
+    },
+    {
+      "name": "func startLoading()",
+      "desc": "Starts protocol-specific loading of the request."
+    },
+    {
+      "name": "func stopLoading()",
+      "desc": "Stops protocol-specific loading of the request."
+    },
+    {
+      "name": "var cachedResponse: CachedURLResponse?",
+      "desc": "The protocol’s cached response."
+    },
+    {
+      "name": "var client: URLProtocolClient?",
+      "desc": "The object the protocol uses to communicate with the URL loading system."
+    },
+    {
+      "name": "protocol URLProtocolClient",
+      "desc": "The interface used by URLProtocol subclasses to communicate with the URL Loading System."
+    },
+    {
+      "name": "var request: URLRequest",
+      "desc": "The protocol’s request."
+    },
+    {
+      "name": "var task: URLSessionTask?",
+      "desc": "The protocol’s task."
+    }
+  ],
+  "declaration": "class URLProtocol : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

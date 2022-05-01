@@ -1,0 +1,47 @@
+{
+  "path": "/documentation/appkit/nscollectionviewdiffabledatasourcereference",
+  "type": "Class",
+  "name": "NSCollectionViewDiffableDataSourceReference",
+  "desc": "The Swift representation of the Objective-C object you use to manage data and provide items for a collection view.",
+  "items": [
+    {
+      "name": "init(collectionView: NSCollectionView, itemProvider: NSCollectionViewDiffableDataSourceReferenceItemProvider)",
+      "desc": "Creates a diffable data source with the specified item provider, and connects it to the specified collection view."
+    },
+    {
+      "name": "typealias NSCollectionViewDiffableDataSourceReferenceItemProvider",
+      "desc": "A closure that configures and returns an item for a collection view from its diffable data source."
+    },
+    {
+      "name": "var supplementaryViewProvider: NSCollectionViewDiffableDataSourceReferenceSupplementaryViewProvider?",
+      "desc": "The closure that configures and returns the collection view’s supplementary views, such as headers and footers, from the diffable data source."
+    },
+    {
+      "name": "typealias NSCollectionViewDiffableDataSourceReferenceSupplementaryViewProvider",
+      "desc": "A closure that configures and returns a collection view’s supplementary view, such as a header or footer, from a diffable data source."
+    },
+    {
+      "name": "func itemIdentifier(for: IndexPath) -> Any?",
+      "desc": "Returns an identifier for the item at the specified index path in the collection view."
+    },
+    {
+      "name": "func indexPath(forItemIdentifier: Any) -> IndexPath?",
+      "desc": "Returns an index path for the item with the specified identifier in the collection view."
+    },
+    {
+      "name": "func snapshot() -> NSDiffableDataSourceSnapshotReference",
+      "desc": "Returns a representation of the current state of the data in the collection view."
+    },
+    {
+      "name": "func applySnapshot(NSDiffableDataSourceSnapshotReference, animatingDifferences: Bool)",
+      "desc": "Updates the UI to reflect the state of the data in the specified snapshot, optionally animating the UI changes."
+    }
+  ],
+  "declaration": "class NSCollectionViewDiffableDataSourceReference : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCollectionViewDataSource"
+  ]
+}

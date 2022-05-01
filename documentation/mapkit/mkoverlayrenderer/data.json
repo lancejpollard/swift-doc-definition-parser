@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/mapkit/mkoverlayrenderer",
+  "type": "Class",
+  "name": "MKOverlayRenderer",
+  "desc": "The shared infrastructure used to draw overlays on the map surface.",
+  "items": [
+    {
+      "name": "init(overlay: MKOverlay)",
+      "desc": "Initializes and returns the overlay renderer and associates it with the specified overlay object."
+    },
+    {
+      "name": "var overlay: MKOverlay",
+      "desc": "The overlay object containing the data for drawing."
+    },
+    {
+      "name": "var alpha: CGFloat",
+      "desc": "The amount of transparency to apply to the overlay."
+    },
+    {
+      "name": "var contentScaleFactor: CGFloat",
+      "desc": "The scale factor used to draw the overlay’s content."
+    },
+    {
+      "name": "func point(for: MKMapPoint) -> CGPoint",
+      "desc": "Returns the point in the overlay renderer’s drawing area corresponding to the specified point on the map."
+    },
+    {
+      "name": "func mapPoint(for: CGPoint) -> MKMapPoint",
+      "desc": "Returns the point on the map that corresponds to the specified point in the overlay renderer’s drawing area."
+    },
+    {
+      "name": "func rect(for: MKMapRect) -> CGRect",
+      "desc": "Returns the rectangle in the overlay renderer’s drawing area corresponding to the specified rectangle on the map."
+    },
+    {
+      "name": "func mapRect(for: CGRect) -> MKMapRect",
+      "desc": "Returns the rectangle on the map that corresponds to the specified rectangle in the overlay renderer’s drawing area."
+    },
+    {
+      "name": "func canDraw(MKMapRect, zoomScale: MKZoomScale) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the overlay view is ready to draw its content."
+    },
+    {
+      "name": "func draw(MKMapRect, zoomScale: MKZoomScale, in: CGContext)",
+      "desc": "Draws the overlay’s contents at the specified location on the map."
+    },
+    {
+      "name": "func setNeedsDisplay()",
+      "desc": "Invalidates the entire contents of the overlay for all zoom scales."
+    },
+    {
+      "name": "func setNeedsDisplay(MKMapRect)",
+      "desc": "Invalidates the specified portion of the overlay at all zoom scales"
+    },
+    {
+      "name": "func setNeedsDisplay(MKMapRect, zoomScale: MKZoomScale)",
+      "desc": "Invalidates the specified portion of the overlay but only at the specified zoom scale."
+    },
+    {
+      "name": "typealias MKZoomScale",
+      "desc": "A scale factor being used in conjunction with a map."
+    },
+    {
+      "name": "func MKRoadWidthAtZoomScale(MKZoomScale) -> CGFloat",
+      "desc": "Returns the width (in screen points) of roads on a map at the specified zoom level."
+    }
+  ],
+  "declaration": "class MKOverlayRenderer : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

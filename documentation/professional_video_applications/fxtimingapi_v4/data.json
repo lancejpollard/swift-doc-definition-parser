@@ -1,0 +1,81 @@
+{
+  "path": "/documentation/professional_video_applications/fxtimingapi_v4",
+  "type": "Protocol",
+  "name": "FxTimingAPI_v4",
+  "desc": "A protocol that defines the methods provided by the host, so that a plug-in can query the timing properties of its input.",
+  "items": [
+    {
+      "name": "func frameDuration(UnsafeMutablePointer<CMTime>!)",
+      "desc": "Provides the native frame duration of the object to which the effect is applied."
+    },
+    {
+      "name": "func sampleDuration(UnsafeMutablePointer<CMTime>!)",
+      "desc": "Provides the native sample duration of the object to which the effect is applied."
+    },
+    {
+      "name": "func startTime(forEffect: UnsafeMutablePointer<CMTime>!)",
+      "desc": "Provides the start time for the effect."
+    },
+    {
+      "name": "func durationTime(forEffect: UnsafeMutablePointer<CMTime>!)",
+      "desc": "Provides the duration time for the effect."
+    },
+    {
+      "name": "func startTimeOfInput(toFilter: UnsafeMutablePointer<CMTime>!)",
+      "desc": "Provides the start time of the filter’s image input clip."
+    },
+    {
+      "name": "func durationTimeOfInput(toFilter: UnsafeMutablePointer<CMTime>!)",
+      "desc": "Provides the duration of the filter's image input clip."
+    },
+    {
+      "name": "func start(UnsafeMutablePointer<CMTime>!, ofImageParameter: UInt32)",
+      "desc": "Provides the start time of the clip the user assigned to the given image parameter for the effect."
+    },
+    {
+      "name": "func durationTime(UnsafeMutablePointer<CMTime>!, ofImageParameter: UInt32)",
+      "desc": "Provides the duration of the clip the user assigns to the given image parameter for the effect."
+    },
+    {
+      "name": "func inPointTimeOfTimeline(forEffect: UnsafeMutablePointer<CMTime>!)",
+      "desc": "The in point of the timeline on which the user applies the effect."
+    },
+    {
+      "name": "func outPointTimeOfTimeline(forEffect: UnsafeMutablePointer<CMTime>!)",
+      "desc": "The out point of the timeline on which the user applies the effect."
+    },
+    {
+      "name": "func timelineTime(UnsafeMutablePointer<CMTime>!, fromInputTime: CMTime)",
+      "desc": "Converts from input time of the filter's image input to timeline time."
+    },
+    {
+      "name": "func timelineTime(UnsafeMutablePointer<CMTime>!, fromImageTime: CMTime, forParameterID: UInt32)",
+      "desc": "Converts from image time of the given parameter to timeline time."
+    },
+    {
+      "name": "func inputTime(UnsafeMutablePointer<CMTime>!, fromTimelineTime: CMTime)",
+      "desc": "Converts from timeline time to time of the filter's image input."
+    },
+    {
+      "name": "func imageTime(UnsafeMutablePointer<CMTime>!, forParameterID: UInt32, fromTimelineTime: CMTime)",
+      "desc": "Converts from timeline time of the given parameter to image time."
+    },
+    {
+      "name": "func fieldOrderForInput(toFilter: FxTileableEffect!) -> FxFieldOrder",
+      "desc": "Returns the field order of the filter input."
+    },
+    {
+      "name": "func timelineFpsNumerator(for: FxTileableEffect!) -> Int",
+      "desc": "The numerator of the timeline’s frame rate where the user applies the effect."
+    },
+    {
+      "name": "func timelineFpsDenominator(for: FxTileableEffect!) -> Int",
+      "desc": "The denominator of the timeline’s frame rate where the user applies the effect."
+    },
+    {
+      "name": "var kFxDuration_Undefined: Double",
+      "desc": "A special duration value that indicates an undefined duration."
+    }
+  ],
+  "declaration": "protocol FxTimingAPI_v4"
+}

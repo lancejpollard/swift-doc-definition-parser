@@ -1,0 +1,114 @@
+{
+  "path": "/documentation/opendirectory/odrecord",
+  "type": "Class",
+  "name": "ODRecord",
+  "desc": "An ODRecord object serves as a Cocoa wrapper for an Open Directory record.",
+  "items": [
+    {
+      "name": "func changePassword(String!, toPassword: String!)",
+      "desc": "Changes the record’s password."
+    },
+    {
+      "name": "func setNodeCredentials(String!, password: String!)",
+      "desc": "Sets credentials for the record’s node."
+    },
+    {
+      "name": "func setNodeCredentialsWithRecordType(String!, authenticationType: String!, authenticationItems: [Any]!, continueItems: AutoreleasingUnsafeMutablePointer<NSArray?>!, context: AutoreleasingUnsafeMutablePointer<AnyObject?>!)",
+      "desc": "Sets the credentials for interaction with the record’s node using other types of authentication available to Open Directory."
+    },
+    {
+      "name": "func verifyExtended(withAuthenticationType: String!, authenticationItems: [Any]!, continueItems: AutoreleasingUnsafeMutablePointer<NSArray?>!, context: AutoreleasingUnsafeMutablePointer<AnyObject?>!)",
+      "desc": "Verifies the credentials for interaction with the record’s node using other types of authentication available to Open Directory."
+    },
+    {
+      "name": "func verifyPassword(String!)",
+      "desc": "Verifies the password for interaction with the record."
+    },
+    {
+      "name": "func addMemberRecord(ODRecord!)",
+      "desc": "Adds a member record to this group record."
+    },
+    {
+      "name": "func isMemberRecord(ODRecord!)",
+      "desc": "Determines whether a given record is a member of this group record."
+    },
+    {
+      "name": "func removeMemberRecord(ODRecord!)",
+      "desc": "Removes a record as a member of this group record."
+    },
+    {
+      "name": "func addValue(Any!, toAttribute: String!)",
+      "desc": "Adds a value to an attribute of the record."
+    },
+    {
+      "name": "func recordDetails(forAttributes: [Any]!) -> [AnyHashable : Any]",
+      "desc": "Returns a dictionary of attributes with their respective values."
+    },
+    {
+      "name": "var recordName: String!",
+      "desc": "The official name of the record."
+    },
+    {
+      "name": "var recordType: String!",
+      "desc": "The record’s type."
+    },
+    {
+      "name": "func removeValues(forAttribute: String!)",
+      "desc": "Removes all values from an attribute of the record."
+    },
+    {
+      "name": "func removeValue(Any!, fromAttribute: String!)",
+      "desc": "Removes a value from an attribute of the record."
+    },
+    {
+      "name": "func setValue(Any!, forAttribute: String!)",
+      "desc": "Sets the values of an attribute of the record."
+    },
+    {
+      "name": "func synchronize()",
+      "desc": "Synchronizes the record from the directory to get current data and commit changes."
+    },
+    {
+      "name": "func values(forAttribute: String!) -> [Any]",
+      "desc": "Returns the values of an attribute of the record."
+    },
+    {
+      "name": "func delete()",
+      "desc": "Deletes the record from its node and invalidates it."
+    },
+    {
+      "name": "var secondsUntilAuthenticationsExpire: Int64"
+    },
+    {
+      "name": "var secondsUntilPasswordExpires: Int64"
+    },
+    {
+      "name": "func accountPolicies() -> [AnyHashable : Any]"
+    },
+    {
+      "name": "func addAccountPolicy([AnyHashable : Any]!, toCategory: String!)"
+    },
+    {
+      "name": "func authenticationAllowed()"
+    },
+    {
+      "name": "func passwordChangeAllowed(String!)"
+    },
+    {
+      "name": "func removeAccountPolicy([AnyHashable : Any]!, fromCategory: String!)"
+    },
+    {
+      "name": "func setAccountPolicies([AnyHashable : Any]!)"
+    },
+    {
+      "name": "func willAuthenticationsExpire(UInt64) -> Bool"
+    },
+    {
+      "name": "func willPasswordExpire(UInt64) -> Bool"
+    }
+  ],
+  "declaration": "class ODRecord : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

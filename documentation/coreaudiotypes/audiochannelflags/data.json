@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/coreaudiotypes/audiochannelflags",
+  "type": "Structure",
+  "name": "AudioChannelFlags",
+  "desc": "No overview available.",
+  "items": [
+    {
+      "name": "init(rawValue: UInt32)"
+    },
+    {
+      "name": "static var meters: AudioChannelFlags",
+      "desc": "Set to indicate the units are in meters, clear to indicate the units are relative to the unit cube or unit sphere. For relative units, the listener is assumed to be at the center of the cube or sphere and the radius of the sphere or the distance from the center to the midpoint of the side of the cube is 1."
+    },
+    {
+      "name": "static var rectangularCoordinates: AudioChannelFlags",
+      "desc": "Set to indicate the channel is specified by the Cartesian coordinates of the speaker position. This flag is mutually exclusive with kAudioChannelFlags_SphericalCoordinates."
+    },
+    {
+      "name": "static var sphericalCoordinates: AudioChannelFlags",
+      "desc": "Set to indicate the channel is specified by the spherical coordinates of the speaker position. This flag is mutually exclusive with kAudioChannelFlags_RectangularCoordinates."
+    }
+  ],
+  "declaration": "struct AudioChannelFlags, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

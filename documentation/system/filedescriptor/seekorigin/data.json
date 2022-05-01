@@ -1,0 +1,78 @@
+{
+  "path": "/documentation/system/filedescriptor/seekorigin",
+  "type": "Structure",
+  "name": "FileDescriptor.SeekOrigin",
+  "desc": "Options for specifying what a file descriptor’s offset is relative to.",
+  "items": [
+    {
+      "name": "static var current: FileDescriptor.SeekOrigin",
+      "desc": "Indicates that the offset should be set to the specified number of bytes after the current location."
+    },
+    {
+      "name": "static var end: FileDescriptor.SeekOrigin",
+      "desc": "Indicates that the offset should be set to the size of the file plus the specified number of bytes."
+    },
+    {
+      "name": "static var nextHole: FileDescriptor.SeekOrigin",
+      "desc": "Indicates that the offset should be set to the next hole after the specified number of bytes."
+    },
+    {
+      "name": "static var nextData: FileDescriptor.SeekOrigin",
+      "desc": "Indicates that the offset should be set to the start of the next file region that isn’t a hole and is greater than or equal to the supplied offset."
+    },
+    {
+      "name": "static var start: FileDescriptor.SeekOrigin",
+      "desc": "Indicates that the offset should be set to the specified value."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual representation of the seek origin."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual representation of the seek origin, suitable for debugging."
+    },
+    {
+      "name": "init(rawValue: CInt)",
+      "desc": "Create a strongly-typed seek origin from a raw C value."
+    },
+    {
+      "name": "var rawValue: CInt",
+      "desc": "The raw C value."
+    },
+    {
+      "name": "typealias RawValue",
+      "desc": "The raw type that can be used to represent all values of the conforming type."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": ""
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": ""
+    },
+    {
+      "name": "func encode(to: Encoder) throws",
+      "desc": "Encodes this value into the given encoder, when the type’s RawValue is Int32."
+    },
+    {
+      "name": "init(from: Decoder) throws",
+      "desc": "Creates a new instance by decoding from the given decoder, when the type’s RawValue is Int32."
+    }
+  ],
+  "declaration": "@frozen struct SeekOrigin",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "Hashable",
+    "RawRepresentable",
+    "Sendable"
+  ]
+}

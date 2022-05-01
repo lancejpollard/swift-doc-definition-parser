@@ -1,0 +1,79 @@
+{
+  "path": "/documentation/uikit/nstextselection",
+  "type": "Class",
+  "name": "NSTextSelection",
+  "desc": "A class that represents a single logical selection context that corresponds to an insertion point.",
+  "items": [
+    {
+      "name": "init(NSTextLocation, affinity: NSTextSelection.Affinity)",
+      "desc": "Creates a new text selection with the location and selection affinity you provide."
+    },
+    {
+      "name": "init(range: NSTextRange, affinity: NSTextSelection.Affinity, granularity: NSTextSelection.Granularity)",
+      "desc": "Creates a new text selection with the range, selection affinity, and granularity you provide."
+    },
+    {
+      "name": "init([NSTextRange], affinity: NSTextSelection.Affinity, granularity: NSTextSelection.Granularity)",
+      "desc": "Creates a new text selection with the ranges, selection affinity, and granularity you provide."
+    },
+    {
+      "name": "init?(coder: NSCoder)",
+      "desc": "Creates a test selection from data in an unarchiver."
+    },
+    {
+      "name": "var affinity: NSTextSelection.Affinity",
+      "desc": "Returns the selection affinity of the text selection."
+    },
+    {
+      "name": "enum NSTextSelection.Affinity",
+      "desc": "Values that describe the visual location of the text cursor, or the direction of the non-anchored edge of the selection."
+    },
+    {
+      "name": "var anchorPositionOffset: CGFloat",
+      "desc": "Represents the anchor position offset from the beginning of a line fragment in the visual order for the initial tap or click location."
+    },
+    {
+      "name": "var granularity: NSTextSelection.Granularity",
+      "desc": "The granularity of the selection."
+    },
+    {
+      "name": "enum NSTextSelection.Granularity",
+      "desc": "Values that describe the different granularities available to make a selection."
+    },
+    {
+      "name": "var isLogical: Bool",
+      "desc": "A Boolean value that indicates whether the framework interprets the selection as logical or visual."
+    },
+    {
+      "name": "var isTransient: Bool",
+      "desc": "A Boolean value that indicates transient text selection during drag handling."
+    },
+    {
+      "name": "var secondarySelectionLocation: NSTextLocation?",
+      "desc": "Specifies the secondary character location when user taps or clicks at a directional boundary."
+    },
+    {
+      "name": "protocol NSTextLocation",
+      "desc": "An interface you implement that represents an abstract location inside your document’s content."
+    },
+    {
+      "name": "var textRanges: [NSTextRange]",
+      "desc": "Represents an array of noncontiguous logical ranges in the selection."
+    },
+    {
+      "name": "var typingAttributes: [NSAttributedString.Key : Any]",
+      "desc": "The template attributes the framework uses for characters that replace the contents of this selection."
+    },
+    {
+      "name": "func textSelection([NSTextRange]) -> NSTextSelection",
+      "desc": "Creates a subselection of the current text selection with the ranges you specify."
+    }
+  ],
+  "declaration": "class NSTextSelection : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

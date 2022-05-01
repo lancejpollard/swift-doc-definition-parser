@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/photokit/phcollection",
+  "type": "Class",
+  "name": "PHCollection",
+  "desc": "The abstract superclass for Photos asset collections and collection lists.",
+  "items": [
+    {
+      "name": "class func fetchCollections(in: PHCollectionList, options: PHFetchOptions?) -> PHFetchResult<PHCollection>",
+      "desc": "Retrieves collections from the specified collection list."
+    },
+    {
+      "name": "class func fetchTopLevelUserCollections(with: PHFetchOptions?) -> PHFetchResult<PHCollection>",
+      "desc": "Retrieves collections from the root of the photo library’s hierarchy of user-created albums and folders."
+    },
+    {
+      "name": "var localizedTitle: String?",
+      "desc": "The localized name of the collection."
+    },
+    {
+      "name": "var canContainAssets: Bool",
+      "desc": "A Boolean value indicating whether the collection can contain assets."
+    },
+    {
+      "name": "var canContainCollections: Bool",
+      "desc": "A Boolean value indicating whether the collection can contain other collections."
+    },
+    {
+      "name": "func canPerform(PHCollectionEditOperation) -> Bool",
+      "desc": "Returns whether the collection supports the specified editing operation."
+    },
+    {
+      "name": "enum PHCollectionEditOperation",
+      "desc": "Values identifying possible actions that a collection can support, used by the canPerform(_:) method."
+    }
+  ],
+  "declaration": "class PHCollection : PHObject",
+  "inheritsFrom": [
+    "PHObject"
+  ]
+}

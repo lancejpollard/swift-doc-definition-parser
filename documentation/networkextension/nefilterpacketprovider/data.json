@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/networkextension/nefilterpacketprovider",
+  "type": "Class",
+  "name": "NEFilterPacketProvider",
+  "desc": "A filter provider that evaluates network packets and decides whether to block, allow, or delay the packets.",
+  "items": [
+    {
+      "name": "var packetHandler: NEFilterPacketHandler?",
+      "desc": "A closure that handles each packet received by the filter."
+    },
+    {
+      "name": "typealias NEFilterPacketHandler",
+      "desc": "A type for closures that make filtering decisions about network packets."
+    },
+    {
+      "name": "class NEFilterPacketContext",
+      "desc": "The context object provided to the filter packet handler."
+    },
+    {
+      "name": "enum NETrafficDirection",
+      "desc": "A type to represent the direction of network traffic."
+    },
+    {
+      "name": "enum NEFilterPacketProvider.Verdict",
+      "desc": "The verdict returned by a packet handler indicating what the framework should do with a packet."
+    },
+    {
+      "name": "func delayCurrentPacket(NEFilterPacketContext) -> NEPacket",
+      "desc": "Delay a packet currently processed by a packet handler."
+    },
+    {
+      "name": "func allow(NEPacket)",
+      "desc": "Allow delivery of a previously-delayed packet."
+    }
+  ],
+  "declaration": "class NEFilterPacketProvider : NEFilterProvider",
+  "inheritsFrom": [
+    "NEFilterProvider"
+  ]
+}

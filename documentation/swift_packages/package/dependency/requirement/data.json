@@ -1,0 +1,51 @@
+{
+  "path": "/documentation/swift_packages/package/dependency/requirement",
+  "type": "Enumeration",
+  "name": "Package.Dependency.Requirement",
+  "desc": "An enum that represents the requirement for a package dependency.",
+  "items": [
+    {
+      "name": "static func upToNextMajor(from: Version) -> Package.Dependency.Requirement",
+      "desc": "Returns a requirement for a version range, starting at the given minimum version and going up to the next major version. This is the recommended version requirement."
+    },
+    {
+      "name": "static func upToNextMinor(from: Version) -> Package.Dependency.Requirement",
+      "desc": "Returns a requirement for a version range, starting at the given minimum version and going up to the next minor version."
+    },
+    {
+      "name": "static func exact(Version) -> Package.Dependency.Requirement",
+      "desc": "Returns a requirement for the given exact version."
+    },
+    {
+      "name": "static func branch(String) -> Package.Dependency.Requirement",
+      "desc": "Returns a requirement for a source control branch."
+    },
+    {
+      "name": "static func revision(String) -> Package.Dependency.Requirement",
+      "desc": "Returns a requirement for a source control revision such as the hash of a commit."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes this value into the given encoder."
+    },
+    {
+      "name": "case localPackageItem"
+    },
+    {
+      "name": "case rangeItem(Range<Version>)"
+    },
+    {
+      "name": "case branchItem(String)"
+    },
+    {
+      "name": "case exactItem(Version)"
+    },
+    {
+      "name": "case revisionItem(String)"
+    }
+  ],
+  "declaration": "enum Requirement",
+  "conformsTo": [
+    "Encodable"
+  ]
+}

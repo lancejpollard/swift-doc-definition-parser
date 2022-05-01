@@ -1,0 +1,95 @@
+{
+  "path": "/documentation/uikit/nstextlayoutfragment",
+  "type": "Class",
+  "name": "NSTextLayoutFragment",
+  "desc": "A class that represents the layout fragment typically corresponding to a rendering surface such as layer or view subclass.",
+  "items": [
+    {
+      "name": "var bottomMargin: CGFloat",
+      "desc": "Returns the amount of space reserved during paragraph layout between the bottom of the last line in the paragraph and the bottom of the text layout fragment."
+    },
+    {
+      "name": "var leadingPadding: CGFloat",
+      "desc": "Returns the amount of margin space reserved during paragraph layout between the leading edge of the text layout fragment and the start of the lines in the paragraph."
+    },
+    {
+      "name": "var topMargin: CGFloat",
+      "desc": "Returns the amount of space reserved during paragraph layout between the top of the text layout fragment and the top of the first line in the paragraph."
+    },
+    {
+      "name": "var trailingPadding: CGFloat",
+      "desc": "Returns the amount of margin space reserved during paragraph layout between the end of the lines in the paragraph and the trailing edge of the text layout fragment."
+    },
+    {
+      "name": "init?(coder: NSCoder)",
+      "desc": "Creates a new layout fragment with the coder you provide."
+    },
+    {
+      "name": "init(textElement: NSTextElement, range: NSTextRange?)",
+      "desc": "Create a new layout fragment using the provided text element and range."
+    },
+    {
+      "name": "var textLayoutManager: NSTextLayoutManager?",
+      "desc": "Returns the layout manager for this text layout fragment."
+    },
+    {
+      "name": "var layoutQueue: OperationQueue?",
+      "desc": "The queue on which the framework dispatches layout operations."
+    },
+    {
+      "name": "var layoutFragmentFrame: CGRect",
+      "desc": "Returns the rectangle the framework uses for tiling the layout fragment inside the target layout coordinate system."
+    },
+    {
+      "name": "var renderingSurfaceBounds: CGRect",
+      "desc": "Returns the bounds defining the area required for rendering the contents."
+    },
+    {
+      "name": "func draw(at: CGPoint, in: CGContext)",
+      "desc": "Renders the visual representation of this element in the specified graphics context."
+    },
+    {
+      "name": "func invalidateLayout()",
+      "desc": "Invalidates any layout information associated with the text layout fragment."
+    },
+    {
+      "name": "var textAttachmentViewProviders: [NSTextAttachmentViewProvider]",
+      "desc": "Returns the attachment view provider associated with the text layout fragment."
+    },
+    {
+      "name": "func frameForTextAttachment(at: NSTextLocation) -> CGRect",
+      "desc": "Returns the frame in the text layout fragment coordinate system for the attachment at the location you specify."
+    },
+    {
+      "name": "var state: NSTextLayoutFragment.State",
+      "desc": "The layout information state."
+    },
+    {
+      "name": "enum NSTextLayoutFragment.State",
+      "desc": "Values that describe the possible layout states."
+    },
+    {
+      "name": "var rangeInElement: NSTextRange",
+      "desc": "Returns the range inside the text element relative to the document origin."
+    },
+    {
+      "name": "var textElement: NSTextElement?",
+      "desc": "Returns the parent text element."
+    },
+    {
+      "name": "var textLineFragments: [NSTextLineFragment]",
+      "desc": "Returns an array of text line fragments."
+    },
+    {
+      "name": "struct NSTextLayoutFragment.EnumerationOptions",
+      "desc": "Values that describe options for enumerating text layout fragments."
+    }
+  ],
+  "declaration": "class NSTextLayoutFragment : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/appkit/nsdraggingdestination",
+  "type": "Protocol",
+  "name": "NSDraggingDestination",
+  "desc": "A set of methods that the destination object (or recipient) of a dragged image must implement.",
+  "items": [
+    {
+      "name": "func draggingEntered(NSDraggingInfo) -> NSDragOperation",
+      "desc": "Invoked when the dragged image enters destination bounds or frame; delegate returns dragging operation to perform."
+    },
+    {
+      "name": "func wantsPeriodicDraggingUpdates() -> Bool",
+      "desc": "Asks the destination object whether it wants to receive periodic draggingUpdated(_:) messages."
+    },
+    {
+      "name": "func draggingUpdated(NSDraggingInfo) -> NSDragOperation",
+      "desc": "Invoked periodically as the image is held within the destination area, allowing modification of the dragging operation or mouse-pointer position."
+    },
+    {
+      "name": "func draggingEnded(NSDraggingInfo)",
+      "desc": "Called when a drag operation ends."
+    },
+    {
+      "name": "func draggingExited(NSDraggingInfo?)",
+      "desc": "Invoked when the dragged image exits the destination’s bounds rectangle (in the case of a view object) or its frame rectangle (in the case of a window object)."
+    },
+    {
+      "name": "func prepareForDragOperation(NSDraggingInfo) -> Bool",
+      "desc": "Invoked when the image is released, allowing the receiver to agree to or refuse drag operation."
+    },
+    {
+      "name": "func performDragOperation(NSDraggingInfo) -> Bool",
+      "desc": "Invoked after the released image has been removed from the screen, signaling the receiver to import the pasteboard data."
+    },
+    {
+      "name": "func concludeDragOperation(NSDraggingInfo?)",
+      "desc": "Invoked when the dragging operation is complete, signaling the receiver to perform any necessary clean-up."
+    },
+    {
+      "name": "func updateDraggingItemsForDrag(NSDraggingInfo?)",
+      "desc": "Invoked when the dragging images should be changed."
+    }
+  ],
+  "declaration": "protocol NSDraggingDestination",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

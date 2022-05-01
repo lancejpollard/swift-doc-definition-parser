@@ -1,0 +1,364 @@
+{
+  "path": "/documentation/foundation/notificationcenter/publisher",
+  "type": "Structure",
+  "name": "NotificationCenter.Publisher",
+  "desc": "A publisher that emits elements when broadcasting notifications.",
+  "items": [
+    {
+      "name": "typealias NotificationCenter.Publisher.Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias NotificationCenter.Publisher.Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "init(center: NotificationCenter, name: Notification.Name, object: AnyObject?)",
+      "desc": "Creates a publisher that emits events when broadcasting notifications."
+    },
+    {
+      "name": "let center: NotificationCenter",
+      "desc": "The notification center this publisher uses as a source."
+    },
+    {
+      "name": "let name: Notification.Name",
+      "desc": "The name of notifications published by this publisher."
+    },
+    {
+      "name": "let object: AnyObject?",
+      "desc": "The object posting the named notfication."
+    },
+    {
+      "name": "var values: AsyncThrowingPublisher<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "var values: AsyncPublisher<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func allSatisfy((Notification) -> Bool) -> Publishers.AllSatisfy<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func append(Notification...) -> Publishers.Concatenate<NotificationCenter.Publisher, Publishers.Sequence<[Notification], Never>>"
+    },
+    {
+      "name": "func assertNoFailure(String, file: StaticString, line: UInt) -> Publishers.AssertNoFailure<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func assign(to: inout Published<Notification>.Publisher)"
+    },
+    {
+      "name": "func assign<Root>(to: ReferenceWritableKeyPath<Root, Notification>, on: Root) -> AnyCancellable"
+    },
+    {
+      "name": "func breakpoint(receiveSubscription: ((Subscription) -> Bool)?, receiveOutput: ((Notification) -> Bool)?, receiveCompletion: ((Subscribers.Completion<Never>) -> Bool)?) -> Publishers.Breakpoint<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func breakpointOnError() -> Publishers.Breakpoint<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func buffer(size: Int, prefetch: Publishers.PrefetchStrategy, whenFull: Publishers.BufferingStrategy<Never>) -> Publishers.Buffer<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func `catch`<P>((Never) -> P) -> Publishers.Catch<NotificationCenter.Publisher, P>"
+    },
+    {
+      "name": "func collect() -> Publishers.Collect<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func collect(Int) -> Publishers.CollectByCount<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func collect<S>(Publishers.TimeGroupingStrategy<S>, options: S.SchedulerOptions?) -> Publishers.CollectByTime<NotificationCenter.Publisher, S>"
+    },
+    {
+      "name": "func combineLatest<P>(P) -> Publishers.CombineLatest<NotificationCenter.Publisher, P>"
+    },
+    {
+      "name": "func combineLatest<P, Q>(P, Q) -> Publishers.CombineLatest3<NotificationCenter.Publisher, P, Q>"
+    },
+    {
+      "name": "func combineLatest<P, T>(P, (Notification, P.Output) -> T) -> Publishers.Map<Publishers.CombineLatest<NotificationCenter.Publisher, P>, T>"
+    },
+    {
+      "name": "func combineLatest<P, Q, R>(P, Q, R) -> Publishers.CombineLatest4<NotificationCenter.Publisher, P, Q, R>"
+    },
+    {
+      "name": "func combineLatest<P, Q, T>(P, Q, (Notification, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.CombineLatest3<NotificationCenter.Publisher, P, Q>, T>"
+    },
+    {
+      "name": "func combineLatest<P, Q, R, T>(P, Q, R, (Notification, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.CombineLatest4<NotificationCenter.Publisher, P, Q, R>, T>"
+    },
+    {
+      "name": "func compactMap<T>((Notification) -> T?) -> Publishers.CompactMap<NotificationCenter.Publisher, T>"
+    },
+    {
+      "name": "func contains(Notification) -> Publishers.Contains<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func contains(where: (Notification) -> Bool) -> Publishers.ContainsWhere<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func count() -> Publishers.Count<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func debounce<S>(for: S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Debounce<NotificationCenter.Publisher, S>"
+    },
+    {
+      "name": "func decode<Item, Coder>(type: Item.Type, decoder: Coder) -> Publishers.Decode<NotificationCenter.Publisher, Item, Coder>"
+    },
+    {
+      "name": "func delay<S>(for: S.SchedulerTimeType.Stride, tolerance: S.SchedulerTimeType.Stride?, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Delay<NotificationCenter.Publisher, S>"
+    },
+    {
+      "name": "func drop<P>(untilOutputFrom: P) -> Publishers.DropUntilOutput<NotificationCenter.Publisher, P>"
+    },
+    {
+      "name": "func drop(while: (Notification) -> Bool) -> Publishers.DropWhile<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func dropFirst(Int) -> Publishers.Drop<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func eraseToAnyPublisher() -> AnyPublisher<Notification, Never>"
+    },
+    {
+      "name": "func filter((Notification) -> Bool) -> Publishers.Filter<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func first() -> Publishers.First<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func first(where: (Notification) -> Bool) -> Publishers.FirstWhere<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func flatMap<T, P>(maxPublishers: Subscribers.Demand, (Notification) -> P) -> Publishers.FlatMap<P, NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func flatMap<P>(maxPublishers: Subscribers.Demand, (Notification) -> P) -> Publishers.FlatMap<Publishers.SetFailureType<P, Never>, NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func flatMap<P>(maxPublishers: Subscribers.Demand, (Notification) -> P) -> Publishers.FlatMap<P, Publishers.SetFailureType<NotificationCenter.Publisher, P.Failure>>"
+    },
+    {
+      "name": "func flatMap<P>(maxPublishers: Subscribers.Demand, (Notification) -> P) -> Publishers.FlatMap<P, NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func handleEvents(receiveSubscription: ((Subscription) -> Void)?, receiveOutput: ((Notification) -> Void)?, receiveCompletion: ((Subscribers.Completion<Never>) -> Void)?, receiveCancel: (() -> Void)?, receiveRequest: ((Subscribers.Demand) -> Void)?) -> Publishers.HandleEvents<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func ignoreOutput() -> Publishers.IgnoreOutput<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func last() -> Publishers.Last<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func last(where: (Notification) -> Bool) -> Publishers.LastWhere<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func makeConnectable() -> Publishers.MakeConnectable<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func map<T>((Notification) -> T) -> Publishers.Map<NotificationCenter.Publisher, T>"
+    },
+    {
+      "name": "func map<T>(KeyPath<Notification, T>) -> Publishers.MapKeyPath<NotificationCenter.Publisher, T>"
+    },
+    {
+      "name": "func map<T0, T1>(KeyPath<Notification, T0>, KeyPath<Notification, T1>) -> Publishers.MapKeyPath2<NotificationCenter.Publisher, T0, T1>"
+    },
+    {
+      "name": "func map<T0, T1, T2>(KeyPath<Notification, T0>, KeyPath<Notification, T1>, KeyPath<Notification, T2>) -> Publishers.MapKeyPath3<NotificationCenter.Publisher, T0, T1, T2>"
+    },
+    {
+      "name": "func mapError<E>((Never) -> E) -> Publishers.MapError<NotificationCenter.Publisher, E>"
+    },
+    {
+      "name": "func max(by: (Notification, Notification) -> Bool) -> Publishers.Comparison<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func measureInterval<S>(using: S, options: S.SchedulerOptions?) -> Publishers.MeasureInterval<NotificationCenter.Publisher, S>"
+    },
+    {
+      "name": "func merge(with: NotificationCenter.Publisher) -> Publishers.MergeMany<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func merge<B, C>(with: B, C) -> Publishers.Merge3<NotificationCenter.Publisher, B, C>"
+    },
+    {
+      "name": "func merge<B, C, D>(with: B, C, D) -> Publishers.Merge4<NotificationCenter.Publisher, B, C, D>"
+    },
+    {
+      "name": "func merge<B, C, D, E>(with: B, C, D, E) -> Publishers.Merge5<NotificationCenter.Publisher, B, C, D, E>"
+    },
+    {
+      "name": "func merge<B, C, D, E, F>(with: B, C, D, E, F) -> Publishers.Merge6<NotificationCenter.Publisher, B, C, D, E, F>"
+    },
+    {
+      "name": "func merge<B, C, D, E, F, G>(with: B, C, D, E, F, G) -> Publishers.Merge7<NotificationCenter.Publisher, B, C, D, E, F, G>"
+    },
+    {
+      "name": "func merge<B, C, D, E, F, G, H>(with: B, C, D, E, F, G, H) -> Publishers.Merge8<NotificationCenter.Publisher, B, C, D, E, F, G, H>"
+    },
+    {
+      "name": "func min(by: (Notification, Notification) -> Bool) -> Publishers.Comparison<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func multicast<S>(() -> S) -> Publishers.Multicast<NotificationCenter.Publisher, S>"
+    },
+    {
+      "name": "func multicast<S>(subject: S) -> Publishers.Multicast<NotificationCenter.Publisher, S>"
+    },
+    {
+      "name": "func output(at: Int) -> Publishers.Output<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func output<R>(in: R) -> Publishers.Output<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func prefix(Int) -> Publishers.Output<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func prefix<P>(untilOutputFrom: P) -> Publishers.PrefixUntilOutput<NotificationCenter.Publisher, P>"
+    },
+    {
+      "name": "func prefix(while: (Notification) -> Bool) -> Publishers.PrefixWhile<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func prepend(Notification...) -> Publishers.Concatenate<Publishers.Sequence<[Notification], Never>, NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func print(String, to: TextOutputStream?) -> Publishers.Print<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func receive<S>(on: S, options: S.SchedulerOptions?) -> Publishers.ReceiveOn<NotificationCenter.Publisher, S>"
+    },
+    {
+      "name": "func receive<S>(subscriber: S)"
+    },
+    {
+      "name": "func reduce<T>(T, (T, Notification) -> T) -> Publishers.Reduce<NotificationCenter.Publisher, T>"
+    },
+    {
+      "name": "func removeDuplicates() -> Publishers.RemoveDuplicates<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func removeDuplicates(by: (Notification, Notification) -> Bool) -> Publishers.RemoveDuplicates<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func replaceEmpty(with: Notification) -> Publishers.ReplaceEmpty<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func replaceError(with: Notification) -> Publishers.ReplaceError<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func replaceNil<T>(with: T) -> Publishers.Map<NotificationCenter.Publisher, T>"
+    },
+    {
+      "name": "func retry(Int) -> Publishers.Retry<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func scan<T>(T, (T, Notification) -> T) -> Publishers.Scan<NotificationCenter.Publisher, T>"
+    },
+    {
+      "name": "func setFailureType<E>(to: E.Type) -> Publishers.SetFailureType<NotificationCenter.Publisher, E>"
+    },
+    {
+      "name": "func share() -> Publishers.Share<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func sink(receiveCompletion: ((Subscribers.Completion<Never>) -> Void), receiveValue: ((Notification) -> Void)) -> AnyCancellable"
+    },
+    {
+      "name": "func sink(receiveValue: ((Notification) -> Void)) -> AnyCancellable"
+    },
+    {
+      "name": "func subscribe<S>(S) -> AnyCancellable"
+    },
+    {
+      "name": "func subscribe<S>(S)"
+    },
+    {
+      "name": "func subscribe<S>(on: S, options: S.SchedulerOptions?) -> Publishers.SubscribeOn<NotificationCenter.Publisher, S>"
+    },
+    {
+      "name": "func throttle<S>(for: S.SchedulerTimeType.Stride, scheduler: S, latest: Bool) -> Publishers.Throttle<NotificationCenter.Publisher, S>"
+    },
+    {
+      "name": "func timeout<S>(S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?, customError: (() -> Never)?) -> Publishers.Timeout<NotificationCenter.Publisher, S>"
+    },
+    {
+      "name": "func tryAllSatisfy((Notification) -> Bool) -> Publishers.TryAllSatisfy<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func tryCatch<P>((Never) -> P) -> Publishers.TryCatch<NotificationCenter.Publisher, P>"
+    },
+    {
+      "name": "func tryCompactMap<T>((Notification) -> T?) -> Publishers.TryCompactMap<NotificationCenter.Publisher, T>"
+    },
+    {
+      "name": "func tryContains(where: (Notification) -> Bool) -> Publishers.TryContainsWhere<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func tryDrop(while: (Notification) -> Bool) -> Publishers.TryDropWhile<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func tryFilter((Notification) -> Bool) -> Publishers.TryFilter<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func tryFirst(where: (Notification) -> Bool) -> Publishers.TryFirstWhere<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func tryLast(where: (Notification) -> Bool) -> Publishers.TryLastWhere<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func tryMap<T>((Notification) -> T) -> Publishers.TryMap<NotificationCenter.Publisher, T>"
+    },
+    {
+      "name": "func tryMax(by: (Notification, Notification) -> Bool) -> Publishers.TryComparison<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func tryMin(by: (Notification, Notification) -> Bool) -> Publishers.TryComparison<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func tryPrefix(while: (Notification) -> Bool) -> Publishers.TryPrefixWhile<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func tryReduce<T>(T, (T, Notification) -> T) -> Publishers.TryReduce<NotificationCenter.Publisher, T>"
+    },
+    {
+      "name": "func tryRemoveDuplicates(by: (Notification, Notification) -> Bool) -> Publishers.TryRemoveDuplicates<NotificationCenter.Publisher>"
+    },
+    {
+      "name": "func tryScan<T>(T, (T, Notification) -> T) -> Publishers.TryScan<NotificationCenter.Publisher, T>"
+    },
+    {
+      "name": "func zip<P>(P) -> Publishers.Zip<NotificationCenter.Publisher, P>"
+    },
+    {
+      "name": "func zip<P, Q>(P, Q) -> Publishers.Zip3<NotificationCenter.Publisher, P, Q>"
+    },
+    {
+      "name": "func zip<P, T>(P, (Notification, P.Output) -> T) -> Publishers.Map<Publishers.Zip<NotificationCenter.Publisher, P>, T>"
+    },
+    {
+      "name": "func zip<P, Q, R>(P, Q, R) -> Publishers.Zip4<NotificationCenter.Publisher, P, Q, R>"
+    },
+    {
+      "name": "func zip<P, Q, T>(P, Q, (Notification, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.Zip3<NotificationCenter.Publisher, P, Q>, T>"
+    },
+    {
+      "name": "func zip<P, Q, R, T>(P, Q, R, (Notification, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.Zip4<NotificationCenter.Publisher, P, Q, R>, T>"
+    },
+    {
+      "name": "static func != (NotificationCenter.Publisher, NotificationCenter.Publisher) -> Bool"
+    },
+    {
+      "name": "static func == (NotificationCenter.Publisher, NotificationCenter.Publisher) -> Bool"
+    }
+  ],
+  "declaration": "struct Publisher",
+  "conformsTo": [
+    "Equatable",
+    "Publisher"
+  ]
+}

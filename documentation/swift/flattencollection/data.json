@@ -1,0 +1,69 @@
+{
+  "path": "/documentation/swift/flattencollection",
+  "type": "Generic Type Alias",
+  "name": "FlattenCollection",
+  "desc": "No overview available.",
+  "items": [
+    {
+      "name": "typealias FlattenCollection.Indices",
+      "desc": "A type that represents the indices that are valid for subscripting the collection, in ascending order."
+    },
+    {
+      "name": "typealias FlattenCollection.SubSequence",
+      "desc": "A collection representing a contiguous subrange of this collection’s elements. The subsequence shares indices with the original collection."
+    },
+    {
+      "name": "var endIndex: FlattenSequence<Base>.Index",
+      "desc": "The collection’s “past the end” position."
+    },
+    {
+      "name": "var startIndex: FlattenSequence<Base>.Index",
+      "desc": "The position of the first element in a non-empty collection."
+    },
+    {
+      "name": "func distance(from: FlattenSequence<Base>.Index, to: FlattenSequence<Base>.Index) -> Int",
+      "desc": "Returns the distance between two indices."
+    },
+    {
+      "name": "func formIndex(inout FlattenSequence<Base>.Index, offsetBy: Int)",
+      "desc": "Available when Base conforms to Collection and Base.Element conforms to Collection."
+    },
+    {
+      "name": "func formIndex(inout FlattenSequence<Base>.Index, offsetBy: Int, limitedBy: FlattenSequence<Base>.Index) -> Bool",
+      "desc": "Available when Base conforms to Collection and Base.Element conforms to Collection."
+    },
+    {
+      "name": "func formIndex(after: inout FlattenSequence<Base>.Index)",
+      "desc": "Replaces the given index with its successor."
+    },
+    {
+      "name": "func formIndex(before: inout FlattenSequence<Base>.Index)",
+      "desc": "Replaces the given index with its predecessor."
+    },
+    {
+      "name": "func index(FlattenSequence<Base>.Index, offsetBy: Int) -> FlattenSequence<Base>.Index",
+      "desc": "Returns an index that is the specified distance from the given index."
+    },
+    {
+      "name": "func index(FlattenSequence<Base>.Index, offsetBy: Int, limitedBy: FlattenSequence<Base>.Index) -> FlattenSequence<Base>.Index?",
+      "desc": "Returns an index that is the specified distance from the given index, unless that distance is beyond a given limiting index."
+    },
+    {
+      "name": "func index(after: FlattenSequence<Base>.Index) -> FlattenSequence<Base>.Index",
+      "desc": "Returns the position immediately after the given index."
+    },
+    {
+      "name": "func index(before: FlattenSequence<Base>.Index) -> FlattenSequence<Base>.Index",
+      "desc": "Returns the position immediately before the given index."
+    },
+    {
+      "name": "subscript(FlattenSequence<Base>.Index) -> Base.Element.Element",
+      "desc": "Accesses the element at position."
+    },
+    {
+      "name": "subscript(Range<FlattenSequence<Base>.Index>) -> Slice<FlattenCollection<Base>>",
+      "desc": "Accesses a contiguous subrange of the collection’s elements."
+    }
+  ],
+  "declaration": "typealias FlattenCollection<T> = FlattenSequence<T> where T : Collection, T.Element : Collection"
+}

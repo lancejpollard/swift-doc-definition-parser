@@ -1,0 +1,67 @@
+{
+  "path": "/documentation/realitykit/anchorentity",
+  "type": "Class",
+  "name": "AnchorEntity",
+  "desc": "An anchor that tethers entities to a scene.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a new anchor entity."
+    },
+    {
+      "name": "init(AnchoringComponent.Target)",
+      "desc": "Creates an anchor entity targeting a particular kind of anchor."
+    },
+    {
+      "name": "init(anchor: ARAnchor)",
+      "desc": "Creates an anchor entity that uses an existing AR anchor."
+    },
+    {
+      "name": "init(plane: AnchoringComponent.Target.Alignment, classification: AnchoringComponent.Target.Classification, minimumBounds: SIMD2<Float>)",
+      "desc": "Creates an anchor entity that targets a plane with the given characteristics."
+    },
+    {
+      "name": "init(raycastResult: ARRaycastResult)",
+      "desc": "Creates an anchor entity using the information about a real-world surface discovered using a ray-cast query."
+    },
+    {
+      "name": "init(world: float4x4)",
+      "desc": "Creates an anchor entity with a target fixed at the given position in the scene."
+    },
+    {
+      "name": "init(world: SIMD3<Float>)",
+      "desc": "Creates an anchor entity with a target fixed at the given position in the scene."
+    },
+    {
+      "name": "var anchoring: AnchoringComponent",
+      "desc": "The component that describes how virtual content is anchored to the real world."
+    },
+    {
+      "name": "struct AnchoringComponent",
+      "desc": "A description of how virtual content can be anchored to the real world."
+    },
+    {
+      "name": "var anchorIdentifier: UUID?",
+      "desc": "The identifier of the AR anchor with which the anchor entity is associated, or nil if it isn’t currently anchored."
+    },
+    {
+      "name": "func reanchor(AnchoringComponent.Target, preservingWorldTransform: Bool)",
+      "desc": "Changes the entity’s anchoring, preserving either the world transform or the local transform."
+    },
+    {
+      "name": "protocol HasAnchoring",
+      "desc": "An interface that enables anchoring of virtual content to a real-world object in an AR scene."
+    },
+    {
+      "name": "struct SynchronizationComponent",
+      "desc": "A component that synchronizes an entity between processes and networked applications."
+    }
+  ],
+  "declaration": "class AnchorEntity : Entity",
+  "inheritsFrom": [
+    "Entity"
+  ],
+  "conformsTo": [
+    "HasAnchoring"
+  ]
+}

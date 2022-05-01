@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/foundation/portmessage",
+  "type": "Class",
+  "name": "PortMessage",
+  "desc": "A low-level, operating system-independent type for inter-application (and inter-thread) messages.",
+  "items": [
+    {
+      "name": "init(send: Port?, receive: Port?, components: [Any]?)",
+      "desc": "Initializes a newly allocated NSPortMessage object to send given data on a given port and to receiver replies on another given port."
+    },
+    {
+      "name": "func send(before: Date) -> Bool",
+      "desc": "Attempts to send the message before aDate, returning true if successful or false if the operation times out."
+    },
+    {
+      "name": "var components: [Any]?",
+      "desc": "Returns the data components of the receiver."
+    },
+    {
+      "name": "var receivePort: Port?",
+      "desc": "For an outgoing message, returns the port on which replies to the receiver will arrive. For an incoming message, returns the port the receiver did arrive on."
+    },
+    {
+      "name": "var sendPort: Port?",
+      "desc": "For an outgoing message, returns the port the receiver will send itself through. For an incoming message, returns the port replies to the receiver should be sent through."
+    },
+    {
+      "name": "var msgid: UInt32",
+      "desc": "Returns the identifier for the receiver."
+    }
+  ],
+  "declaration": "class PortMessage : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "path": "/documentation/scenekit/scnphysicsbody",
+  "type": "Class",
+  "name": "SCNPhysicsBody",
+  "desc": "The physics simulation attributes attached to a scene graph node.",
+  "items": [
+    {
+      "name": "init(type: SCNPhysicsBodyType, shape: SCNPhysicsShape?)",
+      "desc": "Creates a physics body with the specified type and shape."
+    },
+    {
+      "name": "class func `static`() -> Self",
+      "desc": "Creates a physics body that is unaffected by forces or collisions and that cannot move."
+    },
+    {
+      "name": "class func dynamic() -> Self",
+      "desc": "Creates a physics body that can be affected by forces and collisions."
+    },
+    {
+      "name": "class func kinematic() -> Self",
+      "desc": "Creates a physics body that is unaffected by forces or collisions but that can cause collisions affecting other bodies when moved."
+    },
+    {
+      "name": "var physicsShape: SCNPhysicsShape?",
+      "desc": "An object that defines the solid volume of the physics body for use in collision detection."
+    },
+    {
+      "name": "var type: SCNPhysicsBodyType",
+      "desc": "A constant that determines how the physics body responds to forces and collisions."
+    },
+    {
+      "name": "enum SCNPhysicsBodyType",
+      "desc": "Constants that determine how a physics body interacts with forces and other bodies, used by the type property and when creating a physics body."
+    },
+    {
+      "name": "var velocityFactor: SCNVector3",
+      "desc": "A multiplier affecting how SceneKit applies translations computed by the physics simulation to the node containing the physics body."
+    },
+    {
+      "name": "var angularVelocityFactor: SCNVector3",
+      "desc": "A multiplier affecting how SceneKit applies rotations computed by the physics simulation to the node containing the physics body."
+    },
+    {
+      "name": "var isAffectedByGravity: Bool",
+      "desc": "A Boolean value that determines whether the constant gravity of a scene accelerates the body."
+    },
+    {
+      "name": "var mass: CGFloat",
+      "desc": "The mass of the body, in kilograms."
+    },
+    {
+      "name": "var charge: CGFloat",
+      "desc": "The electric charge of the body, in coulombs."
+    },
+    {
+      "name": "var friction: CGFloat",
+      "desc": "The body’s resistance to sliding motion."
+    },
+    {
+      "name": "var rollingFriction: CGFloat",
+      "desc": "The body’s resistance to rolling motion."
+    },
+    {
+      "name": "var restitution: CGFloat",
+      "desc": "A factor that determines how much kinetic energy the body loses or gains in collisions."
+    },
+    {
+      "name": "var damping: CGFloat",
+      "desc": "A factor that reduces the body’s linear velocity."
+    },
+    {
+      "name": "var angularDamping: CGFloat",
+      "desc": "A factor that reduces the body’s angular velocity."
+    },
+    {
+      "name": "var momentOfInertia: SCNVector3",
+      "desc": "The body’s moment of inertia, expressed in the local coordinate system of the node that contains the body."
+    },
+    {
+      "name": "var usesDefaultMomentOfInertia: Bool",
+      "desc": "A Boolean value that determines whether SceneKit automatically calculates the body’s moment of inertia or allows setting a custom value."
+    },
+    {
+      "name": "var centerOfMassOffset: SCNVector3",
+      "desc": "The position of the body’s center of mass relative to its local coordinate origin."
+    },
+    {
+      "name": "var categoryBitMask: Int",
+      "desc": "A mask that defines which categories this physics body belongs to."
+    },
+    {
+      "name": "var contactTestBitMask: Int",
+      "desc": "A mask that defines which categories of bodies cause intersection notifications with this physics body."
+    },
+    {
+      "name": "var collisionBitMask: Int",
+      "desc": "A mask that defines which categories of physics bodies can collide with this physics body."
+    },
+    {
+      "name": "struct SCNPhysicsCollisionCategory",
+      "desc": "Default values for a physics body’s categoryBitMask and collisionBitMask properties."
+    },
+    {
+      "name": "var continuousCollisionDetectionThreshold: CGFloat",
+      "desc": "The minimum distance the body must travel for SceneKit to apply a more precise (but more costly) algorithm to detect contacts with other bodies."
+    },
+    {
+      "name": "func applyForce(SCNVector3, asImpulse: Bool)",
+      "desc": "Applies a force or impulse to the body at its center of mass."
+    },
+    {
+      "name": "func applyForce(SCNVector3, at: SCNVector3, asImpulse: Bool)",
+      "desc": "Applies a force or impulse to the body at a specific point."
+    },
+    {
+      "name": "func applyTorque(SCNVector4, asImpulse: Bool)",
+      "desc": "Applies a net torque or a change in angular momentum to the body."
+    },
+    {
+      "name": "func clearAllForces()",
+      "desc": "Cancels all continuous forces and torques acting on the physics body during the current simulation step."
+    },
+    {
+      "name": "var velocity: SCNVector3",
+      "desc": "A vector describing both the current speed (in meters per second) and direction of motion of the physics body."
+    },
+    {
+      "name": "var angularVelocity: SCNVector4",
+      "desc": "A vector describing both the current rotation axis and rotational speed (in radians per second) of the physics body."
+    },
+    {
+      "name": "var isResting: Bool",
+      "desc": "A Boolean value that indicates whether the physics body is at rest."
+    },
+    {
+      "name": "var allowsResting: Bool",
+      "desc": "A Boolean value that specifies whether SceneKit can automatically mark the physics body at rest."
+    },
+    {
+      "name": "func setResting(Bool)",
+      "desc": "Tells SceneKit whether to treat the body as currently being in motion."
+    },
+    {
+      "name": "func resetTransform()",
+      "desc": "Updates the position and orientation of a body in the physics simulation to match that of the node to which the body is attached."
+    },
+    {
+      "name": "var angularRestingThreshold: CGFloat"
+    },
+    {
+      "name": "var linearRestingThreshold: CGFloat"
+    }
+  ],
+  "declaration": "class SCNPhysicsBody : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

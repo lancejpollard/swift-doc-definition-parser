@@ -1,0 +1,75 @@
+{
+  "path": "/documentation/groupactivities/groupsession/sessions",
+  "type": "Structure",
+  "name": "GroupSession.Sessions",
+  "desc": "An asynchronous sequence of sessions you use to manage a specific activity.",
+  "items": [
+    {
+      "name": "func makeAsyncIterator() -> GroupSession<ActivityType>.Sessions.Iterator",
+      "desc": "Creates the asynchronous iterator that produces elements of this asynchronous sequence."
+    },
+    {
+      "name": "struct Iterator"
+    },
+    {
+      "name": "typealias Element",
+      "desc": "The type of element produced by this asynchronous sequence."
+    },
+    {
+      "name": "func contains(where: (Self.Element) async throws -> Bool) async rethrows -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the asynchronous sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func allSatisfy((Self.Element) async throws -> Bool) async rethrows -> Bool",
+      "desc": "Returns a Boolean value that indicates whether all elements produced by the asynchronous sequence satisfies the given predicate."
+    },
+    {
+      "name": "func first(where: (Self.Element) async throws -> Bool) async rethrows -> Self.Element?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func min(by: (Self.Element, Self.Element) async throws -> Bool) async rethrows -> Self.Element?",
+      "desc": "Returns the minimum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func max(by: (Self.Element, Self.Element) async throws -> Bool) async rethrows -> Self.Element?",
+      "desc": "Returns the maximum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func prefix(Int) -> AsyncPrefixSequence<Self>",
+      "desc": "Returns an asynchronous sequence, up to the specified maximum length, containing the initial elements of the base asynchronous sequence."
+    },
+    {
+      "name": "func prefix(while: (Self.Element) async -> Bool) rethrows -> AsyncPrefixWhileSequence<Self>",
+      "desc": "Returns an asynchronous sequence, containing the initial, consecutive elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func dropFirst(Int) -> AsyncDropFirstSequence<Self>",
+      "desc": "Omits a specified number of elements from the base asynchronous sequence, then passes through all remaining elements."
+    },
+    {
+      "name": "func drop(while: (Self.Element) async -> Bool) -> AsyncDropWhileSequence<Self>",
+      "desc": "Omits elements from the base asynchronous sequence until a given closure returns false, after which it passes through all remaining elements."
+    },
+    {
+      "name": "func filter((Self.Element) async -> Bool) -> AsyncFilterSequence<Self>",
+      "desc": "Creates an asynchronous sequence that contains, in order, the elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, Self.Element) async throws -> Result) async rethrows -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, Self.Element) async throws -> Void) async rethrows -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure, given a mutable initial value."
+    },
+    {
+      "name": "typealias AsyncIterator",
+      "desc": "The type of asynchronous iterator that produces elements of this asynchronous sequence."
+    }
+  ],
+  "declaration": "struct Sessions",
+  "conformsTo": [
+    "AsyncSequence"
+  ]
+}

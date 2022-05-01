@@ -1,0 +1,112 @@
+{
+  "path": "/documentation/swift/asyncthrowingflatmapsequence",
+  "type": "Generic Structure",
+  "name": "AsyncThrowingFlatMapSequence",
+  "desc": "An asynchronous sequence that concatenates the results of calling a given error-throwing transformation with each element of this sequence.",
+  "items": [
+    {
+      "name": "typealias AsyncThrowingFlatMapSequence.AsyncIterator",
+      "desc": "The type of iterator that produces elements of the sequence."
+    },
+    {
+      "name": "typealias AsyncThrowingFlatMapSequence.Element",
+      "desc": "The type of element produced by this asynchronous sequence."
+    },
+    {
+      "name": "func allSatisfy((SegmentOfResult.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether all elements produced by the asynchronous sequence satisfies the given predicate."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((SegmentOfResult.Element) -> ElementOfResult?) -> AsyncThrowingCompactMapSequence<AsyncThrowingFlatMapSequence<Base, SegmentOfResult>, ElementOfResult>",
+      "desc": "Creates an asynchronous sequence that maps an error-throwing closure over the base sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((SegmentOfResult.Element) -> ElementOfResult?) -> AsyncCompactMapSequence<AsyncThrowingFlatMapSequence<Base, SegmentOfResult>, ElementOfResult>",
+      "desc": "Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "func contains(SegmentOfResult.Element) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the asynchronous sequence contains the given element."
+    },
+    {
+      "name": "func contains(where: (SegmentOfResult.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the asynchronous sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func drop(while: (SegmentOfResult.Element) -> Bool) -> AsyncDropWhileSequence<AsyncThrowingFlatMapSequence<Base, SegmentOfResult>>",
+      "desc": "Omits elements from the base asynchronous sequence until a given closure returns false, after which it passes through all remaining elements."
+    },
+    {
+      "name": "func dropFirst(Int) -> AsyncDropFirstSequence<AsyncThrowingFlatMapSequence<Base, SegmentOfResult>>",
+      "desc": "Omits a specified number of elements from the base asynchronous sequence, then passes through all remaining elements."
+    },
+    {
+      "name": "func filter((SegmentOfResult.Element) -> Bool) -> AsyncFilterSequence<AsyncThrowingFlatMapSequence<Base, SegmentOfResult>>",
+      "desc": "Creates an asynchronous sequence that contains, in order, the elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func first(where: (SegmentOfResult.Element) -> Bool) -> SegmentOfResult.Element?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((SegmentOfResult.Element) -> SegmentOfResult) -> AsyncThrowingFlatMapSequence<AsyncThrowingFlatMapSequence<Base, SegmentOfResult>, SegmentOfResult>",
+      "desc": "Creates an asynchronous sequence that concatenates the results of calling the given error-throwing transformation with each element of this sequence."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((SegmentOfResult.Element) -> SegmentOfResult) -> AsyncFlatMapSequence<AsyncThrowingFlatMapSequence<Base, SegmentOfResult>, SegmentOfResult>",
+      "desc": "Creates an asynchronous sequence that concatenates the results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func makeAsyncIterator() -> AsyncThrowingFlatMapSequence<Base, SegmentOfResult>.Iterator",
+      "desc": "Creates the asynchronous iterator that produces elements of this asynchronous sequence."
+    },
+    {
+      "name": "func map<Transformed>((SegmentOfResult.Element) -> Transformed) -> AsyncThrowingMapSequence<AsyncThrowingFlatMapSequence<Base, SegmentOfResult>, Transformed>",
+      "desc": "Creates an asynchronous sequence that maps the given error-throwing closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "func map<Transformed>((SegmentOfResult.Element) -> Transformed) -> AsyncMapSequence<AsyncThrowingFlatMapSequence<Base, SegmentOfResult>, Transformed>",
+      "desc": "Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "func max() -> SegmentOfResult.Element?",
+      "desc": "Returns the maximum element in an asynchronous sequence of comparable elements."
+    },
+    {
+      "name": "func max(by: (SegmentOfResult.Element, SegmentOfResult.Element) -> Bool) -> SegmentOfResult.Element?",
+      "desc": "Returns the maximum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func min() -> SegmentOfResult.Element?",
+      "desc": "Returns the minimum element in an asynchronous sequence of comparable elements."
+    },
+    {
+      "name": "func min(by: (SegmentOfResult.Element, SegmentOfResult.Element) -> Bool) -> SegmentOfResult.Element?",
+      "desc": "Returns the minimum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func prefix(Int) -> AsyncPrefixSequence<AsyncThrowingFlatMapSequence<Base, SegmentOfResult>>",
+      "desc": "Returns an asynchronous sequence, up to the specified maximum length, containing the initial elements of the base asynchronous sequence."
+    },
+    {
+      "name": "func prefix(while: (SegmentOfResult.Element) -> Bool) -> AsyncPrefixWhileSequence<AsyncThrowingFlatMapSequence<Base, SegmentOfResult>>",
+      "desc": "Returns an asynchronous sequence, containing the initial, consecutive elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, SegmentOfResult.Element) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, SegmentOfResult.Element) -> Void) -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure, given a mutable initial value."
+    },
+    {
+      "name": "struct AsyncThrowingFlatMapSequence.Iterator",
+      "desc": "The iterator that produces elements of the flat map sequence."
+    }
+  ],
+  "declaration": "struct AsyncThrowingFlatMapSequence<Base, SegmentOfResult> where Base : AsyncSequence, SegmentOfResult : AsyncSequence",
+  "conformsTo": [
+    "AsyncSequence"
+  ]
+}

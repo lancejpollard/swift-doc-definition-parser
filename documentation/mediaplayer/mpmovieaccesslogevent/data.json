@@ -1,0 +1,71 @@
+{
+  "path": "/documentation/mediaplayer/mpmovieaccesslogevent",
+  "type": "Class",
+  "name": "MPMovieAccessLogEvent",
+  "desc": "A single piece of information for a movie access log.",
+  "items": [
+    {
+      "name": "var numberOfSegmentsDownloaded: Int",
+      "desc": "A count of media segments downloaded from the web server to your app."
+    },
+    {
+      "name": "var playbackStartDate: Date!",
+      "desc": "The timestamp for when playback began for the movie log access event."
+    },
+    {
+      "name": "var uri: String!",
+      "desc": "The URI of the playback item."
+    },
+    {
+      "name": "var serverAddress: String!",
+      "desc": "The IP address of the web server that was the source of the last delivered media segment. Can be either an IPv4 or an IPv6 address."
+    },
+    {
+      "name": "var numberOfServerAddressChanges: Int",
+      "desc": "A count of changes to the serverAddress property over the last uninterrupted period of playback."
+    },
+    {
+      "name": "var playbackSessionID: String!",
+      "desc": "A GUID that identifies the playback session. This value is used in HTTP requests."
+    },
+    {
+      "name": "var playbackStartOffset: TimeInterval",
+      "desc": "An offset into the playlist where the last uninterrupted period of playback began, in seconds."
+    },
+    {
+      "name": "var segmentsDownloadedDuration: TimeInterval",
+      "desc": "The accumulated duration of the media downloaded, in seconds."
+    },
+    {
+      "name": "var durationWatched: TimeInterval",
+      "desc": "The accumulated duration of the media played, in seconds."
+    },
+    {
+      "name": "var numberOfStalls: Int",
+      "desc": "The total number of playback stalls encountered."
+    },
+    {
+      "name": "var numberOfBytesTransferred: Int64",
+      "desc": "The accumulated number of bytes transferred."
+    },
+    {
+      "name": "var observedBitrate: Double",
+      "desc": "The empirical throughput across all media downloaded for the movie player, in bits per second."
+    },
+    {
+      "name": "var indicatedBitrate: Double",
+      "desc": "The throughput required to play the stream, as advertised by the web server, in bits per second."
+    },
+    {
+      "name": "var numberOfDroppedVideoFrames: Int",
+      "desc": "The total number of dropped video frames."
+    }
+  ],
+  "declaration": "class MPMovieAccessLogEvent : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/combine/publishers/mapkeypath3",
+  "type": "Structure",
+  "name": "Publishers.MapKeyPath3",
+  "desc": "A publisher that publishes the values of three key paths as a tuple.",
+  "items": [
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    },
+    {
+      "name": "let keyPath0: KeyPath<Upstream.Output, Output0>",
+      "desc": "The key path of a property to publish."
+    },
+    {
+      "name": "let keyPath1: KeyPath<Upstream.Output, Output1>",
+      "desc": "The key path of a second property to publish."
+    },
+    {
+      "name": "let keyPath2: KeyPath<Upstream.Output, Output2>",
+      "desc": "The key path of a third property to publish."
+    }
+  ],
+  "declaration": "struct MapKeyPath3<Upstream, Output0, Output1, Output2> where Upstream : Publisher",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

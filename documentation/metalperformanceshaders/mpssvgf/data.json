@@ -1,0 +1,91 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpssvgf",
+  "type": "Class",
+  "name": "MPSSVGF",
+  "desc": "No overview available.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice)"
+    },
+    {
+      "name": "var bilateralFilterRadius: Int"
+    },
+    {
+      "name": "var bilateralFilterSigma: Float"
+    },
+    {
+      "name": "var channelCount: Int"
+    },
+    {
+      "name": "var channelCount2: Int"
+    },
+    {
+      "name": "var depthWeight: Float"
+    },
+    {
+      "name": "var luminanceWeight: Float"
+    },
+    {
+      "name": "var minimumFramesForVarianceEstimation: Int"
+    },
+    {
+      "name": "var normalWeight: Float"
+    },
+    {
+      "name": "var reprojectionThreshold: Float"
+    },
+    {
+      "name": "var temporalReprojectionBlendFactor: Float"
+    },
+    {
+      "name": "var temporalWeighting: MPSTemporalWeighting"
+    },
+    {
+      "name": "var varianceEstimationRadius: Int"
+    },
+    {
+      "name": "var varianceEstimationSigma: Float"
+    },
+    {
+      "name": "var variancePrefilterRadius: Int"
+    },
+    {
+      "name": "var variancePrefilterSigma: Float"
+    },
+    {
+      "name": "func copy(with: NSZone?, device: MTLDevice?) -> Self"
+    },
+    {
+      "name": "func encode(with: NSCoder)"
+    },
+    {
+      "name": "func encodeBilateralFilter(to: MTLCommandBuffer, stepDistance: Int, sourceTexture: MTLTexture, destinationTexture: MTLTexture, depthNormalTexture: MTLTexture)"
+    },
+    {
+      "name": "func encodeBilateralFilter(to: MTLCommandBuffer, stepDistance: Int, sourceTexture: MTLTexture, destinationTexture: MTLTexture, sourceTexture2: MTLTexture?, destinationTexture2: MTLTexture?, depthNormalTexture: MTLTexture)"
+    },
+    {
+      "name": "func encodeReprojection(to: MTLCommandBuffer, sourceTexture: MTLTexture, previousTexture: MTLTexture, destinationTexture: MTLTexture, previousLuminanceMomentsTexture: MTLTexture, destinationLuminanceMomentsTexture: MTLTexture, previousFrameCount: MTLTexture, destinationFrameCount: MTLTexture, motionVectorTexture: MTLTexture?, depthNormalTexture: MTLTexture?, previousDepthNormalTexture: MTLTexture?)"
+    },
+    {
+      "name": "func encodeReprojection(to: MTLCommandBuffer, sourceTexture: MTLTexture, previousTexture: MTLTexture, destinationTexture: MTLTexture, previousLuminanceMomentsTexture: MTLTexture, destinationLuminanceMomentsTexture: MTLTexture, sourceTexture2: MTLTexture?, previousTexture2: MTLTexture?, destinationTexture2: MTLTexture?, previousLuminanceMomentsTexture2: MTLTexture?, destinationLuminanceMomentsTexture2: MTLTexture?, previousFrameCount: MTLTexture, destinationFrameCount: MTLTexture, motionVectorTexture: MTLTexture?, depthNormalTexture: MTLTexture?, previousDepthNormalTexture: MTLTexture?)"
+    },
+    {
+      "name": "func encodeVarianceEstimation(to: MTLCommandBuffer, sourceTexture: MTLTexture, luminanceMomentsTexture: MTLTexture, destinationTexture: MTLTexture, frameCount: MTLTexture, depthNormalTexture: MTLTexture?)"
+    },
+    {
+      "name": "func encodeVarianceEstimation(to: MTLCommandBuffer, sourceTexture: MTLTexture, luminanceMomentsTexture: MTLTexture, destinationTexture: MTLTexture, sourceTexture2: MTLTexture?, luminanceMomentsTexture2: MTLTexture?, destinationTexture2: MTLTexture?, frameCount: MTLTexture, depthNormalTexture: MTLTexture?)"
+    }
+  ],
+  "declaration": "class MPSSVGF : MPSKernel",
+  "inheritsFrom": [
+    "MPSKernel"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

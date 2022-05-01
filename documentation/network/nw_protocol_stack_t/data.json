@@ -1,0 +1,37 @@
+{
+  "path": "/documentation/network/nw_protocol_stack_t",
+  "type": "Type Alias",
+  "name": "nw_protocol_stack_t",
+  "desc": "An ordered set of protocol options that define the protocols that connections and listeners use.",
+  "items": [
+    {
+      "name": "func nw_protocol_stack_prepend_application_protocol(nw_protocol_stack_t, nw_protocol_options_t)",
+      "desc": "Adds a protocol onto the top of the protocol stack."
+    },
+    {
+      "name": "func nw_protocol_stack_clear_application_protocols(nw_protocol_stack_t)",
+      "desc": "Removes all application protocols from the protocol stack."
+    },
+    {
+      "name": "func nw_protocol_stack_iterate_application_protocols(nw_protocol_stack_t, (nw_protocol_options_t) -> Void)",
+      "desc": "Iterates through the array of application protocol options that will be used by connections and listeners."
+    },
+    {
+      "name": "typealias nw_protocol_stack_iterate_protocols_block_t",
+      "desc": "A block that allows you to inspect or modify a single protocol's options."
+    },
+    {
+      "name": "func nw_protocol_stack_copy_transport_protocol(nw_protocol_stack_t) -> nw_protocol_options_t?",
+      "desc": "Accesses the options for the protocol stack's transport protocol."
+    },
+    {
+      "name": "func nw_protocol_stack_set_transport_protocol(nw_protocol_stack_t, nw_protocol_options_t)",
+      "desc": "Replaces the protocol stack's transport protocol with a new set of options."
+    },
+    {
+      "name": "func nw_protocol_stack_copy_internet_protocol(nw_protocol_stack_t) -> nw_protocol_options_t?",
+      "desc": "Accesses the protocol stack's Internet Protocol options."
+    }
+  ],
+  "declaration": "typealias nw_protocol_stack_t = OS_nw_protocol_stack"
+}

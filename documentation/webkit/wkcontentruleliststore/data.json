@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/webkit/wkcontentruleliststore",
+  "type": "Class",
+  "name": "WKContentRuleListStore",
+  "desc": "An object that contains the rules for how to load and filter content in the web view.",
+  "items": [
+    {
+      "name": "class func `default`() -> Self!",
+      "desc": "Returns the default content rule list store."
+    },
+    {
+      "name": "init!(url: URL!)",
+      "desc": "Creates a new content rule list store in the specified directory."
+    },
+    {
+      "name": "func compileContentRuleList(forIdentifier: String!, encodedContentRuleList: String!, completionHandler: ((WKContentRuleList?, Error?) -> Void)!)",
+      "desc": "Compiles the specified JSON content into a new rule list and adds it to the current data store."
+    },
+    {
+      "name": "func removeContentRuleList(forIdentifier: String!, completionHandler: ((Error?) -> Void)!)",
+      "desc": "Removes a rule list from the current data store asynchronously."
+    },
+    {
+      "name": "func getAvailableContentRuleListIdentifiers((([String]?) -> Void)!)",
+      "desc": "Fetches the identifiers for all rule lists in the store asynchronously."
+    },
+    {
+      "name": "func lookUpContentRuleList(forIdentifier: String!, completionHandler: ((WKContentRuleList?, Error?) -> Void)!)",
+      "desc": "Searches asynchronously for a specific rule list in the data store."
+    }
+  ],
+  "declaration": "class WKContentRuleListStore : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

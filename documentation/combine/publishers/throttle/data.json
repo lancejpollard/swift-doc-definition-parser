@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/combine/publishers/throttle",
+  "type": "Structure",
+  "name": "Publishers.Throttle",
+  "desc": "A publisher that publishes either the most-recent or first element published by the upstream publisher in a specified time interval.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, interval: Context.SchedulerTimeType.Stride, scheduler: Context, latest: Bool)",
+      "desc": "Creates a publisher that publishes either the most-recent or first element published by the upstream publisher in a specified time interval."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    },
+    {
+      "name": "let interval: Context.SchedulerTimeType.Stride",
+      "desc": "The interval in which to find and emit the most recent element."
+    },
+    {
+      "name": "let scheduler: Context",
+      "desc": "The scheduler on which to publish elements."
+    },
+    {
+      "name": "let latest: Bool",
+      "desc": "A Boolean value indicating whether to publish the most recent element."
+    }
+  ],
+  "declaration": "struct Throttle<Upstream, Context> where Upstream : Publisher, Context : Scheduler",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

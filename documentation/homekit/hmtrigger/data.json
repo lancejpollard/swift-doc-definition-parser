@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/homekit/hmtrigger",
+  "type": "Class",
+  "name": "HMTrigger",
+  "desc": "An abstract base class for triggering actions based on a set of conditions.",
+  "items": [
+    {
+      "name": "var name: String",
+      "desc": "The name of the trigger."
+    },
+    {
+      "name": "func updateName(String, completionHandler: (Error?) -> Void)",
+      "desc": "Updates the name of the trigger."
+    },
+    {
+      "name": "var isEnabled: Bool",
+      "desc": "State of the trigger."
+    },
+    {
+      "name": "func enable(Bool, completionHandler: (Error?) -> Void)",
+      "desc": "Changes the enabled state of the trigger."
+    },
+    {
+      "name": "var lastFireDate: Date?",
+      "desc": "The last time this trigger fired."
+    },
+    {
+      "name": "var uniqueIdentifier: UUID",
+      "desc": "A unique identifier for this trigger."
+    },
+    {
+      "name": "var actionSets: [HMActionSet]",
+      "desc": "Array of all action sets that will be executed by the trigger."
+    },
+    {
+      "name": "func addActionSet(HMActionSet, completionHandler: (Error?) -> Void)",
+      "desc": "Adds an action set to the trigger."
+    },
+    {
+      "name": "func removeActionSet(HMActionSet, completionHandler: (Error?) -> Void)",
+      "desc": "Removes an action set from the trigger."
+    }
+  ],
+  "declaration": "class HMTrigger : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

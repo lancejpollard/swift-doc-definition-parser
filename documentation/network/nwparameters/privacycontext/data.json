@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/network/nwparameters/privacycontext",
+  "type": "Class",
+  "name": "NWParameters.PrivacyContext",
+  "desc": "An object that defines the privacy requirements for a set of connections.",
+  "items": [
+    {
+      "name": "init(description: String)",
+      "desc": "Initializes a privacy context with a description string."
+    },
+    {
+      "name": "static let `default`: NWParameters.PrivacyContext",
+      "desc": "The privacy context that applies to all connections that do not use a custom context."
+    },
+    {
+      "name": "func disableLogging()",
+      "desc": "Disables system logging of connection activity."
+    },
+    {
+      "name": "func flushCache()",
+      "desc": "Flushes all cached data, such as TLS session state, created by connections associated with the privacy context."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "The description string you provide when creating the context."
+    },
+    {
+      "name": "func requireEncryptedNameResolution(Bool, fallbackResolver: NWParameters.PrivacyContext.ResolverConfiguration?)",
+      "desc": "Requires that any DNS name resolution for connections associated with this context use encrypted transports, such as TLS or HTTPS."
+    },
+    {
+      "name": "enum NWParameters.PrivacyContext.ResolverConfiguration",
+      "desc": "A DNS server configuration that uses TLS or HTTPS."
+    }
+  ],
+  "declaration": "class NWParameters.PrivacyContext",
+  "conformsTo": [
+    "CustomDebugStringConvertible"
+  ]
+}

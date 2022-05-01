@@ -1,0 +1,159 @@
+{
+  "path": "/documentation/avfoundation/avcapturephotosettings",
+  "type": "Class",
+  "name": "AVCapturePhotoSettings",
+  "desc": "A specification of the features and settings to use for a single photo capture request.",
+  "items": [
+    {
+      "name": "init(format: [String : Any]?)",
+      "desc": "Creates a photo settings object with the specified output format."
+    },
+    {
+      "name": "init(rawPixelFormatType: OSType)",
+      "desc": "Creates a photo settings object for RAW-format-only capture with the specified pixel format."
+    },
+    {
+      "name": "init(rawPixelFormatType: OSType, processedFormat: [String : Any]?)",
+      "desc": "Creates a photo settings object for capture in both RAW format and a processed format."
+    },
+    {
+      "name": "init(rawPixelFormatType: OSType, rawFileType: AVFileType?, processedFormat: [String : Any]?, processedFileType: AVFileType?)",
+      "desc": "Creates a photo settings object for capture in both RAW format and a processed format with the specified output file types."
+    },
+    {
+      "name": "var format: [String : Any]?",
+      "desc": "A dictionary describing the processed format (for example, JPEG) to deliver captured photos in."
+    },
+    {
+      "name": "var processedFileType: AVFileType?",
+      "desc": "The container file format for eventual output of the processed image."
+    },
+    {
+      "name": "var rawFileType: AVFileType?",
+      "desc": "The container file format for eventual output of the RAW image."
+    },
+    {
+      "name": "var rawPhotoPixelFormatType: OSType",
+      "desc": "An identifier for the Bayer RAW pixel format to deliver captured RAW photos in."
+    },
+    {
+      "name": "struct AVFileType",
+      "desc": "The uniform type identifiers for various file formats."
+    },
+    {
+      "name": "init(from: AVCapturePhotoSettings)",
+      "desc": "Creates a unique photo settings object, copying all settings values from the specified photo settings object."
+    },
+    {
+      "name": "var uniqueID: Int64",
+      "desc": "A unique identifier for this photo settings instance."
+    },
+    {
+      "name": "var previewPhotoFormat: [String : Any]?",
+      "desc": "A dictionary describing the format for delivery of preview-sized images alongside the main photo."
+    },
+    {
+      "name": "var embeddedThumbnailPhotoFormat: [String : Any]?",
+      "desc": "A dictionary describing the format for delivery of thumbnail images embedded in photo file output."
+    },
+    {
+      "name": "var availableRawEmbeddedThumbnailPhotoCodecTypes: [AVVideoCodecType]",
+      "desc": "An array of video codec types compatible with the photo settings for embedding raw thumbnail images in photo file output."
+    },
+    {
+      "name": "var rawEmbeddedThumbnailPhotoFormat: [String : Any]?",
+      "desc": "A dictionary describing the format for delivery of raw thumbnail images embedded in photo file output."
+    },
+    {
+      "name": "var availableEmbeddedThumbnailPhotoCodecTypes: [AVVideoCodecType]",
+      "desc": "An array of video codec types compatible with the photo settings for embedding thumbnail images in photo file output."
+    },
+    {
+      "name": "var availablePreviewPhotoPixelFormatTypes: [OSType]",
+      "desc": "An array of available kCVPixelBufferPixelFormatTypeKeys available to specify a preview photo format."
+    },
+    {
+      "name": "var flashMode: AVCaptureDevice.FlashMode",
+      "desc": "A setting for whether to fire the flash when capturing photos."
+    },
+    {
+      "name": "var photoQualityPrioritization: AVCapturePhotoOutput.QualityPrioritization",
+      "desc": "A setting that indicates how to prioritize photo quality against speed of photo delivery."
+    },
+    {
+      "name": "var isAutoRedEyeReductionEnabled: Bool",
+      "desc": "A Boolean value that determines whether to use auto red-eye reduction on flash captures."
+    },
+    {
+      "name": "var isHighResolutionPhotoEnabled: Bool",
+      "desc": "A Boolean value that specifies whether to capture still images at the highest resolution supported by the active device and format."
+    },
+    {
+      "name": "var isCameraCalibrationDataDeliveryEnabled: Bool",
+      "desc": "A Boolean value that determines whether a dual photo capture also delivers camera calibration data."
+    },
+    {
+      "name": "var isAutoContentAwareDistortionCorrectionEnabled: Bool",
+      "desc": "A Boolean value that specifies whether the photo output, at its discretion, uses content-aware distortion correction on this photo request."
+    },
+    {
+      "name": "var isAutoVirtualDeviceFusionEnabled: Bool",
+      "desc": "A Boolean value that specifies whether to use automatic virtual-device image fusion."
+    },
+    {
+      "name": "var virtualDeviceConstituentPhotoDeliveryEnabledDevices: [AVCaptureDevice]",
+      "desc": "The constituent devices for which the virtual device should deliver photos."
+    },
+    {
+      "name": "var livePhotoMovieFileURL: URL?",
+      "desc": "A URL at which to write Live Photo movie output."
+    },
+    {
+      "name": "var livePhotoMovieMetadata: [AVMetadataItem]!",
+      "desc": "A dictionary containing metadata to be included in the Live Photo movie file."
+    },
+    {
+      "name": "var livePhotoVideoCodecType: AVVideoCodecType",
+      "desc": "The video codec to use for encoding the movie portion of Live Photo output."
+    },
+    {
+      "name": "var isDepthDataDeliveryEnabled: Bool",
+      "desc": "A Boolean value that determines whether the photo output captures depth data along with the photo."
+    },
+    {
+      "name": "var embedsDepthDataInPhoto: Bool",
+      "desc": "A Boolean value that determines whether any depth data captured with the photo is included when generating output file data."
+    },
+    {
+      "name": "var isDepthDataFiltered: Bool",
+      "desc": "A Boolean value that determines whether to smooth noise and fill in missing values in depth data output."
+    },
+    {
+      "name": "var isPortraitEffectsMatteDeliveryEnabled: Bool",
+      "desc": "Specifies whether a portrait effects matte should be captured along with the photo."
+    },
+    {
+      "name": "var embedsPortraitEffectsMatteInPhoto: Bool",
+      "desc": "Specifies whether the portrait effects matte captured with ths photo should be written to the photo's file structure."
+    },
+    {
+      "name": "var embedsSemanticSegmentationMattesInPhoto: Bool",
+      "desc": "A Boolean value that specifies whether to write the enabled semantic segmentation matte types captured with this photo to the photo’s file structure."
+    },
+    {
+      "name": "var enabledSemanticSegmentationMatteTypes: [AVSemanticSegmentationMatte.MatteType]",
+      "desc": "An array of semantic segmentation matte types that the photo render pipeline can deliver."
+    },
+    {
+      "name": "var metadata: [String : Any]",
+      "desc": "A dictionary of metadata keys and values to embed in photo file output."
+    }
+  ],
+  "declaration": "class AVCapturePhotoSettings : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

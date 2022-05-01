@@ -1,0 +1,46 @@
+{
+  "path": "/documentation/uikit/uipasteconfiguration",
+  "type": "Class",
+  "name": "UIPasteConfiguration",
+  "desc": "The interface that an object implements to declare its ability to accept specific data types for pasting and for drag and drop activities.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Initializes a new paste configuration."
+    },
+    {
+      "name": "init(acceptableTypeIdentifiers: [String])",
+      "desc": "Initializes a new paste configuration with a specified array of acceptable UTIs."
+    },
+    {
+      "name": "init(forAccepting: NSItemProviderReading.Type)",
+      "desc": "Initializes a new paste configuration with the UTIs declared as supported by a specified class."
+    },
+    {
+      "name": "var acceptableTypeIdentifiers: [String]",
+      "desc": "An array of UTI strings that specify the types accepted by the paste configuration."
+    },
+    {
+      "name": "func addAcceptableTypeIdentifiers([String])",
+      "desc": "Adds an array of UTI strings to a paste configuration, increasing the variety of types the paste configuration accepts."
+    },
+    {
+      "name": "func addTypeIdentifiers(forAccepting: NSItemProviderReading.Type)",
+      "desc": "Expands the array of accepted UTIs for a paste configuration, based on those declared as supported by a specified class."
+    },
+    {
+      "name": "init<T>(forAccepting: T.Type)"
+    },
+    {
+      "name": "func addTypeIdentifiers<T>(forAccepting: T.Type)"
+    }
+  ],
+  "declaration": "@MainActor class UIPasteConfiguration : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

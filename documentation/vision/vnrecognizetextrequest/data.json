@@ -1,0 +1,55 @@
+{
+  "path": "/documentation/vision/vnrecognizetextrequest",
+  "type": "Class",
+  "name": "VNRecognizeTextRequest",
+  "desc": "An image analysis request that finds and recognizes text in an image.",
+  "items": [
+    {
+      "name": "var minimumTextHeight: Float",
+      "desc": "The minimum height, relative to the image height, of the text to recognize."
+    },
+    {
+      "name": "var recognitionLevel: VNRequestTextRecognitionLevel",
+      "desc": "A value that determines whether the request prioritizes accuracy or speed in text recognition."
+    },
+    {
+      "name": "enum VNRequestTextRecognitionLevel",
+      "desc": "Constants that identify the performance and accuracy of the text recognition."
+    },
+    {
+      "name": "var results: [VNRecognizedTextObservation]?",
+      "desc": "The results of the text recognition request."
+    },
+    {
+      "name": "var recognitionLanguages: [String]",
+      "desc": "An array of languages to detect, in priority order."
+    },
+    {
+      "name": "var usesLanguageCorrection: Bool",
+      "desc": "A Boolean value that indicates whether the request applies language correction during the recognition process."
+    },
+    {
+      "name": "var customWords: [String]",
+      "desc": "An array of strings to supplement the recognized languages at the word-recognition stage."
+    },
+    {
+      "name": "func supportedRecognitionLanguages() -> [String]",
+      "desc": "Returns the identifiers of the languages that the request supports."
+    },
+    {
+      "name": "let VNRecognizeTextRequestRevision2: Int",
+      "desc": "Revision 2 of the text recognition algorithm."
+    },
+    {
+      "name": "let VNRecognizeTextRequestRevision1: Int",
+      "desc": "Revision 1 of the text recognition algorithm."
+    }
+  ],
+  "declaration": "class VNRecognizeTextRequest : VNImageBasedRequest",
+  "inheritsFrom": [
+    "VNImageBasedRequest"
+  ],
+  "conformsTo": [
+    "VNRequestProgressProviding"
+  ]
+}

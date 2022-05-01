@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/deviceactivity/deviceactivityschedule",
+  "type": "Structure",
+  "name": "DeviceActivitySchedule",
+  "desc": "A calendar-based schedule for when to monitor a device’s activity.",
+  "items": [
+    {
+      "name": "init(intervalStart: DateComponents, intervalEnd: DateComponents, repeats: Bool, warningTime: DateComponents?)",
+      "desc": "Creates a new schedule."
+    },
+    {
+      "name": "var intervalEnd: DateComponents",
+      "desc": "The date components that represent the end time for a schedule’s interval."
+    },
+    {
+      "name": "var intervalStart: DateComponents",
+      "desc": "The date components that represent the start time for a schedule’s interval."
+    },
+    {
+      "name": "var nextInterval: DateInterval?",
+      "desc": "The schedule’s next interval or the current interval if one is ongoing."
+    },
+    {
+      "name": "var repeats: Bool",
+      "desc": "A Boolean value that indicates whether the schedule recurs."
+    },
+    {
+      "name": "var warningTime: DateComponents?",
+      "desc": "Optional components that generate a warning prior to regularly scheduled events."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values aren’t equal."
+    },
+    {
+      "name": "static func == (DeviceActivitySchedule, DeviceActivitySchedule) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    }
+  ],
+  "declaration": "struct DeviceActivitySchedule",
+  "conformsTo": [
+    "Equatable"
+  ]
+}

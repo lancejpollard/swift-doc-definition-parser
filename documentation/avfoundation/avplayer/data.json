@@ -1,0 +1,228 @@
+{
+  "path": "/documentation/avfoundation/avplayer",
+  "type": "Class",
+  "name": "AVPlayer",
+  "desc": "An object that provides the interface to control the player’s transport behavior.",
+  "items": [
+    {
+      "name": "init(url: URL)",
+      "desc": "Creates a new player to play a single audiovisual resource referenced by a given URL."
+    },
+    {
+      "name": "init(playerItem: AVPlayerItem?)",
+      "desc": "Creates a new player to play the specified player item."
+    },
+    {
+      "name": "var status: AVPlayer.Status",
+      "desc": "A value that indicates the readiness of a player object for playback."
+    },
+    {
+      "name": "enum AVPlayer.Status",
+      "desc": "Status values that indicate whether a player can successfully play media."
+    },
+    {
+      "name": "var error: Error?",
+      "desc": "The error that caused the failure."
+    },
+    {
+      "name": "var currentItem: AVPlayerItem?",
+      "desc": "The current player item."
+    },
+    {
+      "name": "func replaceCurrentItem(with: AVPlayerItem?)",
+      "desc": "Replaces the current item with a new item."
+    },
+    {
+      "name": "func play()",
+      "desc": "Begins playback of the current item."
+    },
+    {
+      "name": "func pause()",
+      "desc": "Pauses playback of the current item."
+    },
+    {
+      "name": "var rate: Float",
+      "desc": "The current playback rate."
+    },
+    {
+      "name": "class let rateDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that a player posts when its rate changes."
+    },
+    {
+      "name": "var playbackCoordinator: AVPlayerPlaybackCoordinator",
+      "desc": "The playback coordinator for the player."
+    },
+    {
+      "name": "func seek(to: CMTime)",
+      "desc": "Sets the current playback time to the specified time."
+    },
+    {
+      "name": "func seek(to: CMTime, completionHandler: (Bool) -> Void)",
+      "desc": "Sets the current playback time to the specified time and executes the specified block when the seek operation completes or is interrupted."
+    },
+    {
+      "name": "func seek(to: CMTime, toleranceBefore: CMTime, toleranceAfter: CMTime)",
+      "desc": "Sets the current playback time within a specified time bound."
+    },
+    {
+      "name": "func seek(to: CMTime, toleranceBefore: CMTime, toleranceAfter: CMTime, completionHandler: (Bool) -> Void)",
+      "desc": "Sets the current playback time within a specified time bound and invokes the specified block when the seek operation completes or is interrupted."
+    },
+    {
+      "name": "func seek(to: Date)",
+      "desc": "Sets the current playback time to the time specified by the date object."
+    },
+    {
+      "name": "func seek(to: Date, completionHandler: (Bool) -> Void)",
+      "desc": "Sets the current playback time to the specified time and executes the specified block when the seek operation completes or is interrupted."
+    },
+    {
+      "name": "func currentTime() -> CMTime",
+      "desc": "Returns the current time of the current player item."
+    },
+    {
+      "name": "func addPeriodicTimeObserver(forInterval: CMTime, queue: DispatchQueue?, using: (CMTime) -> Void) -> Any",
+      "desc": "Requests the periodic invocation of a given block during playback to report changing time."
+    },
+    {
+      "name": "func addBoundaryTimeObserver(forTimes: [NSValue], queue: DispatchQueue?, using: () -> Void) -> Any",
+      "desc": "Requests the invocation of a block when specified times are traversed during normal playback."
+    },
+    {
+      "name": "func removeTimeObserver(Any)",
+      "desc": "Cancels a previously registered periodic or boundary time observer."
+    },
+    {
+      "name": "var audiovisualBackgroundPlaybackPolicy: AVPlayerAudiovisualBackgroundPlaybackPolicy",
+      "desc": "A policy that determines how playback of audiovisual media continues when the app transitions to the background."
+    },
+    {
+      "name": "enum AVPlayerAudiovisualBackgroundPlaybackPolicy",
+      "desc": "Policies that describe playback behavior when an app transitions to the background while playing video."
+    },
+    {
+      "name": "var automaticallyWaitsToMinimizeStalling: Bool",
+      "desc": "A Boolean value that indicates whether the player should automatically delay playback in order to minimize stalling."
+    },
+    {
+      "name": "var reasonForWaitingToPlay: AVPlayer.WaitingReason?",
+      "desc": "The reason the player is currently waiting for playback to begin or resume."
+    },
+    {
+      "name": "struct AVPlayer.WaitingReason",
+      "desc": "The reasons a player is waiting to begin or resume playback."
+    },
+    {
+      "name": "var timeControlStatus: AVPlayer.TimeControlStatus",
+      "desc": "A value that indicates whether playback is in progress, paused indefinitely, or waiting for network conditions to improve."
+    },
+    {
+      "name": "enum AVPlayer.TimeControlStatus",
+      "desc": "Constants that indicate the state of playback control."
+    },
+    {
+      "name": "func playImmediately(atRate: Float)",
+      "desc": "Plays the available media data immediately, at the specified rate."
+    },
+    {
+      "name": "var allowedAudioSpatializationFormats: AVAudioSpatializationFormats",
+      "desc": "The source audio channel layouts the player item supports for spatialization."
+    },
+    {
+      "name": "var allowsExternalPlayback: Bool",
+      "desc": "A Boolean value that indicates whether the player allows switching to external playback mode."
+    },
+    {
+      "name": "var isExternalPlaybackActive: Bool",
+      "desc": "A Boolean value that indicates whether the player is currently playing video in external playback mode."
+    },
+    {
+      "name": "var usesExternalPlaybackWhileExternalScreenIsActive: Bool",
+      "desc": "A Boolean value that indicates whether the player should automatically switch to external playback mode while the external screen mode is active."
+    },
+    {
+      "name": "var externalPlaybackVideoGravity: AVLayerVideoGravity",
+      "desc": "The video gravity of the player for external playback mode only."
+    },
+    {
+      "name": "class var eligibleForHDRPlayback: Bool",
+      "desc": "A Boolean value that indicates whether the current device can present content to an HDR display."
+    },
+    {
+      "name": "class var availableHDRModes: AVPlayer.HDRMode",
+      "desc": "The HDR modes that are available for playback."
+    },
+    {
+      "name": "struct AVPlayer.HDRMode",
+      "desc": "A bitfield type that specifies an HDR mode."
+    },
+    {
+      "name": "class let eligibleForHDRPlaybackDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that’s posted whenever HDR playback eligibility changes."
+    },
+    {
+      "name": "var actionAtItemEnd: AVPlayer.ActionAtItemEnd",
+      "desc": "The action to perform when the current player item has finished playing."
+    },
+    {
+      "name": "enum AVPlayer.ActionAtItemEnd",
+      "desc": "The actions a player can take when it finishes playing."
+    },
+    {
+      "name": "var appliesMediaSelectionCriteriaAutomatically: Bool",
+      "desc": "A Boolean value that indicates whether the receiver should apply the current selection criteria automatically to player items."
+    },
+    {
+      "name": "func mediaSelectionCriteria(forMediaCharacteristic: AVMediaCharacteristic) -> AVPlayerMediaSelectionCriteria?",
+      "desc": "Returns the automatic selection criteria for media items with the specified media characteristic."
+    },
+    {
+      "name": "func setMediaSelectionCriteria(AVPlayerMediaSelectionCriteria?, forMediaCharacteristic: AVMediaCharacteristic)",
+      "desc": "Applies automatic selection criteria for media that has the specified media characteristic."
+    },
+    {
+      "name": "var volume: Float",
+      "desc": "The audio playback volume for the player."
+    },
+    {
+      "name": "var isMuted: Bool",
+      "desc": "A Boolean value that indicates whether the audio output of the player is muted."
+    },
+    {
+      "name": "var preventsDisplaySleepDuringVideoPlayback: Bool",
+      "desc": "A Boolean value that indicates whether video playback prevents display and device sleep."
+    },
+    {
+      "name": "var isOutputObscuredDueToInsufficientExternalProtection: Bool",
+      "desc": "A Boolean value that indicates whether output is being obscured because of insufficient external protection."
+    },
+    {
+      "name": "func setRate(Float, time: CMTime, atHostTime: CMTime)",
+      "desc": "Synchronizes the playback rate and time of the current item with an external source."
+    },
+    {
+      "name": "func preroll(atRate: Float, completionHandler: ((Bool) -> Void)?)",
+      "desc": "Begins loading media data to prime the media pipelines for playback."
+    },
+    {
+      "name": "func cancelPendingPrerolls()",
+      "desc": "Cancels any pending preroll requests and invokes the corresponding completion handlers, if present."
+    },
+    {
+      "name": "var sourceClock: CMClock?",
+      "desc": "A clock the player uses for item time bases."
+    },
+    {
+      "name": "var audioOutputDeviceUniqueID: String?",
+      "desc": "Specifies the unique ID of the Core Audio output device used to play audio."
+    },
+    {
+      "name": "var preferredVideoDecoderGPURegistryID: UInt64",
+      "desc": "The registry identifier for the GPU used for video decoding."
+    }
+  ],
+  "declaration": "class AVPlayer : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

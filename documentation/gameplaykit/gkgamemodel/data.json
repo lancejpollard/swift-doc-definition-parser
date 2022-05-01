@@ -1,0 +1,49 @@
+{
+  "path": "/documentation/gameplaykit/gkgamemodel",
+  "type": "Protocol",
+  "name": "GKGameModel",
+  "desc": "Implement this protocol to describe your gameplay model so that a strategist object can plan game moves.",
+  "items": [
+    {
+      "name": "var players: [GKGameModelPlayer]?",
+      "desc": "The players currently in the game."
+    },
+    {
+      "name": "var activePlayer: GKGameModelPlayer?",
+      "desc": "The player whose turn it currently is in the game."
+    },
+    {
+      "name": "func gameModelUpdates(for: GKGameModelPlayer) -> [GKGameModelUpdate]?",
+      "desc": "Returns the set of moves available to the specified player."
+    },
+    {
+      "name": "func score(for: GKGameModelPlayer) -> Int",
+      "desc": "Returns a number rating the desirability of the game model’s current state from the perspective of the specified player."
+    },
+    {
+      "name": "func isLoss(for: GKGameModelPlayer) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the specified player has lost the game."
+    },
+    {
+      "name": "func isWin(for: GKGameModelPlayer) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the current state of the game model reflects a win for the specified player."
+    },
+    {
+      "name": "func apply(GKGameModelUpdate)",
+      "desc": "Updates the internal state of the game model to reflect the specified changes."
+    },
+    {
+      "name": "func unapplyGameModelUpdate(GKGameModelUpdate)",
+      "desc": "Updates the internal state of the game model to remove the effect of the specified changes."
+    },
+    {
+      "name": "func setGameModel(GKGameModel)",
+      "desc": "Sets the game model’s internal state to that of the specified game model."
+    }
+  ],
+  "declaration": "protocol GKGameModel",
+  "inheritsFrom": [
+    "NSCopying",
+    "NSObjectProtocol"
+  ]
+}

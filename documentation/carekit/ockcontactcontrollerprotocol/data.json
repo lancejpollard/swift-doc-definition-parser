@@ -1,0 +1,37 @@
+{
+  "path": "/documentation/carekit/ockcontactcontrollerprotocol",
+  "type": "Protocol",
+  "name": "OCKContactControllerProtocol",
+  "desc": "An object that tracks and updates the state of a contact.",
+  "items": [
+    {
+      "name": "var objectWillChange: CurrentValueSubject<OCKAnyContact?, Never>",
+      "desc": "A publisher that publishes when contacts change in the store."
+    },
+    {
+      "name": "var store: OCKAnyContactStore",
+      "desc": "A reference to the store that fetches and updates events."
+    },
+    {
+      "name": "func initiateAddressLookup(completion: (Result<MKMapItem, Error>) -> Void)",
+      "desc": "Initiates showing the address of the contact."
+    },
+    {
+      "name": "func initiateCall() -> URL",
+      "desc": "Initiates a call to the contact."
+    },
+    {
+      "name": "func initiateEmail() -> MFMailComposeViewController",
+      "desc": "Initiates an email to the contact."
+    },
+    {
+      "name": "func initiateMessage() -> MFMessageComposeViewController",
+      "desc": "Initiates sending a message to the contact."
+    },
+    {
+      "name": "func initiateSystemContactLookup() -> CNContactViewController",
+      "desc": "Initiates looking up the contact in the system contacts."
+    }
+  ],
+  "declaration": "protocol OCKContactControllerProtocol"
+}

@@ -1,0 +1,128 @@
+{
+  "path": "/documentation/applearchive/archiveencryptioncontext",
+  "type": "Class",
+  "name": "ArchiveEncryptionContext",
+  "desc": "An object that encapsulates all parameters, keys, and data necessary to open an encrypted archive for both encryption and decryption streams.",
+  "items": [
+    {
+      "name": "init?(from: ArchiveByteStream)",
+      "desc": "Returns a new encryption context from the specified encrypted stream."
+    },
+    {
+      "name": "init(profile: ArchiveEncryptionContext.Profile, compressionAlgorithm: ArchiveCompression, compressionBlockSize: Int)",
+      "desc": "Returns a new encryption context from the specified profile, compression algorithm, and block size."
+    },
+    {
+      "name": "func setSymmetricKey(SymmetricKey)",
+      "desc": "Sets the symmetric encryption key that the context requires for symmetric encryption mode."
+    },
+    {
+      "name": "func setRecipientPrivateKey(P256.KeyAgreement.PrivateKey)",
+      "desc": "Sets the recipient private key that the context requires to decrypt an archive to a specific recipient in ECDHE encryption profiles."
+    },
+    {
+      "name": "func setSigningPrivateKey(P256.Signing.PrivateKey)",
+      "desc": "Sets the signing private key that corresponds to the signing public key that you used to create the archive."
+    },
+    {
+      "name": "func setRecipientPublicKey(P256.KeyAgreement.PublicKey)",
+      "desc": "Sets the recipient public key that the context requires to encrypt an archive to a specific recipient in ECDHE encryption profiles."
+    },
+    {
+      "name": "func setSigningPublicKey(P256.Signing.PublicKey)",
+      "desc": "Sets the signing public key that the context requires to unlock a signed archive."
+    },
+    {
+      "name": "static func sign(encryptedStream: ArchiveByteStream, encryptionContext: ArchiveEncryptionContext)",
+      "desc": "Signs an encrypted archive using the credentials stored in the specified encryption context."
+    },
+    {
+      "name": "var signatureMode: ArchiveEncryptionContext.SignatureMode",
+      "desc": "The signature mode, such as an ECDSA Nist P-256 signature."
+    },
+    {
+      "name": "struct ArchiveEncryptionContext.SignatureMode",
+      "desc": "Constants that describe the signature modes of an encryption context."
+    },
+    {
+      "name": "var archiveIdentifier: Data?",
+      "desc": "An optional set of data that represents the archive identifier."
+    },
+    {
+      "name": "var authData: Data?",
+      "desc": "An optional, unencrypted set of data that’s stored in the archive prologue."
+    },
+    {
+      "name": "var checksumMode: ArchiveEncryptionContext.ChecksumMode",
+      "desc": "The checksum mode, such as the 256-bit SHA-256 checksum."
+    },
+    {
+      "name": "struct ArchiveEncryptionContext.ChecksumMode",
+      "desc": "Constants that describe the checksum modes of an encryption context."
+    },
+    {
+      "name": "var containerSize: Int",
+      "desc": "The size of the compressed and encrypted archive."
+    },
+    {
+      "name": "var encryptionMode: ArchiveEncryptionContext.EncryptionMode",
+      "desc": "The encryption mode, such as symmetric key encryption."
+    },
+    {
+      "name": "struct ArchiveEncryptionContext.EncryptionMode",
+      "desc": "Constants that describe the checksum modes of an encryption context."
+    },
+    {
+      "name": "var compressionAlgorithm: ArchiveCompression",
+      "desc": "The compression algorithm, such as LZFSE."
+    },
+    {
+      "name": "struct ArchiveCompression",
+      "desc": "Constants that describe compression algorithms."
+    },
+    {
+      "name": "var compressionBlockSize: Int",
+      "desc": "The compression block size that defines the size of the blocks, in bytes, that the context splits data into."
+    },
+    {
+      "name": "var paddingSize: Int",
+      "desc": "An integer value that, if not zero, specifies that the size of the final archive is a multiple of the padding size."
+    },
+    {
+      "name": "var profile: ArchiveEncryptionContext.Profile",
+      "desc": "The profile of the archve."
+    },
+    {
+      "name": "struct ArchiveEncryptionContext.Profile",
+      "desc": "Constants that describe the profile of an encryption context."
+    },
+    {
+      "name": "var rawSize: Int",
+      "desc": "The size of the archive raw data."
+    },
+    {
+      "name": "var signatureEncryptionKey: SymmetricKey?",
+      "desc": "The signature encryption key that the context requires to sign an encrypted archive."
+    },
+    {
+      "name": "func setPassword(String)",
+      "desc": "Sets the password from the supplied string."
+    },
+    {
+      "name": "var mainKey: SymmetricKey?"
+    },
+    {
+      "name": "var password: String?"
+    },
+    {
+      "name": "var symmetricKey: SymmetricKey?"
+    },
+    {
+      "name": "func generatePassword() -> String"
+    },
+    {
+      "name": "func generateSymmetricKey() -> SymmetricKey"
+    }
+  ],
+  "declaration": "class ArchiveEncryptionContext"
+}

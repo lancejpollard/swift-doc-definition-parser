@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/foundation/urlcache",
+  "type": "Class",
+  "name": "URLCache",
+  "desc": "An object that maps URL requests to cached response objects.",
+  "items": [
+    {
+      "name": "class var shared: URLCache",
+      "desc": "The shared URL cache instance."
+    },
+    {
+      "name": "init(memoryCapacity: Int, diskCapacity: Int, directory: URL?)",
+      "desc": "Creates a URL cache object with the specified memory and disk capacities, in the specified directory."
+    },
+    {
+      "name": "func cachedResponse(for: URLRequest) -> CachedURLResponse?",
+      "desc": "Returns the cached URL response in the cache for the specified URL request."
+    },
+    {
+      "name": "func storeCachedResponse(CachedURLResponse, for: URLRequest)",
+      "desc": "Stores a cached URL response for a specified request."
+    },
+    {
+      "name": "func getCachedResponse(for: URLSessionDataTask, completionHandler: (CachedURLResponse?) -> Void)",
+      "desc": "Gets the cached URL response for a data task, passing it to the provided completion handler."
+    },
+    {
+      "name": "func storeCachedResponse(CachedURLResponse, for: URLSessionDataTask)",
+      "desc": "Stores a cached URL response for a specified data task."
+    },
+    {
+      "name": "func removeCachedResponse(for: URLRequest)",
+      "desc": "Removes the cached URL response for a specified URL request."
+    },
+    {
+      "name": "func removeCachedResponse(for: URLSessionDataTask)",
+      "desc": "Removes the cached URL response for a specified data task."
+    },
+    {
+      "name": "func removeCachedResponses(since: Date)",
+      "desc": "Clears the given cache of any cached responses since the provided date."
+    },
+    {
+      "name": "func removeAllCachedResponses()",
+      "desc": "Clears the receiver’s cache, removing all stored cached URL responses."
+    },
+    {
+      "name": "var currentDiskUsage: Int",
+      "desc": "The current size of the on-disk cache, in bytes."
+    },
+    {
+      "name": "var diskCapacity: Int",
+      "desc": "The capacity of the on-disk cache, in bytes."
+    },
+    {
+      "name": "var currentMemoryUsage: Int",
+      "desc": "The current size of the in-memory cache, in bytes."
+    },
+    {
+      "name": "var memoryCapacity: Int",
+      "desc": "The capacity of the in-memory cache, in bytes."
+    },
+    {
+      "name": "enum URLCache.StoragePolicy",
+      "desc": "These constants specify the caching strategy used by an CachedURLResponse object."
+    }
+  ],
+  "declaration": "class URLCache : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

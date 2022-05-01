@@ -1,0 +1,336 @@
+{
+  "path": "/documentation/avfoundation/avasset",
+  "type": "Class",
+  "name": "AVAsset",
+  "desc": "An object that models timed audiovisual media.",
+  "items": [
+    {
+      "name": "init(url: URL)",
+      "desc": "Creates an asset that models the media at the specified URL."
+    },
+    {
+      "name": "static var duration: AVAsyncProperty<Root, CMTime>",
+      "desc": "A time value that represents the duration of the asset."
+    },
+    {
+      "name": "static var providesPreciseDurationAndTiming: AVAsyncProperty<Root, Bool>",
+      "desc": "A Boolean value that indicates whether the asset provides precise duration and timing."
+    },
+    {
+      "name": "static var minimumTimeOffsetFromLive: AVAsyncProperty<Root, CMTime>",
+      "desc": "A time value that indicates how closely playback follows the latest live stream content."
+    },
+    {
+      "name": "static var tracks: AVAsyncProperty<Root, [AVAssetTrack]>",
+      "desc": "The tracks an asset contains."
+    },
+    {
+      "name": "func loadTrack(withTrackID: CMPersistentTrackID, completionHandler: (AVAssetTrack?, Error?) -> Void)",
+      "desc": "Loads a track that contains the specified identifier."
+    },
+    {
+      "name": "func loadTracks(withMediaType: AVMediaType, completionHandler: ([AVAssetTrack]?, Error?) -> Void)",
+      "desc": "Loads tracks that contain media of a specified type."
+    },
+    {
+      "name": "func loadTracks(withMediaCharacteristic: AVMediaCharacteristic, completionHandler: ([AVAssetTrack]?, Error?) -> Void)",
+      "desc": "Loads tracks that contain media of a specified characteristic."
+    },
+    {
+      "name": "func findUnusedTrackID(completionHandler: (CMPersistentTrackID, Error?) -> Void)",
+      "desc": "Loads an identifier that no other track in the asset uses."
+    },
+    {
+      "name": "static var trackGroups: AVAsyncProperty<Root, [AVAssetTrackGroup]>",
+      "desc": "The track groups an asset contains."
+    },
+    {
+      "name": "class AVAssetTrackGroup",
+      "desc": "A group of related tracks in an asset."
+    },
+    {
+      "name": "static var metadata: AVAsyncProperty<Root, [AVMetadataItem]>",
+      "desc": "The metadata items that an asset contains for all metadata identifiers."
+    },
+    {
+      "name": "static var commonMetadata: AVAsyncProperty<Root, [AVMetadataItem]>",
+      "desc": "The metadata items that an asset contains for common metadata keys."
+    },
+    {
+      "name": "static var availableMetadataFormats: AVAsyncProperty<Root, [AVMetadataFormat]>",
+      "desc": "The formats of metadata that an asset contains."
+    },
+    {
+      "name": "func loadMetadata(for: AVMetadataFormat, completionHandler: ([AVMetadataItem]?, Error?) -> Void)",
+      "desc": "Loads an array of metadata items that the asset contains for the specified format."
+    },
+    {
+      "name": "static var creationDate: AVAsyncProperty<Root, AVMetadataItem?>",
+      "desc": "A metadata item that indicates the creation date of an asset."
+    },
+    {
+      "name": "static var lyrics: AVAsyncProperty<Root, String?>",
+      "desc": "The lyrics of the asset in a language suitable for the current locale."
+    },
+    {
+      "name": "static var isPlayable: AVAsyncProperty<Root, Bool>",
+      "desc": "A Boolean value that indicates whether an asset contains playable content."
+    },
+    {
+      "name": "static var isExportable: AVAsyncProperty<Root, Bool>",
+      "desc": "A Boolean value that indicates whether you can export an asset using an export session."
+    },
+    {
+      "name": "static var isReadable: AVAsyncProperty<Root, Bool>",
+      "desc": "A Boolean value that indicates whether you can extract the asset’s media data using an asset reader."
+    },
+    {
+      "name": "static var isComposable: AVAsyncProperty<Root, Bool>",
+      "desc": "A Boolean value that indicates whether you can use the asset as a segment of a composition track."
+    },
+    {
+      "name": "static var isCompatibleWithAirPlayVideo: AVAsyncProperty<Root, Bool>",
+      "desc": "A Boolean value that indicates whether the asset is compatible with AirPlay Video."
+    },
+    {
+      "name": "static var isCompatibleWithSavedPhotosAlbum: AVAsyncProperty<Root, Bool>",
+      "desc": "A Boolean value that indicates whether you can write the asset to the Saved Photos album."
+    },
+    {
+      "name": "static var preferredRate: AVAsyncProperty<Root, Float>",
+      "desc": "The asset’s rate preference for playing its media."
+    },
+    {
+      "name": "static var preferredVolume: AVAsyncProperty<Root, Float>",
+      "desc": "The asset’s volume preference for playing its audible media."
+    },
+    {
+      "name": "static var preferredTransform: AVAsyncProperty<Root, CGAffineTransform>",
+      "desc": "The asset’s transform preference to apply to its visual content during presentation or processing."
+    },
+    {
+      "name": "static var preferredDisplayCriteria: AVAsyncProperty<Root, AVDisplayCriteria>",
+      "desc": "The asset’s display mode preference for optimal playback of its content."
+    },
+    {
+      "name": "class AVDisplayCriteria",
+      "desc": "An object that contains properties defining the display criteria for a media asset."
+    },
+    {
+      "name": "static var allMediaSelections: AVAsyncProperty<Root, [AVMediaSelection]>",
+      "desc": "The available media selections for an asset."
+    },
+    {
+      "name": "static var preferredMediaSelection: AVAsyncProperty<Root, AVMediaSelection>",
+      "desc": "The default media selections for the media selection groups of an asset."
+    },
+    {
+      "name": "static var availableMediaCharacteristicsWithMediaSelectionOptions: AVAsyncProperty<Root, [AVMediaCharacteristic]>",
+      "desc": "The media characteristics that provide media selection options."
+    },
+    {
+      "name": "func loadMediaSelectionGroup(for: AVMediaCharacteristic, completionHandler: (AVMediaSelectionGroup?, Error?) -> Void)",
+      "desc": "Loads a media selection group that contains one or more options with the specified media characteristic."
+    },
+    {
+      "name": "static var availableChapterLocales: AVAsyncProperty<Root, [Locale]>",
+      "desc": "The locales of an asset’s chapter metadata."
+    },
+    {
+      "name": "func loadChapterMetadataGroups(withTitleLocale: Locale, containingItemsWithCommonKeys: [AVMetadataKey]) -> [AVTimedMetadataGroup]",
+      "desc": "Loads chapter metadata that contains the specified title locale and common keys."
+    },
+    {
+      "name": "func loadChapterMetadataGroups(bestMatchingPreferredLanguages: [String], completionHandler: ([AVTimedMetadataGroup]?, Error?) -> Void)",
+      "desc": "Loads chapter metadata with a locale that best matches the list of preferred languages."
+    },
+    {
+      "name": "static var hasProtectedContent: AVAsyncProperty<Root, Bool>",
+      "desc": "A Boolean value that indicates whether the asset contains protected content."
+    },
+    {
+      "name": "static var canContainFragments: AVAsyncProperty<Root, Bool>",
+      "desc": "A Boolean value that indicates whether you can extend the asset by fragments."
+    },
+    {
+      "name": "static var containsFragments: AVAsyncProperty<Root, Bool>",
+      "desc": "A Boolean value that indicates whether at least one movie fragment extends the asset."
+    },
+    {
+      "name": "static var overallDurationHint: AVAsyncProperty<Root, CMTime>",
+      "desc": "The total duration of fragments that currently exist, or may exist in the future."
+    },
+    {
+      "name": "func cancelLoading()",
+      "desc": "Cancels all pending requests to asynchronously load property values."
+    },
+    {
+      "name": "var referenceRestrictions: AVAssetReferenceRestrictions",
+      "desc": "The asset’s reference restrictions."
+    },
+    {
+      "name": "struct AVAssetReferenceRestrictions",
+      "desc": "Restrictions to use when resolving references to external media data."
+    },
+    {
+      "name": "var duration: CMTime",
+      "desc": "A time value that indicates the asset’s duration."
+    },
+    {
+      "name": "var providesPreciseDurationAndTiming: Bool",
+      "desc": "A Boolean value that indicates whether the asset provides precise duration and timing."
+    },
+    {
+      "name": "var minimumTimeOffsetFromLive: CMTime",
+      "desc": "A time value that indicates how closely playback follows the latest live stream content."
+    },
+    {
+      "name": "var tracks: [AVAssetTrack]",
+      "desc": "The tracks an asset contains."
+    },
+    {
+      "name": "func track(withTrackID: CMPersistentTrackID) -> AVAssetTrack?",
+      "desc": "Returns a track that contains the specified identifier."
+    },
+    {
+      "name": "func tracks(withMediaType: AVMediaType) -> [AVAssetTrack]",
+      "desc": "Returns tracks that contain media of a specified type."
+    },
+    {
+      "name": "func tracks(withMediaCharacteristic: AVMediaCharacteristic) -> [AVAssetTrack]",
+      "desc": "Returns an array of asset tracks matching the specified media characteristic."
+    },
+    {
+      "name": "func unusedTrackID() -> CMPersistentTrackID",
+      "desc": "Returns an identifier that no other tracks in the asset use."
+    },
+    {
+      "name": "var trackGroups: [AVAssetTrackGroup]",
+      "desc": "The track groups an asset contains."
+    },
+    {
+      "name": "class AVAssetTrackGroup",
+      "desc": "A group of related tracks in an asset."
+    },
+    {
+      "name": "var metadata: [AVMetadataItem]",
+      "desc": "An array of metadata items for all metadata identifiers for which a value is available."
+    },
+    {
+      "name": "var commonMetadata: [AVMetadataItem]",
+      "desc": "The metadata items an asset contains for common metadata identifiers that provide a value."
+    },
+    {
+      "name": "var availableMetadataFormats: [AVMetadataFormat]",
+      "desc": "The metadata formats this asset contains."
+    },
+    {
+      "name": "func metadata(forFormat: AVMetadataFormat) -> [AVMetadataItem]",
+      "desc": "Returns an array of metadata items from the container with the specified format."
+    },
+    {
+      "name": "var creationDate: AVMetadataItem?",
+      "desc": "A metadata item that indicates the asset’s creation date."
+    },
+    {
+      "name": "var lyrics: String?",
+      "desc": "The lyrics of the asset in a language suitable for the current locale."
+    },
+    {
+      "name": "var isPlayable: Bool",
+      "desc": "A Boolean value that indicates whether the asset has playable content."
+    },
+    {
+      "name": "var isExportable: Bool",
+      "desc": "A Boolean value that indicates whether you can export this asset using an export session."
+    },
+    {
+      "name": "var isReadable: Bool",
+      "desc": "A Boolean value that indicates whether you can extract the asset’s media data using an asset reader."
+    },
+    {
+      "name": "var isComposable: Bool",
+      "desc": "A Boolean value that indicates whether you can use the asset as a segment of a composition track."
+    },
+    {
+      "name": "var isCompatibleWithAirPlayVideo: Bool",
+      "desc": "A Boolean value that indicates whether the asset is compatible with AirPlay Video."
+    },
+    {
+      "name": "var isCompatibleWithSavedPhotosAlbum: Bool",
+      "desc": "A Boolean value that indicates whether you can write the asset to the Saved Photos album."
+    },
+    {
+      "name": "var preferredRate: Float",
+      "desc": "The asset’s rate preference for playing its media."
+    },
+    {
+      "name": "var preferredVolume: Float",
+      "desc": "The asset’s volume preference for playing its audible media."
+    },
+    {
+      "name": "var preferredTransform: CGAffineTransform",
+      "desc": "The asset’s transform preference to apply to its visual content during presentation or processing."
+    },
+    {
+      "name": "var preferredDisplayCriteria: AVDisplayCriteria",
+      "desc": "The asset’s display mode preference for optimal playback of its content."
+    },
+    {
+      "name": "class AVDisplayCriteria",
+      "desc": "An object that contains properties defining the display criteria for a media asset."
+    },
+    {
+      "name": "var allMediaSelections: [AVMediaSelection]",
+      "desc": "The array of available media selections for this asset."
+    },
+    {
+      "name": "var preferredMediaSelection: AVMediaSelection",
+      "desc": "The default media selections for this asset’s media selection groups."
+    },
+    {
+      "name": "var availableMediaCharacteristicsWithMediaSelectionOptions: [AVMediaCharacteristic]",
+      "desc": "An array of media characteristics for which a media selection option is available."
+    },
+    {
+      "name": "func mediaSelectionGroup(forMediaCharacteristic: AVMediaCharacteristic) -> AVMediaSelectionGroup?",
+      "desc": "Returns a media selection group that contains one or more options with the specified media characteristic."
+    },
+    {
+      "name": "var availableChapterLocales: [Locale]",
+      "desc": "The locales of the asset’s chapter metadata."
+    },
+    {
+      "name": "func chapterMetadataGroups(withTitleLocale: Locale, containingItemsWithCommonKeys: [AVMetadataKey]?) -> [AVTimedMetadataGroup]",
+      "desc": "Returns an array of chapters that contain the specified title locale and common keys."
+    },
+    {
+      "name": "func chapterMetadataGroups(bestMatchingPreferredLanguages: [String]) -> [AVTimedMetadataGroup]",
+      "desc": "Returns an array of chapters with a locale that best matches the list of preferred languages."
+    },
+    {
+      "name": "var hasProtectedContent: Bool",
+      "desc": "A Boolean value that indicates whether the asset contains protected content."
+    },
+    {
+      "name": "var canContainFragments: Bool",
+      "desc": "A Boolean value that indicates whether you can extend the asset by fragments."
+    },
+    {
+      "name": "var containsFragments: Bool",
+      "desc": "A Boolean value that indicates whether at least one movie fragment extends the asset."
+    },
+    {
+      "name": "var overallDurationHint: CMTime",
+      "desc": "The total duration of fragments that currently exist, or may exist in the future."
+    }
+  ],
+  "declaration": "class AVAsset : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "AVAsynchronousKeyValueLoading",
+    "NSCopying"
+  ]
+}

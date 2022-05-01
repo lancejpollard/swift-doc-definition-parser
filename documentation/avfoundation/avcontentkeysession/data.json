@@ -1,0 +1,100 @@
+{
+  "path": "/documentation/avfoundation/avcontentkeysession",
+  "type": "Class",
+  "name": "AVContentKeySession",
+  "desc": "An object that creates and tracks decryption keys for media data.",
+  "items": [
+    {
+      "name": "init(keySystem: AVContentKeySystem)",
+      "desc": "Creates a content key session to manage a collection of content decryption keys."
+    },
+    {
+      "name": "init(keySystem: AVContentKeySystem, storageDirectoryAt: URL)",
+      "desc": "Creates a content key session to manage a collection of content decryption keys; points to a directory that stores abnormal session termination reports."
+    },
+    {
+      "name": "var keySystem: AVContentKeySystem",
+      "desc": "The type of key system used to retrieve keys."
+    },
+    {
+      "name": "struct AVContentKeySystem",
+      "desc": "A key-delivery method for a content key session."
+    },
+    {
+      "name": "var storageURL: URL?",
+      "desc": "A URL that points to a writable storage directory."
+    },
+    {
+      "name": "func setDelegate(AVContentKeySessionDelegate?, queue: DispatchQueue?)",
+      "desc": "Sets the session’s delegate object and the dispatch queue on which to call the delegate’s methods."
+    },
+    {
+      "name": "var delegate: AVContentKeySessionDelegate?",
+      "desc": "The content key session’s delegate object."
+    },
+    {
+      "name": "var delegateQueue: DispatchQueue?",
+      "desc": "The dispatch queue the session uses to invoke delegate callbacks."
+    },
+    {
+      "name": "var contentKeyRecipients: [AVContentKeyRecipient]",
+      "desc": "An array of content key recipients."
+    },
+    {
+      "name": "protocol AVContentKeyRecipient",
+      "desc": "A protocol for requiring decryption keys for media data."
+    },
+    {
+      "name": "func addContentKeyRecipient(AVContentKeyRecipient)",
+      "desc": "Tells the delegate that the specified recipient should have access to the decryption keys loaded with the session."
+    },
+    {
+      "name": "func removeContentKeyRecipient(AVContentKeyRecipient)",
+      "desc": "Tells the delegate to remove the specified recipient."
+    },
+    {
+      "name": "func processContentKeyRequest(withIdentifier: Any?, initializationData: Data?, options: [String : Any]?)",
+      "desc": "Tells the delegate to start loading the content decryption key with the specified identifier and initialization data."
+    },
+    {
+      "name": "func expire()",
+      "desc": "Tells the delegate that the session expired as the result of normal, intentional processes."
+    },
+    {
+      "name": "func makeSecureTokenForExpirationDate(ofPersistableContentKey: Data, completionHandler: (Data?, Error?) -> Void)",
+      "desc": "Creates a secure server playback context that the client sends to the key server to get an expiration date for the given persistable content key data."
+    },
+    {
+      "name": "func renewExpiringResponseData(for: AVContentKeyRequest)",
+      "desc": "Tells the delegate that previously provided response data for a content key request is about to expire."
+    },
+    {
+      "name": "var contentProtectionSessionIdentifier: Data?",
+      "desc": "The identifier for the current content protection session."
+    },
+    {
+      "name": "func invalidatePersistableContentKey(Data, options: [AVContentKeySessionServerPlaybackContextOption : Any]?, completionHandler: (Data?, Error?) -> Void)",
+      "desc": "Invalidates the persistable content key and creates a secure server playback context (SPC) to verify the outcome of an invalidation request."
+    },
+    {
+      "name": "func invalidateAllPersistableContentKeys(forApp: Data, options: [AVContentKeySessionServerPlaybackContextOption : Any]?, completionHandler: (Data?, Error?) -> Void)",
+      "desc": "Invalidates all of an app’s persistable content keys and creates a secure server playback context (SPC) to verify the outcome of an invalidation request."
+    },
+    {
+      "name": "struct AVContentKeySessionServerPlaybackContextOption",
+      "desc": "Options for specifying additional information for generating server playback context (SPC)."
+    },
+    {
+      "name": "class func pendingExpiredSessionReports(withAppIdentifier: Data, storageDirectoryAt: URL) -> [Data]",
+      "desc": "Returns the expired session reports for content key sessions created with the specified app identifier."
+    },
+    {
+      "name": "class func removePendingExpiredSessionReports([Data], withAppIdentifier: Data, storageDirectoryAt: URL)",
+      "desc": "Removes expired session reports from storage."
+    }
+  ],
+  "declaration": "class AVContentKeySession : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/security/sessionattributebits",
+  "type": "Structure",
+  "name": "SessionAttributeBits",
+  "desc": "The attributes of a security session.",
+  "items": [
+    {
+      "name": "init(rawValue: UInt32)",
+      "desc": "Initializes a session attribute bits structure."
+    },
+    {
+      "name": "static var sessionIsRoot: SessionAttributeBits",
+      "desc": "A bit that indicates the session is the root session."
+    },
+    {
+      "name": "static var sessionHasGraphicAccess: SessionAttributeBits",
+      "desc": "A bit that indicates a graphic subsystem is available."
+    },
+    {
+      "name": "static var sessionHasTTY: SessionAttributeBits",
+      "desc": "A bit that indicates /dev/tty is available."
+    },
+    {
+      "name": "static var sessionIsRemote: SessionAttributeBits",
+      "desc": "A bit that indicates the session was initiated over the network."
+    }
+  ],
+  "declaration": "struct SessionAttributeBits, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/uikit/nstextselectionnavigation",
+  "type": "Class",
+  "name": "NSTextSelectionNavigation",
+  "desc": "An interface used to expose methods for obtaining results from actions performed on text selections.",
+  "items": [
+    {
+      "name": "init(dataSource: NSTextSelectionDataSource)",
+      "desc": "Creates a new object using the text selection data source you provide."
+    },
+    {
+      "name": "var allowsNonContiguousRanges: Bool",
+      "desc": "Determines if the instance could produce selections with multiple noncontiguous selections."
+    },
+    {
+      "name": "var rotatesCoordinateSystemForLayoutOrientation: Bool",
+      "desc": "Determines if the framework rotates the coordinate system to match the layout orientation."
+    },
+    {
+      "name": "struct NSTextSelectionNavigation.Modifier",
+      "desc": "Values that describe how the framework handles different kinds of selection modifiers."
+    },
+    {
+      "name": "enum NSTextSelectionNavigation.Destination",
+      "desc": "Values that affect how the framework handles navigation across different textual boundaries during a selection."
+    },
+    {
+      "name": "enum NSTextSelectionNavigation.Direction",
+      "desc": "Values that describe the direction of a selection."
+    },
+    {
+      "name": "func textSelection(for: NSTextSelection.Granularity, enclosing: CGPoint, inContainerAt: NSTextLocation) -> NSTextSelection?",
+      "desc": "Returns a text selection that expands to the nearest boundaries for selection granularity and an enclosing point you specify."
+    },
+    {
+      "name": "var textSelectionDataSource: NSTextSelectionDataSource?",
+      "desc": "The data source associated with this selection navigation."
+    },
+    {
+      "name": "protocol NSTextSelectionDataSource",
+      "desc": "A set of methods that objects implement to provide data for, and manage text selections."
+    },
+    {
+      "name": "func textSelection(for: NSTextSelection.Granularity, enclosing: NSTextSelection) -> NSTextSelection",
+      "desc": "Returns a text selection expanded to the nearest boundaries for the selection granularity and enclosing text selection text ranges you specify."
+    },
+    {
+      "name": "func textSelections(interactingAt: CGPoint, inContainerAt: NSTextLocation, anchors: [NSTextSelection], modifiers: NSTextSelectionNavigation.Modifier, selecting: Bool, bounds: CGRect) -> [NSTextSelection]",
+      "desc": "Returns an array of text selections produced by a tap or click at the point you specify."
+    },
+    {
+      "name": "func destinationSelection(for: NSTextSelection, direction: NSTextSelectionNavigation.Direction, destination: NSTextSelectionNavigation.Destination, extending: Bool, confined: Bool) -> NSTextSelection?",
+      "desc": "Returns a new selection that results from applying the navigation operations you specify to the text selection you provide."
+    },
+    {
+      "name": "func flushLayoutCache()",
+      "desc": "Flushes cached layout information."
+    },
+    {
+      "name": "func resolvedInsertionLocation(for: NSTextSelection, writingDirection: NSTextSelectionNavigation.WritingDirection) -> NSTextLocation?",
+      "desc": "Returns the location for inserting the next input depending on the state of the current and secondary selections."
+    },
+    {
+      "name": "func deletionRanges(for: NSTextSelection, direction: NSTextSelectionNavigation.Direction, destination: NSTextSelectionNavigation.Destination, allowsDecomposition: Bool) -> [NSTextRange]",
+      "desc": "Returns the ranges for deleting the text based on the current selection and movement arguments."
+    }
+  ],
+  "declaration": "class NSTextSelectionNavigation : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

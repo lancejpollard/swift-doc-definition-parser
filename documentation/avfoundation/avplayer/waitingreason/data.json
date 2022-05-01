@@ -1,0 +1,39 @@
+{
+  "path": "/documentation/avfoundation/avplayer/waitingreason",
+  "type": "Structure",
+  "name": "AVPlayer.WaitingReason",
+  "desc": "The reasons a player is waiting to begin or resume playback.",
+  "items": [
+    {
+      "name": "static let evaluatingBufferingRate: AVPlayer.WaitingReason",
+      "desc": "The player is waiting because it’s monitoring the buffer’s fill rate to determine whether playback is likely to complete without interruptions."
+    },
+    {
+      "name": "static let noItemToPlay: AVPlayer.WaitingReason",
+      "desc": "The player is waiting because there’s no item to play."
+    },
+    {
+      "name": "static let toMinimizeStalls: AVPlayer.WaitingReason",
+      "desc": "The player is waiting for appropriate playback conditions before starting playback."
+    },
+    {
+      "name": "static let interstitialEvent: AVPlayer.WaitingReason",
+      "desc": "The player is waiting for an interstitial event to complete."
+    },
+    {
+      "name": "static let waitingForCoordinatedPlayback: AVPlayer.WaitingReason",
+      "desc": "The player is waiting for another participant in a coordinated playback session."
+    },
+    {
+      "name": "init(rawValue: String)",
+      "desc": "Creates a waiting reason with a string value."
+    }
+  ],
+  "declaration": "struct WaitingReason, @unchecked Sendable",
+  "conformsTo": [
+    "Equatable",
+    "Hashable",
+    "RawRepresentable",
+    "Sendable"
+  ]
+}

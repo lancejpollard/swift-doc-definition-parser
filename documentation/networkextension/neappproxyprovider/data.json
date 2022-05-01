@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/networkextension/neappproxyprovider",
+  "type": "Class",
+  "name": "NEAppProxyProvider",
+  "desc": "The principal class for an app proxy provider app extension.",
+  "items": [
+    {
+      "name": "func startProxy(options: [String : Any]?, completionHandler: (Error?) -> Void)",
+      "desc": "Start the network proxy."
+    },
+    {
+      "name": "func stopProxy(with: NEProviderStopReason, completionHandler: () -> Void)",
+      "desc": "Stop the network proxy."
+    },
+    {
+      "name": "func cancelProxyWithError(Error?)",
+      "desc": "Stop the network proxy from the App Proxy Provider."
+    },
+    {
+      "name": "func handleNewFlow(NEAppProxyFlow) -> Bool",
+      "desc": "Handle a new flow of network data."
+    },
+    {
+      "name": "func handleNewUDPFlow(NEAppProxyUDPFlow, initialRemoteEndpoint: NWEndpoint) -> Bool",
+      "desc": "Handle a new UDP flow of network data."
+    }
+  ],
+  "declaration": "class NEAppProxyProvider : NETunnelProvider",
+  "inheritsFrom": [
+    "NETunnelProvider"
+  ]
+}

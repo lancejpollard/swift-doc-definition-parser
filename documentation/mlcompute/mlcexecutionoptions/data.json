@@ -1,0 +1,37 @@
+{
+  "path": "/documentation/mlcompute/mlcexecutionoptions",
+  "type": "Structure",
+  "name": "MLCExecutionOptions",
+  "desc": "A bitmask that specifies the options you use when executing a graph.",
+  "items": [
+    {
+      "name": "init(rawValue: UInt64)",
+      "desc": "Creates an execution option with the specified raw value."
+    },
+    {
+      "name": "static var skipWritingInputDataToDevice: MLCExecutionOptions",
+      "desc": "The option to skip writing input data to device memory."
+    },
+    {
+      "name": "static var synchronous: MLCExecutionOptions",
+      "desc": "The option to execute the graph synchronously."
+    },
+    {
+      "name": "static var profiling: MLCExecutionOptions",
+      "desc": "The option to return profiling information in the callback before returning from execution."
+    },
+    {
+      "name": "static var perLayerProfiling: MLCExecutionOptions",
+      "desc": "The option to enable additional per-layer profiling information using signposts."
+    },
+    {
+      "name": "static var forwardForInference: MLCExecutionOptions",
+      "desc": "The option to execute the forward pass for inference only."
+    }
+  ],
+  "declaration": "struct MLCExecutionOptions, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

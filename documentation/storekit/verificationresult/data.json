@@ -1,0 +1,123 @@
+{
+  "path": "/documentation/storekit/verificationresult",
+  "type": "Generic Enumeration",
+  "name": "VerificationResult",
+  "desc": "A type that describes the result of a StoreKit verification.",
+  "items": [
+    {
+      "name": "case verified(SignedType)",
+      "desc": "The associated value passed StoreKit automatic verification checks."
+    },
+    {
+      "name": "var payloadValue: SignedType"
+    },
+    {
+      "name": "case unverified(SignedType, VerificationResult<SignedType>.VerificationError)",
+      "desc": "The associated value failed StoreKit automatic verification checks."
+    },
+    {
+      "name": "var unsafePayloadValue: SignedType"
+    },
+    {
+      "name": "enum VerificationResult.VerificationError"
+    },
+    {
+      "name": "static func != (VerificationResult<SignedType>, VerificationResult<SignedType>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (VerificationResult<SignedType>, VerificationResult<SignedType>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "Available when SignedType conforms to CustomDebugStringConvertible."
+    },
+    {
+      "name": "var deviceVerification: Data",
+      "desc": "Available when SignedType is Transaction."
+    },
+    {
+      "name": "var deviceVerificationNonce: UUID",
+      "desc": "Available when SignedType is Transaction."
+    },
+    {
+      "name": "var headerData: Data",
+      "desc": "The header component of the JWS transaction."
+    },
+    {
+      "name": "var jwsRepresentation: String",
+      "desc": "The transaction signed by the App Store, in JWS format."
+    },
+    {
+      "name": "var payloadData: Data",
+      "desc": "The payload component of the JWS transaction."
+    },
+    {
+      "name": "var signatureData: Data",
+      "desc": "The signature component of the JWS transaction."
+    },
+    {
+      "name": "var signature: P256.Signing.ECDSASignature",
+      "desc": "Available when SignedType is Transaction."
+    },
+    {
+      "name": "var signedData: Data",
+      "desc": "The transaction data covered by the signature."
+    },
+    {
+      "name": "var signedDate: Date",
+      "desc": "The date that the App Store signed the JWS transaction."
+    },
+    {
+      "name": "var deviceVerification: Data",
+      "desc": "Available when SignedType is Product.SubscriptionInfo.RenewalInfo."
+    },
+    {
+      "name": "var deviceVerificationNonce: UUID",
+      "desc": "Available when SignedType is Product.SubscriptionInfo.RenewalInfo."
+    },
+    {
+      "name": "var headerData: Data",
+      "desc": "The header component of the JWS transaction."
+    },
+    {
+      "name": "var jwsRepresentation: String",
+      "desc": "The subscription renewal information signed by the App Store, in JWS format."
+    },
+    {
+      "name": "var payloadData: Data",
+      "desc": "The payload component of the JWS transaction."
+    },
+    {
+      "name": "var signature: P256.Signing.ECDSASignature",
+      "desc": "Available when SignedType is Product.SubscriptionInfo.RenewalInfo."
+    },
+    {
+      "name": "var signatureData: Data",
+      "desc": "The signature component of the JWS transaction."
+    },
+    {
+      "name": "var signedData: Data",
+      "desc": "The subscription renewal data covered by the signature."
+    },
+    {
+      "name": "var signedDate: Date",
+      "desc": "Available when SignedType is Product.SubscriptionInfo.RenewalInfo."
+    }
+  ],
+  "declaration": "@frozen enum VerificationResult<SignedType>",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "Equatable",
+    "Hashable"
+  ]
+}

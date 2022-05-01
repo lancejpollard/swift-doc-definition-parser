@@ -1,0 +1,31 @@
+{
+  "path": "/documentation/accelerate/bnns/losslayer",
+  "type": "Class",
+  "name": "BNNS.LossLayer",
+  "desc": "A layer object that wraps a loss filter and manages its deinitialization.",
+  "items": [
+    {
+      "name": "init?(input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, lossFunction: BNNS.LossFunction, lossReduction: BNNS.LossReduction, filterParameters: BNNSFilterParameters?)",
+      "desc": "Returns a new loss layer."
+    },
+    {
+      "name": "enum BNNS.LossFunction",
+      "desc": "Constants that describe loss functions."
+    },
+    {
+      "name": "enum BNNS.LossReduction",
+      "desc": "An enumeration that describes loss reduction functions."
+    },
+    {
+      "name": "func apply(batchSize: Int, input: BNNSNDArrayDescriptor, labels: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, generatingInputGradient: BNNSNDArrayDescriptor)",
+      "desc": "Applies the layer to a set of input objects, writing the result to a set of output objects."
+    },
+    {
+      "name": "func apply(batchSize: Int, input: BNNSNDArrayDescriptor, labels: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, weights: BNNSNDArrayDescriptor?, broadcastsWeights: Bool, generatingInputGradient: BNNSNDArrayDescriptor)"
+    }
+  ],
+  "declaration": "class LossLayer : BNNS.Layer",
+  "inheritsFrom": [
+    "BNNS.Layer"
+  ]
+}

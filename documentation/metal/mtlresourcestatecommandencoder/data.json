@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/metal/mtlresourcestatecommandencoder",
+  "type": "Protocol",
+  "name": "MTLResourceStateCommandEncoder",
+  "desc": "An encoder that encodes commands that modify resource configurations.",
+  "items": [
+    {
+      "name": "func updateTextureMapping(MTLTexture, mode: MTLSparseTextureMappingMode, region: MTLRegion, mipLevel: Int, slice: Int)",
+      "desc": "Encodes a command to update the texture mappings for a region in a single texture mipmap."
+    },
+    {
+      "name": "func updateTextureMappings(MTLTexture, mode: MTLSparseTextureMappingMode, regions: UnsafePointer<MTLRegion>, mipLevels: UnsafePointer<Int>, slices: UnsafePointer<Int>, numRegions: Int)",
+      "desc": "Encodes a command to update memory mappings for multiple regions inside a texture."
+    },
+    {
+      "name": "enum MTLSparseTextureMappingMode",
+      "desc": "Options for sparse texture mapping."
+    },
+    {
+      "name": "func updateTextureMapping(MTLTexture, mode: MTLSparseTextureMappingMode, indirectBuffer: MTLBuffer, indirectBufferOffset: Int)",
+      "desc": "Encodes a command to update a texture's memory mappings, specifying the parameters indirectly."
+    },
+    {
+      "name": "func update(MTLFence)",
+      "desc": "Updates the given fence to capture all GPU work that the command encoder has enqueued up to this point."
+    },
+    {
+      "name": "func wait(for: MTLFence)",
+      "desc": "Prevents the command encoder from enqueuing further GPU commands until the given fence is reached."
+    }
+  ],
+  "declaration": "protocol MTLResourceStateCommandEncoder",
+  "inheritsFrom": [
+    "MTLCommandEncoder"
+  ]
+}

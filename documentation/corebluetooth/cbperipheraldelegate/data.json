@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/corebluetooth/cbperipheraldelegate",
+  "type": "Protocol",
+  "name": "CBPeripheralDelegate",
+  "desc": "A protocol that provides updates on the use of a peripheral’s services.",
+  "items": [
+    {
+      "name": "func peripheral(CBPeripheral, didDiscoverServices: Error?)",
+      "desc": "Tells the delegate that peripheral service discovery succeeded."
+    },
+    {
+      "name": "func peripheral(CBPeripheral, didDiscoverIncludedServicesFor: CBService, error: Error?)",
+      "desc": "Tells the delegate that discovering included services within the indicated service completed."
+    },
+    {
+      "name": "func peripheral(CBPeripheral, didDiscoverCharacteristicsFor: CBService, error: Error?)",
+      "desc": "Tells the delegate that the peripheral found characteristics for a service."
+    },
+    {
+      "name": "func peripheral(CBPeripheral, didDiscoverDescriptorsFor: CBCharacteristic, error: Error?)",
+      "desc": "Tells the delegate that the peripheral found descriptors for a characteristic."
+    },
+    {
+      "name": "func peripheral(CBPeripheral, didUpdateValueFor: CBCharacteristic, error: Error?)",
+      "desc": "Tells the delegate that retrieving the specified characteristic’s value succeeded, or that the characteristic’s value changed."
+    },
+    {
+      "name": "func peripheral(CBPeripheral, didUpdateValueFor: CBDescriptor, error: Error?)",
+      "desc": "Tells the delegate that retrieving a specified characteristic descriptor’s value succeeded."
+    },
+    {
+      "name": "func peripheral(CBPeripheral, didWriteValueFor: CBCharacteristic, error: Error?)",
+      "desc": "Tells the delegate that the peripheral successfully set a value for the characteristic."
+    },
+    {
+      "name": "func peripheral(CBPeripheral, didWriteValueFor: CBDescriptor, error: Error?)",
+      "desc": "Tells the delegate that the peripheral successfully set a value for the descriptor."
+    },
+    {
+      "name": "func peripheralIsReady(toSendWriteWithoutResponse: CBPeripheral)",
+      "desc": "Tells the delegate that a peripheral is again ready to send characteristic updates."
+    },
+    {
+      "name": "func peripheral(CBPeripheral, didUpdateNotificationStateFor: CBCharacteristic, error: Error?)",
+      "desc": "Tells the delegate that the peripheral received a request to start or stop providing notifications for a specified characteristic’s value."
+    },
+    {
+      "name": "func peripheral(CBPeripheral, didReadRSSI: NSNumber, error: Error?)",
+      "desc": "Tells the delegate that retrieving the value of the peripheral’s current Received Signal Strength Indicator (RSSI) succeeded."
+    },
+    {
+      "name": "func peripheralDidUpdateName(CBPeripheral)",
+      "desc": "Tells the delegate that a peripheral’s name changed."
+    },
+    {
+      "name": "func peripheral(CBPeripheral, didModifyServices: [CBService])",
+      "desc": "Tells the delegate that a peripheral’s services changed."
+    },
+    {
+      "name": "func peripheral(CBPeripheral, didOpen: CBL2CAPChannel?, error: Error?)",
+      "desc": "Delivers the result of an attempt to open an L2CAP channel."
+    }
+  ],
+  "declaration": "protocol CBPeripheralDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

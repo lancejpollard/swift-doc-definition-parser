@@ -1,0 +1,97 @@
+{
+  "path": "/documentation/coremedia/cmblockbuffer",
+  "type": "Class",
+  "name": "CMBlockBuffer",
+  "desc": "An object that represents a block of memory.",
+  "items": [
+    {
+      "name": "func append(length: Int, allocator: CFAllocator?, range: Range<Int>?, flags: CMBlockBuffer.Flags)",
+      "desc": "Adds a memory block to an existing block buffer."
+    },
+    {
+      "name": "func append(buffer: UnsafeMutableRawBufferPointer, allocator: CFAllocator?, flags: CMBlockBuffer.Flags)",
+      "desc": "Adds a memory block to a block buffer using a custom allocator."
+    },
+    {
+      "name": "func append(buffer: Slice<UnsafeMutableRawBufferPointer>, allocator: CFAllocator?, flags: CMBlockBuffer.Flags)",
+      "desc": "Adds a sliced memory block to a block buffer using a custom allocator."
+    },
+    {
+      "name": "func append(length: Int, allocator: CMBlockBuffer.CustomBlockAllocator, deallocator: CMBlockBuffer.CustomBlockDeallocator, range: Range<Int>?, flags: CMBlockBuffer.Flags)",
+      "desc": "Adds a memory block to a block buffer using a custom allocator and deallocator."
+    },
+    {
+      "name": "func append(buffer: UnsafeMutableRawBufferPointer, deallocator: CMBlockBuffer.CustomBlockDeallocator, flags: CMBlockBuffer.Flags)",
+      "desc": "Adds a memory block to a block buffer with a custom deallocator."
+    },
+    {
+      "name": "func append(buffer: Slice<UnsafeMutableRawBufferPointer>, deallocator: CMBlockBuffer.CustomBlockDeallocator, flags: CMBlockBuffer.Flags)",
+      "desc": "Adds a sliced memory block to a block buffer with a custom deallocator."
+    },
+    {
+      "name": "typealias CMBlockBuffer.CustomBlockAllocator",
+      "desc": "A type that allocates memory blocks."
+    },
+    {
+      "name": "typealias CMBlockBuffer.CustomBlockDeallocator",
+      "desc": "A type that deallocates memory blocks."
+    },
+    {
+      "name": "func append<T>(bufferReference: T, flags: CMBlockBuffer.Flags)",
+      "desc": "Adds a reference to another block buffer."
+    },
+    {
+      "name": "func assureBlockMemory()",
+      "desc": "Assures that the system allocates all memory blocks."
+    },
+    {
+      "name": "func withUnsafeMutableBytes<R>(atOffset: Int, (UnsafeMutableRawBufferPointer) -> R) -> R",
+      "desc": "Accesses the data that a block buffer represents."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value that indicates whether the block buffer is empty."
+    },
+    {
+      "name": "var startIndex: Int",
+      "desc": "The position of the first element."
+    },
+    {
+      "name": "var endIndex: Int",
+      "desc": "The position past the last element."
+    },
+    {
+      "name": "var owner: CMBlockBuffer",
+      "desc": "The block buffer instance on which to operate."
+    },
+    {
+      "name": "var attachments: CMAttachmentBearerAttachments",
+      "desc": "Accesses the block buffer’s attachments."
+    },
+    {
+      "name": "func propagateAttachments<T>(to: T)",
+      "desc": "Copies all propagatable attachments from one buffer to another."
+    },
+    {
+      "name": "class var typeID: CFTypeID",
+      "desc": "The type identifier for block buffer objects."
+    },
+    {
+      "name": "struct CMBlockBuffer.Error",
+      "desc": "A structure that defines block buffer errors."
+    },
+    {
+      "name": "struct CMBlockBuffer.Flags",
+      "desc": "A structure that defines feature and control flags."
+    },
+    {
+      "name": "struct CMBlockBuffer.Slice",
+      "desc": "A structure that defines a slice of a block buffer."
+    }
+  ],
+  "declaration": "class CMBlockBuffer",
+  "conformsTo": [
+    "CMAttachmentBearerProtocol",
+    "CMBlockBufferProtocol"
+  ]
+}

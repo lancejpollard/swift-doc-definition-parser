@@ -1,0 +1,181 @@
+{
+  "path": "/documentation/foundation/nsitemprovider",
+  "type": "Class",
+  "name": "NSItemProvider",
+  "desc": "An item provider for conveying data or a file between processes during drag and drop or copy/paste activities, or from a host app to an app extension.",
+  "items": [
+    {
+      "name": "init?(contentsOf: URL!)",
+      "desc": "Provides data backed by the contents of an existing file. The system uses the URL’s filename extension to select an appropriate UTI."
+    },
+    {
+      "name": "init(item: NSSecureCoding?, typeIdentifier: String?)",
+      "desc": "Initializes an item provider with an object, according to the NSItemProvider type coercion policy."
+    },
+    {
+      "name": "init()",
+      "desc": "Instantiates an empty item provider to which you can later register a data or file representation."
+    },
+    {
+      "name": "init(object: NSItemProviderWriting)",
+      "desc": "Initializes a new item provider, employing a specified object’s type identifiers to specify the data representations eligible to be loaded by the provider."
+    },
+    {
+      "name": "var preferredPresentationSize: CGSize",
+      "desc": "The ideal presentation size of the item."
+    },
+    {
+      "name": "var preferredPresentationStyle: NSItemProvider.PreferredPresentationStyle",
+      "desc": "The preferred style for presenting the item provider's data."
+    },
+    {
+      "name": "enum NSItemProvider.PreferredPresentationStyle",
+      "desc": "The presentation styles that determine how a view should show an item provider's data."
+    },
+    {
+      "name": "var suggestedName: String?",
+      "desc": "The filename to use when writing the provided data to a file on disk."
+    },
+    {
+      "name": "var teamData: Data?"
+    },
+    {
+      "name": "func canLoadObject(ofClass: NSItemProviderReading.Type) -> Bool",
+      "desc": "Returns a Boolean value indicating whether an item provider can load objects of a given class."
+    },
+    {
+      "name": "func canLoadObject<T>(ofClass: T.Type) -> Bool"
+    },
+    {
+      "name": "func hasItemConformingToTypeIdentifier(String) -> Bool",
+      "desc": "A convenience method equivalent to the hasRepresentationConforming(toTypeIdentifier:fileOptions:) method, but with the fileOptions parameter set to a value of 0."
+    },
+    {
+      "name": "func hasRepresentationConforming(toTypeIdentifier: String, fileOptions: NSItemProviderFileOptions) -> Bool",
+      "desc": "Returns a Boolean value indicating whether an item provider contains a data representation conforming to a specified uniform type identifier (UTI) and to specified open-in-place behavior."
+    },
+    {
+      "name": "var registeredTypeIdentifiers: [String]",
+      "desc": "Returns the array of type identifiers for the item provider, listed in the same order in which they were registered."
+    },
+    {
+      "name": "func registeredTypeIdentifiers(fileOptions: NSItemProviderFileOptions) -> [String]",
+      "desc": "Returns an array with a subset of type identifiers for the item provider, according to the specified file options, listed in the same order in which they were registered."
+    },
+    {
+      "name": "func loadItem(forTypeIdentifier: String, options: [AnyHashable : Any]?, completionHandler: NSItemProvider.CompletionHandler?)",
+      "desc": "Loads the item’s data and coerces it (as needed) to the specified type."
+    },
+    {
+      "name": "func loadDataRepresentation(forTypeIdentifier: String, completionHandler: (Data?, Error?) -> Void) -> Progress",
+      "desc": "Asynchronously copies the provided, typed data into a Data object, returning a Progress object."
+    },
+    {
+      "name": "func loadFileRepresentation(forTypeIdentifier: String, completionHandler: (URL?, Error?) -> Void) -> Progress",
+      "desc": "Asynchronously writes a copy of the provided, typed data to a temporary file, returning a Progress object."
+    },
+    {
+      "name": "func loadInPlaceFileRepresentation(forTypeIdentifier: String, completionHandler: (URL?, Bool, Error?) -> Void) -> Progress",
+      "desc": "Asynchronously opens a file in place, if doing so is possible, returning a Progress object."
+    },
+    {
+      "name": "func loadObject(ofClass: NSItemProviderReading.Type, completionHandler: (NSItemProviderReading?, Error?) -> Void) -> Progress",
+      "desc": "Asynchronously loads an object of a specified class to an item provider, returning a Progress object."
+    },
+    {
+      "name": "func loadObject<T>(ofClass: T.Type, completionHandler: (T?, Error?) -> Void) -> Progress"
+    },
+    {
+      "name": "func loadPreviewImage(options: [AnyHashable : Any]!, completionHandler: NSItemProvider.CompletionHandler!)",
+      "desc": "Loads the preview image for the item that is represented by the item provider."
+    },
+    {
+      "name": "var previewImageHandler: NSItemProvider.LoadHandler?",
+      "desc": "The custom preview image handler block for the item provider."
+    },
+    {
+      "name": "func registerCloudKitShare(CKShare, container: CKContainer)",
+      "desc": "Registers a CloudKit share for the user to modify."
+    },
+    {
+      "name": "func registerCloudKitShare(preparationHandler: ((CKShare?, CKContainer?, Error?) -> Void) -> Void)",
+      "desc": "Registers a handler that prepares a new CloudKit share."
+    },
+    {
+      "name": "func registerDataRepresentation(forTypeIdentifier: String, visibility: NSItemProviderRepresentationVisibility, loadHandler: ((Data?, Error?) -> Void) -> Progress?)",
+      "desc": "Registers a data-backed representation for an item, specifiying item visibility and a load handler."
+    },
+    {
+      "name": "func registerItem(forTypeIdentifier: String, loadHandler: NSItemProvider.LoadHandler)",
+      "desc": "Lazily registers an item, according to the NSItemProvider type coercion policy."
+    },
+    {
+      "name": "func registerFileRepresentation(forTypeIdentifier: String, fileOptions: NSItemProviderFileOptions, visibility: NSItemProviderRepresentationVisibility, loadHandler: ((URL?, Bool, Error?) -> Void) -> Progress?)",
+      "desc": "Registers a file-backed representation for an item, specifying file options, item visibility, and a load handler."
+    },
+    {
+      "name": "func registerObject(NSItemProviderWriting, visibility: NSItemProviderRepresentationVisibility)",
+      "desc": "Adds representations of a specified object to an item provider, based on the object’s implementation of the NSItemProviderWriting protocol and adhering to a visibility specification."
+    },
+    {
+      "name": "func registerObject(ofClass: NSItemProviderWriting.Type, visibility: NSItemProviderRepresentationVisibility, loadHandler: ((NSItemProviderWriting?, Error?) -> Void) -> Progress?)",
+      "desc": "Lazily adds representations of a specified object to an item provider, based on the object’s implementation of the NSItemProviderWriting protocol and adhering to a visibility specification."
+    },
+    {
+      "name": "func registerObject<T>(ofClass: T.Type, visibility: NSItemProviderRepresentationVisibility, loadHandler: ((T?, Error?) -> Void) -> Progress?)"
+    },
+    {
+      "name": "var sourceFrame: NSRect",
+      "desc": "The rectangle (in screen coordinates) occupied by the item in the host app’s source window."
+    },
+    {
+      "name": "var containerFrame: NSRect",
+      "desc": "The rectangle (in screen coordinates) of the item’s visible content."
+    },
+    {
+      "name": "typealias NSItemProvider.CompletionHandler",
+      "desc": "A block that receives the item provider’s data."
+    },
+    {
+      "name": "typealias NSItemProvider.LoadHandler",
+      "desc": "A block that loads the item provider’s data and coerces it to the specified type."
+    },
+    {
+      "name": "class let errorDomain: String",
+      "desc": "The error domain associated with the NSItemProvider class."
+    },
+    {
+      "name": "struct NSItemProviderFileOptions",
+      "desc": "Data-access specifications that declare how items should be handled."
+    },
+    {
+      "name": "protocol NSItemProviderReading",
+      "desc": "The protocol you implement on a class to allow an item provider to create an instance of the class."
+    },
+    {
+      "name": "protocol NSItemProviderWriting",
+      "desc": "The protocol you implement on a class to allow an item provider to retrieve data from an instance of the class."
+    },
+    {
+      "name": "enum NSItemProviderRepresentationVisibility",
+      "desc": "Specifications that control which categories of processes can see an item."
+    },
+    {
+      "name": "enum NSItemProvider.ErrorCode",
+      "desc": "The error codes that describe problems with consuming data from an item provider."
+    },
+    {
+      "name": "func registerGroupActivity<ActivityType>(ActivityType)"
+    },
+    {
+      "name": "func registerGroupActivity<ActivityType>(preparationHandler: () -> ActivityType)"
+    }
+  ],
+  "declaration": "class NSItemProvider : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

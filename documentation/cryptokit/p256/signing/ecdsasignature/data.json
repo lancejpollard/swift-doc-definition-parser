@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/cryptokit/p256/signing/ecdsasignature",
+  "type": "Structure",
+  "name": "P256.Signing.ECDSASignature",
+  "desc": "A P-256 elliptic curve digital signature algorithm (ECDSA) signature.",
+  "items": [
+    {
+      "name": "init<D>(derRepresentation: D)",
+      "desc": "Creates a P-256 digital signature from a Distinguished Encoding Rules (DER) encoded representation."
+    },
+    {
+      "name": "init<D>(rawRepresentation: D)",
+      "desc": "Creates a P-256 digital signature from a raw representation."
+    },
+    {
+      "name": "var derRepresentation: Data",
+      "desc": "A Distinguished Encoding Rules (DER) encoded representation of a P-256 digital signature."
+    },
+    {
+      "name": "var rawRepresentation: Data",
+      "desc": "A raw data representation of a P-256 digital signature."
+    },
+    {
+      "name": "func withUnsafeBytes<R>((UnsafeRawBufferPointer) -> R) -> R",
+      "desc": "Invokes the given closure with a buffer pointer covering the raw bytes of the signature."
+    }
+  ],
+  "declaration": "struct ECDSASignature",
+  "conformsTo": [
+    "ContiguousBytes"
+  ]
+}

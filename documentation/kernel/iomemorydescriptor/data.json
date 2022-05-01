@@ -1,0 +1,208 @@
+{
+  "path": "/documentation/kernel/iomemorydescriptor",
+  "type": "Class",
+  "name": "IOMemoryDescriptor",
+  "desc": "An abstract base class that defines common methods for describing physical or virtual memory.",
+  "items": [
+    {
+      "name": "- initWithOptions",
+      "desc": "Primary initializer for all variants of memory descriptors."
+    },
+    {
+      "name": "+ withOptions",
+      "desc": "Primary initializer for all variants of memory descriptors."
+    },
+    {
+      "name": "+ withAddress",
+      "desc": "Creates an IOMemoryDescriptor to describe one virtual range of the kernel task."
+    },
+    {
+      "name": "+ withAddressRange",
+      "desc": "Creates an IOMemoryDescriptor to describe one virtual range of the specified map."
+    },
+    {
+      "name": "+ withAddressRanges",
+      "desc": "Creates an IOMemoryDescriptor to describe one or more virtual ranges."
+    },
+    {
+      "name": "+ withPersistentMemoryDescriptor",
+      "desc": "Copy constructor that generates a new memory descriptor if the backing memory for the same task's virtual address and length has changed."
+    },
+    {
+      "name": "+ withPhysicalAddress",
+      "desc": "Creates an IOMemoryDescriptor to describe one physical range."
+    },
+    {
+      "name": "- free",
+      "desc": "Performs any final cleanup for the memory descriptor object."
+    },
+    {
+      "name": "- setOwnership",
+      "desc": "Set the task that owns the descriptor’s memory."
+    },
+    {
+      "name": "- setPurgeable",
+      "desc": "Control the purgeable status of a memory descriptors memory."
+    },
+    {
+      "name": "- prepare",
+      "desc": "Prepare the memory for an I/O transfer."
+    },
+    {
+      "name": "- complete",
+      "desc": "Complete processing of the memory after an I/O transfer finishes."
+    },
+    {
+      "name": "- getPreparationID"
+    },
+    {
+      "name": "- setPreparationID"
+    },
+    {
+      "name": "- readBytes",
+      "desc": "Copy data from the memory descriptor's buffer to the specified buffer."
+    },
+    {
+      "name": "- writeBytes",
+      "desc": "Copy data to the memory descriptor's buffer from the specified buffer."
+    },
+    {
+      "name": "- createMappingInTask",
+      "desc": "Maps an IOMemoryDescriptor into a task."
+    },
+    {
+      "name": "- map",
+      "desc": "Maps an IOMemoryDescriptor into the kernel map."
+    },
+    {
+      "name": "- setMapping",
+      "desc": "Establishes an already existing mapping."
+    },
+    {
+      "name": "- getPageCounts",
+      "desc": "Retrieve the number of resident and/or dirty pages encompassed by a memory descriptor."
+    },
+    {
+      "name": "- getPhysicalAddress",
+      "desc": "Return the physical address of the first byte in the memory."
+    },
+    {
+      "name": "- getPhysicalSegment",
+      "desc": "Break a memory descriptor into its physically contiguous segments."
+    },
+    {
+      "name": "- getDirection",
+      "desc": "Gets the direction of memory transfers associated with the descriptor."
+    },
+    {
+      "name": "- getLength",
+      "desc": "Accessor to get the length of the memory descriptor (over all its ranges)."
+    },
+    {
+      "name": "- GetLength",
+      "desc": "Returns the length of the memory block represented by this object."
+    },
+    {
+      "name": "- getDMAMapLength"
+    },
+    {
+      "name": "- getFlags",
+      "desc": "Returns the options used to create the memory descriptor."
+    },
+    {
+      "name": "- getMetaClass"
+    },
+    {
+      "name": "- getTag",
+      "desc": "Accessor to the retrieve the tag for the memory descriptor."
+    },
+    {
+      "name": "- setTag",
+      "desc": "Set the tag for the memory descriptor."
+    },
+    {
+      "name": "- getVMTag"
+    },
+    {
+      "name": "- setVMTags"
+    },
+    {
+      "name": "- performOperation",
+      "desc": "Perform an operation on the memory descriptor's memory."
+    },
+    {
+      "name": "- dmaCommandOperation"
+    },
+    {
+      "name": "+ initialize"
+    },
+    {
+      "name": "- Dispatch"
+    },
+    {
+      "name": "+ CreateMapping_Invoke"
+    },
+    {
+      "name": "- populateDevicePager"
+    },
+    {
+      "name": "- CreateMapping"
+    },
+    {
+      "name": "- CreateMapping_Impl"
+    },
+    {
+      "name": "- Map",
+      "desc": "Maps memory internally."
+    },
+    {
+      "name": "- addMapping"
+    },
+    {
+      "name": "- removeMapping"
+    },
+    {
+      "name": "- makeMapping"
+    },
+    {
+      "name": "- doMap"
+    },
+    {
+      "name": "- doUnmap"
+    },
+    {
+      "name": "- handleFault"
+    },
+    {
+      "name": "- redirect"
+    },
+    {
+      "name": "- getMapperOptions"
+    },
+    {
+      "name": "- setMapperOptions"
+    },
+    {
+      "name": "+ CreateSubMemoryDescriptor"
+    },
+    {
+      "name": "+ CreateSubMemoryDescriptor_Impl"
+    },
+    {
+      "name": "+ CreateSubMemoryDescriptor_Invoke"
+    },
+    {
+      "name": "+ CreateWithMemoryDescriptors"
+    },
+    {
+      "name": "+ CreateWithMemoryDescriptors_Impl"
+    },
+    {
+      "name": "+ CreateWithMemoryDescriptors_Invoke"
+    }
+  ],
+  "declaration": "class IOMemoryDescriptor : OSObject",
+  "inheritsFrom": [
+    "OSObject"
+  ]
+}

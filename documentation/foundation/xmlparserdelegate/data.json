@@ -1,0 +1,92 @@
+{
+  "path": "/documentation/foundation/xmlparserdelegate",
+  "type": "Protocol",
+  "name": "XMLParserDelegate",
+  "desc": "The interface an XML parser uses to inform its delegate about the content of the parsed document.",
+  "items": [
+    {
+      "name": "func parserDidStartDocument(XMLParser)",
+      "desc": "Sent by the parser object to the delegate when it begins parsing a document."
+    },
+    {
+      "name": "func parserDidEndDocument(XMLParser)",
+      "desc": "Sent by the parser object to the delegate when it has successfully completed parsing."
+    },
+    {
+      "name": "func parser(XMLParser, didStartElement: String, namespaceURI: String?, qualifiedName: String?, attributes: [String : String])",
+      "desc": "Sent by a parser object to its delegate when it encounters a start tag for a given element."
+    },
+    {
+      "name": "func parser(XMLParser, didEndElement: String, namespaceURI: String?, qualifiedName: String?)",
+      "desc": "Sent by a parser object to its delegate when it encounters an end tag for a specific element."
+    },
+    {
+      "name": "func parser(XMLParser, didStartMappingPrefix: String, toURI: String)",
+      "desc": "Sent by a parser object to its delegate the first time it encounters a given namespace prefix, which is mapped to a URI."
+    },
+    {
+      "name": "func parser(XMLParser, didEndMappingPrefix: String)",
+      "desc": "Sent by a parser object to its delegate when a given namespace prefix goes out of scope."
+    },
+    {
+      "name": "func parser(XMLParser, resolveExternalEntityName: String, systemID: String?) -> Data?",
+      "desc": "Sent by a parser object to its delegate when it encounters a given external entity with a specific system ID."
+    },
+    {
+      "name": "func parser(XMLParser, parseErrorOccurred: Error)",
+      "desc": "Sent by a parser object to its delegate when it encounters a fatal error."
+    },
+    {
+      "name": "func parser(XMLParser, validationErrorOccurred: Error)",
+      "desc": "Sent by a parser object to its delegate when it encounters a fatal validation error. NSXMLParser currently does not invoke this method and does not perform validation."
+    },
+    {
+      "name": "func parser(XMLParser, foundCharacters: String)",
+      "desc": "Sent by a parser object to provide its delegate with a string representing all or part of the characters of the current element."
+    },
+    {
+      "name": "func parser(XMLParser, foundIgnorableWhitespace: String)",
+      "desc": "Reported by a parser object to provide its delegate with a string representing all or part of the ignorable whitespace characters of the current element."
+    },
+    {
+      "name": "func parser(XMLParser, foundProcessingInstructionWithTarget: String, data: String?)",
+      "desc": "Sent by a parser object to its delegate when it encounters a processing instruction."
+    },
+    {
+      "name": "func parser(XMLParser, foundComment: String)",
+      "desc": "Sent by a parser object to its delegate when it encounters a comment in the XML."
+    },
+    {
+      "name": "func parser(XMLParser, foundCDATA: Data)",
+      "desc": "Sent by a parser object to its delegate when it encounters a CDATA block."
+    },
+    {
+      "name": "func parser(XMLParser, foundAttributeDeclarationWithName: String, forElement: String, type: String?, defaultValue: String?)",
+      "desc": "Sent by a parser object to its delegate when it encounters a declaration of an attribute that is associated with a specific element."
+    },
+    {
+      "name": "func parser(XMLParser, foundElementDeclarationWithName: String, model: String)",
+      "desc": "Sent by a parser object to its delegate when it encounters a declaration of an element with a given model."
+    },
+    {
+      "name": "func parser(XMLParser, foundExternalEntityDeclarationWithName: String, publicID: String?, systemID: String?)",
+      "desc": "Sent by a parser object to its delegate when it encounters an external entity declaration."
+    },
+    {
+      "name": "func parser(XMLParser, foundInternalEntityDeclarationWithName: String, value: String?)",
+      "desc": "Sent by a parser object to the delegate when it encounters an internal entity declaration."
+    },
+    {
+      "name": "func parser(XMLParser, foundUnparsedEntityDeclarationWithName: String, publicID: String?, systemID: String?, notationName: String?)",
+      "desc": "Sent by a parser object to its delegate when it encounters an unparsed entity declaration."
+    },
+    {
+      "name": "func parser(XMLParser, foundNotationDeclarationWithName: String, publicID: String?, systemID: String?)",
+      "desc": "Sent by a parser object to its delegate when it encounters a notation declaration."
+    }
+  ],
+  "declaration": "protocol XMLParserDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

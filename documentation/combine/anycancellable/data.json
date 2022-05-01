@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/combine/anycancellable",
+  "type": "Class",
+  "name": "AnyCancellable",
+  "desc": "A type-erasing cancellable object that executes a provided closure when canceled.",
+  "items": [
+    {
+      "name": "init(() -> Void)",
+      "desc": "Initializes the cancellable object with the given cancel-time closure."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Cancel the activity."
+    },
+    {
+      "name": "func store<C>(in: inout C)",
+      "desc": "Stores this type-erasing cancellable instance in the specified collection."
+    },
+    {
+      "name": "func store(in: inout Set<AnyCancellable>)",
+      "desc": "Stores this type-erasing cancellable instance in the specified set."
+    },
+    {
+      "name": "static func == (AnyCancellable, AnyCancellable) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two instances are equal, as determined by comparing whether their references point to the same instance."
+    },
+    {
+      "name": "init<C>(C)"
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    }
+  ],
+  "declaration": "final class AnyCancellable",
+  "conformsTo": [
+    "Cancellable",
+    "Equatable",
+    "Hashable"
+  ]
+}

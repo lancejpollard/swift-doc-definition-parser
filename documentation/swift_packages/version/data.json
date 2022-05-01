@@ -1,0 +1,120 @@
+{
+  "path": "/documentation/swift_packages/version",
+  "type": "Structure",
+  "name": "Version",
+  "desc": "A version according to the semantic versioning specification.",
+  "items": [
+    {
+      "name": "init?(String)",
+      "desc": "Initializes a version struct with the provided version string."
+    },
+    {
+      "name": "init(Int, Int, Int, prereleaseIdentifiers: [String], buildMetadataIdentifiers: [String])",
+      "desc": "Initializes a version struct with the provided components of a semantic version."
+    },
+    {
+      "name": "init(extendedGraphemeClusterLiteral: String)",
+      "desc": "Initializes a version struct with the provided extended grapheme cluster."
+    },
+    {
+      "name": "init(stringLiteral: String)",
+      "desc": "Initializes a version struct with the provided string literal."
+    },
+    {
+      "name": "init(unicodeScalarLiteral: String)",
+      "desc": "Initializes a version struct with the provided Unicode string."
+    },
+    {
+      "name": "let major: Int",
+      "desc": "The major version according to the semantic versioning standard."
+    },
+    {
+      "name": "let minor: Int",
+      "desc": "The minor version according to the semantic versioning standard."
+    },
+    {
+      "name": "let patch: Int",
+      "desc": "The patch version according to the semantic versioning standard."
+    },
+    {
+      "name": "let prereleaseIdentifiers: [String]",
+      "desc": "The pre-release identifier according to the semantic versioning standard, such as -beta.1."
+    },
+    {
+      "name": "let buildMetadataIdentifiers: [String]",
+      "desc": "The build metadata of this version according to the semantic versioning standard, such as a commit hash."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual description of the version object."
+    },
+    {
+      "name": "static func != (Version, Version) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (Version, Version) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "static func ... (Version) -> PartialRangeFrom<Version>",
+      "desc": "Returns a partial range extending upward from a lower bound."
+    },
+    {
+      "name": "static func ... (Version) -> PartialRangeThrough<Version>",
+      "desc": "Returns a partial range up to, and including, its upper bound."
+    },
+    {
+      "name": "static func ... (Version, Version) -> ClosedRange<Version>",
+      "desc": "Returns a closed range that contains both of its bounds."
+    },
+    {
+      "name": "static func ..< (Version) -> PartialRangeUpTo<Version>",
+      "desc": "Returns a partial range up to, but not including, its upper bound."
+    },
+    {
+      "name": "static func ..< (Version, Version) -> Range<Version>",
+      "desc": "Returns a half-open range that contains its lower bound but not its upper bound."
+    },
+    {
+      "name": "static func < (Version, Version) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than that of the second argument."
+    },
+    {
+      "name": "static func > (Version, Version) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than that of the second argument."
+    },
+    {
+      "name": "static func <= (Version, Version) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than or equal to that of the second argument."
+    },
+    {
+      "name": "static func >= (Version, Version) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than or equal to that of the second argument."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes this value into the given encoder."
+    },
+    {
+      "name": "typealias Version.ExtendedGraphemeClusterLiteralType",
+      "desc": "A type that represents an extended grapheme cluster literal."
+    },
+    {
+      "name": "typealias Version.StringLiteralType",
+      "desc": "A type that represents a string literal."
+    },
+    {
+      "name": "typealias Version.UnicodeScalarLiteralType",
+      "desc": "A type that represents a Unicode scalar literal."
+    }
+  ],
+  "declaration": "struct Version",
+  "conformsTo": [
+    "Comparable",
+    "CustomStringConvertible",
+    "Encodable",
+    "ExpressibleByStringLiteral",
+    "LosslessStringConvertible"
+  ]
+}

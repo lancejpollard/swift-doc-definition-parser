@@ -1,0 +1,80 @@
+{
+  "path": "/documentation/javascriptcore/jscontext",
+  "type": "Class",
+  "name": "JSContext",
+  "desc": "A JavaScript execution environment.",
+  "items": [
+    {
+      "name": "init!()",
+      "desc": "Initializes a new JavaScript context."
+    },
+    {
+      "name": "init!(virtualMachine: JSVirtualMachine!)",
+      "desc": "Creates a new JavaScript context associated with a specific virtual machine."
+    },
+    {
+      "name": "func evaluateScript(String!) -> JSValue!",
+      "desc": "Executes the specified JavaScript code."
+    },
+    {
+      "name": "func evaluateScript(String!, withSourceURL: URL!) -> JSValue!",
+      "desc": "Executes the specified JavaScript code, treating the specified URL as its source location."
+    },
+    {
+      "name": "class func current() -> JSContext!",
+      "desc": "Returns the context currently executing JavaScript code."
+    },
+    {
+      "name": "class func currentCallee() -> JSValue!",
+      "desc": "Returns the currently executing JavaScript function."
+    },
+    {
+      "name": "class func currentThis() -> JSValue!",
+      "desc": "Returns the value of the this keyword in currently executing JavaScript code."
+    },
+    {
+      "name": "class func currentArguments() -> [Any]!",
+      "desc": "Returns the arguments to the current native callback from JavaScript code."
+    },
+    {
+      "name": "var globalObject: JSValue!",
+      "desc": "The JavaScript global object associated with the context."
+    },
+    {
+      "name": "var exception: JSValue!",
+      "desc": "A JavaScript exception to be thrown in evaluation of the script."
+    },
+    {
+      "name": "var exceptionHandler: ((JSContext?, JSValue?) -> Void)!",
+      "desc": "A block to be invoked should evaluating a script result in a JavaScript exception being thrown."
+    },
+    {
+      "name": "var virtualMachine: JSVirtualMachine!",
+      "desc": "The JavaScript virtual machine to which the context belongs."
+    },
+    {
+      "name": "var name: String!",
+      "desc": "A descriptive name for the context."
+    },
+    {
+      "name": "func objectForKeyedSubscript(Any!) -> JSValue!",
+      "desc": "Returns the value of the specified JavaScript property in the context’s global object, allowing subscript getter syntax."
+    },
+    {
+      "name": "func setObject(Any!, forKeyedSubscript: (NSCopying & NSObjectProtocol)!)",
+      "desc": "Sets the specified JavaScript property of the context’s global object, allowing subscript setter syntax."
+    },
+    {
+      "name": "var jsGlobalContextRef: JSGlobalContextRef!",
+      "desc": "Returns the C representation of the JavaScript context."
+    },
+    {
+      "name": "init!(jsGlobalContextRef: JSGlobalContextRef!)",
+      "desc": "Creates a JavaScript context object from the equivalent C representation."
+    }
+  ],
+  "declaration": "class JSContext : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

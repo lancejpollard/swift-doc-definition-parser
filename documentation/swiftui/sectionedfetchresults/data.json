@@ -1,0 +1,67 @@
+{
+  "path": "/documentation/swiftui/sectionedfetchresults",
+  "type": "Structure",
+  "name": "SectionedFetchResults",
+  "desc": "A collection of results retrieved from a Core Data persistent store, grouped into sections.",
+  "items": [
+    {
+      "name": "var nsPredicate: NSPredicate?",
+      "desc": "The request’s predicate."
+    },
+    {
+      "name": "var sortDescriptors: [SortDescriptor<Result>]",
+      "desc": "The request’s sort descriptors, accessed as value types."
+    },
+    {
+      "name": "var nsSortDescriptors: [NSSortDescriptor]",
+      "desc": "The request’s sort descriptors, accessed as reference types."
+    },
+    {
+      "name": "var sectionIdentifier: KeyPath<Result, SectionIdentifier>",
+      "desc": "The key path that the system uses to group fetched results into sections."
+    },
+    {
+      "name": "struct Section",
+      "desc": "A collection of fetched results that share a specified identifier."
+    },
+    {
+      "name": "var startIndex: Int",
+      "desc": "The index of the first section in the results collection."
+    },
+    {
+      "name": "var endIndex: Int",
+      "desc": "The index that’s one greater than that of the last section."
+    },
+    {
+      "name": "subscript(Int) -> SectionedFetchResults<SectionIdentifier, Result>.Section",
+      "desc": "Gets the section at the specified index."
+    },
+    {
+      "name": "typealias Element",
+      "desc": "A type representing the sequence’s elements."
+    },
+    {
+      "name": "typealias Index",
+      "desc": "A type that represents a position in the collection."
+    },
+    {
+      "name": "typealias Indices",
+      "desc": "A type that represents the indices that are valid for subscripting the collection, in ascending order."
+    },
+    {
+      "name": "typealias Iterator",
+      "desc": "A type that provides the collection’s iteration interface and encapsulates its iteration state."
+    },
+    {
+      "name": "typealias SubSequence",
+      "desc": "A collection representing a contiguous subrange of this collection’s elements. The subsequence shares indices with the original collection."
+    }
+  ],
+  "declaration": "struct SectionedFetchResults<SectionIdentifier, Result> where SectionIdentifier : Hashable, Result : NSFetchRequestResult",
+  "conformsTo": [
+    "BidirectionalCollection",
+    "Collection",
+    "RandomAccessCollection",
+    "Sequence"
+  ]
+}

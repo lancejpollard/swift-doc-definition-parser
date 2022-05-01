@@ -1,0 +1,84 @@
+{
+  "path": "/documentation/corebluetooth/cbatterror/code",
+  "type": "Enumeration",
+  "name": "CBATTError.Code",
+  "desc": "The possible errors returned by a GATT server (a remote peripheral) during Bluetooth low energy ATT transactions.",
+  "items": [
+    {
+      "name": "case success",
+      "desc": "The ATT command or request successfully completed."
+    },
+    {
+      "name": "case invalidHandle",
+      "desc": "The attribute handle is invalid on this peripheral."
+    },
+    {
+      "name": "case readNotPermitted",
+      "desc": "The permissions prohibit reading the attribute’s value."
+    },
+    {
+      "name": "case writeNotPermitted",
+      "desc": "The permissions prohibit writing the attribute’s value."
+    },
+    {
+      "name": "case invalidPdu",
+      "desc": "The attribute Protocol Data Unit (PDU) is invalid."
+    },
+    {
+      "name": "case insufficientAuthentication",
+      "desc": "Reading or writing the attribute’s value failed for lack of authentication."
+    },
+    {
+      "name": "case requestNotSupported",
+      "desc": "The attribute server doesn’t support the request received from the client."
+    },
+    {
+      "name": "case invalidOffset",
+      "desc": "The specified offset value was past the end of the attribute’s value."
+    },
+    {
+      "name": "case insufficientAuthorization",
+      "desc": "Reading or writing the attribute’s value failed for lack of authorization."
+    },
+    {
+      "name": "case prepareQueueFull",
+      "desc": "The prepare queue is full, as a result of there being too many write requests in the queue."
+    },
+    {
+      "name": "case attributeNotFound",
+      "desc": "The attribute wasn’t found within the specified attribute handle range."
+    },
+    {
+      "name": "case attributeNotLong",
+      "desc": "The ATT read blob request can’t read or write the attribute."
+    },
+    {
+      "name": "case insufficientEncryptionKeySize",
+      "desc": "The encryption key size used for encrypting this link is insufficient."
+    },
+    {
+      "name": "case invalidAttributeValueLength",
+      "desc": "The length of the attribute’s value is invalid for the intended operation."
+    },
+    {
+      "name": "case unlikelyError",
+      "desc": "The ATT request encountered an unlikely error and wasn’t completed."
+    },
+    {
+      "name": "case insufficientEncryption",
+      "desc": "Reading or writing the attribute’s value failed for lack of encryption."
+    },
+    {
+      "name": "case unsupportedGroupType",
+      "desc": "The attribute type isn’t a supported grouping attribute as defined by a higher-layer specification."
+    },
+    {
+      "name": "case insufficientResources",
+      "desc": "Resources are insufficient to complete the ATT request."
+    }
+  ],
+  "declaration": "enum CBATTError.Code : Int, _ErrorCodeProtocol, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

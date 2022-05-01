@@ -1,0 +1,194 @@
+{
+  "path": "/documentation/xctest/xcuielement",
+  "type": "Class",
+  "name": "XCUIElement",
+  "desc": "A UI element in an application.",
+  "items": [
+    {
+      "name": "func waitForExistence(timeout: TimeInterval) -> Bool",
+      "desc": "Waits the amount of time you specify for the element’s exists property to become true."
+    },
+    {
+      "name": "var exists: Bool",
+      "desc": "Determines if the element exists."
+    },
+    {
+      "name": "var isHittable: Bool",
+      "desc": "Determines if the system can compute a hit point for the element."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "Provides debugging information about the element."
+    },
+    {
+      "name": "func children(matching: XCUIElement.ElementType) -> XCUIElementQuery",
+      "desc": "Returns a query for all direct children of the element matching the type you specify."
+    },
+    {
+      "name": "func descendants(matching: XCUIElement.ElementType) -> XCUIElementQuery",
+      "desc": "Returns a query for all descendants of the element matching the type you specify."
+    },
+    {
+      "name": "func typeText(String)",
+      "desc": "Types a string into the element."
+    },
+    {
+      "name": "func typeKey(String, modifierFlags: XCUIElement.KeyModifierFlags)",
+      "desc": "Types a single key that a string represents with the flags you specify."
+    },
+    {
+      "name": "func typeKey(XCUIKeyboardKey, modifierFlags: XCUIElement.KeyModifierFlags)",
+      "desc": "Types a single key with the flags you specify."
+    },
+    {
+      "name": "struct XCUIKeyboardKey",
+      "desc": "Constants to represent keys that have no typewritten equivalent."
+    },
+    {
+      "name": "class func perform(withKeyModifiers: XCUIElement.KeyModifierFlags, block: () -> Void)",
+      "desc": "Executes a block of code while holding a combination keystroke."
+    },
+    {
+      "name": "struct XCUIElement.KeyModifierFlags",
+      "desc": "Flags for simulating combination keystrokes with keys, such as Control, Option, Shift, and Command."
+    },
+    {
+      "name": "func hover()",
+      "desc": "Moves the pointer over the element."
+    },
+    {
+      "name": "func click()",
+      "desc": "Sends a click event to a hittable point computed for the element."
+    },
+    {
+      "name": "func click(forDuration: TimeInterval, thenDragTo: XCUIElement)",
+      "desc": "Clicks and holds an element for a duration you specify and drags it to the other element."
+    },
+    {
+      "name": "func click(forDuration: TimeInterval, thenDragTo: XCUIElement, withVelocity: XCUIGestureVelocity, thenHoldForDuration: TimeInterval)",
+      "desc": "Clicks and holds an element for a duration you specify, drags it at a velocity you specify, and holds it over another element for a duration you specify."
+    },
+    {
+      "name": "func doubleClick()",
+      "desc": "Sends a double-click event to a hittable point the system computes for the element."
+    },
+    {
+      "name": "func rightClick()",
+      "desc": "Sends a Control-click event to a hittable point the system computes for the element."
+    },
+    {
+      "name": "func scroll(byDeltaX: CGFloat, deltaY: CGFloat)",
+      "desc": "Scrolls the view by the number of x and y pixels you specify."
+    },
+    {
+      "name": "func tap()",
+      "desc": "Sends a tap event to a hittable point the system computes for the element."
+    },
+    {
+      "name": "func doubleTap()",
+      "desc": "Sends a double tap event to a hittable point the system computes for the element."
+    },
+    {
+      "name": "func press(forDuration: TimeInterval)",
+      "desc": "Sends a press-and-hold gesture to a hittable point the system computes for the element, holding for the duration you specify."
+    },
+    {
+      "name": "func press(forDuration: TimeInterval, thenDragTo: XCUIElement)",
+      "desc": "Initiates a press-and-hold gesture, then drags to another element."
+    },
+    {
+      "name": "func press(forDuration: TimeInterval, thenDragTo: XCUIElement, withVelocity: XCUIGestureVelocity, thenHoldForDuration: TimeInterval)",
+      "desc": "Initiates a press-and-hold gesture, drags to another element at a velocity you specify, and holds for a duration you specify."
+    },
+    {
+      "name": "func twoFingerTap()",
+      "desc": "Sends a two-finger tap event to a hittable point the system computes for the element."
+    },
+    {
+      "name": "func tap(withNumberOfTaps: Int, numberOfTouches: Int)",
+      "desc": "Sends one or more taps with one or more touch points."
+    },
+    {
+      "name": "func swipeLeft()",
+      "desc": "Sends a swipe-left gesture."
+    },
+    {
+      "name": "func swipeLeft(velocity: XCUIGestureVelocity)",
+      "desc": "Sends a swipe-left gesture with a velocity you specify."
+    },
+    {
+      "name": "func swipeRight()",
+      "desc": "Sends a swipe-right gesture."
+    },
+    {
+      "name": "func swipeRight(velocity: XCUIGestureVelocity)",
+      "desc": "Sends a swipe-right gesture with a velocity you specify."
+    },
+    {
+      "name": "func swipeUp()",
+      "desc": "Sends a swipe-up gesture."
+    },
+    {
+      "name": "func swipeUp(velocity: XCUIGestureVelocity)",
+      "desc": "Sends a swipe-up gesture with a velocity you specify."
+    },
+    {
+      "name": "func swipeDown()",
+      "desc": "Sends a swipe-down gesture."
+    },
+    {
+      "name": "func swipeDown(velocity: XCUIGestureVelocity)",
+      "desc": "Sends a swipe-down gesture with a velocity you specify."
+    },
+    {
+      "name": "func pinch(withScale: CGFloat, velocity: CGFloat)",
+      "desc": "Sends a pinching gesture with two touches."
+    },
+    {
+      "name": "func rotate(CGFloat, withVelocity: CGFloat)",
+      "desc": "Sends a rotation gesture with two touches."
+    },
+    {
+      "name": "struct XCUIGestureVelocity",
+      "desc": "A value that describes how fast a gesture moves across the screen, in pixels per second."
+    },
+    {
+      "name": "var normalizedSliderPosition: CGFloat",
+      "desc": "Returns the position of the slider’s indicator as a normalized value, where 0 corresponds to the minimum value of the slider and 1 corresponds to its maximum value."
+    },
+    {
+      "name": "func adjust(toNormalizedSliderPosition: CGFloat)",
+      "desc": "Manipulates the UI to change value the slider displays to a new value, based on a normalized position."
+    },
+    {
+      "name": "func adjust(toPickerWheelValue: String)",
+      "desc": "Changes the value that the picker wheel displays."
+    },
+    {
+      "name": "func coordinate(withNormalizedOffset: CGVector) -> XCUICoordinate",
+      "desc": "Creates and returns a new coordinate with a normalized offset."
+    },
+    {
+      "name": "enum XCUIElement.ElementType",
+      "desc": "The types of UI element that you find, inspect, and interact with in a UI test."
+    },
+    {
+      "name": "enum XCUIElement.SizeClass",
+      "desc": "The user interface size classes you can inspect in a UI test."
+    },
+    {
+      "name": "struct XCUIElement.AttributeName",
+      "desc": "A set of string constants that serves as keys for storing element attributes in a dictionary."
+    }
+  ],
+  "declaration": "class XCUIElement : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "XCUIElementAttributes",
+    "XCUIElementSnapshotProviding",
+    "XCUIElementTypeQueryProvider",
+    "XCUIScreenshotProviding"
+  ]
+}

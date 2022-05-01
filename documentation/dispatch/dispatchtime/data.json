@@ -1,0 +1,92 @@
+{
+  "path": "/documentation/dispatch/dispatchtime",
+  "type": "Structure",
+  "name": "DispatchTime",
+  "desc": "A point in time relative to the default clock, with nanosecond precision.",
+  "items": [
+    {
+      "name": "static func now() -> DispatchTime",
+      "desc": "Returns the current time."
+    },
+    {
+      "name": "static let distantFuture: DispatchTime",
+      "desc": "A time in the distant future."
+    },
+    {
+      "name": "init(uptimeNanoseconds: UInt64)",
+      "desc": "Creates a time relative to the amount of time the system has been running."
+    },
+    {
+      "name": "let rawValue: dispatch_time_t",
+      "desc": "Returns the underlying time value."
+    },
+    {
+      "name": "var uptimeNanoseconds: UInt64",
+      "desc": "Returns the number of nanoseconds since boot, excluding any time the system spent asleep."
+    },
+    {
+      "name": "func advanced(by: DispatchTimeInterval) -> DispatchTime"
+    },
+    {
+      "name": "func distance(to: DispatchTime) -> DispatchTimeInterval"
+    },
+    {
+      "name": "static func != (DispatchTime, DispatchTime) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func ... (DispatchTime) -> PartialRangeFrom<DispatchTime>",
+      "desc": "Returns a partial range extending upward from a lower bound."
+    },
+    {
+      "name": "static func ... (DispatchTime) -> PartialRangeThrough<DispatchTime>",
+      "desc": "Returns a partial range up to, and including, its upper bound."
+    },
+    {
+      "name": "static func ... (DispatchTime, DispatchTime) -> ClosedRange<DispatchTime>",
+      "desc": "Returns a closed range that contains both of its bounds."
+    },
+    {
+      "name": "static func ..< (DispatchTime) -> PartialRangeUpTo<DispatchTime>",
+      "desc": "Returns a partial range up to, but not including, its upper bound."
+    },
+    {
+      "name": "static func ..< (DispatchTime, DispatchTime) -> Range<DispatchTime>",
+      "desc": "Returns a half-open range that contains its lower bound but not its upper bound."
+    },
+    {
+      "name": "static func < (DispatchTime, DispatchTime) -> Bool"
+    },
+    {
+      "name": "static func <= (DispatchTime, DispatchTime) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than or equal to that of the second argument."
+    },
+    {
+      "name": "static func == (DispatchTime, DispatchTime) -> Bool"
+    },
+    {
+      "name": "static func > (DispatchTime, DispatchTime) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than that of the second argument."
+    },
+    {
+      "name": "static func >= (DispatchTime, DispatchTime) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than or equal to that of the second argument."
+    },
+    {
+      "name": "func + (DispatchTime, Double) -> DispatchTime"
+    },
+    {
+      "name": "func + (DispatchTime, DispatchTimeInterval) -> DispatchTime"
+    },
+    {
+      "name": "func - (DispatchTime, Double) -> DispatchTime"
+    },
+    {
+      "name": "func - (DispatchTime, DispatchTimeInterval) -> DispatchTime"
+    }
+  ],
+  "declaration": "struct DispatchTime",
+  "conformsTo": [
+    "Comparable"
+  ]
+}

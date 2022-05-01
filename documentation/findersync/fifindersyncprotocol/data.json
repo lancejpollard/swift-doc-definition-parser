@@ -1,0 +1,50 @@
+{
+  "path": "/documentation/findersync/fifindersyncprotocol",
+  "type": "Protocol",
+  "name": "FIFinderSyncProtocol",
+  "desc": "The FIFinderSync protocol defines the interface for adding badges, custom shortcut menus, and toolbar buttons to the Finder.",
+  "items": [
+    {
+      "name": "func beginObservingDirectory(at: URL)",
+      "desc": "Tells the extension that the user is looking at a monitored directory or at one of its subdirectories."
+    },
+    {
+      "name": "func endObservingDirectory(at: URL)",
+      "desc": "Tells the extension that the user has stopped looking at a monitored directory or at one of its subdirectories."
+    },
+    {
+      "name": "func menu(for: FIMenuKind) -> NSMenu?",
+      "desc": "Requests a custom menu from the extension."
+    },
+    {
+      "name": "func requestBadgeIdentifier(for: URL)",
+      "desc": "Requests a badge for the given file or directory."
+    },
+    {
+      "name": "var toolbarItemImage: NSImage",
+      "desc": "The image for the extension’s toolbar button. (read-only)"
+    },
+    {
+      "name": "var toolbarItemName: String",
+      "desc": "The name of the extension’s toolbar button. (read-only)"
+    },
+    {
+      "name": "var toolbarItemToolTip: String",
+      "desc": "The tooltip text for the extension’s toolbar button. (read-only)"
+    },
+    {
+      "name": "enum FIMenuKind",
+      "desc": "The different kinds of custom menus that the Finder Sync extension can provide."
+    },
+    {
+      "name": "func makeListenerEndpoint(forServiceName: NSFileProviderServiceName, itemURL: URL) -> NSXPCListenerEndpoint"
+    },
+    {
+      "name": "func supportedServiceNamesForItem(with: URL) -> [NSFileProviderServiceName]"
+    },
+    {
+      "name": "func values(forAttributes: [URLResourceKey], forItemWith: URL, completion: ([URLResourceKey : Any], Error?) -> Void)"
+    }
+  ],
+  "declaration": "protocol FIFinderSyncProtocol"
+}

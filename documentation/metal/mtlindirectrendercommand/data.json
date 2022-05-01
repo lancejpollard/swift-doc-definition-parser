@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/metal/mtlindirectrendercommand",
+  "type": "Protocol",
+  "name": "MTLIndirectRenderCommand",
+  "desc": "A render command in an indirect command buffer.",
+  "items": [
+    {
+      "name": "func setRenderPipelineState(MTLRenderPipelineState)",
+      "desc": "Sets the render pipeline state object used by the command."
+    },
+    {
+      "name": "func setVertexBuffer(MTLBuffer, offset: Int, at: Int)",
+      "desc": "Sets a vertex buffer argument for the command."
+    },
+    {
+      "name": "func setFragmentBuffer(MTLBuffer, offset: Int, at: Int)",
+      "desc": "Sets a fragment buffer argument for the command."
+    },
+    {
+      "name": "func drawPrimitives(MTLPrimitiveType, vertexStart: Int, vertexCount: Int, instanceCount: Int, baseInstance: Int)",
+      "desc": "Encodes a command to render a number of instances of primitives using vertex data in contiguous array elements, starting from the base instance."
+    },
+    {
+      "name": "func drawIndexedPrimitives(MTLPrimitiveType, indexCount: Int, indexType: MTLIndexType, indexBuffer: MTLBuffer, indexBufferOffset: Int, instanceCount: Int, baseVertex: Int, baseInstance: Int)",
+      "desc": "Encodes a command to render a number of instances of primitives using an index list specified in a buffer, starting from the base vertex of the base instance."
+    },
+    {
+      "name": "func drawPatches(Int, patchStart: Int, patchCount: Int, patchIndexBuffer: MTLBuffer?, patchIndexBufferOffset: Int, instanceCount: Int, baseInstance: Int, tessellationFactorBuffer: MTLBuffer, tessellationFactorBufferOffset: Int, tessellationFactorBufferInstanceStride: Int)",
+      "desc": "Encodes a command to render a number of instances of tessellated patches."
+    },
+    {
+      "name": "func drawIndexedPatches(Int, patchStart: Int, patchCount: Int, patchIndexBuffer: MTLBuffer?, patchIndexBufferOffset: Int, controlPointIndexBuffer: MTLBuffer, controlPointIndexBufferOffset: Int, instanceCount: Int, baseInstance: Int, tessellationFactorBuffer: MTLBuffer, tessellationFactorBufferOffset: Int, tessellationFactorBufferInstanceStride: Int)",
+      "desc": "Encodes a command to render a number of instances of tessellated patches, using a control point index buffer."
+    },
+    {
+      "name": "func reset()",
+      "desc": "Resets the command to its default state."
+    }
+  ],
+  "declaration": "protocol MTLIndirectRenderCommand",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

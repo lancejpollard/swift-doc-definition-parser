@@ -1,0 +1,46 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsimagehistogram",
+  "type": "Class",
+  "name": "MPSImageHistogram",
+  "desc": "A filter that computes the histogram of an image.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice, histogramInfo: UnsafePointer<MPSImageHistogramInfo>)",
+      "desc": "Initializes a histogram with specific information."
+    },
+    {
+      "name": "struct MPSImageHistogramInfo",
+      "desc": "The information used to compute the histogram channels of an image."
+    },
+    {
+      "name": "func encode(to: MTLCommandBuffer, sourceTexture: MTLTexture, histogram: MTLBuffer, histogramOffset: Int)",
+      "desc": "Encodes the filter to a command buffer using a compute command encoder."
+    },
+    {
+      "name": "func histogramSize(forSourceFormat: MTLPixelFormat) -> Int",
+      "desc": "The amount of space the histogram will take up in the output buffer."
+    },
+    {
+      "name": "var clipRectSource: MTLRegion",
+      "desc": "The source rectangle to use when reading data."
+    },
+    {
+      "name": "var zeroHistogram: Bool",
+      "desc": "Determines whether to zero-initialize the histogram results."
+    },
+    {
+      "name": "var histogramInfo: MPSImageHistogramInfo",
+      "desc": "A structure describing the histogram content."
+    },
+    {
+      "name": "var minPixelThresholdValue: vector_float4"
+    }
+  ],
+  "declaration": "class MPSImageHistogram : MPSKernel",
+  "inheritsFrom": [
+    "MPSKernel"
+  ]
+}

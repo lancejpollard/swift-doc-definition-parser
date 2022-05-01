@@ -1,0 +1,121 @@
+{
+  "path": "/documentation/sirikit/inintenterror/code",
+  "type": "Enumeration",
+  "name": "INIntentError.Code",
+  "desc": "Constants for error codes returned by the framework.",
+  "items": [
+    {
+      "name": "case decodingGeneric"
+    },
+    {
+      "name": "case encodingFailed"
+    },
+    {
+      "name": "case encodingGeneric"
+    },
+    {
+      "name": "case imageGeneric"
+    },
+    {
+      "name": "case imageLoadingFailed"
+    },
+    {
+      "name": "case imageNoServiceAvailable"
+    },
+    {
+      "name": "case imageServiceFailure"
+    },
+    {
+      "name": "case imageProxyInvalid"
+    },
+    {
+      "name": "case imageProxyLoop"
+    },
+    {
+      "name": "case imageProxyTimeout"
+    },
+    {
+      "name": "case imageRetrievalFailed"
+    },
+    {
+      "name": "case imageStorageFailed"
+    },
+    {
+      "name": "case imageScalingFailed"
+    },
+    {
+      "name": "case permissionDenied"
+    },
+    {
+      "name": "case voiceShortcutCreationFailed"
+    },
+    {
+      "name": "case voiceShortcutDeleteFailed"
+    },
+    {
+      "name": "case voiceShortcutGetFailed"
+    },
+    {
+      "name": "case interactionOperationNotSupported",
+      "desc": "The INInteraction object could not be donated or deleted because those capabilities are not supported on the current device."
+    },
+    {
+      "name": "case donatingInteraction",
+      "desc": "The INInteraction object could not be donated to the system. To determine the low-level cause of the problem, check the value of NSUnderlyingErrorKey in the error object’s userInfo dictionary."
+    },
+    {
+      "name": "case deletingAllInteractions",
+      "desc": "The system was unable to delete all donated INInteraction objects. To determine the low-level cause of the problem, check the value of NSUnderlyingErrorKey in the error object’s userInfo dictionary."
+    },
+    {
+      "name": "case deletingInteractionWithIdentifiers",
+      "desc": "The system was unable to delete the specified set of INInteraction objects. To determine the low-level cause of the problem, check the value of NSUnderlyingErrorKey in the error object’s userInfo dictionary."
+    },
+    {
+      "name": "case deletingInteractionWithGroupIdentifier",
+      "desc": "The system was unable to delete the INInteraction objects using their group identifier. To determine the low-level cause of the problem, check the value of NSUnderlyingErrorKey in the error object’s userInfo dictionary."
+    },
+    {
+      "name": "case extensionLaunchingTimeout",
+      "desc": "The extension failed to launch in a timely manner."
+    },
+    {
+      "name": "case extensionBringUpFailed",
+      "desc": "There was an error while trying to communicate with the extension."
+    },
+    {
+      "name": "case noAppAvailable"
+    },
+    {
+      "name": "case intentSupportedByMultipleExtension",
+      "desc": "An intent was supported by more than one Intents extension in the same app. An app may have multiple Intents extensions, but each one must support a unique set of intents."
+    },
+    {
+      "name": "case restrictedIntentsNotSupportedByExtension",
+      "desc": "An intent was listed in the IntentsRestrictedWhileLocked key of the app’s Info.plist, but not in the IntentsSupported key. All intents in the IntentsRestrictedWhileLocked key must also be present in the IntentsSupported key."
+    },
+    {
+      "name": "case noHandlerProvidedForIntent",
+      "desc": "No object was provided to handle the specified intent. If your extension declares support for an intent in its Info.plist file, the handler(for:) method of its INExtension object must provide a corresponding handler object."
+    },
+    {
+      "name": "case invalidIntentName",
+      "desc": "The extension declared support for a nonexistent intent. Check your extension’s Info.plist file to make sure all intent names are spelled correctly."
+    },
+    {
+      "name": "case requestTimedOut",
+      "desc": "The underlying request timed out."
+    },
+    {
+      "name": "case invalidUserVocabularyFileLocation",
+      "desc": "An invalid location was specified for the user vocabulary file."
+    },
+    {
+      "name": "case missingInformation"
+    }
+  ],
+  "declaration": "enum INIntentError.Code : Int, _ErrorCodeProtocol, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

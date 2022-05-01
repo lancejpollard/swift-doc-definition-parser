@@ -1,0 +1,42 @@
+{
+  "path": "/documentation/oslog/oslogstore",
+  "type": "Class",
+  "name": "OSLogStore",
+  "desc": "A set of entries from the unified logging system.",
+  "items": [
+    {
+      "name": "init(url: URL)",
+      "desc": "Creates a log store based on a log archive."
+    },
+    {
+      "name": "class func local() -> Self",
+      "desc": "Creates a log store representing the Mac's local store."
+    },
+    {
+      "name": "func position(date: Date) -> OSLogPosition",
+      "desc": "Returns a position representing the time specified."
+    },
+    {
+      "name": "func position(timeIntervalSinceEnd: TimeInterval) -> OSLogPosition",
+      "desc": "Returns a position representing time since the end of the time range that the entries span."
+    },
+    {
+      "name": "func position(timeIntervalSinceLatestBoot: TimeInterval) -> OSLogPosition",
+      "desc": "Returns a position representing time since the last boot in the series of entries."
+    },
+    {
+      "name": "func getEntries(with: OSLogEnumerator.Options, at: OSLogPosition?, matching: NSPredicate?) -> AnySequence<OSLogEntry>",
+      "desc": "Returns a sequence of log entries filtered by the parameters passed in."
+    },
+    {
+      "name": "init(scope: OSLogStore.Scope)"
+    },
+    {
+      "name": "enum OSLogStore.Scope"
+    }
+  ],
+  "declaration": "class OSLogStore : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

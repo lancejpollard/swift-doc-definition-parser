@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/avfoundation/avvideocompositionvalidationhandling",
+  "type": "Protocol",
+  "name": "AVVideoCompositionValidationHandling",
+  "desc": "Methods you can implement to indicate whether validation of a video composition should continue after specific errors are found.",
+  "items": [
+    {
+      "name": "func videoComposition(AVVideoComposition, shouldContinueValidatingAfterFindingInvalidValueForKey: String) -> Bool",
+      "desc": "Reports that a key that has an invalid value."
+    },
+    {
+      "name": "func videoComposition(AVVideoComposition, shouldContinueValidatingAfterFindingEmptyTimeRange: CMTimeRange) -> Bool",
+      "desc": "Reports a time range that has no corresponding video composition instruction."
+    },
+    {
+      "name": "func videoComposition(AVVideoComposition, shouldContinueValidatingAfterFindingInvalidTimeRangeIn: AVVideoCompositionInstructionProtocol) -> Bool",
+      "desc": "Reports a video composition instruction with a time range that is invalid."
+    },
+    {
+      "name": "func videoComposition(AVVideoComposition, shouldContinueValidatingAfterFindingInvalidTrackIDIn: AVVideoCompositionInstructionProtocol, layerInstruction: AVVideoCompositionLayerInstruction, asset: AVAsset) -> Bool",
+      "desc": "Reports a video composition layer instruction that does not correspond to the track ID used for the composition’s animation or to a track of the asset."
+    }
+  ],
+  "declaration": "protocol AVVideoCompositionValidationHandling",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "path": "/documentation/foundation/urlsession",
+  "type": "Class",
+  "name": "URLSession",
+  "desc": "An object that coordinates a group of related, network data transfer tasks.",
+  "items": [
+    {
+      "name": "class var shared: URLSession",
+      "desc": "The shared singleton session object."
+    },
+    {
+      "name": "init(configuration: URLSessionConfiguration)",
+      "desc": "Creates a session with the specified session configuration."
+    },
+    {
+      "name": "init(configuration: URLSessionConfiguration, delegate: URLSessionDelegate?, delegateQueue: OperationQueue?)",
+      "desc": "Creates a session with the specified session configuration, delegate, and operation queue."
+    },
+    {
+      "name": "class URLSessionConfiguration",
+      "desc": "A configuration object that defines behavior and policies for a URL session."
+    },
+    {
+      "name": "var configuration: URLSessionConfiguration",
+      "desc": "A copy of the configuration object for this session."
+    },
+    {
+      "name": "var delegate: URLSessionDelegate?",
+      "desc": "The delegate assigned when this object was created."
+    },
+    {
+      "name": "protocol URLSessionDelegate",
+      "desc": "A protocol that defines methods that URL session instances call on their delegates to handle session-level events, like session life cycle changes."
+    },
+    {
+      "name": "protocol URLSessionTaskDelegate",
+      "desc": "A protocol that defines methods that URL session instances call on their delegates to handle task-level events."
+    },
+    {
+      "name": "var delegateQueue: OperationQueue",
+      "desc": "The operation queue provided when this object was created."
+    },
+    {
+      "name": "func bytes(for: URLRequest, delegate: URLSessionTaskDelegate?) -> (URLSession.AsyncBytes, URLResponse)",
+      "desc": "Retrieves the contents of a URL based on the specified URL request and delivers an asynchronous sequence of bytes."
+    },
+    {
+      "name": "func bytes(from: URL, delegate: URLSessionTaskDelegate?) -> (URLSession.AsyncBytes, URLResponse)",
+      "desc": "Retrieves the contents of a given URL and delivers an asynchronous sequence of bytes."
+    },
+    {
+      "name": "struct URLSession.AsyncBytes",
+      "desc": "An asynchronous sequence of bytes."
+    },
+    {
+      "name": "func data(for: URLRequest, delegate: URLSessionTaskDelegate?) -> (Data, URLResponse)",
+      "desc": "Downloads the contents of a URL based on the specified URL request and delivers the data asynchronously."
+    },
+    {
+      "name": "func data(from: URL, delegate: URLSessionTaskDelegate?) -> (Data, URLResponse)",
+      "desc": "Retrieves the contents of a URL and delivers the data asynchronously."
+    },
+    {
+      "name": "func download(for: URLRequest, delegate: URLSessionTaskDelegate?) -> (URL, URLResponse)",
+      "desc": "Retrieves the contents of a URL based on the specified URL request and delivers the URL of the saved file asynchronously."
+    },
+    {
+      "name": "func download(from: URL, delegate: URLSessionTaskDelegate?) -> (URL, URLResponse)",
+      "desc": "Retrieves the contents of a URL and delivers the URL of the saved file asynchronously."
+    },
+    {
+      "name": "func download(resumeFrom: Data, delegate: URLSessionTaskDelegate?) -> (URL, URLResponse)",
+      "desc": "Resumes a previously-paused download and delivers the URL of the saved file asynchronously."
+    },
+    {
+      "name": "func upload(for: URLRequest, from: Data, delegate: URLSessionTaskDelegate?) -> (Data, URLResponse)",
+      "desc": "Uploads data to a URL based on the specified URL request and delivers the result asynchronously."
+    },
+    {
+      "name": "func upload(for: URLRequest, fromFile: URL, delegate: URLSessionTaskDelegate?) -> (Data, URLResponse)",
+      "desc": "Uploads data to a URL and delivers the result asynchronously."
+    },
+    {
+      "name": "protocol URLSessionTaskDelegate",
+      "desc": "A protocol that defines methods that URL session instances call on their delegates to handle task-level events."
+    },
+    {
+      "name": "func dataTask(with: URL) -> URLSessionDataTask",
+      "desc": "Creates a task that retrieves the contents of the specified URL."
+    },
+    {
+      "name": "func dataTask(with: URL, completionHandler: (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask",
+      "desc": "Creates a task that retrieves the contents of the specified URL, then calls a handler upon completion."
+    },
+    {
+      "name": "func dataTask(with: URLRequest) -> URLSessionDataTask",
+      "desc": "Creates a task that retrieves the contents of a URL based on the specified URL request object."
+    },
+    {
+      "name": "func dataTask(with: URLRequest, completionHandler: (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask",
+      "desc": "Creates a task that retrieves the contents of a URL based on the specified URL request object, and calls a handler upon completion."
+    },
+    {
+      "name": "class URLSessionDataTask",
+      "desc": "A URL session task that returns downloaded data directly to the app in memory."
+    },
+    {
+      "name": "protocol URLSessionDataDelegate",
+      "desc": "A protocol that defines methods that URL session instances call on their delegates to handle task-level events specific to data and upload tasks."
+    },
+    {
+      "name": "func downloadTask(with: URL) -> URLSessionDownloadTask",
+      "desc": "Creates a download task that retrieves the contents of the specified URL and saves the results to a file."
+    },
+    {
+      "name": "func downloadTask(with: URL, completionHandler: (URL?, URLResponse?, Error?) -> Void) -> URLSessionDownloadTask",
+      "desc": "Creates a download task that retrieves the contents of the specified URL, saves the results to a file, and calls a handler upon completion."
+    },
+    {
+      "name": "func downloadTask(with: URLRequest) -> URLSessionDownloadTask",
+      "desc": "Creates a download task that retrieves the contents of a URL based on the specified URL request object and saves the results to a file."
+    },
+    {
+      "name": "func downloadTask(with: URLRequest, completionHandler: (URL?, URLResponse?, Error?) -> Void) -> URLSessionDownloadTask",
+      "desc": "Creates a download task that retrieves the contents of a URL based on the specified URL request object, saves the results to a file, and calls a handler upon completion."
+    },
+    {
+      "name": "func downloadTask(withResumeData: Data) -> URLSessionDownloadTask",
+      "desc": "Creates a download task to resume a previously canceled or failed download."
+    },
+    {
+      "name": "func downloadTask(withResumeData: Data, completionHandler: (URL?, URLResponse?, Error?) -> Void) -> URLSessionDownloadTask",
+      "desc": "Creates a download task to resume a previously canceled or failed download and calls a handler upon completion."
+    },
+    {
+      "name": "class URLSessionDownloadTask",
+      "desc": "A URL session task that stores downloaded data to a file."
+    },
+    {
+      "name": "protocol URLSessionDownloadDelegate",
+      "desc": "A protocol that defines methods that URL session instances call on their delegates to handle task-level events specific to download tasks."
+    },
+    {
+      "name": "func uploadTask(with: URLRequest, from: Data) -> URLSessionUploadTask",
+      "desc": "Creates a task that performs an HTTP request for the specified URL request object and uploads the provided data."
+    },
+    {
+      "name": "func uploadTask(with: URLRequest, from: Data?, completionHandler: (Data?, URLResponse?, Error?) -> Void) -> URLSessionUploadTask",
+      "desc": "Creates a task that performs an HTTP request for the specified URL request object, uploads the provided data, and calls a handler upon completion."
+    },
+    {
+      "name": "func uploadTask(with: URLRequest, fromFile: URL) -> URLSessionUploadTask",
+      "desc": "Creates a task that performs an HTTP request for uploading the specified file."
+    },
+    {
+      "name": "func uploadTask(with: URLRequest, fromFile: URL, completionHandler: (Data?, URLResponse?, Error?) -> Void) -> URLSessionUploadTask",
+      "desc": "Creates a task that performs an HTTP request for uploading the specified file, then calls a handler upon completion."
+    },
+    {
+      "name": "func uploadTask(withStreamedRequest: URLRequest) -> URLSessionUploadTask",
+      "desc": "Creates a task that performs an HTTP request for uploading data based on the specified URL request."
+    },
+    {
+      "name": "class URLSessionUploadTask",
+      "desc": "A URL session task that uploads data to the network in a request body."
+    },
+    {
+      "name": "protocol URLSessionDataDelegate",
+      "desc": "A protocol that defines methods that URL session instances call on their delegates to handle task-level events specific to data and upload tasks."
+    },
+    {
+      "name": "func streamTask(withHostName: String, port: Int) -> URLSessionStreamTask",
+      "desc": "Creates a task that establishes a bidirectional TCP/IP connection to a specified hostname and port."
+    },
+    {
+      "name": "class URLSessionStreamTask",
+      "desc": "A URL session task that is stream-based."
+    },
+    {
+      "name": "protocol URLSessionStreamDelegate",
+      "desc": "A protocol that defines methods that URL session instances call on their delegates to handle task-level events specific to stream tasks."
+    },
+    {
+      "name": "func webSocketTask(with: URL) -> URLSessionWebSocketTask",
+      "desc": "Creates a WebSocket task for the provided URL."
+    },
+    {
+      "name": "func webSocketTask(with: URLRequest) -> URLSessionWebSocketTask",
+      "desc": "Creates a WebSocket task for the provided URL request."
+    },
+    {
+      "name": "func webSocketTask(with: URL, protocols: [String]) -> URLSessionWebSocketTask",
+      "desc": "Creates a WebSocket task given a URL and an array of protocols."
+    },
+    {
+      "name": "class URLSessionWebSocketTask",
+      "desc": "A URL session task that communicates over the WebSockets protocol standard."
+    },
+    {
+      "name": "protocol URLSessionWebSocketDelegate",
+      "desc": "A protocol that defines methods that URL session instances call on their delegates to handle task-level events specific to WebSocket tasks."
+    },
+    {
+      "name": "func finishTasksAndInvalidate()",
+      "desc": "Invalidates the session, allowing any outstanding tasks to finish."
+    },
+    {
+      "name": "func flush(completionHandler: () -> Void)",
+      "desc": "Flushes cookies and credentials to disk, clears transient caches, and ensures that future requests occur on a new TCP connection."
+    },
+    {
+      "name": "func getTasksWithCompletionHandler(([URLSessionDataTask], [URLSessionUploadTask], [URLSessionDownloadTask]) -> Void)",
+      "desc": "Asynchronously calls a completion callback with all data, upload, and download tasks in a session."
+    },
+    {
+      "name": "func getAllTasks(completionHandler: ([URLSessionTask]) -> Void)",
+      "desc": "Asynchronously calls a completion callback with all tasks in a session"
+    },
+    {
+      "name": "func invalidateAndCancel()",
+      "desc": "Cancels all outstanding tasks and then invalidates the session."
+    },
+    {
+      "name": "func reset(completionHandler: () -> Void)",
+      "desc": "Empties all cookies, caches and credential stores, removes disk files, flushes in-progress downloads to disk, and ensures that future requests occur on a new socket."
+    },
+    {
+      "name": "var sessionDescription: String?",
+      "desc": "An app-defined descriptive label for the session."
+    },
+    {
+      "name": "func dataTaskPublisher(for: URLRequest) -> URLSession.DataTaskPublisher",
+      "desc": "Returns a publisher that wraps a URL session data task for a given URL request."
+    },
+    {
+      "name": "func dataTaskPublisher(for: URL) -> URLSession.DataTaskPublisher",
+      "desc": "Returns a publisher that wraps a URL session data task for a given URL."
+    },
+    {
+      "name": "struct URLSession.DataTaskPublisher",
+      "desc": "A publisher that delivers the results of performing URL session data tasks."
+    }
+  ],
+  "declaration": "class URLSession : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

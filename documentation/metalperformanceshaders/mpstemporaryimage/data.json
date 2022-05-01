@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpstemporaryimage",
+  "type": "Class",
+  "name": "MPSTemporaryImage",
+  "desc": "A texture for use in convolutional neural networks that stores transient data to be used and discarded promptly.",
+  "items": [
+    {
+      "name": "init(commandBuffer: MTLCommandBuffer, imageDescriptor: MPSImageDescriptor)",
+      "desc": "Initializes a temporary image for use on a command buffer."
+    },
+    {
+      "name": "class MPSImageDescriptor",
+      "desc": "A description of the attributes used to create an MPSImage."
+    },
+    {
+      "name": "init(commandBuffer: MTLCommandBuffer, textureDescriptor: MTLTextureDescriptor)",
+      "desc": "Low-level interface for creating a temporary image using a texture descriptor."
+    },
+    {
+      "name": "class MTLTextureDescriptor",
+      "desc": "An object that you use to configure new Metal texture objects."
+    },
+    {
+      "name": "init(commandBuffer: MTLCommandBuffer, textureDescriptor: MTLTextureDescriptor, featureChannels: Int)"
+    },
+    {
+      "name": "class func prefetchStorage(with: MTLCommandBuffer, imageDescriptorList: [MPSImageDescriptor])",
+      "desc": "A method that helps the framework decide which allocations to make ahead of time."
+    },
+    {
+      "name": "class func defaultAllocator() -> MPSImageAllocator"
+    },
+    {
+      "name": "protocol MPSImageAllocator"
+    },
+    {
+      "name": "var readCount: Int",
+      "desc": "The number of times a temporary image may be read by a CNN kernel before its contents become undefined."
+    }
+  ],
+  "declaration": "class MPSTemporaryImage : MPSImage",
+  "inheritsFrom": [
+    "MPSImage"
+  ]
+}

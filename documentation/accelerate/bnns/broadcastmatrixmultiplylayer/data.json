@@ -1,0 +1,23 @@
+{
+  "path": "/documentation/accelerate/bnns/broadcastmatrixmultiplylayer",
+  "type": "Class",
+  "name": "BNNS.BroadcastMatrixMultiplyLayer",
+  "desc": "A layer object that wraps a broadcast matrix multiply filter and manages its deinitialization.",
+  "items": [
+    {
+      "name": "init?(inputA: BNNSNDArrayDescriptor, transposed: Bool, isWeights: Bool, inputB: BNNSNDArrayDescriptor, transposed: Bool, isWeights: Bool, output: BNNSNDArrayDescriptor, alpha: Float, accumulatesToOutput: Bool, isQuadratic: Bool, filterParameters: BNNSFilterParameters?)",
+      "desc": "Returns a new broadcast matrix multiply layer."
+    },
+    {
+      "name": "func applyBackward(batchSize: Int, inputA: BNNSNDArrayDescriptor, inputB: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, outputGradient: BNNSNDArrayDescriptor, generatingInputAGradient: BNNSNDArrayDescriptor, generatingInputBGradient: BNNSNDArrayDescriptor)",
+      "desc": "Applies the layer backward to generate input gradients."
+    },
+    {
+      "name": "func apply(batchSize: Int, inputA: BNNSNDArrayDescriptor, inputB: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor)"
+    }
+  ],
+  "declaration": "class BroadcastMatrixMultiplyLayer : BNNS.Layer",
+  "inheritsFrom": [
+    "BNNS.Layer"
+  ]
+}

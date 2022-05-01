@@ -1,0 +1,92 @@
+{
+  "path": "/documentation/addressbook/abaddressbook",
+  "type": "Class",
+  "name": "ABAddressBook",
+  "desc": "The main object you use to access the Address Book database.",
+  "items": [
+    {
+      "name": "class func shared() -> ABAddressBook!",
+      "desc": "Returns the unique shared instance of ABAddressBook, or nil if the Address Book database can’t be initialized."
+    },
+    {
+      "name": "func groups() -> [Any]!",
+      "desc": "Returns an array of all the groups in the Address Book database."
+    },
+    {
+      "name": "func people() -> [Any]!",
+      "desc": "Returns an array of all the people in the Address Book database."
+    },
+    {
+      "name": "func me() -> ABPerson!",
+      "desc": "Returns the ABPerson record that represents the logged-in user."
+    },
+    {
+      "name": "func setMe(ABPerson!)",
+      "desc": "Sets the record that represents the logged-in user."
+    },
+    {
+      "name": "func record(forUniqueId: String!) -> ABRecord!",
+      "desc": "Returns the person or group record that matches the given unique ID."
+    },
+    {
+      "name": "func recordClass(fromUniqueId: String!) -> String!",
+      "desc": "Returns the class name of the record that matches the given unique ID."
+    },
+    {
+      "name": "func formattedAddress(from: [AnyHashable : Any]!) -> NSAttributedString!",
+      "desc": "Returns an attributed string containing the formatted address."
+    },
+    {
+      "name": "func defaultCountryCode() -> String!",
+      "desc": "Returns the default country code for records with unspecified country codes."
+    },
+    {
+      "name": "func defaultNameOrdering() -> Int",
+      "desc": "Returns the default name ordering defined by the user in the Address Book application’s preferences."
+    },
+    {
+      "name": "func add(ABRecord!, error: ())",
+      "desc": "Adds an ABPerson or ABGroup record to the Address Book database."
+    },
+    {
+      "name": "func add(ABRecord!) -> Bool",
+      "desc": "Adds an ABPerson or ABGroup record to the Address Book database."
+    },
+    {
+      "name": "func remove(ABRecord!, error: ())",
+      "desc": "Removes an ABPerson or ABGroup record from the Address Book database."
+    },
+    {
+      "name": "func remove(ABRecord!) -> Bool",
+      "desc": "Removes an ABPerson or ABGroup record from the Address Book database."
+    },
+    {
+      "name": "func records(matching: ABSearchElement!) -> [Any]!",
+      "desc": "Returns an array of records that match the given search element, or returns an empty array if no records match the search element."
+    },
+    {
+      "name": "func hasUnsavedChanges() -> Bool",
+      "desc": "Indicates whether an address book has changes that have not been saved to the Address Book database."
+    },
+    {
+      "name": "func save() -> Bool",
+      "desc": "Saves all the changes made since the last save."
+    },
+    {
+      "name": "func saveAndReturnError()",
+      "desc": "Saves all the changes made since the last save."
+    },
+    {
+      "name": "static let abDatabaseChanged: NSNotification.Name",
+      "desc": "Posted when this process has changed the Address Book database."
+    },
+    {
+      "name": "static let abDatabaseChangedExternally: NSNotification.Name",
+      "desc": "Posted when a process other than the current one has changed the Address Book database."
+    }
+  ],
+  "declaration": "class ABAddressBook : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

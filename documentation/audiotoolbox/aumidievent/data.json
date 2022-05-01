@@ -1,0 +1,43 @@
+{
+  "path": "/documentation/audiotoolbox/aumidievent",
+  "type": "Structure",
+  "name": "AUMIDIEvent",
+  "desc": "A structure that describes a scheduled MIDI event.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(next: UnsafeMutablePointer<AURenderEvent>?, eventSampleTime: AUEventSampleTime, eventType: AURenderEventType, reserved: UInt8, length: UInt16, cable: UInt8, data: (UInt8, UInt8, UInt8))"
+    },
+    {
+      "name": "var cable: UInt8",
+      "desc": "The virtual cable number."
+    },
+    {
+      "name": "var data: (UInt8, UInt8, UInt8)",
+      "desc": "The bytes of the MIDI event. Running status is not used."
+    },
+    {
+      "name": "var eventSampleTime: AUEventSampleTime",
+      "desc": "The sample time at which the event is scheduled to occur."
+    },
+    {
+      "name": "var eventType: AURenderEventType",
+      "desc": "The type of render event. Must be AURenderEventType.MIDI or AURenderEventType.midiSysEx."
+    },
+    {
+      "name": "var length: UInt16",
+      "desc": "The number of valid MIDI bytes in the data field. For most MIDI events this value is usually 1, 2, or 3, but it can be longer for system-exclusive events."
+    },
+    {
+      "name": "var next: UnsafeMutablePointer<AURenderEvent>?",
+      "desc": "The next event in a linked list of events."
+    },
+    {
+      "name": "var reserved: UInt8",
+      "desc": "Reserved field. Must be 0."
+    }
+  ],
+  "declaration": "struct AUMIDIEvent"
+}

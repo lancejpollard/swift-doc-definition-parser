@@ -1,0 +1,555 @@
+{
+  "path": "/documentation/appkit/nsdocument",
+  "type": "Class",
+  "name": "NSDocument",
+  "desc": "An abstract class that defines the interface for macOS documents.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Initializes and returns an empty document object."
+    },
+    {
+      "name": "init(contentsOf: URL, ofType: String)",
+      "desc": "Initializes a document located by a URL of a specified type."
+    },
+    {
+      "name": "init(for: URL?, withContentsOf: URL, ofType: String)",
+      "desc": "Initializes a document with the specified contents, and places the resulting document's file at the designated location."
+    },
+    {
+      "name": "init(type: String)",
+      "desc": "Initializes a document of a specified type."
+    },
+    {
+      "name": "class func canConcurrentlyReadDocuments(ofType: String) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the receiver reads multiple documents of the given type concurrently."
+    },
+    {
+      "name": "func read(from: URL, ofType: String)",
+      "desc": "Sets the contents of this document by reading from a file or file package, of a specified type, located by a URL."
+    },
+    {
+      "name": "func read(from: FileWrapper, ofType: String)",
+      "desc": "Sets the contents of this document by reading from a file wrapper of a specified type."
+    },
+    {
+      "name": "func read(from: Data, ofType: String)",
+      "desc": "Sets the contents of this document by reading from data of a specified type."
+    },
+    {
+      "name": "func canAsynchronouslyWrite(to: URL, ofType: String, for: NSDocument.SaveOperationType) -> Bool",
+      "desc": "Returns whether the receiver can concurrently write to a file or file package located by a URL, that is formatted for a specific type, for a specific kind of save operation."
+    },
+    {
+      "name": "func unblockUserInteraction()",
+      "desc": "Unblocks the main thread during asynchronous saving."
+    },
+    {
+      "name": "func write(to: URL, ofType: String)",
+      "desc": "Writes the contents of the document to a file or file package located by a URL, that is formatted to a specified type."
+    },
+    {
+      "name": "func writeSafely(to: URL, ofType: String, for: NSDocument.SaveOperationType)",
+      "desc": "Writes the contents of the document to a file or file package located by a URL."
+    },
+    {
+      "name": "func fileWrapper(ofType: String) -> FileWrapper",
+      "desc": "Creates and returns a file wrapper that contains the contents of the document, formatted to the specified type."
+    },
+    {
+      "name": "func data(ofType: String) -> Data",
+      "desc": "Creates and returns a data object that contains the contents of the document, formatted to a specified type."
+    },
+    {
+      "name": "func write(to: URL, ofType: String, for: NSDocument.SaveOperationType, originalContentsURL: URL?)",
+      "desc": "Writes the contents of the document to a file or file package located by a URL."
+    },
+    {
+      "name": "func save(to: URL, ofType: String, for: NSDocument.SaveOperationType, delegate: Any?, didSave: Selector?, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Saves the contents of the document to a file or file package located by a URL, that is formatted to a specified type, for a particular kind of save operation."
+    },
+    {
+      "name": "func save(to: URL, ofType: String, for: NSDocument.SaveOperationType, completionHandler: (Error?) -> Void)",
+      "desc": "Saves the contents of the document to a file or file package located by a URL, that is formatted to a specified type, for a particular kind of save operation, and invokes the passed-in completion handler."
+    },
+    {
+      "name": "func fileAttributesToWrite(to: URL, ofType: String, for: NSDocument.SaveOperationType, originalContentsURL: URL?) -> [String : Any]",
+      "desc": "Returns the attributes to write to the file or file package at the specified URL, and targeting the specified type of save operation."
+    },
+    {
+      "name": "enum NSDocument.SaveOperationType",
+      "desc": "Constants for specifying the type of document-save operation to perform."
+    },
+    {
+      "name": "var fileURL: URL?",
+      "desc": "The location of the document’s on-disk representation."
+    },
+    {
+      "name": "var isEntireFileLoaded: Bool",
+      "desc": "A Boolean value that indicates whether the document’s file is completely loaded into memory."
+    },
+    {
+      "name": "var fileModificationDate: Date?",
+      "desc": "The last-known modification date of the document’s on-disk representation."
+    },
+    {
+      "name": "var keepBackupFile: Bool",
+      "desc": "A Boolean value that indicates whether the document archives previously saved versions of the document."
+    },
+    {
+      "name": "var isDraft: Bool",
+      "desc": "A Boolean value that indicates whether the document is a draft that the user has not yet saved."
+    },
+    {
+      "name": "var fileType: String?",
+      "desc": "The name of the document type, as specified in the app’s information property-list file."
+    },
+    {
+      "name": "var isDocumentEdited: Bool",
+      "desc": "A Boolean value that indicates whether the document has unsaved changes."
+    },
+    {
+      "name": "var isInViewingMode: Bool",
+      "desc": "A Boolean value that indicates whether the document is in read-only mode."
+    },
+    {
+      "name": "class var readableTypes: [String]",
+      "desc": "Returns the types of data the receiver can read natively and any types filterable to that native type."
+    },
+    {
+      "name": "class var writableTypes: [String]",
+      "desc": "Returns the types of data the receiver can write natively and any types filterable to that native type."
+    },
+    {
+      "name": "class func isNativeType(String) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the document can read and write the data natively."
+    },
+    {
+      "name": "func writableTypes(for: NSDocument.SaveOperationType) -> [String]",
+      "desc": "Returns the names of the types to which this document can be saved for a specified kind of save operation."
+    },
+    {
+      "name": "func fileNameExtension(forType: String, saveOperation: NSDocument.SaveOperationType) -> String?",
+      "desc": "Returns a filename extension that can be appended to a base filename, for a specified file type and kind of save operation."
+    },
+    {
+      "name": "func makeWindowControllers()",
+      "desc": "Creates the window controller objects that the document uses to display its content."
+    },
+    {
+      "name": "func addWindowController(NSWindowController)",
+      "desc": "Adds the specified window controller to the current document."
+    },
+    {
+      "name": "func removeWindowController(NSWindowController)",
+      "desc": "Removes the specified window controller from the receiver’s array of window controllers."
+    },
+    {
+      "name": "var windowControllers: [NSWindowController]",
+      "desc": "The document’s current window controllers."
+    },
+    {
+      "name": "var windowNibName: NSNib.Name?",
+      "desc": "The name of the document’s sole nib file."
+    },
+    {
+      "name": "func windowControllerDidLoadNib(NSWindowController)",
+      "desc": "Called after one of the document's window controllers loads its nib file."
+    },
+    {
+      "name": "func windowControllerWillLoadNib(NSWindowController)",
+      "desc": "Called before one of the document's window controllers loads its nib file."
+    },
+    {
+      "name": "func shouldCloseWindowController(NSWindowController, delegate: Any?, shouldClose: Selector?, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Determines whether the system should close the document and its associated window."
+    },
+    {
+      "name": "func showWindows()",
+      "desc": "Displays all of the document’s windows, bringing them to the front and making them main or key as necessary."
+    },
+    {
+      "name": "func setWindow(NSWindow?)",
+      "desc": "Sets the window outlet of this document to the specified value."
+    },
+    {
+      "name": "var windowForSheet: NSWindow?",
+      "desc": "Returns the document window to use as the parent of a document-modal sheet."
+    },
+    {
+      "name": "var displayName: String!",
+      "desc": "The name of the document as displayed in the title bars of the document’s windows and in alert dialogs related to the document."
+    },
+    {
+      "name": "func defaultDraftName() -> String",
+      "desc": "Returns the default draft name for the document subclass."
+    },
+    {
+      "name": "func encodeRestorableState(with: NSCoder, backgroundQueue: OperationQueue)",
+      "desc": "Saves the interface-related state of the document."
+    },
+    {
+      "name": "class var autosavesInPlace: Bool",
+      "desc": "Returns whether the receiver supports autosaving in place."
+    },
+    {
+      "name": "class var autosavesDrafts: Bool",
+      "desc": "A Boolean value that indicates whether the document subclass supports autosaving of drafts."
+    },
+    {
+      "name": "class var preservesVersions: Bool",
+      "desc": "Returns whether the document subclass supports version management."
+    },
+    {
+      "name": "var autosavedContentsFileURL: URL?",
+      "desc": "The location of the most recently autosaved document contents."
+    },
+    {
+      "name": "var autosavingFileType: String?",
+      "desc": "Returns the document type to use for an autosave operation."
+    },
+    {
+      "name": "var autosavingIsImplicitlyCancellable: Bool",
+      "desc": "Returns a Boolean value that indicates whether you can cancel an in-progress autosave operation."
+    },
+    {
+      "name": "func checkAutosavingSafety()",
+      "desc": "Returns a Boolean value that indicates whether it is safe to autosave document changes."
+    },
+    {
+      "name": "var hasUnautosavedChanges: Bool",
+      "desc": "A Boolean value that indicates whether the document has changes that have not been autosaved."
+    },
+    {
+      "name": "func scheduleAutosaving()",
+      "desc": "Schedules periodic autosaving for the purpose of crash protection."
+    },
+    {
+      "name": "func autosave(withDelegate: Any?, didAutosave: Selector?, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Autosaves the document’s contents to an appropriate location in the file system."
+    },
+    {
+      "name": "func autosave(withImplicitCancellability: Bool, completionHandler: (Error?) -> Void)",
+      "desc": "Autosaves the document’s contents to an appropriate file-system location, as needed."
+    },
+    {
+      "name": "var backupFileURL: URL?",
+      "desc": "The URL for the document’s backup file that was created during an autosave operation."
+    },
+    {
+      "name": "func browseVersions(Any?)",
+      "desc": "Opens the Versions browser in the document’s main window."
+    },
+    {
+      "name": "var isBrowsingVersions: Bool",
+      "desc": "A Boolean value that indicates whether the document is currently displaying the Versions browser."
+    },
+    {
+      "name": "func stopBrowsingVersions(completionHandler: (() -> Void)?)",
+      "desc": "Dismiss the Versions browser for the current document."
+    },
+    {
+      "name": "func moveToUbiquityContainer(Any?)",
+      "desc": "Moves the document to the user’s iCloud storage."
+    },
+    {
+      "name": "class var usesUbiquitousStorage: Bool",
+      "desc": "Returns whether the document object stores its contents in the user's iCloud document storage."
+    },
+    {
+      "name": "var undoManager: UndoManager?",
+      "desc": "The object that the document uses to support undo/redo operations."
+    },
+    {
+      "name": "var hasUndoManager: Bool",
+      "desc": "A Boolean value that indicates whether the document owns an undo manager object."
+    },
+    {
+      "name": "func updateChangeCount(withToken: Any, for: NSDocument.SaveOperationType)",
+      "desc": "Updates the document's change count settings after a successful save operation."
+    },
+    {
+      "name": "func updateChangeCount(NSDocument.ChangeType)",
+      "desc": "Updates the receiver’s change count according to the given change type."
+    },
+    {
+      "name": "enum NSDocument.ChangeType",
+      "desc": "Values that indicate a document’s edit status."
+    },
+    {
+      "name": "func changeCountToken(for: NSDocument.SaveOperationType) -> Any",
+      "desc": "Returns an object that encapsulates the current record of document changes at the beginning of a save operation."
+    },
+    {
+      "name": "class func allowedClasses(forRestorableStateKeyPath: String) -> [AnyClass]",
+      "desc": "Returns the classes that support secure coding."
+    },
+    {
+      "name": "func encodeRestorableState(with: NSCoder)",
+      "desc": "Saves the interface-related state of the document."
+    },
+    {
+      "name": "func restoreState(with: NSCoder)",
+      "desc": "Restores the interface-related state of the document."
+    },
+    {
+      "name": "class var restorableStateKeyPaths: [String]",
+      "desc": "Returns an array of key paths that represent the restorable attributes of the document."
+    },
+    {
+      "name": "func invalidateRestorableState()",
+      "desc": "Marks the document’s interface-related state as dirty."
+    },
+    {
+      "name": "func restoreWindow(withIdentifier: NSUserInterfaceItemIdentifier, state: NSCoder, completionHandler: (NSWindow?, Error?) -> Void)",
+      "desc": "Restores a window that was associated with a document, after that document is reopened."
+    },
+    {
+      "name": "func runModalSavePanel(for: NSDocument.SaveOperationType, delegate: Any?, didSave: Selector?, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Presents a modal Save panel to the user, then tries to save the document if the user approves the operation."
+    },
+    {
+      "name": "func prepareSavePanel(NSSavePanel) -> Bool",
+      "desc": "Tells the document to customize the specified Save panel."
+    },
+    {
+      "name": "var shouldRunSavePanelWithAccessoryView: Bool",
+      "desc": "A Boolean value that indicates whether the document’s Save panel displays a list of supported writable document types."
+    },
+    {
+      "name": "var fileTypeFromLastRunSavePanel: String?",
+      "desc": "The file type that was last selected in the Save panel."
+    },
+    {
+      "name": "var fileNameExtensionWasHiddenInLastRunSavePanel: Bool",
+      "desc": "A Boolean value that indicates whether the user chose to hide the document's filename extension."
+    },
+    {
+      "name": "var userActivity: NSUserActivity?",
+      "desc": "An object that encapsulates a user activity supported by this document."
+    },
+    {
+      "name": "func updateUserActivityState(NSUserActivity)",
+      "desc": "Updates the state of the given user activity."
+    },
+    {
+      "name": "class let userActivityURLKey: String",
+      "desc": "The key that identifies the document associated with a user activity."
+    },
+    {
+      "name": "func validateUserInterfaceItem(NSValidatedUserInterfaceItem) -> Bool",
+      "desc": "Validates the specified user interface item that the receiver manages."
+    },
+    {
+      "name": "func performSynchronousFileAccess(() -> Void)",
+      "desc": "Waits for any scheduled file access to complete, then invokes the passed-in block."
+    },
+    {
+      "name": "func performAsynchronousFileAccess((() -> Void) -> Void)",
+      "desc": "Waits for any scheduled file access to complete but without blocking the main thread, then invokes the passed-in block."
+    },
+    {
+      "name": "func performActivity(withSynchronousWaiting: Bool, using: (() -> Void) -> Void)",
+      "desc": "Waits for any work scheduled by previous invocations of this method to complete, then invokes the passed-in block."
+    },
+    {
+      "name": "func continueActivity(() -> Void)",
+      "desc": "Continues to perform the task for a user activity object using a different block."
+    },
+    {
+      "name": "func continueAsynchronousWorkOnMainThread(() -> Void)",
+      "desc": "Invokes the passed-in block on the main thread."
+    },
+    {
+      "name": "func printDocument(Any?)",
+      "desc": "Prints the receiver in response to the user choosing the Print menu command."
+    },
+    {
+      "name": "func runPageLayout(Any?)",
+      "desc": "The action method invoked in the receiver as first responder when the user chooses the Page Setup menu command."
+    },
+    {
+      "name": "func revertToSaved(Any?)",
+      "desc": "The action of the File menu item Revert in a document-based app."
+    },
+    {
+      "name": "func save(Any?)",
+      "desc": "The action method invoked in the receiver as first responder when the user chooses the Save menu command."
+    },
+    {
+      "name": "func saveAs(Any?)",
+      "desc": "The action method invoked in the receiver as first responder when the user chooses the Save As menu command."
+    },
+    {
+      "name": "func saveTo(Any?)",
+      "desc": "The action method invoked in the receiver as first responder when the user chooses the Save To menu command."
+    },
+    {
+      "name": "func save(withDelegate: Any?, didSave: Selector?, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Saves the document and delivers the results to the provided delegate object."
+    },
+    {
+      "name": "func canClose(withDelegate: Any, shouldClose: Selector?, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Determines whether to close the document, prompting the user as needed to choose a course of action."
+    },
+    {
+      "name": "func close()",
+      "desc": "Closes all of the document's windows and removes the document from its document controller."
+    },
+    {
+      "name": "func revert(toContentsOf: URL, ofType: String)",
+      "desc": "Discards all unsaved document modifications and replaces the document’s contents by reading a file or file package located by a URL of a specified type."
+    },
+    {
+      "name": "func duplicate() -> NSDocument",
+      "desc": "Creates a new document whose contents are the same as the receiver and returns an error object if unsuccessful."
+    },
+    {
+      "name": "func duplicate(Any?)",
+      "desc": "Creates a copy of the receiving document in response to the user choosing Duplicate from the File menu."
+    },
+    {
+      "name": "func duplicate(withDelegate: Any?, didDuplicate: Selector?, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Creates a new document whose contents are the same as the current document."
+    },
+    {
+      "name": "func rename(Any?)",
+      "desc": "Renames the current document in response to the user choosing the Rename menu item."
+    },
+    {
+      "name": "func move(Any?)",
+      "desc": "Moves the document to a new location in response to the user choosing the Move To… menu item."
+    },
+    {
+      "name": "func move(completionHandler: ((Bool) -> Void)?)",
+      "desc": "Moves the document to a user-selected location."
+    },
+    {
+      "name": "func move(to: URL, completionHandler: ((Error?) -> Void)?)",
+      "desc": "Moves the document’s file to the given URL."
+    },
+    {
+      "name": "func lock(Any?)",
+      "desc": "Locks the document in response to the user choosing the Lock menu item."
+    },
+    {
+      "name": "func unlock(Any?)",
+      "desc": "Unlocks the document in response to the user choosing the Unlock menu item."
+    },
+    {
+      "name": "func lock(completionHandler: ((Bool) -> Void)?)",
+      "desc": "Prevents the user from making further changes to the document."
+    },
+    {
+      "name": "func lock(completionHandler: ((Error?) -> Void)?)",
+      "desc": "Prevents the user from making changes to the document's file."
+    },
+    {
+      "name": "func unlock(completionHandler: ((Bool) -> Void)?)",
+      "desc": "Allows the user to make modifications to the document."
+    },
+    {
+      "name": "func unlock(completionHandler: ((Error?) -> Void)?)",
+      "desc": "Allows the user to make modifications to the document's file."
+    },
+    {
+      "name": "var isLocked: Bool",
+      "desc": "A Boolean value that indicates whether or not the file can be written to."
+    },
+    {
+      "name": "var printInfo: NSPrintInfo",
+      "desc": "The printing information associated with the document."
+    },
+    {
+      "name": "func preparePageLayout(NSPageLayout) -> Bool",
+      "desc": "Adds document-specific content to the Page Layout panel."
+    },
+    {
+      "name": "func runModalPageLayout(with: NSPrintInfo, delegate: Any?, didRun: Selector?, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Runs the modal page layout panel with the receiver’s printing information object."
+    },
+    {
+      "name": "func runModalPrintOperation(NSPrintOperation, delegate: Any?, didRun: Selector?, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Runs the specified print operation modally."
+    },
+    {
+      "name": "func shouldChangePrintInfo(NSPrintInfo) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the document allows changes to the default printing information."
+    },
+    {
+      "name": "func print(withSettings: [NSPrintInfo.AttributeKey : Any], showPrintPanel: Bool, delegate: Any?, didPrint: Selector?, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Prints the document's contents, optionally displaying a print panel to the user."
+    },
+    {
+      "name": "func printOperation(withSettings: [NSPrintInfo.AttributeKey : Any]) -> NSPrintOperation",
+      "desc": "Creates and returns a print operation for the document's contents."
+    },
+    {
+      "name": "var pdfPrintOperation: NSPrintOperation",
+      "desc": "A print operation you can use to create a PDF representation of the document’s current contents."
+    },
+    {
+      "name": "func saveToPDF(Any?)",
+      "desc": "Exports a PDF representation of the document’s current contents."
+    },
+    {
+      "name": "var allowsDocumentSharing: Bool",
+      "desc": "A Boolean value that indicates whether the document is shareable from the standard Share menu."
+    },
+    {
+      "name": "func prepare(NSSharingServicePicker)",
+      "desc": "Perform any custom setup associated with a sharing service picker."
+    },
+    {
+      "name": "func share(with: NSSharingService, completionHandler: ((Bool) -> Void)?)",
+      "desc": "Share the document's file using the specified sharing service."
+    },
+    {
+      "name": "func handleClose(NSCloseCommand) -> Any?",
+      "desc": "Handles the Close AppleScript command by attempting to close the document."
+    },
+    {
+      "name": "func handlePrint(NSScriptCommand) -> Any?",
+      "desc": "Handles the Print AppleScript command by attempting to print the document."
+    },
+    {
+      "name": "func handleSave(NSScriptCommand) -> Any?",
+      "desc": "Handles the Save AppleScript command by attempting to save the document."
+    },
+    {
+      "name": "var objectSpecifier: NSScriptObjectSpecifier",
+      "desc": "Returns the object specifier that represents the document."
+    },
+    {
+      "name": "var lastComponentOfFileName: String",
+      "desc": "The name of the document seen by the user in AppleScript."
+    },
+    {
+      "name": "func presentError(Error, modalFor: NSWindow, delegate: Any?, didPresent: Selector?, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Presents an error alert to the user as a modal panel."
+    },
+    {
+      "name": "func presentError(Error) -> Bool",
+      "desc": "Presents an error alert to the user as a modal panel."
+    },
+    {
+      "name": "func willPresentError(Error) -> Error",
+      "desc": "Called when the receiver is about to present an error."
+    },
+    {
+      "name": "func willNotPresentError(Error)",
+      "desc": "Confirms that the error object is not to be presented to the user and the error cannot be recovered from, so cleanup can be done."
+    }
+  ],
+  "declaration": "@MainActor class NSDocument : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSEditorRegistration",
+    "NSFilePresenter",
+    "NSMenuItemValidation",
+    "NSUserActivityRestoring",
+    "NSUserInterfaceValidations"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "path": "/documentation/avfoundation/avmediaselectionoption",
+  "type": "Class",
+  "name": "AVMediaSelectionOption",
+  "desc": "An object that represents a specific option for the presentation of media within a group of options.",
+  "items": [
+    {
+      "name": "var mediaType: AVMediaType",
+      "desc": "The media type of the media data."
+    },
+    {
+      "name": "var mediaSubTypes: [NSNumber]",
+      "desc": "The media sub-types of the media data associated with the option."
+    },
+    {
+      "name": "func hasMediaCharacteristic(AVMediaCharacteristic) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the receiver has media with the given media characteristic."
+    },
+    {
+      "name": "var commonMetadata: [AVMetadataItem]",
+      "desc": "An array of metadata items for each common metadata key for which a value is available."
+    },
+    {
+      "name": "var availableMetadataFormats: [String]",
+      "desc": "The metadata formats that contain metadata associated with the option."
+    },
+    {
+      "name": "func metadata(forFormat: String) -> [AVMetadataItem]",
+      "desc": "Returns an array of metadata items—one for each metadata item in the container of a given format."
+    },
+    {
+      "name": "var isPlayable: Bool",
+      "desc": "A Boolean value that indicates whether the media selection option is playable."
+    },
+    {
+      "name": "var displayName: String",
+      "desc": "A string suitable for display using the current system locale."
+    },
+    {
+      "name": "func displayName(with: Locale) -> String",
+      "desc": "Returns a string suitable for display using the specified locale."
+    },
+    {
+      "name": "var locale: Locale?",
+      "desc": "The locale for which the media option was authored."
+    },
+    {
+      "name": "var extendedLanguageTag: String?",
+      "desc": "The IETF BCP 47 language tag associated with the option"
+    },
+    {
+      "name": "func associatedMediaSelectionOption(in: AVMediaSelectionGroup) -> AVMediaSelectionOption?",
+      "desc": "Returns a media selection option associated with the receiver in a given group."
+    },
+    {
+      "name": "func makeNowPlayingInfoLanguageOption() -> MPNowPlayingInfoLanguageOption?",
+      "desc": "Creates a language option for a media selection option."
+    },
+    {
+      "name": "func propertyList() -> Any",
+      "desc": "Returns a serializable property list that’s sufficient to identify the option within its group."
+    }
+  ],
+  "declaration": "class AVMediaSelectionOption : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/uikit/uitextpastedelegate",
+  "type": "Protocol",
+  "name": "UITextPasteDelegate",
+  "desc": "The interface for handling pasting and dropping of text, using item providers.",
+  "items": [
+    {
+      "name": "func textPasteConfigurationSupporting(UITextPasteConfigurationSupporting, transform: UITextPasteItem)",
+      "desc": "Tells the delegate to transform the pasted or dropped text item."
+    },
+    {
+      "name": "func textPasteConfigurationSupporting(UITextPasteConfigurationSupporting, combineItemAttributedStrings: [NSAttributedString], for: UITextRange) -> NSAttributedString",
+      "desc": "Asks the delegate to combine multiple strings into a single attributed string."
+    },
+    {
+      "name": "func textPasteConfigurationSupporting(UITextPasteConfigurationSupporting, performPasteOf: NSAttributedString, to: UITextRange) -> UITextRange",
+      "desc": "Asks the delegate to explicitly handle the final incorporation of a pasted or dropped string of text into the text view."
+    },
+    {
+      "name": "func textPasteConfigurationSupporting(UITextPasteConfigurationSupporting, shouldAnimatePasteOf: NSAttributedString, to: UITextRange) -> Bool",
+      "desc": "Asks the delegate if the paste or drop operation should be animated."
+    }
+  ],
+  "declaration": "@MainActor protocol UITextPasteDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "path": "/documentation/combine/currentvaluesubject",
+  "type": "Class",
+  "name": "CurrentValueSubject",
+  "desc": "A subject that wraps a single value and publishes a new element whenever the value changes.",
+  "items": [
+    {
+      "name": "init(Output)",
+      "desc": "Creates a current value subject with the given initial value."
+    },
+    {
+      "name": "var value: Output",
+      "desc": "The value wrapped by this subject, published as a new element whenever it changes."
+    },
+    {
+      "name": "func send(Output)",
+      "desc": "Sends a value to the subscriber."
+    },
+    {
+      "name": "func send()",
+      "desc": "Sends a void value to the subscriber."
+    },
+    {
+      "name": "func send(subscription: Subscription)",
+      "desc": "Sends a subscription to the subscriber."
+    },
+    {
+      "name": "func send(completion: Subscribers.Completion<Failure>)",
+      "desc": "Sends a completion signal to the subscriber."
+    }
+  ],
+  "declaration": "final class CurrentValueSubject<Output, Failure> where Failure : Error",
+  "conformsTo": [
+    "Publisher",
+    "Subject"
+  ]
+}

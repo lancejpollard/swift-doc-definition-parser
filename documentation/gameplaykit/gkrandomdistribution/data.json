@@ -1,0 +1,63 @@
+{
+  "path": "/documentation/gameplaykit/gkrandomdistribution",
+  "type": "Class",
+  "name": "GKRandomDistribution",
+  "desc": "A generator for random numbers that fall within a specific range and that exhibit a specific distribution over multiple samplings.",
+  "items": [
+    {
+      "name": "init(randomSource: GKRandom, lowestValue: Int, highestValue: Int)",
+      "desc": "Initializes a uniform random distribution with the specified lower and upper bounds, using the specified source randomizer."
+    },
+    {
+      "name": "init(lowestValue: Int, highestValue: Int)",
+      "desc": "Creates a random distribution with the specified lower and upper bounds, using the Arc4 randomizer."
+    },
+    {
+      "name": "class func d6() -> Self",
+      "desc": "Creates a random distribution equivalent to a six-sided die."
+    },
+    {
+      "name": "class func d20() -> Self",
+      "desc": "Creates a random distribution equivalent to a twenty-sided die."
+    },
+    {
+      "name": "init(forDieWithSideCount: Int)",
+      "desc": "Creates a random distribution equivalent to a die with the specified number of sides."
+    },
+    {
+      "name": "func nextInt() -> Int",
+      "desc": "Generates and returns a new random integer within the bounds of the distribution."
+    },
+    {
+      "name": "func nextInt(upperBound: Int) -> Int",
+      "desc": "Generates and returns a new random integer within the bounds of the distribution and less than the specified limit."
+    },
+    {
+      "name": "func nextUniform() -> Float",
+      "desc": "Generates and returns a new random floating-point value within the characteristics of the distribution."
+    },
+    {
+      "name": "func nextBool() -> Bool",
+      "desc": "Generates and returns a new random Boolean value within the characteristics of the distribution."
+    },
+    {
+      "name": "var lowestValue: Int",
+      "desc": "The lowest value to be produced by the distribution."
+    },
+    {
+      "name": "var highestValue: Int",
+      "desc": "The highest value to be produced by the distribution."
+    },
+    {
+      "name": "var numberOfPossibleOutcomes: Int",
+      "desc": "The number of unique values the distribution can generate."
+    }
+  ],
+  "declaration": "class GKRandomDistribution : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "GKRandom"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "path": "/documentation/carplay/cpnavigationsession",
+  "type": "Class",
+  "name": "CPNavigationSession",
+  "desc": "An object that represents an active route guidance session.",
+  "items": [
+    {
+      "name": "var trip: CPTrip",
+      "desc": "The trip associated with the navigation session."
+    },
+    {
+      "name": "class CPTrip",
+      "desc": "An object that represents a journey between an origin and a destination."
+    },
+    {
+      "name": "func cancelTrip()",
+      "desc": "Tells the navigation session to cancel the trip."
+    },
+    {
+      "name": "func finishTrip()",
+      "desc": "Tells the navigation session to finish the trip."
+    },
+    {
+      "name": "func pauseTrip(for: CPNavigationSession.PauseReason, description: String?)",
+      "desc": "Tells the navigation session to pause the trip for the specified reason."
+    },
+    {
+      "name": "enum CPNavigationSession.PauseReason",
+      "desc": "A set of reasons for pausing a trip."
+    },
+    {
+      "name": "var upcomingManeuvers: [CPManeuver]",
+      "desc": "The next set of maneuvers the user should perform while following the current route."
+    },
+    {
+      "name": "class CPManeuver",
+      "desc": "An object that describes a single navigation instruction."
+    },
+    {
+      "name": "func updateEstimates(CPTravelEstimates, for: CPManeuver)",
+      "desc": "Updates the travel estimates for the specified maneuver."
+    },
+    {
+      "name": "class CPTravelEstimates",
+      "desc": "An object that describes the time and distance remaining for a maneuver in a navigation session."
+    },
+    {
+      "name": "func pauseTrip(for: CPNavigationSession.PauseReason, description: String?, turnCardColor: UIColor?)"
+    }
+  ],
+  "declaration": "class CPNavigationSession : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

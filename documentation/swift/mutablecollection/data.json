@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/swift/mutablecollection",
+  "type": "Protocol",
+  "name": "MutableCollection",
+  "desc": "A collection that supports subscript assignment.",
+  "items": [
+    {
+      "name": "associatedtype Element"
+    },
+    {
+      "name": "associatedtype Index"
+    },
+    {
+      "name": "associatedtype SubSequence"
+    },
+    {
+      "name": "func move(fromOffsets: IndexSet, toOffset: Int)"
+    },
+    {
+      "name": "func partition(by: (Self.Element) -> Bool) -> Self.Index",
+      "desc": "Reorders the elements of the collection such that all the elements that match the given predicate are after all the elements that don’t match."
+    },
+    {
+      "name": "func reverse()",
+      "desc": "Reverses the elements of the collection in place."
+    },
+    {
+      "name": "func shuffle()",
+      "desc": "Shuffles the collection in place."
+    },
+    {
+      "name": "func shuffle<T>(using: inout T)",
+      "desc": "Shuffles the collection in place, using the given generator as a source for randomness."
+    },
+    {
+      "name": "func sort()",
+      "desc": "Sorts the collection in place."
+    },
+    {
+      "name": "func sort(by: (Self.Element, Self.Element) -> Bool)",
+      "desc": "Sorts the collection in place, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func sort<Comparator>(using: Comparator)",
+      "desc": "Available when Self conforms to RandomAccessCollection."
+    },
+    {
+      "name": "func sort<S, Comparator>(using: S)",
+      "desc": "Available when Self conforms to RandomAccessCollection."
+    },
+    {
+      "name": "func swapAt(Self.Index, Self.Index)",
+      "desc": "Exchanges the values at the specified indices of the collection."
+    },
+    {
+      "name": "func withContiguousMutableStorageIfAvailable<R>((inout UnsafeMutableBufferPointer<Self.Element>) -> R) -> R?",
+      "desc": "Executes a closure on the collection’s contiguous storage."
+    },
+    {
+      "name": "subscript(Self.Index) -> Self.Element",
+      "desc": "Accesses the element at the specified position."
+    },
+    {
+      "name": "subscript(Range<Self.Index>) -> Self.SubSequence",
+      "desc": "Accesses a contiguous subrange of the collection’s elements."
+    }
+  ],
+  "declaration": "protocol MutableCollection where Self.SubSequence : MutableCollection",
+  "inheritsFrom": [
+    "Collection"
+  ]
+}

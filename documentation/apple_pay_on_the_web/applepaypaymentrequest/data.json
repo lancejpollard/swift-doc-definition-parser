@@ -1,0 +1,8 @@
+{
+  "path": "/documentation/apple_pay_on_the_web/applepaypaymentrequest",
+  "type": "Structure",
+  "name": "ApplePayPaymentRequest",
+  "desc": "A request for payment, which includes information about payment processing capabilities, the payment amount, and shipping information.",
+  "items": [],
+  "declaration": "dictionary ApplePayPaymentRequest {\n    required sequence <ApplePayMerchantCapability> merchantCapabilities;\n    required sequence <DOMString> supportedNetworks;\n    required DOMString countryCode;\n    sequence <ApplePayContactField> requiredBillingContactFields;\n    ApplePayPaymentContact billingContact;\n    sequence <ApplePayContactField> requiredShippingContactFields;\n    ApplePayPaymentContact shippingContact;\n    DOMString applicationData;\n    sequence <DOMString> supportedCountries;\n    boolean supportsCouponCode;\n    DOMString couponCode;\n    ApplePayShippingContactEditingMode shippingContactEditingMode;\n    required ApplePayLineItem total;\n    sequence <ApplePayLineItem> lineItems;\n    required DOMString currencyCode;\n    ApplePayShippingType shippingType;\n    sequence <ApplePayShippingMethod> shippingMethods;\n};"
+}

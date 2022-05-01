@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/sirikitcloudmedia/queue",
+  "type": "Object",
+  "name": "Queue",
+  "desc": "A sequence of media content for playback, with links to the previous and next segments of a full playback queue.",
+  "items": [
+    {
+      "name": "content",
+      "desc": "A sequence of songs, podcasts, ads, or other media content for the client to play."
+    },
+    {
+      "name": "contentItemsCount",
+      "desc": "The number of pieces of content in the full playback queue."
+    },
+    {
+      "name": "controls",
+      "desc": "The control schemes that are relevant while playing this content."
+    },
+    {
+      "name": "identifier",
+      "desc": "The identifier for the full playback queue. If you want this Queue to replace the client’s current playback queue, provide a new value."
+    },
+    {
+      "name": "insertPointer",
+      "desc": "The position in the client’s full playback queue to insert this queue segment."
+    },
+    {
+      "name": "nextContentUrl",
+      "desc": "A URL pattern to request the next queue segment. Omit this field for the last segment in a queue, or provide a pointer to the first segment of the queue to provide a repeat mode."
+    },
+    {
+      "name": "playPointer",
+      "desc": "The ContentIdentifier for the content to play next. Omit this field if you want the client to start at the beginning of the queue segment."
+    },
+    {
+      "name": "prerollSeconds",
+      "desc": "The number of seconds before the end of this queue for the client to request the next queue segment. The client may not be able to honor this hint if the user skips ahead into the last prerollSeconds of the current queue segment."
+    },
+    {
+      "name": "previousContentUrl",
+      "desc": "A URL pattern to request the previous queue segment. Omit this field for the first segment in a queue, or provide a pointer to the last segment of the queue to provide a repeat mode."
+    },
+    {
+      "name": "skipsRemaining",
+      "desc": "For content with the internetRadio value in PlayMediaControlScheme, the number of times the user can skip to another track during this queue segment."
+    },
+    {
+      "name": "version",
+      "desc": "The version of the SiriKitMediaAPI library the client uses."
+    }
+  ]
+}

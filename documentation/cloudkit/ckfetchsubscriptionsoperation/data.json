@@ -1,0 +1,34 @@
+{
+  "path": "/documentation/cloudkit/ckfetchsubscriptionsoperation",
+  "type": "Class",
+  "name": "CKFetchSubscriptionsOperation",
+  "desc": "An operation for fetching subscriptions.",
+  "items": [
+    {
+      "name": "init(subscriptionIDs: [CKSubscription.ID])",
+      "desc": "Creates an operation for fetching the specified subscriptions."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates an empty fetch subscriptions operation."
+    },
+    {
+      "name": "class func fetchAllSubscriptionsOperation() -> Self",
+      "desc": "Returns an operation that fetches all of the user’s subscriptions."
+    },
+    {
+      "name": "var subscriptionIDs: [CKSubscription.ID]?",
+      "desc": "The IDs of the subscriptions to fetch."
+    },
+    {
+      "name": "var fetchSubscriptionsResultBlock: ((Result<Void, Error>) -> Void)?"
+    },
+    {
+      "name": "var perSubscriptionResultBlock: ((CKSubscription.ID, Result<CKSubscription, Error>) -> Void)?"
+    }
+  ],
+  "declaration": "class CKFetchSubscriptionsOperation : CKDatabaseOperation",
+  "inheritsFrom": [
+    "CKDatabaseOperation"
+  ]
+}

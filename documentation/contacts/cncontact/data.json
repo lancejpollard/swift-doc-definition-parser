@@ -1,0 +1,195 @@
+{
+  "path": "/documentation/contacts/cncontact",
+  "type": "Class",
+  "name": "CNContact",
+  "desc": "An immutable object that stores information about a single contact, such as the contact's first name, phone numbers, and addresses.",
+  "items": [
+    {
+      "name": "var identifier: String",
+      "desc": "A value that uniquely identifies a contact on the device."
+    },
+    {
+      "name": "var contactType: CNContactType",
+      "desc": "An enum identifying the contact type."
+    },
+    {
+      "name": "enum CNContactType",
+      "desc": "The types a contact can be."
+    },
+    {
+      "name": "var namePrefix: String",
+      "desc": "The name prefix of the contact."
+    },
+    {
+      "name": "var givenName: String",
+      "desc": "The given name of the contact."
+    },
+    {
+      "name": "var middleName: String",
+      "desc": "The middle name of the contact."
+    },
+    {
+      "name": "var familyName: String",
+      "desc": "The family name of the contact."
+    },
+    {
+      "name": "var previousFamilyName: String",
+      "desc": "A string for the previous family name of the contact."
+    },
+    {
+      "name": "var nameSuffix: String",
+      "desc": "The name suffix of the contact."
+    },
+    {
+      "name": "var nickname: String",
+      "desc": "The nickname of the contact."
+    },
+    {
+      "name": "var phoneticGivenName: String",
+      "desc": "The phonetic given name of the contact."
+    },
+    {
+      "name": "var phoneticMiddleName: String",
+      "desc": "The phonetic middle name of the contact."
+    },
+    {
+      "name": "var phoneticFamilyName: String",
+      "desc": "A string for the phonetic family name of the contact."
+    },
+    {
+      "name": "var jobTitle: String",
+      "desc": "The contact’s job title."
+    },
+    {
+      "name": "var departmentName: String",
+      "desc": "The name of the department associated with the contact."
+    },
+    {
+      "name": "var organizationName: String",
+      "desc": "The name of the organization associated with the contact."
+    },
+    {
+      "name": "var phoneticOrganizationName: String",
+      "desc": "The phonetic name of the organization associated with the contact."
+    },
+    {
+      "name": "var postalAddresses: [CNLabeledValue<CNPostalAddress>]",
+      "desc": "An array of labeled postal addresses for a contact."
+    },
+    {
+      "name": "var emailAddresses: [CNLabeledValue<NSString>]",
+      "desc": "An array of labeled email addresses for the contact."
+    },
+    {
+      "name": "var urlAddresses: [CNLabeledValue<NSString>]",
+      "desc": "An array of labeled URL addresses for a contact."
+    },
+    {
+      "name": "var phoneNumbers: [CNLabeledValue<CNPhoneNumber>]",
+      "desc": "An array of labeled phone numbers for a contact."
+    },
+    {
+      "name": "var socialProfiles: [CNLabeledValue<CNSocialProfile>]",
+      "desc": "An array of labeled social profiles for a contact."
+    },
+    {
+      "name": "var birthday: DateComponents?",
+      "desc": "A date component for the Gregorian birthday of the contact."
+    },
+    {
+      "name": "var nonGregorianBirthday: DateComponents?",
+      "desc": "A date component for the non-Gregorian birthday of the contact."
+    },
+    {
+      "name": "var dates: [CNLabeledValue<NSDateComponents>]",
+      "desc": "An array containing labeled Gregorian dates."
+    },
+    {
+      "name": "var note: String",
+      "desc": "A string containing notes for the contact."
+    },
+    {
+      "name": "var imageData: Data?",
+      "desc": "The profile picture of a contact."
+    },
+    {
+      "name": "var thumbnailImageData: Data?",
+      "desc": "The thumbnail version of the contact’s profile picture."
+    },
+    {
+      "name": "var imageDataAvailable: Bool",
+      "desc": "A Boolean indicating whether a contact has a profile picture."
+    },
+    {
+      "name": "var contactRelations: [CNLabeledValue<CNContactRelation>]",
+      "desc": "An array of labeled relations for the contact."
+    },
+    {
+      "name": "var instantMessageAddresses: [CNLabeledValue<CNInstantMessageAddress>]",
+      "desc": "An array of labeled IM addresses for the contact."
+    },
+    {
+      "name": "class func localizedString(forKey: String) -> String",
+      "desc": "Returns a string containing the localized contact property name."
+    },
+    {
+      "name": "class func descriptorForAllComparatorKeys() -> CNKeyDescriptor",
+      "desc": "Fetches all the keys required for the contact sort comparator."
+    },
+    {
+      "name": "class func comparator(forNameSortOrder: CNContactSortOrder) -> Comparator",
+      "desc": "Returns a comparator to sort contacts with the specified order."
+    },
+    {
+      "name": "func isUnifiedWithContact(withIdentifier: String) -> Bool",
+      "desc": "Returns a Boolean indicating whether the current contact is a unified contact and includes a contact with the specified identifier."
+    },
+    {
+      "name": "enum CNContactSortOrder",
+      "desc": "Indicates the sorting order for contacts."
+    },
+    {
+      "name": "func isKeyAvailable(String) -> Bool",
+      "desc": "Determines whether the contact property value for the specified key is fetched."
+    },
+    {
+      "name": "func areKeysAvailable([CNKeyDescriptor]) -> Bool",
+      "desc": "Determines whether all contact property values for the specified keys are fetched."
+    },
+    {
+      "name": "class func predicateForContacts(matchingName: String) -> NSPredicate",
+      "desc": "Returns a predicate to find the contacts matching the specified name."
+    },
+    {
+      "name": "class func predicateForContacts(withIdentifiers: [String]) -> NSPredicate",
+      "desc": "Returns a predicate to find the contacts matching the specified identifiers."
+    },
+    {
+      "name": "class func predicateForContactsInGroup(withIdentifier: String) -> NSPredicate",
+      "desc": "Returns a predicate to find the contacts that are members in the specified group."
+    },
+    {
+      "name": "class func predicateForContactsInContainer(withIdentifier: String) -> NSPredicate",
+      "desc": "Returns a predicate to find the contacts in the specified container."
+    },
+    {
+      "name": "class func predicateForContacts(matching: CNPhoneNumber) -> NSPredicate",
+      "desc": "Returns a predicate to find the contacts whose phone number matches the specified value."
+    },
+    {
+      "name": "class func predicateForContacts(matchingEmailAddress: String) -> NSPredicate",
+      "desc": "Returns a predicate to find the contacts whose email address matches the specified value."
+    }
+  ],
+  "declaration": "class CNContact : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSItemProviderReading",
+    "NSItemProviderWriting",
+    "NSMutableCopying",
+    "NSSecureCoding"
+  ]
+}

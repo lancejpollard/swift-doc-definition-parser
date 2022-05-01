@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/applearchive/archiveheader/field",
+  "type": "Enumeration",
+  "name": "ArchiveHeader.Field",
+  "desc": "An enumeration that describes the type, key, and value of a header field.",
+  "items": [
+    {
+      "name": "case blob(key: ArchiveHeader.FieldKey, size: UInt64, offset: UInt64)",
+      "desc": "An enumeration that indicates the field is a data blob."
+    },
+    {
+      "name": "case flag(key: ArchiveHeader.FieldKey)",
+      "desc": "An enumeration that indicates the field is a flag."
+    },
+    {
+      "name": "case hash(key: ArchiveHeader.FieldKey, hashFunction: ArchiveHash, value: ContiguousArray<UInt8>)",
+      "desc": "An enumeration that indicates the field is a hash."
+    },
+    {
+      "name": "case string(key: ArchiveHeader.FieldKey, value: String)",
+      "desc": "An enumeration that indicates the field is a string."
+    },
+    {
+      "name": "case timespec(key: ArchiveHeader.FieldKey, value: timespec)",
+      "desc": "An enumeration that indicates the field is a time value."
+    },
+    {
+      "name": "case uint(key: ArchiveHeader.FieldKey, value: UInt64)",
+      "desc": "An enumeration that indicates the field is an unsigned integer."
+    },
+    {
+      "name": "var key: ArchiveHeader.FieldKey",
+      "desc": "The field key of this field."
+    },
+    {
+      "name": "var type: ArchiveHeader.FieldType",
+      "desc": "The field type of this field."
+    }
+  ],
+  "declaration": "enum Field"
+}

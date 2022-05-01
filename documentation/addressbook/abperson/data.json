@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/addressbook/abperson",
+  "type": "Class",
+  "name": "ABPerson",
+  "desc": "An object that encapsulates all information about a person in the Address Book database.",
+  "items": [
+    {
+      "name": "class func addPropertiesAndTypes([AnyHashable : Any]!) -> Int",
+      "desc": "Adds the given properties to all the records of this type in the Address Book database."
+    },
+    {
+      "name": "class func removeProperties([Any]!) -> Int",
+      "desc": "Removes the given properties from all the records of this type in the Address Book database."
+    },
+    {
+      "name": "class func properties() -> [Any]!",
+      "desc": "Returns an array of the names of all the properties for the record in the Address Book database."
+    },
+    {
+      "name": "class func type(ofProperty: String!) -> ABPropertyType",
+      "desc": "Returns the type of a given property."
+    },
+    {
+      "name": "func linkedPeople() -> [Any]!",
+      "desc": "Returns the array of all person records that are linked to the person this record represents."
+    },
+    {
+      "name": "func parentGroups() -> [Any]!",
+      "desc": "Returns an array of the address book groups that this person belongs to."
+    },
+    {
+      "name": "class func cancelLoadingImageData(forTag: Int)",
+      "desc": "Cancels an asynchronous fetch of the images for a given tag."
+    },
+    {
+      "name": "func beginLoadingImageData(for: ABImageClient!) -> Int",
+      "desc": "Starts an asynchronous fetch for image data in all locations"
+    },
+    {
+      "name": "func imageData() -> Data!",
+      "desc": "Returns data that contains a picture of this person."
+    },
+    {
+      "name": "func setImageData(Data!) -> Bool",
+      "desc": "Sets the image for this person to the given data."
+    },
+    {
+      "name": "class func searchElement(forProperty: String!, label: String!, key: String!, value: Any!, comparison: ABSearchComparison) -> ABSearchElement!",
+      "desc": "Returns a search element object that specifies a query for records of this type."
+    },
+    {
+      "name": "init!(vCardRepresentation: Data!)",
+      "desc": "Returns an ABPerson instance initialized with the given data."
+    },
+    {
+      "name": "func vCardRepresentation() -> Data!",
+      "desc": "Returns the vCard representation of the person record as a data object in vCard format."
+    }
+  ],
+  "declaration": "class ABPerson : ABRecord",
+  "inheritsFrom": [
+    "ABRecord"
+  ]
+}

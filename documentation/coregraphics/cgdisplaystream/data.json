@@ -1,0 +1,77 @@
+{
+  "path": "/documentation/coregraphics/cgdisplaystream",
+  "type": "Class",
+  "name": "CGDisplayStream",
+  "desc": "A reference to a display stream object.",
+  "items": [
+    {
+      "name": "init?(display: CGDirectDisplayID, outputWidth: Int, outputHeight: Int, pixelFormat: Int32, properties: CFDictionary?, handler: CGDisplayStreamFrameAvailableHandler?)",
+      "desc": "Creates a new display stream to be used with a CFRunloop."
+    },
+    {
+      "name": "init?(dispatchQueueDisplay: CGDirectDisplayID, outputWidth: Int, outputHeight: Int, pixelFormat: Int32, properties: CFDictionary?, queue: DispatchQueue, handler: CGDisplayStreamFrameAvailableHandler?)",
+      "desc": "Creates a new display stream whose updates are delivered to a dispatch queue."
+    },
+    {
+      "name": "var runLoopSource: CFRunLoopSource?",
+      "desc": "Gets the run loop source for a display stream."
+    },
+    {
+      "name": "class let colorSpace: CFString",
+      "desc": "This key specifies the color space of the output buffer. If this key is not included in the dictionary, the output buffer uses the same color space as the display. The value associated with this key must be a CGColorSpace for the desired color space."
+    },
+    {
+      "name": "class let destinationRect: CFString",
+      "desc": "This key specifies that the display stream outputs the frame data into a subset of the output IOSurface object. If this key is not included in the dictionary, then the entire output surface is used. The value must be created using the dictionaryRepresentation function. The rectangle is specified in pixels in the surface’s coordinate system"
+    },
+    {
+      "name": "class let minimumFrameTime: CFString",
+      "desc": "This key specifies the desired minimum time between frame updates, allowing you to throttle the rate at which updates are received. If this key is not included in the dictionary, the default value is 0, meaning that updates are not throttled. The value must be specified as a CFNumber."
+    },
+    {
+      "name": "class let preserveAspectRatio: CFString",
+      "desc": "This key specifies whether the display stream preserves the aspect ratio of the source pixel data. If this key is not included in the dictionary, then the aspect ratio is preserved. If the aspect ratio is preserved, then the display stream adds black bars to the output data. If the aspect ratio is not preserved, then the pixel data is stretched to fit the output buffer’s dimensions. The value associated with the key must be a CFBoolean."
+    },
+    {
+      "name": "class let queueDepth: CFString",
+      "desc": "This key specifies the number of frames to keep in the queue. If this key is not included in the dictionary, the default value is 3 frames. Specifying more frames uses more memory, but may allow you to process frame data without stalling the display stream. The value associated with this key should be specified as a CFNumber, and should not exceed 8 frames."
+    },
+    {
+      "name": "class let showCursor: CFString",
+      "desc": "This key specifies whether the cursor should appear in the stream. If this key is not included in the dictionary, the cursor is visible. The value must be specified as a CFBoolean."
+    },
+    {
+      "name": "class let sourceRect: CFString",
+      "desc": "This key specifies that the display stream only samples a subset of the display’s framebuffer. If this key is not included in the dictionary, then the entire display is streamed. The value must be created using the dictionaryRepresentation function. The rectangle is specified in points in the display’s logical coordinate system."
+    },
+    {
+      "name": "class var typeID: CFTypeID",
+      "desc": "Returns the type identifier of a Quartz display stream."
+    },
+    {
+      "name": "class let yCbCrMatrix: CFString",
+      "desc": "This key should only be included if you the display stream is creating output frames in either the 420v or 420f formats. It is used to specify the YCbCr matrix applied to the output surface. The value associated with this key must be one of the strings specified in Display Stream YCbCr to RGB conversion Matrix Options."
+    },
+    {
+      "name": "class let yCbCrMatrix_ITU_R_601_4: CFString",
+      "desc": "Specifies the YCbCr to RGB conversion matrix for standard digital television (ITU R 601) images."
+    },
+    {
+      "name": "class let yCbCrMatrix_ITU_R_709_2: CFString",
+      "desc": "Specifies the YCbCr to RGB conversion matrix for HDTV digital television (ITU R 709) images."
+    },
+    {
+      "name": "class let yCbCrMatrix_SMPTE_240M_1995: CFString",
+      "desc": "Specifies the YCbCR to RGB conversion matrix for 1920 x 1135 HDTV (SMPTE 240M 1995)."
+    },
+    {
+      "name": "func start() -> CGError",
+      "desc": "Tells a stream to start sending updates."
+    },
+    {
+      "name": "func stop() -> CGError",
+      "desc": "Tells a stream to stop sending updates."
+    }
+  ],
+  "declaration": "class CGDisplayStream"
+}

@@ -1,0 +1,51 @@
+{
+  "path": "/documentation/coreaudiotypes/smptetime",
+  "type": "Structure",
+  "name": "SMPTETime",
+  "desc": "Specifies a time stamp as one of the SMPTE time types.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(mSubframes: Int16, mSubframeDivisor: Int16, mCounter: UInt32, mType: SMPTETimeType, mFlags: SMPTETimeFlags, mHours: Int16, mMinutes: Int16, mSeconds: Int16, mFrames: Int16)"
+    },
+    {
+      "name": "var mCounter: UInt32",
+      "desc": "The total number of messages received. It takes 8 messages to carry a full SMPTE time code."
+    },
+    {
+      "name": "var mFlags: SMPTETimeFlags",
+      "desc": "A set of flags that indicate the SMPTE state (see SMPTE State Flags)."
+    },
+    {
+      "name": "var mFrames: Int16",
+      "desc": "The value of the frames portion of the SMPTE time."
+    },
+    {
+      "name": "var mHours: Int16",
+      "desc": "The value of the hours portion of the SMPTE time."
+    },
+    {
+      "name": "var mMinutes: Int16",
+      "desc": "The value of the minutes portion of the SMPTE time."
+    },
+    {
+      "name": "var mSeconds: Int16",
+      "desc": "The value of the seconds portion of the SMPTE time."
+    },
+    {
+      "name": "var mSubframeDivisor: Int16",
+      "desc": "The number of subframes per video frame (typically 80)."
+    },
+    {
+      "name": "var mSubframes: Int16",
+      "desc": "A subframe offset to the HH:MM:SS:FF time. You can use this field to position a time marker somewhere within the time span represented by a video frame, if necessary."
+    },
+    {
+      "name": "var mType: SMPTETimeType",
+      "desc": "A SMPTE time type constant indicating the kind of SMPTE time used (see SMPTE Timecode Type Constants)."
+    }
+  ],
+  "declaration": "struct SMPTETime"
+}

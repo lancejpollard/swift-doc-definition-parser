@@ -1,0 +1,141 @@
+{
+  "path": "/documentation/coregraphics/cgfont",
+  "type": "Class",
+  "name": "CGFont",
+  "desc": "A set of character glyphs and layout information for drawing text.",
+  "items": [
+    {
+      "name": "init?(CGDataProvider)",
+      "desc": "Creates a font object from data supplied from a data provider."
+    },
+    {
+      "name": "init?(CFString)",
+      "desc": "Creates a font object corresponding to the font specified by a PostScript or full name."
+    },
+    {
+      "name": "var fullName: CFString?",
+      "desc": "Returns the full name associated with a font object."
+    },
+    {
+      "name": "var ascent: Int32",
+      "desc": "Returns the ascent of a font."
+    },
+    {
+      "name": "var capHeight: Int32",
+      "desc": "Returns the cap height of a font."
+    },
+    {
+      "name": "var descent: Int32",
+      "desc": "Returns the descent of a font."
+    },
+    {
+      "name": "var fontBBox: CGRect",
+      "desc": "Returns the bounding box of a font."
+    },
+    {
+      "name": "var italicAngle: CGFloat",
+      "desc": "Returns the italic angle of a font."
+    },
+    {
+      "name": "var leading: Int32",
+      "desc": "Returns the leading of a font."
+    },
+    {
+      "name": "var stemV: CGFloat",
+      "desc": "Returns the thickness of the dominant vertical stems of glyphs in a font."
+    },
+    {
+      "name": "var unitsPerEm: Int32",
+      "desc": "Returns the number of glyph space units per em for the provided font."
+    },
+    {
+      "name": "var xHeight: Int32",
+      "desc": "Returns the x-height of a font."
+    },
+    {
+      "name": "var postScriptName: CFString?",
+      "desc": "Obtains the PostScript name of a font."
+    },
+    {
+      "name": "func canCreatePostScriptSubset(CGFontPostScriptFormat) -> Bool",
+      "desc": "Determines whether Core Graphics can create a subset of the font in PostScript format."
+    },
+    {
+      "name": "func createPostScriptSubset(subsetName: CFString, format: CGFontPostScriptFormat, glyphs: UnsafePointer<CGGlyph>?, count: Int, encoding: UnsafePointer<CGGlyph>?) -> CFData?",
+      "desc": "Creates a subset of the font in the specified PostScript format."
+    },
+    {
+      "name": "enum CGFontPostScriptFormat",
+      "desc": "Possible formats for a PostScript font subset."
+    },
+    {
+      "name": "func createPostScriptEncoding(encoding: UnsafePointer<CGGlyph>?) -> CFData?",
+      "desc": "Creates a PostScript encoding of a font."
+    },
+    {
+      "name": "var tableTags: CFArray?",
+      "desc": "Returns an array of tags that correspond to the font tables for a font."
+    },
+    {
+      "name": "func table(for: UInt32) -> CFData?",
+      "desc": "Returns the font table that corresponds to the provided tag."
+    },
+    {
+      "name": "func copy(withVariations: CFDictionary?) -> CGFont?",
+      "desc": "Creates a copy of a font using a variation specification dictionary."
+    },
+    {
+      "name": "var variations: CFDictionary?",
+      "desc": "Returns the variation specification dictionary for a font."
+    },
+    {
+      "name": "var variationAxes: CFArray?",
+      "desc": "Returns an array of the variation axis dictionaries for a font."
+    },
+    {
+      "name": "var numberOfGlyphs: Int",
+      "desc": "Returns the number of glyphs in a font."
+    },
+    {
+      "name": "func name(for: CGGlyph) -> CFString?",
+      "desc": "Returns the glyph name of the specified glyph in the specified font."
+    },
+    {
+      "name": "func getGlyphWithGlyphName(name: CFString) -> CGGlyph",
+      "desc": "Returns the glyph for the glyph name associated with the specified font object."
+    },
+    {
+      "name": "func getGlyphBBoxes(glyphs: UnsafePointer<CGGlyph>, count: Int, bboxes: UnsafeMutablePointer<CGRect>) -> Bool",
+      "desc": "Get the bounding box of each glyph in an array."
+    },
+    {
+      "name": "func getGlyphAdvances(glyphs: UnsafePointer<CGGlyph>, count: Int, advances: UnsafeMutablePointer<Int32>) -> Bool",
+      "desc": "Gets the advance width of each glyph in the provided array."
+    },
+    {
+      "name": "typealias CGGlyph",
+      "desc": "An index into the internal glyph table of a font."
+    },
+    {
+      "name": "let kCGGlyphMax: CGFontIndex",
+      "desc": "The maximum allowed value of a CGGlyph."
+    },
+    {
+      "name": "typealias CGFontIndex",
+      "desc": "An index into a font table."
+    },
+    {
+      "name": "let kCGFontIndexMax: CGFontIndex",
+      "desc": "The maximum allowed value of a CGFontIndex."
+    },
+    {
+      "name": "let kCGFontIndexInvalid: CGFontIndex",
+      "desc": "A value representing an invalid CGFontIndex."
+    },
+    {
+      "name": "class var typeID: CFTypeID",
+      "desc": "Returns the Core Foundation type identifier for Core Graphics fonts."
+    }
+  ],
+  "declaration": "class CGFont"
+}

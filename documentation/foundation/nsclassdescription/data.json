@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/foundation/nsclassdescription",
+  "type": "Class",
+  "name": "NSClassDescription",
+  "desc": "An abstract class that provides the interface for querying the relationships and properties of a class.",
+  "items": [
+    {
+      "name": "init?(for: AnyClass)",
+      "desc": "Returns the class description for a given class."
+    },
+    {
+      "name": "class func invalidateClassDescriptionCache()",
+      "desc": "Removes all NSClassDescription objects from the cache."
+    },
+    {
+      "name": "class func register(NSClassDescription, for: AnyClass)",
+      "desc": "Registers an NSClassDescription object for a given class in the NSClassDescription cache."
+    },
+    {
+      "name": "var attributeKeys: [String]",
+      "desc": "Overridden by subclasses to return the names of attributes of instances of the described class."
+    },
+    {
+      "name": "func inverse(forRelationshipKey: String) -> String?",
+      "desc": "Overridden by subclasses to return the name of the inverse relationship from a relationship specified by a given key."
+    },
+    {
+      "name": "var toManyRelationshipKeys: [String]",
+      "desc": "Overridden by subclasses to return the keys for the to-many relationship properties of instances of the described class."
+    },
+    {
+      "name": "var toOneRelationshipKeys: [String]",
+      "desc": "Overridden by subclasses to return the keys for the to-one relationship properties of instances of the described class."
+    },
+    {
+      "name": "static let NSClassDescriptionNeededForClass: NSNotification.Name",
+      "desc": "Posted by init(for:) when a class description cannot be found for a class."
+    }
+  ],
+  "declaration": "class NSClassDescription : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

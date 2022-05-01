@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/eventkit/ekobject",
+  "type": "Class",
+  "name": "EKObject",
+  "desc": "An abstract superclass for all EventKit classes that have persistent instances.",
+  "items": [
+    {
+      "name": "var hasChanges: Bool",
+      "desc": "Returns whether this object or any of the objects it contains has uncommitted changes."
+    },
+    {
+      "name": "var isNew: Bool",
+      "desc": "A Boolean value that indicates whether this object has ever been saved."
+    },
+    {
+      "name": "func refresh() -> Bool",
+      "desc": "Merges changes to this object with the latest saved values."
+    },
+    {
+      "name": "func reset()",
+      "desc": "Returns this object to its saved state."
+    },
+    {
+      "name": "func rollback()",
+      "desc": "Rolls back the property values of this object to its original state when it was first fetched."
+    }
+  ],
+  "declaration": "class EKObject : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

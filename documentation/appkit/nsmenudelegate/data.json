@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/appkit/nsmenudelegate",
+  "type": "Protocol",
+  "name": "NSMenuDelegate",
+  "desc": "The optional methods implemented by delegates of NSMenu objects to manage menu display and handle some events.",
+  "items": [
+    {
+      "name": "func menuHasKeyEquivalent(NSMenu, for: NSEvent, target: AutoreleasingUnsafeMutablePointer<AnyObject?>, action: UnsafeMutablePointer<Selector?>) -> Bool",
+      "desc": "Invoked to allow the delegate to return the target and action for a key-down event."
+    },
+    {
+      "name": "func menu(NSMenu, update: NSMenuItem, at: Int, shouldCancel: Bool) -> Bool",
+      "desc": "Invoked to let the delegate update a menu item before it is displayed."
+    },
+    {
+      "name": "func confinementRect(for: NSMenu, on: NSScreen?) -> NSRect",
+      "desc": "Invoked to allow the delegate to specify a display location for the menu."
+    },
+    {
+      "name": "func menu(NSMenu, willHighlight: NSMenuItem?)",
+      "desc": "Invoked to indicate that a menu is about to highlight a given item."
+    },
+    {
+      "name": "func menuWillOpen(NSMenu)",
+      "desc": "Invoked when a menu is about to open."
+    },
+    {
+      "name": "func menuDidClose(NSMenu)",
+      "desc": "Invoked after a menu closed."
+    },
+    {
+      "name": "func numberOfItems(in: NSMenu) -> Int",
+      "desc": "Invoked when a menu is about to be displayed at the start of a tracking session so the delegate can specify the number of items in the menu."
+    },
+    {
+      "name": "func menuNeedsUpdate(NSMenu)",
+      "desc": "Invoked when a menu is about to be displayed at the start of a tracking session."
+    }
+  ],
+  "declaration": "protocol NSMenuDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

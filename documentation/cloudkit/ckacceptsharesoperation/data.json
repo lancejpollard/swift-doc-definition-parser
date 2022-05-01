@@ -1,0 +1,38 @@
+{
+  "path": "/documentation/cloudkit/ckacceptsharesoperation",
+  "type": "Class",
+  "name": "CKAcceptSharesOperation",
+  "desc": "An operation that confirms a user’s participation in a share.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an operation for accepting shares."
+    },
+    {
+      "name": "init(shareMetadatas: [CKShare.Metadata])",
+      "desc": "Creates an operation for accepting the specified shares."
+    },
+    {
+      "name": "var shareMetadatas: [CKShare.Metadata]?",
+      "desc": "The share metadatas to process."
+    },
+    {
+      "name": "var perShareCompletionBlock: ((CKShare.Metadata, CKShare?, Error?) -> Void)?",
+      "desc": "The block to execute as CloudKit processes individual shares."
+    },
+    {
+      "name": "var acceptSharesCompletionBlock: ((Error?) -> Void)?",
+      "desc": "The closure to execute when the operation finishes."
+    },
+    {
+      "name": "var acceptSharesResultBlock: ((Result<Void, Error>) -> Void)?"
+    },
+    {
+      "name": "var perShareResultBlock: ((CKShare.Metadata, Result<CKShare, Error>) -> Void)?"
+    }
+  ],
+  "declaration": "class CKAcceptSharesOperation : CKOperation",
+  "inheritsFrom": [
+    "CKOperation"
+  ]
+}

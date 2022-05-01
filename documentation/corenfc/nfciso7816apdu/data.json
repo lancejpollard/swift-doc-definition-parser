@@ -1,0 +1,47 @@
+{
+  "path": "/documentation/corenfc/nfciso7816apdu",
+  "type": "Class",
+  "name": "NFCISO7816APDU",
+  "desc": "An object representing an ISO 7816 application protocol data unit (APDU).",
+  "items": [
+    {
+      "name": "init(instructionClass: UInt8, instructionCode: UInt8, p1Parameter: UInt8, p2Parameter: UInt8, data: Data, expectedResponseLength: Int)",
+      "desc": "Creates an APDU object with the instruction class and code, parameter bytes, and expected response length."
+    },
+    {
+      "name": "init?(data: Data)",
+      "desc": "Creates an APDU object with the data buffer containing the full APDU."
+    },
+    {
+      "name": "var instructionClass: UInt8",
+      "desc": "The value of the instruction class (CLA) byte."
+    },
+    {
+      "name": "var instructionCode: UInt8",
+      "desc": "The value of the instruction code (INS) byte."
+    },
+    {
+      "name": "var p1Parameter: UInt8",
+      "desc": "The value of the P1 parameter byte."
+    },
+    {
+      "name": "var p2Parameter: UInt8",
+      "desc": "The value of the P2 parameter byte."
+    },
+    {
+      "name": "var data: Data?",
+      "desc": "The data to transmit."
+    },
+    {
+      "name": "var expectedResponseLength: Int",
+      "desc": "The expected response data length (Le) in bytes."
+    }
+  ],
+  "declaration": "class NFCISO7816APDU : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

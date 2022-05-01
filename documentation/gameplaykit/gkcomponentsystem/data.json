@@ -1,0 +1,54 @@
+{
+  "path": "/documentation/gameplaykit/gkcomponentsystem",
+  "type": "Generic Class",
+  "name": "GKComponentSystem",
+  "desc": "Manages periodic update messages for all component objects of a specified class.",
+  "items": [
+    {
+      "name": "init(componentClass: AnyClass)",
+      "desc": "Initializes a component system to manage components of the specified class."
+    },
+    {
+      "name": "var componentClass: AnyClass",
+      "desc": "The class of components managed by the component system."
+    },
+    {
+      "name": "var components: [ComponentType]",
+      "desc": "The component system’s list of components."
+    },
+    {
+      "name": "func addComponent(ComponentType)",
+      "desc": "Adds a component instance to the component system."
+    },
+    {
+      "name": "func addComponent(foundIn: GKEntity)",
+      "desc": "Adds any instances of the component system’s component class in the specified entity to the component system."
+    },
+    {
+      "name": "func removeComponent(ComponentType)",
+      "desc": "Removes the specified component instance from the component system."
+    },
+    {
+      "name": "func removeComponent(foundIn: GKEntity)",
+      "desc": "Removes any instances of the component system’s component class in the specified entity from the component system."
+    },
+    {
+      "name": "func update(deltaTime: TimeInterval)",
+      "desc": "Tells all component instances managed by the system to perform their custom periodic actions."
+    },
+    {
+      "name": "subscript(Int) -> ComponentType",
+      "desc": "Returns the component at the specified index in the system’s list of components."
+    },
+    {
+      "name": "func classForGenericArgument(at: Int) -> AnyClass"
+    }
+  ],
+  "declaration": "class GKComponentSystem<ComponentType> : NSObject where ComponentType : GKComponent",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSFastEnumeration"
+  ]
+}

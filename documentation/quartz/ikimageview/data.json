@@ -1,0 +1,164 @@
+{
+  "path": "/documentation/quartz/ikimageview",
+  "type": "Class",
+  "name": "IKImageView",
+  "desc": "The IKImageView class provides an efficient way to display images in a view while at the same time supporting a number of image editing operations such as rotating, zooming, and cropping.  It supports drag and drop for the NSFilenamesPboardType flavor so that the user can drag an image to the view. If possible, image rendering uses hardware acceleration to achieve optimal performance. The IKImageView class is implemented as a subclass of NSView. Similar to NSImageView, the IKImageView class is used to display a single image.",
+  "items": [
+    {
+      "name": "var delegate: AnyObject!",
+      "desc": "Specifies the delegate object of the receiver."
+    },
+    {
+      "name": "var zoomFactor: CGFloat",
+      "desc": "Specifies the zoom factor for the image view."
+    },
+    {
+      "name": "var rotationAngle: CGFloat",
+      "desc": "Specifies the rotation angle for the image view."
+    },
+    {
+      "name": "var currentToolMode: String!",
+      "desc": "Specifies the current tool mode for the image view."
+    },
+    {
+      "name": "var autoresizes: Bool",
+      "desc": "Specifies the automatic resizing state for the image view."
+    },
+    {
+      "name": "var hasHorizontalScroller: Bool",
+      "desc": "Specifies the horizontal scroll bar state for the image view."
+    },
+    {
+      "name": "var hasVerticalScroller: Bool",
+      "desc": "Specifies the vertical scroll bar state for the image view."
+    },
+    {
+      "name": "var autohidesScrollers: Bool",
+      "desc": "Specifies the automatic-hiding scroll bar state for the image view."
+    },
+    {
+      "name": "var supportsDragAndDrop: Bool",
+      "desc": "Specifies the drag-and-drop support state for the image view."
+    },
+    {
+      "name": "var editable: Bool",
+      "desc": "Specifies the editable state for the image view."
+    },
+    {
+      "name": "var doubleClickOpensImageEditPanel: Bool",
+      "desc": "Specifies the image-opening state of the editing pane in the image view."
+    },
+    {
+      "name": "var imageCorrection: CIFilter!",
+      "desc": "Specifies a Core Image filter for image correction."
+    },
+    {
+      "name": "var backgroundColor: NSColor!",
+      "desc": "Specifies the background color for the image view."
+    },
+    {
+      "name": "func imageSize() -> NSSize",
+      "desc": "Returns the size of the image in the image view."
+    },
+    {
+      "name": "func imageProperties() -> [AnyHashable : Any]!",
+      "desc": "Returns the metadata for the image in the view."
+    },
+    {
+      "name": "func image() -> Unmanaged<CGImage>!",
+      "desc": "Returns the image associated with the view, after any image corrections."
+    },
+    {
+      "name": "func setImage(CGImage!, imageProperties: [AnyHashable : Any]!)",
+      "desc": "Sets the image to display in an image view."
+    },
+    {
+      "name": "func setImageWith(URL!)",
+      "desc": "Initializes an image view with the image specified by a URL."
+    },
+    {
+      "name": "func setRotationAngle(CGFloat, center: NSPoint)",
+      "desc": "Sets the rotation angle at the provided origin."
+    },
+    {
+      "name": "func setImageZoomFactor(CGFloat, center: NSPoint)",
+      "desc": "Sets the zoom factor at the provided origin."
+    },
+    {
+      "name": "func zoomImageToFit(Any!)",
+      "desc": "Zooms the image so that it fits in the image view."
+    },
+    {
+      "name": "func zoomImageToActualSize(Any!)",
+      "desc": "Zooms the image so that it is displayed using its true size."
+    },
+    {
+      "name": "func zoomImage(to: NSRect)",
+      "desc": "Zooms the image so that it fits in the specified rectangle."
+    },
+    {
+      "name": "func zoomIn(Any!)",
+      "desc": "Zooms the image in."
+    },
+    {
+      "name": "func zoomOut(Any!)",
+      "desc": "Zooms the image out."
+    },
+    {
+      "name": "func crop(Any!)",
+      "desc": "Crops the image using the current selection."
+    },
+    {
+      "name": "func flipImageHorizontal(Any!)",
+      "desc": "Flips an image along the horizontal axis."
+    },
+    {
+      "name": "func flipImageVertical(Any!)",
+      "desc": "Flips an image along the vertical axis."
+    },
+    {
+      "name": "func rotateImageLeft(Any!)",
+      "desc": "Rotates the image left (counter-clockwise)."
+    },
+    {
+      "name": "func rotateImageRight(Any!)",
+      "desc": "Rotates the image right (clockwise)."
+    },
+    {
+      "name": "func setOverlay(CALayer!, forType: String!)",
+      "desc": "Sets an overlay type for a Core Animation layer."
+    },
+    {
+      "name": "func overlay(forType: String!) -> CALayer!",
+      "desc": "Returns the Core Animation layer associated with a layer type."
+    },
+    {
+      "name": "func scroll(to: NSPoint)",
+      "desc": "Scrolls the view to the specified point."
+    },
+    {
+      "name": "func scroll(to: NSRect)",
+      "desc": "Scrolls the view so that it includes the provided rectangular area."
+    },
+    {
+      "name": "func convertPoint(toImagePoint: NSPoint) -> NSPoint",
+      "desc": "Converts an image view coordinate to an image coordinate."
+    },
+    {
+      "name": "func convertRect(toImageRect: NSRect) -> NSRect",
+      "desc": "Converts an image view rectangle to an image rectangle."
+    },
+    {
+      "name": "func convertImagePoint(toViewPoint: NSPoint) -> NSPoint",
+      "desc": "Converts an image coordinate to an image view coordinate."
+    },
+    {
+      "name": "func convertImageRect(toViewRect: NSRect) -> NSRect",
+      "desc": "Converts an image rectangle to an image view rectangle."
+    }
+  ],
+  "declaration": "class IKImageView : NSView",
+  "inheritsFrom": [
+    "NSView"
+  ]
+}

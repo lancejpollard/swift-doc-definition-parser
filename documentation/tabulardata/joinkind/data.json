@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/tabulardata/joinkind",
+  "type": "Enumeration",
+  "name": "JoinKind",
+  "desc": "An operation type that joins two data frame types.",
+  "items": [
+    {
+      "name": "static func == (JoinKind, JoinKind) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "case full",
+      "desc": "A join kind that contains every row from both data frame types."
+    },
+    {
+      "name": "case inner",
+      "desc": "A join kind that only contains rows with matching values in both data frame types."
+    },
+    {
+      "name": "case left",
+      "desc": "A join kind that contains all rows from the left data frame type, and only the rows with matching values from the right data frame type."
+    },
+    {
+      "name": "case right",
+      "desc": "A join kind that contains all rows from the right data frame type, and only the rows with matching values from the left data frame type."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    }
+  ],
+  "declaration": "enum JoinKind",
+  "conformsTo": [
+    "Equatable",
+    "Hashable"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "path": "/documentation/scenekit/scnphysicsworld",
+  "type": "Class",
+  "name": "SCNPhysicsWorld",
+  "desc": "The global simulation of collisions, gravity, joints, and other physics effects in a scene.",
+  "items": [
+    {
+      "name": "var gravity: SCNVector3",
+      "desc": "A vector that specifies the gravitational acceleration applied to physics bodies in the physics world."
+    },
+    {
+      "name": "var speed: CGFloat",
+      "desc": "The rate at which the simulation executes."
+    },
+    {
+      "name": "var timeStep: TimeInterval",
+      "desc": "The time interval between updates to the physics simulation."
+    },
+    {
+      "name": "func updateCollisionPairs()",
+      "desc": "Forces the physics engine to reevaluate possible collisions between physics bodies."
+    },
+    {
+      "name": "func addBehavior(SCNPhysicsBehavior)",
+      "desc": "Adds a behavior to the physics world."
+    },
+    {
+      "name": "func removeBehavior(SCNPhysicsBehavior)",
+      "desc": "Removes a behavior from the physics world."
+    },
+    {
+      "name": "var allBehaviors: [SCNPhysicsBehavior]",
+      "desc": "The list of behaviors affecting bodies in the physics world."
+    },
+    {
+      "name": "func removeAllBehaviors()",
+      "desc": "Removes all behaviors affecting bodies in the physics world."
+    },
+    {
+      "name": "var contactDelegate: SCNPhysicsContactDelegate?",
+      "desc": "A delegate that is called when two physics bodies come in contact with each other."
+    },
+    {
+      "name": "func contactTestBetween(SCNPhysicsBody, SCNPhysicsBody, options: [SCNPhysicsWorld.TestOption : Any]?) -> [SCNPhysicsContact]",
+      "desc": "Checks for contacts between two physics bodies."
+    },
+    {
+      "name": "func contactTest(with: SCNPhysicsBody, options: [SCNPhysicsWorld.TestOption : Any]?) -> [SCNPhysicsContact]",
+      "desc": "Checks for contacts between one physics body and any other bodies in the physics world."
+    },
+    {
+      "name": "func rayTestWithSegment(from: SCNVector3, to: SCNVector3, options: [SCNPhysicsWorld.TestOption : Any]?) -> [SCNHitTestResult]",
+      "desc": "Searches for physics bodies along a line segment between two points in the physics world."
+    },
+    {
+      "name": "func convexSweepTest(with: SCNPhysicsShape, from: SCNMatrix4, to: SCNMatrix4, options: [SCNPhysicsWorld.TestOption : Any]?) -> [SCNPhysicsContact]",
+      "desc": "Searches for physics bodies in the space formed by moving a convex shape through the physics world."
+    },
+    {
+      "name": "struct SCNPhysicsWorld.TestOption",
+      "desc": "Keys in options dictionaries that affect how SceneKit searches for bodies in a collision, ray, or sweep test."
+    }
+  ],
+  "declaration": "class SCNPhysicsWorld : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

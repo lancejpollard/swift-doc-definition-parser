@@ -1,0 +1,153 @@
+{
+  "path": "/documentation/foundation/affinetransform",
+  "type": "Structure",
+  "name": "AffineTransform",
+  "desc": "A graphics coordinate transformation.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an affine transformation matrix with identity values."
+    },
+    {
+      "name": "init(m11: CGFloat, m12: CGFloat, m21: CGFloat, m22: CGFloat, tX: CGFloat, tY: CGFloat)",
+      "desc": "Creates an affine transformation."
+    },
+    {
+      "name": "init(rotationByDegrees: CGFloat)",
+      "desc": "Creates an affine transformation matrix from a rotation value (angle in degrees). The matrix takes the following form:"
+    },
+    {
+      "name": "init(rotationByRadians: CGFloat)",
+      "desc": "Creates an affine transformation matrix from rotation value (angle in radians). The matrix takes the following form:"
+    },
+    {
+      "name": "init(scale: CGFloat)",
+      "desc": "Creates an affine transformation matrix from scaling a single value. The matrix takes the following form:"
+    },
+    {
+      "name": "init(scaleByX: CGFloat, byY: CGFloat)",
+      "desc": "Creates an affine transformation matrix from scaling values. The matrix takes the following form:"
+    },
+    {
+      "name": "init(translationByX: CGFloat, byY: CGFloat)",
+      "desc": "Creates an affine transformation matrix from translation values. The matrix takes the following form:"
+    },
+    {
+      "name": "static let identity: AffineTransform",
+      "desc": "An identity affine transformation matrix"
+    },
+    {
+      "name": "func rotate(byDegrees: CGFloat)",
+      "desc": "Mutates an affine transformation matrix from a rotation value (angle α in degrees)."
+    },
+    {
+      "name": "func rotate(byRadians: CGFloat)",
+      "desc": "Mutates an affine transformation matrix from a rotation value (angle α in radians)."
+    },
+    {
+      "name": "func scale(CGFloat)",
+      "desc": "Mutates an affine transformation matrix to perform the given scaling in both x and y dimensions."
+    },
+    {
+      "name": "func scale(x: CGFloat, y: CGFloat)",
+      "desc": "Mutates an affine transformation matrix to perform a scaling in each of the x and y dimensions."
+    },
+    {
+      "name": "func translate(x: CGFloat, y: CGFloat)",
+      "desc": "Mutates an affine transformation matrix to perform the given translation."
+    },
+    {
+      "name": "func append(AffineTransform)",
+      "desc": "Mutates an affine transformation by appending the specified matrix."
+    },
+    {
+      "name": "func prepend(AffineTransform)",
+      "desc": "Mutates an affine transformation by prepending the specified matrix."
+    },
+    {
+      "name": "func invert()",
+      "desc": "Inverts the transformation matrix if possible."
+    },
+    {
+      "name": "func inverted() -> AffineTransform?",
+      "desc": "Returns an inverted version of the matrix if possible, or nil if not."
+    },
+    {
+      "name": "func transform(NSPoint) -> NSPoint",
+      "desc": "Applies the receiver’s transform to the specified point and returns the result."
+    },
+    {
+      "name": "func transform(NSSize) -> NSSize",
+      "desc": "Applies the receiver’s transform to the specified size and returns the results."
+    },
+    {
+      "name": "var m11: CGFloat",
+      "desc": "An element of the transform matrix that contributes scaling, rotation, and shear."
+    },
+    {
+      "name": "var m12: CGFloat",
+      "desc": "An element of the transform matrix that contributes scaling, rotation, and shear."
+    },
+    {
+      "name": "var m21: CGFloat",
+      "desc": "An element of the transform matrix that contributes scaling, rotation, and shear."
+    },
+    {
+      "name": "var m22: CGFloat",
+      "desc": "An element of the transform matrix that contributes scaling, rotation, and shear."
+    },
+    {
+      "name": "var tX: CGFloat",
+      "desc": "An element of the transform matrix that contributes translation."
+    },
+    {
+      "name": "var tY: CGFloat",
+      "desc": "An element of the transform matrix that contributes translation."
+    },
+    {
+      "name": "static func == (AffineTransform, AffineTransform) -> Bool",
+      "desc": "Indicates whether two transforms are the same."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual description of the transform."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual description of the transform suitable for debugging."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The computed hash value for the transform."
+    },
+    {
+      "name": "class NSAffineTransform",
+      "desc": "An object representing a graphics coordinate transformation that bridges to AffineTransform; use NSAffineTransform when you need reference semantics or other Foundation-specific behavior."
+    },
+    {
+      "name": "typealias AffineTransform.ReferenceType",
+      "desc": "An alias for this value type's equivalent reference type."
+    },
+    {
+      "name": "init(from: Decoder)"
+    },
+    {
+      "name": "func encode(to: Encoder)"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "static func != (AffineTransform, AffineTransform) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    }
+  ],
+  "declaration": "Declarationstruct AffineTransform",
+  "conformsTo": [
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Hashable",
+    "ReferenceConvertible"
+  ]
+}

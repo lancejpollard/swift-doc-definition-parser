@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/coremotion/cmmovementdisordermanager",
+  "type": "Class",
+  "name": "CMMovementDisorderManager",
+  "desc": "A manager for recording and querying movement disorder data.",
+  "items": [
+    {
+      "name": "class func isAvailable() -> Bool",
+      "desc": "A Boolean value indicating whether the current device supports the movement disorder manager."
+    },
+    {
+      "name": "class func authorizationStatus() -> CMAuthorizationStatus",
+      "desc": "A value indicating whether the user has authorized the app to monitor and query for movement disorder data."
+    },
+    {
+      "name": "func monitorKinesias(forDuration: TimeInterval)",
+      "desc": "Calculate and store tremor and dyskinetic symptom results for the duration of the specified time interval."
+    },
+    {
+      "name": "func monitorKinesiasExpirationDate() -> Date?",
+      "desc": "Returns the expiration date for the most recent monitoring period."
+    },
+    {
+      "name": "func queryTremor(from: Date, to: Date, withHandler: CMTremorResultHandler)",
+      "desc": "Query for tremor results from the provided time interval."
+    },
+    {
+      "name": "typealias CMTremorResultHandler",
+      "desc": "A completion handler for accessing and processing tremor results."
+    },
+    {
+      "name": "func queryDyskineticSymptom(from: Date, to: Date, withHandler: CMDyskineticSymptomResultHandler)",
+      "desc": "Query for dyskinetic symptoms from the provided time interval."
+    },
+    {
+      "name": "typealias CMDyskineticSymptomResultHandler",
+      "desc": "A completion handler for processing dyskinetic symptom results."
+    },
+    {
+      "name": "func lastProcessedDate() -> Date?",
+      "desc": "Returns the date of the most recently calculated results."
+    }
+  ],
+  "declaration": "class CMMovementDisorderManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

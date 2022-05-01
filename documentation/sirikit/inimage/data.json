@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/sirikit/inimage",
+  "type": "Class",
+  "name": "INImage",
+  "desc": "Image data inside an Intents extension or Intents UI extension.",
+  "items": [
+    {
+      "name": "init(named: String)",
+      "desc": "Creates an image object from an image file in the extension’s bundle."
+    },
+    {
+      "name": "init(uiImage: UIImage)",
+      "desc": "Creates an image object from the specified UIKit image."
+    },
+    {
+      "name": "init(cgImage: CGImage)",
+      "desc": "Creates an image object from the specified Core Graphics image."
+    },
+    {
+      "name": "init(imageData: Data)",
+      "desc": "Creates an image object from the specified data."
+    },
+    {
+      "name": "init?(url: URL)",
+      "desc": "Creates an image object from an image file in the local file system."
+    },
+    {
+      "name": "init?(url: URL, width: Double, height: Double)",
+      "desc": "Creates an image object, of the specified size, from an image file in the local file system."
+    },
+    {
+      "name": "func fetchUIImage(completion: (UIImage?) -> Void)",
+      "desc": "Fetches the image and provides it to the specified completion handler."
+    },
+    {
+      "name": "class func imageSize(for: INIntentResponse) -> CGSize",
+      "desc": "Returns the preferred image size for the specified response object."
+    },
+    {
+      "name": "class func systemImageNamed(String) -> Self",
+      "desc": "Returns an image object that contains the specified system symbol image."
+    }
+  ],
+  "declaration": "class INImage : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

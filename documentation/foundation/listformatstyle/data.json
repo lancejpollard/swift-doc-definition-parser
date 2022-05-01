@@ -1,0 +1,96 @@
+{
+  "path": "/documentation/foundation/listformatstyle",
+  "type": "Generic Structure",
+  "name": "ListFormatStyle",
+  "desc": "A type used to format lists of items with a separator and conjunction appropriate for a given locale.",
+  "items": [
+    {
+      "name": "init(memberStyle: Style)",
+      "desc": "Creates an instance using the provided format style."
+    },
+    {
+      "name": "var width: ListFormatStyle<Style, Base>.Width",
+      "desc": "The size of the list."
+    },
+    {
+      "name": "enum ListFormatStyle.Width",
+      "desc": "The type representing the width of a list."
+    },
+    {
+      "name": "var listType: ListFormatStyle<Style, Base>.ListType",
+      "desc": "The type of the list."
+    },
+    {
+      "name": "enum ListFormatStyle.ListType",
+      "desc": "A type that describes whether the returned list contains cumulative or alternative elements."
+    },
+    {
+      "name": "var locale: Locale",
+      "desc": "The locale to use when formatting items in the list."
+    },
+    {
+      "name": "func locale(Locale) -> ListFormatStyle<Style, Base>",
+      "desc": "Modifies the list format style to use the specified locale."
+    },
+    {
+      "name": "static func list<MemberStyle, Base>(memberStyle: MemberStyle, type: ListFormatStyle<MemberStyle, Base>.ListType, width: ListFormatStyle<MemberStyle, Base>.Width) -> ListFormatStyle<MemberStyle, Base>",
+      "desc": "Creates a list format style using the provided format style and list style."
+    },
+    {
+      "name": "static func list<Base>(type: ListFormatStyle<StringStyle, Base>.ListType, width: ListFormatStyle<StringStyle, Base>.Width) -> ListFormatStyle<StringStyle, Base>",
+      "desc": "Creates a list format style using the provided type and width."
+    },
+    {
+      "name": "func format(Base) -> String",
+      "desc": "Creates a locale-aware string representation of the value."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a new instance by decoding from the given decoder."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes this value into the given encoder."
+    },
+    {
+      "name": "typealias ListFormatStyle.FormatInput",
+      "desc": "The type of data to format."
+    },
+    {
+      "name": "typealias ListFormatStyle.FormatOutput",
+      "desc": "The type of the formatted data."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value of the style format."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "static func != (ListFormatStyle<Style, Base>, ListFormatStyle<Style, Base>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are not equal."
+    },
+    {
+      "name": "static func == (ListFormatStyle<Style, Base>, ListFormatStyle<Style, Base>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are equal."
+    },
+    {
+      "name": "static func currency<Value>(code: String) -> FloatingPointFormatStyle<Value>.Currency"
+    },
+    {
+      "name": "static func currency<V>(code: String) -> IntegerFormatStyle<V>.Currency"
+    },
+    {
+      "name": "static func measurement(width: Measurement<UnitTemperature>.FormatStyle.UnitWidth, usage: MeasurementFormatUnitUsage<UnitTemperature>, hidesScaleName: Bool, numberFormatStyle: FloatingPointFormatStyle<Double>?) -> Measurement<UnitTemperature>.FormatStyle"
+    },
+    {
+      "name": "static func measurement<UnitType>(width: Measurement<UnitType>.FormatStyle.UnitWidth, usage: MeasurementFormatUnitUsage<UnitType>, numberFormatStyle: FloatingPointFormatStyle<Double>?) -> Measurement<UnitType>.FormatStyle"
+    }
+  ],
+  "declaration": "struct ListFormatStyle<Style, Base> where Style : FormatStyle, Base : Sequence, Style.FormatInput == Base.Element, Style.FormatOutput == String",
+  "conformsTo": [
+    "FormatStyle"
+  ]
+}

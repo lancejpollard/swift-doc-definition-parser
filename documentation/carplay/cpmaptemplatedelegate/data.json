@@ -1,0 +1,104 @@
+{
+  "path": "/documentation/carplay/cpmaptemplatedelegate",
+  "type": "Protocol",
+  "name": "CPMapTemplateDelegate",
+  "desc": "The protocol an object implements to handle events from a map template.",
+  "items": [
+    {
+      "name": "func mapTemplate(CPMapTemplate, displayStyleFor: CPManeuver) -> CPManeuverDisplayStyle",
+      "desc": "Asks the delegate for the maneuver’s display style."
+    },
+    {
+      "name": "struct CPManeuverDisplayStyle",
+      "desc": "A display style that determines the visual layout for a maneuver."
+    },
+    {
+      "name": "func mapTemplate(CPMapTemplate, selectedPreviewFor: CPTrip, using: CPRouteChoice)",
+      "desc": "Tells the delegate that the user selected a trip and route choice to preview."
+    },
+    {
+      "name": "func mapTemplate(CPMapTemplate, startedTrip: CPTrip, using: CPRouteChoice)",
+      "desc": "Tells the delegate that the user selected a trip and route choice to navigate."
+    },
+    {
+      "name": "func mapTemplateDidCancelNavigation(CPMapTemplate)",
+      "desc": "Tells the delegate that the system canceled the navigation."
+    },
+    {
+      "name": "func mapTemplate(CPMapTemplate, shouldShowNotificationFor: CPManeuver) -> Bool",
+      "desc": "Asks the delegate whether the system should display the maneuver as a notification when the app is in the background."
+    },
+    {
+      "name": "func mapTemplate(CPMapTemplate, shouldUpdateNotificationFor: CPManeuver, with: CPTravelEstimates) -> Bool",
+      "desc": "Asks the delegate whether the system should display the maneuver with updated travel estimates as a notification when the app is in the background."
+    },
+    {
+      "name": "func mapTemplate(CPMapTemplate, shouldShowNotificationFor: CPNavigationAlert) -> Bool",
+      "desc": "Asks the delegate whether the system should display the navigation alert as a notification when the app is in the background."
+    },
+    {
+      "name": "func mapTemplate(CPMapTemplate, willShow: CPNavigationAlert)",
+      "desc": "Tells the delegate that the system will show the navigation alert."
+    },
+    {
+      "name": "func mapTemplate(CPMapTemplate, didShow: CPNavigationAlert)",
+      "desc": "Tells the delegate that the system showed the navigation alert."
+    },
+    {
+      "name": "func mapTemplate(CPMapTemplate, willDismiss: CPNavigationAlert, dismissalContext: CPNavigationAlert.DismissalContext)",
+      "desc": "Tells the delegate that the system is preparing to dismiss the navigation alert."
+    },
+    {
+      "name": "func mapTemplate(CPMapTemplate, didDismiss: CPNavigationAlert, dismissalContext: CPNavigationAlert.DismissalContext)",
+      "desc": "Tells the delegate that the system dismissed the navigation alert."
+    },
+    {
+      "name": "enum CPNavigationAlert.DismissalContext",
+      "desc": "A set of reasons for dismissing a navigation alert."
+    },
+    {
+      "name": "func mapTemplateDidShowPanningInterface(CPMapTemplate)",
+      "desc": "Tells the delegate that the panning interface is visible on the map."
+    },
+    {
+      "name": "func mapTemplateWillDismissPanningInterface(CPMapTemplate)",
+      "desc": "Tells the delegate that the panning interface will disappear from the map."
+    },
+    {
+      "name": "func mapTemplateDidDismissPanningInterface(CPMapTemplate)",
+      "desc": "Tells the delegate that the panning interface is no longer visible on the map."
+    },
+    {
+      "name": "func mapTemplateDidBeginPanGesture(CPMapTemplate)",
+      "desc": "Tells the delegate that the pan gesture has started."
+    },
+    {
+      "name": "func mapTemplate(CPMapTemplate, panBeganWith: CPMapTemplate.PanDirection)",
+      "desc": "Tells the delegate that the user is starting to pan the map."
+    },
+    {
+      "name": "func mapTemplate(CPMapTemplate, panWith: CPMapTemplate.PanDirection)",
+      "desc": "Tells the delegate that the user is panning in a certain direction on the map."
+    },
+    {
+      "name": "func mapTemplate(CPMapTemplate, panEndedWith: CPMapTemplate.PanDirection)",
+      "desc": "Tells the delegate that the user stopped panning the map."
+    },
+    {
+      "name": "struct CPMapTemplate.PanDirection",
+      "desc": "The directions a user can pan (or move) a map displayed on the CarPlay screen."
+    },
+    {
+      "name": "func mapTemplate(CPMapTemplate, didEndPanGestureWithVelocity: CGPoint)",
+      "desc": "Tells the delegate that the pan gesture ended with the specified velocity."
+    },
+    {
+      "name": "func mapTemplate(CPMapTemplate, didUpdatePanGestureWithTranslation: CGPoint, velocity: CGPoint)",
+      "desc": "Tells the delegate that the pan gesture changed."
+    }
+  ],
+  "declaration": "protocol CPMapTemplateDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

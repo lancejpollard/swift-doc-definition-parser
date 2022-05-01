@@ -1,0 +1,112 @@
+{
+  "path": "/documentation/appkit/nscollectionviewdelegate",
+  "type": "Protocol",
+  "name": "NSCollectionViewDelegate",
+  "desc": "A set of methods that you use to manage the behavior of a collection view.",
+  "items": [
+    {
+      "name": "func collectionView(NSCollectionView, shouldSelectItemsAt: Set<IndexPath>) -> Set<IndexPath>",
+      "desc": "Asks the delegate to approve the pending selection of items."
+    },
+    {
+      "name": "func collectionView(NSCollectionView, didSelectItemsAt: Set<IndexPath>)",
+      "desc": "Notifies the delegate object that one or more items were selected."
+    },
+    {
+      "name": "func collectionView(NSCollectionView, shouldDeselectItemsAt: Set<IndexPath>) -> Set<IndexPath>",
+      "desc": "Asks the delegate object to approve the pending deselection of items."
+    },
+    {
+      "name": "func collectionView(NSCollectionView, didDeselectItemsAt: Set<IndexPath>)",
+      "desc": "Notifies the delegate object that one or more items were deselected."
+    },
+    {
+      "name": "func collectionView(NSCollectionView, shouldChangeItemsAt: Set<IndexPath>, to: NSCollectionViewItem.HighlightState) -> Set<IndexPath>",
+      "desc": "Asks the delegate to approve the pending highlighting of the specified items."
+    },
+    {
+      "name": "func collectionView(NSCollectionView, didChangeItemsAt: Set<IndexPath>, to: NSCollectionViewItem.HighlightState)",
+      "desc": "Notifies the delegate that the highlight state of the specified items changed."
+    },
+    {
+      "name": "func collectionView(NSCollectionView, willDisplay: NSCollectionViewItem, forRepresentedObjectAt: IndexPath)",
+      "desc": "Notifies the delegate that the specified item is about to be displayed by the collection view."
+    },
+    {
+      "name": "func collectionView(NSCollectionView, didEndDisplaying: NSCollectionViewItem, forRepresentedObjectAt: IndexPath)",
+      "desc": "Notifies the delegate that the specified item was removed from the collection view."
+    },
+    {
+      "name": "func collectionView(NSCollectionView, willDisplaySupplementaryView: NSView, forElementKind: NSCollectionView.SupplementaryElementKind, at: IndexPath)",
+      "desc": "Notifies the delegate that the specified supplementary view is about to be displayed by the collection view."
+    },
+    {
+      "name": "func collectionView(NSCollectionView, didEndDisplayingSupplementaryView: NSView, forElementOfKind: NSCollectionView.SupplementaryElementKind, at: IndexPath)",
+      "desc": "Notifies the delegate that the specified supplementary view was removed from the collection view."
+    },
+    {
+      "name": "func collectionView(NSCollectionView, transitionLayoutForOldLayout: NSCollectionViewLayout, newLayout: NSCollectionViewLayout) -> NSCollectionViewTransitionLayout",
+      "desc": "Returns the transition layout object to use when performing an animated change between different layouts."
+    },
+    {
+      "name": "func collectionView(NSCollectionView, canDragItemsAt: Set<IndexPath>, with: NSEvent) -> Bool",
+      "desc": "Returns a Boolean indicating whether a drag operation involving the specified items can begin."
+    },
+    {
+      "name": "func collectionView(NSCollectionView, pasteboardWriterForItemAt: IndexPath) -> NSPasteboardWriting?",
+      "desc": "Provides the pasteboard writer for the item at the specified index path."
+    },
+    {
+      "name": "func collectionView(NSCollectionView, draggingImageForItemsAt: Set<IndexPath>, with: NSEvent, offset: NSPointPointer) -> NSImage",
+      "desc": "Creates and returns a drag image to represent the specified items during a drag."
+    },
+    {
+      "name": "func collectionView(NSCollectionView, draggingSession: NSDraggingSession, willBeginAt: NSPoint, forItemsAt: Set<IndexPath>)",
+      "desc": "Notifies your delegate that a drag session is about to begin."
+    },
+    {
+      "name": "func collectionView(NSCollectionView, draggingSession: NSDraggingSession, endedAt: NSPoint, dragOperation: NSDragOperation)",
+      "desc": "Notifies your delegate that a drag session ended."
+    },
+    {
+      "name": "func collectionView(NSCollectionView, updateDraggingItemsForDrag: NSDraggingInfo)",
+      "desc": "Asks your delegate to update the dragging items during a drag operation."
+    },
+    {
+      "name": "func collectionView(NSCollectionView, validateDrop: NSDraggingInfo, proposedIndexPath: AutoreleasingUnsafeMutablePointer<NSIndexPath>, dropOperation: UnsafeMutablePointer<NSCollectionView.DropOperation>) -> NSDragOperation",
+      "desc": "Validates whether a drop operation is possible at the specified location."
+    },
+    {
+      "name": "func collectionView(NSCollectionView, acceptDrop: NSDraggingInfo, indexPath: IndexPath, dropOperation: NSCollectionView.DropOperation) -> Bool",
+      "desc": "Incorporates the dropped content into the collection view."
+    },
+    {
+      "name": "func collectionView(NSCollectionView, canDragItemsAt: IndexSet, with: NSEvent) -> Bool",
+      "desc": "Returns a Boolean indicating whether the collection view can begin dragging the specified items."
+    },
+    {
+      "name": "func collectionView(NSCollectionView, pasteboardWriterForItemAt: Int) -> NSPasteboardWriting?",
+      "desc": "Provides the pasteboard writer for the item at the specified index"
+    },
+    {
+      "name": "func collectionView(NSCollectionView, draggingImageForItemsAt: IndexSet, with: NSEvent, offset: NSPointPointer) -> NSImage",
+      "desc": "Creates and returns a drag image to represent the specified items during a drag."
+    },
+    {
+      "name": "func collectionView(NSCollectionView, draggingSession: NSDraggingSession, willBeginAt: NSPoint, forItemsAt: IndexSet)",
+      "desc": "Notifies your delegate that a drag session is about to begin."
+    },
+    {
+      "name": "func collectionView(NSCollectionView, validateDrop: NSDraggingInfo, proposedIndex: UnsafeMutablePointer<Int>, dropOperation: UnsafeMutablePointer<NSCollectionView.DropOperation>) -> NSDragOperation",
+      "desc": "Validates the specified location to see if it is a valid drop target."
+    },
+    {
+      "name": "func collectionView(NSCollectionView, acceptDrop: NSDraggingInfo, index: Int, dropOperation: NSCollectionView.DropOperation) -> Bool",
+      "desc": "Invoked when the mouse is released over a collection view that previously allowed a drop."
+    }
+  ],
+  "declaration": "protocol NSCollectionViewDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "path": "/documentation/os/ossignpostid",
+  "type": "Structure",
+  "name": "OSSignpostID",
+  "desc": "An identifier that disambiguates signposted intervals.",
+  "items": [
+    {
+      "name": "static let exclusive: OSSignpostID",
+      "desc": "A signpost identifier that indicates no overlap among different signpost time intervals."
+    },
+    {
+      "name": "static let invalid: OSSignpostID",
+      "desc": "A signpost identifier that indicates an error."
+    },
+    {
+      "name": "static let null: OSSignpostID",
+      "desc": "A signpost identifier that indicates a disabled signpost."
+    },
+    {
+      "name": "init(UInt64)",
+      "desc": "Creates a signpost ID from an arbitrary 64-bit integer value."
+    },
+    {
+      "name": "init(log: OSLog)",
+      "desc": "Creates a signpost ID for the specified log."
+    },
+    {
+      "name": "init(log: OSLog, object: AnyObject)",
+      "desc": "Creates a signpost ID and associates it with the specified object."
+    },
+    {
+      "name": "let rawValue: os_signpost_id_t",
+      "desc": "The signpost ID’s raw value."
+    },
+    {
+      "name": "static func == (OSSignpostID, OSSignpostID) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two signpost IDs are equal."
+    },
+    {
+      "name": "static func != (OSSignpostID, OSSignpostID) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two signpost IDs are unequal."
+    },
+    {
+      "name": "static func < (OSSignpostID, OSSignpostID) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether one signpost ID is less than another."
+    },
+    {
+      "name": "static func <= (OSSignpostID, OSSignpostID) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than or equal to that of the second argument."
+    },
+    {
+      "name": "static func > (OSSignpostID, OSSignpostID) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than that of the second argument."
+    },
+    {
+      "name": "static func >= (OSSignpostID, OSSignpostID) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than or equal to that of the second argument."
+    },
+    {
+      "name": "static func ... (OSSignpostID) -> PartialRangeFrom<OSSignpostID>",
+      "desc": "Returns a partial range extending upward from a lower bound."
+    },
+    {
+      "name": "static func ... (OSSignpostID) -> PartialRangeThrough<OSSignpostID>",
+      "desc": "Returns a partial range up to, and including, its upper bound."
+    },
+    {
+      "name": "static func ... (OSSignpostID, OSSignpostID) -> ClosedRange<OSSignpostID>",
+      "desc": "Returns a closed range that contains both of its bounds."
+    },
+    {
+      "name": "static func ..< (OSSignpostID) -> PartialRangeUpTo<OSSignpostID>",
+      "desc": "Returns a partial range up to, but not including, its upper bound."
+    },
+    {
+      "name": "static func ..< (OSSignpostID, OSSignpostID) -> Range<OSSignpostID>",
+      "desc": "Returns a half-open range that contains its lower bound but not its upper bound."
+    }
+  ],
+  "declaration": "struct OSSignpostID",
+  "conformsTo": [
+    "Comparable"
+  ]
+}

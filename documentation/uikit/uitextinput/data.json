@@ -1,0 +1,219 @@
+{
+  "path": "/documentation/uikit/uitextinput",
+  "type": "Protocol",
+  "name": "UITextInput",
+  "desc": "A set of methods for interacting with the text input system and enabling features, such as autocorrect and multistage text input, in documents.",
+  "items": [
+    {
+      "name": "var inputDelegate: UITextInputDelegate?",
+      "desc": "An input delegate that receives a notification when text changes or when the selection changes."
+    },
+    {
+      "name": "protocol UITextInputDelegate",
+      "desc": "An intermediary between a document and the text input system."
+    },
+    {
+      "name": "func text(in: UITextRange) -> String?",
+      "desc": "Returns the text in the specified range."
+    },
+    {
+      "name": "func replace(UITextRange, withText: String)",
+      "desc": "Replaces the text in a document that is in the specified range."
+    },
+    {
+      "name": "func shouldChangeText(in: UITextRange, replacementText: String) -> Bool",
+      "desc": "Asks whether to replace the text in the specified range."
+    },
+    {
+      "name": "var selectedTextRange: UITextRange?",
+      "desc": "The range of selected text in a document."
+    },
+    {
+      "name": "var markedTextRange: UITextRange?",
+      "desc": "The range of currently marked text in a document."
+    },
+    {
+      "name": "var markedTextStyle: [NSAttributedString.Key : Any]?",
+      "desc": "A dictionary of attributes that describes how to draw marked text."
+    },
+    {
+      "name": "func setMarkedText(String?, selectedRange: NSRange)",
+      "desc": "Inserts the provided text and marks it to indicate that it is part of an active input session."
+    },
+    {
+      "name": "func setAttributedMarkedText(NSAttributedString?, selectedRange: NSRange)",
+      "desc": "Inserts the provided styled text and marks it to indicate that it is part of an active input session."
+    },
+    {
+      "name": "func unmarkText()",
+      "desc": "Unmarks the currently marked text."
+    },
+    {
+      "name": "var selectionAffinity: UITextStorageDirection",
+      "desc": "The desired location for the insertion point."
+    },
+    {
+      "name": "func textRange(from: UITextPosition, to: UITextPosition) -> UITextRange?",
+      "desc": "Returns the range between two text positions."
+    },
+    {
+      "name": "func position(from: UITextPosition, offset: Int) -> UITextPosition?",
+      "desc": "Returns the text position at a specified offset from another text position."
+    },
+    {
+      "name": "func position(from: UITextPosition, in: UITextLayoutDirection, offset: Int) -> UITextPosition?",
+      "desc": "Returns the text position at a specified offset in a specified direction from another text position."
+    },
+    {
+      "name": "var beginningOfDocument: UITextPosition",
+      "desc": "The text position for the beginning of a document."
+    },
+    {
+      "name": "var endOfDocument: UITextPosition",
+      "desc": "The text position for the end of a document."
+    },
+    {
+      "name": "func compare(UITextPosition, to: UITextPosition) -> ComparisonResult",
+      "desc": "Returns how one text position compares to another text position."
+    },
+    {
+      "name": "func offset(from: UITextPosition, to: UITextPosition) -> Int",
+      "desc": "Returns the number of UTF-16 characters between one text position and another text position."
+    },
+    {
+      "name": "func position(within: UITextRange, farthestIn: UITextLayoutDirection) -> UITextPosition?",
+      "desc": "Returns the text position that is at the farthest extent in a specified layout direction within a range of text."
+    },
+    {
+      "name": "func characterRange(byExtending: UITextPosition, in: UITextLayoutDirection) -> UITextRange?",
+      "desc": "Returns a text range from a specified text position to its farthest extent in a certain direction of layout."
+    },
+    {
+      "name": "func baseWritingDirection(for: UITextPosition, in: UITextStorageDirection) -> NSWritingDirection",
+      "desc": "Returns the base writing direction for a position in the text going in a certain direction."
+    },
+    {
+      "name": "func setBaseWritingDirection(NSWritingDirection, for: UITextRange)",
+      "desc": "Sets the base writing direction for a specified range of text in a document."
+    },
+    {
+      "name": "func firstRect(for: UITextRange) -> CGRect",
+      "desc": "Returns the first rectangle that encloses a range of text in a document."
+    },
+    {
+      "name": "func caretRect(for: UITextPosition) -> CGRect",
+      "desc": "Returns a rectangle to draw the caret at a specified insertion point."
+    },
+    {
+      "name": "func closestPosition(to: CGPoint) -> UITextPosition?",
+      "desc": "Returns the position in a document that is closest to a specified point."
+    },
+    {
+      "name": "func selectionRects(for: UITextRange) -> [UITextSelectionRect]",
+      "desc": "Returns an array of selection rects corresponding to the range of text."
+    },
+    {
+      "name": "func closestPosition(to: CGPoint, within: UITextRange) -> UITextPosition?",
+      "desc": "Returns the position in a document that is closest to a specified point in a specified range."
+    },
+    {
+      "name": "func characterRange(at: CGPoint) -> UITextRange?",
+      "desc": "Returns the character or range of characters that is at a specified point in a document."
+    },
+    {
+      "name": "var tokenizer: UITextInputTokenizer",
+      "desc": "An input tokenizer that provides information about the granularity of text units."
+    },
+    {
+      "name": "protocol UITextInputTokenizer",
+      "desc": "A tokenizer, which is an object that allows the text input system to evaluate text units of different granularities."
+    },
+    {
+      "name": "func beginFloatingCursor(at: CGPoint)",
+      "desc": "Called at the beginning of the gesture that the system uses to manipulate the cursor."
+    },
+    {
+      "name": "func updateFloatingCursor(at: CGPoint)",
+      "desc": "Called to move the floating cursor to a new location."
+    },
+    {
+      "name": "func endFloatingCursor()",
+      "desc": "Called at the end of the gesture that the system uses to manipulate the cursor."
+    },
+    {
+      "name": "func dictationRecordingDidEnd()",
+      "desc": "Called when there is a pending dictation result."
+    },
+    {
+      "name": "func dictationRecognitionFailed()",
+      "desc": "Called when dictation ends, but recognition fails."
+    },
+    {
+      "name": "func insertDictationResult([UIDictationPhrase])",
+      "desc": "Called when there is more than one interpretation of a spoken phrase in a dictation result."
+    },
+    {
+      "name": "var insertDictationResultPlaceholder: Any",
+      "desc": "Asks for the placeholder object to use while generating dictation results."
+    },
+    {
+      "name": "func frame(forDictationResultPlaceholder: Any) -> CGRect",
+      "desc": "Asks for the rectangle for displaying the dictation placeholder animation."
+    },
+    {
+      "name": "func removeDictationResultPlaceholder(Any, willInsertResult: Bool)",
+      "desc": "Tells the view that the specified placeholder object is unnecessary."
+    },
+    {
+      "name": "func insertTextPlaceholder(with: CGSize) -> UITextPlaceholder",
+      "desc": "Inserts a placeholder object to reserve visual space during text input."
+    },
+    {
+      "name": "func remove(UITextPlaceholder)",
+      "desc": "Removes a placeholder object from the text input view."
+    },
+    {
+      "name": "class UITextPlaceholder",
+      "desc": "A placeholder object that reserves visual space in a text input view."
+    },
+    {
+      "name": "func insertText(String, alternatives: [String], style: UITextAlternativeStyle)"
+    },
+    {
+      "name": "enum UITextAlternativeStyle",
+      "desc": "A constant that determines if the system highlights alternative phrases during text input."
+    },
+    {
+      "name": "func textStyling(at: UITextPosition, in: UITextStorageDirection) -> [NSAttributedString.Key : Any]?",
+      "desc": "Returns a dictionary with properties that specify how to style the text at a certain location in a document."
+    },
+    {
+      "name": "func position(within: UITextRange, atCharacterOffset: Int) -> UITextPosition?",
+      "desc": "Returns the position within a range of a document’s text that corresponds to the character offset from the start of that range."
+    },
+    {
+      "name": "func characterOffset(of: UITextPosition, within: UITextRange) -> Int",
+      "desc": "Returns the character offset of a position in a document’s text that falls within a specified range."
+    },
+    {
+      "name": "var textInputView: UIView",
+      "desc": "An affiliated view that provides a coordinate system for all geometric values in the protocol."
+    },
+    {
+      "name": "struct UITextDirection",
+      "desc": "The direction of the text."
+    },
+    {
+      "name": "enum UITextStorageDirection",
+      "desc": "The direction of text storage."
+    },
+    {
+      "name": "enum UITextLayoutDirection",
+      "desc": "The direction of text layout."
+    }
+  ],
+  "declaration": "@MainActor protocol UITextInput",
+  "inheritsFrom": [
+    "UIKeyInput"
+  ]
+}

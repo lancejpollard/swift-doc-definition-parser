@@ -1,0 +1,51 @@
+{
+  "path": "/documentation/corefoundation/cfrunloopsourcecontext1",
+  "type": "Structure",
+  "name": "CFRunLoopSourceContext1",
+  "desc": "A structure that contains program-defined data and callbacks with which you can configure a version 1 CFRunLoopSource’s behavior.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(version: CFIndex, info: UnsafeMutableRawPointer!, retain: ((UnsafeRawPointer?) -> UnsafeRawPointer?)!, release: ((UnsafeRawPointer?) -> Void)!, copyDescription: ((UnsafeRawPointer?) -> Unmanaged<CFString>?)!, equal: ((UnsafeRawPointer?, UnsafeRawPointer?) -> DarwinBoolean)!, hash: ((UnsafeRawPointer?) -> CFHashCode)!, getPort: ((UnsafeMutableRawPointer?) -> mach_port_t)!, perform: ((UnsafeMutableRawPointer?, CFIndex, CFAllocator?, UnsafeMutableRawPointer?) -> UnsafeMutableRawPointer?)!)"
+    },
+    {
+      "name": "var copyDescription: ((UnsafeRawPointer?) -> Unmanaged<CFString>?)!",
+      "desc": "A copy description callback for your program-defined info pointer. Can be NULL."
+    },
+    {
+      "name": "var equal: ((UnsafeRawPointer?, UnsafeRawPointer?) -> DarwinBoolean)!",
+      "desc": "An equality test callback for your program-defined info pointer. Can be NULL."
+    },
+    {
+      "name": "var getPort: ((UnsafeMutableRawPointer?) -> mach_port_t)!",
+      "desc": "A callback to retrieve the native Mach port represented by the source. This callback is called when the source is either added to or removed from a run loop mode."
+    },
+    {
+      "name": "var hash: ((UnsafeRawPointer?) -> CFHashCode)!",
+      "desc": "A hash calculation callback for your program-defined info pointer. Can be NULL."
+    },
+    {
+      "name": "var info: UnsafeMutableRawPointer!",
+      "desc": "An arbitrary pointer to program-defined data, which can be associated with the run loop source at creation time. This pointer is passed to all the callbacks defined in the context."
+    },
+    {
+      "name": "var perform: ((UnsafeMutableRawPointer?, CFIndex, CFAllocator?, UnsafeMutableRawPointer?) -> UnsafeMutableRawPointer?)!",
+      "desc": "A perform callback for the run loop source. This callback is called when the source has fired."
+    },
+    {
+      "name": "var release: ((UnsafeRawPointer?) -> Void)!",
+      "desc": "A release callback for your program-defined info pointer. Can be NULL."
+    },
+    {
+      "name": "var retain: ((UnsafeRawPointer?) -> UnsafeRawPointer?)!",
+      "desc": "A retain callback for your program-defined info pointer. Can be NULL."
+    },
+    {
+      "name": "var version: CFIndex",
+      "desc": "Version number of the structure. Must be 1."
+    }
+  ],
+  "declaration": "struct CFRunLoopSourceContext1"
+}

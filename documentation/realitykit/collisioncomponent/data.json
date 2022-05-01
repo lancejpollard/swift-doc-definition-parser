@@ -1,0 +1,53 @@
+{
+  "path": "/documentation/realitykit/collisioncomponent",
+  "type": "Structure",
+  "name": "CollisionComponent",
+  "desc": "A component that gives an entity the ability to collide with other entities that also have collision components.",
+  "items": [
+    {
+      "name": "init(shapes: [ShapeResource], mode: CollisionComponent.Mode, filter: CollisionFilter)",
+      "desc": "Creates a collision component with the given collision shape, mode, and filter parameters."
+    },
+    {
+      "name": "var mode: CollisionComponent.Mode",
+      "desc": "The collision mode."
+    },
+    {
+      "name": "enum CollisionComponent.Mode",
+      "desc": "A mode that dictates how much collision data is collected for a given entity."
+    },
+    {
+      "name": "var filter: CollisionFilter",
+      "desc": "The collision filter used to segregate entities into different collision groups."
+    },
+    {
+      "name": "struct CollisionFilter",
+      "desc": "A set of masks that determine whether entities can collide during simulations."
+    },
+    {
+      "name": "var shapes: [ShapeResource]",
+      "desc": "A collection of shape resources that collectively represent the outer dimensions of an entity for the purposes of collision detection."
+    },
+    {
+      "name": "class ShapeResource",
+      "desc": "A representation of a shape."
+    },
+    {
+      "name": "static func registerComponent()",
+      "desc": "Registers a new component type."
+    },
+    {
+      "name": "static func == (CollisionComponent, CollisionComponent) -> Bool",
+      "desc": "Indicates whether two collision components are equal."
+    },
+    {
+      "name": "static func != (CollisionComponent, CollisionComponent) -> Bool",
+      "desc": "Indicates whether two collision components are not equal."
+    }
+  ],
+  "declaration": "struct CollisionComponent",
+  "conformsTo": [
+    "Component",
+    "Equatable"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/sirikit/insetprofileincarintenthandling",
+  "type": "Protocol",
+  "name": "INSetProfileInCarIntentHandling",
+  "desc": "The handler interface for restoring vehicle environment settings from a user-specified profile.DeprecatedThis intent is no longer available. You may define a custom intent instead. For more information, see Deprecated SiriKit Intent Domains.",
+  "items": [
+    {
+      "name": "func resolveProfileNumber(for: INSetProfileInCarIntent, with: (INIntegerResolutionResult) -> Void)",
+      "desc": "Resolves the profile index from which to restore any settings."
+    },
+    {
+      "name": "func resolveProfileName(for: INSetProfileInCarIntent, with: (INStringResolutionResult) -> Void)",
+      "desc": "Resolves the profile name from which to retrieve settings."
+    },
+    {
+      "name": "func resolveCarName(for: INSetProfileInCarIntent, with: (INSpeakableStringResolutionResult) -> Void)",
+      "desc": "Resolves the car name."
+    },
+    {
+      "name": "func resolveDefaultProfile(forSetProfileInCar: INSetProfileInCarIntent, with: (INBooleanResolutionResult) -> Void)",
+      "desc": "Resolves whether the profile can become the default profile."
+    },
+    {
+      "name": "func confirm(intent: INSetProfileInCarIntent, completion: (INSetProfileInCarIntentResponse) -> Void)",
+      "desc": "Confirms whether you can restore the settings from the designated profile."
+    },
+    {
+      "name": "func handle(intent: INSetProfileInCarIntent, completion: (INSetProfileInCarIntentResponse) -> Void)",
+      "desc": "Handles restoring settings from the designated profile."
+    }
+  ],
+  "declaration": "protocol INSetProfileInCarIntentHandling",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

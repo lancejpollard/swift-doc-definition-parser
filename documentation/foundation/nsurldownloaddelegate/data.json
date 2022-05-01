@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/foundation/nsurldownloaddelegate",
+  "type": "Protocol",
+  "name": "NSURLDownloadDelegate",
+  "desc": "A protocol that URL download delegates implement to interact with a URL download request.",
+  "items": [
+    {
+      "name": "func download(NSURLDownload, canAuthenticateAgainstProtectionSpace: URLProtectionSpace) -> Bool",
+      "desc": "Sent to determine whether the delegate is able to respond to a protection space’s form of authentication."
+    },
+    {
+      "name": "func download(NSURLDownload, didCancel: URLAuthenticationChallenge)",
+      "desc": "Sent if an authentication challenge is canceled due to the protocol implementation encountering an error."
+    },
+    {
+      "name": "func download(NSURLDownload, didReceive: URLAuthenticationChallenge)",
+      "desc": "Sent when the URL download must authenticate a challenge in order to download the request."
+    },
+    {
+      "name": "func downloadShouldUseCredentialStorage(NSURLDownload) -> Bool",
+      "desc": "Sent to determine whether the URL loader should consult the credential storage to authenticate the download."
+    },
+    {
+      "name": "func download(NSURLDownload, decideDestinationWithSuggestedFilename: String)",
+      "desc": "The delegate receives this message when download has determined a suggested filename for the downloaded file."
+    },
+    {
+      "name": "func downloadDidBegin(NSURLDownload)",
+      "desc": "Sent immediately after a download object begins a download."
+    },
+    {
+      "name": "func download(NSURLDownload, didCreateDestination: String)",
+      "desc": "Sent when the destination file is created."
+    },
+    {
+      "name": "func download(NSURLDownload, didReceive: URLResponse)",
+      "desc": "Sent when a download object has received sufficient load data to construct the NSURLResponse object for the download."
+    },
+    {
+      "name": "func download(NSURLDownload, didReceiveDataOfLength: Int)",
+      "desc": "Sent as a download object receives data incrementally."
+    },
+    {
+      "name": "func download(NSURLDownload, shouldDecodeSourceDataOfMIMEType: String) -> Bool",
+      "desc": "Sent when a download object determines that the downloaded file is encoded to inquire whether the file should be automatically decoded."
+    },
+    {
+      "name": "func download(NSURLDownload, willResumeWith: URLResponse, fromByte: Int64)",
+      "desc": "Sent when a download object has received a response from the server after attempting to resume a download."
+    },
+    {
+      "name": "func download(NSURLDownload, willSend: URLRequest, redirectResponse: URLResponse?) -> URLRequest?",
+      "desc": "Sent when the download object determines that it must change URLs in order to continue loading a request."
+    },
+    {
+      "name": "func download(NSURLDownload, didFailWithError: Error)",
+      "desc": "Sent if the download fails or if an I/O error occurs when the file is written to disk."
+    },
+    {
+      "name": "func downloadDidFinish(NSURLDownload)",
+      "desc": "Sent when a download object has completed downloading successfully and has written its results to disk."
+    }
+  ],
+  "declaration": "protocol NSURLDownloadDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

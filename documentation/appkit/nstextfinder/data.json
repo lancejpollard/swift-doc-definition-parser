@@ -1,0 +1,74 @@
+{
+  "path": "/documentation/appkit/nstextfinder",
+  "type": "Class",
+  "name": "NSTextFinder",
+  "desc": "An optional search-and-replace find interface inside a view, usually a scroll view.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Initializes and returns a new NSTextFinder instance."
+    },
+    {
+      "name": "func performAction(NSTextFinder.Action)",
+      "desc": "Performs the specified text finding action."
+    },
+    {
+      "name": "func validateAction(NSTextFinder.Action) -> Bool",
+      "desc": "Allows validation of the find action before performing."
+    },
+    {
+      "name": "func cancelFindIndicator()",
+      "desc": "Cancels the find indicator immediately."
+    },
+    {
+      "name": "var findBarContainer: NSTextFinderBarContainer?",
+      "desc": "Specifies the find bar container."
+    },
+    {
+      "name": "var client: NSTextFinderClient?",
+      "desc": "The object that provides the target search string, find bar location, and feedback methods."
+    },
+    {
+      "name": "func noteClientStringWillChange()",
+      "desc": "Invoke this method when the searched content will change."
+    },
+    {
+      "name": "var findIndicatorNeedsUpdate: Bool",
+      "desc": "Invoke to specify that the find indicator needs updating when not contained within a scroll view."
+    },
+    {
+      "name": "class func drawIncrementalMatchHighlight(in: NSRect)",
+      "desc": "Override this method to draw custom highlighting."
+    },
+    {
+      "name": "var incrementalMatchRanges: [NSValue]",
+      "desc": "Array of incremental search matches posted on the main queue, which have been found during a background search."
+    },
+    {
+      "name": "var isIncrementalSearchingEnabled: Bool",
+      "desc": "Determines if incremental searching is enabled."
+    },
+    {
+      "name": "var incrementalSearchingShouldDimContentView: Bool",
+      "desc": "Determines the type of incremental search feedback to be presented"
+    },
+    {
+      "name": "enum NSTextFinder.Action",
+      "desc": "These constants specify the user interface item tags that correspond find action. These constants are passed to the performTextFinderAction(_:) method, the responder will call the appropriate method for the tag. That method will, in turn, determine the desired action and invoke the appropriate method in the NSTextFinder object’s NSTextFinderClient protocol."
+    },
+    {
+      "name": "enum NSTextFinder.MatchingType",
+      "desc": "The following constants indicate the type of search anchor an action should perform."
+    },
+    {
+      "name": "init(coder: NSCoder)"
+    }
+  ],
+  "declaration": "class NSTextFinder : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding"
+  ]
+}

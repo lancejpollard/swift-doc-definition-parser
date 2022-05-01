@@ -1,0 +1,24 @@
+{
+  "path": "/documentation/networkextension/netunnelprovidersession",
+  "type": "Class",
+  "name": "NETunnelProviderSession",
+  "desc": "An object to start and stop a tunnel connection and get its status.",
+  "items": [
+    {
+      "name": "func startTunnel(options: [String : Any]?)",
+      "desc": "Start the process of connecting the tunnel."
+    },
+    {
+      "name": "func stopTunnel()",
+      "desc": "Start the process of disconnecting the tunnel."
+    },
+    {
+      "name": "func sendProviderMessage(Data, responseHandler: ((Data?) -> Void)?)",
+      "desc": "Send a message to the Tunnel Provider extension. If the extension is not running, it should be launched to handle the message. If this method can’t start sending the message it reports an error in the returnError parameter. If an error occurs while sending the message or returning the result, nil should be sent to the response handler as notification."
+    }
+  ],
+  "declaration": "class NETunnelProviderSession : NEVPNConnection",
+  "inheritsFrom": [
+    "NEVPNConnection"
+  ]
+}

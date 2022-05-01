@@ -1,0 +1,43 @@
+{
+  "path": "/documentation/networkextension/neapprule",
+  "type": "Class",
+  "name": "NEAppRule",
+  "desc": "The identity of an app whose traffic is to be routed through the tunnel.",
+  "items": [
+    {
+      "name": "init(signingIdentifier: String)",
+      "desc": "Create an app rule that matches an app with a given signing identifier."
+    },
+    {
+      "name": "init(signingIdentifier: String, designatedRequirement: String)",
+      "desc": "Create an app rule that matches an app with a given signing identifier and a given designated requirement."
+    },
+    {
+      "name": "var matchSigningIdentifier: String",
+      "desc": "The signing identifier of the app that matches the rule."
+    },
+    {
+      "name": "var matchDesignatedRequirement: String",
+      "desc": "The designated requirement of the app that matches the rule."
+    },
+    {
+      "name": "var matchPath: String?",
+      "desc": "The file system path of the app that matches the rule."
+    },
+    {
+      "name": "var matchDomains: [Any]?",
+      "desc": "The hostname domains that match the rule."
+    },
+    {
+      "name": "var matchTools: [NEAppRule]?"
+    }
+  ],
+  "declaration": "class NEAppRule : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

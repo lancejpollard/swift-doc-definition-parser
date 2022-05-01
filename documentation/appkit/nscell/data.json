@@ -1,0 +1,457 @@
+{
+  "path": "/documentation/appkit/nscell",
+  "type": "Class",
+  "name": "NSCell",
+  "desc": "A mechanism for displaying text or images in a view object without the overhead of a full NSView subclass.",
+  "items": [
+    {
+      "name": "init(imageCell: NSImage?)",
+      "desc": "Returns an NSCell object initialized with the specified image and set to have the cell’s default menu."
+    },
+    {
+      "name": "init(textCell: String)",
+      "desc": "Returns an NSCell object initialized with the specified string and set to have the cell’s default menu."
+    },
+    {
+      "name": "var objectValue: Any?",
+      "desc": "The cell’s value as an Objective-C object."
+    },
+    {
+      "name": "var hasValidObjectValue: Bool",
+      "desc": "A Boolean value that indicates whether the cell has a valid object value."
+    },
+    {
+      "name": "var intValue: Int32",
+      "desc": "The cell’s value as an integer."
+    },
+    {
+      "name": "var integerValue: Int",
+      "desc": "The cell’s value as an NSInteger type."
+    },
+    {
+      "name": "var stringValue: String",
+      "desc": "The cell’s value as a string."
+    },
+    {
+      "name": "var doubleValue: Double",
+      "desc": "The cell’s value as a double-precision floating-point number."
+    },
+    {
+      "name": "var floatValue: Float",
+      "desc": "The cell’s value as a single-precision floating-point number."
+    },
+    {
+      "name": "func setCellAttribute(NSCell.Attribute, to: Int)",
+      "desc": "Sets the value for the specified cell attribute."
+    },
+    {
+      "name": "func cellAttribute(NSCell.Attribute) -> Int",
+      "desc": "Returns the value for the specified cell attribute."
+    },
+    {
+      "name": "var type: NSCell.CellType",
+      "desc": "The type of the cell."
+    },
+    {
+      "name": "var isEnabled: Bool",
+      "desc": "A Boolean value indicating whether the cell is currently enabled."
+    },
+    {
+      "name": "var allowsUndo: Bool",
+      "desc": "A Boolean value indicating whether the cell assumes responsibility for undo operations."
+    },
+    {
+      "name": "var isBezeled: Bool",
+      "desc": "A Boolean value indicating whether the cell has a bezeled border."
+    },
+    {
+      "name": "var isBordered: Bool",
+      "desc": "A Boolean value indicating whether the cell draws itself outlined with a plain border."
+    },
+    {
+      "name": "var isOpaque: Bool",
+      "desc": "A Boolean value indicating whether the cell is completely opaque."
+    },
+    {
+      "name": "var backgroundStyle: NSView.BackgroundStyle",
+      "desc": "The cell’s background style."
+    },
+    {
+      "name": "var interiorBackgroundStyle: NSView.BackgroundStyle",
+      "desc": "The cell’s interior background style."
+    },
+    {
+      "name": "enum NSView.BackgroundStyle",
+      "desc": "Background styles used with the backgroundStyle and interiorBackgroundStyle properties."
+    },
+    {
+      "name": "var allowsMixedState: Bool",
+      "desc": "A Boolean value indicating whether the cell supports three states instead of two."
+    },
+    {
+      "name": "var nextState: Int",
+      "desc": "The cell’s next state."
+    },
+    {
+      "name": "func setNextState()",
+      "desc": "Changes cell’s state to the next value in the sequence."
+    },
+    {
+      "name": "var state: NSControl.StateValue",
+      "desc": "The cell’s current state."
+    },
+    {
+      "name": "struct NSControl.StateValue",
+      "desc": "A constant that indicates whether a control is on, off, or in a mixed state."
+    },
+    {
+      "name": "var isEditable: Bool",
+      "desc": "A Boolean value indicating whether the cell is editable."
+    },
+    {
+      "name": "var isSelectable: Bool",
+      "desc": "A Boolean value indicating whether the cell’s text can be selected."
+    },
+    {
+      "name": "var isScrollable: Bool",
+      "desc": "A Boolean value indicating whether excess text scrolls past the cell’s bounds."
+    },
+    {
+      "name": "var alignment: NSTextAlignment",
+      "desc": "The alignment of the cell’s text."
+    },
+    {
+      "name": "var font: NSFont?",
+      "desc": "The font that the cell uses to display text."
+    },
+    {
+      "name": "var lineBreakMode: NSLineBreakMode",
+      "desc": "The line break mode to use when drawing text in the cell."
+    },
+    {
+      "name": "var truncatesLastVisibleLine: Bool",
+      "desc": "A Boolean value indicating whether the cell truncates text that does not fit within the cell’s bounds."
+    },
+    {
+      "name": "var wraps: Bool",
+      "desc": "A Boolean value indicating whether the cell wraps text whose length that exceeds the cell’s frame."
+    },
+    {
+      "name": "var baseWritingDirection: NSWritingDirection",
+      "desc": "The initial writing direction used to determine the actual writing direction for text."
+    },
+    {
+      "name": "var attributedStringValue: NSAttributedString",
+      "desc": "The cell’s value as an attributed string."
+    },
+    {
+      "name": "var allowsEditingTextAttributes: Bool",
+      "desc": "A Boolean value indicating whether the cell allows the editing of its content’s text attributes by the user."
+    },
+    {
+      "name": "var importsGraphics: Bool",
+      "desc": "A Boolean value indicating whether the cell supports the importation of images into its text."
+    },
+    {
+      "name": "func setUpFieldEditorAttributes(NSText) -> NSText",
+      "desc": "Configures the textual and background attributes of the receiver's field editor."
+    },
+    {
+      "name": "var title: String",
+      "desc": "The cell’s title text."
+    },
+    {
+      "name": "var action: Selector?",
+      "desc": "The action performed by the cell."
+    },
+    {
+      "name": "var target: AnyObject?",
+      "desc": "The object that receives the cell’s action messages."
+    },
+    {
+      "name": "var isContinuous: Bool",
+      "desc": "A Boolean value indicating whether the cell sends its action message continuously during mouse tracking."
+    },
+    {
+      "name": "func sendAction(on: NSEvent.EventTypeMask) -> Int",
+      "desc": "Sets the conditions on which the receiver sends action messages to its target."
+    },
+    {
+      "name": "var image: NSImage?",
+      "desc": "The image displayed by the cell, if any."
+    },
+    {
+      "name": "var tag: Int",
+      "desc": "A tag for identifying the cell."
+    },
+    {
+      "name": "var formatter: Formatter?",
+      "desc": "The cell’s formatter object."
+    },
+    {
+      "name": "class var defaultMenu: NSMenu?",
+      "desc": "Returns the default menu for instances of the cell."
+    },
+    {
+      "name": "var menu: NSMenu?",
+      "desc": "The cell’s contextual menu."
+    },
+    {
+      "name": "func menu(for: NSEvent, in: NSRect, of: NSView) -> NSMenu?",
+      "desc": "Returns the menu associated with the cell and related to the specified event and frame."
+    },
+    {
+      "name": "func compare(Any) -> ComparisonResult",
+      "desc": "Compares the string values of the receiver another cell, disregarding case."
+    },
+    {
+      "name": "var acceptsFirstResponder: Bool",
+      "desc": "A Boolean value indicating whether the cell accepts first responder status."
+    },
+    {
+      "name": "var showsFirstResponder: Bool",
+      "desc": "A Boolean value indicating whether the cell provides a visual indication that it is the first responder."
+    },
+    {
+      "name": "var refusesFirstResponder: Bool",
+      "desc": "A Boolean value indicating whether the cell refuses the first responder status."
+    },
+    {
+      "name": "func performClick(Any?)",
+      "desc": "Simulates a single mouse click on the receiver."
+    },
+    {
+      "name": "func takeObjectValueFrom(Any?)",
+      "desc": "Sets the value of the receiver’s cell to the object value obtained from the specified object."
+    },
+    {
+      "name": "func takeIntegerValueFrom(Any?)",
+      "desc": "Sets the value of the receiver’s cell to an integer value obtained from the specified object."
+    },
+    {
+      "name": "func takeIntValueFrom(Any?)",
+      "desc": "Sets the value of the receiver’s cell to an integer value obtained from the specified object."
+    },
+    {
+      "name": "func takeStringValueFrom(Any?)",
+      "desc": "Sets the value of the receiver’s cell to the string value obtained from the specified object."
+    },
+    {
+      "name": "func takeDoubleValueFrom(Any?)",
+      "desc": "Sets the value of the receiver’s cell to a double-precision floating-point value obtained from the specified object."
+    },
+    {
+      "name": "func takeFloatValueFrom(Any?)",
+      "desc": "Sets the value of the receiver’s cell to a single-precision floating-point value obtained from the specified object."
+    },
+    {
+      "name": "var representedObject: Any?",
+      "desc": "The object represented by the cell."
+    },
+    {
+      "name": "func trackMouse(with: NSEvent, in: NSRect, of: NSView, untilMouseUp: Bool) -> Bool",
+      "desc": "Initiates the mouse tracking behavior in a cell."
+    },
+    {
+      "name": "func startTracking(at: NSPoint, in: NSView) -> Bool",
+      "desc": "Begins tracking mouse events within the receiver."
+    },
+    {
+      "name": "func continueTracking(last: NSPoint, current: NSPoint, in: NSView) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether mouse tracking should continue in the receiving cell."
+    },
+    {
+      "name": "func stopTracking(last: NSPoint, current: NSPoint, in: NSView, mouseIsUp: Bool)",
+      "desc": "Stops tracking mouse events within the receiver."
+    },
+    {
+      "name": "var mouseDownFlags: Int",
+      "desc": "The modifier flags for the last (left) mouse-down event."
+    },
+    {
+      "name": "class var prefersTrackingUntilMouseUp: Bool",
+      "desc": "Returns a Boolean value that indicates whether tracking stops when the cursor leaves the cell."
+    },
+    {
+      "name": "func getPeriodicDelay(UnsafeMutablePointer<Float>, interval: UnsafeMutablePointer<Float>)",
+      "desc": "Returns the initial delay and repeat values for continuous sending of action messages to target objects."
+    },
+    {
+      "name": "func hitTest(for: NSEvent, in: NSRect, of: NSView) -> NSCell.HitResult",
+      "desc": "Returns hit testing information for the receiver."
+    },
+    {
+      "name": "func resetCursorRect(NSRect, in: NSView)",
+      "desc": "Sets the receiver to show the I-beam cursor while it tracks the mouse."
+    },
+    {
+      "name": "var keyEquivalent: String",
+      "desc": "The key equivalent associated with clicking the cell."
+    },
+    {
+      "name": "func draggingImageComponents(withFrame: NSRect, in: NSView) -> [NSDraggingImageComponent]",
+      "desc": "Generates dragging image components with the specified frame in the view."
+    },
+    {
+      "name": "func drawFocusRingMask(withFrame: NSRect, in: NSView)",
+      "desc": "Draws the focus ring for the control."
+    },
+    {
+      "name": "func focusRingMaskBounds(forFrame: NSRect, in: NSView) -> NSRect",
+      "desc": "Returns the bounds of the focus ring mask."
+    },
+    {
+      "name": "class var defaultFocusRingType: NSFocusRingType",
+      "desc": "Returns the default type of focus ring for the receiver."
+    },
+    {
+      "name": "var focusRingType: NSFocusRingType",
+      "desc": "The type of focus ring to use with the associated view."
+    },
+    {
+      "name": "func calcDrawInfo(NSRect)",
+      "desc": "Recalculates the cell geometry."
+    },
+    {
+      "name": "var cellSize: NSSize",
+      "desc": "The minimum size needed to display the cell."
+    },
+    {
+      "name": "func cellSize(forBounds: NSRect) -> NSSize",
+      "desc": "Returns the minimum size needed to display the receiver, constraining it to the specified rectangle."
+    },
+    {
+      "name": "func drawingRect(forBounds: NSRect) -> NSRect",
+      "desc": "Returns the rectangle within which the receiver draws itself"
+    },
+    {
+      "name": "func imageRect(forBounds: NSRect) -> NSRect",
+      "desc": "Returns the rectangle in which the receiver draws its image."
+    },
+    {
+      "name": "func titleRect(forBounds: NSRect) -> NSRect",
+      "desc": "Returns the rectangle in which the receiver draws its title text."
+    },
+    {
+      "name": "var controlSize: NSControl.ControlSize",
+      "desc": "The size of the cell."
+    },
+    {
+      "name": "func draw(withFrame: NSRect, in: NSView)",
+      "desc": "Draws the receiver’s border and then draws the interior of the cell."
+    },
+    {
+      "name": "func highlightColor(withFrame: NSRect, in: NSView) -> NSColor?",
+      "desc": "Returns the color the receiver uses when drawing the selection highlight."
+    },
+    {
+      "name": "func drawInterior(withFrame: NSRect, in: NSView)",
+      "desc": "Draws the interior portion of the receiver, which includes the image or text portion but does not include the border."
+    },
+    {
+      "name": "var controlView: NSView?",
+      "desc": "The view associated with the cell."
+    },
+    {
+      "name": "func highlight(Bool, withFrame: NSRect, in: NSView)",
+      "desc": "Redraws the receiver with the specified highlight setting."
+    },
+    {
+      "name": "var isHighlighted: Bool",
+      "desc": "A Boolean value indicating whether the cell has a highlighted appearance."
+    },
+    {
+      "name": "func edit(withFrame: NSRect, in: NSView, editor: NSText, delegate: Any?, event: NSEvent?)",
+      "desc": "Begins editing of the receiver’s text using the specified field editor."
+    },
+    {
+      "name": "func select(withFrame: NSRect, in: NSView, editor: NSText, delegate: Any?, start: Int, length: Int)",
+      "desc": "Selects the specified text range in the cell's field editor."
+    },
+    {
+      "name": "var sendsActionOnEndEditing: Bool",
+      "desc": "A Boolean value indicating whether the cell’s control object sends its action message when the user finishes editing the cell’s text."
+    },
+    {
+      "name": "func endEditing(NSText)",
+      "desc": "Ends the editing of text in the receiver using the specified field editor."
+    },
+    {
+      "name": "var wantsNotificationForMarkedText: Bool",
+      "desc": "A Boolean value indicating whether the cell’s field editor should post text change notifications."
+    },
+    {
+      "name": "func fieldEditor(for: NSView) -> NSTextView?",
+      "desc": "Returns a custom field editor for editing in the view."
+    },
+    {
+      "name": "var usesSingleLineMode: Bool",
+      "desc": "A Boolean value indicating whether the cell restricts layout and rendering of text to a single line."
+    },
+    {
+      "name": "func expansionFrame(withFrame: NSRect, in: NSView) -> NSRect",
+      "desc": "Returns the expansion cell frame for the receiver."
+    },
+    {
+      "name": "func draw(withExpansionFrame: NSRect, in: NSView)",
+      "desc": "Instructs the receiver to draw in an expansion frame."
+    },
+    {
+      "name": "var userInterfaceLayoutDirection: NSUserInterfaceLayoutDirection",
+      "desc": "The layout direction of the user interface."
+    },
+    {
+      "name": "enum NSCell.CellType",
+      "desc": "Constants for specifying how a cell represents its data (as text or as an image)."
+    },
+    {
+      "name": "enum NSCell.Attribute",
+      "desc": "Constants for specifying how a button behaves when pressed and how it displays its state."
+    },
+    {
+      "name": "enum NSControl.ImagePosition",
+      "desc": "A constant for specifying the position of a button’s image relative to its title."
+    },
+    {
+      "name": "enum NSImageScaling",
+      "desc": "Constants that specify a cell’s image scaling behavior."
+    },
+    {
+      "name": "struct NSCell.StyleMask",
+      "desc": "Constants for specifying what happens when a button is pressed or is displaying its alternate state."
+    },
+    {
+      "name": "enum NSControlTint",
+      "desc": "Constants for specifying a cell’s tint color."
+    },
+    {
+      "name": "enum NSControl.ControlSize",
+      "desc": "A constant for specifying a cell’s size."
+    },
+    {
+      "name": "struct NSCell.HitResult",
+      "desc": "Constants used by the hitTest(for:in:of:) method to determine the effect of an event."
+    },
+    {
+      "name": "enum NSView.BackgroundStyle",
+      "desc": "Background styles used with the backgroundStyle and interiorBackgroundStyle properties."
+    },
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(coder: NSCoder)"
+    }
+  ],
+  "declaration": "@MainActor class NSCell : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSAccessibilityProtocol",
+    "NSAccessibilityElementProtocol",
+    "NSCoding",
+    "NSCopying",
+    "NSUserInterfaceItemIdentification"
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "path": "/documentation/uikit/uipresentationcontroller",
+  "type": "Class",
+  "name": "UIPresentationController",
+  "desc": "An object that manages the transition animations and the presentation of view controllers onscreen.",
+  "items": [
+    {
+      "name": "init(presentedViewController: UIViewController, presenting: UIViewController?)",
+      "desc": "Initializes and returns a presentation controller for transitioning between the specified view controllers"
+    },
+    {
+      "name": "var delegate: UIAdaptivePresentationControllerDelegate?",
+      "desc": "The delegate object for managing adaptive presentations."
+    },
+    {
+      "name": "protocol UIAdaptivePresentationControllerDelegate",
+      "desc": "A set of methods that, in conjunction with a presentation controller, determine how to respond to trait changes in your app."
+    },
+    {
+      "name": "var presentingViewController: UIViewController",
+      "desc": "The view controller that is the starting point for the presentation."
+    },
+    {
+      "name": "var presentedViewController: UIViewController",
+      "desc": "The view controller being presented."
+    },
+    {
+      "name": "var containerView: UIView?",
+      "desc": "The view in which the presentation occurs."
+    },
+    {
+      "name": "var presentedView: UIView?",
+      "desc": "The view to be animated by the animator objects during a transition."
+    },
+    {
+      "name": "var frameOfPresentedViewInContainerView: CGRect",
+      "desc": "The frame rectangle to assign to the presented view at the end of the animations."
+    },
+    {
+      "name": "var overrideTraitCollection: UITraitCollection?",
+      "desc": "Interface traits for the presented view controller, to use in place of traits from the iOS environment."
+    },
+    {
+      "name": "func containerViewWillLayoutSubviews()",
+      "desc": "Notifies the presentation controller that layout is about to begin on the views of the container view."
+    },
+    {
+      "name": "func containerViewDidLayoutSubviews()",
+      "desc": "Called to notify the presentation controller that layout ended on the views of the container view."
+    },
+    {
+      "name": "func presentationTransitionWillBegin()",
+      "desc": "Notifies the presentation controller that the presentation animations are about to start."
+    },
+    {
+      "name": "func presentationTransitionDidEnd(Bool)",
+      "desc": "Notifies the presentation controller that the presentation animations finished."
+    },
+    {
+      "name": "func dismissalTransitionWillBegin()",
+      "desc": "Notifies the presentation controller that the dismissal animations are about to start."
+    },
+    {
+      "name": "func dismissalTransitionDidEnd(Bool)",
+      "desc": "Notifies the presentation controller that the dismissal animations finished."
+    },
+    {
+      "name": "var presentationStyle: UIModalPresentationStyle",
+      "desc": "The presentation style of the presented view controller."
+    },
+    {
+      "name": "func adaptivePresentationStyle(for: UITraitCollection) -> UIModalPresentationStyle",
+      "desc": "Returns the presentation style to use for the specified set of traits."
+    },
+    {
+      "name": "var adaptivePresentationStyle: UIModalPresentationStyle",
+      "desc": "Returns the presentation style to use when the presented view controller becomes horizontally compact."
+    },
+    {
+      "name": "var shouldPresentInFullscreen: Bool",
+      "desc": "A Boolean value indicating whether the presentation covers the entire screen."
+    },
+    {
+      "name": "var shouldRemovePresentersView: Bool",
+      "desc": "A Boolean value indicating whether the presenting view controller’s view should be removed when the presentation animations finish."
+    }
+  ],
+  "declaration": "@MainActor class UIPresentationController : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "UIAppearanceContainer",
+    "UIContentContainer",
+    "UIFocusEnvironment",
+    "UITraitEnvironment"
+  ]
+}

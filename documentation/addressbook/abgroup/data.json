@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/addressbook/abgroup",
+  "type": "Class",
+  "name": "ABGroup",
+  "desc": "An object that represents a group of records in the Address Book database.",
+  "items": [
+    {
+      "name": "class func addPropertiesAndTypes([AnyHashable : Any]!) -> Int",
+      "desc": "Adds the given properties to all records of this type in the Address Book database."
+    },
+    {
+      "name": "class func removeProperties([Any]!) -> Int",
+      "desc": "Removes the given properties from all the records of this type in the Address Book database."
+    },
+    {
+      "name": "class func properties() -> [Any]!",
+      "desc": "Returns an array of the names of all the properties for this record type in the Address Book database."
+    },
+    {
+      "name": "class func type(ofProperty: String!) -> ABPropertyType",
+      "desc": "Returns the type for a given property."
+    },
+    {
+      "name": "func addMember(ABPerson!) -> Bool",
+      "desc": "Adds a person to a group."
+    },
+    {
+      "name": "func removeMember(ABPerson!) -> Bool",
+      "desc": "Removes a person from a group."
+    },
+    {
+      "name": "func members() -> [Any]!",
+      "desc": "Returns an array of persons in a group."
+    },
+    {
+      "name": "func addSubgroup(ABGroup!) -> Bool",
+      "desc": "Adds a subgroup to another group."
+    },
+    {
+      "name": "func removeSubgroup(ABGroup!) -> Bool",
+      "desc": "Removes a subgroup from a group."
+    },
+    {
+      "name": "func parentGroups() -> [Any]!",
+      "desc": "Returns an array containing a group’s parents—that is, the groups that a group belongs to."
+    },
+    {
+      "name": "func subgroups() -> [Any]!",
+      "desc": "Returns an array containing a group’s subgroups."
+    },
+    {
+      "name": "func distributionIdentifier(forProperty: String!, person: ABPerson!) -> String!",
+      "desc": "Returns the distribution identifier for the given property and person."
+    },
+    {
+      "name": "func setDistributionIdentifier(String!, forProperty: String!, person: ABPerson!) -> Bool",
+      "desc": "Assigns a specific distribution identifier for a person’s multivalue list property so that the group can be used as a distribution list."
+    },
+    {
+      "name": "class func searchElement(forProperty: String!, label: String!, key: String!, value: Any!, comparison: ABSearchComparison) -> ABSearchElement!",
+      "desc": "Returns a search element object that searches for records of this type."
+    }
+  ],
+  "declaration": "class ABGroup : ABRecord",
+  "inheritsFrom": [
+    "ABRecord"
+  ]
+}

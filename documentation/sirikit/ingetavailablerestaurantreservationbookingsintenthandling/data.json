@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/sirikit/ingetavailablerestaurantreservationbookingsintenthandling",
+  "type": "Protocol",
+  "name": "INGetAvailableRestaurantReservationBookingsIntentHandling",
+  "desc": "The handler interface for generating a list of potential reservation times from which the user can select.",
+  "items": [
+    {
+      "name": "func resolveRestaurant(for: INGetAvailableRestaurantReservationBookingsIntent, completion: (INRestaurantResolutionResult) -> Void)",
+      "desc": "Resolves the restaurant to use when gathering reservation times."
+    },
+    {
+      "name": "func resolvePartySize(for: INGetAvailableRestaurantReservationBookingsIntent, completion: (INIntegerResolutionResult) -> Void)",
+      "desc": "Resolves the party size to use when generating the reservation times."
+    },
+    {
+      "name": "func resolvePreferredBookingDateComponents(for: INGetAvailableRestaurantReservationBookingsIntent, completion: (INDateComponentsResolutionResult) -> Void)",
+      "desc": "Resolves the date to use when generating the reservation times."
+    },
+    {
+      "name": "func confirm(getAvailableRestaurantReservationBookings: INGetAvailableRestaurantReservationBookingsIntent, completion: (INGetAvailableRestaurantReservationBookingsIntentResponse) -> Void)",
+      "desc": "Confirms whether you can provide a set of potential reservation times."
+    },
+    {
+      "name": "func handle(getAvailableRestaurantReservationBookings: INGetAvailableRestaurantReservationBookingsIntent, completion: (INGetAvailableRestaurantReservationBookingsIntentResponse) -> Void)",
+      "desc": "Handles generating the list of potential reservation times."
+    }
+  ],
+  "declaration": "protocol INGetAvailableRestaurantReservationBookingsIntentHandling",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/iousbhost/iousbhostinterface",
+  "type": "Class",
+  "name": "IOUSBHostInterface",
+  "desc": "The class for accessing USB-related services.",
+  "items": [
+    {
+      "name": "var configurationDescriptor: UnsafePointer<IOUSBConfigurationDescriptor>",
+      "desc": "The configuration descriptor for the interface."
+    },
+    {
+      "name": "var interfaceDescriptor: UnsafePointer<IOUSBInterfaceDescriptor>",
+      "desc": "The descriptor for the interface."
+    },
+    {
+      "name": "func selectAlternateSetting(Int)",
+      "desc": "Selects an alternative setting for the interface."
+    },
+    {
+      "name": "func copyPipe(withAddress: Int) -> IOUSBHostPipe",
+      "desc": "Copies a pipe for a specific endpoint address."
+    },
+    {
+      "name": "var idleTimeout: TimeInterval",
+      "desc": "The current idle suspend timeout."
+    },
+    {
+      "name": "func setIdleTimeout(TimeInterval)",
+      "desc": "Sets the desired idle suspend timeout for the interface."
+    }
+  ],
+  "declaration": "class IOUSBHostInterface : IOUSBHostObject",
+  "inheritsFrom": [
+    "IOUSBHostObject"
+  ]
+}

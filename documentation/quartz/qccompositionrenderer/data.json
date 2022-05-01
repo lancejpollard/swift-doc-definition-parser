@@ -1,0 +1,49 @@
+{
+  "path": "/documentation/quartz/qccompositionrenderer",
+  "type": "Protocol",
+  "name": "QCCompositionRenderer",
+  "desc": "The QCRenderer protocol defines the methods used to pass data to the input ports or retrieve data from the output ports of the root patch of a Quartz Composer composition. This protocol is adopted by the QCRenderer, QCView, and QCCompositionLayer classes.",
+  "items": [
+    {
+      "name": "func setValue(Any!, forInputKey: String!) -> Bool",
+      "desc": "Sets the value for an input port of a composition."
+    },
+    {
+      "name": "func value(forInputKey: String!) -> Any!",
+      "desc": "Returns the value for an input port of a composition."
+    },
+    {
+      "name": "func value(forOutputKey: String!) -> Any!",
+      "desc": "Returns the value for an output port of a composition."
+    },
+    {
+      "name": "func value(forOutputKey: String!, ofType: String!) -> Any!",
+      "desc": "Returns the current value on an output port (identified by its key) of the root patch of the composition."
+    },
+    {
+      "name": "func inputKeys() -> [Any]!",
+      "desc": "Returns an array that contains the keys that identify the input ports of the root patch of the composition."
+    },
+    {
+      "name": "func outputKeys() -> [Any]!",
+      "desc": "Returns an array that contains the keys that identify the output ports of the root patch of the composition."
+    },
+    {
+      "name": "func attributes() -> [AnyHashable : Any]!",
+      "desc": "Returns the attributes of the composition associated with the renderer."
+    },
+    {
+      "name": "func userInfo() -> NSMutableDictionary!",
+      "desc": "Returns a mutable dictionary for storing arbitrary information."
+    },
+    {
+      "name": "func propertyListFromInputValues() -> Any!",
+      "desc": "Returns a property list object that represents the current values for all the input keys of the composition."
+    },
+    {
+      "name": "func setInputValuesWithPropertyList(Any!)",
+      "desc": "Sets the values for the input keys of the composition from a previously saved property list."
+    }
+  ],
+  "declaration": "protocol QCCompositionRenderer"
+}

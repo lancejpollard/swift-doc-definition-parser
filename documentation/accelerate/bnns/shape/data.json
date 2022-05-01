@@ -1,0 +1,132 @@
+{
+  "path": "/documentation/accelerate/bnns/shape",
+  "type": "Enumeration",
+  "name": "BNNS.Shape",
+  "desc": "Constants that describe the size and data layout of an n-dimensional array descriptor.",
+  "items": [
+    {
+      "name": "init([Int], dataLayout: BNNS.DataLayout?, stride: [Int]?)",
+      "desc": "Returns a new shape with the specified size, data layout, and stride."
+    },
+    {
+      "name": "init(arrayLiteral: BNNS.Shape.ArrayLiteralElement...)",
+      "desc": "Returns a new shape with the specified size."
+    },
+    {
+      "name": "enum BNNS.DataLayout",
+      "desc": "Constants that describe the data layout of an n-dimensional array descriptor shape."
+    },
+    {
+      "name": "case vector(Int, stride: Int)",
+      "desc": "A constant that represents a shape with a 1D vector data layout."
+    },
+    {
+      "name": "case matrixColumnMajor(Int, Int, stride: (Int, Int))",
+      "desc": "A constant that represents a shape with a 2D column-major data layout."
+    },
+    {
+      "name": "case matrixRowMajor(Int, Int, stride: (Int, Int))",
+      "desc": "A constant that represents a shape with a 2D row-major data layout."
+    },
+    {
+      "name": "case matrixFirstMajor(Int, Int, stride: (Int, Int))",
+      "desc": "A constant that represents a shape with a 2D first-major data layout."
+    },
+    {
+      "name": "case matrixLastMajor(Int, Int, stride: (Int, Int))",
+      "desc": "A constant that represents a shape with a 2D last-major data layout."
+    },
+    {
+      "name": "case imageCHW(Int, Int, Int, stride: (Int, Int, Int))",
+      "desc": "A constant that represents a shape with a 3D image stack data layout."
+    },
+    {
+      "name": "case tensor3DFirstMajor(Int, Int, Int, stride: (Int, Int, Int))",
+      "desc": "A constant that represents a shape with a 3D first-major data layout."
+    },
+    {
+      "name": "case tensor3DLastMajor(Int, Int, Int, stride: (Int, Int, Int))",
+      "desc": "A constant that represents a shape with a 3D last-major data layout."
+    },
+    {
+      "name": "case tensor3DNSE(Int, Int, Int, stride: (Int, Int, Int))",
+      "desc": "A constant that represents a shape with the size elements embedding dimension, sequence length, and batch size."
+    },
+    {
+      "name": "case tensor3DSNE(Int, Int, Int, stride: (Int, Int, Int))",
+      "desc": "A constant that represents a shape with the size elements embedding dimension, batch size, and sequence length."
+    },
+    {
+      "name": "case convolutionWeightsOIHW(Int, Int, Int, Int, stride: (Int, Int, Int, Int))",
+      "desc": "A constant that represents a shape with a 4D array of convolution weights data layout."
+    },
+    {
+      "name": "case tensor4DFirstMajor(Int, Int, Int, Int, stride: (Int, Int, Int, Int))",
+      "desc": "A constant that represents a shape with a 4D first-major data layout."
+    },
+    {
+      "name": "case tensor4DLastMajor(Int, Int, Int, Int, stride: (Int, Int, Int, Int))",
+      "desc": "A constant that represents a shape with a 4D last-major data layout."
+    },
+    {
+      "name": "case tensor5DFirstMajor(Int, Int, Int, Int, Int, stride: (Int, Int, Int, Int, Int))",
+      "desc": "A constant that represents a shape with a 5D first-major data layout."
+    },
+    {
+      "name": "case tensor5DLastMajor(Int, Int, Int, Int, Int, stride: (Int, Int, Int, Int, Int))",
+      "desc": "A constant that represents a shape with a 5D last-major data layout."
+    },
+    {
+      "name": "case tensor6DFirstMajor(Int, Int, Int, Int, Int, Int, stride: (Int, Int, Int, Int, Int, Int))",
+      "desc": "A constant that represents a shape with a 6D first-major data layout."
+    },
+    {
+      "name": "case tensor6DLastMajor(Int, Int, Int, Int, Int, Int, stride: (Int, Int, Int, Int, Int, Int))",
+      "desc": "A constant that represents a shape with a 6D last-major data layout."
+    },
+    {
+      "name": "case tensor7DFirstMajor(Int, Int, Int, Int, Int, Int, Int, stride: (Int, Int, Int, Int, Int, Int, Int))",
+      "desc": "A constant that represents a shape with a 7D first-major data layout."
+    },
+    {
+      "name": "case tensor7DLastMajor(Int, Int, Int, Int, Int, Int, Int, stride: (Int, Int, Int, Int, Int, Int, Int))",
+      "desc": "A constant that represents a shape with a 7D last-major data layout."
+    },
+    {
+      "name": "case tensor8DFirstMajor(Int, Int, Int, Int, Int, Int, Int, Int, stride: (Int, Int, Int, Int, Int, Int, Int, Int))",
+      "desc": "A constant that represents a shape with a 8D first-major data layout."
+    },
+    {
+      "name": "case tensor8DLastMajor(Int, Int, Int, Int, Int, Int, Int, Int, stride: (Int, Int, Int, Int, Int, Int, Int, Int))",
+      "desc": "A constant that represents a shape with a 8D last-major data layout."
+    },
+    {
+      "name": "var batchStride: Int",
+      "desc": "The number of elements between each batch of data in the shape."
+    },
+    {
+      "name": "var layout: BNNSDataLayout",
+      "desc": "The data layout of the shape."
+    },
+    {
+      "name": "var rank: Int",
+      "desc": "The number of dimensions of the shape."
+    },
+    {
+      "name": "var size: (Int, Int, Int, Int, Int, Int, Int, Int)",
+      "desc": "The size, in elements, of each dimension of the shape."
+    },
+    {
+      "name": "var stride: (Int, Int, Int, Int, Int, Int, Int, Int)",
+      "desc": "The stride, in elements, of each dimension of the shape."
+    },
+    {
+      "name": "typealias BNNS.Shape.ArrayLiteralElement",
+      "desc": "The type of the elements of an array literal."
+    }
+  ],
+  "declaration": "enum Shape",
+  "conformsTo": [
+    "ExpressibleByArrayLiteral"
+  ]
+}

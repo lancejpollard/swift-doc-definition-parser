@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/sirikit/insiriauthorizationstatus",
+  "type": "Enumeration",
+  "name": "INSiriAuthorizationStatus",
+  "desc": "Constants indicating the authorization status of your Intents extension.",
+  "items": [
+    {
+      "name": "case notDetermined",
+      "desc": "Not yet determined. An authorization request has not yet been made or the user has not yet made a choice regarding the status of the app. Call the requestSiriAuthorization(_:) method to request authorization from the user."
+    },
+    {
+      "name": "case restricted",
+      "desc": "Restricted. The app is not authorized to use Siri services. This status could be the result of active restrictions on Siri services rather than on the user denying access."
+    },
+    {
+      "name": "case denied",
+      "desc": "Not authorized. The user explicitly denied authorization for this app."
+    },
+    {
+      "name": "case authorized",
+      "desc": "Authorized. Siri is enabled and your app is authorized to interact with it."
+    }
+  ],
+  "declaration": "enum INSiriAuthorizationStatus : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

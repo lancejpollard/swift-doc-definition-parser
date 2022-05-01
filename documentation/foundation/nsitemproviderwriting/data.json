@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/foundation/nsitemproviderwriting",
+  "type": "Protocol",
+  "name": "NSItemProviderWriting",
+  "desc": "The protocol you implement on a class to allow an item provider to retrieve data from an instance of the class.",
+  "items": [
+    {
+      "name": "func loadData(withTypeIdentifier: String, forItemProviderCompletionHandler: (Data?, Error?) -> Void) -> Progress?",
+      "desc": "Loads data of a particular type, identified by the given UTI."
+    },
+    {
+      "name": "static var writableTypeIdentifiersForItemProvider: [String]",
+      "desc": "An array of UTI strings representing the types of data that can be loaded for an item provider."
+    },
+    {
+      "name": "var writableTypeIdentifiersForItemProvider: [String]",
+      "desc": "An array of UTI strings representing the types of data that can be loaded for an item provider."
+    },
+    {
+      "name": "static func itemProviderVisibilityForRepresentation(withTypeIdentifier: String) -> NSItemProviderRepresentationVisibility",
+      "desc": "Asks the item provider for the default representation visibility specification for the given UTI."
+    },
+    {
+      "name": "func itemProviderVisibilityForRepresentation(withTypeIdentifier: String) -> NSItemProviderRepresentationVisibility",
+      "desc": "Asks the item provider for the representation visibility specification for the given UTI."
+    }
+  ],
+  "declaration": "protocol NSItemProviderWriting",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

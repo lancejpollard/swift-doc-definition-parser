@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/backgroundtasks/bgtaskscheduler",
+  "type": "Class",
+  "name": "BGTaskScheduler",
+  "desc": "A class for scheduling task requests that launch your app in the background.",
+  "items": [
+    {
+      "name": "class var shared: BGTaskScheduler",
+      "desc": "The shared background task scheduler instance."
+    },
+    {
+      "name": "func register(forTaskWithIdentifier: String, using: DispatchQueue?, launchHandler: (BGTask) -> Void) -> Bool",
+      "desc": "Register a launch handler for the task with the associated identifier that’s executed on the specified queue."
+    },
+    {
+      "name": "func submit(BGTaskRequest)",
+      "desc": "Submit a previously registered background task for execution."
+    },
+    {
+      "name": "func cancel(taskRequestWithIdentifier: String)",
+      "desc": "Cancel a previously scheduled task request."
+    },
+    {
+      "name": "func cancelAllTaskRequests()",
+      "desc": "Cancel all scheduled task requests."
+    },
+    {
+      "name": "func getPendingTaskRequests(completionHandler: ([BGTaskRequest]) -> Void)",
+      "desc": "Request a list of unexecuted scheduled task requests."
+    },
+    {
+      "name": "struct BGTaskScheduler.Error",
+      "desc": "The Errors for the BGTaskSchedulerError domain."
+    },
+    {
+      "name": "class let errorDomain: String",
+      "desc": "The background tasks error domain as a string."
+    }
+  ],
+  "declaration": "class BGTaskScheduler : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

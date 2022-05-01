@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/imagecapturecore/icscannerdevice",
+  "type": "Class",
+  "name": "ICScannerDevice",
+  "desc": "An object that represents a scanner.",
+  "items": [
+    {
+      "name": "var availableFunctionalUnitTypes: [NSNumber]",
+      "desc": "An array of functional unit types available on this scanner."
+    },
+    {
+      "name": "var selectedFunctionalUnit: ICScannerFunctionalUnit",
+      "desc": "The currently selected functional unit on the scanner."
+    },
+    {
+      "name": "func requestSelect(ICScannerFunctionalUnitType)",
+      "desc": "Requests to select a functional unit on the scanner."
+    },
+    {
+      "name": "enum ICScannerFunctionalUnitType",
+      "desc": "The types of scanner functional units."
+    },
+    {
+      "name": "enum ICScannerFunctionalUnitState",
+      "desc": "Flags to indicate the state of the scanner functional unit."
+    },
+    {
+      "name": "func requestOpenSession(withCredentials: String, password: String)",
+      "desc": "Opens a session on the protected device with the authorized username and passcode."
+    },
+    {
+      "name": "func requestOverviewScan()",
+      "desc": "Starts an overview scan on the selected functional unit."
+    },
+    {
+      "name": "func requestScan()",
+      "desc": "Starts a scan on the selected functional unit."
+    },
+    {
+      "name": "func cancelScan()",
+      "desc": "Cancels the current scan."
+    },
+    {
+      "name": "var documentName: String",
+      "desc": "The document’s name."
+    },
+    {
+      "name": "var documentUTI: String",
+      "desc": "The document’s uniform type identifier."
+    },
+    {
+      "name": "var downloadsDirectory: URL",
+      "desc": "The downloads directory."
+    },
+    {
+      "name": "var transferMode: ICScannerTransferMode",
+      "desc": "The transfer mode for the scanned document."
+    },
+    {
+      "name": "var maxMemoryBandSize: UInt32",
+      "desc": "The total maximum band size requested when performing a memory-based transfer."
+    },
+    {
+      "name": "var defaultUsername: String",
+      "desc": "A default username on protected scanners."
+    }
+  ],
+  "declaration": "class ICScannerDevice : ICDevice",
+  "inheritsFrom": [
+    "ICDevice"
+  ]
+}

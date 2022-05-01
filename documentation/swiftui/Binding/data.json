@@ -1,0 +1,69 @@
+{
+  "path": "/documentation/swiftui/binding",
+  "type": "Structure",
+  "name": "Binding",
+  "desc": "A property wrapper type that can read and write a value owned by a source of truth.",
+  "items": [
+    {
+      "name": "init?(Binding<Value?>)",
+      "desc": "Creates a binding by projecting the base value to an unwrapped value."
+    },
+    {
+      "name": "init<V>(Binding<V>)",
+      "desc": "Creates a binding by projecting the base value to an optional value."
+    },
+    {
+      "name": "init<V>(Binding<V>)",
+      "desc": "Creates a binding by projecting the base value to a hashable value."
+    },
+    {
+      "name": "init(projectedValue: Binding<Value>)",
+      "desc": "Creates a binding from the value of another binding."
+    },
+    {
+      "name": "init(get: () -> Value, set: (Value, Transaction) -> Void)",
+      "desc": "Creates a binding with a closure that reads from the binding value, and a closure that applies a transaction when writing to the binding value."
+    },
+    {
+      "name": "init(get: () -> Value, set: (Value) -> Void)",
+      "desc": "Creates a binding with closures that read and write the binding value."
+    },
+    {
+      "name": "static func constant(Value) -> Binding<Value>",
+      "desc": "Creates a binding with an immutable value."
+    },
+    {
+      "name": "var wrappedValue: Value",
+      "desc": "The underlying value referenced by the binding variable."
+    },
+    {
+      "name": "var projectedValue: Binding<Value>",
+      "desc": "A projection of the binding value that returns a binding."
+    },
+    {
+      "name": "subscript<Subject>(dynamicMember _: WritableKeyPath<Value, Subject>) -> Binding<Subject>",
+      "desc": "Returns a binding to the resulting value of a given key path."
+    },
+    {
+      "name": "func animation(Animation?) -> Binding<Value>",
+      "desc": "Specifies an animation to perform when the binding value changes."
+    },
+    {
+      "name": "func transaction(Transaction) -> Binding<Value>",
+      "desc": "Specifies a transaction for the binding."
+    },
+    {
+      "name": "var transaction: Transaction",
+      "desc": "The binding’s transaction."
+    }
+  ],
+  "declaration": "@frozen @propertyWrapper @dynamicMemberLookup struct Binding<Value>",
+  "conformsTo": [
+    "BidirectionalCollection",
+    "Collection",
+    "DynamicProperty",
+    "Identifiable",
+    "RandomAccessCollection",
+    "Sequence"
+  ]
+}

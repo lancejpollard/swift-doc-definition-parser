@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/coredata/nspersistentstoreubiquitoustransitiontype",
+  "type": "Enumeration",
+  "name": "NSPersistentStoreUbiquitousTransitionType",
+  "desc": "These constants are used as the value corresponding to the NSPersistentStoreUbiquitousTransitionTypeKey in the user info dictionary of NSPersistentStoreCoordinatorStoresWillChange and NSPersistentStoreCoordinatorStoresDidChange notifications to identify the type of event leading to a change.",
+  "items": [
+    {
+      "name": "case accountAdded",
+      "desc": "This value indicates that a new iCloud account is available, and the persistent store in use will or did transition to the new account."
+    },
+    {
+      "name": "case accountRemoved",
+      "desc": "This value indicates that no iCloud account is available, and the persistent store in use will or did transition to the “local” store."
+    },
+    {
+      "name": "case contentRemoved",
+      "desc": "This value indicates that the user has wiped the contents of the iCloud account, usually using Delete All from Documents & Data in Settings."
+    },
+    {
+      "name": "case initialImportCompleted",
+      "desc": "This value indicates that the Core Data integration has finished building a store file that is consistent with the contents of the iCloud account, and is ready to replace the fallback store with that file."
+    }
+  ],
+  "declaration": "enum NSPersistentStoreUbiquitousTransitionType : UInt, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

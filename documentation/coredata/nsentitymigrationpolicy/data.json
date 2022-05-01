@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/coredata/nsentitymigrationpolicy",
+  "type": "Class",
+  "name": "NSEntityMigrationPolicy",
+  "desc": "A policy instance that customizes the migration process for an entity mapping.",
+  "items": [
+    {
+      "name": "func begin(NSEntityMapping, with: NSMigrationManager)",
+      "desc": "Sets up state information before the start of a given entity mapping."
+    },
+    {
+      "name": "func createDestinationInstances(forSource: NSManagedObject, in: NSEntityMapping, manager: NSMigrationManager)",
+      "desc": "Creates the destination instance(s) for a given source instance."
+    },
+    {
+      "name": "func endInstanceCreation(forMapping: NSEntityMapping, manager: NSMigrationManager)",
+      "desc": "Indicates the end of the instance creation stage for the specified entity mapping, and the precursor to the next migration stage."
+    },
+    {
+      "name": "func createRelationships(forDestination: NSManagedObject, in: NSEntityMapping, manager: NSMigrationManager)",
+      "desc": "Constructs the relationships between the newly-created destination instances."
+    },
+    {
+      "name": "func endRelationshipCreation(forMapping: NSEntityMapping, manager: NSMigrationManager)",
+      "desc": "Indicates the end of the relationship creation stage for the specified entity mapping."
+    },
+    {
+      "name": "func performCustomValidation(forMapping: NSEntityMapping, manager: NSMigrationManager)",
+      "desc": "Provides the option to perform custom validation on migrated objects during the validation stage of the entity migration policy."
+    },
+    {
+      "name": "func end(NSEntityMapping, manager: NSMigrationManager)",
+      "desc": "Performs cleanup at the end of the migration, from any phase of the mapping."
+    },
+    {
+      "name": "let NSMigrationManagerKey: String",
+      "desc": "Key for the migration manager."
+    },
+    {
+      "name": "let NSMigrationSourceObjectKey: String",
+      "desc": "Key for the source object."
+    },
+    {
+      "name": "let NSMigrationDestinationObjectKey: String",
+      "desc": "Key for the destination object."
+    },
+    {
+      "name": "let NSMigrationEntityMappingKey: String",
+      "desc": "Key for the entity mapping object."
+    },
+    {
+      "name": "let NSMigrationPropertyMappingKey: String",
+      "desc": "Key for the property mapping object."
+    },
+    {
+      "name": "let NSMigrationEntityPolicyKey: String",
+      "desc": "Key for the entity migration policy object."
+    }
+  ],
+  "declaration": "class NSEntityMigrationPolicy : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

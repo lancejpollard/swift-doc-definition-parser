@@ -1,0 +1,104 @@
+{
+  "path": "/documentation/realitykit/boundingbox",
+  "type": "Structure",
+  "name": "BoundingBox",
+  "desc": "An axis-aligned bounding box.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an empty bounding box."
+    },
+    {
+      "name": "init(min: SIMD3<Float>, max: SIMD3<Float>)",
+      "desc": "Creates a bounding box with the given settings."
+    },
+    {
+      "name": "static let empty: BoundingBox",
+      "desc": "An empty bounding box."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean that indicates whether a box is empty."
+    },
+    {
+      "name": "var max: SIMD3<Float>",
+      "desc": "The position of the maximum corner of the box."
+    },
+    {
+      "name": "var min: SIMD3<Float>",
+      "desc": "The position of the minimum corner of the box."
+    },
+    {
+      "name": "var center: SIMD3<Float>",
+      "desc": "The center of the bounding box."
+    },
+    {
+      "name": "var extents: SIMD3<Float>",
+      "desc": "The extents of the bounding box."
+    },
+    {
+      "name": "var boundingRadius: Float",
+      "desc": "The radius of a bounding sphere that encompasses the bounding box."
+    },
+    {
+      "name": "func union(BoundingBox) -> BoundingBox",
+      "desc": "Creates a bounding box containing the current bounds and the specified bounds."
+    },
+    {
+      "name": "func formUnion(BoundingBox)",
+      "desc": "Expands the bounding box to contain the specified bounds."
+    },
+    {
+      "name": "func union(SIMD3<Float>) -> BoundingBox",
+      "desc": "Creates a bounding box containing the current bounds and the specified point."
+    },
+    {
+      "name": "func formUnion(SIMD3<Float>)",
+      "desc": "Expands the bounding box to contain the specified point."
+    },
+    {
+      "name": "func contains(BoundingBox) -> Bool",
+      "desc": "Checks whether the bounding box contains the specified bounds."
+    },
+    {
+      "name": "func contains(SIMD3<Float>) -> Bool",
+      "desc": "Checks whether the bounding box contains the specified point."
+    },
+    {
+      "name": "func intersects(BoundingBox) -> Bool",
+      "desc": "Checks whether the bounding box intersects the specified bounds."
+    },
+    {
+      "name": "func distanceSquared(toPoint: SIMD3<Float>) -> Float",
+      "desc": "Calculates the distance from a point to the bounding box."
+    },
+    {
+      "name": "func transform(by: float4x4)",
+      "desc": "Transforms the bounding box."
+    },
+    {
+      "name": "func transformed(by: float4x4) -> BoundingBox",
+      "desc": "Transforms the bounding box and finds the bounds of the result."
+    },
+    {
+      "name": "static func == (BoundingBox, BoundingBox) -> Bool",
+      "desc": "Indicates whether two bounding boxes are equal."
+    },
+    {
+      "name": "static func != (BoundingBox, BoundingBox) -> Bool",
+      "desc": "Indicates whether two bounding boxes are not equal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the bounding box by feeding them into the given hash function."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hashed value of the bounding box."
+    }
+  ],
+  "declaration": "@frozen struct BoundingBox",
+  "conformsTo": [
+    "Hashable"
+  ]
+}

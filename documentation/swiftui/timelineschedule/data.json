@@ -1,0 +1,61 @@
+{
+  "path": "/documentation/swiftui/timelineschedule",
+  "type": "Protocol",
+  "name": "TimelineSchedule",
+  "desc": "A type that provides a sequence of dates for use as a schedule.",
+  "items": [
+    {
+      "name": "static var animation: AnimationTimelineSchedule",
+      "desc": "A pausable schedule of dates updating at a frequency no more quickly than the provided interval."
+    },
+    {
+      "name": "static func animation(minimumInterval: Double?, paused: Bool) -> AnimationTimelineSchedule",
+      "desc": "A pausable schedule of dates updating at a frequency no more quickly than the provided interval."
+    },
+    {
+      "name": "static var everyMinute: EveryMinuteTimelineSchedule",
+      "desc": "A schedule for updating a timeline view at the start of every minute."
+    },
+    {
+      "name": "static func explicit<S>(S) -> ExplicitTimelineSchedule<S>",
+      "desc": "A schedule for updating a timeline view at explicit points in time."
+    },
+    {
+      "name": "static func periodic(from: Date, by: TimeInterval) -> PeriodicTimelineSchedule",
+      "desc": "A schedule for updating a timeline view at regular intervals."
+    },
+    {
+      "name": "func entries(from: Date, mode: Self.Mode) -> Self.Entries",
+      "desc": "Provides a sequence of dates starting around a given date."
+    },
+    {
+      "name": "associatedtype Entries : Sequence",
+      "desc": "The sequence of dates within a schedule."
+    },
+    {
+      "name": "typealias Mode",
+      "desc": "An alias for the timeline schedule update mode."
+    },
+    {
+      "name": "enum TimelineScheduleMode",
+      "desc": "A mode of operation for timeline schedule updates."
+    },
+    {
+      "name": "struct AnimationTimelineSchedule",
+      "desc": "A pausable schedule of dates updating at a frequency no more quickly than the provided interval."
+    },
+    {
+      "name": "struct EveryMinuteTimelineSchedule",
+      "desc": "A schedule for updating a timeline view at the start of every minute."
+    },
+    {
+      "name": "struct ExplicitTimelineSchedule",
+      "desc": "A schedule for updating a timeline view at explicit points in time."
+    },
+    {
+      "name": "struct PeriodicTimelineSchedule",
+      "desc": "A schedule for updating a timeline view at regular intervals."
+    }
+  ],
+  "declaration": "protocol TimelineSchedule"
+}

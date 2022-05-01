@@ -1,0 +1,96 @@
+{
+  "path": "/documentation/securityinterface/sfauthorizationview",
+  "type": "Class",
+  "name": "SFAuthorizationView",
+  "desc": "The class responsible for displaying a lock icon that can be used to indicate that a user interface has restricted access.",
+  "items": [
+    {
+      "name": "func authorizationViewShouldDeauthorize(SFAuthorizationView!) -> Bool",
+      "desc": "Sent to the delegate when a user clicks the open lock icon."
+    },
+    {
+      "name": "func authorizationViewCreatedAuthorization(SFAuthorizationView!)",
+      "desc": "Sent to the delegate to indicate the authorization object has been created or changed. If you have saved a copy of the authorization object for your own purposes, you should discard it and call authorization() for a new authorization object."
+    },
+    {
+      "name": "func authorizationViewDidAuthorize(SFAuthorizationView!)",
+      "desc": "Sent to the delegate to indicate the user was authorized and the authorization view was changed to unlocked."
+    },
+    {
+      "name": "func authorizationViewDidDeauthorize(SFAuthorizationView!)",
+      "desc": "Sent to the delegate to indicate the user was deauthorized and the authorization view was changed to locked."
+    },
+    {
+      "name": "func authorizationViewDidHide(SFAuthorizationView!)",
+      "desc": "Sent to the delegate to indicate that the view’s visibility has changed."
+    },
+    {
+      "name": "func authorizationViewReleasedAuthorization(SFAuthorizationView!)",
+      "desc": "Sent to the delegate to indicate that deauthorization is about to occur."
+    },
+    {
+      "name": "func authorization() -> SFAuthorization!",
+      "desc": "Returns the authorization object associated with this view."
+    },
+    {
+      "name": "func authorizationRights() -> UnsafeMutablePointer<AuthorizationRights>!",
+      "desc": "Returns the authorization rights for this view."
+    },
+    {
+      "name": "func authorizationState() -> SFAuthorizationViewState",
+      "desc": "Returns the current state of the authorization view."
+    },
+    {
+      "name": "func authorize(Any!) -> Bool",
+      "desc": "Attempts to unlock the lock icon in the view."
+    },
+    {
+      "name": "func deauthorize(Any!) -> Bool",
+      "desc": "Sets the authorization state to unauthorized and locks the lock icon in the view."
+    },
+    {
+      "name": "func delegate() -> Any!",
+      "desc": "Returns the delegate for this view."
+    },
+    {
+      "name": "func isEnabled() -> Bool",
+      "desc": "Indicates whether the authorization view is enabled (true) or disabled (false)."
+    },
+    {
+      "name": "func setAuthorizationRights(UnsafePointer<AuthorizationRights>!)",
+      "desc": "Sets the authorization rights for this view."
+    },
+    {
+      "name": "func setAutoupdate(Bool)",
+      "desc": "Sets the authorization view to update itself automatically."
+    },
+    {
+      "name": "func setAutoupdate(Bool, interval: TimeInterval)",
+      "desc": "Sets the authorization view to update itself at a specific interval."
+    },
+    {
+      "name": "func setDelegate(Any!)",
+      "desc": "Sets the delegate for this authorization view."
+    },
+    {
+      "name": "func setEnabled(Bool)",
+      "desc": "Sets the current state of the authorization view."
+    },
+    {
+      "name": "func setFlags(AuthorizationFlags)",
+      "desc": "Sets the current authorization flags for the view."
+    },
+    {
+      "name": "func setString(AuthorizationString!)",
+      "desc": "Sets the requested-right string to use with the default authorization rights set."
+    },
+    {
+      "name": "func updateStatus(Any!) -> Bool",
+      "desc": "Manually updates the authorization view."
+    }
+  ],
+  "declaration": "class SFAuthorizationView : NSView",
+  "inheritsFrom": [
+    "NSView"
+  ]
+}

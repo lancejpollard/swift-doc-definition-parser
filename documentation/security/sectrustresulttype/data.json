@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/security/sectrustresulttype",
+  "type": "Enumeration",
+  "name": "SecTrustResultType",
+  "desc": "Trust evaluation result codes.",
+  "items": [
+    {
+      "name": "case unspecified",
+      "desc": "The user did not specify a trust setting."
+    },
+    {
+      "name": "case proceed",
+      "desc": "The user granted permission to trust the certificate for the purposes designated in the specified policies."
+    },
+    {
+      "name": "case deny",
+      "desc": "The user specified that the certificate should not be trusted."
+    },
+    {
+      "name": "case recoverableTrustFailure",
+      "desc": "Trust is denied, but recovery may be possible."
+    },
+    {
+      "name": "case fatalTrustFailure",
+      "desc": "Trust is denied and no simple fix is available."
+    },
+    {
+      "name": "case otherError",
+      "desc": "A value that indicates a failure other than trust evaluation."
+    },
+    {
+      "name": "case invalid",
+      "desc": "An indication of an invalid setting or result."
+    }
+  ],
+  "declaration": "enum SecTrustResultType : UInt32, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

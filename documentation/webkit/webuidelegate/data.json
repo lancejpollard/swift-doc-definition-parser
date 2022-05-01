@@ -1,0 +1,172 @@
+{
+  "path": "/documentation/webkit/webuidelegate",
+  "type": "Protocol",
+  "name": "WebUIDelegate",
+  "desc": "Web view user interface delegates implement this protocol to control the opening of new windows, augment the behavior of default menu items displayed when the user clicks elements, and perform other user interface–related tasks. These methods can be invoked as a result of handling JavaScript or other plug-in content. Delegates that display more than one web view per window, for example, need to implement some of these methods to handle that case. The default implementation assumes one window per web view, so non-conventional user interfaces might implement a user interface delegate.",
+  "items": [
+    {
+      "name": "func webView(WebView!, createWebViewModalDialogWith: URLRequest!) -> WebView!",
+      "desc": "Creates a modal window containing a web view that loads the specified request."
+    },
+    {
+      "name": "func webViewRunModal(WebView!)",
+      "desc": "Displays a web view in a modal window."
+    },
+    {
+      "name": "func webView(WebView!, createWebViewWith: URLRequest!) -> WebView!",
+      "desc": "Creates a window containing a web view to load the specified request."
+    },
+    {
+      "name": "func webViewClose(WebView!)",
+      "desc": "Closes a web view in a window."
+    },
+    {
+      "name": "func webViewIsResizable(WebView!) -> Bool",
+      "desc": "Returns a Boolean value indicating whether a web view’s window can be resized."
+    },
+    {
+      "name": "func webView(WebView!, setResizable: Bool)",
+      "desc": "Sets whether a web view’s window can be resized."
+    },
+    {
+      "name": "func webView(WebView!, setFrame: NSRect)",
+      "desc": "Sets the frame rectangle of a web view’s window to the specified frame size."
+    },
+    {
+      "name": "func webViewFrame(WebView!) -> NSRect",
+      "desc": "Returns the frame rectangle of a web view’s window."
+    },
+    {
+      "name": "func webViewFocus(WebView!)",
+      "desc": "Brings a web view’s window to the front and makes it the active window."
+    },
+    {
+      "name": "func webViewUnfocus(WebView!)",
+      "desc": "Relinquishes focus on a web view’s window."
+    },
+    {
+      "name": "func webViewShow(WebView!)",
+      "desc": "Displays a web view’s window and moves it to the front."
+    },
+    {
+      "name": "func webViewFirstResponder(WebView!) -> NSResponder!",
+      "desc": "Returns the first responder of the web view’s window."
+    },
+    {
+      "name": "func webView(WebView!, makeFirstResponder: NSResponder!)",
+      "desc": "Sets the first responder of a web view’s window to the specified view."
+    },
+    {
+      "name": "func webView(WebView!, mouseDidMoveOverElement: [AnyHashable : Any]!, modifierFlags: Int)",
+      "desc": "Updates information about the element the user is mousing over."
+    },
+    {
+      "name": "func webView(WebView!, contextMenuItemsForElement: [AnyHashable : Any]!, defaultMenuItems: [Any]!) -> [Any]!",
+      "desc": "Returns menu items to display in an element's contextual menu."
+    },
+    {
+      "name": "func webView(WebView!, runJavaScriptAlertPanelWithMessage: String!, initiatedBy: WebFrame!)",
+      "desc": "Displays a JavaScript alert panel containing the specified message."
+    },
+    {
+      "name": "func webView(WebView!, runJavaScriptConfirmPanelWithMessage: String!, initiatedBy: WebFrame!) -> Bool",
+      "desc": "Displays a JavaScript confirmation panel with the specified message."
+    },
+    {
+      "name": "func webView(WebView!, runJavaScriptTextInputPanelWithPrompt: String!, defaultText: String!, initiatedBy: WebFrame!) -> String!",
+      "desc": "Displays a JavaScript text input panel and returns the entered text."
+    },
+    {
+      "name": "func webView(WebView!, runOpenPanelForFileButtonWith: WebOpenPanelResultListener!)",
+      "desc": "Displays an open panel for a file input control."
+    },
+    {
+      "name": "func webView(WebView!, runOpenPanelForFileButtonWith: WebOpenPanelResultListener!, allowMultipleFiles: Bool)",
+      "desc": "Displays an open panel for a file input control."
+    },
+    {
+      "name": "func webView(WebView!, runBeforeUnloadConfirmPanelWithMessage: String!, initiatedBy: WebFrame!) -> Bool",
+      "desc": "Displays a confirmation panel containing the specified message before a window closes."
+    },
+    {
+      "name": "func webView(WebView!, setStatusText: String!)",
+      "desc": "Sets the status message displayed by a web view’s window, if any, to the specified text."
+    },
+    {
+      "name": "func webViewStatusText(WebView!) -> String!",
+      "desc": "Returns the current status message from a web view's window."
+    },
+    {
+      "name": "func webViewAreToolbarsVisible(WebView!) -> Bool",
+      "desc": "Returns a Boolean value indicating whether any toolbars are visible in a web view's window."
+    },
+    {
+      "name": "func webView(WebView!, setToolbarsVisible: Bool)",
+      "desc": "Sets whether a web view's toolbars should be visible."
+    },
+    {
+      "name": "func webViewIsStatusBarVisible(WebView!) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the status bar in a web view's window is visible."
+    },
+    {
+      "name": "func webView(WebView!, setStatusBarVisible: Bool)",
+      "desc": "Sets the visibility of the status bar in a web view’s window."
+    },
+    {
+      "name": "func webView(WebView!, dragDestinationActionMaskFor: NSDraggingInfo!) -> Int",
+      "desc": "Returns a mask indicating which drag operations are allowed by the sender."
+    },
+    {
+      "name": "func webView(WebView!, dragSourceActionMaskFor: NSPoint) -> Int",
+      "desc": "Returns a mask indicating which drag-source actions are allowed for a drag that begins at the specified location."
+    },
+    {
+      "name": "func webView(WebView!, willPerform: WebDragDestinationAction, for: NSDraggingInfo!)",
+      "desc": "Tells the receiver that the sending web view will perform the specified drag-destination action."
+    },
+    {
+      "name": "func webView(WebView!, willPerform: WebDragSourceAction, from: NSPoint, with: NSPasteboard!)",
+      "desc": "Tells the receiver that the sending web view will perform the specified drag-source action."
+    },
+    {
+      "name": "func webView(WebView!, shouldPerformAction: Selector!, fromSender: Any!) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the action sent by the specified object should be performed."
+    },
+    {
+      "name": "func webView(WebView!, validate: NSValidatedUserInterfaceItem!, defaultValidation: Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the specified user interface item is valid."
+    },
+    {
+      "name": "func webView(WebView!, print: WebFrameView!)",
+      "desc": "Prints the contents of a web frame view."
+    },
+    {
+      "name": "func webViewHeaderHeight(WebView!) -> Float",
+      "desc": "Returns the height of the web view’s printed page header."
+    },
+    {
+      "name": "func webViewFooterHeight(WebView!) -> Float",
+      "desc": "Returns the height of the web view’s printed page footer."
+    },
+    {
+      "name": "func webView(WebView!, drawHeaderIn: NSRect)",
+      "desc": "Draws the web view’s header in the specified rectangle."
+    },
+    {
+      "name": "func webView(WebView!, drawFooterIn: NSRect)",
+      "desc": "Draws the web view’s footer in the specified rectangle."
+    },
+    {
+      "name": "struct WebDragDestinationAction",
+      "desc": "Actions that the destination object of a drag operation can perform."
+    },
+    {
+      "name": "struct WebDragSourceAction",
+      "desc": "Actions that the source object of a drag operation can perform."
+    }
+  ],
+  "declaration": "protocol WebUIDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

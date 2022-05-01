@@ -1,0 +1,116 @@
+{
+  "path": "/documentation/foundation/nskeyedunarchiver",
+  "type": "Class",
+  "name": "NSKeyedUnarchiver",
+  "desc": "A decoder that restores data from an archive referenced by keys.",
+  "items": [
+    {
+      "name": "init(forReadingFrom: Data)",
+      "desc": "Initializes an archiver to decode data from the specified location."
+    },
+    {
+      "name": "class func unarchiveTopLevelObjectWithData(Data) -> Any?",
+      "desc": "Decodes a previously-archived object graph, and returns the root object."
+    },
+    {
+      "name": "static func unarchivedObject<DecodedObjectType>(ofClass: DecodedObjectType.Type, from: Data) -> DecodedObjectType?",
+      "desc": "Decodes a previously-archived object graph, and returns the root object as the specified type."
+    },
+    {
+      "name": "class func unarchivedObject(ofClasses: Set<AnyHashable>, from: Data) -> Any",
+      "desc": "Decodes a previously-archived object graph, returning the root object as one of the specified classes."
+    },
+    {
+      "name": "static func unarchivedObject(ofClasses: [AnyClass], from: Data) -> Any?",
+      "desc": "Decodes a previously-archived object graph, returning the root object as one of the specified classes."
+    },
+    {
+      "name": "var requiresSecureCoding: Bool",
+      "desc": "Indicates whether the receiver requires all unarchived classes to conform to NSSecureCoding."
+    },
+    {
+      "name": "func containsValue(forKey: String) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the archive contains a value for a given key within the current decoding scope."
+    },
+    {
+      "name": "func decodeDecodable<T>(T.Type, forKey: String) -> T?",
+      "desc": "Decodes a decodable value associated with a given key."
+    },
+    {
+      "name": "func decodeTopLevelDecodable<T>(T.Type, forKey: String) -> T?",
+      "desc": "Decodes a top-level decodable value associated with a given key."
+    },
+    {
+      "name": "func decodeBool(forKey: String) -> Bool",
+      "desc": "Decodes a Boolean value associated with a given key."
+    },
+    {
+      "name": "func decodeBytes(forKey: String, returnedLength: UnsafeMutablePointer<Int>?) -> UnsafePointer<UInt8>?",
+      "desc": "Decodes a stream of bytes associated with a given key."
+    },
+    {
+      "name": "func decodeDouble(forKey: String) -> Double",
+      "desc": "Decodes a double-precision floating-point value associated with a given key."
+    },
+    {
+      "name": "func decodeFloat(forKey: String) -> Float",
+      "desc": "Decodes a single-precision floating-point value associated with a given key."
+    },
+    {
+      "name": "func decodeInt32(forKey: String) -> Int32",
+      "desc": "Decodes a 32-bit integer value associated with a given key."
+    },
+    {
+      "name": "func decodeInt64(forKey: String) -> Int64",
+      "desc": "Decodes a 64-bit integer value associated with a given key."
+    },
+    {
+      "name": "func decodeObject(forKey: String) -> Any?",
+      "desc": "Decodes and returns an object associated with a given key."
+    },
+    {
+      "name": "func finishDecoding()",
+      "desc": "Tells the receiver that you are finished decoding objects."
+    },
+    {
+      "name": "var decodingFailurePolicy: NSCoder.DecodingFailurePolicy",
+      "desc": "The action to take when this unarchiver fails to decode an entry."
+    },
+    {
+      "name": "var delegate: NSKeyedUnarchiverDelegate?",
+      "desc": "The receiver’s delegate."
+    },
+    {
+      "name": "class func setClass(AnyClass?, forClassName: String)",
+      "desc": "Sets a global translation mapping to decode objects encoded with a given class name as instances of a given class instead."
+    },
+    {
+      "name": "class func `class`(forClassName: String) -> AnyClass?",
+      "desc": "Returns the class from which this unarchiver instantiates an encoded object with a given class name."
+    },
+    {
+      "name": "func setClass(AnyClass?, forClassName: String)",
+      "desc": "Sets a translation mapping on this unarchiver to decode objects encoded with a given class name as instances of a given class instead."
+    },
+    {
+      "name": "func `class`(forClassName: String) -> AnyClass?",
+      "desc": "Returns the class from which this unarchiver instantiates an encoded object with a given class name."
+    },
+    {
+      "name": "static func unarchivedArrayOfObjects<DecodedObject>(ofClass: DecodedObject.Type, from: Data) -> [DecodedObject]?"
+    },
+    {
+      "name": "static func unarchivedArrayOfObjects(ofClasses: [AnyClass], from: Data) -> [Any]?"
+    },
+    {
+      "name": "static func unarchivedDictionary(keysOfClasses: [AnyClass], objectsOfClasses: [AnyClass], from: Data) -> [AnyHashable : Any]?"
+    },
+    {
+      "name": "static func unarchivedDictionary<DecodedKey, DecodedObject>(ofKeyClass: DecodedKey.Type, objectClass: DecodedObject.Type, from: Data) -> [DecodedKey : DecodedObject]?"
+    }
+  ],
+  "declaration": "class NSKeyedUnarchiver : NSCoder",
+  "inheritsFrom": [
+    "NSCoder"
+  ]
+}

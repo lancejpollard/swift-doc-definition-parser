@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/combine/publishers/ignoreoutput",
+  "type": "Structure",
+  "name": "Publishers.IgnoreOutput",
+  "desc": "A publisher that ignores all upstream elements, but passes along the upstream publisher’s completion state (finished or failed).",
+  "items": [
+    {
+      "name": "init(upstream: Upstream)",
+      "desc": "Creates a publisher that ignores all upstream elements, but passes along the upstream publisher’s completion state (finish or failed)."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    },
+    {
+      "name": "static func == (Publishers.IgnoreOutput<Upstream>, Publishers.IgnoreOutput<Upstream>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two publishers are equivalent."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    }
+  ],
+  "declaration": "struct IgnoreOutput<Upstream> where Upstream : Publisher",
+  "conformsTo": [
+    "Equatable",
+    "Publisher"
+  ]
+}

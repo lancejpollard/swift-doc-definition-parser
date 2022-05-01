@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/combine/publishers/combinelatest3",
+  "type": "Structure",
+  "name": "Publishers.CombineLatest3",
+  "desc": "A publisher that receives and combines the latest elements from three publishers.",
+  "items": [
+    {
+      "name": "init(A, B, C)"
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let a: A"
+    },
+    {
+      "name": "let b: B"
+    },
+    {
+      "name": "let c: C"
+    },
+    {
+      "name": "static func == (Publishers.CombineLatest3<A, B, C>, Publishers.CombineLatest3<A, B, C>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    }
+  ],
+  "declaration": "struct CombineLatest3<A, B, C> where A : Publisher, B : Publisher, C : Publisher, A.Failure == B.Failure, B.Failure == C.Failure",
+  "conformsTo": [
+    "Equatable",
+    "Publisher"
+  ]
+}

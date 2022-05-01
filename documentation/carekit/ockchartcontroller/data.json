@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/carekit/ockchartcontroller",
+  "type": "Class",
+  "name": "OCKChartController",
+  "desc": "A controller object that handles updating charts.",
+  "items": [
+    {
+      "name": "init(weekOfDate: Date, storeManager: OCKSynchronizedStoreManager)",
+      "desc": "Creates a new chart view controller for a specific week."
+    },
+    {
+      "name": "let objectWillChange: CurrentValueSubject<[OCKDataSeries], Never>",
+      "desc": "A publisher that publishes a contact when it changes in the store."
+    },
+    {
+      "name": "var store: OCKAnyEventStore",
+      "desc": "A reference to the store that fetches and updates events."
+    },
+    {
+      "name": "let storeManager: OCKSynchronizedStoreManager",
+      "desc": "The object that synchronizes between the store and controller."
+    },
+    {
+      "name": "func fetchAndObserveInsights(forConfigurations: [OCKDataSeriesConfiguration], errorHandler: ((Error) -> Void)?)",
+      "desc": "Retrieves and observes insights data, using an array of specific data series configurations."
+    }
+  ],
+  "declaration": "class OCKChartController",
+  "conformsTo": [
+    "OCKChartControllerProtocol",
+    "ObservableObject"
+  ]
+}

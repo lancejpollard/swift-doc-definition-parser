@@ -1,0 +1,112 @@
+{
+  "path": "/documentation/passkit/pkpasslibrary",
+  "type": "Class",
+  "name": "PKPassLibrary",
+  "desc": "Provides an interface to the user’s library of passes.",
+  "items": [
+    {
+      "name": "class func isPassLibraryAvailable() -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the pass library is available."
+    },
+    {
+      "name": "func passes() -> [PKPass]",
+      "desc": "Returns the passes in the user’s pass library that the app can access."
+    },
+    {
+      "name": "func passes(of: PKPassType) -> [PKPass]",
+      "desc": "Returns the passes of the specified pass type."
+    },
+    {
+      "name": "func pass(withPassTypeIdentifier: String, serialNumber: String) -> PKPass?",
+      "desc": "Returns the pass with the specified pass type identifier and serial number."
+    },
+    {
+      "name": "func containsPass(PKPass) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the user’s pass library contains the specified pass."
+    },
+    {
+      "name": "func serviceProviderData(for: PKSecureElementPass, completion: (Data?, Error?) -> Void)",
+      "desc": "Calls a completion handler that returns the custom data for a Secure Element pass."
+    },
+    {
+      "name": "var remoteSecureElementPasses: [PKSecureElementPass]",
+      "desc": "The Secure Element passes that PassKit stores on paired devices."
+    },
+    {
+      "name": "func canAddSecureElementPass(primaryAccountIdentifier: String) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether PassKit can add a Secure Element pass for the specified account."
+    },
+    {
+      "name": "func canAddFelicaPass() -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the library can add FeliCa™ passes."
+    },
+    {
+      "name": "func addPasses([PKPass], withCompletionHandler: ((PKPassLibraryAddPassesStatus) -> Void)?)",
+      "desc": "Presents a user interface for adding multiple passes at once."
+    },
+    {
+      "name": "enum PKPassLibraryAddPassesStatus",
+      "desc": "Statuses that PassKit uses when it adds passes to the pass library."
+    },
+    {
+      "name": "var isSecureElementPassActivationAvailable: Bool",
+      "desc": "A Boolean value that indicates whether the device supports creating Secure Element passes."
+    },
+    {
+      "name": "func activate(PKSecureElementPass, activationData: Data, completion: ((Bool, Error?) -> Void)?)",
+      "desc": "Activates a Secure Element pass using the specified data."
+    },
+    {
+      "name": "func replacePass(with: PKPass) -> Bool",
+      "desc": "Replaces a pass in the user’s pass library with the specified pass."
+    },
+    {
+      "name": "func removePass(PKPass)",
+      "desc": "Removes the pass from the user’s pass library."
+    },
+    {
+      "name": "func present(PKSecureElementPass)",
+      "desc": "Presents a Secure Element pass."
+    },
+    {
+      "name": "class func isSuppressingAutomaticPassPresentation() -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the system suppresses the automatic presentation of Apple Pay passes."
+    },
+    {
+      "name": "class func requestAutomaticPassPresentationSuppression(responseHandler: (PKAutomaticPassPresentationSuppressionResult) -> Void) -> PKSuppressionRequestToken",
+      "desc": "Prevents the iOS device from automatically displaying the Apple Pay interface."
+    },
+    {
+      "name": "enum PKAutomaticPassPresentationSuppressionResult",
+      "desc": "The result of an attempt to suppress automatic pass presentation."
+    },
+    {
+      "name": "class func endAutomaticPassPresentationSuppression(withRequestToken: PKSuppressionRequestToken)",
+      "desc": "Reenables the automatic display of the Apple Pay interface."
+    },
+    {
+      "name": "typealias PKSuppressionRequestToken",
+      "desc": "A token that represents a request to suppress the automatic presentation of payment passes."
+    },
+    {
+      "name": "func openPaymentSetup()",
+      "desc": "Opens the user interface to set up credit cards for Apple Pay."
+    },
+    {
+      "name": "func sign(Data, using: PKSecureElementPass, completion: (Data?, Data?, Error?) -> Void)",
+      "desc": "Signs an opaque value using a cryptographic signature."
+    },
+    {
+      "name": "struct PKPassLibraryNotificationKey",
+      "desc": "The user info keys that a pass library notification uses."
+    },
+    {
+      "name": "struct PKPassLibraryNotificationName",
+      "desc": "The types of notifications that the pass library posts."
+    }
+  ],
+  "declaration": "class PKPassLibrary : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

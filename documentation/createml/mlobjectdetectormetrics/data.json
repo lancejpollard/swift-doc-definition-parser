@@ -1,0 +1,46 @@
+{
+  "path": "/documentation/createml/mlobjectdetectormetrics",
+  "type": "Structure",
+  "name": "MLObjectDetectorMetrics",
+  "desc": "Metrics you use to evaluate an object detector’s performance.",
+  "items": [
+    {
+      "name": "init(averagePrecision: (variedIoU: [String : Double], IoU50: [String : Double]), meanAveragePrecision: (variedIoU: Double, IoU50: Double))",
+      "desc": "Creates metrics for an object detector given an average precision and a mean average precision."
+    },
+    {
+      "name": "var averagePrecision: (variedIoU: [String : Double], IoU50: [String : Double])",
+      "desc": "Two dictionaries of average precisions at different threshholds."
+    },
+    {
+      "name": "var meanAveragePrecision: (variedIoU: Double, IoU50: Double)",
+      "desc": "Two mean-average precisions at different threshholds."
+    },
+    {
+      "name": "var isValid: Bool",
+      "desc": "A Boolean value indicating whether the object detector model was able to calculate metrics."
+    },
+    {
+      "name": "var error: Error?",
+      "desc": "The underlying error present when the metrics are invalid."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the object detector metrics."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the object detector metrics that’s suitable for output during debugging."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the object detector metrics shown in a playground."
+    }
+  ],
+  "declaration": "struct MLObjectDetectorMetrics",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomStringConvertible"
+  ]
+}

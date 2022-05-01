@@ -1,0 +1,114 @@
+{
+  "path": "/documentation/createml/mlsoundclassifier",
+  "type": "Structure",
+  "name": "MLSoundClassifier",
+  "desc": "A machine learning model you train with audio files to recognize and identify sounds on a device.",
+  "items": [
+    {
+      "name": "static func train(trainingData: MLSoundClassifier.DataSource, parameters: MLSoundClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLJob<MLSoundClassifier>",
+      "desc": "Begins an asynchronous sound classifier training session with a training dataset represented by a data source."
+    },
+    {
+      "name": "static func train(trainingData: [String : [URL]], parameters: MLSoundClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLJob<MLSoundClassifier>",
+      "desc": "Begins an asynchronous sound classifier training session with a training dataset represented by a dictionary."
+    },
+    {
+      "name": "static func makeTrainingSession(trainingData: MLSoundClassifier.DataSource, parameters: MLSoundClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLTrainingSession<MLSoundClassifier>",
+      "desc": "Creates an asynchronous training session for a sound classifier."
+    },
+    {
+      "name": "static func resume(MLTrainingSession<MLSoundClassifier>) -> MLJob<MLSoundClassifier>",
+      "desc": "Begins or continues an asynchronous training session for a sound classifier."
+    },
+    {
+      "name": "static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) -> MLTrainingSession<MLSoundClassifier>",
+      "desc": "Creates an asynchronous training session for a sound classifier by restoring an existing training session’s state from its parameters."
+    },
+    {
+      "name": "static func extractFeatures(trainingData: MLSoundClassifier.DataSource, parameters: MLSoundClassifier.FeatureExtractionParameters, sessionParameters: MLTrainingSessionParameters) -> MLJob<MLSoundClassifier.DataSource>",
+      "desc": "Begins an asynchronous session that extracts sound features from a data source of sound files."
+    },
+    {
+      "name": "struct MLSoundClassifier.FeatureExtractionParameters",
+      "desc": "Parameters that affect the process of extracting sound features from audio files."
+    },
+    {
+      "name": "init(checkpoint: MLCheckpoint)",
+      "desc": "Creates a sound classifier from a training session checkpoint."
+    },
+    {
+      "name": "init(trainingData: MLSoundClassifier.DataSource, parameters: MLSoundClassifier.ModelParameters)",
+      "desc": "Creates a sound classifier with a training dataset represented by a data source."
+    },
+    {
+      "name": "init(trainingData: [String : [URL]], parameters: MLSoundClassifier.ModelParameters)",
+      "desc": "Creates a sound classifier with a training dataset represented by a dictionary."
+    },
+    {
+      "name": "var trainingMetrics: MLClassifierMetrics",
+      "desc": "Measurements of the sound classifier’s performance on the training dataset."
+    },
+    {
+      "name": "var validationMetrics: MLClassifierMetrics",
+      "desc": "Measurements of the sound classifier’s performance on the validation dataset."
+    },
+    {
+      "name": "func evaluation(on: MLSoundClassifier.DataSource) -> MLClassifierMetrics",
+      "desc": "Generates metrics by evaluating the sound classifier’s performance on a dataset represented by a data source."
+    },
+    {
+      "name": "func evaluation(on: [String : [URL]]) -> MLClassifierMetrics",
+      "desc": "Generates metrics by evaluating the sound classifier’s performance on a dataset represented by a dictionary."
+    },
+    {
+      "name": "func predictions(from: [URL]) -> [String]",
+      "desc": "Generates predictions for an array of audio files."
+    },
+    {
+      "name": "func predictions(from: [URL], overlapFactor: Double, predictionTimeWindowSize: TimeInterval) -> [String]",
+      "desc": "Generates predictions that use an overlap factor and time window size for an array of audio files."
+    },
+    {
+      "name": "func write(to: URL, metadata: MLModelMetadata?)",
+      "desc": "Exports the sound classifier as a model file to a location in the file system."
+    },
+    {
+      "name": "func write(toFile: String, metadata: MLModelMetadata?)",
+      "desc": "Exports the sound classifier as a model file to a path in the file system."
+    },
+    {
+      "name": "var model: MLModel",
+      "desc": "The underlying model instance of the sound classifier stored in memory."
+    },
+    {
+      "name": "let modelParameters: MLSoundClassifier.ModelParameters",
+      "desc": "The model configuration parameters the sound classifier used during its training session."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the sound classifier."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the sound classifier that’s suitable for output during debugging."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the sound classifier in a playground."
+    },
+    {
+      "name": "enum MLSoundClassifier.DataSource",
+      "desc": "A representation of a sound-classifier dataset located in the file system or in a data table."
+    },
+    {
+      "name": "struct MLSoundClassifier.ModelParameters",
+      "desc": "Parameters that affect the process of training a sound-classifier model."
+    }
+  ],
+  "declaration": "struct MLSoundClassifier",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomStringConvertible"
+  ]
+}

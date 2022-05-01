@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/foundation/urlsessionstreamtask",
+  "type": "Class",
+  "name": "URLSessionStreamTask",
+  "desc": "A URL session task that is stream-based.",
+  "items": [
+    {
+      "name": "func readData(ofMinLength: Int, maxLength: Int, timeout: TimeInterval, completionHandler: (Data?, Bool, Error?) -> Void)",
+      "desc": "Asynchronously reads a number of bytes from the stream, and calls a handler upon completion."
+    },
+    {
+      "name": "func write(Data, timeout: TimeInterval, completionHandler: (Error?) -> Void)",
+      "desc": "Asynchronously writes the specified data to the stream, and calls a handler upon completion."
+    },
+    {
+      "name": "func captureStreams()",
+      "desc": "Completes any already enqueued reads and writes, and then invokes the urlSession(_:streamTask:didBecome:outputStream:) delegate message."
+    },
+    {
+      "name": "func closeRead()",
+      "desc": "Completes any enqueued reads and writes, and then closes the read side of the underlying socket."
+    },
+    {
+      "name": "func closeWrite()",
+      "desc": "Completes any enqueued reads and writes, and then closes the write side of the underlying socket."
+    },
+    {
+      "name": "func startSecureConnection()",
+      "desc": "Completes any enqueued reads and writes, and establishes a secure connection."
+    }
+  ],
+  "declaration": "class URLSessionStreamTask : URLSessionTask",
+  "inheritsFrom": [
+    "URLSessionTask"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "path": "/documentation/accelerate/vdsp_fouriertransformfunctions",
+  "type": "Protocol",
+  "name": "vDSP_FourierTransformFunctions",
+  "desc": "A protocol that defines functions for fast Fourier transform operations.",
+  "items": [
+    {
+      "name": "associatedtype SplitComplex"
+    },
+    {
+      "name": "static func destroySetup(OpaquePointer)"
+    },
+    {
+      "name": "static func makeFFTSetup(log2n: vDSP_Length, radix: vDSP.Radix) -> OpaquePointer?"
+    },
+    {
+      "name": "static func transform(fftSetup: OpaquePointer, log2n: vDSP_Length, source: UnsafePointer<Self.SplitComplex>, destination: UnsafeMutablePointer<Self.SplitComplex>, direction: vDSP.FourierTransformDirection)"
+    },
+    {
+      "name": "static func transform2D(fftSetup: OpaquePointer, width: Int, height: Int, source: UnsafePointer<Self.SplitComplex>, destination: UnsafeMutablePointer<Self.SplitComplex>, direction: vDSP.FourierTransformDirection)"
+    }
+  ],
+  "declaration": "protocol vDSP_FourierTransformFunctions"
+}

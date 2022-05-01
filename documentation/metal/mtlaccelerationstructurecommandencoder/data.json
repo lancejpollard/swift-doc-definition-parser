@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/metal/mtlaccelerationstructurecommandencoder",
+  "type": "Protocol",
+  "name": "MTLAccelerationStructureCommandEncoder",
+  "desc": "An object for encoding commands that build or refit acceleration structures.",
+  "items": [
+    {
+      "name": "func build(accelerationStructure: MTLAccelerationStructure, descriptor: MTLAccelerationStructureDescriptor, scratchBuffer: MTLBuffer, scratchBufferOffset: Int)",
+      "desc": "Encodes a command to build a new acceleration structure."
+    },
+    {
+      "name": "func copy(sourceAccelerationStructure: MTLAccelerationStructure, destinationAccelerationStructure: MTLAccelerationStructure)",
+      "desc": "Encodes a command to copy the data from one acceleration structure to another."
+    },
+    {
+      "name": "func writeCompactedSize(accelerationStructure: MTLAccelerationStructure, buffer: MTLBuffer, offset: Int)",
+      "desc": "Encodes a command to calculate the compacted size of an acceleration structure."
+    },
+    {
+      "name": "func writeCompactedSize(accelerationStructure: MTLAccelerationStructure, buffer: MTLBuffer, offset: Int, sizeDataType: MTLDataType)",
+      "desc": "Encodes a command to calculate the compacted size of an acceleration structure, taking into account the size of the output data."
+    },
+    {
+      "name": "func copyAndCompact(sourceAccelerationStructure: MTLAccelerationStructure, destinationAccelerationStructure: MTLAccelerationStructure)",
+      "desc": "Encodes a command to compact an acceleration structure’s data and copy it into a different acceleration structure."
+    },
+    {
+      "name": "func refit(sourceAccelerationStructure: MTLAccelerationStructure, descriptor: MTLAccelerationStructureDescriptor, destinationAccelerationStructure: MTLAccelerationStructure?, scratchBuffer: MTLBuffer, scratchBufferOffset: Int)",
+      "desc": "Updates an acceleration structure with new geometry or instance data."
+    },
+    {
+      "name": "func updateFence(MTLFence)",
+      "desc": "Tells the GPU to update the fence after all commands encoded by the encoder have finished executing."
+    },
+    {
+      "name": "func waitForFence(MTLFence)",
+      "desc": "Tells the GPU to wait until the fence is updated before executing any commands encoded by the command encoder."
+    },
+    {
+      "name": "func useHeap(MTLHeap)",
+      "desc": "Makes the resources contained in the specified heap available to the acceleration structure pass."
+    },
+    {
+      "name": "func useHeaps([MTLHeap])",
+      "desc": "Makes the resources contained in the specified heaps available to the acceleration structure pass."
+    },
+    {
+      "name": "func useResource(MTLResource, usage: MTLResourceUsage)",
+      "desc": "Makes a resource available to the acceleration structure pass."
+    },
+    {
+      "name": "func useResources([MTLResource], usage: MTLResourceUsage)",
+      "desc": "Makes multiple resources available to the acceleration structure pass."
+    },
+    {
+      "name": "struct MTLResourceUsage",
+      "desc": "Options that describe how a graphics or compute function uses an argument buffer’s resource."
+    },
+    {
+      "name": "func sampleCounters(sampleBuffer: MTLCounterSampleBuffer, sampleIndex: Int, barrier: Bool)",
+      "desc": "Encodes a command to sample hardware counters at this point in the acceleration structure pass and store the samples into a counter sample buffer."
+    }
+  ],
+  "declaration": "protocol MTLAccelerationStructureCommandEncoder",
+  "inheritsFrom": [
+    "MTLCommandEncoder"
+  ]
+}

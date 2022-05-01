@@ -1,0 +1,59 @@
+{
+  "path": "/documentation/avfoundation/avasynchronousvideocompositionrequest",
+  "type": "Class",
+  "name": "AVAsynchronousVideoCompositionRequest",
+  "desc": "An object that contains information a video compositor needs to render an output pixel buffer.",
+  "items": [
+    {
+      "name": "var compositionTime: CMTime",
+      "desc": "A time for which to compose the frame."
+    },
+    {
+      "name": "var renderContext: AVVideoCompositionRenderContext",
+      "desc": "The rendering context of the video composition."
+    },
+    {
+      "name": "var videoCompositionInstruction: AVVideoCompositionInstructionProtocol",
+      "desc": "A video composition instruction that indicates how to compose the frame."
+    },
+    {
+      "name": "var sourceTrackIDs: [NSNumber]",
+      "desc": "The identifiers of tracks that contain source video."
+    },
+    {
+      "name": "var sourceSampleDataTrackIDs: [CMPersistentTrackID]",
+      "desc": "The identifiers of tracks that contain source sample data."
+    },
+    {
+      "name": "func sourceFrame(byTrackID: CMPersistentTrackID) -> CVPixelBuffer?",
+      "desc": "Returns a source pixel buffer for the track that contains the specified identifier."
+    },
+    {
+      "name": "func sourceSampleBuffer(byTrackID: CMPersistentTrackID) -> CMSampleBuffer?",
+      "desc": "Returns a source sample buffer for the track that contains the specified identifier."
+    },
+    {
+      "name": "func sourceTimedMetadata(byTrackID: CMPersistentTrackID) -> AVTimedMetadataGroup?",
+      "desc": "Returns a source timed metadata group for the track that contains the specified identifier."
+    },
+    {
+      "name": "func finish(withComposedVideoFrame: CVPixelBuffer)",
+      "desc": "Finishes the request to compose the frame."
+    },
+    {
+      "name": "func finish(with: Error)",
+      "desc": "Finishes the request with an error."
+    },
+    {
+      "name": "func finishCancelledRequest()",
+      "desc": "Cancels the request to compose a video frame."
+    }
+  ],
+  "declaration": "class AVAsynchronousVideoCompositionRequest : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

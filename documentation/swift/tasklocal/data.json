@@ -1,0 +1,34 @@
+{
+  "path": "/documentation/swift/tasklocal",
+  "type": "Generic Class",
+  "name": "TaskLocal",
+  "desc": "Property wrapper that defines a task-local value key.",
+  "items": [
+    {
+      "name": "init(wrappedValue: Value)"
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual representation of this instance."
+    },
+    {
+      "name": "var projectedValue: TaskLocal<Value>"
+    },
+    {
+      "name": "var wrappedValue: Value"
+    },
+    {
+      "name": "func get() -> Value",
+      "desc": "Gets the value currently bound to this task-local from the current task."
+    },
+    {
+      "name": "func withValue<R>(Value, operation: () -> R, file: String, line: UInt) -> R",
+      "desc": "Binds the task-local to the specific value for the duration of the asynchronous operation."
+    }
+  ],
+  "declaration": "@propertyWrapper final class TaskLocal<Value> where Value : Sendable",
+  "conformsTo": [
+    "CustomStringConvertible",
+    "Sendable"
+  ]
+}

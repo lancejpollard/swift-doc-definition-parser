@@ -1,0 +1,91 @@
+{
+  "path": "/documentation/iobluetooth/iobluetoothsdpservicerecord",
+  "type": "Class",
+  "name": "IOBluetoothSDPServiceRecord",
+  "desc": "An instance of this class represents a single SDP service record.",
+  "items": [
+    {
+      "name": "init!(serviceDictionary: [AnyHashable : Any]!, device: IOBluetoothDevice!)",
+      "desc": "Returns an initialized IOBluetoothSDPServiceRecord * with the attributes specified in the provided service dictionary. Provide a pointer to an IOBlueotothDevice if you wish to associate the record to a specific IOBluetoothDevice."
+    },
+    {
+      "name": "var attributes: [AnyHashable : Any]!",
+      "desc": "Returns an NSDictionary containing the attributes for the service."
+    },
+    {
+      "name": "var device: IOBluetoothDevice!",
+      "desc": "Returns the IOBluetoothDevice that the target service belongs to."
+    },
+    {
+      "name": "var sortedAttributes: [Any]!",
+      "desc": "Returns a sorted array of SDP attributes"
+    },
+    {
+      "name": "func getAttributeDataElement(BluetoothSDPServiceAttributeID) -> IOBluetoothSDPDataElement!",
+      "desc": "Returns the data element for the given attribute ID in the target service."
+    },
+    {
+      "name": "func getL2CAPPSM(UnsafeMutablePointer<BluetoothL2CAPPSM>!) -> IOReturn",
+      "desc": "Allows the discovery of the L2CAP PSM assigned to the service."
+    },
+    {
+      "name": "func getRFCOMMChannelID(UnsafeMutablePointer<BluetoothRFCOMMChannelID>!) -> IOReturn",
+      "desc": "Allows the discovery of the RFCOMM channel ID assigned to the service."
+    },
+    {
+      "name": "func getRef() -> Unmanaged<IOBluetoothSDPServiceRecordRef>!",
+      "desc": "Returns an IOBluetoothSDPServiceRecordRef representation of the target IOBluetoothSDPServiceRecord object."
+    },
+    {
+      "name": "func getServiceName() -> String!",
+      "desc": "Returns the name of the service."
+    },
+    {
+      "name": "func getHandle(UnsafeMutablePointer<BluetoothSDPServiceRecordHandle>!) -> IOReturn",
+      "desc": "Allows the discovery of the service record handle assigned to the service."
+    },
+    {
+      "name": "func handsFreeSupportedFeatures() -> UInt16"
+    },
+    {
+      "name": "func hasService(from: [Any]!) -> Bool",
+      "desc": "Returns TRUE if any one of the UUIDs in the given array is found in the target service."
+    },
+    {
+      "name": "func matchesSearch([Any]!) -> Bool",
+      "desc": "Returns TRUE any of the UUID arrays in the search array match the target service."
+    },
+    {
+      "name": "func matchesUUID16(BluetoothSDPUUID16) -> Bool",
+      "desc": "Returns TRUE the UUID16 is found in the target service."
+    },
+    {
+      "name": "func matchesUUIDArray([Any]!) -> Bool",
+      "desc": "Returns TRUE if ALL of the UUIDs in the given array is found in the target service."
+    },
+    {
+      "name": "func remove() -> IOReturn",
+      "desc": "Removes the service from the local SDP server."
+    },
+    {
+      "name": "class func publishedServiceRecord(with: [AnyHashable : Any]!) -> Self!",
+      "desc": "Adds a service to the local SDP server."
+    },
+    {
+      "name": "class func withSDPServiceRecordRef(IOBluetoothSDPServiceRecordRef!) -> Self!",
+      "desc": "Method call to convert an IOBluetoothSDPServiceRecordRef into an IOBluetoothSDPServiceRecord *."
+    },
+    {
+      "name": "class func withServiceDictionary([AnyHashable : Any]!, device: IOBluetoothDevice!) -> Self!",
+      "desc": "Returns an IOBluetoothSDPServiceRecord * with the attributes specified in the provided service dictionary. Provide a pointer to an IOBlueotothDevice if you wish to associate the record to a specific IOBluetoothDevice."
+    }
+  ],
+  "declaration": "class IOBluetoothSDPServiceRecord : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "NSSecureCoding"
+  ]
+}

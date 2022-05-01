@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/coremidi/midiciresponder",
+  "type": "Class",
+  "name": "MIDICIResponder",
+  "desc": "An object that responds to MIDI-CI inquiries from an initiator on behalf of a MIDI client, and handles profile and property exchange operations.",
+  "items": [
+    {
+      "name": "init(deviceInfo: MIDICIDeviceInfo, profileDelegate: MIDICIProfileResponderDelegate, profileStates: [MIDICIProfileState], supportProperties: Bool)",
+      "desc": "Creates a new responder."
+    },
+    {
+      "name": "func start() -> Bool",
+      "desc": "Starts receiving initiator requests."
+    },
+    {
+      "name": "func stop()",
+      "desc": "Stops receiving initiator requests and disconnects all connected initiators."
+    },
+    {
+      "name": "var profileDelegate: MIDICIProfileResponderDelegate",
+      "desc": "The profile delegate."
+    },
+    {
+      "name": "protocol MIDICIProfileResponderDelegate",
+      "desc": "A protocol that defines the methods to respond to MIDI-CI responder life-cycle events."
+    },
+    {
+      "name": "typealias MIDICIInitiatiorMUID",
+      "desc": "The unique MIDI-CI negotiation identifier to use for a responder connection."
+    },
+    {
+      "name": "var initiators: [MIDICIInitiatiorMUID]",
+      "desc": "An array of initiators."
+    },
+    {
+      "name": "struct MIDICIDeviceIdentification",
+      "desc": "A structure that describes a MIDI-CI device."
+    },
+    {
+      "name": "class MIDICIDeviceInfo",
+      "desc": "An object that provides basic information about a MIDI-CI device."
+    },
+    {
+      "name": "var deviceInfo: MIDICIDeviceInfo",
+      "desc": "The MIDI-CI device’s information."
+    },
+    {
+      "name": "func notify(MIDICIProfile, onChannel: MIDIChannelNumber, isEnabled: Bool) -> Bool",
+      "desc": "Enables or disables a profile and notifies all connected initiators."
+    },
+    {
+      "name": "func send(MIDICIProfile, onChannel: MIDIChannelNumber, profileData: Data) -> Bool",
+      "desc": "Sends profile-specific data to all connected initiators."
+    }
+  ],
+  "declaration": "class MIDICIResponder : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

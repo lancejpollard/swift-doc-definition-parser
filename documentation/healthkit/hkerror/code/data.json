@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/healthkit/hkerror/code",
+  "type": "Enumeration",
+  "name": "HKError.Code",
+  "desc": "Error codes returned by HealthKit.",
+  "items": [
+    {
+      "name": "case noError",
+      "desc": "No error occurred."
+    },
+    {
+      "name": "case errorHealthDataUnavailable",
+      "desc": "HealthKit accessed on an unsupported device, such as an iPad."
+    },
+    {
+      "name": "case errorHealthDataRestricted",
+      "desc": "A Mobile Device Management (MDM) profile restricts the use of HealthKit on this device."
+    },
+    {
+      "name": "case errorInvalidArgument",
+      "desc": "The app passed an invalid argument to the HealthKit API."
+    },
+    {
+      "name": "case errorAuthorizationDenied",
+      "desc": "The user hasn’t given the app permission to save data."
+    },
+    {
+      "name": "case errorAuthorizationNotDetermined",
+      "desc": "The app hasn’t yet asked the user for the authorization required to complete the task."
+    },
+    {
+      "name": "case errorRequiredAuthorizationDenied",
+      "desc": "The user hasn’t granted the application authorization to access all the required clinical record types."
+    },
+    {
+      "name": "case errorDatabaseInaccessible",
+      "desc": "The HealthKit data is unavailable because it’s protected and the device is locked."
+    },
+    {
+      "name": "case errorUserCanceled",
+      "desc": "The user canceled the operation."
+    },
+    {
+      "name": "case errorAnotherWorkoutSessionStarted",
+      "desc": "Another app started a workout session."
+    },
+    {
+      "name": "case errorUserExitedWorkoutSession",
+      "desc": "The user exited your application while a workout session was running."
+    },
+    {
+      "name": "case errorNoData",
+      "desc": "Data is unavailable for the requested query and predicate."
+    }
+  ],
+  "declaration": "enum HKError.Code : Int, _ErrorCodeProtocol, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/avfoundation/avvideocompositing",
+  "type": "Protocol",
+  "name": "AVVideoCompositing",
+  "desc": "A protocol that defines the methods custom video compositors must implement.",
+  "items": [
+    {
+      "name": "var sourcePixelBufferAttributes: [String : Any]?",
+      "desc": "The pixel buffer attributes that the compositor accepts for source frames."
+    },
+    {
+      "name": "var requiredPixelBufferAttributesForRenderContext: [String : Any]",
+      "desc": "The pixel buffer attributes that the compositor requires for pixel buffers that it creates."
+    },
+    {
+      "name": "var supportsHDRSourceFrames: Bool",
+      "desc": "A Boolean value that indicates whether the compositor handles source frames that contain high dynamic range (HDR) properties."
+    },
+    {
+      "name": "var supportsWideColorSourceFrames: Bool",
+      "desc": "A Boolean value that indicates whether the compositor handles source frames that contains wide color properties."
+    },
+    {
+      "name": "var canConformColorOfSourceFrames: Bool",
+      "desc": "A Boolean value that indicates whether the compositor conforms the color space of source frames to the composition color space."
+    },
+    {
+      "name": "func renderContextChanged(AVVideoCompositionRenderContext)",
+      "desc": "Tells the compositor that the composition changed render contexts."
+    },
+    {
+      "name": "class AVVideoCompositionRenderContext",
+      "desc": "An object that defines the context in which custom compositors render pixel buffers."
+    },
+    {
+      "name": "func anticipateRendering(using: AVVideoCompositionRenderHint)",
+      "desc": "Informs a custom video compositor about upcoming rendering requests."
+    },
+    {
+      "name": "func prerollForRendering(using: AVVideoCompositionRenderHint)",
+      "desc": "Tells a custom video compositor to perform any work in the prerolling phase."
+    },
+    {
+      "name": "class AVVideoCompositionRenderHint",
+      "desc": "Information about upcoming composition requests, such as composition start time and end time."
+    },
+    {
+      "name": "func startRequest(AVAsynchronousVideoCompositionRequest)",
+      "desc": "Directs a custom video compositor object to create a new pixel buffer composed asynchronously from a collection of sources."
+    },
+    {
+      "name": "class AVAsynchronousVideoCompositionRequest",
+      "desc": "An object that contains information a video compositor needs to render an output pixel buffer."
+    },
+    {
+      "name": "func cancelAllPendingVideoCompositionRequests()",
+      "desc": "Directs a custom video compositor object to cancel or finish all pending video composition requests."
+    }
+  ],
+  "declaration": "protocol AVVideoCompositing",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

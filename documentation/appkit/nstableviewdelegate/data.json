@@ -1,0 +1,128 @@
+{
+  "path": "/documentation/appkit/nstableviewdelegate",
+  "type": "Protocol",
+  "name": "NSTableViewDelegate",
+  "desc": "A set of optional methods you implement in a table view delegate to customize the behavior of the table view.",
+  "items": [
+    {
+      "name": "func tableView(NSTableView, viewFor: NSTableColumn?, row: Int) -> NSView?",
+      "desc": "Asks the delegate for a view to display the specified row and column."
+    },
+    {
+      "name": "func tableView(NSTableView, rowViewForRow: Int) -> NSTableRowView?",
+      "desc": "Asks the delegate for a view to display the specified row."
+    },
+    {
+      "name": "func tableView(NSTableView, didAdd: NSTableRowView, forRow: Int)",
+      "desc": "Tells the delegate that a row view was added at the specified row."
+    },
+    {
+      "name": "func tableView(NSTableView, didRemove: NSTableRowView, forRow: Int)",
+      "desc": "Tells the delegate that a row view was removed from the table at the specified row."
+    },
+    {
+      "name": "func tableView(NSTableView, isGroupRow: Int) -> Bool",
+      "desc": "Returns whether the specified row is a group row."
+    },
+    {
+      "name": "func tableView(NSTableView, willDisplayCell: Any, for: NSTableColumn?, row: Int)",
+      "desc": "Tells the delegate that the table view will display the specified cell at the specified row and column."
+    },
+    {
+      "name": "func tableView(NSTableView, dataCellFor: NSTableColumn?, row: Int) -> NSCell?",
+      "desc": "Asks the delegate for a custom data cell for the specified row and column."
+    },
+    {
+      "name": "func tableView(NSTableView, shouldShowCellExpansionFor: NSTableColumn?, row: Int) -> Bool",
+      "desc": "Asks the delegate if an expansion tooltip should be displayed for a specific row and column."
+    },
+    {
+      "name": "func tableView(NSTableView, toolTipFor: NSCell, rect: NSRectPointer, tableColumn: NSTableColumn?, row: Int, mouseLocation: NSPoint) -> String",
+      "desc": "Asks the delegate for a string to display in a tooltip for the specified cell in the column and row."
+    },
+    {
+      "name": "func tableView(NSTableView, shouldEdit: NSTableColumn?, row: Int) -> Bool",
+      "desc": "Asks the delegate if the cell at the specified row and column can be edited."
+    },
+    {
+      "name": "func tableView(NSTableView, heightOfRow: Int) -> CGFloat",
+      "desc": "Asks the delegate for the height of the specified row."
+    },
+    {
+      "name": "func tableView(NSTableView, sizeToFitWidthOfColumn: Int) -> CGFloat",
+      "desc": "Asks the delegate to provide custom sizing behavior when a column’s resize divider is double clicked."
+    },
+    {
+      "name": "func selectionShouldChange(in: NSTableView) -> Bool",
+      "desc": "Asks the delegate if the user is allowed to change the selection."
+    },
+    {
+      "name": "func tableView(NSTableView, shouldSelectRow: Int) -> Bool",
+      "desc": "Asks the delegate if the table view should allow selection of the specified row."
+    },
+    {
+      "name": "func tableView(NSTableView, selectionIndexesForProposedSelection: IndexSet) -> IndexSet",
+      "desc": "Asks the delegate to accept or reject the proposed selection."
+    },
+    {
+      "name": "func tableView(NSTableView, shouldSelect: NSTableColumn?) -> Bool",
+      "desc": "Asks the delegate whether the specified table column can be selected."
+    },
+    {
+      "name": "func tableViewSelectionIsChanging(Notification)",
+      "desc": "Tells the delegate that the table view’s selection is in the process of changing."
+    },
+    {
+      "name": "func tableViewSelectionDidChange(Notification)",
+      "desc": "Tells the delegate that the table view’s selection has changed."
+    },
+    {
+      "name": "func tableView(NSTableView, shouldTypeSelectFor: NSEvent, withCurrentSearch: String?) -> Bool",
+      "desc": "Asks the delegate to allow or deny type select for the specified event and current search string."
+    },
+    {
+      "name": "func tableView(NSTableView, typeSelectStringFor: NSTableColumn?, row: Int) -> String?",
+      "desc": "Asks the delegate to provide an alternative text value used for type selection for the specified row and column."
+    },
+    {
+      "name": "func tableView(NSTableView, nextTypeSelectMatchFromRow: Int, toRow: Int, for: String) -> Int",
+      "desc": "Asks the delegate for the row within the specified search range that matches the specified string."
+    },
+    {
+      "name": "func tableView(NSTableView, shouldReorderColumn: Int, toColumn: Int) -> Bool",
+      "desc": "Asks the delegate to allow or prohibit the specified column to be dragged to a new location."
+    },
+    {
+      "name": "func tableView(NSTableView, didDrag: NSTableColumn)",
+      "desc": "Tells the delegate that the specified table column was dragged."
+    },
+    {
+      "name": "func tableViewColumnDidMove(Notification)",
+      "desc": "Tells the delegate that a table column was moved by user action."
+    },
+    {
+      "name": "func tableViewColumnDidResize(Notification)",
+      "desc": "Tells the delegate that a table column was resized."
+    },
+    {
+      "name": "func tableView(NSTableView, didClick: NSTableColumn)",
+      "desc": "Tells the delegate that the mouse button was clicked in the specified table column, but the column was not dragged."
+    },
+    {
+      "name": "func tableView(NSTableView, mouseDownInHeaderOf: NSTableColumn)",
+      "desc": "Tells the delegate that the mouse button was clicked in the specified table column’s header."
+    },
+    {
+      "name": "func tableView(NSTableView, shouldTrackCell: NSCell, for: NSTableColumn?, row: Int) -> Bool",
+      "desc": "Asks the delegate whether the specified cell should be tracked."
+    },
+    {
+      "name": "func tableView(NSTableView, rowActionsForRow: Int, edge: NSTableView.RowActionEdge) -> [NSTableViewRowAction]",
+      "desc": "Asks the delegate to provide an array of row actions to be attached to the specified edge of a table row and displayed when the user swipes horizontally across the row."
+    }
+  ],
+  "declaration": "protocol NSTableViewDelegate",
+  "inheritsFrom": [
+    "NSControlTextEditingDelegate"
+  ]
+}

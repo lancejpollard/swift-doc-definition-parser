@@ -1,0 +1,39 @@
+{
+  "path": "/documentation/corenfc/nfctagreadersession",
+  "type": "Class",
+  "name": "NFCTagReaderSession",
+  "desc": "A reader session for detecting ISO7816, ISO15693, FeliCa, and MIFARE tags.",
+  "items": [
+    {
+      "name": "init?(pollingOption: NFCTagReaderSession.PollingOption, delegate: NFCTagReaderSessionDelegate, queue: DispatchQueue?)",
+      "desc": "Creates an NFC tag reader session."
+    },
+    {
+      "name": "struct NFCTagReaderSession.PollingOption",
+      "desc": "Options that determine the type of tags that a reader session should detect during a polling sequence."
+    },
+    {
+      "name": "protocol NFCTagReaderSessionDelegate",
+      "desc": "A protocol that an object implements to receive callbacks sent from an NFC tag reader session."
+    },
+    {
+      "name": "func connect(to: NFCTag, completionHandler: (Error?) -> Void)",
+      "desc": "Connects the reader session to a tag and activates that tag."
+    },
+    {
+      "name": "var connectedTag: NFCTag?",
+      "desc": "The tag connected to the reader session."
+    },
+    {
+      "name": "func restartPolling()",
+      "desc": "Restarts the polling sequence so the reader session can discover new tags."
+    },
+    {
+      "name": "func connect(to: NFCTag)"
+    }
+  ],
+  "declaration": "class NFCTagReaderSession : NFCReaderSession",
+  "inheritsFrom": [
+    "NFCReaderSession"
+  ]
+}

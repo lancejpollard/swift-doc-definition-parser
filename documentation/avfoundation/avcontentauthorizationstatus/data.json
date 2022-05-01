@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/avfoundation/avcontentauthorizationstatus",
+  "type": "Enumeration",
+  "name": "AVContentAuthorizationStatus",
+  "desc": "A value representing the status of a content authorization request.",
+  "items": [
+    {
+      "name": "case unknown",
+      "desc": "The content authorization content request hasn't completed."
+    },
+    {
+      "name": "case completed",
+      "desc": "The last completed call to request content authorization completed."
+    },
+    {
+      "name": "case cancelled",
+      "desc": "The last call to request content authorization was cancelled by the user."
+    },
+    {
+      "name": "case timedOut",
+      "desc": "The last call to request content authorization was cancelled because the timeout interval was reached."
+    },
+    {
+      "name": "case busy",
+      "desc": "The last call to request content authorization couldn't be completed because another asset is currently attempting authorization."
+    },
+    {
+      "name": "case notAvailable",
+      "desc": "The last call to request content authorization couldn't be completed because there was no known mechanism by which to attempt authorization."
+    },
+    {
+      "name": "case notPossible",
+      "desc": "The last call to request content authorization couldn't be completed in a non-recoverable way."
+    }
+  ],
+  "declaration": "enum AVContentAuthorizationStatus : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

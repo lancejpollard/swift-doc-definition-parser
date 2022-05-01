@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/foundation/nssortdescriptor",
+  "type": "Class",
+  "name": "NSSortDescriptor",
+  "desc": "An immutable description of how to order a collection of objects according to a property common to all the objects.",
+  "items": [
+    {
+      "name": "init(key: String?, ascending: Bool)",
+      "desc": "Creates a sort descriptor with a specified string key path and sort order."
+    },
+    {
+      "name": "init(key: String?, ascending: Bool, selector: Selector?)",
+      "desc": "Creates a sort descriptor with a specified string key path, ordering, and comparison selector."
+    },
+    {
+      "name": "init<Root, Value>(keyPath: KeyPath<Root, Value>, ascending: Bool)",
+      "desc": "Creates a sort descriptor with a specified key path and ordering."
+    },
+    {
+      "name": "init(key: String?, ascending: Bool, comparator: Comparator)",
+      "desc": "Creates a sort descriptor with a specified string key path and ordering, and a comparator block."
+    },
+    {
+      "name": "init<Root, Value>(keyPath: KeyPath<Root, Value>, ascending: Bool, comparator: Comparator)",
+      "desc": "Creates a sort descriptor with a specified key path and ordering, and a comparator block."
+    },
+    {
+      "name": "init?(coder: NSCoder)",
+      "desc": "Creates a sort descriptor by decoding from the coder you specify."
+    },
+    {
+      "name": "init<Compared>(SortDescriptor<Compared>)",
+      "desc": "Creates a sort descriptor using a sort descriptor you specify."
+    },
+    {
+      "name": "var ascending: Bool",
+      "desc": "A Boolean value that indicates whether the receiver specifies sorting in ascending order."
+    },
+    {
+      "name": "var key: String?",
+      "desc": "The key that specifies the property to compare during sorting."
+    },
+    {
+      "name": "var keyPath: AnyKeyPath?",
+      "desc": "The key path that specifies the property to compare during sorting."
+    },
+    {
+      "name": "var selector: Selector?",
+      "desc": "The selector for comparing objects."
+    },
+    {
+      "name": "var comparator: Comparator",
+      "desc": "The comparator for the sort descriptor."
+    },
+    {
+      "name": "func compare(Any, to: Any) -> ComparisonResult",
+      "desc": "Returns a comparison result value that indicates the sort order of two objects."
+    },
+    {
+      "name": "var reversedSortDescriptor: Any",
+      "desc": "Returns a sort descriptor that reverses the sort order."
+    },
+    {
+      "name": "func allowEvaluation()",
+      "desc": "Forces a securely decoded sort descriptor to allow evaluation."
+    }
+  ],
+  "declaration": "class NSSortDescriptor : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

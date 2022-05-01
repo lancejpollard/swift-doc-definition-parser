@@ -1,0 +1,115 @@
+{
+  "path": "/documentation/quartz/qcplugin",
+  "type": "Class",
+  "name": "QCPlugIn",
+  "desc": "The QCPlugIn class provides the base class to subclass for writing custom  Quartz Composer patches. You implement a custom patch by subclassing QCPlugIn, overriding the appropriate methods, packaging the code as an NSBundle object, and installing the bundle in the appropriate location. A bundle can contain more than one subclass  of QCPlugIn, allowing you to provide a suite of custom patches in one bundle. Quartz Composer Custom Patch Programming Guide provides detailed instructions on how to create and package a custom patch. QCPlugIn Class Reference supplements the information in the programming guide.",
+  "items": [
+    {
+      "name": "class func executionMode() -> QCPlugInExecutionMode",
+      "desc": "Returns the execution mode of the custom patch."
+    },
+    {
+      "name": "class func timeMode() -> QCPlugInTimeMode",
+      "desc": "Returns the time mode for the custom patch."
+    },
+    {
+      "name": "func execute(QCPlugInContext!, atTime: TimeInterval, withArguments: [AnyHashable : Any]!) -> Bool",
+      "desc": "Performs the processing or rendering tasks appropriate for the custom patch."
+    },
+    {
+      "name": "func startExecution(QCPlugInContext!) -> Bool",
+      "desc": "Allows you to perform custom setup tasks before the Quartz Composer engine starts rendering."
+    },
+    {
+      "name": "func enableExecution(QCPlugInContext!)",
+      "desc": "Allows you to perform custom tasks when the execution of the QCPlugIn object is resumed."
+    },
+    {
+      "name": "func disableExecution(QCPlugInContext!)",
+      "desc": "Allows you to perform custom tasks when the execution of the QCPlugIn object is paused."
+    },
+    {
+      "name": "func stopExecution(QCPlugInContext!)",
+      "desc": "Allows you to perform custom tasks when the QCPlugIn object stops executing."
+    },
+    {
+      "name": "class func attributes() -> [AnyHashable : Any]!",
+      "desc": "Returns a dictionary that contains strings for the user interface that describe the custom patch."
+    },
+    {
+      "name": "class func attributesForPropertyPort(withKey: String!) -> [AnyHashable : Any]!",
+      "desc": "Returns a dictionary that contains strings for the user interface that describe the optional attributes for ports created from properties."
+    },
+    {
+      "name": "func createViewController() -> QCPlugInViewController!",
+      "desc": "Creates and returns a view controller for the Settings pane of a custom patch."
+    },
+    {
+      "name": "class func plugInKeys() -> [Any]!",
+      "desc": "Returns the keys for the internal settings of a custom patch."
+    },
+    {
+      "name": "func serializedValue(forKey: String!) -> Any!",
+      "desc": "Provides custom serialization for patch internal settings that do not comply to the NSCoding protocol."
+    },
+    {
+      "name": "func setSerializedValue(Any!, forKey: String!)",
+      "desc": "Provides custom deserialization for patch internal settings that were previously serialized using the method serializedValue(forKey:)."
+    },
+    {
+      "name": "func addInputPort(withType: String!, forKey: String!, withAttributes: [AnyHashable : Any]!)",
+      "desc": "Adds an input port of the specified type and associates a key and attributes with the port."
+    },
+    {
+      "name": "func removeInputPort(forKey: String!)",
+      "desc": "Removes the input port for a given key."
+    },
+    {
+      "name": "func addOutputPort(withType: String!, forKey: String!, withAttributes: [AnyHashable : Any]!)",
+      "desc": "Adds an output port of the specified type and associates a key and attributes with the port."
+    },
+    {
+      "name": "func removeOutputPort(forKey: String!)",
+      "desc": "Removes the output port for a given key."
+    },
+    {
+      "name": "func didValue(forInputKeyChange: String!) -> Bool",
+      "desc": "Returns whether the input port value changed since the last execution of the custom patch."
+    },
+    {
+      "name": "func value(forInputKey: String!) -> Any!",
+      "desc": "Returns the current value for an input port."
+    },
+    {
+      "name": "func setValue(Any!, forOutputKey: String!) -> Bool",
+      "desc": "Sets the value of an output port."
+    },
+    {
+      "name": "class func load(atPath: String!) -> Bool",
+      "desc": "Loads a Quartz Composer plug-in bundle from the specified path."
+    },
+    {
+      "name": "class func registerClass(AnyClass!)",
+      "desc": "Registers a QCPlugIn subclass."
+    },
+    {
+      "name": "class func sortedPropertyPortKeys() -> [Any]!",
+      "desc": "Returns and array of property port keys in the order you want them to appear in the user interface."
+    },
+    {
+      "name": "struct QCPlugInExecutionMode",
+      "desc": "Execution modes for custom patches."
+    },
+    {
+      "name": "struct QCPlugInTimeMode",
+      "desc": "Time modes for custom patches."
+    },
+    {
+      "name": "func executionTime(for: QCPlugInContext!, atTime: TimeInterval, withArguments: [AnyHashable : Any]!) -> TimeInterval"
+    }
+  ],
+  "declaration": "class QCPlugIn : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

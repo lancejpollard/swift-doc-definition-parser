@@ -1,0 +1,156 @@
+{
+  "path": "/documentation/scenekit/scnscenerenderer",
+  "type": "Protocol",
+  "name": "SCNSceneRenderer",
+  "desc": "Methods and properties common to the SCNView, SCNLayer, and SCNRenderer classes.",
+  "items": [
+    {
+      "name": "var scene: SCNScene?",
+      "desc": "The scene to be displayed."
+    },
+    {
+      "name": "func present(SCNScene, with: SKTransition, incomingPointOfView: SCNNode?, completionHandler: (() -> Void)?)",
+      "desc": "Displays the specified scene with an animated transition."
+    },
+    {
+      "name": "var pointOfView: SCNNode?",
+      "desc": "The node from which the scene’s contents are viewed for rendering."
+    },
+    {
+      "name": "var autoenablesDefaultLighting: Bool",
+      "desc": "A Boolean value that determines whether SceneKit automatically adds lights to a scene."
+    },
+    {
+      "name": "var isJitteringEnabled: Bool",
+      "desc": "A Boolean value that determines whether SceneKit applies jittering to reduce aliasing artifacts."
+    },
+    {
+      "name": "var showsStatistics: Bool",
+      "desc": "A Boolean value that determines whether SceneKit displays rendering performance statistics in an accessory view."
+    },
+    {
+      "name": "var debugOptions: SCNDebugOptions",
+      "desc": "Options for drawing overlay content in a scene that can aid debugging."
+    },
+    {
+      "name": "var renderingAPI: SCNRenderingAPI",
+      "desc": "The graphics technology SceneKit uses to render the scene."
+    },
+    {
+      "name": "struct SCNDebugOptions",
+      "desc": "Options for drawing overlays with SceneKit content that can aid in debugging, used with the debugOptions property."
+    },
+    {
+      "name": "enum SCNRenderingAPI",
+      "desc": "Options for choosing the graphics technology for an SCNView object (or other SceneKit renderer) to use for drawing its contents. Used by the renderingAPI property and the preferredRenderingAPI option when initializing an SCNView object."
+    },
+    {
+      "name": "var sceneTime: TimeInterval",
+      "desc": "The current scene time."
+    },
+    {
+      "name": "var isPlaying: Bool",
+      "desc": "A Boolean value that determines whether the scene is playing."
+    },
+    {
+      "name": "var loops: Bool",
+      "desc": "A Boolean value that determines whether SceneKit restarts the scene time after all animations in the scene have played."
+    },
+    {
+      "name": "func prepare(Any, shouldAbortBlock: (() -> Bool)?) -> Bool",
+      "desc": "Prepares a SceneKit object for rendering."
+    },
+    {
+      "name": "func prepare([Any], completionHandler: ((Bool) -> Void)?)",
+      "desc": "Prepares the specified SceneKit objects for rendering, using a background thread."
+    },
+    {
+      "name": "func hitTest(CGPoint, options: [SCNHitTestOption : Any]?) -> [SCNHitTestResult]",
+      "desc": "Searches the renderer’s scene for objects corresponding to a point in the rendered image."
+    },
+    {
+      "name": "struct SCNHitTestOption",
+      "desc": "Options affecting the behavior of SceneKit hit-testing methods."
+    },
+    {
+      "name": "func isNode(SCNNode, insideFrustumOf: SCNNode) -> Bool",
+      "desc": "Returns a Boolean value indicating whether a node might be visible from a specified point of view."
+    },
+    {
+      "name": "func nodesInsideFrustum(of: SCNNode) -> [SCNNode]",
+      "desc": "Returns all nodes that might be visible from a specified point of view."
+    },
+    {
+      "name": "func projectPoint(SCNVector3) -> SCNVector3",
+      "desc": "Projects a point from the 3D world coordinate system of the scene to the 2D pixel coordinate system of the renderer."
+    },
+    {
+      "name": "func unprojectPoint(SCNVector3) -> SCNVector3",
+      "desc": "Unprojects a point from the 2D pixel coordinate system of the renderer to the 3D world coordinate system of the scene."
+    },
+    {
+      "name": "var delegate: SCNSceneRendererDelegate?",
+      "desc": "A delegate object that receives messages about SceneKit’s rendering process."
+    },
+    {
+      "name": "var currentRenderCommandEncoder: MTLRenderCommandEncoder?",
+      "desc": "The Metal render command encoder in use for the current SceneKit rendering pass."
+    },
+    {
+      "name": "var device: MTLDevice?",
+      "desc": "The Metal device this renderer uses for rendering."
+    },
+    {
+      "name": "var commandQueue: MTLCommandQueue?",
+      "desc": "The Metal command queue this renderer uses for rendering."
+    },
+    {
+      "name": "var colorPixelFormat: MTLPixelFormat",
+      "desc": "The Metal pixel format for the renderer’s color output."
+    },
+    {
+      "name": "var depthPixelFormat: MTLPixelFormat",
+      "desc": "The Metal pixel format for the renderer’s depth buffer."
+    },
+    {
+      "name": "var stencilPixelFormat: MTLPixelFormat",
+      "desc": "The Metal pixel format for the renderer’s stencil buffer."
+    },
+    {
+      "name": "var context: UnsafeMutableRawPointer?",
+      "desc": "The OpenGL rendering context that SceneKit uses for rendering the scene."
+    },
+    {
+      "name": "var overlaySKScene: SKScene?",
+      "desc": "A Sprite Kit scene to be rendered on top of the SceneKit content."
+    },
+    {
+      "name": "var audioListener: SCNNode?",
+      "desc": "The node representing the listener’s position in the scene for use with positional audio effects."
+    },
+    {
+      "name": "var audioEnvironmentNode: AVAudioEnvironmentNode",
+      "desc": "The 3D audio mixing node SceneKit uses for positional audio effects."
+    },
+    {
+      "name": "var audioEngine: AVAudioEngine",
+      "desc": "The audio engine SceneKit uses for playing scene sounds."
+    },
+    {
+      "name": "var currentRenderPassDescriptor: MTLRenderPassDescriptor"
+    },
+    {
+      "name": "var currentViewport: CGRect"
+    },
+    {
+      "name": "var isTemporalAntialiasingEnabled: Bool"
+    },
+    {
+      "name": "var usesReverseZ: Bool"
+    }
+  ],
+  "declaration": "protocol SCNSceneRenderer",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

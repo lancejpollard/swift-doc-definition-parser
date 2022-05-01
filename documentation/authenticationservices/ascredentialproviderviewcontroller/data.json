@@ -1,0 +1,53 @@
+{
+  "path": "/documentation/authenticationservices/ascredentialproviderviewcontroller",
+  "type": "Class",
+  "name": "ASCredentialProviderViewController",
+  "desc": "A view controller that a password manager app uses to extend Password AutoFill.",
+  "items": [
+    {
+      "name": "var extensionContext: ASCredentialProviderExtensionContext",
+      "desc": "The context your credential provider extension uses to provide information to the system."
+    },
+    {
+      "name": "class ASCredentialProviderExtensionContext",
+      "desc": "A mechanism that credential provider extensions use to communicate with the system."
+    },
+    {
+      "name": "func prepareInterfaceForExtensionConfiguration()",
+      "desc": "Prepares the interface to enable the user to configure the extension."
+    },
+    {
+      "name": "class ASCredentialIdentityStore",
+      "desc": "A container that your extension fills to provide credentials through the QuickType bar."
+    },
+    {
+      "name": "func prepareCredentialList(for: [ASCredentialServiceIdentifier])",
+      "desc": "Prepares the interface to display a list of credentials from which the user can select."
+    },
+    {
+      "name": "class ASCredentialServiceIdentifier",
+      "desc": "An identifier representing a particular service for which the user needs a credential, like a web site."
+    },
+    {
+      "name": "func provideCredentialWithoutUserInteraction(for: ASPasswordCredentialIdentity)",
+      "desc": "Attempts to provide the user-requested credential with no further user interaction."
+    },
+    {
+      "name": "func prepareInterfaceToProvideCredential(for: ASPasswordCredentialIdentity)",
+      "desc": "Prepares the interface for a user interaction, like a database login, that enables it to access and return the credential for the given identity."
+    },
+    {
+      "name": "class ASPasswordCredentialIdentity",
+      "desc": "A description that uniquely identifies a particular credential."
+    },
+    {
+      "name": "struct ASExtensionError",
+      "desc": "A credential provider extension error."
+    }
+  ],
+  "declaration": "class ASCredentialProviderViewController : UIViewController",
+  "inheritsFrom": [
+    "NSViewController",
+    "UIViewController"
+  ]
+}

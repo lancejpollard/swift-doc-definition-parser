@@ -1,0 +1,111 @@
+{
+  "path": "/documentation/uikit/uiprintinteractioncontroller",
+  "type": "Class",
+  "name": "UIPrintInteractionController",
+  "desc": "A user interface that manages the printing of documents, images, and other printable content in iOS.",
+  "items": [
+    {
+      "name": "class var shared: UIPrintInteractionController",
+      "desc": "Returns the shared print-interaction controller object."
+    },
+    {
+      "name": "var delegate: UIPrintInteractionControllerDelegate?",
+      "desc": "The delegate of the print-interaction controller."
+    },
+    {
+      "name": "protocol UIPrintInteractionControllerDelegate",
+      "desc": "An optional set of methods that the delegate of the shared print-interaction controller implements."
+    },
+    {
+      "name": "class var isPrintingAvailable: Bool",
+      "desc": "A Boolean value that indicates whether the device supports printing."
+    },
+    {
+      "name": "class func canPrint(Data) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether UIKit can print the contents of a data object."
+    },
+    {
+      "name": "class func canPrint(URL) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether UIKit can print the file that the specified URL references."
+    },
+    {
+      "name": "class var printableUTIs: Set<String>",
+      "desc": "Returns a set of the Uniform Type Identifiers for the types of data that UIKit can print."
+    },
+    {
+      "name": "var printingItem: Any?",
+      "desc": "A single ready-to-print object."
+    },
+    {
+      "name": "var printingItems: [Any]?",
+      "desc": "An array of ready-to-print objects."
+    },
+    {
+      "name": "var printPageRenderer: UIPrintPageRenderer?",
+      "desc": "An object that draws pages of printable content when UIKit requests it."
+    },
+    {
+      "name": "var printFormatter: UIPrintFormatter?",
+      "desc": "An object that lays out the content of pages according to the kind of content."
+    },
+    {
+      "name": "func present(animated: Bool, completionHandler: UIPrintInteractionController.CompletionHandler?) -> Bool",
+      "desc": "Presents the iPhone printing user interface in a sheet, optionally animating it to slide up from the bottom of the screen."
+    },
+    {
+      "name": "func present(from: UIBarButtonItem, animated: Bool, completionHandler: UIPrintInteractionController.CompletionHandler?) -> Bool",
+      "desc": "Presents the iPad printing user interface in a popover view, optionally animating it from a bar-button item."
+    },
+    {
+      "name": "func present(from: CGRect, in: UIView, animated: Bool, completionHandler: UIPrintInteractionController.CompletionHandler?) -> Bool",
+      "desc": "Presents the iPad printing user interface in a popover view, optionally animating it from any area in a view."
+    },
+    {
+      "name": "func dismiss(animated: Bool)",
+      "desc": "Dismisses the printing-options sheet or popover."
+    },
+    {
+      "name": "func print(to: UIPrinter, completionHandler: UIPrintInteractionController.CompletionHandler?) -> Bool",
+      "desc": "Prints directly to the specified printer."
+    },
+    {
+      "name": "typealias UIPrintInteractionController.CompletionHandler",
+      "desc": "A completion handler for responding to the completion of a print job or for handling printing errors."
+    },
+    {
+      "name": "var printInfo: UIPrintInfo?",
+      "desc": "An object that encapsulates information about the print job."
+    },
+    {
+      "name": "var printPaper: UIPrintPaper?",
+      "desc": "An object that represents the paper size and printing area for the print job."
+    },
+    {
+      "name": "var showsNumberOfCopies: Bool",
+      "desc": "A Boolean value that determines whether the printing options include the number of copies."
+    },
+    {
+      "name": "var showsPaperSelectionForLoadedPapers: Bool",
+      "desc": "A Boolean value that determines whether the paper selection menu displays."
+    },
+    {
+      "name": "let UIPrintErrorDomain: String",
+      "desc": "The string constant that defines the UIKit printing error domain."
+    },
+    {
+      "name": "struct UIPrintError",
+      "desc": "A structure that contains information about a printing error."
+    },
+    {
+      "name": "enum UIPrintError.Code",
+      "desc": "Constants that specify the print error code."
+    },
+    {
+      "name": "var showsPaperOrientation: Bool"
+    }
+  ],
+  "declaration": "@MainActor class UIPrintInteractionController : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

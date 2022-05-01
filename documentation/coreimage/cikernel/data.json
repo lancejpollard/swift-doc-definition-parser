@@ -1,0 +1,42 @@
+{
+  "path": "/documentation/coreimage/cikernel",
+  "type": "Class",
+  "name": "CIKernel",
+  "desc": "A GPU-based image processing routine used to create custom Core Image filters.",
+  "items": [
+    {
+      "name": "init(functionName: String, fromMetalLibraryData: Data)",
+      "desc": "Creates a single kernel object using a Metal Shading Language (MSL) kernel function."
+    },
+    {
+      "name": "init(functionName: String, fromMetalLibraryData: Data, outputPixelFormat: CIFormat)",
+      "desc": "Creates a single kernel object using a Metal Shading Language kernel function with optional pixel format."
+    },
+    {
+      "name": "var name: String",
+      "desc": "The name of the kernel routine."
+    },
+    {
+      "name": "func setROISelector(Selector)",
+      "desc": "Sets the selector Core Image uses to query the region of interest for image processing with the kernel."
+    },
+    {
+      "name": "func apply(extent: CGRect, roiCallback: CIKernelROICallback, arguments: [Any]) -> CIImage?",
+      "desc": "Creates a new image using the kernel and specified arguments."
+    },
+    {
+      "name": "typealias CIKernelROICallback",
+      "desc": "The signature for a block that computes the region of interest (ROI) for a given area of destination image pixels. Core Image calls this block when applying the kernel. You specify this block when using the apply(extent:roiCallback:arguments:) method."
+    },
+    {
+      "name": "class func kernelNames(fromMetalLibraryData: Data) -> [String]"
+    },
+    {
+      "name": "class func kernels(withMetalString: String) -> [CIKernel]"
+    }
+  ],
+  "declaration": "class CIKernel : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

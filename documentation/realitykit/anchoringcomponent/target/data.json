@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/realitykit/anchoringcomponent/target",
+  "type": "Enumeration",
+  "name": "AnchoringComponent.Target",
+  "desc": "The kinds of real world objects to which an anchor entity can be tethered.",
+  "items": [
+    {
+      "name": "case camera",
+      "desc": "The camera."
+    },
+    {
+      "name": "case world(transform: float4x4)",
+      "desc": "A fixed position in the scene."
+    },
+    {
+      "name": "case anchor(identifier: UUID)",
+      "desc": "The AR anchor with a given identifier."
+    },
+    {
+      "name": "case plane(AnchoringComponent.Target.Alignment, classification: AnchoringComponent.Target.Classification, minimumBounds: SIMD2<Float>)",
+      "desc": "A surface."
+    },
+    {
+      "name": "case image(group: String, name: String)",
+      "desc": "An image."
+    },
+    {
+      "name": "case object(group: String, name: String)",
+      "desc": "A specific object."
+    },
+    {
+      "name": "case face",
+      "desc": "The user’s face."
+    },
+    {
+      "name": "case body",
+      "desc": "The user’s body."
+    },
+    {
+      "name": "struct AnchoringComponent.Target.Alignment",
+      "desc": "The alignment of real-world surfaces to seek as targets."
+    },
+    {
+      "name": "struct AnchoringComponent.Target.Classification",
+      "desc": "Types of real-world surfaces to seek as targets."
+    },
+    {
+      "name": "static func == (AnchoringComponent.Target, AnchoringComponent.Target) -> Bool",
+      "desc": "Indicates whether two targets are equal."
+    },
+    {
+      "name": "static func != (AnchoringComponent.Target, AnchoringComponent.Target) -> Bool",
+      "desc": "Indicates whether two targets are not equal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the target by feeding them into the given hash function."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hashed value of the target."
+    }
+  ],
+  "declaration": "enum AnchoringComponent.Target",
+  "conformsTo": [
+    "Hashable"
+  ]
+}

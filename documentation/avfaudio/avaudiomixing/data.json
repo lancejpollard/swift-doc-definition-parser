@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/avfaudio/avaudiomixing",
+  "type": "Protocol",
+  "name": "AVAudioMixing",
+  "desc": "A collection of properties that are applicable to the input bus of a mixer node.",
+  "items": [
+    {
+      "name": "protocol AVAudioStereoMixing",
+      "desc": "A protocol that defines stereo mixing properties a mixer uses."
+    },
+    {
+      "name": "protocol AVAudio3DMixing",
+      "desc": "A collection of properties that define 3D mixing properties."
+    },
+    {
+      "name": "class AVAudioMixingDestination",
+      "desc": "An object that represents a connection to a mixer node from a node that conforms to the audio mixing protocol."
+    },
+    {
+      "name": "func destination(forMixer: AVAudioNode, bus: AVAudioNodeBus) -> AVAudioMixingDestination?",
+      "desc": "Gets the audio mixing destination object that corresponds to the specified mixer node and input bus."
+    },
+    {
+      "name": "var volume: Float",
+      "desc": "The bus’s input volume."
+    }
+  ],
+  "declaration": "protocol AVAudioMixing",
+  "inheritsFrom": [
+    "AVAudio3DMixing",
+    "AVAudioStereoMixing"
+  ]
+}

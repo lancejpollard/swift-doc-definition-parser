@@ -1,0 +1,138 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpscnnmultiarykernel",
+  "type": "Class",
+  "name": "MPSCNNMultiaryKernel",
+  "desc": "No overview available.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice, sourceCount: Int)"
+    },
+    {
+      "name": "var clipRect: MTLRegion"
+    },
+    {
+      "name": "var destinationFeatureChannelOffset: Int"
+    },
+    {
+      "name": "var destinationImageAllocator: MPSImageAllocator"
+    },
+    {
+      "name": "var isBackwards: Bool"
+    },
+    {
+      "name": "var isStateModified: Bool"
+    },
+    {
+      "name": "var padding: MPSNNPadding"
+    },
+    {
+      "name": "var sourceCount: Int"
+    },
+    {
+      "name": "func appendBatchBarrier() -> Bool"
+    },
+    {
+      "name": "func destinationImageDescriptor(sourceImages: [MPSImage], sourceStates: [MPSState]?) -> MPSImageDescriptor"
+    },
+    {
+      "name": "func dilationRateXatIndex(Int) -> Int"
+    },
+    {
+      "name": "func dilationRateYatIndex(Int) -> Int"
+    },
+    {
+      "name": "func edgeMode(at: Int) -> MPSImageEdgeMode"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, sourceImages: [MPSImage]) -> MPSImage"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, sourceImages: [MPSImage], destinationImage: MPSImage)"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, sourceImages: [MPSImage], destinationState: AutoreleasingUnsafeMutablePointer<MPSState?>, destinationStateIsTemporary: Bool) -> MPSImage"
+    },
+    {
+      "name": "func encodeBatch(commandBuffer: MTLCommandBuffer, sourceImages: [[MPSImage]]) -> [MPSImage]"
+    },
+    {
+      "name": "func encodeBatch(commandBuffer: MTLCommandBuffer, sourceImages: [[MPSImage]], destinationImages: [MPSImage])"
+    },
+    {
+      "name": "func encodeBatch(commandBuffer: MTLCommandBuffer, sourceImages: [[MPSImage]], destinationStates: AutoreleasingUnsafeMutablePointer<NSArray?>, destinationStateIsTemporary: Bool) -> [MPSImage]"
+    },
+    {
+      "name": "func isResultStateReusedAcrossBatch() -> Bool"
+    },
+    {
+      "name": "func kernelHeight(at: Int) -> Int"
+    },
+    {
+      "name": "func kernelWidth(at: Int) -> Int"
+    },
+    {
+      "name": "func offset(at: Int) -> MPSOffset"
+    },
+    {
+      "name": "func resultState(sourceImages: [MPSImage], sourceStates: [MPSState]?, destinationImage: MPSImage) -> MPSState?"
+    },
+    {
+      "name": "func resultStateBatch(sourceImages: [[MPSImage]], sourceStates: [[MPSState]]?, destinationImage: [MPSImage]) -> [MPSState]?"
+    },
+    {
+      "name": "func setDilationRateX(Int, at: Int)"
+    },
+    {
+      "name": "func setDilationRateY(Int, at: Int)"
+    },
+    {
+      "name": "func setEdgeMode(MPSImageEdgeMode, at: Int)"
+    },
+    {
+      "name": "func setKernelHeight(Int, at: Int)"
+    },
+    {
+      "name": "func setKernelWidth(Int, at: Int)"
+    },
+    {
+      "name": "func setOffset(MPSOffset, at: Int)"
+    },
+    {
+      "name": "func setSourceFeatureChannelMaxCount(Int, at: Int)"
+    },
+    {
+      "name": "func setSourceFeatureChannelOffset(Int, at: Int)"
+    },
+    {
+      "name": "func setStrideInPixelsX(Int, at: Int)"
+    },
+    {
+      "name": "func setStrideInPixelsY(Int, at: Int)"
+    },
+    {
+      "name": "func sourceFeatureChannelMaxCount(at: Int) -> Int"
+    },
+    {
+      "name": "func sourceFeatureChannelOffset(at: Int) -> Int"
+    },
+    {
+      "name": "func stride(inPixelsXatIndex: Int) -> Int"
+    },
+    {
+      "name": "func stride(inPixelsYatIndex: Int) -> Int"
+    },
+    {
+      "name": "func temporaryResultState(commandBuffer: MTLCommandBuffer, sourceImages: [MPSImage], sourceStates: [MPSState]?, destinationImage: MPSImage) -> MPSState?"
+    },
+    {
+      "name": "func temporaryResultStateBatch(commandBuffer: MTLCommandBuffer, sourceImages: [[MPSImage]], sourceStates: [[MPSState]]?, destinationImage: [MPSImage]) -> [MPSState]?"
+    }
+  ],
+  "declaration": "class MPSCNNMultiaryKernel : MPSKernel",
+  "inheritsFrom": [
+    "MPSKernel"
+  ]
+}

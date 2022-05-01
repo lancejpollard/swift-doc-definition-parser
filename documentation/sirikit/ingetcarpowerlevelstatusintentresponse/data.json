@@ -1,0 +1,96 @@
+{
+  "path": "/documentation/sirikit/ingetcarpowerlevelstatusintentresponse",
+  "type": "Class",
+  "name": "INGetCarPowerLevelStatusIntentResponse",
+  "desc": "Your app’s response to a request for the vehicle power level.",
+  "items": [
+    {
+      "name": "init(code: INGetCarPowerLevelStatusIntentResponseCode, userActivity: NSUserActivity?)",
+      "desc": "Initializes the response object with the specified code and user activity."
+    },
+    {
+      "name": "var code: INGetCarPowerLevelStatusIntentResponseCode",
+      "desc": "The code that indicates success or failure when confirming or handling an intent."
+    },
+    {
+      "name": "enum INGetCarPowerLevelStatusIntentResponseCode",
+      "desc": "Constants that indicate the status of the response."
+    },
+    {
+      "name": "var carIdentifier: String?",
+      "desc": "A unique identifier for the vehicle."
+    },
+    {
+      "name": "var chargePercentRemaining: Float?",
+      "desc": "The percentage of charge that remains for the electric vehicle."
+    },
+    {
+      "name": "var fuelPercentRemaining: Float?",
+      "desc": "The percentage of fuel that remains for the fuel-powered vehicle."
+    },
+    {
+      "name": "var maximumDistance: Measurement<UnitLength>?",
+      "desc": "The maximum rated distance the vehicle can travel with full resources."
+    },
+    {
+      "name": "var distanceRemaining: Measurement<UnitLength>?",
+      "desc": "The maximum distance the vehicle can travel with the remaining resources."
+    },
+    {
+      "name": "var maximumDistanceElectric: Measurement<UnitLength>?",
+      "desc": "The maximum rated distance the electric vehicle can travel on a full charge."
+    },
+    {
+      "name": "var distanceRemainingElectric: Measurement<UnitLength>?",
+      "desc": "The maximum distance the electric vehicle can travel with the remaining charge."
+    },
+    {
+      "name": "var maximumDistanceFuel: Measurement<UnitLength>?",
+      "desc": "The maximum rated distance the fuel-powered vehicle can travel with a full tank of fuel."
+    },
+    {
+      "name": "var distanceRemainingFuel: Measurement<UnitLength>?",
+      "desc": "The maximum distance the fuel-powered vehicle can travel with the remaining fuel."
+    },
+    {
+      "name": "var activeConnector: INCar.ChargingConnectorType?",
+      "desc": "The type of connector that’s currently delivering charge to the electric vehicle’s battery."
+    },
+    {
+      "name": "var charging: Bool?",
+      "desc": "A Boolean value that indicates whether the electric vehicle is currently charging."
+    },
+    {
+      "name": "var minutesToFull: Int?",
+      "desc": "The number of minutes it takes to fully charge the electric vehicle’s battery."
+    },
+    {
+      "name": "var dateOfLastStateUpdate: DateComponents?",
+      "desc": "A timestamp that indicates the most recent charge status for the electric vehicle."
+    },
+    {
+      "name": "var minimumBatteryCapacity: Measurement<UnitEnergy>?",
+      "desc": "A user-facing value that represents the minimum battery capacity of the electric vehicle."
+    },
+    {
+      "name": "var maximumBatteryCapacity: Measurement<UnitEnergy>?",
+      "desc": "A user-facing value that represents the maximum battery capacity of the electric vehicle."
+    },
+    {
+      "name": "var currentBatteryCapacity: Measurement<UnitEnergy>?",
+      "desc": "A user-facing value that represents the current battery capacity of the electric vehicle."
+    },
+    {
+      "name": "var chargingFormulaArguments: [String : Any]?",
+      "desc": "The parameters the electric vehicle’s charging model uses to calculate the duration of a charge."
+    },
+    {
+      "name": "var consumptionFormulaArguments: [String : Any]?",
+      "desc": "The parameters the electric vehicle’s consumption model uses to calculate its energy consumption."
+    }
+  ],
+  "declaration": "class INGetCarPowerLevelStatusIntentResponse : INIntentResponse",
+  "inheritsFrom": [
+    "INIntentResponse"
+  ]
+}

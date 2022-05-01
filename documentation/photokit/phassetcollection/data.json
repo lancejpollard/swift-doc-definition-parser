@@ -1,0 +1,80 @@
+{
+  "path": "/documentation/photokit/phassetcollection",
+  "type": "Class",
+  "name": "PHAssetCollection",
+  "desc": "A representation of a Photos asset grouping, such as a moment, user-created album, or smart album.",
+  "items": [
+    {
+      "name": "class func fetchAssetCollections(withLocalIdentifiers: [String], options: PHFetchOptions?) -> PHFetchResult<PHAssetCollection>",
+      "desc": "Retrieves asset collections with the specified unique identifiers."
+    },
+    {
+      "name": "class func fetchAssetCollections(with: PHAssetCollectionType, subtype: PHAssetCollectionSubtype, options: PHFetchOptions?) -> PHFetchResult<PHAssetCollection>",
+      "desc": "Retrieves asset collections of the specified type and subtype."
+    },
+    {
+      "name": "class func fetchAssetCollectionsContaining(PHAsset, with: PHAssetCollectionType, options: PHFetchOptions?) -> PHFetchResult<PHAssetCollection>",
+      "desc": "Retrieves asset collections of the specified type containing the specified asset."
+    },
+    {
+      "name": "class func fetchAssetCollections(withALAssetGroupURLs: [URL], options: PHFetchOptions?) -> PHFetchResult<PHAssetCollection>",
+      "desc": "Retrieves asset collections using URLs provided by the Assets Library framework."
+    },
+    {
+      "name": "class func fetchMoments(inMomentList: PHCollectionList, options: PHFetchOptions?) -> PHFetchResult<PHAssetCollection>",
+      "desc": "Retrieves asset collections in the specified moment list collection."
+    },
+    {
+      "name": "class func fetchMoments(with: PHFetchOptions?) -> PHFetchResult<PHAssetCollection>",
+      "desc": "Retrieves asset collections corresponding to moments seen in the Photos app."
+    },
+    {
+      "name": "var assetCollectionType: PHAssetCollectionType",
+      "desc": "The type of the asset collection, such as an album or a moment."
+    },
+    {
+      "name": "enum PHAssetCollectionType",
+      "desc": "Major distinctions between kinds of asset collections, used by the assetCollectionType property and the fetchAssetCollectionsContaining(_:with:options:) and fetchAssetCollections(with:subtype:options:) methods."
+    },
+    {
+      "name": "var assetCollectionSubtype: PHAssetCollectionSubtype",
+      "desc": "The subtype of the asset collection."
+    },
+    {
+      "name": "enum PHAssetCollectionSubtype",
+      "desc": "Minor distinctions between kinds of asset collections, used by the assetCollectionSubtype property and the fetchAssetCollections(with:subtype:options:) method."
+    },
+    {
+      "name": "var estimatedAssetCount: Int",
+      "desc": "The estimated number of assets in the asset collection."
+    },
+    {
+      "name": "var startDate: Date?",
+      "desc": "The earliest creation date among all assets in the asset collection."
+    },
+    {
+      "name": "var endDate: Date?",
+      "desc": "The latest creation date among all assets in the asset collection."
+    },
+    {
+      "name": "var approximateLocation: CLLocation?",
+      "desc": "A location representing those of all assets in the collection."
+    },
+    {
+      "name": "var localizedLocationNames: [String]",
+      "desc": "The names of locations grouped by the collection (an array of NSString objects)."
+    },
+    {
+      "name": "class func transientAssetCollection(with: [PHAsset], title: String?) -> PHAssetCollection",
+      "desc": "Creates a temporary asset collection containing the specified assets."
+    },
+    {
+      "name": "class func transientAssetCollection(withAssetFetchResult: PHFetchResult<PHAsset>, title: String?) -> PHAssetCollection",
+      "desc": "Creates a temporary asset collection containing the assets from the specified fetch result."
+    }
+  ],
+  "declaration": "class PHAssetCollection : PHCollection",
+  "inheritsFrom": [
+    "PHCollection"
+  ]
+}

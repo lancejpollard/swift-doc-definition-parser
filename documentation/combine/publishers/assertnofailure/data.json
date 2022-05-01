@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/combine/publishers/assertnofailure",
+  "type": "Structure",
+  "name": "Publishers.AssertNoFailure",
+  "desc": "A publisher that raises a fatal error upon receiving any failure, and otherwise republishes all received input.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, prefix: String, file: StaticString, line: UInt)",
+      "desc": "Creates a publisher that raises a fatal error upon receiving any failure, and otherwise republishes all received input."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    },
+    {
+      "name": "let file: StaticString",
+      "desc": "The filename used in the error message."
+    },
+    {
+      "name": "let line: UInt",
+      "desc": "The line number used in the error message."
+    },
+    {
+      "name": "let prefix: String",
+      "desc": "The string used at the beginning of the fatal error message."
+    }
+  ],
+  "declaration": "struct AssertNoFailure<Upstream> where Upstream : Publisher",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

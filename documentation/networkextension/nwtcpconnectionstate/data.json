@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/networkextension/nwtcpconnectionstate",
+  "type": "Enumeration",
+  "name": "NWTCPConnectionState",
+  "desc": "Defined connection states. New types may be defined in the future.",
+  "items": [
+    {
+      "name": "case invalid",
+      "desc": "The connection is in an invalid or uninitialized state."
+    },
+    {
+      "name": "case connecting",
+      "desc": "The connection is attempting to connect. This includes endpoint resolution when applicable."
+    },
+    {
+      "name": "case waiting",
+      "desc": "The connection has attempted to connect but failed. It is now waiting for better conditions before trying again."
+    },
+    {
+      "name": "case connected",
+      "desc": "The connection is established. It is now possible to transfer data. If TLS is in use, the TLS handshake has finished."
+    },
+    {
+      "name": "case disconnected",
+      "desc": "The connection is disconnected. It is no longer possible to transfer data. The application should call cancel to clean up resources."
+    },
+    {
+      "name": "case cancelled",
+      "desc": "The connection has been cancelled by the client calling cancel."
+    }
+  ],
+  "declaration": "enum NWTCPConnectionState : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

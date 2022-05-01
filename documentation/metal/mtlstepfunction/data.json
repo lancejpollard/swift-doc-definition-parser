@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/metal/mtlstepfunction",
+  "type": "Enumeration",
+  "name": "MTLStepFunction",
+  "desc": "The frequency with which a function fetches attribute data.",
+  "items": [
+    {
+      "name": "case constant",
+      "desc": "The function fetches attribute data once."
+    },
+    {
+      "name": "case perInstance",
+      "desc": "The function fetches data based on the instance index."
+    },
+    {
+      "name": "case perPatch",
+      "desc": "The post-tessellation function fetches data based on the patch index of the patch."
+    },
+    {
+      "name": "case perPatchControlPoint",
+      "desc": "The post-tessellation function fetches data based on the control-point indices associated with the patch."
+    },
+    {
+      "name": "case perVertex",
+      "desc": "The vertex function fetches data for every vertex."
+    },
+    {
+      "name": "case threadPositionInGridX",
+      "desc": "The compute function fetches data based on the thread's x coordinate."
+    },
+    {
+      "name": "case threadPositionInGridY",
+      "desc": "The compute function fetches data based on the thread's y coordinate."
+    },
+    {
+      "name": "case threadPositionInGridXIndexed",
+      "desc": "The compute function fetches data by using the thread's x coordinate to look up a value in the index buffer."
+    },
+    {
+      "name": "case threadPositionInGridYIndexed",
+      "desc": "The compute function fetches data by using the thread's y coordinate to look up a value in the index buffer."
+    }
+  ],
+  "declaration": "enum MTLStepFunction : UInt, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

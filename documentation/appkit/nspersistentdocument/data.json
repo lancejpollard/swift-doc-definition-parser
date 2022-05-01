@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/appkit/nspersistentdocument",
+  "type": "Class",
+  "name": "NSPersistentDocument",
+  "desc": "A document object that can integrate with Core Data.",
+  "items": [
+    {
+      "name": "var managedObjectContext: NSManagedObjectContext?",
+      "desc": "The managed object context for the document."
+    },
+    {
+      "name": "var managedObjectModel: NSManagedObjectModel?",
+      "desc": "The managed object model of the document."
+    },
+    {
+      "name": "func configurePersistentStoreCoordinator(for: URL, ofType: String, modelConfiguration: String?, storeOptions: [String : Any]?)",
+      "desc": "Configures the receiver’s persistent store coordinator with the appropriate stores for a given URL."
+    },
+    {
+      "name": "func persistentStoreType(forFileType: String) -> String",
+      "desc": "Returns the type of persistent store associated with the specified file type."
+    },
+    {
+      "name": "func read(from: URL, ofType: String)",
+      "desc": "Sets the contents of the receiver by reading from a file of a given type located by a given URL."
+    },
+    {
+      "name": "func revert(toContentsOf: URL, ofType: String)",
+      "desc": "Overridden to clean up the managed object context and controllers during a revert."
+    },
+    {
+      "name": "func write(to: URL, ofType: String, for: NSDocument.SaveOperationType, originalContentsURL: URL?)",
+      "desc": "Saves changes in the document’s managed object context and saves the document’s persistent store to a given URL."
+    }
+  ],
+  "declaration": "class NSPersistentDocument : NSDocument",
+  "inheritsFrom": [
+    "NSDocument"
+  ]
+}

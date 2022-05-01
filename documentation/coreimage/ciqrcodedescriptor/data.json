@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/coreimage/ciqrcodedescriptor",
+  "type": "Class",
+  "name": "CIQRCodeDescriptor",
+  "desc": "A concrete subclass of CIBarcodeDescriptor that represents a square QR code symbol.",
+  "items": [
+    {
+      "name": "init?(payload: Data, symbolVersion: Int, maskPattern: UInt8, errorCorrectionLevel: CIQRCodeDescriptor.ErrorCorrectionLevel)",
+      "desc": "Initializes a descriptor that can be used as input to the CIBarcodeGenerator filter."
+    },
+    {
+      "name": "var errorCorrectedPayload: Data",
+      "desc": "The error-corrected payload containing the data encoded in the QR code."
+    },
+    {
+      "name": "var symbolVersion: Int",
+      "desc": "The version of the QR code."
+    },
+    {
+      "name": "var maskPattern: UInt8",
+      "desc": "The QR code's mask pattern."
+    },
+    {
+      "name": "var errorCorrectionLevel: CIQRCodeDescriptor.ErrorCorrectionLevel",
+      "desc": "The QR code error correction level."
+    },
+    {
+      "name": "enum CIQRCodeDescriptor.ErrorCorrectionLevel",
+      "desc": "Constants that indicate the percentage of the symbol dedicated to error correction."
+    }
+  ],
+  "declaration": "class CIQRCodeDescriptor : CIBarcodeDescriptor",
+  "inheritsFrom": [
+    "CIBarcodeDescriptor"
+  ]
+}

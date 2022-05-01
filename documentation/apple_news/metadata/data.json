@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/apple_news/metadata",
+  "type": "Object",
+  "name": "Metadata",
+  "desc": "Information about your article, including author name, creation date, publication date, keywords, and excerpt.",
+  "items": [
+    {
+      "name": "authors",
+      "desc": "The authors of this article. The value may or may not be the same string provided in the Author or Byline component. Note the following:Include an author name or an array of author names formatted in title case. For example, Maria Ruiz.Provide author names for your articles instead of team names. Only provide a team name, such as News Staff, for special cases.Do not include a website link, email ID, or Twitter handles, or use additional words such as By, and, As told to, or Illustrated by.Note that the byline or author component in the article body does not have these same requirements.This value appears in the article tile in channel feeds and section feeds."
+    },
+    {
+      "name": "campaignData",
+      "desc": "A set of key-value pairs that can be leveraged to target your advertising campaigns to specific articles or groups of articles. See Set up targeting in the Advertising Guide for News Publishers."
+    },
+    {
+      "name": "canonicalURL",
+      "desc": "The canonical URL of a web version of this article. If this Apple News Format document corresponds to a web version of this article, set this property to the URL of the web article. This property can be used to point to one version of the article as well as to redirect devices that do not support News content.If canonicalURL is omitted, devices that do not support News cannot display the article."
+    },
+    {
+      "name": "dateCreated",
+      "desc": "The UTC date in ISO 8601 format (YYYY-MM-DDTHH:mm:ss±ZZ:ZZ) on which this article was created. This value may or may not be the same as datePublished."
+    },
+    {
+      "name": "dateModified",
+      "desc": "The UTC date in ISO 8601 format (YYYY-MM-DDTHH:mm:ss±ZZ:ZZ) on which this article was last modified after it was published.This date is used instead of datePublished in the article tile if it is later than datePublished by less than 48 hours. dateModified does not affect the feed order.   See Changing the Appearance of Your Article Tile in Feeds."
+    },
+    {
+      "name": "datePublished",
+      "desc": "The UTC date in ISO 8601 format (YYYY-MM-DDTHH:mm:ss±ZZ:ZZ) on which this article was first published. This date is used in the feed. Include this date when posting older content to make sure the articles don’t appear at the top of your feed."
+    },
+    {
+      "name": "excerpt",
+      "desc": "Some text representing your article. It can also be an article summary or subheadline. Although this property is optional, it’s best to define it in all of your Apple News Format documents. Your excerpt should be within the recommended 80–300 character range.This text may appear in the article tile in feeds. It can also appear when an article is shared.See Changing the Appearance of Your Article Tile in Feeds.Do not use HTML tags or Markdown syntax for this property."
+    },
+    {
+      "name": "generatorIdentifier",
+      "desc": "A unique identifier for the generator used to create or provide this JSON document."
+    },
+    {
+      "name": "generatorName",
+      "desc": "The name of the generator or system that was used to create the JSON document."
+    },
+    {
+      "name": "generatorVersion",
+      "desc": "The version “number,” as a string, of the generator used to create the JSON document."
+    },
+    {
+      "name": "issue",
+      "desc": "The object for defining information about an issue."
+    },
+    {
+      "name": "keywords",
+      "desc": "The keywords that describe this article. You can define up to 50 keywords."
+    },
+    {
+      "name": "links",
+      "desc": "An array of links to other articles in Apple News."
+    },
+    {
+      "name": "thumbnailURL",
+      "desc": "The URL of an image that can represent this article in a News feed view (channel, topic, or For You). For best results, provide a high-resolution image. The image is automatically scaled down to the correct size.Supported image types are JPEG (.jpeg or .jpg) GIF, or PNG. GIF images provided as thumbnailURL are converted to JPEG for use as an article thumbnail. The minimum size of the image must be 300 px wide x 300 px high. The aspect ratio (width ÷ height) must be between 0.5 and 3.0. To improve the loading time of the article, use one of the images in the article as the thumbnail image. If you use the same images in both places and the image appears on the first screen of the article, the image moves with an animated effect from the feed to the article. See Preparing Image, Video, Audio, Music, and ARKit Assets."
+    },
+    {
+      "name": "transparentToolbar",
+      "desc": "A Boolean value that indicates whether this article should be shown with a transparent top toolbar that is overlaid on the top portion of the article.If you set this property to true, make sure to leave some room between the top of the article and the first readable component, and make sure the top portion of the article is predominantly dark or predominantly light."
+    },
+    {
+      "name": "videoURL",
+      "desc": "The URL for the video that represents this article. A glyph appears on the thumbnail of the article tile, allowing the video to be playable from For You, topic, and channel feeds.The videoURL should be the same as the URL for one of the Video components in the article. For the best results or continuous playback for an opened article with a videoURL, make sure that the thumbnailURL property in metadata uses the same image file as the video component’s stillURL.Video URL must begin with http:// or preferably https://. The video must be in one of the supported HTTP Live Streaming (HLS) formats. Streaming using the M3U playlist format is highly recommended. See Preparing Image, Video, Audio, Music, and ARKit Assets.For more information about HLS, see HTTP Live Streaming."
+    }
+  ]
+}

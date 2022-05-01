@@ -1,0 +1,85 @@
+{
+  "path": "/documentation/network/nw_data_transfer_report_t",
+  "type": "Type Alias",
+  "name": "nw_data_transfer_report_t",
+  "desc": "A report that provides metrics about data being sent and received on a connection.",
+  "items": [
+    {
+      "name": "func nw_data_transfer_report_collect(nw_data_transfer_report_t, DispatchQueue, nw_data_transfer_report_collect_block_t)",
+      "desc": "Stops an outstanding data transfer report and calculates the results."
+    },
+    {
+      "name": "typealias nw_data_transfer_report_collect_block_t",
+      "desc": "A block that is delivered when a data transfer report is fully collected."
+    },
+    {
+      "name": "func nw_data_transfer_report_get_state(nw_data_transfer_report_t) -> nw_data_transfer_report_state_t",
+      "desc": "Checks whether a data transfer report is collected."
+    },
+    {
+      "name": "struct nw_data_transfer_report_state_t",
+      "desc": "States indicating whether a data transfer report is collected yet."
+    },
+    {
+      "name": "func nw_data_transfer_report_get_path_count(nw_data_transfer_report_t) -> UInt32",
+      "desc": "Checks the number of valid paths in the report."
+    },
+    {
+      "name": "func nw_data_transfer_report_get_duration_milliseconds(nw_data_transfer_report_t) -> UInt64",
+      "desc": "Checks the duration of the data transfer report, from when it was started to when it was collected."
+    },
+    {
+      "name": "func nw_data_transfer_report_copy_path_interface(nw_data_transfer_report_t, UInt32) -> nw_interface_t",
+      "desc": "Accesses the network interface the path used."
+    },
+    {
+      "name": "func nw_data_transfer_report_get_received_application_byte_count(nw_data_transfer_report_t, UInt32) -> UInt64",
+      "desc": "Accesses the number of bytes the connection delivered."
+    },
+    {
+      "name": "func nw_data_transfer_report_get_sent_application_byte_count(nw_data_transfer_report_t, UInt32) -> UInt64",
+      "desc": "Accesses the number of bytes sent on the connection."
+    },
+    {
+      "name": "func nw_data_transfer_report_get_received_transport_byte_count(nw_data_transfer_report_t, UInt32) -> UInt64",
+      "desc": "Accesses the number of bytes the transport protocol delivered."
+    },
+    {
+      "name": "func nw_data_transfer_report_get_received_transport_duplicate_byte_count(nw_data_transfer_report_t, UInt32) -> UInt64",
+      "desc": "Accesses the number of duplicated bytes the transport protocol detected."
+    },
+    {
+      "name": "func nw_data_transfer_report_get_received_transport_out_of_order_byte_count(nw_data_transfer_report_t, UInt32) -> UInt64",
+      "desc": "Accesses the number of bytes the transport protocol received out of order."
+    },
+    {
+      "name": "func nw_data_transfer_report_get_sent_transport_byte_count(nw_data_transfer_report_t, UInt32) -> UInt64",
+      "desc": "Accesses the number of bytes sent into the transport protocol."
+    },
+    {
+      "name": "func nw_data_transfer_report_get_sent_transport_retransmitted_byte_count(nw_data_transfer_report_t, UInt32) -> UInt64",
+      "desc": "Accesses the number of bytes the transport protocol retransmitted."
+    },
+    {
+      "name": "func nw_data_transfer_report_get_transport_smoothed_rtt_milliseconds(nw_data_transfer_report_t, UInt32) -> UInt64",
+      "desc": "Accesses the smoothed round-trip time the transport protocol measured, in milliseconds."
+    },
+    {
+      "name": "func nw_data_transfer_report_get_transport_minimum_rtt_milliseconds(nw_data_transfer_report_t, UInt32) -> UInt64",
+      "desc": "Accesses the minimum round-trip time the transport protocol measured, in milliseconds."
+    },
+    {
+      "name": "func nw_data_transfer_report_get_transport_rtt_variance(nw_data_transfer_report_t, UInt32) -> UInt64",
+      "desc": "Accesses the variance of the round-trip time the transport protocol measured."
+    },
+    {
+      "name": "func nw_data_transfer_report_get_received_ip_packet_count(nw_data_transfer_report_t, UInt32) -> UInt64",
+      "desc": "Accesses the number of IP packets the connection received."
+    },
+    {
+      "name": "func nw_data_transfer_report_get_sent_ip_packet_count(nw_data_transfer_report_t, UInt32) -> UInt64",
+      "desc": "Accesses the number of IP packets the connection sent."
+    }
+  ],
+  "declaration": "typealias nw_data_transfer_report_t = OS_nw_data_transfer_report"
+}

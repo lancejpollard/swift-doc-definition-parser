@@ -1,0 +1,116 @@
+{
+  "path": "/documentation/appkit/nssavepanel",
+  "type": "Class",
+  "name": "NSSavePanel",
+  "desc": "A panel that prompts the user for information about where to save a file.",
+  "items": [
+    {
+      "name": "var delegate: NSOpenSavePanelDelegate?",
+      "desc": "A custom object you use to manage interactions with an open or save panel."
+    },
+    {
+      "name": "protocol NSOpenSavePanelDelegate",
+      "desc": "A set of methods for managing interactions with an open or save panel."
+    },
+    {
+      "name": "func beginSheetModal(for: NSWindow, completionHandler: (NSApplication.ModalResponse) -> Void)",
+      "desc": "Presents the panel as a sheet modal to the specified window."
+    },
+    {
+      "name": "func begin(completionHandler: (NSApplication.ModalResponse) -> Void)",
+      "desc": "Presents the panel as a modeless window."
+    },
+    {
+      "name": "func runModal() -> NSApplication.ModalResponse",
+      "desc": "Displays the panel and begins its event loop with the current working (or last-selected) directory as the default starting point."
+    },
+    {
+      "name": "func validateVisibleColumns()",
+      "desc": "Validates and reloads the browser columns visible in the panel."
+    },
+    {
+      "name": "var url: URL?",
+      "desc": "A URL that contains the fully specified location of the targeted file."
+    },
+    {
+      "name": "var title: String!",
+      "desc": "The title of the panel."
+    },
+    {
+      "name": "var prompt: String!",
+      "desc": "The text to display in the default button."
+    },
+    {
+      "name": "var message: String!",
+      "desc": "The message text displayed in the panel."
+    },
+    {
+      "name": "var nameFieldLabel: String!",
+      "desc": "The label text displayed in front of the filename text field."
+    },
+    {
+      "name": "var nameFieldStringValue: String",
+      "desc": "The user-editable filename currently shown in the name field."
+    },
+    {
+      "name": "var directoryURL: URL?",
+      "desc": "The current directory shown in the panel."
+    },
+    {
+      "name": "var accessoryView: NSView?",
+      "desc": "The custom accessory view for the current app."
+    },
+    {
+      "name": "var showsTagField: Bool",
+      "desc": "A Boolean value that indicates whether the panel displays the Tags field."
+    },
+    {
+      "name": "var tagNames: [String]?",
+      "desc": "The tag names that you want to include on a saved file."
+    },
+    {
+      "name": "var canCreateDirectories: Bool",
+      "desc": "A Boolean value that indicates whether the panel displays UI for creating directories."
+    },
+    {
+      "name": "var canSelectHiddenExtension: Bool",
+      "desc": "A Boolean value that indicates whether the panel displays UI for hiding or showing filename extensions."
+    },
+    {
+      "name": "var showsHiddenFiles: Bool",
+      "desc": "A Boolean value that indicates whether the panel displays files that are normally hidden from the user."
+    },
+    {
+      "name": "var isExtensionHidden: Bool",
+      "desc": "A Boolean value that indicates whether to display filename extensions."
+    },
+    {
+      "name": "var isExpanded: Bool",
+      "desc": "A Boolean value that indicates whether whether the panel is expanded."
+    },
+    {
+      "name": "var allowedContentTypes: [UTType]",
+      "desc": "An array of types that specify the files types to which you can save."
+    },
+    {
+      "name": "var allowsOtherFileTypes: Bool",
+      "desc": "A Boolean value that indicates whether the panel allows the user to save files with a filename extension that’s not in the list of allowed types."
+    },
+    {
+      "name": "var treatsFilePackagesAsDirectories: Bool",
+      "desc": "A Boolean value that indicates whether the panel displays file packages as directories."
+    },
+    {
+      "name": "func ok(Any?)",
+      "desc": "The action method that the panel calls when the user clicks the OK button."
+    },
+    {
+      "name": "func cancel(Any?)",
+      "desc": "The action method that the panel calls when the user clicks the Cancel button."
+    }
+  ],
+  "declaration": "class NSSavePanel : NSPanel",
+  "inheritsFrom": [
+    "NSPanel"
+  ]
+}

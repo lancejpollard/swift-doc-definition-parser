@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/eventkit/ekparticipantschedulestatus",
+  "type": "Enumeration",
+  "name": "EKParticipantScheduleStatus",
+  "desc": "The participant's scheduled status.",
+  "items": [
+    {
+      "name": "case none",
+      "desc": "The invitation hasn't been sent yet."
+    },
+    {
+      "name": "case pending",
+      "desc": "The invitation is in the process of being sent."
+    },
+    {
+      "name": "case sent",
+      "desc": "The invitation has been sent, but it's unclear if it was successfully delivered."
+    },
+    {
+      "name": "case delivered",
+      "desc": "The invitation has been sent and successfully delivered."
+    },
+    {
+      "name": "case recipientNotRecognized",
+      "desc": "The invitation wasn't delivered because the source doesn't recognize the recipient."
+    },
+    {
+      "name": "case noPrivileges",
+      "desc": "The invitation wasn’t delivered because of insufficient privileges."
+    },
+    {
+      "name": "case deliveryFailed",
+      "desc": "The invitation wasn't delivered due to a temporary failure."
+    },
+    {
+      "name": "case cannotDeliver",
+      "desc": "The invitation wasn't delivered because the system is unsure of how to deliver it."
+    },
+    {
+      "name": "case recipientNotAllowed",
+      "desc": "The invitation wasn't delivered because scheduling with the participant isn't allowed."
+    }
+  ],
+  "declaration": "enum EKParticipantScheduleStatus : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

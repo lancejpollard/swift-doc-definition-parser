@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/gamekit/gkturnbasedexchangestatus",
+  "type": "Enumeration",
+  "name": "GKTurnBasedExchangeStatus",
+  "desc": "The status of an exchange or reply.",
+  "items": [
+    {
+      "name": "case unknown",
+      "desc": "The state of the exchange request is unknown."
+    },
+    {
+      "name": "case active",
+      "desc": "GameKit sent the exchange request to recipients but not all recipients replied."
+    },
+    {
+      "name": "case complete",
+      "desc": "All recipients of the exchange request replied."
+    },
+    {
+      "name": "case resolved",
+      "desc": "The current participant saved the exchange request."
+    },
+    {
+      "name": "case canceled",
+      "desc": "The sender canceled the exchange request."
+    }
+  ],
+  "declaration": "enum GKTurnBasedExchangeStatus : Int8, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

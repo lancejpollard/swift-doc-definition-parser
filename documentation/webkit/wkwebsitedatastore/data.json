@@ -1,0 +1,47 @@
+{
+  "path": "/documentation/webkit/wkwebsitedatastore",
+  "type": "Class",
+  "name": "WKWebsiteDataStore",
+  "desc": "An object that manages cookies, disk and memory caches, and other types of data for a web view.",
+  "items": [
+    {
+      "name": "class func `default`() -> WKWebsiteDataStore",
+      "desc": "Returns the default data store, which stores data persistently to disk."
+    },
+    {
+      "name": "class func nonPersistent() -> WKWebsiteDataStore",
+      "desc": "Creates a new data store object that stores website data in memory, and doesn’t write that data to disk."
+    },
+    {
+      "name": "var isPersistent: Bool",
+      "desc": "A Boolean value that indicates whether this object stores data to disk."
+    },
+    {
+      "name": "var httpCookieStore: WKHTTPCookieStore",
+      "desc": "The object that manages the HTTP cookies for your website."
+    },
+    {
+      "name": "func fetchDataRecords(ofTypes: Set<String>, completionHandler: ([WKWebsiteDataRecord]) -> Void)",
+      "desc": "Fetches the specified types of records from the data store."
+    },
+    {
+      "name": "class func allWebsiteDataTypes() -> Set<String>",
+      "desc": "Returns the set of all the available data types."
+    },
+    {
+      "name": "func removeData(ofTypes: Set<String>, for: [WKWebsiteDataRecord], completionHandler: () -> Void)",
+      "desc": "Removes the specified types of website data from one or more data records."
+    },
+    {
+      "name": "func removeData(ofTypes: Set<String>, modifiedSince: Date, completionHandler: () -> Void)",
+      "desc": "Removes website data that changed after the specified date."
+    }
+  ],
+  "declaration": "class WKWebsiteDataStore : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "path": "/documentation/storekit/product",
+  "type": "Structure",
+  "name": "Product",
+  "desc": "Information about a product configured in App Store Connect.",
+  "items": [
+    {
+      "name": "static func products<Identifiers>(for: Identifiers) -> [Product]",
+      "desc": "Requests product data from the App Store."
+    },
+    {
+      "name": "let displayName: String",
+      "desc": "The localized display name of the product."
+    },
+    {
+      "name": "let description: String",
+      "desc": "The localized description of the product."
+    },
+    {
+      "name": "let displayPrice: String",
+      "desc": "The localized string representation of the product price."
+    },
+    {
+      "name": "let price: Decimal",
+      "desc": "The decimal representation of the cost of the product, in local currency."
+    },
+    {
+      "name": "func purchase(options: Set<Product.PurchaseOption>) -> Product.PurchaseResult",
+      "desc": "Initiates a purchase for the product with the App Store."
+    },
+    {
+      "name": "struct Product.PurchaseOption",
+      "desc": "Optional settings for a product purchase."
+    },
+    {
+      "name": "enum Product.PurchaseResult",
+      "desc": "The result of a purchase."
+    },
+    {
+      "name": "enum Product.PurchaseError",
+      "desc": "Error information for product purchase errors."
+    },
+    {
+      "name": "var currentEntitlement: VerificationResult<Transaction>?",
+      "desc": "The transaction that entitles the user to this product."
+    },
+    {
+      "name": "var latestTransaction: VerificationResult<Transaction>?",
+      "desc": "The most recent transaction for this product."
+    },
+    {
+      "name": "let subscription: Product.SubscriptionInfo?",
+      "desc": "The subscription information for an auto-renewable subscripton."
+    },
+    {
+      "name": "struct Product.SubscriptionInfo",
+      "desc": "Information about an auto-renewable subscription such as its status, period, subscription group, and subscription offer details."
+    },
+    {
+      "name": "let id: String",
+      "desc": "The unique product identifier."
+    },
+    {
+      "name": "typealias Product.ID",
+      "desc": "A type representing a unique product identifier."
+    },
+    {
+      "name": "let type: Product.ProductType",
+      "desc": "The in-app purchase product type."
+    },
+    {
+      "name": "struct Product.ProductType",
+      "desc": "The types of in-app purchases."
+    },
+    {
+      "name": "var id: ObjectIdentifier",
+      "desc": "The stable identity of the entity associated with this instance."
+    },
+    {
+      "name": "let isFamilyShareable: Bool",
+      "desc": "A Boolean value that indicates whether the product is available for family sharing in App Store Connect."
+    },
+    {
+      "name": "var jsonRepresentation: Data",
+      "desc": "The raw JSON representation of the product information."
+    },
+    {
+      "name": "static func != (Product, Product) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (Product, Product) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "var debugDescription: String"
+    }
+  ],
+  "declaration": "struct Product",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "Equatable",
+    "Hashable",
+    "Identifiable"
+  ]
+}

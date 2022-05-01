@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/combine/publishers/zip",
+  "type": "Structure",
+  "name": "Publishers.Zip",
+  "desc": "A publisher created by applying the zip function to two upstream publishers.",
+  "items": [
+    {
+      "name": "init(A, B)",
+      "desc": "Creates a publisher that applies the zip function to two upstream publishers."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let a: A",
+      "desc": "A publisher to zip."
+    },
+    {
+      "name": "let b: B",
+      "desc": "Another publisher to zip."
+    },
+    {
+      "name": "static func == (Publishers.Zip<A, B>, Publishers.Zip<A, B>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two publishers are equivalent."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    }
+  ],
+  "declaration": "struct Zip<A, B> where A : Publisher, B : Publisher, A.Failure == B.Failure",
+  "conformsTo": [
+    "Equatable",
+    "Publisher"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/combine/publishers/handleevents",
+  "type": "Structure",
+  "name": "Publishers.HandleEvents",
+  "desc": "A publisher that performs the specified closures when publisher events occur.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, receiveSubscription: ((Subscription) -> Void)?, receiveOutput: ((Publishers.HandleEvents<Upstream>.Output) -> Void)?, receiveCompletion: ((Subscribers.Completion<Publishers.HandleEvents<Upstream>.Failure>) -> Void)?, receiveCancel: (() -> Void)?, receiveRequest: ((Subscribers.Demand) -> Void)?)",
+      "desc": "Creates a publisher that performs the specified closures when publisher events occur."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    },
+    {
+      "name": "var receiveSubscription: ((Subscription) -> Void)?",
+      "desc": "A closure that executes when the publisher receives the subscription from the upstream publisher."
+    },
+    {
+      "name": "var receiveOutput: ((Publishers.HandleEvents<Upstream>.Output) -> Void)?",
+      "desc": "A closure that executes when the publisher receives a value from the upstream publisher."
+    },
+    {
+      "name": "var receiveCompletion: ((Subscribers.Completion<Publishers.HandleEvents<Upstream>.Failure>) -> Void)?",
+      "desc": "A closure that executes when the upstream publisher finishes normally or terminates with an error."
+    },
+    {
+      "name": "var receiveCancel: (() -> Void)?",
+      "desc": "A closure that executes when the downstream receiver cancels publishing."
+    },
+    {
+      "name": "var receiveRequest: ((Subscribers.Demand) -> Void)?",
+      "desc": "A closure that executes when the publisher receives a request for more elements."
+    }
+  ],
+  "declaration": "struct HandleEvents<Upstream> where Upstream : Publisher",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

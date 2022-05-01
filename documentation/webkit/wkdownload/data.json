@@ -1,0 +1,35 @@
+{
+  "path": "/documentation/webkit/wkdownload",
+  "type": "Class",
+  "name": "WKDownload",
+  "desc": "An object that represents the download of a web resource.",
+  "items": [
+    {
+      "name": "var delegate: WKDownloadDelegate?",
+      "desc": "An object you use to track download progress and handle redirects, authentication challenges, and failures."
+    },
+    {
+      "name": "func cancel(((Data?) -> Void)?)",
+      "desc": "Cancels the download, and optionally captures data so that you can resume the download later."
+    },
+    {
+      "name": "var originalRequest: URLRequest?",
+      "desc": "An object that represents the request that initiated the download."
+    },
+    {
+      "name": "var webView: WKWebView?",
+      "desc": "The web view where the download initiated."
+    },
+    {
+      "name": "enum WKDownload.RedirectPolicy",
+      "desc": "An enumeration with cases that indicate whether to proceed with a redirect."
+    }
+  ],
+  "declaration": "class WKDownload : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "ProgressReporting"
+  ]
+}

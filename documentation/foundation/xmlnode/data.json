@@ -1,0 +1,210 @@
+{
+  "path": "/documentation/foundation/xmlnode",
+  "type": "Class",
+  "name": "XMLNode",
+  "desc": "The nodes in the abstract, logical tree structure that represents an XML document.",
+  "items": [
+    {
+      "name": "init(kind: XMLNode.Kind)",
+      "desc": "Returns an NSXMLNode instance initialized with the constant indicating node kind."
+    },
+    {
+      "name": "init(kind: XMLNode.Kind, options: XMLNode.Options)",
+      "desc": "Returns an NSXMLNode instance initialized with the constant indicating node kind and one or more initialization options."
+    },
+    {
+      "name": "class func document() -> Any",
+      "desc": "Returns an empty document node."
+    },
+    {
+      "name": "class func document(withRootElement: XMLElement) -> Any",
+      "desc": "Returns an XMLDocument object initialized with a given root element."
+    },
+    {
+      "name": "class func element(withName: String) -> Any",
+      "desc": "Returns an XMLElement object with a given tag identifier, or name"
+    },
+    {
+      "name": "class func element(withName: String, children: [XMLNode]?, attributes: [XMLNode]?) -> Any",
+      "desc": "Returns an XMLElement object with the given tag (name), attributes, and children."
+    },
+    {
+      "name": "class func element(withName: String, stringValue: String) -> Any",
+      "desc": "Returns an XMLElement object with a single text-node child containing the specified text."
+    },
+    {
+      "name": "class func element(withName: String, uri: String) -> Any",
+      "desc": "Returns an element whose fully qualified name is specified."
+    },
+    {
+      "name": "class func attribute(withName: String, stringValue: String) -> Any",
+      "desc": "Returns an NSXMLNode object representing an attribute node with a given name and string."
+    },
+    {
+      "name": "class func attribute(withName: String, uri: String, stringValue: String) -> Any",
+      "desc": "Returns an NSXMLNode object representing an attribute node with a given qualified name and string."
+    },
+    {
+      "name": "class func text(withStringValue: String) -> Any",
+      "desc": "Returns an NSXMLNode object representing a text node with specified content."
+    },
+    {
+      "name": "class func comment(withStringValue: String) -> Any",
+      "desc": "Returns an XMLNode object representing a comment node containing given text."
+    },
+    {
+      "name": "class func namespace(withName: String, stringValue: String) -> Any",
+      "desc": "Returns an NSXMLNode object representing a namespace with a specified name and URI."
+    },
+    {
+      "name": "class func dtdNode(withXMLString: String) -> Any?",
+      "desc": "Returns a XMLDTDNode object representing the DTD declaration for an element, attribute, entity, or notation based on a given string."
+    },
+    {
+      "name": "class func predefinedNamespace(forPrefix: String) -> XMLNode?",
+      "desc": "Returns an NSXMLNode object representing one of the predefined namespaces with the specified prefix."
+    },
+    {
+      "name": "class func processingInstruction(withName: String, stringValue: String) -> Any",
+      "desc": "Returns an NSXMLNode object representing a processing instruction with a specified name and value."
+    },
+    {
+      "name": "var index: Int",
+      "desc": "Returns the index of the receiver identifying its position relative to its sibling nodes."
+    },
+    {
+      "name": "var kind: XMLNode.Kind",
+      "desc": "Returns the kind of node the receiver is as a constant of type XMLNode.Kind."
+    },
+    {
+      "name": "var level: Int",
+      "desc": "Returns the nesting level of the receiver within the tree hierarchy."
+    },
+    {
+      "name": "var name: String?",
+      "desc": "Returns the name of the receiver."
+    },
+    {
+      "name": "var objectValue: Any?",
+      "desc": "Returns the object value of the receiver."
+    },
+    {
+      "name": "var stringValue: String?",
+      "desc": "Returns the content of the receiver as a string value."
+    },
+    {
+      "name": "func setStringValue(String, resolvingEntities: Bool)",
+      "desc": "Sets the content of the receiver as a string value and, optionally, resolves character references, predefined entities, and user-defined entities as declared in the associated DTD."
+    },
+    {
+      "name": "var uri: String?",
+      "desc": "Returns the URI associated with the receiver."
+    },
+    {
+      "name": "var rootDocument: XMLDocument?",
+      "desc": "Returns the XMLDocument object containing the root element and representing the XML document as a whole."
+    },
+    {
+      "name": "var parent: XMLNode?",
+      "desc": "Returns the parent node of the receiver."
+    },
+    {
+      "name": "func child(at: Int) -> XMLNode?",
+      "desc": "Returns the child node of the receiver at the specified location."
+    },
+    {
+      "name": "var childCount: Int",
+      "desc": "Returns the number of child nodes the receiver has."
+    },
+    {
+      "name": "var children: [XMLNode]?",
+      "desc": "Returns an immutable array containing the child nodes of the receiver (as NSXMLNode objects)."
+    },
+    {
+      "name": "var next: XMLNode?",
+      "desc": "Returns the next NSXMLNode object in document order."
+    },
+    {
+      "name": "var nextSibling: XMLNode?",
+      "desc": "Returns the next NSXMLNode object that is a sibling node to the receiver."
+    },
+    {
+      "name": "var previous: XMLNode?",
+      "desc": "Returns the previous NSXMLNode object in document order."
+    },
+    {
+      "name": "var previousSibling: XMLNode?",
+      "desc": "Returns the previous NSXMLNode object that is a sibling node to the receiver."
+    },
+    {
+      "name": "func detach()",
+      "desc": "Detaches the receiver from its parent node."
+    },
+    {
+      "name": "var xmlString: String",
+      "desc": "Returns the string representation of the receiver as it would appear in an XML document."
+    },
+    {
+      "name": "func xmlString(options: XMLNode.Options) -> String",
+      "desc": "Returns the string representation of the receiver as it would appear in an XML document, with one or more output options specified."
+    },
+    {
+      "name": "func canonicalXMLStringPreservingComments(Bool) -> String",
+      "desc": "Returns a string object encapsulating the receiver’s XML in canonical form."
+    },
+    {
+      "name": "var description: String",
+      "desc": "Returns a description of the receiver."
+    },
+    {
+      "name": "func nodes(forXPath: String) -> [XMLNode]",
+      "desc": "Returns the nodes resulting from executing an XPath query upon the receiver."
+    },
+    {
+      "name": "func objects(forXQuery: String) -> [Any]",
+      "desc": "Returns the objects resulting from executing an XQuery query upon the receiver."
+    },
+    {
+      "name": "func objects(forXQuery: String, constants: [String : Any]?) -> [Any]",
+      "desc": "Returns the objects resulting from executing an XQuery query upon the receiver."
+    },
+    {
+      "name": "var xPath: String?",
+      "desc": "Returns the XPath expression identifying the receiver’s location in the document tree."
+    },
+    {
+      "name": "var localName: String?",
+      "desc": "Returns the local name of the receiver."
+    },
+    {
+      "name": "class func localName(forName: String) -> String",
+      "desc": "Returns the local name from the specified qualified name."
+    },
+    {
+      "name": "var prefix: String?",
+      "desc": "Returns the prefix of the receiver’s name."
+    },
+    {
+      "name": "class func prefix(forName: String) -> String?",
+      "desc": "Returns the prefix from the specified qualified name."
+    },
+    {
+      "name": "enum XMLNode.Kind",
+      "desc": "NSXMLNode declares the following constants of type NSXMLNodeKind for specifying a node’s kind in the initializer methods init(kind:) and init(kind:options:):"
+    },
+    {
+      "name": "struct XMLNode.Options",
+      "desc": "These constants are input and output options for all NSXMLNode objects (unless otherwise indicated), including XMLDocument objects. You can specify these options in the NSXMLNode methods init(kind:options:) and xmlString(options:)."
+    },
+    {
+      "name": "init()"
+    }
+  ],
+  "declaration": "class XMLNode : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

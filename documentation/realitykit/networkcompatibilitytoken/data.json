@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/realitykit/networkcompatibilitytoken",
+  "type": "Class",
+  "name": "NetworkCompatibilityToken",
+  "desc": "An opaque token used to check the networking compatibility between two peers in a multipeer connection.",
+  "items": [
+    {
+      "name": "static let local: NetworkCompatibilityToken",
+      "desc": "A token containing the local peer’s networking compatibility info."
+    },
+    {
+      "name": "func compatibilityWith(NetworkCompatibilityToken) -> NetworkCompatibilityToken.Compatibility",
+      "desc": "Compares network compatibility tokens between the local device and another device."
+    },
+    {
+      "name": "enum NetworkCompatibilityToken.Compatibility",
+      "desc": "Indicates whether two devices running RealityKit are compatible and able to connect and sync scenes."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a new instance from a decoder."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Writes the token’s data into an encoder."
+    }
+  ],
+  "declaration": "final class NetworkCompatibilityToken",
+  "conformsTo": [
+    "Decodable",
+    "Encodable"
+  ]
+}

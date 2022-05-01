@@ -1,0 +1,31 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsimagemedian",
+  "type": "Class",
+  "name": "MPSImageMedian",
+  "desc": "A filter that applies a median filter in a square region centered around each pixel in the source image.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice, kernelDiameter: Int)",
+      "desc": "Initializes a filter for a particular kernel size and device."
+    },
+    {
+      "name": "class func maxKernelDiameter() -> Int",
+      "desc": "Queries the maximum diameter, in pixels, of the filter window supported by the median filter."
+    },
+    {
+      "name": "class func minKernelDiameter() -> Int",
+      "desc": "Queries the minimum diameter, in pixels, of the filter window supported by the median filter."
+    },
+    {
+      "name": "var kernelDiameter: Int",
+      "desc": "The diameter, in pixels, of the filter window."
+    }
+  ],
+  "declaration": "class MPSImageMedian : MPSUnaryImageKernel",
+  "inheritsFrom": [
+    "MPSUnaryImageKernel"
+  ]
+}

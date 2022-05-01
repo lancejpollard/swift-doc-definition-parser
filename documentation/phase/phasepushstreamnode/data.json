@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/phase/phasepushstreamnode",
+  "type": "Class",
+  "name": "PHASEPushStreamNode",
+  "desc": "An audio stream you manage to provide a sound buffer data.",
+  "items": [
+    {
+      "name": "var mixer: PHASEMixer",
+      "desc": "The audio stream's output pipeline."
+    },
+    {
+      "name": "var format: AVAudioFormat",
+      "desc": "The format of the audio stream data."
+    },
+    {
+      "name": "func scheduleBuffer(buffer: AVAudioPCMBuffer)",
+      "desc": "Schedules audio data for playback."
+    },
+    {
+      "name": "func scheduleBuffer(buffer: AVAudioPCMBuffer, time: AVAudioTime?, options: PHASEPushStreamBufferOptions)",
+      "desc": "Schedules audio data playback at a specific time."
+    },
+    {
+      "name": "func scheduleBuffer(buffer: AVAudioPCMBuffer, time: AVAudioTime?, options: PHASEPushStreamBufferOptions, completionCallbackType: PHASEPushStreamCompletionCallbackCondition, completionHandler: (PHASEPushStreamCompletionCallbackCondition) -> Void)",
+      "desc": "Schedules audio data playback at a specific time with a completion handler."
+    },
+    {
+      "name": "func scheduleBuffer(buffer: AVAudioPCMBuffer, completionCallbackType: PHASEPushStreamCompletionCallbackCondition, completionHandler: (PHASEPushStreamCompletionCallbackCondition) -> Void)",
+      "desc": "Schedules audio data playback with a completion handler."
+    },
+    {
+      "name": "enum PHASEPushStreamCompletionCallbackCondition",
+      "desc": "A status that describes the results after the app schedules a push-stream buffer."
+    },
+    {
+      "name": "var gainMetaParameter: PHASENumberMetaParameter?",
+      "desc": "A meta parameter for dynamic loudness control."
+    },
+    {
+      "name": "var rateMetaParameter: PHASENumberMetaParameter?",
+      "desc": "A meta parameter for dynamic rate control."
+    }
+  ],
+  "declaration": "class PHASEPushStreamNode : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/mailkit/memessagesecurityinformation",
+  "type": "Class",
+  "name": "MEMessageSecurityInformation",
+  "desc": "An object that contains details about a message’s content, such as if it’s encrypted and who digitally signed it.",
+  "items": [
+    {
+      "name": "init(signers: [MEMessageSigner], isEncrypted: Bool, signingError: Error?, encryptionError: Error?)",
+      "desc": "Creates a message security information object that indicates if a message is encrypted, who signed it, or if an error occurred when decoding the message."
+    },
+    {
+      "name": "var isEncrypted: Bool",
+      "desc": "A Boolean value that indicates if the sender encrypted the message."
+    },
+    {
+      "name": "var encryptionError: Error?",
+      "desc": "An error that indicates the security handler couldn’t decrypt the message."
+    },
+    {
+      "name": "var signers: [MEMessageSigner]",
+      "desc": "An array of objects that contain information about who signed the message."
+    },
+    {
+      "name": "var signingError: Error?",
+      "desc": "An error that indicates the security handler couldn’t decode the message’s digital signatures."
+    },
+    {
+      "name": "init(signers: [MEMessageSigner], isEncrypted: Bool, signingError: Error?, encryptionError: Error?, shouldBlockRemoteContent: Bool, localizedRemoteContentBlockingReason: String?)"
+    },
+    {
+      "name": "var localizedRemoteContentBlockingReason: String?"
+    },
+    {
+      "name": "var shouldBlockRemoteContent: Bool"
+    }
+  ],
+  "declaration": "class MEMessageSecurityInformation : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

@@ -1,0 +1,316 @@
+{
+  "path": "/documentation/appkit/nsworkspace",
+  "type": "Class",
+  "name": "NSWorkspace",
+  "desc": "A workspace that can launch other apps and perform a variety of file-handling services.",
+  "items": [
+    {
+      "name": "class var shared: NSWorkspace",
+      "desc": "The shared workspace object."
+    },
+    {
+      "name": "var notificationCenter: NotificationCenter",
+      "desc": "The notification center for workspace notifications."
+    },
+    {
+      "name": "func open(URL, configuration: NSWorkspace.OpenConfiguration, completionHandler: ((NSRunningApplication?, Error?) -> Void)?)",
+      "desc": "Opens a URL asynchronously using the provided options."
+    },
+    {
+      "name": "func open([URL], withApplicationAt: URL, configuration: NSWorkspace.OpenConfiguration, completionHandler: ((NSRunningApplication?, Error?) -> Void)?)",
+      "desc": "Opens one or more URLs asynchronously in the specified app using the provided options."
+    },
+    {
+      "name": "func open(URL) -> Bool",
+      "desc": "Opens the location at the specified URL."
+    },
+    {
+      "name": "func openApplication(at: URL, configuration: NSWorkspace.OpenConfiguration, completionHandler: ((NSRunningApplication?, Error?) -> Void)?)",
+      "desc": "Launches the app at the specified URL and asynchronously reports back on the app's status."
+    },
+    {
+      "name": "func hideOtherApplications()",
+      "desc": "Hides all applications other than the sender."
+    },
+    {
+      "name": "class NSWorkspace.OpenConfiguration",
+      "desc": "The configuration options for opening URLs or launching apps."
+    },
+    {
+      "name": "func duplicate([URL], completionHandler: (([URL : URL], Error?) -> Void)?)",
+      "desc": "Duplicates the specified URLS asynchronously in the same manner as the Finder."
+    },
+    {
+      "name": "func recycle([URL], completionHandler: (([URL : URL], Error?) -> Void)?)",
+      "desc": "Moves the specified URLs to the trash in the same manner as the Finder."
+    },
+    {
+      "name": "func activateFileViewerSelecting([URL])",
+      "desc": "Activates the Finder, and opens one or more windows selecting the specified files."
+    },
+    {
+      "name": "func selectFile(String?, inFileViewerRootedAtPath: String) -> Bool",
+      "desc": "Selects the file at the specified path."
+    },
+    {
+      "name": "func urlForApplication(withBundleIdentifier: String) -> URL?",
+      "desc": "Returns the URL for the app with the specified identifier."
+    },
+    {
+      "name": "func urlForApplication(toOpen: URL) -> URL?",
+      "desc": "Returns the URL to the default app that would be opened."
+    },
+    {
+      "name": "func getFileSystemInfo(forPath: String, isRemovable: UnsafeMutablePointer<ObjCBool>?, isWritable: UnsafeMutablePointer<ObjCBool>?, isUnmountable: UnsafeMutablePointer<ObjCBool>?, description: AutoreleasingUnsafeMutablePointer<NSString?>?, type: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool",
+      "desc": "Returns information about the file system at the specified path."
+    },
+    {
+      "name": "func isFilePackage(atPath: String) -> Bool",
+      "desc": "Determines whether the specified path is a file package."
+    },
+    {
+      "name": "var frontmostApplication: NSRunningApplication?",
+      "desc": "Returns the frontmost app, which is the app that receives key events."
+    },
+    {
+      "name": "var runningApplications: [NSRunningApplication]",
+      "desc": "Returns an array of running apps."
+    },
+    {
+      "name": "var menuBarOwningApplication: NSRunningApplication?",
+      "desc": "Returns the app that owns the currently displayed menu bar."
+    },
+    {
+      "name": "func icon(forFile: String) -> NSImage",
+      "desc": "Returns an image containing the icon for the specified file."
+    },
+    {
+      "name": "func icon(forFiles: [String]) -> NSImage?",
+      "desc": "Returns an image containing the icon for the specified files."
+    },
+    {
+      "name": "func icon(for: UTType) -> NSImage",
+      "desc": "Returns an image containing the icon for the specified content type."
+    },
+    {
+      "name": "func setIcon(NSImage?, forFile: String, options: NSWorkspace.IconCreationOptions) -> Bool",
+      "desc": "Sets the icon for the file or directory at the specified path."
+    },
+    {
+      "name": "struct NSWorkspace.IconCreationOptions",
+      "desc": "Constants that describe options for creating icons."
+    },
+    {
+      "name": "func unmountAndEjectDevice(atPath: String) -> Bool",
+      "desc": "Unmounts and ejects the device at the specified path."
+    },
+    {
+      "name": "func unmountAndEjectDevice(at: URL)",
+      "desc": "Attempts to eject the volume mounted at the given path."
+    },
+    {
+      "name": "func desktopImageURL(for: NSScreen) -> URL?",
+      "desc": "Returns the URL for the desktop image for the given screen."
+    },
+    {
+      "name": "func setDesktopImageURL(URL, for: NSScreen, options: [NSWorkspace.DesktopImageOptionKey : Any])",
+      "desc": "Sets the desktop image for the given screen to the image at the specified URL."
+    },
+    {
+      "name": "func desktopImageOptions(for: NSScreen) -> [NSWorkspace.DesktopImageOptionKey : Any]?",
+      "desc": "Returns the desktop image options for the given screen."
+    },
+    {
+      "name": "struct NSWorkspace.DesktopImageOptionKey",
+      "desc": "Keys that indicate how to display a new desktop image."
+    },
+    {
+      "name": "func showSearchResults(forQueryString: String) -> Bool",
+      "desc": "Displays a Spotlight search results window in Finder for the specified query string."
+    },
+    {
+      "name": "var fileLabels: [String]",
+      "desc": "The array of file labels, returned as strings."
+    },
+    {
+      "name": "var fileLabelColors: [NSColor]",
+      "desc": "The array of colors for the file labels."
+    },
+    {
+      "name": "func noteFileSystemChanged(String)",
+      "desc": "Informs the workspace object that the file system changed at the specified path."
+    },
+    {
+      "name": "func extendPowerOff(by: Int) -> Int",
+      "desc": "Requests the system wait for the specified amount of time before turning off the power or logging out the user."
+    },
+    {
+      "name": "var accessibilityDisplayShouldDifferentiateWithoutColor: Bool",
+      "desc": "A Boolean value that indicates whether the app avoids conveying information through color alone."
+    },
+    {
+      "name": "var accessibilityDisplayShouldIncreaseContrast: Bool",
+      "desc": "A Boolean value that indicates whether the app presents a high-contrast user interface."
+    },
+    {
+      "name": "var accessibilityDisplayShouldReduceTransparency: Bool",
+      "desc": "A Boolean value that indicates whether the app avoids using semitransparent backgrounds."
+    },
+    {
+      "name": "var accessibilityDisplayShouldInvertColors: Bool",
+      "desc": "A Boolean value that indicates whether the accessibility option to invert colors is in an enabled state."
+    },
+    {
+      "name": "var accessibilityDisplayShouldReduceMotion: Bool",
+      "desc": "A Boolean value that indicates whether the accessibility option to reduce motion is in an enabled state."
+    },
+    {
+      "name": "var isSwitchControlEnabled: Bool",
+      "desc": "A Boolean value that indicates whether Switch Control is currently running."
+    },
+    {
+      "name": "var isVoiceOverEnabled: Bool",
+      "desc": "A Boolean value that indicates whether VoiceOver is currently running."
+    },
+    {
+      "name": "func requestAuthorization(to: NSWorkspace.AuthorizationType, completionHandler: (NSWorkspace.Authorization?, Error?) -> Void)",
+      "desc": "Requests authorization to perform a privileged file operation."
+    },
+    {
+      "name": "class NSWorkspace.Authorization",
+      "desc": "The authorization granted to the app by the user."
+    },
+    {
+      "name": "enum NSWorkspace.AuthorizationType",
+      "desc": "The types of privileged file operations that can be authorized by the user."
+    },
+    {
+      "name": "class let willLaunchApplicationNotification: NSNotification.Name",
+      "desc": "A notification that the workspace posts when the Finder is about to launch an app."
+    },
+    {
+      "name": "class let didLaunchApplicationNotification: NSNotification.Name",
+      "desc": "A notification that the workspace posts when a new app starts up."
+    },
+    {
+      "name": "class let didTerminateApplicationNotification: NSNotification.Name",
+      "desc": "A notification that the workspace posts when an app finishes executing."
+    },
+    {
+      "name": "class let sessionDidBecomeActiveNotification: NSNotification.Name",
+      "desc": "A notification that the workspace posts after a user session switches in."
+    },
+    {
+      "name": "class let sessionDidResignActiveNotification: NSNotification.Name",
+      "desc": "A notification that the workspace posts before a user session switches out."
+    },
+    {
+      "name": "class let didHideApplicationNotification: NSNotification.Name",
+      "desc": "A notification that the workspace posts when the Finder hides an app."
+    },
+    {
+      "name": "class let didUnhideApplicationNotification: NSNotification.Name",
+      "desc": "A notification that the workspace posts when the Finder unhides an app."
+    },
+    {
+      "name": "class let didActivateApplicationNotification: NSNotification.Name",
+      "desc": "A notification that the workspace posts when the Finder is about to activate an app."
+    },
+    {
+      "name": "class let didDeactivateApplicationNotification: NSNotification.Name",
+      "desc": "A notification that the workspace posts when the Finder deactivates an app."
+    },
+    {
+      "name": "class let didRenameVolumeNotification: NSNotification.Name",
+      "desc": "A notification that the workspace posts when a volume changes its name or mount path."
+    },
+    {
+      "name": "class let didMountNotification: NSNotification.Name",
+      "desc": "A notification that the workspace posts when a new device mounts."
+    },
+    {
+      "name": "class let willUnmountNotification: NSNotification.Name",
+      "desc": "A notification that the workspace posts when the Finder is about to unmount a device."
+    },
+    {
+      "name": "class let didUnmountNotification: NSNotification.Name",
+      "desc": "A notification that the workspace posts when the Finder unmounts a device."
+    },
+    {
+      "name": "class let didChangeFileLabelsNotification: NSNotification.Name",
+      "desc": "A notification that the workspace posts when the Finder file labels or colors change."
+    },
+    {
+      "name": "class let activeSpaceDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that the workspace posts when a Spaces change occurs."
+    },
+    {
+      "name": "class let didWakeNotification: NSNotification.Name",
+      "desc": "A notification that the workspace posts when the device wakes from sleep."
+    },
+    {
+      "name": "class let willPowerOffNotification: NSNotification.Name",
+      "desc": "A notification that the workspace posts when the user requests a logout or powers off the device."
+    },
+    {
+      "name": "class let willSleepNotification: NSNotification.Name",
+      "desc": "A notification that the workspace posts before the device goes to sleep."
+    },
+    {
+      "name": "class let screensDidSleepNotification: NSNotification.Name",
+      "desc": "A notification that the workspace posts when the device’s screen goes to sleep."
+    },
+    {
+      "name": "class let screensDidWakeNotification: NSNotification.Name",
+      "desc": "A notification that the workspace posts when the device’s screens wake."
+    },
+    {
+      "name": "class let accessibilityDisplayOptionsDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that the workspace posts when any of the accessibility display options change."
+    },
+    {
+      "name": "class let localizedVolumeNameUserInfoKey: String",
+      "desc": "A string containing the user-visible name of the volume."
+    },
+    {
+      "name": "class let volumeURLUserInfoKey: String",
+      "desc": "A URL containing the mount path of the volume."
+    },
+    {
+      "name": "class let oldLocalizedVolumeNameUserInfoKey: String",
+      "desc": "A string containing the old user-visible name of the volume"
+    },
+    {
+      "name": "class let oldVolumeURLUserInfoKey: String",
+      "desc": "A URL containing the old mount path of the volume"
+    },
+    {
+      "name": "func setDefaultApplication(at: URL, toOpen: UTType, completion: ((Error?) -> Void)?)"
+    },
+    {
+      "name": "func setDefaultApplication(at: URL, toOpenContentTypeOfFileAt: URL, completion: ((Error?) -> Void)?)"
+    },
+    {
+      "name": "func setDefaultApplication(at: URL, toOpenFileAt: URL, completion: ((Error?) -> Void)?)"
+    },
+    {
+      "name": "func setDefaultApplication(at: URL, toOpenURLsWithScheme: String, completion: ((Error?) -> Void)?)"
+    },
+    {
+      "name": "func urlForApplication(toOpen: UTType) -> URL?"
+    },
+    {
+      "name": "func urlsForApplications(toOpen: UTType) -> [URL]"
+    },
+    {
+      "name": "func urlsForApplications(toOpen: URL) -> [URL]"
+    },
+    {
+      "name": "func urlsForApplications(withBundleIdentifier: String) -> [URL]"
+    }
+  ],
+  "declaration": "class NSWorkspace : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

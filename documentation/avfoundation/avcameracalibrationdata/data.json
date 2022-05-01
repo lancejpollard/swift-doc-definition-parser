@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/avfoundation/avcameracalibrationdata",
+  "type": "Class",
+  "name": "AVCameraCalibrationData",
+  "desc": "Information about the camera characteristics used to capture images and depth data.",
+  "items": [
+    {
+      "name": "var intrinsicMatrix: matrix_float3x3",
+      "desc": "A matrix relating a camera's internal properties to an ideal pinhole-camera model."
+    },
+    {
+      "name": "var intrinsicMatrixReferenceDimensions: CGSize",
+      "desc": "The image dimensions to which the camera's intrinsic matrix values are relative."
+    },
+    {
+      "name": "var extrinsicMatrix: matrix_float4x3",
+      "desc": "A matrix relating a camera's position and orientation to a world or scene coordinate system."
+    },
+    {
+      "name": "var pixelSize: Float",
+      "desc": "The size, in millimeters, of one image pixel."
+    },
+    {
+      "name": "var lensDistortionLookupTable: Data?",
+      "desc": "A map of floating-point values describing radial distortions imparted by the camera lens, for use in rectifying camera images."
+    },
+    {
+      "name": "var inverseLensDistortionLookupTable: Data?",
+      "desc": "A map of floating-point values describing radial distortions for use in reapplying camera geometry to a rectified image."
+    },
+    {
+      "name": "var lensDistortionCenter: CGPoint",
+      "desc": "The offset of the distortion center of the camera lens from the top-left corner of the image."
+    }
+  ],
+  "declaration": "class AVCameraCalibrationData : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

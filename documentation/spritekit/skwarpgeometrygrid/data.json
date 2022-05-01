@@ -1,0 +1,55 @@
+{
+  "path": "/documentation/spritekit/skwarpgeometrygrid",
+  "type": "Class",
+  "name": "SKWarpGeometryGrid",
+  "desc": "A definition for a grid-based deformation of nodes that conform to SKWarpable.",
+  "items": [
+    {
+      "name": "init(columns: Int, rows: Int)",
+      "desc": "Creates a warp geometry grid of a specified size."
+    },
+    {
+      "name": "init(columns: Int, rows: Int, sourcePositions: [SIMD2<Float>], destinationPositions: [SIMD2<Float>])",
+      "desc": "Creates a warp geometry grid of a specific size and warp translation, in point arrays."
+    },
+    {
+      "name": "init?(coder: NSCoder)",
+      "desc": "Tells you when to intialize a grid that was loaded from an archive."
+    },
+    {
+      "name": "var numberOfColumns: Int",
+      "desc": "The object's number of columns."
+    },
+    {
+      "name": "var numberOfRows: Int",
+      "desc": "The object's number of rows."
+    },
+    {
+      "name": "var vertexCount: Int",
+      "desc": "The object's total number of vertices."
+    },
+    {
+      "name": "func destPosition(at: Int) -> vector_float2",
+      "desc": "Returns the destination position of a vertex."
+    },
+    {
+      "name": "func replacingByDestinationPositions(positions: [SIMD2<Float>]) -> SKWarpGeometryGrid",
+      "desc": "Returns a copy of this grid, updated with the argument destination positions."
+    },
+    {
+      "name": "func replacingBySourcePositions(positions: [SIMD2<Float>]) -> SKWarpGeometryGrid",
+      "desc": "Returns a copy of this grid, updated with the argument source positions."
+    },
+    {
+      "name": "func sourcePosition(at: Int) -> vector_float2",
+      "desc": "Returns the source position of a vertex."
+    }
+  ],
+  "declaration": "class SKWarpGeometryGrid : SKWarpGeometry",
+  "inheritsFrom": [
+    "SKWarpGeometry"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

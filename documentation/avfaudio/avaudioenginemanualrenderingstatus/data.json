@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/avfaudio/avaudioenginemanualrenderingstatus",
+  "type": "Enumeration",
+  "name": "AVAudioEngineManualRenderingStatus",
+  "desc": "Status codes that return from the render call to the engine operating in manual rendering mode.",
+  "items": [
+    {
+      "name": "case error",
+      "desc": "A problem that occurs during rendering and results in no data returning."
+    },
+    {
+      "name": "case success",
+      "desc": "A status that indicates the successful return of the requested data."
+    },
+    {
+      "name": "case insufficientDataFromInputNode",
+      "desc": "A condition that occurs when the input node doesn’t return enough input data to satisfy the render request at the time of the request."
+    },
+    {
+      "name": "case cannotDoInCurrentContext",
+      "desc": "An operation that the system can’t perform under the current conditions."
+    }
+  ],
+  "declaration": "enum AVAudioEngineManualRenderingStatus : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

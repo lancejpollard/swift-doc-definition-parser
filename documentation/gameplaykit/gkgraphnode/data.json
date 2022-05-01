@@ -1,0 +1,43 @@
+{
+  "path": "/documentation/gameplaykit/gkgraphnode",
+  "type": "Class",
+  "name": "GKGraphNode",
+  "desc": "A single node in a navigation graph for use in pathfinding.",
+  "items": [
+    {
+      "name": "var connectedNodes: [GKGraphNode]",
+      "desc": "The list of other nodes connected to this node."
+    },
+    {
+      "name": "func addConnections(to: [GKGraphNode], bidirectional: Bool)",
+      "desc": "Connects this node to all nodes in the specified list."
+    },
+    {
+      "name": "func removeConnections(to: [GKGraphNode], bidirectional: Bool)",
+      "desc": "Removes the connections from this node to the specified nodes."
+    },
+    {
+      "name": "func cost(to: GKGraphNode) -> Float",
+      "desc": "Returns the cost to travel from this node to the specified, directly connected, node."
+    },
+    {
+      "name": "func estimatedCost(to: GKGraphNode) -> Float",
+      "desc": "Returns an underestimate of the cost of travel from this node to the specified node."
+    },
+    {
+      "name": "func findPath(to: GKGraphNode) -> [GKGraphNode]",
+      "desc": "Computes and returns a sequence of nodes that represents the lowest-cost graph traversal from this node to the specified node."
+    },
+    {
+      "name": "func findPath(from: GKGraphNode) -> [GKGraphNode]",
+      "desc": "Computes and returns a sequence of nodes that represents the lowest-cost graph traversal from the specified node to this node."
+    }
+  ],
+  "declaration": "class GKGraphNode : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

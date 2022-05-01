@@ -1,0 +1,428 @@
+{
+  "path": "/documentation/scenekit/scnnode",
+  "type": "Class",
+  "name": "SCNNode",
+  "desc": "A structural element of a scene graph, representing a position and transform in a 3D coordinate space, to which you can attach geometry, lights, cameras, or other displayable content.",
+  "items": [
+    {
+      "name": "init(geometry: SCNGeometry?)",
+      "desc": "Creates and returns a node object with the specified geometry attached."
+    },
+    {
+      "name": "var simdTransform: simd_float4x4",
+      "desc": "The transform applied to the node relative to its parent. Animatable."
+    },
+    {
+      "name": "var simdPosition: simd_float3",
+      "desc": "The translation applied to the node. Animatable."
+    },
+    {
+      "name": "var simdRotation: simd_float4",
+      "desc": "The node’s orientation, expressed as a rotation angle about an axis. Animatable."
+    },
+    {
+      "name": "var simdEulerAngles: simd_float3",
+      "desc": "The node’s orientation, expressed as pitch, yaw, and roll angles in radians. Animatable."
+    },
+    {
+      "name": "var simdOrientation: simd_quatf",
+      "desc": "The node’s orientation, expressed as a quaternion. Animatable."
+    },
+    {
+      "name": "var simdScale: simd_float3",
+      "desc": "The scale factor applied to the node. Animatable."
+    },
+    {
+      "name": "var simdPivot: simd_float4x4",
+      "desc": "The pivot point for the node’s position, rotation, and scale. Animatable."
+    },
+    {
+      "name": "var name: String?",
+      "desc": "A name associated with the node."
+    },
+    {
+      "name": "var light: SCNLight?",
+      "desc": "The light attached to the node."
+    },
+    {
+      "name": "var camera: SCNCamera?",
+      "desc": "The camera attached to the node."
+    },
+    {
+      "name": "var geometry: SCNGeometry?",
+      "desc": "The geometry attached to the node."
+    },
+    {
+      "name": "var morpher: SCNMorpher?",
+      "desc": "The morpher object responsible for blending the node’s geometry."
+    },
+    {
+      "name": "var skinner: SCNSkinner?",
+      "desc": "The skinner object responsible for skeletal animations of node’s contents."
+    },
+    {
+      "name": "var categoryBitMask: Int",
+      "desc": "A mask that defines which categories the node belongs to."
+    },
+    {
+      "name": "protocol SCNBoundingVolume",
+      "desc": "Properties common to the SCNNode and SCNGeometry classes for measuring location and size."
+    },
+    {
+      "name": "var constraints: [SCNConstraint]?",
+      "desc": "A list of constraints affecting the node’s transformation."
+    },
+    {
+      "name": "var presentation: SCNNode",
+      "desc": "A node object representing the state of the node as it currently appears onscreen."
+    },
+    {
+      "name": "var isPaused: Bool",
+      "desc": "A Boolean value that determines whether to run actions and animations attached to the node and its child nodes."
+    },
+    {
+      "name": "var isHidden: Bool",
+      "desc": "A Boolean value that determines the visibility of the node’s contents. Animatable."
+    },
+    {
+      "name": "var opacity: CGFloat",
+      "desc": "The opacity value of the node. Animatable."
+    },
+    {
+      "name": "var renderingOrder: Int",
+      "desc": "The order the node’s content is drawn in relative to that of other nodes."
+    },
+    {
+      "name": "var castsShadow: Bool",
+      "desc": "A Boolean value that determines whether SceneKit renders the node’s contents into shadow maps."
+    },
+    {
+      "name": "var movabilityHint: SCNMovabilityHint",
+      "desc": "A value that indicates how SceneKit should handle the node when rendering movement-related effects."
+    },
+    {
+      "name": "enum SCNMovabilityHint",
+      "desc": "Values that inform SceneKit’s rendering for movement-related effects, used by the movabilityHint property."
+    },
+    {
+      "name": "var parent: SCNNode?",
+      "desc": "The node’s parent in the scene graph hierarchy."
+    },
+    {
+      "name": "var childNodes: [SCNNode]",
+      "desc": "An array of the node’s children in the scene graph hierarchy."
+    },
+    {
+      "name": "func addChildNode(SCNNode)",
+      "desc": "Adds a node to the node’s array of children."
+    },
+    {
+      "name": "func insertChildNode(SCNNode, at: Int)",
+      "desc": "Adds a node to the node’s array of children at a specified index."
+    },
+    {
+      "name": "func removeFromParentNode()",
+      "desc": "Removes the node from its parent’s array of child nodes."
+    },
+    {
+      "name": "func replaceChildNode(SCNNode, with: SCNNode)",
+      "desc": "Removes a child from the node’s array of children and inserts another node in its place."
+    },
+    {
+      "name": "func childNodes(passingTest: (SCNNode, UnsafeMutablePointer<ObjCBool>) -> Bool) -> [SCNNode]",
+      "desc": "Returns all nodes in the node’s child node subtree that satisfy the test applied by a block."
+    },
+    {
+      "name": "func childNode(withName: String, recursively: Bool) -> SCNNode?",
+      "desc": "Returns the first node in the node’s child node subtree with the specified name."
+    },
+    {
+      "name": "func enumerateChildNodes((SCNNode, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Executes the specified block for each of the node’s child and descendant nodes."
+    },
+    {
+      "name": "func enumerateHierarchy((SCNNode, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Executes the specified block for each of the node’s child and descendant nodes, as well as for the node itself."
+    },
+    {
+      "name": "var filters: [CIFilter]?",
+      "desc": "An array of Core Image filters to be applied to the rendered contents of the node."
+    },
+    {
+      "name": "var rendererDelegate: SCNNodeRendererDelegate?",
+      "desc": "An object responsible for rendering custom contents for the node using Metal or OpenGL."
+    },
+    {
+      "name": "var physicsBody: SCNPhysicsBody?",
+      "desc": "The physics body associated with the node."
+    },
+    {
+      "name": "var physicsField: SCNPhysicsField?",
+      "desc": "The physics field associated with the node."
+    },
+    {
+      "name": "func addParticleSystem(SCNParticleSystem)",
+      "desc": "Attaches a particle system to the node."
+    },
+    {
+      "name": "var particleSystems: [SCNParticleSystem]?",
+      "desc": "The particle systems attached to the node."
+    },
+    {
+      "name": "func removeParticleSystem(SCNParticleSystem)",
+      "desc": "Removes a particle system attached to the node."
+    },
+    {
+      "name": "func removeAllParticleSystems()",
+      "desc": "Removes any particle systems directly attached to the node."
+    },
+    {
+      "name": "func addAudioPlayer(SCNAudioPlayer)",
+      "desc": "Adds the specified auto player to the node and begins playback."
+    },
+    {
+      "name": "var audioPlayers: [SCNAudioPlayer]",
+      "desc": "The audio players currently attached to the node."
+    },
+    {
+      "name": "func removeAudioPlayer(SCNAudioPlayer)",
+      "desc": "Removes the specified audio player from the node, stopping playback."
+    },
+    {
+      "name": "func removeAllAudioPlayers()",
+      "desc": "Removes all audio players attached to the node, stopping playback."
+    },
+    {
+      "name": "func clone() -> Self",
+      "desc": "Creates a copy of the node and its children."
+    },
+    {
+      "name": "func flattenedClone() -> Self",
+      "desc": "Creates an optimized copy of the node and its children."
+    },
+    {
+      "name": "func hitTestWithSegment(from: SCNVector3, to: SCNVector3, options: [String : Any]?) -> [SCNHitTestResult]",
+      "desc": "Searches the node’s child node subtree for objects intersecting a line segment between two specified points."
+    },
+    {
+      "name": "struct SCNHitTestOption",
+      "desc": "Options affecting the behavior of SceneKit hit-testing methods."
+    },
+    {
+      "name": "func simdRotate(by: simd_quatf, aroundTarget: simd_float3)",
+      "desc": "Changes the node's position and orientation, relative to its current transform, through a rotation around the specified point in scene space."
+    },
+    {
+      "name": "func simdLocalTranslate(by: simd_float3)",
+      "desc": "Changes the node's position relative to its current position."
+    },
+    {
+      "name": "func simdLocalRotate(by: simd_quatf)",
+      "desc": "Changes the node's orientation relative to its current orientation."
+    },
+    {
+      "name": "func simdLook(at: simd_float3)",
+      "desc": "Changes the node's orientation so that its local forward vector points toward the specified location."
+    },
+    {
+      "name": "func simdLook(at: simd_float3, up: simd_float3, localFront: simd_float3)",
+      "desc": "Changes the node's orientation so that the specified forward vector points toward the specified location."
+    },
+    {
+      "name": "class var simdLocalRight: simd_float3",
+      "desc": "The direction SceneKit treats as \"right\" in local space for all nodes."
+    },
+    {
+      "name": "class var simdLocalUp: simd_float3",
+      "desc": "The direction SceneKit treats as \"up\" in local space for all nodes."
+    },
+    {
+      "name": "class var simdLocalFront: simd_float3",
+      "desc": "The unit vector SceneKit treats as \"forward\" in local space for all nodes."
+    },
+    {
+      "name": "var simdWorldRight: simd_float3",
+      "desc": "The \"right\" (+X) direction vector relative to the node, expressed in world space."
+    },
+    {
+      "name": "var simdWorldUp: simd_float3",
+      "desc": "The \"up\" (+Y) direction vector relative to the node, expressed in world space."
+    },
+    {
+      "name": "var simdWorldFront: simd_float3",
+      "desc": "The \"forward\" (-Z) direction vector relative to the node, expressed in world space."
+    },
+    {
+      "name": "var simdWorldTransform: simd_float4x4",
+      "desc": "The world transform applied to the node."
+    },
+    {
+      "name": "var simdWorldOrientation: simd_quatf",
+      "desc": "The node's orientation relative to the scene's world coordinate space."
+    },
+    {
+      "name": "var simdWorldPosition: simd_float3",
+      "desc": "The node's position relative to the scene's world coordinate space."
+    },
+    {
+      "name": "func simdConvertPosition(simd_float3, from: SCNNode?) -> simd_float3",
+      "desc": "Converts a position to the node’s local coordinate space from that of another node."
+    },
+    {
+      "name": "func simdConvertPosition(simd_float3, to: SCNNode?) -> simd_float3",
+      "desc": "Converts a position from the node’s local coordinate space to that of another node."
+    },
+    {
+      "name": "func simdConvertTransform(simd_float4x4, from: SCNNode?) -> simd_float4x4",
+      "desc": "Converts a transform to the node’s local coordinate space from that of another node."
+    },
+    {
+      "name": "func simdConvertTransform(simd_float4x4, to: SCNNode?) -> simd_float4x4",
+      "desc": "Converts a transform from the node’s local coordinate space to that of another node."
+    },
+    {
+      "name": "func simdConvertVector(simd_float3, from: SCNNode?) -> simd_float3",
+      "desc": "Converts a direction vector to the node’s local coordinate space from that of another node."
+    },
+    {
+      "name": "func simdConvertVector(simd_float3, to: SCNNode?) -> simd_float3",
+      "desc": "Converts a direction vector from the node’s local coordinate space to that of another node."
+    },
+    {
+      "name": "var focusBehavior: SCNNodeFocusBehavior",
+      "desc": "The focus behavior for a node."
+    },
+    {
+      "name": "enum SCNNodeFocusBehavior",
+      "desc": "Options for the focusable states of a SceneKit node."
+    },
+    {
+      "name": "var entity: GKEntity?",
+      "desc": "The GameplayKit entity this node represents."
+    },
+    {
+      "name": "var transform: SCNMatrix4",
+      "desc": "The transform applied to the node relative to its parent. Animatable."
+    },
+    {
+      "name": "var position: SCNVector3",
+      "desc": "The translation applied to the node. Animatable."
+    },
+    {
+      "name": "var rotation: SCNVector4",
+      "desc": "The node’s orientation, expressed as a rotation angle about an axis. Animatable."
+    },
+    {
+      "name": "var eulerAngles: SCNVector3",
+      "desc": "The node’s orientation, expressed as pitch, yaw, and roll angles in radians. Animatable."
+    },
+    {
+      "name": "var orientation: SCNQuaternion",
+      "desc": "The node’s orientation, expressed as a quaternion. Animatable."
+    },
+    {
+      "name": "var scale: SCNVector3",
+      "desc": "The scale factor applied to the node. Animatable."
+    },
+    {
+      "name": "var pivot: SCNMatrix4",
+      "desc": "The pivot point for the node’s position, rotation, and scale. Animatable."
+    },
+    {
+      "name": "func rotate(by: SCNQuaternion, aroundTarget: SCNVector3)",
+      "desc": "Changes the node's position and orientation, relative to its current transform, through a rotation around the specified point in scene space."
+    },
+    {
+      "name": "func localTranslate(by: SCNVector3)",
+      "desc": "Changes the node's position relative to its current position."
+    },
+    {
+      "name": "func localRotate(by: SCNQuaternion)",
+      "desc": "Changes the node's orientation relative to its current orientation."
+    },
+    {
+      "name": "func look(at: SCNVector3)",
+      "desc": "Changes the node's orientation so that its local forward vector points toward the specified location."
+    },
+    {
+      "name": "func look(at: SCNVector3, up: SCNVector3, localFront: SCNVector3)",
+      "desc": "Changes the node's orientation so that the specified forward vector points toward the specified location."
+    },
+    {
+      "name": "class var localRight: SCNVector3",
+      "desc": "The direction SceneKit treats as \"right\" in local space for all nodes."
+    },
+    {
+      "name": "class var localUp: SCNVector3",
+      "desc": "The direction SceneKit treats as \"up\" in local space for all nodes."
+    },
+    {
+      "name": "class var localFront: SCNVector3",
+      "desc": "The unit vector SceneKit treats as \"forward\" in local space for all nodes."
+    },
+    {
+      "name": "var worldRight: SCNVector3",
+      "desc": "The \"right\" (+X) direction vector relative to the node, expressed in world space."
+    },
+    {
+      "name": "var worldUp: SCNVector3",
+      "desc": "The \"up\" (+Y) direction vector relative to the node, expressed in world space."
+    },
+    {
+      "name": "var worldFront: SCNVector3",
+      "desc": "The \"forward\" (-Z) direction vector relative to the node, expressed in world space."
+    },
+    {
+      "name": "var worldTransform: SCNMatrix4",
+      "desc": "The world transform applied to the node."
+    },
+    {
+      "name": "func setWorldTransform(SCNMatrix4)",
+      "desc": "Sets the world transform applied to the node."
+    },
+    {
+      "name": "var worldOrientation: SCNQuaternion",
+      "desc": "The node's orientation relative to the scene's world coordinate space."
+    },
+    {
+      "name": "var worldPosition: SCNVector3",
+      "desc": "The node's position relative to the scene's world coordinate space."
+    },
+    {
+      "name": "func convertPosition(SCNVector3, from: SCNNode?) -> SCNVector3",
+      "desc": "Converts a position to the node’s local coordinate space from that of another node."
+    },
+    {
+      "name": "func convertPosition(SCNVector3, to: SCNNode?) -> SCNVector3",
+      "desc": "Converts a position from the node’s local coordinate space to that of another node."
+    },
+    {
+      "name": "func convertTransform(SCNMatrix4, from: SCNNode?) -> SCNMatrix4",
+      "desc": "Converts a transform to the node’s local coordinate space from that of another node."
+    },
+    {
+      "name": "func convertTransform(SCNMatrix4, to: SCNNode?) -> SCNMatrix4",
+      "desc": "Converts a transform from the node’s local coordinate space to that of another node."
+    },
+    {
+      "name": "func convertVector(SCNVector3, from: SCNNode?) -> SCNVector3",
+      "desc": "Converts a direction vector to the node’s local coordinate space from that of another node."
+    },
+    {
+      "name": "func convertVector(SCNVector3, to: SCNNode?) -> SCNVector3",
+      "desc": "Converts a direction vector from the node’s local coordinate space to that of another node."
+    }
+  ],
+  "declaration": "class SCNNode : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding",
+    "SCNActionable",
+    "SCNAnimatable",
+    "SCNBoundingVolume",
+    "UIFocusItem"
+  ]
+}

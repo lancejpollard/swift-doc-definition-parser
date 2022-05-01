@@ -1,0 +1,185 @@
+{
+  "path": "/documentation/appkit/nsgesturerecognizer",
+  "type": "Class",
+  "name": "NSGestureRecognizer",
+  "desc": "An object that monitors events and calls its action method when a predefined sequence of events occur.",
+  "items": [
+    {
+      "name": "init(target: Any?, action: Selector?)",
+      "desc": "Initializes the gesture recognizer with the specified target and action information."
+    },
+    {
+      "name": "var action: Selector?",
+      "desc": "The action method to call when the gesture is recognized."
+    },
+    {
+      "name": "var target: AnyObject?",
+      "desc": "The object that implements the action method."
+    },
+    {
+      "name": "func location(in: NSView?) -> NSPoint",
+      "desc": "Returns the point computed as the location of the gesture."
+    },
+    {
+      "name": "var state: NSGestureRecognizer.State",
+      "desc": "The current state of the gesture recognizer."
+    },
+    {
+      "name": "var view: NSView?",
+      "desc": "The view to which the gesture recognizer is attached."
+    },
+    {
+      "name": "var isEnabled: Bool",
+      "desc": "A Boolean value indicating whether the gesture recognizer is able to handle events."
+    },
+    {
+      "name": "var delaysPrimaryMouseButtonEvents: Bool",
+      "desc": "A Boolean value that indicates whether primary mouse button events are delivered only after gesture recognition fails."
+    },
+    {
+      "name": "var delaysSecondaryMouseButtonEvents: Bool",
+      "desc": "A Boolean value that indicates whether secondary mouse button events are delivered only after gesture recognition fails."
+    },
+    {
+      "name": "var delaysOtherMouseButtonEvents: Bool",
+      "desc": "A Boolean value that indicates whether other mouse button events are delivered only after gesture recognition fails."
+    },
+    {
+      "name": "var delaysKeyEvents: Bool",
+      "desc": "A Boolean value that indicates whether key events are delivered only after gesture recognition fails."
+    },
+    {
+      "name": "var delaysMagnificationEvents: Bool",
+      "desc": "A Boolean value that indicates whether magnification events are delivered only after gesture recognition fails."
+    },
+    {
+      "name": "var delaysRotationEvents: Bool",
+      "desc": "A Boolean value that indicates whether rotation events are delivered only after gesture recognition fails."
+    },
+    {
+      "name": "var delegate: NSGestureRecognizerDelegate?",
+      "desc": "The delegate of the gesture recognizer."
+    },
+    {
+      "name": "func reset()",
+      "desc": "Overridden to reset the internal state of the gesture recognizer when an attempt completes."
+    },
+    {
+      "name": "func mouseDown(with: NSEvent)",
+      "desc": "Informs the gesture recognizer that the user pressed the left mouse button."
+    },
+    {
+      "name": "func mouseDragged(with: NSEvent)",
+      "desc": "Informs the gesture recognizer that the user moved the mouse with the left button pressed."
+    },
+    {
+      "name": "func mouseUp(with: NSEvent)",
+      "desc": "Informs the gesture recognizer that the user released the left mouse button."
+    },
+    {
+      "name": "func otherMouseDown(with: NSEvent)",
+      "desc": "Informs the gesture recognizer that the user pressed a mouse button other than the left or right one."
+    },
+    {
+      "name": "func otherMouseDragged(with: NSEvent)",
+      "desc": "Informs the gesture recognizer that the user moved the mouse with a button other than the left or right one pressed."
+    },
+    {
+      "name": "func otherMouseUp(with: NSEvent)",
+      "desc": "Informs the gesture recognizer that the user released a mouse button other than the left or right one."
+    },
+    {
+      "name": "func rightMouseDown(with: NSEvent)",
+      "desc": "Informs the gesture recognizer that the user pressed the right mouse button."
+    },
+    {
+      "name": "func rightMouseDragged(with: NSEvent)",
+      "desc": "Informs the gesture recognizer that the user moved the mouse with the right button pressed."
+    },
+    {
+      "name": "func rightMouseUp(with: NSEvent)",
+      "desc": "Informs the gesture recognizer that the user released the right mouse button."
+    },
+    {
+      "name": "func magnify(with: NSEvent)",
+      "desc": "Informs the gesture recognizer that the user is performing a pinch gesture."
+    },
+    {
+      "name": "func rotate(with: NSEvent)",
+      "desc": "Informs the gesture recognizer that the user is performing a rotation gesture."
+    },
+    {
+      "name": "func canBePrevented(by: NSGestureRecognizer) -> Bool",
+      "desc": "Overridden to indicate that the specified gesture recognizer can prevent the current object from recognizing a gesture."
+    },
+    {
+      "name": "func canPrevent(NSGestureRecognizer) -> Bool",
+      "desc": "Overridden to indicate that the current object can prevent the specified gesture recognizer from recognizing its gesture."
+    },
+    {
+      "name": "func shouldBeRequiredToFail(by: NSGestureRecognizer) -> Bool",
+      "desc": "Overridden to indicate that the current object must fail before the specified gesture recognizer begins recognizing its gesture."
+    },
+    {
+      "name": "func shouldRequireFailure(of: NSGestureRecognizer) -> Bool",
+      "desc": "Overridden to indicate that the specified gesture recognizer must fail before the current object begins recognizing its gesture."
+    },
+    {
+      "name": "func keyDown(with: NSEvent)",
+      "desc": "Informs the gesture recognizer that the user has pressed a key."
+    },
+    {
+      "name": "func keyUp(with: NSEvent)",
+      "desc": "Informs the gesture recognizer that the user released a key."
+    },
+    {
+      "name": "func tabletPoint(with: NSEvent)",
+      "desc": "Informs the user that a tablet-point event occurred."
+    },
+    {
+      "name": "func flagsChanged(with: NSEvent)",
+      "desc": "Informs the current object that the user pressed or released a modifier key (Shift, Control, and so on)."
+    },
+    {
+      "name": "func pressureChange(with: NSEvent)",
+      "desc": "Informs the current object that a pressure change occurred on a system that supports pressure sensitivity."
+    },
+    {
+      "name": "var pressureConfiguration: NSPressureConfiguration",
+      "desc": "Configures the behavior and progression of the Force Touch trackpad when responding to recognized pressure gestures."
+    },
+    {
+      "name": "enum NSGestureRecognizer.State",
+      "desc": "The current state of the gesture recognizer."
+    },
+    {
+      "name": "init?(coder: NSCoder)"
+    },
+    {
+      "name": "var allowedTouchTypes: NSTouch.TouchTypeMask"
+    },
+    {
+      "name": "func touchesBegan(with: NSEvent)",
+      "desc": "Called when one or more fingers first make contact with an NSTouchBar instance on the Touch Bar."
+    },
+    {
+      "name": "func touchesCancelled(with: NSEvent)",
+      "desc": "Called when a system event, such as a low-memory warning, cancels an in-progress touch event in an NSTouchBar object."
+    },
+    {
+      "name": "func touchesEnded(with: NSEvent)",
+      "desc": "Called when one or more fingers are removed from contact with an NSTouchBar instance on the Touch Bar."
+    },
+    {
+      "name": "func touchesMoved(with: NSEvent)",
+      "desc": "Called when one or more fingers, associated with an in-progress event, move within an NSTouchBar instance on the Touch Bar."
+    }
+  ],
+  "declaration": "@MainActor class NSGestureRecognizer : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding"
+  ]
+}

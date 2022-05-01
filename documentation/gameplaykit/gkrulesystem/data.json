@@ -1,0 +1,84 @@
+{
+  "path": "/documentation/gameplaykit/gkrulesystem",
+  "type": "Class",
+  "name": "GKRuleSystem",
+  "desc": "A list of rules, together with a context for evaluating them and interpreting results, for use in constructing data-driven logic or fuzzy logic systems.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Initializes a new, empty rule system."
+    },
+    {
+      "name": "var state: NSMutableDictionary",
+      "desc": "A dictionary of state information to be evaluated by the system’s rules."
+    },
+    {
+      "name": "var rules: [GKRule]",
+      "desc": "The list of rules to be executed when evaluating the system."
+    },
+    {
+      "name": "func add(GKRule)",
+      "desc": "Adds the specified rule to the system."
+    },
+    {
+      "name": "func add([GKRule])",
+      "desc": "Adds the specified list of rules to the system."
+    },
+    {
+      "name": "func removeAllRules()",
+      "desc": "Removes all rules from the system."
+    },
+    {
+      "name": "func evaluate()",
+      "desc": "Evaluates the rule system, executing the list of rules in its agenda."
+    },
+    {
+      "name": "var agenda: [GKRule]",
+      "desc": "The list of rules to be considered when evaluating the system."
+    },
+    {
+      "name": "var executed: [GKRule]",
+      "desc": "The list of rules whose actions have been performed during evaluation of the system."
+    },
+    {
+      "name": "func reset()",
+      "desc": "Returns the rule system to its original agenda and clears all facts."
+    },
+    {
+      "name": "var facts: [Any]",
+      "desc": "The list of facts claimed by the rule system."
+    },
+    {
+      "name": "func assertFact(NSObjectProtocol)",
+      "desc": "Adds the specified fact to the fact set with a membership grade of 1.0, and reevaluates the rules in the system’s agenda."
+    },
+    {
+      "name": "func assertFact(NSObjectProtocol, grade: Float)",
+      "desc": "Increases the membership grade of the specified fact by the specified amount, adding it to the fact set if necessary, and reevaluates the rules in the system’s agenda."
+    },
+    {
+      "name": "func retractFact(NSObjectProtocol)",
+      "desc": "Removes the specified fact from the fact set, and reevaluates the rules in the system’s agenda."
+    },
+    {
+      "name": "func retractFact(NSObjectProtocol, grade: Float)",
+      "desc": "Reduces the membership grade of the specified fact by the specified amount, removing it from the fact set if necessary, and reevaluates the rules in the system’s agenda."
+    },
+    {
+      "name": "func grade(forFact: NSObjectProtocol) -> Float",
+      "desc": "Returns the membership grade of the specified fact."
+    },
+    {
+      "name": "func minimumGrade(forFacts: [Any]) -> Float",
+      "desc": "Returns the lowest membership grade among the specified facts."
+    },
+    {
+      "name": "func maximumGrade(forFacts: [Any]) -> Float",
+      "desc": "Returns the highest membership grade among the specified facts."
+    }
+  ],
+  "declaration": "class GKRuleSystem : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

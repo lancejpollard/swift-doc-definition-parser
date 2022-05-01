@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/gameplaykit/gkquadtree",
+  "type": "Generic Class",
+  "name": "GKQuadtree",
+  "desc": "A data structure for organizing objects based on their locations in a two-dimensional space.",
+  "items": [
+    {
+      "name": "init(boundingQuad: GKQuad, minimumCellSize: Float)",
+      "desc": "Initializes a quadtree with the specified dimensions."
+    },
+    {
+      "name": "func add(ElementType, at: vector_float2) -> GKQuadtreeNode",
+      "desc": "Adds an object to the tree corresponding to the specified point in 2D space."
+    },
+    {
+      "name": "func add(ElementType, in: GKQuad) -> GKQuadtreeNode",
+      "desc": "Adds an object to the tree corresponding to the specified region of 2D space."
+    },
+    {
+      "name": "func remove(ElementType, using: GKQuadtreeNode) -> Bool",
+      "desc": "Removes the specified object from the tree, using a reference to its containing node."
+    },
+    {
+      "name": "func remove(ElementType) -> Bool",
+      "desc": "Searches for the specified object and removes it from the tree."
+    },
+    {
+      "name": "func elements(at: vector_float2) -> [ElementType]",
+      "desc": "Returns all objects whose corresponding locations overlap the specified point."
+    },
+    {
+      "name": "func elements(in: GKQuad) -> [ElementType]",
+      "desc": "Returns all objects whose corresponding locations overlap the specified region."
+    },
+    {
+      "name": "struct GKQuad",
+      "desc": "The definition of an axis-aligned rectangle addressed by the tree."
+    }
+  ],
+  "declaration": "class GKQuadtree<ElementType> : NSObject where ElementType : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

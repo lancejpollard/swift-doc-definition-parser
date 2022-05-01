@@ -1,0 +1,78 @@
+{
+  "path": "/documentation/tabulardata/numericsummary",
+  "type": "Structure",
+  "name": "NumericSummary",
+  "desc": "A summary of a numerical column.",
+  "items": [
+    {
+      "name": "static func == (NumericSummary<Element>, NumericSummary<Element>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates an empty numeric summary with default values."
+    },
+    {
+      "name": "init(someCount: Int, noneCount: Int, mean: Element, standardDeviation: Element, min: Element, max: Element, median: Element, firstQuartile: Element, thirdQuartile: Element)",
+      "desc": "Creates an empty numeric summary."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the summary’s statistics suitable for debugging."
+    },
+    {
+      "name": "var firstQuartile: Element",
+      "desc": "The value that’s above 25% of the non-missing elements’ values."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "var max: Element",
+      "desc": "The largest value, excluding missing elements."
+    },
+    {
+      "name": "var mean: Element",
+      "desc": "The arithmetic mean of a column’s values that excludes missing elements."
+    },
+    {
+      "name": "var median: Element",
+      "desc": "The midpoint value that’s above half of the non-missing elements’ values and below the other half’s values."
+    },
+    {
+      "name": "var min: Element",
+      "desc": "The smallest value, excluding missing elements."
+    },
+    {
+      "name": "var noneCount: Int",
+      "desc": "The number of missing elements in the column."
+    },
+    {
+      "name": "var someCount: Int",
+      "desc": "The number of non-missing elements in the column."
+    },
+    {
+      "name": "var standardDeviation: Element",
+      "desc": "The standard deviation of a column’s values that excludes missing elements."
+    },
+    {
+      "name": "var thirdQuartile: Element",
+      "desc": "The value that’s above 75% of the non-missing elements’ values."
+    },
+    {
+      "name": "var totalCount: Int",
+      "desc": "The total number of elements in the column."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    }
+  ],
+  "declaration": "struct NumericSummary<Element> where Element : BinaryFloatingPoint",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "Equatable",
+    "Hashable"
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "path": "/documentation/createml/mldatatable",
+  "type": "Structure",
+  "name": "MLDataTable",
+  "desc": "A table of data for training or evaluating a machine learning model.",
+  "items": [
+    {
+      "name": "init(contentsOf: URL, options: MLDataTable.ParsingOptions)",
+      "desc": "Creates a data table from an imported JSON or CSV file."
+    },
+    {
+      "name": "init(dictionary: [String : MLDataValueConvertible])",
+      "desc": "Creates a data table from a dictionary of column names and data values."
+    },
+    {
+      "name": "init(namedColumns: [String : MLUntypedColumn])",
+      "desc": "Creates a data table from a dictionary of column names and untyped columns."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates an empty table containing no rows or columns."
+    },
+    {
+      "name": "var size: (rows: Int, columns: Int)",
+      "desc": "The number of rows and columns in the data table."
+    },
+    {
+      "name": "func map<T>((MLDataTable.Row) -> T) -> MLDataColumn<T>",
+      "desc": "Creates a new column by applying a given thread-safe transform to every row in the data table."
+    },
+    {
+      "name": "func map<T>((MLDataTable.Row) -> T?) -> MLDataColumn<T>",
+      "desc": "Creates a new column, potentially with missing values, by applying a given thread-safe transform to every row in the data table."
+    },
+    {
+      "name": "func addColumn<Element>(MLDataColumn<Element>, named: String)",
+      "desc": "Adds a data column to the table."
+    },
+    {
+      "name": "struct MLDataColumn",
+      "desc": "A column of typed values in a data table."
+    },
+    {
+      "name": "func addColumn(MLUntypedColumn, named: String)",
+      "desc": "Adds an untyped column to the table."
+    },
+    {
+      "name": "struct MLUntypedColumn",
+      "desc": "A column of untyped values in a data table."
+    },
+    {
+      "name": "subscript<T>(String, T.Type) -> MLDataColumn<T>?",
+      "desc": "Retrieves a column with the specified name and type."
+    },
+    {
+      "name": "subscript<Element>(String) -> MLDataColumn<Element>",
+      "desc": "Retrieves or adds a typed column with the specified name."
+    },
+    {
+      "name": "subscript(String) -> MLUntypedColumn",
+      "desc": "Retrieves or adds an untyped column with the specified name."
+    },
+    {
+      "name": "func renameColumn(named: String, to: String)",
+      "desc": "Changes the name of an existing column."
+    },
+    {
+      "name": "func removeColumn(named: String)",
+      "desc": "Removes the column with the specified name."
+    },
+    {
+      "name": "func append(contentsOf: MLDataTable)",
+      "desc": "Appends the contents of the given data table to the end of this data table."
+    },
+    {
+      "name": "var rows: MLDataTable.Rows",
+      "desc": "The rows of data in the table."
+    },
+    {
+      "name": "struct MLDataTable.Rows",
+      "desc": "A collection of rows in a data table."
+    },
+    {
+      "name": "var columnNames: MLDataTable.ColumnNames",
+      "desc": "The names of the columns in the data table."
+    },
+    {
+      "name": "struct MLDataTable.ColumnNames",
+      "desc": "A collection of the names of the columns in a data table."
+    },
+    {
+      "name": "var columnTypes: [String : MLDataValue.ValueType]",
+      "desc": "The type of the data in each column."
+    },
+    {
+      "name": "func write(to: URL)",
+      "desc": "Exports a binary file of the data table to the given directory URL."
+    },
+    {
+      "name": "func write(toDirectory: String)",
+      "desc": "Exports a binary file of the data table to the given directory path."
+    },
+    {
+      "name": "func writeCSV(to: URL)",
+      "desc": "Exports a CSV file of the data table to the given directory URL."
+    },
+    {
+      "name": "func writeCSV(toFile: String)",
+      "desc": "Exports a CSV file of the data table to the given directory path."
+    },
+    {
+      "name": "func show() -> MLStreamingVisualizable",
+      "desc": "Generates a visualization for the data in the table."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the data table."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the data table shown in a playground."
+    },
+    {
+      "name": "var isValid: Bool",
+      "desc": "A Boolean value that indicates whether the data table is valid."
+    },
+    {
+      "name": "var error: Error?",
+      "desc": "The underlying error present when the data table is invalid."
+    },
+    {
+      "name": "func randomSplitBySequence(proportion: Double, by: String, on: String, seed: Int) -> (MLDataTable, remaining: MLDataTable)"
+    },
+    {
+      "name": "func stratifiedSplit<RNG>(proportions: [Double], on: String, generator: inout RNG) -> MLDataTable"
+    },
+    {
+      "name": "func stratifiedSplit(proportions: [Double], on: String, seed: Int) -> MLDataTable"
+    },
+    {
+      "name": "func stratifiedSplitBySequence<RNG>(proportions: [Double], by: String, on: String, generator: inout RNG) -> MLDataTable"
+    },
+    {
+      "name": "func stratifiedSplitBySequence(proportions: [Double], by: String, on: String, seed: Int) -> MLDataTable"
+    }
+  ],
+  "declaration": "struct MLDataTable",
+  "conformsTo": [
+    "CustomPlaygroundDisplayConvertible",
+    "CustomStringConvertible"
+  ]
+}

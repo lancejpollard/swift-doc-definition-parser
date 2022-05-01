@@ -1,0 +1,71 @@
+{
+  "path": "/documentation/swift/opaquepointer",
+  "type": "Structure",
+  "name": "OpaquePointer",
+  "desc": "A wrapper around an opaque C pointer.",
+  "items": [
+    {
+      "name": "init<T>(UnsafePointer<T>)",
+      "desc": "Converts a typed UnsafePointer to an opaque C pointer."
+    },
+    {
+      "name": "init<T>(UnsafeMutablePointer<T>)",
+      "desc": "Converts a typed UnsafeMutablePointer to an opaque C pointer."
+    },
+    {
+      "name": "init?<T>(UnsafePointer<T>?)",
+      "desc": "Converts a typed UnsafePointer to an opaque C pointer."
+    },
+    {
+      "name": "init?<T>(UnsafeMutablePointer<T>?)",
+      "desc": "Converts a typed UnsafeMutablePointer to an opaque C pointer."
+    },
+    {
+      "name": "init(UnsafeMutableRawPointer)"
+    },
+    {
+      "name": "init?(UnsafeMutableRawPointer?)"
+    },
+    {
+      "name": "init?(UnsafeRawPointer?)"
+    },
+    {
+      "name": "init(UnsafeRawPointer)"
+    },
+    {
+      "name": "init?(bitPattern: Int)",
+      "desc": "Creates an OpaquePointer from a given address in memory."
+    },
+    {
+      "name": "init?(bitPattern: UInt)",
+      "desc": "Creates an OpaquePointer from a given address in memory."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual representation of the pointer, suitable for debugging."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "static func != (OpaquePointer, OpaquePointer) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (OpaquePointer, OpaquePointer) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    }
+  ],
+  "declaration": "@frozen struct OpaquePointer",
+  "conformsTo": [
+    "CVarArg",
+    "CustomDebugStringConvertible",
+    "Equatable",
+    "Hashable"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/accelerate/bnns/fusedconvolutionnormalizationlayer",
+  "type": "Class",
+  "name": "BNNS.FusedConvolutionNormalizationLayer",
+  "desc": "A layer object that wraps a fused, convolution normalization layer and manages its deinitialization.",
+  "items": [
+    {
+      "name": "init?(input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, convolutionWeights: BNNSNDArrayDescriptor, convolutionBias: BNNSNDArrayDescriptor?, convolutionStride: (x: Int, y: Int), convolutionDilationStride: (x: Int, y: Int), convolutionPadding: BNNS.ConvolutionPadding, normalization: BNNS.NormalizationType, normalizationBeta: BNNSNDArrayDescriptor, normalizationGamma: BNNSNDArrayDescriptor, normalizationMomentum: Float, normalizationEpsilon: Float, normalizationActivation: BNNS.ActivationFunction, filterParameters: BNNSFilterParameters?)",
+      "desc": "Returns a new fused, convolution normalization layer."
+    },
+    {
+      "name": "func apply(batchSize: Int, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, for: BNNS.LearningPhase)",
+      "desc": "Applies the layer to a set of input objects, writing the result to a set of output objects."
+    },
+    {
+      "name": "func applyBackward(batchSize: Int, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, outputGradient: BNNSNDArrayDescriptor, generatingInputGradient: BNNSNDArrayDescriptor, generatingParameterGradients: [BNNSNDArrayDescriptor])",
+      "desc": "Applies the layer backward to generate input gradients."
+    },
+    {
+      "name": "enum BNNS.LearningPhase",
+      "desc": "Constants that describe the learning phase of a normalization operation."
+    }
+  ],
+  "declaration": "class FusedConvolutionNormalizationLayer : BNNS.FusedLayer",
+  "inheritsFrom": [
+    "BNNS.FusedLayer"
+  ]
+}

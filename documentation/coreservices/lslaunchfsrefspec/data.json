@@ -1,0 +1,39 @@
+{
+  "path": "/documentation/coreservices/lslaunchfsrefspec",
+  "type": "Structure",
+  "name": "LSLaunchFSRefSpec",
+  "desc": "The specification that defines, by file-system reference, an app to launch, items to open, or both, along with related information.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(appRef: UnsafePointer<FSRef>!, numDocs: Int, itemRefs: UnsafePointer<FSRef>!, passThruParams: UnsafePointer<AEDesc>!, launchFlags: LSLaunchFlags, asyncRefCon: UnsafeMutableRawPointer!)"
+    },
+    {
+      "name": "var appRef: UnsafePointer<FSRef>!",
+      "desc": "A pointer to a file-system reference designatingthe application to launch; see the File Manager Reference inthe Carbon File Management Documentation for a description of the FSRef datatype. Set this field to NULL torequest that each item in the itemRefs arraybe opened in its own preferred application."
+    },
+    {
+      "name": "var asyncRefCon: UnsafeMutableRawPointer!",
+      "desc": "A pointer to an arbitrary application-definedvalue, passed in the Carbon event notifying you of an application’slaunch or termination (if you have registered for such notification).The value of this field can be NULL."
+    },
+    {
+      "name": "var itemRefs: UnsafePointer<FSRef>!",
+      "desc": "An array of file-system references designatingthe item or items to open. If the value of numDocs is 0,this field is ignored and can be set to NULL."
+    },
+    {
+      "name": "var launchFlags: LSLaunchFlags",
+      "desc": "Launch flags specifying how to launch each application(including whether to print or merely open documents); see LSLaunchFlags fora description of these flags."
+    },
+    {
+      "name": "var numDocs: Int",
+      "desc": "The number of elements in the array specifiedby the itemRefs field.The value of this field can be 0,in which case the application designated by appRef islaunched without opening any items."
+    },
+    {
+      "name": "var passThruParams: UnsafePointer<AEDesc>!",
+      "desc": "A pointer to an Apple event descriptor that ispassed untouched as an optional parameter, with keyword keyAEPropData ('prdt'),in the Apple event sent to each application launched or activated(whether individual preferred applications or the application designatedby appRef). See the AppleEvent Manager Reference in the Carbon Interapplication CommunicationDocumentation for a description of the AEDesc datatype. The value of this field can be NULL."
+    }
+  ],
+  "declaration": "struct LSLaunchFSRefSpec"
+}

@@ -1,0 +1,96 @@
+{
+  "path": "/documentation/foundation/nsfilepresenter",
+  "type": "Protocol",
+  "name": "NSFilePresenter",
+  "desc": "The interface a file coordinator uses to inform an object presenting a file about changes to that file made elsewhere in the system.",
+  "items": [
+    {
+      "name": "var presentedItemURL: URL?",
+      "desc": "The URL of the presented file or directory."
+    },
+    {
+      "name": "var presentedItemOperationQueue: OperationQueue",
+      "desc": "The operation queue in which to execute presenter-related messages."
+    },
+    {
+      "name": "var primaryPresentedItemURL: URL?",
+      "desc": "The URL of a secondary item’s primary presented file or directory."
+    },
+    {
+      "name": "func relinquishPresentedItem(toReader: ((() -> Void)?) -> Void)",
+      "desc": "Notifies your object that another object or process wants to read the presented file or directory."
+    },
+    {
+      "name": "func relinquishPresentedItem(toWriter: ((() -> Void)?) -> Void)",
+      "desc": "Notifies your object that another object or process wants to write to the presented file or directory."
+    },
+    {
+      "name": "func savePresentedItemChanges(completionHandler: (Error?) -> Void)",
+      "desc": "Tells your object to save any unsaved changes for the presented item."
+    },
+    {
+      "name": "func accommodatePresentedItemDeletion(completionHandler: (Error?) -> Void)",
+      "desc": "Tells your object that its presented item is about to be deleted."
+    },
+    {
+      "name": "func presentedItemDidMove(to: URL)",
+      "desc": "Tells your object that the presented item moved or was renamed."
+    },
+    {
+      "name": "func presentedItemDidChange()",
+      "desc": "Tells your object that the presented item’s contents or attributes changed."
+    },
+    {
+      "name": "func presentedItemDidGain(NSFileVersion)",
+      "desc": "Tells the delegate that a new version of the file or file package was added."
+    },
+    {
+      "name": "func presentedItemDidLose(NSFileVersion)",
+      "desc": "Tells the delegate that a version of the file or file package was removed."
+    },
+    {
+      "name": "func presentedItemDidResolveConflict(NSFileVersion)",
+      "desc": "Tells the delegate that some other entity resolved a version conflict for the presenter’s file or file package."
+    },
+    {
+      "name": "func presentedSubitem(at: URL, didGain: NSFileVersion)",
+      "desc": "Tells the delegate that the item inside the presented directory gained a new version."
+    },
+    {
+      "name": "func presentedSubitem(at: URL, didLose: NSFileVersion)",
+      "desc": "Tells the delegate that the item inside the presented directory lost an existing version."
+    },
+    {
+      "name": "func presentedSubitem(at: URL, didResolve: NSFileVersion)",
+      "desc": "Tells the delegate that the item inside the presented directory had a version conflict resolved by an outside entity."
+    },
+    {
+      "name": "func accommodatePresentedSubitemDeletion(at: URL, completionHandler: (Error?) -> Void)",
+      "desc": "Tells the delegate that some entity wants to delete an item that is inside of a presented directory."
+    },
+    {
+      "name": "func presentedSubitemDidAppear(at: URL)",
+      "desc": "Tells the delegate that an item was added to the presented directory."
+    },
+    {
+      "name": "func presentedSubitem(at: URL, didMoveTo: URL)",
+      "desc": "Tells the delegate that an item in the presented directory moved to a new location."
+    },
+    {
+      "name": "func presentedSubitemDidChange(at: URL)",
+      "desc": "Tells the delegate that the contents or attributes of the specified item changed."
+    },
+    {
+      "name": "var observedPresentedItemUbiquityAttributes: Set<URLResourceKey>",
+      "desc": "A list of ubiquity attributes used to generate and send notifications whenever an attribute in the list changes."
+    },
+    {
+      "name": "func presentedItemDidChangeUbiquityAttributes(Set<URLResourceKey>)",
+      "desc": "Tells your object that the file or file package's ubiquity attributes have changed."
+    }
+  ],
+  "declaration": "protocol NSFilePresenter",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

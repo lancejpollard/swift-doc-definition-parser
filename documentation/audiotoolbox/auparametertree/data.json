@@ -1,0 +1,43 @@
+{
+  "path": "/documentation/audiotoolbox/auparametertree",
+  "type": "Class",
+  "name": "AUParameterTree",
+  "desc": "An AUParameterTree object is a top-level group node, representing all of an audio unit’s parameters. An audio unit’s parameters are organized into a tree containing groups and parameters (groups may be nested).",
+  "items": [
+    {
+      "name": "func parameter(withAddress: AUParameterAddress) -> AUParameter?",
+      "desc": "Searches the tree for a parameter with a specific address."
+    },
+    {
+      "name": "func parameter(withID: AudioUnitParameterID, scope: AudioUnitScope, element: AudioUnitElement) -> AUParameter?",
+      "desc": "Searches the tree for a specific version 2 audio unit parameter."
+    },
+    {
+      "name": "class func createParameter(withIdentifier: String, name: String, address: AUParameterAddress, min: AUValue, max: AUValue, unit: AudioUnitParameterUnit, unitName: String?, flags: AudioUnitParameterOptions, valueStrings: [String]?, dependentParameters: [NSNumber]?) -> AUParameter",
+      "desc": "Creates a single parameter object."
+    },
+    {
+      "name": "class func createGroup(withIdentifier: String, name: String, children: [AUParameterNode]) -> AUParameterGroup",
+      "desc": "Creates a parameter group object."
+    },
+    {
+      "name": "class func createGroupTemplate([AUParameterNode]) -> AUParameterGroup",
+      "desc": "Creates a template group which may be used as a prototype for further group instances."
+    },
+    {
+      "name": "class func createGroup(fromTemplate: AUParameterGroup, identifier: String, name: String, addressOffset: AUParameterAddress) -> AUParameterGroup",
+      "desc": "Initializes a group as a copied instance of a template group."
+    },
+    {
+      "name": "class func createTree(withChildren: [AUParameterNode]) -> AUParameterTree",
+      "desc": "Creates a parameter tree object."
+    }
+  ],
+  "declaration": "class AUParameterTree : AUParameterGroup",
+  "inheritsFrom": [
+    "AUParameterGroup"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

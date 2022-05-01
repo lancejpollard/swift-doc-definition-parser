@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/gamekit/gksessiondelegate",
+  "type": "Protocol",
+  "name": "GKSessionDelegate",
+  "desc": "An object implements the GKSessionDelegate protocol to control the behavior of a GKSession object. The delegate is called when other visible peers change their state relative to the session. It is also called to determine whether another peer is allowed to connect to the session.",
+  "items": [
+    {
+      "name": "func session(GKSession, peer: String, didChange: GKPeerConnectionState)",
+      "desc": "Received by the delegate when a peer changes state."
+    },
+    {
+      "name": "func session(GKSession, didReceiveConnectionRequestFromPeer: String)",
+      "desc": "Received by the delegate when a remote peer wants to create a connection to the session."
+    },
+    {
+      "name": "func session(GKSession, connectionWithPeerFailed: String, withError: Error)",
+      "desc": "Received by the delegate when an attempt to connect to another peer failed."
+    },
+    {
+      "name": "func session(GKSession, didFailWithError: Error)",
+      "desc": "Sent to the delegate when a serious error has occurred in the session."
+    }
+  ],
+  "declaration": "protocol GKSessionDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

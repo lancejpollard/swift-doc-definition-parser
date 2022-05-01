@@ -1,0 +1,24 @@
+{
+  "path": "/documentation/swiftui/stateobject",
+  "type": "Structure",
+  "name": "StateObject",
+  "desc": "A property wrapper type that instantiates an observable object.",
+  "items": [
+    {
+      "name": "init(wrappedValue: () -> ObjectType)",
+      "desc": "Creates a new state object with an initial wrapped value."
+    },
+    {
+      "name": "var wrappedValue: ObjectType",
+      "desc": "The underlying value referenced by the state object."
+    },
+    {
+      "name": "var projectedValue: ObservedObject<ObjectType>.Wrapper",
+      "desc": "A projection of the state object that creates bindings to its properties."
+    }
+  ],
+  "declaration": "@frozen @propertyWrapper struct StateObject<ObjectType> where ObjectType : ObservableObject",
+  "conformsTo": [
+    "DynamicProperty"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/sirikit/instartworkoutintenthandling",
+  "type": "Protocol",
+  "name": "INStartWorkoutIntentHandling",
+  "desc": "An interface that handles requests to start a workout.",
+  "items": [
+    {
+      "name": "func resolveWorkoutName(for: INStartWorkoutIntent, with: (INSpeakableStringResolutionResult) -> Void)",
+      "desc": "Resolves the workout name selected by the user."
+    },
+    {
+      "name": "func resolveGoalValue(for: INStartWorkoutIntent, with: (INDoubleResolutionResult) -> Void)",
+      "desc": "Resolves the numerical goal of a user’s workout."
+    },
+    {
+      "name": "func resolveWorkoutGoalUnitType(for: INStartWorkoutIntent, with: (INWorkoutGoalUnitTypeResolutionResult) -> Void)",
+      "desc": "Resolves the units for the user’s workout goal."
+    },
+    {
+      "name": "func resolveWorkoutLocationType(for: INStartWorkoutIntent, with: (INWorkoutLocationTypeResolutionResult) -> Void)",
+      "desc": "Resolves the location type of a user’s workout."
+    },
+    {
+      "name": "func resolveIsOpenEnded(for: INStartWorkoutIntent, with: (INBooleanResolutionResult) -> Void)",
+      "desc": "Resolves whether the user’s workout is open ended."
+    },
+    {
+      "name": "func confirm(intent: INStartWorkoutIntent, completion: (INStartWorkoutIntentResponse) -> Void)",
+      "desc": "Validates that your app is able to start the workout."
+    },
+    {
+      "name": "func handle(intent: INStartWorkoutIntent, completion: (INStartWorkoutIntentResponse) -> Void)",
+      "desc": "Handles starting the workout."
+    }
+  ],
+  "declaration": "protocol INStartWorkoutIntentHandling",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "path": "/documentation/webkit/webhistory",
+  "type": "Class",
+  "name": "WebHistory",
+  "desc": "WebHistory objects are used to maintain the pages visited by users. Visited pages are represented by WebHistoryItem objects. You add and remove history items using the addItems(_:) and removeItems(_:) methods. These methods post appropriate notifications when items are added or removed so you can update the display. WebHistory organizes the WebHistoryItem objects by the day they were visited, ordered from most recent to oldest. You can request all the days that contain history items using the orderedLastVisitedDays method or request the items visited on a particular day using the orderedItemsLastVisited(onDay:) method. WebHistory objects can be loaded and saved by specifying a file URL (see load(from:)).",
+  "items": [
+    {
+      "name": "class func optionalShared() -> WebHistory!",
+      "desc": "Returns a shared web history object, if one exists."
+    },
+    {
+      "name": "class func setOptionalShared(WebHistory!)",
+      "desc": "Sets the web history object to share."
+    },
+    {
+      "name": "func addItems([Any]!)",
+      "desc": "Inserts or updates the specified items in the web history."
+    },
+    {
+      "name": "func removeItems([Any]!)",
+      "desc": "Removes the specified items from the web history."
+    },
+    {
+      "name": "func removeAllItems()",
+      "desc": "Removes all items from the web history."
+    },
+    {
+      "name": "func orderedItemsLastVisited(onDay: NSCalendarDate!) -> [Any]!",
+      "desc": "Returns web history items that were last visited on the specified date."
+    },
+    {
+      "name": "var orderedLastVisitedDays: [Any]!",
+      "desc": "An array of all calendar days represented in the web history."
+    },
+    {
+      "name": "func item(for: URL!) -> WebHistoryItem!",
+      "desc": "Returns the web history item that corresponds to the specified web location."
+    },
+    {
+      "name": "func load(from: URL!)",
+      "desc": "Loads the contents of the specified web history file."
+    },
+    {
+      "name": "func save(to: URL!)",
+      "desc": "Saves the web history to the specified file."
+    },
+    {
+      "name": "var historyAgeInDaysLimit: Int32",
+      "desc": "The maximum age of web history items that can be retrieved."
+    },
+    {
+      "name": "var historyItemLimit: Int32",
+      "desc": "The maximum number of web history items that can be stored."
+    },
+    {
+      "name": "static let WebHistoryAllItemsRemoved: NSNotification.Name",
+      "desc": "Posted when all history items have been removed from the web history."
+    },
+    {
+      "name": "static let WebHistoryItemsAdded: NSNotification.Name",
+      "desc": "Posted when history items have been added to a web history."
+    },
+    {
+      "name": "static let WebHistoryItemsRemoved: NSNotification.Name",
+      "desc": "Posted when items have been removed from the web history."
+    },
+    {
+      "name": "static let WebHistoryLoaded: NSNotification.Name",
+      "desc": "Posted when web history items have been loaded from a URL."
+    },
+    {
+      "name": "static let WebHistorySaved: NSNotification.Name",
+      "desc": "Posted when web history items have been saved to a URL."
+    }
+  ],
+  "declaration": "class WebHistory : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "path": "/documentation/scenekit/scnaction",
+  "type": "Class",
+  "name": "SCNAction",
+  "desc": "A simple, reusable animation that changes attributes of any node you attach it to.",
+  "items": [
+    {
+      "name": "class func moveBy(x: CGFloat, y: CGFloat, z: CGFloat, duration: TimeInterval) -> SCNAction",
+      "desc": "Creates an action that moves a node relative to its current position."
+    },
+    {
+      "name": "class func move(by: SCNVector3, duration: TimeInterval) -> SCNAction",
+      "desc": "Creates an action that moves a node relative to its current position."
+    },
+    {
+      "name": "class func move(to: SCNVector3, duration: TimeInterval) -> SCNAction",
+      "desc": "Creates an action that moves a node to a new position."
+    },
+    {
+      "name": "class func rotateBy(x: CGFloat, y: CGFloat, z: CGFloat, duration: TimeInterval) -> SCNAction",
+      "desc": "Creates an action that rotates the node in each of the three principal axes by angles relative to its current orientation."
+    },
+    {
+      "name": "class func rotateTo(x: CGFloat, y: CGFloat, z: CGFloat, duration: TimeInterval) -> SCNAction",
+      "desc": "Creates an action that rotates the node to absolute angles in each of the three principal axes."
+    },
+    {
+      "name": "class func rotateTo(x: CGFloat, y: CGFloat, z: CGFloat, duration: TimeInterval, usesShortestUnitArc: Bool) -> SCNAction",
+      "desc": "Creates an action that rotates the node to absolute angles in each of the three principal axes."
+    },
+    {
+      "name": "class func rotate(by: CGFloat, around: SCNVector3, duration: TimeInterval) -> SCNAction",
+      "desc": "Creates an action that rotates the node by an angle around a specified axis."
+    },
+    {
+      "name": "class func rotate(toAxisAngle: SCNVector4, duration: TimeInterval) -> SCNAction",
+      "desc": "Creates an action that rotates the node to an absolute angle around a specified axis."
+    },
+    {
+      "name": "class func scale(by: CGFloat, duration: TimeInterval) -> SCNAction",
+      "desc": "Creates an action that uniformly changes the scale factor of a node by a relative value."
+    },
+    {
+      "name": "class func scale(to: CGFloat, duration: TimeInterval) -> SCNAction",
+      "desc": "Creates an action that uniformly changes the scale factor of a node to an absolute value."
+    },
+    {
+      "name": "class func fadeIn(duration: TimeInterval) -> SCNAction",
+      "desc": "Creates an action that changes the opacity of the node to 1.0."
+    },
+    {
+      "name": "class func fadeOut(duration: TimeInterval) -> SCNAction",
+      "desc": "Creates an action that changes the opacity of the node to 0.0."
+    },
+    {
+      "name": "class func fadeOpacity(by: CGFloat, duration: TimeInterval) -> SCNAction",
+      "desc": "Creates an action that adjusts the opacity of a node by a relative value."
+    },
+    {
+      "name": "class func fadeOpacity(to: CGFloat, duration: TimeInterval) -> SCNAction",
+      "desc": "Creates an action that adjusts the opacity of a node to a new value."
+    },
+    {
+      "name": "class func hide() -> SCNAction",
+      "desc": "Creates an action that hides a node."
+    },
+    {
+      "name": "class func unhide() -> SCNAction",
+      "desc": "Creates an action that ensures a node is not hidden."
+    },
+    {
+      "name": "class func removeFromParentNode() -> SCNAction",
+      "desc": "Creates an action that removes the node from its parent."
+    },
+    {
+      "name": "class func playAudio(SCNAudioSource, waitForCompletion: Bool) -> SCNAction",
+      "desc": "Creates an action that plays an audio source."
+    },
+    {
+      "name": "class func group([SCNAction]) -> SCNAction",
+      "desc": "Creates an action that runs a collection of actions in parallel."
+    },
+    {
+      "name": "class func sequence([SCNAction]) -> SCNAction",
+      "desc": "Creates an action that runs a collection of actions sequentially."
+    },
+    {
+      "name": "class func `repeat`(SCNAction, count: Int) -> SCNAction",
+      "desc": "Creates an action that repeats another action a specified number of times."
+    },
+    {
+      "name": "class func repeatForever(SCNAction) -> SCNAction",
+      "desc": "Creates an action that repeats another action forever."
+    },
+    {
+      "name": "class func wait(duration: TimeInterval) -> SCNAction",
+      "desc": "Creates an action that idles for a specified period of time."
+    },
+    {
+      "name": "class func wait(duration: TimeInterval, withRange: TimeInterval) -> SCNAction",
+      "desc": "Creates an action that idles for a randomized period of time."
+    },
+    {
+      "name": "class func run((SCNNode) -> Void) -> SCNAction",
+      "desc": "Creates an action that executes a block."
+    },
+    {
+      "name": "class func run((SCNNode) -> Void, queue: DispatchQueue) -> SCNAction",
+      "desc": "Creates an action that executes a block on a specific dispatch queue."
+    },
+    {
+      "name": "class func customAction(duration: TimeInterval, action: (SCNNode, CGFloat) -> Void) -> SCNAction",
+      "desc": "Creates an action that executes a block periodically over a specified duration."
+    },
+    {
+      "name": "class func javaScriptAction(withScript: String, duration: TimeInterval) -> SCNAction",
+      "desc": "Creates an action that executes a JavaScript script periodically over a specified duration."
+    },
+    {
+      "name": "func reversed() -> SCNAction",
+      "desc": "Creates an action that reverses the behavior of another action."
+    },
+    {
+      "name": "var duration: TimeInterval",
+      "desc": "The duration required to complete an action."
+    },
+    {
+      "name": "var speed: CGFloat",
+      "desc": "A speed factor that modifies how fast an action runs."
+    },
+    {
+      "name": "var timingMode: SCNActionTimingMode",
+      "desc": "The timing mode used to execute an action."
+    },
+    {
+      "name": "var timingFunction: SCNActionTimingFunction?",
+      "desc": "A block SceneKit calls to determine the action’s animation timing."
+    },
+    {
+      "name": "enum SCNActionTimingMode",
+      "desc": "Constants affecting the animation curve of an action, used by the timingMode property."
+    },
+    {
+      "name": "typealias SCNActionTimingFunction",
+      "desc": "The signature for a block that manages animation timing, used by the timingFunction property."
+    }
+  ],
+  "declaration": "class SCNAction : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

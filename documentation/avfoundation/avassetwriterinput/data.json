@@ -1,0 +1,136 @@
+{
+  "path": "/documentation/avfoundation/avassetwriterinput",
+  "type": "Class",
+  "name": "AVAssetWriterInput",
+  "desc": "An object that appends media samples to a track in an asset writer’s output file.",
+  "items": [
+    {
+      "name": "init(mediaType: AVMediaType, outputSettings: [String : Any]?)",
+      "desc": "Creates an input to append sample buffers of the specified type to the output file."
+    },
+    {
+      "name": "init(mediaType: AVMediaType, outputSettings: [String : Any]?, sourceFormatHint: CMFormatDescription?)",
+      "desc": "Creates an input that appends sample buffers of the specified type and format hint to the output file."
+    },
+    {
+      "name": "var naturalSize: CGSize",
+      "desc": "The natural display dimensions of the output’s visual media."
+    },
+    {
+      "name": "var transform: CGAffineTransform",
+      "desc": "The transform to use for display of the output’s visual media."
+    },
+    {
+      "name": "var preferredVolume: Float",
+      "desc": "The volume to prefer for playback of the output’s audio data."
+    },
+    {
+      "name": "var mediaTimeScale: CMTimeScale",
+      "desc": "The time scale of the track in the output file."
+    },
+    {
+      "name": "var marksOutputTrackAsEnabled: Bool",
+      "desc": "A Boolean value that indicates whether to enable a track in the output for playback and processing."
+    },
+    {
+      "name": "var languageCode: String?",
+      "desc": "The language code of the input’s track."
+    },
+    {
+      "name": "var extendedLanguageTag: String?",
+      "desc": "The extended language for the input’s track."
+    },
+    {
+      "name": "var metadata: [AVMetadataItem]",
+      "desc": "The track-level metadata to write to the output."
+    },
+    {
+      "name": "var preferredMediaChunkAlignment: Int",
+      "desc": "The boundary, in bytes, for aligning media chunks."
+    },
+    {
+      "name": "var preferredMediaChunkDuration: CMTime",
+      "desc": "The duration to use for each chunk of sample data in the output file."
+    },
+    {
+      "name": "var sampleReferenceBaseURL: URL?",
+      "desc": "The base URL sample references are relative to."
+    },
+    {
+      "name": "var mediaDataLocation: AVAssetWriterInput.MediaDataLocation",
+      "desc": "Specifies how the input lays out and interleaves media data."
+    },
+    {
+      "name": "struct AVAssetWriterInput.MediaDataLocation",
+      "desc": "A structure that indicates how to lay out and interleave media data."
+    },
+    {
+      "name": "func canAddTrackAssociation(withTrackOf: AVAssetWriterInput, type: String) -> Bool",
+      "desc": "Determines whether it’s valid to associate another input’s track with this input’s track."
+    },
+    {
+      "name": "func addTrackAssociation(withTrackOf: AVAssetWriterInput, type: String)",
+      "desc": "Adds an association between input tracks."
+    },
+    {
+      "name": "var expectsMediaDataInRealTime: Bool",
+      "desc": "A Boolean value that indicates whether the input tailors its processing for real-time sources."
+    },
+    {
+      "name": "var isReadyForMoreMediaData: Bool",
+      "desc": "A Boolean value that indicates whether the input is ready to accept media data."
+    },
+    {
+      "name": "func requestMediaDataWhenReady(on: DispatchQueue, using: () -> Void)",
+      "desc": "Tells the input to request media data, at its convenience, to write to the output file."
+    },
+    {
+      "name": "func append(CMSampleBuffer) -> Bool",
+      "desc": "Appends a sample buffer to an input to write to the output file."
+    },
+    {
+      "name": "func markAsFinished()",
+      "desc": "Marks the input as finished to indicate that you’re done appending samples to it."
+    },
+    {
+      "name": "var canPerformMultiplePasses: Bool",
+      "desc": "A Boolean value that indicates whether the input may perform multiple passes over appended media data."
+    },
+    {
+      "name": "var currentPassDescription: AVAssetWriterInputPassDescription?",
+      "desc": "An object that describes the requirements for the current pass."
+    },
+    {
+      "name": "class AVAssetWriterInputPassDescription",
+      "desc": "An object that defines the interface to query for the requirements of the current pass."
+    },
+    {
+      "name": "func markCurrentPassAsFinished()",
+      "desc": "Tells the input to analyze the appended media to determine whether it can improve the results by reencoding certain segments."
+    },
+    {
+      "name": "var performsMultiPassEncodingIfSupported: Bool",
+      "desc": "A Boolean value that indicates whether the input attempts to encode the source media data using multiple passes."
+    },
+    {
+      "name": "func respondToEachPassDescription(on: DispatchQueue, using: () -> Void)",
+      "desc": "Tells the input to invoke a callback whenever it begins a new pass."
+    },
+    {
+      "name": "var mediaType: AVMediaType",
+      "desc": "The media type of the samples that the input accepts."
+    },
+    {
+      "name": "var outputSettings: [String : Any]?",
+      "desc": "The settings to use for encoding media data you append to the output."
+    },
+    {
+      "name": "var sourceFormatHint: CMFormatDescription?",
+      "desc": "A hint about the format of the sample buffers to append to the input."
+    }
+  ],
+  "declaration": "class AVAssetWriterInput : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

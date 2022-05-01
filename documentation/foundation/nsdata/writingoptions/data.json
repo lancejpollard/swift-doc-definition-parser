@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/foundation/nsdata/writingoptions",
+  "type": "Structure",
+  "name": "NSData.WritingOptions",
+  "desc": "Options for methods used to write data objects.",
+  "items": [
+    {
+      "name": "init(rawValue: UInt)"
+    },
+    {
+      "name": "static var atomic: NSData.WritingOptions",
+      "desc": "An option to write data to an auxiliary file first and then replace the original file with the auxiliary file when the write completes."
+    },
+    {
+      "name": "static var withoutOverwriting: NSData.WritingOptions",
+      "desc": "An option that attempts to write data to a file and fails with an error if the destination file already exists."
+    },
+    {
+      "name": "static var noFileProtection: NSData.WritingOptions",
+      "desc": "An option to not encrypt the file when writing it out."
+    },
+    {
+      "name": "static var completeFileProtection: NSData.WritingOptions",
+      "desc": "An option to make the file accessible only while the device is unlocked."
+    },
+    {
+      "name": "static var completeFileProtectionUnlessOpen: NSData.WritingOptions",
+      "desc": "An option to allow the file to be accessible while the device is unlocked or the file is already open."
+    },
+    {
+      "name": "static var completeFileProtectionUntilFirstUserAuthentication: NSData.WritingOptions",
+      "desc": "An option to allow the file to be accessible after a user first unlocks the device."
+    },
+    {
+      "name": "static var fileProtectionMask: NSData.WritingOptions",
+      "desc": "An option the system uses when determining the file protection options that the system assigns to the data."
+    }
+  ],
+  "declaration": "struct WritingOptions, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

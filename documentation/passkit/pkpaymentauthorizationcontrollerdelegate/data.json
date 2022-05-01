@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/passkit/pkpaymentauthorizationcontrollerdelegate",
+  "type": "Protocol",
+  "name": "PKPaymentAuthorizationControllerDelegate",
+  "desc": "Methods that let you respond to user interactions with your payment authorization controller.",
+  "items": [
+    {
+      "name": "func presentationWindow(for: PKPaymentAuthorizationController) -> UIWindow?",
+      "desc": "Returns the window in which to present a payment authorization sheet."
+    },
+    {
+      "name": "func paymentAuthorizationController(PKPaymentAuthorizationController, didSelectPaymentMethod: PKPaymentMethod, handler: (PKPaymentRequestPaymentMethodUpdate) -> Void)",
+      "desc": "Tells the delegate that the user changed the payment method, and asks for an updated payment request."
+    },
+    {
+      "name": "func paymentAuthorizationController(PKPaymentAuthorizationController, didSelectPaymentMethod: PKPaymentMethod, completion: ([PKPaymentSummaryItem]) -> Void)",
+      "desc": "Tells the delegate that the user changed the payment method, and asks for an updated payment request."
+    },
+    {
+      "name": "func paymentAuthorizationController(PKPaymentAuthorizationController, didChangeCouponCode: String, handler: (PKPaymentRequestCouponCodeUpdate) -> Void)",
+      "desc": "Tells the delegate that the user entered or updated a coupon code."
+    },
+    {
+      "name": "func paymentAuthorizationController(PKPaymentAuthorizationController, didSelectShippingContact: PKContact, handler: (PKPaymentRequestShippingContactUpdate) -> Void)",
+      "desc": "Tells the delegate that the user selected a shipping address."
+    },
+    {
+      "name": "func paymentAuthorizationController(PKPaymentAuthorizationController, didSelectShippingContact: PKContact, completion: (PKPaymentAuthorizationStatus, [PKShippingMethod], [PKPaymentSummaryItem]) -> Void)",
+      "desc": "Tells the delegate that the user selected a shipping address."
+    },
+    {
+      "name": "func paymentAuthorizationController(PKPaymentAuthorizationController, didSelectShippingMethod: PKShippingMethod, handler: (PKPaymentRequestShippingMethodUpdate) -> Void)",
+      "desc": "Tells the delegate that the user selected a shipping method."
+    },
+    {
+      "name": "func paymentAuthorizationController(PKPaymentAuthorizationController, didSelectShippingMethod: PKShippingMethod, completion: (PKPaymentAuthorizationStatus, [PKPaymentSummaryItem]) -> Void)",
+      "desc": "Tells the delegate that the user selected a shipping method."
+    },
+    {
+      "name": "func paymentAuthorizationController(PKPaymentAuthorizationController, didRequestMerchantSessionUpdate: (PKPaymentRequestMerchantSessionUpdate) -> Void)",
+      "desc": "Requests an object that validates the identity of a merchant for a payment request."
+    },
+    {
+      "name": "func paymentAuthorizationControllerWillAuthorizePayment(PKPaymentAuthorizationController)",
+      "desc": "Tells the delegate that the user is authorizing the payment request."
+    },
+    {
+      "name": "func paymentAuthorizationController(PKPaymentAuthorizationController, didAuthorizePayment: PKPayment, handler: (PKPaymentAuthorizationResult) -> Void)",
+      "desc": "Tells the delegate that the user authorized the payment request, and asks for a result."
+    },
+    {
+      "name": "func paymentAuthorizationController(PKPaymentAuthorizationController, didAuthorizePayment: PKPayment, completion: (PKPaymentAuthorizationStatus) -> Void)",
+      "desc": "Tells the delegate that the user authorized the payment request, and asks for a result."
+    },
+    {
+      "name": "func paymentAuthorizationControllerDidFinish(PKPaymentAuthorizationController)",
+      "desc": "Tells the delegate that payment authorization has completed."
+    }
+  ],
+  "declaration": "protocol PKPaymentAuthorizationControllerDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

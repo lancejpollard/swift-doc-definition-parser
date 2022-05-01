@@ -1,0 +1,29 @@
+{
+  "path": "/documentation/accelerate/bnns/poolingtype",
+  "type": "Enumeration",
+  "name": "BNNS.PoolingType",
+  "desc": "Constants that describe pooling types.",
+  "items": [
+    {
+      "name": "case average(countIncludesPadding: Bool)",
+      "desc": "A function for pooling that computes the average of each element in the pooling kernel."
+    },
+    {
+      "name": "case l2Norm",
+      "desc": "A function for pooling that computes the square root of the sum of squares of each element in the pooling kernel."
+    },
+    {
+      "name": "case max(indices: UnsafeMutableBufferPointer<Int>?, xDilationStride: Int, yDilationStride: Int)",
+      "desc": "A function for pooling that computes the maximum of each element in the pooling kernel."
+    },
+    {
+      "name": "case unMax(indices: UnsafeMutableBufferPointer<Int>?, xDilationStride: Int, yDilationStride: Int)",
+      "desc": "A function for pooling that’s the partial inverse of max pooling and sets all nonmaximal values to zero."
+    },
+    {
+      "name": "var bnnsPoolingFunction: BNNSPoolingFunction",
+      "desc": "The underlying pooling function structure."
+    }
+  ],
+  "declaration": "enum PoolingType"
+}

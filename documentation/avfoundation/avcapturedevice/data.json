@@ -1,0 +1,643 @@
+{
+  "path": "/documentation/avfoundation/avcapturedevice",
+  "type": "Class",
+  "name": "AVCaptureDevice",
+  "desc": "A device that provides input (such as audio or video) for capture sessions and offers controls for hardware-specific capture features.",
+  "items": [
+    {
+      "name": "init?(uniqueID: String)",
+      "desc": "Returns the device with a given ID."
+    },
+    {
+      "name": "class func `default`(for: AVMediaType) -> AVCaptureDevice?",
+      "desc": "Returns the default device used to capture data of a given media type."
+    },
+    {
+      "name": "class func `default`(AVCaptureDevice.DeviceType, for: AVMediaType?, position: AVCaptureDevice.Position) -> AVCaptureDevice?",
+      "desc": "Returns the default device for the specified device type, media type, and position."
+    },
+    {
+      "name": "enum AVCaptureDevice.Position",
+      "desc": "Constants that indicate the physical position of a capture device."
+    },
+    {
+      "name": "struct AVCaptureDevice.DeviceType",
+      "desc": "Values identifying the capture device’s type."
+    },
+    {
+      "name": "class AVCaptureDevice.DiscoverySession",
+      "desc": "A query for finding and monitoring available capture devices."
+    },
+    {
+      "name": "static let AVCaptureDeviceWasConnected: NSNotification.Name",
+      "desc": "A notification the system posts when a new capture device becomes available."
+    },
+    {
+      "name": "static let AVCaptureDeviceWasDisconnected: NSNotification.Name",
+      "desc": "A notification the system posts when an existing device becomes unavailable."
+    },
+    {
+      "name": "class func requestAccess(for: AVMediaType, completionHandler: (Bool) -> Void)",
+      "desc": "Requests the user’s permission, if needed, for recording a specified media type."
+    },
+    {
+      "name": "class func authorizationStatus(for: AVMediaType) -> AVAuthorizationStatus",
+      "desc": "Returns a constant indicating whether the app has permission for recording a specified media type."
+    },
+    {
+      "name": "enum AVAuthorizationStatus",
+      "desc": "Constants that provide information regarding permission to use media capture devices."
+    },
+    {
+      "name": "func lockForConfiguration()",
+      "desc": "Requests exclusive access to the device’s hardware properties."
+    },
+    {
+      "name": "func unlockForConfiguration()",
+      "desc": "Relinquishes exclusive control over the device’s configuration."
+    },
+    {
+      "name": "var isInUseByAnotherApplication: Bool",
+      "desc": "Indicates whether the device is being used exclusively by another application."
+    },
+    {
+      "name": "var isSuspended: Bool",
+      "desc": "Indicates whether the device is suspended."
+    },
+    {
+      "name": "var linkedDevices: [AVCaptureDevice]",
+      "desc": "An array of AVCaptureDevice objects representing the devices physically linked to the receiver."
+    },
+    {
+      "name": "var transportType: Int32",
+      "desc": "The transport type of the device."
+    },
+    {
+      "name": "class AVCaptureDevice.InputSource",
+      "desc": "A distinct input source on a capture device."
+    },
+    {
+      "name": "var inputSources: [AVCaptureDevice.InputSource]",
+      "desc": "An array of AVCaptureDevice.InputSource objects representing the input sources supported by the device."
+    },
+    {
+      "name": "var activeInputSource: AVCaptureDevice.InputSource?",
+      "desc": "The currently active input source."
+    },
+    {
+      "name": "var uniqueID: String",
+      "desc": "An ID unique to the model of device corresponding to the receiver."
+    },
+    {
+      "name": "var modelID: String",
+      "desc": "The model ID of the device."
+    },
+    {
+      "name": "var manufacturer: String",
+      "desc": "A human-readable string describing the manufacturer of the device."
+    },
+    {
+      "name": "var localizedName: String",
+      "desc": "A localized, human-readable name for the receiver."
+    },
+    {
+      "name": "var isConnected: Bool",
+      "desc": "Indicates whether the device is currently connected."
+    },
+    {
+      "name": "var isVirtualDevice: Bool",
+      "desc": "A Boolean value that indicates whether the device is a virtual device consisting of two or more physical devices."
+    },
+    {
+      "name": "var deviceType: AVCaptureDevice.DeviceType",
+      "desc": "The general type of the device, such as a built-in microphone or wide-angle camera."
+    },
+    {
+      "name": "var constituentDevices: [AVCaptureDevice]",
+      "desc": "An array of physical devices comprising a virtual device."
+    },
+    {
+      "name": "var lensAperture: Float",
+      "desc": "The size of the lens diaphragm."
+    },
+    {
+      "name": "var position: AVCaptureDevice.Position",
+      "desc": "Indicates the physical position of the device hardware on the system."
+    },
+    {
+      "name": "func hasMediaType(AVMediaType) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the device provides media with a given type."
+    },
+    {
+      "name": "func supportsSessionPreset(AVCaptureSession.Preset) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the receiver can be used in a capture session configured with the given preset."
+    },
+    {
+      "name": "class var isCenterStageEnabled: Bool",
+      "desc": "A Boolean value that indicates whether a user or an app enabled Center Stage."
+    },
+    {
+      "name": "var isCenterStageActive: Bool",
+      "desc": "A Boolean value that indicates whether Center Stage is active on a device."
+    },
+    {
+      "name": "class var centerStageControlMode: AVCaptureDevice.CenterStageControlMode",
+      "desc": "A value that indicates the current mode of Center Stage control."
+    },
+    {
+      "name": "enum AVCaptureDevice.CenterStageControlMode",
+      "desc": "Constants that indicate the current Center Stage control mode."
+    },
+    {
+      "name": "var formats: [AVCaptureDevice.Format]",
+      "desc": "The capture formats supported by the device."
+    },
+    {
+      "name": "var activeFormat: AVCaptureDevice.Format",
+      "desc": "The currently active media data format of the capture device."
+    },
+    {
+      "name": "class AVCaptureDevice.Format",
+      "desc": "A set of media format and capture settings (such as video resolution and frame rate) that you use to configure a capture device."
+    },
+    {
+      "name": "var exposureDuration: CMTime",
+      "desc": "The length of time over which exposure takes place."
+    },
+    {
+      "name": "func setExposureModeCustom(duration: CMTime, iso: Float, completionHandler: ((CMTime) -> Void)?)",
+      "desc": "Locks the exposure duration and ISO at the specified values."
+    },
+    {
+      "name": "var exposureTargetOffset: Float",
+      "desc": "The metered exposure level’s offset from the target exposure value, in EV units."
+    },
+    {
+      "name": "var exposureTargetBias: Float",
+      "desc": "Bias applied to the target exposure value, in EV units."
+    },
+    {
+      "name": "var minExposureTargetBias: Float",
+      "desc": "The minimum supported exposure bias, in EV units."
+    },
+    {
+      "name": "var maxExposureTargetBias: Float",
+      "desc": "The maximum supported exposure bias, in EV units."
+    },
+    {
+      "name": "var activeMaxExposureDuration: CMTime",
+      "desc": "The maximum exposure duration, in seconds, defined in the auto-exposure algorithm."
+    },
+    {
+      "name": "func setExposureTargetBias(Float, completionHandler: ((CMTime) -> Void)?)",
+      "desc": "Sets the bias to be applied to the target exposure value."
+    },
+    {
+      "name": "class let currentExposureTargetBias: Float",
+      "desc": "A special constant representing the current exposure bias value."
+    },
+    {
+      "name": "class let currentExposureDuration: CMTime",
+      "desc": "A special constant representing the current exposure duration setting."
+    },
+    {
+      "name": "var exposureMode: AVCaptureDevice.ExposureMode",
+      "desc": "The exposure mode for the device."
+    },
+    {
+      "name": "func isExposureModeSupported(AVCaptureDevice.ExposureMode) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the given exposure mode is supported."
+    },
+    {
+      "name": "enum AVCaptureDevice.ExposureMode",
+      "desc": "Constants to specify the exposure mode of a capture device."
+    },
+    {
+      "name": "var automaticallyAdjustsFaceDrivenAutoExposureEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the device automatically adjusts face-driven auto exposure."
+    },
+    {
+      "name": "var isFaceDrivenAutoExposureEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the device has face-driven auto exposure enabled."
+    },
+    {
+      "name": "var isExposurePointOfInterestSupported: Bool",
+      "desc": "Indicates whether the device supports a point of interest for exposure."
+    },
+    {
+      "name": "var exposurePointOfInterest: CGPoint",
+      "desc": "The point of interest for exposure."
+    },
+    {
+      "name": "var isAdjustingExposure: Bool",
+      "desc": "Indicates whether the device is currently adjusting its exposure setting."
+    },
+    {
+      "name": "var focusMode: AVCaptureDevice.FocusMode",
+      "desc": "The capture device’s focus mode."
+    },
+    {
+      "name": "func isFocusModeSupported(AVCaptureDevice.FocusMode) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the device supports the given focus mode."
+    },
+    {
+      "name": "enum AVCaptureDevice.FocusMode",
+      "desc": "Constants to specify the focus mode of a capture device."
+    },
+    {
+      "name": "var minimumFocusDistance: Int",
+      "desc": "The capture device’s minimum focus distance in millimeters."
+    },
+    {
+      "name": "var automaticallyAdjustsFaceDrivenAutoFocusEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the device automatically adjusts face-driven auto focus."
+    },
+    {
+      "name": "var isFaceDrivenAutoFocusEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the device has face-driven auto focus enabled."
+    },
+    {
+      "name": "var isFocusPointOfInterestSupported: Bool",
+      "desc": "A Boolean value that indicates whether the device supports a point of interest for focus."
+    },
+    {
+      "name": "var focusPointOfInterest: CGPoint",
+      "desc": "The point of interest for focusing."
+    },
+    {
+      "name": "var isSmoothAutoFocusEnabled: Bool",
+      "desc": "A Boolean value that determines whether smooth autofocus is in an enabled state on the device."
+    },
+    {
+      "name": "var isSmoothAutoFocusSupported: Bool",
+      "desc": "A Boolean value that indicates whether the device supports smooth autofocus."
+    },
+    {
+      "name": "var isAutoFocusRangeRestrictionSupported: Bool",
+      "desc": "A Boolean value that indicates whether the device supports focus range restrictions."
+    },
+    {
+      "name": "var autoFocusRangeRestriction: AVCaptureDevice.AutoFocusRangeRestriction",
+      "desc": "A value that controls the allowable range for automatic focusing."
+    },
+    {
+      "name": "enum AVCaptureDevice.AutoFocusRangeRestriction",
+      "desc": "Constants to specify the autofocus range of a capture device."
+    },
+    {
+      "name": "var isAdjustingFocus: Bool",
+      "desc": "A Boolean value that indicates whether the device is currently adjusting its focus setting."
+    },
+    {
+      "name": "var activeDepthDataFormat: AVCaptureDevice.Format?",
+      "desc": "The currently active depth data format of the capture device."
+    },
+    {
+      "name": "var activeDepthDataMinFrameDuration: CMTime",
+      "desc": "The minimum frame duration of depth data."
+    },
+    {
+      "name": "var videoZoomFactor: CGFloat",
+      "desc": "A value that controls the cropping and enlargement of images captured by the device."
+    },
+    {
+      "name": "var minAvailableVideoZoomFactor: CGFloat",
+      "desc": "The minimum zoom factor allowed in the current capture configuration."
+    },
+    {
+      "name": "var maxAvailableVideoZoomFactor: CGFloat",
+      "desc": "The maximum zoom factor allowed in the current capture configuration."
+    },
+    {
+      "name": "func ramp(toVideoZoomFactor: CGFloat, withRate: Float)",
+      "desc": "Begins a smooth transition from the current zoom factor to another."
+    },
+    {
+      "name": "var isRampingVideoZoom: Bool",
+      "desc": "A Boolean value that indicates whether a zoom transition is in progress."
+    },
+    {
+      "name": "func cancelVideoZoomRamp()",
+      "desc": "Smoothly ends a zoom transition in progress."
+    },
+    {
+      "name": "var virtualDeviceSwitchOverVideoZoomFactors: [NSNumber]",
+      "desc": "An array of video zoom factors at or above which a virtual device, such as the dual camera, may switch to its next constituent device."
+    },
+    {
+      "name": "var hasFlash: Bool",
+      "desc": "Indicates whether the capture device has a flash."
+    },
+    {
+      "name": "var isFlashAvailable: Bool",
+      "desc": "Indicates whether the flash is currently available for use."
+    },
+    {
+      "name": "enum AVCaptureDevice.FlashMode",
+      "desc": "Constants to specify the flash mode of a capture device."
+    },
+    {
+      "name": "var flashMode: AVCaptureDevice.FlashMode",
+      "desc": "The device’s current flash mode."
+    },
+    {
+      "name": "func isFlashModeSupported(AVCaptureDevice.FlashMode) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the device supports the given flash mode."
+    },
+    {
+      "name": "var hasTorch: Bool",
+      "desc": "A Boolean value that specifies whether the capture device has a torch."
+    },
+    {
+      "name": "var isTorchAvailable: Bool",
+      "desc": "Indicates whether the torch is currently available for use."
+    },
+    {
+      "name": "var isTorchActive: Bool",
+      "desc": "A Boolean value indicating whether the device’s torch is currently active."
+    },
+    {
+      "name": "var torchLevel: Float",
+      "desc": "The current torch brightness level."
+    },
+    {
+      "name": "class let maxAvailableTorchLevel: Float"
+    },
+    {
+      "name": "enum AVCaptureDevice.TorchMode",
+      "desc": "Constants to specify the capture device’s torch mode."
+    },
+    {
+      "name": "var torchMode: AVCaptureDevice.TorchMode",
+      "desc": "The current torch mode."
+    },
+    {
+      "name": "func isTorchModeSupported(AVCaptureDevice.TorchMode) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the device supports the specified torch mode."
+    },
+    {
+      "name": "func setTorchModeOn(level: Float)",
+      "desc": "Sets the illumination level when in torch mode."
+    },
+    {
+      "name": "var isLowLightBoostSupported: Bool",
+      "desc": "A Boolean value that indicates whether the capture device supports boosting images in low light conditions."
+    },
+    {
+      "name": "var isLowLightBoostEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the capture device’s low light boost feature is enabled."
+    },
+    {
+      "name": "var automaticallyEnablesLowLightBoostWhenAvailable: Bool",
+      "desc": "A Boolean value that indicates whether the capture device should automatically switch to low light boost mode when necessary."
+    },
+    {
+      "name": "var activeVideoMinFrameDuration: CMTime",
+      "desc": "The currently active minimum frame duration."
+    },
+    {
+      "name": "var activeVideoMaxFrameDuration: CMTime",
+      "desc": "The currently active maximum frame duration"
+    },
+    {
+      "name": "var transportControlsSupported: Bool",
+      "desc": "Indicates whether the device supports transport control commands."
+    },
+    {
+      "name": "var transportControlsPlaybackMode: AVCaptureDevice.TransportControlsPlaybackMode",
+      "desc": "The current playback mode."
+    },
+    {
+      "name": "var transportControlsSpeed: AVCaptureDevice.TransportControlsSpeed",
+      "desc": "The current playback speed."
+    },
+    {
+      "name": "func setTransportControlsPlaybackMode(AVCaptureDevice.TransportControlsPlaybackMode, speed: AVCaptureDevice.TransportControlsSpeed)",
+      "desc": "Sets the transport control’s playback mode and speed."
+    },
+    {
+      "name": "enum AVCaptureDevice.TransportControlsPlaybackMode",
+      "desc": "Constants that indicate the transport control's current mode of playback, if it has one."
+    },
+    {
+      "name": "typealias AVCaptureDevice.TransportControlsSpeed",
+      "desc": "A playback speed value."
+    },
+    {
+      "name": "var isSubjectAreaChangeMonitoringEnabled: Bool",
+      "desc": "Indicates whether the device should monitor the subject area for changes."
+    },
+    {
+      "name": "static let AVCaptureDeviceSubjectAreaDidChange: NSNotification.Name",
+      "desc": "A notification the system posts when a capture device detects a substantial change to the video subject area."
+    },
+    {
+      "name": "var lensPosition: Float",
+      "desc": "Indicates the focus position of the lens."
+    },
+    {
+      "name": "func setFocusModeLocked(lensPosition: Float, completionHandler: ((CMTime) -> Void)?)",
+      "desc": "Locks the lens position at the specified value."
+    },
+    {
+      "name": "var isLockingFocusWithCustomLensPositionSupported: Bool",
+      "desc": "A Boolean value indicating whether the device supports locking focus to a specific lens position."
+    },
+    {
+      "name": "class let currentLensPosition: Float",
+      "desc": "A special constant representing the current lens position."
+    },
+    {
+      "name": "func isWhiteBalanceModeSupported(AVCaptureDevice.WhiteBalanceMode) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the given white balance mode is supported."
+    },
+    {
+      "name": "var whiteBalanceMode: AVCaptureDevice.WhiteBalanceMode",
+      "desc": "The current white balance mode."
+    },
+    {
+      "name": "var isAdjustingWhiteBalance: Bool",
+      "desc": "Indicates whether the devise is currently adjusting the white balance."
+    },
+    {
+      "name": "func chromaticityValues(for: AVCaptureDevice.WhiteBalanceGains) -> AVCaptureDevice.WhiteBalanceChromaticityValues",
+      "desc": "Converts device-specific white balance RGB gain values to device-independent chromaticity values."
+    },
+    {
+      "name": "var deviceWhiteBalanceGains: AVCaptureDevice.WhiteBalanceGains",
+      "desc": "The current device-specific RGB white balance gain values."
+    },
+    {
+      "name": "var maxWhiteBalanceGain: Float",
+      "desc": "The maximum supported value to which a channel in the AVCaptureWhiteBalanceGains may be set."
+    },
+    {
+      "name": "func deviceWhiteBalanceGains(for: AVCaptureDevice.WhiteBalanceChromaticityValues) -> AVCaptureDevice.WhiteBalanceGains",
+      "desc": "Converts device-independent chromaticity values to device-specific white balance RGB gain values."
+    },
+    {
+      "name": "func deviceWhiteBalanceGains(for: AVCaptureDevice.WhiteBalanceTemperatureAndTintValues) -> AVCaptureDevice.WhiteBalanceGains",
+      "desc": "Converts device-independent temperature and tint values to device-specific white balance RGB gain values."
+    },
+    {
+      "name": "var grayWorldDeviceWhiteBalanceGains: AVCaptureDevice.WhiteBalanceGains",
+      "desc": "The current device-specific white balance values required for a neutral gray white point."
+    },
+    {
+      "name": "func setWhiteBalanceModeLocked(with: AVCaptureDevice.WhiteBalanceGains, completionHandler: ((CMTime) -> Void)?)",
+      "desc": "Sets white balance to locked mode with the specified deviceWhiteBalanceGains values."
+    },
+    {
+      "name": "func temperatureAndTintValues(for: AVCaptureDevice.WhiteBalanceGains) -> AVCaptureDevice.WhiteBalanceTemperatureAndTintValues",
+      "desc": "Converts device-specific white balance RGB gain values to device-independent temperature and tint values."
+    },
+    {
+      "name": "var isLockingWhiteBalanceWithCustomDeviceGainsSupported: Bool",
+      "desc": "A Boolean value indicating whether the device supports locking white balance to specific gain values."
+    },
+    {
+      "name": "class let currentWhiteBalanceGains: AVCaptureDevice.WhiteBalanceGains",
+      "desc": "A special constant representing the current white balance setting."
+    },
+    {
+      "name": "struct AVCaptureDevice.WhiteBalanceGains",
+      "desc": "Structure containing RGB white balance gain values."
+    },
+    {
+      "name": "struct AVCaptureDevice.WhiteBalanceChromaticityValues",
+      "desc": "Structure containing CIE 1931 xy chromaticity values."
+    },
+    {
+      "name": "struct AVCaptureDevice.WhiteBalanceTemperatureAndTintValues",
+      "desc": "Structure containing temperature and tint values correlated to a white-balance color."
+    },
+    {
+      "name": "enum AVCaptureDevice.WhiteBalanceMode",
+      "desc": "Constants to specify the white balance mode of a capture device."
+    },
+    {
+      "name": "var iso: Float",
+      "desc": "The current exposure ISO value."
+    },
+    {
+      "name": "class let currentISO: Float",
+      "desc": "This value indicates that the caller does not wish to specify a value for the iso property, and that it should instead be set to its current value."
+    },
+    {
+      "name": "var automaticallyAdjustsVideoHDREnabled: Bool",
+      "desc": "A Boolean value that indicates whether the capture device is allowed to turn high dynamic range streaming on or off."
+    },
+    {
+      "name": "var isVideoHDREnabled: Bool",
+      "desc": "A Boolean value that indicates whether the receiver is allowed to turn high dynamic range streaming on or off."
+    },
+    {
+      "name": "var activeColorSpace: AVCaptureColorSpace",
+      "desc": "The currently active color space for capture."
+    },
+    {
+      "name": "enum AVCaptureColorSpace",
+      "desc": "A capture device’s supported video color spaces."
+    },
+    {
+      "name": "var isGeometricDistortionCorrectionSupported: Bool",
+      "desc": "A Boolean value that indicates whether this device supports geometric distortion correction."
+    },
+    {
+      "name": "var isGeometricDistortionCorrectionEnabled: Bool",
+      "desc": "A Boolean value that indicates whether geometric distortion correction is enabled for this device."
+    },
+    {
+      "name": "class func extrinsicMatrix(from: AVCaptureDevice, to: AVCaptureDevice) -> Data?",
+      "desc": "The relative extrinsic matrix from one capture device to another."
+    },
+    {
+      "name": "var systemPressureState: AVCaptureDevice.SystemPressureState",
+      "desc": "The current of OS and hardware status affecting capture system performance and availability."
+    },
+    {
+      "name": "class AVCaptureDevice.SystemPressureState",
+      "desc": "Information about OS and hardware status affecting capture system performance and availability."
+    },
+    {
+      "name": "let AVCaptureSessionInterruptionSystemPressureStateKey: String",
+      "desc": "The key for retrieving information about system pressure factors that caused a capture session interruption."
+    },
+    {
+      "name": "var isGlobalToneMappingEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the device should use global tone mapping."
+    },
+    {
+      "name": "func setPrimaryConstituentDeviceSwitchingBehavior(AVCaptureDevice.PrimaryConstituentDeviceSwitchingBehavior, restrictedSwitchingBehaviorConditions: AVCaptureDevice.PrimaryConstituentDeviceRestrictedSwitchingBehaviorConditions)",
+      "desc": "Sets the switching behavior of the primary constituent device."
+    },
+    {
+      "name": "var primaryConstituentDeviceSwitchingBehavior: AVCaptureDevice.PrimaryConstituentDeviceSwitchingBehavior",
+      "desc": "The switching behavior for the primary constituent device."
+    },
+    {
+      "name": "enum AVCaptureDevice.PrimaryConstituentDeviceSwitchingBehavior",
+      "desc": "Constants that control when to allow a virtual device to switch its active primary constituent device."
+    },
+    {
+      "name": "var primaryConstituentDeviceRestrictedSwitchingBehaviorConditions: AVCaptureDevice.PrimaryConstituentDeviceRestrictedSwitchingBehaviorConditions",
+      "desc": "The conditions that restrict the primary constituent device’s switching behavior."
+    },
+    {
+      "name": "struct AVCaptureDevice.PrimaryConstituentDeviceRestrictedSwitchingBehaviorConditions",
+      "desc": "A structure that defines the conditions in which to restrict camera switching."
+    },
+    {
+      "name": "var activePrimaryConstituent: AVCaptureDevice?",
+      "desc": "A virtual device’s active primary constituent device."
+    },
+    {
+      "name": "var activePrimaryConstituentDeviceSwitchingBehavior: AVCaptureDevice.PrimaryConstituentDeviceSwitchingBehavior",
+      "desc": "The switching behavior of the active constituent device."
+    },
+    {
+      "name": "var activePrimaryConstituentDeviceRestrictedSwitchingBehaviorConditions: AVCaptureDevice.PrimaryConstituentDeviceRestrictedSwitchingBehaviorConditions",
+      "desc": "The conditions that restrict camera switching behavior for the active primary constituent device."
+    },
+    {
+      "name": "var supportedFallbackPrimaryConstituentDevices: [AVCaptureDevice]",
+      "desc": "The constituent devices available to select as a fallback for a longer focal length primary constituent device."
+    },
+    {
+      "name": "var fallbackPrimaryConstituentDevices: [AVCaptureDevice]",
+      "desc": "The fallback devices to use when a constituent device with a longer focal length becomes limited by its light sensitivity or minimum focus distance."
+    },
+    {
+      "name": "class var activeMicrophoneMode: AVCaptureDevice.MicrophoneMode",
+      "desc": "The device’s active microphone mode."
+    },
+    {
+      "name": "class var preferredMicrophoneMode: AVCaptureDevice.MicrophoneMode",
+      "desc": "The microphone mode that the user selects in Control Center."
+    },
+    {
+      "name": "enum AVCaptureDevice.MicrophoneMode",
+      "desc": "Constants that define the available microphone modes."
+    },
+    {
+      "name": "var isPortraitEffectActive: Bool",
+      "desc": "A Boolean value that indicates whether Portrait Effect is currently active for the device."
+    },
+    {
+      "name": "class var isPortraitEffectEnabled: Bool",
+      "desc": "A class property that indicates whether the user enables the Portrait Effect feature in Control Center."
+    },
+    {
+      "name": "class func showSystemUserInterface(AVCaptureDevice.SystemUserInterface)",
+      "desc": "Displays the system’s user interface to configure video effects or microphone modes."
+    },
+    {
+      "name": "enum AVCaptureDevice.SystemUserInterface",
+      "desc": "Constants that describe the capture device configuration user interfaces."
+    }
+  ],
+  "declaration": "class AVCaptureDevice : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

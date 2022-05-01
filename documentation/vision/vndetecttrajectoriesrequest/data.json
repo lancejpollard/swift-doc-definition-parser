@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/vision/vndetecttrajectoriesrequest",
+  "type": "Class",
+  "name": "VNDetectTrajectoriesRequest",
+  "desc": "A request that detects the trajectories of shapes moving along a parabolic path.",
+  "items": [
+    {
+      "name": "init(frameAnalysisSpacing: CMTime, trajectoryLength: Int, completionHandler: VNRequestCompletionHandler?)",
+      "desc": "Creates a new request to detect trajectories."
+    },
+    {
+      "name": "var targetFrameTime: CMTime",
+      "desc": "The requested target frame time for processing trajectory detection."
+    },
+    {
+      "name": "var trajectoryLength: Int",
+      "desc": "The number of points to detect before calculating a trajectory."
+    },
+    {
+      "name": "var objectMinimumNormalizedRadius: Float",
+      "desc": "The minimum radius of the bounding circle of the object to track."
+    },
+    {
+      "name": "var objectMaximumNormalizedRadius: Float",
+      "desc": "The maximum radius of the bounding circle of the object to track."
+    },
+    {
+      "name": "var results: [VNTrajectoryObservation]?",
+      "desc": "The array of detected trajectory observations."
+    },
+    {
+      "name": "class VNTrajectoryObservation",
+      "desc": "An observation that describes a detected trajectory."
+    },
+    {
+      "name": "let VNDetectTrajectoriesRequestRevision1: Int",
+      "desc": "Detect trajectories request, revision 1."
+    }
+  ],
+  "declaration": "class VNDetectTrajectoriesRequest : VNStatefulRequest",
+  "inheritsFrom": [
+    "VNStatefulRequest"
+  ]
+}

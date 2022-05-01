@@ -1,0 +1,104 @@
+{
+  "path": "/documentation/scenekit/scngeometry",
+  "type": "Class",
+  "name": "SCNGeometry",
+  "desc": "A three-dimensional shape (also called a model or mesh) that can be displayed in a scene, with attached materials that define its appearance.",
+  "items": [
+    {
+      "name": "init(sources: [SCNGeometrySource], elements: [SCNGeometryElement]?)",
+      "desc": "Creates a new geometry built from the specified geometry sources and elements."
+    },
+    {
+      "name": "var name: String?",
+      "desc": "A name associated with the geometry object."
+    },
+    {
+      "name": "protocol SCNBoundingVolume",
+      "desc": "Properties common to the SCNNode and SCNGeometry classes for measuring location and size."
+    },
+    {
+      "name": "var materials: [SCNMaterial]",
+      "desc": "An array of SCNMaterial objects that determine the geometry’s appearance when rendered."
+    },
+    {
+      "name": "var firstMaterial: SCNMaterial?",
+      "desc": "The first material attached to the geometry."
+    },
+    {
+      "name": "func material(named: String) -> SCNMaterial?",
+      "desc": "Returns the first material attached to the geometry with the specified name."
+    },
+    {
+      "name": "func insertMaterial(SCNMaterial, at: Int)",
+      "desc": "Attaches a material to the geometry at the specified index."
+    },
+    {
+      "name": "func removeMaterial(at: Int)",
+      "desc": "Removes a material attached to the geometry."
+    },
+    {
+      "name": "func replaceMaterial(at: Int, with: SCNMaterial)",
+      "desc": "Replaces a material attached to the geometry with another."
+    },
+    {
+      "name": "var elements: [SCNGeometryElement]",
+      "desc": "An array of geometry elements that describe the geometry’s shape."
+    },
+    {
+      "name": "var sources: [SCNGeometrySource]",
+      "desc": "An array of geometry sources that provide vertex data for the geometry."
+    },
+    {
+      "name": "var elementCount: Int",
+      "desc": "The number of geometry elements in the geometry."
+    },
+    {
+      "name": "func element(at: Int) -> SCNGeometryElement",
+      "desc": "Returns the geometry element at a specified index."
+    },
+    {
+      "name": "func sources(for: SCNGeometrySource.Semantic) -> [SCNGeometrySource]",
+      "desc": "Returns the geometry sources for a specified semantic."
+    },
+    {
+      "name": "var levelsOfDetail: [SCNLevelOfDetail]?",
+      "desc": "An array of SCNLevelOfDetail objects for managing the geometry’s appearance when viewed from far away."
+    },
+    {
+      "name": "class SCNLevelOfDetail",
+      "desc": "An alternate resolution for a geometry that SceneKit automatically substitutes to improve rendering performance."
+    },
+    {
+      "name": "var subdivisionLevel: Int",
+      "desc": "The number of subdivisions SceneKit uses to smooth the geometry’s surface at render time."
+    },
+    {
+      "name": "var edgeCreasesElement: SCNGeometryElement?",
+      "desc": "The geometry element identifying which edges of the geometry’s surface should remain sharp after subdivision."
+    },
+    {
+      "name": "var edgeCreasesSource: SCNGeometrySource?",
+      "desc": "The geometry source specifying the smoothness or sharpness of edges after surface subdivision."
+    },
+    {
+      "name": "var wantsAdaptiveSubdivision: Bool"
+    },
+    {
+      "name": "var tessellator: SCNGeometryTessellator?"
+    },
+    {
+      "name": "class SCNGeometryTessellator"
+    }
+  ],
+  "declaration": "class SCNGeometry : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding",
+    "SCNAnimatable",
+    "SCNBoundingVolume",
+    "SCNShadable"
+  ]
+}

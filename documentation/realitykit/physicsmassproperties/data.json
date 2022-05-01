@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/realitykit/physicsmassproperties",
+  "type": "Structure",
+  "name": "PhysicsMassProperties",
+  "desc": "Mass properties of a physics body.",
+  "items": [
+    {
+      "name": "static let `default`: PhysicsMassProperties",
+      "desc": "The default mass properties, equivalent to a unit sphere with a mass of 1 kilogram."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates a mass properties instance with default settings."
+    },
+    {
+      "name": "init(mass: Float, inertia: SIMD3<Float>, centerOfMass: (position: SIMD3<Float>, orientation: simd_quatf))",
+      "desc": "Creates a mass properties instance with the given settings."
+    },
+    {
+      "name": "init(shape: ShapeResource, density: Float)",
+      "desc": "Creates the mass properties for a solid shape with the specified density."
+    },
+    {
+      "name": "init(shape: ShapeResource, mass: Float)",
+      "desc": "Creates the mass properties for a solid shape with the specified mass."
+    },
+    {
+      "name": "var mass: Float",
+      "desc": "The mass in kilograms."
+    },
+    {
+      "name": "var inertia: SIMD3<Float>",
+      "desc": "The inertia in kilograms per square meter."
+    },
+    {
+      "name": "var centerOfMass: (position: SIMD3<Float>, orientation: simd_quatf)",
+      "desc": "The position of the center of mass and the orientation of the principal axes."
+    },
+    {
+      "name": "static func == (PhysicsMassProperties, PhysicsMassProperties) -> Bool",
+      "desc": "Indicates whether two physics mass properties are equal."
+    },
+    {
+      "name": "static func != (PhysicsMassProperties, PhysicsMassProperties) -> Bool",
+      "desc": "Indicates whether two physics mass properties are not equal."
+    }
+  ],
+  "declaration": "struct PhysicsMassProperties",
+  "conformsTo": [
+    "Equatable"
+  ]
+}

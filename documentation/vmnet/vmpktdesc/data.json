@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/vmnet/vmpktdesc",
+  "type": "Structure",
+  "name": "vmpktdesc",
+  "desc": "Describes a packet.",
+  "items": [
+    {
+      "name": "var vm_flags: UInt32",
+      "desc": "Option flags. Should be set to 0 on read."
+    },
+    {
+      "name": "var vm_pkt_iov: UnsafeMutablePointer<iovec>",
+      "desc": "An array of packet buffers."
+    },
+    {
+      "name": "var vm_pkt_iovcnt: UInt32",
+      "desc": "The number of packet buffers in vm_pkt_iov."
+    },
+    {
+      "name": "var vm_pkt_size: Int",
+      "desc": "The size of the packet, in bytes."
+    },
+    {
+      "name": "init(vm_pkt_size: Int, vm_pkt_iov: UnsafeMutablePointer<iovec>, vm_pkt_iovcnt: UInt32, vm_flags: UInt32)"
+    }
+  ],
+  "declaration": "struct vmpktdesc"
+}

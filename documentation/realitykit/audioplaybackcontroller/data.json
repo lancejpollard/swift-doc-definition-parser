@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/realitykit/audioplaybackcontroller",
+  "type": "Class",
+  "name": "AudioPlaybackController",
+  "desc": "A controller that manages audio playback of a resource.",
+  "items": [
+    {
+      "name": "var id: ObjectIdentifier",
+      "desc": "The stable identity of the entity associated with this instance."
+    },
+    {
+      "name": "var id: UInt64",
+      "desc": "The stable identity of the controller."
+    },
+    {
+      "name": "typealias AudioPlaybackController.ID",
+      "desc": "A type of unique identifier used for a playback controller."
+    },
+    {
+      "name": "let resource: AudioResource",
+      "desc": "The resource that provides the audio stream."
+    },
+    {
+      "name": "var gain: AudioPlaybackController.Decibel",
+      "desc": "The gain in decibels of the audio playback controller output."
+    },
+    {
+      "name": "func fade(to: AudioPlaybackController.Decibel, duration: TimeInterval)",
+      "desc": "Transitions the gain to the given value over a time interval using a linear curve."
+    },
+    {
+      "name": "typealias AudioPlaybackController.Decibel",
+      "desc": "A type for expressing gain in decibels."
+    },
+    {
+      "name": "var speed: Double",
+      "desc": "The rate of playback of the audio resource, with a range from half speed to double speed."
+    },
+    {
+      "name": "var reverbSendLevel: AudioPlaybackController.Decibel",
+      "desc": "The send level in decibels from the playback controller to the reverb system."
+    },
+    {
+      "name": "func play()",
+      "desc": "Plays the audio resource."
+    },
+    {
+      "name": "func pause()",
+      "desc": "Pauses playback of the audio resource while maintaining the position in the audio stream."
+    },
+    {
+      "name": "func stop()",
+      "desc": "Stops playback of the audio resource and discards the location in the audio stream."
+    },
+    {
+      "name": "var isPlaying: Bool",
+      "desc": "A Boolean that indicates whether playback is currently active."
+    },
+    {
+      "name": "var completionHandler: (() -> Void)?",
+      "desc": "A closure that the playback controller executes when it comes to the end of the audio stream."
+    },
+    {
+      "name": "var entity: Entity?",
+      "desc": "The entity from which the audio stream emanates."
+    }
+  ],
+  "declaration": "class AudioPlaybackController",
+  "conformsTo": [
+    "Identifiable"
+  ]
+}

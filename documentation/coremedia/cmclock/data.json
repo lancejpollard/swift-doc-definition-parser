@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/coremedia/cmclock",
+  "type": "Class",
+  "name": "CMClock",
+  "desc": "An object that represents a source of time.",
+  "items": [
+    {
+      "name": "var time: CMTime",
+      "desc": "The current time."
+    },
+    {
+      "name": "static var typeID: CFTypeID",
+      "desc": "The Core Foundation identifier that corresponds to the clock structure."
+    },
+    {
+      "name": "func invalidate()",
+      "desc": "Stops the clock."
+    },
+    {
+      "name": "static var hostTimeClock: CMClock",
+      "desc": "The singleton clock that the system identifies as host time."
+    },
+    {
+      "name": "func anchorTime() -> (anchorTime: CMTime, referenceTime: CMTime)",
+      "desc": "Returns the current time from a clock and the matching time from the clock’s reference clock."
+    },
+    {
+      "name": "func audioDevice() -> (deviceUID: String?, deviceID: AudioDeviceID, trackingDefaultDevice: Bool)",
+      "desc": "Returns the audio device the clock tracks."
+    },
+    {
+      "name": "func setAudioDeviceID(AudioDeviceID)",
+      "desc": "Sets the audio device by using the device identifier."
+    },
+    {
+      "name": "func setAudioDeviceUID(String?)",
+      "desc": "Sets the audio device by using the unique device identifier."
+    },
+    {
+      "name": "func rate<T>(relativeTo: T) -> Double",
+      "desc": "Queries the relative rate of one timebase or clock relative to another timebase or clock."
+    },
+    {
+      "name": "func rateAndAnchorTime<T>(relativeTo: T) -> (rate: Double, anchorTime: CMTime, referenceTime: CMTime)",
+      "desc": "Queries the relative rate of one timebase or clock relative to another timebase or clock, and the times of each timebase or clock at which the relative rate went into effect."
+    },
+    {
+      "name": "func mightDrift(relativeTo: CMClock) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether it’s possible for one timebase or clock to drift relative to another."
+    },
+    {
+      "name": "func mightDrift<T>(relativeTo: T) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether it’s possible for the clock to drift relative to the input."
+    },
+    {
+      "name": "func convertTime<T>(CMTime, to: T) -> CMTime",
+      "desc": "Converts a time from one timebase or clock to another timebase or clock."
+    },
+    {
+      "name": "static func convertHostTimeToSystemUnits(CMTime) -> UInt64",
+      "desc": "Converts a host time from a time structure to the host time’s native units."
+    },
+    {
+      "name": "static func convertSystemUnitsToHostTime(UInt64) -> CMTime",
+      "desc": "Converts a host time from native units to a time structure."
+    },
+    {
+      "name": "struct CMClock.Error",
+      "desc": "Constants that describe clock errors."
+    }
+  ],
+  "declaration": "class CMClock",
+  "conformsTo": [
+    "CMSyncProtocol"
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "path": "/documentation/swift/unsafepointer",
+  "type": "Generic Structure",
+  "name": "UnsafePointer",
+  "desc": "A pointer for accessing data of a specific type.",
+  "items": [
+    {
+      "name": "typealias UnsafePointer.Distance",
+      "desc": "A type that represents the distance between two pointers."
+    },
+    {
+      "name": "typealias UnsafePointer.Stride",
+      "desc": "A type that represents the distance between two values."
+    },
+    {
+      "name": "init?(UnsafePointer<Pointee>?)",
+      "desc": "Creates a new pointer from the given pointer."
+    },
+    {
+      "name": "init?(OpaquePointer?)",
+      "desc": "Creates a new typed pointer from the given opaque pointer."
+    },
+    {
+      "name": "init(OpaquePointer)",
+      "desc": "Creates a new typed pointer from the given opaque pointer."
+    },
+    {
+      "name": "init(UnsafePointer<Pointee>)",
+      "desc": "Creates a new pointer from the given pointer."
+    },
+    {
+      "name": "init?(bitPattern: Int)",
+      "desc": "Creates a new pointer from the given address, specified as a bit pattern."
+    },
+    {
+      "name": "init?(bitPattern: UInt)",
+      "desc": "Creates a new pointer from the given address, specified as a bit pattern."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "The custom mirror for this instance."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual representation of the pointer, suitable for debugging."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "var pointee: Pointee",
+      "desc": "Accesses the instance referenced by this pointer."
+    },
+    {
+      "name": "func advanced(by: Int) -> UnsafePointer<Pointee>",
+      "desc": "Returns a pointer offset from this pointer by the specified number of instances."
+    },
+    {
+      "name": "func bytes() -> MIDIPacket.ByteCollection",
+      "desc": "Available when Pointee is MIDIPacket."
+    },
+    {
+      "name": "func deallocate()",
+      "desc": "Deallocates the memory block previously allocated at this pointer."
+    },
+    {
+      "name": "func distance(to: UnsafePointer<Pointee>) -> Int",
+      "desc": "Returns the distance from this pointer to the given pointer, counted as instances of the pointer’s Pointee type."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "func predecessor() -> UnsafePointer<Pointee>",
+      "desc": "Returns a pointer to the previous consecutive instance."
+    },
+    {
+      "name": "func sequence() -> MIDIPacket.ByteSequence",
+      "desc": "Available when Pointee is MIDIPacket."
+    },
+    {
+      "name": "func sequence() -> MIDIEventPacket.WordSequence",
+      "desc": "Available when Pointee is MIDIEventPacket."
+    },
+    {
+      "name": "func successor() -> UnsafePointer<Pointee>",
+      "desc": "Returns a pointer to the next consecutive instance."
+    },
+    {
+      "name": "func unsafeSequence() -> MIDIPacketList.UnsafeSequence",
+      "desc": "Available when Pointee is MIDIPacketList."
+    },
+    {
+      "name": "func unsafeSequence() -> MIDIEventList.UnsafeSequence",
+      "desc": "Available when Pointee is MIDIEventList."
+    },
+    {
+      "name": "func withMemoryRebound<T, Result>(to: T.Type, capacity: Int, (UnsafePointer<T>) -> Result) -> Result",
+      "desc": "Executes the given closure while temporarily binding the specified number of instances to the given type."
+    },
+    {
+      "name": "func words() -> MIDIEventPacket.WordCollection",
+      "desc": "Available when Pointee is MIDIEventPacket."
+    },
+    {
+      "name": "subscript(Int) -> Pointee",
+      "desc": "Accesses the pointee at the specified offset from this pointer."
+    },
+    {
+      "name": "static func != (UnsafePointer<Pointee>, UnsafePointer<Pointee>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func + (Int, UnsafePointer<Pointee>) -> UnsafePointer<Pointee>"
+    },
+    {
+      "name": "static func + (UnsafePointer<Pointee>, Int) -> UnsafePointer<Pointee>"
+    },
+    {
+      "name": "static func += (inout UnsafePointer<Pointee>, Int)"
+    },
+    {
+      "name": "static func - (UnsafePointer<Pointee>, UnsafePointer<Pointee>) -> Int"
+    },
+    {
+      "name": "static func - (UnsafePointer<Pointee>, Int) -> UnsafePointer<Pointee>"
+    },
+    {
+      "name": "static func -= (inout UnsafePointer<Pointee>, Int)"
+    },
+    {
+      "name": "static func ... (UnsafePointer<Pointee>) -> PartialRangeFrom<UnsafePointer<Pointee>>",
+      "desc": "Returns a partial range extending upward from a lower bound."
+    },
+    {
+      "name": "static func ... (UnsafePointer<Pointee>) -> PartialRangeThrough<UnsafePointer<Pointee>>",
+      "desc": "Returns a partial range up to, and including, its upper bound."
+    },
+    {
+      "name": "static func ... (UnsafePointer<Pointee>, UnsafePointer<Pointee>) -> ClosedRange<UnsafePointer<Pointee>>",
+      "desc": "Returns a closed range that contains both of its bounds."
+    },
+    {
+      "name": "static func ..< (UnsafePointer<Pointee>) -> PartialRangeUpTo<UnsafePointer<Pointee>>",
+      "desc": "Returns a partial range up to, but not including, its upper bound."
+    },
+    {
+      "name": "static func ..< (UnsafePointer<Pointee>, UnsafePointer<Pointee>) -> Range<UnsafePointer<Pointee>>",
+      "desc": "Returns a half-open range that contains its lower bound but not its upper bound."
+    },
+    {
+      "name": "static func < (UnsafePointer<Pointee>, UnsafePointer<Pointee>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than that of the second argument."
+    },
+    {
+      "name": "static func <= (UnsafePointer<Pointee>, UnsafePointer<Pointee>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than or equal to that of the second argument."
+    },
+    {
+      "name": "static func == (UnsafePointer<Pointee>, UnsafePointer<Pointee>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "static func > (UnsafePointer<Pointee>, UnsafePointer<Pointee>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than that of the second argument."
+    },
+    {
+      "name": "static func >= (UnsafePointer<Pointee>, UnsafePointer<Pointee>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than or equal to that of the second argument."
+    }
+  ],
+  "declaration": "@frozen struct UnsafePointer<Pointee>",
+  "conformsTo": [
+    "CVarArg"
+  ]
+}

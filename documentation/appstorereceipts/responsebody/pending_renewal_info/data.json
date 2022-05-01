@@ -1,0 +1,56 @@
+{
+  "path": "/documentation/appstorereceipts/responsebody/pending_renewal_info",
+  "type": "Object",
+  "name": "responseBody.Pending_renewal_info",
+  "desc": "An array of elements that refers to open or failed auto-renewable subscription renewals.",
+  "items": [
+    {
+      "name": "auto_renew_product_id",
+      "desc": "The value for this key corresponds to the productIdentifier property of the product that the customer’s subscription renews."
+    },
+    {
+      "name": "auto_renew_status",
+      "desc": "The current renewal status for the auto-renewable subscription. See auto_renew_status for more information."
+    },
+    {
+      "name": "expiration_intent",
+      "desc": "The reason a subscription expired. This field is only present for a receipt that contains an expired auto-renewable subscription."
+    },
+    {
+      "name": "grace_period_expires_date",
+      "desc": "The time at which the grace period for subscription renewals expires, in a date-time format similar to the ISO 8601."
+    },
+    {
+      "name": "grace_period_expires_date_ms",
+      "desc": "The time at which the grace period for subscription renewals expires, in UNIX epoch time format, in milliseconds. This key is only present for apps that have Billing Grace Period enabled and when the user experiences a billing error at the time of renewal. Use this time format for processing dates."
+    },
+    {
+      "name": "grace_period_expires_date_pst",
+      "desc": "The time at which the grace period for subscription renewals expires, in the Pacific Time zone."
+    },
+    {
+      "name": "is_in_billing_retry_period",
+      "desc": "A flag that indicates Apple is attempting to renew an expired subscription automatically. This field is only present if an auto-renewable subscription is in the billing retry state. See is_in_billing_retry_period for more information."
+    },
+    {
+      "name": "offer_code_ref_name",
+      "desc": "The reference name of a subscription offer that you configured in App Store Connect. This field is present when a customer redeemed a subscription offer code. For more information, see offer_code_ref_name."
+    },
+    {
+      "name": "original_transaction_id",
+      "desc": "The transaction identifier of the original purchase."
+    },
+    {
+      "name": "price_consent_status",
+      "desc": "The price consent status for a subscription price increase. This field is only present if the customer was notified of the price increase. The default value is \"0\" and changes to \"1\" if the customer consents."
+    },
+    {
+      "name": "product_id",
+      "desc": "The unique identifier of the product purchased. You provide this value when creating the product in App Store Connect, and it corresponds to the productIdentifier property of the SKPayment object stored in the transaction's payment property."
+    },
+    {
+      "name": "promotional_offer_id",
+      "desc": "The identifier of the promotional offer for an auto-renewable subscription that the user redeemed. You provide this value in the Promotional Offer Identifier field when you create the promotional offer in App Store Connect."
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "path": "/documentation/quartz/qcview",
+  "type": "Class",
+  "name": "QCView",
+  "desc": "The QCView class is a custom NSView class that loads, plays, and controls Quartz Composer compositions. It is an autonomous view that is driven by an internal timer running on the main thread.",
+  "items": [
+    {
+      "name": "func render(atTime: TimeInterval, arguments: [AnyHashable : Any]!) -> Bool",
+      "desc": "Overrides to perform your custom operations prior to or after rendering a frame of a composition."
+    },
+    {
+      "name": "func loadComposition(fromFile: String!) -> Bool",
+      "desc": "Loads the composition file located at the specified path."
+    },
+    {
+      "name": "func load(QCComposition!) -> Bool",
+      "desc": "Loads a QCComposition object into the view."
+    },
+    {
+      "name": "func loadedComposition() -> QCComposition!",
+      "desc": "Returns the composition loaded in the view."
+    },
+    {
+      "name": "func unloadComposition()",
+      "desc": "Unloads the composition from the view."
+    },
+    {
+      "name": "func erase()",
+      "desc": "Clears the view using the current erase color."
+    },
+    {
+      "name": "func eraseColor() -> NSColor!",
+      "desc": "Retrieves the current color used to erase the view."
+    },
+    {
+      "name": "func setEraseColor(NSColor!)",
+      "desc": "Sets the color used to erase the view."
+    },
+    {
+      "name": "func eventForwardingMask() -> Int",
+      "desc": "Retrieves the mask used to filter which types of events are forwarded from the view to the composition during rendering."
+    },
+    {
+      "name": "func setEventForwardingMask(Int)",
+      "desc": "Sets the mask used to filter which types of events are forwarded from the view to the composition during rendering."
+    },
+    {
+      "name": "func maxRenderingFrameRate() -> Float",
+      "desc": "Returns the maximum frame rate for rendering."
+    },
+    {
+      "name": "func setMaxRenderingFrameRate(Float)",
+      "desc": "Sets the maximum rendering frame rate."
+    },
+    {
+      "name": "func startRendering() -> Bool",
+      "desc": "Starts rendering the composition that is in the view."
+    },
+    {
+      "name": "func isRendering() -> Bool",
+      "desc": "Checks whether a composition is rendering in the view."
+    },
+    {
+      "name": "func autostartsRendering() -> Bool",
+      "desc": "Checks whether the view is set to start rendering automatically."
+    },
+    {
+      "name": "func setAutostartsRendering(Bool)",
+      "desc": "Sets whether the composition that is in the view starts rendering automatically when the view is put on the screen."
+    },
+    {
+      "name": "func stopRendering()",
+      "desc": "Stops rendering the composition that is in the view."
+    },
+    {
+      "name": "func pauseRendering()",
+      "desc": "Pauses rendering in the view."
+    },
+    {
+      "name": "func isPausedRendering() -> Bool",
+      "desc": "Returns whether or not the rendering in the view is paused."
+    },
+    {
+      "name": "func resumeRendering()",
+      "desc": "Resumes rendering a paused composition."
+    },
+    {
+      "name": "func play(Any!)",
+      "desc": "Plays or pauses a composition in a view."
+    },
+    {
+      "name": "func start(Any!)",
+      "desc": "Starts rendering a composition in a view."
+    },
+    {
+      "name": "func stop(Any!)",
+      "desc": "Stops rendering a composition in a view."
+    },
+    {
+      "name": "func snapshotImage() -> NSImage!",
+      "desc": "Returns an NSImage object of the current image in the view."
+    },
+    {
+      "name": "func createSnapshotImage(ofType: String!) -> Any!",
+      "desc": "Returns the current image in the view as an image object of the provided image type."
+    },
+    {
+      "name": "func openGLContext() -> NSOpenGLContext!",
+      "desc": "Returns the OpenGL context used by the view."
+    },
+    {
+      "name": "func openGLPixelFormat() -> NSOpenGLPixelFormat!",
+      "desc": "Returns the OpenGL pixel format used by the view."
+    },
+    {
+      "name": "static let QCViewDidStartRendering: NSNotification.Name",
+      "desc": "Posted when the view starts rendering."
+    },
+    {
+      "name": "static let QCViewDidStopRendering: NSNotification.Name",
+      "desc": "Posted when the view stops rendering."
+    }
+  ],
+  "declaration": "class QCView : NSView",
+  "inheritsFrom": [
+    "NSView"
+  ],
+  "conformsTo": [
+    "QCCompositionRenderer"
+  ]
+}

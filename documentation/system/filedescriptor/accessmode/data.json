@@ -1,0 +1,70 @@
+{
+  "path": "/documentation/system/filedescriptor/accessmode",
+  "type": "Structure",
+  "name": "FileDescriptor.AccessMode",
+  "desc": "The desired read and write access for a newly opened file.",
+  "items": [
+    {
+      "name": "static var readOnly: FileDescriptor.AccessMode",
+      "desc": "Opens the file for reading only."
+    },
+    {
+      "name": "static var readWrite: FileDescriptor.AccessMode",
+      "desc": "Opens the file for reading and writing."
+    },
+    {
+      "name": "static var writeOnly: FileDescriptor.AccessMode",
+      "desc": "Opens the file for writing only."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual representation of the access mode."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual representation of the access mode, suitable for debugging"
+    },
+    {
+      "name": "init(rawValue: CInt)",
+      "desc": "Creates a strongly-typed access mode from a raw C access mode."
+    },
+    {
+      "name": "var rawValue: CInt",
+      "desc": "The raw C access mode."
+    },
+    {
+      "name": "typealias RawValue",
+      "desc": "The raw type that can be used to represent all values of the conforming type."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": ""
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": ""
+    },
+    {
+      "name": "func encode(to: Encoder) throws",
+      "desc": "Encodes this value into the given encoder, when the type’s RawValue is Int32."
+    },
+    {
+      "name": "init(from: Decoder) throws",
+      "desc": "Creates a new instance by decoding from the given decoder, when the type’s RawValue is Int32."
+    }
+  ],
+  "declaration": "@frozen struct AccessMode",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "Hashable",
+    "RawRepresentable",
+    "Sendable"
+  ]
+}

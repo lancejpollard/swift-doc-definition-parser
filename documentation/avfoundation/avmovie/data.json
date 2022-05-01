@@ -1,0 +1,96 @@
+{
+  "path": "/documentation/avfoundation/avmovie",
+  "type": "Class",
+  "name": "AVMovie",
+  "desc": "An object that represents an audiovisual container that conforms to the QuickTime movie file format or a related format like MPEG-4.",
+  "items": [
+    {
+      "name": "init(url: URL, options: [String : Any]?)",
+      "desc": "Creates a movie object from a movie header stored in a QuickTime movie file of ISO base media file."
+    },
+    {
+      "name": "init(data: Data, options: [String : Any]?)",
+      "desc": "Creates a movie object from a movie file’s data."
+    },
+    {
+      "name": "var url: URL?",
+      "desc": "The URL to initialize the movie instance."
+    },
+    {
+      "name": "var data: Data?",
+      "desc": "The data block to initialize the movie."
+    },
+    {
+      "name": "var canContainMovieFragments: Bool",
+      "desc": "A Boolean value that indicates whether fragments can extend the movie file."
+    },
+    {
+      "name": "var containsMovieFragments: Bool",
+      "desc": "A Boolean value that indicates whether at least one movie fragment extends the movie file."
+    },
+    {
+      "name": "var defaultMediaDataStorage: AVMediaDataStorage?",
+      "desc": "The default storage container for media data added to a movie."
+    },
+    {
+      "name": "class func movieTypes() -> [AVFileType]",
+      "desc": "Returns the file types that a movie can process."
+    },
+    {
+      "name": "static var tracks: AVAsyncProperty<Root, [AVMovieTrack]>",
+      "desc": "The tracks that a movie contains."
+    },
+    {
+      "name": "func loadTrack(withTrackID: CMPersistentTrackID, completionHandler: (AVMovieTrack?, Error?) -> Void)",
+      "desc": "Loads a track that contains the specified identifier."
+    },
+    {
+      "name": "func loadTracks(withMediaType: AVMediaType, completionHandler: ([AVMovieTrack]?, Error?) -> Void)",
+      "desc": "Loads tracks that contain media of a specified type."
+    },
+    {
+      "name": "func loadTracks(withMediaCharacteristic: AVMediaCharacteristic, completionHandler: ([AVMovieTrack]?, Error?) -> Void)",
+      "desc": "Loads tracks that contain media of a specified characteristic."
+    },
+    {
+      "name": "var tracks: [AVMovieTrack]",
+      "desc": "The tracks that a movie contains."
+    },
+    {
+      "name": "func track(withTrackID: CMPersistentTrackID) -> AVMovieTrack?",
+      "desc": "Retrieves a track in the movie that contains the specified identifier."
+    },
+    {
+      "name": "func tracks(withMediaType: AVMediaType) -> [AVMovieTrack]",
+      "desc": "Retrieves tracks in the movie that present media of the specified type."
+    },
+    {
+      "name": "func tracks(withMediaCharacteristic: AVMediaCharacteristic) -> [AVMovieTrack]",
+      "desc": "Retrieves tracks in the movie that present media of the specified characteristic."
+    },
+    {
+      "name": "func makeMovieHeader(fileType: AVFileType) -> Data",
+      "desc": "Creates a data object containing the movie header for a movie object."
+    },
+    {
+      "name": "func writeHeader(to: URL, fileType: AVFileType, options: AVMovieWritingOptions)",
+      "desc": "Writes the movie header to the specified URL."
+    },
+    {
+      "name": "struct AVMovieWritingOptions",
+      "desc": "A set of options to control the writing of a movie header to a destination URL."
+    },
+    {
+      "name": "func `is`(compatibleWithFileType: AVFileType) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the system can create a movie header of the specified type."
+    }
+  ],
+  "declaration": "class AVMovie : AVAsset",
+  "inheritsFrom": [
+    "AVAsset"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSMutableCopying"
+  ]
+}

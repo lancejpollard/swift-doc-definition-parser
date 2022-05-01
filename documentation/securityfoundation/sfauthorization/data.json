@@ -1,0 +1,47 @@
+{
+  "path": "/documentation/securityfoundation/sfauthorization",
+  "type": "Class",
+  "name": "SFAuthorization",
+  "desc": "A class that allows you to restrict a user’s access to particular features in your Mac app or daemon.",
+  "items": [
+    {
+      "name": "class func authorization() -> Any!",
+      "desc": "Returns an authorization object initialized with a default environment, flags, and rights."
+    },
+    {
+      "name": "class func authorization(with: AuthorizationFlags, rights: UnsafePointer<AuthorizationRights>!, environment: UnsafePointer<AuthorizationEnvironment>!) -> Any!",
+      "desc": "Returns an authorization object initialized with the specified flags, rights and environment."
+    },
+    {
+      "name": "init!()",
+      "desc": "Initializes an authorization object with default environment, flags, and rights."
+    },
+    {
+      "name": "init!(flags: AuthorizationFlags, rights: UnsafePointer<AuthorizationRights>!, environment: UnsafePointer<AuthorizationEnvironment>!)",
+      "desc": "Initializes an authorization object with the specified flags, rights, and environment."
+    },
+    {
+      "name": "func authorizationRef() -> AuthorizationRef!",
+      "desc": "Returns the authorization reference for this object."
+    },
+    {
+      "name": "func obtain(withRights: UnsafePointer<AuthorizationRights>!, flags: AuthorizationFlags, environment: UnsafePointer<AuthorizationEnvironment>!, authorizedRights: UnsafeMutablePointer<UnsafeMutablePointer<AuthorizationRights>?>!)",
+      "desc": "Authorizes and preauthorizes rights to access a privileged operation and returns the granted rights."
+    },
+    {
+      "name": "func obtain(withRight: AuthorizationString!, flags: AuthorizationFlags)",
+      "desc": "Authorizes and preauthorizes one specific right."
+    },
+    {
+      "name": "func invalidateCredentials()",
+      "desc": "Prevents any rights that were obtained by this object from being preserved."
+    }
+  ],
+  "declaration": "class SFAuthorization : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

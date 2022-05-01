@@ -1,0 +1,112 @@
+{
+  "path": "/documentation/corelocation/cllocation",
+  "type": "Class",
+  "name": "CLLocation",
+  "desc": "The latitude, longitude, and course information reported by the system.",
+  "items": [
+    {
+      "name": "init(latitude: CLLocationDegrees, longitude: CLLocationDegrees)",
+      "desc": "Creates a location object with the specified latitude and longitude."
+    },
+    {
+      "name": "init(coordinate: CLLocationCoordinate2D, altitude: CLLocationDistance, horizontalAccuracy: CLLocationAccuracy, verticalAccuracy: CLLocationAccuracy, timestamp: Date)",
+      "desc": "Creates a location object with the specified coordinate and altitude information."
+    },
+    {
+      "name": "init(coordinate: CLLocationCoordinate2D, altitude: CLLocationDistance, horizontalAccuracy: CLLocationAccuracy, verticalAccuracy: CLLocationAccuracy, course: CLLocationDirection, speed: CLLocationSpeed, timestamp: Date)",
+      "desc": "Creates a location object with the specified coordinate, altitude, and course information."
+    },
+    {
+      "name": "init(coordinate: CLLocationCoordinate2D, altitude: CLLocationDistance, horizontalAccuracy: CLLocationAccuracy, verticalAccuracy: CLLocationAccuracy, course: CLLocationDirection, courseAccuracy: CLLocationDirectionAccuracy, speed: CLLocationSpeed, speedAccuracy: CLLocationSpeedAccuracy, timestamp: Date)",
+      "desc": "Creates a location object with the specified coordinate, altitude, course, and accuracy information."
+    },
+    {
+      "name": "init(coordinate: CLLocationCoordinate2D, altitude: CLLocationDistance, horizontalAccuracy: CLLocationAccuracy, verticalAccuracy: CLLocationAccuracy, course: CLLocationDirection, courseAccuracy: CLLocationDirectionAccuracy, speed: CLLocationSpeed, speedAccuracy: CLLocationSpeedAccuracy, timestamp: Date, sourceInfo: CLLocationSourceInformation)"
+    },
+    {
+      "name": "var coordinate: CLLocationCoordinate2D",
+      "desc": "The geographical coordinate information."
+    },
+    {
+      "name": "var altitude: CLLocationDistance",
+      "desc": "The altitude above mean sea level associated with a location, measured in meters."
+    },
+    {
+      "name": "var ellipsoidalAltitude: CLLocationDistance",
+      "desc": "The altitude as a height above the World Geodetic System 1984 (WGS84) ellipsoid, measured in meters."
+    },
+    {
+      "name": "var floor: CLFloor?",
+      "desc": "The logical floor of the building in which the user is located."
+    },
+    {
+      "name": "var horizontalAccuracy: CLLocationAccuracy",
+      "desc": "The radius of uncertainty for the location, measured in meters."
+    },
+    {
+      "name": "var verticalAccuracy: CLLocationAccuracy",
+      "desc": "The validity of the altitude values, and their estimated uncertainty, measured in meters."
+    },
+    {
+      "name": "var timestamp: Date",
+      "desc": "The time at which this location was determined."
+    },
+    {
+      "name": "var sourceInformation: CLLocationSourceInformation?",
+      "desc": "Information about the source that provides the location."
+    },
+    {
+      "name": "func distance(from: CLLocation) -> CLLocationDistance",
+      "desc": "Returns the distance (measured in meters) from the current object’s location to the specified location."
+    },
+    {
+      "name": "var speed: CLLocationSpeed",
+      "desc": "The instantaneous speed of the device, measured in meters per second."
+    },
+    {
+      "name": "var speedAccuracy: CLLocationSpeedAccuracy",
+      "desc": "The accuracy of the speed value, measured in meters per second."
+    },
+    {
+      "name": "var course: CLLocationDirection",
+      "desc": "The direction in which the device is traveling, measured in degrees and relative to due north."
+    },
+    {
+      "name": "var courseAccuracy: CLLocationDirectionAccuracy",
+      "desc": "The accuracy of the course value, measured in degrees."
+    },
+    {
+      "name": "typealias CLLocationSpeed",
+      "desc": "The velocity (measured in meters per second) at which the device is moving."
+    },
+    {
+      "name": "typealias CLLocationDirection",
+      "desc": "An azimuth that is measured in degrees relative to true north."
+    },
+    {
+      "name": "typealias CLLocationDistance",
+      "desc": "A distance measurement (measured in meters) from an existing location."
+    },
+    {
+      "name": "typealias CLLocationAccuracy",
+      "desc": "The accuracy of a geographical coordinate."
+    },
+    {
+      "name": "typealias CLLocationSpeedAccuracy",
+      "desc": "The accuracy of a speed."
+    },
+    {
+      "name": "typealias CLLocationDirectionAccuracy",
+      "desc": "The accuracy of a compass heading."
+    }
+  ],
+  "declaration": "class CLLocation : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "CKRecordValueProtocol",
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

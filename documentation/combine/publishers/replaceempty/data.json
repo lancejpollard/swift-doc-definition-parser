@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/combine/publishers/replaceempty",
+  "type": "Structure",
+  "name": "Publishers.ReplaceEmpty",
+  "desc": "A publisher that replaces an empty stream with a provided element.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, output: Publishers.ReplaceEmpty<Upstream>.Output)",
+      "desc": "Creates a publisher that replaces an empty stream with a provided element."
+    },
+    {
+      "name": "struct Output",
+      "desc": "A publisher that publishes elements specified by a range in the sequence of published elements."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    },
+    {
+      "name": "let output: Publishers.ReplaceEmpty<Upstream>.Output",
+      "desc": "The element to deliver when the upstream publisher finishes without delivering any elements."
+    },
+    {
+      "name": "static func == (Publishers.ReplaceEmpty<Upstream>, Publishers.ReplaceEmpty<Upstream>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two publishers are equivalent."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    }
+  ],
+  "declaration": "struct ReplaceEmpty<Upstream> where Upstream : Publisher",
+  "conformsTo": [
+    "Equatable",
+    "Publisher"
+  ]
+}

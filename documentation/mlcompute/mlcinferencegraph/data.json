@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/mlcompute/mlcinferencegraph",
+  "type": "Class",
+  "name": "MLCInferenceGraph",
+  "desc": "An inference graph created from one or more MLCGraph instances plus additional layers added directly to the inference graph.",
+  "items": [
+    {
+      "name": "init(graphObjects: [MLCGraph])",
+      "desc": "Creates an inference graph with the layers from the graph objects you specify."
+    },
+    {
+      "name": "func addInputs([String : MLCTensor]) -> Bool",
+      "desc": "Adds the inputs you specify to the inference graph."
+    },
+    {
+      "name": "func addInputs([String : MLCTensor], lossLabels: [String : MLCTensor]?, lossLabelWeights: [String : MLCTensor]?) -> Bool",
+      "desc": "Adds the inputs, loss labels, and loss label weights that you specify to the inference graph."
+    },
+    {
+      "name": "func addOutputs([String : MLCTensor]) -> Bool",
+      "desc": "Adds the outputs you specify to the inference graph."
+    },
+    {
+      "name": "func compile(options: MLCGraphCompilationOptions, device: MLCDevice) -> Bool",
+      "desc": "Compiles the inference graph for the options and device you specify."
+    },
+    {
+      "name": "func compile(options: MLCGraphCompilationOptions, device: MLCDevice, inputTensors: [String : MLCTensor]?, inputTensorsData: [String : MLCTensorData]?) -> Bool",
+      "desc": "Compiles the inference graph for the options, device, and input tensors you specify."
+    },
+    {
+      "name": "func link(with: [MLCInferenceGraph]) -> Bool",
+      "desc": "Links the inference graphs you specify."
+    },
+    {
+      "name": "struct MLCGraphCompilationOptions",
+      "desc": "A bitmask that specifies the options you use when compiling a graph."
+    },
+    {
+      "name": "func execute(inputsData: [String : MLCTensorData], batchSize: Int, options: MLCExecutionOptions, completionHandler: MLCGraphCompletionHandler?) -> Bool",
+      "desc": "Executes the inference graph with the inputs data, batch size, execution options, and completion handler you specify."
+    },
+    {
+      "name": "func execute(inputsData: [String : MLCTensorData], outputsData: [String : MLCTensorData]?, batchSize: Int, options: MLCExecutionOptions, completionHandler: MLCGraphCompletionHandler?) -> Bool",
+      "desc": "Executes the inference graph with the inputs and outputs data, batch size, execution options, and completion handler that you specify."
+    },
+    {
+      "name": "func execute(inputsData: [String : MLCTensorData], lossLabelsData: [String : MLCTensorData]?, lossLabelWeightsData: [String : MLCTensorData]?, batchSize: Int, options: MLCExecutionOptions, completionHandler: MLCGraphCompletionHandler?) -> Bool",
+      "desc": "Executes the inference graph with the input data, batch size, execution options and completion handler you specify."
+    },
+    {
+      "name": "func execute(inputsData: [String : MLCTensorData], lossLabelsData: [String : MLCTensorData]?, lossLabelWeightsData: [String : MLCTensorData]?, outputsData: [String : MLCTensorData]?, batchSize: Int, options: MLCExecutionOptions, completionHandler: MLCGraphCompletionHandler?) -> Bool",
+      "desc": "Executes the inference graph with the input and output data, batch size, execution options, and completion handler that you specify."
+    },
+    {
+      "name": "func execute(inputsData: [String : MLCTensorData], lossLabelsData: [String : MLCTensorData]?, lossLabelWeightsData: [String : MLCTensorData]?, outputsData: [String : MLCTensorData]?, batchSize: Int, options: MLCExecutionOptions) -> (result: MLCTensor?, executionTime: TimeInterval)",
+      "desc": "Executes the inference graph with the input and output data, batch size, and execution options you specify."
+    },
+    {
+      "name": "struct MLCExecutionOptions",
+      "desc": "A bitmask that specifies the options you use when executing a graph."
+    },
+    {
+      "name": "typealias MLCGraphCompletionHandler",
+      "desc": "A callback completion handler you execute when a graph finishes execution."
+    },
+    {
+      "name": "var deviceMemorySize: Int",
+      "desc": "The device memory size in bytes for all intermediate tensors in the inference graph."
+    }
+  ],
+  "declaration": "class MLCInferenceGraph : MLCGraph",
+  "inheritsFrom": [
+    "MLCGraph"
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "path": "/documentation/metal/mtlcomputecommandencoder",
+  "type": "Protocol",
+  "name": "MTLComputeCommandEncoder",
+  "desc": "An object for encoding commands in a compute pass.",
+  "items": [
+    {
+      "name": "func setComputePipelineState(MTLComputePipelineState)",
+      "desc": "Sets the current compute pipeline state object."
+    },
+    {
+      "name": "func setBuffer(MTLBuffer?, offset: Int, index: Int)",
+      "desc": "Sets a buffer for the compute function."
+    },
+    {
+      "name": "func setBuffers([MTLBuffer?], offsets: [Int], range: Range<Int>)",
+      "desc": "Sets an array of buffers for the vertex function."
+    },
+    {
+      "name": "func setBufferOffset(Int, index: Int)",
+      "desc": "Sets where the data begins in a buffer already bound to the compute shader."
+    },
+    {
+      "name": "func setBytes(UnsafeRawPointer, length: Int, index: Int)",
+      "desc": "Sets a block of data for the compute shader."
+    },
+    {
+      "name": "func setSamplerState(MTLSamplerState?, index: Int)",
+      "desc": "Sets a sampler for the compute function."
+    },
+    {
+      "name": "func setSamplerState(MTLSamplerState?, lodMinClamp: Float, lodMaxClamp: Float, index: Int)",
+      "desc": "Sets a sampler for the compute function, specifying clamp values for the level of detail."
+    },
+    {
+      "name": "func setSamplerStates([MTLSamplerState?], range: Range<Int>)",
+      "desc": "Sets an array of sampler states in a range of indices in the sampler state argument table."
+    },
+    {
+      "name": "func setSamplerStates([MTLSamplerState?], lodMinClamps: [Float], lodMaxClamps: [Float], range: Range<Int>)",
+      "desc": "Sets multiple samplers for the compute function, specifying clamp values for the level of detail of each sampler."
+    },
+    {
+      "name": "func setTexture(MTLTexture?, index: Int)",
+      "desc": "Sets a texture for the compute function."
+    },
+    {
+      "name": "func setTextures([MTLTexture?], range: Range<Int>)",
+      "desc": "Sets an array of textures for the compute function."
+    },
+    {
+      "name": "func setThreadgroupMemoryLength(Int, index: Int)",
+      "desc": "Sets the size of a block of threadgroup memory."
+    },
+    {
+      "name": "func setVisibleFunctionTable(MTLVisibleFunctionTable?, bufferIndex: Int)",
+      "desc": "Sets a visible function table for the compute function."
+    },
+    {
+      "name": "func setVisibleFunctionTables([MTLVisibleFunctionTable?], bufferRange: Range<Int>)",
+      "desc": "Sets an array of visible function tables for the compute function."
+    },
+    {
+      "name": "func setIntersectionFunctionTable(MTLIntersectionFunctionTable?, bufferIndex: Int)",
+      "desc": "Sets a intersection function table for the compute function."
+    },
+    {
+      "name": "func setIntersectionFunctionTables([MTLIntersectionFunctionTable?], bufferRange: Range<Int>)",
+      "desc": "Sets an array of intersection function tables for the compute function."
+    },
+    {
+      "name": "func setAccelerationStructure(MTLAccelerationStructure?, bufferIndex: Int)",
+      "desc": "Sets an acceleration structure for the compute function."
+    },
+    {
+      "name": "func dispatchThreadgroups(MTLSize, threadsPerThreadgroup: MTLSize)",
+      "desc": "Encodes a compute command using a grid aligned to threadgroup boundaries."
+    },
+    {
+      "name": "func dispatchThreads(MTLSize, threadsPerThreadgroup: MTLSize)",
+      "desc": "Encodes a compute command using an arbitrarily sized grid."
+    },
+    {
+      "name": "func dispatchThreadgroups(indirectBuffer: MTLBuffer, indirectBufferOffset: Int, threadsPerThreadgroup: MTLSize)",
+      "desc": "Encodes a dispatch call for a compute pass, using an indirect buffer that defines the size of a grid aligned to threadgroup boundaries."
+    },
+    {
+      "name": "func useResource(MTLResource, usage: MTLResourceUsage)",
+      "desc": "Specifies that a resource in an argument buffer can be safely used by a compute pass."
+    },
+    {
+      "name": "func useResources([MTLResource], usage: MTLResourceUsage)",
+      "desc": "Specifies that an array of resources in an argument buffer can be safely used by a compute pass."
+    },
+    {
+      "name": "func useHeap(MTLHeap)",
+      "desc": "Specifies that a heap containing resources in an argument buffer can be safely used by a compute pass."
+    },
+    {
+      "name": "func useHeaps([MTLHeap])",
+      "desc": "Specifies that an array of heaps containing resources in an argument buffer can be safely used by a compute pass."
+    },
+    {
+      "name": "func setImageblockWidth(Int, height: Int)",
+      "desc": "Sets the size, in pixels, of the imageblock."
+    },
+    {
+      "name": "func setStageInRegion(MTLRegion)",
+      "desc": "Sets the region of the stage-in attributes to apply to the compute kernel."
+    },
+    {
+      "name": "func setStageInRegionWithIndirectBuffer(MTLBuffer, indirectBufferOffset: Int)",
+      "desc": "Sets the region of the stage-in attributes to apply to the compute kernel using an indirect buffer."
+    },
+    {
+      "name": "var dispatchType: MTLDispatchType",
+      "desc": "The strategy to use when dispatching commands encoded by the compute command encoder."
+    },
+    {
+      "name": "enum MTLDispatchType",
+      "desc": "Constants indicating how the compute command encoder's commands are dispatched."
+    },
+    {
+      "name": "func memoryBarrier(scope: MTLBarrierScope)",
+      "desc": "Encodes a barrier so that changes to a set of resource types made by commands encoded before the barrier are completed before further commands are executed."
+    },
+    {
+      "name": "func memoryBarrier(resources: [MTLResource])",
+      "desc": "Encodes a barrier so that changes to a set of resources made by commands encoded before the barrier are completed before further commands are executed."
+    },
+    {
+      "name": "func executeCommandsInBuffer(MTLIndirectCommandBuffer, range: Range<Int>)",
+      "desc": "Encodes a command to execute commands in an indirect command buffer."
+    },
+    {
+      "name": "func executeCommandsInBuffer(MTLIndirectCommandBuffer, indirectBuffer: MTLBuffer, offset: Int)",
+      "desc": "Encodes a command to execute commands in an indirect command buffer, specifying the range indirectly."
+    },
+    {
+      "name": "func updateFence(MTLFence)",
+      "desc": "Tells the GPU to update the fence after all commands encoded by the compute command encoder have finished executing."
+    },
+    {
+      "name": "func waitForFence(MTLFence)",
+      "desc": "Tells the GPU to wait until the fence is updated before executing any commands encoded by the compute command encoder."
+    },
+    {
+      "name": "func sampleCounters(sampleBuffer: MTLCounterSampleBuffer, sampleIndex: Int, barrier: Bool)",
+      "desc": "Encodes a command to sample hardware counters at this point in the compute pass and store the samples into a counter sample buffer."
+    }
+  ],
+  "declaration": "protocol MTLComputeCommandEncoder",
+  "inheritsFrom": [
+    "MTLCommandEncoder"
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "path": "/documentation/homekit/hmaccessory",
+  "type": "Class",
+  "name": "HMAccessory",
+  "desc": "A home automation accessory, like a garage door opener or a thermostat.",
+  "items": [
+    {
+      "name": "var delegate: HMAccessoryDelegate?",
+      "desc": "A delegate that receives updates on the state of the accessory."
+    },
+    {
+      "name": "protocol HMAccessoryDelegate",
+      "desc": "A set of methods that defines the communication method for state updates from accessories to their delegates."
+    },
+    {
+      "name": "var supportsAddingNetworkRouter: Bool",
+      "desc": "A Boolean that indicates whether a home supports all of the requirements for adding a network router."
+    },
+    {
+      "name": "var name: String",
+      "desc": "The name of the accessory."
+    },
+    {
+      "name": "func updateName(String, completionHandler: (Error?) -> Void)",
+      "desc": "Changes the name of the accessory."
+    },
+    {
+      "name": "var uniqueIdentifier: UUID",
+      "desc": "A unique identifier for the accessory."
+    },
+    {
+      "name": "var category: HMAccessoryCategory",
+      "desc": "The category to which the accessory belongs."
+    },
+    {
+      "name": "class HMAccessoryCategory",
+      "desc": "A category for a HomeKit accessory."
+    },
+    {
+      "name": "var room: HMRoom?",
+      "desc": "The room containing the accessory."
+    },
+    {
+      "name": "class HMRoom",
+      "desc": "The smallest subdivision of a home’s space."
+    },
+    {
+      "name": "var profiles: [HMAccessoryProfile]",
+      "desc": "An array of profiles implemented by the accessory."
+    },
+    {
+      "name": "class HMAccessoryProfile",
+      "desc": "A profile implemented by an accessory."
+    },
+    {
+      "name": "class HMNetworkConfigurationProfile",
+      "desc": "A profile that provides information about network protection for an accessory."
+    },
+    {
+      "name": "struct CameraView",
+      "desc": "A SwiftUI view into which a video stream or an image snapshot is rendered."
+    },
+    {
+      "name": "var cameraProfiles: [HMCameraProfile]?",
+      "desc": "An array of camera profiles implemented by the accessory."
+    },
+    {
+      "name": "class HMCameraProfile",
+      "desc": "A camera profile that interacts with an accessory's camera."
+    },
+    {
+      "name": "class HMCameraView",
+      "desc": "The view into which a video stream or an image snapshot is rendered."
+    },
+    {
+      "name": "var isReachable: Bool",
+      "desc": "A Boolean value indicating whether the accessory can be communicated with in the current network environment."
+    },
+    {
+      "name": "var isBlocked: Bool",
+      "desc": "A Boolean value indicating whether the accessory is blocked."
+    },
+    {
+      "name": "var supportsIdentify: Bool",
+      "desc": "A Boolean value that indicates whether the accessory supports the identify action."
+    },
+    {
+      "name": "func identify(completionHandler: (Error?) -> Void)",
+      "desc": "Asks an accessory to identify itself."
+    },
+    {
+      "name": "var services: [HMService]",
+      "desc": "An array of services provided by the accessory."
+    },
+    {
+      "name": "class HMService",
+      "desc": "A controllable feature of an accessory, like a light attached to a garage door opener."
+    },
+    {
+      "name": "var isBridged: Bool",
+      "desc": "A Boolean that indicates whether the accessory is accessed through a bridge."
+    },
+    {
+      "name": "var uniqueIdentifiersForBridgedAccessories: [UUID]?",
+      "desc": "An array of unique identifiers, each of which represents an accessory vended by the bridge."
+    },
+    {
+      "name": "var firmwareVersion: String?",
+      "desc": "The firmware version of the accessory."
+    },
+    {
+      "name": "var manufacturer: String?",
+      "desc": "The manufacturer of the accessory."
+    },
+    {
+      "name": "var model: String?",
+      "desc": "The model name of the accessory."
+    },
+    {
+      "name": "class HMAccessoryBrowser",
+      "desc": "A network browser you can use to discover new accessories in a home."
+    }
+  ],
+  "declaration": "class HMAccessory : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

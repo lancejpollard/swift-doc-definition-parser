@@ -1,0 +1,210 @@
+{
+  "path": "/documentation/TabularData/DataFrame",
+  "type": "Structure",
+  "name": "DataFrame",
+  "desc": "A collection that arranges data in rows and columns.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an empty data frame with no rows or columns."
+    },
+    {
+      "name": "init<S>(columns: S)",
+      "desc": "Creates a new data frame from a sequence of columns."
+    },
+    {
+      "name": "init(dictionaryLiteral: (String, [Any?])...)",
+      "desc": "Creates a data frame from a dictionary literal."
+    },
+    {
+      "name": "typealias ColumnType",
+      "desc": "A type that conforms to the type-erased column protocol."
+    },
+    {
+      "name": "typealias Key",
+      "desc": "The key type of a dictionary literal."
+    },
+    {
+      "name": "typealias Value",
+      "desc": "The value type of a dictionary literal."
+    },
+    {
+      "name": "init(DataFrame.Slice)",
+      "desc": "Creates a new data frame with a slice of rows from another data frame."
+    },
+    {
+      "name": "struct Slice",
+      "desc": "A set of a data frame’s rows you create by using a method from a data frame instance or another data frame slice."
+    },
+    {
+      "name": "init(contentsOfJSONFile: URL, columns: [String]?, types: [String : JSONType], options: JSONReadingOptions) throws",
+      "desc": "Creates a data frame by reading a JSON file."
+    },
+    {
+      "name": "init(jsonData: Data, columns: [String]?, types: [String : JSONType], options: JSONReadingOptions) throws",
+      "desc": "Creates a data frame by converting JSON data."
+    },
+    {
+      "name": "enum JSONType",
+      "desc": "Represents the value types in a JSON file."
+    },
+    {
+      "name": "struct JSONReadingOptions",
+      "desc": "A set of JSON file-reading options."
+    },
+    {
+      "name": "init(contentsOfCSVFile: URL, columns: [String]?, rows: Range<Int>?, types: [String : CSVType], options: CSVReadingOptions) throws",
+      "desc": "Creates a data frame from a CSV file."
+    },
+    {
+      "name": "init(csvData: Data, columns: [String]?, rows: Range<Int>?, types: [String : CSVType], options: CSVReadingOptions) throws",
+      "desc": "Creates a data frame from CSV file data."
+    },
+    {
+      "name": "enum CSVType",
+      "desc": "Represents the value types in a CSV file."
+    },
+    {
+      "name": "struct CSVReadingOptions",
+      "desc": "A set of CSV file-reading options."
+    },
+    {
+      "name": "init(contentsOfSFrameDirectory: URL, columns: [String]?, rows: Range<Int>?) throws",
+      "desc": "Creates a data frame from a Turi Create scalable data frame."
+    },
+    {
+      "name": "struct ShapedData",
+      "desc": "A collection type that represents multidimensional data in a data frame element."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean that indicates whether the data frame type is empty."
+    },
+    {
+      "name": "var shape: (rows: Int, columns: Int)",
+      "desc": "The number of rows and columns in the data frame."
+    },
+    {
+      "name": "var columns: [AnyColumn]",
+      "desc": "The entire data frame as a collection of columns."
+    },
+    {
+      "name": "var rows: DataFrame.Rows",
+      "desc": "The entire data frame as a collection of rows."
+    },
+    {
+      "name": "struct Rows",
+      "desc": "A collection of rows in a data frame."
+    },
+    {
+      "name": "var base: DataFrame",
+      "desc": "The underlying data frame."
+    },
+    {
+      "name": "func sort(on: String, order: Order)",
+      "desc": "Arranges the rows of a data frame according to a column that you select by its name."
+    },
+    {
+      "name": "func sort<T>(on: String, T.Type, order: Order)",
+      "desc": "Arranges the rows of a data frame according to a column that you select by its name and type."
+    },
+    {
+      "name": "func sort<T>(on: String, T.Type, by: (T, T) throws -> Bool) rethrows",
+      "desc": "Arranges the rows of a data frame according to a column that you select by its name and type, with a predicate."
+    },
+    {
+      "name": "func sort<T>(on: ColumnID<T>, by: (T, T) throws -> Bool) rethrows",
+      "desc": "Arranges the rows of a data frame according to a column that you select by its column identifier, with a predicate."
+    },
+    {
+      "name": "func sort<T>(on: ColumnID<T>, order: Order)",
+      "desc": "Arranges the rows of a data frame according to a column that you select by its column identifier."
+    },
+    {
+      "name": "func sort<T0, T1>(on: ColumnID<T0>, ColumnID<T1>, order: Order)",
+      "desc": "Arranges the rows of a data frame according to two columns that you select by their column identifiers."
+    },
+    {
+      "name": "func sort<T0, T1, T2>(on: ColumnID<T0>, ColumnID<T1>, ColumnID<T2>, order: Order)",
+      "desc": "Arranges the rows of a data frame according to three columns that you select by their column identifiers."
+    },
+    {
+      "name": "func summary() -> DataFrame",
+      "desc": "Generates a data frame that summarizes the columns of the data frame."
+    },
+    {
+      "name": "func summary(of: String...) -> DataFrame",
+      "desc": "Generates a data frame that summarizes the columns you select by name."
+    },
+    {
+      "name": "func summary(ofColumns: Int...) -> DataFrame",
+      "desc": "Generates a data frame that summarizes the columns you select by index."
+    },
+    {
+      "name": "enum SummaryColumnIDs",
+      "desc": "The summary data frame column identifiers."
+    },
+    {
+      "name": "func writeCSV(to: URL, options: CSVWritingOptions) throws",
+      "desc": "Creates a CSV file with the contents of the data frame type."
+    },
+    {
+      "name": "func csvRepresentation(options: CSVWritingOptions) throws -> Data",
+      "desc": "Generates a CSV data instance of the data frame type."
+    },
+    {
+      "name": "struct CSVWritingOptions",
+      "desc": "A set of CSV file-writing options."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the data frame."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the data frame suitable for debugging."
+    },
+    {
+      "name": "func description(options: FormattingOptions) -> String",
+      "desc": "Generates a text representation of the data frame type."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A mirror that reflects the data frame."
+    },
+    {
+      "name": "static func == (DataFrame, DataFrame) -> Bool",
+      "desc": "Returns a Boolean that indicates whether the data frames are equal."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool",
+      "desc": "Returns a Boolean that indicates whether the data frames are unequal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the data frame by feeding them into a hasher."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "func containsColumn<T>(ColumnID<T>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the data frame contains a column matching a column ID."
+    },
+    {
+      "name": "func containsColumn<T>(String, T.Type) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the data frame contains a column."
+    }
+  ],
+  "declaration": "@dynamicMemberLookup struct DataFrame",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "DataFrameProtocol",
+    "Equatable",
+    "ExpressibleByDictionaryLiteral",
+    "Hashable"
+  ]
+}

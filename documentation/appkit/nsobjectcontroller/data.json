@@ -1,0 +1,107 @@
+{
+  "path": "/documentation/appkit/nsobjectcontroller",
+  "type": "Class",
+  "name": "NSObjectController",
+  "desc": "A controller that can manage an object's properties referenced by key-value paths.",
+  "items": [
+    {
+      "name": "init(content: Any?)",
+      "desc": "Initializes and returns an NSObjectController object with the given content."
+    },
+    {
+      "name": "var content: Any?",
+      "desc": "The receiver’s content object."
+    },
+    {
+      "name": "var automaticallyPreparesContent: Bool",
+      "desc": "A Boolean that shows whether the receiver automatically creates and inserts new content objects automatically when loading from a nib file."
+    },
+    {
+      "name": "func prepareContent()",
+      "desc": "Typically overridden by subclasses that require additional control over the creation of new objects."
+    },
+    {
+      "name": "var objectClass: AnyClass!",
+      "desc": "The object class to use when creating new objects."
+    },
+    {
+      "name": "func newObject() -> Any",
+      "desc": "Creates and returns a new object of the appropriate class."
+    },
+    {
+      "name": "func addObject(Any)",
+      "desc": "Sets the receiver’s content object."
+    },
+    {
+      "name": "func removeObject(Any)",
+      "desc": "Removes a given object from the receiver’s content."
+    },
+    {
+      "name": "func add(Any?)",
+      "desc": "Creates a new object and sets it as the receiver’s content object."
+    },
+    {
+      "name": "var canAdd: Bool",
+      "desc": "A Boolean value that indicates whether an object can be added to the receiver using add(_:)."
+    },
+    {
+      "name": "func remove(Any?)",
+      "desc": "Removes the receiver’s content object."
+    },
+    {
+      "name": "var canRemove: Bool",
+      "desc": "A Boolean value that indicates whether an object can be removed from the receiver."
+    },
+    {
+      "name": "var isEditable: Bool",
+      "desc": "A Boolean that indicates whether the receiver allows adding and removing objects."
+    },
+    {
+      "name": "var entityName: String?",
+      "desc": "The entity name used by the receiver to create new objects."
+    },
+    {
+      "name": "func fetch(Any?)",
+      "desc": "Causes the receiver to fetch the data objects specified by the entity name and fetch predicate."
+    },
+    {
+      "name": "var usesLazyFetching: Bool",
+      "desc": "A Boolean that indicates whether the receiver uses lazy fetching."
+    },
+    {
+      "name": "func defaultFetchRequest() -> NSFetchRequest<NSFetchRequestResult>",
+      "desc": "Returns the default fetch request used by the receiver."
+    },
+    {
+      "name": "var fetchPredicate: NSPredicate?",
+      "desc": "The receiver’s fetch predicate."
+    },
+    {
+      "name": "var managedObjectContext: NSManagedObjectContext?",
+      "desc": "The receiver’s managed object context."
+    },
+    {
+      "name": "func fetch(with: NSFetchRequest<NSFetchRequestResult>?, merge: Bool)",
+      "desc": "Subclasses should override this method to customize a fetch request, for example to specify fetch limits."
+    },
+    {
+      "name": "var selectedObjects: [Any]",
+      "desc": "An array of all objects to be affected by editing."
+    },
+    {
+      "name": "var selection: Any",
+      "desc": "A proxy object representing the receiver’s selection."
+    },
+    {
+      "name": "func validateUserInterfaceItem(NSValidatedUserInterfaceItem) -> Bool",
+      "desc": "Returns whether the receiver can handle the action method for a user interface item."
+    },
+    {
+      "name": "init?(coder: NSCoder)"
+    }
+  ],
+  "declaration": "class NSObjectController : NSController",
+  "inheritsFrom": [
+    "NSController"
+  ]
+}

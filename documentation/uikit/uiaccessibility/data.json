@@ -1,0 +1,289 @@
+{
+  "path": "/documentation/uikit/uiaccessibility",
+  "type": "Structure",
+  "name": "UIAccessibility",
+  "desc": "A namespace for accessibility symbols for UIKit apps.",
+  "items": [
+    {
+      "name": "static let announcementDidFinishNotification: NSNotification.Name",
+      "desc": "A notification that UIKit posts when the system finishes reading an announcement."
+    },
+    {
+      "name": "static let assistiveTouchStatusDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that indicates a change in the status of AssistiveTouch."
+    },
+    {
+      "name": "static let boldTextStatusDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that UIKit posts when the system’s Bold Text setting changes."
+    },
+    {
+      "name": "static let buttonShapesEnabledStatusDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that UIKit posts when the system’s Button Shapes setting changes."
+    },
+    {
+      "name": "static let closedCaptioningStatusDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that UIKit posts when the setting for Closed Captions + SDH changes."
+    },
+    {
+      "name": "static let darkerSystemColorsStatusDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that UIKit posts when the system’s Increase Contrast setting changes."
+    },
+    {
+      "name": "static let differentiateWithoutColorDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that UIKit posts when the system’s Differentiate Without Color setting changes."
+    },
+    {
+      "name": "static let onOffSwitchLabelsDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that UIKit posts when the system’s On/Off Labels setting changes."
+    },
+    {
+      "name": "static let videoAutoplayStatusDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that UIKit posts when the system’s Auto-Play Video Previews setting changes."
+    },
+    {
+      "name": "static let elementFocusedNotification: NSNotification.Name",
+      "desc": "A notification that UIKit posts when an assistive app focuses on an accessibility element."
+    },
+    {
+      "name": "static let grayscaleStatusDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that UIKit posts when the system’s Grayscale setting changes."
+    },
+    {
+      "name": "static let guidedAccessStatusDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that indicates when a Guided Access session starts or ends."
+    },
+    {
+      "name": "static let hearingDevicePairedEarDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that UIKit posts when there is a change to the currently paired hearing devices."
+    },
+    {
+      "name": "static var hearingDevicePairedEar: UIAccessibility.HearingDeviceEar",
+      "desc": "The current pairing status of Made for iPhone hearing devices."
+    },
+    {
+      "name": "static let invertColorsStatusDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that UIKit posts when the settings for inverted colors change."
+    },
+    {
+      "name": "static let monoAudioStatusDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that UIKit posts when system audio changes from stereo to mono."
+    },
+    {
+      "name": "static let prefersCrossFadeTransitionsStatusDidChange: NSNotification.Name",
+      "desc": "A notification that UIKit posts when the system’s Prefer Cross-Fade Transitions setting changes."
+    },
+    {
+      "name": "static let reduceMotionStatusDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that UIKit posts when the system’s Reduce Motion setting changes."
+    },
+    {
+      "name": "static let reduceTransparencyStatusDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that UIKit posts when the system’s Reduce Transparency setting changes."
+    },
+    {
+      "name": "static let shakeToUndoDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that UIKit posts when the system's Shake to Undo setting changes."
+    },
+    {
+      "name": "static let speakScreenStatusDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that UIKit posts when the system’s Speak Screen setting changes."
+    },
+    {
+      "name": "static let speakSelectionStatusDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that UIKit posts when the system’s Speak Selection setting changes."
+    },
+    {
+      "name": "static let switchControlStatusDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that UIKit posts when the system’s Switch Control setting changes."
+    },
+    {
+      "name": "static let voiceOverStatusDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that UIKit posts when VoiceOver starts or stops."
+    },
+    {
+      "name": "static func post(notification: UIAccessibility.Notification, argument: Any?)",
+      "desc": "Posts a notification to assistive apps."
+    },
+    {
+      "name": "struct UIAccessibility.Notification",
+      "desc": "An accessibility notification that an app can send."
+    },
+    {
+      "name": "static let announcementStringValueUserInfoKey: String",
+      "desc": "The text of the announcement."
+    },
+    {
+      "name": "static let announcementWasSuccessfulUserInfoKey: String",
+      "desc": "A Boolean value that indicates whether the announcement is successful."
+    },
+    {
+      "name": "static let focusedElementUserInfoKey: String",
+      "desc": "The element currently in focus by the assistive app."
+    },
+    {
+      "name": "static let unfocusedElementUserInfoKey: String",
+      "desc": "The element previously in focus by the assistive app."
+    },
+    {
+      "name": "static let assistiveTechnologyUserInfoKey: String",
+      "desc": "The identifier of the assistive app."
+    },
+    {
+      "name": "static func requestGuidedAccessSession(enabled: Bool, completionHandler: (Bool) -> Void)",
+      "desc": "Transitions the app to or from Single App mode asynchronously."
+    },
+    {
+      "name": "static func configureForGuidedAccess(features: UIGuidedAccessAccessibilityFeature, enabled: Bool, completionHandler: (Bool, Error?) -> Void)",
+      "desc": "Enables or disables the specified accessibility features while using Guided Access."
+    },
+    {
+      "name": "static func guidedAccessRestrictionState(forIdentifier: String) -> UIAccessibility.GuidedAccessRestrictionState",
+      "desc": "Returns the restriction state for the specified guided access restriction."
+    },
+    {
+      "name": "enum UIAccessibility.GuidedAccessRestrictionState",
+      "desc": "Constants that describe the state of a restriction, either allow or deny."
+    },
+    {
+      "name": "static func convertToScreenCoordinates(UIBezierPath, in: UIView) -> UIBezierPath",
+      "desc": "Converts the specified path object to screen coordinates and returns a new path object with the results."
+    },
+    {
+      "name": "static func convertToScreenCoordinates(CGRect, in: UIView) -> CGRect",
+      "desc": "Converts the specified rectangle from view coordinates to screen coordinates."
+    },
+    {
+      "name": "static func focusedElement(using: UIAccessibility.AssistiveTechnologyIdentifier?) -> Any?",
+      "desc": "Returns the accessibility element that is currently in focus by the specified assistive app."
+    },
+    {
+      "name": "static func registerGestureConflictWithZoom()",
+      "desc": "Warns users that app-specific gestures conflict with the system-defined Zoom accessibility gestures."
+    },
+    {
+      "name": "static func zoomFocusChanged(zoomType: UIAccessibility.ZoomType, toFrame: CGRect, in: UIView)",
+      "desc": "Notifies the system when the app’s focus changes to a new location."
+    },
+    {
+      "name": "static var isAssistiveTouchRunning: Bool",
+      "desc": "A Boolean value that indicates whether AssistiveTouch is in an enabled state."
+    },
+    {
+      "name": "static var isBoldTextEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the Bold Text setting is in an enabled state."
+    },
+    {
+      "name": "static var isClosedCaptioningEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the Closed Captions + SDH setting is in an enabled state."
+    },
+    {
+      "name": "static var isDarkerSystemColorsEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the Increase Contrast setting is in an enabled state."
+    },
+    {
+      "name": "static var isGrayscaleEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the Color Filters and the Grayscale settings are in an enabled state."
+    },
+    {
+      "name": "static var isGuidedAccessEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the Guided Access setting is in an enabled state."
+    },
+    {
+      "name": "static var isInvertColorsEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the Classic Invert setting is in an enabled state."
+    },
+    {
+      "name": "static var isMonoAudioEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the Mono Audio setting is in an enabled state."
+    },
+    {
+      "name": "static var isOnOffSwitchLabelsEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the On/Off Labels setting is in an enabled state."
+    },
+    {
+      "name": "static var isReduceMotionEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the Reduce Motion setting is in an enabled state."
+    },
+    {
+      "name": "static var isReduceTransparencyEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the Reduce Transparency setting is in an enabled state."
+    },
+    {
+      "name": "static var isShakeToUndoEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the Shake to Undo setting is in an enabled state."
+    },
+    {
+      "name": "static var isSpeakScreenEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the Speak Screen setting is in an enabled state."
+    },
+    {
+      "name": "static var isSpeakSelectionEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the Speak Selection setting is in an enabled state."
+    },
+    {
+      "name": "static var isSwitchControlRunning: Bool",
+      "desc": "A Boolean value that indicates whether the Switch Control setting is in an enabled state."
+    },
+    {
+      "name": "static var isVideoAutoplayEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the Auto-Play Video Previews setting is in an enabled state."
+    },
+    {
+      "name": "static var isVoiceOverRunning: Bool",
+      "desc": "A Boolean value that indicates whether VoiceOver is in an enabled state."
+    },
+    {
+      "name": "static var shouldDifferentiateWithoutColor: Bool",
+      "desc": "A Boolean value that indicates whether the Differentiate Without Color setting is in an enabled state."
+    },
+    {
+      "name": "static var buttonShapesEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the Button Shapes setting is in an enabled state."
+    },
+    {
+      "name": "static var prefersCrossFadeTransitions: Bool",
+      "desc": "A Boolean value that indicates whether the Reduce Motion and the Prefer Cross-Fade Transitions settings are in an enabled state."
+    },
+    {
+      "name": "struct UIAccessibilityTraits",
+      "desc": "Constants that describe how an accessibility element behaves."
+    },
+    {
+      "name": "struct UIAccessibility.AssistiveTechnologyIdentifier",
+      "desc": "Identifiers for assistive apps."
+    },
+    {
+      "name": "struct UIAccessibility.HearingDeviceEar",
+      "desc": "Constants that specify how a user is using a hearing device."
+    },
+    {
+      "name": "enum UIAccessibilityContainerType",
+      "desc": "Constants that indicate the type of content in a data-based container."
+    },
+    {
+      "name": "enum UIAccessibilityNavigationStyle",
+      "desc": "Constants that describe how to navigate an object’s elements with an assistive app."
+    },
+    {
+      "name": "enum UIAccessibilityScrollDirection",
+      "desc": "The direction of a scrolling action."
+    },
+    {
+      "name": "enum UIAccessibility.ZoomType",
+      "desc": "The types of system Zoom that can be in effect."
+    },
+    {
+      "name": "init(_reserved: UnsafeMutableRawPointer)",
+      "desc": "Creates an accessibility structure."
+    },
+    {
+      "name": "struct UIAccessibility.GuidedAccessError",
+      "desc": "A Guided Access error."
+    },
+    {
+      "name": "static let guidedAccessErrorDomain: String",
+      "desc": "A string that identifies the Guided Access error domain."
+    }
+  ],
+  "declaration": "struct UIAccessibility"
+}

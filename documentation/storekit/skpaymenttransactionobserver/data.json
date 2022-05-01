@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/storekit/skpaymenttransactionobserver",
+  "type": "Protocol",
+  "name": "SKPaymentTransactionObserver",
+  "desc": "A set of methods that process transactions, unlock purchased functionality, and continue promoted in-app purchases.",
+  "items": [
+    {
+      "name": "func paymentQueue(SKPaymentQueue, updatedTransactions: [SKPaymentTransaction])",
+      "desc": "Tells an observer that one or more transactions have been updated."
+    },
+    {
+      "name": "func paymentQueue(SKPaymentQueue, removedTransactions: [SKPaymentTransaction])",
+      "desc": "Tells an observer that one or more transactions have been removed from the queue."
+    },
+    {
+      "name": "func paymentQueue(SKPaymentQueue, restoreCompletedTransactionsFailedWithError: Error)",
+      "desc": "Tells the observer that an error occurred while restoring transactions."
+    },
+    {
+      "name": "func paymentQueueRestoreCompletedTransactionsFinished(SKPaymentQueue)",
+      "desc": "Tells the observer that the payment queue has finished sending restored transactions."
+    },
+    {
+      "name": "func paymentQueue(SKPaymentQueue, updatedDownloads: [SKDownload])",
+      "desc": "Tells the observer that the payment queue has updated one or more download objects."
+    },
+    {
+      "name": "func paymentQueue(SKPaymentQueue, shouldAddStorePayment: SKPayment, for: SKProduct) -> Bool",
+      "desc": "Tells the observer that a user initiated an in-app purchase from the App Store."
+    },
+    {
+      "name": "func paymentQueue(SKPaymentQueue, didRevokeEntitlementsForProductIdentifiers: [String])",
+      "desc": "Tells an observer that the user is no longer entitled to one or more family-shared purchases."
+    },
+    {
+      "name": "func paymentQueueDidChangeStorefront(SKPaymentQueue)",
+      "desc": "Tells the observer that the storefront for the payment queue has changed."
+    }
+  ],
+  "declaration": "protocol SKPaymentTransactionObserver",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

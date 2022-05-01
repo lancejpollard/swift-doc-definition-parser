@@ -1,0 +1,467 @@
+{
+  "path": "/documentation/foundation/urlresourcevalues",
+  "type": "Structure",
+  "name": "URLResourceValues",
+  "desc": "The properties supported by file system resources.",
+  "items": [
+    {
+      "name": "var applicationIsScriptable: Bool?",
+      "desc": "True if the resource is scriptable. Only applies to applications."
+    },
+    {
+      "name": "var isApplication: Bool?",
+      "desc": "True if resource is an application."
+    },
+    {
+      "name": "var isDirectory: Bool?",
+      "desc": "True for directories."
+    },
+    {
+      "name": "var documentIdentifier: Int?",
+      "desc": "The document identifier – a value assigned by the kernel to a document (which can be either a file or directory) and is used to identify the document regardless of where it gets moved on a volume."
+    },
+    {
+      "name": "var fileAllocatedSize: Int?",
+      "desc": "Total size allocated on disk for the file in bytes (number of blocks times block size)"
+    },
+    {
+      "name": "var fileProtection: URLFileProtection?",
+      "desc": "The protection level for this file"
+    },
+    {
+      "name": "var fileResourceIdentifier: (NSCopying & NSSecureCoding & NSObjectProtocol)?",
+      "desc": "An identifier which can be used to compare two file system objects for equality using isEqual."
+    },
+    {
+      "name": "var fileResourceType: URLFileResourceType?",
+      "desc": "Returns the file system object type."
+    },
+    {
+      "name": "var fileSecurity: NSFileSecurity?",
+      "desc": "The file system object’s security information encapsulated in a FileSecurity object."
+    },
+    {
+      "name": "var fileSize: Int?",
+      "desc": "Total file size in bytes"
+    },
+    {
+      "name": "var isExecutable: Bool?",
+      "desc": "True if this process (as determined by EUID) can execute a file resource or search a directory resource."
+    },
+    {
+      "name": "var isRegularFile: Bool?",
+      "desc": "True for regular files."
+    },
+    {
+      "name": "var totalFileAllocatedSize: Int?",
+      "desc": "Total allocated size of the file in bytes (this may include space used by metadata), or nil if not available. This can be less than the value returned by totalFileSize if the resource is compressed."
+    },
+    {
+      "name": "var totalFileSize: Int?",
+      "desc": "Total displayable size of the file in bytes (this may include space used by metadata), or nil if not available."
+    },
+    {
+      "name": "var volumeAvailableCapacity: Int?",
+      "desc": "The volume’s available capacity in bytes."
+    },
+    {
+      "name": "var volumeAvailableCapacityForImportantUsage: Int64?",
+      "desc": "The volume’s available capacity in bytes for storing important resources."
+    },
+    {
+      "name": "var volumeAvailableCapacityForOpportunisticUsage: Int64?",
+      "desc": "The volume’s available capacity in bytes for storing nonessential resources."
+    },
+    {
+      "name": "var volumeTotalCapacity: Int?",
+      "desc": "The volume’s total capacity in bytes."
+    },
+    {
+      "name": "var volumeIsAutomounted: Bool?",
+      "desc": "true if the volume is automounted. Note: do not mistake this with the functionality provided by kCFURLVolumeSupportsBrowsingKey."
+    },
+    {
+      "name": "var volumeIsBrowsable: Bool?",
+      "desc": "True if the volume should be visible through the user interface (in effect, appear on the Desktop as a separate volume)."
+    },
+    {
+      "name": "var volumeIsEjectable: Bool?",
+      "desc": "true if the volume’s media is ejectable from the drive mechanism under software control."
+    },
+    {
+      "name": "var volumeIsEncrypted: Bool?",
+      "desc": "true if the volume is encrypted."
+    },
+    {
+      "name": "var volumeIsInternal: Bool?",
+      "desc": "true if the volume’s device is connected to an internal bus, false if connected to an external bus, or nil if not available."
+    },
+    {
+      "name": "var volumeIsJournaling: Bool?",
+      "desc": "true if the volume is currently using a journal for speedy recovery after an unplanned restart."
+    },
+    {
+      "name": "var volumeIsLocal: Bool?",
+      "desc": "true if the volume is stored on a local device."
+    },
+    {
+      "name": "var volumeIsReadOnly: Bool?",
+      "desc": "true if the volume is read-only."
+    },
+    {
+      "name": "var volumeIsRemovable: Bool?",
+      "desc": "true if the volume’s media is removable from the drive mechanism."
+    },
+    {
+      "name": "var volumeIsRootFileSystem: Bool?",
+      "desc": "true if the volume is the root filesystem."
+    },
+    {
+      "name": "var isMountTrigger: Bool?",
+      "desc": "True if this URL is a file system trigger directory. Traversing or opening a file system trigger will cause an attempt to mount a file system on the trigger directory."
+    },
+    {
+      "name": "var isVolume: Bool?",
+      "desc": "True for the root directory of a volume."
+    },
+    {
+      "name": "var volume: URL?",
+      "desc": "URL of the volume on which the resource is stored."
+    },
+    {
+      "name": "var volumeCreationDate: Date?",
+      "desc": "The volume’s creation date, or nil if this cannot be determined."
+    },
+    {
+      "name": "var volumeIdentifier: (NSCopying & NSSecureCoding & NSObjectProtocol)?",
+      "desc": "An identifier that can be used to identify the volume the file system object is on."
+    },
+    {
+      "name": "var volumeLocalizedFormatDescription: String?",
+      "desc": "The user-visible volume format."
+    },
+    {
+      "name": "var volumeLocalizedName: String?",
+      "desc": "The user-presentable name of the volume"
+    },
+    {
+      "name": "var volumeMaximumFileSize: Int?",
+      "desc": "The largest file size (in bytes) supported by this file system, or nil if this cannot be determined."
+    },
+    {
+      "name": "var volumeName: String?",
+      "desc": "The name of the volume"
+    },
+    {
+      "name": "var volumeResourceCount: Int?",
+      "desc": "Total number of resources on the volume."
+    },
+    {
+      "name": "var volumeSupportsAccessPermissions: Bool?",
+      "desc": "A Boolean value that indicates whether the volume supports setting standard access permissions."
+    },
+    {
+      "name": "var volumeSupportsAdvisoryFileLocking: Bool?",
+      "desc": "true if the volume implements whole-file flock(2) style advisory locks, and the O_EXLOCK and O_SHLOCK flags of the open(2) call."
+    },
+    {
+      "name": "var volumeSupportsCasePreservedNames: Bool?",
+      "desc": "true if the volume format preserves the case of file and directory names. Otherwise the volume may change the case of some characters (typically making them all upper or all lower case)."
+    },
+    {
+      "name": "var volumeSupportsCaseSensitiveNames: Bool?",
+      "desc": "true if the volume format treats upper and lower case characters in file and directory names as different. Otherwise an upper case character is equivalent to a lower case character, and you can’t have two names that differ solely in the case of the characters."
+    },
+    {
+      "name": "var volumeSupportsCompression: Bool?",
+      "desc": "true if the volume supports transparent decompression of compressed files using decmpfs."
+    },
+    {
+      "name": "var volumeSupportsExclusiveRenaming: Bool?",
+      "desc": "A Boolean value that indicates whether the volume warns of a pre-existing destination when renaming a file."
+    },
+    {
+      "name": "var volumeSupportsExtendedSecurity: Bool?",
+      "desc": "true if the volume implements extended security (ACLs)."
+    },
+    {
+      "name": "var volumeSupportsFileCloning: Bool?",
+      "desc": "A Boolean value that indicates whether the volume supports file cloning."
+    },
+    {
+      "name": "var volumeSupportsHardLinks: Bool?",
+      "desc": "true if the volume format supports hard links."
+    },
+    {
+      "name": "var volumeSupportsImmutableFiles: Bool?",
+      "desc": "A Boolean value that indicates whether the volume supports making files immutable."
+    },
+    {
+      "name": "var volumeSupportsJournaling: Bool?",
+      "desc": "true if the volume format supports a journal used to speed recovery in case of unplanned restart (such as a power outage or crash). This does not necessarily mean the volume is actively using a journal."
+    },
+    {
+      "name": "var volumeSupportsPersistentIDs: Bool?",
+      "desc": "true if the volume format supports persistent object identifiers and can look up file system objects by their IDs."
+    },
+    {
+      "name": "var volumeSupportsRenaming: Bool?",
+      "desc": "true if the volume can be renamed."
+    },
+    {
+      "name": "var volumeSupportsRootDirectoryDates: Bool?",
+      "desc": "true if the volume supports reliable storage of times for the root directory."
+    },
+    {
+      "name": "var volumeSupportsSparseFiles: Bool?",
+      "desc": "true if the volume format supports sparse files, that is, files which can have ‘holes’ that have never been written to, and thus do not consume space on disk. A sparse file may have an allocated size on disk that is less than its logical length."
+    },
+    {
+      "name": "var volumeSupportsSwapRenaming: Bool?",
+      "desc": "A Boolean value that indicates whether the volume supports swapping source and target files when both exist."
+    },
+    {
+      "name": "var volumeSupportsSymbolicLinks: Bool?",
+      "desc": "true if the volume format supports symbolic links."
+    },
+    {
+      "name": "var volumeSupportsVolumeSizes: Bool?",
+      "desc": "true if the volume supports returning volume size values (volumeTotalCapacity and volumeAvailableCapacity)."
+    },
+    {
+      "name": "var volumeSupportsZeroRuns: Bool?",
+      "desc": "For security reasons, parts of a file (runs) that have never been written to must appear to contain zeroes. true if the volume keeps track of allocated but unwritten runs of a file so that it can substitute zeroes without actually writing zeroes to the media."
+    },
+    {
+      "name": "var volumeURLForRemounting: URL?",
+      "desc": "The URL needed to remount a network volume, or nil if not available."
+    },
+    {
+      "name": "var volumeUUIDString: String?",
+      "desc": "The volume’s persistent UUID as a string, or nil if a persistent UUID is not available for the volume."
+    },
+    {
+      "name": "var isUbiquitousItem: Bool?",
+      "desc": "true if this item is synced to the cloud, false if it is only a local file."
+    },
+    {
+      "name": "var ubiquitousItemIsShared: Bool?"
+    },
+    {
+      "name": "var ubiquitousSharedItemCurrentUserPermissions: URLUbiquitousSharedItemPermissions?"
+    },
+    {
+      "name": "var ubiquitousSharedItemCurrentUserRole: URLUbiquitousSharedItemRole?"
+    },
+    {
+      "name": "var ubiquitousSharedItemMostRecentEditorNameComponents: PersonNameComponents?"
+    },
+    {
+      "name": "var ubiquitousSharedItemOwnerNameComponents: PersonNameComponents?"
+    },
+    {
+      "name": "var ubiquitousItemContainerDisplayName: String?",
+      "desc": "returns the name of this item’s container as displayed to users."
+    },
+    {
+      "name": "var ubiquitousItemDownloadRequested: Bool?",
+      "desc": "returns whether a download of this item has already been requested with an API like startDownloadingUbiquitousItem(at:) throws."
+    },
+    {
+      "name": "var ubiquitousItemDownloadingError: NSError?",
+      "desc": "returns the error when downloading the item from iCloud failed, see the NSUbiquitousFile section in FoundationErrors.h"
+    },
+    {
+      "name": "var ubiquitousItemDownloadingStatus: URLUbiquitousItemDownloadingStatus?",
+      "desc": "returns the download status of this item."
+    },
+    {
+      "name": "var ubiquitousItemHasUnresolvedConflicts: Bool?",
+      "desc": "true if this item has conflicts outstanding."
+    },
+    {
+      "name": "var ubiquitousItemIsDownloading: Bool?",
+      "desc": "true if data is being downloaded for this item."
+    },
+    {
+      "name": "var ubiquitousItemIsUploaded: Bool?",
+      "desc": "true if there is data present in the cloud for this item."
+    },
+    {
+      "name": "var ubiquitousItemIsUploading: Bool?",
+      "desc": "true if data is being uploaded for this item."
+    },
+    {
+      "name": "var ubiquitousItemUploadingError: NSError?",
+      "desc": "returns the error when uploading the item to iCloud failed, see the NSUbiquitousFile section in FoundationErrors.h"
+    },
+    {
+      "name": "var thumbnail: NSImage?",
+      "desc": "A thumbnail image of the URL."
+    },
+    {
+      "name": "var thumbnailDictionary: [URLThumbnailDictionaryItem : UIImage]?",
+      "desc": "A dictionary of UIKit image objects keyed by size."
+    },
+    {
+      "name": "var thumbnailDictionary: [URLThumbnailDictionaryItem : NSImage]?",
+      "desc": "A dictionary of AppKit image objects keyed by size."
+    },
+    {
+      "name": "var addedToDirectoryDate: Date?",
+      "desc": "The date the resource was created, or renamed into or within its parent directory."
+    },
+    {
+      "name": "var allValues: [URLResourceKey : Any]",
+      "desc": "A loosely-typed dictionary containing all keys and values."
+    },
+    {
+      "name": "var attributeModificationDate: Date?",
+      "desc": "The time the resource’s attributes were last modified."
+    },
+    {
+      "name": "var canonicalPath: String?",
+      "desc": "The URL’s path as a canonical absolute file system path."
+    },
+    {
+      "name": "var contentAccessDate: Date?",
+      "desc": "The date the resource was last accessed."
+    },
+    {
+      "name": "var contentModificationDate: Date?",
+      "desc": "The time the resource content was last modified."
+    },
+    {
+      "name": "var creationDate: Date?",
+      "desc": "The date the resource was created."
+    },
+    {
+      "name": "var customIcon: NSImage?"
+    },
+    {
+      "name": "var effectiveIcon: AnyObject?"
+    },
+    {
+      "name": "var generationIdentifier: (NSCopying & NSSecureCoding & NSObjectProtocol)?",
+      "desc": "An opaque generation identifier which can be compared using == to determine if the data in a document has been modified."
+    },
+    {
+      "name": "var hasHiddenExtension: Bool?",
+      "desc": "True for resources whose filename extension is removed from the localized name property."
+    },
+    {
+      "name": "var isAliasFile: Bool?",
+      "desc": "true if the resource is a Finder alias file or a symlink, false otherwise"
+    },
+    {
+      "name": "var isExcludedFromBackup: Bool?",
+      "desc": "True if resource should be excluded from backups, false otherwise."
+    },
+    {
+      "name": "var isHidden: Bool?",
+      "desc": "True for resources normally not displayed to users."
+    },
+    {
+      "name": "var isPackage: Bool?",
+      "desc": "True for packaged directories."
+    },
+    {
+      "name": "var isReadable: Bool?",
+      "desc": "True if this process (as determined by EUID) can read the resource."
+    },
+    {
+      "name": "var isSymbolicLink: Bool?",
+      "desc": "True for symlinks."
+    },
+    {
+      "name": "var isSystemImmutable: Bool?",
+      "desc": "True for system-immutable resources."
+    },
+    {
+      "name": "var isUserImmutable: Bool?",
+      "desc": "True for user-immutable resources"
+    },
+    {
+      "name": "var isWritable: Bool?",
+      "desc": "True if this process (as determined by EUID) can write to the resource."
+    },
+    {
+      "name": "var labelColor: NSColor?"
+    },
+    {
+      "name": "var labelNumber: Int?",
+      "desc": "The label number assigned to the resource."
+    },
+    {
+      "name": "var linkCount: Int?",
+      "desc": "Number of hard links to the resource."
+    },
+    {
+      "name": "var localizedLabel: String?",
+      "desc": "The user-visible label text."
+    },
+    {
+      "name": "var localizedName: String?",
+      "desc": "Localized or extension-hidden name as displayed to users."
+    },
+    {
+      "name": "var localizedTypeDescription: String?",
+      "desc": "User-visible type or “kind” description."
+    },
+    {
+      "name": "var name: String?",
+      "desc": "The resource name provided by the file system."
+    },
+    {
+      "name": "var parentDirectory: URL?",
+      "desc": "The resource’s parent directory, if any."
+    },
+    {
+      "name": "var path: String?",
+      "desc": "The URL’s path as a file system path."
+    },
+    {
+      "name": "var preferredIOBlockSize: Int?",
+      "desc": "The optimal block size when reading or writing this file’s data, or nil if not available."
+    },
+    {
+      "name": "var quarantineProperties: [String : Any]?",
+      "desc": "The quarantine properties as defined in LSQuarantine.h. To remove quarantine information from a file, pass nil as the value when setting this property."
+    },
+    {
+      "name": "var tagNames: [String]?",
+      "desc": "The array of Tag names."
+    },
+    {
+      "name": "var typeIdentifier: String?",
+      "desc": "A string that represents the identifier for the type of the resource."
+    },
+    {
+      "name": "var contentType: UTType?",
+      "desc": "The resource’s type."
+    },
+    {
+      "name": "init()",
+      "desc": "Initializes a new resource values structure."
+    },
+    {
+      "name": "var fileContentIdentifier: Int64?"
+    },
+    {
+      "name": "var isPurgeable: Bool?"
+    },
+    {
+      "name": "var isSparse: Bool?"
+    },
+    {
+      "name": "var mayHaveExtendedAttributes: Bool?"
+    },
+    {
+      "name": "var mayShareFileContent: Bool?"
+    },
+    {
+      "name": "var ubiquitousItemIsExcludedFromSync: Bool?"
+    }
+  ],
+  "declaration": "struct URLResourceValues"
+}

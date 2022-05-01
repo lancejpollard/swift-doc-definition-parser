@@ -1,0 +1,50 @@
+{
+  "path": "/documentation/musickit/musicdatarequest",
+  "type": "Structure",
+  "name": "MusicDataRequest",
+  "desc": "A request for loading data from an arbitrary Apple Music API endpoint.",
+  "items": [
+    {
+      "name": "struct Error",
+      "desc": "An error that the Apple Music API returns."
+    },
+    {
+      "name": "static func == (MusicDataRequest, MusicDataRequest) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "init(urlRequest: URLRequest)",
+      "desc": "Creates a data request with a URL request."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "let urlRequest: URLRequest",
+      "desc": "The URL request for the data request."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "func response() async throws -> MusicDataResponse",
+      "desc": "Fetches data from the Apple Music API endpoint that the URL request defines."
+    },
+    {
+      "name": "static var currentCountryCode: String",
+      "desc": "Fetches the current country code for the user’s Apple Music account."
+    },
+    {
+      "name": "static var tokenProvider: MusicTokenProvider",
+      "desc": "The shared token provider for fetching tokens that Apple Music API requires."
+    }
+  ],
+  "declaration": "struct MusicDataRequest",
+  "conformsTo": [
+    "CustomStringConvertible",
+    "Equatable",
+    "Hashable"
+  ]
+}

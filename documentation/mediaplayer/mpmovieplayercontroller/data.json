@@ -1,0 +1,235 @@
+{
+  "path": "/documentation/mediaplayer/mpmovieplayercontroller",
+  "type": "Class",
+  "name": "MPMoviePlayerController",
+  "desc": "A type of movie player that manages the playback of a movie from a file or a network stream.",
+  "items": [
+    {
+      "name": "init!(contentURL: URL!)",
+      "desc": "Returns a MPMoviePlayerController object initialized with the movie at the specified URL."
+    },
+    {
+      "name": "var contentURL: URL!",
+      "desc": "The URL that points to the movie file."
+    },
+    {
+      "name": "var movieSourceType: MPMovieSourceType",
+      "desc": "The playback type of the movie."
+    },
+    {
+      "name": "var movieMediaTypes: MPMovieMediaTypeMask",
+      "desc": "The types of media available in the movie."
+    },
+    {
+      "name": "var allowsAirPlay: Bool",
+      "desc": "Specifies whether the movie player allows AirPlay movie playback."
+    },
+    {
+      "name": "var isAirPlayVideoActive: Bool",
+      "desc": "Indicates whether the movie player is currently playing video via AirPlay."
+    },
+    {
+      "name": "var naturalSize: CGSize",
+      "desc": "The width and height of the movie frame."
+    },
+    {
+      "name": "var isFullscreen: Bool",
+      "desc": "A Boolean that indicates whether the movie player is in full-screen mode."
+    },
+    {
+      "name": "func setFullscreen(Bool, animated: Bool)",
+      "desc": "Causes the movie player to enter or exit full-screen mode."
+    },
+    {
+      "name": "var scalingMode: MPMovieScalingMode",
+      "desc": "The scaling mode to use when displaying the movie."
+    },
+    {
+      "name": "var controlStyle: MPMovieControlStyle",
+      "desc": "The style of the playback controls."
+    },
+    {
+      "name": "var useApplicationAudioSession: Bool",
+      "desc": "A Boolean value that indicates whether the movie player should use the app’s audio session."
+    },
+    {
+      "name": "var duration: TimeInterval",
+      "desc": "The duration of the movie, measured in seconds."
+    },
+    {
+      "name": "var playableDuration: TimeInterval",
+      "desc": "The amount of currently playable content."
+    },
+    {
+      "name": "var view: UIView!",
+      "desc": "The view containing the movie content and controls."
+    },
+    {
+      "name": "var backgroundView: UIView!",
+      "desc": "A customizable view that is displayed behind the movie content."
+    },
+    {
+      "name": "var loadState: MPMovieLoadState",
+      "desc": "The network load state of the movie player."
+    },
+    {
+      "name": "var playbackState: MPMoviePlaybackState",
+      "desc": "The current playback state of the movie player."
+    },
+    {
+      "name": "var initialPlaybackTime: TimeInterval",
+      "desc": "The time, specified in seconds within the video timeline, when playback should start."
+    },
+    {
+      "name": "var endPlaybackTime: TimeInterval",
+      "desc": "The end time (measured in seconds) for playback of the movie."
+    },
+    {
+      "name": "var shouldAutoplay: Bool",
+      "desc": "A Boolean that indicates whether a movie should begin playback automatically."
+    },
+    {
+      "name": "var readyForDisplay: Bool",
+      "desc": "A Boolean that indicates whether the first video frame of the movie is ready to be displayed."
+    },
+    {
+      "name": "var repeatMode: MPMovieRepeatMode",
+      "desc": "Determines how the movie player repeats the playback of the movie."
+    },
+    {
+      "name": "var timedMetadata: [Any]!",
+      "desc": "Obtains the most recent time-based metadata provided by the streamed movie."
+    },
+    {
+      "name": "func thumbnailImage(atTime: TimeInterval, timeOption: MPMovieTimeOption) -> UIImage!",
+      "desc": "Captures and returns a thumbnail image from the current movie."
+    },
+    {
+      "name": "func requestThumbnailImages(atTimes: [Any]!, timeOption: MPMovieTimeOption)",
+      "desc": "Captures one or more thumbnail images asynchronously from the current movie."
+    },
+    {
+      "name": "func cancelAllThumbnailImageRequests()",
+      "desc": "Cancels all pending asynchronous thumbnail image requests."
+    },
+    {
+      "name": "var accessLog: MPMovieAccessLog!",
+      "desc": "A snapshot of the network playback log for the movie player if it is playing a network stream."
+    },
+    {
+      "name": "var errorLog: MPMovieErrorLog!",
+      "desc": "A snapshot of the playback failure error log for the movie player if it is playing a network stream."
+    },
+    {
+      "name": "struct MPMovieLoadState",
+      "desc": "Constants describing the network load state of the movie player."
+    },
+    {
+      "name": "enum MPMovieControlStyle",
+      "desc": "Constants describing the style of the playback controls."
+    },
+    {
+      "name": "enum MPMovieFinishReason",
+      "desc": "Constants describing the reason that playback ended."
+    },
+    {
+      "name": "enum MPMoviePlaybackState",
+      "desc": "Constants describing the current playback state of the movie player."
+    },
+    {
+      "name": "enum MPMovieRepeatMode",
+      "desc": "Constants describing how the movie player repeats content at the end of playback."
+    },
+    {
+      "name": "enum MPMovieScalingMode",
+      "desc": "Constants describing how the movie content is scaled to fit the frame of its view."
+    },
+    {
+      "name": "enum MPMovieTimeOption",
+      "desc": "Constants describing which frame to use when generating thumbnail images."
+    },
+    {
+      "name": "struct MPMovieMediaTypeMask",
+      "desc": "The types of content available in the movie file."
+    },
+    {
+      "name": "enum MPMovieSourceType",
+      "desc": "Specifies the type of the movie file."
+    },
+    {
+      "name": "static let MPMoviePlayerDidEnterFullscreen: NSNotification.Name",
+      "desc": "Posted when a movie player has entered full-screen mode. There is no userInfo dictionary."
+    },
+    {
+      "name": "static let MPMoviePlayerDidExitFullscreen: NSNotification.Name",
+      "desc": "Posted when a movie player has exited full-screen mode. There is no userInfo dictionary."
+    },
+    {
+      "name": "static let MPMoviePlayerIsAirPlayVideoActiveDidChange: NSNotification.Name",
+      "desc": "Posted when a movie player has started or ended playing a movie via AirPlay. There is no userInfo dictionary."
+    },
+    {
+      "name": "static let MPMoviePlayerLoadStateDidChange: NSNotification.Name",
+      "desc": "Posted when a movie player’s network buffering state has changed. There is no userInfo dictionary."
+    },
+    {
+      "name": "static let MPMoviePlayerNowPlayingMovieDidChange: NSNotification.Name",
+      "desc": "Posted when the currently playing movie has changed. There is no userInfo dictionary."
+    },
+    {
+      "name": "static let MPMoviePlayerPlaybackDidFinish: NSNotification.Name",
+      "desc": "Posted when a movie has finished playing. The userInfo dictionary of this notification contains the MPMoviePlayerPlaybackDidFinishReasonUserInfoKey key, which indicates the reason that playback finished. This notification is also sent when playback fails because of an error."
+    },
+    {
+      "name": "static let MPMoviePlayerPlaybackStateDidChange: NSNotification.Name",
+      "desc": "Posted when a movie player’s playback state has changed. There is no userInfo dictionary."
+    },
+    {
+      "name": "static let MPMoviePlayerReadyForDisplayDidChange: NSNotification.Name",
+      "desc": "Posted when the ready for display state changes."
+    },
+    {
+      "name": "static let MPMoviePlayerScalingModeDidChange: NSNotification.Name",
+      "desc": "Posted when the scaling mode of a movie player has changed. There is no userInfo dictionary."
+    },
+    {
+      "name": "static let MPMoviePlayerThumbnailImageRequestDidFinish: NSNotification.Name",
+      "desc": "Posted when a request to capture a thumbnail from a movie has finished whether the request succeeded or failed. Upon successful capture of a thumbnail, the userInfo dictionary contains values for the following keys:"
+    },
+    {
+      "name": "static let MPMoviePlayerTimedMetadataUpdated: NSNotification.Name",
+      "desc": "Posted when new timed metadata arrives."
+    },
+    {
+      "name": "static let MPMoviePlayerWillEnterFullscreen: NSNotification.Name",
+      "desc": "Posted when a movie player is about to enter full-screen mode. The userInfo dictionary contains keys whose values describe the transition animation used to enter full-screen mode. See Fullscreen Notification Keys."
+    },
+    {
+      "name": "static let MPMoviePlayerWillExitFullscreen: NSNotification.Name",
+      "desc": "Posted when a movie player is about to exit full-screen mode. The userInfo dictionary contains keys whose values describe the transition animation used to exit full-screen mode. See Fullscreen Notification Keys."
+    },
+    {
+      "name": "static let MPMovieDurationAvailable: NSNotification.Name",
+      "desc": "Posted when the duration of a movie has been determined. There is no userInfo dictionary."
+    },
+    {
+      "name": "static let MPMovieMediaTypesAvailable: NSNotification.Name",
+      "desc": "Posted when the available media types in a movie are determined. There is no userInfo dictionary."
+    },
+    {
+      "name": "static let MPMovieNaturalSizeAvailable: NSNotification.Name",
+      "desc": "Posted when the natural frame size of a movie is first determined or subsequently changes. There is no userInfo dictionary."
+    },
+    {
+      "name": "static let MPMovieSourceTypeAvailable: NSNotification.Name",
+      "desc": "Posted when the source type of a movie was previously unknown and is newly available. There is no userInfo dictionary."
+    }
+  ],
+  "declaration": "class MPMoviePlayerController : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "MPMediaPlayback"
+  ]
+}

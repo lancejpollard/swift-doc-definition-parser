@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/foundation/urlcredential",
+  "type": "Class",
+  "name": "URLCredential",
+  "desc": "An authentication credential consisting of information specific to the type of credential and the type of persistent storage to use, if any.",
+  "items": [
+    {
+      "name": "init(identity: SecIdentity, certificates: [Any]?, persistence: URLCredential.Persistence)",
+      "desc": "Creates a URL credential instance for resolving a client certificate authentication challenge."
+    },
+    {
+      "name": "init(trust: SecTrust)",
+      "desc": "Creates a URL credential instance for server trust authentication, initialized with a accepted trust."
+    },
+    {
+      "name": "init(user: String, password: String, persistence: URLCredential.Persistence)",
+      "desc": "Creates a URL credential instance initialized with a given user name and password, using a given persistence setting."
+    },
+    {
+      "name": "enum URLCredential.Persistence",
+      "desc": "Constants that specify how long the credential will be kept."
+    },
+    {
+      "name": "var user: String?",
+      "desc": "The credential’s user name."
+    },
+    {
+      "name": "var certificates: [Any]",
+      "desc": "The intermediate certificates of the credential, if it is a client certificate credential."
+    },
+    {
+      "name": "var hasPassword: Bool",
+      "desc": "A Boolean value that indicates whether the credential has a password."
+    },
+    {
+      "name": "var password: String?",
+      "desc": "The credential’s password."
+    },
+    {
+      "name": "var identity: SecIdentity?",
+      "desc": "The identity of this credential if it is a client certificate credential."
+    },
+    {
+      "name": "var persistence: URLCredential.Persistence",
+      "desc": "The credential’s persistence setting."
+    },
+    {
+      "name": "enum URLCredential.Persistence",
+      "desc": "Constants that specify how long the credential will be kept."
+    }
+  ],
+  "declaration": "class URLCredential : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

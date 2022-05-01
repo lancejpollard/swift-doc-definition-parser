@@ -1,0 +1,103 @@
+{
+  "path": "/documentation/uikit/uidocumentbrowserviewcontroller",
+  "type": "Class",
+  "name": "UIDocumentBrowserViewController",
+  "desc": "A view controller for browsing and performing actions on documents that you store locally and in the cloud.",
+  "items": [
+    {
+      "name": "init(forOpening: [UTType]?)",
+      "desc": "Initializes and returns a document browser view controller that can open the specified file types."
+    },
+    {
+      "name": "var delegate: UIDocumentBrowserViewControllerDelegate?",
+      "desc": "The document browser's delegate."
+    },
+    {
+      "name": "protocol UIDocumentBrowserViewControllerDelegate",
+      "desc": "The protocol you implement to respond as the user interacts with the document browser."
+    },
+    {
+      "name": "func importDocument(at: URL, nextToDocumentAt: URL, mode: UIDocumentBrowserViewController.ImportMode, completionHandler: (URL?, Error?) -> Void)",
+      "desc": "Imports a document into the same location as an existing document."
+    },
+    {
+      "name": "var allowsDocumentCreation: Bool",
+      "desc": "A Boolean value that determines whether the document browser can create new documents."
+    },
+    {
+      "name": "var allowsPickingMultipleItems: Bool",
+      "desc": "A Boolean value that determines whether the user can select and open more than one document at a time."
+    },
+    {
+      "name": "func revealDocument(at: URL, importIfNeeded: Bool, completion: ((URL?, Error?) -> Void)?)",
+      "desc": "Reveals, and optionally imports, the document at the provided URL."
+    },
+    {
+      "name": "var contentTypesForRecentDocuments: [UTType]",
+      "desc": "Content types for browsing recent documents."
+    },
+    {
+      "name": "var browserUserInterfaceStyle: UIDocumentBrowserViewController.BrowserUserInterfaceStyle",
+      "desc": "The visual style for the document browser."
+    },
+    {
+      "name": "enum UIDocumentBrowserViewController.BrowserUserInterfaceStyle",
+      "desc": "Styles that define the document browser's appearance."
+    },
+    {
+      "name": "var additionalLeadingNavigationBarButtonItems: [UIBarButtonItem]",
+      "desc": "Additional bar button items that the document browser displays on the leading side of its navigation bar."
+    },
+    {
+      "name": "var additionalTrailingNavigationBarButtonItems: [UIBarButtonItem]",
+      "desc": "Additional bar button items that the document browser displays on the trailing side of its navigation bar."
+    },
+    {
+      "name": "var shouldShowFileExtensions: Bool",
+      "desc": "A Boolean value that determines whether the browser always shows file extensions."
+    },
+    {
+      "name": "var localizedCreateDocumentActionTitle: String",
+      "desc": "The title for the Create Document button."
+    },
+    {
+      "name": "var defaultDocumentAspectRatio: CGFloat",
+      "desc": "The aspect ratio for the Create Document button."
+    },
+    {
+      "name": "var customActions: [UIDocumentBrowserAction]",
+      "desc": "Custom document browser actions."
+    },
+    {
+      "name": "class UIDocumentBrowserAction",
+      "desc": "A custom action that you can create and add to a document browser's Edit menu or navigation bar."
+    },
+    {
+      "name": "func transitionController(forDocumentAt: URL) -> UIDocumentBrowserTransitionController",
+      "desc": "Creates a transition controller that provides the standard system-loading and segue animations for the document browser."
+    },
+    {
+      "name": "class UIDocumentBrowserTransitionController",
+      "desc": "An object that implements the standard loading and transition animations for a document browser."
+    },
+    {
+      "name": "struct UIDocumentBrowserError",
+      "desc": "A structure that contains information about document browser errors."
+    },
+    {
+      "name": "enum UIDocumentBrowserError.Code",
+      "desc": "The error codes for document browser errors."
+    },
+    {
+      "name": "let UIDocumentBrowserErrorDomain: String",
+      "desc": "The error domain for document browser errors."
+    }
+  ],
+  "declaration": "class UIDocumentBrowserViewController : UIViewController",
+  "inheritsFrom": [
+    "UIViewController"
+  ],
+  "conformsTo": [
+    "NSCoding"
+  ]
+}

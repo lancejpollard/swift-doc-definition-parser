@@ -1,0 +1,47 @@
+{
+  "path": "/documentation/networkextension/nednssettings",
+  "type": "Class",
+  "name": "NEDNSSettings",
+  "desc": "The DNS resolver settings of a network tunnel or a system-wide configuration.",
+  "items": [
+    {
+      "name": "init(servers: [String])",
+      "desc": "Initialize the NEDNSSetting object."
+    },
+    {
+      "name": "var servers: [String]",
+      "desc": "The DNS server IP addresses."
+    },
+    {
+      "name": "var searchDomains: [String]?",
+      "desc": "A list of domain strings used to fully qualify single-label host names."
+    },
+    {
+      "name": "var domainName: String?",
+      "desc": "The primary domain of the tunnel."
+    },
+    {
+      "name": "var matchDomains: [String]?",
+      "desc": "A list of domain strings used to determine which DNS queries will use the DNS resolver settings contained in this object."
+    },
+    {
+      "name": "var matchDomainsNoSearch: Bool",
+      "desc": "A Boolean that specifies if the domains in the matchDomains list should not be appended to the resolver’s list of search domains."
+    },
+    {
+      "name": "var dnsProtocol: NEDNSProtocol",
+      "desc": "The DNS protocol used by the server, such as HTTPS or TLS."
+    },
+    {
+      "name": "enum NEDNSProtocol"
+    }
+  ],
+  "declaration": "class NEDNSSettings : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

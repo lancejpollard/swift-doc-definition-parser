@@ -1,0 +1,104 @@
+{
+  "path": "/documentation/fileprovider/nsfileproviderextension",
+  "type": "Class",
+  "name": "NSFileProviderExtension",
+  "desc": "The principal class for the File Provider extension.",
+  "items": [
+    {
+      "name": "func persistentIdentifierForItem(at: URL) -> NSFileProviderItemIdentifier?",
+      "desc": "Returns a unique identifier for the given URL."
+    },
+    {
+      "name": "func urlForItem(withPersistentIdentifier: NSFileProviderItemIdentifier) -> URL?",
+      "desc": "Returns the URL for a given persistent identifier."
+    },
+    {
+      "name": "func item(for: NSFileProviderItemIdentifier) -> NSFileProviderItem",
+      "desc": "Returns a description of the item associated with the persistent identifier."
+    },
+    {
+      "name": "func enumerator(for: NSFileProviderItemIdentifier) -> NSFileProviderEnumerator",
+      "desc": "Returns an enumerator for the specified item."
+    },
+    {
+      "name": "struct NSFileProviderItemIdentifier",
+      "desc": "A unique identifier for an item managed by the File Provider extension."
+    },
+    {
+      "name": "func itemChanged(at: URL)",
+      "desc": "Tells the File Provider extension that a document has changed."
+    },
+    {
+      "name": "func providePlaceholder(at: URL, completionHandler: (Error?) -> Void)",
+      "desc": "Triggers the creation of a placeholder for the given URL."
+    },
+    {
+      "name": "func startProvidingItem(at: URL, completionHandler: (Error?) -> Void)",
+      "desc": "Provides an actual file on disk for a placeholder."
+    },
+    {
+      "name": "func stopProvidingItem(at: URL)",
+      "desc": "Tells the File Provider extension that a given document is no longer being accessed."
+    },
+    {
+      "name": "func createDirectory(withName: String, inParentItemIdentifier: NSFileProviderItemIdentifier, completionHandler: (NSFileProviderItem?, Error?) -> Void)",
+      "desc": "Creates a directory with the given name inside the given parent directory."
+    },
+    {
+      "name": "func deleteItem(withIdentifier: NSFileProviderItemIdentifier, completionHandler: (Error?) -> Void)",
+      "desc": "Permanently deletes an item from the trash."
+    },
+    {
+      "name": "func importDocument(at: URL, toParentItemIdentifier: NSFileProviderItemIdentifier, completionHandler: (NSFileProviderItem?, Error?) -> Void)",
+      "desc": "Imports a file or package into the given parent directory."
+    },
+    {
+      "name": "func renameItem(withIdentifier: NSFileProviderItemIdentifier, toName: String, completionHandler: (NSFileProviderItem?, Error?) -> Void)",
+      "desc": "Renames a document or directory."
+    },
+    {
+      "name": "func reparentItem(withIdentifier: NSFileProviderItemIdentifier, toParentItemWithIdentifier: NSFileProviderItemIdentifier, newName: String?, completionHandler: (NSFileProviderItem?, Error?) -> Void)",
+      "desc": "Moves the specified item into the given parent directory."
+    },
+    {
+      "name": "func setFavoriteRank(NSNumber?, forItemIdentifier: NSFileProviderItemIdentifier, completionHandler: (NSFileProviderItem?, Error?) -> Void)",
+      "desc": "Marks a directory as a favorite and sets its relative order in the Favorites list."
+    },
+    {
+      "name": "func setLastUsedDate(Date?, forItemIdentifier: NSFileProviderItemIdentifier, completionHandler: (NSFileProviderItem?, Error?) -> Void)",
+      "desc": "Marks an item as recently used and sets its relative order in the Recents list."
+    },
+    {
+      "name": "func setTagData(Data?, forItemIdentifier: NSFileProviderItemIdentifier, completionHandler: (NSFileProviderItem?, Error?) -> Void)",
+      "desc": "Tags an item."
+    },
+    {
+      "name": "func trashItem(withIdentifier: NSFileProviderItemIdentifier, completionHandler: (NSFileProviderItem?, Error?) -> Void)",
+      "desc": "Moves an item into the trash."
+    },
+    {
+      "name": "func untrashItem(withIdentifier: NSFileProviderItemIdentifier, toParentItemIdentifier: NSFileProviderItemIdentifier?, completionHandler: (NSFileProviderItem?, Error?) -> Void)",
+      "desc": "Moves an item out of the trash."
+    },
+    {
+      "name": "var domain: NSFileProviderDomain?",
+      "desc": "The domain managed by this file provider object."
+    },
+    {
+      "name": "func fetchThumbnails(for: [NSFileProviderItemIdentifier], requestedSize: CGSize, perThumbnailCompletionHandler: (NSFileProviderItemIdentifier, Data?, Error?) -> Void, completionHandler: (Error?) -> Void) -> Progress",
+      "desc": "Fetches the thumbnails for items that have been enumerated by the file provider."
+    },
+    {
+      "name": "func supportedServiceSources(for: NSFileProviderItemIdentifier) -> [NSFileProviderServiceSource]",
+      "desc": "Return an array of service sources that let the host app perform actions associated with the specified item."
+    },
+    {
+      "name": "protocol NSFileProviderServiceSource",
+      "desc": "A service that provides a custom communication channel between the host app and the File Provider extension."
+    }
+  ],
+  "declaration": "class NSFileProviderExtension : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

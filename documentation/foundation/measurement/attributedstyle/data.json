@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/foundation/measurement/attributedstyle",
+  "type": "Structure",
+  "name": "Measurement.AttributedStyle",
+  "desc": "A type that provides localized representations of measurements with an attributed string.",
+  "items": [
+    {
+      "name": "func format(Measurement<UnitType>) -> AttributedString",
+      "desc": "Creates a string representation of a measurement."
+    },
+    {
+      "name": "static func list<MemberStyle, Base>(memberStyle: MemberStyle, type: ListFormatStyle<MemberStyle, Base>.ListType, width: ListFormatStyle<MemberStyle, Base>.Width) -> ListFormatStyle<MemberStyle, Base>",
+      "desc": "Creates a list format style using the provided format style and list style."
+    },
+    {
+      "name": "static func list<Base>(type: ListFormatStyle<StringStyle, Base>.ListType, width: ListFormatStyle<StringStyle, Base>.Width) -> ListFormatStyle<StringStyle, Base>",
+      "desc": "Creates a list format style using the provided type and width."
+    },
+    {
+      "name": "func locale(Locale) -> Measurement<UnitType>.AttributedStyle",
+      "desc": "Modifies the measurement format style to use the specified locale."
+    },
+    {
+      "name": "static func != (Measurement<UnitType>.AttributedStyle, Measurement<UnitType>.AttributedStyle) -> Bool",
+      "desc": "Indicates whether two measurement format styles are not equal."
+    },
+    {
+      "name": "static func == (Measurement<UnitType>.AttributedStyle, Measurement<UnitType>.AttributedStyle) -> Bool",
+      "desc": "Indicates whether two measurement format styles are equal."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value of the style format."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the value by feeding them into the specified hasher."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes the value into the specified encoder."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a style by decoding from the specified decoder."
+    },
+    {
+      "name": "typealias Measurement.AttributedStyle.FormatInput",
+      "desc": "The type of data to format."
+    },
+    {
+      "name": "typealias Measurement.AttributedStyle.FormatOutput",
+      "desc": "The type of the formatted data."
+    },
+    {
+      "name": "static func currency<Value>(code: String) -> FloatingPointFormatStyle<Value>.Currency"
+    },
+    {
+      "name": "static func currency<V>(code: String) -> IntegerFormatStyle<V>.Currency"
+    },
+    {
+      "name": "static func measurement(width: Measurement<UnitTemperature>.FormatStyle.UnitWidth, usage: MeasurementFormatUnitUsage<UnitTemperature>, hidesScaleName: Bool, numberFormatStyle: FloatingPointFormatStyle<Double>?) -> Measurement<UnitTemperature>.FormatStyle"
+    },
+    {
+      "name": "static func measurement<UnitType>(width: Measurement<UnitType>.FormatStyle.UnitWidth, usage: MeasurementFormatUnitUsage<UnitType>, numberFormatStyle: FloatingPointFormatStyle<Double>?) -> Measurement<UnitType>.FormatStyle"
+    }
+  ],
+  "declaration": "struct AttributedStyle",
+  "conformsTo": [
+    "FormatStyle"
+  ]
+}

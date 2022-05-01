@@ -1,0 +1,55 @@
+{
+  "path": "/documentation/networkextension/nefilterdataprovider",
+  "type": "Class",
+  "name": "NEFilterDataProvider",
+  "desc": "The principal class for a filter data provider extension.",
+  "items": [
+    {
+      "name": "func handleNewFlow(NEFilterFlow) -> NEFilterNewFlowVerdict",
+      "desc": "Make a filtering decision for a newly-created flow of network content."
+    },
+    {
+      "name": "func handleInboundData(from: NEFilterFlow, readBytesStartOffset: Int, readBytes: Data) -> NEFilterDataVerdict",
+      "desc": "Make a filtering decision about a chunk of inbound data."
+    },
+    {
+      "name": "func handleOutboundData(from: NEFilterFlow, readBytesStartOffset: Int, readBytes: Data) -> NEFilterDataVerdict",
+      "desc": "Make a filtering decision about a chunk of outbound data."
+    },
+    {
+      "name": "func handleInboundDataComplete(for: NEFilterFlow) -> NEFilterDataVerdict",
+      "desc": "Make a filtering decision after seeing all of the inbound data for a flow."
+    },
+    {
+      "name": "func handleOutboundDataComplete(for: NEFilterFlow) -> NEFilterDataVerdict",
+      "desc": "Make a filtering decision after seeing all of the outbound data for a flow."
+    },
+    {
+      "name": "func handleRemediation(for: NEFilterFlow) -> NEFilterRemediationVerdict",
+      "desc": "Handle a remediation request."
+    },
+    {
+      "name": "func handleRulesChanged()",
+      "desc": "Handle a rules changed event."
+    },
+    {
+      "name": "func apply(NEFilterSettings?, completionHandler: (Error?) -> Void)",
+      "desc": "Applies a set of filtering rules associated with the provider and changes the default filtering action."
+    },
+    {
+      "name": "class NEFilterSettings",
+      "desc": "The rules and other settings that define the operation of a filter."
+    },
+    {
+      "name": "func resumeFlow(NEFilterFlow, with: NEFilterVerdict)",
+      "desc": "Resumes a previously-paused flow."
+    },
+    {
+      "name": "func update(NEFilterSocketFlow, using: NEFilterDataVerdict, for: NETrafficDirection)"
+    }
+  ],
+  "declaration": "class NEFilterDataProvider : NEFilterProvider",
+  "inheritsFrom": [
+    "NEFilterProvider"
+  ]
+}

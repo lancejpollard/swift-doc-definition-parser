@@ -1,0 +1,59 @@
+{
+  "path": "/documentation/metal/mtlcommandbuffererror/code",
+  "type": "Enumeration",
+  "name": "MTLCommandBufferError.Code",
+  "desc": "Error codes that indicate why the execution of the command buffer has failed. The error property contains the error code.",
+  "items": [
+    {
+      "name": "case none",
+      "desc": "No error occurred."
+    },
+    {
+      "name": "case `internal`",
+      "desc": "An internal error that doesn't fit into the other categories."
+    },
+    {
+      "name": "case timeout",
+      "desc": "Execution of this command buffer took more time than the system allows, so execution was interrupted and aborted."
+    },
+    {
+      "name": "case pageFault",
+      "desc": "Execution of this command buffer generated an unserviceable GPU page fault."
+    },
+    {
+      "name": "case blacklisted",
+      "desc": "Access to this device has been revoked because this client has been responsible for too many timeouts or hangs."
+    },
+    {
+      "name": "case notPermitted",
+      "desc": "This process does not have access to use this device."
+    },
+    {
+      "name": "case outOfMemory",
+      "desc": "Insufficient memory was available to execute this command buffer."
+    },
+    {
+      "name": "case invalidResource",
+      "desc": "The command buffer referenced an invalid resource."
+    },
+    {
+      "name": "case memoryless",
+      "desc": "One or more internal resource limits was reached that prevent using memoryless render pass attachments."
+    },
+    {
+      "name": "case deviceRemoved",
+      "desc": "The device was physically removed before the command could finish execution."
+    },
+    {
+      "name": "case stackOverflow",
+      "desc": "The shader exceeded the stack size when calling other functions."
+    },
+    {
+      "name": "static var accessRevoked: MTLCommandBufferError.Code"
+    }
+  ],
+  "declaration": "enum MTLCommandBufferError.Code : UInt, _ErrorCodeProtocol, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "path": "/documentation/coredata/nspersistentstore",
+  "type": "Class",
+  "name": "NSPersistentStore",
+  "desc": "The abstract base class for all Core Data persistent stores.",
+  "items": [
+    {
+      "name": "init(persistentStoreCoordinator: NSPersistentStoreCoordinator?, configurationName: String?, at: URL, options: [AnyHashable : Any]?)",
+      "desc": "Returns a store initialized with the given arguments."
+    },
+    {
+      "name": "var configurationName: String",
+      "desc": "The name of the managed object model configuration that creates the persistent store."
+    },
+    {
+      "name": "var options: [AnyHashable : Any]?",
+      "desc": "The options that Core Data uses to create the store."
+    },
+    {
+      "name": "var persistentStoreCoordinator: NSPersistentStoreCoordinator?",
+      "desc": "The persistent store coordinator that loads the persistent store."
+    },
+    {
+      "name": "var type: String",
+      "desc": "The type string of the persistent store."
+    },
+    {
+      "name": "struct NSPersistentStore.StoreType",
+      "desc": "The types of persistent stores that Core Data supports."
+    },
+    {
+      "name": "var identifier: String!",
+      "desc": "The unique identifier for the persistent store."
+    },
+    {
+      "name": "var isReadOnly: Bool",
+      "desc": "A Boolean value that indicates whether the persistent store is read-only."
+    },
+    {
+      "name": "var url: URL?",
+      "desc": "The URL for the persistent store."
+    },
+    {
+      "name": "class func metadataForPersistentStore(with: URL) -> [String : Any]",
+      "desc": "Returns the metadata from the persistent store at the given URL."
+    },
+    {
+      "name": "class func setMetadata([String : Any]?, forPersistentStoreAt: URL)",
+      "desc": "Sets the metadata for the store at a given URL."
+    },
+    {
+      "name": "func loadMetadata()",
+      "desc": "Instructs the persistent store to load its metadata."
+    },
+    {
+      "name": "var metadata: [String : Any]!",
+      "desc": "The metadata for the persistent store."
+    },
+    {
+      "name": "func didAdd(to: NSPersistentStoreCoordinator)",
+      "desc": "Invoked after the persistent store has been added to the persistent store coordinator."
+    },
+    {
+      "name": "func willRemove(from: NSPersistentStoreCoordinator?)",
+      "desc": "Invoked before the persistent store is removed from the persistent store coordinator."
+    },
+    {
+      "name": "var coreSpotlightExporter: NSCoreDataCoreSpotlightDelegate",
+      "desc": "The spotlight exporter associated with this persistent store."
+    },
+    {
+      "name": "class func migrationManagerClass() -> AnyClass",
+      "desc": "Returns the migration manager class for this store class."
+    }
+  ],
+  "declaration": "class NSPersistentStore : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

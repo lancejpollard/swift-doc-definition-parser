@@ -1,0 +1,26 @@
+{
+  "path": "/documentation/combine/anypublisher",
+  "type": "Structure",
+  "name": "AnyPublisher",
+  "desc": "A publisher that performs type erasure by wrapping another publisher.",
+  "items": [
+    {
+      "name": "init<P>(P)",
+      "desc": "Creates a type-erasing publisher to wrap the provided publisher."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual representation of this instance."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A custom playground description for this instance."
+    }
+  ],
+  "declaration": "@frozen struct AnyPublisher<Output, Failure> where Failure : Error",
+  "conformsTo": [
+    "CustomPlaygroundDisplayConvertible",
+    "CustomStringConvertible",
+    "Publisher"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/phase/phasepushstreambufferoptions",
+  "type": "Structure",
+  "name": "PHASEPushStreamBufferOptions",
+  "desc": "Options that inform PHASE of an audio-stream buffer's playback priority.",
+  "items": [
+    {
+      "name": "init(rawValue: UInt)",
+      "desc": "Creates a push stream buffer option with the given raw value."
+    },
+    {
+      "name": "static var `default`: PHASEPushStreamBufferOptions",
+      "desc": "Indicates a buffer processes after existing buffers in the queue."
+    },
+    {
+      "name": "static var interrupts: PHASEPushStreamBufferOptions",
+      "desc": "Indicates a buffer begins processing immediately."
+    },
+    {
+      "name": "static var interruptsAtLoop: PHASEPushStreamBufferOptions",
+      "desc": "Indicates a buffer begins processing when an existing buffer loops."
+    },
+    {
+      "name": "static var loops: PHASEPushStreamBufferOptions",
+      "desc": "Indicates a buffer restarts after it finishes processing."
+    }
+  ],
+  "declaration": "struct PHASEPushStreamBufferOptions, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/screencapturekit/scstream",
+  "type": "Class",
+  "name": "SCStream",
+  "desc": "An object that represents a stream of shareable content.",
+  "items": [
+    {
+      "name": "init(filter: SCContentFilter, configuration: SCStreamConfiguration, delegate: SCStreamDelegate?)",
+      "desc": "Creates a stream with a content filter and configuration."
+    },
+    {
+      "name": "class SCContentFilter",
+      "desc": "An object that filters the content a stream captures."
+    },
+    {
+      "name": "class SCStreamConfiguration",
+      "desc": "An object that provides the output configuration for a stream."
+    },
+    {
+      "name": "protocol SCStreamDelegate",
+      "desc": "A delegate protocol to adopt to respond to stream events."
+    },
+    {
+      "name": "func updateConfiguration(SCStreamConfiguration, completionHandler: ((Error?) -> Void)?)",
+      "desc": "Updates the stream with a new configuration."
+    },
+    {
+      "name": "func updateContentFilter(SCContentFilter, completionHandler: ((Error?) -> Void)?)",
+      "desc": "Updates the stream by applying a new content filter."
+    },
+    {
+      "name": "func addStreamOutput(SCStreamOutput, type: SCStreamOutputType, sampleHandlerQueue: DispatchQueue?)",
+      "desc": "Adds a destination that receives the stream output."
+    },
+    {
+      "name": "func removeStreamOutput(SCStreamOutput, type: SCStreamOutputType)",
+      "desc": "Removes a destination from receiving stream output."
+    },
+    {
+      "name": "func startCapture(completionHandler: ((Error?) -> Void)?)",
+      "desc": "Starts the stream with a callback to indicate whether it successfully starts."
+    },
+    {
+      "name": "func stopCapture(completionHandler: ((Error?) -> Void)?)",
+      "desc": "Stops the stream."
+    }
+  ],
+  "declaration": "class SCStream : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

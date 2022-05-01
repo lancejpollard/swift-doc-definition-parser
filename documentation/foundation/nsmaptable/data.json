@@ -1,0 +1,93 @@
+{
+  "path": "/documentation/foundation/nsmaptable",
+  "type": "Generic Class",
+  "name": "NSMapTable",
+  "desc": "A collection similar to a dictionary, but with a broader range of available memory semantics.",
+  "items": [
+    {
+      "name": "init(keyOptions: NSPointerFunctions.Options, valueOptions: NSPointerFunctions.Options, capacity: Int)",
+      "desc": "Returns a map table, initialized with the given options."
+    },
+    {
+      "name": "init(keyOptions: NSPointerFunctions.Options, valueOptions: NSPointerFunctions.Options)",
+      "desc": "Returns a new map table, initialized with the given options"
+    },
+    {
+      "name": "init(keyPointerFunctions: NSPointerFunctions, valuePointerFunctions: NSPointerFunctions, capacity: Int)",
+      "desc": "Returns a map table, initialized with the given functions."
+    },
+    {
+      "name": "class func strongToStrongObjects() -> NSMapTable<KeyType, ObjectType>",
+      "desc": "Returns a new map table object which has strong references to the keys and values."
+    },
+    {
+      "name": "class func weakToStrongObjects() -> NSMapTable<KeyType, ObjectType>",
+      "desc": "Returns a new map table object which has weak references to the keys and strong references to the values."
+    },
+    {
+      "name": "class func strongToWeakObjects() -> NSMapTable<KeyType, ObjectType>",
+      "desc": "Returns a new map table object which has strong references to the keys and weak references to the values."
+    },
+    {
+      "name": "class func weakToWeakObjects() -> NSMapTable<KeyType, ObjectType>",
+      "desc": "Returns a new map table object which has weak references to the keys and values."
+    },
+    {
+      "name": "typealias NSMapTableOptions",
+      "desc": "Constants used as components in a bitfield to specify the behavior of elements (keys and values) in an NSMapTable object."
+    },
+    {
+      "name": "func object(forKey: KeyType?) -> ObjectType?",
+      "desc": "Returns a the value associated with a given key."
+    },
+    {
+      "name": "func keyEnumerator() -> NSEnumerator",
+      "desc": "Returns an enumerator object that lets you access each key in the map table."
+    },
+    {
+      "name": "func objectEnumerator() -> NSEnumerator?",
+      "desc": "Returns an enumerator object that lets you access each value in the map table."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of key-value pairs in the map table."
+    },
+    {
+      "name": "func setObject(ObjectType?, forKey: KeyType?)",
+      "desc": "Adds a given key-value pair to the map table."
+    },
+    {
+      "name": "func removeObject(forKey: KeyType?)",
+      "desc": "Removes a given key and its associated value from the map table."
+    },
+    {
+      "name": "func removeAllObjects()",
+      "desc": "Empties the map table of its entries."
+    },
+    {
+      "name": "func dictionaryRepresentation() -> [AnyHashable : ObjectType]",
+      "desc": "Returns a dictionary representation of the map table."
+    },
+    {
+      "name": "var keyPointerFunctions: NSPointerFunctions",
+      "desc": "The pointer functions the map table uses to manage keys."
+    },
+    {
+      "name": "var valuePointerFunctions: NSPointerFunctions",
+      "desc": "The pointer functions the map table uses to manage values."
+    },
+    {
+      "name": "class NSPointerFunctions",
+      "desc": "An instance of NSPointerFunctions defines callout functions appropriate for managing a pointer reference held somewhere else."
+    }
+  ],
+  "declaration": "class NSMapTable<KeyType, ObjectType> : NSObject where KeyType : AnyObject, ObjectType : AnyObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSFastEnumeration",
+    "NSSecureCoding"
+  ]
+}

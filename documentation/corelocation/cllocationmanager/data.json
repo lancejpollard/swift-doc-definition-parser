@@ -1,0 +1,252 @@
+{
+  "path": "/documentation/corelocation/cllocationmanager",
+  "type": "Class",
+  "name": "CLLocationManager",
+  "desc": "The object that you use to start and stop the delivery of location-related events to your app.",
+  "items": [
+    {
+      "name": "class func significantLocationChangeMonitoringAvailable() -> Bool",
+      "desc": "Returns a Boolean value indicating whether the significant-change location service is available on the device."
+    },
+    {
+      "name": "class func headingAvailable() -> Bool",
+      "desc": "Returns a Boolean value indicating whether the location manager is able to generate heading-related events."
+    },
+    {
+      "name": "var isAuthorizedForWidgetUpdates: Bool",
+      "desc": "A Boolean value that indicates whether a widget is eligible to receive location updates."
+    },
+    {
+      "name": "var accuracyAuthorization: CLAccuracyAuthorization",
+      "desc": "A value that indicates the level of location accuracy the app has permission to use."
+    },
+    {
+      "name": "class func isMonitoringAvailable(for: AnyClass) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the device supports region monitoring using the specified class."
+    },
+    {
+      "name": "class func isRangingAvailable() -> Bool",
+      "desc": "Returns a Boolean value indicating whether the device supports ranging of beacons that use the iBeacon protocol."
+    },
+    {
+      "name": "class func locationServicesEnabled() -> Bool",
+      "desc": "Returns a Boolean value indicating whether location services are enabled on the device."
+    },
+    {
+      "name": "var delegate: CLLocationManagerDelegate?",
+      "desc": "The delegate object to receive update events."
+    },
+    {
+      "name": "protocol CLLocationManagerDelegate",
+      "desc": "The methods that you use to receive events from an associated location manager object."
+    },
+    {
+      "name": "func requestWhenInUseAuthorization()",
+      "desc": "Requests the user’s permission to use location services while the app is in use."
+    },
+    {
+      "name": "func requestAlwaysAuthorization()",
+      "desc": "Requests the user’s permission to use location services regardless of whether the app is in use."
+    },
+    {
+      "name": "func requestTemporaryFullAccuracyAuthorization(withPurposeKey: String, completion: ((Error?) -> Void)?)",
+      "desc": "Requests the user’s permission to temporarily use location services with full accuracy."
+    },
+    {
+      "name": "func requestTemporaryFullAccuracyAuthorization(withPurposeKey: String)",
+      "desc": "Requests the user’s permission to temporarily use location services with full accuracy."
+    },
+    {
+      "name": "var authorizationStatus: CLAuthorizationStatus",
+      "desc": "The current authorization status for the app."
+    },
+    {
+      "name": "enum CLAuthorizationStatus",
+      "desc": "Constants indicating the app's authorization to use location services."
+    },
+    {
+      "name": "property list key NSLocationDefaultAccuracyReduced",
+      "desc": "A Boolean value that indicates whether the app requests reduced location accuracy by default."
+    },
+    {
+      "name": "property list key NSLocationAlwaysAndWhenInUseUsageDescription",
+      "desc": "A message that tells the user why the app is requesting access to the user’s location information at all times."
+    },
+    {
+      "name": "func startUpdatingLocation()",
+      "desc": "Starts the generation of updates that report the user’s current location."
+    },
+    {
+      "name": "func stopUpdatingLocation()",
+      "desc": "Stops the generation of location updates."
+    },
+    {
+      "name": "func requestLocation()",
+      "desc": "Requests the one-time delivery of the user’s current location."
+    },
+    {
+      "name": "var pausesLocationUpdatesAutomatically: Bool",
+      "desc": "A Boolean value that indicates whether the location manager object may pause location updates."
+    },
+    {
+      "name": "var allowsBackgroundLocationUpdates: Bool",
+      "desc": "A Boolean value that indicates whether the app receives location updates when running in the background."
+    },
+    {
+      "name": "var showsBackgroundLocationIndicator: Bool",
+      "desc": "A Boolean indicating whether the status bar changes its appearance when an app uses location services in the background."
+    },
+    {
+      "name": "var activityType: CLActivityType",
+      "desc": "The type of user activity associated with the location updates."
+    },
+    {
+      "name": "enum CLActivityType",
+      "desc": "Constants indicating the type of activity associated with location updates."
+    },
+    {
+      "name": "var distanceFilter: CLLocationDistance",
+      "desc": "The minimum distance (measured in meters) a device must move horizontally before an update event is generated."
+    },
+    {
+      "name": "let CLLocationDistanceMax: CLLocationDistance",
+      "desc": "A constant indicating the maximum distance."
+    },
+    {
+      "name": "let kCLDistanceFilterNone: CLLocationDistance",
+      "desc": "A constant indicating that all movement should be reported."
+    },
+    {
+      "name": "typealias CLLocationDistance",
+      "desc": "A distance measurement (measured in meters) from an existing location."
+    },
+    {
+      "name": "var desiredAccuracy: CLLocationAccuracy",
+      "desc": "The accuracy of the location data that your app wants to receive."
+    },
+    {
+      "name": "typealias CLLocationAccuracy",
+      "desc": "The accuracy of a geographical coordinate."
+    },
+    {
+      "name": "func startMonitoringSignificantLocationChanges()",
+      "desc": "Starts the generation of updates based on significant location changes."
+    },
+    {
+      "name": "func stopMonitoringSignificantLocationChanges()",
+      "desc": "Stops the delivery of location events based on significant location changes."
+    },
+    {
+      "name": "func startUpdatingHeading()",
+      "desc": "Starts the generation of updates that report the user’s current heading."
+    },
+    {
+      "name": "func stopUpdatingHeading()",
+      "desc": "Stops the generation of heading updates."
+    },
+    {
+      "name": "func dismissHeadingCalibrationDisplay()",
+      "desc": "Dismisses the heading calibration view from the screen immediately."
+    },
+    {
+      "name": "var headingFilter: CLLocationDegrees",
+      "desc": "The minimum angular change (measured in degrees) required to generate new heading events."
+    },
+    {
+      "name": "let kCLHeadingFilterNone: CLLocationDegrees",
+      "desc": "A constant indicating that all header values should be reported."
+    },
+    {
+      "name": "typealias CLLocationDegrees",
+      "desc": "A latitude or longitude value specified in degrees."
+    },
+    {
+      "name": "var headingOrientation: CLDeviceOrientation",
+      "desc": "The device orientation to use when computing heading values."
+    },
+    {
+      "name": "enum CLDeviceOrientation",
+      "desc": "Constants indicating the physical orientation of the device."
+    },
+    {
+      "name": "func startMonitoring(for: CLRegion)",
+      "desc": "Starts monitoring the specified region."
+    },
+    {
+      "name": "func stopMonitoring(for: CLRegion)",
+      "desc": "Stops monitoring the specified region."
+    },
+    {
+      "name": "var monitoredRegions: Set<CLRegion>",
+      "desc": "The set of shared regions monitored by all location manager objects."
+    },
+    {
+      "name": "var maximumRegionMonitoringDistance: CLLocationDistance",
+      "desc": "The largest boundary distance that can be assigned to a region."
+    },
+    {
+      "name": "func requestState(for: CLRegion)",
+      "desc": "Retrieves the state of a region asynchronously."
+    },
+    {
+      "name": "func startRangingBeacons(satisfying: CLBeaconIdentityConstraint)",
+      "desc": "Starts the delivery of notifications for the specified beacon constraints."
+    },
+    {
+      "name": "func stopRangingBeacons(satisfying: CLBeaconIdentityConstraint)",
+      "desc": "Stops the delivery of notifications for the specified beacon constraints."
+    },
+    {
+      "name": "var rangedBeaconConstraints: Set<CLBeaconIdentityConstraint>",
+      "desc": "The set of beacon constraints currently being tracked using ranging."
+    },
+    {
+      "name": "func startMonitoringVisits()",
+      "desc": "Starts the delivery of visit-related events."
+    },
+    {
+      "name": "func stopMonitoringVisits()",
+      "desc": "Stops the delivery of visit-related events."
+    },
+    {
+      "name": "func startMonitoringLocationPushes(completion: ((Data?, Error?) -> Void)?)",
+      "desc": "Starts monitoring for the delivery of Apple Push Notification service (APNs) location pushes, and provides a device-specific token for sending pushes."
+    },
+    {
+      "name": "func stopMonitoringLocationPushes()",
+      "desc": "Stop monitoring for Apple Push Notification service (APNs) location pushes."
+    },
+    {
+      "name": "protocol CLLocationPushServiceExtension",
+      "desc": "A protocol that provides the entry point for the Location Push Service Extension."
+    },
+    {
+      "name": "struct CLLocationPushServiceError",
+      "desc": "Error codes the location manager returns if starting to monitor for location push notifications fails."
+    },
+    {
+      "name": "let CLLocationPushServiceErrorDomain: String",
+      "desc": "The domain for Location Push Service Extension errors."
+    },
+    {
+      "name": "enum CLLocationPushServiceError.Code",
+      "desc": "Error codes the location manager returns if starting to monitor for location push notifications fails."
+    },
+    {
+      "name": "var location: CLLocation?",
+      "desc": "The most recently retrieved user location."
+    },
+    {
+      "name": "var heading: CLHeading?",
+      "desc": "The most recently reported heading."
+    },
+    {
+      "name": "let CLTimeIntervalMax: TimeInterval",
+      "desc": "A value representing an unlimited amount of time."
+    }
+  ],
+  "declaration": "class CLLocationManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

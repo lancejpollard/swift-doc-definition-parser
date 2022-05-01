@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/screensaver/screensaverview",
+  "type": "Class",
+  "name": "ScreenSaverView",
+  "desc": "An abstract class that defines the interface for subclassers to interact with the screen saver infrastructure.",
+  "items": [
+    {
+      "name": "init?(frame: NSRect, isPreview: Bool)",
+      "desc": "Initializes a newly allocated ScreenSaverView with frame as its frame rectangle, and sets the value returned by isPreview to isPreview."
+    },
+    {
+      "name": "class func backingStoreType() -> NSWindow.BackingStoreType",
+      "desc": "Returns the desired backing store for windows in which the screen saver view will be instantiated."
+    },
+    {
+      "name": "class func performGammaFade() -> Bool",
+      "desc": "Indicates whether the screen saver application should perform a gradual screen fade when it starts and stops the animation."
+    },
+    {
+      "name": "var animationTimeInterval: TimeInterval",
+      "desc": "Sets the time interval between animation frames."
+    },
+    {
+      "name": "func startAnimation()",
+      "desc": "Activates the periodic timer that animates the screen saver."
+    },
+    {
+      "name": "func animateOneFrame()",
+      "desc": "Advances the screen saver’s animation by a single frame."
+    },
+    {
+      "name": "func stopAnimation()",
+      "desc": "Deactivates the timer that advances the animation."
+    },
+    {
+      "name": "var isAnimating: Bool",
+      "desc": "A Boolean value that indicates if the screen saver is currently animating."
+    },
+    {
+      "name": "func draw(NSRect)",
+      "desc": "Draws the screen saver view."
+    },
+    {
+      "name": "var isPreview: Bool",
+      "desc": "A Boolean value that indicates if the screen saver view was created in a size appropriate for use as a preview."
+    },
+    {
+      "name": "var hasConfigureSheet: Bool",
+      "desc": "Returns whether the screen saver has an associated configuration sheet."
+    },
+    {
+      "name": "var configureSheet: NSWindow?",
+      "desc": "Returns the window containing all of the controls to be used for configuring the screen saver."
+    }
+  ],
+  "declaration": "class ScreenSaverView : NSView",
+  "inheritsFrom": [
+    "NSView"
+  ]
+}

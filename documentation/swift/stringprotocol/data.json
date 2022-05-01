@@ -1,0 +1,258 @@
+{
+  "path": "/documentation/swift/stringprotocol",
+  "type": "Protocol",
+  "name": "StringProtocol",
+  "desc": "A type that can represent a string as a collection of characters.",
+  "items": [
+    {
+      "name": "associatedtype SubSequence"
+    },
+    {
+      "name": "associatedtype UTF16View"
+    },
+    {
+      "name": "associatedtype UTF8View"
+    },
+    {
+      "name": "associatedtype UnicodeScalarView"
+    },
+    {
+      "name": "init(cString: UnsafePointer<CChar>)",
+      "desc": "Creates a string from the null-terminated, UTF-8 encoded sequence of bytes at the given pointer."
+    },
+    {
+      "name": "init<C, Encoding>(decoding: C, as: Encoding.Type)",
+      "desc": "Creates a string from the given Unicode code units in the specified encoding."
+    },
+    {
+      "name": "init<Encoding>(decodingCString: UnsafePointer<Encoding.CodeUnit>, as: Encoding.Type)",
+      "desc": "Creates a string from the null-terminated sequence of bytes at the given pointer."
+    },
+    {
+      "name": "var capitalized: String"
+    },
+    {
+      "name": "var decomposedStringWithCanonicalMapping: String"
+    },
+    {
+      "name": "var decomposedStringWithCompatibilityMapping: String"
+    },
+    {
+      "name": "var fastestEncoding: String.Encoding"
+    },
+    {
+      "name": "var hash: Int"
+    },
+    {
+      "name": "var localizedCapitalized: String"
+    },
+    {
+      "name": "var localizedLowercase: String"
+    },
+    {
+      "name": "var localizedUppercase: String"
+    },
+    {
+      "name": "var precomposedStringWithCanonicalMapping: String"
+    },
+    {
+      "name": "var precomposedStringWithCompatibilityMapping: String"
+    },
+    {
+      "name": "var removingPercentEncoding: String?"
+    },
+    {
+      "name": "var smallestEncoding: String.Encoding"
+    },
+    {
+      "name": "var unicodeScalars: Self.UnicodeScalarView"
+    },
+    {
+      "name": "var utf16: Self.UTF16View"
+    },
+    {
+      "name": "var utf8: Self.UTF8View"
+    },
+    {
+      "name": "func addingPercentEncoding(withAllowedCharacters: CharacterSet) -> String?"
+    },
+    {
+      "name": "func appending<T>(T) -> String"
+    },
+    {
+      "name": "func appendingFormat<T>(T, CVarArg...) -> String"
+    },
+    {
+      "name": "func applyingTransform(StringTransform, reverse: Bool) -> String?"
+    },
+    {
+      "name": "func cString(using: String.Encoding) -> [CChar]?"
+    },
+    {
+      "name": "func canBeConverted(to: String.Encoding) -> Bool"
+    },
+    {
+      "name": "func capitalized(with: Locale?) -> String"
+    },
+    {
+      "name": "func caseInsensitiveCompare<T>(T) -> ComparisonResult"
+    },
+    {
+      "name": "func commonPrefix<T>(with: T, options: String.CompareOptions) -> String"
+    },
+    {
+      "name": "func compare<T>(T, options: String.CompareOptions, range: Range<Self.Index>?, locale: Locale?) -> ComparisonResult"
+    },
+    {
+      "name": "func completePath(into: UnsafeMutablePointer<String>?, caseSensitive: Bool, matchesInto: UnsafeMutablePointer<[String]>?, filterTypes: [String]?) -> Int"
+    },
+    {
+      "name": "func components(separatedBy: CharacterSet) -> [String]"
+    },
+    {
+      "name": "func components<T>(separatedBy: T) -> [String]"
+    },
+    {
+      "name": "func contains<T>(T) -> Bool"
+    },
+    {
+      "name": "func data(using: String.Encoding, allowLossyConversion: Bool) -> Data?"
+    },
+    {
+      "name": "func enumerateLines(invoking: (String, inout Bool) -> Void)"
+    },
+    {
+      "name": "func enumerateLinguisticTags<T, R>(in: R, scheme: T, options: NSLinguisticTagger.Options, orthography: NSOrthography?, invoking: (String, Range<Self.Index>, Range<Self.Index>, inout Bool) -> Void)"
+    },
+    {
+      "name": "func enumerateSubstrings<R>(in: R, options: String.EnumerationOptions, (String?, Range<Self.Index>, Range<Self.Index>, inout Bool) -> Void)"
+    },
+    {
+      "name": "func folding(options: String.CompareOptions, locale: Locale?) -> String"
+    },
+    {
+      "name": "func getBytes<R>(inout [UInt8], maxLength: Int, usedLength: UnsafeMutablePointer<Int>, encoding: String.Encoding, options: String.EncodingConversionOptions, range: R, remaining: UnsafeMutablePointer<Range<Self.Index>>) -> Bool"
+    },
+    {
+      "name": "func getCString(inout [CChar], maxLength: Int, encoding: String.Encoding) -> Bool"
+    },
+    {
+      "name": "func getLineStart<R>(UnsafeMutablePointer<Self.Index>, end: UnsafeMutablePointer<Self.Index>, contentsEnd: UnsafeMutablePointer<Self.Index>, for: R)"
+    },
+    {
+      "name": "func getParagraphStart<R>(UnsafeMutablePointer<Self.Index>, end: UnsafeMutablePointer<Self.Index>, contentsEnd: UnsafeMutablePointer<Self.Index>, for: R)"
+    },
+    {
+      "name": "func hasPrefix(String) -> Bool"
+    },
+    {
+      "name": "func hasSuffix(String) -> Bool"
+    },
+    {
+      "name": "func lengthOfBytes(using: String.Encoding) -> Int"
+    },
+    {
+      "name": "func lineRange<R>(for: R) -> Range<Self.Index>"
+    },
+    {
+      "name": "func linguisticTags<T, R>(in: R, scheme: T, options: NSLinguisticTagger.Options, orthography: NSOrthography?, tokenRanges: UnsafeMutablePointer<[Range<Self.Index>]>?) -> [String]"
+    },
+    {
+      "name": "func localizedCaseInsensitiveCompare<T>(T) -> ComparisonResult"
+    },
+    {
+      "name": "func localizedCaseInsensitiveContains<T>(T) -> Bool"
+    },
+    {
+      "name": "func localizedCompare<T>(T) -> ComparisonResult"
+    },
+    {
+      "name": "func localizedStandardCompare<T>(T) -> ComparisonResult"
+    },
+    {
+      "name": "func localizedStandardContains<T>(T) -> Bool"
+    },
+    {
+      "name": "func localizedStandardRange<T>(of: T) -> Range<Self.Index>?"
+    },
+    {
+      "name": "func lowercased() -> String"
+    },
+    {
+      "name": "func lowercased(with: Locale?) -> String"
+    },
+    {
+      "name": "func maximumLengthOfBytes(using: String.Encoding) -> Int"
+    },
+    {
+      "name": "func padding<T>(toLength: Int, withPad: T, startingAt: Int) -> String"
+    },
+    {
+      "name": "func paragraphRange<R>(for: R) -> Range<Self.Index>"
+    },
+    {
+      "name": "func propertyList() -> Any"
+    },
+    {
+      "name": "func propertyListFromStringsFileFormat() -> [String : String]"
+    },
+    {
+      "name": "func range<T>(of: T, options: String.CompareOptions, range: Range<Self.Index>?, locale: Locale?) -> Range<Self.Index>?"
+    },
+    {
+      "name": "func rangeOfCharacter(from: CharacterSet, options: String.CompareOptions, range: Range<Self.Index>?) -> Range<Self.Index>?"
+    },
+    {
+      "name": "func rangeOfComposedCharacterSequence(at: Self.Index) -> Range<Self.Index>"
+    },
+    {
+      "name": "func rangeOfComposedCharacterSequences<R>(for: R) -> Range<Self.Index>"
+    },
+    {
+      "name": "func replacingCharacters<T, R>(in: R, with: T) -> String"
+    },
+    {
+      "name": "func replacingOccurrences<Target, Replacement>(of: Target, with: Replacement, options: String.CompareOptions, range: Range<Self.Index>?) -> String"
+    },
+    {
+      "name": "func trimmingCharacters(in: CharacterSet) -> String"
+    },
+    {
+      "name": "func uppercased() -> String"
+    },
+    {
+      "name": "func uppercased(with: Locale?) -> String"
+    },
+    {
+      "name": "func withCString<Result>((UnsafePointer<CChar>) -> Result) -> Result",
+      "desc": "Calls the given closure with a pointer to the contents of the string, represented as a null-terminated sequence of UTF-8 code units."
+    },
+    {
+      "name": "func withCString<Result, Encoding>(encodedAs: Encoding.Type, (UnsafePointer<Encoding.CodeUnit>) -> Result) -> Result",
+      "desc": "Calls the given closure with a pointer to the contents of the string, represented as a null-terminated sequence of code units."
+    },
+    {
+      "name": "func write(to: URL, atomically: Bool, encoding: String.Encoding)"
+    },
+    {
+      "name": "func write<T>(toFile: T, atomically: Bool, encoding: String.Encoding)"
+    },
+    {
+      "name": "static func != <RHS>(Self, RHS) -> Bool"
+    },
+    {
+      "name": "static func == <RHS>(Self, RHS) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    }
+  ],
+  "declaration": "protocol StringProtocol where Self.Element == Character, Self.Index == String.Index, Self.StringInterpolation == DefaultStringInterpolation, Self.SubSequence : StringProtocol",
+  "inheritsFrom": [
+    "BidirectionalCollection",
+    "Comparable",
+    "ExpressibleByStringInterpolation",
+    "Hashable",
+    "LosslessStringConvertible",
+    "TextOutputStream",
+    "TextOutputStreamable"
+  ]
+}

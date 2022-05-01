@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/corespotlight/cssearchableindex",
+  "type": "Class",
+  "name": "CSSearchableIndex",
+  "desc": "The on-device index.",
+  "items": [
+    {
+      "name": "class func isIndexingAvailable() -> Bool",
+      "desc": "Returns a Boolean value that indicates whether indexing is available on the current device."
+    },
+    {
+      "name": "class func `default`() -> Self",
+      "desc": "Returns the default on-device index."
+    },
+    {
+      "name": "init(name: String)",
+      "desc": "Returns an on-device index with the specified name."
+    },
+    {
+      "name": "init(name: String, protectionClass: FileProtectionType?)",
+      "desc": "Returns an on-device index with the specified name and data protection class."
+    },
+    {
+      "name": "protocol CSSearchableIndexDelegate",
+      "desc": "A protocol defining methods a delegate object or app extension uses to handle communication from the on-device index."
+    },
+    {
+      "name": "var indexDelegate: CSSearchableIndexDelegate?",
+      "desc": "The delegate object that can handle index-management tasks."
+    },
+    {
+      "name": "func deleteAllSearchableItems(completionHandler: ((Error?) -> Void)?)",
+      "desc": "Deletes all searchable items from the index."
+    },
+    {
+      "name": "func deleteSearchableItems(withDomainIdentifiers: [String], completionHandler: ((Error?) -> Void)?)",
+      "desc": "Removes from the index all searchable items associated with the specified domain."
+    },
+    {
+      "name": "func deleteSearchableItems(withIdentifiers: [String], completionHandler: ((Error?) -> Void)?)",
+      "desc": "Removes from the index all items with the specified identifiers."
+    },
+    {
+      "name": "func indexSearchableItems([CSSearchableItem], completionHandler: ((Error?) -> Void)?)",
+      "desc": "Adds or updates items in the index."
+    },
+    {
+      "name": "func beginBatch()",
+      "desc": "Begins a batch of updates to an index."
+    },
+    {
+      "name": "func endBatch(withClientState: Data, completionHandler: ((Error?) -> Void)?)",
+      "desc": "Ends a batch of index updates and stores the specified state information."
+    },
+    {
+      "name": "func fetchLastClientState(completionHandler: (Data?, Error?) -> Void)",
+      "desc": "Gets the app’s most recently stored state information."
+    }
+  ],
+  "declaration": "class CSSearchableIndex : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

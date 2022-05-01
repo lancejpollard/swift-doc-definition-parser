@@ -1,0 +1,29 @@
+{
+  "path": "/documentation/SwiftUI/WKExtensionDelegateAdaptor",
+  "type": "Structure",
+  "name": "WKExtensionDelegateAdaptor",
+  "desc": "A property wrapper type that you use to create a WatchKit extension delegate.",
+  "items": [
+    {
+      "name": "init(DelegateType.Type)",
+      "desc": "Creates a WatchKit extension delegate adaptor."
+    },
+    {
+      "name": "init(DelegateType.Type)",
+      "desc": "Creates a WatchKit extension delegate adaptor using a delegate that’s an observable object."
+    },
+    {
+      "name": "var projectedValue: ObservedObject<DelegateType>.Wrapper",
+      "desc": "A projection of the observed object that provides bindings to its properties."
+    },
+    {
+      "name": "var wrappedValue: DelegateType",
+      "desc": "The underlying delegate."
+    }
+  ],
+  "declaration": "@propertyWrapper struct WKExtensionDelegateAdaptor<DelegateType> where DelegateType : NSObject, DelegateType : WKExtensionDelegate",
+  "conformsTo": [
+    "DynamicProperty",
+    "Sendable"
+  ]
+}

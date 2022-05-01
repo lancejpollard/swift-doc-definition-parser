@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/combine/publishers/contains",
+  "type": "Structure",
+  "name": "Publishers.Contains",
+  "desc": "A publisher that emits a Boolean value when it receives a specific element from its upstream publisher.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, output: Upstream.Output)",
+      "desc": "Creates a publisher that emits a Boolean value when it receives a specific element from its upstream publisher."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    },
+    {
+      "name": "let output: Upstream.Output",
+      "desc": "The element to match in the upstream publisher."
+    },
+    {
+      "name": "static func == (Publishers.Contains<Upstream>, Publishers.Contains<Upstream>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two publishers are equivalent."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    }
+  ],
+  "declaration": "struct Contains<Upstream> where Upstream : Publisher, Upstream.Output : Equatable",
+  "conformsTo": [
+    "Equatable",
+    "Publisher"
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "path": "/documentation/coreimage/cicontext",
+  "type": "Class",
+  "name": "CIContext",
+  "desc": "An evaluation context for rendering image processing results and performing image analysis.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Initializes a context without a specific rendering destination, using default options."
+    },
+    {
+      "name": "init(options: [CIContextOption : Any]?)",
+      "desc": "Initializes a context without a specific rendering destination, using the specified options."
+    },
+    {
+      "name": "init(cgContext: CGContext, options: [CIContextOption : Any]?)",
+      "desc": "Creates a Core Image context from a Quartz context, using the specified options."
+    },
+    {
+      "name": "init(mtlDevice: MTLDevice)",
+      "desc": "Creates a Core Image context using the specified Metal device."
+    },
+    {
+      "name": "init(mtlDevice: MTLDevice, options: [CIContextOption : Any]?)",
+      "desc": "Creates a Core Image context using the specified Metal device and options."
+    },
+    {
+      "name": "func createCGImage(CIImage, from: CGRect) -> CGImage?",
+      "desc": "Creates a Quartz 2D image from a region of a Core Image image object."
+    },
+    {
+      "name": "func createCGImage(CIImage, from: CGRect, format: CIFormat, colorSpace: CGColorSpace?) -> CGImage?",
+      "desc": "Creates a Quartz 2D image from a region of a Core Image image object."
+    },
+    {
+      "name": "func createCGImage(CIImage, from: CGRect, format: CIFormat, colorSpace: CGColorSpace?, deferred: Bool) -> CGImage?",
+      "desc": "Creates a Quartz 2D image from a region of a Core Image image object with deferred rendering."
+    },
+    {
+      "name": "func render(CIImage, toBitmap: UnsafeMutableRawPointer, rowBytes: Int, bounds: CGRect, format: CIFormat, colorSpace: CGColorSpace?)",
+      "desc": "Renders to the given bitmap."
+    },
+    {
+      "name": "func render(CIImage, to: CVPixelBuffer)",
+      "desc": "Renders an image into a pixel buffer."
+    },
+    {
+      "name": "func render(CIImage, to: CVPixelBuffer, bounds: CGRect, colorSpace: CGColorSpace?)",
+      "desc": "Renders a region of an image into a pixel buffer."
+    },
+    {
+      "name": "func render(CIImage, to: IOSurfaceRef, bounds: CGRect, colorSpace: CGColorSpace?)",
+      "desc": "Renders a region of an image into an IOSurface object."
+    },
+    {
+      "name": "func render(CIImage, to: MTLTexture, commandBuffer: MTLCommandBuffer?, bounds: CGRect, colorSpace: CGColorSpace)",
+      "desc": "Renders a region of an image to a Metal texture."
+    },
+    {
+      "name": "func draw(CIImage, in: CGRect, from: CGRect)",
+      "desc": "Renders a region of an image to a rectangle in the context destination."
+    },
+    {
+      "name": "func inputImageMaximumSize() -> CGSize",
+      "desc": "Returns the maximum size allowed for any image rendered into the context."
+    },
+    {
+      "name": "func outputImageMaximumSize() -> CGSize",
+      "desc": "Returns the maximum size allowed for any image created by the context."
+    },
+    {
+      "name": "func clearCaches()",
+      "desc": "Frees any cached data, such as temporary images, associated with the context and runs the garbage collector."
+    },
+    {
+      "name": "func reclaimResources()",
+      "desc": "Runs the garbage collector to reclaim any resources that the context no longer requires."
+    },
+    {
+      "name": "class func offlineGPUCount() -> UInt32",
+      "desc": "Returns the number of GPUs not currently driving a display."
+    },
+    {
+      "name": "var workingColorSpace: CGColorSpace?",
+      "desc": "The working color space of the Core Image context."
+    },
+    {
+      "name": "var workingFormat: CIFormat",
+      "desc": "The working pixel format of the Core Image context."
+    },
+    {
+      "name": "func tiffRepresentation(of: CIImage, format: CIFormat, colorSpace: CGColorSpace, options: [CIImageRepresentationOption : Any]) -> Data?",
+      "desc": "Renders the image and exports the resulting image data in TIFF format."
+    },
+    {
+      "name": "func jpegRepresentation(of: CIImage, colorSpace: CGColorSpace, options: [CIImageRepresentationOption : Any]) -> Data?",
+      "desc": "Renders the image and exports the resulting image data in JPEG format."
+    },
+    {
+      "name": "func pngRepresentation(of: CIImage, format: CIFormat, colorSpace: CGColorSpace, options: [CIImageRepresentationOption : Any]) -> Data?",
+      "desc": "Renders the image and exports the resulting image data in PNG format."
+    },
+    {
+      "name": "func heifRepresentation(of: CIImage, format: CIFormat, colorSpace: CGColorSpace, options: [CIImageRepresentationOption : Any]) -> Data?",
+      "desc": "Renders the image and exports the resulting image data in HEIF format."
+    },
+    {
+      "name": "func writeTIFFRepresentation(of: CIImage, to: URL, format: CIFormat, colorSpace: CGColorSpace, options: [CIImageRepresentationOption : Any])",
+      "desc": "Renders the image and exports the resulting image data as a file in TIFF format."
+    },
+    {
+      "name": "func writeJPEGRepresentation(of: CIImage, to: URL, colorSpace: CGColorSpace, options: [CIImageRepresentationOption : Any])",
+      "desc": "Renders the image and exports the resulting image data as a file in JPEG format."
+    },
+    {
+      "name": "func writePNGRepresentation(of: CIImage, to: URL, format: CIFormat, colorSpace: CGColorSpace, options: [CIImageRepresentationOption : Any])",
+      "desc": "Renders the image and exports the resulting image data as a file in PNG format."
+    },
+    {
+      "name": "func writeHEIFRepresentation(of: CIImage, to: URL, format: CIFormat, colorSpace: CGColorSpace, options: [CIImageRepresentationOption : Any])",
+      "desc": "Renders the image and exports the resulting image data as a file in HEIF format."
+    },
+    {
+      "name": "static let avDepthData: CIImageRepresentationOption",
+      "desc": "options dictionary key for image export methods to represent data as AVDepthData."
+    },
+    {
+      "name": "static let depthImage: CIImageRepresentationOption",
+      "desc": "options dictionary key for image export methods to output depth data."
+    },
+    {
+      "name": "static let disparityImage: CIImageRepresentationOption",
+      "desc": "options dictionary key for image export methods to output disparity data."
+    },
+    {
+      "name": "static let outputColorSpace: CIContextOption",
+      "desc": "A key for the color space to use for images before they are rendered to the context."
+    },
+    {
+      "name": "static let workingColorSpace: CIContextOption",
+      "desc": "A key for the color space to use for image operations."
+    },
+    {
+      "name": "static let workingFormat: CIContextOption",
+      "desc": "An option for the color format to use for intermediate results when rendering with the context."
+    },
+    {
+      "name": "static let highQualityDownsample: CIContextOption",
+      "desc": "An option controlling the quality of image downsampling operations performed by the context."
+    },
+    {
+      "name": "static let outputPremultiplied: CIContextOption",
+      "desc": "An option for whether output rendering by the context produces alpha-premultiplied pixels."
+    },
+    {
+      "name": "static let cacheIntermediates: CIContextOption",
+      "desc": "An option for whether the context caches the contents of any intermediate pixel buffers it uses during rendering."
+    },
+    {
+      "name": "static let useSoftwareRenderer: CIContextOption",
+      "desc": "A key for enabling software renderer use. If the associated NSNumber object is true, the software renderer is required."
+    },
+    {
+      "name": "static let priorityRequestLow: CIContextOption",
+      "desc": "A key for enabling low-priority GPU use."
+    },
+    {
+      "name": "func prepareRender(CIImage, from: CGRect, to: CIRenderDestination, at: CGPoint)",
+      "desc": "An optional call to warm up a CIContext so that subsequent calls to render with the same arguments run more efficiently."
+    },
+    {
+      "name": "func startTask(toClear: CIRenderDestination) -> CIRenderTask",
+      "desc": "Fills the entire destination with black or clear depending on its alphaMode."
+    },
+    {
+      "name": "func startTask(toRender: CIImage, from: CGRect, to: CIRenderDestination, at: CGPoint) -> CIRenderTask",
+      "desc": "Renders a portion of an image to a point of destination."
+    },
+    {
+      "name": "func startTask(toRender: CIImage, to: CIRenderDestination) -> CIRenderTask",
+      "desc": "Renders an image to a destination so that point (0, 0) of the image maps to point (0, 0) of the destination."
+    },
+    {
+      "name": "init(mtlCommandQueue: MTLCommandQueue)"
+    },
+    {
+      "name": "init(mtlCommandQueue: MTLCommandQueue, options: [CIContextOption : Any]?)"
+    },
+    {
+      "name": "func depthBlurEffectFilter(for: CIImage, disparityImage: CIImage, portraitEffectsMatte: CIImage?, hairSemanticSegmentation: CIImage?, glassesMatte: CIImage?, gainMap: CIImage?, orientation: CGImagePropertyOrientation, options: [AnyHashable : Any]?) -> CIFilter?"
+    },
+    {
+      "name": "func depthBlurEffectFilter(for: CIImage, disparityImage: CIImage, portraitEffectsMatte: CIImage?, hairSemanticSegmentation: CIImage?, orientation: CGImagePropertyOrientation, options: [AnyHashable : Any]?) -> CIFilter?"
+    },
+    {
+      "name": "func depthBlurEffectFilter(for: CIImage, disparityImage: CIImage, portraitEffectsMatte: CIImage?, orientation: CGImagePropertyOrientation, options: [AnyHashable : Any]?) -> CIFilter?"
+    },
+    {
+      "name": "func depthBlurEffectFilter(forImageData: Data, options: [AnyHashable : Any]?) -> CIFilter?"
+    },
+    {
+      "name": "func depthBlurEffectFilter(forImageURL: URL, options: [AnyHashable : Any]?) -> CIFilter?"
+    },
+    {
+      "name": "func heif10Representation(of: CIImage, colorSpace: CGColorSpace, options: [CIImageRepresentationOption : Any]) -> Data"
+    },
+    {
+      "name": "func writeHEIF10Representation(of: CIImage, to: URL, colorSpace: CGColorSpace, options: [CIImageRepresentationOption : Any])"
+    }
+  ],
+  "declaration": "class CIContext : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

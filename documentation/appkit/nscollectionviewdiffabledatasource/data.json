@@ -1,0 +1,51 @@
+{
+  "path": "/documentation/appkit/nscollectionviewdiffabledatasource",
+  "type": "Generic Class",
+  "name": "NSCollectionViewDiffableDataSource",
+  "desc": "The object you use to manage data and provide items for a collection view.",
+  "items": [
+    {
+      "name": "init(collectionView: NSCollectionView, itemProvider: NSCollectionViewDiffableDataSource<SectionIdentifierType, ItemIdentifierType>.ItemProvider)",
+      "desc": "Creates a diffable data source with the specified item provider, and connects it to the specified collection view."
+    },
+    {
+      "name": "typealias NSCollectionViewDiffableDataSource.ItemProvider",
+      "desc": "A closure that configures and returns an item for a collection view from its diffable data source."
+    },
+    {
+      "name": "var supplementaryViewProvider: NSCollectionViewDiffableDataSource<SectionIdentifierType, ItemIdentifierType>.SupplementaryViewProvider?",
+      "desc": "The closure that configures and returns the collection view’s supplementary views, such as headers and footers, from the diffable data source."
+    },
+    {
+      "name": "typealias NSCollectionViewDiffableDataSource.SupplementaryViewProvider",
+      "desc": "A closure that configures and returns a collection view’s supplementary view, such as a header or footer, from a diffable data source."
+    },
+    {
+      "name": "func itemIdentifier(for: IndexPath) -> ItemIdentifierType?",
+      "desc": "Returns an identifier for the item at the specified index path in the collection view."
+    },
+    {
+      "name": "func indexPath(for: ItemIdentifierType) -> IndexPath?",
+      "desc": "Returns an index path for the item with the specified identifier in the collection view."
+    },
+    {
+      "name": "func snapshot() -> NSDiffableDataSourceSnapshot<SectionIdentifierType, ItemIdentifierType>",
+      "desc": "Returns a representation of the current state of the data in the collection view."
+    },
+    {
+      "name": "func apply(NSDiffableDataSourceSnapshot<SectionIdentifierType, ItemIdentifierType>, animatingDifferences: Bool, completion: (() -> Void)?)",
+      "desc": "Updates the UI to reflect the state of the data in the specified snapshot, optionally animating the UI changes and executing a completion handler."
+    },
+    {
+      "name": "class NSCollectionViewDiffableDataSourceReference",
+      "desc": "The Swift representation of the Objective-C object you use to manage data and provide items for a collection view."
+    }
+  ],
+  "declaration": "class NSCollectionViewDiffableDataSource<SectionIdentifierType, ItemIdentifierType> : NSObject where SectionIdentifierType : Hashable, ItemIdentifierType : Hashable",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCollectionViewDataSource"
+  ]
+}

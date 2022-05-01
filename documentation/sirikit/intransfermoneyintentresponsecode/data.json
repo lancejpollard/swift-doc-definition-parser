@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/sirikit/intransfermoneyintentresponsecode",
+  "type": "Enumeration",
+  "name": "INTransferMoneyIntentResponseCode",
+  "desc": "Constants indicating the state of the response.DeprecatedThis intent is no longer available. You may define a custom intent instead. For more information, see Deprecated SiriKit Intent Domains.",
+  "items": [
+    {
+      "name": "case unspecified",
+      "desc": "The response didn’t specify a response code."
+    },
+    {
+      "name": "case ready",
+      "desc": "You’re ready to handle the intent."
+    },
+    {
+      "name": "case inProgress",
+      "desc": "You’ve received the transaction details but haven’t yet scheduled the transaction."
+    },
+    {
+      "name": "case success",
+      "desc": "You successfully scheduled the transaction."
+    },
+    {
+      "name": "case failure",
+      "desc": "You were unable to schedule the transaction."
+    },
+    {
+      "name": "case failureRequiringAppLaunch",
+      "desc": "The user must launch your app to schedule the transaction."
+    },
+    {
+      "name": "case failureCredentialsUnverified",
+      "desc": "The transaction failed because you were unable to verify the user’s credentials."
+    },
+    {
+      "name": "case failureInsufficientFunds",
+      "desc": "The transaction failed because the user’s account didn’t contain sufficient funds."
+    }
+  ],
+  "declaration": "enum INTransferMoneyIntentResponseCode : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

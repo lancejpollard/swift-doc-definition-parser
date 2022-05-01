@@ -1,0 +1,88 @@
+{
+  "path": "/documentation/coregraphics/cgdataprovider",
+  "type": "Class",
+  "name": "CGDataProvider",
+  "desc": "An abstraction for data-reading tasks that eliminates the need to manage a raw memory buffer.",
+  "items": [
+    {
+      "name": "init?(sequentialInfo: UnsafeMutableRawPointer?, callbacks: UnsafePointer<CGDataProviderSequentialCallbacks>)",
+      "desc": "Creates a sequential-access data provider."
+    },
+    {
+      "name": "struct CGDataProviderSequentialCallbacks",
+      "desc": "Defines a structure containing pointers to client-defined callback functions that manage the sending of data for a sequential-access data provider."
+    },
+    {
+      "name": "typealias CGDataProviderRewindCallback",
+      "desc": "A callback function that moves the current position in the data stream back to the beginning."
+    },
+    {
+      "name": "typealias CGDataProviderGetBytesCallback",
+      "desc": "A callback function that copies from a provider data stream into a Core Graphics buffer."
+    },
+    {
+      "name": "typealias CGDataProviderSkipForwardCallback",
+      "desc": "A callback function that advances the current position in the data stream supplied by the provider."
+    },
+    {
+      "name": "typealias CGDataProviderReleaseInfoCallback",
+      "desc": "A callback function that releases any private data or resources associated with the data provider."
+    },
+    {
+      "name": "init?(directInfo: UnsafeMutableRawPointer?, size: off_t, callbacks: UnsafePointer<CGDataProviderDirectCallbacks>)",
+      "desc": "Creates a direct-access data provider."
+    },
+    {
+      "name": "init?(data: CFData)",
+      "desc": "Creates a data provider that reads from a CFData object."
+    },
+    {
+      "name": "init?(url: CFURL)",
+      "desc": "Creates a direct-access data provider that uses a URL to supply data."
+    },
+    {
+      "name": "init?(dataInfo: UnsafeMutableRawPointer?, data: UnsafeRawPointer, size: Int, releaseData: CGDataProviderReleaseDataCallback)",
+      "desc": "Creates a direct-access data provider that uses data your program supplies."
+    },
+    {
+      "name": "init?(filename: UnsafePointer<CChar>)",
+      "desc": "Creates a direct-access data provider that uses a file to supply data."
+    },
+    {
+      "name": "struct CGDataProviderDirectCallbacks",
+      "desc": "Defines pointers to client-defined callback functions that manage the sending of data for a direct-access data provider."
+    },
+    {
+      "name": "typealias CGDataProviderGetBytePointerCallback",
+      "desc": "A callback function that returns a generic pointer to the provider data."
+    },
+    {
+      "name": "typealias CGDataProviderGetBytesAtPositionCallback",
+      "desc": "A callback function that copies data from the provider into a Core Graphics buffer."
+    },
+    {
+      "name": "typealias CGDataProviderReleaseBytePointerCallback",
+      "desc": "A callback function that releases the pointer Core Graphics obtained by calling CGDataProviderGetBytePointerCallback."
+    },
+    {
+      "name": "typealias CGDataProviderReleaseInfoCallback",
+      "desc": "A callback function that releases any private data or resources associated with the data provider."
+    },
+    {
+      "name": "typealias CGDataProviderReleaseDataCallback",
+      "desc": "A callback function that releases data you supply to the function init(dataInfo:data:size:releaseData:)."
+    },
+    {
+      "name": "var data: CFData?",
+      "desc": "Returns a copy of the provider’s data."
+    },
+    {
+      "name": "class var typeID: CFTypeID",
+      "desc": "Returns the Core Foundation type identifier for data providers."
+    },
+    {
+      "name": "var info: UnsafeMutableRawPointer?"
+    }
+  ],
+  "declaration": "class CGDataProvider"
+}

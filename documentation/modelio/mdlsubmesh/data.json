@@ -1,0 +1,70 @@
+{
+  "path": "/documentation/modelio/mdlsubmesh",
+  "type": "Class",
+  "name": "MDLSubmesh",
+  "desc": "A container for index buffer data and material information to be used in rendering all or part of a 3D object.",
+  "items": [
+    {
+      "name": "init(indexBuffer: MDLMeshBuffer, indexCount: Int, indexType: MDLIndexBitDepth, geometryType: MDLGeometryType, material: MDLMaterial?)",
+      "desc": "Initializes a submesh with an index buffer and the specified properties."
+    },
+    {
+      "name": "init(name: String, indexBuffer: MDLMeshBuffer, indexCount: Int, indexType: MDLIndexBitDepth, geometryType: MDLGeometryType, material: MDLMaterial?)",
+      "desc": "Initializes a named submesh with an index buffer and the specified properties."
+    },
+    {
+      "name": "init(name: String, indexBuffer: MDLMeshBuffer, indexCount: Int, indexType: MDLIndexBitDepth, geometryType: MDLGeometryType, material: MDLMaterial?, topology: MDLSubmeshTopology?)",
+      "desc": "Initializes a named submesh with a specific topology."
+    },
+    {
+      "name": "init?(mdlSubmesh: MDLSubmesh, indexType: MDLIndexBitDepth, geometryType: MDLGeometryType)",
+      "desc": "Initializes a submesh by copying or converting another submesh."
+    },
+    {
+      "name": "var indexBuffer: MDLMeshBuffer",
+      "desc": "An object that provides index data for the submesh."
+    },
+    {
+      "name": "var indexCount: Int",
+      "desc": "The number of indices in the submesh’s index buffer."
+    },
+    {
+      "name": "var indexType: MDLIndexBitDepth",
+      "desc": "The data type for each element in the submesh’s index buffer."
+    },
+    {
+      "name": "var geometryType: MDLGeometryType",
+      "desc": "The type of geometric primitives described by the submesh’s index buffer."
+    },
+    {
+      "name": "var topology: MDLSubmeshTopology?",
+      "desc": "A description of how the non-uniform layout of the submesh’s index buffer defines the shape of the mesh."
+    },
+    {
+      "name": "func indexBuffer(asIndexType: MDLIndexBitDepth) -> MDLMeshBuffer"
+    },
+    {
+      "name": "var material: MDLMaterial?",
+      "desc": "An object that describes the intended surface appearance of the submesh for rendering."
+    },
+    {
+      "name": "var name: String",
+      "desc": "A descriptive name for the submesh."
+    },
+    {
+      "name": "enum MDLIndexBitDepth",
+      "desc": "Options for the size of integer data in a submesh’s index buffer, used by the indexType property."
+    },
+    {
+      "name": "enum MDLGeometryType",
+      "desc": "Types of geometric primitives for rendering a submesh, used by the geometryType property."
+    }
+  ],
+  "declaration": "class MDLSubmesh : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "MDLNamed"
+  ]
+}

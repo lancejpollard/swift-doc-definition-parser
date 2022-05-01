@@ -1,0 +1,43 @@
+{
+  "path": "/documentation/quicklook/qlpreviewreply",
+  "type": "Class",
+  "name": "QLPreviewReply",
+  "desc": "The class you create when providing a data-based Quick Look preview extension.",
+  "items": [
+    {
+      "name": "init(fileURL: URL)",
+      "desc": "Creates a preview reply from an existing file URL."
+    },
+    {
+      "name": "init(forPDFWithPageSize: CGSize, createDocumentUsing: (QLPreviewReply) -> PDFDocument)",
+      "desc": "Creates a PDF preview reply."
+    },
+    {
+      "name": "init(dataOfContentType: UTType, contentSize: CGSize, createDataUsing: (QLPreviewReply) -> Data)",
+      "desc": "Creates a preview reply of a specified size and from a specified type by providing the data of the preview."
+    },
+    {
+      "name": "init(contextSize: CGSize, isBitmap: Bool, drawUsing: (CGContext, QLPreviewReply) -> Void)",
+      "desc": "Creates a preview reply of a specified size by drawing into a CoreGraphics context."
+    },
+    {
+      "name": "var title: String",
+      "desc": "The title for the system to display with the preview."
+    },
+    {
+      "name": "var attachments: [String : QLPreviewReplyAttachment]",
+      "desc": "The attachments for a preview reply that provide additional data for the system to display the preview."
+    },
+    {
+      "name": "var stringEncoding: String.Encoding",
+      "desc": "The string encoding used to parse the data you provide when creating the reply."
+    },
+    {
+      "name": "var stringEncoding: String.Encoding"
+    }
+  ],
+  "declaration": "class QLPreviewReply : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

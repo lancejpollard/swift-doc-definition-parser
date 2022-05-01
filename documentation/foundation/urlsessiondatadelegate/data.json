@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/foundation/urlsessiondatadelegate",
+  "type": "Protocol",
+  "name": "URLSessionDataDelegate",
+  "desc": "A protocol that defines methods that URL session instances call on their delegates to handle task-level events specific to data and upload tasks.",
+  "items": [
+    {
+      "name": "func urlSession(URLSession, dataTask: URLSessionDataTask, didReceive: URLResponse, completionHandler: (URLSession.ResponseDisposition) -> Void)",
+      "desc": "Tells the delegate that the data task received the initial reply (headers) from the server."
+    },
+    {
+      "name": "enum URLSession.ResponseDisposition",
+      "desc": "Constants indicating how a data or upload session should proceed after receiving the initial headers."
+    },
+    {
+      "name": "func urlSession(URLSession, dataTask: URLSessionDataTask, didBecome: URLSessionDownloadTask)",
+      "desc": "Tells the delegate that the data task was changed to a download task."
+    },
+    {
+      "name": "func urlSession(URLSession, dataTask: URLSessionDataTask, didBecome: URLSessionStreamTask)",
+      "desc": "Tells the delegate that the data task was changed to a stream task."
+    },
+    {
+      "name": "func urlSession(URLSession, dataTask: URLSessionDataTask, didReceive: Data)",
+      "desc": "Tells the delegate that the data task has received some of the expected data."
+    },
+    {
+      "name": "func urlSession(URLSession, dataTask: URLSessionDataTask, willCacheResponse: CachedURLResponse, completionHandler: (CachedURLResponse?) -> Void)",
+      "desc": "Asks the delegate whether the data (or upload) task should store the response in the cache."
+    }
+  ],
+  "declaration": "protocol URLSessionDataDelegate",
+  "inheritsFrom": [
+    "URLSessionTaskDelegate"
+  ]
+}

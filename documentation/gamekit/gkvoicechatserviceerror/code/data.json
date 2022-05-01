@@ -1,0 +1,80 @@
+{
+  "path": "/documentation/gamekit/gkvoicechatserviceerror/code",
+  "type": "Enumeration",
+  "name": "GKVoiceChatServiceError.Code",
+  "desc": "Error codes for the GKVoiceChatService error domain.",
+  "items": [
+    {
+      "name": "case internalError",
+      "desc": "A serious error occurred inside the voice chat service."
+    },
+    {
+      "name": "case noRemotePacketsError",
+      "desc": "The voice chat service stopped receiving packets from the remote participant."
+    },
+    {
+      "name": "case unableToConnectError",
+      "desc": "The voice chat service was unable to establish a connection with another user."
+    },
+    {
+      "name": "case remoteParticipantHangupError",
+      "desc": "The remote participant in a voice chat stopped the chat."
+    },
+    {
+      "name": "case invalidCallIDError",
+      "desc": "The voice chat service didn’t recognize the call identifier."
+    },
+    {
+      "name": "case audioUnavailableError",
+      "desc": "The audio hardware is unavailable to the voice chat service."
+    },
+    {
+      "name": "case uninitializedClientError",
+      "desc": "The application did not set a client before calling voice chat service methods."
+    },
+    {
+      "name": "case clientMissingRequiredMethodsError",
+      "desc": "The voice chat service did not find an expected method defined by the client."
+    },
+    {
+      "name": "case remoteParticipantBusyError",
+      "desc": "The remote participant is already connected to a voice chat."
+    },
+    {
+      "name": "case remoteParticipantCancelledError",
+      "desc": "A remote participant attempted to start a voice chat, then canceled."
+    },
+    {
+      "name": "case remoteParticipantResponseInvalidError",
+      "desc": "Invalid data was received from a remote participant."
+    },
+    {
+      "name": "case remoteParticipantDeclinedInviteError",
+      "desc": "A remote participant declined an invitation."
+    },
+    {
+      "name": "case methodCurrentlyInvalidError",
+      "desc": "A method on the voice chat service was called when it was not allowed to be called (for example, attempting to connect when the voice chat service was already connected)."
+    },
+    {
+      "name": "case networkConfigurationError",
+      "desc": "The voice chat service had problems accessing the network."
+    },
+    {
+      "name": "case unsupportedRemoteVersionError",
+      "desc": "The other participant is running a different version of the voice chat service."
+    },
+    {
+      "name": "case outOfMemoryError",
+      "desc": "The voice chat service was unable to allocate memory required to operate."
+    },
+    {
+      "name": "case invalidParameterError",
+      "desc": "A parameter had an unrecognized value."
+    }
+  ],
+  "declaration": "enum GKVoiceChatServiceError.Code : Int32, _ErrorCodeProtocol, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

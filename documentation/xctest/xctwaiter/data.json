@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/xctest/xctwaiter",
+  "type": "Class",
+  "name": "XCTWaiter",
+  "desc": "Waits for a group of expectations to be fulfilled.",
+  "items": [
+    {
+      "name": "init(delegate: XCTWaiterDelegate?)",
+      "desc": "Creates a new waiter with the specified delegate."
+    },
+    {
+      "name": "func wait(for: [XCTestExpectation], timeout: TimeInterval) -> XCTWaiter.Result",
+      "desc": "Waits on a group of expectations for up to the specified timeout."
+    },
+    {
+      "name": "func wait(for: [XCTestExpectation], timeout: TimeInterval, enforceOrder: Bool) -> XCTWaiter.Result",
+      "desc": "Waits on a group of expectations for up to the specified timeout, optionally enforcing their order of fulfillment."
+    },
+    {
+      "name": "class func wait(for: [XCTestExpectation], timeout: TimeInterval) -> XCTWaiter.Result",
+      "desc": "Creates a waiter that waits on a group of expectations for up to the specified timeout."
+    },
+    {
+      "name": "class func wait(for: [XCTestExpectation], timeout: TimeInterval, enforceOrder: Bool) -> XCTWaiter.Result",
+      "desc": "Creates a waiter that waits on a group of expectations for up to the specified timeout, optionally enforcing their order of fulfillment."
+    },
+    {
+      "name": "enum XCTWaiter.Result",
+      "desc": "Result states returned by a waiter when it completes, times out, fails, or is interrupted."
+    },
+    {
+      "name": "var delegate: XCTWaiterDelegate?",
+      "desc": "The delegate to which expectation fulfillment events will be reported."
+    },
+    {
+      "name": "protocol XCTWaiterDelegate",
+      "desc": "Defines methods that are called when XCTWaiter expectations are fulfilled correctly or incorrectly."
+    },
+    {
+      "name": "var fulfilledExpectations: [XCTestExpectation]",
+      "desc": "An array of expectations that were fulfilled, in order, up until the waiter stopped waiting."
+    }
+  ],
+  "declaration": "class XCTWaiter : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/avfoundation/avcapturemoviefileoutput",
+  "type": "Class",
+  "name": "AVCaptureMovieFileOutput",
+  "desc": "A capture output that records video and audio to a QuickTime movie file.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a movie file output."
+    },
+    {
+      "name": "var movieFragmentInterval: CMTime",
+      "desc": "The number of seconds of output that are written per fragment."
+    },
+    {
+      "name": "var metadata: [AVMetadataItem]?",
+      "desc": "The metadata for the output file."
+    },
+    {
+      "name": "func supportedOutputSettingsKeys(for: AVCaptureConnection) -> [String]",
+      "desc": "The list of supported keys for the output settings dictionary."
+    },
+    {
+      "name": "func outputSettings(for: AVCaptureConnection) -> [String : Any]",
+      "desc": "Returns the options used to reencode media from a given connection as it's being recorded."
+    },
+    {
+      "name": "func setOutputSettings([String : Any]?, for: AVCaptureConnection)",
+      "desc": "Sets the options dictionary used to reencode media from the given connection as it's being recorded."
+    },
+    {
+      "name": "var availableVideoCodecTypes: [AVVideoCodecType]",
+      "desc": "The video codec types currently supported for recording movie files."
+    },
+    {
+      "name": "struct AVVideoCodecType",
+      "desc": "A set of constants that describe the codecs the system supports for video capture."
+    },
+    {
+      "name": "func recordsVideoOrientationAndMirroringChangesAsMetadataTrack(for: AVCaptureConnection) -> Bool",
+      "desc": "A Boolean indicating whether the capture device records video orientation."
+    },
+    {
+      "name": "func setRecordsVideoOrientationAndMirroringChangesAsMetadataTrack(Bool, for: AVCaptureConnection)",
+      "desc": "A Boolean indicating whether the capture device sets video orientation."
+    },
+    {
+      "name": "var isPrimaryConstituentDeviceSwitchingBehaviorForRecordingEnabled: Bool",
+      "desc": "A Boolean value that indicates whether to restrict constituent device switching behavior during recording."
+    },
+    {
+      "name": "func setPrimaryConstituentDeviceSwitchingBehaviorForRecording(AVCaptureDevice.PrimaryConstituentDeviceSwitchingBehavior, restrictedSwitchingBehaviorConditions: AVCaptureDevice.PrimaryConstituentDeviceRestrictedSwitchingBehaviorConditions)",
+      "desc": "Sets the camera switching behavior to use during recording."
+    },
+    {
+      "name": "var primaryConstituentDeviceSwitchingBehaviorForRecording: AVCaptureDevice.PrimaryConstituentDeviceSwitchingBehavior",
+      "desc": "The camera switching behavior to use for recording."
+    },
+    {
+      "name": "var primaryConstituentDeviceRestrictedSwitchingBehaviorConditionsForRecording: AVCaptureDevice.PrimaryConstituentDeviceRestrictedSwitchingBehaviorConditions",
+      "desc": "The conditions during which camera switching may occur while recording."
+    }
+  ],
+  "declaration": "class AVCaptureMovieFileOutput : AVCaptureFileOutput",
+  "inheritsFrom": [
+    "AVCaptureFileOutput"
+  ]
+}

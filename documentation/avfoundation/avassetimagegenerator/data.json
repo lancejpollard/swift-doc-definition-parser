@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/avfoundation/avassetimagegenerator",
+  "type": "Class",
+  "name": "AVAssetImageGenerator",
+  "desc": "An object that generates thumbnail or preview images of video assets.",
+  "items": [
+    {
+      "name": "init(asset: AVAsset)",
+      "desc": "Creates an image generator for use with the specified asset."
+    },
+    {
+      "name": "var asset: AVAsset",
+      "desc": "The asset that initialized the image generator."
+    },
+    {
+      "name": "var maximumSize: CGSize",
+      "desc": "Specifies the maximum dimensions for the generated image."
+    },
+    {
+      "name": "var appliesPreferredTrackTransform: Bool",
+      "desc": "Specifies whether to apply the track matrix or matrices when extracting an image from the asset."
+    },
+    {
+      "name": "var requestedTimeToleranceBefore: CMTime",
+      "desc": "The maximum amount of time before a requested time you can generate an image."
+    },
+    {
+      "name": "var requestedTimeToleranceAfter: CMTime",
+      "desc": "The maximum length of time after a requested time you can generate an image."
+    },
+    {
+      "name": "var apertureMode: AVAssetImageGenerator.ApertureMode?",
+      "desc": "Specifies the aperture mode for the generated image."
+    },
+    {
+      "name": "struct AVAssetImageGenerator.ApertureMode",
+      "desc": "The aperture modes used when generating images."
+    },
+    {
+      "name": "var videoComposition: AVVideoComposition?",
+      "desc": "The video composition to use when extracting images from assets with multiple video tracks."
+    },
+    {
+      "name": "var customVideoCompositor: AVVideoCompositing?",
+      "desc": "Returns the custom video compositor instance used, if any."
+    },
+    {
+      "name": "func copyCGImage(at: CMTime, actualTime: UnsafeMutablePointer<CMTime>?) -> CGImage",
+      "desc": "Returns an image for the asset at or near a specified time."
+    },
+    {
+      "name": "func generateCGImagesAsynchronously(forTimes: [NSValue], completionHandler: AVAssetImageGeneratorCompletionHandler)",
+      "desc": "Creates a series of image objects for an asset at or near specified times."
+    },
+    {
+      "name": "typealias AVAssetImageGeneratorCompletionHandler",
+      "desc": "A block that you use to receive thumbnail images generated from an asset."
+    },
+    {
+      "name": "enum AVAssetImageGenerator.Result",
+      "desc": "The statuses indicating the outcome of image generation."
+    },
+    {
+      "name": "func cancelAllCGImageGeneration()",
+      "desc": "Cancels all pending image generation requests."
+    }
+  ],
+  "declaration": "class AVAssetImageGenerator : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

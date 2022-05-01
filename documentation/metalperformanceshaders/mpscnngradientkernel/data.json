@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpscnngradientkernel",
+  "type": "Class",
+  "name": "MPSCNNGradientKernel",
+  "desc": "The base class for gradient layers.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice)"
+    },
+    {
+      "name": "var kernelOffsetX: Int"
+    },
+    {
+      "name": "var kernelOffsetY: Int"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, sourceGradient: MPSImage, sourceImage: MPSImage, gradientState: MPSState) -> MPSImage"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, sourceGradient: MPSImage, sourceImage: MPSImage, gradientState: MPSState, destinationGradient: MPSImage)"
+    },
+    {
+      "name": "func encodeBatch(commandBuffer: MTLCommandBuffer, sourceGradients: [MPSImage], sourceImages: [MPSImage], gradientStates: [MPSState]) -> [MPSImage]"
+    },
+    {
+      "name": "func encodeBatch(commandBuffer: MTLCommandBuffer, sourceGradients: [MPSImage], sourceImages: [MPSImage], gradientStates: [MPSState], destinationGradients: [MPSImage])"
+    }
+  ],
+  "declaration": "class MPSCNNGradientKernel : MPSCNNBinaryKernel",
+  "inheritsFrom": [
+    "MPSCNNBinaryKernel"
+  ]
+}

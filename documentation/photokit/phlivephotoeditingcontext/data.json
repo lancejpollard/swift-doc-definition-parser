@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/photokit/phlivephotoeditingcontext",
+  "type": "Class",
+  "name": "PHLivePhotoEditingContext",
+  "desc": "An editing session for modifying the photo, video, and audio content of a Live Photo.",
+  "items": [
+    {
+      "name": "init?(livePhotoEditingInput: PHContentEditingInput)",
+      "desc": "Creates a Live Photo editing context for the specified editing input."
+    },
+    {
+      "name": "var frameProcessor: PHLivePhotoFrameProcessingBlock?",
+      "desc": "A block to be called by Photos for processing each frame of the Live Photo’s visual content."
+    },
+    {
+      "name": "typealias PHLivePhotoFrameProcessingBlock",
+      "desc": "The signature for a block Photos calls to process Live Photo frames."
+    },
+    {
+      "name": "var audioVolume: Float",
+      "desc": "The audio gain to apply to the processed Live Photo."
+    },
+    {
+      "name": "func saveLivePhoto(to: PHContentEditingOutput, options: [String : Any]?, completionHandler: (Bool, Error?) -> Void)",
+      "desc": "Processes and saves a full-quality Live Photo as the output of your editing session."
+    },
+    {
+      "name": "func prepareLivePhotoForPlayback(withTargetSize: CGSize, options: [String : Any]?, completionHandler: (PHLivePhoto?, Error?) -> Void)",
+      "desc": "Processes a Live Photo with your edits for viewing."
+    },
+    {
+      "name": "struct PHLivePhotoEditingOption",
+      "desc": "Keys for the options dictionary used with the methods listed in Processing an Editing Context’s Live Photo."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Aborts any Live Photo processing in progress."
+    },
+    {
+      "name": "var fullSizeImage: CIImage",
+      "desc": "The unedited still photo content of the Live Photo."
+    },
+    {
+      "name": "var duration: CMTime",
+      "desc": "The duration, in seconds, of the Live Photo."
+    },
+    {
+      "name": "var photoTime: CMTime",
+      "desc": "The offset, in seconds, from the beginning of the Live Photo’s duration to the time corresponding to its still photo."
+    },
+    {
+      "name": "var orientation: CGImagePropertyOrientation",
+      "desc": "The image orientation of the Live Photo."
+    },
+    {
+      "name": "enum PHLivePhotoEditingErrorCode",
+      "desc": "Error codes for Live Photo editing errors."
+    }
+  ],
+  "declaration": "class PHLivePhotoEditingContext : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

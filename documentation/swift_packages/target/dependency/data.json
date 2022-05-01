@@ -1,0 +1,66 @@
+{
+  "path": "/documentation/swift_packages/target/dependency",
+  "type": "Enumeration",
+  "name": "Target.Dependency",
+  "desc": "The different types of a target’s dependency on another entity.",
+  "items": [
+    {
+      "name": "static func product(name: String, package: String, condition: TargetDependencyCondition?) -> Target.Dependency",
+      "desc": "Creates a target dependency on a product from a package dependency."
+    },
+    {
+      "name": "static func target(name: String, condition: TargetDependencyCondition?) -> Target.Dependency",
+      "desc": "Creates a dependency on a target in the same package."
+    },
+    {
+      "name": "static func byName(name: String, condition: TargetDependencyCondition?) -> Target.Dependency",
+      "desc": "Creates a dependency that resolves to either a target or a product with the specified name."
+    },
+    {
+      "name": "struct TargetDependencyCondition",
+      "desc": "A condition that limits the application of a target’s dependency."
+    },
+    {
+      "name": "init(stringLiteral: String)",
+      "desc": "Creates a target dependency instance with the given value."
+    },
+    {
+      "name": "init(extendedGraphemeClusterLiteral: String)",
+      "desc": "Creates an instance initialized to the given value."
+    },
+    {
+      "name": "init(unicodeScalarLiteral: String)",
+      "desc": "Creates an instance initialized to the given value."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes this value into the given encoder."
+    },
+    {
+      "name": "typealias Target.Dependency.ExtendedGraphemeClusterLiteralType",
+      "desc": "A type that represents an extended grapheme cluster literal."
+    },
+    {
+      "name": "typealias Target.Dependency.StringLiteralType",
+      "desc": "A type that represents a string literal."
+    },
+    {
+      "name": "typealias Target.Dependency.UnicodeScalarLiteralType",
+      "desc": "A type that represents a Unicode scalar literal."
+    },
+    {
+      "name": "case byNameItem(name: String, condition: TargetDependencyCondition?)"
+    },
+    {
+      "name": "case productItem(name: String, package: String?, condition: TargetDependencyCondition?)"
+    },
+    {
+      "name": "case targetItem(name: String, condition: TargetDependencyCondition?)"
+    }
+  ],
+  "declaration": "enum Target.Dependency",
+  "conformsTo": [
+    "Encodable",
+    "ExpressibleByStringLiteral"
+  ]
+}

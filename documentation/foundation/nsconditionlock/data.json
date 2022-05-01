@@ -1,0 +1,51 @@
+{
+  "path": "/documentation/foundation/nsconditionlock",
+  "type": "Class",
+  "name": "NSConditionLock",
+  "desc": "A lock that can be associated with specific, user-defined conditions.",
+  "items": [
+    {
+      "name": "init(condition: Int)",
+      "desc": "Initializes a newly allocated NSConditionLock object and sets its condition."
+    },
+    {
+      "name": "var condition: Int",
+      "desc": "The condition associated with the receiver."
+    },
+    {
+      "name": "func lock(before: Date) -> Bool",
+      "desc": "Attempts to acquire a lock before a specified moment in time."
+    },
+    {
+      "name": "func lock(whenCondition: Int)",
+      "desc": "Attempts to acquire a lock."
+    },
+    {
+      "name": "func lock(whenCondition: Int, before: Date) -> Bool",
+      "desc": "Attempts to acquire a lock before a specified moment in time."
+    },
+    {
+      "name": "func `try`() -> Bool",
+      "desc": "Attempts to acquire a lock without regard to the receiver’s condition."
+    },
+    {
+      "name": "func tryLock(whenCondition: Int) -> Bool",
+      "desc": "Attempts to acquire a lock if the receiver’s condition is equal to the specified condition."
+    },
+    {
+      "name": "func unlock(withCondition: Int)",
+      "desc": "Relinquishes the lock and sets the receiver’s condition."
+    },
+    {
+      "name": "var name: String?",
+      "desc": "The name associated with the receiver."
+    }
+  ],
+  "declaration": "class NSConditionLock : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSLocking"
+  ]
+}

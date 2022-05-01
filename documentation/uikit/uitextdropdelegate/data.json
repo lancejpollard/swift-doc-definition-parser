@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/uikit/uitextdropdelegate",
+  "type": "Protocol",
+  "name": "UITextDropDelegate",
+  "desc": "The interface for configuring a text view’s drop behavior.",
+  "items": [
+    {
+      "name": "func textDroppableView(UIView & UITextDroppable, proposalForDrop: UITextDropRequest) -> UITextDropProposal",
+      "desc": "Asks the delegate if the text view can accept a drop operation."
+    },
+    {
+      "name": "func textDroppableView(UIView & UITextDroppable, willBecomeEditableForDrop: UITextDropRequest) -> UITextDropEditability",
+      "desc": "Asks the delegate if a noneditable text view can accept a drop operation."
+    },
+    {
+      "name": "func textDroppableView(UIView & UITextDroppable, dropSessionDidEnter: UIDropSession)",
+      "desc": "Tells the delegate that the user has moved the drag items into the coordinate system of the text view."
+    },
+    {
+      "name": "func textDroppableView(UIView & UITextDroppable, dropSessionDidExit: UIDropSession)",
+      "desc": "Tells the delegate that the user has moved the drag items out of the text view's coordinate system."
+    },
+    {
+      "name": "func textDroppableView(UIView & UITextDroppable, dropSessionDidUpdate: UIDropSession)",
+      "desc": "Tells the delegate that the drop session has been updated."
+    },
+    {
+      "name": "func textDroppableView(UIView & UITextDroppable, dropSessionDidEnd: UIDropSession)",
+      "desc": "Tells the delegate that the drop session has ended."
+    },
+    {
+      "name": "func textDroppableView(UIView & UITextDroppable, willPerformDrop: UITextDropRequest)",
+      "desc": "Tells the delegate that the drop operation is about to happen."
+    },
+    {
+      "name": "func textDroppableView(UIView & UITextDroppable, previewForDroppingAllItemsWithDefault: UITargetedDragPreview) -> UITargetedDragPreview?",
+      "desc": "Asks the delegate for the preview to show during the drop animation."
+    }
+  ],
+  "declaration": "@MainActor protocol UITextDropDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

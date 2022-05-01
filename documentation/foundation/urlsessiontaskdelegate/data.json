@@ -1,0 +1,56 @@
+{
+  "path": "/documentation/foundation/urlsessiontaskdelegate",
+  "type": "Protocol",
+  "name": "URLSessionTaskDelegate",
+  "desc": "A protocol that defines methods that URL session instances call on their delegates to handle task-level events.",
+  "items": [
+    {
+      "name": "func urlSession(URLSession, task: URLSessionTask, didCompleteWithError: Error?)",
+      "desc": "Tells the delegate that the task finished transferring data."
+    },
+    {
+      "name": "func urlSession(URLSession, task: URLSessionTask, willPerformHTTPRedirection: HTTPURLResponse, newRequest: URLRequest, completionHandler: (URLRequest?) -> Void)",
+      "desc": "Tells the delegate that the remote server requested an HTTP redirect."
+    },
+    {
+      "name": "func urlSession(URLSession, task: URLSessionTask, didSendBodyData: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64)",
+      "desc": "Periodically informs the delegate of the progress of sending body content to the server."
+    },
+    {
+      "name": "func urlSession(URLSession, task: URLSessionTask, needNewBodyStream: (InputStream?) -> Void)",
+      "desc": "Tells the delegate when a task requires a new request body stream to send to the remote server."
+    },
+    {
+      "name": "func urlSession(URLSession, task: URLSessionTask, didReceive: URLAuthenticationChallenge, completionHandler: (URLSession.AuthChallengeDisposition, URLCredential?) -> Void)",
+      "desc": "Requests credentials from the delegate in response to an authentication request from the remote server."
+    },
+    {
+      "name": "enum URLSession.AuthChallengeDisposition",
+      "desc": "Constants passed by session or task delegates to the provided continuation block in response to an authentication challenge."
+    },
+    {
+      "name": "func urlSession(URLSession, task: URLSessionTask, willBeginDelayedRequest: URLRequest, completionHandler: (URLSession.DelayedRequestDisposition, URLRequest?) -> Void)",
+      "desc": "Tells the delegate that a delayed URL session task will now begin loading."
+    },
+    {
+      "name": "enum URLSession.DelayedRequestDisposition",
+      "desc": "The action to take on a delayed URL session task."
+    },
+    {
+      "name": "func urlSession(URLSession, taskIsWaitingForConnectivity: URLSessionTask)",
+      "desc": "Tells the delegate that the task is waiting until suitable connectivity is available before beginning the network load."
+    },
+    {
+      "name": "func urlSession(URLSession, task: URLSessionTask, didFinishCollecting: URLSessionTaskMetrics)",
+      "desc": "Tells the delegate that the session finished collecting metrics for the task."
+    },
+    {
+      "name": "class URLSessionTaskMetrics",
+      "desc": "An object encapsulating the metrics for a session task."
+    }
+  ],
+  "declaration": "protocol URLSessionTaskDelegate",
+  "inheritsFrom": [
+    "URLSessionDelegate"
+  ]
+}

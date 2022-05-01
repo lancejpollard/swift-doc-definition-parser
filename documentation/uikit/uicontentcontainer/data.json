@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/uikit/uicontentcontainer",
+  "type": "Protocol",
+  "name": "UIContentContainer",
+  "desc": "A set of methods for adapting the contents of your view controllers to size and trait changes.",
+  "items": [
+    {
+      "name": "func viewWillTransition(to: CGSize, with: UIViewControllerTransitionCoordinator)",
+      "desc": "Notifies the container that the size of its view is about to change."
+    },
+    {
+      "name": "func willTransition(to: UITraitCollection, with: UIViewControllerTransitionCoordinator)",
+      "desc": "Notifies the container that its trait collection changed."
+    },
+    {
+      "name": "func size(forChildContentContainer: UIContentContainer, withParentContainerSize: CGSize) -> CGSize",
+      "desc": "Returns the size of the specified child view controller’s content."
+    },
+    {
+      "name": "func preferredContentSizeDidChange(forChildContentContainer: UIContentContainer)",
+      "desc": "Notifies an interested controller that the preferred content size of one of its children changed."
+    },
+    {
+      "name": "func systemLayoutFittingSizeDidChange(forChildContentContainer: UIContentContainer)",
+      "desc": "Notifies the container that a child view controller was resized using auto layout."
+    },
+    {
+      "name": "var preferredContentSize: CGSize",
+      "desc": "The preferred size for the container’s content."
+    }
+  ],
+  "declaration": "@MainActor protocol UIContentContainer",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

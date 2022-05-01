@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/webkit/webdocumentview",
+  "type": "Protocol",
+  "name": "WebDocumentView",
+  "desc": "This protocol is adopted by the document view of a WebFrameView. You can extend WebKit to support additional MIME types by implementing your own document view and document representation classes to render data for specific MIME types. You register those classes using the WebFrame registerClass(_:representationClass:forMIMEType:) method. Classes that adopt this protocol are expected to be subclasses of NSView.",
+  "items": [
+    {
+      "name": "func setDataSource(WebDataSource!)",
+      "desc": "Invoked when the data source for this document has been changed."
+    },
+    {
+      "name": "func dataSourceUpdated(WebDataSource!)",
+      "desc": "Invoked when additional data has been received."
+    },
+    {
+      "name": "func setNeedsLayout(Bool)",
+      "desc": "Sets whether or not the receiver should change its layout."
+    },
+    {
+      "name": "func layout()",
+      "desc": "Invoked when the receiver should change its layout immediately."
+    },
+    {
+      "name": "func viewDidMoveToHostWindow()",
+      "desc": "Invoked when a web view's host window is set."
+    },
+    {
+      "name": "func viewWillMove(toHostWindow: NSWindow!)",
+      "desc": "Invoked when a web view’s host window is about to change."
+    }
+  ],
+  "declaration": "protocol WebDocumentView",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

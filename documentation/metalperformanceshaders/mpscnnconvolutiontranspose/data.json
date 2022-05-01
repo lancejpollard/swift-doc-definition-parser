@@ -1,0 +1,84 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpscnnconvolutiontranspose",
+  "type": "Class",
+  "name": "MPSCNNConvolutionTranspose",
+  "desc": "A transposed convolution kernel.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)",
+      "desc": "Initializes a transposed convolution kernel."
+    },
+    {
+      "name": "init(device: MTLDevice, weights: MPSCNNConvolutionDataSource)",
+      "desc": "Initializes a transposed convolution kernel."
+    },
+    {
+      "name": "protocol MPSCNNConvolutionDataSource",
+      "desc": "The protocol that provides convolution filter weights and bias terms."
+    },
+    {
+      "name": "var groups: Int"
+    },
+    {
+      "name": "var inputFeatureChannels: Int"
+    },
+    {
+      "name": "var kernelOffsetX: Int"
+    },
+    {
+      "name": "var kernelOffsetY: Int"
+    },
+    {
+      "name": "var outputFeatureChannels: Int"
+    },
+    {
+      "name": "var accumulatorPrecisionOption: MPSNNConvolutionAccumulatorPrecisionOption"
+    },
+    {
+      "name": "var dataSource: MPSCNNConvolutionDataSource"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, sourceImage: MPSImage, convolutionGradientState: MPSCNNConvolutionGradientState?) -> MPSImage"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, sourceImage: MPSImage, convolutionGradientState: MPSCNNConvolutionGradientState?, destinationImage: MPSImage)"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, sourceImage: MPSImage, convolutionGradientState: MPSCNNConvolutionGradientState?, destinationState: AutoreleasingUnsafeMutablePointer<MPSCNNConvolutionTransposeGradientState?>, destinationStateIsTemporary: Bool) -> MPSImage"
+    },
+    {
+      "name": "func encodeBatch(commandBuffer: MTLCommandBuffer, sourceImages: [MPSImage], convolutionGradientStates: [MPSCNNConvolutionGradientState]?) -> [MPSImage]"
+    },
+    {
+      "name": "func encodeBatch(commandBuffer: MTLCommandBuffer, sourceImages: [MPSImage], convolutionGradientStates: [MPSCNNConvolutionGradientState]?, destinationImages: [MPSImage])"
+    },
+    {
+      "name": "func encodeBatch(commandBuffer: MTLCommandBuffer, sourceImages: [MPSImage], convolutionGradientStates: [MPSCNNConvolutionGradientState]?, destinationStates: AutoreleasingUnsafeMutablePointer<NSArray?>, destinationStateIsTemporary: Bool) -> [MPSImage]"
+    },
+    {
+      "name": "func exportWeightsAndBiases(with: MTLCommandBuffer, resultStateCanBeTemporary: Bool) -> MPSCNNConvolutionWeightsAndBiasesState"
+    },
+    {
+      "name": "func reloadWeightsAndBiases(with: MTLCommandBuffer, state: MPSCNNConvolutionWeightsAndBiasesState)"
+    },
+    {
+      "name": "func reloadWeightsAndBiasesFromDataSource()"
+    },
+    {
+      "name": "func resultState(sourceImage: MPSImage, sourceStates: [MPSCNNConvolutionGradientState]?, destinationImage: MPSImage) -> MPSCNNConvolutionTransposeGradientState?"
+    },
+    {
+      "name": "func resultStateBatch(sourceImage: [MPSImage], sourceStates: [[MPSCNNConvolutionGradientState]]?, destinationImage: [MPSImage]) -> [MPSCNNConvolutionTransposeGradientState]?"
+    },
+    {
+      "name": "func temporaryResultState(commandBuffer: MTLCommandBuffer, sourceImage: MPSImage, sourceStates: [MPSCNNConvolutionGradientState]?, destinationImage: MPSImage) -> MPSCNNConvolutionTransposeGradientState?"
+    },
+    {
+      "name": "func temporaryResultStateBatch(commandBuffer: MTLCommandBuffer, sourceImage: [MPSImage], sourceStates: [[MPSCNNConvolutionGradientState]]?, destinationImage: [MPSImage]) -> [MPSCNNConvolutionTransposeGradientState]?"
+    }
+  ],
+  "declaration": "class MPSCNNConvolutionTranspose : MPSCNNKernel",
+  "inheritsFrom": [
+    "MPSCNNKernel"
+  ]
+}

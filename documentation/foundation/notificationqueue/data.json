@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/foundation/notificationqueue",
+  "type": "Class",
+  "name": "NotificationQueue",
+  "desc": "A notification center buffer.",
+  "items": [
+    {
+      "name": "init(notificationCenter: NotificationCenter)",
+      "desc": "Initializes and returns a notification queue for the specified notification center."
+    },
+    {
+      "name": "class var `default`: NotificationQueue",
+      "desc": "Returns the default notification queue for the current thread."
+    },
+    {
+      "name": "func enqueue(Notification, postingStyle: NotificationQueue.PostingStyle, coalesceMask: NotificationQueue.NotificationCoalescing, forModes: [RunLoop.Mode]?)",
+      "desc": "Adds a notification to the notification queue with a specified posting style, criteria for coalescing, and run loop mode."
+    },
+    {
+      "name": "func enqueue(Notification, postingStyle: NotificationQueue.PostingStyle)",
+      "desc": "Adds a notification to the notification queue with a specified posting style."
+    },
+    {
+      "name": "func dequeueNotifications(matching: Notification, coalesceMask: Int)",
+      "desc": "Removes all notifications from the queue that match a provided notification using provided matching criteria."
+    },
+    {
+      "name": "struct NotificationQueue.NotificationCoalescing",
+      "desc": "The constants that specify how notifications are coalesced."
+    },
+    {
+      "name": "enum NotificationQueue.PostingStyle",
+      "desc": "The constants that specify when notifications are posted."
+    }
+  ],
+  "declaration": "class NotificationQueue : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "path": "/documentation/accelerate/bnns/fusedlayer",
+  "type": "Class",
+  "name": "BNNS.FusedLayer",
+  "desc": "The base class for fused convolution-normalization and fully connected-normalization layers.",
+  "items": [
+    {
+      "name": "func apply(batchSize: Int, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, for: BNNS.LearningPhase)",
+      "desc": "Applies the layer to a set of input objects, writing the result to a set of output objects."
+    },
+    {
+      "name": "func applyBackward(batchSize: Int, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, outputGradient: BNNSNDArrayDescriptor, generatingInputGradient: BNNSNDArrayDescriptor, generatingParameterGradients: [BNNSNDArrayDescriptor])",
+      "desc": "Applies the layer backward to generate input gradients."
+    }
+  ],
+  "declaration": "class FusedLayer : BNNS.Layer",
+  "inheritsFrom": [
+    "BNNS.Layer"
+  ]
+}

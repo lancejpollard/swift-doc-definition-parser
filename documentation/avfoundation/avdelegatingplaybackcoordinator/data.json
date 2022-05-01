@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/avfoundation/avdelegatingplaybackcoordinator",
+  "type": "Class",
+  "name": "AVDelegatingPlaybackCoordinator",
+  "desc": "A playback coordinator subclass that coordinates the playback of custom player objects in a connected group.",
+  "items": [
+    {
+      "name": "init(playbackControlDelegate: AVPlaybackCoordinatorPlaybackControlDelegate)",
+      "desc": "Creates a playback coordinator for a custom playback object."
+    },
+    {
+      "name": "protocol AVPlaybackCoordinatorPlaybackControlDelegate",
+      "desc": "A protocol that defines the method to implement to respond to playback commands from the playback coordinator."
+    },
+    {
+      "name": "var currentItemIdentifier: String?",
+      "desc": "An identifier of the current item."
+    },
+    {
+      "name": "var playbackControlDelegate: AVPlaybackCoordinatorPlaybackControlDelegate?",
+      "desc": "The delegate object for the playback coordinator."
+    },
+    {
+      "name": "func coordinateRateChange(to: Float, options: AVDelegatingPlaybackCoordinatorRateChangeOptions)",
+      "desc": "Coordinates a rate change across all participants, waiting for others to become ready, if necessary."
+    },
+    {
+      "name": "func coordinateSeek(to: CMTime, options: AVDelegatingPlaybackCoordinatorSeekOptions)",
+      "desc": "Coordinates a seek to the specified time for all connected participants."
+    },
+    {
+      "name": "func transitionToItem(withIdentifier: String?, proposingInitialTimingBasedOn: CMTimebase?)",
+      "desc": "Tells the coordinator to transition to a new item."
+    },
+    {
+      "name": "func reapplyCurrentItemStateToPlaybackControlDelegate()",
+      "desc": "Tells the coordinator to reissue current play state commands to synchronize the current item to the state of other participants."
+    },
+    {
+      "name": "struct AVDelegatingPlaybackCoordinatorSeekOptions",
+      "desc": "Constants that define seek options."
+    },
+    {
+      "name": "struct AVDelegatingPlaybackCoordinatorRateChangeOptions",
+      "desc": "Constants that define rate change options."
+    },
+    {
+      "name": "class AVDelegatingPlaybackCoordinatorPlaybackControlCommand",
+      "desc": "An abstract superclass for playback commands."
+    },
+    {
+      "name": "class AVDelegatingPlaybackCoordinatorPlayCommand",
+      "desc": "A command that indicates to play at a specific rate and time."
+    },
+    {
+      "name": "class AVDelegatingPlaybackCoordinatorPauseCommand",
+      "desc": "A command that indicates to pause playback."
+    },
+    {
+      "name": "class AVDelegatingPlaybackCoordinatorSeekCommand",
+      "desc": "A command that indicates to seek to a new time in the item timeline."
+    },
+    {
+      "name": "class AVDelegatingPlaybackCoordinatorBufferingCommand",
+      "desc": "A command that indicates to start buffering data in preparation for playback."
+    }
+  ],
+  "declaration": "class AVDelegatingPlaybackCoordinator : AVPlaybackCoordinator",
+  "inheritsFrom": [
+    "AVPlaybackCoordinator"
+  ]
+}

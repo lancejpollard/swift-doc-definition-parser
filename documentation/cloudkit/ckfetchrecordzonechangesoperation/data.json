@@ -1,0 +1,61 @@
+{
+  "path": "/documentation/cloudkit/ckfetchrecordzonechangesoperation",
+  "type": "Class",
+  "name": "CKFetchRecordZoneChangesOperation",
+  "desc": "An operation that fetches record zone changes.",
+  "items": [
+    {
+      "name": "init(recordZoneIDs: [CKRecordZone.ID]?, configurationsByRecordZoneID: [CKRecordZone.ID : CKFetchRecordZoneChangesOperation.ZoneConfiguration]?)",
+      "desc": "Creates an operation for fetching record zone changes."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates an empty fetch record zone changes operation."
+    },
+    {
+      "name": "var configurationsByRecordZoneID: [CKRecordZone.ID : CKFetchRecordZoneChangesOperation.ZoneConfiguration]?",
+      "desc": "A dictionary of configurations for fetching change operations by zone identifier."
+    },
+    {
+      "name": "class CKFetchRecordZoneChangesOperation.ZoneConfiguration",
+      "desc": "A configuration object that describes the information to fetch from a record zone."
+    },
+    {
+      "name": "var fetchAllChanges: Bool",
+      "desc": "A Boolean value that indicates whether to send repeated requests to the server."
+    },
+    {
+      "name": "var recordZoneIDs: [CKRecordZone.ID]?",
+      "desc": "The IDs of the record zones that contain the records to fetch."
+    },
+    {
+      "name": "var recordWithIDWasDeletedBlock: ((CKRecord.ID, CKRecord.RecordType) -> Void)?",
+      "desc": "The closure to execute when a record no longer exists."
+    },
+    {
+      "name": "var recordZoneChangeTokensUpdatedBlock: ((CKRecordZone.ID, CKServerChangeToken?, Data?) -> Void)?",
+      "desc": "The closure to execute when the change token updates."
+    },
+    {
+      "name": "var recordZoneFetchCompletionBlock: ((CKRecordZone.ID, CKServerChangeToken?, Data?, Bool, Error?) -> Void)?",
+      "desc": "The closure to execute when a record zone’s fetch finishes."
+    },
+    {
+      "name": "var fetchRecordZoneChangesCompletionBlock: ((Error?) -> Void)?",
+      "desc": "The closure to execute when the operation finishes."
+    },
+    {
+      "name": "var fetchRecordZoneChangesResultBlock: ((Result<Void, Error>) -> Void)?"
+    },
+    {
+      "name": "var recordWasChangedBlock: ((CKRecord.ID, Result<CKRecord, Error>) -> Void)?"
+    },
+    {
+      "name": "var recordZoneFetchResultBlock: ((CKRecordZone.ID, Result<(serverChangeToken: CKServerChangeToken, clientChangeTokenData: Data?, moreComing: Bool), Error>) -> Void)?"
+    }
+  ],
+  "declaration": "class CKFetchRecordZoneChangesOperation : CKDatabaseOperation",
+  "inheritsFrom": [
+    "CKDatabaseOperation"
+  ]
+}

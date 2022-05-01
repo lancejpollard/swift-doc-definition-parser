@@ -1,0 +1,167 @@
+{
+  "path": "/documentation/foundation/measurement",
+  "type": "Generic Structure",
+  "name": "Measurement",
+  "desc": "A numeric quantity labeled with a unit of measure, with support for unit conversion and unit-aware calculations.",
+  "items": [
+    {
+      "name": "init(value: Double, unit: UnitType)",
+      "desc": "Create a Measurement given a specified value and unit."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a new instance by decoding from the given decoder."
+    },
+    {
+      "name": "let unit: UnitType",
+      "desc": "The unit component of the measurement."
+    },
+    {
+      "name": "var value: Double",
+      "desc": "The value component of the measurement."
+    },
+    {
+      "name": "func convert(to: UnitType)",
+      "desc": "Converts the measurement to the specified unit."
+    },
+    {
+      "name": "func converted(to: UnitType) -> Measurement<UnitType>",
+      "desc": "Returns a new measurement created by converting to the specified unit."
+    },
+    {
+      "name": "static func * (Double, Measurement<UnitType>) -> Measurement<UnitType>",
+      "desc": "Multiply a scalar value by a measurement."
+    },
+    {
+      "name": "static func * (Measurement<UnitType>, Double) -> Measurement<UnitType>",
+      "desc": "Multiply a measurement by a scalar value."
+    },
+    {
+      "name": "static func + (Measurement<UnitType>, Measurement<UnitType>) -> Measurement<UnitType>",
+      "desc": "Add two measurements."
+    },
+    {
+      "name": "static func + (Measurement<UnitType>, Measurement<UnitType>) -> Measurement<UnitType>",
+      "desc": "Adds two measurements of the same dimension."
+    },
+    {
+      "name": "static func - (Measurement<UnitType>, Measurement<UnitType>) -> Measurement<UnitType>",
+      "desc": "Subtract one measurement from another."
+    },
+    {
+      "name": "static func - (Measurement<UnitType>, Measurement<UnitType>) -> Measurement<UnitType>",
+      "desc": "Subtracts two measurements of the same dimension."
+    },
+    {
+      "name": "static func / (Double, Measurement<UnitType>) -> Measurement<UnitType>",
+      "desc": "Divide a scalar value by a measurement."
+    },
+    {
+      "name": "static func / (Measurement<UnitType>, Double) -> Measurement<UnitType>",
+      "desc": "Divide a measurement by a scalar value."
+    },
+    {
+      "name": "func formatted() -> String",
+      "desc": "Generates a locale-aware string representation of a measurement using the default measurement format style."
+    },
+    {
+      "name": "func formatted<S>(S) -> S.FormatOutput",
+      "desc": "Generates a locale-aware string representation of a measurement using the provided measurement format style."
+    },
+    {
+      "name": "struct Measurement.FormatStyle",
+      "desc": "A type that provides localized representations of measurements."
+    },
+    {
+      "name": "struct Measurement.AttributedStyle",
+      "desc": "A type that provides localized representations of measurements with an attributed string."
+    },
+    {
+      "name": "static func == <LeftHandSideType, RightHandSideType>(Measurement<LeftHandSideType>, Measurement<RightHandSideType>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are equal."
+    },
+    {
+      "name": "static func != (Measurement<UnitType>, Measurement<UnitType>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are unequal."
+    },
+    {
+      "name": "static func > (Measurement<UnitType>, Measurement<UnitType>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than that of the second argument."
+    },
+    {
+      "name": "static func >= (Measurement<UnitType>, Measurement<UnitType>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than or equal to that of the second argument."
+    },
+    {
+      "name": "static func < <LeftHandSideType, RightHandSideType>(Measurement<LeftHandSideType>, Measurement<RightHandSideType>) -> Bool",
+      "desc": "Compare two measurements of the same Unit."
+    },
+    {
+      "name": "static func <= (Measurement<UnitType>, Measurement<UnitType>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than or equal to that of the second argument."
+    },
+    {
+      "name": "static func ... (Measurement<UnitType>) -> PartialRangeFrom<Measurement<UnitType>>",
+      "desc": "Returns a partial range extending upward from a lower bound."
+    },
+    {
+      "name": "static func ... (Measurement<UnitType>) -> PartialRangeThrough<Measurement<UnitType>>",
+      "desc": "Returns a partial range up to, and including, its upper bound."
+    },
+    {
+      "name": "static func ... (Measurement<UnitType>, Measurement<UnitType>) -> ClosedRange<Measurement<UnitType>>",
+      "desc": "Returns a closed range that contains both of its bounds."
+    },
+    {
+      "name": "static func ..< (Measurement<UnitType>, Measurement<UnitType>) -> Range<Measurement<UnitType>>",
+      "desc": "Returns a half-open range that contains its lower bound but not its upper bound."
+    },
+    {
+      "name": "static func ..< (Measurement<UnitType>) -> PartialRangeUpTo<Measurement<UnitType>>",
+      "desc": "Returns a partial range up to, but not including, its upper bound."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual description of the measurement."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual description of the measurement suitable for debugging."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A mirror that reflects the date interval."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The computed hash value for the date interval."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes this value into the given encoder."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "class NSMeasurement",
+      "desc": "An object representing a numeric quantity with a unit of measure, for use when you need reference semantics or other Foundation-specific behavior."
+    },
+    {
+      "name": "typealias Measurement.ReferenceType",
+      "desc": "An alias for this value type's equivalent reference type."
+    }
+  ],
+  "declaration": "struct Measurement<UnitType> where UnitType : Unit",
+  "conformsTo": [
+    "Comparable",
+    "CustomDebugStringConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "ReferenceConvertible"
+  ]
+}

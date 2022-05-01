@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/carplay/cpinterfacecontroller",
+  "type": "Class",
+  "name": "CPInterfaceController",
+  "desc": "A controller that manages the templates for constructing a scene’s user interface.",
+  "items": [
+    {
+      "name": "var delegate: CPInterfaceControllerDelegate?",
+      "desc": "An object that serves as the delegate to the interface controller."
+    },
+    {
+      "name": "protocol CPInterfaceControllerDelegate",
+      "desc": "The interface that an object implements to serve as a delegate to an interface controller."
+    },
+    {
+      "name": "var prefersDarkUserInterfaceStyle: Bool",
+      "desc": "A Boolean value that determines whether the system draws the user interface in Dark Mode."
+    },
+    {
+      "name": "func setRootTemplate(CPTemplate, animated: Bool, completion: ((Bool, Error?) -> Void)?)",
+      "desc": "Sets the root template of the navigation hierarchy."
+    },
+    {
+      "name": "var carTraitCollection: UITraitCollection",
+      "desc": "The trait collection of the vehicle’s primary screen."
+    },
+    {
+      "name": "var rootTemplate: CPTemplate",
+      "desc": "The root template in the navigation hierarchy."
+    },
+    {
+      "name": "var topTemplate: CPTemplate?",
+      "desc": "The top-most template in the navigation hierarchy."
+    },
+    {
+      "name": "var templates: [CPTemplate]",
+      "desc": "The contents of the navigation hierarchy."
+    },
+    {
+      "name": "func pushTemplate(CPTemplate, animated: Bool, completion: ((Bool, Error?) -> Void)?)",
+      "desc": "Adds the specified template to the navigation hierarchy and displays it."
+    },
+    {
+      "name": "func popTemplate(animated: Bool, completion: ((Bool, Error?) -> Void)?)",
+      "desc": "Removes the top-most template from the navigation hierarchy."
+    },
+    {
+      "name": "func popToRootTemplate(animated: Bool, completion: ((Bool, Error?) -> Void)?)",
+      "desc": "Removes all of the templates from the navigation hierarchy except the root template."
+    },
+    {
+      "name": "func pop(to: CPTemplate, animated: Bool, completion: ((Bool, Error?) -> Void)?)",
+      "desc": "Removes each template from the navigation hierarchy until the specified template becomes visible."
+    },
+    {
+      "name": "func presentTemplate(CPTemplate, animated: Bool, completion: ((Bool, Error?) -> Void)?)",
+      "desc": "Presents a template modally."
+    },
+    {
+      "name": "func dismissTemplate(animated: Bool, completion: ((Bool, Error?) -> Void)?)",
+      "desc": "Dismisses a modal template."
+    },
+    {
+      "name": "var presentedTemplate: CPTemplate?",
+      "desc": "The interface controller’s current modal template."
+    }
+  ],
+  "declaration": "class CPInterfaceController : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

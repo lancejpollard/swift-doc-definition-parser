@@ -1,0 +1,39 @@
+{
+  "path": "/documentation/arkit/arfaceanchor",
+  "type": "Class",
+  "name": "ARFaceAnchor",
+  "desc": "An anchor for a unique face that is visible in the front-facing camera.",
+  "items": [
+    {
+      "name": "var geometry: ARFaceGeometry",
+      "desc": "A coarse triangle mesh representing the topology of the detected face."
+    },
+    {
+      "name": "var blendShapes: [ARFaceAnchor.BlendShapeLocation : NSNumber]",
+      "desc": "A dictionary of named coefficients representing the detected facial expression in terms of the movement of specific facial features."
+    },
+    {
+      "name": "struct ARFaceAnchor.BlendShapeLocation",
+      "desc": "Identifiers for specific facial features, for use with coefficients describing the relative movements of those features."
+    },
+    {
+      "name": "var leftEyeTransform: simd_float4x4",
+      "desc": "A transform matrix indicating the position and orientation of the face's left eye."
+    },
+    {
+      "name": "var rightEyeTransform: simd_float4x4",
+      "desc": "A transform matrix indicating the position and orientation of the face's right eye."
+    },
+    {
+      "name": "var lookAtPoint: simd_float3",
+      "desc": "A position in face coordinate space estimating the direction of the face's gaze."
+    }
+  ],
+  "declaration": "class ARFaceAnchor : ARAnchor",
+  "inheritsFrom": [
+    "ARAnchor"
+  ],
+  "conformsTo": [
+    "ARTrackable"
+  ]
+}

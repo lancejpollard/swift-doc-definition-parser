@@ -1,0 +1,122 @@
+{
+  "path": "/documentation/foundation/attributedstringprotocol",
+  "type": "Protocol",
+  "name": "AttributedStringProtocol",
+  "desc": "A protocol that provides common functionality to attributed strings and attributed substrings.",
+  "items": [
+    {
+      "name": "func settingAttributes(AttributeContainer) -> AttributedString",
+      "desc": "Returns an attributed string by setting the attributed string’s attributes to those in a specified attribute container."
+    },
+    {
+      "name": "func mergingAttributes(AttributeContainer, mergePolicy: AttributedString.AttributeMergePolicy) -> AttributedString",
+      "desc": "Returns an attributed string by merging the attributed string’s attributes with those in a specified attribute container."
+    },
+    {
+      "name": "enum AttributedString.AttributeMergePolicy",
+      "desc": "An enumeration of behaviors to apply when merging attributes."
+    },
+    {
+      "name": "func replacingAttributes(AttributeContainer, with: AttributeContainer) -> AttributedString",
+      "desc": "Returns an attributed string by replacing occurrences of attributes in one attribute container with those in another attribute container."
+    },
+    {
+      "name": "func range<T>(of: T, options: String.CompareOptions, locale: Locale?) -> Range<AttributedString.Index>?",
+      "desc": "Returns the range of a substring in the attributed string, if it exists."
+    },
+    {
+      "name": "subscript<R>(R) -> AttributedSubstring",
+      "desc": "Returns a substring of the attributed string using a range to indicate the substring bounds."
+    },
+    {
+      "name": "var startIndex: AttributedString.Index",
+      "desc": "The position of the first character in a nonempty attributed string."
+    },
+    {
+      "name": "var endIndex: AttributedString.Index",
+      "desc": "A string’s past-the-end position — the position one greater than the last valid subscript argument."
+    },
+    {
+      "name": "func index(AttributedString.Index, offsetByCharacters: Int) -> AttributedString.Index",
+      "desc": "Returns the position of the character offset a given distance, measured in characters, from a given string index."
+    },
+    {
+      "name": "func index(AttributedString.Index, offsetByRuns: Int) -> AttributedString.Index",
+      "desc": "Returns the position of the run offset a given number of runs from a given string index."
+    },
+    {
+      "name": "func index(AttributedString.Index, offsetByUnicodeScalars: Int) -> AttributedString.Index",
+      "desc": "Returns the position of the Unicode scalar offset a given distance, measured in Unicode scalars, from a given string index."
+    },
+    {
+      "name": "func index(afterCharacter: AttributedString.Index) -> AttributedString.Index",
+      "desc": "Returns the position of the character immediately after another charcter indicated by an index."
+    },
+    {
+      "name": "func index(afterRun: AttributedString.Index) -> AttributedString.Index",
+      "desc": "Returns the position of the run immediately after a run indicated by an index."
+    },
+    {
+      "name": "func index(afterUnicodeScalar: AttributedString.Index) -> AttributedString.Index",
+      "desc": "Returns the position of the Unicode scalar immediately after a Unicode scalar indicated by an index."
+    },
+    {
+      "name": "func index(beforeCharacter: AttributedString.Index) -> AttributedString.Index",
+      "desc": "Returns the position of the character immediately before another charcter indicated by an index."
+    },
+    {
+      "name": "func index(beforeRun: AttributedString.Index) -> AttributedString.Index",
+      "desc": "Returns the position of the run immediately before a run indicated by an index."
+    },
+    {
+      "name": "func index(beforeUnicodeScalar: AttributedString.Index) -> AttributedString.Index",
+      "desc": "Returns the position of the Unicode scalar immediately before a Unicode scalar indicated by an index."
+    },
+    {
+      "name": "struct AttributedString.Index",
+      "desc": "A type that represents the position of a character or code unit within an attributed string."
+    },
+    {
+      "name": "var characters: AttributedString.CharacterView",
+      "desc": "The characters of the attributed string, as a view into the underlying string."
+    },
+    {
+      "name": "var unicodeScalars: AttributedString.UnicodeScalarView",
+      "desc": "The Unicode scalars of the attributed string, as a view into the underlying string."
+    },
+    {
+      "name": "var runs: AttributedString.Runs",
+      "desc": "The attributed runs of the attributed string, as a view into the underlying string."
+    },
+    {
+      "name": "subscript<K>(K.Type) -> K.Value?",
+      "desc": "Returns an attribute value that corresponds to an attributed string key."
+    },
+    {
+      "name": "subscript<K>(dynamicMember: KeyPath<AttributeDynamicLookup, K>) -> K.Value?",
+      "desc": "Returns an attribute value that a key path indicates."
+    },
+    {
+      "name": "enum AttributeDynamicLookup",
+      "desc": "A type to support dynamic member lookup of attributes and containers."
+    },
+    {
+      "name": "subscript<S>(dynamicMember: KeyPath<AttributeScopes, S.Type>) -> ScopedAttributeContainer<S>",
+      "desc": "Returns a scoped attribute container that a key path indicates."
+    },
+    {
+      "name": "struct ScopedAttributeContainer",
+      "desc": "An attribute container that allows dynamic member lookup of its contents within the specified attribute scope."
+    },
+    {
+      "name": "static func == <RHS>(Self, RHS) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether an attributed string or substring is equal to another attributed string or substring."
+    }
+  ],
+  "declaration": "@dynamicMemberLookup protocol AttributedStringProtocol",
+  "inheritsFrom": [
+    "AttributedStringAttributeMutation",
+    "CustomStringConvertible",
+    "Hashable"
+  ]
+}

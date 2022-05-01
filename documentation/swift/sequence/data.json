@@ -1,0 +1,226 @@
+{
+  "path": "/documentation/swift/sequence",
+  "type": "Protocol",
+  "name": "Sequence",
+  "desc": "A type that provides sequential, iterated access to its elements.",
+  "items": [
+    {
+      "name": "func makeIterator() -> Self.Iterator",
+      "desc": "Returns an iterator over the elements of this sequence."
+    },
+    {
+      "name": "associatedtype Iterator",
+      "desc": "A type that provides the sequence’s iteration interface and encapsulates its iteration state."
+    },
+    {
+      "name": "associatedtype Element",
+      "desc": "A type representing the sequence’s elements."
+    },
+    {
+      "name": "func contains(Self.Element) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence contains the given element."
+    },
+    {
+      "name": "func contains(where: (Self.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func allSatisfy((Self.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether every element of a sequence satisfies a given predicate."
+    },
+    {
+      "name": "func first(where: (Self.Element) -> Bool) -> Self.Element?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func min() -> Self.Element?",
+      "desc": "Returns the minimum element in the sequence."
+    },
+    {
+      "name": "func min(by: (Self.Element, Self.Element) -> Bool) -> Self.Element?",
+      "desc": "Returns the minimum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func max() -> Self.Element?",
+      "desc": "Returns the maximum element in the sequence."
+    },
+    {
+      "name": "func max(by: (Self.Element, Self.Element) -> Bool) -> Self.Element?",
+      "desc": "Returns the maximum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func prefix(Int) -> PrefixSequence<Self>",
+      "desc": "Returns a sequence, up to the specified maximum length, containing the initial elements of the sequence."
+    },
+    {
+      "name": "func prefix(while: (Self.Element) -> Bool) -> [Self.Element]",
+      "desc": "Returns a sequence containing the initial, consecutive elements that satisfy the given predicate."
+    },
+    {
+      "name": "func suffix(Int) -> [Self.Element]",
+      "desc": "Returns a subsequence, up to the given maximum length, containing the final elements of the sequence."
+    },
+    {
+      "name": "func dropFirst(Int) -> DropFirstSequence<Self>",
+      "desc": "Returns a sequence containing all but the given number of initial elements."
+    },
+    {
+      "name": "func dropLast(Int) -> [Self.Element]",
+      "desc": "Returns a sequence containing all but the given number of final elements."
+    },
+    {
+      "name": "func drop(while: (Self.Element) -> Bool) -> DropWhileSequence<Self>",
+      "desc": "Returns a sequence by skipping the initial, consecutive elements that satisfy the given predicate."
+    },
+    {
+      "name": "func filter((Self.Element) -> Bool) -> [Self.Element]",
+      "desc": "Returns an array containing, in order, the elements of the sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func map<T>((Self.Element) -> T) -> [T]",
+      "desc": "Returns an array containing the results of mapping the given closure over the sequence’s elements."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((Self.Element) -> ElementOfResult?) -> [ElementOfResult]",
+      "desc": "Returns an array containing the non-nil results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((Self.Element) -> SegmentOfResult) -> [SegmentOfResult.Element]",
+      "desc": "Returns an array containing the concatenated results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, Self.Element) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, Self.Element) -> ()) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "var lazy: LazySequence<Self>",
+      "desc": "A sequence containing the same elements as this sequence, but on which some operations, such as map and filter, are implemented lazily."
+    },
+    {
+      "name": "func forEach((Self.Element) -> Void)",
+      "desc": "Calls the given closure on each element in the sequence in the same order as a for-in loop."
+    },
+    {
+      "name": "func enumerated() -> EnumeratedSequence<Self>",
+      "desc": "Returns a sequence of pairs (n, x), where n represents a consecutive integer starting at zero and x represents an element of the sequence."
+    },
+    {
+      "name": "var underestimatedCount: Int",
+      "desc": "A value less than or equal to the number of elements in the sequence, calculated nondestructively."
+    },
+    {
+      "name": "func sorted() -> [Self.Element]",
+      "desc": "Returns the elements of the sequence, sorted."
+    },
+    {
+      "name": "func sorted(by: (Self.Element, Self.Element) -> Bool) -> [Self.Element]",
+      "desc": "Returns the elements of the sequence, sorted using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func reversed() -> [Self.Element]",
+      "desc": "Returns an array containing the elements of this sequence in reverse order."
+    },
+    {
+      "name": "func shuffled() -> [Self.Element]",
+      "desc": "Returns the elements of the sequence, shuffled."
+    },
+    {
+      "name": "func shuffled<T>(using: inout T) -> [Self.Element]",
+      "desc": "Returns the elements of the sequence, shuffled using the given generator as a source for randomness."
+    },
+    {
+      "name": "func formatted() -> String",
+      "desc": "Generates a locale-aware string representation of a sequence using the default list format style."
+    },
+    {
+      "name": "func formatted<S>(S) -> S.FormatOutput",
+      "desc": "Generates a locale-aware string representation of a sequence using the provided list format style."
+    },
+    {
+      "name": "struct ListFormatStyle",
+      "desc": "A type used to format lists of items with a separator and conjunction appropriate for a given locale."
+    },
+    {
+      "name": "func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Self.Element) -> Bool) -> [ArraySlice<Self.Element>]",
+      "desc": "Returns the longest possible subsequences of the sequence, in order, that don’t contain elements satisfying the given predicate. Elements that are used to split the sequence are not returned as part of any subsequence."
+    },
+    {
+      "name": "func split(separator: Self.Element, maxSplits: Int, omittingEmptySubsequences: Bool) -> [ArraySlice<Self.Element>]",
+      "desc": "Returns the longest possible subsequences of the sequence, in order, around elements equal to the given element."
+    },
+    {
+      "name": "func joined() -> FlattenSequence<Self>",
+      "desc": "Returns the elements of this sequence of sequences, concatenated."
+    },
+    {
+      "name": "func joined(separator: String) -> String",
+      "desc": "Returns a new string by concatenating the elements of the sequence, adding the given separator between each element."
+    },
+    {
+      "name": "func joined<Separator>(separator: Separator) -> JoinedSequence<Self>",
+      "desc": "Returns the concatenated elements of this sequence of sequences, inserting the given separator between each element."
+    },
+    {
+      "name": "func elementsEqual<OtherSequence>(OtherSequence) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this sequence and another sequence contain the same elements in the same order."
+    },
+    {
+      "name": "func elementsEqual<OtherSequence>(OtherSequence, by: (Self.Element, OtherSequence.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this sequence and another sequence contain equivalent elements in the same order, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func starts<PossiblePrefix>(with: PossiblePrefix) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the initial elements of the sequence are the same as the elements in another sequence."
+    },
+    {
+      "name": "func starts<PossiblePrefix>(with: PossiblePrefix, by: (Self.Element, PossiblePrefix.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the initial elements of the sequence are equivalent to the elements in another sequence, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func lexicographicallyPrecedes<OtherSequence>(OtherSequence) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the less-than operator (<) to compare elements."
+    },
+    {
+      "name": "func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Self.Element, Self.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the given predicate to compare elements."
+    },
+    {
+      "name": "func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<Self.Element>) -> R) -> R?",
+      "desc": "Executes a closure on the sequence’s contiguous storage."
+    },
+    {
+      "name": "var publisher: Publishers.Sequence<Self, Never>",
+      "desc": "A Combine publisher that publishes each member of the sequence as a separate element."
+    },
+    {
+      "name": "func fill(using: NSCompositingOperation)",
+      "desc": "Given a sequence of rectangular regions and associated colors, fills those regions in the current graphics context with the context’s fill color."
+    },
+    {
+      "name": "func fill(using: NSCompositingOperation)",
+      "desc": "Given a sequence of rectangular regions and gray component values, fills those regions in the current graphics context."
+    },
+    {
+      "name": "func fill(using: NSCompositingOperation)",
+      "desc": "Given a sequence of rectangular regions and associated colors, fills those regions in the current graphics context."
+    },
+    {
+      "name": "func clip()",
+      "desc": "Given a sequence of rectangular regions, modifies the current graphics context clipping path by intersecting it with the union of these rectangles."
+    },
+    {
+      "name": "func compare<Comparator>(Comparator.Compared, Comparator.Compared) -> ComparisonResult"
+    },
+    {
+      "name": "func sorted<Comparator>(using: Comparator) -> [Self.Element]"
+    },
+    {
+      "name": "func sorted<S, Comparator>(using: S) -> [Self.Element]"
+    }
+  ],
+  "declaration": "protocol Sequence"
+}

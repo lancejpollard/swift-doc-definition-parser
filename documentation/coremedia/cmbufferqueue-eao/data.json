@@ -1,0 +1,126 @@
+{
+  "path": "/documentation/coremedia/cmbufferqueue-eao",
+  "type": "Class",
+  "name": "CMBufferQueue",
+  "desc": "An object that provides a queue of timed buffers.",
+  "items": [
+    {
+      "name": "func enqueue(CMBuffer)",
+      "desc": "Enqueues a buffer to the queue."
+    },
+    {
+      "name": "func dequeue() -> CMBuffer?",
+      "desc": "Dequeues a buffer from the queue."
+    },
+    {
+      "name": "func dequeueIfDataReady() -> CMBuffer?",
+      "desc": "Dequeues a buffer from the queue, if it’s ready."
+    },
+    {
+      "name": "func markEndOfData()",
+      "desc": "Marks a buffer as being at the end of its data."
+    },
+    {
+      "name": "func reset()",
+      "desc": "Empties the queue and resets its end-of-data state."
+    },
+    {
+      "name": "func reset((CMBuffer) -> ())",
+      "desc": "Resets a buffer with a callback block."
+    },
+    {
+      "name": "func installTrigger(condition: CMBufferQueue.TriggerCondition, CMBufferQueueTriggerHandler?) -> CMBufferQueue.TriggerToken",
+      "desc": "Installs a trigger on the queue."
+    },
+    {
+      "name": "func removeTrigger(CMBufferQueue.TriggerToken)",
+      "desc": "Removes a trigger from the queue."
+    },
+    {
+      "name": "func testTrigger(CMBufferQueue.TriggerToken) -> Bool",
+      "desc": "Tests a trigger condition."
+    },
+    {
+      "name": "typealias CMBufferQueue.TriggerToken",
+      "desc": "A type alias for a trigger token."
+    },
+    {
+      "name": "enum CMBufferQueue.TriggerCondition",
+      "desc": "An enumeration of trigger conditions."
+    },
+    {
+      "name": "var duration: CMTime",
+      "desc": "The sum of all durations of buffers in the queue."
+    },
+    {
+      "name": "var totalSize: Int",
+      "desc": "The total size of all buffers in the queue."
+    },
+    {
+      "name": "var firstDecodeTimeStamp: CMTime",
+      "desc": "The decode timestamp of the first buffer in the queue."
+    },
+    {
+      "name": "var firstPresentationTimeStamp: CMTime",
+      "desc": "The presentation timestamp of the first buffer in the queue."
+    },
+    {
+      "name": "var endPresentationTimeStamp: CMTime",
+      "desc": "The greatest end presentation timestamp."
+    },
+    {
+      "name": "var minDecodeTimeStamp: CMTime",
+      "desc": "The earliest decode timestamp."
+    },
+    {
+      "name": "var minPresentationTimeStamp: CMTime",
+      "desc": "The earliest presentation timestamp."
+    },
+    {
+      "name": "var maxPresentationTimeStamp: CMTime",
+      "desc": "The greatest presentation timestamp."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value that indicates whether the queue contains buffers."
+    },
+    {
+      "name": "var bufferCount: CMItemCount",
+      "desc": "The count of buffers in the queue."
+    },
+    {
+      "name": "var head: CMBuffer?",
+      "desc": "The element at the head of the queue."
+    },
+    {
+      "name": "var containsEndOfData: Bool",
+      "desc": "A Boolean value that indicates whether the buffer has its end-of-data state set."
+    },
+    {
+      "name": "var isAtEndOfData: Bool",
+      "desc": "A Boolean value that indicates whether that queue is at the end of its data."
+    },
+    {
+      "name": "func setValidationHandler((CMBufferQueue, CMBuffer) -> Void)",
+      "desc": "Sets validation handler for the queue to call before enqueuing buffers."
+    },
+    {
+      "name": "var buffers: CMBufferQueue.Buffers",
+      "desc": "The buffers that the queue contains."
+    },
+    {
+      "name": "class var typeID: CFTypeID",
+      "desc": "The type identifier for this object."
+    },
+    {
+      "name": "struct CMBufferQueue.Buffers"
+    },
+    {
+      "name": "struct CMBufferQueue.Handlers"
+    },
+    {
+      "name": "struct CMBufferQueue.Error"
+    }
+  ],
+  "declaration": "class CMBufferQueue"
+}

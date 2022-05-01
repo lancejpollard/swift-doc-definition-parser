@@ -1,0 +1,159 @@
+{
+  "path": "/documentation/metal/mtltexture",
+  "type": "Protocol",
+  "name": "MTLTexture",
+  "desc": "A resource that holds formatted image data.",
+  "items": [
+    {
+      "name": "func replace(region: MTLRegion, mipmapLevel: Int, slice: Int, withBytes: UnsafeRawPointer, bytesPerRow: Int, bytesPerImage: Int)",
+      "desc": "Copies pixel data into a section of a texture slice."
+    },
+    {
+      "name": "func replace(region: MTLRegion, mipmapLevel: Int, withBytes: UnsafeRawPointer, bytesPerRow: Int)",
+      "desc": "Copies a block of pixels into a section of texture slice 0."
+    },
+    {
+      "name": "func getBytes(UnsafeMutableRawPointer, bytesPerRow: Int, bytesPerImage: Int, from: MTLRegion, mipmapLevel: Int, slice: Int)",
+      "desc": "Copies pixel data from the texture to a buffer in system memory."
+    },
+    {
+      "name": "func getBytes(UnsafeMutableRawPointer, bytesPerRow: Int, from: MTLRegion, mipmapLevel: Int)",
+      "desc": "Copies pixel data from the first slice of the texture to a buffer in system memory."
+    },
+    {
+      "name": "func makeTextureView(pixelFormat: MTLPixelFormat) -> MTLTexture?",
+      "desc": "Creates a new view of the texture, reinterpreting its data using a different pixel format."
+    },
+    {
+      "name": "func makeTextureView(pixelFormat: MTLPixelFormat, textureType: MTLTextureType, levels: Range<Int>, slices: Range<Int>) -> MTLTexture?",
+      "desc": "Creates a new view of the texture, reinterpreting a subset of its data using a different type and pixel format."
+    },
+    {
+      "name": "func makeTextureView(pixelFormat: MTLPixelFormat, textureType: MTLTextureType, levels: Range<Int>, slices: Range<Int>, swizzle: MTLTextureSwizzleChannels) -> MTLTexture?",
+      "desc": "Creates a new view of the texture, reinterpreting a subset of its data using a different type, pixel format, and swizzle pattern."
+    },
+    {
+      "name": "var textureType: MTLTextureType",
+      "desc": "The dimension and arrangement of the texture image data."
+    },
+    {
+      "name": "var pixelFormat: MTLPixelFormat",
+      "desc": "The format of pixels in the texture."
+    },
+    {
+      "name": "var width: Int",
+      "desc": "The width of the texture image for the base level mipmap, in pixels."
+    },
+    {
+      "name": "var height: Int",
+      "desc": "The height of the texture image for the base level mipmap, in pixels."
+    },
+    {
+      "name": "var depth: Int",
+      "desc": "The depth of the texture image for the base level mipmap, in pixels."
+    },
+    {
+      "name": "var mipmapLevelCount: Int",
+      "desc": "The number of mipmap levels in the texture."
+    },
+    {
+      "name": "var arrayLength: Int",
+      "desc": "The number of slices in the texture array."
+    },
+    {
+      "name": "var sampleCount: Int",
+      "desc": "The number of samples in each pixel."
+    },
+    {
+      "name": "var isFramebufferOnly: Bool",
+      "desc": "A Boolean value that indicates whether the texture can only be used as a render target."
+    },
+    {
+      "name": "var usage: MTLTextureUsage",
+      "desc": "Options that determine how you can use the texture."
+    },
+    {
+      "name": "var allowGPUOptimizedContents: Bool",
+      "desc": "A Boolean value indicating whether the GPU is allowed to adjust the contents of the texture to improve GPU performance."
+    },
+    {
+      "name": "var isShareable: Bool",
+      "desc": "A Boolean indicating whether this texture can be shared with other processes."
+    },
+    {
+      "name": "var swizzle: MTLTextureSwizzleChannels",
+      "desc": "The pattern that the GPU applies to pixels when you read or sample pixels from the texture."
+    },
+    {
+      "name": "enum MTLTextureType",
+      "desc": "The dimension of each image, including whether multiple images are arranged into an array or a cube."
+    },
+    {
+      "name": "struct MTLTextureUsage",
+      "desc": "An enumeration for the various options that determine how you can use a texture."
+    },
+    {
+      "name": "var iosurface: IOSurfaceRef?",
+      "desc": "A reference to the IOSurface the texture was created from, if any."
+    },
+    {
+      "name": "var iosurfacePlane: Int",
+      "desc": "The plane of the IOSurface to reference if any."
+    },
+    {
+      "name": "var parent: MTLTexture?",
+      "desc": "The parent texture that the texture was created from, if any."
+    },
+    {
+      "name": "var parentRelativeLevel: Int",
+      "desc": "The base level of the parent texture that the texture was created from, if any."
+    },
+    {
+      "name": "var parentRelativeSlice: Int",
+      "desc": "The base slice of the parent texture that the texture was created from, if any."
+    },
+    {
+      "name": "var buffer: MTLBuffer?",
+      "desc": "The source buffer that the texture was created from, if any."
+    },
+    {
+      "name": "var bufferOffset: Int",
+      "desc": "The offset in the source buffer where the texture's data comes from."
+    },
+    {
+      "name": "var bufferBytesPerRow: Int",
+      "desc": "The number of bytes in each row of the texture’s source buffer, if applicable."
+    },
+    {
+      "name": "func makeSharedTextureHandle() -> MTLSharedTextureHandle?",
+      "desc": "Creates a new texture handle from a shareable texture."
+    },
+    {
+      "name": "func makeRemoteTextureView(MTLDevice) -> MTLTexture?",
+      "desc": "Creates a remote texture view for another GPU in the same peer group."
+    },
+    {
+      "name": "var remoteStorageTexture: MTLTexture?",
+      "desc": "The texture on another GPU that the texture was created from, if any."
+    },
+    {
+      "name": "var isSparse: Bool",
+      "desc": "A Boolean value that indicates whether this is a sparse texture."
+    },
+    {
+      "name": "var firstMipmapInTail: Int",
+      "desc": "The index of the first mipmap in the tail."
+    },
+    {
+      "name": "var tailSizeInBytes: Int",
+      "desc": "The size of the sparse texture tail, in bytes."
+    },
+    {
+      "name": "var compressionType: MTLTextureCompressionType"
+    }
+  ],
+  "declaration": "protocol MTLTexture",
+  "inheritsFrom": [
+    "MTLResource"
+  ]
+}

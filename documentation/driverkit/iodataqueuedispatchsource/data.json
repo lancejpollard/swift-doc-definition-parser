@@ -1,0 +1,96 @@
+{
+  "path": "/documentation/driverkit/iodataqueuedispatchsource",
+  "type": "Class",
+  "name": "IODataQueueDispatchSource",
+  "desc": "A dispatch source that manages a shared-memory data queue.",
+  "items": [
+    {
+      "name": "+ Create",
+      "desc": "Creates a dispatch source that you use as a shared-memory data queue."
+    },
+    {
+      "name": "- init",
+      "desc": "Handles the basic initialization of the dispatch source."
+    },
+    {
+      "name": "- free",
+      "desc": "Performs any final cleanup for the data-queue dispatch source."
+    },
+    {
+      "name": "- SetDataServicedHandler",
+      "desc": "Installs the handler block to execute when data is removed from the queue."
+    },
+    {
+      "name": "- DataServiced",
+      "desc": "Responds to the removal of data from the queue."
+    },
+    {
+      "name": "- Enqueue",
+      "desc": "Adds a single entry to the shared data queue."
+    },
+    {
+      "name": "- EnqueueWithCoalesce",
+      "desc": "Adds an entry to the queue, but doesn't automatically send a data-available notification."
+    },
+    {
+      "name": "- SendDataAvailable",
+      "desc": "Sends a notification to observers that indicates more data is available for processing."
+    },
+    {
+      "name": "- SetDataAvailableHandler",
+      "desc": "Sets the handler block to run when another object adds data to the queue."
+    },
+    {
+      "name": "- DataAvailable",
+      "desc": "Responds to the addition of new data to the queue."
+    },
+    {
+      "name": "- IsDataAvailable",
+      "desc": "Checks whether the data queue contains data to process."
+    },
+    {
+      "name": "- Peek",
+      "desc": "Returns the next queue entry without removing it from the queue."
+    },
+    {
+      "name": "- Dequeue",
+      "desc": "Removes the next entry from the queue."
+    },
+    {
+      "name": "- DequeueWithCoalesce",
+      "desc": "Removes the next queue entry, but doesn't automatically send notifications."
+    },
+    {
+      "name": "- SendDataServiced",
+      "desc": "Notifies interested parties that you removed data from the queue."
+    },
+    {
+      "name": "- SetEnableWithCompletion",
+      "desc": "Controls the enable state of the interrupt source."
+    },
+    {
+      "name": "- Cancel",
+      "desc": "Cancels all callbacks from the dispatch source."
+    },
+    {
+      "name": "- CopyDataAvailableHandler",
+      "desc": "A private method that the dispatch source uses to detect enqueued data."
+    },
+    {
+      "name": "- CopyDataServicedHandler",
+      "desc": "A private method that the dispatch source uses to detect dequeued data."
+    },
+    {
+      "name": "- CopyMemory",
+      "desc": "A private method that the dispatch source uses to copy memory."
+    },
+    {
+      "name": "- CheckForWork",
+      "desc": "Checks for events to handle."
+    }
+  ],
+  "declaration": "class IODataQueueDispatchSource : IODispatchSource",
+  "inheritsFrom": [
+    "IODispatchSource"
+  ]
+}

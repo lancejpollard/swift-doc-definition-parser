@@ -1,0 +1,29 @@
+{
+  "path": "/documentation/coremedia/cmsyncprotocol",
+  "type": "Protocol",
+  "name": "CMSyncProtocol",
+  "desc": "A type that provides behavior for syncing time.",
+  "items": [
+    {
+      "name": "var time: CMTime",
+      "desc": "The current time."
+    },
+    {
+      "name": "func convertTime<T>(CMTime, to: T) -> CMTime",
+      "desc": "Converts a time from one timebase or clock to another timebase or clock."
+    },
+    {
+      "name": "func rate<T>(relativeTo: T) -> Double",
+      "desc": "Queries the relative rate of one timebase or clock relative to another timebase or clock."
+    },
+    {
+      "name": "func rateAndAnchorTime<T>(relativeTo: T) -> (rate: Double, anchorTime: CMTime, referenceTime: CMTime)",
+      "desc": "Queries the relative rate of one timebase or clock relative to another timebase or clock, and the times of each timebase or clock at which the relative rate went into effect."
+    },
+    {
+      "name": "func mightDrift<T>(relativeTo: T) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether it’s possible for the clock to drift relative to the input."
+    }
+  ],
+  "declaration": "protocol CMSyncProtocol"
+}

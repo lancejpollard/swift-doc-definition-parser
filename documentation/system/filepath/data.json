@@ -1,0 +1,235 @@
+{
+  "path": "/documentation/system/filepath",
+  "type": "Structure",
+  "name": "FilePath",
+  "desc": "Represents a location in the file system.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an empty, null-terminated path."
+    },
+    {
+      "name": "init(stringLiteral: String)",
+      "desc": "Creates a file path from a string literal."
+    },
+    {
+      "name": "init(extendedGraphemeClusterLiteral: Self.StringLiteralType)",
+      "desc": "Creates an instance initialized to the given value."
+    },
+    {
+      "name": "init(unicodeScalarLiteral: Self.ExtendedGraphemeClusterLiteralType)",
+      "desc": "Creates an instance initialized to the given value."
+    },
+    {
+      "name": "var length: Int",
+      "desc": "The length of the file path, excluding the null terminator."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual representation of the file path."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual representation of the file path, suitable for debugging."
+    },
+    {
+      "name": "init(cString: UnsafePointer<CChar>)",
+      "desc": "For backwards compatibility only. This initializer is equivalent to the preferred FilePath(platformString:)."
+    },
+    {
+      "name": "func withCString<Result>((UnsafePointer<CChar>) throws -> Result) rethrows -> Result",
+      "desc": "For backwards compatibility only. This function is equivalent to the preferred withPlatformString."
+    },
+    {
+      "name": "static func == (FilePath, FilePath) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "init(from: Decoder) throws",
+      "desc": "Creates a new instance by decoding from the given decoder."
+    },
+    {
+      "name": "func encode(to: Encoder) throws",
+      "desc": "Encodes this value into the given encoder."
+    },
+    {
+      "name": "struct Component",
+      "desc": "Represents an individual, non-root component of a file path."
+    },
+    {
+      "name": "struct ComponentView",
+      "desc": "A bidirectional, range replaceable collection of the non-root components that make up a file path."
+    },
+    {
+      "name": "struct Root",
+      "desc": "Represents a root of a file path."
+    },
+    {
+      "name": "init?(URL)",
+      "desc": "Creates a file path from a URL"
+    },
+    {
+      "name": "init(String)",
+      "desc": "Creates a file path from a string."
+    },
+    {
+      "name": "init(platformString: UnsafePointer<CInterop.PlatformChar>)",
+      "desc": "Creates a file path by copying bytes from a null-terminated platform string."
+    },
+    {
+      "name": "init<C>(root: FilePath.Root?, C)",
+      "desc": "Create a file path from a root and a collection of components."
+    },
+    {
+      "name": "init(root: FilePath.Root?, FilePath.ComponentView.SubSequence)",
+      "desc": "Create a file path from an optional root and a slice of another path’s components."
+    },
+    {
+      "name": "init(root: FilePath.Root?, components: FilePath.Component...)",
+      "desc": "Create a file path from a root and any number of components."
+    },
+    {
+      "name": "var components: FilePath.ComponentView",
+      "desc": "View the non-root components that make up this path."
+    },
+    {
+      "name": "var `extension`: String?",
+      "desc": "The extension of the file or directory last component."
+    },
+    {
+      "name": "var isAbsolute: Bool",
+      "desc": "Returns true if this path uniquely identifies the location of a file without reference to an additional starting location."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "Whether this path is empty"
+    },
+    {
+      "name": "var isLexicallyNormal: Bool",
+      "desc": "Whether the path is in lexical-normal form, that is . and .. components have been collapsed lexically (i.e. without following symlinks)."
+    },
+    {
+      "name": "var isRelative: Bool",
+      "desc": "Returns true if this path is not absolute (see isAbsolute)."
+    },
+    {
+      "name": "var lastComponent: FilePath.Component?",
+      "desc": "Returns the final component of the path. Returns nil if the path is empty or only contains a root."
+    },
+    {
+      "name": "var root: FilePath.Root?",
+      "desc": "Returns the root of a path if there is one, otherwise nil."
+    },
+    {
+      "name": "var stem: String?",
+      "desc": "The non-extension portion of the file or directory last component."
+    },
+    {
+      "name": "var string: String",
+      "desc": "Creates a string by interpreting the path’s content as UTF-8 on Unix and UTF-16 on Windows."
+    },
+    {
+      "name": "func append<C>(C)",
+      "desc": "Append components on to the end of this path."
+    },
+    {
+      "name": "func append(String)",
+      "desc": "Append the contents of other, ignoring any spurious leading separators."
+    },
+    {
+      "name": "func append(FilePath.Component)",
+      "desc": "Append a component on to the end of this path."
+    },
+    {
+      "name": "func appending(String) -> FilePath",
+      "desc": "Non-mutating version of append(_:String)."
+    },
+    {
+      "name": "func appending(FilePath.Component) -> FilePath",
+      "desc": "Non-mutating version of append(_:Component)."
+    },
+    {
+      "name": "func appending<C>(C) -> FilePath",
+      "desc": "Non-mutating version of append(_:C)."
+    },
+    {
+      "name": "func ends(with: FilePath) -> Bool",
+      "desc": "Returns whether other is a suffix of self, only considering whole path components."
+    },
+    {
+      "name": "func lexicallyNormalize()",
+      "desc": "Collapse . and .. components lexically (i.e. without following symlinks)."
+    },
+    {
+      "name": "func lexicallyNormalized() -> FilePath",
+      "desc": "Returns a copy of self in lexical-normal form, that is . and .. components have been collapsed lexically (i.e. without following symlinks). See lexicallyNormalize"
+    },
+    {
+      "name": "func lexicallyResolving(FilePath) -> FilePath?",
+      "desc": "Create a new FilePath by resolving subpath relative to self, ensuring that the result is lexically contained within self."
+    },
+    {
+      "name": "func push(FilePath)",
+      "desc": "If other does not have a root, append each component of other. If other has a root, replaces self with other."
+    },
+    {
+      "name": "func pushing(FilePath) -> FilePath",
+      "desc": "Non-mutating version of push()."
+    },
+    {
+      "name": "func removeAll(keepingCapacity: Bool)",
+      "desc": "Remove the contents of the path, keeping the null terminator."
+    },
+    {
+      "name": "func removeLastComponent() -> Bool",
+      "desc": "In-place mutating variant of removingLastComponent."
+    },
+    {
+      "name": "func removePrefix(FilePath) -> Bool",
+      "desc": "If prefix is a prefix of self, removes it and returns true. Otherwise returns false."
+    },
+    {
+      "name": "func removingLastComponent() -> FilePath",
+      "desc": "Creates a new path with everything up to but not including lastComponent."
+    },
+    {
+      "name": "func removingRoot() -> FilePath",
+      "desc": "Creates a new path containing just the components, i.e. everything after root."
+    },
+    {
+      "name": "func reserveCapacity(Int)",
+      "desc": "Reserve enough storage space to store minimumCapacity platform characters."
+    },
+    {
+      "name": "func starts(with: FilePath) -> Bool",
+      "desc": "Returns whether other is a prefix of self, only considering whole path components."
+    },
+    {
+      "name": "func withPlatformString<Result>((UnsafePointer<CInterop.PlatformChar>) throws -> Result) rethrows -> Result",
+      "desc": "Calls the given closure with a pointer to the contents of the file path, represented as a null-terminated platform string."
+    }
+  ],
+  "declaration": "struct FilePath",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "ExpressibleByExtendedGraphemeClusterLiteral",
+    "ExpressibleByStringLiteral",
+    "ExpressibleByUnicodeScalarLiteral",
+    "Hashable"
+  ]
+}

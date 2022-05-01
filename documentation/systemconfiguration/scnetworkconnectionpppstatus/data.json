@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/systemconfiguration/scnetworkconnectionpppstatus",
+  "type": "Enumeration",
+  "name": "SCNetworkConnectionPPPStatus",
+  "desc": "The PPP-specific status of the network connection.",
+  "items": [
+    {
+      "name": "case disconnected",
+      "desc": "PPP is disconnected."
+    },
+    {
+      "name": "case initializing",
+      "desc": "PPP is initializing."
+    },
+    {
+      "name": "case connectingLink",
+      "desc": "PPP is connecting the lower connection layer (for example, the modem is dialing out)."
+    },
+    {
+      "name": "case dialOnTraffic",
+      "desc": "PPP is waiting for networking traffic to automatically establish the connection."
+    },
+    {
+      "name": "case negotiatingLink",
+      "desc": "The PPP lower layer is connected and PPP is negotiating the link layer (LCP protocol)."
+    },
+    {
+      "name": "case authenticating",
+      "desc": "PPP is authenticating to the server (PAP, CHAP, MS-CHAP, or EAP protocols)."
+    },
+    {
+      "name": "case waitingForCallBack",
+      "desc": "PPP is waiting for the server to call back."
+    },
+    {
+      "name": "case negotiatingNetwork",
+      "desc": "PPP is now authenticated and negotiating the networking layer (IPCP or IPv6CP protocols)."
+    },
+    {
+      "name": "case connected",
+      "desc": "PPP is now fully connected for at least one networking layer. Additional networking protocol might still be negotiating."
+    },
+    {
+      "name": "case terminating",
+      "desc": "PPP networking and link protocols are terminating."
+    },
+    {
+      "name": "case disconnectingLink",
+      "desc": "PPP is disconnecting the lower level (for example, the modem is hanging up)."
+    },
+    {
+      "name": "case holdingLinkOff",
+      "desc": "PPP is disconnected and maintaining the link temporarily off."
+    },
+    {
+      "name": "case suspended",
+      "desc": "PPP is suspended as a result of the suspend command (for example, when a V.92 Modem is On Hold)."
+    },
+    {
+      "name": "case waitingForRedial",
+      "desc": "PPP has found a busy server and is waiting for redial."
+    }
+  ],
+  "declaration": "enum SCNetworkConnectionPPPStatus : Int32, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

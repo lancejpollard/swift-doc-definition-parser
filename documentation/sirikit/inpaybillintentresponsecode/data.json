@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/sirikit/inpaybillintentresponsecode",
+  "type": "Enumeration",
+  "name": "INPayBillIntentResponseCode",
+  "desc": "Constants indicating the state of the response.DeprecatedThis intent is no longer available. You may define a custom intent instead. For more information, see Deprecated SiriKit Intent Domains.",
+  "items": [
+    {
+      "name": "case unspecified",
+      "desc": "The response didn’t specify a response code."
+    },
+    {
+      "name": "case ready",
+      "desc": "You’re ready to handle the intent."
+    },
+    {
+      "name": "case inProgress",
+      "desc": "You’ve received the payment details and are in the process of scheduling the transaction."
+    },
+    {
+      "name": "case success",
+      "desc": "You successfully scheduled the transaction."
+    },
+    {
+      "name": "case failure",
+      "desc": "You were unable to schedule the transaction."
+    },
+    {
+      "name": "case failureRequiringAppLaunch",
+      "desc": "The user must launch your app to schedule the transaction."
+    },
+    {
+      "name": "case failureCredentialsUnverified",
+      "desc": "The transaction failed because you were unable to verify the credentials of the user or the payee."
+    },
+    {
+      "name": "case failureInsufficientFunds",
+      "desc": "The transaction failed because the user’s account didn’t contain sufficient funds."
+    }
+  ],
+  "declaration": "enum INPayBillIntentResponseCode : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

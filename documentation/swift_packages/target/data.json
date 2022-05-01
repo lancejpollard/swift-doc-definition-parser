@@ -1,0 +1,156 @@
+{
+  "path": "/documentation/swift_packages/target",
+  "type": "Class",
+  "name": "Target",
+  "desc": "A target, the basic building block of a Swift package.",
+  "items": [
+    {
+      "name": "var name: String",
+      "desc": "The name of the target."
+    },
+    {
+      "name": "var path: String?",
+      "desc": "The path of the target, relative to the package root."
+    },
+    {
+      "name": "var exclude: [String]",
+      "desc": "The paths to source and resource files you don’t want to include in the target."
+    },
+    {
+      "name": "var sources: [String]?",
+      "desc": "The source files in this target."
+    },
+    {
+      "name": "var resources: [Resource]?",
+      "desc": "The explicit list of resource files in the target."
+    },
+    {
+      "name": "struct Resource",
+      "desc": "A resource to bundle with the Swift package."
+    },
+    {
+      "name": "var publicHeadersPath: String?",
+      "desc": "The path to the directory containing public headers of a C-family target."
+    },
+    {
+      "name": "static func binaryTarget(name: String, path: String) -> Target",
+      "desc": "Creates a binary target that references an artifact on disk."
+    },
+    {
+      "name": "static func binaryTarget(name: String, url: String, checksum: String) -> Target",
+      "desc": "Creates a binary target that references a remote artifact."
+    },
+    {
+      "name": "var url: String?",
+      "desc": "The URL of a binary target."
+    },
+    {
+      "name": "var checksum: String?",
+      "desc": "The checksum for the archive file that contains the referenced binary artifact."
+    },
+    {
+      "name": "static func systemLibrary(name: String, path: String?, pkgConfig: String?, providers: [SystemPackageProvider]?) -> Target",
+      "desc": "Creates a system library target."
+    },
+    {
+      "name": "let pkgConfig: String?",
+      "desc": "The name to use for C modules."
+    },
+    {
+      "name": "let providers: [SystemPackageProvider]?",
+      "desc": "The providers array for a system library target."
+    },
+    {
+      "name": "var dependencies: [Target.Dependency]",
+      "desc": "The target’s dependencies on other entities inside or outside the package."
+    },
+    {
+      "name": "enum Target.Dependency",
+      "desc": "The different types of a target’s dependency on another entity."
+    },
+    {
+      "name": "var cSettings: [CSetting]?",
+      "desc": "C build settings."
+    },
+    {
+      "name": "var cxxSettings: [CXXSetting]?",
+      "desc": "C++ build settings."
+    },
+    {
+      "name": "var swiftSettings: [SwiftSetting]?",
+      "desc": "Swift build settings."
+    },
+    {
+      "name": "var linkerSettings: [LinkerSetting]?",
+      "desc": "Linker build settings."
+    },
+    {
+      "name": "struct BuildConfiguration",
+      "desc": "The build configuration such as debug or release."
+    },
+    {
+      "name": "struct BuildSettingCondition",
+      "desc": "A condition that limits the application of a build setting."
+    },
+    {
+      "name": "struct CSetting",
+      "desc": "A C-language build setting."
+    },
+    {
+      "name": "struct CXXSetting",
+      "desc": "A CXX-language build setting."
+    },
+    {
+      "name": "struct SwiftSetting",
+      "desc": "A Swift language build setting."
+    },
+    {
+      "name": "struct LinkerSetting",
+      "desc": "A linker build setting."
+    },
+    {
+      "name": "var isTest: Bool",
+      "desc": "A boolean value that indicates if this is a test target."
+    },
+    {
+      "name": "let type: Target.TargetType",
+      "desc": "The type of the target."
+    },
+    {
+      "name": "enum Target.TargetType",
+      "desc": "The different types of a target."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes this value into the given encoder."
+    },
+    {
+      "name": "var pluginCapability: Target.PluginCapability?"
+    },
+    {
+      "name": "var plugins: [Target.PluginUsage]?"
+    },
+    {
+      "name": "static func executableTarget(name: String, dependencies: [Target.Dependency], path: String?, exclude: [String], sources: [String]?, resources: [Resource]?, publicHeadersPath: String?, cSettings: [CSetting]?, cxxSettings: [CXXSetting]?, swiftSettings: [SwiftSetting]?, linkerSettings: [LinkerSetting]?, plugins: [Target.PluginUsage]?) -> Target"
+    },
+    {
+      "name": "static func plugin(name: String, capability: Target.PluginCapability, dependencies: [Target.Dependency], path: String?, exclude: [String], sources: [String]?) -> Target"
+    },
+    {
+      "name": "static func target(name: String, dependencies: [Target.Dependency], path: String?, exclude: [String], sources: [String]?, resources: [Resource]?, publicHeadersPath: String?, cSettings: [CSetting]?, cxxSettings: [CXXSetting]?, swiftSettings: [SwiftSetting]?, linkerSettings: [LinkerSetting]?, plugins: [Target.PluginUsage]?) -> Target"
+    },
+    {
+      "name": "static func testTarget(name: String, dependencies: [Target.Dependency], path: String?, exclude: [String], sources: [String]?, resources: [Resource]?, cSettings: [CSetting]?, cxxSettings: [CXXSetting]?, swiftSettings: [SwiftSetting]?, linkerSettings: [LinkerSetting]?, plugins: [Target.PluginUsage]?) -> Target"
+    },
+    {
+      "name": "enum Target.PluginCapability"
+    },
+    {
+      "name": "enum Target.PluginUsage"
+    }
+  ],
+  "declaration": "final class Target",
+  "conformsTo": [
+    "Encodable"
+  ]
+}

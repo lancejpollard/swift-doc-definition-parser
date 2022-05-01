@@ -1,0 +1,107 @@
+{
+  "path": "/documentation/createml/mlregressor",
+  "type": "Enumeration",
+  "name": "MLRegressor",
+  "desc": "A model you train to estimate continuous values.",
+  "items": [
+    {
+      "name": "init(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]?)",
+      "desc": "Creates a regressor from the feature columns in the training data to predict the values in the target column."
+    },
+    {
+      "name": "var targetColumn: String",
+      "desc": "The name of the column you selected at initialization to define which feature the regressor predicts."
+    },
+    {
+      "name": "var featureColumns: [String]",
+      "desc": "The names of the columns you selected at initialization to train the regressor."
+    },
+    {
+      "name": "var trainingMetrics: MLRegressorMetrics",
+      "desc": "Measurements of the regressor’s performance on the training data set."
+    },
+    {
+      "name": "var validationMetrics: MLRegressorMetrics",
+      "desc": "Measurements of the regressor’s performance on the validation data set."
+    },
+    {
+      "name": "func evaluation(on: MLDataTable) -> MLRegressorMetrics",
+      "desc": "Returns metrics describing the regressor’s performance on the provided labeled data."
+    },
+    {
+      "name": "func predictions(from: MLDataTable) -> MLUntypedColumn",
+      "desc": "Predicts the target value from the provided data."
+    },
+    {
+      "name": "func write(to: URL, metadata: MLModelMetadata?)",
+      "desc": "Exports a Core ML model file for use in your app."
+    },
+    {
+      "name": "func write(toFile: String, metadata: MLModelMetadata?)",
+      "desc": "Exports a Core ML model file for use in your app."
+    },
+    {
+      "name": "var model: MLModel",
+      "desc": "The underlying Core ML model stored in memory."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the regressor."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the regressor that’s suitable for output during debugging."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the regressor shown in a playground."
+    },
+    {
+      "name": "case linear(MLLinearRegressor)",
+      "desc": "A regressor that estimates the target as a linear function of the features."
+    },
+    {
+      "name": "case decisionTree(MLDecisionTreeRegressor)",
+      "desc": "A regressor that estimates the target by learning rules to split the data."
+    },
+    {
+      "name": "case boostedTree(MLBoostedTreeRegressor)",
+      "desc": "A regressor based on a collection of decision trees combined with gradient boosting."
+    },
+    {
+      "name": "case randomForest(MLRandomForestRegressor)",
+      "desc": "A regressor based on a collection of decision trees trained on subsets of the data."
+    },
+    {
+      "name": "struct MLLinearRegressor",
+      "desc": "A regressor that estimates the target as a linear function of the features."
+    },
+    {
+      "name": "struct MLDecisionTreeRegressor",
+      "desc": "A regressor that estimates the target by learning rules to split the data."
+    },
+    {
+      "name": "struct MLRandomForestRegressor",
+      "desc": "A regressor based on a collection of decision trees trained on subsets of the data."
+    },
+    {
+      "name": "struct MLBoostedTreeRegressor",
+      "desc": "A regressor based on a collection of decision trees combined with gradient boosting."
+    },
+    {
+      "name": "init(trainingData: DataFrame, targetColumn: String, featureColumns: [String]?)"
+    },
+    {
+      "name": "func evaluation(on: DataFrame) -> MLRegressorMetrics"
+    },
+    {
+      "name": "func predictions(from: DataFrame) -> AnyColumn"
+    }
+  ],
+  "declaration": "enum MLRegressor",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomStringConvertible"
+  ]
+}

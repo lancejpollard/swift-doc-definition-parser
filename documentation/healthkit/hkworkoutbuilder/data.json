@@ -1,0 +1,80 @@
+{
+  "path": "/documentation/healthkit/hkworkoutbuilder",
+  "type": "Class",
+  "name": "HKWorkoutBuilder",
+  "desc": "A builder object that incrementally constructs a workout.",
+  "items": [
+    {
+      "name": "init(healthStore: HKHealthStore, configuration: HKWorkoutConfiguration, device: HKDevice?)",
+      "desc": "Returns a new workout builder object that is not connected to a workout session or other data source."
+    },
+    {
+      "name": "var device: HKDevice?",
+      "desc": "The device associated with the workout."
+    },
+    {
+      "name": "var workoutConfiguration: HKWorkoutConfiguration",
+      "desc": "The configuration information for the workout."
+    },
+    {
+      "name": "func beginCollection(withStart: Date, completion: (Bool, Error?) -> Void)",
+      "desc": "Sets the workout’s start date and begins building the workout."
+    },
+    {
+      "name": "var startDate: Date?",
+      "desc": "The workout’s start date and time."
+    },
+    {
+      "name": "func elapsedTime(at: Date) -> TimeInterval",
+      "desc": "Calculates the duration of the workout at the specified time."
+    },
+    {
+      "name": "func add([HKSample], completion: (Bool, Error?) -> Void)",
+      "desc": "Adds a sample to be associated with the workout."
+    },
+    {
+      "name": "func seriesBuilder(for: HKSeriesType) -> HKSeriesBuilder?",
+      "desc": "Returns the series builder for the specified type, creating a new builder, if necessary."
+    },
+    {
+      "name": "func statistics(for: HKQuantityType) -> HKStatistics?",
+      "desc": "Returns the statistics calculated for matching samples added to the workout."
+    },
+    {
+      "name": "func addMetadata([String : Any], completion: (Bool, Error?) -> Void)",
+      "desc": "Adds metadata to be saved with the workout."
+    },
+    {
+      "name": "var metadata: [String : Any]",
+      "desc": "The metadata the builder saves with the workout."
+    },
+    {
+      "name": "func addWorkoutEvents([HKWorkoutEvent], completion: (Bool, Error?) -> Void)",
+      "desc": "Adds a workout event to the builder."
+    },
+    {
+      "name": "var workoutEvents: [HKWorkoutEvent]",
+      "desc": "The list of events added to the workout."
+    },
+    {
+      "name": "func endCollection(withEnd: Date, completion: (Bool, Error?) -> Void)",
+      "desc": "Stops the collection of data, sets the workout’s end date, and deactivates the workout builder."
+    },
+    {
+      "name": "var endDate: Date?",
+      "desc": "The workout’s end date and time."
+    },
+    {
+      "name": "func finishWorkout(completion: (HKWorkout?, Error?) -> Void)",
+      "desc": "Creates the workout, using the samples and events added to the builder, and saves it to the HealthKit store."
+    },
+    {
+      "name": "func discardWorkout()",
+      "desc": "Stops the collection of data and discards the current results without saving the workout."
+    }
+  ],
+  "declaration": "class HKWorkoutBuilder : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

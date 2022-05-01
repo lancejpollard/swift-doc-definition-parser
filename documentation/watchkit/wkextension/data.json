@@ -1,0 +1,100 @@
+{
+  "path": "/documentation/watchkit/wkextension",
+  "type": "Class",
+  "name": "WKExtension",
+  "desc": "The centralized point of control and coordination for apps running in watchOS.",
+  "items": [
+    {
+      "name": "class func shared() -> WKExtension",
+      "desc": "Returns the shared WatchKit extension object."
+    },
+    {
+      "name": "var delegate: WKExtensionDelegate?",
+      "desc": "The delegate of the WatchKit extension object."
+    },
+    {
+      "name": "protocol WKExtensionDelegate",
+      "desc": "A collection of methods that manages the app-level behavior of a WatchKit extension."
+    },
+    {
+      "name": "func openSystemURL(URL)",
+      "desc": "Opens the specified system URL."
+    },
+    {
+      "name": "var rootInterfaceController: WKInterfaceController?",
+      "desc": "The app’s root interface controller."
+    },
+    {
+      "name": "var visibleInterfaceController: WKInterfaceController?",
+      "desc": "Returns the last visible interface controller."
+    },
+    {
+      "name": "var applicationState: WKApplicationState",
+      "desc": "The runtime state of the Watch app."
+    },
+    {
+      "name": "enum WKApplicationState",
+      "desc": "The running states of the Watch app."
+    },
+    {
+      "name": "var isApplicationRunningInDock: Bool",
+      "desc": "A Boolean value that indicates whether the app is running in the dock."
+    },
+    {
+      "name": "func scheduleBackgroundRefresh(withPreferredDate: Date, userInfo: (NSSecureCoding & NSObjectProtocol)?, scheduledCompletion: (Error?) -> Void)",
+      "desc": "Schedules a background task to refresh the app’s data."
+    },
+    {
+      "name": "var isAutorotating: Bool",
+      "desc": "A Boolean value that determines whether the interface automatically rotates when the user flips their wrist."
+    },
+    {
+      "name": "var isAutorotated: Bool",
+      "desc": "A Boolean value that indicates whether the system has automatically rotated the user interface so that it is properly oriented for another viewer."
+    },
+    {
+      "name": "var globalTintColor: UIColor",
+      "desc": "The watchOS app’s global tint color."
+    },
+    {
+      "name": "func scheduleSnapshotRefresh(withPreferredDate: Date, userInfo: (NSSecureCoding & NSObjectProtocol)?, scheduledCompletion: (Error?) -> Void)",
+      "desc": "Schedules a background task to refresh your app’s snapshot."
+    },
+    {
+      "name": "class let applicationDidFinishLaunchingNotification: NSNotification.Name",
+      "desc": "A message indicating that the launch process finished and the extension is ready to run."
+    },
+    {
+      "name": "class let applicationDidBecomeActiveNotification: NSNotification.Name",
+      "desc": "A message indicating that the watchOS app is visible and processing events."
+    },
+    {
+      "name": "class let applicationWillResignActiveNotification: NSNotification.Name",
+      "desc": "A message indicating that the system is about to deactivate the watchOS app."
+    },
+    {
+      "name": "class let applicationWillEnterForegroundNotification: NSNotification.Name",
+      "desc": "A message indicating that the watchOS app is about to transition from the background to the foreground."
+    },
+    {
+      "name": "class let applicationDidEnterBackgroundNotification: NSNotification.Name",
+      "desc": "A message indicating that the watchOS app transitioned from the foreground to the background."
+    },
+    {
+      "name": "func registerForRemoteNotifications()",
+      "desc": "Register to receive remote notifications from the Apple Push Notification service (APNs)."
+    },
+    {
+      "name": "func unregisterForRemoteNotifications()",
+      "desc": "Unregister for all remote notifications received from Apple Push Notification service (APNs)."
+    },
+    {
+      "name": "var isRegisteredForRemoteNotifications: Bool",
+      "desc": "A Boolean value that indicates if the app has successfully registered for remote notifications."
+    }
+  ],
+  "declaration": "@MainActor class WKExtension : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

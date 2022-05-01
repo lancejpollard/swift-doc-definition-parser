@@ -1,0 +1,195 @@
+{
+  "path": "/documentation/appkit/nsbitmapimagerep",
+  "type": "Class",
+  "name": "NSBitmapImageRep",
+  "desc": "An object that renders an image from bitmap data.",
+  "items": [
+    {
+      "name": "class func imageReps(with: Data) -> [NSImageRep]",
+      "desc": "Creates and returns an array of bitmap image representation objects that correspond to the images in the specified data."
+    },
+    {
+      "name": "func colorize(byMappingGray: CGFloat, to: NSColor?, blackMapping: NSColor?, whiteMapping: NSColor?)",
+      "desc": "Colorizes a grayscale image."
+    },
+    {
+      "name": "init?(bitmapDataPlanes: UnsafeMutablePointer<UnsafeMutablePointer<UInt8>?>?, pixelsWide: Int, pixelsHigh: Int, bitsPerSample: Int, samplesPerPixel: Int, hasAlpha: Bool, isPlanar: Bool, colorSpaceName: NSColorSpaceName, bitmapFormat: NSBitmapImageRep.Format, bytesPerRow: Int, bitsPerPixel: Int)",
+      "desc": "Initializes a newly allocated bitmap image representation so it can render the specified image."
+    },
+    {
+      "name": "init?(bitmapDataPlanes: UnsafeMutablePointer<UnsafeMutablePointer<UInt8>?>?, pixelsWide: Int, pixelsHigh: Int, bitsPerSample: Int, samplesPerPixel: Int, hasAlpha: Bool, isPlanar: Bool, colorSpaceName: NSColorSpaceName, bytesPerRow: Int, bitsPerPixel: Int)",
+      "desc": "Initializes a newly allocated bitmap image representation so it can render the specified image."
+    },
+    {
+      "name": "init(cgImage: CGImage)",
+      "desc": "Returns a bitmap image representation from a Core Graphics image object."
+    },
+    {
+      "name": "init(ciImage: CIImage)",
+      "desc": "Returns a bitmap image representation from a Core Image object."
+    },
+    {
+      "name": "init?(data: Data)",
+      "desc": "Initializes a newly allocated bitmap image representation from the specified data."
+    },
+    {
+      "name": "init(forIncrementalLoad: ())",
+      "desc": "Initializes a newly allocated bitmap image representation for incremental loading."
+    },
+    {
+      "name": "var bitmapFormat: NSBitmapImageRep.Format",
+      "desc": "The format of the bitmap image representation."
+    },
+    {
+      "name": "struct NSBitmapImageRep.Format",
+      "desc": "Constants that represent bitmap component formats."
+    },
+    {
+      "name": "var bitsPerPixel: Int",
+      "desc": "The number of bits allocated for each pixel in each plane of data."
+    },
+    {
+      "name": "var bytesPerPlane: Int",
+      "desc": "The number of bytes in each plane or channel of data."
+    },
+    {
+      "name": "var bytesPerRow: Int",
+      "desc": "The minimum number of bytes required to specify a scan line in each data plane."
+    },
+    {
+      "name": "var isPlanar: Bool",
+      "desc": "A Boolean value that indicates whether the image data is in a planar configuration."
+    },
+    {
+      "name": "var numberOfPlanes: Int",
+      "desc": "The number of separate planes into which the image data is organized."
+    },
+    {
+      "name": "var samplesPerPixel: Int",
+      "desc": "The number of components for each pixel."
+    },
+    {
+      "name": "var bitmapData: UnsafeMutablePointer<UInt8>?",
+      "desc": "A pointer to the bitmap data."
+    },
+    {
+      "name": "func getBitmapDataPlanes(UnsafeMutablePointer<UnsafeMutablePointer<UInt8>?>)",
+      "desc": "Returns by indirection bitmap data of the bitmap image representation separated into planes."
+    },
+    {
+      "name": "class func tiffRepresentationOfImageReps(in: [NSImageRep]) -> Data?",
+      "desc": "Returns a TIFF representation of the specified images."
+    },
+    {
+      "name": "class func tiffRepresentationOfImageReps(in: [NSImageRep], using: NSBitmapImageRep.TIFFCompression, factor: Float) -> Data?",
+      "desc": "Returns a TIFF representation of the specified images using the specified compression scheme and factor."
+    },
+    {
+      "name": "var tiffRepresentation: Data?",
+      "desc": "A TIFF representation of the bitmap image data."
+    },
+    {
+      "name": "func tiffRepresentation(using: NSBitmapImageRep.TIFFCompression, factor: Float) -> Data?",
+      "desc": "Returns a TIFF representation of the image using the specified compression."
+    },
+    {
+      "name": "class func representationOfImageReps(in: [NSImageRep], using: NSBitmapImageRep.FileType, properties: [NSBitmapImageRep.PropertyKey : Any]) -> Data?",
+      "desc": "Formats the specified bitmap images using the specified storage type and properties and returns them in a data object."
+    },
+    {
+      "name": "func representation(using: NSBitmapImageRep.FileType, properties: [NSBitmapImageRep.PropertyKey : Any]) -> Data?",
+      "desc": "Formats the bitmap representation’s image data using the specified storage type and properties and returns it in a data object."
+    },
+    {
+      "name": "func NSDrawBitmap(NSRect, Int, Int, Int, Int, Int, Int, Bool, Bool, NSColorSpaceName, UnsafePointer<UnsafePointer<UInt8>?>)",
+      "desc": "Draws a bitmap image."
+    },
+    {
+      "name": "class func getTIFFCompressionTypes(UnsafeMutablePointer<UnsafePointer<NSBitmapImageRep.TIFFCompression>?>, count: UnsafeMutablePointer<Int>)",
+      "desc": "Returns by indirection an array of all available compression types that can be used when writing a TIFF image."
+    },
+    {
+      "name": "class func localizedName(forTIFFCompressionType: NSBitmapImageRep.TIFFCompression) -> String?",
+      "desc": "Returns an autoreleased string containing the localized name for the specified compression type."
+    },
+    {
+      "name": "func canBeCompressed(using: NSBitmapImageRep.TIFFCompression) -> Bool",
+      "desc": "Tests whether the bitmap image representation can be compressed by the specified compression scheme."
+    },
+    {
+      "name": "func setCompression(NSBitmapImageRep.TIFFCompression, factor: Float)",
+      "desc": "Sets the bitmap image representation’s compression type and compression factor."
+    },
+    {
+      "name": "func getCompression(UnsafeMutablePointer<NSBitmapImageRep.TIFFCompression>?, factor: UnsafeMutablePointer<Float>?)",
+      "desc": "Returns by indirection the bitmap image representation’s compression type and compression factor."
+    },
+    {
+      "name": "func setProperty(NSBitmapImageRep.PropertyKey, withValue: Any?)",
+      "desc": "Sets the specified property of the bitmap image representation to the specified value."
+    },
+    {
+      "name": "func value(forProperty: NSBitmapImageRep.PropertyKey) -> Any?",
+      "desc": "Returns the value for the specified property."
+    },
+    {
+      "name": "enum NSBitmapImageRep.TIFFCompression",
+      "desc": "Constants that represent the supported TIFF data-compression schemes."
+    },
+    {
+      "name": "struct NSBitmapImageRep.PropertyKey",
+      "desc": "Constants that identify bitmap image representation properties."
+    },
+    {
+      "name": "func incrementalLoad(from: Data, complete: Bool) -> Int",
+      "desc": "Loads the current image data into an incrementally-loaded image representation and returns the current status of the image."
+    },
+    {
+      "name": "enum NSBitmapImageRep.LoadStatus",
+      "desc": "Constants that identify the loading status of the image."
+    },
+    {
+      "name": "func setColor(NSColor, atX: Int, y: Int)",
+      "desc": "Changes the color of the pixel at the specified coordinates."
+    },
+    {
+      "name": "func colorAt(x: Int, y: Int) -> NSColor?",
+      "desc": "Returns the color of the pixel at the specified coordinates."
+    },
+    {
+      "name": "func setPixel(UnsafeMutablePointer<Int>, atX: Int, y: Int)",
+      "desc": "Sets the bitmap image representation’s pixel at the specified coordinates to the specified raw pixel values."
+    },
+    {
+      "name": "func getPixel(UnsafeMutablePointer<Int>, atX: Int, y: Int)",
+      "desc": "Returns by indirection the pixel data for the specified location in the bitmap image representation."
+    },
+    {
+      "name": "var cgImage: CGImage?",
+      "desc": "A Core Graphics image object based on the bitmap image representation’s data."
+    },
+    {
+      "name": "func converting(to: NSColorSpace, renderingIntent: NSColorRenderingIntent) -> NSBitmapImageRep?",
+      "desc": "Converts the bitmap image representation to the specified color space."
+    },
+    {
+      "name": "func retagging(with: NSColorSpace) -> NSBitmapImageRep?",
+      "desc": "Changes the color space tag of the bitmap image representation."
+    },
+    {
+      "name": "var colorSpace: NSColorSpace",
+      "desc": "The color space of the bitmap."
+    },
+    {
+      "name": "enum NSBitmapImageRep.FileType",
+      "desc": "Constants that specify bitmap file types."
+    }
+  ],
+  "declaration": "class NSBitmapImageRep : NSImageRep",
+  "inheritsFrom": [
+    "NSImageRep"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

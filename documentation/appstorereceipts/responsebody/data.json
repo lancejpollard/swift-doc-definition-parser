@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/appstorereceipts/responsebody",
+  "type": "Object",
+  "name": "responseBody",
+  "desc": "The JSON data returned in the response from the App Store.",
+  "items": [
+    {
+      "name": "environment",
+      "desc": "The environment for which the receipt was generated."
+    },
+    {
+      "name": "is-retryable",
+      "desc": "An indicator that an error occurred during the request. A value of 1 indicates a temporary issue; retry validation for this receipt at a later time. A value of 0 indicates an unresolvable issue; do not retry validation for this receipt. Only applicable to status codes 21100-21199."
+    },
+    {
+      "name": "latest_receipt",
+      "desc": "The latest Base64 encoded app receipt. Only returned for receipts that contain auto-renewable subscriptions."
+    },
+    {
+      "name": "latest_receipt_info",
+      "desc": "An array that contains all in-app purchase transactions. This excludes transactions for consumable products that have been marked as finished by your app. Only returned for receipts that contain auto-renewable subscriptions."
+    },
+    {
+      "name": "pending_renewal_info",
+      "desc": "In the JSON file, an array where each element contains the pending renewal information for each auto-renewable subscription identified by the product_id. Only returned for app receipts that contain auto-renewable subscriptions."
+    },
+    {
+      "name": "receipt",
+      "desc": "A JSON representation of the receipt that was sent for verification."
+    },
+    {
+      "name": "status",
+      "desc": "Either 0 if the receipt is valid, or a status code if there is an error. The status code reflects the status of the app receipt as a whole. See status for possible status codes and descriptions."
+    }
+  ]
+}

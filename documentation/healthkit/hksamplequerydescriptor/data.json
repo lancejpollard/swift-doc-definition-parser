@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/healthkit/hksamplequerydescriptor",
+  "type": "Generic Structure",
+  "name": "HKSampleQueryDescriptor",
+  "desc": "An instance that lets you run sample queries using Swift concurrency.",
+  "items": [
+    {
+      "name": "typealias HKSampleQueryDescriptor.Output",
+      "desc": "The type of data that the query returns."
+    },
+    {
+      "name": "init(predicates: [HKSamplePredicate<Sample>], sortDescriptors: [SortDescriptor<Sample>], limit: Int?)",
+      "desc": "Creates a sample query descriptor."
+    },
+    {
+      "name": "func result(for: HKHealthStore) -> [Sample]",
+      "desc": "Runs a one-shot query and asynchronously returns a snapshot of the current matching results."
+    },
+    {
+      "name": "var limit: Int?",
+      "desc": "The maximum number of samples that the query returns."
+    },
+    {
+      "name": "var predicates: [HKSamplePredicate<Sample>]",
+      "desc": "An array of sample predicates that define the type of data that the query returns."
+    },
+    {
+      "name": "var sortDescriptors: [SortDescriptor<Sample>]",
+      "desc": "An array that specifies the order of the results that the query returns."
+    }
+  ],
+  "declaration": "struct HKSampleQueryDescriptor<Sample> where Sample : HKSample",
+  "conformsTo": [
+    "HKAsyncQuery"
+  ]
+}

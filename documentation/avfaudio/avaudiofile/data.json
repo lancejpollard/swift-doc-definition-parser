@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/avfaudio/avaudiofile",
+  "type": "Class",
+  "name": "AVAudioFile",
+  "desc": "An object that represents an audio file that the system can open for reading or writing.",
+  "items": [
+    {
+      "name": "init(forReading: URL)",
+      "desc": "Opens a file for reading using the standard, deinterleaved floating point format."
+    },
+    {
+      "name": "init(forReading: URL, commonFormat: AVAudioCommonFormat, interleaved: Bool)",
+      "desc": "Opens a file for reading using the specified processing format."
+    },
+    {
+      "name": "init(forWriting: URL, settings: [String : Any])",
+      "desc": "Opens a file for writing using the specified settings."
+    },
+    {
+      "name": "init(forWriting: URL, settings: [String : Any], commonFormat: AVAudioCommonFormat, interleaved: Bool)",
+      "desc": "Opens a file for writing using a specified processing format and settings."
+    },
+    {
+      "name": "func read(into: AVAudioPCMBuffer)",
+      "desc": "Reads an entire audio buffer."
+    },
+    {
+      "name": "func read(into: AVAudioPCMBuffer, frameCount: AVAudioFrameCount)",
+      "desc": "Reads a portion of an audio buffer using the number of frames you specify."
+    },
+    {
+      "name": "func write(from: AVAudioPCMBuffer)",
+      "desc": "Writes an audio buffer sequentially."
+    },
+    {
+      "name": "var url: URL",
+      "desc": "The location of the audio file."
+    },
+    {
+      "name": "var fileFormat: AVAudioFormat",
+      "desc": "The on-disk format of the file."
+    },
+    {
+      "name": "var processingFormat: AVAudioFormat",
+      "desc": "The processing format of the file."
+    },
+    {
+      "name": "var length: AVAudioFramePosition",
+      "desc": "The number of sample frames in the file."
+    },
+    {
+      "name": "typealias AVAudioFramePosition",
+      "desc": "A position in an audio file or stream."
+    },
+    {
+      "name": "var framePosition: AVAudioFramePosition",
+      "desc": "The position in the file where the next read or write operation occurs."
+    },
+    {
+      "name": "typealias AVAudioFrameCount",
+      "desc": "A number of audio sample frames."
+    },
+    {
+      "name": "let AVAudioFileTypeKey: String",
+      "desc": "A string that indicates the audio file type."
+    }
+  ],
+  "declaration": "class AVAudioFile : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

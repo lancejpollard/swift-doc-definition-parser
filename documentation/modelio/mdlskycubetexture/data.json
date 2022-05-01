@@ -1,0 +1,74 @@
+{
+  "path": "/documentation/modelio/mdlskycubetexture",
+  "type": "Class",
+  "name": "MDLSkyCubeTexture",
+  "desc": "A generator of texel data that creates cube textures using a physically realistic simulation of the sunlit sky.",
+  "items": [
+    {
+      "name": "init(name: String?, channelEncoding: MDLTextureChannelEncoding, textureDimensions: vector_int2, turbidity: Float, sunElevation: Float, upperAtmosphereScattering: Float, groundAlbedo: Float)",
+      "desc": "Initializes a sky cube texture object with the specified parameters."
+    },
+    {
+      "name": "var turbidity: Float",
+      "desc": "The cloudiness or haziness of the simulated sky."
+    },
+    {
+      "name": "var sunElevation: Float",
+      "desc": "The sun’s position in the simulated sky."
+    },
+    {
+      "name": "var upperAtmosphereScattering: Float",
+      "desc": "A factor that influences the color of the simulated sky."
+    },
+    {
+      "name": "var groundAlbedo: Float",
+      "desc": "A factor that influences the clarity of the simulated sky."
+    },
+    {
+      "name": "var groundColor: CGColor?",
+      "desc": "The color of the simulated ground."
+    },
+    {
+      "name": "var horizonElevation: Float",
+      "desc": "The angle, in radians relative to center, below which to render the ground color."
+    },
+    {
+      "name": "var gamma: Float",
+      "desc": "The amount of gamma correction to apply during tone mapping."
+    },
+    {
+      "name": "var exposure: Float",
+      "desc": "The amount of exposure compensation to apply during tone mapping."
+    },
+    {
+      "name": "var brightness: Float",
+      "desc": "The amount of brightness enhancement to apply during tone mapping."
+    },
+    {
+      "name": "var contrast: Float",
+      "desc": "The amount of contrast enhancement to apply during tone mapping."
+    },
+    {
+      "name": "var saturation: Float",
+      "desc": "The amount of saturation enhancement to apply during tone mapping."
+    },
+    {
+      "name": "var highDynamicRangeCompression: vector_float2",
+      "desc": "Two parameters that determine the brightness compression curve for colors in the texture image."
+    },
+    {
+      "name": "func update()",
+      "desc": "Generates new texel data matching the current sky parameters."
+    },
+    {
+      "name": "init(name: String?, channelEncoding: MDLTextureChannelEncoding, textureDimensions: vector_int2, turbidity: Float, sunElevation: Float, sunAzimuth: Float, upperAtmosphereScattering: Float, groundAlbedo: Float)"
+    },
+    {
+      "name": "var sunAzimuth: Float"
+    }
+  ],
+  "declaration": "class MDLSkyCubeTexture : MDLTexture",
+  "inheritsFrom": [
+    "MDLTexture"
+  ]
+}

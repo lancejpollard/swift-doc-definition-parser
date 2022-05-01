@@ -1,0 +1,253 @@
+{
+  "path": "/documentation/foundation/macherror",
+  "type": "Structure",
+  "name": "MachError",
+  "desc": "Describes an error in the Mach error domain.",
+  "items": [
+    {
+      "name": "typealias MachError.Code"
+    },
+    {
+      "name": "init(MachErrorCode, userInfo: [String : Any])"
+    },
+    {
+      "name": "var code: MachErrorCode"
+    },
+    {
+      "name": "var errorCode: Int"
+    },
+    {
+      "name": "var errorUserInfo: [String : Any]"
+    },
+    {
+      "name": "var hashValue: Int"
+    },
+    {
+      "name": "var localizedDescription: String"
+    },
+    {
+      "name": "var userInfo: [String : Any]"
+    },
+    {
+      "name": "static var aborted: MachError.Code",
+      "desc": "The operation was aborted. Ipc code will catch this and reflect it as a message error."
+    },
+    {
+      "name": "static var alreadyInSet: MachError.Code",
+      "desc": "The receive right is already a member of the portset."
+    },
+    {
+      "name": "static var alreadyWaiting: MachError.Code",
+      "desc": "A thread is attempting to wait for an event for which there is already a waiting thread."
+    },
+    {
+      "name": "static var codesignError: MachError.Code",
+      "desc": "During a page fault, indicates that the page was rejected as a result of a signature check."
+    },
+    {
+      "name": "static var defaultSet: MachError.Code",
+      "desc": "An attempt was made to destroy the default processor set."
+    },
+    {
+      "name": "static var errorDomain: String"
+    },
+    {
+      "name": "static var exceptionProtected: MachError.Code",
+      "desc": "An attempt was made to fetch an exception port that is protected, or to abort a thread while processing a protected exception."
+    },
+    {
+      "name": "static var failure: MachError.Code",
+      "desc": "The function could not be performed. A catch-all."
+    },
+    {
+      "name": "static var invalidAddress: MachError.Code",
+      "desc": "Specified address is not currently valid."
+    },
+    {
+      "name": "static var invalidArgument: MachError.Code",
+      "desc": "The function requested was not applicable to this type of argument, or an argument is invalid."
+    },
+    {
+      "name": "static var invalidCapability: MachError.Code",
+      "desc": "The supplied (port) capability is improper."
+    },
+    {
+      "name": "static var invalidHost: MachError.Code",
+      "desc": "Target host isn’t actually a host."
+    },
+    {
+      "name": "static var invalidLedger: MachError.Code",
+      "desc": "A ledger was required but not supplied."
+    },
+    {
+      "name": "static var invalidMemoryControl: MachError.Code",
+      "desc": "The port was not a memory cache control port."
+    },
+    {
+      "name": "static var invalidName: MachError.Code",
+      "desc": "The name doesn’t denote a right in the task."
+    },
+    {
+      "name": "static var invalidObject: MachError.Code",
+      "desc": "The external memory manager failed to initialize the memory object."
+    },
+    {
+      "name": "static var invalidPolicy: MachError.Code",
+      "desc": "The specified scheduling policy is not currently enabled for the processor set."
+    },
+    {
+      "name": "static var invalidProcessorSet: MachError.Code",
+      "desc": "An argument applied to assert processor set privilege was not a processor set control port."
+    },
+    {
+      "name": "static var invalidRight: MachError.Code",
+      "desc": "The name denotes a right, but not an appropriate right."
+    },
+    {
+      "name": "static var invalidSecurity: MachError.Code",
+      "desc": "An argument supplied to assert security privilege was not a host security port."
+    },
+    {
+      "name": "static var invalidTask: MachError.Code",
+      "desc": "Target task isn’t an active task."
+    },
+    {
+      "name": "static var invalidValue: MachError.Code",
+      "desc": "A blatant range error."
+    },
+    {
+      "name": "static var lockOwned: MachError.Code",
+      "desc": "The lock is already owned by another thread."
+    },
+    {
+      "name": "static var lockOwnedSelf: MachError.Code",
+      "desc": "The lock is already owned by the calling thread."
+    },
+    {
+      "name": "static var lockSetDestroyed: MachError.Code",
+      "desc": "Lock set has been destroyed and is no longer available."
+    },
+    {
+      "name": "static var lockUnstable: MachError.Code",
+      "desc": "The thread holding the lock terminated before releasing the lock."
+    },
+    {
+      "name": "static var memoryDataMoved: MachError.Code",
+      "desc": "A page was requested of a memory manager via memory_object_data_request for an object using a MEMORY_OBJECT_COPY_CALL strategy, with the VM_PROT_WANTS_COPY flag being used to specify that the page desired is for a copy of the object, and the memory manager has detected the page was pushed into a copy of the object while the kernel was walking the shadow chain from the copy to the object. This error code is delivered via memory_object_data_error and is handled by the kernel (it forces the kernel to restart the fault). It will not be seen by users."
+    },
+    {
+      "name": "static var memoryError: MachError.Code",
+      "desc": "During a page fault, the memory object indicated that the data could not be returned. This failure may be temporary; future attempts to access this same data may succeed, as defined by the memory object."
+    },
+    {
+      "name": "static var memoryFailure: MachError.Code",
+      "desc": "During a page fault, the target address refers to a memory object that has been destroyed. This failure is permanent."
+    },
+    {
+      "name": "static var memoryPresent: MachError.Code",
+      "desc": "An attempt was made to supply “precious” data for memory that is already present in a memory object."
+    },
+    {
+      "name": "static var memoryRestartCopy: MachError.Code",
+      "desc": "A strategic copy was attempted of an object upon which a quicker copy is now possible. The caller should retry the copy using vm_object_copy_quickly. This error code is seen only by the kernel."
+    },
+    {
+      "name": "static var nameExists: MachError.Code",
+      "desc": "The name already denotes a right in the task."
+    },
+    {
+      "name": "static var noAccess: MachError.Code",
+      "desc": "Bogus access restriction."
+    },
+    {
+      "name": "static var noSpace: MachError.Code",
+      "desc": "The address range specified is already in use, or no address range of the size specified could be found."
+    },
+    {
+      "name": "static var nodeDown: MachError.Code",
+      "desc": "Remote node down or inaccessible."
+    },
+    {
+      "name": "static var notDepressed: MachError.Code",
+      "desc": "thread_depress_abort was called on a thread which was not currently depressed."
+    },
+    {
+      "name": "static var notInSet: MachError.Code",
+      "desc": "The receive right is not a member of a port set."
+    },
+    {
+      "name": "static var notReceiver: MachError.Code",
+      "desc": "The task in question does not hold receive rights for the port argument."
+    },
+    {
+      "name": "static var notSupported: MachError.Code",
+      "desc": "Empty thread activation (No thread linked to it)."
+    },
+    {
+      "name": "static var notWaiting: MachError.Code",
+      "desc": "A signalled thread was not actually waiting."
+    },
+    {
+      "name": "static var operationTimedOut: MachError.Code",
+      "desc": "Some thread-oriented operation (semaphore_wait) timed out."
+    },
+    {
+      "name": "static var policyLimit: MachError.Code",
+      "desc": "The specified scheduling attributes exceed the thread’s limits."
+    },
+    {
+      "name": "static var policyStatic: MachError.Code",
+      "desc": "The requested property cannot be changed at this time."
+    },
+    {
+      "name": "static var protectionFailure: MachError.Code",
+      "desc": "Specified memory is valid, but does not permit the required forms of access."
+    },
+    {
+      "name": "static var resourceShortage: MachError.Code",
+      "desc": "A system resource could not be allocated to fulfill this request. This failure may not be permanent."
+    },
+    {
+      "name": "static var rightExists: MachError.Code",
+      "desc": "The task already has send or receive rights for the port under another name."
+    },
+    {
+      "name": "static var rpcContinueOrphan: MachError.Code",
+      "desc": "Allow an orphaned activation to continue executing."
+    },
+    {
+      "name": "static var rpcServerTerminated: MachError.Code",
+      "desc": "Return from RPC indicating the target server was terminated before it successfully replied."
+    },
+    {
+      "name": "static var rpcTerminateOrphan: MachError.Code",
+      "desc": "Terminate an orphaned activation."
+    },
+    {
+      "name": "static var semaphoreDestroyed: MachError.Code",
+      "desc": "Semaphore has been destroyed and is no longer available."
+    },
+    {
+      "name": "static var success: MachError.Code"
+    },
+    {
+      "name": "static var terminated: MachError.Code",
+      "desc": "Object has been terminated and is no longer available."
+    },
+    {
+      "name": "static var userReferencesOverflow: MachError.Code",
+      "desc": "Operation would overflow limit on user-references."
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "static func != (MachError, MachError) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (MachError, MachError) -> Bool"
+    }
+  ],
+  "declaration": "struct MachError"
+}

@@ -1,0 +1,84 @@
+{
+  "path": "/documentation/multipeerconnectivity/mcsession",
+  "type": "Class",
+  "name": "MCSession",
+  "desc": "An MCSession object enables and manages communication among all peers in a Multipeer Connectivity session.",
+  "items": [
+    {
+      "name": "init(peer: MCPeerID)",
+      "desc": "Creates a Multipeer Connectivity session."
+    },
+    {
+      "name": "init(peer: MCPeerID, securityIdentity: [Any]?, encryptionPreference: MCEncryptionPreference)",
+      "desc": "Creates a Multipeer Connectivity session, providing security information."
+    },
+    {
+      "name": "var delegate: MCSessionDelegate?",
+      "desc": "The delegate object that handles session-related events."
+    },
+    {
+      "name": "var encryptionPreference: MCEncryptionPreference",
+      "desc": "A value indicating whether the connection prefers encrypted connections, unencrypted connections, or has no preference."
+    },
+    {
+      "name": "var myPeerID: MCPeerID",
+      "desc": "A local identifier that represents the device on which your app is currently running."
+    },
+    {
+      "name": "var securityIdentity: [Any]?",
+      "desc": "The security identity of the local peer."
+    },
+    {
+      "name": "func connectPeer(MCPeerID, withNearbyConnectionData: Data)",
+      "desc": "Call this method to connect a peer to the session when using your own service discovery code instead of an MCNearbyServiceBrowser or MCBrowserViewController object."
+    },
+    {
+      "name": "func cancelConnectPeer(MCPeerID)",
+      "desc": "Cancels an attempt to connect to a peer."
+    },
+    {
+      "name": "var connectedPeers: [MCPeerID]",
+      "desc": "An array of all peers that are currently connected to this session."
+    },
+    {
+      "name": "func nearbyConnectionData(forPeer: MCPeerID, withCompletionHandler: (Data?, Error?) -> Void)",
+      "desc": "Obtains connection data for the specified peer."
+    },
+    {
+      "name": "func send(Data, toPeers: [MCPeerID], with: MCSessionSendDataMode)",
+      "desc": "Sends a message encapsulated in a Data instance to nearby peers."
+    },
+    {
+      "name": "func sendResource(at: URL, withName: String, toPeer: MCPeerID, withCompletionHandler: ((Error?) -> Void)?) -> Progress?",
+      "desc": "Sends the contents of a URL to a peer."
+    },
+    {
+      "name": "func startStream(withName: String, toPeer: MCPeerID) -> OutputStream",
+      "desc": "Opens a byte stream to a nearby peer."
+    },
+    {
+      "name": "func disconnect()",
+      "desc": "Disconnects the local peer from the session."
+    },
+    {
+      "name": "enum MCSessionSendDataMode",
+      "desc": "Indicates whether delivery of data should be guaranteed."
+    },
+    {
+      "name": "enum MCSessionState",
+      "desc": "Indicates the current state of a given peer within a session."
+    },
+    {
+      "name": "enum MCEncryptionPreference",
+      "desc": "Indicates whether a session should use encryption when communicating with nearby peers."
+    },
+    {
+      "name": "enum MCError.Code",
+      "desc": "Error codes found in MCErrorDomain error domain NSError objects returned by methods in the Multipeer Connectivity framework."
+    }
+  ],
+  "declaration": "class MCSession : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

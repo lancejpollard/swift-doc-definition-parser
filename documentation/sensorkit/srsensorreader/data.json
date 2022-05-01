@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/sensorkit/srsensorreader",
+  "type": "Class",
+  "name": "SRSensorReader",
+  "desc": "An object that establishes user authorization and records data for a particular sensor.",
+  "items": [
+    {
+      "name": "var authorizationStatus: SRAuthorizationStatus",
+      "desc": "The status of the user’s agreement to let the app access this reader’s sensor."
+    },
+    {
+      "name": "class func requestAuthorization(sensors: Set<SRSensor>, completion: (Error?) -> Void)",
+      "desc": "Requests user permission to read one or more sensors."
+    },
+    {
+      "name": "enum SRAuthorizationStatus",
+      "desc": "The states that model whether the user approves the app to read a particular sensor."
+    },
+    {
+      "name": "init(sensor: SRSensor)",
+      "desc": "Initializes a new sensor reader object."
+    },
+    {
+      "name": "struct SRSensor",
+      "desc": "The sensors an app can read."
+    },
+    {
+      "name": "var sensor: SRSensor",
+      "desc": "The particular sensor that this object reads."
+    },
+    {
+      "name": "func startRecording()",
+      "desc": "Starts recording sensor data."
+    },
+    {
+      "name": "func stopRecording()",
+      "desc": "Stops recording sensor data."
+    },
+    {
+      "name": "func fetch(SRFetchRequest)",
+      "desc": "Fetches the samples that a fetch request specifies."
+    },
+    {
+      "name": "func fetchDevices()",
+      "desc": "Acquires device information for all devices that store data for this reader’s sensor."
+    },
+    {
+      "name": "class SRDevice",
+      "desc": "A representation of a device that provides sample data."
+    },
+    {
+      "name": "var delegate: SRSensorReaderDelegate?",
+      "desc": "An object that responds to sensor-related events."
+    },
+    {
+      "name": "protocol SRSensorReaderDelegate",
+      "desc": "A set of callbacks the framework invokes to notify the app of sensor-related events."
+    }
+  ],
+  "declaration": "class SRSensorReader : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

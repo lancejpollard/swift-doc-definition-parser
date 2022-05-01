@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/sirikit/inrequestpaymentintenthandling",
+  "type": "Protocol",
+  "name": "INRequestPaymentIntentHandling",
+  "desc": "The handler interface for delivering a request for payment from another user of your app.",
+  "items": [
+    {
+      "name": "func resolvePayer(for: INRequestPaymentIntent, with: (INRequestPaymentPayerResolutionResult) -> Void)",
+      "desc": "Resolves the person to receive the payment request."
+    },
+    {
+      "name": "func resolveCurrencyAmount(for: INRequestPaymentIntent, with: (INRequestPaymentCurrencyAmountResolutionResult) -> Void)",
+      "desc": "Resolves the amount of money requested."
+    },
+    {
+      "name": "func resolveNote(for: INRequestPaymentIntent, with: (INStringResolutionResult) -> Void)",
+      "desc": "Resolves the notes associated with the request."
+    },
+    {
+      "name": "func confirm(intent: INRequestPaymentIntent, completion: (INRequestPaymentIntentResponse) -> Void)",
+      "desc": "Confirms the payment request and confirm the details."
+    },
+    {
+      "name": "func handle(intent: INRequestPaymentIntent, completion: (INRequestPaymentIntentResponse) -> Void)",
+      "desc": "Handles sending the payment request to the designated user."
+    }
+  ],
+  "declaration": "protocol INRequestPaymentIntentHandling",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

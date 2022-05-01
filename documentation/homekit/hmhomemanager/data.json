@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/homekit/hmhomemanager",
+  "type": "Class",
+  "name": "HMHomeManager",
+  "desc": "The manager for a collection of one or more of a user’s homes.",
+  "items": [
+    {
+      "name": "var authorizationStatus: HMHomeManagerAuthorizationStatus",
+      "desc": "The current state of the app’s access to home data."
+    },
+    {
+      "name": "struct HMHomeManagerAuthorizationStatus",
+      "desc": "The possible home-access states."
+    },
+    {
+      "name": "var homes: [HMHome]",
+      "desc": "An array of all homes managed by this home manager."
+    },
+    {
+      "name": "class HMHome",
+      "desc": "The primary unit of living space, typically composed of rooms organized into zones."
+    },
+    {
+      "name": "var delegate: HMHomeManagerDelegate?",
+      "desc": "A delegate that receives updates on the collection of homes."
+    },
+    {
+      "name": "protocol HMHomeManagerDelegate",
+      "desc": "An interface the home manager uses to communicate changes to the state of the home network."
+    },
+    {
+      "name": "func addHome(withName: String, completionHandler: (HMHome?, Error?) -> Void)",
+      "desc": "Adds a new home to this home manager."
+    },
+    {
+      "name": "func removeHome(HMHome, completionHandler: (Error?) -> Void)",
+      "desc": "Removes a home from this home manager."
+    },
+    {
+      "name": "var primaryHome: HMHome?",
+      "desc": "The primary home managed by this home manager."
+    },
+    {
+      "name": "func updatePrimaryHome(HMHome, completionHandler: (Error?) -> Void)",
+      "desc": "Updates the primary home of this home manager."
+    }
+  ],
+  "declaration": "class HMHomeManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

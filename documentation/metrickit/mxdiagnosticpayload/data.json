@@ -1,0 +1,47 @@
+{
+  "path": "/documentation/metrickit/mxdiagnosticpayload",
+  "type": "Class",
+  "name": "MXDiagnosticPayload",
+  "desc": "An object that encapsulates a diagnostic report.",
+  "items": [
+    {
+      "name": "var crashDiagnostics: [MXCrashDiagnostic]?",
+      "desc": "The diagnostic reports for app crashes during the reporting period."
+    },
+    {
+      "name": "var cpuExceptionDiagnostics: [MXCPUExceptionDiagnostic]?",
+      "desc": "The diagnostic reports for fatal and nonfatal CPU exceptions for the app during the reporting period."
+    },
+    {
+      "name": "var hangDiagnostics: [MXHangDiagnostic]?",
+      "desc": "The diagnostic reports for times when the app was too busy to handle input responsively during the reporting period."
+    },
+    {
+      "name": "var diskWriteExceptionDiagnostics: [MXDiskWriteExceptionDiagnostic]?",
+      "desc": "The diagnostic reports for disk write exceptions for the app during the reporting period."
+    },
+    {
+      "name": "func jsonRepresentation() -> Data",
+      "desc": "Returns the contents of the payload in JSON format."
+    },
+    {
+      "name": "func dictionaryRepresentation() -> [AnyHashable : Any]",
+      "desc": "Returns the results of the payload as a dictionary."
+    },
+    {
+      "name": "var timeStampBegin: Date",
+      "desc": "The starting time of the reporting period."
+    },
+    {
+      "name": "var timeStampEnd: Date",
+      "desc": "The ending time of the reporting period."
+    }
+  ],
+  "declaration": "class MXDiagnosticPayload : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

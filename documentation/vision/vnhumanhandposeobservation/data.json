@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/vision/vnhumanhandposeobservation",
+  "type": "Class",
+  "name": "VNHumanHandPoseObservation",
+  "desc": "An observation that provides the hand points the analysis recognized.",
+  "items": [
+    {
+      "name": "var availableJointNames: [VNHumanHandPoseObservation.JointName]",
+      "desc": "The names of the available joints in the observation."
+    },
+    {
+      "name": "struct VNHumanHandPoseObservation.JointName",
+      "desc": "The supported joint names for the hand pose."
+    },
+    {
+      "name": "var availableJointsGroupNames: [VNHumanHandPoseObservation.JointsGroupName]",
+      "desc": "The joint group names available in the observation."
+    },
+    {
+      "name": "struct VNHumanHandPoseObservation.JointsGroupName",
+      "desc": "The supported joint group names for the hand pose."
+    },
+    {
+      "name": "func recognizedPoint(VNHumanHandPoseObservation.JointName) -> VNRecognizedPoint",
+      "desc": "Retrieves the recognized point for a joint name."
+    },
+    {
+      "name": "func recognizedPoints(VNHumanHandPoseObservation.JointsGroupName) -> [VNHumanHandPoseObservation.JointName : VNRecognizedPoint]",
+      "desc": "Retrieves the recognized points associated with the joint group name."
+    },
+    {
+      "name": "var chirality: VNChirality",
+      "desc": "The chirality, or handedness, of a pose."
+    },
+    {
+      "name": "enum VNChirality",
+      "desc": "Constants that the define the chirality, or handedness, of a pose."
+    }
+  ],
+  "declaration": "class VNHumanHandPoseObservation : VNRecognizedPointsObservation",
+  "inheritsFrom": [
+    "VNRecognizedPointsObservation"
+  ]
+}

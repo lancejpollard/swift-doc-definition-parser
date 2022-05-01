@@ -1,0 +1,151 @@
+{
+  "path": "/documentation/appkit/nsspeechsynthesizer",
+  "type": "Class",
+  "name": "NSSpeechSynthesizer",
+  "desc": "The Cocoa interface to speech synthesis in macOS.",
+  "items": [
+    {
+      "name": "init?(voice: NSSpeechSynthesizer.VoiceName?)",
+      "desc": "Initializes the receiver with a voice."
+    },
+    {
+      "name": "var delegate: NSSpeechSynthesizerDelegate?",
+      "desc": "The synthesizer’s delegate."
+    },
+    {
+      "name": "protocol NSSpeechSynthesizerDelegate",
+      "desc": "A set of optional methods implemented by delegates of NSSpeechSynthesizer objects."
+    },
+    {
+      "name": "var usesFeedbackWindow: Bool",
+      "desc": "Indicates whether the receiver uses the speech feedback window."
+    },
+    {
+      "name": "func voice() -> NSSpeechSynthesizer.VoiceName?",
+      "desc": "Returns the identifier of the receiver’s current voice."
+    },
+    {
+      "name": "func setVoice(NSSpeechSynthesizer.VoiceName?) -> Bool",
+      "desc": "Sets the receiver’s current voice."
+    },
+    {
+      "name": "var rate: Float",
+      "desc": "The synthesizer’s speaking rate (words per minute)."
+    },
+    {
+      "name": "var volume: Float",
+      "desc": "The synthesizer’s speaking volume."
+    },
+    {
+      "name": "func addSpeechDictionary([NSSpeechSynthesizer.DictionaryKey : Any])",
+      "desc": "Registers the given speech dictionary with the receiver."
+    },
+    {
+      "name": "struct NSSpeechSynthesizer.DictionaryKey",
+      "desc": "These constants identify key-value pairs used to add vocabulary to the dictionary using addSpeechDictionary(_:)."
+    },
+    {
+      "name": "func object(forProperty: NSSpeechSynthesizer.SpeechPropertyKey) -> Any",
+      "desc": "Provides the value of a receiver’s property."
+    },
+    {
+      "name": "func setObject(Any?, forProperty: NSSpeechSynthesizer.SpeechPropertyKey)",
+      "desc": "Specifies the value of a receiver’s property."
+    },
+    {
+      "name": "struct NSSpeechSynthesizer.SpeechPropertyKey",
+      "desc": "These constants are used with setObject(_:forProperty:) and object(forProperty:) to get or set the characteristics of a synthesizer."
+    },
+    {
+      "name": "struct NSSpeechSynthesizer.SpeechPropertyKey.CommandDelimiterKey",
+      "desc": "Keys for the command delimiters."
+    },
+    {
+      "name": "struct NSSpeechSynthesizer.SpeechPropertyKey.ErrorKey",
+      "desc": "Keys that identify errors that may occur during speech synthesis."
+    },
+    {
+      "name": "struct NSSpeechSynthesizer.SpeechPropertyKey.Mode",
+      "desc": "Keys for the speaking mode."
+    },
+    {
+      "name": "struct NSSpeechSynthesizer.SpeechPropertyKey.PhonemeInfoKey",
+      "desc": "Keys for the speech phoneme information."
+    },
+    {
+      "name": "struct NSSpeechSynthesizer.SpeechPropertyKey.StatusKey",
+      "desc": "Keys for the speech synthesizier status."
+    },
+    {
+      "name": "struct NSSpeechSynthesizer.SpeechPropertyKey.SynthesizerInfoKey",
+      "desc": "Keys for the speech synthesizier information."
+    },
+    {
+      "name": "struct NSSpeechSynthesizer.VoiceGender",
+      "desc": "The following constants define voice gender attributes, which are the allowable values of the gender key returned by attributes(forVoice:)."
+    },
+    {
+      "name": "class var availableVoices: [NSSpeechSynthesizer.VoiceName]",
+      "desc": "Provides the identifiers of the voices available on the system."
+    },
+    {
+      "name": "class func attributes(forVoice: NSSpeechSynthesizer.VoiceName) -> [NSSpeechSynthesizer.VoiceAttributeKey : Any]",
+      "desc": "Provides the attribute dictionary of a voice."
+    },
+    {
+      "name": "class var defaultVoice: NSSpeechSynthesizer.VoiceName",
+      "desc": "Provides the identifier of the default voice."
+    },
+    {
+      "name": "struct NSSpeechSynthesizer.VoiceName"
+    },
+    {
+      "name": "struct NSSpeechSynthesizer.VoiceAttributeKey",
+      "desc": "The following constants are keys for the dictionary returned by attributes(forVoice:)."
+    },
+    {
+      "name": "class var isAnyApplicationSpeaking: Bool",
+      "desc": "A Boolean value indicating whether any application is currently speaking through the sound output device."
+    },
+    {
+      "name": "var isSpeaking: Bool",
+      "desc": "Indicates whether the receiver is currently generating synthesized speech."
+    },
+    {
+      "name": "func startSpeaking(String) -> Bool",
+      "desc": "Begins speaking synthesized text through the system’s default sound output device."
+    },
+    {
+      "name": "func startSpeaking(String, to: URL) -> Bool",
+      "desc": "Begins synthesizing text into a sound (AIFF) file."
+    },
+    {
+      "name": "func pauseSpeaking(at: NSSpeechSynthesizer.Boundary)",
+      "desc": "Pauses synthesis in progress at a given boundary."
+    },
+    {
+      "name": "func continueSpeaking()",
+      "desc": "Resumes synthesis."
+    },
+    {
+      "name": "func stopSpeaking()",
+      "desc": "Stops synthesis in progress."
+    },
+    {
+      "name": "func stopSpeaking(at: NSSpeechSynthesizer.Boundary)",
+      "desc": "Stops synthesis in progress at a given boundary."
+    },
+    {
+      "name": "enum NSSpeechSynthesizer.Boundary",
+      "desc": "These constants are used to indicate where speech should be stopped and paused. See pauseSpeaking(at:) and stopSpeaking(at:)."
+    },
+    {
+      "name": "func phonemes(from: String) -> String",
+      "desc": "Provides the phoneme symbols generated by the given text."
+    }
+  ],
+  "declaration": "class NSSpeechSynthesizer : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

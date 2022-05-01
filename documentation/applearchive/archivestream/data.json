@@ -1,0 +1,88 @@
+{
+  "path": "/documentation/applearchive/archivestream",
+  "type": "Class",
+  "name": "ArchiveStream",
+  "desc": "An archive stream that reads from and writes to data blobs",
+  "items": [
+    {
+      "name": "init(object: _AAOptionalObjectWrapperWithFilter<_AAArchiveStreamTraits>.AAType?, owned: Bool, messageProc: ArchiveHeader._EntryFilterWrapper?)",
+      "desc": "Returns a new archive stream from the specified traits and entry message processing callback."
+    },
+    {
+      "name": "func readBlob(key: ArchiveHeader.FieldKey, into: UnsafeMutableRawBufferPointer)",
+      "desc": "Reads current entry blob data."
+    },
+    {
+      "name": "func writeBlob(key: ArchiveHeader.FieldKey, from: UnsafeRawBufferPointer)",
+      "desc": "Writes entry blob data."
+    },
+    {
+      "name": "func readHeader() -> ArchiveHeader?",
+      "desc": "Reads the next entry header."
+    },
+    {
+      "name": "func writeHeader(ArchiveHeader)",
+      "desc": "Writes an entry header."
+    },
+    {
+      "name": "func writeDirectoryContents(archiveFrom: FilePath, path: FilePath?, keySet: ArchiveHeader.FieldKeySet, selectUsing: ArchiveHeader.EntryFilter?, flags: ArchiveFlags, threadCount: Int)",
+      "desc": "Writes all entries from a directory to the archive stream."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Cancels stream operations."
+    },
+    {
+      "name": "func close()",
+      "desc": "Closes the stream and releases associated resources."
+    },
+    {
+      "name": "static func extractStream(extractingTo: FilePath, selectUsing: ArchiveHeader.EntryFilter?, flags: ArchiveFlags, threadCount: Int) -> ArchiveStream?",
+      "desc": "Opens an extract output archive stream."
+    },
+    {
+      "name": "static func withExtractStream<E>(extractingTo: FilePath, selectUsing: ArchiveHeader.EntryFilter?, flags: ArchiveFlags, threadCount: Int, (ArchiveStream) -> E) -> E",
+      "desc": "Calls the given closure with an extract output archive stream."
+    },
+    {
+      "name": "static func encodeStream(writingTo: ArchiveByteStream, selectUsing: ArchiveHeader.EntryFilter?, flags: ArchiveFlags, threadCount: Int) -> ArchiveStream?",
+      "desc": "Opens an encode output archive stream."
+    },
+    {
+      "name": "static func withEncodeStream<E>(writingTo: ArchiveByteStream, selectUsing: ArchiveHeader.EntryFilter?, flags: ArchiveFlags, threadCount: Int, (ArchiveStream) -> E) -> E",
+      "desc": "Calls the given closure with an encode output archive stream."
+    },
+    {
+      "name": "static func decodeStream(readingFrom: ArchiveByteStream, selectUsing: ArchiveHeader.EntryFilter?, flags: ArchiveFlags, threadCount: Int) -> ArchiveStream?",
+      "desc": "Opens a decode input archive stream."
+    },
+    {
+      "name": "static func withDecodeStream<E>(readingFrom: ArchiveByteStream, selectUsing: ArchiveHeader.EntryFilter?, flags: ArchiveFlags, threadCount: Int, (ArchiveStream) -> E) -> E",
+      "desc": "Calls the given closure with a decode input archive stream."
+    },
+    {
+      "name": "static func convertStream(writingTo: ArchiveStream, insertKeySet: ArchiveHeader.FieldKeySet, removeKeySet: ArchiveHeader.FieldKeySet, selectUsing: ArchiveHeader.EntryFilter?, flags: ArchiveFlags, threadCount: Int) -> ArchiveStream?",
+      "desc": "Opens a convert output archive stream."
+    },
+    {
+      "name": "static func withConvertStream<E>(writingTo: ArchiveStream, insertKeySet: ArchiveHeader.FieldKeySet, removeKeySet: ArchiveHeader.FieldKeySet, selectUsing: ArchiveHeader.EntryFilter?, flags: ArchiveFlags, threadCount: Int, (ArchiveStream) -> E) -> E",
+      "desc": "Calls the given closure with a convert output archive stream."
+    },
+    {
+      "name": "static func process(readingFrom: ArchiveStream, writingTo: ArchiveStream, selectUsing: ArchiveHeader.EntryFilter?, flags: ArchiveFlags, threadCount: Int) -> Int",
+      "desc": "Processes archive elements between two archive streams."
+    },
+    {
+      "name": "static func customStream<C>(instance: C) -> ArchiveStream?",
+      "desc": "Returns a new archive stream instance mapped to an object that conforms to the archive stream protocol."
+    },
+    {
+      "name": "static func withStream<C, E>(wrapping: C, (ArchiveStream) -> E) -> E",
+      "desc": "Calls the given closure with an archive stream instance mapped to an object that conforms to the archive stream protocol."
+    }
+  ],
+  "declaration": "class ArchiveStream",
+  "conformsTo": [
+    "ArchiveStreamProtocol"
+  ]
+}

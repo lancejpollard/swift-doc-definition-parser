@@ -1,0 +1,502 @@
+{
+  "path": "/documentation/appkit/nstableview",
+  "type": "Class",
+  "name": "NSTableView",
+  "desc": "A set of related records, displayed in rows that represent individual records and columns that represent the attributes of those records.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder)"
+    },
+    {
+      "name": "init(frame: NSRect)"
+    },
+    {
+      "name": "var dataSource: NSTableViewDataSource?",
+      "desc": "The object that provides the data displayed by the table view."
+    },
+    {
+      "name": "var usesStaticContents: Bool",
+      "desc": "A Boolean value indicating whether the table uses static data."
+    },
+    {
+      "name": "func reloadData()",
+      "desc": "Marks the table view as needing redisplay, so it will reload the data for visible cells and draw the new values."
+    },
+    {
+      "name": "func reloadData(forRowIndexes: IndexSet, columnIndexes: IndexSet)",
+      "desc": "Reloads the data for only the specified rows and columns."
+    },
+    {
+      "name": "func makeView(withIdentifier: NSUserInterfaceItemIdentifier, owner: Any?) -> NSView?",
+      "desc": "Returns a new or existing view with the specified identifier."
+    },
+    {
+      "name": "func rowView(atRow: Int, makeIfNecessary: Bool) -> NSTableRowView?",
+      "desc": "Returns a row view at the specified index, creating one if necessary."
+    },
+    {
+      "name": "func view(atColumn: Int, row: Int, makeIfNecessary: Bool) -> NSView?",
+      "desc": "Returns a view at the specified row and column indexes, creating one if necessary."
+    },
+    {
+      "name": "struct NSUserInterfaceItemIdentifier"
+    },
+    {
+      "name": "func beginUpdates()",
+      "desc": "Begins a group of updates for the table view."
+    },
+    {
+      "name": "func endUpdates()",
+      "desc": "Ends the group of updates for the table view."
+    },
+    {
+      "name": "func moveRow(at: Int, to: Int)",
+      "desc": "Moves the specified row to the new row location using animation."
+    },
+    {
+      "name": "func insertRows(at: IndexSet, withAnimation: NSTableView.AnimationOptions)",
+      "desc": "Inserts the rows using the specified animation."
+    },
+    {
+      "name": "func removeRows(at: IndexSet, withAnimation: NSTableView.AnimationOptions)",
+      "desc": "Removes the rows using the specified animation."
+    },
+    {
+      "name": "func row(for: NSView) -> Int",
+      "desc": "Returns the index of the row for the specified view."
+    },
+    {
+      "name": "func column(for: NSView) -> Int",
+      "desc": "Returns the column index for the specified view."
+    },
+    {
+      "name": "func register(NSNib?, forIdentifier: NSUserInterfaceItemIdentifier)",
+      "desc": "Registers a NIB for the specified identifier, so that view-based table views can use it to instantiate views."
+    },
+    {
+      "name": "var registeredNibsByIdentifier: [NSUserInterfaceItemIdentifier : NSNib]?",
+      "desc": "The dictionary of all registered nib files for view-based table view identifiers."
+    },
+    {
+      "name": "var doubleAction: Selector?",
+      "desc": "The message sent to the table view’s target when the user double-clicks a cell or column header."
+    },
+    {
+      "name": "var clickedColumn: Int",
+      "desc": "The index of the column the user clicked."
+    },
+    {
+      "name": "var clickedRow: Int",
+      "desc": "The index of the row the user clicked."
+    },
+    {
+      "name": "var allowsColumnReordering: Bool",
+      "desc": "A Boolean value indicating whether the table view allows the user to rearrange columns by dragging their headers."
+    },
+    {
+      "name": "var allowsColumnResizing: Bool",
+      "desc": "A Boolean value indicating whether the table view allows the user to resize columns by dragging between their headers."
+    },
+    {
+      "name": "var allowsMultipleSelection: Bool",
+      "desc": "A Boolean value indicating whether the table view allows the user to select more than one column or row at a time."
+    },
+    {
+      "name": "var allowsEmptySelection: Bool",
+      "desc": "A Boolean value indicating whether the table view allows the user to select zero columns or rows."
+    },
+    {
+      "name": "var allowsColumnSelection: Bool",
+      "desc": "A Boolean value indicating whether the table view allows the user to select columns by clicking their headers."
+    },
+    {
+      "name": "var usesAutomaticRowHeights: Bool",
+      "desc": "A Boolean value that indicates whether the table view uses autolayout to calculate the height of rows."
+    },
+    {
+      "name": "var intercellSpacing: NSSize",
+      "desc": "The horizontal and vertical spacing between cells."
+    },
+    {
+      "name": "var rowHeight: CGFloat",
+      "desc": "The height of each row in the table."
+    },
+    {
+      "name": "var backgroundColor: NSColor",
+      "desc": "The color used to draw the background of the table."
+    },
+    {
+      "name": "var usesAlternatingRowBackgroundColors: Bool",
+      "desc": "A Boolean value indicating whether the table view uses alternating row colors for its background."
+    },
+    {
+      "name": "var style: NSTableView.Style",
+      "desc": "The style that the table view uses."
+    },
+    {
+      "name": "var effectiveStyle: NSTableView.Style",
+      "desc": "The effective style that the table uses."
+    },
+    {
+      "name": "enum NSTableView.Style",
+      "desc": "Contains the possible style values for a table view."
+    },
+    {
+      "name": "var selectionHighlightStyle: NSTableView.SelectionHighlightStyle",
+      "desc": "The selection highlight style used by the table view to indicate row and column selection."
+    },
+    {
+      "name": "var gridColor: NSColor",
+      "desc": "The color used to draw grid lines."
+    },
+    {
+      "name": "var gridStyleMask: NSTableView.GridLineStyle",
+      "desc": "The grid lines drawn by the table view."
+    },
+    {
+      "name": "func indicatorImage(in: NSTableColumn) -> NSImage?",
+      "desc": "Returns the indicator image of the specified table column."
+    },
+    {
+      "name": "func setIndicatorImage(NSImage?, in: NSTableColumn)",
+      "desc": "Sets the indicator image of the specified column."
+    },
+    {
+      "name": "var effectiveRowSizeStyle: NSTableView.RowSizeStyle",
+      "desc": "The effective row size style for the table."
+    },
+    {
+      "name": "var rowSizeStyle: NSTableView.RowSizeStyle",
+      "desc": "The row size style (small, medium, large, or custom) used by the table view."
+    },
+    {
+      "name": "func addTableColumn(NSTableColumn)",
+      "desc": "Adds the specified column as the last column of the table view."
+    },
+    {
+      "name": "func removeTableColumn(NSTableColumn)",
+      "desc": "Removes the specified column from the table view."
+    },
+    {
+      "name": "func moveColumn(Int, toColumn: Int)",
+      "desc": "Moves the column and heading at the specified index to the new specified index."
+    },
+    {
+      "name": "var tableColumns: [NSTableColumn]",
+      "desc": "An array containing the current table column objects."
+    },
+    {
+      "name": "func column(withIdentifier: NSUserInterfaceItemIdentifier) -> Int",
+      "desc": "Returns the index of the first column in the table view whose identifier is equal to the specified identifier."
+    },
+    {
+      "name": "func tableColumn(withIdentifier: NSUserInterfaceItemIdentifier) -> NSTableColumn?",
+      "desc": "Returns the NSTableColumn object for the first column whose identifier is equal to the specified object."
+    },
+    {
+      "name": "func selectColumnIndexes(IndexSet, byExtendingSelection: Bool)",
+      "desc": "Sets the column selection using indexes possibly extending the selection."
+    },
+    {
+      "name": "var selectedColumn: Int",
+      "desc": "The index of the last selected column (or the last column added to the selection)."
+    },
+    {
+      "name": "var selectedColumnIndexes: IndexSet",
+      "desc": "An index set containing the indexes of the selected columns."
+    },
+    {
+      "name": "func deselectColumn(Int)",
+      "desc": "Deselects the column at the specified index if it’s selected."
+    },
+    {
+      "name": "var numberOfSelectedColumns: Int",
+      "desc": "The number of selected columns."
+    },
+    {
+      "name": "func isColumnSelected(Int) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the column at the specified index is selected."
+    },
+    {
+      "name": "func selectRowIndexes(IndexSet, byExtendingSelection: Bool)",
+      "desc": "Sets the row selection using indexes extending the selection if specified."
+    },
+    {
+      "name": "var selectedRow: Int",
+      "desc": "The index of the last selected row (or the last row added to the selection)."
+    },
+    {
+      "name": "var selectedRowIndexes: IndexSet",
+      "desc": "An index set containing the indexes of the selected rows."
+    },
+    {
+      "name": "func deselectRow(Int)",
+      "desc": "Deselects the row at the specified index if it’s selected."
+    },
+    {
+      "name": "var numberOfSelectedRows: Int",
+      "desc": "The number of selected rows."
+    },
+    {
+      "name": "func isRowSelected(Int) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the row at the specified index is selected."
+    },
+    {
+      "name": "func selectAll(Any?)",
+      "desc": "Selects all rows or all columns, according to whether rows or columns were most recently selected."
+    },
+    {
+      "name": "func deselectAll(Any?)",
+      "desc": "Deselects all selected rows or columns if empty selection is allowed; otherwise does nothing."
+    },
+    {
+      "name": "func enumerateAvailableRowViews((NSTableRowView, Int) -> Void)",
+      "desc": "Allows the enumeration of all the table rows that are known to the table view."
+    },
+    {
+      "name": "var allowsTypeSelect: Bool",
+      "desc": "A Boolean value indicating whether the table view allows the user to type characters to select rows."
+    },
+    {
+      "name": "var numberOfColumns: Int",
+      "desc": "The number of columns in the table."
+    },
+    {
+      "name": "var numberOfRows: Int",
+      "desc": "The number of rows in the table."
+    },
+    {
+      "name": "var floatsGroupRows: Bool",
+      "desc": "A Boolean value indicating whether the table view draws grouped rows as if they are floating."
+    },
+    {
+      "name": "func editColumn(Int, row: Int, with: NSEvent?, select: Bool)",
+      "desc": "Edits the cell at the specified column and row using the specified event and selection behavior."
+    },
+    {
+      "name": "var editedColumn: Int",
+      "desc": "The index of the column being edited."
+    },
+    {
+      "name": "var editedRow: Int",
+      "desc": "The index of the row being edited."
+    },
+    {
+      "name": "func didAdd(NSTableRowView, forRow: Int)",
+      "desc": "Invoked when a row view is added to the table."
+    },
+    {
+      "name": "func didRemove(NSTableRowView, forRow: Int)",
+      "desc": "Invoked when a row view is removed from the table."
+    },
+    {
+      "name": "var headerView: NSTableHeaderView?",
+      "desc": "The view object used to draw headers over columns."
+    },
+    {
+      "name": "var cornerView: NSView?",
+      "desc": "The view used to draw the area to the right of the column headers and above the vertical scroller of the enclosing scroll view."
+    },
+    {
+      "name": "var userInterfaceLayoutDirection: NSUserInterfaceLayoutDirection",
+      "desc": "The layout direction of the user interface."
+    },
+    {
+      "name": "func rect(ofColumn: Int) -> NSRect",
+      "desc": "Returns the rectangle containing the column at the specified index."
+    },
+    {
+      "name": "func rect(ofRow: Int) -> NSRect",
+      "desc": "Returns the rectangle containing the row at the specified index."
+    },
+    {
+      "name": "func rows(in: NSRect) -> NSRange",
+      "desc": "Returns a range of indexes for the rows that lie wholly or partially within the vertical boundaries of the specified rectangle."
+    },
+    {
+      "name": "func columnIndexes(in: NSRect) -> IndexSet",
+      "desc": "Returns the indexes of the table view’s columns that intersect the specified rectangle."
+    },
+    {
+      "name": "func column(at: NSPoint) -> Int",
+      "desc": "Returns the index of the column the specified point lies in."
+    },
+    {
+      "name": "func row(at: NSPoint) -> Int",
+      "desc": "Returns the index of the row the specified point lies in."
+    },
+    {
+      "name": "func frameOfCell(atColumn: Int, row: Int) -> NSRect",
+      "desc": "Returns a rectangle locating the cell that lies at the intersection of the specified column and row."
+    },
+    {
+      "name": "var columnAutoresizingStyle: NSTableView.ColumnAutoresizingStyle",
+      "desc": "The table view’s column autoresizing style."
+    },
+    {
+      "name": "func sizeLastColumnToFit()",
+      "desc": "Resizes the last column so the table view fits exactly within its enclosing clip view."
+    },
+    {
+      "name": "func noteNumberOfRowsChanged()",
+      "desc": "Informs the table view that the number of records in its data source has changed."
+    },
+    {
+      "name": "func tile()",
+      "desc": "Properly sizes the table view and its header view and marks it as needing display."
+    },
+    {
+      "name": "func sizeToFit()",
+      "desc": "Sizes the table view based on a uniform column autoresizing style."
+    },
+    {
+      "name": "func noteHeightOfRows(withIndexesChanged: IndexSet)",
+      "desc": "Informs the table view that the rows specified in indexSet have changed height."
+    },
+    {
+      "name": "func drawRow(Int, clipRect: NSRect)",
+      "desc": "Draws the cells for the row at rowIndex in the columns that intersect clipRect."
+    },
+    {
+      "name": "func drawGrid(inClipRect: NSRect)",
+      "desc": "Draws the grid lines within the supplied rectangle."
+    },
+    {
+      "name": "func highlightSelection(inClipRect: NSRect)",
+      "desc": "Highlights the region of the table view in the specified rectangle."
+    },
+    {
+      "name": "func drawBackground(inClipRect: NSRect)",
+      "desc": "Draws the background of the table view in the clip rect specified by the rectangle."
+    },
+    {
+      "name": "func scrollRowToVisible(Int)",
+      "desc": "Scrolls the view so the specified row is visible."
+    },
+    {
+      "name": "func scrollColumnToVisible(Int)",
+      "desc": "Scrolls the view so the specified column is visible."
+    },
+    {
+      "name": "var autosaveTableColumns: Bool",
+      "desc": "A Boolean value indicating whether the order and width of the table view’s columns are automatically saved."
+    },
+    {
+      "name": "var autosaveName: NSTableView.AutosaveName?",
+      "desc": "The name under which table information is automatically saved."
+    },
+    {
+      "name": "typealias NSTableView.AutosaveName"
+    },
+    {
+      "name": "var delegate: NSTableViewDelegate?",
+      "desc": "The table view’s delegate."
+    },
+    {
+      "name": "var highlightedTableColumn: NSTableColumn?",
+      "desc": "The column highlighted in the table."
+    },
+    {
+      "name": "func dragImageForRows(with: IndexSet, tableColumns: [NSTableColumn], event: NSEvent, offset: NSPointPointer) -> NSImage",
+      "desc": "Computes and returns an image to use for dragging."
+    },
+    {
+      "name": "func canDragRows(with: IndexSet, at: NSPoint) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the table view allows dragging the rows with the drag initiated at the specified point."
+    },
+    {
+      "name": "func setDraggingSourceOperationMask(NSDragOperation, forLocal: Bool)",
+      "desc": "Sets the default operation mask returned by draggingSourceOperationMaskForLocal: to mask."
+    },
+    {
+      "name": "var verticalMotionCanBeginDrag: Bool",
+      "desc": "A Boolean value indicating whether vertical motion is treated as a drag or selection change."
+    },
+    {
+      "name": "var draggingDestinationFeedbackStyle: NSTableView.DraggingDestinationFeedbackStyle",
+      "desc": "The feedback style displayed when the user drags over the table view."
+    },
+    {
+      "name": "func setDropRow(Int, dropOperation: NSTableView.DropOperation)",
+      "desc": "Retargets the proposed drop operation."
+    },
+    {
+      "name": "var sortDescriptors: [NSSortDescriptor]",
+      "desc": "The table view’s sort descriptors."
+    },
+    {
+      "name": "var rowActionsVisible: Bool",
+      "desc": "A Boolean value indicating whether a table row’s actions are visible."
+    },
+    {
+      "name": "func hideRows(at: IndexSet, withAnimation: NSTableView.AnimationOptions)",
+      "desc": "Hides the specified table rows."
+    },
+    {
+      "name": "func unhideRows(at: IndexSet, withAnimation: NSTableView.AnimationOptions)",
+      "desc": "Unhides the specified table rows."
+    },
+    {
+      "name": "var hiddenRowIndexes: IndexSet",
+      "desc": "The indexes of all hidden table rows."
+    },
+    {
+      "name": "enum NSTableView.DraggingDestinationFeedbackStyle",
+      "desc": "These constants specify the drag styles displayed by the table view. They’re used by draggingDestinationFeedbackStyle."
+    },
+    {
+      "name": "enum NSTableView.DropOperation",
+      "desc": "NSTableView defines these constants to specify drop operations."
+    },
+    {
+      "name": "struct NSTableView.GridLineStyle",
+      "desc": "NSTableView defines these constants to specify grid styles. These constants are used by the gridStyleMask property. The mask can be either gridNone or it can contain either or both of the other options combined using the C bitwise OR operator."
+    },
+    {
+      "name": "enum NSTableView.ColumnAutoresizingStyle",
+      "desc": "The following constants specify the autoresizing styles. These constants are used by the columnAutoresizingStyle property."
+    },
+    {
+      "name": "enum NSTableView.SelectionHighlightStyle",
+      "desc": "The following constants specify the selection highlight styles. These constants are used by the selectionHighlightStyle property."
+    },
+    {
+      "name": "struct NSTableView.AnimationOptions",
+      "desc": "Specifies the animation effects to apply when inserting or removing rows."
+    },
+    {
+      "name": "enum NSTableView.RowSizeStyle",
+      "desc": "The row size style constants define the size of the rows in the table view. They are used by the effectiveRowSizeStyle and rowSizeStyle properties. You can also query the row size in the NSTableCellView class’ property rowSizeStyle."
+    },
+    {
+      "name": "enum NSTableView.RowActionEdge",
+      "desc": "These constants define table row edges on which row actions are attached. They are used by the tableView:rowActionsForRow:edge: delegate method."
+    },
+    {
+      "name": "class let columnDidMoveNotification: NSNotification.Name",
+      "desc": "Posted whenever a column is moved by user action in an NSTableView object."
+    },
+    {
+      "name": "class let columnDidResizeNotification: NSNotification.Name",
+      "desc": "Posted whenever a column is resized in an NSTableView object."
+    },
+    {
+      "name": "class let selectionDidChangeNotification: NSNotification.Name",
+      "desc": "Posted after an NSTableView object's selection changes."
+    },
+    {
+      "name": "class let selectionIsChangingNotification: NSNotification.Name",
+      "desc": "Posted as an NSTableView object's selection changes (while the mouse button is still down)."
+    }
+  ],
+  "declaration": "class NSTableView : NSControl",
+  "inheritsFrom": [
+    "NSControl"
+  ],
+  "conformsTo": [
+    "NSAccessibilityTable",
+    "NSDraggingSource",
+    "NSTextViewDelegate",
+    "NSUserInterfaceValidations"
+  ]
+}

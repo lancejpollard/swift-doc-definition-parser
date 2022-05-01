@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/coredata/nsconstraintconflict",
+  "type": "Class",
+  "name": "NSConstraintConflict",
+  "desc": "An encapsulation of conflicts that occur during an attempt to save a managed object.",
+  "items": [
+    {
+      "name": "init(constraint: [String], database: NSManagedObject?, databaseSnapshot: [AnyHashable : Any]?, conflicting: [NSManagedObject], conflictingSnapshots: [Any])",
+      "desc": "Initializes a constraint conflict."
+    },
+    {
+      "name": "var conflictingObjects: [NSManagedObject]",
+      "desc": "The managed objects that are in conflict."
+    },
+    {
+      "name": "var conflictingSnapshots: [[AnyHashable : Any]]",
+      "desc": "The original property values of objects in violation of the constraint."
+    },
+    {
+      "name": "var constraint: [String]",
+      "desc": "The constraint that has been violated."
+    },
+    {
+      "name": "var constraintValues: [String : Any]",
+      "desc": "The values that the conflicting objects had when the conflict was created."
+    },
+    {
+      "name": "var databaseObject: NSManagedObject?",
+      "desc": "The object whose database row is using constraint values."
+    },
+    {
+      "name": "var databaseSnapshot: [String : Any]?",
+      "desc": "The values currently stored in the database."
+    }
+  ],
+  "declaration": "class NSConstraintConflict : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

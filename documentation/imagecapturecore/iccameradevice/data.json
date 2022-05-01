@@ -1,0 +1,143 @@
+{
+  "path": "/documentation/imagecapturecore/iccameradevice",
+  "type": "Class",
+  "name": "ICCameraDevice",
+  "desc": "An object that represents a camera.",
+  "items": [
+    {
+      "name": "var contents: [ICCameraItem]?",
+      "desc": "All image, movie, and audio files stored on the camera, in an order that reflects the camera’s storage folder structure."
+    },
+    {
+      "name": "var mediaFiles: [ICCameraItem]?",
+      "desc": "All image, movie and audio files stored on the camera, without regard to the camera’s storage folder structure."
+    },
+    {
+      "name": "var contentCatalogPercentCompleted: Int",
+      "desc": "The percentage of the camera’s content that has been catalogued."
+    },
+    {
+      "name": "func files(ofType: String) -> [String]?",
+      "desc": "Returns an array of files of the selected type on the camera."
+    },
+    {
+      "name": "func requestReadData(from: ICCameraFile, atOffset: off_t, length: off_t, readDelegate: Any, didReadDataSelector: Selector, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Asynchronously reads data of a specified length from a specified offset."
+    },
+    {
+      "name": "struct ICUploadOption",
+      "desc": "An option for uploading a file to the camera."
+    },
+    {
+      "name": "func requestUploadFile(URL, options: [ICUploadOption : Any], uploadDelegate: Any, didUploadSelector: Selector, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Uploads a file to the camera."
+    },
+    {
+      "name": "struct ICDownloadOption",
+      "desc": "An option for downloading a file from the camera."
+    },
+    {
+      "name": "func cancelDownload()",
+      "desc": "Cancels a download from the camera."
+    },
+    {
+      "name": "func requestDownloadFile(ICCameraFile, options: [ICDownloadOption : Any], downloadDelegate: ICCameraDeviceDownloadDelegate, didDownloadSelector: Selector, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Downloads a file from the camera."
+    },
+    {
+      "name": "protocol ICCameraDeviceDownloadDelegate",
+      "desc": "Methods for managing camera file downloads."
+    },
+    {
+      "name": "var isLocked: Bool",
+      "desc": "A Boolean value indicating whether the device is locked, preventing deletion of any asset."
+    },
+    {
+      "name": "struct ICDeleteResult",
+      "desc": "The result of a deletion request."
+    },
+    {
+      "name": "struct ICDeleteError",
+      "desc": "An error resulting from a deletion request."
+    },
+    {
+      "name": "func requestDeleteFiles([ICCameraItem])",
+      "desc": "Deletes files from the camera."
+    },
+    {
+      "name": "func requestDeleteFiles([ICCameraItem], deleteFailed: ([ICDeleteError : ICCameraItem]) -> Void, completion: ([ICDeleteResult : [ICCameraItem]], Error?) -> Void) -> Progress?",
+      "desc": "Deletes files from the camera, with the ability to catch failures and execute a completion block."
+    },
+    {
+      "name": "func cancelDelete()",
+      "desc": "Cancels the current delete operation."
+    },
+    {
+      "name": "var tetheredCaptureEnabled: Bool",
+      "desc": "A Boolean value indicating whether tethered capture is enabled on the camera."
+    },
+    {
+      "name": "var ptpEventHandler: (Data) -> Void",
+      "desc": "A closure for handling PTP event packets."
+    },
+    {
+      "name": "func requestEnableTethering()",
+      "desc": "Enables tethered capture if the camera has the capability to take pictures while connected."
+    },
+    {
+      "name": "func requestTakePicture()",
+      "desc": "Captures a new image using the camera."
+    },
+    {
+      "name": "func requestSendPTPCommand(Data, outData: Data?, sendCommandDelegate: Any, didSendCommand: Selector, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Sends a Picture Transfer Protocol (PTP) command to a camera asynchronously."
+    },
+    {
+      "name": "func requestSendPTPCommand(Data, outData: Data?, completion: (Data, Data, Error?) -> Void)",
+      "desc": "Sends a Picture Transfer Protocol (PTP) command to a camera asynchronously."
+    },
+    {
+      "name": "func requestDisableTethering()",
+      "desc": "Disables tethered capture on the camera."
+    },
+    {
+      "name": "var batteryLevelAvailable: Bool",
+      "desc": "A Boolean value that indicates whether the battery charge level is available."
+    },
+    {
+      "name": "var batteryLevel: Int",
+      "desc": "The battery charge level."
+    },
+    {
+      "name": "var timeOffset: TimeInterval",
+      "desc": "The time offset, in seconds, between the camera’s clock and the computer’s clock."
+    },
+    {
+      "name": "func requestSyncClock()",
+      "desc": "Synchronizes the camera’s clock with the computer’s clock."
+    },
+    {
+      "name": "var isAccessRestrictedAppleDevice: Bool",
+      "desc": "A Boolean value indicating whether the device is an Apple device, passcode-locked, and connected to an untrusted host."
+    },
+    {
+      "name": "var iCloudPhotosEnabled: Bool",
+      "desc": "A Boolean value indicating whether the iCloud Photo Library is enabled on the device."
+    },
+    {
+      "name": "var mountPoint: String?",
+      "desc": "The file system mount point for a camera using the mass storage transport type."
+    },
+    {
+      "name": "var isEjectable: Bool",
+      "desc": "A Boolean value indicating whether the device can be ‘soft’ removed or disconnected."
+    },
+    {
+      "name": "var mediaPresentation: ICMediaPresentation"
+    }
+  ],
+  "declaration": "class ICCameraDevice : ICDevice",
+  "inheritsFrom": [
+    "ICDevice"
+  ]
+}

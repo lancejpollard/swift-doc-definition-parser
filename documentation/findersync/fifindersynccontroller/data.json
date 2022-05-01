@@ -1,0 +1,54 @@
+{
+  "path": "/documentation/findersync/fifindersynccontroller",
+  "type": "Class",
+  "name": "FIFinderSyncController",
+  "desc": "The FIFinderSyncController class acts as a bridge between your Finder Sync extension and the Finder itself. Use the Finder Sync controller to configure your extension, to set badges on items in the Finder’s window, and to get a list of selected and targeted items.",
+  "items": [
+    {
+      "name": "class func `default`() -> Self",
+      "desc": "Returns the shared Finder Sync controller object."
+    },
+    {
+      "name": "var directoryURLs: Set<URL>!",
+      "desc": "The directories managed by this extension."
+    },
+    {
+      "name": "func selectedItemURLs() -> [URL]?",
+      "desc": "Returns an array of selected items."
+    },
+    {
+      "name": "func setBadgeIdentifier(String, for: URL)",
+      "desc": "Sets the badge for a file or directory."
+    },
+    {
+      "name": "func setBadgeImage(NSImage, label: String?, forBadgeIdentifier: String)",
+      "desc": "Sets the badge image and label for the given ID."
+    },
+    {
+      "name": "func targetedURL() -> URL?",
+      "desc": "Returns the URL of the Finder’s current target."
+    },
+    {
+      "name": "class var isExtensionEnabled: Bool"
+    },
+    {
+      "name": "func lastUsedDateForItem(with: URL) -> Date?"
+    },
+    {
+      "name": "func setLastUsedDate(Date, forItemWith: URL, completion: (Error) -> Void)"
+    },
+    {
+      "name": "func setTagData(Data?, forItemWith: URL, completion: (Error) -> Void)"
+    },
+    {
+      "name": "func tagDataForItem(with: URL) -> Data?"
+    },
+    {
+      "name": "class func showExtensionManagementInterface()"
+    }
+  ],
+  "declaration": "class FIFinderSyncController : NSExtensionContext",
+  "inheritsFrom": [
+    "NSExtensionContext"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/uikit/uitableviewdragdelegate",
+  "type": "Protocol",
+  "name": "UITableViewDragDelegate",
+  "desc": "The interface for initiating drags from a table view.",
+  "items": [
+    {
+      "name": "func tableView(UITableView, itemsForBeginning: UIDragSession, at: IndexPath) -> [UIDragItem]",
+      "desc": "Provides the initial set of items (if any) to drag."
+    },
+    {
+      "name": "func tableView(UITableView, itemsForAddingTo: UIDragSession, at: IndexPath, point: CGPoint) -> [UIDragItem]",
+      "desc": "Adds the specified items to an existing drag session."
+    },
+    {
+      "name": "func tableView(UITableView, dragSessionWillBegin: UIDragSession)",
+      "desc": "Signals the start of a drag operation involving content from the specified table view."
+    },
+    {
+      "name": "func tableView(UITableView, dragSessionDidEnd: UIDragSession)",
+      "desc": "Signals the end of a drag operation involving content from the specified table view"
+    },
+    {
+      "name": "func tableView(UITableView, dragSessionIsRestrictedToDraggingApplication: UIDragSession) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the dragged content must be dropped in the same app."
+    },
+    {
+      "name": "func tableView(UITableView, dragSessionAllowsMoveOperation: UIDragSession) -> Bool",
+      "desc": "Returns a Boolean value indicating whether your app supports a move operation for the dragged content."
+    },
+    {
+      "name": "func tableView(UITableView, dragPreviewParametersForRowAt: IndexPath) -> UIDragPreviewParameters?",
+      "desc": "Returns custom information about how to display the row at the specified location during the drag."
+    }
+  ],
+  "declaration": "@MainActor protocol UITableViewDragDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

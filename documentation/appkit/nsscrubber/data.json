@@ -1,0 +1,136 @@
+{
+  "path": "/documentation/appkit/nsscrubber",
+  "type": "Class",
+  "name": "NSScrubber",
+  "desc": "A customizable item picker control for the Touch Bar.",
+  "items": [
+    {
+      "name": "init(frame: NSRect)",
+      "desc": "Initializes and returns a newly allocated scrubber object with the specified frame rectangle."
+    },
+    {
+      "name": "init(coder: NSCoder)",
+      "desc": "Initializes and returns a newly allocated scrubber object from a storyboard or nib file."
+    },
+    {
+      "name": "var dataSource: NSScrubberDataSource?",
+      "desc": "The object that provides the data for the scrubber."
+    },
+    {
+      "name": "var delegate: NSScrubberDelegate?",
+      "desc": "The object that acts as the delegate of the scrubber."
+    },
+    {
+      "name": "func register(AnyClass?, forItemIdentifier: NSUserInterfaceItemIdentifier)",
+      "desc": "Registers a class for the scrubber to use when it creates new items."
+    },
+    {
+      "name": "func register(NSNib?, forItemIdentifier: NSUserInterfaceItemIdentifier)",
+      "desc": "Registers a nib file for the scrubber to use when it creates new items in the scrubber."
+    },
+    {
+      "name": "func makeItem(withIdentifier: NSUserInterfaceItemIdentifier, owner: Any?) -> NSScrubberItemView?",
+      "desc": "Creates or returns a reusable item object with the specified identifier."
+    },
+    {
+      "name": "var scrubberLayout: NSScrubberLayout",
+      "desc": "An object used to describe the layout of items within the scrubber."
+    },
+    {
+      "name": "var mode: NSScrubber.Mode",
+      "desc": "A setting that determines whether interaction with the scrubber is fixed or free."
+    },
+    {
+      "name": "enum NSScrubber.Mode",
+      "desc": "The scrolling behavior for a scrubber."
+    },
+    {
+      "name": "var itemAlignment: NSScrubber.Alignment",
+      "desc": "A setting that specifies the snapping behavior of items in the scrubber."
+    },
+    {
+      "name": "enum NSScrubber.Alignment",
+      "desc": "The specified preferred alignment of items within the scrubber, when they come to rest following a user’s scrolling or paging interaction."
+    },
+    {
+      "name": "var isContinuous: Bool",
+      "desc": "A Boolean value that, together with the mode property, determines scrubber interaction style."
+    },
+    {
+      "name": "var backgroundColor: NSColor?",
+      "desc": "The color displayed behind the scrubber content."
+    },
+    {
+      "name": "var backgroundView: NSView?",
+      "desc": "A view that is displayed behind the scrubber content."
+    },
+    {
+      "name": "var showsAdditionalContentIndicators: Bool",
+      "desc": "A Boolean value that specifies whether the scrubber should display the existence of additional items beyond the leading and trailing edges."
+    },
+    {
+      "name": "var showsArrowButtons: Bool",
+      "desc": "A Boolean value that specifies whether arrow buttons should be displayed at the leading and trailing edges of the scrubber."
+    },
+    {
+      "name": "var floatsSelectionViews: Bool",
+      "desc": "A Boolean value that determines the behavior of the item selection decorations as the scrubber's selection changes."
+    },
+    {
+      "name": "var selectionOverlayStyle: NSScrubberSelectionStyle?",
+      "desc": "The style overlaid on selected items."
+    },
+    {
+      "name": "var selectionBackgroundStyle: NSScrubberSelectionStyle?",
+      "desc": "The style applied to the background of selected items."
+    },
+    {
+      "name": "func reloadData()",
+      "desc": "Reloads the content of the entire scrubber, and deselects the currently selected item."
+    },
+    {
+      "name": "func reloadItems(at: IndexSet)",
+      "desc": "Reloads the items at the specified indexes."
+    },
+    {
+      "name": "var numberOfItems: Int",
+      "desc": "The number of items represented by the scrubber."
+    },
+    {
+      "name": "var highlightedIndex: Int",
+      "desc": "The index of the highlighted item in the scrubber."
+    },
+    {
+      "name": "var selectedIndex: Int",
+      "desc": "The index of the selected item in the scrubber."
+    },
+    {
+      "name": "func insertItems(at: IndexSet)",
+      "desc": "Inserts new items at the specified indexes into the scrubber."
+    },
+    {
+      "name": "func moveItem(at: Int, to: Int)",
+      "desc": "Moves an item from one index to another in the scrubber."
+    },
+    {
+      "name": "func removeItems(at: IndexSet)",
+      "desc": "Removes the items at the specified indexes from the scrubber."
+    },
+    {
+      "name": "func performSequentialBatchUpdates(() -> Void)",
+      "desc": "Combines multiple scrubber content updates into a single action."
+    },
+    {
+      "name": "func scrollItem(at: Int, to: NSScrubber.Alignment)",
+      "desc": "Scrolls an item to a specified alignment within the scrubber."
+    },
+    {
+      "name": "func itemViewForItem(at: Int) -> NSScrubberItemView?",
+      "desc": "Returns the view for the item at the specified index."
+    }
+  ],
+  "declaration": "class NSScrubber : NSView",
+  "inheritsFrom": [
+    "NSView"
+  ]
+}

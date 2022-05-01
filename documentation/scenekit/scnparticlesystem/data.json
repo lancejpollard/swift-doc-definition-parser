@@ -1,0 +1,337 @@
+{
+  "path": "/documentation/scenekit/scnparticlesystem",
+  "type": "Class",
+  "name": "SCNParticleSystem",
+  "desc": "An object that animates and renders a system of small image sprites using a high-level simulation whose general behavior you specify.",
+  "items": [
+    {
+      "name": "init?(named: String, inDirectory: String?)",
+      "desc": "Loads a particle system from a file in the app’s bundle resources."
+    },
+    {
+      "name": "var emissionDuration: CGFloat",
+      "desc": "The duration, in seconds, over which the system spawns new particles. Animatable."
+    },
+    {
+      "name": "var emissionDurationVariation: CGFloat",
+      "desc": "The range, in seconds, of randomized emission duration values. Animatable."
+    },
+    {
+      "name": "var idleDuration: CGFloat",
+      "desc": "The duration, in seconds, of periods when the system emits no particles. Animatable."
+    },
+    {
+      "name": "var idleDurationVariation: CGFloat",
+      "desc": "The range, in seconds, of randomized idle duration values. Animatable."
+    },
+    {
+      "name": "var loops: Bool",
+      "desc": "A Boolean value that determines whether the system repeats its emission and idle periods."
+    },
+    {
+      "name": "var warmupDuration: CGFloat",
+      "desc": "The duration, in seconds, for which particles are spawned before the system is first rendered. Animatable."
+    },
+    {
+      "name": "var birthRate: CGFloat",
+      "desc": "The number of particles spawned during each emission period. Animatable."
+    },
+    {
+      "name": "var birthRateVariation: CGFloat",
+      "desc": "The range of randomized particle birth rate values. Animatable."
+    },
+    {
+      "name": "var emitterShape: SCNGeometry?",
+      "desc": "The shape of the region of space where the system spawns new particles."
+    },
+    {
+      "name": "var birthLocation: SCNParticleBirthLocation",
+      "desc": "The possible locations for newly spawned particles, relative to the emitter shape."
+    },
+    {
+      "name": "enum SCNParticleBirthLocation",
+      "desc": "Options for the initial location of each emitted particle, used by the birthLocation property."
+    },
+    {
+      "name": "var birthDirection: SCNParticleBirthDirection",
+      "desc": "The possible initial directions for newly spawned particles, relative to the emitter shape."
+    },
+    {
+      "name": "enum SCNParticleBirthDirection",
+      "desc": "Options for the initial direction of each emitted particle, used by the birthDirection property."
+    },
+    {
+      "name": "var emittingDirection: SCNVector3",
+      "desc": "The initial direction for newly spawned particles. Animatable."
+    },
+    {
+      "name": "var spreadingAngle: CGFloat",
+      "desc": "The range, in degrees, of randomized initial particle directions. Animatable."
+    },
+    {
+      "name": "var particleAngle: CGFloat",
+      "desc": "The rotation angle, in degrees, of newly spawned particles. Animatable."
+    },
+    {
+      "name": "var particleAngleVariation: CGFloat",
+      "desc": "The range, in degrees of randomized initial particle angles. Animatable."
+    },
+    {
+      "name": "var particleVelocity: CGFloat",
+      "desc": "The initial speed, in units per second, for newly spawned particles. Animatable."
+    },
+    {
+      "name": "var particleVelocityVariation: CGFloat",
+      "desc": "The range, in units per second, of randomized initial particle speeds. Animatable."
+    },
+    {
+      "name": "var particleAngularVelocity: CGFloat",
+      "desc": "The initial spin rate, in degrees per second, of newly spawned particles. Animatable."
+    },
+    {
+      "name": "var particleAngularVelocityVariation: CGFloat",
+      "desc": "The range, in degrees per second, of randomized initial angular velocities for particles. Animatable."
+    },
+    {
+      "name": "var particleLifeSpan: CGFloat",
+      "desc": "The duration, in seconds, for which each particle is rendered before being removed from the scene. Animatable."
+    },
+    {
+      "name": "var particleLifeSpanVariation: CGFloat",
+      "desc": "The range, in seconds, of randomized particle life spans. Animatable."
+    },
+    {
+      "name": "var particleSize: CGFloat",
+      "desc": "The rendered size, in units of the scene’s world coordinate space, of the particle image. Animatable."
+    },
+    {
+      "name": "var particleSizeVariation: CGFloat",
+      "desc": "The range of randomized particle sizes. Animatable."
+    },
+    {
+      "name": "var particleColor: UIColor",
+      "desc": "The color of newly spawned particles. Animatable."
+    },
+    {
+      "name": "var particleColorVariation: SCNVector4",
+      "desc": "The ranges of randomized particle color components. Animatable."
+    },
+    {
+      "name": "var particleImage: Any?",
+      "desc": "The texture image SceneKit uses to render each particle."
+    },
+    {
+      "name": "var fresnelExponent: CGFloat",
+      "desc": "The reflectivity exponent SceneKit uses when rendering the particle’s image as a cube map. Animatable."
+    },
+    {
+      "name": "var stretchFactor: CGFloat",
+      "desc": "A multiplier for stretching particle images along their direction of motion. Animatable."
+    },
+    {
+      "name": "var imageSequenceRowCount: Int",
+      "desc": "The number of rows for treating the particle image as a grid of animation frames."
+    },
+    {
+      "name": "var imageSequenceColumnCount: Int",
+      "desc": "The number of columns for treating the particle image as a grid of animation frames."
+    },
+    {
+      "name": "var imageSequenceInitialFrame: CGFloat",
+      "desc": "The index of the first frame in a particle image animation. Animatable."
+    },
+    {
+      "name": "var imageSequenceInitialFrameVariation: CGFloat",
+      "desc": "The range of randomized initial frames for particle image animation. Animatable."
+    },
+    {
+      "name": "var imageSequenceFrameRate: CGFloat",
+      "desc": "The rate, in frames per second, of particle image animation. Animatable."
+    },
+    {
+      "name": "var imageSequenceFrameRateVariation: CGFloat",
+      "desc": "The range, in frames per second, of randomized frame rates for particle image animation. Animatable."
+    },
+    {
+      "name": "var imageSequenceAnimationMode: SCNParticleImageSequenceAnimationMode",
+      "desc": "The animation mode for particle image animation."
+    },
+    {
+      "name": "enum SCNParticleImageSequenceAnimationMode",
+      "desc": "Options for animating each particle with a sequence of images, used by the imageSequenceAnimationMode property."
+    },
+    {
+      "name": "var isAffectedByGravity: Bool",
+      "desc": "A Boolean value that determines whether gravity, as defined by the scene’s physics simulation, affects the motion of particles."
+    },
+    {
+      "name": "var isAffectedByPhysicsFields: Bool",
+      "desc": "A Boolean value that determines whether physics fields in the scene affect the motion of particles."
+    },
+    {
+      "name": "var colliderNodes: [SCNNode]?",
+      "desc": "The nodes whose geometry the system’s particles can collide with."
+    },
+    {
+      "name": "var particleDiesOnCollision: Bool",
+      "desc": "A Boolean value that determines whether particles are removed from the scene upon colliding with another object."
+    },
+    {
+      "name": "var acceleration: SCNVector3",
+      "desc": "The constant acceleration vector, in units per second per second, applied to all particles in the system. Animatable."
+    },
+    {
+      "name": "var dampingFactor: CGFloat",
+      "desc": "A factor that slows particles relative to their velocity. Animatable."
+    },
+    {
+      "name": "var particleMass: CGFloat",
+      "desc": "The mass, in kilograms, of each particle in the system. Animatable."
+    },
+    {
+      "name": "var particleMassVariation: CGFloat",
+      "desc": "The range, in kilograms, of randomized particle masses. Animatable."
+    },
+    {
+      "name": "var particleCharge: CGFloat",
+      "desc": "The electric charge, in coulombs, of each particle in the system. Animatable."
+    },
+    {
+      "name": "var particleChargeVariation: CGFloat",
+      "desc": "The range, in coulombs, of randomized particle charges. Animatable."
+    },
+    {
+      "name": "var particleBounce: CGFloat",
+      "desc": "The restitution coefficient of each particle in the system. Animatable."
+    },
+    {
+      "name": "var particleBounceVariation: CGFloat",
+      "desc": "The range of randomized restitution coefficients for particles. Animatable."
+    },
+    {
+      "name": "var particleFriction: CGFloat",
+      "desc": "The friction coefficient of each particle in the system. Animatable."
+    },
+    {
+      "name": "var particleFrictionVariation: CGFloat",
+      "desc": "The range of randomized friction coefficients for particles. Animatable."
+    },
+    {
+      "name": "var systemSpawnedOnCollision: SCNParticleSystem?",
+      "desc": "Another particle system to be added to the scene when a particle collides with scene geometry."
+    },
+    {
+      "name": "var systemSpawnedOnDying: SCNParticleSystem?",
+      "desc": "Another particle system to be added to the scene when a particle dies."
+    },
+    {
+      "name": "var systemSpawnedOnLiving: SCNParticleSystem?",
+      "desc": "Another particle system to be added to the scene for each living particle in the system."
+    },
+    {
+      "name": "var blendMode: SCNParticleBlendMode",
+      "desc": "The blending mode for compositing particle images into the rendered scene."
+    },
+    {
+      "name": "enum SCNParticleBlendMode",
+      "desc": "Options for combining source and destination pixel colors when compositing particles during rendering, used by the blendMode property."
+    },
+    {
+      "name": "var orientationMode: SCNParticleOrientationMode",
+      "desc": "The mode defining whether and how particles may rotate."
+    },
+    {
+      "name": "enum SCNParticleOrientationMode",
+      "desc": "Options for restricting the orientation of particles, used by the orientationMode property."
+    },
+    {
+      "name": "var sortingMode: SCNParticleSortingMode",
+      "desc": "The mode defining the order in which SceneKit renders the system’s particles."
+    },
+    {
+      "name": "enum SCNParticleSortingMode",
+      "desc": "Options for the rendering order of particles, used by the sortingMode property."
+    },
+    {
+      "name": "var isLightingEnabled: Bool",
+      "desc": "A Boolean value that determines whether SceneKit applies lighting to particle images when rendering."
+    },
+    {
+      "name": "var isBlackPassEnabled: Bool",
+      "desc": "A Boolean value that determines whether SceneKit renders particles in black before rendering the particle image."
+    },
+    {
+      "name": "var isLocal: Bool",
+      "desc": "A Boolean value that specifies whether the particle simulation runs in the local coordinate space of the node containing it."
+    },
+    {
+      "name": "func reset()",
+      "desc": "Returns the particle system to its initial state."
+    },
+    {
+      "name": "var speedFactor: CGFloat",
+      "desc": "A multiplier for the speed at which SceneKit runs the particle simulation. Animatable."
+    },
+    {
+      "name": "func handle(SCNParticleEvent, forProperties: [SCNParticleSystem.ParticleProperty], handler: SCNParticleEventBlock)",
+      "desc": "Adds a block that modifies particle properties, to be executed at a specified event in the lifetimes of particles in the system."
+    },
+    {
+      "name": "enum SCNParticleEvent",
+      "desc": "Significant events in the life spans of simulate particles, used by the handle(_:forProperties:handler:) method."
+    },
+    {
+      "name": "typealias SCNParticleEventBlock",
+      "desc": "The signature for blocks called by SceneKit in response to significant events during particle simulation, used by the handle(_:forProperties:handler:) method."
+    },
+    {
+      "name": "var propertyControllers: [SCNParticleSystem.ParticleProperty : SCNParticlePropertyController]?",
+      "desc": "A dictionary that optionally associates particle properties with objects that animate a property’s value for each particle."
+    },
+    {
+      "name": "func addModifier(forProperties: [SCNParticleSystem.ParticleProperty], at: SCNParticleModifierStage, modifier: SCNParticleModifierBlock)",
+      "desc": "Adds a block that modifies particle properties, to be executed each time SceneKit renders a frame."
+    },
+    {
+      "name": "func removeModifiers(at: SCNParticleModifierStage)",
+      "desc": "Removes particle modifier blocks for the specified stage of the particle simulation."
+    },
+    {
+      "name": "func removeAllModifiers()",
+      "desc": "Removes all particle modifier blocks associated with the particle system."
+    },
+    {
+      "name": "struct SCNParticleSystem.ParticleProperty",
+      "desc": "Keys identifying properties of individual particles, used by the propertyControllers dictionary and the handle(_:forProperties:handler:) and addModifier(forProperties:at:modifier:) methods."
+    },
+    {
+      "name": "enum SCNParticleModifierStage",
+      "desc": "Stages of SceneKit’s particle simulation process into which you can insert modifier blocks, used by the addModifier(forProperties:at:modifier:) method."
+    },
+    {
+      "name": "typealias SCNParticleModifierBlock",
+      "desc": "The signature for blocks called by SceneKit to modify particle properties on each frame of simulation, used by the addModifier(forProperties:at:modifier:) method."
+    },
+    {
+      "name": "var orientationDirection: SCNVector3"
+    },
+    {
+      "name": "var particleIntensity: CGFloat"
+    },
+    {
+      "name": "var particleIntensityVariation: CGFloat"
+    },
+    {
+      "name": "var writesToDepthBuffer: Bool"
+    }
+  ],
+  "declaration": "class SCNParticleSystem : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding",
+    "SCNAnimatable"
+  ]
+}

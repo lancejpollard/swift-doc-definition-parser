@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/cryptokit/hkdf",
+  "type": "Generic Structure",
+  "name": "HKDF",
+  "desc": "A standards-based implementation of an HMAC-based Key Derivation Function (HKDF).",
+  "items": [
+    {
+      "name": "static func deriveKey(inputKeyMaterial: SymmetricKey, outputByteCount: Int) -> SymmetricKey",
+      "desc": "Derives a symmetric encryption key from a main key or passcode using HKDF key derivation."
+    },
+    {
+      "name": "static func deriveKey<Info>(inputKeyMaterial: SymmetricKey, info: Info, outputByteCount: Int) -> SymmetricKey",
+      "desc": "Derives a symmetric encryption key from a main key or passcode using HKDF key derivation with information you specify."
+    },
+    {
+      "name": "static func deriveKey<Salt>(inputKeyMaterial: SymmetricKey, salt: Salt, outputByteCount: Int) -> SymmetricKey",
+      "desc": "Derives a symmetric encryption key from a main key or passcode using HKDF key derivation with salt that you specify."
+    },
+    {
+      "name": "static func deriveKey<Salt, Info>(inputKeyMaterial: SymmetricKey, salt: Salt, info: Info, outputByteCount: Int) -> SymmetricKey",
+      "desc": "Derives a symmetric encryption key from a main key or passcode using HKDF key derivation with information and salt you specify."
+    },
+    {
+      "name": "static func extract<Salt>(inputKeyMaterial: SymmetricKey, salt: Salt?) -> HashedAuthenticationCode<H>",
+      "desc": "Creates cryptographically strong key material from a main key or passcode that you specify."
+    },
+    {
+      "name": "static func expand<PRK, Info>(pseudoRandomKey: PRK, info: Info?, outputByteCount: Int) -> SymmetricKey",
+      "desc": "Expands cryptographically strong key material into a derived symmetric key."
+    }
+  ],
+  "declaration": "struct HKDF<H> where H : HashFunction"
+}

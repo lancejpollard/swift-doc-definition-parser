@@ -1,0 +1,56 @@
+{
+  "path": "/documentation/watchkit/wkextendedruntimesession",
+  "type": "Class",
+  "name": "WKExtendedRuntimeSession",
+  "desc": "A session that continues to run your app after the user has stopped interacting.",
+  "items": [
+    {
+      "name": "var delegate: WKExtendedRuntimeSessionDelegate?",
+      "desc": "A delegate object for monitoring the session and responding to state changes and errors."
+    },
+    {
+      "name": "protocol WKExtendedRuntimeSessionDelegate",
+      "desc": "A set of optional methods for monitoring an extended runtime session."
+    },
+    {
+      "name": "func start()",
+      "desc": "Starts running the session."
+    },
+    {
+      "name": "func start(at: Date)",
+      "desc": "Schedules a session to start running at a future date."
+    },
+    {
+      "name": "func invalidate()",
+      "desc": "Stops the session."
+    },
+    {
+      "name": "var state: WKExtendedRuntimeSessionState",
+      "desc": "The session’s current state."
+    },
+    {
+      "name": "enum WKExtendedRuntimeSessionState",
+      "desc": "The activation states for an extended runtime session."
+    },
+    {
+      "name": "var expirationDate: Date?",
+      "desc": "The time and date when the session expires."
+    },
+    {
+      "name": "func notifyUser(hapticType: WKHapticType, repeatHandler: ((UnsafeMutablePointer<WKHapticType>) -> TimeInterval)?)",
+      "desc": "Play a repeating haptic alert."
+    },
+    {
+      "name": "enum WKExtendedRuntimeSessionErrorCode",
+      "desc": "The error codes reported by extended runtime sessions."
+    },
+    {
+      "name": "let WKExtendedRuntimeSessionErrorDomain: String",
+      "desc": "The domain for errors reported by extended runtime sessions."
+    }
+  ],
+  "declaration": "class WKExtendedRuntimeSession : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

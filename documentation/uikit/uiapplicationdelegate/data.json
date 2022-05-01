@@ -1,0 +1,256 @@
+{
+  "path": "/documentation/uikit/uiapplicationdelegate",
+  "type": "Protocol",
+  "name": "UIApplicationDelegate",
+  "desc": "A set of methods to manage shared behaviors for your app.",
+  "items": [
+    {
+      "name": "func application(UIApplication, willFinishLaunchingWithOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool",
+      "desc": "Tells the delegate that the launch process has begun but that state restoration hasn’t occured."
+    },
+    {
+      "name": "func application(UIApplication, didFinishLaunchingWithOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool",
+      "desc": "Tells the delegate that the launch process is almost done and the app is almost ready to run."
+    },
+    {
+      "name": "struct UIApplication.LaunchOptionsKey",
+      "desc": "The keys you use to access values in the launch options dictionary that the system passes to your app at initialization."
+    },
+    {
+      "name": "class let didFinishLaunchingNotification: NSNotification.Name",
+      "desc": "A notification that posts immediately after the app finishes launching."
+    },
+    {
+      "name": "func application(UIApplication, configurationForConnecting: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration",
+      "desc": "Retrieves the configuration data for UIKit to use when creating a new scene."
+    },
+    {
+      "name": "func application(UIApplication, didDiscardSceneSessions: Set<UISceneSession>)",
+      "desc": "Tells the delegate that the user closed one or more of the app's scenes from the app switcher."
+    },
+    {
+      "name": "func applicationDidBecomeActive(UIApplication)",
+      "desc": "Tells the delegate that the app has become active."
+    },
+    {
+      "name": "func applicationWillResignActive(UIApplication)",
+      "desc": "Tells the delegate that the app is about to become inactive."
+    },
+    {
+      "name": "func applicationDidEnterBackground(UIApplication)",
+      "desc": "Tells the delegate that the app is now in the background."
+    },
+    {
+      "name": "func applicationWillEnterForeground(UIApplication)",
+      "desc": "Tells the delegate that the app is about to enter the foreground."
+    },
+    {
+      "name": "func applicationWillTerminate(UIApplication)",
+      "desc": "Tells the delegate when the app is about to terminate."
+    },
+    {
+      "name": "class let didBecomeActiveNotification: NSNotification.Name",
+      "desc": "A notification that posts when the app becomes active."
+    },
+    {
+      "name": "class let didEnterBackgroundNotification: NSNotification.Name",
+      "desc": "A notification that posts when the app enters the background."
+    },
+    {
+      "name": "class let willEnterForegroundNotification: NSNotification.Name",
+      "desc": "A notification that posts shortly before an app leaves the background state on its way to becoming the active app."
+    },
+    {
+      "name": "class let willResignActiveNotification: NSNotification.Name",
+      "desc": "A notification that posts when the app is no longer active and loses focus."
+    },
+    {
+      "name": "class let willTerminateNotification: NSNotification.Name",
+      "desc": "A notification that posts when the app is about to terminate."
+    },
+    {
+      "name": "func applicationProtectedDataDidBecomeAvailable(UIApplication)",
+      "desc": "Tells the delegate that protected files are available now."
+    },
+    {
+      "name": "func applicationProtectedDataWillBecomeUnavailable(UIApplication)",
+      "desc": "Tells the delegate that the protected files are about to become unavailable."
+    },
+    {
+      "name": "func applicationDidReceiveMemoryWarning(UIApplication)",
+      "desc": "Tells the delegate when the app receives a memory warning from the system."
+    },
+    {
+      "name": "func applicationSignificantTimeChange(UIApplication)",
+      "desc": "Tells the delegate when there is a significant change in the time."
+    },
+    {
+      "name": "class let protectedDataDidBecomeAvailableNotification: NSNotification.Name",
+      "desc": "A notification that posts when the protected files become available for your code to access."
+    },
+    {
+      "name": "class let protectedDataWillBecomeUnavailableNotification: NSNotification.Name",
+      "desc": "A notification that posts shortly before protected files are locked down and become inaccessible."
+    },
+    {
+      "name": "class let didReceiveMemoryWarningNotification: NSNotification.Name",
+      "desc": "A notification that posts when the app receives a warning from the operating system about low memory availability."
+    },
+    {
+      "name": "class let significantTimeChangeNotification: NSNotification.Name",
+      "desc": "A notification that posts when there’s a significant change in time."
+    },
+    {
+      "name": "func application(UIApplication, shouldSaveSecureApplicationState: NSCoder) -> Bool",
+      "desc": "Asks the delegate whether to securely preserve the app’s state."
+    },
+    {
+      "name": "func application(UIApplication, shouldRestoreSecureApplicationState: NSCoder) -> Bool",
+      "desc": "Asks the delegate whether to restore the app’s saved state."
+    },
+    {
+      "name": "func application(UIApplication, viewControllerWithRestorationIdentifierPath: [String], coder: NSCoder) -> UIViewController?",
+      "desc": "Asks the delegate to provide the specified view controller."
+    },
+    {
+      "name": "func application(UIApplication, willEncodeRestorableStateWith: NSCoder)",
+      "desc": "Tells your delegate to save any high-level state information at the beginning of the state preservation process."
+    },
+    {
+      "name": "func application(UIApplication, didDecodeRestorableStateWith: NSCoder)",
+      "desc": "Tells your delegate to restore any high-level state information as part of the state restoration process."
+    },
+    {
+      "name": "class let stateRestorationBundleVersionKey: String",
+      "desc": "The version of your app responsible for creating the restoration archive."
+    },
+    {
+      "name": "class let stateRestorationSystemVersionKey: String",
+      "desc": "The version of the system on which your app created the restoration archive."
+    },
+    {
+      "name": "class let stateRestorationTimestampKey: String",
+      "desc": "The time your app created the restoration archive."
+    },
+    {
+      "name": "class let stateRestorationUserInterfaceIdiomKey: String",
+      "desc": "The user interface idiom that was in effect when your app created the restoration archive."
+    },
+    {
+      "name": "class let stateRestorationViewControllerStoryboardKey: String",
+      "desc": "A reference to the storyboard that contains the view controller."
+    },
+    {
+      "name": "func application(UIApplication, handleEventsForBackgroundURLSession: String, completionHandler: () -> Void)",
+      "desc": "Tells the delegate that events related to a URL session are waiting to be processed."
+    },
+    {
+      "name": "enum UIBackgroundFetchResult",
+      "desc": "Constants that indicate the result of a background fetch operation."
+    },
+    {
+      "name": "func application(UIApplication, didRegisterForRemoteNotificationsWithDeviceToken: Data)",
+      "desc": "Tells the delegate that the app successfully registered with Apple Push Notification service (APNs)."
+    },
+    {
+      "name": "func application(UIApplication, didFailToRegisterForRemoteNotificationsWithError: Error)",
+      "desc": "Tells the delegate when Apple Push Notification service cannot successfully complete the registration process."
+    },
+    {
+      "name": "func application(UIApplication, didReceiveRemoteNotification: [AnyHashable : Any], fetchCompletionHandler: (UIBackgroundFetchResult) -> Void)",
+      "desc": "Tells the app that a remote notification arrived that indicates there is data to be fetched."
+    },
+    {
+      "name": "func application(UIApplication, willContinueUserActivityWithType: String) -> Bool",
+      "desc": "Tells the delegate if your app takes responsibility for notifying users when a continuation activity takes longer than expected."
+    },
+    {
+      "name": "func application(UIApplication, continue: NSUserActivity, restorationHandler: ([UIUserActivityRestoring]?) -> Void) -> Bool",
+      "desc": "Tells the delegate that the data for continuing an activity is available."
+    },
+    {
+      "name": "func application(UIApplication, didUpdate: NSUserActivity)",
+      "desc": "Tells the delegate that the activity was updated."
+    },
+    {
+      "name": "func application(UIApplication, didFailToContinueUserActivityWithType: String, error: Error)",
+      "desc": "Tells the delegate that the activity couldn’t be continued."
+    },
+    {
+      "name": "func application(UIApplication, performActionFor: UIApplicationShortcutItem, completionHandler: (Bool) -> Void)",
+      "desc": "Tells the delegate that the user selected a Home screen quick action for your app, except when you’ve intercepted the interaction in a launch method."
+    },
+    {
+      "name": "func application(UIApplication, handleWatchKitExtensionRequest: [AnyHashable : Any]?, reply: ([AnyHashable : Any]?) -> Void)",
+      "desc": "Asks the delegate to respond to a request from a paired watchOS app."
+    },
+    {
+      "name": "func applicationShouldRequestHealthAuthorization(UIApplication)",
+      "desc": "Tells the delegate when your app should ask the user for access to his or her HealthKit data."
+    },
+    {
+      "name": "func application(UIApplication, open: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool",
+      "desc": "Asks the delegate to open a resource specified by a URL, and provides a dictionary of launch options."
+    },
+    {
+      "name": "struct UIApplication.OpenURLOptionsKey",
+      "desc": "Keys you use to access values in the options dictionary when opening a URL."
+    },
+    {
+      "name": "func application(UIApplication, shouldAllowExtensionPointIdentifier: UIApplication.ExtensionPointIdentifier) -> Bool",
+      "desc": "Asks the delegate to grant permission to use app extensions that are based on a specified extension point identifier."
+    },
+    {
+      "name": "struct UIApplication.ExtensionPointIdentifier",
+      "desc": "A structure that identifies types of extensions."
+    },
+    {
+      "name": "static let keyboard: UIApplication.ExtensionPointIdentifier",
+      "desc": "The identifier for custom keyboards."
+    },
+    {
+      "name": "func application(UIApplication, handlerFor: INIntent) -> Any?",
+      "desc": "Asks the delegate for an intent handler capable of handling the specified intent."
+    },
+    {
+      "name": "func application(UIApplication, userDidAcceptCloudKitShareWith: CKShareMetadata)",
+      "desc": "Tells the delegate that the app now has access to shared information in CloudKit."
+    },
+    {
+      "name": "func applicationShouldAutomaticallyLocalizeKeyCommands(UIApplication) -> Bool",
+      "desc": "Returns a Boolean value that tells the system whether to remap menu shortcuts to support localized keyboards."
+    },
+    {
+      "name": "func application(UIApplication, supportedInterfaceOrientationsFor: UIWindow?) -> UIInterfaceOrientationMask",
+      "desc": "Asks the delegate for the interface orientations to use for the view controllers in the specified window."
+    },
+    {
+      "name": "enum UIInterfaceOrientation",
+      "desc": "Constants that specify the orientation of the app's user interface."
+    },
+    {
+      "name": "struct UIInterfaceOrientationMask",
+      "desc": "Constants that specify a view controller’s supported interface orientations."
+    },
+    {
+      "name": "class let invalidInterfaceOrientationException: NSExceptionName",
+      "desc": "An exception that’s thrown if a view controller or the app returns an invalid set of supported interface orientations."
+    },
+    {
+      "name": "var window: UIWindow?",
+      "desc": "The window to use when presenting a storyboard."
+    },
+    {
+      "name": "static func main()",
+      "desc": "Provides the top-level entry point for the app."
+    },
+    {
+      "name": "func applicationDidFinishLaunching(UIApplication)",
+      "desc": "Tells the delegate when the app has finished launching."
+    }
+  ],
+  "declaration": "@MainActor protocol UIApplicationDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

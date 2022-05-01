@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/corewlan/cwnetwork",
+  "type": "Class",
+  "name": "CWNetwork",
+  "desc": "Encapsulates an IEEE 802.11 network, providing read-only accessors to various properties of the network.",
+  "items": [
+    {
+      "name": "func supportsSecurity(CWSecurity) -> Bool",
+      "desc": "Method for determining which security types a network supports."
+    },
+    {
+      "name": "func supportsPHYMode(CWPHYMode) -> Bool",
+      "desc": "Method for determining which PHY modes a network supports."
+    },
+    {
+      "name": "func isEqual(to: CWNetwork) -> Bool",
+      "desc": "Method for determining CWNetwork object equality."
+    },
+    {
+      "name": "var beaconInterval: Int",
+      "desc": "The beacon interval (ms) for the network."
+    },
+    {
+      "name": "var bssid: String?",
+      "desc": "The basic service set identifier (BSSID) for the network, returned as UTF-8 string."
+    },
+    {
+      "name": "var countryCode: String?",
+      "desc": "The country code (ISO/IEC 3166-1:1997) for the network."
+    },
+    {
+      "name": "var ibss: Bool",
+      "desc": "The network is an IBSS network."
+    },
+    {
+      "name": "var informationElementData: Data?",
+      "desc": "Information element data included in beacon or probe response frames."
+    },
+    {
+      "name": "var noiseMeasurement: Int",
+      "desc": "The aggregate noise measurement (dBm) for the network."
+    },
+    {
+      "name": "var rssiValue: Int",
+      "desc": "The aggregate received signal strength indication (RSSI) measurement (dBm) for the network."
+    },
+    {
+      "name": "var ssid: String?",
+      "desc": "The service set identifier (SSID) for the network, encoded as a string."
+    },
+    {
+      "name": "var ssidData: Data?",
+      "desc": "The service set identifier (SSID) for the network, returned as data."
+    },
+    {
+      "name": "var wlanChannel: CWChannel?",
+      "desc": "The channel for the network."
+    }
+  ],
+  "declaration": "class CWNetwork : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

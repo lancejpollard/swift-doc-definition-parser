@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/metal/mtlbinaryarchive",
+  "type": "Protocol",
+  "name": "MTLBinaryArchive",
+  "desc": "A container for pipeline state descriptors and their associated compiled shader code.",
+  "items": [
+    {
+      "name": "var device: MTLDevice",
+      "desc": "The Metal device object that created the binary archive."
+    },
+    {
+      "name": "var label: String?",
+      "desc": "A string that identifies the library."
+    },
+    {
+      "name": "func addComputePipelineFunctions(descriptor: MTLComputePipelineDescriptor)",
+      "desc": "Adds a description of a compute pipeline to the archive."
+    },
+    {
+      "name": "func addRenderPipelineFunctions(descriptor: MTLRenderPipelineDescriptor)",
+      "desc": "Adds a description of a render pipeline to the archive."
+    },
+    {
+      "name": "func addTileRenderPipelineFunctions(descriptor: MTLTileRenderPipelineDescriptor)",
+      "desc": "Adds a description of a tile renderer pipeline to the archive."
+    },
+    {
+      "name": "func addFunction(descriptor: MTLFunctionDescriptor, library: MTLLibrary)",
+      "desc": "Adds a description of a function to the archive."
+    },
+    {
+      "name": "func serialize(to: URL)",
+      "desc": "Writes the contents of the archive to a file."
+    }
+  ],
+  "declaration": "protocol MTLBinaryArchive",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

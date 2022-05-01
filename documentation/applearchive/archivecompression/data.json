@@ -1,0 +1,59 @@
+{
+  "path": "/documentation/applearchive/archivecompression",
+  "type": "Structure",
+  "name": "ArchiveCompression",
+  "desc": "Constants that describe compression algorithms.",
+  "items": [
+    {
+      "name": "static let none: ArchiveCompression",
+      "desc": "A constant that represents no compression."
+    },
+    {
+      "name": "static let lzfse: ArchiveCompression",
+      "desc": "The LZFSE compression algorithm, that’s recommended for use on Apple platforms."
+    },
+    {
+      "name": "static let lz4: ArchiveCompression",
+      "desc": "The LZ4 compression algorithm, that’s recommended for fast compression."
+    },
+    {
+      "name": "static let lzma: ArchiveCompression",
+      "desc": "The LZMA compression algorithm, that’s recommended for high-compression ratio."
+    },
+    {
+      "name": "static let zlib: ArchiveCompression",
+      "desc": "The zlib compression algorithm, that’s recommended for cross-platform compression."
+    },
+    {
+      "name": "typealias ArchiveCompression.RawValue"
+    },
+    {
+      "name": "init(algo: Algorithm)"
+    },
+    {
+      "name": "init(rawValue: UInt32)"
+    },
+    {
+      "name": "var description: String"
+    },
+    {
+      "name": "var hashValue: Int"
+    },
+    {
+      "name": "var rawValue: ArchiveCompression.RawValue"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "static func != (ArchiveCompression, ArchiveCompression) -> Bool"
+    }
+  ],
+  "declaration": "struct ArchiveCompression",
+  "conformsTo": [
+    "CustomStringConvertible",
+    "Equatable",
+    "Hashable",
+    "RawRepresentable"
+  ]
+}

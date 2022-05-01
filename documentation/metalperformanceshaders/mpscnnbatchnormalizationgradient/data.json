@@ -1,0 +1,30 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpscnnbatchnormalizationgradient",
+  "type": "Class",
+  "name": "MPSCNNBatchNormalizationGradient",
+  "desc": "A gradient batch normalization kernel.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice, fusedNeuronDescriptor: MPSNNNeuronDescriptor?)"
+    },
+    {
+      "name": "func encode(to: MTLCommandBuffer, sourceGradient: MPSImage, sourceImage: MPSImage, batchNormalizationState: MPSCNNBatchNormalizationState) -> MPSImage"
+    },
+    {
+      "name": "func encode(to: MTLCommandBuffer, sourceGradient: MPSImage, sourceImage: MPSImage, batchNormalizationState: MPSCNNBatchNormalizationState, destinationGradient: MPSImage)"
+    },
+    {
+      "name": "func encodeBatch(to: MTLCommandBuffer, sourceGradients: [MPSImage], sourceImages: [MPSImage], batchNormalizationState: MPSCNNBatchNormalizationState) -> [MPSImage]"
+    },
+    {
+      "name": "func encodeBatch(to: MTLCommandBuffer, sourceGradients: [MPSImage], sourceImages: [MPSImage], batchNormalizationState: MPSCNNBatchNormalizationState, destinationGradients: [MPSImage])"
+    }
+  ],
+  "declaration": "class MPSCNNBatchNormalizationGradient : MPSCNNGradientKernel",
+  "inheritsFrom": [
+    "MPSCNNGradientKernel"
+  ]
+}

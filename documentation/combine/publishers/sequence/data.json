@@ -1,0 +1,196 @@
+{
+  "path": "/documentation/combine/publishers/sequence",
+  "type": "Structure",
+  "name": "Publishers.Sequence",
+  "desc": "A publisher that publishes a given sequence of elements.",
+  "items": [
+    {
+      "name": "init(sequence: Elements)",
+      "desc": "Creates a publisher for a sequence of elements."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "let sequence: Elements",
+      "desc": "The sequence of elements to publish."
+    },
+    {
+      "name": "static func == (Publishers.Sequence<Elements, Failure>, Publishers.Sequence<Elements, Failure>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two publishers are equivalent."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    },
+    {
+      "name": "func allSatisfy((Publishers.Sequence<Elements, Failure>.Output) -> Bool) -> Result<Bool, Failure>.Publisher",
+      "desc": ""
+    },
+    {
+      "name": "func append(Publishers.Sequence<Elements, Failure>.Output...) -> Publishers.Sequence<Elements, Failure>",
+      "desc": ""
+    },
+    {
+      "name": "func append(Publishers.Sequence<Elements, Failure>) -> Publishers.Sequence<Elements, Failure>",
+      "desc": ""
+    },
+    {
+      "name": "func append<S>(S) -> Publishers.Sequence<Elements, Failure>",
+      "desc": ""
+    },
+    {
+      "name": "func collect() -> Result<[Publishers.Sequence<Elements, Failure>.Output], Failure>.Publisher",
+      "desc": ""
+    },
+    {
+      "name": "func compactMap<T>((Publishers.Sequence<Elements, Failure>.Output) -> T?) -> Publishers.Sequence<[T], Failure>",
+      "desc": ""
+    },
+    {
+      "name": "func contains(Elements.Element) -> Result<Bool, Failure>.Publisher",
+      "desc": ""
+    },
+    {
+      "name": "func contains(where: (Publishers.Sequence<Elements, Failure>.Output) -> Bool) -> Result<Bool, Failure>.Publisher",
+      "desc": ""
+    },
+    {
+      "name": "func count() -> Result<Int, Failure>.Publisher",
+      "desc": ""
+    },
+    {
+      "name": "func count() -> Just<Int>",
+      "desc": ""
+    },
+    {
+      "name": "func count() -> Result<Int, Failure>.Publisher",
+      "desc": ""
+    },
+    {
+      "name": "func drop(while: (Elements.Element) -> Bool) -> Publishers.Sequence<DropWhileSequence<Elements>, Failure>",
+      "desc": ""
+    },
+    {
+      "name": "func dropFirst(Int) -> Publishers.Sequence<DropFirstSequence<Elements>, Failure>",
+      "desc": ""
+    },
+    {
+      "name": "func filter((Publishers.Sequence<Elements, Failure>.Output) -> Bool) -> Publishers.Sequence<[Publishers.Sequence<Elements, Failure>.Output], Failure>",
+      "desc": ""
+    },
+    {
+      "name": "func first() -> Optional<Publishers.Sequence<Elements, Failure>.Output>.Publisher",
+      "desc": ""
+    },
+    {
+      "name": "func first(where: (Publishers.Sequence<Elements, Failure>.Output) -> Bool) -> Optional<Publishers.Sequence<Elements, Failure>.Output>.Publisher",
+      "desc": ""
+    },
+    {
+      "name": "func ignoreOutput() -> Empty<Publishers.Sequence<Elements, Failure>.Output, Failure>",
+      "desc": ""
+    },
+    {
+      "name": "func last() -> Optional<Publishers.Sequence<Elements, Failure>.Output>.Publisher",
+      "desc": ""
+    },
+    {
+      "name": "func last(where: (Publishers.Sequence<Elements, Failure>.Output) -> Bool) -> Optional<Publishers.Sequence<Elements, Failure>.Output>.Publisher",
+      "desc": ""
+    },
+    {
+      "name": "func map<T>((Elements.Element) -> T) -> Publishers.Sequence<[T], Failure>",
+      "desc": ""
+    },
+    {
+      "name": "func max() -> Optional<Publishers.Sequence<Elements, Failure>.Output>.Publisher",
+      "desc": ""
+    },
+    {
+      "name": "func max(by: (Publishers.Sequence<Elements, Failure>.Output, Publishers.Sequence<Elements, Failure>.Output) -> Bool) -> Optional<Publishers.Sequence<Elements, Failure>.Output>.Publisher",
+      "desc": ""
+    },
+    {
+      "name": "func min() -> Optional<Publishers.Sequence<Elements, Failure>.Output>.Publisher",
+      "desc": ""
+    },
+    {
+      "name": "func min(by: (Publishers.Sequence<Elements, Failure>.Output, Publishers.Sequence<Elements, Failure>.Output) -> Bool) -> Optional<Publishers.Sequence<Elements, Failure>.Output>.Publisher",
+      "desc": ""
+    },
+    {
+      "name": "func output(at: Elements.Index) -> Optional<Publishers.Sequence<Elements, Failure>.Output>.Publisher",
+      "desc": ""
+    },
+    {
+      "name": "func output(at: Elements.Index) -> Optional<Publishers.Sequence<Elements, Failure>.Output>.Publisher",
+      "desc": ""
+    },
+    {
+      "name": "func output(in: Range<Elements.Index>) -> Publishers.Sequence<[Publishers.Sequence<Elements, Failure>.Output], Failure>",
+      "desc": ""
+    },
+    {
+      "name": "func output(in: Range<Elements.Index>) -> Publishers.Sequence<[Publishers.Sequence<Elements, Failure>.Output], Failure>",
+      "desc": ""
+    },
+    {
+      "name": "func prefix(Int) -> Publishers.Sequence<PrefixSequence<Elements>, Failure>",
+      "desc": ""
+    },
+    {
+      "name": "func prefix(while: (Elements.Element) -> Bool) -> Publishers.Sequence<[Elements.Element], Failure>",
+      "desc": ""
+    },
+    {
+      "name": "func prepend<S>(S) -> Publishers.Sequence<Elements, Failure>",
+      "desc": ""
+    },
+    {
+      "name": "func prepend(Publishers.Sequence<Elements, Failure>.Output...) -> Publishers.Sequence<Elements, Failure>",
+      "desc": ""
+    },
+    {
+      "name": "func prepend(Publishers.Sequence<Elements, Failure>) -> Publishers.Sequence<Elements, Failure>",
+      "desc": ""
+    },
+    {
+      "name": "func reduce<T>(T, (T, Publishers.Sequence<Elements, Failure>.Output) -> T) -> Result<T, Failure>.Publisher",
+      "desc": ""
+    },
+    {
+      "name": "func removeDuplicates() -> Publishers.Sequence<[Publishers.Sequence<Elements, Failure>.Output], Failure>",
+      "desc": ""
+    },
+    {
+      "name": "func replaceNil<T>(with: T) -> Publishers.Sequence<[Publishers.Sequence<Elements, Failure>.Output], Failure>",
+      "desc": ""
+    },
+    {
+      "name": "func scan<T>(T, (T, Publishers.Sequence<Elements, Failure>.Output) -> T) -> Publishers.Sequence<[T], Failure>",
+      "desc": ""
+    },
+    {
+      "name": "func setFailureType<E>(to: E.Type) -> Publishers.Sequence<Elements, E>",
+      "desc": ""
+    },
+    {
+      "name": "func tryAllSatisfy((Publishers.Sequence<Elements, Failure>.Output) throws -> Bool) -> Result<Bool, Error>.Publisher",
+      "desc": ""
+    },
+    {
+      "name": "func tryContains(where: (Publishers.Sequence<Elements, Failure>.Output) throws -> Bool) -> Result<Bool, Error>.Publisher",
+      "desc": ""
+    },
+    {
+      "name": "func tryReduce<T>(T, (T, Publishers.Sequence<Elements, Failure>.Output) throws -> T) -> Result<T, Error>.Publisher",
+      "desc": ""
+    }
+  ],
+  "declaration": "struct Sequence<Elements, Failure> where Elements : Sequence, Failure : Error",
+  "conformsTo": [
+    "Equatable",
+    "Publisher"
+  ]
+}

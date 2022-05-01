@@ -1,0 +1,86 @@
+{
+  "path": "/documentation/network/nwendpoint/port",
+  "type": "Structure",
+  "name": "NWEndpoint.Port",
+  "desc": "A port number you use along with a host to identify a network endpoint.",
+  "items": [
+    {
+      "name": "init?(String)",
+      "desc": "Initializes a port with a string."
+    },
+    {
+      "name": "init?(rawValue: UInt16)",
+      "desc": "Initializes a port with a raw UInt16 value."
+    },
+    {
+      "name": "init(integerLiteral: NWEndpoint.Port.IntegerLiteralType)",
+      "desc": "Initializes a port with a literal type."
+    },
+    {
+      "name": "typealias NWEndpoint.Port.IntegerLiteralType",
+      "desc": "A literal type defined for ports."
+    },
+    {
+      "name": "static let any: NWEndpoint.Port",
+      "desc": "The unspecified port (port 0)."
+    },
+    {
+      "name": "static let ssh: NWEndpoint.Port",
+      "desc": "The Secure Shell port (port 22)."
+    },
+    {
+      "name": "static let smtp: NWEndpoint.Port",
+      "desc": "The Simple Mail Transfer Protocol port (port 25)."
+    },
+    {
+      "name": "static let http: NWEndpoint.Port",
+      "desc": "The Hypertext Transfer Protocol port (port 80)."
+    },
+    {
+      "name": "static let pop: NWEndpoint.Port",
+      "desc": "The Post Office Protocol port (port 110)."
+    },
+    {
+      "name": "static let imap: NWEndpoint.Port",
+      "desc": "The Internet Message Access Protocol port (port 143)."
+    },
+    {
+      "name": "static let https: NWEndpoint.Port",
+      "desc": "The Secure Hypertext Transfer Protocol port (port 443)."
+    },
+    {
+      "name": "static let imaps: NWEndpoint.Port",
+      "desc": "The Secure Internet Message Access Protocol port (port 993)."
+    },
+    {
+      "name": "static let socks: NWEndpoint.Port",
+      "desc": "The SOCKS proxy protocol port (port 1080)."
+    },
+    {
+      "name": "var rawValue: UInt16"
+    },
+    {
+      "name": "var debugDescription: String"
+    },
+    {
+      "name": "static func != (NWEndpoint.Port, NWEndpoint.Port) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "var hashValue: Int"
+    },
+    {
+      "name": "typealias NWEndpoint.Port.RawValue"
+    }
+  ],
+  "declaration": "struct NWEndpoint.Port",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "ExpressibleByIntegerLiteral",
+    "Hashable",
+    "RawRepresentable"
+  ]
+}

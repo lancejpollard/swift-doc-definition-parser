@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/cloudkit/ckfetchrecordchangesoperation",
+  "type": "Class",
+  "name": "CKFetchRecordChangesOperation",
+  "desc": "An operation that reports on the changed and deleted records in the specified record zone.DeprecatedUse CKFetchRecordZoneChangesOperation instead.",
+  "items": [
+    {
+      "name": "init(recordZoneID: CKRecordZone.ID, previousServerChangeToken: CKServerChangeToken?)",
+      "desc": "Creates an operation for fetching changes in the specified record zone."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates an empty fetch record changes operation."
+    },
+    {
+      "name": "var recordZoneID: CKRecordZone.ID?",
+      "desc": "The ID of the record zone with the records you want to fetch."
+    },
+    {
+      "name": "var previousServerChangeToken: CKServerChangeToken?",
+      "desc": "The token that identifies the starting point for retrieving changes."
+    },
+    {
+      "name": "var desiredKeys: [String]?",
+      "desc": "The fields to fetch for the requested records."
+    },
+    {
+      "name": "var resultsLimit: Int",
+      "desc": "The maximum number of changed records to report with this operation object."
+    },
+    {
+      "name": "var moreComing: Bool",
+      "desc": "A Boolean value that indicates whether more results are available."
+    },
+    {
+      "name": "var recordChangedBlock: ((CKRecord) -> Void)?",
+      "desc": "The block to execute with the contents of a changed record."
+    },
+    {
+      "name": "var recordWithIDWasDeletedBlock: ((CKRecord.ID) -> Void)?",
+      "desc": "The block to execute with the ID of a deleted record."
+    },
+    {
+      "name": "var fetchRecordChangesCompletionBlock: ((CKServerChangeToken?, Data?, Error?) -> Void)?",
+      "desc": "The block to execute when the system finishes processing all changes."
+    }
+  ],
+  "declaration": "class CKFetchRecordChangesOperation : CKDatabaseOperation",
+  "inheritsFrom": [
+    "CKDatabaseOperation"
+  ]
+}

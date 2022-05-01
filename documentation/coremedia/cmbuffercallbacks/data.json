@@ -1,0 +1,59 @@
+{
+  "path": "/documentation/coremedia/cmbuffercallbacks",
+  "type": "Structure",
+  "name": "CMBufferCallbacks",
+  "desc": "A structure that stores the callbacks that perform buffer operations.",
+  "items": [
+    {
+      "name": "var compare: CMBufferCompareCallback?",
+      "desc": "This callback is called multiple times from CMBufferQueueEnqueue(_:buffer:), to perform an insertion sort."
+    },
+    {
+      "name": "typealias CMBufferCompareCallback",
+      "desc": "Callback that compares one CMBuffer with another."
+    },
+    {
+      "name": "typealias CMBufferGetBooleanCallback",
+      "desc": "Callback that returns a Boolean value from a CMBuffer."
+    },
+    {
+      "name": "typealias CMBufferGetTimeCallback",
+      "desc": "Callback that returns a CMTime from a CMBuffer."
+    },
+    {
+      "name": "var dataBecameReadyNotification: Unmanaged<CFString>?",
+      "desc": "If triggers of type kCMBufferQueueTrigger_WhenDataBecomesReady are installed, the queue will listen for this notification on the head buffer."
+    },
+    {
+      "name": "var getDecodeTimeStamp: CMBufferGetTimeCallback?",
+      "desc": "Client callback that returns a CMTime from a CMBuffer."
+    },
+    {
+      "name": "var getDuration: CMBufferGetTimeCallback",
+      "desc": "This callback is called (once) during enqueue and dequeue operations to update the total duration of the queue."
+    },
+    {
+      "name": "var getPresentationTimeStamp: CMBufferGetTimeCallback?",
+      "desc": "Client callback that returns a CMTime from a CMBuffer."
+    },
+    {
+      "name": "var getSize: CMBufferGetSizeCallback?"
+    },
+    {
+      "name": "var isDataReady: CMBufferGetBooleanCallback?",
+      "desc": "This callback is called from CMBufferQueueDequeueIfDataReady(_:), to ask if the buffer that is about to be dequeued is ready."
+    },
+    {
+      "name": "var refcon: UnsafeMutableRawPointer?",
+      "desc": "Contextual data to be passed to all callbacks."
+    },
+    {
+      "name": "var version: UInt32",
+      "desc": "The callback version."
+    },
+    {
+      "name": "init(version: UInt32, refcon: UnsafeMutableRawPointer?, getDecodeTimeStamp: CMBufferGetTimeCallback?, getPresentationTimeStamp: CMBufferGetTimeCallback?, getDuration: CMBufferGetTimeCallback, isDataReady: CMBufferGetBooleanCallback?, compare: CMBufferCompareCallback?, dataBecameReadyNotification: Unmanaged<CFString>?, getSize: CMBufferGetSizeCallback?)"
+    }
+  ],
+  "declaration": "struct CMBufferCallbacks"
+}

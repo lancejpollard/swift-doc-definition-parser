@@ -1,0 +1,39 @@
+{
+  "path": "/documentation/swiftui/uiviewcontrollerrepresentable",
+  "type": "Protocol",
+  "name": "UIViewControllerRepresentable",
+  "desc": "A view that represents a UIKit view controller.",
+  "items": [
+    {
+      "name": "func makeUIViewController(context: Self.Context) -> Self.UIViewControllerType",
+      "desc": "Creates the view controller object and configures its initial state."
+    },
+    {
+      "name": "func updateUIViewController(Self.UIViewControllerType, context: Self.Context)",
+      "desc": "Updates the state of the specified view controller with new information from SwiftUI."
+    },
+    {
+      "name": "typealias Context"
+    },
+    {
+      "name": "associatedtype UIViewControllerType : UIViewController",
+      "desc": "The type of view controller to present."
+    },
+    {
+      "name": "static func dismantleUIViewController(Self.UIViewControllerType, coordinator: Self.Coordinator)",
+      "desc": "Cleans up the presented view controller (and coordinator) in anticipation of their removal."
+    },
+    {
+      "name": "func makeCoordinator() -> Self.Coordinator",
+      "desc": "Creates the custom instance that you use to communicate changes from your view controller to other parts of your SwiftUI interface."
+    },
+    {
+      "name": "associatedtype Coordinator = Void",
+      "desc": "A type to coordinate with the view controller."
+    }
+  ],
+  "declaration": "protocol UIViewControllerRepresentable : View where Self.Body == Never",
+  "inheritsFrom": [
+    "View"
+  ]
+}

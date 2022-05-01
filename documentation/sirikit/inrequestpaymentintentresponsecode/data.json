@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/sirikit/inrequestpaymentintentresponsecode",
+  "type": "Enumeration",
+  "name": "INRequestPaymentIntentResponseCode",
+  "desc": "Constants indicating the state of the response.",
+  "items": [
+    {
+      "name": "case unspecified",
+      "desc": "The response didn’t specify a response code."
+    },
+    {
+      "name": "case ready",
+      "desc": "You are ready to handle the intent."
+    },
+    {
+      "name": "case inProgress",
+      "desc": "You are in the process of handling the intent."
+    },
+    {
+      "name": "case success",
+      "desc": "You successfully handled the intent."
+    },
+    {
+      "name": "case failure",
+      "desc": "You were unable to deliver the payment request."
+    },
+    {
+      "name": "case failureRequiringAppLaunch",
+      "desc": "The user must launch your app to make the payment request."
+    },
+    {
+      "name": "case failureCredentialsUnverified",
+      "desc": "The request failed because you couldn’t verify one of the user’s credentials."
+    },
+    {
+      "name": "case failurePaymentsAmountBelowMinimum",
+      "desc": "The request failed because the specified amount was below the required minimum established by your app."
+    },
+    {
+      "name": "case failurePaymentsAmountAboveMaximum",
+      "desc": "The request failed because the specified amount was above the allowed maximum established by your app."
+    },
+    {
+      "name": "case failurePaymentsCurrencyUnsupported",
+      "desc": "The request failed because your app does not support the specified currency."
+    },
+    {
+      "name": "case failureNoBankAccount",
+      "desc": "The request failed because you couldn’t determine a user’s bank account information."
+    },
+    {
+      "name": "case failureNotEligible",
+      "desc": "The request failed because a user was not eligible to perform the transaction."
+    },
+    {
+      "name": "case failureTermsAndConditionsAcceptanceRequired",
+      "desc": "The request failed because the user must accept the app’s terms and conditions."
+    }
+  ],
+  "declaration": "enum INRequestPaymentIntentResponseCode : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

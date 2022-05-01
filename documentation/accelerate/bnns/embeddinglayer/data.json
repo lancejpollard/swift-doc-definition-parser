@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/accelerate/bnns/embeddinglayer",
+  "type": "Class",
+  "name": "BNNS.EmbeddingLayer",
+  "desc": "A layer object that wraps an embedding filter and manages its deinitialization.",
+  "items": [
+    {
+      "name": "init?(input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, dictionary: BNNSNDArrayDescriptor, paddingIndex: Int, maximumNorm: Float, normType: BNNS.Norm, scalesGradientByFrequency: Bool, filterParameters: BNNSFilterParameters?)",
+      "desc": "Returns a new embedding layer."
+    },
+    {
+      "name": "struct BNNS.Norm",
+      "desc": "Constants that describe norm types."
+    },
+    {
+      "name": "func apply(batchSize: Int, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor)",
+      "desc": "Applies the layer to a set of input objects, writing the result to a set of output objects."
+    },
+    {
+      "name": "func applyBackward(batchSize: Int, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, outputGradient: BNNSNDArrayDescriptor, generatingWeightsGradient: BNNSNDArrayDescriptor)",
+      "desc": "Applies the layer backward to generate input gradients."
+    }
+  ],
+  "declaration": "class EmbeddingLayer : BNNS.Layer",
+  "inheritsFrom": [
+    "BNNS.Layer"
+  ]
+}

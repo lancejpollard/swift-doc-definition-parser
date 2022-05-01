@@ -1,0 +1,104 @@
+{
+  "path": "/documentation/carekit/ocktaskviewcontroller",
+  "type": "Generic Class",
+  "name": "OCKTaskViewController",
+  "desc": "An abstract superclass to all synchronized view controllers, that displays a task and its events.",
+  "items": [
+    {
+      "name": "init(controller: Controller, viewSynchronizer: ViewSynchronizer)",
+      "desc": "Creates a new task view controller with a specific controller and synchronizer."
+    },
+    {
+      "name": "init(task: OCKAnyTask, eventQuery: OCKEventQuery, storeManager: OCKSynchronizedStoreManager)",
+      "desc": "Creates a new task view controller for a specific task, with an event query to limit the results from the store."
+    },
+    {
+      "name": "init(taskID: String, eventQuery: OCKEventQuery, storeManager: OCKSynchronizedStoreManager)",
+      "desc": "Creates a new task view controller with a specific task identifier and event query."
+    },
+    {
+      "name": "init(taskIDs: [String], eventQuery: OCKEventQuery, storeManager: OCKSynchronizedStoreManager)",
+      "desc": "Creates a new task view controller with an array of specific task identifiers, and event query."
+    },
+    {
+      "name": "init(viewSynchronizer: ViewSynchronizer, task: OCKAnyTask, eventQuery: OCKEventQuery, storeManager: OCKSynchronizedStoreManager)",
+      "desc": "Creates a new task view controller with a specific synchronizer, task, and query."
+    },
+    {
+      "name": "init(viewSynchronizer: ViewSynchronizer, taskID: String, eventQuery: OCKEventQuery, storeManager: OCKSynchronizedStoreManager)",
+      "desc": "Creates a new task view controller with a specific task identifier, synchronizer, and query."
+    },
+    {
+      "name": "init(viewSynchronizer: ViewSynchronizer, taskIDs: [String], eventQuery: OCKEventQuery, storeManager: OCKSynchronizedStoreManager)",
+      "desc": "Creates a new task view controller with an array of specific task identifiers, synchronizer, and query."
+    },
+    {
+      "name": "var delegate: OCKTaskViewControllerDelegate?",
+      "desc": "An object that handles important events inside a view controller."
+    },
+    {
+      "name": "protocol OCKTaskViewControllerDelegate",
+      "desc": "A protocol for handling changes in events inside a view controller."
+    },
+    {
+      "name": "func didSelectTaskView(UIView & OCKTaskDisplayable, eventIndexPath: IndexPath)",
+      "desc": "Notifies the delegate a task view has been selected."
+    },
+    {
+      "name": "let controller: Controller",
+      "desc": "An object that handles interacting with data from the store."
+    },
+    {
+      "name": "var taskView: ViewSynchronizer.View",
+      "desc": "The view that displays task data."
+    },
+    {
+      "name": "let viewSynchronizer: ViewSynchronizer",
+      "desc": "An object that handles updating the view when data in the store changes."
+    },
+    {
+      "name": "var hashValue: Int"
+    },
+    {
+      "name": "func contains(UIFocusEnvironment) -> Bool"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "func taskView(UIView & OCKTaskDisplayable, didCompleteEvent: Bool, at: IndexPath, sender: Any?)"
+    },
+    {
+      "name": "func taskView(UIView & OCKTaskDisplayable, didCreateOutcomeValueAt: Int, eventIndexPath: IndexPath, sender: Any?)"
+    },
+    {
+      "name": "func taskView(UIView & OCKTaskDisplayable, didSelectOutcomeValueAt: Int, eventIndexPath: IndexPath, sender: Any?)"
+    },
+    {
+      "name": "func viewDidLoad()"
+    },
+    {
+      "name": "static func != (OCKTaskViewController<Controller, ViewSynchronizer>, OCKTaskViewController<Controller, ViewSynchronizer>) -> Bool"
+    },
+    {
+      "name": "static func == (NSObject, NSObject) -> Bool"
+    },
+    {
+      "name": "struct OCKTaskViewController.KeyValueObservingPublisher"
+    }
+  ],
+  "declaration": "class OCKTaskViewController<Controller, ViewSynchronizer> : UIViewController where Controller : OCKTaskControllerProtocol, ViewSynchronizer : OCKTaskViewSynchronizerProtocol",
+  "inheritsFrom": [
+    "UIViewController"
+  ],
+  "conformsTo": [
+    "CVarArg",
+    "Equatable",
+    "Hashable",
+    "NSExtensionRequestHandling",
+    "OCKTaskViewDelegate",
+    "UIPasteConfigurationSupporting",
+    "UIStateRestoring",
+    "UIUserActivityRestoring"
+  ]
+}

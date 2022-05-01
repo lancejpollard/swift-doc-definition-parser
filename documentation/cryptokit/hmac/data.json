@@ -1,0 +1,57 @@
+{
+  "path": "/documentation/cryptokit/hmac",
+  "type": "Generic Structure",
+  "name": "HMAC",
+  "desc": "A hash-based message authentication algorithm.",
+  "items": [
+    {
+      "name": "typealias HMAC.Key",
+      "desc": "An alias for the symmetric key type used to compute or verify a message authentication code."
+    },
+    {
+      "name": "struct SymmetricKey",
+      "desc": "A symmetric cryptographic key."
+    },
+    {
+      "name": "typealias HMAC.MAC",
+      "desc": "An alias for a hash-based message authentication code."
+    },
+    {
+      "name": "struct HashedAuthenticationCode",
+      "desc": "A hash-based message authentication code."
+    },
+    {
+      "name": "protocol MessageAuthenticationCode",
+      "desc": "A type that represents a message authentication code."
+    },
+    {
+      "name": "static func authenticationCode<D>(for: D, using: SymmetricKey) -> HMAC<H>.MAC",
+      "desc": "Computes a message authentication code for the given data."
+    },
+    {
+      "name": "init(key: SymmetricKey)",
+      "desc": "Creates a message authentication code generator."
+    },
+    {
+      "name": "func update<D>(data: D)",
+      "desc": "Updates the message authentication code computation with a block of data."
+    },
+    {
+      "name": "func finalize() -> HMAC<H>.MAC",
+      "desc": "Finalizes the message authentication computation and returns the computed code."
+    },
+    {
+      "name": "static func isValidAuthenticationCode<D>(HMAC<H>.MAC, authenticating: D, using: SymmetricKey) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the given message authentication code is valid for a block of data."
+    },
+    {
+      "name": "static func isValidAuthenticationCode(HMAC<H>.MAC, authenticating: UnsafeRawBufferPointer, using: SymmetricKey) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the given message authentication code is valid for a block of data stored in a buffer."
+    },
+    {
+      "name": "static func isValidAuthenticationCode<C, D>(C, authenticating: D, using: SymmetricKey) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the given message authentication code represented as contiguous bytes is valid for a block of data."
+    }
+  ],
+  "declaration": "struct HMAC<H> where H : HashFunction"
+}

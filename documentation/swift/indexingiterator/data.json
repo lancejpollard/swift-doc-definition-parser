@@ -1,0 +1,196 @@
+{
+  "path": "/documentation/swift/indexingiterator",
+  "type": "Generic Structure",
+  "name": "IndexingIterator",
+  "desc": "A type that iterates over a collection using its indices.",
+  "items": [
+    {
+      "name": "typealias IndexingIterator.Element",
+      "desc": "The type of element traversed by the iterator."
+    },
+    {
+      "name": "typealias IndexingIterator.Iterator",
+      "desc": "A type that provides the sequence’s iteration interface and encapsulates its iteration state."
+    },
+    {
+      "name": "typealias IndexingIterator.SubSequence"
+    },
+    {
+      "name": "var lazy: LazySequence<IndexingIterator<Elements>>",
+      "desc": "A sequence containing the same elements as this sequence, but on which some operations, such as map and filter, are implemented lazily."
+    },
+    {
+      "name": "var underestimatedCount: Int",
+      "desc": "A value less than or equal to the number of elements in the sequence, calculated nondestructively."
+    },
+    {
+      "name": "func allSatisfy((Elements.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether every element of a sequence satisfies a given predicate."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((Elements.Element) -> ElementOfResult?) -> [ElementOfResult]",
+      "desc": "Returns an array containing the non-nil results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func contains(Elements.Element) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence contains the given element."
+    },
+    {
+      "name": "func contains(where: (Elements.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func drop(while: (Elements.Element) -> Bool) -> DropWhileSequence<IndexingIterator<Elements>>",
+      "desc": "Returns a sequence by skipping the initial, consecutive elements that satisfy the given predicate."
+    },
+    {
+      "name": "func dropFirst(Int) -> DropFirstSequence<IndexingIterator<Elements>>",
+      "desc": "Returns a sequence containing all but the given number of initial elements."
+    },
+    {
+      "name": "func dropLast(Int) -> [Elements.Element]",
+      "desc": "Returns a sequence containing all but the given number of final elements."
+    },
+    {
+      "name": "func elementsEqual<OtherSequence>(OtherSequence) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this sequence and another sequence contain the same elements in the same order."
+    },
+    {
+      "name": "func elementsEqual<OtherSequence>(OtherSequence, by: (Elements.Element, OtherSequence.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this sequence and another sequence contain equivalent elements in the same order, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func enumerated() -> EnumeratedSequence<IndexingIterator<Elements>>",
+      "desc": "Returns a sequence of pairs (n, x), where n represents a consecutive integer starting at zero and x represents an element of the sequence."
+    },
+    {
+      "name": "func filter((Elements.Element) -> Bool) -> [Elements.Element]",
+      "desc": "Returns an array containing, in order, the elements of the sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func first(where: (Elements.Element) -> Bool) -> Elements.Element?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((Elements.Element) -> SegmentOfResult) -> [SegmentOfResult.Element]",
+      "desc": "Returns an array containing the concatenated results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func forEach((Elements.Element) -> Void)",
+      "desc": "Calls the given closure on each element in the sequence in the same order as a for-in loop."
+    },
+    {
+      "name": "func joined() -> FlattenSequence<IndexingIterator<Elements>>",
+      "desc": "Returns the elements of this sequence of sequences, concatenated."
+    },
+    {
+      "name": "func joined(separator: String) -> String",
+      "desc": "Returns a new string by concatenating the elements of the sequence, adding the given separator between each element."
+    },
+    {
+      "name": "func joined<Separator>(separator: Separator) -> JoinedSequence<IndexingIterator<Elements>>",
+      "desc": "Returns the concatenated elements of this sequence of sequences, inserting the given separator between each element."
+    },
+    {
+      "name": "func lexicographicallyPrecedes<OtherSequence>(OtherSequence) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the less-than operator (<) to compare elements."
+    },
+    {
+      "name": "func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Elements.Element, Elements.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the given predicate to compare elements."
+    },
+    {
+      "name": "func makeIterator() -> IndexingIterator<Elements>",
+      "desc": "Returns an iterator over the elements of this sequence."
+    },
+    {
+      "name": "func map<T>((Elements.Element) -> T) -> [T]",
+      "desc": "Returns an array containing the results of mapping the given closure over the sequence’s elements."
+    },
+    {
+      "name": "func max() -> Elements.Element?",
+      "desc": "Returns the maximum element in the sequence."
+    },
+    {
+      "name": "func max(by: (Elements.Element, Elements.Element) -> Bool) -> Elements.Element?",
+      "desc": "Returns the maximum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func min() -> Elements.Element?",
+      "desc": "Returns the minimum element in the sequence."
+    },
+    {
+      "name": "func min(by: (Elements.Element, Elements.Element) -> Bool) -> Elements.Element?",
+      "desc": "Returns the minimum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func next() -> Elements.Element?",
+      "desc": "Advances to the next element and returns it, or nil if no next element exists."
+    },
+    {
+      "name": "func prefix(Int) -> PrefixSequence<IndexingIterator<Elements>>",
+      "desc": "Returns a sequence, up to the specified maximum length, containing the initial elements of the sequence."
+    },
+    {
+      "name": "func prefix(while: (Elements.Element) -> Bool) -> [Elements.Element]",
+      "desc": "Returns a sequence containing the initial, consecutive elements that satisfy the given predicate."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, Elements.Element) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, Elements.Element) -> ()) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "func reversed() -> [Elements.Element]",
+      "desc": "Returns an array containing the elements of this sequence in reverse order."
+    },
+    {
+      "name": "func shuffled() -> [Elements.Element]",
+      "desc": "Returns the elements of the sequence, shuffled."
+    },
+    {
+      "name": "func shuffled<T>(using: inout T) -> [Elements.Element]",
+      "desc": "Returns the elements of the sequence, shuffled using the given generator as a source for randomness."
+    },
+    {
+      "name": "func sorted() -> [Elements.Element]",
+      "desc": "Returns the elements of the sequence, sorted."
+    },
+    {
+      "name": "func sorted(by: (Elements.Element, Elements.Element) -> Bool) -> [Elements.Element]",
+      "desc": "Returns the elements of the sequence, sorted using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Elements.Element) -> Bool) -> [ArraySlice<Elements.Element>]",
+      "desc": "Returns the longest possible subsequences of the sequence, in order, that don’t contain elements satisfying the given predicate. Elements that are used to split the sequence are not returned as part of any subsequence."
+    },
+    {
+      "name": "func split(separator: Elements.Element, maxSplits: Int, omittingEmptySubsequences: Bool) -> [ArraySlice<Elements.Element>]",
+      "desc": "Returns the longest possible subsequences of the sequence, in order, around elements equal to the given element."
+    },
+    {
+      "name": "func starts<PossiblePrefix>(with: PossiblePrefix) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the initial elements of the sequence are the same as the elements in another sequence."
+    },
+    {
+      "name": "func starts<PossiblePrefix>(with: PossiblePrefix, by: (Elements.Element, PossiblePrefix.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the initial elements of the sequence are equivalent to the elements in another sequence, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func suffix(Int) -> [Elements.Element]",
+      "desc": "Returns a subsequence, up to the given maximum length, containing the final elements of the sequence."
+    },
+    {
+      "name": "func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<Elements.Element>) -> R) -> R?",
+      "desc": "Executes a closure on the sequence’s contiguous storage."
+    }
+  ],
+  "declaration": "@frozen struct IndexingIterator<Elements> where Elements : Collection",
+  "conformsTo": [
+    "IteratorProtocol",
+    "Sequence"
+  ]
+}

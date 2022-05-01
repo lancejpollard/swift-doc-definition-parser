@@ -1,0 +1,88 @@
+{
+  "path": "/documentation/phase/phasesoundevent",
+  "type": "Class",
+  "name": "PHASESoundEvent",
+  "desc": "An object that determines which audio to play.",
+  "items": [
+    {
+      "name": "init(engine: PHASEEngine, assetIdentifier: String)",
+      "desc": "Creates a sound event node with the given asset."
+    },
+    {
+      "name": "init(engine: PHASEEngine, assetIdentifier: String, mixerParameters: PHASEMixerParameters)",
+      "desc": "Creates a sound event node with the given asset and mixer parameters."
+    },
+    {
+      "name": "var mixers: [String : PHASEMixer]",
+      "desc": "Nodes in the event tree that control the volume of their child nodes."
+    },
+    {
+      "name": "var metaParameters: [String : PHASEMetaParameter]",
+      "desc": "The object's meta parameters."
+    },
+    {
+      "name": "func prepare(completion: ((PHASESoundEvent.PrepareHandlerReason) -> Void)?)",
+      "desc": "Enables a sound event to play and runs the argument code when the sound event plays back."
+    },
+    {
+      "name": "enum PHASESoundEvent.PrepareHandlerReason",
+      "desc": "Indicates the results of sound-event preparation."
+    },
+    {
+      "name": "var prepareState: PHASESoundEvent.PrepareState",
+      "desc": "The status of sound-event preparation."
+    },
+    {
+      "name": "enum PHASESoundEvent.PrepareState",
+      "desc": "Indicates the state of sound-event preparation."
+    },
+    {
+      "name": "var renderingState: PHASESoundEvent.RenderingState",
+      "desc": "The sound event’s playback status."
+    },
+    {
+      "name": "var pushStreamNodes: [String : PHASEPushStreamNode]",
+      "desc": "A collection of audio streams for playback."
+    },
+    {
+      "name": "func start(completion: ((PHASESoundEvent.StartHandlerReason) -> Void)?)",
+      "desc": "Invokes the sound event and runs the specified code on completion."
+    },
+    {
+      "name": "enum PHASESoundEvent.StartHandlerReason",
+      "desc": "Indicates the status after starting a sound event."
+    },
+    {
+      "name": "func seek(to: Double, completion: ((PHASESoundEvent.SeekHandlerReason) -> Void)?)",
+      "desc": "Advances the sound event’s playback position to a specific time."
+    },
+    {
+      "name": "enum PHASESoundEvent.SeekHandlerReason",
+      "desc": "Indicates the status after a sound event changes its playback position."
+    },
+    {
+      "name": "func pause()",
+      "desc": "Pauses the sound event."
+    },
+    {
+      "name": "func resume()",
+      "desc": "Resumes the sound event."
+    },
+    {
+      "name": "func stopAndInvalidate()",
+      "desc": "Stops a sound event and prevents it from resuming."
+    },
+    {
+      "name": "var isIndefinite: Bool",
+      "desc": "A Boolean value that indicates whether the sound loops or stops on its own."
+    },
+    {
+      "name": "enum PHASESoundEvent.RenderingState",
+      "desc": "The playback status of audio."
+    }
+  ],
+  "declaration": "class PHASESoundEvent : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

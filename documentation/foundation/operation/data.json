@@ -1,0 +1,88 @@
+{
+  "path": "/documentation/foundation/operation",
+  "type": "Class",
+  "name": "Operation",
+  "desc": "An abstract class that represents the code and data associated with a single task.",
+  "items": [
+    {
+      "name": "func start()",
+      "desc": "Begins the execution of the operation."
+    },
+    {
+      "name": "func main()",
+      "desc": "Performs the receiver’s non-concurrent task."
+    },
+    {
+      "name": "var completionBlock: (() -> Void)?",
+      "desc": "The block to execute after the operation’s main task is completed."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Advises the operation object that it should stop executing its task."
+    },
+    {
+      "name": "var isCancelled: Bool",
+      "desc": "A Boolean value indicating whether the operation has been cancelled"
+    },
+    {
+      "name": "var isExecuting: Bool",
+      "desc": "A Boolean value indicating whether the operation is currently executing."
+    },
+    {
+      "name": "var isFinished: Bool",
+      "desc": "A Boolean value indicating whether the operation has finished executing its task."
+    },
+    {
+      "name": "var isConcurrent: Bool",
+      "desc": "A Boolean value indicating whether the operation executes its task asynchronously."
+    },
+    {
+      "name": "var isAsynchronous: Bool",
+      "desc": "A Boolean value indicating whether the operation executes its task asynchronously."
+    },
+    {
+      "name": "var isReady: Bool",
+      "desc": "A Boolean value indicating whether the operation can be performed now."
+    },
+    {
+      "name": "var name: String?",
+      "desc": "The name of the operation."
+    },
+    {
+      "name": "func addDependency(Operation)",
+      "desc": "Makes the receiver dependent on the completion of the specified operation."
+    },
+    {
+      "name": "func removeDependency(Operation)",
+      "desc": "Removes the receiver’s dependence on the specified operation."
+    },
+    {
+      "name": "var dependencies: [Operation]",
+      "desc": "An array of the operation objects that must finish executing before the current object can begin executing."
+    },
+    {
+      "name": "var qualityOfService: QualityOfService",
+      "desc": "The relative amount of importance for granting system resources to the operation."
+    },
+    {
+      "name": "var queuePriority: Operation.QueuePriority",
+      "desc": "The execution priority of the operation in an operation queue."
+    },
+    {
+      "name": "func waitUntilFinished()",
+      "desc": "Blocks execution of the current thread until the operation object finishes its task."
+    },
+    {
+      "name": "enum Operation.QueuePriority",
+      "desc": "These constants let you prioritize the order in which operations execute."
+    },
+    {
+      "name": "enum QualityOfService",
+      "desc": "Constants that indicate the nature and importance of work to the system."
+    }
+  ],
+  "declaration": "class Operation : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

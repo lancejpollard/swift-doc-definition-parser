@@ -1,0 +1,27 @@
+{
+  "path": "/documentation/coregraphics/cgconfigureoption",
+  "type": "Structure",
+  "name": "CGConfigureOption",
+  "desc": "The scope of the changes in a display configuration transaction.",
+  "items": [
+    {
+      "name": "init(rawValue: UInt32)"
+    },
+    {
+      "name": "static var forAppOnly: CGConfigureOption",
+      "desc": "Changes persist for the lifetime of the current application. After the application terminates, the display configuration settings revert to the current login session."
+    },
+    {
+      "name": "static var forSession: CGConfigureOption",
+      "desc": "Changes persist for the lifetime of the current login session. After the current session terminates, the displays revert to the last saved permanent configuration."
+    },
+    {
+      "name": "static var permanently: CGConfigureOption"
+    }
+  ],
+  "declaration": "struct CGConfigureOption, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

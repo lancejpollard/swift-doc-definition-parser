@@ -1,0 +1,43 @@
+{
+  "path": "/documentation/network/nwconnection/state",
+  "type": "Enumeration",
+  "name": "NWConnection.State",
+  "desc": "States indicating whether a connection can be used to send and receive data.",
+  "items": [
+    {
+      "name": "case setup",
+      "desc": "The connection has been initialized but not started."
+    },
+    {
+      "name": "case waiting(NWError)",
+      "desc": "The connection is waiting for a network path change."
+    },
+    {
+      "name": "case preparing",
+      "desc": "The connection in the process of being established."
+    },
+    {
+      "name": "case ready",
+      "desc": "The connection is established, and ready to send and receive data."
+    },
+    {
+      "name": "case failed(NWError)",
+      "desc": "The connection has disconnected or encountered an error."
+    },
+    {
+      "name": "case cancelled",
+      "desc": "The connection has been canceled."
+    },
+    {
+      "name": "static func != (NWConnection.State, NWConnection.State) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (NWConnection.State, NWConnection.State) -> Bool"
+    }
+  ],
+  "declaration": "enum NWConnection.State",
+  "conformsTo": [
+    "Equatable"
+  ]
+}

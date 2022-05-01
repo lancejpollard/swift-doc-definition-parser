@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/createml/mlcheckpoint",
+  "type": "Structure",
+  "name": "MLCheckpoint",
+  "desc": "The state of a model’s asynchronous training session at a specific point in time during the feature extraction or training phase.",
+  "items": [
+    {
+      "name": "var phase: MLPhase",
+      "desc": "The training session’s phase when it created the checkpoint."
+    },
+    {
+      "name": "var iteration: Int",
+      "desc": "The iteration number of a training session’s phase when it created the checkpoint."
+    },
+    {
+      "name": "var date: Date",
+      "desc": "The time when the training session created the checkpoint."
+    },
+    {
+      "name": "var url: URL",
+      "desc": "The location of the checkpoint in the file system."
+    },
+    {
+      "name": "var metrics: [MLProgress.Metric : Any]",
+      "desc": "Measurements of the model’s performance at the time the session saved the checkpoint."
+    },
+    {
+      "name": "enum MLProgress.Metric",
+      "desc": "Metrics you use to evaluate a model’s performance during a training session."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes the checkpoint into the encoder."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a new checkpoint by decoding from the decoder."
+    }
+  ],
+  "declaration": "struct MLCheckpoint",
+  "conformsTo": [
+    "Decodable",
+    "Encodable"
+  ]
+}

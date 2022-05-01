@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/gameplaykit/gkdecisiontree",
+  "type": "Class",
+  "name": "GKDecisionTree",
+  "desc": "A data structure that models a set of specific questions, their possible answers, and the actions that follow from a series of answers.",
+  "items": [
+    {
+      "name": "init(attribute: NSObjectProtocol)",
+      "desc": "Creates a decision tree starting with the specified initial attribute to test."
+    },
+    {
+      "name": "var rootNode: GKDecisionNode?",
+      "desc": "The decision node at the root of the decision tree, representing the first attribute to test."
+    },
+    {
+      "name": "init(examples: [[NSObjectProtocol]], actions: [NSObjectProtocol], attributes: [NSObjectProtocol])",
+      "desc": "Creates an automatically learned decision tree using the specified attributes, example items, and actions."
+    },
+    {
+      "name": "func findAction(forAnswers: [AnyHashable : NSObjectProtocol]) -> NSObjectProtocol?",
+      "desc": "Searches the decision tree, following the branches corresponding to each of the specified answers, and returns the resulting action object."
+    },
+    {
+      "name": "var randomSource: GKRandomSource",
+      "desc": "The randomizer to be used when evaluating parts of the tree that branch randomly."
+    },
+    {
+      "name": "init(url: URL, error: Error?)"
+    },
+    {
+      "name": "func export(to: URL, error: Error?) -> Bool"
+    }
+  ],
+  "declaration": "class GKDecisionTree : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

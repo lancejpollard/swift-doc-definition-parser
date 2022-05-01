@@ -1,0 +1,127 @@
+{
+  "path": "/documentation/accelerate/bnnsndarraydescriptor",
+  "type": "Structure",
+  "name": "BNNSNDArrayDescriptor",
+  "desc": "A structure that describes the shape, stride, data type, and, optionally, the memory location of an n-dimensional array.",
+  "items": [
+    {
+      "name": "init(flags: BNNSNDArrayFlags, layout: BNNSDataLayout, size: (Int, Int, Int, Int, Int, Int, Int, Int), stride: (Int, Int, Int, Int, Int, Int, Int, Int), data: UnsafeMutableRawPointer?, data_type: BNNSDataType, table_data: UnsafeMutableRawPointer?, table_data_type: BNNSDataType, data_scale: Float, data_bias: Float)",
+      "desc": "Returns a new n-dimensional array descriptor with the specified parameters."
+    },
+    {
+      "name": "init?(data: UnsafeMutableRawBufferPointer, scalarType: BNNSScalar.Type, shape: BNNS.Shape)",
+      "desc": "Returns a new n-dimensional array descriptor that references the same data as the specified raw pointer."
+    },
+    {
+      "name": "init?<T>(data: UnsafeMutableBufferPointer<T>, shape: BNNS.Shape)",
+      "desc": "Returns a new n-dimensional array descriptor that references the same data as the specified pointer."
+    },
+    {
+      "name": "init(dataType: BNNSDataType, shape: BNNS.Shape)",
+      "desc": "Returns a new n-dimensional array descriptor from the specified data type and shape."
+    },
+    {
+      "name": "init()",
+      "desc": "Returns a new n-dimensional array descriptor."
+    },
+    {
+      "name": "struct BNNSNDArrayFlags",
+      "desc": "Options that control the behavior of an n-dimensional array."
+    },
+    {
+      "name": "var flags: BNNSNDArrayFlags",
+      "desc": "Flags that control some behaviors of the n-dimensional array."
+    },
+    {
+      "name": "var layout: BNNSDataLayout",
+      "desc": "The dimension of the n-dimensional array."
+    },
+    {
+      "name": "var size: (Int, Int, Int, Int, Int, Int, Int, Int)",
+      "desc": "The number of values in each dimension."
+    },
+    {
+      "name": "var stride: (Int, Int, Int, Int, Int, Int, Int, Int)",
+      "desc": "The increment, in values, between consecutive elements in each dimension."
+    },
+    {
+      "name": "var data: UnsafeMutableRawPointer?",
+      "desc": "A pointer that is optional and points to the underlying data."
+    },
+    {
+      "name": "var data_type: BNNSDataType",
+      "desc": "The data type of the n-dimensional array."
+    },
+    {
+      "name": "var table_data: UnsafeMutableRawPointer?",
+      "desc": "The lookup table for indexed data types."
+    },
+    {
+      "name": "var table_data_type: BNNSDataType",
+      "desc": "The data type of the lookup table."
+    },
+    {
+      "name": "var data_scale: Float",
+      "desc": "The scale you use to convert integer and unsigned integer data to floating point."
+    },
+    {
+      "name": "var data_bias: Float",
+      "desc": "The bias you use to convert integer and unsigned integer data to floating point."
+    },
+    {
+      "name": "var shape: BNNS.Shape",
+      "desc": "The shape of the n-dimensional array."
+    },
+    {
+      "name": "static func allocate<C>(initializingFrom: C, shape: BNNS.Shape, batchSize: Int) -> BNNSNDArrayDescriptor",
+      "desc": "Returns a new n-dimensional array descriptor that’s initialized with a copy of the elements in the specified collection."
+    },
+    {
+      "name": "static func allocate<Scalar>(randomUniformUsing: BNNS.RandomGenerator, range: ClosedRange<Scalar>, shape: BNNS.Shape, batchSize: Int) -> BNNSNDArrayDescriptor?",
+      "desc": "Returns a new array descriptor that’s initialized with random integer values from the continuous uniform distribution."
+    },
+    {
+      "name": "static func allocate<Scalar>(randomUniformUsing: BNNS.RandomGenerator, range: ClosedRange<Scalar>, shape: BNNS.Shape, batchSize: Int) -> BNNSNDArrayDescriptor?",
+      "desc": "Returns a new array descriptor that’s initialized with random floating-point values from the continuous uniform distribution."
+    },
+    {
+      "name": "static func allocate<Scalar>(randomIn: ClosedRange<Scalar>, shape: BNNS.Shape, batchSize: Int) -> BNNSNDArrayDescriptor",
+      "desc": "Returns a new n-dimensional array descriptor that’s initialized with random values within the specified range."
+    },
+    {
+      "name": "static func allocate<Scalar>(randomIn: ClosedRange<Scalar>, shape: BNNS.Shape, batchSize: Int) -> BNNSNDArrayDescriptor",
+      "desc": "Returns a new n-dimensional array descriptor that’s initialized with random values within the specified range."
+    },
+    {
+      "name": "static func allocate<Scalar, Generator>(randomIn: ClosedRange<Scalar>, using: inout Generator, shape: BNNS.Shape, batchSize: Int) -> BNNSNDArrayDescriptor",
+      "desc": "Returns a new array descriptor that’s initialized with random values within the specified range, using the given generator as a source for randomness."
+    },
+    {
+      "name": "static func allocate<Scalar, Generator>(randomIn: ClosedRange<Scalar>, using: inout Generator, shape: BNNS.Shape, batchSize: Int) -> BNNSNDArrayDescriptor",
+      "desc": "Returns a new array descriptor that’s initialized with random values within the specified range, using the given generator as a source for randomness."
+    },
+    {
+      "name": "static func allocate<T>(repeating: T, shape: BNNS.Shape, batchSize: Int) -> BNNSNDArrayDescriptor",
+      "desc": "Returns a new n-dimensional array descriptor that’s initialized with a single, repeated scalar value."
+    },
+    {
+      "name": "static func allocateUninitialized(scalarType: BNNSScalar.Type, shape: BNNS.Shape, batchSize: Int) -> BNNSNDArrayDescriptor",
+      "desc": "Returns a new n-dimensional array descriptor that’s allocated with uninitialized memory."
+    },
+    {
+      "name": "func deallocate()",
+      "desc": "Deallocates the memory block previously allocated to this n-dimensional array descriptor."
+    },
+    {
+      "name": "func makeArray<T>(of: T.Type, batchSize: Int) -> [T]?",
+      "desc": "Returns a new array that contains a copy of the n-dimensional array descriptor’s data."
+    },
+    {
+      "name": "init?(data: UnsafeMutableRawBufferPointer, scalarType: BNNSScalar.Type, shape: BNNS.Shape, batchSize: Int)"
+    },
+    {
+      "name": "init?<T>(data: UnsafeMutableBufferPointer<T>, shape: BNNS.Shape, batchSize: Int)"
+    }
+  ],
+  "declaration": "struct BNNSNDArrayDescriptor"
+}

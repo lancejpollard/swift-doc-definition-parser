@@ -1,0 +1,73 @@
+{
+  "path": "/documentation/network/nw_txt_record_t",
+  "type": "Type Alias",
+  "name": "nw_txt_record_t",
+  "desc": "A dictionary representing a TXT record in a DNS packet.",
+  "items": [
+    {
+      "name": "func nw_txt_record_create_dictionary() -> nw_txt_record_t",
+      "desc": "Initializes a TXT record as a dictionary of strings."
+    },
+    {
+      "name": "func nw_txt_record_create_with_bytes(UnsafePointer<UInt8>, Int) -> nw_txt_record_t",
+      "desc": "Initializes a TXT record with raw bytes."
+    },
+    {
+      "name": "func nw_txt_record_copy(nw_txt_record_t?) -> nw_txt_record_t?",
+      "desc": "Performs a deep copy of a TXT record."
+    },
+    {
+      "name": "func nw_txt_record_set_key(nw_txt_record_t, UnsafePointer<CChar>, UnsafePointer<UInt8>?, Int) -> Bool",
+      "desc": "Sets a data value in a TXT record dictionary."
+    },
+    {
+      "name": "func nw_txt_record_remove_key(nw_txt_record_t, UnsafePointer<CChar>) -> Bool",
+      "desc": "Removes a data value in a TXT record dictionary."
+    },
+    {
+      "name": "func nw_txt_record_is_dictionary(nw_txt_record_t) -> Bool",
+      "desc": "Checks whether a TXT record conforms to a dictionary format."
+    },
+    {
+      "name": "func nw_txt_record_get_key_count(nw_txt_record_t?) -> Int",
+      "desc": "Accesses the number of keys stored in the TXT record dictionary."
+    },
+    {
+      "name": "func nw_txt_record_apply(nw_txt_record_t, nw_txt_record_applier_t) -> Bool",
+      "desc": "Iterates through all keys in a TXT record dictionary."
+    },
+    {
+      "name": "typealias nw_txt_record_applier_t",
+      "desc": "A block that iterates over values and keys in a TXT record dictionary."
+    },
+    {
+      "name": "func nw_txt_record_access_key(nw_txt_record_t, UnsafePointer<CChar>, nw_txt_record_access_key_t) -> Bool",
+      "desc": "Accesses the value for a specific key in a TXT record dictionary."
+    },
+    {
+      "name": "typealias nw_txt_record_access_key_t",
+      "desc": "A block that returns a value in a TXT record dictionary."
+    },
+    {
+      "name": "func nw_txt_record_find_key(nw_txt_record_t, UnsafePointer<CChar>) -> nw_txt_record_find_key_t",
+      "desc": "Checks the status of value associated with a key in a TXT record dictionary."
+    },
+    {
+      "name": "struct nw_txt_record_find_key_t",
+      "desc": "Status values describing what kind of value is stored in a TXT record dictionary."
+    },
+    {
+      "name": "func nw_txt_record_is_equal(nw_txt_record_t?, nw_txt_record_t?) -> Bool",
+      "desc": "Checks whether two TXT records are equivalent."
+    },
+    {
+      "name": "func nw_txt_record_access_bytes(nw_txt_record_t, nw_txt_record_access_bytes_t) -> Bool",
+      "desc": "Accesses the raw bytes contained within a TXT record."
+    },
+    {
+      "name": "typealias nw_txt_record_access_bytes_t",
+      "desc": "A block that provides access to the raw bytes of a TXT record."
+    }
+  ],
+  "declaration": "typealias nw_txt_record_t = OS_nw_txt_record"
+}

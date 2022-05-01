@@ -1,0 +1,37 @@
+{
+  "path": "/documentation/cloudkit/ckmodifysubscriptionsoperation",
+  "type": "Class",
+  "name": "CKModifySubscriptionsOperation",
+  "desc": "An operation for modifying one or more subscriptions.",
+  "items": [
+    {
+      "name": "init(subscriptionsToSave: [CKSubscription]?, subscriptionIDsToDelete: [CKSubscription.ID]?)",
+      "desc": "Creates an operation for saving and deleting the specified subscriptions."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates an empty modify subscriptions operation."
+    },
+    {
+      "name": "var subscriptionsToSave: [CKSubscription]?",
+      "desc": "The subscriptions to save to the database."
+    },
+    {
+      "name": "var subscriptionIDsToDelete: [CKSubscription.ID]?",
+      "desc": "The IDs of the subscriptions that you want to delete."
+    },
+    {
+      "name": "var modifySubscriptionsResultBlock: ((Result<Void, Error>) -> Void)?"
+    },
+    {
+      "name": "var perSubscriptionDeleteBlock: ((CKSubscription.ID, Result<Void, Error>) -> Void)?"
+    },
+    {
+      "name": "var perSubscriptionSaveBlock: ((CKSubscription.ID, Result<CKSubscription, Error>) -> Void)?"
+    }
+  ],
+  "declaration": "class CKModifySubscriptionsOperation : CKDatabaseOperation",
+  "inheritsFrom": [
+    "CKDatabaseOperation"
+  ]
+}

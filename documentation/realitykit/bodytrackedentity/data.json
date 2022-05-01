@@ -1,0 +1,51 @@
+{
+  "path": "/documentation/realitykit/bodytrackedentity",
+  "type": "Class",
+  "name": "BodyTrackedEntity",
+  "desc": "An entity used to animate a virtual character in an AR scene by tracking a real person.",
+  "items": [
+    {
+      "name": "var bodyTracking: BodyTrackingComponent",
+      "desc": "The body-tracking component for the body-tracked entity."
+    },
+    {
+      "name": "struct BodyTrackingComponent",
+      "desc": "A component for tracking people in an AR session."
+    },
+    {
+      "name": "protocol HasBodyTracking",
+      "desc": "An interface that enables the animation of a virtual character by tracking a real person in AR."
+    },
+    {
+      "name": "var model: ModelComponent?",
+      "desc": "The model component for the entity."
+    },
+    {
+      "name": "struct ModelComponent",
+      "desc": "A collection of resources that create the visual appearance of an entity."
+    },
+    {
+      "name": "var jointNames: [String]",
+      "desc": "The names of all the joints in the model."
+    },
+    {
+      "name": "var jointTransforms: [Transform]",
+      "desc": "The relative joint transforms of the model."
+    },
+    {
+      "name": "struct SynchronizationComponent",
+      "desc": "A component that synchronizes an entity between processes and networked applications."
+    },
+    {
+      "name": "var modelDebugOptions: ModelDebugOptionsComponent?"
+    }
+  ],
+  "declaration": "class BodyTrackedEntity : Entity",
+  "inheritsFrom": [
+    "Entity"
+  ],
+  "conformsTo": [
+    "HasBodyTracking",
+    "HasModel"
+  ]
+}

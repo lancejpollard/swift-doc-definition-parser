@@ -1,0 +1,47 @@
+{
+  "path": "/documentation/createml/mljob",
+  "type": "Generic Class",
+  "name": "MLJob",
+  "desc": "The representation of a model’s asynchronous training session you use to monitor the session’s progress or terminate its execution.",
+  "items": [
+    {
+      "name": "var checkpoints: AnyPublisher<MLCheckpoint, Never>",
+      "desc": "A publisher that sends a checkpoint for each of the session’s checkpoint intervals."
+    },
+    {
+      "name": "var result: AnyPublisher<Result, Error>",
+      "desc": "A publisher that provides a result when the training session has finished."
+    },
+    {
+      "name": "func store(in: inout Set<AnyCancellable>)",
+      "desc": "Inserts itself into the set of cancelable items."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Stops the training session’s execution."
+    },
+    {
+      "name": "var isCanceled: Bool",
+      "desc": "A Boolean value that indicates whether you canceled the job."
+    },
+    {
+      "name": "let startDate: Date",
+      "desc": "The date and time when the training session began."
+    },
+    {
+      "name": "let progress: Progress",
+      "desc": "The training session’s current progress."
+    },
+    {
+      "name": "struct MLProgress",
+      "desc": "A convenience type that exposes information about the progress of a training session."
+    },
+    {
+      "name": "var phase: AnyPublisher<MLPhase, Never>"
+    }
+  ],
+  "declaration": "final class MLJob<Result>",
+  "conformsTo": [
+    "Cancellable"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/uikit/uicollisionbehavior",
+  "type": "Class",
+  "name": "UICollisionBehavior",
+  "desc": "An object that confers to a specified array of dynamic items the ability to engage in collisions with each other and with the behavior’s specified boundaries.",
+  "items": [
+    {
+      "name": "func addItem(UIDynamicItem)",
+      "desc": "Adds a dynamic item to the collision behavior’s item array."
+    },
+    {
+      "name": "init(items: [UIDynamicItem])",
+      "desc": "Initializes a collision behavior with an array of dynamic items."
+    },
+    {
+      "name": "func removeItem(UIDynamicItem)",
+      "desc": "Removes a specific dynamic item from the collision behavior."
+    },
+    {
+      "name": "var items: [UIDynamicItem]",
+      "desc": "Returns the set of dynamic items you’ve added to the collision behavior."
+    },
+    {
+      "name": "var collisionDelegate: UICollisionBehaviorDelegate?",
+      "desc": "The delegate object that you want to respond to collisions for the collision behavior."
+    },
+    {
+      "name": "protocol UICollisionBehaviorDelegate",
+      "desc": "To respond to UIKit dynamic item collisions, configure a custom class to adopt the UICollisionBehaviorDelegate protocol. Then, in a collision behavior (an instance of the UICollisionBehavior class), set the delegate to be an instance of your custom class."
+    },
+    {
+      "name": "func addBoundary(withIdentifier: NSCopying, for: UIBezierPath)",
+      "desc": "Adds a collision boundary, specified as a Bezier path, to the collision behavior."
+    },
+    {
+      "name": "func addBoundary(withIdentifier: NSCopying, from: CGPoint, to: CGPoint)",
+      "desc": "Adds a collision boundary, specified as a line segment, to the collision behavior."
+    },
+    {
+      "name": "var boundaryIdentifiers: [NSCopying]?",
+      "desc": "The set of boundary identifiers that you’ve added to the collision behavior."
+    },
+    {
+      "name": "func boundary(withIdentifier: NSCopying) -> UIBezierPath?",
+      "desc": "Returns a specified Bezier-path boundary."
+    },
+    {
+      "name": "var collisionMode: UICollisionBehavior.Mode",
+      "desc": "The type of edges that participate in collisions for the collision behavior."
+    },
+    {
+      "name": "func removeAllBoundaries()",
+      "desc": "Removes all previously-specified collision boundaries from the collision behavior."
+    },
+    {
+      "name": "func removeBoundary(withIdentifier: NSCopying)",
+      "desc": "Removes a specific collision boundary from the collision behavior."
+    },
+    {
+      "name": "func setTranslatesReferenceBoundsIntoBoundary(with: UIEdgeInsets)",
+      "desc": "Specifies a collision boundary based on the bounds of the animation reference system, with optional insets."
+    },
+    {
+      "name": "var translatesReferenceBoundsIntoBoundary: Bool",
+      "desc": "Specifies whether a boundary based on the reference system is active."
+    },
+    {
+      "name": "struct UICollisionBehavior.Mode",
+      "desc": "The types of edges that participate in collisions for a collision behavior."
+    }
+  ],
+  "declaration": "@MainActor class UICollisionBehavior : UIDynamicBehavior",
+  "inheritsFrom": [
+    "UIDynamicBehavior"
+  ]
+}

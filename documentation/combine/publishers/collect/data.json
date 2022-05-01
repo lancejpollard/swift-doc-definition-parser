@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/combine/publishers/collect",
+  "type": "Structure",
+  "name": "Publishers.Collect",
+  "desc": "A publisher that buffers items.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream)",
+      "desc": "Creates a publisher that buffers items."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher that this publisher receives elements from."
+    },
+    {
+      "name": "static func == (Publishers.Collect<Upstream>, Publishers.Collect<Upstream>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two publishers are equivalent."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    }
+  ],
+  "declaration": "struct Collect<Upstream> where Upstream : Publisher",
+  "conformsTo": [
+    "Equatable",
+    "Publisher"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "path": "/documentation/accelerate/vdsp/fft",
+  "type": "Generic Class",
+  "name": "vDSP.FFT",
+  "desc": "A 1D single- and double-precision fast Fourier transform.",
+  "items": [
+    {
+      "name": "init?(log2n: vDSP_Length, radix: vDSP.Radix, ofType: T.Type)",
+      "desc": "Initializes a new fast Fourier transform instance."
+    },
+    {
+      "name": "func forward(input: DSPSplitComplex, output: inout DSPSplitComplex)",
+      "desc": "Computes an out-of-place forward fast Fourier transform."
+    },
+    {
+      "name": "func inverse(input: DSPSplitComplex, output: inout DSPSplitComplex)",
+      "desc": "Computes an out-of-place inverse fast Fourier transform."
+    },
+    {
+      "name": "func transform<T>(input: T, output: inout T, direction: vDSP.FourierTransformDirection)",
+      "desc": "Computes an out-of-place fast Fourier transform."
+    }
+  ],
+  "declaration": "class FFT<T> where T : vDSP_FourierTransformable"
+}

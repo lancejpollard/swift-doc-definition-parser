@@ -1,0 +1,96 @@
+{
+  "path": "/documentation/iobluetooth/iobluetoothrfcommchannel",
+  "type": "Class",
+  "name": "IOBluetoothRFCOMMChannel",
+  "desc": "An instance of this class represents an RFCOMM channel as defined by the Bluetooth SDP spec..",
+  "items": [
+    {
+      "name": "func close() -> IOReturn",
+      "desc": "Close the channel."
+    },
+    {
+      "name": "func delegate() -> Any!",
+      "desc": "Returns the object delegate"
+    },
+    {
+      "name": "func getID() -> BluetoothRFCOMMChannelID",
+      "desc": "Returns the object rfcomm channel ID."
+    },
+    {
+      "name": "func getDevice() -> IOBluetoothDevice!",
+      "desc": "Returns the Bluetooth Device that carries the rfcomm data."
+    },
+    {
+      "name": "func getMTU() -> BluetoothRFCOMMMTU",
+      "desc": "Returns the channel maximum transfer unit."
+    },
+    {
+      "name": "func getObjectID() -> IOBluetoothObjectID",
+      "desc": "Returns the IOBluetoothObjectID of the given IOBluetoothRFCOMMChannel."
+    },
+    {
+      "name": "func getRef() -> Unmanaged<IOBluetoothRFCOMMChannelRef>!",
+      "desc": "Returns an IOBluetoothRFCOMMChannelRef representation of the target IOBluetoothRFCOMMChannel object."
+    },
+    {
+      "name": "func isIncoming() -> Bool",
+      "desc": "Returns the direction of the channel. An incoming channel is one that was opened by the remote device."
+    },
+    {
+      "name": "func isOpen() -> Bool",
+      "desc": "Returns the state of the channel."
+    },
+    {
+      "name": "func isTransmissionPaused() -> Bool",
+      "desc": "Returns TRUE if flow control is off."
+    },
+    {
+      "name": "func register(forChannelCloseNotification: Any!, selector: Selector!) -> IOBluetoothUserNotification!",
+      "desc": "Allows a client to register for a channel close notification."
+    },
+    {
+      "name": "func sendRemoteLineStatus(BluetoothRFCOMMLineStatus) -> IOReturn",
+      "desc": "Sends an error to the remote side."
+    },
+    {
+      "name": "func setDelegate(Any!) -> IOReturn",
+      "desc": "Allows an object to register itself as a client of the RFCOMM channel."
+    },
+    {
+      "name": "func setSerialParameters(UInt32, dataBits: UInt8, parity: BluetoothRFCOMMParityType, stopBits: UInt8) -> IOReturn",
+      "desc": "Changes the parameters of the serial connection."
+    },
+    {
+      "name": "func writeAsync(UnsafeMutableRawPointer!, length: UInt16, refcon: UnsafeMutableRawPointer!) -> IOReturn",
+      "desc": "Sends a block of data in the channel asynchronously."
+    },
+    {
+      "name": "func writeSync(UnsafeMutableRawPointer!, length: UInt16) -> IOReturn",
+      "desc": "Sends a block of data in the channel synchronously."
+    },
+    {
+      "name": "class func register(forChannelOpenNotifications: Any!, selector: Selector!) -> IOBluetoothUserNotification!",
+      "desc": "Allows a client to register for RFCOMM channel open notifications for any RFCOMM channel."
+    },
+    {
+      "name": "class func register(forChannelOpenNotifications: Any!, selector: Selector!, withChannelID: BluetoothRFCOMMChannelID, direction: IOBluetoothUserNotificationChannelDirection) -> IOBluetoothUserNotification!",
+      "desc": "Allows a client to register for RFCOMM channel open notifications for certain types of RFCOMM channels."
+    },
+    {
+      "name": "class func withObjectID(IOBluetoothObjectID) -> Self!",
+      "desc": "Returns the IObluetoothRFCOMMChannel with the given IOBluetoothObjectID."
+    },
+    {
+      "name": "class func withRFCOMMChannelRef(IOBluetoothRFCOMMChannelRef!) -> Self!",
+      "desc": "Method call to convert an IOBluetoothRFCOMMChannelRef into an IOBluetoothRFCOMMChannel *."
+    }
+  ],
+  "declaration": "class IOBluetoothRFCOMMChannel : IOBluetoothObject",
+  "inheritsFrom": [
+    "IOBluetoothObject"
+  ],
+  "conformsTo": [
+    "PortDelegate",
+    "StreamDelegate"
+  ]
+}

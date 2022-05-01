@@ -1,0 +1,96 @@
+{
+  "path": "/documentation/healthkit/hkworkout",
+  "type": "Class",
+  "name": "HKWorkout",
+  "desc": "A workout sample that stores information about a single physical activity.",
+  "items": [
+    {
+      "name": "init(activityType: HKWorkoutActivityType, start: Date, end: Date)",
+      "desc": "Instantiates a new workout."
+    },
+    {
+      "name": "init(activityType: HKWorkoutActivityType, start: Date, end: Date, duration: TimeInterval, totalEnergyBurned: HKQuantity?, totalDistance: HKQuantity?, metadata: [String : Any]?)",
+      "desc": "Instantiates a new workout that includes the energy burned, distance, and metadata for the workout."
+    },
+    {
+      "name": "init(activityType: HKWorkoutActivityType, start: Date, end: Date, workoutEvents: [HKWorkoutEvent]?, totalEnergyBurned: HKQuantity?, totalDistance: HKQuantity?, metadata: [String : Any]?)",
+      "desc": "Instantiates a new workout whose duration is calculated based on the start and end dates and the provided workout events."
+    },
+    {
+      "name": "init(activityType: HKWorkoutActivityType, start: Date, end: Date, duration: TimeInterval, totalEnergyBurned: HKQuantity?, totalDistance: HKQuantity?, device: HKDevice?, metadata: [String : Any]?)",
+      "desc": "Instantiates a new workout activity that includes the device that produced the sample data."
+    },
+    {
+      "name": "init(activityType: HKWorkoutActivityType, start: Date, end: Date, workoutEvents: [HKWorkoutEvent]?, totalEnergyBurned: HKQuantity?, totalDistance: HKQuantity?, device: HKDevice?, metadata: [String : Any]?)",
+      "desc": "Instantiates a workout that includes both workout events and the device that produced the sample data."
+    },
+    {
+      "name": "init(activityType: HKWorkoutActivityType, start: Date, end: Date, workoutEvents: [HKWorkoutEvent]?, totalEnergyBurned: HKQuantity?, totalDistance: HKQuantity?, totalFlightsClimbed: HKQuantity?, device: HKDevice?, metadata: [String : Any]?)",
+      "desc": "Instantiates a workout using a variety of data, including the number of flights of stairs climbed."
+    },
+    {
+      "name": "init(activityType: HKWorkoutActivityType, start: Date, end: Date, workoutEvents: [HKWorkoutEvent]?, totalEnergyBurned: HKQuantity?, totalDistance: HKQuantity?, totalSwimmingStrokeCount: HKQuantity?, device: HKDevice?, metadata: [String : Any]?)",
+      "desc": "Instantiates a workout using a variety of data, including the number of strokes while swimming."
+    },
+    {
+      "name": "var duration: TimeInterval",
+      "desc": "The workout’s duration."
+    },
+    {
+      "name": "var totalDistance: HKQuantity?",
+      "desc": "The total distance traveled during the workout."
+    },
+    {
+      "name": "var totalEnergyBurned: HKQuantity?",
+      "desc": "The total active energy burned during the workout."
+    },
+    {
+      "name": "var workoutActivityType: HKWorkoutActivityType",
+      "desc": "The type of activity performed during the workout."
+    },
+    {
+      "name": "var workoutEvents: [HKWorkoutEvent]?",
+      "desc": "An array of workout event objects."
+    },
+    {
+      "name": "var totalFlightsClimbed: HKQuantity?",
+      "desc": "The total number of flights of stairs climbed during the workout."
+    },
+    {
+      "name": "var totalSwimmingStrokeCount: HKQuantity?",
+      "desc": "The total stroke count for the workout."
+    },
+    {
+      "name": "let HKWorkoutSortIdentifierDuration: String",
+      "desc": "A constant for sorting workouts based on their duration."
+    },
+    {
+      "name": "let HKWorkoutSortIdentifierTotalDistance: String",
+      "desc": "A constant for sorting workouts based on their total distance."
+    },
+    {
+      "name": "let HKWorkoutSortIdentifierTotalEnergyBurned: String",
+      "desc": "A constant for sorting workouts based on the total energy burned."
+    },
+    {
+      "name": "let HKPredicateKeyPathWorkoutDuration: String",
+      "desc": "The key path for accessing the workout’s duration."
+    },
+    {
+      "name": "let HKPredicateKeyPathWorkoutTotalDistance: String",
+      "desc": "The key path for accessing the workout’s total distance."
+    },
+    {
+      "name": "let HKPredicateKeyPathWorkoutTotalEnergyBurned: String",
+      "desc": "The key path for accessing the workout’s total energy burned."
+    },
+    {
+      "name": "let HKPredicateKeyPathWorkoutType: String",
+      "desc": "The key path for accessing the workout’s type."
+    }
+  ],
+  "declaration": "class HKWorkout : HKSample",
+  "inheritsFrom": [
+    "HKSample"
+  ]
+}

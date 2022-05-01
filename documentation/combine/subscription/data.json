@@ -1,0 +1,21 @@
+{
+  "path": "/documentation/combine/subscription",
+  "type": "Protocol",
+  "name": "Subscription",
+  "desc": "A protocol representing the connection of a subscriber to a publisher.",
+  "items": [
+    {
+      "name": "func request(Subscribers.Demand)",
+      "desc": "Tells a publisher that it may send more values to the subscriber."
+    },
+    {
+      "name": "struct Demand",
+      "desc": "A requested number of items, sent to a publisher from a subscriber through the subscription."
+    }
+  ],
+  "declaration": "protocol Subscription : Cancellable, CustomCombineIdentifierConvertible",
+  "inheritsFrom": [
+    "Cancellable",
+    "CustomCombineIdentifierConvertible"
+  ]
+}

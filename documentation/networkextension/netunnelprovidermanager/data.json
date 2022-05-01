@@ -1,0 +1,51 @@
+{
+  "path": "/documentation/networkextension/netunnelprovidermanager",
+  "type": "Class",
+  "name": "NETunnelProviderManager",
+  "desc": "An object to create and manage the tunnel provider’s VPN configuration.",
+  "items": [
+    {
+      "name": "class func loadAllFromPreferences(completionHandler: ([NETunnelProviderManager]?, Error?) -> Void)",
+      "desc": "Read all of the VPN configurations created by the calling app that have previously been saved to the Network Extension preferences."
+    },
+    {
+      "name": "func copyAppRules() -> [NEAppRule]?",
+      "desc": "Create a copy of the app rules currently set in the configuration."
+    },
+    {
+      "name": "var routingMethod: NETunnelProviderRoutingMethod",
+      "desc": "The method by which network traffic is routed to the tunnel."
+    },
+    {
+      "name": "enum NETunnelProviderRoutingMethod"
+    },
+    {
+      "name": "var appRules: [NEAppRule]"
+    },
+    {
+      "name": "var associatedDomains: [String]"
+    },
+    {
+      "name": "var calendarDomains: [String]"
+    },
+    {
+      "name": "var contactsDomains: [String]"
+    },
+    {
+      "name": "var excludedDomains: [String]"
+    },
+    {
+      "name": "var mailDomains: [String]"
+    },
+    {
+      "name": "var safariDomains: [String]"
+    },
+    {
+      "name": "class func forPerAppVPN() -> Self"
+    }
+  ],
+  "declaration": "class NETunnelProviderManager : NEVPNManager",
+  "inheritsFrom": [
+    "NEVPNManager"
+  ]
+}

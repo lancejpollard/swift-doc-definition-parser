@@ -1,0 +1,50 @@
+{
+  "path": "/documentation/corevideo/cvtimestamp",
+  "type": "Structure",
+  "name": "CVTimeStamp",
+  "desc": "A structure for defining a display timestamp.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(version: UInt32, videoTimeScale: Int32, videoTime: Int64, hostTime: UInt64, rateScalar: Double, videoRefreshPeriod: Int64, smpteTime: CVSMPTETime, flags: UInt64, reserved: UInt64)"
+    },
+    {
+      "name": "var flags: UInt64",
+      "desc": "A bit field containing additional information about the timestamp. See CVTimeStamp Flags for a list of possible values. ."
+    },
+    {
+      "name": "var hostTime: UInt64",
+      "desc": "The system time measured by the timestamp."
+    },
+    {
+      "name": "var rateScalar: Double",
+      "desc": "The current rate of the device as measured by the timestamps, divided by the nominal rate."
+    },
+    {
+      "name": "var reserved: UInt64",
+      "desc": "Reserved. Do not use."
+    },
+    {
+      "name": "var smpteTime: CVSMPTETime",
+      "desc": "The SMPTE time representation of the timestamp."
+    },
+    {
+      "name": "var version: UInt32",
+      "desc": "The current CVTimeStamp structure is version 0. Some functions require you to specify a version when passing in a timestamp structure to be filled."
+    },
+    {
+      "name": "var videoRefreshPeriod: Int64"
+    },
+    {
+      "name": "var videoTime: Int64",
+      "desc": "The start of a frame (or field for interlaced video)."
+    },
+    {
+      "name": "var videoTimeScale: Int32",
+      "desc": "The scale (in units per second) of the videoTimeScale and videoRefreshPeriod fields."
+    }
+  ],
+  "declaration": "struct CVTimeStamp"
+}

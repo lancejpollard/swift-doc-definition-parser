@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/cryptotokenkit/tksmartcardslot",
+  "type": "Class",
+  "name": "TKSmartCardSlot",
+  "desc": "A single smart card reader slot in the system.",
+  "items": [
+    {
+      "name": "func makeSmartCard() -> TKSmartCard?",
+      "desc": "Creates a new TKSmartCard object representing the currently inserted Smart Card."
+    },
+    {
+      "name": "var state: TKSmartCardSlot.State",
+      "desc": "The current state of the Smart Card reader slot."
+    },
+    {
+      "name": "enum TKSmartCardSlot.State",
+      "desc": "All smart card slot states."
+    },
+    {
+      "name": "var name: String",
+      "desc": "The name of the Smart Card reader slot."
+    },
+    {
+      "name": "var maxInputLength: Int",
+      "desc": "The maximum length of input APDU (Application Protocol Data Unit) that the Smart Card reader slot is able to transfer to the Smart Card."
+    },
+    {
+      "name": "var maxOutputLength: Int",
+      "desc": "The maximum length of output APDU (Application Protocol Data Unit) that the Smart Card reader slot is able to transfer from the Smart Card."
+    },
+    {
+      "name": "var atr: TKSmartCardATR?",
+      "desc": "The ATR (Answer to Reset) of the inserted Smart Card, or nil if no Smart Card is inserted or the inserted Smart Card is mute."
+    },
+    {
+      "name": "class TKSmartCardATR",
+      "desc": "A parsed ATR (Answer To Reset) message from a Smart Card."
+    }
+  ],
+  "declaration": "class TKSmartCardSlot : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "path": "/documentation/accelerate/bnns-c5d",
+  "type": "Enumeration",
+  "name": "BNNS",
+  "desc": "An enumeration that acts as a namespace for Swift overlays to BNNS.",
+  "items": [
+    {
+      "name": "class BNNS.Layer",
+      "desc": "The base class for layer objects that wrap filters and manage deinitialization."
+    },
+    {
+      "name": "class BNNS.UnaryLayer",
+      "desc": "The base class for layers that accept a single input."
+    },
+    {
+      "name": "class BNNS.BinaryLayer",
+      "desc": "The base class for layers that accept two inputs."
+    },
+    {
+      "name": "static func applyActivation(activation: BNNS.ActivationFunction, axes: [Int], input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, batchSize: Int, filterParameters: BNNSFilterParameters?)"
+    },
+    {
+      "name": "static func applyActivation(activation: BNNS.ActivationFunction, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, batchSize: Int, filterParameters: BNNSFilterParameters?)",
+      "desc": "Applies the specified activation function."
+    },
+    {
+      "name": "static func applyInTopK(k: Int, input: BNNSNDArrayDescriptor, testIndices: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, axis: Int, batchSize: Int, filterParameters: BNNSFilterParameters?)",
+      "desc": "Applies an in-top-k filter directly to an input."
+    },
+    {
+      "name": "static func applyReduction(BNNS.ReductionFunction, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, weights: BNNSNDArrayDescriptor?, filterParameters: BNNSFilterParameters?)",
+      "desc": "Applies the specified reduction function."
+    },
+    {
+      "name": "static func applyTopK(k: Int, input: BNNSNDArrayDescriptor, bestValues: BNNSNDArrayDescriptor, bestIndices: BNNSNDArrayDescriptor, axis: Int, batchSize: Int, filterParameters: BNNSFilterParameters?)",
+      "desc": "Applies a top-k filter directly to an input."
+    },
+    {
+      "name": "static func clip(to: ClosedRange<Float>, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor)",
+      "desc": "Clips the input tensor to a closed range and writes the result to the output tensor."
+    },
+    {
+      "name": "static func clipByGlobalNorm(threshold: Float, inputs: [BNNSNDArrayDescriptor], outputs: [BNNSNDArrayDescriptor], globalNorm: Float)",
+      "desc": "Clips the input tensors to a global Euclidean norm and writes the result to the output tensors."
+    },
+    {
+      "name": "static func clipByNorm(threshold: Float, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, axes: [Int]?)",
+      "desc": "Clips the input tensor to a Euclidean norm and writes the result to the output tensor."
+    },
+    {
+      "name": "static func compare(BNNSNDArrayDescriptor, BNNSNDArrayDescriptor, using: BNNS.RelationalOperator, output: BNNSNDArrayDescriptor)",
+      "desc": "Performs an elementwise comparison of two array descriptors using the specified relational operator."
+    },
+    {
+      "name": "static func computeNorm(input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, axes: [Int]?)",
+      "desc": "Computes the Euclidean norm and writes the result to the output tensor."
+    },
+    {
+      "name": "static func computeNormBackward(input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, axes: [Int]?, outputGradient: BNNSNDArrayDescriptor, generatingInputGradient: BNNSNDArrayDescriptor)",
+      "desc": "Backpropogates gradients for the compute norm function."
+    },
+    {
+      "name": "static func copy(BNNSNDArrayDescriptor, to: BNNSNDArrayDescriptor, filterParameters: BNNSFilterParameters?)",
+      "desc": "Copies the contents of an n-dimensional array descriptor to another descriptor of the same shape."
+    },
+    {
+      "name": "static func dequantize(batchSize: Int, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, axis: Int?, scale: BNNSNDArrayDescriptor?, bias: BNNSNDArrayDescriptor?, filterParameters: BNNSFilterParameters?)",
+      "desc": "Dequantizes the input tensor and writes the result to the output tensor."
+    },
+    {
+      "name": "static func quantize(batchSize: Int, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, axis: Int?, scale: BNNSNDArrayDescriptor?, bias: BNNSNDArrayDescriptor?, filterParameters: BNNSFilterParameters?)",
+      "desc": "Quantizes the input tensor and writes the result to the output tensor."
+    },
+    {
+      "name": "static func transpose(input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, firstTransposeAxis: Int, secondTransposeAxis: Int, filterParameters: BNNSFilterParameters?)",
+      "desc": "Transposes a tensor by swapping two of its dimensions."
+    },
+    {
+      "name": "class BNNS.ActivationLayer",
+      "desc": "A layer object that wraps an activation filter and manages its deinitialization."
+    },
+    {
+      "name": "class BNNS.BinaryArithmeticLayer",
+      "desc": "A layer object that wraps a binary arithmetic filter and manages its deinitialization."
+    },
+    {
+      "name": "class BNNS.BroadcastMatrixMultiplyLayer",
+      "desc": "A layer object that wraps a broadcast matrix multiply filter and manages its deinitialization."
+    },
+    {
+      "name": "class BNNS.ConvolutionLayer",
+      "desc": "A layer object that wraps a convolution filter and manages its deinitialization."
+    },
+    {
+      "name": "class BNNS.DropoutLayer",
+      "desc": "A layer object that wraps a dropout filter and manages its deinitialization."
+    },
+    {
+      "name": "class BNNS.EmbeddingLayer",
+      "desc": "A layer object that wraps an embedding filter and manages its deinitialization."
+    },
+    {
+      "name": "class BNNS.FullyConnectedLayer",
+      "desc": "A layer object that wraps a fully connected filter and manages its deinitialization."
+    },
+    {
+      "name": "class BNNS.FusedConvolutionNormalizationLayer",
+      "desc": "A layer object that wraps a fused, convolution normalization layer and manages its deinitialization."
+    },
+    {
+      "name": "class BNNS.FusedFullyConnectedNormalizationLayer",
+      "desc": "A layer object that wraps a fused, fully connected normalization layer and manages its deinitialization."
+    },
+    {
+      "name": "class BNNS.FusedLayer",
+      "desc": "The base class for fused convolution-normalization and fully connected-normalization layers."
+    },
+    {
+      "name": "class BNNS.FusedParametersLayer",
+      "desc": "A layer object that wraps a fused layer and manages its deinitialization."
+    },
+    {
+      "name": "class BNNS.GramLayer",
+      "desc": "A layer object that wraps a Gram matrix filter and manages its deinitialization."
+    },
+    {
+      "name": "class BNNS.LossLayer",
+      "desc": "A layer object that wraps a loss filter and manages its deinitialization."
+    },
+    {
+      "name": "class BNNS.NormalizationLayer",
+      "desc": "A layer object that wraps a normalization filter and manages its deinitialization."
+    },
+    {
+      "name": "class BNNS.PaddingLayer",
+      "desc": "A layer object that wraps a padding filter and manages its deinitialization."
+    },
+    {
+      "name": "class BNNS.PermuteLayer",
+      "desc": "A layer object that wraps a permute filter and manages its deinitialization."
+    },
+    {
+      "name": "class BNNS.PoolingLayer",
+      "desc": "A layer object that wraps a pooling filter and manages its deinitialization."
+    },
+    {
+      "name": "class BNNS.RandomGenerator",
+      "desc": "A random number generator."
+    },
+    {
+      "name": "class BNNS.RandomGeneratorState",
+      "desc": "An opaque object that contains the state of a random number generator."
+    },
+    {
+      "name": "class BNNS.ReductionLayer",
+      "desc": "A layer object that wraps a reduction filter and manages its deinitialization."
+    },
+    {
+      "name": "class BNNS.ResizeLayer",
+      "desc": "A layer object that wraps a resize filter and manages its deinitialization."
+    },
+    {
+      "name": "class BNNS.TernaryArithmeticLayer",
+      "desc": "A layer object that wraps a ternary arithmetic filter and manages its deinitialization."
+    },
+    {
+      "name": "class BNNS.UnaryArithmeticLayer",
+      "desc": "A layer object that wraps a unary arithmetic filter and manages its deinitialization."
+    },
+    {
+      "name": "struct BNNS.AdamOptimizer",
+      "desc": "An optimizer that uses the Adam optimization algorithm."
+    },
+    {
+      "name": "struct BNNS.AdamWOptimizer",
+      "desc": "An optimizer that uses the AdamW optimization algorithm."
+    },
+    {
+      "name": "struct BNNS.FusedBinaryArithmeticParameters",
+      "desc": "A structure that contains the parameters for a fused binary arithmetic layer."
+    },
+    {
+      "name": "struct BNNS.FusedConvolutionParameters",
+      "desc": "A structure that contains the parameters for a fused convolution layer."
+    },
+    {
+      "name": "struct BNNS.FusedDequantizationParameters",
+      "desc": "A structure that contains the parameters for a fused dequantization layer."
+    },
+    {
+      "name": "struct BNNS.FusedFullyConnectedParameters",
+      "desc": "A structure that contains the parameters for a fused fully connected layer."
+    },
+    {
+      "name": "struct BNNS.FusedNormalizationParameters",
+      "desc": "A structure that contains the parameters for a fused normalization layer."
+    },
+    {
+      "name": "struct BNNS.FusedQuantizationParameters",
+      "desc": "A structure that contains the parameters for a fused quantization layer."
+    },
+    {
+      "name": "struct BNNS.FusedTernaryArithmeticParameters",
+      "desc": "A structure that contains the parameters for a fused ternary arithmetic layer."
+    },
+    {
+      "name": "struct BNNS.FusedUnaryArithmeticParameters",
+      "desc": "A structure that contains the parameters for a fused unary arithmetic layer."
+    },
+    {
+      "name": "struct BNNS.Norm",
+      "desc": "Constants that describe norm types."
+    },
+    {
+      "name": "struct BNNS.RMSPropOptimizer",
+      "desc": "An optimizer that uses the root mean square propagation (RMSProp) optimization method."
+    },
+    {
+      "name": "struct BNNS.RelationalOperator",
+      "desc": "Constants that describe relational operations."
+    },
+    {
+      "name": "struct BNNS.SGDMomentumOptimizer",
+      "desc": "An optimizer that uses the stochastic gradient descent (SGD) with the momentum optimization method."
+    },
+    {
+      "name": "enum BNNS.ActivationFunction",
+      "desc": "Constants that describe activation functions."
+    },
+    {
+      "name": "enum BNNS.ArithmeticBinaryFunction",
+      "desc": "Constants that describe binary arithmetic functions."
+    },
+    {
+      "name": "enum BNNS.ArithmeticTernaryFunction",
+      "desc": "Constants that describe ternary arithmetic functions."
+    },
+    {
+      "name": "enum BNNS.ArithmeticUnaryFunction",
+      "desc": "Constants that describe unary arithmetic functions."
+    },
+    {
+      "name": "enum BNNS.ConvolutionPadding",
+      "desc": "Constants that describe convolution padding modes."
+    },
+    {
+      "name": "enum BNNS.ConvolutionType",
+      "desc": "Constants that describe convolution types."
+    },
+    {
+      "name": "enum BNNS.DataLayout",
+      "desc": "Constants that describe the data layout of an n-dimensional array descriptor shape."
+    },
+    {
+      "name": "enum BNNS.DescriptorType",
+      "desc": "Constants that describe the input and output types of an arithmetic operation."
+    },
+    {
+      "name": "enum BNNS.Error"
+    },
+    {
+      "name": "enum BNNS.GradientClipping",
+      "desc": "Constants that describe clipping functions."
+    },
+    {
+      "name": "enum BNNS.InterpolationMethod"
+    },
+    {
+      "name": "enum BNNS.LearningPhase",
+      "desc": "Constants that describe the learning phase of a normalization operation."
+    },
+    {
+      "name": "enum BNNS.LossFunction",
+      "desc": "Constants that describe loss functions."
+    },
+    {
+      "name": "enum BNNS.LossReduction",
+      "desc": "An enumeration that describes loss reduction functions."
+    },
+    {
+      "name": "enum BNNS.NormalizationType",
+      "desc": "Constants that describe normalization types."
+    },
+    {
+      "name": "enum BNNS.PaddingMode",
+      "desc": "Constants that define padding modes."
+    },
+    {
+      "name": "enum BNNS.PoolingType",
+      "desc": "Constants that describe pooling types."
+    },
+    {
+      "name": "enum BNNS.RandomGeneratorMethod",
+      "desc": "Constants that describe random number generation methods."
+    },
+    {
+      "name": "enum BNNS.ReductionFunction",
+      "desc": "Constants that describe reduction functions."
+    },
+    {
+      "name": "enum BNNS.Shape",
+      "desc": "Constants that describe the size and data layout of an n-dimensional array descriptor."
+    }
+  ],
+  "declaration": "enum BNNS"
+}

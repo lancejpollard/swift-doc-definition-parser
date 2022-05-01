@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/sirikit/insearchfornotebookitemsintenthandling",
+  "type": "Protocol",
+  "name": "INSearchForNotebookItemsIntentHandling",
+  "desc": "The handler interface for searching for notes, tasks, and reminders.",
+  "items": [
+    {
+      "name": "func resolveItemType(for: INSearchForNotebookItemsIntent, with: (INNotebookItemTypeResolutionResult) -> Void)",
+      "desc": "Resolves the type of items to search."
+    },
+    {
+      "name": "func resolveTitle(for: INSearchForNotebookItemsIntent, with: (INSpeakableStringResolutionResult) -> Void)",
+      "desc": "Resolves the string to use when searching the title of notes, tasks, or reminders."
+    },
+    {
+      "name": "func resolveContent(for: INSearchForNotebookItemsIntent, with: (INStringResolutionResult) -> Void)",
+      "desc": "Resolves the string to use when searching the content of notes."
+    },
+    {
+      "name": "func resolveStatus(for: INSearchForNotebookItemsIntent, with: (INTaskStatusResolutionResult) -> Void)",
+      "desc": "Resolves the status value to use during the search."
+    },
+    {
+      "name": "func resolveDateSearchType(for: INSearchForNotebookItemsIntent, with: (INDateSearchTypeResolutionResult) -> Void)",
+      "desc": "Resolves how to use a date value during the search."
+    },
+    {
+      "name": "func resolveDateTime(for: INSearchForNotebookItemsIntent, with: (INDateComponentsRangeResolutionResult) -> Void)",
+      "desc": "Resolves the date to use during a date-based search."
+    },
+    {
+      "name": "func resolveLocation(for: INSearchForNotebookItemsIntent, with: (INPlacemarkResolutionResult) -> Void)",
+      "desc": "Resolves how to use a location value during the search."
+    },
+    {
+      "name": "func resolveLocationSearchType(for: INSearchForNotebookItemsIntent, with: (INLocationSearchTypeResolutionResult) -> Void)",
+      "desc": "Resolves the location to use during a location-based search."
+    },
+    {
+      "name": "func resolveTaskPriority(for: INSearchForNotebookItemsIntent, with: (INTaskPriorityResolutionResult) -> Void)",
+      "desc": "Resolves the priority to use during a priority-based search."
+    },
+    {
+      "name": "func resolveTemporalEventTriggerTypes(for: INSearchForNotebookItemsIntent, with: (INTemporalEventTriggerTypeOptionsResolutionResult) -> Void)",
+      "desc": "Resolves the trigger type to use during a temporal-based search."
+    },
+    {
+      "name": "func confirm(intent: INSearchForNotebookItemsIntent, completion: (INSearchForNotebookItemsIntentResponse) -> Void)",
+      "desc": "Confirms whether you can perform the search."
+    },
+    {
+      "name": "func handle(intent: INSearchForNotebookItemsIntent, completion: (INSearchForNotebookItemsIntentResponse) -> Void)",
+      "desc": "Performs the search and deliver the results to SiriKit."
+    }
+  ],
+  "declaration": "protocol INSearchForNotebookItemsIntentHandling",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

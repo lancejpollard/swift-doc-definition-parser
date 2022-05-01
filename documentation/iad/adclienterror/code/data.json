@@ -1,0 +1,47 @@
+{
+  "path": "/documentation/iad/adclienterror/code",
+  "type": "Enumeration",
+  "name": "ADClientError.Code",
+  "desc": "The error codes that are passed from the attribution response to the completion handler.",
+  "items": [
+    {
+      "name": "case corruptResponse",
+      "desc": "The response from the attribution server is corrupt."
+    },
+    {
+      "name": "case requestClientError",
+      "desc": "The response from the attribution server has an HTTP 4xx status code."
+    },
+    {
+      "name": "case requestNetworkError",
+      "desc": "The communication with the attribution server has a network error."
+    },
+    {
+      "name": "case requestServerError",
+      "desc": "The response from the attribution server has an HTTP 5xx status code."
+    },
+    {
+      "name": "case trackingRestrictedOrDenied",
+      "desc": "The user has a restricted status or has denied tracking for the calling app."
+    },
+    {
+      "name": "case missingData",
+      "desc": "The downloaded app has a payload without enough data to perform an attribution check."
+    },
+    {
+      "name": "case unsupportedPlatform",
+      "desc": "The system doesn’t support the platform for the attribution API call."
+    },
+    {
+      "name": "case unknown",
+      "desc": "The response from the attribution server has an unknown error."
+    },
+    {
+      "name": "static var limitAdTracking: ADClientError.Code"
+    }
+  ],
+  "declaration": "enum ADClientError.Code : Int, _ErrorCodeProtocol, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

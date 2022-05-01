@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/nearbyinteraction/nisessiondelegate",
+  "type": "Protocol",
+  "name": "NISessionDelegate",
+  "desc": "An object that monitors and reacts to session updates.",
+  "items": [
+    {
+      "name": "func session(NISession, didUpdate: [NINearbyObject])",
+      "desc": "Notifies you when the session updates nearby objects."
+    },
+    {
+      "name": "func session(NISession, didGenerateShareableConfigurationData: Data, for: NINearbyObject)",
+      "desc": "Provides configuration data to share with a third-party accessory."
+    },
+    {
+      "name": "func session(NISession, didRemove: [NINearbyObject], reason: NINearbyObject.RemovalReason)",
+      "desc": "Notifies you when the session removes one or more nearby objects."
+    },
+    {
+      "name": "enum NINearbyObject.RemovalReason",
+      "desc": "The reason a session removed a nearby object."
+    },
+    {
+      "name": "func sessionWasSuspended(NISession)",
+      "desc": "Notifies you of a suspended session."
+    },
+    {
+      "name": "func sessionSuspensionEnded(NISession)",
+      "desc": "Notifies you of the end of a session's suspension."
+    },
+    {
+      "name": "func session(NISession, didInvalidateWith: Error)",
+      "desc": "Notifies you of an invalidated session."
+    },
+    {
+      "name": "struct NIError",
+      "desc": "An error Nearby Interaction reports."
+    },
+    {
+      "name": "enum NIError.Code",
+      "desc": "Codes that identify errors in Nearby Interaction."
+    },
+    {
+      "name": "let NIErrorDomain: String",
+      "desc": "A unique error domain for Nearby Interaction."
+    }
+  ],
+  "declaration": "protocol NISessionDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

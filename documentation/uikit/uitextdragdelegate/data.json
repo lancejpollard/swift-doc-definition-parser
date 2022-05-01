@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/uikit/uitextdragdelegate",
+  "type": "Protocol",
+  "name": "UITextDragDelegate",
+  "desc": "The interface for customizing the behavior of a drag activity for a text view.",
+  "items": [
+    {
+      "name": "func textDraggableView(UIView & UITextDraggable, dragSessionWillBegin: UIDragSession)",
+      "desc": "Tells the delegate that the text has been lifted out of the text view and the user is beginning to drag the text."
+    },
+    {
+      "name": "func textDraggableView(UIView & UITextDraggable, dragSessionDidEnd: UIDragSession, with: UIDropOperation)",
+      "desc": "Tells the delegate that the drag session has ended."
+    },
+    {
+      "name": "func textDraggableView(UIView & UITextDraggable, willAnimateLiftWith: UIDragAnimating, session: UIDragSession)",
+      "desc": "Tells the delegate when the lift animation is about to begin, and gives you a chance to animate additional changes alongside the system animation."
+    },
+    {
+      "name": "func textDraggableView(UIView & UITextDraggable, itemsForDrag: UITextDragRequest) -> [UIDragItem]",
+      "desc": "Asks the delegate for custom drag items from a text view."
+    },
+    {
+      "name": "func textDraggableView(UIView & UITextDraggable, dragPreviewForLiftingItem: UIDragItem, session: UIDragSession) -> UITargetedDragPreview?",
+      "desc": "Asks the delegate for the preview to show during the lift animation that happens when a user begins to drag an item from a text view."
+    }
+  ],
+  "declaration": "@MainActor protocol UITextDragDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

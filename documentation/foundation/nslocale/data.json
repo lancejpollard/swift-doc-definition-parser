@@ -1,0 +1,220 @@
+{
+  "path": "/documentation/foundation/nslocale",
+  "type": "Class",
+  "name": "NSLocale",
+  "desc": "An object representing information about linguistic, cultural, and technological conventions that bridges to Locale; use NSLocale when you need reference semantics or other Foundation-specific behavior.",
+  "items": [
+    {
+      "name": "init(localeIdentifier: String)",
+      "desc": "Initializes a locale using a given locale identifier."
+    },
+    {
+      "name": "init?(coder: NSCoder)",
+      "desc": "Returns a locale initialized from data in the given unarchiver."
+    },
+    {
+      "name": "class var autoupdatingCurrent: Locale",
+      "desc": "A locale which tracks the user’s current preferences."
+    },
+    {
+      "name": "class var current: Locale",
+      "desc": "A locale representing the user's region settings at the time the property is read."
+    },
+    {
+      "name": "class let currentLocaleDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that indicates that the user’s locale changed."
+    },
+    {
+      "name": "class var system: Locale",
+      "desc": "A locale representing the generic root values with little localization."
+    },
+    {
+      "name": "class var availableLocaleIdentifiers: [String]",
+      "desc": "The list of locale identifiers available on the system."
+    },
+    {
+      "name": "class var isoCountryCodes: [String]",
+      "desc": "The list of known country or region codes."
+    },
+    {
+      "name": "class var isoLanguageCodes: [String]",
+      "desc": "The list of known language codes."
+    },
+    {
+      "name": "class var isoCurrencyCodes: [String]",
+      "desc": "The list of known currency codes."
+    },
+    {
+      "name": "class var commonISOCurrencyCodes: [String]",
+      "desc": "A list of commonly encountered currency codes."
+    },
+    {
+      "name": "class func canonicalLocaleIdentifier(from: String) -> String",
+      "desc": "Returns the canonical identifier for a given locale identification string."
+    },
+    {
+      "name": "class func components(fromLocaleIdentifier: String) -> [String : String]",
+      "desc": "Returns a dictionary that is the result of parsing a locale ID."
+    },
+    {
+      "name": "class func localeIdentifier(fromComponents: [String : String]) -> String",
+      "desc": "Returns a locale identifier from the components specified in a given dictionary."
+    },
+    {
+      "name": "class func canonicalLanguageIdentifier(from: String) -> String",
+      "desc": "Returns a canonical language identifier by mapping an arbitrary locale identification string to the canonical identifier."
+    },
+    {
+      "name": "class func localeIdentifier(fromWindowsLocaleCode: UInt32) -> String?",
+      "desc": "Returns a locale identifier from a Windows locale code."
+    },
+    {
+      "name": "class func windowsLocaleCode(fromLocaleIdentifier: String) -> UInt32",
+      "desc": "Returns a Window locale code from the locale identifier."
+    },
+    {
+      "name": "var localeIdentifier: String",
+      "desc": "The identifier for the locale."
+    },
+    {
+      "name": "var countryCode: String?",
+      "desc": "The country or region code for the locale."
+    },
+    {
+      "name": "var languageCode: String",
+      "desc": "The language code for the locale."
+    },
+    {
+      "name": "var scriptCode: String?",
+      "desc": "The script code for the locale."
+    },
+    {
+      "name": "var variantCode: String?",
+      "desc": "The variant code for the locale."
+    },
+    {
+      "name": "var exemplarCharacterSet: CharacterSet",
+      "desc": "The exemplar character set for the locale."
+    },
+    {
+      "name": "var collationIdentifier: String?",
+      "desc": "The collation identifier for the locale."
+    },
+    {
+      "name": "var collatorIdentifier: String",
+      "desc": "The collator identifier for the locale."
+    },
+    {
+      "name": "var usesMetricSystem: Bool",
+      "desc": "A Boolean value that indicates whether the locale uses the metric system."
+    },
+    {
+      "name": "var decimalSeparator: String",
+      "desc": "The decimal separator for the locale."
+    },
+    {
+      "name": "var groupingSeparator: String",
+      "desc": "The grouping separator for the locale."
+    },
+    {
+      "name": "var currencyCode: String?",
+      "desc": "The currency code for the locale."
+    },
+    {
+      "name": "var currencySymbol: String",
+      "desc": "The currency symbol for the locale."
+    },
+    {
+      "name": "var calendarIdentifier: String",
+      "desc": "The calendar identifier for the locale."
+    },
+    {
+      "name": "var quotationBeginDelimiter: String",
+      "desc": "The begin quotation symbol for the locale."
+    },
+    {
+      "name": "var quotationEndDelimiter: String",
+      "desc": "The end quotation symbol for the locale."
+    },
+    {
+      "name": "var alternateQuotationBeginDelimiter: String",
+      "desc": "The alternate begin quotation symbol for the locale."
+    },
+    {
+      "name": "var alternateQuotationEndDelimiter: String",
+      "desc": "The alternate end quotation symbol for the locale."
+    },
+    {
+      "name": "func localizedString(forLocaleIdentifier: String) -> String",
+      "desc": "Returns the localized string for the specified locale identifier."
+    },
+    {
+      "name": "func localizedString(forCountryCode: String) -> String?",
+      "desc": "Returns the localized string for a country or region code."
+    },
+    {
+      "name": "func localizedString(forLanguageCode: String) -> String?",
+      "desc": "Returns the localized string for the specified language code."
+    },
+    {
+      "name": "func localizedString(forScriptCode: String) -> String?",
+      "desc": "Returns the localized string for the specified script code."
+    },
+    {
+      "name": "func localizedString(forVariantCode: String) -> String?",
+      "desc": "Returns the localized string for the specified variant code."
+    },
+    {
+      "name": "func localizedString(forCollationIdentifier: String) -> String?",
+      "desc": "Returns the localized string for the specified collation identifier."
+    },
+    {
+      "name": "func localizedString(forCollatorIdentifier: String) -> String?",
+      "desc": "Returns the localized string for the specified collator identifier."
+    },
+    {
+      "name": "func localizedString(forCurrencyCode: String) -> String?",
+      "desc": "Returns the localized string for the specified currency code."
+    },
+    {
+      "name": "func localizedString(forCalendarIdentifier: String) -> String?",
+      "desc": "Returns the localized string for the specified calendar identifier."
+    },
+    {
+      "name": "func object(forKey: NSLocale.Key) -> Any?",
+      "desc": "Returns the value of the component corresponding to the specified key."
+    },
+    {
+      "name": "func displayName(forKey: NSLocale.Key, value: Any) -> String?",
+      "desc": "Returns the display name for the given locale component value."
+    },
+    {
+      "name": "struct NSLocale.Key",
+      "desc": "The keys used to access components of a locale."
+    },
+    {
+      "name": "class var preferredLanguages: [String]",
+      "desc": "An ordered list of the user's preferred languages."
+    },
+    {
+      "name": "class func characterDirection(forLanguage: String) -> NSLocale.LanguageDirection",
+      "desc": "Returns the direction of the sequence of characters in a line for the specified ISO language code."
+    },
+    {
+      "name": "class func lineDirection(forLanguage: String) -> NSLocale.LanguageDirection",
+      "desc": "Returns the direction of the sequence of lines for the specified ISO language code."
+    },
+    {
+      "name": "enum NSLocale.LanguageDirection",
+      "desc": "The directions that a language may take across a page of text."
+    }
+  ],
+  "declaration": "class NSLocale : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

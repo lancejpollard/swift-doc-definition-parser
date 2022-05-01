@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/uikit/uicollectionviewdragdelegate",
+  "type": "Protocol",
+  "name": "UICollectionViewDragDelegate",
+  "desc": "The interface for initiating drags from a collection view.",
+  "items": [
+    {
+      "name": "func collectionView(UICollectionView, itemsForBeginning: UIDragSession, at: IndexPath) -> [UIDragItem]",
+      "desc": "Provides the initial set of items (if any) to drag."
+    },
+    {
+      "name": "func collectionView(UICollectionView, itemsForAddingTo: UIDragSession, at: IndexPath, point: CGPoint) -> [UIDragItem]",
+      "desc": "Adds the specified items to an existing drag session."
+    },
+    {
+      "name": "func collectionView(UICollectionView, dragSessionWillBegin: UIDragSession)",
+      "desc": "Notifies you that a drag session is about to begin for the collection view."
+    },
+    {
+      "name": "func collectionView(UICollectionView, dragSessionDidEnd: UIDragSession)",
+      "desc": "Notifies you that a drag session ended for the collection view."
+    },
+    {
+      "name": "func collectionView(UICollectionView, dragPreviewParametersForItemAt: IndexPath) -> UIDragPreviewParameters?",
+      "desc": "Returns custom information about how to display the item at the specified location during the drag."
+    },
+    {
+      "name": "func collectionView(UICollectionView, dragSessionAllowsMoveOperation: UIDragSession) -> Bool",
+      "desc": "Returns a Boolean value that determines whether a move operation is allowed for a drag session."
+    },
+    {
+      "name": "func collectionView(UICollectionView, dragSessionIsRestrictedToDraggingApplication: UIDragSession) -> Bool",
+      "desc": "Returns a Boolean value that determines whether the source app and destination app must be the same for a drag session."
+    }
+  ],
+  "declaration": "@MainActor protocol UICollectionViewDragDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

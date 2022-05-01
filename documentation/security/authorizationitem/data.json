@@ -1,0 +1,29 @@
+{
+  "path": "/documentation/security/authorizationitem",
+  "type": "Structure",
+  "name": "AuthorizationItem",
+  "desc": "A structure containing information about an authorization right or the authorization environment.",
+  "items": [
+    {
+      "name": "var name: AuthorizationString",
+      "desc": "The required name of the authorization right or environment data."
+    },
+    {
+      "name": "var valueLength: Int",
+      "desc": "The number of bytes in the value field."
+    },
+    {
+      "name": "var value: UnsafeMutableRawPointer?",
+      "desc": "A pointer to information pertaining to the name field."
+    },
+    {
+      "name": "var flags: UInt32",
+      "desc": "Reserved option bits."
+    },
+    {
+      "name": "init(name: AuthorizationString, valueLength: Int, value: UnsafeMutableRawPointer?, flags: UInt32)",
+      "desc": "Creates a new authorization item."
+    }
+  ],
+  "declaration": "struct AuthorizationItem"
+}

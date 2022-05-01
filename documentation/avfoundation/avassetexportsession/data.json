@@ -1,0 +1,128 @@
+{
+  "path": "/documentation/avfoundation/avassetexportsession",
+  "type": "Class",
+  "name": "AVAssetExportSession",
+  "desc": "An object that transcodes the contents of an asset in a format that you specify using an export preset.",
+  "items": [
+    {
+      "name": "init?(asset: AVAsset, presetName: String)",
+      "desc": "Creates an asset export session that uses the specified preset."
+    },
+    {
+      "name": "var presetName: String",
+      "desc": "The name of the preset that the asset export session uses."
+    },
+    {
+      "name": "class func allExportPresets() -> [String]",
+      "desc": "Returns all available export preset names."
+    },
+    {
+      "name": "class func exportPresets(compatibleWith: AVAsset) -> [String]",
+      "desc": "Returns compatible export presets for the asset."
+    },
+    {
+      "name": "class func determineCompatibility(ofExportPreset: String, with: AVAsset, outputFileType: AVFileType?, completionHandler: (Bool) -> Void)",
+      "desc": "Determines an export preset’s compatibility to export the asset in a container of the output file type."
+    },
+    {
+      "name": "func determineCompatibleFileTypes(completionHandler: ([AVFileType]) -> Void)",
+      "desc": "Determines the output file types an asset export session supports writing in its current configuration."
+    },
+    {
+      "name": "var outputURL: URL?",
+      "desc": "A URL where an asset export session writes its output."
+    },
+    {
+      "name": "var outputFileType: AVFileType?",
+      "desc": "The file type of the output an asset export session writes."
+    },
+    {
+      "name": "var supportedFileTypes: [AVFileType]",
+      "desc": "An array containing the types of files the session can write."
+    },
+    {
+      "name": "var timeRange: CMTimeRange",
+      "desc": "The time range of the source asset to export."
+    },
+    {
+      "name": "var fileLengthLimit: Int64",
+      "desc": "The file length that the output of the session must not exceed."
+    },
+    {
+      "name": "var shouldOptimizeForNetworkUse: Bool",
+      "desc": "A Boolean value that indicates whether to optimize the movie for network use."
+    },
+    {
+      "name": "var canPerformMultiplePassesOverSourceMediaData: Bool",
+      "desc": "A Boolean value that indicates whether the export session can perform multiple passes over the source media to achieve better results."
+    },
+    {
+      "name": "var directoryForTemporaryFiles: URL?",
+      "desc": "A directory suitable to store temporary files that the export process generates."
+    },
+    {
+      "name": "var metadata: [AVMetadataItem]?",
+      "desc": "The metadata an export session writes to the output container file."
+    },
+    {
+      "name": "var metadataItemFilter: AVMetadataItemFilter?",
+      "desc": "An object the export session uses to filter the metadata items it transfers to the output asset."
+    },
+    {
+      "name": "var videoComposition: AVVideoComposition?",
+      "desc": "An optional object that provides instructions for how to composite frames of video."
+    },
+    {
+      "name": "var customVideoCompositor: AVVideoCompositing?",
+      "desc": "An optional custom object to use when compositing video frames."
+    },
+    {
+      "name": "var audioMix: AVAudioMix?",
+      "desc": "The parameters for audio mixing and an indication of whether to enable nondefault audio mixing for export."
+    },
+    {
+      "name": "var audioTimePitchAlgorithm: AVAudioTimePitchAlgorithm",
+      "desc": "A processing algorithm for managing audio pitch for scaled audio edits."
+    },
+    {
+      "name": "func exportAsynchronously(completionHandler: () -> Void)",
+      "desc": "Starts the asynchronous execution of an export session."
+    },
+    {
+      "name": "func cancelExport()",
+      "desc": "Cancels the execution of an export session."
+    },
+    {
+      "name": "var status: AVAssetExportSession.Status",
+      "desc": "The status of the export session."
+    },
+    {
+      "name": "enum AVAssetExportSession.Status",
+      "desc": "Values that indicate the state of an export session."
+    },
+    {
+      "name": "var progress: Float",
+      "desc": "A value that indicates the progress of the export."
+    },
+    {
+      "name": "var error: Error?",
+      "desc": "An optional error object."
+    },
+    {
+      "name": "func estimateOutputFileLength(completionHandler: (Int64, Error?) -> Void)",
+      "desc": "Starts estimating the output file length of the export while considering the asset, preset, and time range configuration of the export session."
+    },
+    {
+      "name": "func estimateMaximumDuration(completionHandler: (CMTime, Error?) -> Void)",
+      "desc": "Starts estimating the maximum duration of the export while considering the asset, preset, and time range configuration of the export session."
+    },
+    {
+      "name": "var asset: AVAsset",
+      "desc": "An asset that a session exports."
+    }
+  ],
+  "declaration": "class AVAssetExportSession : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/corenfc/nfciso7816tag",
+  "type": "Protocol",
+  "name": "NFCISO7816Tag",
+  "desc": "An interface for interacting with an ISO 7816 tag.",
+  "items": [
+    {
+      "name": "property list key com.apple.developer.nfc.readersession.iso7816.select-identifiers",
+      "desc": "A list of application identifiers that the app supports."
+    },
+    {
+      "name": "var initialSelectedAID: String",
+      "desc": "A hexadecimal string of the application identifier for the tag selected by the reader session when discovering new tags."
+    },
+    {
+      "name": "var identifier: Data",
+      "desc": "The unique hardware identifier of the tag."
+    },
+    {
+      "name": "var historicalBytes: Data?",
+      "desc": "The historical bytes extracted from the Type A Answer To Select response."
+    },
+    {
+      "name": "var applicationData: Data?",
+      "desc": "The application data bytes extracted from the Type B Answer To Request response."
+    },
+    {
+      "name": "var proprietaryApplicationDataCoding: Bool",
+      "desc": "A Boolean value that indicates whether the application data follows proprietary data coding."
+    },
+    {
+      "name": "func sendCommand(apdu: NFCISO7816APDU, resultHandler: (Result<NFCISO7816ResponseAPDU, Error>) -> Void)",
+      "desc": "Sends an application protocol data unit (APDU) to the tag and receives a response APDU."
+    },
+    {
+      "name": "class NFCISO7816APDU",
+      "desc": "An object representing an ISO 7816 application protocol data unit (APDU)."
+    },
+    {
+      "name": "struct NFCISO7816ResponseAPDU",
+      "desc": "An object containing the response from the tag."
+    },
+    {
+      "name": "func sendCommand(apdu: NFCISO7816APDU, completionHandler: (Data, UInt8, UInt8, Error?) -> Void)",
+      "desc": "Sends an application protocol data unit (APDU) to the tag and receives a response APDU."
+    }
+  ],
+  "declaration": "protocol NFCISO7816Tag",
+  "inheritsFrom": [
+    "NFCNDEFTag"
+  ]
+}

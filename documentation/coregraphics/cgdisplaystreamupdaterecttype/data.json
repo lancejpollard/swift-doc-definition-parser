@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/coregraphics/cgdisplaystreamupdaterecttype",
+  "type": "Enumeration",
+  "name": "CGDisplayStreamUpdateRectType",
+  "desc": "Use these constants to determine which rectangles your app is interested in.",
+  "items": [
+    {
+      "name": "case refreshedRects",
+      "desc": "The rectangles for the portions of the display that were redrawn."
+    },
+    {
+      "name": "case movedRects",
+      "desc": "The rectangles for the portions of the display that were simply moved from one part of the display to another."
+    },
+    {
+      "name": "case dirtyRects",
+      "desc": "The union of both rectangles that were redrawn and rectangles that were moved."
+    },
+    {
+      "name": "case reducedDirtyRects",
+      "desc": "The union is calculated and then simplified. This reduces the number of rectangles returned to your app, but it may report some pixels that were not actually changed."
+    }
+  ],
+  "declaration": "enum CGDisplayStreamUpdateRectType : Int32, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

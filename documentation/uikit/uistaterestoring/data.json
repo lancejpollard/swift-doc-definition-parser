@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/uikit/uistaterestoring",
+  "type": "Protocol",
+  "name": "UIStateRestoring",
+  "desc": "Methods for adding objects to your state restoration archives.",
+  "items": [
+    {
+      "name": "var restorationParent: UIStateRestoring?",
+      "desc": "The parent object used to scope the current object."
+    },
+    {
+      "name": "var objectRestorationClass: UIObjectRestoration.Type?",
+      "desc": "The class responsible for creating this object when restoring the app’s state."
+    },
+    {
+      "name": "func encodeRestorableState(with: NSCoder)",
+      "desc": "Encodes state-related information for the object."
+    },
+    {
+      "name": "func decodeRestorableState(with: NSCoder)",
+      "desc": "Decodes and restores state-related information for the object."
+    },
+    {
+      "name": "func applicationFinishedRestoringState()",
+      "desc": "Called after all objects have had a chance to decode their state."
+    }
+  ],
+  "declaration": "@MainActor protocol UIStateRestoring",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/coredata/nsincrementalstore",
+  "type": "Class",
+  "name": "NSIncrementalStore",
+  "desc": "An abstract superclass defining the API through which Core Data communicates with a store.",
+  "items": [
+    {
+      "name": "func execute(NSPersistentStoreRequest, with: NSManagedObjectContext?) -> Any",
+      "desc": "Returns a value as appropriate for the given request, or nil if the request cannot be completed."
+    },
+    {
+      "name": "func newValuesForObject(with: NSManagedObjectID, with: NSManagedObjectContext) -> NSIncrementalStoreNode",
+      "desc": "Returns an incremental store node encapsulating the persistent external values of the object with a given object ID."
+    },
+    {
+      "name": "func newValue(forRelationship: NSRelationshipDescription, forObjectWith: NSManagedObjectID, with: NSManagedObjectContext?) -> Any",
+      "desc": "Returns the relationship for the given relationship of the object with a given object ID."
+    },
+    {
+      "name": "func obtainPermanentIDs(for: [NSManagedObject]) -> [NSManagedObjectID]",
+      "desc": "Returns an array containing the object IDs for a given array of newly-inserted objects."
+    },
+    {
+      "name": "func newObjectID(for: NSEntityDescription, referenceObject: Any) -> NSManagedObjectID",
+      "desc": "Returns a new object ID that uses given data as the key."
+    },
+    {
+      "name": "func referenceObject(for: NSManagedObjectID) -> Any",
+      "desc": "Returns the reference data used to construct a given object ID."
+    },
+    {
+      "name": "func managedObjectContextDidRegisterObjects(with: [NSManagedObjectID])",
+      "desc": "Indicates that objects identified by a given array of object IDs are in use in a managed object context."
+    },
+    {
+      "name": "func managedObjectContextDidUnregisterObjects(with: [NSManagedObjectID])",
+      "desc": "Indicates that objects identified by a given array of object IDs are no longer being used by a managed object context."
+    },
+    {
+      "name": "class func identifierForNewStore(at: URL) -> Any",
+      "desc": "Returns the identifier for the store at a given URL."
+    },
+    {
+      "name": "func loadMetadata()",
+      "desc": "Loads the metadata for the store."
+    }
+  ],
+  "declaration": "class NSIncrementalStore : NSPersistentStore",
+  "inheritsFrom": [
+    "NSPersistentStore"
+  ]
+}

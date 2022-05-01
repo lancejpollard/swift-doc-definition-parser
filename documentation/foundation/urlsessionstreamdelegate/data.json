@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/foundation/urlsessionstreamdelegate",
+  "type": "Protocol",
+  "name": "URLSessionStreamDelegate",
+  "desc": "A protocol that defines methods that URL session instances call on their delegates to handle task-level events specific to stream tasks.",
+  "items": [
+    {
+      "name": "func urlSession(URLSession, betterRouteDiscoveredFor: URLSessionStreamTask)",
+      "desc": "Tells the delegate that a better route to the host has been detected for the stream."
+    },
+    {
+      "name": "func urlSession(URLSession, streamTask: URLSessionStreamTask, didBecome: InputStream, outputStream: OutputStream)",
+      "desc": "Tells the delegate that the stream task has been completed as a result of the stream task calling the captureStreams() method."
+    },
+    {
+      "name": "func urlSession(URLSession, readClosedFor: URLSessionStreamTask)",
+      "desc": "Tells the delegate that the read side of the underlying socket has been closed."
+    },
+    {
+      "name": "func urlSession(URLSession, writeClosedFor: URLSessionStreamTask)",
+      "desc": "Tells the delegate that the write side of the underlying socket has been closed."
+    }
+  ],
+  "declaration": "protocol URLSessionStreamDelegate",
+  "inheritsFrom": [
+    "URLSessionTaskDelegate"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "path": "/documentation/appkit/nsworkspace/launchconfigurationkey",
+  "type": "Structure",
+  "name": "NSWorkspace.LaunchConfigurationKey",
+  "desc": "The following keys can be used in the configuration dictionary of the launchApplication(at:options:configuration:) method.  Each key is optional, and if omitted, default behavior is applied.DeprecatedUse NSWorkspace.OpenConfiguration instead.",
+  "items": [
+    {
+      "name": "static let appleEvent: NSWorkspace.LaunchConfigurationKey",
+      "desc": "The value is the first NSAppleEventDescriptor to send to the new app. If an instance of the app is already running, this is sent to that app."
+    },
+    {
+      "name": "static let architecture: NSWorkspace.LaunchConfigurationKey",
+      "desc": "The value is an NSNumber containing an Mach-O Architecture constant. Ignored if a new instance of the app is not launched."
+    },
+    {
+      "name": "static let arguments: NSWorkspace.LaunchConfigurationKey",
+      "desc": "The value is an NSArray of NSStrings, passed to the new app in the argv parameter. Ignored if a new instance of the app is not launched. This constant is not available to sandboxed apps."
+    },
+    {
+      "name": "static let environment: NSWorkspace.LaunchConfigurationKey",
+      "desc": "The value is an NSDictionary, mapping NSStrings to NSStrings, containing environment variables to set for the new app. Ignored if a new instance of the app is not launched. This constant is not available to sandboxed apps."
+    },
+    {
+      "name": "init(rawValue: String)"
+    }
+  ],
+  "declaration": "struct LaunchConfigurationKey, @unchecked Sendable",
+  "conformsTo": [
+    "Equatable",
+    "Hashable",
+    "RawRepresentable",
+    "Sendable"
+  ]
+}

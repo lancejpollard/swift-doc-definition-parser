@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/modelio/mdlmeshbufferallocator",
+  "type": "Protocol",
+  "name": "MDLMeshBufferAllocator",
+  "desc": "The general interface for managing allocation of data buffers to be used in loading, processing, and rendering meshes.",
+  "items": [
+    {
+      "name": "func newZone(Int) -> MDLMeshBufferZone",
+      "desc": "Creates a zone for related memory allocations."
+    },
+    {
+      "name": "func newZoneForBuffers(withSize: [NSNumber], andType: [NSNumber]) -> MDLMeshBufferZone",
+      "desc": "Creates a zone large enough to fit the specified group of allocation sizes."
+    },
+    {
+      "name": "func newBuffer(Int, type: MDLMeshBufferType) -> MDLMeshBuffer",
+      "desc": "Creates a new buffer of the specified length."
+    },
+    {
+      "name": "func newBuffer(from: MDLMeshBufferZone?, length: Int, type: MDLMeshBufferType) -> MDLMeshBuffer?",
+      "desc": "Creates a new buffer of the specified length in the specified zone."
+    },
+    {
+      "name": "func newBuffer(with: Data, type: MDLMeshBufferType) -> MDLMeshBuffer",
+      "desc": "Creates a new buffer containing the specified data."
+    },
+    {
+      "name": "func newBuffer(from: MDLMeshBufferZone?, data: Data, type: MDLMeshBufferType) -> MDLMeshBuffer?",
+      "desc": "Creates a new buffer containing the specified data in the specified zone."
+    }
+  ],
+  "declaration": "protocol MDLMeshBufferAllocator",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "path": "/documentation/hypervisor/hv_ion_message_t",
+  "type": "Structure",
+  "name": "hv_ion_message_t",
+  "desc": "The structure that describes the Mach message that the Hypervisor sends when an I/O notifier delivers the notifications you request.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a new I/O notifier message."
+    },
+    {
+      "name": "init(header: mach_msg_header_t, addr: UInt64, size: UInt64, value: UInt64, trailer: mach_msg_trailer_t)",
+      "desc": "Creates a new I/O notifier message with the parameters you provide."
+    },
+    {
+      "name": "var addr: UInt64",
+      "desc": "The address of the I/O write."
+    },
+    {
+      "name": "var header: mach_msg_header_t",
+      "desc": "The Mach message header."
+    },
+    {
+      "name": "var size: UInt64",
+      "desc": "The size of the value written by the notifier."
+    },
+    {
+      "name": "var trailer: mach_msg_trailer_t",
+      "desc": "The Mach message trailer."
+    },
+    {
+      "name": "var value: UInt64",
+      "desc": "An unsigned 64-bit integer that represents the contents of an I/O notifier message."
+    }
+  ],
+  "declaration": "struct hv_ion_message_t"
+}

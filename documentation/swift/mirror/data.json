@@ -1,0 +1,77 @@
+{
+  "path": "/documentation/swift/mirror",
+  "type": "Structure",
+  "name": "Mirror",
+  "desc": "A representation of the substructure and display style of an instance of any type.",
+  "items": [
+    {
+      "name": "func descendant(MirrorPath, MirrorPath...) -> Any?",
+      "desc": "Returns a specific descendant of the reflected subject, or nil if no such descendant exists."
+    },
+    {
+      "name": "protocol MirrorPath",
+      "desc": "A protocol for legitimate arguments to Mirror’s descendant method."
+    },
+    {
+      "name": "typealias Mirror.Child",
+      "desc": "An element of the reflected instance’s structure."
+    },
+    {
+      "name": "typealias Mirror.Children",
+      "desc": "The type used to represent substructure."
+    },
+    {
+      "name": "init<Subject, C>(Subject, children: C, displayStyle: Mirror.DisplayStyle?, ancestorRepresentation: Mirror.AncestorRepresentation)",
+      "desc": "Creates a mirror representing the given subject with a specified structure."
+    },
+    {
+      "name": "init<Subject>(Subject, children: KeyValuePairs<String, Any>, displayStyle: Mirror.DisplayStyle?, ancestorRepresentation: Mirror.AncestorRepresentation)",
+      "desc": "Creates a mirror representing the given subject using a dictionary literal for the structure."
+    },
+    {
+      "name": "init<Subject, C>(Subject, unlabeledChildren: C, displayStyle: Mirror.DisplayStyle?, ancestorRepresentation: Mirror.AncestorRepresentation)",
+      "desc": "Creates a mirror representing the given subject with unlabeled children."
+    },
+    {
+      "name": "init(reflecting: Any)",
+      "desc": "Creates a mirror that reflects on the given instance."
+    },
+    {
+      "name": "let children: Mirror.Children",
+      "desc": "A collection of Child elements describing the structure of the reflected subject."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "The custom mirror for this instance."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual representation of this instance."
+    },
+    {
+      "name": "let displayStyle: Mirror.DisplayStyle?",
+      "desc": "A suggested display style for the reflected subject."
+    },
+    {
+      "name": "let subjectType: Any.Type",
+      "desc": "The static type of the subject being reflected."
+    },
+    {
+      "name": "var superclassMirror: Mirror?",
+      "desc": "A mirror of the subject’s superclass, if one exists."
+    },
+    {
+      "name": "enum Mirror.AncestorRepresentation",
+      "desc": "The representation to use for ancestor classes."
+    },
+    {
+      "name": "enum Mirror.DisplayStyle",
+      "desc": "A suggestion of how a mirror’s subject is to be interpreted."
+    }
+  ],
+  "declaration": "struct Mirror",
+  "conformsTo": [
+    "CustomReflectable",
+    "CustomStringConvertible"
+  ]
+}

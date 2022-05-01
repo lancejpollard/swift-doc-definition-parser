@@ -1,0 +1,98 @@
+{
+  "path": "/documentation/createml/mlwordtagger",
+  "type": "Structure",
+  "name": "MLWordTagger",
+  "desc": "A word-tagging model you train to classify natural language text at the word level.",
+  "items": [
+    {
+      "name": "init(trainingData: [(tokens: [MLWordTagger.Token], labels: [String])], parameters: MLWordTagger.ModelParameters)",
+      "desc": "Creates a word tagger from a training set in an array of tokens and their labels."
+    },
+    {
+      "name": "init(trainingData: MLDataTable, tokenColumn: String, labelColumn: String, parameters: MLWordTagger.ModelParameters)",
+      "desc": "Creates a word tagger from a training set in a data table."
+    },
+    {
+      "name": "typealias MLWordTagger.Token",
+      "desc": "The token type of a word tagger, which is a string."
+    },
+    {
+      "name": "struct MLWordTagger.ModelParameters",
+      "desc": "Parameters that specify model training parameters and validation data."
+    },
+    {
+      "name": "let modelParameters: MLWordTagger.ModelParameters",
+      "desc": "The configuration parameters that the word tagger used for training during initialization."
+    },
+    {
+      "name": "var trainingMetrics: MLWordTaggerMetrics",
+      "desc": "Measurements of the tagger’s performance on the training data set."
+    },
+    {
+      "name": "var validationMetrics: MLWordTaggerMetrics",
+      "desc": "Measurements of the tagger’s performance on the validation data set."
+    },
+    {
+      "name": "struct MLWordTaggerMetrics",
+      "desc": "Metrics you use to evaluate a word tagger’s performance."
+    },
+    {
+      "name": "func evaluation(on: MLDataTable, tokenColumn: String, labelColumn: String) -> MLWordTaggerMetrics",
+      "desc": "Generates metrics that describe the tagger’s performance on labeled data in a data table."
+    },
+    {
+      "name": "func evaluation(on: [(tokens: [MLWordTagger.Token], labels: [String])]) -> MLWordTaggerMetrics",
+      "desc": "Generates metrics that describe the tagger’s performance on labeled tokens in a dictionary."
+    },
+    {
+      "name": "func prediction(from: [MLWordTagger.Token]) -> [String]",
+      "desc": "Tags each input token in the specified array."
+    },
+    {
+      "name": "func prediction(from: String) -> [String]",
+      "desc": "Tags each token in the specified string."
+    },
+    {
+      "name": "func predictions(from: MLDataColumn<String>) -> MLDataTable",
+      "desc": "Tags each string in the specified column."
+    },
+    {
+      "name": "func predictionWithConfidence(from: String) -> [[String : Double]]",
+      "desc": "Predicts multiple possible tags and their confidence scores for each token in the specified string."
+    },
+    {
+      "name": "func predictionWithConfidence(from: [MLWordTagger.Token]) -> [[String : Double]]",
+      "desc": "Predicts multiple possible tags and their confidence scores for each token in the specified token array."
+    },
+    {
+      "name": "func write(to: URL, metadata: MLModelMetadata?)",
+      "desc": "Exports the word tagger as a Core ML model file at the specified URL."
+    },
+    {
+      "name": "func write(toFile: String, metadata: MLModelMetadata?)",
+      "desc": "Exports the word tagger as a Core ML model file at the specified file path."
+    },
+    {
+      "name": "var model: MLModel",
+      "desc": "The underlying Core ML model of the word tagger."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the word tagger."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the word tagger that’s suitable for output during debugging."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the word tagger in a playground."
+    }
+  ],
+  "declaration": "struct MLWordTagger",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomStringConvertible"
+  ]
+}

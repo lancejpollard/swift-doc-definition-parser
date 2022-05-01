@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/passkit/pkissuerprovisioningextensionhandler",
+  "type": "Class",
+  "name": "PKIssuerProvisioningExtensionHandler",
+  "desc": "An abstract superclass for an app extension to add a payment card to Wallet.",
+  "items": [
+    {
+      "name": "func status(completion: (PKIssuerProvisioningExtensionStatus) -> Void)",
+      "desc": "Reports the status of your Wallet extension."
+    },
+    {
+      "name": "class PKIssuerProvisioningExtensionStatus",
+      "desc": "An object that indicates whether there are any payment cards available to add as Wallet passes."
+    },
+    {
+      "name": "func passEntries(completion: ([PKIssuerProvisioningExtensionPassEntry]) -> Void)",
+      "desc": "Reports the list of passes available to add to an iPhone."
+    },
+    {
+      "name": "func remotePassEntries(completion: ([PKIssuerProvisioningExtensionPassEntry]) -> Void)",
+      "desc": "Reports the list of passes available to add to an Apple Watch."
+    },
+    {
+      "name": "class PKIssuerProvisioningExtensionPassEntry",
+      "desc": "An object that represents an item available to add to as a Wallet pass."
+    },
+    {
+      "name": "class PKIssuerProvisioningExtensionPaymentPassEntry",
+      "desc": "An object that represents a payment card available to add as a payment pass."
+    },
+    {
+      "name": "func generateAddPaymentPassRequestForPassEntryWithIdentifier(String, configuration: PKAddPaymentPassRequestConfiguration, certificateChain: [Data], nonce: Data, nonceSignature: Data, completionHandler: (PKAddPaymentPassRequest?) -> Void)",
+      "desc": "Creates an object with the data the system needs to add a card to Apple Pay."
+    }
+  ],
+  "declaration": "class PKIssuerProvisioningExtensionHandler : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

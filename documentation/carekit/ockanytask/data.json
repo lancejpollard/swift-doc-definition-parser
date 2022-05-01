@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/carekit/ockanytask",
+  "type": "Protocol",
+  "name": "OCKAnyTask",
+  "desc": "A protocol that allows you to query and display a custom task data type.",
+  "items": [
+    {
+      "name": "var id: String",
+      "desc": "A human-readable unique identifier that is never shown to a user."
+    },
+    {
+      "name": "var title: String?",
+      "desc": "A string that represents this task to the patient."
+    },
+    {
+      "name": "var instructions: String?",
+      "desc": "A string that provides user instructions about how to perform a task."
+    },
+    {
+      "name": "var schedule: OCKSchedule",
+      "desc": "The dates and times when the task occurs."
+    },
+    {
+      "name": "var impactsAdherence: Bool",
+      "desc": "A Boolean that indicates whether your app factors completion of this task into the patient’s overall adherence."
+    },
+    {
+      "name": "var notes: [OCKNote]?",
+      "desc": "An array of notes associated with the task object."
+    },
+    {
+      "name": "var groupIdentifier: String?",
+      "desc": "A user-defined group identifier you can use to query and sort results."
+    },
+    {
+      "name": "var remoteID: String?",
+      "desc": "A string value that represents a unique identifier, which a remote database uses optionally."
+    },
+    {
+      "name": "func belongs(to: OCKAnyCarePlan) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a task belongs to a specific care plan."
+    }
+  ],
+  "declaration": "protocol OCKAnyTask"
+}

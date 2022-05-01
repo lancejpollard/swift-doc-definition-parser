@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/uikit/nstextelementprovider",
+  "type": "Protocol",
+  "name": "NSTextElementProvider",
+  "desc": "A protocol the text content manager and its concrete subclasses conform to which defines the interface for interacting with custom content types of a text document.",
+  "items": [
+    {
+      "name": "var documentRange: NSTextRange",
+      "desc": "Describes the starting and ending locations for the document."
+    },
+    {
+      "name": "func enumerateTextElements(from: NSTextLocation?, options: NSTextContentManager.EnumerationOptions, using: (NSTextElement) -> Bool) -> NSTextLocation?",
+      "desc": "Enumerates text elements starting at the text location you provide."
+    },
+    {
+      "name": "struct NSTextLayoutFragment.EnumerationOptions",
+      "desc": "Values that describe options for enumerating text layout fragments."
+    },
+    {
+      "name": "func location(NSTextLocation, offsetBy: Int) -> NSTextLocation?",
+      "desc": "Returns a new location from location with offset you provide."
+    },
+    {
+      "name": "func replaceContents(in: NSTextRange, with: [NSTextElement]?)",
+      "desc": "Replaces the characters specified by range with the text elements you provide."
+    },
+    {
+      "name": "func adjustedRange(from: NSTextRange, forEditingTextSelection: Bool) -> NSTextRange?",
+      "desc": "A method you implement if the location backing store requires manual adjustment after editing."
+    },
+    {
+      "name": "func offset(from: NSTextLocation, to: NSTextLocation) -> Int",
+      "desc": "Returns the offset between the two specified locations."
+    },
+    {
+      "name": "func synchronizeToBackingStore(((Error?) -> Void)?)",
+      "desc": "Synchronizes changes to the backing store."
+    }
+  ],
+  "declaration": "protocol NSTextElementProvider",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

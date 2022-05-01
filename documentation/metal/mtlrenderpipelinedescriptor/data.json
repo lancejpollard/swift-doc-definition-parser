@@ -1,0 +1,169 @@
+{
+  "path": "/documentation/metal/mtlrenderpipelinedescriptor",
+  "type": "Class",
+  "name": "MTLRenderPipelineDescriptor",
+  "desc": "An argument of options you pass to a device to get a render pipeline state object.",
+  "items": [
+    {
+      "name": "var label: String?",
+      "desc": "A string that identifies the render pipeline descriptor."
+    },
+    {
+      "name": "var vertexFunction: MTLFunction?",
+      "desc": "The vertex function the pipeline calls to process vertices."
+    },
+    {
+      "name": "var fragmentFunction: MTLFunction?",
+      "desc": "The fragment function the pipeline calls to process fragments."
+    },
+    {
+      "name": "var maxVertexCallStackDepth: Int",
+      "desc": "The maximum function call depth from the top-most vertex shader function."
+    },
+    {
+      "name": "var maxFragmentCallStackDepth: Int",
+      "desc": "The maximum function call depth from the top-most fragment shader function."
+    },
+    {
+      "name": "var vertexDescriptor: MTLVertexDescriptor?",
+      "desc": "The organization of vertex data in an attribute’s argument table."
+    },
+    {
+      "name": "var vertexBuffers: MTLPipelineBufferDescriptorArray",
+      "desc": "An array that contains the buffer mutability options for a render pipeline's vertex function."
+    },
+    {
+      "name": "var fragmentBuffers: MTLPipelineBufferDescriptorArray",
+      "desc": "An array that contains the buffer mutability options for a render pipeline's fragment function."
+    },
+    {
+      "name": "func reset()",
+      "desc": "Specifies the default rendering pipeline state values for the descriptor."
+    },
+    {
+      "name": "var colorAttachments: MTLRenderPipelineColorAttachmentDescriptorArray",
+      "desc": "An array of attachments that store color data."
+    },
+    {
+      "name": "var depthAttachmentPixelFormat: MTLPixelFormat",
+      "desc": "The pixel format of the attachment that stores depth data."
+    },
+    {
+      "name": "var stencilAttachmentPixelFormat: MTLPixelFormat",
+      "desc": "The pixel format of the attachment that stores stencil data."
+    },
+    {
+      "name": "var sampleCount: Int",
+      "desc": "The number of samples in each fragment."
+    },
+    {
+      "name": "var isAlphaToCoverageEnabled: Bool",
+      "desc": "A Boolean value that indicates whether to read and use the alpha channel fragment output for color attachments to compute a sample coverage mask."
+    },
+    {
+      "name": "var isAlphaToOneEnabled: Bool",
+      "desc": "A Boolean value that indicates whether to force alpha channel values for color attachments to the largest representable value."
+    },
+    {
+      "name": "var isRasterizationEnabled: Bool",
+      "desc": "A Boolean value that determines whether the pipeline rasterizes primitives."
+    },
+    {
+      "name": "var inputPrimitiveTopology: MTLPrimitiveTopologyClass",
+      "desc": "The type of primitive topology the pipeline renders."
+    },
+    {
+      "name": "var rasterSampleCount: Int",
+      "desc": "The number of samples in each fragment."
+    },
+    {
+      "name": "enum MTLPrimitiveTopologyClass",
+      "desc": "The primitive topologies available for rendering."
+    },
+    {
+      "name": "var maxTessellationFactor: Int",
+      "desc": "The maximum tessellation factor that the tessellator uses when tessellating patches."
+    },
+    {
+      "name": "var isTessellationFactorScaleEnabled: Bool",
+      "desc": "A Boolean value that determines whether the pipeline scales the tessellation factor."
+    },
+    {
+      "name": "var tessellationFactorFormat: MTLTessellationFactorFormat",
+      "desc": "The format of the tessellation factors in the tessellation factor buffer."
+    },
+    {
+      "name": "var tessellationControlPointIndexType: MTLTessellationControlPointIndexType",
+      "desc": "The size of the control point indices in a control point index buffer."
+    },
+    {
+      "name": "var tessellationFactorStepFunction: MTLTessellationFactorStepFunction",
+      "desc": "The step function for determining the tessellation factors for a patch from the tessellation factor buffer."
+    },
+    {
+      "name": "var tessellationOutputWindingOrder: MTLWinding",
+      "desc": "The winding order of triangles from the tessellator."
+    },
+    {
+      "name": "var tessellationPartitionMode: MTLTessellationPartitionMode",
+      "desc": "The partitioning mode that the tessellator uses to derive the number and spacing of segments for subdividing a corresponding edge."
+    },
+    {
+      "name": "enum MTLTessellationFactorFormat",
+      "desc": "Options for specifying the format of the tessellation factors in a tessellation factor buffer."
+    },
+    {
+      "name": "enum MTLTessellationControlPointIndexType",
+      "desc": "Options for specifying the size of the control point indices in a control point index buffer."
+    },
+    {
+      "name": "enum MTLTessellationFactorStepFunction",
+      "desc": "Options for specifying the step function that determines the tessellation factors for a patch from the tessellation factor buffer."
+    },
+    {
+      "name": "enum MTLTessellationPartitionMode",
+      "desc": "Options for specifying the partitioning mode that the tessellator uses to derive the number and spacing of segments for subdividing a corresponding edge."
+    },
+    {
+      "name": "var supportIndirectCommandBuffers: Bool",
+      "desc": "A Boolean value that determines whether you can encode commands into an indirect command buffer using the render pipeline."
+    },
+    {
+      "name": "var maxVertexAmplificationCount: Int",
+      "desc": "The maximum vertex amplification count you can set when encoding render commands."
+    },
+    {
+      "name": "var supportAddingVertexBinaryFunctions: Bool",
+      "desc": "A Boolean value that indicates whether you can use the pipeline to create new pipelines by adding binary functions to the vertex shader’s callable functions list."
+    },
+    {
+      "name": "var supportAddingFragmentBinaryFunctions: Bool",
+      "desc": "A Boolean value that indicates whether you can use the pipeline to create new pipelines by adding binary functions to the fragment shader’s callable functions list."
+    },
+    {
+      "name": "var binaryArchives: [MTLBinaryArchive]?",
+      "desc": "An array of binary archives to search for precompiled versions of the shader."
+    },
+    {
+      "name": "var vertexLinkedFunctions: MTLLinkedFunctions!",
+      "desc": "Functions that you can specify as function arguments for the vertex shader when encoding commands that use the pipeline."
+    },
+    {
+      "name": "var fragmentLinkedFunctions: MTLLinkedFunctions!",
+      "desc": "Functions that you can specify as function arguments for the fragment shader when encoding commands that use the pipeline."
+    },
+    {
+      "name": "var fragmentPreloadedLibraries: [MTLDynamicLibrary]"
+    },
+    {
+      "name": "var vertexPreloadedLibraries: [MTLDynamicLibrary]"
+    }
+  ],
+  "declaration": "class MTLRenderPipelineDescriptor : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

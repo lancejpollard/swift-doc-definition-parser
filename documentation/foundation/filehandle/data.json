@@ -1,0 +1,175 @@
+{
+  "path": "/documentation/foundation/filehandle",
+  "type": "Class",
+  "name": "FileHandle",
+  "desc": "An object-oriented wrapper for a file descriptor.",
+  "items": [
+    {
+      "name": "init(fileDescriptor: Int32)",
+      "desc": "Creates and returns a file handle object associated with the specified file descriptor."
+    },
+    {
+      "name": "init(fileDescriptor: Int32, closeOnDealloc: Bool)",
+      "desc": "Creates and returns a file handle object associated with the specified file descriptor and deallocation policy."
+    },
+    {
+      "name": "init?(forReadingAtPath: String)",
+      "desc": "Returns a file handle initialized for reading the file, device, or named socket at the specified path."
+    },
+    {
+      "name": "init(forReadingFrom: URL)",
+      "desc": "Returns a file handle initialized for reading the file, device, or named socket at the specified URL."
+    },
+    {
+      "name": "init?(forWritingAtPath: String)",
+      "desc": "Returns a file handle initialized for writing to the file, device, or named socket at the specified path."
+    },
+    {
+      "name": "init(forWritingTo: URL)",
+      "desc": "Returns a file handle initialized for writing to the file, device, or named socket at the specified URL."
+    },
+    {
+      "name": "init?(forUpdatingAtPath: String)",
+      "desc": "Returns a file handle initialized for reading and writing to the file, device, or named socket at the specified path."
+    },
+    {
+      "name": "init(forUpdating: URL)",
+      "desc": "Returns a file handle initialized for reading and writing to the file, device, or named socket at the specified URL."
+    },
+    {
+      "name": "init?(coder: NSCoder)",
+      "desc": "Returns a file handle initialized from data in an unarchiver."
+    },
+    {
+      "name": "class var standardError: FileHandle",
+      "desc": "The file handle associated with the standard error file."
+    },
+    {
+      "name": "class var standardInput: FileHandle",
+      "desc": "The file handle associated with the standard input file."
+    },
+    {
+      "name": "class var standardOutput: FileHandle",
+      "desc": "The file handle associated with the standard output file."
+    },
+    {
+      "name": "class var nullDevice: FileHandle",
+      "desc": "The file handle associated with a null device."
+    },
+    {
+      "name": "var fileDescriptor: Int32",
+      "desc": "The POSIX file descriptor associated with the receiver."
+    },
+    {
+      "name": "var bytes: FileHandle.AsyncBytes",
+      "desc": "The file’s contents, as an asynchronous sequence of bytes."
+    },
+    {
+      "name": "struct FileHandle.AsyncBytes",
+      "desc": "An asynchronous sequence of bytes."
+    },
+    {
+      "name": "var availableData: Data",
+      "desc": "The data currently available in the receiver."
+    },
+    {
+      "name": "func readToEnd() -> Data?",
+      "desc": "Reads the available data synchronously up to the end of file or maximum number of bytes."
+    },
+    {
+      "name": "func read(upToCount: Int) -> Data?",
+      "desc": "Reads data synchronously up to the specified number of bytes."
+    },
+    {
+      "name": "func acceptConnectionInBackgroundAndNotify()",
+      "desc": "Accepts a socket connection (for stream-type sockets only) in the background and creates a file handle for the “near” (client) end of the communications channel."
+    },
+    {
+      "name": "func acceptConnectionInBackgroundAndNotify(forModes: [RunLoop.Mode]?)",
+      "desc": "Accepts a socket connection (for stream-type sockets only) in the background and creates a file handle for the “near” (client) end of the communications channel."
+    },
+    {
+      "name": "func readInBackgroundAndNotify()",
+      "desc": "Reads from the file or communications channel in the background and posts a notification when finished."
+    },
+    {
+      "name": "func readInBackgroundAndNotify(forModes: [RunLoop.Mode]?)",
+      "desc": "Reads from the file or communications channel in the background and posts a notification when finished."
+    },
+    {
+      "name": "func readToEndOfFileInBackgroundAndNotify()",
+      "desc": "Reads to the end of file from the file or communications channel in the background and posts a notification when finished."
+    },
+    {
+      "name": "func readToEndOfFileInBackgroundAndNotify(forModes: [RunLoop.Mode]?)",
+      "desc": "Reads to the end of file from the file or communications channel in the background and posts a notification when finished."
+    },
+    {
+      "name": "func waitForDataInBackgroundAndNotify()",
+      "desc": "Asynchronously checks to see if data is available."
+    },
+    {
+      "name": "func waitForDataInBackgroundAndNotify(forModes: [RunLoop.Mode]?)",
+      "desc": "Asynchronously checks to see if data is available."
+    },
+    {
+      "name": "func write<T>(contentsOf: T)",
+      "desc": "Writes the specified data synchronously to the file handle."
+    },
+    {
+      "name": "func offset() -> UInt64",
+      "desc": "Gets the position of the file pointer within the file."
+    },
+    {
+      "name": "func seekToEnd() -> UInt64",
+      "desc": "Places the file pointer at the end of the file referenced by the file handle and returns the new file offset."
+    },
+    {
+      "name": "func seek(toOffset: UInt64)",
+      "desc": "Moves the file pointer to the specified offset within the file."
+    },
+    {
+      "name": "func close()",
+      "desc": "Disallows further access to the represented file or communications channel and signals end of file on communications channels that permit writing."
+    },
+    {
+      "name": "func synchronize()",
+      "desc": "Causes all in-memory data and attributes of the file represented by the file handle to write to permanent storage."
+    },
+    {
+      "name": "func truncate(atOffset: UInt64)",
+      "desc": "Truncates or extends the file represented by the file handle to a specified offset within the file and puts the file pointer at that position."
+    },
+    {
+      "name": "var readabilityHandler: ((FileHandle) -> Void)?",
+      "desc": "The block to use for reading the contents of the file handle asynchronously."
+    },
+    {
+      "name": "var writeabilityHandler: ((FileHandle) -> Void)?",
+      "desc": "The block to use for writing the contents of the file handle asynchronously."
+    },
+    {
+      "name": "static let NSFileHandleConnectionAccepted: NSNotification.Name",
+      "desc": "Posted when a file handle object establishes a socket connection between two processes, creates a file handle object for one end of the connection, and makes this object available to observers."
+    },
+    {
+      "name": "static let NSFileHandleDataAvailable: NSNotification.Name",
+      "desc": "Posted when the file handle determines that data is currently available for reading in a file or at a communications channel."
+    },
+    {
+      "name": "class let readCompletionNotification: NSNotification.Name",
+      "desc": "Posted when the file handle reads the data currently available in a file or at a communications channel."
+    },
+    {
+      "name": "static let NSFileHandleReadToEndOfFileCompletion: NSNotification.Name",
+      "desc": "Posted when the file handle reads all data in the file or, in a communications channel, until the other process signals the end of data."
+    }
+  ],
+  "declaration": "class FileHandle : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

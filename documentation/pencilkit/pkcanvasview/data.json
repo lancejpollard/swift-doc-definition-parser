@@ -1,0 +1,47 @@
+{
+  "path": "/documentation/pencilkit/pkcanvasview",
+  "type": "Class",
+  "name": "PKCanvasView",
+  "desc": "A view that captures Apple Pencil input and displays the rendered results in an iOS app.",
+  "items": [
+    {
+      "name": "var delegate: PKCanvasViewDelegate?",
+      "desc": "The object you use to respond to changes in the drawn content or with the selected tool."
+    },
+    {
+      "name": "protocol PKCanvasViewDelegate",
+      "desc": "Methods for monitoring drawing related changes in a canvas view."
+    },
+    {
+      "name": "var tool: PKTool",
+      "desc": "The currently selected tool used for drawing."
+    },
+    {
+      "name": "var isRulerActive: Bool",
+      "desc": "A Boolean value that indicates whether a ruler view is visible on the canvas."
+    },
+    {
+      "name": "var drawingPolicy: PKCanvasViewDrawingPolicy",
+      "desc": "The policy that controls the types of touches allowed when drawing on the canvas."
+    },
+    {
+      "name": "enum PKCanvasViewDrawingPolicy",
+      "desc": "Constants that you use to specify the type of drawing gestures your app permits while the user draws on the canvas."
+    },
+    {
+      "name": "var drawingGestureRecognizer: UIGestureRecognizer",
+      "desc": "The gesture recognizer that the canvas uses to track touch events."
+    },
+    {
+      "name": "var drawing: PKDrawing",
+      "desc": "The data object that the canvas uses to store drawn content."
+    }
+  ],
+  "declaration": "class PKCanvasView : UIScrollView",
+  "inheritsFrom": [
+    "UIScrollView"
+  ],
+  "conformsTo": [
+    "PKToolPickerObserver"
+  ]
+}

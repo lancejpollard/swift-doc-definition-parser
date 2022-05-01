@@ -1,0 +1,29 @@
+{
+  "path": "/documentation/swiftui/tablerowcontent",
+  "type": "Protocol",
+  "name": "TableRowContent",
+  "desc": "Conforming types represent rows used within a table.",
+  "items": [
+    {
+      "name": "var tableRowBody: Self.TableRowBody",
+      "desc": "The composition of content that comprise the table row content."
+    },
+    {
+      "name": "associatedtype TableRowBody : TableRowContent",
+      "desc": "The type of content representing the body of this table row content."
+    },
+    {
+      "name": "associatedtype TableRowValue : Identifiable = Self.TableRowBody.TableRowValue",
+      "desc": "The type of value represented by this table row content."
+    },
+    {
+      "name": "func itemProvider((() -> NSItemProvider?)?) -> ModifiedContent<Self, ItemProviderTableRowModifier>",
+      "desc": "Provides a closure that vends the drag representation to be used for a particular data element."
+    },
+    {
+      "name": "struct ItemProviderTableRowModifier",
+      "desc": "A table row modifier that associates an item provider with some base row content."
+    }
+  ],
+  "declaration": "protocol TableRowContent"
+}

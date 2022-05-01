@@ -1,0 +1,43 @@
+{
+  "path": "/documentation/opendirectory/odquery",
+  "type": "Class",
+  "name": "ODQuery",
+  "desc": "An ODQuery object serves as a Cocoa wrapper for an Open Directory query.",
+  "items": [
+    {
+      "name": "init(node: ODNode!, forRecordTypes: Any!, attribute: String!, matchType: ODMatchType, queryValues: Any!, returnAttributes: Any!, maximumResults: Int)",
+      "desc": "Creates a query object with provided parameters."
+    },
+    {
+      "name": "var delegate: ODQueryDelegate!",
+      "desc": "The query’s delegate."
+    },
+    {
+      "name": "var operationQueue: OperationQueue!",
+      "desc": "The queue on which asynchronous results are delivered to the delegate."
+    },
+    {
+      "name": "func schedule(in: RunLoop!, forMode: String!)",
+      "desc": "Retrieves results from a query asynchronously by scheduling the query in a run loop."
+    },
+    {
+      "name": "func remove(from: RunLoop!, forMode: String!)",
+      "desc": "Removes the query from a specified run loop."
+    },
+    {
+      "name": "func synchronize()",
+      "desc": "Restarts a query, disposing of any results it has obtained."
+    },
+    {
+      "name": "func resultsAllowingPartial(Bool) -> [Any]",
+      "desc": "Returns results from a query synchronously."
+    }
+  ],
+  "declaration": "class ODQuery : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

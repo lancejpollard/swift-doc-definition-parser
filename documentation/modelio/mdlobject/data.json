@@ -1,0 +1,85 @@
+{
+  "path": "/documentation/modelio/mdlobject",
+  "type": "Class",
+  "name": "MDLObject",
+  "desc": "The base class for objects that are part of a 3D asset, including meshes, cameras, and lights.",
+  "items": [
+    {
+      "name": "func componentConforming(to: Protocol) -> MDLComponent?",
+      "desc": "Returns the object’s component for the specified protocol."
+    },
+    {
+      "name": "func setComponent(MDLComponent, for: Protocol)",
+      "desc": "Associates a component with the object for the specified protocol."
+    },
+    {
+      "name": "var parent: MDLObject?",
+      "desc": "The parent object that contains this object."
+    },
+    {
+      "name": "var children: MDLObjectContainerComponent",
+      "desc": "A component that manages this object’s collection of children."
+    },
+    {
+      "name": "func addChild(MDLObject)",
+      "desc": "Adds a child object to this object, creating a container for the object’s children if necessary."
+    },
+    {
+      "name": "func enumerateChildObjects(of: AnyClass, root: MDLObject, using: (MDLObject, UnsafeMutablePointer<ObjCBool>) -> Void, stopPointer: UnsafeMutablePointer<ObjCBool>)",
+      "desc": "Executes the specified block using each object in this object's child hierarchy."
+    },
+    {
+      "name": "var path: String",
+      "desc": "A path that identifies the object in an asset's object hierarchy using object names."
+    },
+    {
+      "name": "func atPath(String) -> MDLObject",
+      "desc": "Returns the child object at the specified path."
+    },
+    {
+      "name": "func boundingBox(atTime: TimeInterval) -> MDLAxisAlignedBoundingBox",
+      "desc": "Returns the minimum region entirely enclosing the object’s contents at the specified time sample."
+    },
+    {
+      "name": "var transform: MDLTransformComponent?",
+      "desc": "A component that manages this object’s spatial transform and its changes over time."
+    },
+    {
+      "name": "var hidden: Bool",
+      "desc": "A Boolean value indicating whether this object should be used in rendering."
+    },
+    {
+      "name": "var instance: MDLObject?",
+      "desc": "The primary object, if applicable, of which this object is an instance."
+    },
+    {
+      "name": "var path: String",
+      "desc": "A path that identifies the object in an asset's object hierarchy using object names."
+    },
+    {
+      "name": "var components: [MDLComponent]"
+    },
+    {
+      "name": "func atPath(String) -> MDLObject",
+      "desc": "Returns the child object at the specified path."
+    },
+    {
+      "name": "func enumerateChildObjects(of: AnyClass, root: MDLObject, using: (MDLObject, UnsafeMutablePointer<ObjCBool>) -> Void, stopPointer: UnsafeMutablePointer<ObjCBool>)",
+      "desc": "Executes the specified block using each object in this object's child hierarchy."
+    },
+    {
+      "name": "subscript(Protocol) -> MDLComponent?"
+    },
+    {
+      "name": "struct MDLAxisAlignedBoundingBox",
+      "desc": "The minimal volume containing an object, used by the boundingBox(atTime:) method."
+    }
+  ],
+  "declaration": "class MDLObject : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "MDLNamed"
+  ]
+}

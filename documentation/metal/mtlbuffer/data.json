@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/metal/mtlbuffer",
+  "type": "Protocol",
+  "name": "MTLBuffer",
+  "desc": "A resource that stores data in a format defined by your app.",
+  "items": [
+    {
+      "name": "func makeTexture(descriptor: MTLTextureDescriptor, offset: Int, bytesPerRow: Int) -> MTLTexture?",
+      "desc": "Creates a texture that shares its storage with the buffer."
+    },
+    {
+      "name": "func contents() -> UnsafeMutableRawPointer",
+      "desc": "Gets the system address of the buffer’s storage allocation."
+    },
+    {
+      "name": "func didModifyRange(Range<Int>)",
+      "desc": "Informs the GPU that the CPU has modified a section of the buffer."
+    },
+    {
+      "name": "func addDebugMarker(String, range: Range<Int>)",
+      "desc": "Adds a debug marker string to a specific buffer range."
+    },
+    {
+      "name": "func removeAllDebugMarkers()",
+      "desc": "Removes all debug marker strings from the buffer."
+    },
+    {
+      "name": "var length: Int",
+      "desc": "The logical size of the buffer, in bytes."
+    },
+    {
+      "name": "func makeRemoteBufferView(MTLDevice) -> MTLBuffer?",
+      "desc": "Creates a remote view of the buffer for another GPU in the same peer group."
+    },
+    {
+      "name": "var remoteStorageBuffer: MTLBuffer?",
+      "desc": "The buffer on another GPU that the buffer was created from, if any."
+    }
+  ],
+  "declaration": "protocol MTLBuffer",
+  "inheritsFrom": [
+    "MTLResource"
+  ]
+}

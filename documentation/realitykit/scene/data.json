@@ -1,0 +1,142 @@
+{
+  "path": "/documentation/realitykit/scene",
+  "type": "Class",
+  "name": "Scene",
+  "desc": "A container that holds the collection of entities rendered by an AR view.",
+  "items": [
+    {
+      "name": "var name: String",
+      "desc": "A name for the scene."
+    },
+    {
+      "name": "var id: ObjectIdentifier",
+      "desc": "The stable identity of the entity associated with this instance."
+    },
+    {
+      "name": "var id: UInt64",
+      "desc": "The stable identity of the scene."
+    },
+    {
+      "name": "typealias Scene.ID",
+      "desc": "A type of unique identifier used for a scene."
+    },
+    {
+      "name": "var anchors: Scene.AnchorCollection",
+      "desc": "The collection of anchors contained in the scene."
+    },
+    {
+      "name": "func addAnchor(HasAnchoring)",
+      "desc": "Adds an anchor to the scene’s list of anchors."
+    },
+    {
+      "name": "func removeAnchor(HasAnchoring)",
+      "desc": "Removes the specified anchor from the scene."
+    },
+    {
+      "name": "struct Scene.AnchorCollection",
+      "desc": "A collection of anchor entities."
+    },
+    {
+      "name": "func findEntity(named: String) -> Entity?",
+      "desc": "Searches the scene’s anchor entity hierarchies for an entity with the given name."
+    },
+    {
+      "name": "func raycast(origin: SIMD3<Float>, direction: SIMD3<Float>, length: Float, query: CollisionCastQueryType, mask: CollisionGroup, relativeTo: Entity?) -> [CollisionCastHit]",
+      "desc": "Performs a convex ray cast against all the geometry in the scene for a ray of a given origin, direction, and length."
+    },
+    {
+      "name": "func raycast(from: SIMD3<Float>, to: SIMD3<Float>, query: CollisionCastQueryType, mask: CollisionGroup, relativeTo: Entity?) -> [CollisionCastHit]",
+      "desc": "Performs a convex ray cast against all the geometry in the scene for a ray between two end points."
+    },
+    {
+      "name": "func convexCast(convexShape: ShapeResource, fromPosition: SIMD3<Float>, fromOrientation: simd_quatf, toPosition: SIMD3<Float>, toOrientation: simd_quatf, query: CollisionCastQueryType, mask: CollisionGroup, relativeTo: Entity?) -> [CollisionCastHit]",
+      "desc": "Performs a convex shape cast against all the geometry in the scene."
+    },
+    {
+      "name": "struct CollisionCastHit",
+      "desc": "A hit result of a collision cast."
+    },
+    {
+      "name": "enum CollisionCastQueryType",
+      "desc": "The kinds of ray and convex shape cast queries that you can make."
+    },
+    {
+      "name": "struct CollisionGroup",
+      "desc": "A bitmask that defines the collision group to which an entity belongs."
+    },
+    {
+      "name": "var synchronizationService: SynchronizationService?",
+      "desc": "The service to use for network synchronization."
+    },
+    {
+      "name": "protocol SynchronizationService",
+      "desc": "An interface that enables entity synchronization among a group of local peers."
+    },
+    {
+      "name": "func publisher<E>(for: E.Type, on: EventSource?) -> Scene.Publisher<E>",
+      "desc": "Generates a publisher for events of the specified type."
+    },
+    {
+      "name": "func subscribe<E>(to: E.Type, on: EventSource?, (E) -> Void) -> Cancellable",
+      "desc": "Receives events of the given type."
+    },
+    {
+      "name": "struct Scene.Publisher",
+      "desc": "A publisher for the given event type in the scene."
+    },
+    {
+      "name": "enum SceneEvents",
+      "desc": "Events the scene triggers."
+    },
+    {
+      "name": "enum AnimationEvents",
+      "desc": "Notable milestones that the framework signals during animation playback."
+    },
+    {
+      "name": "enum AudioEvents",
+      "desc": "Events associated with audio playback."
+    },
+    {
+      "name": "enum CollisionEvents",
+      "desc": "Events associated with collisions."
+    },
+    {
+      "name": "protocol Event",
+      "desc": "A type that can be sent as an event."
+    },
+    {
+      "name": "protocol EventSource",
+      "desc": "A type on which events can be published and subscribed."
+    },
+    {
+      "name": "static func == (Scene, Scene) -> Bool",
+      "desc": "Indicates whether two scenes are equal."
+    },
+    {
+      "name": "static func != (Scene, Scene) -> Bool",
+      "desc": "Indicates whether two scenes are not equal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the scene by feeding them into the given hash function."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hashed value of the scene."
+    },
+    {
+      "name": "func performQuery(EntityQuery) -> QueryResult<Entity>"
+    },
+    {
+      "name": "func publisher<E>(for: E.Type, on: EventSource?, componentType: Component.Type?) -> Scene.Publisher<E>"
+    },
+    {
+      "name": "func subscribe<E>(to: E.Type, on: EventSource?, componentType: Component.Type?, (E) -> Void) -> Cancellable"
+    }
+  ],
+  "declaration": "class Scene",
+  "conformsTo": [
+    "Hashable",
+    "Identifiable"
+  ]
+}

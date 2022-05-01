@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/networkextension/neipv4settings",
+  "type": "Class",
+  "name": "NEIPv4Settings",
+  "desc": "NEIPv4Settings contains the Internet Protocol version 4 (IPv4) settings of a IP layer network tunnel.",
+  "items": [
+    {
+      "name": "init(addresses: [String], subnetMasks: [String])",
+      "desc": "Initialize the NEIPv4Settings object."
+    },
+    {
+      "name": "var addresses: [String]",
+      "desc": "The IPv4 addresses to assign to the TUN interface."
+    },
+    {
+      "name": "var subnetMasks: [String]",
+      "desc": "The IPv4 network masks to assign to the TUN interface."
+    },
+    {
+      "name": "var includedRoutes: [NEIPv4Route]?",
+      "desc": "The routes that specify what IPv4 network traffic will be routed to the TUN interface."
+    },
+    {
+      "name": "var excludedRoutes: [NEIPv4Route]?",
+      "desc": "The routes that specify what IPv4 network traffic will be routed to the primary physical interface."
+    },
+    {
+      "name": "class NEIPv4Route",
+      "desc": "NEIPv4Route contains settings for an IPv4 route."
+    }
+  ],
+  "declaration": "class NEIPv4Settings : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "path": "/documentation/photokit/phlivephotoview",
+  "type": "Class",
+  "name": "PHLivePhotoView",
+  "desc": "A view that displays a Live Photo—a picture that also includes motion and sound from the moments just before and after its capture.",
+  "items": [
+    {
+      "name": "var livePhoto: PHLivePhoto?",
+      "desc": "The Live Photo displayed in the view."
+    },
+    {
+      "name": "var playbackGestureRecognizer: UIGestureRecognizer",
+      "desc": "A gesture recognizer that controls playback of the Live Photo in the view."
+    },
+    {
+      "name": "var isMuted: Bool",
+      "desc": "A Boolean value that determines whether the view plays the audio content of its Live Photo."
+    },
+    {
+      "name": "var audioVolume: Float",
+      "desc": "The audio gain to apply to the Live Photo’s movie content during playback."
+    },
+    {
+      "name": "var delegate: PHLivePhotoViewDelegate?",
+      "desc": "An object to be notified when Live Photo playback begins or ends."
+    },
+    {
+      "name": "protocol PHLivePhotoViewDelegate",
+      "desc": "The PHLivePhotoViewDelegate protocol describes messages sent by a PHLivePhotoView instance in response to playback events when playing the motion and sound content associated with a Live Photo. To receive these messages, implement the methods in this protocol in one of your controller objects and assign that object to the delegate property of a Live Photo view."
+    },
+    {
+      "name": "func startPlayback(with: PHLivePhotoViewPlaybackStyle)",
+      "desc": "Begins playback of Live Photo content in the view."
+    },
+    {
+      "name": "func stopPlayback()",
+      "desc": "Stops playback of a Live Photo."
+    },
+    {
+      "name": "func stopPlayback(animated: Bool)",
+      "desc": "Stops playback of a Live Photo in an animated manner."
+    },
+    {
+      "name": "class func livePhotoBadgeImage(options: PHLivePhotoBadgeOptions) -> UIImage",
+      "desc": "Returns an icon image for the specified Live Photo semantic options."
+    },
+    {
+      "name": "var livePhotoBadgeView: NSView?",
+      "desc": "A view for displaying Live Photo status."
+    },
+    {
+      "name": "var contentMode: PHLivePhotoViewContentMode",
+      "desc": "The mode in which the view displays its content."
+    },
+    {
+      "name": "enum PHLivePhotoViewContentMode",
+      "desc": "The enumerated Live Photo content modes."
+    },
+    {
+      "name": "enum PHLivePhotoViewPlaybackStyle",
+      "desc": "Options for how much of the motion and sound content of a Live Photo to play, used in the startPlayback(with:) method and in messages to the view’s delegate object."
+    },
+    {
+      "name": "struct PHLivePhotoBadgeOptions",
+      "desc": "Options for the semantic use and display style of icons for badging Live Photo assets, used by the livePhotoBadgeImage(options:) method."
+    }
+  ],
+  "declaration": "class PHLivePhotoView : UIView",
+  "inheritsFrom": [
+    "NSView",
+    "UIView"
+  ]
+}

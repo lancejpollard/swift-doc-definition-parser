@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/coremotion/cmpedometer",
+  "type": "Class",
+  "name": "CMPedometer",
+  "desc": "An object for fetching the system-generated live walking data.",
+  "items": [
+    {
+      "name": "class func isStepCountingAvailable() -> Bool",
+      "desc": "Returns a Boolean value indicating whether step counting is available on the current device."
+    },
+    {
+      "name": "class func isDistanceAvailable() -> Bool",
+      "desc": "Returns a Boolean value indicating whether distance estimation is available on the current device."
+    },
+    {
+      "name": "class func isFloorCountingAvailable() -> Bool",
+      "desc": "Returns a Boolean value indicating whether floor counting is available on the current device."
+    },
+    {
+      "name": "class func isPaceAvailable() -> Bool",
+      "desc": "Returns a Boolean value indicating whether pace information is available on the current device."
+    },
+    {
+      "name": "class func isCadenceAvailable() -> Bool",
+      "desc": "Returns a Boolean value indicating whether cadence information is available on the current device."
+    },
+    {
+      "name": "class func isPedometerEventTrackingAvailable() -> Bool",
+      "desc": "Returns a Boolean value indicating whether pedometer events are available on the current device."
+    },
+    {
+      "name": "class func authorizationStatus() -> CMAuthorizationStatus",
+      "desc": "Returns a value indicating whether the app is authorized to gather pedometer data."
+    },
+    {
+      "name": "enum CMAuthorizationStatus",
+      "desc": "The authorization status for motion-related features."
+    },
+    {
+      "name": "func startUpdates(from: Date, withHandler: CMPedometerHandler)",
+      "desc": "Starts the delivery of recent pedestrian-related data to your app."
+    },
+    {
+      "name": "func stopUpdates()",
+      "desc": "Stops the delivery of recent pedestrian data updates to your app."
+    },
+    {
+      "name": "func startEventUpdates(handler: CMPedometerEventHandler)",
+      "desc": "Starts the delivery of pedometer events to your app."
+    },
+    {
+      "name": "func stopEventUpdates()",
+      "desc": "Stops the delivery of pedometer events to your app."
+    },
+    {
+      "name": "typealias CMPedometerHandler",
+      "desc": "A block for processing pedometer-related data."
+    },
+    {
+      "name": "typealias CMPedometerEventHandler",
+      "desc": "A block for processing pedometer events."
+    },
+    {
+      "name": "func queryPedometerData(from: Date, to: Date, withHandler: CMPedometerHandler)",
+      "desc": "Retrieves the data between the specified start and end dates."
+    }
+  ],
+  "declaration": "class CMPedometer : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

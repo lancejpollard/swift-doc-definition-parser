@@ -1,0 +1,105 @@
+{
+  "path": "/documentation/uikit/nsdiffabledatasourcesectionsnapshot",
+  "type": "Generic Structure",
+  "name": "NSDiffableDataSourceSectionSnapshot",
+  "desc": "A representation of the state of the data in a layout section at a specific point in time.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an empty section snapshot."
+    },
+    {
+      "name": "init(NSDiffableDataSourceSectionSnapshot<ItemIdentifierType>)",
+      "desc": "Creates a copy of the provided section snapshot."
+    },
+    {
+      "name": "func snapshot(of: ItemIdentifierType, includingParent: Bool) -> NSDiffableDataSourceSectionSnapshot<ItemIdentifierType>",
+      "desc": "Creates a section snapshot that contains the child items of the specified parent item, optionally including the parent item."
+    },
+    {
+      "name": "func append([ItemIdentifierType], to: ItemIdentifierType?)",
+      "desc": "Adds the specified items as child items of the specified parent item in the section snapshot."
+    },
+    {
+      "name": "var items: [ItemIdentifierType]",
+      "desc": "The identifiers of all items in the section snapshot."
+    },
+    {
+      "name": "var rootItems: [ItemIdentifierType]",
+      "desc": "The identifiers of the items at the top level of the section snapshot’s hierarchy."
+    },
+    {
+      "name": "var visibleItems: [ItemIdentifierType]",
+      "desc": "The identifiers of the currently visible items in the section snapshot."
+    },
+    {
+      "name": "func index(of: ItemIdentifierType) -> Int?",
+      "desc": "Finds the index of the specified item in the section snapshot."
+    },
+    {
+      "name": "func level(of: ItemIdentifierType) -> Int",
+      "desc": "Finds the hierarchical level of the specified item in the section snapshot."
+    },
+    {
+      "name": "func parent(of: ItemIdentifierType) -> ItemIdentifierType?",
+      "desc": "Finds the parent item of the specified item in the section snapshot."
+    },
+    {
+      "name": "func contains(ItemIdentifierType) -> Bool",
+      "desc": "Indicates whether the section snapshot contains the specified item."
+    },
+    {
+      "name": "func isVisible(ItemIdentifierType) -> Bool",
+      "desc": "Indicates whether the specified item is currently visible onscreen."
+    },
+    {
+      "name": "func insert([ItemIdentifierType], after: ItemIdentifierType)",
+      "desc": "Inserts the provided items immediately after the item with the specified identifier in the section snapshot."
+    },
+    {
+      "name": "func insert(NSDiffableDataSourceSectionSnapshot<ItemIdentifierType>, after: (ItemIdentifierType))",
+      "desc": "Inserts the provided section snapshot immediately after the item with the specified identifier in the section snapshot."
+    },
+    {
+      "name": "func insert([ItemIdentifierType], before: ItemIdentifierType)",
+      "desc": "Inserts the provided items immediately before the item with the specified identifier in the section snapshot."
+    },
+    {
+      "name": "func insert(NSDiffableDataSourceSectionSnapshot<ItemIdentifierType>, before: (ItemIdentifierType))",
+      "desc": "Inserts the provided section snapshot immediately before the item with the specified identifier in the section snapshot."
+    },
+    {
+      "name": "func delete([ItemIdentifierType])",
+      "desc": "Deletes the items with the specified identifiers, and any of their child items, from the section snapshot."
+    },
+    {
+      "name": "func deleteAll()",
+      "desc": "Deletes all of the items from the section snapshot."
+    },
+    {
+      "name": "func replace(childrenOf: ItemIdentifierType, using: NSDiffableDataSourceSectionSnapshot<ItemIdentifierType>)",
+      "desc": "Replaces all child items of the specified parent item with the provided section snapshot."
+    },
+    {
+      "name": "func isExpanded(ItemIdentifierType) -> Bool",
+      "desc": "Indicates whether the item with the specified identifier is in an expanded state."
+    },
+    {
+      "name": "func expand([ItemIdentifierType])",
+      "desc": "Expands the specified items in the section snapshot."
+    },
+    {
+      "name": "func collapse([ItemIdentifierType])",
+      "desc": "Collapses the specified items in the section snapshot."
+    },
+    {
+      "name": "func visualDescription() -> String",
+      "desc": "Returns a string with an ASCII representation of the section snapshot."
+    },
+    {
+      "name": "class NSDiffableDataSourceSectionSnapshotReference",
+      "desc": "The Swift representation of the Objective-C object you use to represent the state of the data in a layout section at a specific point in time."
+    }
+  ],
+  "declaration": "struct NSDiffableDataSourceSectionSnapshot<ItemIdentifierType> where ItemIdentifierType : Hashable"
+}

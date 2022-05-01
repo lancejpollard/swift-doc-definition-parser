@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/coremidi/midinetworksession",
+  "type": "Class",
+  "name": "MIDINetworkSession",
+  "desc": "An object that represents a pairing of a source and destination.",
+  "items": [
+    {
+      "name": "class func `default`() -> MIDINetworkSession",
+      "desc": "Returns the default singleton session."
+    },
+    {
+      "name": "var isEnabled: Bool",
+      "desc": "A Boolean value that determines whether the session is enabled."
+    },
+    {
+      "name": "var connectionPolicy: MIDINetworkConnectionPolicy",
+      "desc": "The policy that determines who can connect to this session."
+    },
+    {
+      "name": "var localName: String",
+      "desc": "The name of this session’s entity."
+    },
+    {
+      "name": "var networkName: String",
+      "desc": "The name with which this session advertises itself over Bonjour."
+    },
+    {
+      "name": "var networkPort: Int",
+      "desc": "The session’s UDP port."
+    },
+    {
+      "name": "func sourceEndpoint() -> MIDIEndpointRef",
+      "desc": "Returns the session’s source endpoint."
+    },
+    {
+      "name": "func destinationEndpoint() -> MIDIEndpointRef",
+      "desc": "Returns the session’s destination endpoint."
+    },
+    {
+      "name": "func connections() -> Set<MIDINetworkConnection>",
+      "desc": "Returns the session’s set of MIDI network connections."
+    },
+    {
+      "name": "func addConnection(MIDINetworkConnection) -> Bool",
+      "desc": "Adds a new connection to this session."
+    },
+    {
+      "name": "func removeConnection(MIDINetworkConnection) -> Bool",
+      "desc": "Removes a connection from this session."
+    },
+    {
+      "name": "func contacts() -> Set<MIDINetworkHost>",
+      "desc": "Returns the array of network hosts."
+    },
+    {
+      "name": "func addContact(MIDINetworkHost) -> Bool",
+      "desc": "Adds a host as a contact."
+    },
+    {
+      "name": "func removeContact(MIDINetworkHost) -> Bool",
+      "desc": "Removes a host as a contact."
+    },
+    {
+      "name": "let MIDINetworkNotificationContactsDidChange: String",
+      "desc": "Indicates that the list of contacts changed."
+    },
+    {
+      "name": "let MIDINetworkNotificationSessionDidChange: String",
+      "desc": "Indicates that other aspects of the session changed, such as the connection list, connection policy, and so on."
+    }
+  ],
+  "declaration": "class MIDINetworkSession : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

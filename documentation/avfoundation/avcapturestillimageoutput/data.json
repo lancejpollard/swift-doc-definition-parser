@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/avfoundation/avcapturestillimageoutput",
+  "type": "Class",
+  "name": "AVCaptureStillImageOutput",
+  "desc": "A capture output for capturing still photos in macOS.",
+  "items": [
+    {
+      "name": "func captureStillImageAsynchronously(from: AVCaptureConnection, completionHandler: (CMSampleBuffer?, Error?) -> Void)",
+      "desc": "Initiates a still image capture and returns immediately."
+    },
+    {
+      "name": "var isCapturingStillImage: Bool",
+      "desc": "Indicates whether a still image is being captured."
+    },
+    {
+      "name": "var isStillImageStabilizationActive: Bool",
+      "desc": "Indicates whether still image stabilization is in use for the current capture."
+    },
+    {
+      "name": "var automaticallyEnablesStillImageStabilizationWhenAvailable: Bool",
+      "desc": "A Boolean value that indicates whether still image stabilization should be automatically enabled."
+    },
+    {
+      "name": "var isStillImageStabilizationSupported: Bool",
+      "desc": "A Boolean value that indicates whether the still image currently being captured supports still image stabilization."
+    },
+    {
+      "name": "var isHighResolutionStillImageOutputEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the receiver should emit still images at the highest resolution supported by its source AVCaptureDevice objects activeFormat property."
+    },
+    {
+      "name": "var availableImageDataCVPixelFormatTypes: [NSNumber]",
+      "desc": "The supported image pixel formats that can be specified as output settings."
+    },
+    {
+      "name": "var availableImageDataCodecTypes: [AVVideoCodecType]",
+      "desc": "The supported image codec formats that can be specified as output settings."
+    },
+    {
+      "name": "var outputSettings: [String : Any]",
+      "desc": "The compression settings for the output."
+    },
+    {
+      "name": "class func jpegStillImageNSDataRepresentation(CMSampleBuffer) -> Data?",
+      "desc": "Returns an NSData representation of a still image data and metadata attachments in a JPEG sample buffer."
+    },
+    {
+      "name": "func captureStillImageBracketAsynchronously(from: AVCaptureConnection, withSettingsArray: [AVCaptureBracketedStillImageSettings], completionHandler: (CMSampleBuffer?, AVCaptureBracketedStillImageSettings?, Error?) -> Void)",
+      "desc": "Captures a still image bracket."
+    },
+    {
+      "name": "var maxBracketedCaptureStillImageCount: Int",
+      "desc": "Specifies the maximum number of still images that may be taken in a single bracket."
+    },
+    {
+      "name": "func prepareToCaptureStillImageBracket(from: AVCaptureConnection, withSettingsArray: [AVCaptureBracketedStillImageSettings], completionHandler: (Bool, Error?) -> Void)",
+      "desc": "Allows the receiver to prepare resources in advance of capturing a still image bracket."
+    },
+    {
+      "name": "var isLensStabilizationDuringBracketedCaptureSupported: Bool",
+      "desc": "A Boolean value that indicates whether the capture output supports lens stabilization across the duration of a bracketed capture."
+    },
+    {
+      "name": "var isLensStabilizationDuringBracketedCaptureEnabled: Bool",
+      "desc": "A Boolean value that specifies whether to stabilize the lens across the duration of a bracketed capture."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates new still image output."
+    }
+  ],
+  "declaration": "class AVCaptureStillImageOutput : AVCaptureOutput",
+  "inheritsFrom": [
+    "AVCaptureOutput"
+  ]
+}

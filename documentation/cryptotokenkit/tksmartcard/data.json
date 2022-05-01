@@ -1,0 +1,104 @@
+{
+  "path": "/documentation/cryptotokenkit/tksmartcard",
+  "type": "Class",
+  "name": "TKSmartCard",
+  "desc": "A representation of a smart card.",
+  "items": [
+    {
+      "name": "var slot: TKSmartCardSlot",
+      "desc": "The slot in which the Smart Card is inserted."
+    },
+    {
+      "name": "var isValid: Bool",
+      "desc": "Whether the Smart Card is valid and accessible from its slot."
+    },
+    {
+      "name": "var isSensitive: Bool",
+      "desc": "Whether sessions established for the Smart Card should be considered sensitive. false by default."
+    },
+    {
+      "name": "var context: Any?",
+      "desc": "User-specified information. This property is automatically set to nil if the Smart Card is removed or another TKSmartCard object begins a session."
+    },
+    {
+      "name": "var allowedProtocols: TKSmartCardProtocol",
+      "desc": "The protocols allowed for communication with the Smart Card. any by default."
+    },
+    {
+      "name": "var currentProtocol: TKSmartCardProtocol",
+      "desc": "The protocol used for communication with the Smart Card. Returns none if no session is currently established."
+    },
+    {
+      "name": "struct TKSmartCardProtocol",
+      "desc": "Smart Card transmission protocols."
+    },
+    {
+      "name": "func beginSession(reply: (Bool, Error?) -> Void)",
+      "desc": "Begins a session with the Smart Card."
+    },
+    {
+      "name": "func transmit(Data, reply: (Data?, Error?) -> Void)",
+      "desc": "Transmits data in Application Protocol Data Unit (APDU) format to the Smart Card."
+    },
+    {
+      "name": "func endSession()",
+      "desc": "Completes any pending transmissions and ends the session to the Smart Card."
+    },
+    {
+      "name": "func userInteractionForSecurePINVerification(TKSmartCardPINFormat, apdu: Data, pinByteOffset: Int) -> TKSmartCardUserInteractionForSecurePINVerification?",
+      "desc": "Creates and returns a new user interaction object for secure PIN verification using the Smart Card reader facilities."
+    },
+    {
+      "name": "func userInteractionForSecurePINChange(TKSmartCardPINFormat, apdu: Data, currentPINByteOffset: Int, newPINByteOffset: Int) -> TKSmartCardUserInteractionForSecurePINChange?",
+      "desc": "Creates a new user interaction object for secure PIN change using the smart card reader facilities (typically a HW keypad)."
+    },
+    {
+      "name": "class TKSmartCardPINFormat",
+      "desc": "The formatting properties for a PIN, such as character encoding and length constraints."
+    },
+    {
+      "name": "class TKSmartCardUserInteraction",
+      "desc": "The base class for encapsulating user interaction with a Smart Card reader."
+    },
+    {
+      "name": "class TKSmartCardUserInteractionForPINOperation",
+      "desc": "A representation of user interaction for secure PIN operations on a Smart Card reader."
+    },
+    {
+      "name": "class TKSmartCardUserInteractionForSecurePINChange",
+      "desc": "A representation of the user interaction for secure PIN change operations on a Smart Card reader."
+    },
+    {
+      "name": "class TKSmartCardUserInteractionForSecurePINVerification",
+      "desc": "A representation of the user interaction for secure PIN change verification on a Smart Card reader."
+    },
+    {
+      "name": "var cla: UInt8",
+      "desc": "The CLA byte used for APDU transmission. 0x00 by default."
+    },
+    {
+      "name": "var useExtendedLength: Bool",
+      "desc": "Whether to use extended length APDU."
+    },
+    {
+      "name": "var useCommandChaining: Bool",
+      "desc": "Whether to use command chaining of APDU with a data field longer than 255 bytes."
+    },
+    {
+      "name": "func send(ins: UInt8, p1: UInt8, p2: UInt8, data: Data?, le: Int?, reply: (Data?, UInt16, Error?) -> Void)",
+      "desc": "Asynchronously transmits an APDU command to the card, returning the response in a completion handler."
+    },
+    {
+      "name": "func send(ins: UInt8, p1: UInt8, p2: UInt8, data: Data?, le: Int?) -> (sw: UInt16, response: Data)",
+      "desc": "Synchronously transmits an APDU command to the card and returns the response."
+    },
+    {
+      "name": "func withSession<T>(() -> T) -> T",
+      "desc": "Synchronously begins a session, executes the given closure, and ends the session."
+    }
+  ],
+  "declaration": "class TKSmartCard : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

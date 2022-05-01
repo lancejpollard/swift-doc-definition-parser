@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/photokit/phprojectextensioncontroller",
+  "type": "Protocol",
+  "name": "PHProjectExtensionController",
+  "desc": "A protocol defining the life cycle and supported types of project extensions.",
+  "items": [
+    {
+      "name": "func beginProject(with: PHProjectExtensionContext, projectInfo: PHProjectInfo, completion: (Error?) -> Void)",
+      "desc": "Provides an opportunity to customize the initial state when the user creates a project using the extension."
+    },
+    {
+      "name": "func finishProject(completionHandler: () -> Void)",
+      "desc": "Provides an opportunity to perform cleanup when a user switches away from the project or terminates the extension."
+    },
+    {
+      "name": "func resumeProject(with: PHProjectExtensionContext, completion: (Error?) -> Void)",
+      "desc": "Provides an opportunity to restore or refresh the user interface when the user returns to a previously created project."
+    },
+    {
+      "name": "func typeDescriptionDataSource(for: PHProjectCategory, invalidator: PHProjectTypeDescriptionInvalidator) -> PHProjectTypeDescriptionDataSource",
+      "desc": "Fetches the type description data source to provide the user with more information about the project extension category."
+    }
+  ],
+  "declaration": "protocol PHProjectExtensionController",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

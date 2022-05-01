@@ -1,0 +1,61 @@
+{
+  "path": "/documentation/coremidi/mididriverinterface",
+  "type": "Structure",
+  "name": "MIDIDriverInterface",
+  "desc": "The interface to a MIDI driver.",
+  "items": [
+    {
+      "name": "var FindDevices: (MIDIDriverRef, MIDIDeviceListRef) -> OSStatus",
+      "desc": "Finds the available devices."
+    },
+    {
+      "name": "var Start: (MIDIDriverRef, MIDIDeviceListRef) -> OSStatus",
+      "desc": "Starts MIDI I/O."
+    },
+    {
+      "name": "var Stop: (MIDIDriverRef) -> OSStatus",
+      "desc": "Stops MIDI I/O."
+    },
+    {
+      "name": "var Configure: (MIDIDriverRef, MIDIDeviceRef) -> OSStatus",
+      "desc": "The system doesn’t currently use this method."
+    },
+    {
+      "name": "var Send: (MIDIDriverRef, UnsafePointer<MIDIPacketList>, UnsafeMutableRawPointer, UnsafeMutableRawPointer) -> OSStatus",
+      "desc": "Sends a MIDI packet list to the specified destination endpoints."
+    },
+    {
+      "name": "var EnableSource: (MIDIDriverRef, MIDIEndpointRef, DarwinBoolean) -> OSStatus",
+      "desc": "Tells the driver whether input from a particular source has listeners."
+    },
+    {
+      "name": "var Flush: (MIDIDriverRef, MIDIEndpointRef, UnsafeMutableRawPointer?, UnsafeMutableRawPointer?) -> OSStatus",
+      "desc": "Unschedules all pending output to the specified destination."
+    },
+    {
+      "name": "var Monitor: (MIDIDriverRef, MIDIEndpointRef, UnsafePointer<MIDIPacketList>) -> OSStatus",
+      "desc": "Enables monitoring of MIDI packet lists by the specified driver."
+    },
+    {
+      "name": "var MonitorEvents: (MIDIDriverRef, MIDIEndpointRef, UnsafePointer<MIDIEventList>) -> OSStatus",
+      "desc": "Enables monitoring of MIDI event lists by the specified driver."
+    },
+    {
+      "name": "var SendPackets: (MIDIDriverRef, UnsafePointer<MIDIEventList>, UnsafeMutableRawPointer, UnsafeMutableRawPointer) -> OSStatus",
+      "desc": "Sends a MIDI event list to the specified destination endpoints."
+    },
+    {
+      "name": "var AddRef: (UnsafeMutableRawPointer) -> ULONG"
+    },
+    {
+      "name": "var QueryInterface: (UnsafeMutableRawPointer, REFIID, UnsafeMutablePointer<LPVOID?>?) -> HRESULT"
+    },
+    {
+      "name": "var Release: (UnsafeMutableRawPointer) -> ULONG"
+    },
+    {
+      "name": "init(_reserved: UnsafeMutableRawPointer, QueryInterface: (UnsafeMutableRawPointer, REFIID, UnsafeMutablePointer<LPVOID?>?) -> HRESULT, AddRef: (UnsafeMutableRawPointer) -> ULONG, Release: (UnsafeMutableRawPointer) -> ULONG, FindDevices: (MIDIDriverRef, MIDIDeviceListRef) -> OSStatus, Start: (MIDIDriverRef, MIDIDeviceListRef) -> OSStatus, Stop: (MIDIDriverRef) -> OSStatus, Configure: (MIDIDriverRef, MIDIDeviceRef) -> OSStatus, Send: (MIDIDriverRef, UnsafePointer<MIDIPacketList>, UnsafeMutableRawPointer, UnsafeMutableRawPointer) -> OSStatus, EnableSource: (MIDIDriverRef, MIDIEndpointRef, DarwinBoolean) -> OSStatus, Flush: (MIDIDriverRef, MIDIEndpointRef, UnsafeMutableRawPointer?, UnsafeMutableRawPointer?) -> OSStatus, Monitor: (MIDIDriverRef, MIDIEndpointRef, UnsafePointer<MIDIPacketList>) -> OSStatus, SendPackets: (MIDIDriverRef, UnsafePointer<MIDIEventList>, UnsafeMutableRawPointer, UnsafeMutableRawPointer) -> OSStatus, MonitorEvents: (MIDIDriverRef, MIDIEndpointRef, UnsafePointer<MIDIEventList>) -> OSStatus)"
+    }
+  ],
+  "declaration": "struct MIDIDriverInterface"
+}

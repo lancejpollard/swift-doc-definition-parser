@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/dispatch/dispatchqos",
+  "type": "Structure",
+  "name": "DispatchQoS",
+  "desc": "The quality of service, or the execution priority, to apply to tasks.",
+  "items": [
+    {
+      "name": "static let userInteractive: DispatchQoS",
+      "desc": "The quality-of-service class for user-interactive tasks, such as animations, event handling, or updates to your app's user interface."
+    },
+    {
+      "name": "static let userInitiated: DispatchQoS",
+      "desc": "The quality-of-service class for tasks that prevent the user from actively using your app."
+    },
+    {
+      "name": "static let `default`: DispatchQoS",
+      "desc": "The default quality-of-service class."
+    },
+    {
+      "name": "static let utility: DispatchQoS",
+      "desc": "The quality-of-service class for tasks that the user does not track actively."
+    },
+    {
+      "name": "static let background: DispatchQoS",
+      "desc": "The quality-of-service class for maintenance or cleanup tasks that you create."
+    },
+    {
+      "name": "static let unspecified: DispatchQoS",
+      "desc": "The absence of a quality-of-service class."
+    },
+    {
+      "name": "init(qosClass: DispatchQoS.QoSClass, relativePriority: Int)",
+      "desc": "Creates a new DispatchQoS object with the specified QoS class and relative priority."
+    },
+    {
+      "name": "enum DispatchQoS.QoSClass",
+      "desc": "Quality-of-service classes that specify the priorities for executing tasks."
+    },
+    {
+      "name": "let qosClass: DispatchQoS.QoSClass",
+      "desc": "The quality-of-service class."
+    },
+    {
+      "name": "let relativePriority: Int",
+      "desc": "The priority of a quality of service relative to others with the same class."
+    },
+    {
+      "name": "static func != (DispatchQoS, DispatchQoS) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are not equal."
+    },
+    {
+      "name": "static func == (DispatchQoS, DispatchQoS) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are equal."
+    }
+  ],
+  "declaration": "struct DispatchQoS",
+  "conformsTo": [
+    "Equatable"
+  ]
+}

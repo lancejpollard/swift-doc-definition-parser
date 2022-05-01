@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/gamekit/gkmatchmaker",
+  "type": "Class",
+  "name": "GKMatchmaker",
+  "desc": "An object that creates matches with other players without presenting an interface to the players.",
+  "items": [
+    {
+      "name": "class func shared() -> GKMatchmaker",
+      "desc": "Returns the singleton matchmaker instance."
+    },
+    {
+      "name": "func match(for: GKInvite, completionHandler: ((GKMatch?, Error?) -> Void)?)",
+      "desc": "Creates a match from an invitation that the local player accepts."
+    },
+    {
+      "name": "func findMatch(for: GKMatchRequest, withCompletionHandler: ((GKMatch?, Error?) -> Void)?)",
+      "desc": "Initiates a request to find players for a peer-to-peer match."
+    },
+    {
+      "name": "func findPlayers(forHostedRequest: GKMatchRequest, withCompletionHandler: (([GKPlayer]?, Error?) -> Void)?)",
+      "desc": "Initiates a request to find players for a hosted match."
+    },
+    {
+      "name": "func addPlayers(to: GKMatch, matchRequest: GKMatchRequest, completionHandler: ((Error?) -> Void)?)",
+      "desc": "Invites additional players to an existing match."
+    },
+    {
+      "name": "func finishMatchmaking(for: GKMatch)",
+      "desc": "Informs the server that programmatic matchmaking finished."
+    },
+    {
+      "name": "func queryActivity(completionHandler: ((Int, Error?) -> Void)?)",
+      "desc": "Finds the number of players, across player goups, who recently requested a match."
+    },
+    {
+      "name": "func queryPlayerGroupActivity(Int, withCompletionHandler: ((Int, Error?) -> Void)?)",
+      "desc": "Finds the number of players in a player group who recently requested a match."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Cancels a matchmaking request."
+    },
+    {
+      "name": "func cancelPendingInvite(to: GKPlayer)",
+      "desc": "Cancels a pending invitation to another player."
+    },
+    {
+      "name": "func startBrowsingForNearbyPlayers(handler: ((GKPlayer, Bool) -> Void)?)",
+      "desc": "Finds nearby players through Bluetooth or WiFi on the same subnet."
+    },
+    {
+      "name": "func stopBrowsingForNearbyPlayers()",
+      "desc": "Stops finding nearby players."
+    }
+  ],
+  "declaration": "class GKMatchmaker : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

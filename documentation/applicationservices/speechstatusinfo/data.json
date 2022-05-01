@@ -1,0 +1,31 @@
+{
+  "path": "/documentation/applicationservices/speechstatusinfo",
+  "type": "Structure",
+  "name": "SpeechStatusInfo",
+  "desc": "Defines a speech status information structure, which stores information about the status of a speech channel.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(outputBusy: DarwinBoolean, outputPaused: DarwinBoolean, inputBytesLeft: Int, phonemeCode: Int16)"
+    },
+    {
+      "name": "var inputBytesLeft: Int",
+      "desc": "The number of input bytes of the text that the speech channel must still process. When inputBytesLeft is 0, the buffer of input text passed to one of the SpeakText or SpeakBuffer functions may be disposed of. When you call the SpeakString function, the Speech Synthesis Manager stores a duplicate of the string to be spoken in an internal buffer; thus, you may delete the original string immediately after calling SpeakString."
+    },
+    {
+      "name": "var outputBusy: DarwinBoolean",
+      "desc": "Whether the speech channel is currently producing speech. A speech channel is considered to be producing speech even at some times when no audio data is being produced through the Macintosh speaker. This occurs, for example, when the Speech Synthesis Manager is processing an input buffer but has not yet initiated speech or when speech output is paused."
+    },
+    {
+      "name": "var outputPaused: DarwinBoolean",
+      "desc": "Whether speech output in the speech channel has been paused by a call to the PauseSpeechAt(_:_:) function."
+    },
+    {
+      "name": "var phonemeCode: Int16",
+      "desc": "The opcode for the phoneme that the speech channel is currently processing."
+    }
+  ],
+  "declaration": "struct SpeechStatusInfo"
+}

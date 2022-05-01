@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/swiftui/canvas",
+  "type": "Structure",
+  "name": "Canvas",
+  "desc": "A view type that supports immediate mode drawing.",
+  "items": [
+    {
+      "name": "init(opaque: Bool, colorMode: ColorRenderingMode, rendersAsynchronously: Bool, renderer: (inout GraphicsContext, CGSize) -> Void)",
+      "desc": "Creates and configures a canvas."
+    },
+    {
+      "name": "init(opaque: Bool, colorMode: ColorRenderingMode, rendersAsynchronously: Bool, renderer: (inout GraphicsContext, CGSize) -> Void, symbols: () -> Symbols)",
+      "desc": "Creates and configures a canvas that you supply with renderable child views."
+    },
+    {
+      "name": "var isOpaque: Bool",
+      "desc": "A Boolean that indicates whether the canvas is fully opaque."
+    },
+    {
+      "name": "var colorMode: ColorRenderingMode",
+      "desc": "The working color space and storage format of the canvas."
+    },
+    {
+      "name": "var symbols: Symbols",
+      "desc": "A view that provides child views that you can use in the drawing callback."
+    },
+    {
+      "name": "var rendersAsynchronously: Bool",
+      "desc": "A Boolean that indicates whether the canvas can present its contents to its parent view asynchronously."
+    },
+    {
+      "name": "var renderer: (inout GraphicsContext, CGSize) -> Void",
+      "desc": "The drawing callback that you use to draw into the canvas."
+    },
+    {
+      "name": "typealias Body",
+      "desc": "The type of view representing the body of this view."
+    }
+  ],
+  "declaration": "struct Canvas<Symbols> where Symbols : View",
+  "conformsTo": [
+    "View"
+  ]
+}

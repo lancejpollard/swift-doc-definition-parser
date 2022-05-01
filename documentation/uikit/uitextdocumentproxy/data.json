@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/uikit/uitextdocumentproxy",
+  "type": "Protocol",
+  "name": "UITextDocumentProxy",
+  "desc": "An object that provides textual context to a custom keyboard.",
+  "items": [
+    {
+      "name": "var documentInputMode: UITextInputMode?",
+      "desc": "The text-input mode for the keyboard."
+    },
+    {
+      "name": "var documentContextAfterInput: String?",
+      "desc": "Textual context after the insertion point in the current text input object."
+    },
+    {
+      "name": "var documentContextBeforeInput: String?",
+      "desc": "Textual context before the insertion point in the current text input object."
+    },
+    {
+      "name": "func adjustTextPosition(byCharacterOffset: Int)",
+      "desc": "Moves the insertion point forward or backward in the current text input object."
+    },
+    {
+      "name": "var selectedText: String?",
+      "desc": "The currently selected text in the document."
+    },
+    {
+      "name": "func setMarkedText(String, selectedRange: NSRange)",
+      "desc": "Inserts the provided text and marks it to indicate that it is part of an active input session."
+    },
+    {
+      "name": "func unmarkText()",
+      "desc": "Unmarks the currently marked text."
+    },
+    {
+      "name": "var documentIdentifier: UUID",
+      "desc": "The unique identifier for the document."
+    }
+  ],
+  "declaration": "@MainActor protocol UITextDocumentProxy",
+  "inheritsFrom": [
+    "UIKeyInput"
+  ]
+}

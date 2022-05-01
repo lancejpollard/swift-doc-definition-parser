@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/security/seccodestatus",
+  "type": "Structure",
+  "name": "SecCodeStatus",
+  "desc": "Operational flags attached by code signing services to running code.",
+  "items": [
+    {
+      "name": "init(rawValue: UInt32)"
+    },
+    {
+      "name": "static var valid: SecCodeStatus",
+      "desc": "The code is dynamically valid."
+    },
+    {
+      "name": "static var hard: SecCodeStatus",
+      "desc": "The code prefers to be denied access to resources if gaining access would invalidate it."
+    },
+    {
+      "name": "static var kill: SecCodeStatus",
+      "desc": "The code wants to be terminated if it ever loses its validity."
+    },
+    {
+      "name": "static var debugged: SecCodeStatus",
+      "desc": "The code has been debugged by another process that was allowed to do so."
+    },
+    {
+      "name": "static var platform: SecCodeStatus",
+      "desc": "The code ships with the operating system and is signed by Apple."
+    }
+  ],
+  "declaration": "struct SecCodeStatus, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "path": "/documentation/combine/subscribers/sink",
+  "type": "Class",
+  "name": "Subscribers.Sink",
+  "desc": "A simple subscriber that requests an unlimited number of values upon subscription.",
+  "items": [
+    {
+      "name": "func cancel()",
+      "desc": "Cancel the activity."
+    },
+    {
+      "name": "func receive(subscription: Subscription)",
+      "desc": "Tells the subscriber that it has successfully subscribed to the publisher and may request items."
+    },
+    {
+      "name": "var combineIdentifier: CombineIdentifier",
+      "desc": "A unique identifier for identifying publisher streams."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "The custom mirror for this instance."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual representation of this instance."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A custom playground description for this instance."
+    },
+    {
+      "name": "init(receiveCompletion: ((Subscribers.Completion<Failure>) -> Void), receiveValue: ((Input) -> Void))",
+      "desc": "Initializes a sink with the provided closures."
+    },
+    {
+      "name": "var receiveCompletion: (Subscribers.Completion<Failure>) -> Void",
+      "desc": "The closure to execute on completion."
+    },
+    {
+      "name": "var receiveValue: (Input) -> Void",
+      "desc": "The closure to execute on receipt of a value."
+    },
+    {
+      "name": "func receive(Input) -> Subscribers.Demand",
+      "desc": "Tells the subscriber that the publisher has produced an element."
+    },
+    {
+      "name": "func receive(completion: Subscribers.Completion<Failure>)",
+      "desc": "Tells the subscriber that the publisher has completed publishing, either normally or with an error."
+    }
+  ],
+  "declaration": "final class Sink<Input, Failure> where Failure : Error",
+  "conformsTo": [
+    "Cancellable",
+    "CustomCombineIdentifierConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "Subscriber"
+  ]
+}

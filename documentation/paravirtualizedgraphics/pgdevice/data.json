@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/paravirtualizedgraphics/pgdevice",
+  "type": "Protocol",
+  "name": "PGDevice",
+  "desc": "A paravirtualized GPU device object.",
+  "items": [
+    {
+      "name": "func mmioRead(atOffset: Int) -> UInt32",
+      "desc": "Reads data from the virtual graphics device’s memory-mapped I/O region."
+    },
+    {
+      "name": "func mmioWrite(atOffset: Int, value: UInt32)",
+      "desc": "Writes data to the virtual graphics device’s memory-mapped I/O region."
+    },
+    {
+      "name": "func willSuspend()",
+      "desc": "Notifies the virtual graphics device to start suspending graphics activities."
+    },
+    {
+      "name": "func finishSuspend() -> Data?",
+      "desc": "Notifies the virtualized graphics device to finish suspending graphics activities."
+    },
+    {
+      "name": "func willResume(withSuspendState: Data, error: NSErrorPointer) -> Bool",
+      "desc": "Tells a new device object to load a previously saved device’s suspend state."
+    },
+    {
+      "name": "func didResume()",
+      "desc": "Tells the device object to finish any remaining work to resume processing of a previously saved device’s suspend state."
+    },
+    {
+      "name": "let PGResumeErrorDomain: String",
+      "desc": "The error domain for suspend-resume actions."
+    },
+    {
+      "name": "enum PGResumeErrorCode",
+      "desc": "Error codes for suspend-resume actions."
+    },
+    {
+      "name": "func newDisplay(with: PGDisplayDescriptor, port: Int, serialNum: UInt32) -> PGDisplay?",
+      "desc": "Create a display from the specified descriptor and uniquifying parameters."
+    },
+    {
+      "name": "func pause()"
+    },
+    {
+      "name": "func reset()"
+    },
+    {
+      "name": "func stop()"
+    },
+    {
+      "name": "func unpause()"
+    }
+  ],
+  "declaration": "protocol PGDevice",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

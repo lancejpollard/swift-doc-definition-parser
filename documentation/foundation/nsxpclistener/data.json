@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/foundation/nsxpclistener",
+  "type": "Class",
+  "name": "NSXPCListener",
+  "desc": "A listener that waits for new incoming connections, configures them, and accepts or rejects them.",
+  "items": [
+    {
+      "name": "init(machServiceName: String)",
+      "desc": "Initializes a listener in a LaunchAgent or LaunchDaemon which has a name advertised in a launchd.plist file."
+    },
+    {
+      "name": "var delegate: NSXPCListenerDelegate?",
+      "desc": "The delegate for the listener."
+    },
+    {
+      "name": "var endpoint: NSXPCListenerEndpoint",
+      "desc": "Returns an endpoint object that may be sent over an existing connection."
+    },
+    {
+      "name": "func invalidate()",
+      "desc": "Invalidates the listener."
+    },
+    {
+      "name": "func resume()",
+      "desc": "Starts processing of incoming requests."
+    },
+    {
+      "name": "func suspend()",
+      "desc": "Suspends the listener."
+    },
+    {
+      "name": "class func anonymous() -> NSXPCListener",
+      "desc": "Returns a new anonymous listener connection."
+    },
+    {
+      "name": "class func service() -> NSXPCListener",
+      "desc": "Returns the singleton listener used to listen for incoming connections in an XPC service."
+    }
+  ],
+  "declaration": "class NSXPCListener : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

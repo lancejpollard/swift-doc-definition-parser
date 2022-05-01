@@ -1,0 +1,63 @@
+{
+  "path": "/documentation/corenfc/nfcndefpayload",
+  "type": "Class",
+  "name": "NFCNDEFPayload",
+  "desc": "A payload record in an NFC NDEF message.",
+  "items": [
+    {
+      "name": "class func wellKnownTypeURIPayload(url: URL) -> Self?",
+      "desc": "Creates a payload record with a URI specified as a URL."
+    },
+    {
+      "name": "class func wellKnownTypeURIPayload(string: String) -> Self?",
+      "desc": "Creates a payload record with a URI specified as a string."
+    },
+    {
+      "name": "class func wellKnownTypeTextPayload(string: String, locale: Locale) -> Self?",
+      "desc": "Creates a payload record with text."
+    },
+    {
+      "name": "init(format: NFCTypeNameFormat, type: Data, identifier: Data, payload: Data)",
+      "desc": "Creates a payload record with the specified format, type, identifier, and payload data."
+    },
+    {
+      "name": "init(format: NFCTypeNameFormat, type: Data, identifier: Data, payload: Data, chunkSize: Int)",
+      "desc": "Creates a payload record with the specified format, type, identifier, payload data, and data chunk size."
+    },
+    {
+      "name": "var identifier: Data",
+      "desc": "The identifier of the payload, as defined by the NDEF specification."
+    },
+    {
+      "name": "var payload: Data",
+      "desc": "The payload, as defined by the NDEF specification."
+    },
+    {
+      "name": "var type: Data",
+      "desc": "The type of the payload, as defined by the NDEF specification."
+    },
+    {
+      "name": "var typeNameFormat: NFCTypeNameFormat",
+      "desc": "The Type Name Format field of the payload, as defined by the NDEF specification."
+    },
+    {
+      "name": "enum NFCTypeNameFormat",
+      "desc": "The Type Name Format values that specify the content type for the payload data in an NFC NDEF message."
+    },
+    {
+      "name": "func wellKnownTypeURIPayload() -> URL?",
+      "desc": "Returns the URL of a valid Well Known Type URI payload."
+    },
+    {
+      "name": "func wellKnownTypeTextPayload() -> (String?, Locale?)",
+      "desc": "Returns the text and locale of a valid Well Known Type Text payload."
+    }
+  ],
+  "declaration": "class NFCNDEFPayload : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

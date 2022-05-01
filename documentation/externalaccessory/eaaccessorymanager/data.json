@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/externalaccessory/eaaccessorymanager",
+  "type": "Class",
+  "name": "EAAccessoryManager",
+  "desc": "The object you use to identify connected accessories, and begin delivery of connection and disconnection notifications.",
+  "items": [
+    {
+      "name": "class func shared() -> EAAccessoryManager",
+      "desc": "Returns the shared accessory manager object for the iOS-based device."
+    },
+    {
+      "name": "func registerForLocalNotifications()",
+      "desc": "Begins the delivery of accessory-related notifications to the current application."
+    },
+    {
+      "name": "func unregisterForLocalNotifications()",
+      "desc": "Stops the delivery of accessory-related notifications to the current application."
+    },
+    {
+      "name": "static let EAAccessoryDidConnect: NSNotification.Name",
+      "desc": "A notification that the system sends when an accessory becomes connected and available for your application to use."
+    },
+    {
+      "name": "static let EAAccessoryDidDisconnect: NSNotification.Name",
+      "desc": "A notification that is posted when an accessory is disconnected and no longer available for your application to use."
+    },
+    {
+      "name": "let EAAccessoryKey: String",
+      "desc": "A key that indicates the accessory object whose status changed."
+    },
+    {
+      "name": "let EAAccessorySelectedKey: String",
+      "desc": "A key that indicates the accessory object that the user selected."
+    },
+    {
+      "name": "func showBluetoothAccessoryPicker(withNameFilter: NSPredicate?, completion: EABluetoothAccessoryPickerCompletion?)",
+      "desc": "Displays an alert that allows the user to pair the device with a Bluetooth accessory."
+    },
+    {
+      "name": "typealias EABluetoothAccessoryPickerCompletion",
+      "desc": "The completion block for the Bluetooth picker."
+    },
+    {
+      "name": "struct EABluetoothAccessoryPickerError",
+      "desc": "Error codes returned by the Bluetooth accessory picker."
+    },
+    {
+      "name": "enum EABluetoothAccessoryPickerError.Code",
+      "desc": "The error codes that may be passed in an error object for the Bluetooth picker completion block."
+    },
+    {
+      "name": "let EABluetoothAccessoryPickerErrorDomain: String",
+      "desc": "The domain for errors passed to a Bluetooth picker completion block."
+    },
+    {
+      "name": "var connectedAccessories: [EAAccessory]",
+      "desc": "The accessory objects corresponding to the list of currently connected accessories."
+    }
+  ],
+  "declaration": "class EAAccessoryManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

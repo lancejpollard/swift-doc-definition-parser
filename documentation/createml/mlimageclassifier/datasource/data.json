@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/createml/mlimageclassifier/datasource",
+  "type": "Enumeration",
+  "name": "MLImageClassifier.DataSource",
+  "desc": "A data source for an image classifier.",
+  "items": [
+    {
+      "name": "case labeledDirectories(at: URL)",
+      "desc": "An image classifier data source that uses the directory structure to label images."
+    },
+    {
+      "name": "case labeledFiles(at: URL)",
+      "desc": "An image classifier data source that uses file names to label images."
+    },
+    {
+      "name": "func labeledImages() -> [String : [URL]]",
+      "desc": "Returns the labeled images represented by the data source."
+    },
+    {
+      "name": "func stratifiedSplit(proportions: [Double], seed: Int) -> [[String : [URL]]]",
+      "desc": "Generates an array of labeled image dictionaries by splitting the data source into strata."
+    },
+    {
+      "name": "func stratifiedSplit<RNG>(proportions: [Double], generator: inout RNG) -> [[String : [URL]]]",
+      "desc": "Generates an array of labeled image dictionaries by splitting the data source into strata using the random-number generator."
+    },
+    {
+      "name": "case filesByLabel([String : [URL]])"
+    }
+  ],
+  "declaration": "enum DataSource"
+}

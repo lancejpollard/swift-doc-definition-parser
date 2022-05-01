@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/phase/phasegroup",
+  "type": "Class",
+  "name": "PHASEGroup",
+  "desc": "A container that shares audio parameters with a collection of sounds.",
+  "items": [
+    {
+      "name": "init(identifier: String)",
+      "desc": "Creates a group with a unique name."
+    },
+    {
+      "name": "var identifier: String",
+      "desc": "A unique name for the group."
+    },
+    {
+      "name": "func register(engine: PHASEEngine)",
+      "desc": "Adds the group to the engine's dictionary."
+    },
+    {
+      "name": "func unregisterFromEngine()",
+      "desc": "Removes the group from the engine's dictionary."
+    },
+    {
+      "name": "var gain: Double",
+      "desc": "Modifies the volume of the group's sounds."
+    },
+    {
+      "name": "func fadeGain(gain: Double, duration: Double, curveType: PHASECurveType)",
+      "desc": "Adjusts the volume of the sounds in a group gradually."
+    },
+    {
+      "name": "var rate: Double",
+      "desc": "The group’s playback speed."
+    },
+    {
+      "name": "func fadeRate(rate: Double, duration: Double, curveType: PHASECurveType)",
+      "desc": "Adjusts the playback speed of the sounds in a group gradually."
+    },
+    {
+      "name": "func mute()",
+      "desc": "Silences the group."
+    },
+    {
+      "name": "func unmute()",
+      "desc": "Restores the group's volume."
+    },
+    {
+      "name": "var isMuted: Bool",
+      "desc": "A Boolean value that indicates whether the app silences the group."
+    },
+    {
+      "name": "func solo()",
+      "desc": "Silences all other groups."
+    },
+    {
+      "name": "func unsolo()",
+      "desc": "Restores the other groups' volume."
+    },
+    {
+      "name": "var isSoloed: Bool",
+      "desc": "A Boolean value that indicates whether the app silences all groups other than this group."
+    }
+  ],
+  "declaration": "class PHASEGroup : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

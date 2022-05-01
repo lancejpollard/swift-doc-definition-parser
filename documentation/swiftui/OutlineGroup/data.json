@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/swiftui/outlinegroup",
+  "type": "Structure",
+  "name": "OutlineGroup",
+  "desc": "A structure that computes views and disclosure groups on demand from an underlying collection of tree-structured, identified data.",
+  "items": [
+    {
+      "name": "init<DataElement>(DataElement, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)",
+      "desc": "Creates an outline group from a root data element and a key path to its children."
+    },
+    {
+      "name": "init<DataElement>(Data, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)",
+      "desc": "Creates an outline group from a collection of root data elements and a key path to its children."
+    },
+    {
+      "name": "init<DataElement>(DataElement, id: KeyPath<DataElement, ID>, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)",
+      "desc": "Creates an outline group from a root data element, the key path to its identifier, and a key path to its children."
+    },
+    {
+      "name": "init<DataElement>(Data, id: KeyPath<DataElement, ID>, children: KeyPath<DataElement, Data?>, content: (DataElement) -> Leaf)",
+      "desc": "Creates an outline group from a collection of root data elements, the key path to a data element’s identifier, and a key path to its children."
+    },
+    {
+      "name": "init<C, E>(Binding<E>, children: WritableKeyPath<E, C?>, content: (Binding<E>) -> Leaf)",
+      "desc": "Creates an outline group from a binding to a root data element and a key path to its children."
+    },
+    {
+      "name": "init<C, E>(Binding<C>, children: WritableKeyPath<E, C?>, content: (Binding<E>) -> Leaf)",
+      "desc": "Creates an outline group from a binding to a collection of root data elements and a key path to its children."
+    },
+    {
+      "name": "init<C, E>(Binding<E>, id: KeyPath<E, ID>, children: WritableKeyPath<E, C?>, content: (Binding<E>) -> Leaf)",
+      "desc": "Creates an outline group from a binding to a root data element, the key path to its identifier, and a key path to its children."
+    },
+    {
+      "name": "init<C, E>(Binding<C>, id: KeyPath<E, ID>, children: WritableKeyPath<E, C?>, content: (Binding<E>) -> Leaf)",
+      "desc": "Creates an outline group from a binding to a collection of root data elements, the key path to a data element’s identifier, and a key path to its children."
+    },
+    {
+      "name": "struct OutlineSubgroupChildren",
+      "desc": "A type-erased view representing the children in an outline subgroup."
+    }
+  ],
+  "declaration": "struct OutlineGroup<Data, ID, Parent, Leaf, Subgroup> where Data : RandomAccessCollection, ID : Hashable",
+  "conformsTo": [
+    "View"
+  ]
+}

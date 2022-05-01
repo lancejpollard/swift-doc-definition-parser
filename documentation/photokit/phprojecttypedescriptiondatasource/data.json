@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/photokit/phprojecttypedescriptiondatasource",
+  "type": "Protocol",
+  "name": "PHProjectTypeDescriptionDataSource",
+  "desc": "A protocol that you use to provide the project with type description data.",
+  "items": [
+    {
+      "name": "func subtypes(for: PHProjectType) -> [PHProjectTypeDescription]",
+      "desc": "Provides the root-level project type descriptions and descriptions of any promised subtypes with canProvideSubtypes set to true."
+    },
+    {
+      "name": "func typeDescription(for: PHProjectType) -> PHProjectTypeDescription?",
+      "desc": "Provides the updated project type description for previously invalidated project types."
+    },
+    {
+      "name": "func footerText(forSubtypesOf: PHProjectType) -> NSAttributedString?",
+      "desc": "Provides the footer text for the subtypes of the given project type."
+    },
+    {
+      "name": "func extensionWillDiscardDataSource()",
+      "desc": "Provides an opportunity to use the data source before it's released."
+    }
+  ],
+  "declaration": "protocol PHProjectTypeDescriptionDataSource",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

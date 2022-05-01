@@ -1,0 +1,27 @@
+{
+  "path": "/documentation/foundation/nsmaptablevaluecallbacks",
+  "type": "Structure",
+  "name": "NSMapTableValueCallBacks",
+  "desc": "The function pointers used to configure behavior of NSMapTable with respect to value elements within a map table.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(retain: ((NSMapTable<AnyObject, AnyObject>, UnsafeRawPointer) -> Void)?, release: ((NSMapTable<AnyObject, AnyObject>, UnsafeMutableRawPointer) -> Void)?, describe: ((NSMapTable<AnyObject, AnyObject>, UnsafeRawPointer) -> String?)?)"
+    },
+    {
+      "name": "var describe: ((NSMapTable<AnyObject, AnyObject>, UnsafeRawPointer) -> String?)?",
+      "desc": "Points to the function that produces an autoreleased NSString * describing the given element. If NULL, then the map table produces a generic string description."
+    },
+    {
+      "name": "var release: ((NSMapTable<AnyObject, AnyObject>, UnsafeMutableRawPointer) -> Void)?",
+      "desc": "Points to the function that decrements a reference count for the given element, and if the reference count becomes zero, frees the given element. If NULL, then nothing is done for reference counting or releasing."
+    },
+    {
+      "name": "var retain: ((NSMapTable<AnyObject, AnyObject>, UnsafeRawPointer) -> Void)?",
+      "desc": "Points to the function that increments a reference count for the given element. If NULL, then nothing is done for reference counting."
+    }
+  ],
+  "declaration": "struct NSMapTableValueCallBacks"
+}

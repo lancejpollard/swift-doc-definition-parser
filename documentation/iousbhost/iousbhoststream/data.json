@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/iousbhost/iousbhoststream",
+  "type": "Class",
+  "name": "IOUSBHostStream",
+  "desc": "The class responsible for sending stream data for function drivers.",
+  "items": [
+    {
+      "name": "typealias IOUSBHostCompletionHandler",
+      "desc": "The completion handler for asynchronous control, bulk, and interrupt transfers."
+    },
+    {
+      "name": "func enqueueIORequest(with: NSMutableData?, completionHandler: IOUSBHostCompletionHandler?)",
+      "desc": "Enqueues an input/output request on the stream."
+    },
+    {
+      "name": "func abort(with: IOUSBHostAbortOption)",
+      "desc": "Aborts pending input/output requests."
+    },
+    {
+      "name": "func abort()",
+      "desc": "Aborts pending input/output requests synchronously."
+    },
+    {
+      "name": "var hostPipe: IOUSBHostPipe",
+      "desc": "The pipe that creates the stream."
+    },
+    {
+      "name": "var streamID: Int",
+      "desc": "The ID for the stream."
+    }
+  ],
+  "declaration": "class IOUSBHostStream : IOUSBHostIOSource",
+  "inheritsFrom": [
+    "IOUSBHostIOSource"
+  ]
+}

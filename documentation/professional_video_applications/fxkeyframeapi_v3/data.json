@@ -1,0 +1,62 @@
+{
+  "path": "/documentation/professional_video_applications/fxkeyframeapi_v3",
+  "type": "Protocol",
+  "name": "FxKeyframeAPI_v3",
+  "desc": "A collection of methods for manipulating the keyframes of your FxPlug 4 plug-in.",
+  "items": [
+    {
+      "name": "func add(UnsafePointer<FxKeyframe>, toParameter: Int, andChannel: Int) -> Error?",
+      "desc": "Adds a keyframe at the given time."
+    },
+    {
+      "name": "func channelCount(UnsafeMutablePointer<Int>, forParameter: Int) -> Error?",
+      "desc": "Returns the number of channels in a parameter."
+    },
+    {
+      "name": "func keyframe(UnsafeMutablePointer<FxKeyframe>, atOrAfter: CMTime, fromParameter: Int, andChannel: Int) -> Error?",
+      "desc": "Returns the info about the nearest next keyframe."
+    },
+    {
+      "name": "func keyframe(UnsafeMutablePointer<FxKeyframe>, atOrBefore: CMTime, fromParameter: Int, andChannel: Int) -> Error?",
+      "desc": "Returns the info about the nearest previous keyframe."
+    },
+    {
+      "name": "func keyframe(UnsafeMutablePointer<FxKeyframe>, forParameter: Int, channel: Int, andIndex: Int) -> Error?",
+      "desc": "Returns the keyframe info for the keyframe at a given index."
+    },
+    {
+      "name": "func keyframeCount(UnsafeMutablePointer<Int>, forParameter: Int, andChannel: Int) -> Error?",
+      "desc": "Returns the number of keyframes for a parameter's channel."
+    },
+    {
+      "name": "func parameter(Int, channel: Int, hasKeyframe: UnsafeMutablePointer<ObjCBool>, at: CMTime) -> Error?",
+      "desc": "Tells whether there is a keyframe at a given time."
+    },
+    {
+      "name": "func removeAllKeyframes(forParameter: Int, andChannel: Int) -> Error?",
+      "desc": "Remove all keyframes from the given parameter's channel."
+    },
+    {
+      "name": "func removeKeyframe(at: Int, fromParameter: Int, andChannel: Int) -> Error?",
+      "desc": "Removes the keyframe at the given index."
+    },
+    {
+      "name": "func setKeyframeIndex(Int, with: UnsafePointer<FxKeyframe>, forParameter: Int, andChannel: Int) -> Error?",
+      "desc": "Sets the keyframe at the given index to have the given info."
+    },
+    {
+      "name": "struct FxKeyframe"
+    },
+    {
+      "name": "typealias FxKeyframeStyle",
+      "desc": "Constants for specifying the type of keyframe"
+    },
+    {
+      "name": "var kFxKeyframe_V3: Int32"
+    },
+    {
+      "name": "var kFxKeyframe_CurrentVersion: Int32"
+    }
+  ],
+  "declaration": "protocol FxKeyframeAPI_v3"
+}

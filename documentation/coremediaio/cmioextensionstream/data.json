@@ -1,0 +1,84 @@
+{
+  "path": "/documentation/coremediaio/cmioextensionstream",
+  "type": "Class",
+  "name": "CMIOExtensionStream",
+  "desc": "An object that represents a stream of media data.",
+  "items": [
+    {
+      "name": "init(localizedName: String, streamID: UUID, direction: CMIOExtensionStream.Direction, clockType: CMIOExtensionStream.ClockType, source: CMIOExtensionStreamSource)",
+      "desc": "Creates a stream."
+    },
+    {
+      "name": "init(localizedName: String, streamID: UUID, direction: CMIOExtensionStream.Direction, customClockConfiguration: CMIOExtensionStreamCustomClockConfiguration, source: CMIOExtensionStreamSource)",
+      "desc": "Creates a stream that uses a custom clock configuration."
+    },
+    {
+      "name": "var localizedName: String",
+      "desc": "A localized name for the stream."
+    },
+    {
+      "name": "var streamID: UUID",
+      "desc": "A universally unique identifier for the stream."
+    },
+    {
+      "name": "var streamingClients: [CMIOExtensionClient]",
+      "desc": "An array of clients of the stream."
+    },
+    {
+      "name": "var source: CMIOExtensionStreamSource?",
+      "desc": "The source object for the stream."
+    },
+    {
+      "name": "var direction: CMIOExtensionStream.Direction",
+      "desc": "The data-flow direction of the stream."
+    },
+    {
+      "name": "enum CMIOExtensionStream.Direction",
+      "desc": "Constants that define the data-flow direction of the stream."
+    },
+    {
+      "name": "var clockType: CMIOExtensionStream.ClockType",
+      "desc": "A clock type for the stream."
+    },
+    {
+      "name": "enum CMIOExtensionStream.ClockType",
+      "desc": "Constants that indicate the clock type of a stream."
+    },
+    {
+      "name": "var customClockConfiguration: CMIOExtensionStreamCustomClockConfiguration?",
+      "desc": "An optional custom clock configuration for a stream."
+    },
+    {
+      "name": "class CMIOExtensionStreamCustomClockConfiguration",
+      "desc": "An object that describes the parameters to create a custom clock on the host side."
+    },
+    {
+      "name": "func consumeSampleBuffer(from: CMIOExtensionClient, completionHandler: (CMSampleBuffer?, UInt64, CMIOExtensionStream.DiscontinuityFlags, Bool, Error?) -> Void)",
+      "desc": "Consumes a sample buffer from a client."
+    },
+    {
+      "name": "func send(CMSampleBuffer, discontinuity: CMIOExtensionStream.DiscontinuityFlags, hostTimeInNanoseconds: UInt64)",
+      "desc": "Sends a media sample to stream client."
+    },
+    {
+      "name": "struct CMIOExtensionStream.DiscontinuityFlags",
+      "desc": "Constants that specify the types of discontinuities that can occur in a media stream."
+    },
+    {
+      "name": "func notifyPropertiesChanged([CMIOExtensionProperty : CMIOExtensionPropertyState<AnyObject>])",
+      "desc": "Notifies clients about stream property changes."
+    },
+    {
+      "name": "func notifyScheduledOutputChanged(CMIOExtensionScheduledOutput)",
+      "desc": "Notifies clients when a particular buffer is output."
+    },
+    {
+      "name": "class CMIOExtensionScheduledOutput",
+      "desc": "An object that represents scheduled output."
+    }
+  ],
+  "declaration": "class CMIOExtensionStream : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

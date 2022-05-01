@@ -1,0 +1,110 @@
+{
+  "path": "/documentation/metal/mtlargumentencoder",
+  "type": "Protocol",
+  "name": "MTLArgumentEncoder",
+  "desc": "An object used to encode data into an argument buffer.",
+  "items": [
+    {
+      "name": "func setArgumentBuffer(MTLBuffer?, offset: Int)",
+      "desc": "Specifies the position in a buffer where the encoder writes argument data."
+    },
+    {
+      "name": "func setArgumentBuffer(MTLBuffer?, startOffset: Int, arrayElement: Int)",
+      "desc": "Specifies an array element within a buffer where the encoder writes argument data."
+    },
+    {
+      "name": "var encodedLength: Int",
+      "desc": "The number of bytes required to store the encoded resources of an argument buffer."
+    },
+    {
+      "name": "func setBuffer(MTLBuffer?, offset: Int, index: Int)",
+      "desc": "Encodes a reference to a buffer into the argument buffer."
+    },
+    {
+      "name": "func setBuffers([MTLBuffer?], offsets: [Int], range: Range<Int>)",
+      "desc": "Encodes references to an array of buffers into the argument buffer."
+    },
+    {
+      "name": "func setTexture(MTLTexture?, index: Int)",
+      "desc": "Encodes a reference to a texture into the argument buffer."
+    },
+    {
+      "name": "func setTextures([MTLTexture?], range: Range<Int>)",
+      "desc": "Encodes references to an array of textures into the argument buffer."
+    },
+    {
+      "name": "func setSamplerState(MTLSamplerState?, index: Int)",
+      "desc": "Encodes a sampler into the argument buffer."
+    },
+    {
+      "name": "func setSamplerStates([MTLSamplerState?], range: Range<Int>)",
+      "desc": "Encodes an array of samplers into the argument buffer."
+    },
+    {
+      "name": "func setRenderPipelineState(MTLRenderPipelineState?, index: Int)",
+      "desc": "Encodes a reference to a render pipeline state into the argument buffer."
+    },
+    {
+      "name": "func setRenderPipelineStates([MTLRenderPipelineState?], range: Range<Int>)",
+      "desc": "Encodes references to an array of render pipeline states into the argument buffer."
+    },
+    {
+      "name": "func setComputePipelineState(MTLComputePipelineState?, index: Int)",
+      "desc": "Encodes a reference to a compute pipeline state into the argument buffer."
+    },
+    {
+      "name": "func setComputePipelineStates([MTLComputePipelineState?], range: Range<Int>)",
+      "desc": "Encodes references to an array of compute pipeline states into the argument buffer."
+    },
+    {
+      "name": "func constantData(at: Int) -> UnsafeMutableRawPointer",
+      "desc": "Returns a pointer for an inlined constant data argument in the argument buffer."
+    },
+    {
+      "name": "func setIndirectCommandBuffer(MTLIndirectCommandBuffer?, index: Int)",
+      "desc": "Encodes a reference to an indirect command buffer into the argument buffer."
+    },
+    {
+      "name": "func setIndirectCommandBuffers([MTLIndirectCommandBuffer?], range: Range<Int>)",
+      "desc": "Encodes an array of indirect command buffers into the argument buffer."
+    },
+    {
+      "name": "func setAccelerationStructure(MTLAccelerationStructure?, index: Int)",
+      "desc": "Encodes a reference to an acceleration structure into the argument buffer."
+    },
+    {
+      "name": "func setVisibleFunctionTable(MTLVisibleFunctionTable?, index: Int)",
+      "desc": "Encodes a reference to a function table into the argument buffer."
+    },
+    {
+      "name": "func setIntersectionFunctionTable(MTLIntersectionFunctionTable?, index: Int)",
+      "desc": "Encodes a reference to a ray-tracing intersection function table into the argument buffer."
+    },
+    {
+      "name": "func setIntersectionFunctionTables([MTLIntersectionFunctionTable?], range: Range<Int>)"
+    },
+    {
+      "name": "func setVisibleFunctionTables([MTLVisibleFunctionTable?], range: Range<Int>)"
+    },
+    {
+      "name": "func makeArgumentEncoderForBuffer(atIndex: Int) -> MTLArgumentEncoder?",
+      "desc": "Creates a new argument encoder for a nested argument buffer."
+    },
+    {
+      "name": "var alignment: Int",
+      "desc": "The alignment, in bytes, required for storing the encoded resources of an argument buffer."
+    },
+    {
+      "name": "var label: String?",
+      "desc": "A string that identifies the argument buffer."
+    },
+    {
+      "name": "var device: MTLDevice",
+      "desc": "The device object that created the argument encoder."
+    }
+  ],
+  "declaration": "protocol MTLArgumentEncoder",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

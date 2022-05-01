@@ -1,0 +1,125 @@
+{
+  "path": "/documentation/storekittest/sktestsession",
+  "type": "Class",
+  "name": "SKTestSession",
+  "desc": "The controls and environment configuration you use to test StoreKit transactions in Xcode.",
+  "items": [
+    {
+      "name": "init(configurationFileNamed: String)",
+      "desc": "Initializes the test session with the provided configuration file that you include in your application’s bundle."
+    },
+    {
+      "name": "init(contentsOf: URL)",
+      "desc": "Initializes the test session with a configuration file you provide through a URL."
+    },
+    {
+      "name": "func resetToDefaultState()",
+      "desc": "Removes all property overrides and resets all test session settings to their default state."
+    },
+    {
+      "name": "var storefront: String",
+      "desc": "The three-letter code that represents the region associated with the App Store storefront."
+    },
+    {
+      "name": "var locale: Locale",
+      "desc": "The value that determines the localization metadata the test environment uses."
+    },
+    {
+      "name": "var disableDialogs: Bool",
+      "desc": "A Boolean value that determines whether the test environment disables dialogs during automated testing."
+    },
+    {
+      "name": "func allTransactions() -> [SKTestTransaction]",
+      "desc": "Gets a list of all transactions in the test environment."
+    },
+    {
+      "name": "func deleteTransaction(identifier: Int)",
+      "desc": "Deletes a specific transaction from the test environment."
+    },
+    {
+      "name": "func clearTransactions()",
+      "desc": "Removes all transactions from the test environment."
+    },
+    {
+      "name": "var failTransactionsEnabled: Bool",
+      "desc": "A Boolean value that determines whether transactions fail in the test environment."
+    },
+    {
+      "name": "var failureError: SKError.Code",
+      "desc": "The error code that transactions return when you enable failing transactions."
+    },
+    {
+      "name": "var interruptedPurchasesEnabled: Bool",
+      "desc": "A Boolean value that determines whether the test environment simulates an interrupted purchase."
+    },
+    {
+      "name": "func resolveIssueForTransaction(identifier: Int)",
+      "desc": "Simulates resolving an issue when you test an interrupted purchase scenario."
+    },
+    {
+      "name": "var askToBuyEnabled: Bool",
+      "desc": "A Boolean value that determines whether the test environment simulates an Ask to Buy scenario."
+    },
+    {
+      "name": "func approveAskToBuyTransaction(identifier: Int)",
+      "desc": "Resolves an Ask to Buy test scenario by approving the transaction."
+    },
+    {
+      "name": "func declineAskToBuyTransaction(identifier: Int)",
+      "desc": "Resolves an Ask to Buy test scenario by declining the transaction."
+    },
+    {
+      "name": "var timeRate: SKTestSession.TimeRate",
+      "desc": "The rate at which time passes for subscriptions in the test environment as compared to real time."
+    },
+    {
+      "name": "enum SKTestSession.TimeRate",
+      "desc": "The values for rates of time passing in the test environment."
+    },
+    {
+      "name": "func enableAutoRenewForTransaction(identifier: Int)",
+      "desc": "Turns on auto-renewing for a subscription."
+    },
+    {
+      "name": "func disableAutoRenewForTransaction(identifier: Int)",
+      "desc": "Turns off auto-renewing for a subscription."
+    },
+    {
+      "name": "func forceRenewalOfSubscription(productIdentifier: String)",
+      "desc": "Ends the previous subscription period and begins the next period in the test environment."
+    },
+    {
+      "name": "func expireSubscription(productIdentifier: String)",
+      "desc": "Causes the identified subscription to expire immediately."
+    },
+    {
+      "name": "var billingGracePeriodIsEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the test environment simulates a billing grace period for auto-renewable subscriptions."
+    },
+    {
+      "name": "var shouldEnterBillingRetryOnRenewal: Bool",
+      "desc": "A Boolean value the indicates whether the test environment enters a billing retry state when an auto-renewable subscription renews."
+    },
+    {
+      "name": "func requestPriceIncreaseConsentForTransaction(identifier: Int)"
+    },
+    {
+      "name": "func consentToPriceIncreaseForTransaction(identifier: Int)"
+    },
+    {
+      "name": "func declinePriceIncreaseForTransaction(identifier: Int)"
+    },
+    {
+      "name": "func buyProduct(productIdentifier: String)",
+      "desc": "Simulates buying an in-app purchase or subscription outside the app."
+    },
+    {
+      "name": "func refundTransaction(identifier: Int)",
+      "desc": "Simulates a refund for any product that happens outside the app."
+    }
+  ],
+  "declaration": "class SKTestSession : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

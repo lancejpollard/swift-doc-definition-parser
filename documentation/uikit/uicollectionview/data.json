@@ -1,0 +1,345 @@
+{
+  "path": "/documentation/uikit/uicollectionview",
+  "type": "Class",
+  "name": "UICollectionView",
+  "desc": "An object that manages an ordered collection of data items and presents them using customizable layouts.",
+  "items": [
+    {
+      "name": "init(frame: CGRect, collectionViewLayout: UICollectionViewLayout)",
+      "desc": "Creates a collection view object with the specified frame and layout."
+    },
+    {
+      "name": "init?(coder: NSCoder)",
+      "desc": "Creates a collection view object from data in a given unarchiver."
+    },
+    {
+      "name": "var dataSource: UICollectionViewDataSource?",
+      "desc": "The object that provides the data for the collection view."
+    },
+    {
+      "name": "class UICollectionViewDiffableDataSource",
+      "desc": "The object you use to manage data and provide cells for a collection view."
+    },
+    {
+      "name": "protocol UICollectionViewDataSource",
+      "desc": "The methods adopted by the object you use to manage data and provide cells for a collection view."
+    },
+    {
+      "name": "var isPrefetchingEnabled: Bool",
+      "desc": "A Boolean value that indicates whether cell and data prefetching are enabled."
+    },
+    {
+      "name": "var prefetchDataSource: UICollectionViewDataSourcePrefetching?",
+      "desc": "The object that acts as the prefetching data source for the collection view, receiving notifications of upcoming cell data requirements."
+    },
+    {
+      "name": "protocol UICollectionViewDataSourcePrefetching",
+      "desc": "A protocol that provides advance warning of the data requirements for a collection view, allowing the triggering of asynchronous data load operations."
+    },
+    {
+      "name": "var delegate: UICollectionViewDelegate?",
+      "desc": "The object that acts as the delegate of the collection view."
+    },
+    {
+      "name": "protocol UICollectionViewDelegate",
+      "desc": "The methods adopted by the object you use to manage user interactions with items in a collection view."
+    },
+    {
+      "name": "struct UICollectionView.CellRegistration",
+      "desc": "A registration for the collection view’s cells."
+    },
+    {
+      "name": "func dequeueConfiguredReusableCell<Cell, Item>(using: UICollectionView.CellRegistration<Cell, Item>, for: IndexPath, item: Item?) -> Cell",
+      "desc": "Dequeues a configured reusable cell object."
+    },
+    {
+      "name": "func register(AnyClass?, forCellWithReuseIdentifier: String)",
+      "desc": "Registers a class for use in creating new collection view cells."
+    },
+    {
+      "name": "func register(UINib?, forCellWithReuseIdentifier: String)",
+      "desc": "Registers a nib file for use in creating new collection view cells."
+    },
+    {
+      "name": "func dequeueReusableCell(withReuseIdentifier: String, for: IndexPath) -> UICollectionViewCell",
+      "desc": "Dequeues a reusable cell object located by its identifier."
+    },
+    {
+      "name": "struct UICollectionView.SupplementaryRegistration",
+      "desc": "A registration for the collection view’s supplementary views."
+    },
+    {
+      "name": "func dequeueConfiguredReusableSupplementary<Supplementary>(using: UICollectionView.SupplementaryRegistration<Supplementary>, for: IndexPath) -> Supplementary",
+      "desc": "Dequeues a configured reusable supplementary view object."
+    },
+    {
+      "name": "func register(AnyClass?, forSupplementaryViewOfKind: String, withReuseIdentifier: String)",
+      "desc": "Registers a class for use in creating supplementary views for the collection view."
+    },
+    {
+      "name": "func register(UINib?, forSupplementaryViewOfKind: String, withReuseIdentifier: String)",
+      "desc": "Registers a nib file for use in creating supplementary views for the collection view."
+    },
+    {
+      "name": "func dequeueReusableSupplementaryView(ofKind: String, withReuseIdentifier: String, for: IndexPath) -> UICollectionReusableView",
+      "desc": "Dequeues a reusable supplementary view located by its identifier and kind."
+    },
+    {
+      "name": "var backgroundView: UIView?",
+      "desc": "The view that provides the background appearance."
+    },
+    {
+      "name": "var collectionViewLayout: UICollectionViewLayout",
+      "desc": "The layout used to organize the collected view’s items."
+    },
+    {
+      "name": "func setCollectionViewLayout(UICollectionViewLayout, animated: Bool)",
+      "desc": "Changes the collection view’s layout and optionally animates the change."
+    },
+    {
+      "name": "func setCollectionViewLayout(UICollectionViewLayout, animated: Bool, completion: ((Bool) -> Void)?)",
+      "desc": "Changes the collection view’s layout and notifies you when the animations complete."
+    },
+    {
+      "name": "func startInteractiveTransition(to: UICollectionViewLayout, completion: UICollectionView.LayoutInteractiveTransitionCompletion?) -> UICollectionViewTransitionLayout",
+      "desc": "Changes the collection view’s current layout using an interactive transition effect."
+    },
+    {
+      "name": "func finishInteractiveTransition()",
+      "desc": "Tells the collection view to finish an interactive transition by installing the intended target layout."
+    },
+    {
+      "name": "func cancelInteractiveTransition()",
+      "desc": "Tells the collection view to cancel an interactive transition and return to its original layout object."
+    },
+    {
+      "name": "typealias UICollectionView.LayoutInteractiveTransitionCompletion",
+      "desc": "The completion block called at the end of an interactive transition for a collection view."
+    },
+    {
+      "name": "var numberOfSections: Int",
+      "desc": "The number of sections displayed by the collection view."
+    },
+    {
+      "name": "func numberOfItems(inSection: Int) -> Int",
+      "desc": "Fetches the count of items in the specified section."
+    },
+    {
+      "name": "var visibleCells: [UICollectionViewCell]",
+      "desc": "An array of visible cells currently displayed by the collection view."
+    },
+    {
+      "name": "func insertItems(at: [IndexPath])",
+      "desc": "Inserts new items at the specified index paths."
+    },
+    {
+      "name": "func moveItem(at: IndexPath, to: IndexPath)",
+      "desc": "Moves an item from one location to another in the collection view."
+    },
+    {
+      "name": "func deleteItems(at: [IndexPath])",
+      "desc": "Deletes the items at the specified index paths."
+    },
+    {
+      "name": "func insertSections(IndexSet)",
+      "desc": "Inserts new sections at the specified indexes."
+    },
+    {
+      "name": "func moveSection(Int, toSection: Int)",
+      "desc": "Moves a section from one location to another in the collection view."
+    },
+    {
+      "name": "func deleteSections(IndexSet)",
+      "desc": "Deletes the sections at the specified indexes."
+    },
+    {
+      "name": "func beginInteractiveMovementForItem(at: IndexPath) -> Bool",
+      "desc": "Initiates the interactive movement of the item at the specified index path."
+    },
+    {
+      "name": "func updateInteractiveMovementTargetPosition(CGPoint)",
+      "desc": "Updates the position of the item within the collection view’s bounds."
+    },
+    {
+      "name": "func endInteractiveMovement()",
+      "desc": "Ends interactive movement tracking and moves the target item to its new location."
+    },
+    {
+      "name": "func cancelInteractiveMovement()",
+      "desc": "Ends interactive movement tracking and returns the target item to its original location."
+    },
+    {
+      "name": "var dragDelegate: UICollectionViewDragDelegate?",
+      "desc": "The delegate object that manages the dragging of items from the collection view."
+    },
+    {
+      "name": "protocol UICollectionViewDragDelegate",
+      "desc": "The interface for initiating drags from a collection view."
+    },
+    {
+      "name": "var hasActiveDrag: Bool",
+      "desc": "A Boolean value that indicates whether items were lifted from the collection view and have not yet been dropped."
+    },
+    {
+      "name": "var dragInteractionEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the collection view supports dragging content."
+    },
+    {
+      "name": "var dropDelegate: UICollectionViewDropDelegate?",
+      "desc": "The delegate object that manages the dropping of items into the collection view."
+    },
+    {
+      "name": "var hasActiveDrop: Bool",
+      "desc": "A Boolean value that indicates whether the collection view is currently tracking a drop session."
+    },
+    {
+      "name": "var reorderingCadence: UICollectionView.ReorderingCadence",
+      "desc": "The speed at which items in the collection view are reordered to show potential drop locations."
+    },
+    {
+      "name": "enum UICollectionView.ReorderingCadence",
+      "desc": "Constants indicating the speed at which collection view items are reorganized during a drop."
+    },
+    {
+      "name": "var indexPathsForSelectedItems: [IndexPath]?",
+      "desc": "The index paths for the selected items."
+    },
+    {
+      "name": "func selectItem(at: IndexPath?, animated: Bool, scrollPosition: UICollectionView.ScrollPosition)",
+      "desc": "Selects the item at the specified index path and optionally scrolls it into view."
+    },
+    {
+      "name": "func deselectItem(at: IndexPath, animated: Bool)",
+      "desc": "Deselects the item at the specified index."
+    },
+    {
+      "name": "var allowsSelection: Bool",
+      "desc": "A Boolean value that indicates whether users can select items in the collection view."
+    },
+    {
+      "name": "var allowsMultipleSelection: Bool",
+      "desc": "A Boolean value that determines whether users can select more than one item in the collection view."
+    },
+    {
+      "name": "var allowsSelectionDuringEditing: Bool",
+      "desc": "A Boolean value that determines whether users can select cells while the collection view is in editing mode."
+    },
+    {
+      "name": "var allowsMultipleSelectionDuringEditing: Bool",
+      "desc": "A Boolean value that controls whether users can select more than one cell simultaneously in editing mode."
+    },
+    {
+      "name": "var selectionFollowsFocus: Bool",
+      "desc": "A Boolean value that triggers an automatic selection when focus moves to a cell."
+    },
+    {
+      "name": "var isEditing: Bool",
+      "desc": "A Boolean value that determines whether the collection view is in editing mode."
+    },
+    {
+      "name": "func indexPathForItem(at: CGPoint) -> IndexPath?",
+      "desc": "Gets the index path of the item at the specified point in the collection view."
+    },
+    {
+      "name": "var indexPathsForVisibleItems: [IndexPath]",
+      "desc": "An array of the visible items in the collection view."
+    },
+    {
+      "name": "func indexPath(for: UICollectionViewCell) -> IndexPath?",
+      "desc": "Gets the index path of the specified cell."
+    },
+    {
+      "name": "func cellForItem(at: IndexPath) -> UICollectionViewCell?",
+      "desc": "Gets the cell object at the index path you specify."
+    },
+    {
+      "name": "func indexPathsForVisibleSupplementaryElements(ofKind: String) -> [IndexPath]",
+      "desc": "Gets the index paths of all visible supplementary views of the specified type."
+    },
+    {
+      "name": "func supplementaryView(forElementKind: String, at: IndexPath) -> UICollectionReusableView?",
+      "desc": "Gets the supplementary view at the specified index path."
+    },
+    {
+      "name": "func visibleSupplementaryViews(ofKind: String) -> [UICollectionReusableView]",
+      "desc": "Gets an array of the visible supplementary views of the specified kind."
+    },
+    {
+      "name": "func layoutAttributesForItem(at: IndexPath) -> UICollectionViewLayoutAttributes?",
+      "desc": "Gets the layout information for the item at the specified index path."
+    },
+    {
+      "name": "func layoutAttributesForSupplementaryElement(ofKind: String, at: IndexPath) -> UICollectionViewLayoutAttributes?",
+      "desc": "Gets the layout information for the specified supplementary view."
+    },
+    {
+      "name": "func scrollToItem(at: IndexPath, at: UICollectionView.ScrollPosition, animated: Bool)",
+      "desc": "Scrolls the collection view contents until the specified item is visible."
+    },
+    {
+      "name": "struct UICollectionView.ScrollPosition",
+      "desc": "Constants that indicate how to scroll an item into the visible portion of the collection view."
+    },
+    {
+      "name": "enum UICollectionView.ScrollDirection",
+      "desc": "Constants that indicate the direction of scrolling for the layout."
+    },
+    {
+      "name": "func performBatchUpdates((() -> Void)?, completion: ((Bool) -> Void)?)",
+      "desc": "Animates multiple insert, delete, reload, and move operations as a group."
+    },
+    {
+      "name": "var hasUncommittedUpdates: Bool",
+      "desc": "A Boolean value that indicates whether the collection view contains drop placeholders or is reordering its items as part of handling a drop."
+    },
+    {
+      "name": "func reconfigureItems(at: [IndexPath])",
+      "desc": "Updates the data for the items at the index paths you specify, preserving the existing cells for the items."
+    },
+    {
+      "name": "func reloadData()",
+      "desc": "Reloads all of the data for the collection view."
+    },
+    {
+      "name": "func reloadSections(IndexSet)",
+      "desc": "Reloads the data in the specified sections of the collection view."
+    },
+    {
+      "name": "func reloadItems(at: [IndexPath])",
+      "desc": "Reloads just the items at the specified index paths."
+    },
+    {
+      "name": "enum UICollectionView.ElementCategory",
+      "desc": "Constants specifying the type of view."
+    },
+    {
+      "name": "class let elementKindSectionFooter: String",
+      "desc": "A supplementary view that identifies the footer for a given section."
+    },
+    {
+      "name": "class let elementKindSectionHeader: String",
+      "desc": "A supplementary view that identifies the header for a given section."
+    },
+    {
+      "name": "var remembersLastFocusedIndexPath: Bool",
+      "desc": "A Boolean value that indicates whether the collection view automatically assigns the focus to the item at the last focused index path."
+    },
+    {
+      "name": "var allowsFocus: Bool"
+    },
+    {
+      "name": "var allowsFocusDuringEditing: Bool"
+    },
+    {
+      "name": "var contextMenuInteraction: UIContextMenuInteraction?"
+    }
+  ],
+  "declaration": "@MainActor class UICollectionView : UIScrollView",
+  "inheritsFrom": [
+    "UIScrollView"
+  ],
+  "conformsTo": [
+    "UIDataSourceTranslating",
+    "UISpringLoadedInteractionSupporting"
+  ]
+}

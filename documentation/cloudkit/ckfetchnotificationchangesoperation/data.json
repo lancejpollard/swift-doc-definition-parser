@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/cloudkit/ckfetchnotificationchangesoperation",
+  "type": "Class",
+  "name": "CKFetchNotificationChangesOperation",
+  "desc": "An operation that retrieves unread notifications from a CloudKit container.",
+  "items": [
+    {
+      "name": "init(previousServerChangeToken: CKServerChangeToken?)",
+      "desc": "Creates an operation for fetching notification changes that occur after the specified change token."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates an operation for fetching notification changes."
+    },
+    {
+      "name": "var previousServerChangeToken: CKServerChangeToken?",
+      "desc": "The change token from a previous fetch operation."
+    },
+    {
+      "name": "var resultsLimit: Int",
+      "desc": "The maximum number of results to fetch with the operation."
+    },
+    {
+      "name": "var moreComing: Bool",
+      "desc": "A Boolean value that indicates whether more notifications are available."
+    },
+    {
+      "name": "var notificationChangedBlock: ((CKNotification) -> Void)?",
+      "desc": "The block that processes a single push notification."
+    },
+    {
+      "name": "var fetchNotificationChangesCompletionBlock: ((CKServerChangeToken?, Error?) -> Void)?",
+      "desc": "The block that executes after the system fetches all requested notifications."
+    }
+  ],
+  "declaration": "class CKFetchNotificationChangesOperation : CKOperation",
+  "inheritsFrom": [
+    "CKOperation"
+  ]
+}

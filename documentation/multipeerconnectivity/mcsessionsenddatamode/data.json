@@ -1,0 +1,20 @@
+{
+  "path": "/documentation/multipeerconnectivity/mcsessionsenddatamode",
+  "type": "Enumeration",
+  "name": "MCSessionSendDataMode",
+  "desc": "Indicates whether delivery of data should be guaranteed.",
+  "items": [
+    {
+      "name": "case reliable",
+      "desc": "The framework should guarantee delivery of each message, enqueueing and retransmitting data as needed, and ensuring in-order delivery."
+    },
+    {
+      "name": "case unreliable",
+      "desc": "Messages to peers should be sent immediately without socket-level queueing. If a message cannot be sent immediately, it should be dropped. The order of messages is not guaranteed."
+    }
+  ],
+  "declaration": "enum MCSessionSendDataMode : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

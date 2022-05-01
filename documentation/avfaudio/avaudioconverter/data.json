@@ -1,0 +1,116 @@
+{
+  "path": "/documentation/avfaudio/avaudioconverter",
+  "type": "Class",
+  "name": "AVAudioConverter",
+  "desc": "An object that converts streams of audio between formats.",
+  "items": [
+    {
+      "name": "init?(from: AVAudioFormat, to: AVAudioFormat)",
+      "desc": "Creates an audio converter object from the specified input and output formats."
+    },
+    {
+      "name": "func convert(to: AVAudioBuffer, error: NSErrorPointer, withInputFrom: AVAudioConverterInputBlock) -> AVAudioConverterOutputStatus",
+      "desc": "Performs a conversion between audio formats, if the system supports it."
+    },
+    {
+      "name": "func convert(to: AVAudioPCMBuffer, from: AVAudioPCMBuffer)",
+      "desc": "Performs a basic conversion between audio formats that doesn’t involve converting codecs or sample rates."
+    },
+    {
+      "name": "enum AVAudioConverterInputStatus",
+      "desc": "An option that indicates the status of an audio converter input block."
+    },
+    {
+      "name": "enum AVAudioConverterOutputStatus",
+      "desc": "An option that indicates the return status of an audio converter method."
+    },
+    {
+      "name": "func reset()",
+      "desc": "Resets the converter so you can convert a new audio stream."
+    },
+    {
+      "name": "var channelMap: [NSNumber]",
+      "desc": "An array of integers that indicates which input to derive each output from."
+    },
+    {
+      "name": "var dither: Bool",
+      "desc": "A Boolean value that indicates whether dither is on."
+    },
+    {
+      "name": "var downmix: Bool",
+      "desc": "A Boolean value that indicates whether the framework mixes the channels instead of remapping."
+    },
+    {
+      "name": "var inputFormat: AVAudioFormat",
+      "desc": "The format of the input audio stream."
+    },
+    {
+      "name": "var outputFormat: AVAudioFormat",
+      "desc": "The format of the output audio stream."
+    },
+    {
+      "name": "var magicCookie: Data?",
+      "desc": "An object that contains metadata for encoders and decoders."
+    },
+    {
+      "name": "var maximumOutputPacketSize: Int",
+      "desc": "The maximum size of an output packet, in bytes."
+    },
+    {
+      "name": "var applicableEncodeBitRates: [NSNumber]?",
+      "desc": "An array of bit rates the framework applies during encoding according to the current formats and settings."
+    },
+    {
+      "name": "var availableEncodeBitRates: [NSNumber]?",
+      "desc": "An array of all bit rates the codec provides when encoding."
+    },
+    {
+      "name": "var availableEncodeChannelLayoutTags: [NSNumber]?",
+      "desc": "An array of all output channel layout tags the codec provides when encoding."
+    },
+    {
+      "name": "var bitRate: Int",
+      "desc": "The bit rate, in bits per second."
+    },
+    {
+      "name": "var bitRateStrategy: String?",
+      "desc": "A key value constant the framework uses during encoding."
+    },
+    {
+      "name": "var sampleRateConverterQuality: Int",
+      "desc": "A sample rate converter algorithm key value."
+    },
+    {
+      "name": "var sampleRateConverterAlgorithm: String?",
+      "desc": "The priming method the sample rate converter or decoder uses."
+    },
+    {
+      "name": "var applicableEncodeSampleRates: [NSNumber]?",
+      "desc": "An array of output sample rates that the converter applies according to the current formats and settings, when encoding."
+    },
+    {
+      "name": "var availableEncodeSampleRates: [NSNumber]?",
+      "desc": "An array of all output sample rates the codec provides when encoding."
+    },
+    {
+      "name": "var primeInfo: AVAudioConverterPrimeInfo",
+      "desc": "The number of priming frames the converter uses."
+    },
+    {
+      "name": "var primeMethod: AVAudioConverterPrimeMethod",
+      "desc": "The priming method the sample rate converter or decoder uses."
+    },
+    {
+      "name": "struct AVAudioConverterPrimeInfo",
+      "desc": "Priming information for audio conversion."
+    },
+    {
+      "name": "enum AVAudioConverterPrimeMethod",
+      "desc": "Options for the prime method property."
+    }
+  ],
+  "declaration": "class AVAudioConverter : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

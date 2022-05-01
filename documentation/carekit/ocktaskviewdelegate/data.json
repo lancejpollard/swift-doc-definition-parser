@@ -1,0 +1,25 @@
+{
+  "path": "/documentation/carekit/ocktaskviewdelegate",
+  "type": "Protocol",
+  "name": "OCKTaskViewDelegate",
+  "desc": "A protocol that handles events related to a task-displayable object.",
+  "items": [
+    {
+      "name": "func didSelectTaskView(UIView & OCKTaskDisplayable, eventIndexPath: IndexPath)",
+      "desc": "Notifies the delegate a task view has been selected."
+    },
+    {
+      "name": "func taskView(UIView & OCKTaskDisplayable, didCompleteEvent: Bool, at: IndexPath, sender: Any?)",
+      "desc": "Sets a specific event for a task view controller, and creates an outcome value if the task is complete."
+    },
+    {
+      "name": "func taskView(UIView & OCKTaskDisplayable, didCreateOutcomeValueAt: Int, eventIndexPath: IndexPath, sender: Any?)",
+      "desc": "Adds an outcome value to the array of outcomes for an event."
+    },
+    {
+      "name": "func taskView(UIView & OCKTaskDisplayable, didSelectOutcomeValueAt: Int, eventIndexPath: IndexPath, sender: Any?)",
+      "desc": "Returns an alert controller with localized text, that confirms deleting an outcome."
+    }
+  ],
+  "declaration": "protocol OCKTaskViewDelegate : AnyObject"
+}

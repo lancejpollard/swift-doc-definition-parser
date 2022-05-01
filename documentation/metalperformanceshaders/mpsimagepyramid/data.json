@@ -1,0 +1,35 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsimagepyramid",
+  "type": "Class",
+  "name": "MPSImagePyramid",
+  "desc": "A base class for creating different kinds of pyramid images.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice)",
+      "desc": "Initializes a downwards 5-tap image pyramid with the default filter kernel and device."
+    },
+    {
+      "name": "init(device: MTLDevice, centerWeight: Float)",
+      "desc": "Initialize a downwards 5-tap image pyramid with a central weight parameter and device."
+    },
+    {
+      "name": "init(device: MTLDevice, kernelWidth: Int, kernelHeight: Int, weights: UnsafePointer<Float>)",
+      "desc": "Initialize a downwards n-tap image pyramid with a custom filter kernel and device."
+    },
+    {
+      "name": "var kernelWidth: Int",
+      "desc": "The width of the filter window. Must be an odd number."
+    },
+    {
+      "name": "var kernelHeight: Int",
+      "desc": "The height of the filter window. Must be an odd number."
+    }
+  ],
+  "declaration": "class MPSImagePyramid : MPSUnaryImageKernel",
+  "inheritsFrom": [
+    "MPSUnaryImageKernel"
+  ]
+}

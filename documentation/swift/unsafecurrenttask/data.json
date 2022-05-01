@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/swift/unsafecurrenttask",
+  "type": "Structure",
+  "name": "UnsafeCurrentTask",
+  "desc": "An unsafe reference to the current task.",
+  "items": [
+    {
+      "name": "func withUnsafeCurrentTask<T>(body: (UnsafeCurrentTask?) -> T) -> T",
+      "desc": "Calls a closure with an unsafe reference to the current task."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "var isCancelled: Bool",
+      "desc": "A Boolean value that indicates whether the current task was canceled."
+    },
+    {
+      "name": "var priority: TaskPriority",
+      "desc": "The current task’s priority."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Cancel the current task."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "static func != (UnsafeCurrentTask, UnsafeCurrentTask) -> Bool"
+    },
+    {
+      "name": "static func == (UnsafeCurrentTask, UnsafeCurrentTask) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    }
+  ],
+  "declaration": "struct UnsafeCurrentTask",
+  "conformsTo": [
+    "Equatable",
+    "Hashable"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "path": "/documentation/metal/mtlheap",
+  "type": "Protocol",
+  "name": "MTLHeap",
+  "desc": "A memory pool from which you can suballocate resources.",
+  "items": [
+    {
+      "name": "var device: MTLDevice",
+      "desc": "The device object that created the heap."
+    },
+    {
+      "name": "var label: String?",
+      "desc": "A string that identifies the heap."
+    },
+    {
+      "name": "var type: MTLHeapType",
+      "desc": "The heap's type."
+    },
+    {
+      "name": "var storageMode: MTLStorageMode",
+      "desc": "The heap's storage mode."
+    },
+    {
+      "name": "var cpuCacheMode: MTLCPUCacheMode",
+      "desc": "The heap's CPU cache mode."
+    },
+    {
+      "name": "var hazardTrackingMode: MTLHazardTrackingMode",
+      "desc": "The heap's hazard tracking mode."
+    },
+    {
+      "name": "var resourceOptions: MTLResourceOptions",
+      "desc": "The options for resources created by the heap."
+    },
+    {
+      "name": "var size: Int",
+      "desc": "The total size of the heap, in bytes."
+    },
+    {
+      "name": "var usedSize: Int",
+      "desc": "The size of all resources currently in the heap, in bytes."
+    },
+    {
+      "name": "var currentAllocatedSize: Int",
+      "desc": "The size, in bytes, of the current heap allocation."
+    },
+    {
+      "name": "func maxAvailableSize(alignment: Int) -> Int",
+      "desc": "The maximum size of a resource, in bytes, that can be currently allocated from the heap."
+    },
+    {
+      "name": "enum MTLHeapType",
+      "desc": "The options you use to choose the heap type."
+    },
+    {
+      "name": "func setPurgeableState(MTLPurgeableState) -> MTLPurgeableState",
+      "desc": "Sets the purgeable state of the heap."
+    },
+    {
+      "name": "func makeBuffer(length: Int, options: MTLResourceOptions) -> MTLBuffer?",
+      "desc": "Creates a buffer on the heap."
+    },
+    {
+      "name": "func makeTexture(descriptor: MTLTextureDescriptor) -> MTLTexture?",
+      "desc": "Creates a texture on the heap."
+    },
+    {
+      "name": "func makeBuffer(length: Int, options: MTLResourceOptions, offset: Int) -> MTLBuffer?",
+      "desc": "Creates a buffer at a specified offset on the heap."
+    },
+    {
+      "name": "func makeTexture(descriptor: MTLTextureDescriptor, offset: Int) -> MTLTexture?",
+      "desc": "Creates a texture at a specified offset on the heap."
+    }
+  ],
+  "declaration": "protocol MTLHeap",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

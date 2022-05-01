@@ -1,0 +1,84 @@
+{
+  "path": "/documentation/phase/phaseengine",
+  "type": "Class",
+  "name": "PHASEEngine",
+  "desc": "An object that manages audio assets, controls playback, and configures environmental effects.",
+  "items": [
+    {
+      "name": "init(updateMode: PHASEEngine.UpdateMode)",
+      "desc": "Creates an engine updated by the app or framework."
+    },
+    {
+      "name": "var assetRegistry: PHASEAssetRegistry",
+      "desc": "An object that loads and unloads audio resources."
+    },
+    {
+      "name": "var rootObject: PHASEObject",
+      "desc": "The main object to which the app adds child objects."
+    },
+    {
+      "name": "var defaultReverbPreset: PHASEReverbPreset",
+      "desc": "The environmental surroundings that determine how sound resonates."
+    },
+    {
+      "name": "var defaultMedium: PHASEMedium",
+      "desc": "The physical matter through which sound travels."
+    },
+    {
+      "name": "var outputSpatializationMode: PHASESpatializationMode",
+      "desc": "The mode the engine implements to create a 3D sound experience."
+    },
+    {
+      "name": "func pause()",
+      "desc": "Pauses all audio playback."
+    },
+    {
+      "name": "func start()",
+      "desc": "Starts or resumes all audio playback."
+    },
+    {
+      "name": "func stop()",
+      "desc": "Stops all audio playback."
+    },
+    {
+      "name": "func update()",
+      "desc": "Processes app commands and increments framework processing."
+    },
+    {
+      "name": "var renderingState: PHASESoundEvent.RenderingState",
+      "desc": "The status of the engine's audio playback."
+    },
+    {
+      "name": "var groups: [String : PHASEGroup]",
+      "desc": "A list of named groups that contain sounds the app operates on collectively."
+    },
+    {
+      "name": "var activeGroupPreset: PHASEGroupPreset?",
+      "desc": "The settings that define playback for a group of sounds."
+    },
+    {
+      "name": "var duckers: [PHASEDucker]",
+      "desc": "An array of objects that reduce the volume of simultaneously playing sounds."
+    },
+    {
+      "name": "var soundEvents: [PHASESoundEvent]",
+      "desc": "A collection of the sounds that play under various runtime circumstances."
+    },
+    {
+      "name": "var unitsPerMeter: Double",
+      "desc": "A conversion factor from meters to your app's preferred unit of measurement."
+    },
+    {
+      "name": "var unitsPerSecond: Double",
+      "desc": "A conversion factor from seconds to your app’s preferred unit of time."
+    },
+    {
+      "name": "enum PHASEEngine.UpdateMode",
+      "desc": "Modes that determine when the framework consumes API calls and updates internal state."
+    }
+  ],
+  "declaration": "class PHASEEngine : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

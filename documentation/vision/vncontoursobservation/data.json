@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/vision/vncontoursobservation",
+  "type": "Class",
+  "name": "VNContoursObservation",
+  "desc": "An object that represents the detected contours in an image.",
+  "items": [
+    {
+      "name": "var contourCount: Int",
+      "desc": "The total number of detected contours."
+    },
+    {
+      "name": "var normalizedPath: CGPath",
+      "desc": "The detected contours as a path object in normalized coordinates."
+    },
+    {
+      "name": "var topLevelContours: [VNContour]",
+      "desc": "An array of contours that don’t have another contour enclosing them."
+    },
+    {
+      "name": "var topLevelContourCount: Int",
+      "desc": "The total number of detected top-level contours."
+    },
+    {
+      "name": "func contour(at: Int) -> VNContour",
+      "desc": "Retrieves the contour object at the specified index, irrespective of hierarchy."
+    },
+    {
+      "name": "func contour(at: IndexPath) -> VNContour",
+      "desc": "Retrieves the contour object at the specified index path."
+    },
+    {
+      "name": "class VNContour",
+      "desc": "A class that represents a detected contour in an image."
+    }
+  ],
+  "declaration": "class VNContoursObservation : VNObservation",
+  "inheritsFrom": [
+    "VNObservation"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "path": "/documentation/swift/managedbufferpointer",
+  "type": "Generic Structure",
+  "name": "ManagedBufferPointer",
+  "desc": "Contains a buffer object, and provides access to an instance of Header and contiguous storage for an arbitrary number of Element instances stored in that buffer.",
+  "items": [
+    {
+      "name": "init(bufferClass: AnyClass, minimumCapacity: Int, makingHeaderWith: (AnyObject, (AnyObject) -> Int) -> Header)",
+      "desc": "Create with new storage containing an initial Header and space for at least minimumCapacity elements."
+    },
+    {
+      "name": "init(unsafeBufferObject: AnyObject)",
+      "desc": "Manage the given buffer."
+    },
+    {
+      "name": "var capacity: Int",
+      "desc": "The actual number of elements that can be stored in this object."
+    },
+    {
+      "name": "var header: Header",
+      "desc": "The stored Header instance."
+    },
+    {
+      "name": "var buffer: AnyObject",
+      "desc": "Returns the object instance being used for storage."
+    },
+    {
+      "name": "func isUniqueReference() -> Bool",
+      "desc": "Returns true if self holds the only strong reference to its buffer; otherwise, returns false."
+    },
+    {
+      "name": "func withUnsafeMutablePointerToElements<R>((UnsafeMutablePointer<Element>) -> R) -> R",
+      "desc": "Call body with an UnsafeMutablePointer to the Element storage."
+    },
+    {
+      "name": "func withUnsafeMutablePointerToHeader<R>((UnsafeMutablePointer<Header>) -> R) -> R",
+      "desc": "Call body with an UnsafeMutablePointer to the stored Header."
+    },
+    {
+      "name": "func withUnsafeMutablePointers<R>((UnsafeMutablePointer<Header>, UnsafeMutablePointer<Element>) -> R) -> R",
+      "desc": "Call body with UnsafeMutablePointers to the stored Header and raw Element storage."
+    },
+    {
+      "name": "static func != (ManagedBufferPointer<Header, Element>, ManagedBufferPointer<Header, Element>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (ManagedBufferPointer<Header, Element>, ManagedBufferPointer<Header, Element>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    }
+  ],
+  "declaration": "@frozen struct ManagedBufferPointer<Header, Element>",
+  "conformsTo": [
+    "Equatable"
+  ]
+}

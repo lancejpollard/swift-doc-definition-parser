@@ -1,0 +1,61 @@
+{
+  "path": "/documentation/accelerate/sparselsmroptions",
+  "type": "Structure",
+  "name": "SparseLSMROptions",
+  "desc": "Options for creating a least squares minimum residual method.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Returns a new LSMR options structure."
+    },
+    {
+      "name": "init(reportError: ((UnsafePointer<CChar>) -> Void)?, lambda: Double, nvec: Int32, convergenceTest: SparseLSMRConvergenceTest_t, atol: Double, rtol: Double, btol: Double, conditionLimit: Double, maxIterations: Int32, reportStatus: ((UnsafePointer<CChar>) -> Void)?)",
+      "desc": "Returns a new LSMR options structure using the specified parameters."
+    },
+    {
+      "name": "var atol: Double",
+      "desc": "The absolute tolerance (default test) or A tolerance (Fong-Saunders test)."
+    },
+    {
+      "name": "var btol: Double",
+      "desc": "The B tolerance (Fong-Saunders test only)."
+    },
+    {
+      "name": "var conditionLimit: Double",
+      "desc": "The condition number limit (Fong-Saunders test only)."
+    },
+    {
+      "name": "var convergenceTest: SparseLSMRConvergenceTest_t",
+      "desc": "The convergence test to use for iterative solve methods."
+    },
+    {
+      "name": "struct SparseLSMRConvergenceTest_t",
+      "desc": "Constants that specify the type of convergence test."
+    },
+    {
+      "name": "var lambda: Double",
+      "desc": "The damping parameter lambda for regularized least squares."
+    },
+    {
+      "name": "var maxIterations: Int32",
+      "desc": "The maximum number of iterations."
+    },
+    {
+      "name": "var nvec: Int32",
+      "desc": "The number of vectors to use for local reorthogonalization."
+    },
+    {
+      "name": "var reportError: ((UnsafePointer<CChar>) -> Void)?",
+      "desc": "An optional error-reporting routine."
+    },
+    {
+      "name": "var reportStatus: ((UnsafePointer<CChar>) -> Void)?",
+      "desc": "An optional status-reporting routine."
+    },
+    {
+      "name": "var rtol: Double",
+      "desc": "The relative convergence tolerance (default test only)."
+    }
+  ],
+  "declaration": "struct SparseLSMROptions"
+}

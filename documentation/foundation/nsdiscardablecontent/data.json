@@ -1,0 +1,25 @@
+{
+  "path": "/documentation/foundation/nsdiscardablecontent",
+  "type": "Protocol",
+  "name": "NSDiscardableContent",
+  "desc": "You implement this protocol when a class’s objects have subcomponents that can be discarded when not being used, thereby giving an application a smaller memory footprint.",
+  "items": [
+    {
+      "name": "func beginContentAccess() -> Bool",
+      "desc": "Returns a Boolean value indicating whether the discardable contents are still available and have been successfully accessed."
+    },
+    {
+      "name": "func endContentAccess()",
+      "desc": "Called if the discardable contents are no longer being accessed."
+    },
+    {
+      "name": "func discardContentIfPossible()",
+      "desc": "Called to discard the contents of the receiver if the value of the accessed counter is 0."
+    },
+    {
+      "name": "func isContentDiscarded() -> Bool",
+      "desc": "Returns a Boolean value indicating whether the content has been discarded."
+    }
+  ],
+  "declaration": "protocol NSDiscardableContent"
+}

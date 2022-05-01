@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/carekit/ockweekcalendarpageviewcontroller",
+  "type": "Class",
+  "name": "OCKWeekCalendarPageViewController",
+  "desc": "A view controller that allows the user to page through adjacent weeks of task adherence content.",
+  "items": [
+    {
+      "name": "init(storeManager: OCKSynchronizedStoreManager, aggregator: OCKAdherenceAggregator)",
+      "desc": "Creates a new week-long paging calendar view controller that contains a specific date."
+    },
+    {
+      "name": "var calendarDelegate: OCKWeekCalendarPageViewControllerDelegate?",
+      "desc": "An object that handles important events in a week calendar page view controller."
+    },
+    {
+      "name": "var dateInterval: DateInterval?",
+      "desc": "The date interval the calendar displays."
+    },
+    {
+      "name": "var selectedDate: Date",
+      "desc": "The date currently selected in the calendar."
+    },
+    {
+      "name": "func calendarView(UIView & OCKCalendarDisplayable, didSelectDate: Date, at: Int, sender: Any?)",
+      "desc": "Notifies the delegate that a date has been selected in the calendar view."
+    },
+    {
+      "name": "func selectDate(Date, animated: Bool)",
+      "desc": "Selects a specific date in the calendar view."
+    },
+    {
+      "name": "func pageViewController(UIPageViewController, didFinishAnimating: Bool, previousViewControllers: [UIViewController], transitionCompleted: Bool)"
+    },
+    {
+      "name": "func pageViewController(UIPageViewController, viewControllerAfter: UIViewController) -> UIViewController?"
+    },
+    {
+      "name": "func pageViewController(UIPageViewController, viewControllerBefore: UIViewController) -> UIViewController?"
+    },
+    {
+      "name": "func viewDidLoad()"
+    }
+  ],
+  "declaration": "class OCKWeekCalendarPageViewController : UIPageViewController",
+  "inheritsFrom": [
+    "UIPageViewController"
+  ],
+  "conformsTo": [
+    "CVarArg",
+    "Equatable",
+    "Hashable",
+    "NSExtensionRequestHandling",
+    "OCKCalendarViewDelegate",
+    "UIPageViewControllerDataSource",
+    "UIPageViewControllerDelegate",
+    "UIPasteConfigurationSupporting",
+    "UIStateRestoring",
+    "UIUserActivityRestoring"
+  ]
+}

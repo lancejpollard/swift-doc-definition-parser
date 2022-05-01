@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/accelerate/vimageconverter",
+  "type": "Class",
+  "name": "vImageConverter",
+  "desc": "A description of a conversion from one image format to another.",
+  "items": [
+    {
+      "name": "var destinationBufferCount: Int",
+      "desc": "The number of destination buffers written to by the converter."
+    },
+    {
+      "name": "var sourceBufferCount: Int",
+      "desc": "The number of source buffers written to by the converter."
+    },
+    {
+      "name": "func convert(source: vImage_Buffer, destination: inout vImage_Buffer, flags: vImage.Options)",
+      "desc": "Converts the pixels in a vImage buffer to another format."
+    },
+    {
+      "name": "func mustOperateOutOfPlace(source: vImage_Buffer, destination: vImage_Buffer, flags: vImage.Options) -> Bool",
+      "desc": "Determines whether a converter is capable of operating in place."
+    },
+    {
+      "name": "func destinationBuffers(colorSpace: CGColorSpace) -> [vImage.BufferType?]",
+      "desc": "Returns a list of vImage destination buffer types, specifying the order of planes."
+    },
+    {
+      "name": "func sourceBuffers(colorSpace: CGColorSpace) -> [vImage.BufferType?]",
+      "desc": "Returns a list of vImage source buffer types, specifying the order of planes."
+    },
+    {
+      "name": "static func make(sourceFormat: vImageCVImageFormat, destinationFormat: vImage_CGImageFormat, flags: vImage.Options) -> vImageConverter",
+      "desc": "Creates a vImage converter that converts a Core Video-formatted image to a Core Graphics-formatted image."
+    },
+    {
+      "name": "static func make(sourceFormat: vImage_CGImageFormat, destinationFormat: vImage_CGImageFormat, flags: vImage.Options) -> vImageConverter",
+      "desc": "Creates a vImage converter that converts from one vImage Core Graphics image format to another."
+    },
+    {
+      "name": "static func make(sourceFormat: vImage_CGImageFormat, destinationFormat: vImageCVImageFormat, flags: vImage.Options) -> vImageConverter",
+      "desc": "Creates a vImage converter that converts a Core Graphics-formatted image to a Core Video-formatted image."
+    }
+  ],
+  "declaration": "class vImageConverter"
+}

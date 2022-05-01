@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/swift/checkedcontinuation",
+  "type": "Generic Structure",
+  "name": "CheckedContinuation",
+  "desc": "A mechanism to interface between synchronous and asynchronous code, logging correctness violations.",
+  "items": [
+    {
+      "name": "init(continuation: UnsafeContinuation<T, E>, function: String)",
+      "desc": "Creates a checked continuation from an unsafe continuation."
+    },
+    {
+      "name": "func resume()",
+      "desc": "Resume the task awaiting the continuation by having it return normally from its suspension point."
+    },
+    {
+      "name": "func resume(returning: T)",
+      "desc": "Resume the task awaiting the continuation by having it return normally from its suspension point."
+    },
+    {
+      "name": "func resume(throwing: E)",
+      "desc": "Resume the task awaiting the continuation by having it throw an error from its suspension point."
+    },
+    {
+      "name": "func resume(with: Result<T, E>)",
+      "desc": "Resume the task awaiting the continuation by having it either return normally or throw an error based on the state of the given Result value."
+    },
+    {
+      "name": "func resume<Er>(with: Result<T, Er>)",
+      "desc": "Resume the task awaiting the continuation by having it either return normally or throw an error based on the state of the given Result value."
+    }
+  ],
+  "declaration": "struct CheckedContinuation<T, E> where E : Error"
+}

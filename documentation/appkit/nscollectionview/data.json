@@ -1,0 +1,279 @@
+{
+  "path": "/documentation/appkit/nscollectionview",
+  "type": "Class",
+  "name": "NSCollectionView",
+  "desc": "An ordered collection of data items displayed in a customizable layout.",
+  "items": [
+    {
+      "name": "var dataSource: NSCollectionViewDataSource?",
+      "desc": "An object that provides data for the collection view."
+    },
+    {
+      "name": "protocol NSCollectionViewDataSource",
+      "desc": "A set of methods that a data source object implements to provide the information and view objects that a collection view requires to present content."
+    },
+    {
+      "name": "var delegate: NSCollectionViewDelegate?",
+      "desc": "The collection view’s delegate object."
+    },
+    {
+      "name": "protocol NSCollectionViewDelegate",
+      "desc": "A set of methods that you use to manage the behavior of a collection view."
+    },
+    {
+      "name": "var content: [Any]",
+      "desc": "An array that provides data for the collection view."
+    },
+    {
+      "name": "var backgroundView: NSView?",
+      "desc": "The background view placed behind all items and supplementary views."
+    },
+    {
+      "name": "var backgroundColors: [NSColor]!",
+      "desc": "An array containing the collection view’s background colors."
+    },
+    {
+      "name": "var backgroundViewScrollsWithContent: Bool",
+      "desc": "A Boolean value that indicates whether the collection view’s background view scrolls with the items and other content."
+    },
+    {
+      "name": "func makeItem(withIdentifier: NSUserInterfaceItemIdentifier, for: IndexPath) -> NSCollectionViewItem",
+      "desc": "Creates or returns a reusable item object of the specified type."
+    },
+    {
+      "name": "func register(AnyClass?, forItemWithIdentifier: NSUserInterfaceItemIdentifier)",
+      "desc": "Registers a class to use when creating new items in the collection view."
+    },
+    {
+      "name": "func register(NSNib?, forItemWithIdentifier: NSUserInterfaceItemIdentifier)",
+      "desc": "Registers a nib file to use when creating items in the collection view."
+    },
+    {
+      "name": "func makeSupplementaryView(ofKind: NSCollectionView.SupplementaryElementKind, withIdentifier: NSUserInterfaceItemIdentifier, for: IndexPath) -> NSView",
+      "desc": "Creates or returns a reusable supplementary view of the specified type."
+    },
+    {
+      "name": "func register(AnyClass?, forSupplementaryViewOfKind: NSCollectionView.SupplementaryElementKind, withIdentifier: NSUserInterfaceItemIdentifier)",
+      "desc": "Registers a class to use when creating new supplementary views in the collection view."
+    },
+    {
+      "name": "func register(NSNib?, forSupplementaryViewOfKind: NSCollectionView.SupplementaryElementKind, withIdentifier: NSUserInterfaceItemIdentifier)",
+      "desc": "Registers a nib file to use when creating supplementary views in the collection view."
+    },
+    {
+      "name": "typealias NSCollectionView.SupplementaryElementKind"
+    },
+    {
+      "name": "struct NSUserInterfaceItemIdentifier"
+    },
+    {
+      "name": "var collectionViewLayout: NSCollectionViewLayout?",
+      "desc": "The layout object used to organize the collection view’s content."
+    },
+    {
+      "name": "func reloadData()",
+      "desc": "Reloads all of the data for the collection view."
+    },
+    {
+      "name": "func reloadSections(IndexSet)",
+      "desc": "Reloads the data in the specified sections of the collection view."
+    },
+    {
+      "name": "func reloadItems(at: Set<IndexPath>)",
+      "desc": "Reloads only the specified items."
+    },
+    {
+      "name": "var prefetchDataSource: NSCollectionViewPrefetching?"
+    },
+    {
+      "name": "protocol NSCollectionViewPrefetching"
+    },
+    {
+      "name": "var numberOfSections: Int",
+      "desc": "The number of sections in the collection view."
+    },
+    {
+      "name": "func numberOfItems(inSection: Int) -> Int",
+      "desc": "Returns the number of items in the specified section."
+    },
+    {
+      "name": "func insertItems(at: Set<IndexPath>)",
+      "desc": "Inserts new items into the collection view at the specified locations."
+    },
+    {
+      "name": "func moveItem(at: IndexPath, to: IndexPath)",
+      "desc": "Moves an item from one location to another in the collection view."
+    },
+    {
+      "name": "func deleteItems(at: Set<IndexPath>)",
+      "desc": "Deletes the items at the specified index paths."
+    },
+    {
+      "name": "func insertSections(IndexSet)",
+      "desc": "Inserts new sections at the specified indexes."
+    },
+    {
+      "name": "func moveSection(Int, toSection: Int)",
+      "desc": "Moves a section from its current location to a new location."
+    },
+    {
+      "name": "func deleteSections(IndexSet)",
+      "desc": "Deletes the specified sections and their contained items."
+    },
+    {
+      "name": "func toggleSectionCollapse(Any)",
+      "desc": "Collapses the section in which the sender resides into a single horizontally scrollable row."
+    },
+    {
+      "name": "var isSelectable: Bool",
+      "desc": "A Boolean value that indicates whether the user may select items in the collection view."
+    },
+    {
+      "name": "var allowsMultipleSelection: Bool",
+      "desc": "A Boolean value that indicates whether the user may select more than one item in the collection view."
+    },
+    {
+      "name": "var allowsEmptySelection: Bool",
+      "desc": "A Boolean value indicating whether the collection view may have no selected items."
+    },
+    {
+      "name": "var selectionIndexPaths: Set<IndexPath>",
+      "desc": "The set of index paths representing the currently selected items."
+    },
+    {
+      "name": "func selectAll(Any?)",
+      "desc": "Selects all items in the collection view, if doing so is possible."
+    },
+    {
+      "name": "func deselectAll(Any?)",
+      "desc": "Deselects all items in the collection view."
+    },
+    {
+      "name": "func selectItems(at: Set<IndexPath>, scrollPosition: NSCollectionView.ScrollPosition)",
+      "desc": "Adds the specified items to the current selection and optionally scrolls the items into position."
+    },
+    {
+      "name": "func deselectItems(at: Set<IndexPath>)",
+      "desc": "Removes the specified items from the current selection."
+    },
+    {
+      "name": "func visibleItems() -> [NSCollectionViewItem]",
+      "desc": "Returns an array of the actively managed items in the collection view."
+    },
+    {
+      "name": "func indexPathsForVisibleItems() -> Set<IndexPath>",
+      "desc": "Returns the index paths of the currently active items."
+    },
+    {
+      "name": "func visibleSupplementaryViews(ofKind: NSCollectionView.SupplementaryElementKind) -> [NSView & NSCollectionViewElement]",
+      "desc": "Returns an array of the actively managed supplementary views in the collection view."
+    },
+    {
+      "name": "func indexPathsForVisibleSupplementaryElements(ofKind: NSCollectionView.SupplementaryElementKind) -> Set<IndexPath>",
+      "desc": "Returns the index paths of the currently active supplementary views."
+    },
+    {
+      "name": "func indexPath(for: NSCollectionViewItem) -> IndexPath?",
+      "desc": "Returns the index path of the specified item."
+    },
+    {
+      "name": "func indexPathForItem(at: NSPoint) -> IndexPath?",
+      "desc": "Returns the index path of the item at the specified point."
+    },
+    {
+      "name": "func item(at: IndexPath) -> NSCollectionViewItem?",
+      "desc": "Returns the item associated with the specified index path."
+    },
+    {
+      "name": "func supplementaryView(forElementKind: NSCollectionView.SupplementaryElementKind, at: IndexPath) -> (NSView & NSCollectionViewElement)?",
+      "desc": "Returns the supplementary view associated with the specified index path."
+    },
+    {
+      "name": "func scrollToItems(at: Set<IndexPath>, scrollPosition: NSCollectionView.ScrollPosition)",
+      "desc": "Scrolls the collection view contents until the specified items are visible."
+    },
+    {
+      "name": "func layoutAttributesForItem(at: IndexPath) -> NSCollectionViewLayoutAttributes?",
+      "desc": "Returns the layout information for the item at the specified index path."
+    },
+    {
+      "name": "func layoutAttributesForSupplementaryElement(ofKind: NSCollectionView.SupplementaryElementKind, at: IndexPath) -> NSCollectionViewLayoutAttributes?",
+      "desc": "Returns the layout information for the supplementary view at the specified index path."
+    },
+    {
+      "name": "func performBatchUpdates((() -> Void)?, completionHandler: ((Bool) -> Void)?)",
+      "desc": "Encapsulates multiple insert, delete, reload, and move operations into a single animated operation."
+    },
+    {
+      "name": "var isFirstResponder: Bool",
+      "desc": "A Boolean value indicating whether the collection view is the first responder."
+    },
+    {
+      "name": "func draggingImageForItems(at: Set<IndexPath>, with: NSEvent, offset: NSPointPointer) -> NSImage",
+      "desc": "Returns an image to use for dragging the specified items."
+    },
+    {
+      "name": "var selectionIndexes: IndexSet",
+      "desc": "The indexes of the currently selected items."
+    },
+    {
+      "name": "func item(at: Int) -> NSCollectionViewItem?",
+      "desc": "Returns the collection view item for the represented object at the specified index."
+    },
+    {
+      "name": "func frameForItem(at: Int) -> NSRect",
+      "desc": "Returns the frame of the collection view item at the specified index."
+    },
+    {
+      "name": "func frameForItem(at: Int, withNumberOfItems: Int) -> NSRect",
+      "desc": "Returns the frame of an item based on the number of items in the collection view."
+    },
+    {
+      "name": "func draggingImageForItems(at: IndexSet, with: NSEvent, offset: NSPointPointer) -> NSImage",
+      "desc": "This method computes and returns an image to use for dragging."
+    },
+    {
+      "name": "func setDraggingSourceOperationMask(NSDragOperation, forLocal: Bool)",
+      "desc": "Configures the default value returned from draggingSourceOperationMaskForLocal:."
+    },
+    {
+      "name": "enum NSCollectionView.DropOperation",
+      "desc": "These constants specify if acceptance of a drop should be at the item it is dropped on or before the item. These constants are used by the collectionView(_:acceptDrop:index:dropOperation:) and collectionView(_:validateDrop:proposedIndex:dropOperation:) methods in NSCollectionViewDelegate"
+    },
+    {
+      "name": "struct NSCollectionView.ScrollPosition",
+      "desc": "Constants indicating the options for scrolling the collection view’s content."
+    },
+    {
+      "name": "typealias NSCollectionView.DecorationElementKind"
+    },
+    {
+      "name": "class let elementKindInterItemGapIndicator: String",
+      "desc": "The element kind string assigned to the attributes object when it represents an inter-item gap."
+    },
+    {
+      "name": "class let elementKindSectionFooter: String",
+      "desc": "A supplementary view that acts as a footer for a given section."
+    },
+    {
+      "name": "class let elementKindSectionHeader: String",
+      "desc": "A supplementary view that acts as a header for a given section."
+    },
+    {
+      "name": "enum NSCollectionView.UpdateAction",
+      "desc": "Constants indicating the type of action being performed on an item."
+    },
+    {
+      "name": "enum NSCollectionView.ScrollDirection",
+      "desc": "Constants indicating the scrolling direction for the layout."
+    }
+  ],
+  "declaration": "class NSCollectionView : NSView",
+  "inheritsFrom": [
+    "NSView"
+  ],
+  "conformsTo": [
+    "NSDraggingDestination",
+    "NSDraggingSource"
+  ]
+}

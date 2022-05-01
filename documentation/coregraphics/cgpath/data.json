@@ -1,0 +1,92 @@
+{
+  "path": "/documentation/coregraphics/cgpath",
+  "type": "Class",
+  "name": "CGPath",
+  "desc": "An immutable graphics path: a mathematical description of shapes or lines to be drawn in a graphics context.",
+  "items": [
+    {
+      "name": "init(rect: CGRect, transform: UnsafePointer<CGAffineTransform>?)",
+      "desc": "Create an immutable path of a rectangle."
+    },
+    {
+      "name": "init(ellipseIn: CGRect, transform: UnsafePointer<CGAffineTransform>?)",
+      "desc": "Create an immutable path of an ellipse."
+    },
+    {
+      "name": "init(roundedRect: CGRect, cornerWidth: CGFloat, cornerHeight: CGFloat, transform: UnsafePointer<CGAffineTransform>?)",
+      "desc": "Create an immutable path of a rounded rectangle."
+    },
+    {
+      "name": "func copy() -> CGPath?",
+      "desc": "Creates an immutable copy of a graphics path."
+    },
+    {
+      "name": "func copy(using: UnsafePointer<CGAffineTransform>?) -> CGPath?",
+      "desc": "Creates an immutable copy of a graphics path transformed by a transformation matrix."
+    },
+    {
+      "name": "func copy(dashingWithPhase: CGFloat, lengths: [CGFloat], transform: CGAffineTransform) -> CGPath",
+      "desc": "Returns a new path equivalent to the results of drawing the path with a dashed stroke."
+    },
+    {
+      "name": "func copy(strokingWithWidth: CGFloat, lineCap: CGLineCap, lineJoin: CGLineJoin, miterLimit: CGFloat, transform: CGAffineTransform) -> CGPath",
+      "desc": "Returns a new path equivalent to the results of drawing the path with a solid stroke."
+    },
+    {
+      "name": "func mutableCopy() -> CGMutablePath?",
+      "desc": "Creates a mutable copy of an existing graphics path."
+    },
+    {
+      "name": "func mutableCopy(using: UnsafePointer<CGAffineTransform>?) -> CGMutablePath?",
+      "desc": "Creates a mutable copy of a graphics path transformed by a transformation matrix."
+    },
+    {
+      "name": "var boundingBox: CGRect",
+      "desc": "Returns the bounding box containing all points in a graphics path."
+    },
+    {
+      "name": "var boundingBoxOfPath: CGRect",
+      "desc": "Returns the bounding box of a graphics path."
+    },
+    {
+      "name": "var currentPoint: CGPoint",
+      "desc": "Returns the current point in a graphics path."
+    },
+    {
+      "name": "func contains(CGPoint, using: CGPathFillRule, transform: CGAffineTransform) -> Bool",
+      "desc": "Returns whether the specified point is interior to the path."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "Indicates whether or not a graphics path is empty."
+    },
+    {
+      "name": "func isRect(UnsafeMutablePointer<CGRect>?) -> Bool",
+      "desc": "Indicates whether or not a graphics path represents a rectangle."
+    },
+    {
+      "name": "func apply(info: UnsafeMutableRawPointer?, function: CGPathApplierFunction)",
+      "desc": "For each element in a graphics path, calls a custom applier function."
+    },
+    {
+      "name": "typealias CGPathApplierFunction",
+      "desc": "Defines a callback function that can view an element in a graphics path."
+    },
+    {
+      "name": "struct CGPathElement",
+      "desc": "A data structure that provides information about a path element."
+    },
+    {
+      "name": "enum CGPathElementType",
+      "desc": "The type of element found in a path."
+    },
+    {
+      "name": "class var typeID: CFTypeID",
+      "desc": "Returns the Core Foundation type identifier for Core Graphics paths."
+    },
+    {
+      "name": "func applyWithBlock((UnsafePointer<CGPathElement>) -> Void)"
+    }
+  ],
+  "declaration": "class CGPath"
+}

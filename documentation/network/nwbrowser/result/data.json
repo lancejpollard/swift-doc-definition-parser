@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/network/nwbrowser/result",
+  "type": "Structure",
+  "name": "NWBrowser.Result",
+  "desc": "A set of discovered services and changes from the last result.",
+  "items": [
+    {
+      "name": "let endpoint: NWEndpoint",
+      "desc": "The discovered service endpoint."
+    },
+    {
+      "name": "let interfaces: [NWInterface]",
+      "desc": "The list of interfaces on which the service was discovered."
+    },
+    {
+      "name": "let metadata: NWBrowser.Result.Metadata",
+      "desc": "The metadata associated with the discovered service, such as the TXT record."
+    },
+    {
+      "name": "enum NWBrowser.Result.Metadata",
+      "desc": "Values associated with discovered services, such as TXT records."
+    },
+    {
+      "name": "struct NWTXTRecord",
+      "desc": "A dictionary representing a TXT record in a DNS packet."
+    },
+    {
+      "name": "enum NWBrowser.Result.Change",
+      "desc": "Ways in which discovered services can change between specific results."
+    },
+    {
+      "name": "static func == (NWBrowser.Result, NWBrowser.Result) -> Bool"
+    },
+    {
+      "name": "static func != (NWBrowser.Result, NWBrowser.Result) -> Bool"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "var hashValue: Int"
+    }
+  ],
+  "declaration": "struct NWBrowser.Result",
+  "conformsTo": [
+    "Hashable"
+  ]
+}

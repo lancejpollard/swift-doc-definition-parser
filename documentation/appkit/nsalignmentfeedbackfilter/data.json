@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/appkit/nsalignmentfeedbackfilter",
+  "type": "Class",
+  "name": "NSAlignmentFeedbackFilter",
+  "desc": "An object that can filter the movement of an object and provides haptic feedback when alignment occurs.",
+  "items": [
+    {
+      "name": "class var inputEventMask: NSEvent.EventTypeMask",
+      "desc": "Retrieves the event types the filter accepts."
+    },
+    {
+      "name": "func update(with: NSEvent)",
+      "desc": "Informs the feedback filter about a new event."
+    },
+    {
+      "name": "func update(withPanRecognizer: NSPanGestureRecognizer)",
+      "desc": "Informs the feedback filter about a new pan (drag) gesture recognizer event."
+    },
+    {
+      "name": "func alignmentFeedbackTokenForMovement(in: NSView?, previousPoint: NSPoint, alignedPoint: NSPoint, defaultPoint: NSPoint) -> NSAlignmentFeedbackToken?",
+      "desc": "Requests a feedback token for the alignment of an object requiring horizontal and vertical movement."
+    },
+    {
+      "name": "func alignmentFeedbackTokenForHorizontalMovement(in: NSView?, previousX: CGFloat, alignedX: CGFloat, defaultX: CGFloat) -> NSAlignmentFeedbackToken?",
+      "desc": "Requests a feedback token for the alignment of an object requiring horizontal movement only."
+    },
+    {
+      "name": "func alignmentFeedbackTokenForVerticalMovement(in: NSView?, previousY: CGFloat, alignedY: CGFloat, defaultY: CGFloat) -> NSAlignmentFeedbackToken?",
+      "desc": "Requests a feedback token for the alignment of an object requiring vertical movement only."
+    },
+    {
+      "name": "func performFeedback([NSAlignmentFeedbackToken], performanceTime: NSHapticFeedbackManager.PerformanceTime)",
+      "desc": "Performs the haptic feedback described by one or more alignment feedback tokens."
+    }
+  ],
+  "declaration": "class NSAlignmentFeedbackFilter : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

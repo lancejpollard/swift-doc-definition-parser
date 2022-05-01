@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/coredata/nsatomicstore",
+  "type": "Class",
+  "name": "NSAtomicStore",
+  "desc": "An abstract superclass that you subclass to create a Core Data atomic store.",
+  "items": [
+    {
+      "name": "init(persistentStoreCoordinator: NSPersistentStoreCoordinator?, configurationName: String?, at: URL, options: [AnyHashable : Any]?)",
+      "desc": "Creates an atomic store at the specified location."
+    },
+    {
+      "name": "func load()",
+      "desc": "Loads the cache nodes for the receiver."
+    },
+    {
+      "name": "func objectID(for: NSEntityDescription, withReferenceObject: Any) -> NSManagedObjectID",
+      "desc": "Returns a managed object ID from the reference data for a specified entity."
+    },
+    {
+      "name": "func addCacheNodes(Set<NSAtomicStoreCacheNode>)",
+      "desc": "Registers a set of cache nodes with the receiver."
+    },
+    {
+      "name": "func newCacheNode(for: NSManagedObject) -> NSAtomicStoreCacheNode",
+      "desc": "Returns a new cache node for a given managed object."
+    },
+    {
+      "name": "func newReferenceObject(for: NSManagedObject) -> Any",
+      "desc": "Returns a new reference object for a given managed object."
+    },
+    {
+      "name": "func updateCacheNode(NSAtomicStoreCacheNode, from: NSManagedObject)",
+      "desc": "Updates the given cache node using the values in a given managed object."
+    },
+    {
+      "name": "func willRemoveCacheNodes(Set<NSAtomicStoreCacheNode>)",
+      "desc": "Method invoked before the store removes the given collection of cache nodes."
+    },
+    {
+      "name": "func save()",
+      "desc": "Saves the cache nodes."
+    },
+    {
+      "name": "func cacheNodes() -> Set<NSAtomicStoreCacheNode>",
+      "desc": "Returns the set of cache nodes registered with the receiver."
+    },
+    {
+      "name": "func cacheNode(for: NSManagedObjectID) -> NSAtomicStoreCacheNode?",
+      "desc": "Returns the cache node for a given managed object ID."
+    },
+    {
+      "name": "func referenceObject(for: NSManagedObjectID) -> Any",
+      "desc": "Returns the reference object for a given managed object ID."
+    }
+  ],
+  "declaration": "class NSAtomicStore : NSPersistentStore",
+  "inheritsFrom": [
+    "NSPersistentStore"
+  ]
+}

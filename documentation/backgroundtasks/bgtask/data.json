@@ -1,0 +1,24 @@
+{
+  "path": "/documentation/backgroundtasks/bgtask",
+  "type": "Class",
+  "name": "BGTask",
+  "desc": "An abstract class representing a task that’s run while the app is in the background.",
+  "items": [
+    {
+      "name": "var identifier: String",
+      "desc": "The string identifier of the task."
+    },
+    {
+      "name": "var expirationHandler: (() -> Void)?",
+      "desc": "A handler called shortly before the task’s background time expires."
+    },
+    {
+      "name": "func setTaskCompleted(success: Bool)",
+      "desc": "Informs the background task scheduler that the task is complete."
+    }
+  ],
+  "declaration": "class BGTask : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

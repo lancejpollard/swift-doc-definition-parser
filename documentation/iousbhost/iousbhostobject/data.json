@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/iousbhost/iousbhostobject",
+  "type": "Class",
+  "name": "IOUSBHostObject",
+  "desc": "This class provides basic functionality for sending device requests and retrieving descriptors.",
+  "items": [
+    {
+      "name": "struct IOUSBHostObjectInitOptions",
+      "desc": "Options for initializing the host object."
+    },
+    {
+      "name": "typealias IOUSBHostInterestHandler",
+      "desc": "The callback that handles underlying service-state changes."
+    },
+    {
+      "name": "var ioService: io_service_t",
+      "desc": "A reference to the kernel object."
+    },
+    {
+      "name": "var queue: DispatchQueue",
+      "desc": "The queue for servicing input/output requests."
+    },
+    {
+      "name": "func destroy()",
+      "desc": "Removes underlying allocations and connections from the USB host object."
+    },
+    {
+      "name": "func ioData(withCapacity: Int) -> NSMutableData",
+      "desc": "Allocates a buffer for input/output requests."
+    },
+    {
+      "name": "func IOUSBHostDeviceRequestType(tIOUSBDeviceRequestDirectionValue, tIOUSBDeviceRequestTypeValue, tIOUSBDeviceRequestRecipientValue) -> UInt8",
+      "desc": "Creates the request type field of a device request."
+    },
+    {
+      "name": "let IOUSBHostDefaultControlCompletionTimeout: TimeInterval",
+      "desc": "The default completion timeout for input/output requests."
+    },
+    {
+      "name": "typealias IOUSBHostCompletionHandler",
+      "desc": "The completion handler for asynchronous control, bulk, and interrupt transfers."
+    },
+    {
+      "name": "enum IOUSBHostAbortOption",
+      "desc": "Options for aborting pending input/output requests."
+    },
+    {
+      "name": "var deviceAddress: Int",
+      "desc": "The device’s bus address."
+    },
+    {
+      "name": "var capabilityDescriptors: UnsafePointer<IOUSBBOSDescriptor>?"
+    },
+    {
+      "name": "var deviceDescriptor: UnsafePointer<IOUSBDeviceDescriptor>?"
+    },
+    {
+      "name": "func configurationDescriptor(with: Int) -> UnsafePointer<IOUSBConfigurationDescriptor>"
+    },
+    {
+      "name": "func configurationDescriptor(withConfigurationValue: Int) -> UnsafePointer<IOUSBConfigurationDescriptor>"
+    }
+  ],
+  "declaration": "class IOUSBHostObject : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

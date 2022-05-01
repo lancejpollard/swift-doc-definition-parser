@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsmatrixcopytoimage",
+  "type": "Class",
+  "name": "MPSMatrixCopyToImage",
+  "desc": "A kernel that copies matrix data to a Metal Performance Shaders image.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice, dataLayout: MPSDataLayout)"
+    },
+    {
+      "name": "var dataLayout: MPSDataLayout"
+    },
+    {
+      "name": "var sourceMatrixBatchIndex: Int"
+    },
+    {
+      "name": "var sourceMatrixOrigin: MTLOrigin"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, sourceMatrix: MPSMatrix, destinationImage: MPSImage)"
+    },
+    {
+      "name": "func encodeBatch(commandBuffer: MTLCommandBuffer, sourceMatrix: MPSMatrix, destinationImages: [MPSImage])"
+    }
+  ],
+  "declaration": "class MPSMatrixCopyToImage : MPSKernel",
+  "inheritsFrom": [
+    "MPSKernel"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/cryptokit/aes/gcm/sealedbox",
+  "type": "Structure",
+  "name": "AES.GCM.SealedBox",
+  "desc": "A secure container for your data that you can access using a cipher.",
+  "items": [
+    {
+      "name": "init<C, T>(nonce: AES.GCM.Nonce, ciphertext: C, tag: T)",
+      "desc": "Creates a sealed box from the given tag, nonce, and ciphertext."
+    },
+    {
+      "name": "init<D>(combined: D)",
+      "desc": "Creates a sealed box from the combined bytes of an authentication tag, nonce, and encrypted data."
+    },
+    {
+      "name": "var combined: Data?",
+      "desc": "A combined element composed of the nonce, encrypted data, and authentication tag."
+    },
+    {
+      "name": "var nonce: AES.GCM.Nonce",
+      "desc": "The nonce used to encrypt the data."
+    },
+    {
+      "name": "var ciphertext: Data",
+      "desc": "The encrypted data."
+    },
+    {
+      "name": "var tag: Data",
+      "desc": "An authentication tag."
+    }
+  ],
+  "declaration": "struct SealedBox"
+}

@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/uikit/uicloudsharingcontrollerdelegate",
+  "type": "Protocol",
+  "name": "UICloudSharingControllerDelegate",
+  "desc": "The protocol you implement to provide additional information to, and receive notifications from, the CloudKit sharing controller.",
+  "items": [
+    {
+      "name": "func itemTitle(for: UICloudSharingController) -> String?",
+      "desc": "Asks the delegate for the title to display on the invitation screen."
+    },
+    {
+      "name": "func itemType(for: UICloudSharingController) -> String?",
+      "desc": "Asks the delegate for the Uniform Type Identifier (UTI) of the item."
+    },
+    {
+      "name": "func itemThumbnailData(for: UICloudSharingController) -> Data?",
+      "desc": "Asks the delegate for the thumbnail image data to display on the invitation."
+    },
+    {
+      "name": "func cloudSharingController(UICloudSharingController, failedToSaveShareWithError: Error)",
+      "desc": "Tells the delegate that the CloudKit sharing controller failed to save the share record."
+    },
+    {
+      "name": "func cloudSharingControllerDidStopSharing(UICloudSharingController)",
+      "desc": "Tells the delegate that the user has stopped sharing the record."
+    },
+    {
+      "name": "func cloudSharingControllerDidSaveShare(UICloudSharingController)",
+      "desc": "Tells the delegate that the CloudKit sharing controller saved the share record."
+    }
+  ],
+  "declaration": "@MainActor protocol UICloudSharingControllerDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

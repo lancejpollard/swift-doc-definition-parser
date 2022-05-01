@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/avfaudio/avaudiounitcomponentmanager",
+  "type": "Class",
+  "name": "AVAudioUnitComponentManager",
+  "desc": "An object that provides a way to search and query audio components that the system registers.",
+  "items": [
+    {
+      "name": "class func shared() -> Self",
+      "desc": "Gets the shared component manager instance."
+    },
+    {
+      "name": "func components(matching: AudioComponentDescription) -> [AVAudioUnitComponent]",
+      "desc": "Gets an array of audio component objects that match the description."
+    },
+    {
+      "name": "func components(matching: NSPredicate) -> [AVAudioUnitComponent]",
+      "desc": "Gets an array of audio component objects that match the search predicate."
+    },
+    {
+      "name": "func components(passingTest: (AVAudioUnitComponent, UnsafeMutablePointer<ObjCBool>) -> Bool) -> [AVAudioUnitComponent]",
+      "desc": "Gets an array of audio components that pass the block method."
+    },
+    {
+      "name": "var standardLocalizedTagNames: [String]",
+      "desc": "An array of the localized standard system tags the audio units define."
+    },
+    {
+      "name": "var tagNames: [String]",
+      "desc": "An array of all tags the audio unit associates with the current user, and the system tags the audio units define."
+    },
+    {
+      "name": "class let registrationsChangedNotification: NSNotification.Name",
+      "desc": "A notification the component manager generates when it updates its list of components."
+    }
+  ],
+  "declaration": "class AVAudioUnitComponentManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

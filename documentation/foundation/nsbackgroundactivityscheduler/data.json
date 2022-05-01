@@ -1,0 +1,59 @@
+{
+  "path": "/documentation/foundation/nsbackgroundactivityscheduler",
+  "type": "Class",
+  "name": "NSBackgroundActivityScheduler",
+  "desc": "A task scheduler suitable for low priority operations that can run in the background.",
+  "items": [
+    {
+      "name": "var identifier: String",
+      "desc": "A unique reverse DNS notation string, such as com.example.MyApp.updatecheck, that identifies the activity."
+    },
+    {
+      "name": "var repeats: Bool",
+      "desc": "A Boolean value indicating whether the activity should be rescheduled after it completes."
+    },
+    {
+      "name": "var interval: TimeInterval",
+      "desc": "An integer providing a suggested interval between scheduling and invoking the activity."
+    },
+    {
+      "name": "var qualityOfService: QualityOfService",
+      "desc": "A value of type NSQualityOfService, which controls how aggressively the system schedules the activity."
+    },
+    {
+      "name": "var shouldDefer: Bool",
+      "desc": "A Boolean value indicating whether your app should stop performing background activity and resume at a more optimal time."
+    },
+    {
+      "name": "var tolerance: TimeInterval",
+      "desc": "A value of type TimeInterval, which specifies a range of time during which the background activity may occur."
+    },
+    {
+      "name": "init(identifier: String)",
+      "desc": "Initializes a background activity scheduler object with a specified unique identifier."
+    },
+    {
+      "name": "func schedule((NSBackgroundActivityScheduler.CompletionHandler) -> Void)",
+      "desc": "Begins scheduling the background activity."
+    },
+    {
+      "name": "typealias NSBackgroundActivityScheduler.CompletionHandler"
+    },
+    {
+      "name": "func invalidate()",
+      "desc": "Prevents the background activity from being scheduled again."
+    },
+    {
+      "name": "enum NSBackgroundActivityScheduler.Result",
+      "desc": "These constants indicate whether background activity has been completed successfully or whether additional processing should be deferred until a more optimal time."
+    },
+    {
+      "name": "enum QualityOfService",
+      "desc": "Constants that indicate the nature and importance of work to the system."
+    }
+  ],
+  "declaration": "class NSBackgroundActivityScheduler : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

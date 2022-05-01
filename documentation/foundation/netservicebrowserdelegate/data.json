@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/foundation/netservicebrowserdelegate",
+  "type": "Protocol",
+  "name": "NetServiceBrowserDelegate",
+  "desc": "The interface a net service browser uses to inform a delegate about the state of service discovery.",
+  "items": [
+    {
+      "name": "func netServiceBrowser(NetServiceBrowser, didFindDomain: String, moreComing: Bool)",
+      "desc": "Tells the delegate the sender found a domain."
+    },
+    {
+      "name": "func netServiceBrowser(NetServiceBrowser, didRemoveDomain: String, moreComing: Bool)",
+      "desc": "Tells the delegate the a domain has disappeared or has become unavailable."
+    },
+    {
+      "name": "func netServiceBrowser(NetServiceBrowser, didFind: NetService, moreComing: Bool)",
+      "desc": "Tells the delegate the sender found a service."
+    },
+    {
+      "name": "func netServiceBrowser(NetServiceBrowser, didRemove: NetService, moreComing: Bool)",
+      "desc": "Tells the delegate a service has disappeared or has become unavailable."
+    },
+    {
+      "name": "func netServiceBrowserWillSearch(NetServiceBrowser)",
+      "desc": "Tells the delegate that a search is commencing."
+    },
+    {
+      "name": "func netServiceBrowser(NetServiceBrowser, didNotSearch: [String : NSNumber])",
+      "desc": "Tells the delegate that a search was not successful."
+    },
+    {
+      "name": "func netServiceBrowserDidStopSearch(NetServiceBrowser)",
+      "desc": "Tells the delegate that a search was stopped."
+    }
+  ],
+  "declaration": "protocol NetServiceBrowserDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

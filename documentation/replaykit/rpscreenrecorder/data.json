@@ -1,0 +1,92 @@
+{
+  "path": "/documentation/replaykit/rpscreenrecorder",
+  "type": "Class",
+  "name": "RPScreenRecorder",
+  "desc": "The shared recorder object that provides the ability to record audio and video of your app.",
+  "items": [
+    {
+      "name": "class func shared() -> RPScreenRecorder",
+      "desc": "Returns an app’s instance of the shared screen recorder."
+    },
+    {
+      "name": "var isAvailable: Bool",
+      "desc": "A Boolean value that indicates whether the screen recorder is available for recording."
+    },
+    {
+      "name": "var isRecording: Bool",
+      "desc": "A Boolean value that indicates whether the app is currently recording."
+    },
+    {
+      "name": "var isMicrophoneEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the microphone is currently enabled."
+    },
+    {
+      "name": "var isCameraEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the camera is currently enabled."
+    },
+    {
+      "name": "var cameraPreviewView: UIView?",
+      "desc": "A view containing the contents of the front-facing camera."
+    },
+    {
+      "name": "var cameraPosition: RPCameraPosition",
+      "desc": "The camera position to be used."
+    },
+    {
+      "name": "enum RPCameraPosition",
+      "desc": "The position of the camera being accessed."
+    },
+    {
+      "name": "var delegate: RPScreenRecorderDelegate?",
+      "desc": "The delegate for the screen recorder."
+    },
+    {
+      "name": "protocol RPScreenRecorderDelegate",
+      "desc": "The protocol you implement to receive notifications from the screen recorder."
+    },
+    {
+      "name": "func startRecording(handler: ((Error?) -> Void)?)",
+      "desc": "Starts recording the app display."
+    },
+    {
+      "name": "func stopRecording(handler: ((RPPreviewViewController?, Error?) -> Void)?)",
+      "desc": "Stops the current recording."
+    },
+    {
+      "name": "func stopRecording(withOutput: URL, completionHandler: ((Error?) -> Void)?)",
+      "desc": "Stops the current recording and writes the movie to the specified output URL."
+    },
+    {
+      "name": "func startCapture(handler: ((CMSampleBuffer, RPSampleBufferType, Error?) -> Void)?, completionHandler: ((Error?) -> Void)?)",
+      "desc": "Starts screen and audio capture."
+    },
+    {
+      "name": "enum RPSampleBufferType",
+      "desc": "The type of media clip sample being buffered."
+    },
+    {
+      "name": "func stopCapture(handler: ((Error?) -> Void)?)",
+      "desc": "Stops screen capture"
+    },
+    {
+      "name": "func discardRecording(handler: () -> Void)",
+      "desc": "Discards the current recording."
+    },
+    {
+      "name": "func startClipBuffering(completionHandler: ((Error?) -> Void)?)",
+      "desc": "Starts buffering a clip recording."
+    },
+    {
+      "name": "func stopClipBuffering(completionHandler: ((Error?) -> Void)?)",
+      "desc": "Stops buffering a clip recording."
+    },
+    {
+      "name": "func exportClip(to: URL, duration: TimeInterval, completionHandler: ((Error?) -> Void)?)",
+      "desc": "Exports a clip recording to a file."
+    }
+  ],
+  "declaration": "class RPScreenRecorder : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

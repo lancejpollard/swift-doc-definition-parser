@@ -1,0 +1,46 @@
+{
+  "path": "/documentation/createml/mlregressormetrics",
+  "type": "Structure",
+  "name": "MLRegressorMetrics",
+  "desc": "Metrics you use to evaluate a regressor’s performance.",
+  "items": [
+    {
+      "name": "var maximumError: Double",
+      "desc": "The largest absolute difference between the expected values and the model's predicted values during testing or training."
+    },
+    {
+      "name": "var rootMeanSquaredError: Double",
+      "desc": "A common metric used to determine the deviation between correct and predicted values."
+    },
+    {
+      "name": "var isValid: Bool",
+      "desc": "A Boolean value indicating whether the regressor model was able to calculate metrics."
+    },
+    {
+      "name": "var error: Error?",
+      "desc": "The underlying error present when the metrics are invalid."
+    },
+    {
+      "name": "init(maximumError: Double, rootMeanSquaredError: Double)",
+      "desc": "Creates regressor metrics describing the quality of your model."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the regressor metrics."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the regressor metrics that’s suitable for output during debugging."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the regressor metrics shown in a playground."
+    }
+  ],
+  "declaration": "struct MLRegressorMetrics",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomStringConvertible"
+  ]
+}

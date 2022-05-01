@@ -1,0 +1,161 @@
+{
+  "path": "/documentation/coremedia/cmformatdescription",
+  "type": "Class",
+  "name": "CMFormatDescription",
+  "desc": "An object that describes a media format descriptor.",
+  "items": [
+    {
+      "name": "var audioFormatList: [AudioFormatListItem]",
+      "desc": "The audio format list items that describe the audio formats."
+    },
+    {
+      "name": "var audioStreamBasicDescription: AudioStreamBasicDescription?",
+      "desc": "The audio stream description."
+    },
+    {
+      "name": "var audioChannelLayout: ManagedAudioChannelLayout?",
+      "desc": "The audio channel layout."
+    },
+    {
+      "name": "var dimensions: CMVideoDimensions",
+      "desc": "The encoded pixels not including the pixel aspect ratio or clean aperture tags."
+    },
+    {
+      "name": "var extensions: CMFormatDescription.Extensions",
+      "desc": "A dictionary that contains all of the extensions."
+    },
+    {
+      "name": "var frameDuration: CMTime",
+      "desc": "The duration of each frame."
+    },
+    {
+      "name": "var frameQuanta: UInt32",
+      "desc": "The frames per second for the time code, or the frame per tick for counter mode."
+    },
+    {
+      "name": "var identifiers: [String]",
+      "desc": "An array of metadata identifiers."
+    },
+    {
+      "name": "var magicCookie: Data?",
+      "desc": "A copy of the magic cookie, if any."
+    },
+    {
+      "name": "var mediaSubType: CMFormatDescription.MediaSubType",
+      "desc": "The media subtype."
+    },
+    {
+      "name": "var mediaType: CMFormatDescription.MediaType",
+      "desc": "The media type."
+    },
+    {
+      "name": "var mostCompatibleFormat: AudioFormatListItem?",
+      "desc": "The most compatible audio format list item."
+    },
+    {
+      "name": "var nalUnitHeaderLength: Int?",
+      "desc": "The size, in bytes, of the unit length field in an AVC or HEVC video sample or parameter set sample."
+    },
+    {
+      "name": "var parameterSets: CMFormatDescription.ParameterSetCollection",
+      "desc": "The parameter sets that an H.264 or HEVC format contains."
+    },
+    {
+      "name": "var richestDecodableFormat: AudioFormatListItem?",
+      "desc": "The audio format list item the system validates."
+    },
+    {
+      "name": "var timeCodeFlags: CMFormatDescription.TimeCode.Flag",
+      "desc": "The flags for the available time codes."
+    },
+    {
+      "name": "func withMagicCookie<R>((UnsafeRawBufferPointer?) -> R) -> R",
+      "desc": "Returns the magic cookie."
+    },
+    {
+      "name": "func cleanAperture(originIsAtTopLeft: Bool) -> CGRect",
+      "desc": "Returns the clean aperture."
+    },
+    {
+      "name": "func matchesImageBuffer(CVImageBuffer) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the format description matches an image buffer."
+    },
+    {
+      "name": "func presentationDimensions(usePixelAspectRatio: Bool, useCleanAperture: Bool) -> CGSize",
+      "desc": "Returns the dimensions to take the pixel aspect ratio or clean aperture into account."
+    },
+    {
+      "name": "func keyWithLocalID(OSType) -> [String : CFPropertyList]?",
+      "desc": "Returns the metadata for the local identifier you specify."
+    },
+    {
+      "name": "func defaultStyle() -> (localFontID: Int, bold: Bool, italic: Bool, underline: Bool, fontSize: CGFloat, colorComponents: [CGFloat])",
+      "desc": "Returns the default text style."
+    },
+    {
+      "name": "func defaultTextBox(originIsAtTopLeft: Bool, heightOfTextTrack: CGFloat) -> CGRect",
+      "desc": "Returns the default text box."
+    },
+    {
+      "name": "func displayFlags() -> CMFormatDescription.Extensions.Value.TextDisplayFlags",
+      "desc": "Returns the display mode flags for the text media."
+    },
+    {
+      "name": "func fontName(localFontID: Int) -> String",
+      "desc": "Returns the font name for the local font identifier."
+    },
+    {
+      "name": "func justification() -> (horizontal: CMFormatDescription.Extensions.Value.TextJustification, vertical: CMFormatDescription.Extensions.Value.TextJustification)",
+      "desc": "Returns the horizontal and vertical justification."
+    },
+    {
+      "name": "static func == (CMFormatDescription, CMFormatDescription) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the descriptions are equal."
+    },
+    {
+      "name": "func equalTo(CMAudioFormatDescription, equalityMask: CMFormatDescription.EqualityMask) -> (Bool, equalityMask: CMFormatDescription.EqualityMask)",
+      "desc": "Evaluates equality for the parts of two audio format descriptions."
+    },
+    {
+      "name": "func equalTo(CMFormatDescription, extensionKeysToIgnore: [CMFormatDescription.Extensions.Key], sampleDescriptionExtensionAtomKeysToIgnore: [String]) -> Bool",
+      "desc": "Evaluates equality for the parts of two audio format descriptions, ignoring the extensions you specify."
+    },
+    {
+      "name": "static var extensionKeysCommonWithImageBuffers: [CMFormatDescription.Extensions.Key]",
+      "desc": "A constant that represents keys you use with video format description extensions and image buffers."
+    },
+    {
+      "name": "static var typeID: CFTypeID",
+      "desc": "A type identifier that corresponds to a description object."
+    },
+    {
+      "name": "struct CMFormatDescription.MediaType",
+      "desc": "A type that describes format description media."
+    },
+    {
+      "name": "struct CMFormatDescription.MediaSubType",
+      "desc": "A type that describes format description media subtypes."
+    },
+    {
+      "name": "struct CMFormatDescription.TimeCode",
+      "desc": "A type that describes format description time codes."
+    },
+    {
+      "name": "struct CMFormatDescription.EqualityMask",
+      "desc": "A type that describes format description equality masks."
+    },
+    {
+      "name": "struct CMFormatDescription.Error",
+      "desc": "A type that describes format description errors."
+    },
+    {
+      "name": "struct CMFormatDescription.Extensions",
+      "desc": "A type that describes format description extensions."
+    },
+    {
+      "name": "struct CMFormatDescription.ParameterSetCollection",
+      "desc": "A type that describes format description parameter sets."
+    }
+  ],
+  "declaration": "class CMFormatDescription"
+}

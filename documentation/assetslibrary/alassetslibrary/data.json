@@ -1,0 +1,99 @@
+{
+  "path": "/documentation/assetslibrary/alassetslibrary",
+  "type": "Class",
+  "name": "ALAssetsLibrary",
+  "desc": "An instance of ALAssetsLibrary provides access to the videos and photos that are under the control of the Photos application.",
+  "items": [
+    {
+      "name": "class func authorizationStatus() -> ALAuthorizationStatus",
+      "desc": "Returns photo data authorization status for this application."
+    },
+    {
+      "name": "class func disableSharedPhotoStreamsSupport()",
+      "desc": "Disables shared photo streams notifications and asset retrieval."
+    },
+    {
+      "name": "func asset(for: URL!, resultBlock: ALAssetsLibraryAssetForURLResultBlock!, failureBlock: ALAssetsLibraryAccessFailureBlock!)",
+      "desc": "Invokes a given block passing as a parameter an asset identified by a specified file URL."
+    },
+    {
+      "name": "func enumerateGroups(withTypes: ALAssetsGroupType, using: ALAssetsLibraryGroupsEnumerationResultsBlock!, failureBlock: ALAssetsLibraryAccessFailureBlock!)",
+      "desc": "Invokes a given block passing as a parameter each of the asset groups that match the given asset group type."
+    },
+    {
+      "name": "func enumerateGroupsWithTypes(UInt32, usingBlock: ALAssetsLibraryGroupsEnumerationResultsBlock!, failureBlock: ALAssetsLibraryAccessFailureBlock!)"
+    },
+    {
+      "name": "func writeVideoAtPath(toSavedPhotosAlbum: URL!, completionBlock: ALAssetsLibraryWriteVideoCompletionBlock!)",
+      "desc": "Saves a video identified by a given URL to the Saved Photos album."
+    },
+    {
+      "name": "func videoAtPathIs(compatibleWithSavedPhotosAlbum: URL!) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a video identified by a given URL is compatible with the Saved Photos album."
+    },
+    {
+      "name": "func writeImage(toSavedPhotosAlbum: CGImage!, orientation: ALAssetOrientation, completionBlock: ALAssetsLibraryWriteImageCompletionBlock!)",
+      "desc": "Saves a given image to the Saved Photos album."
+    },
+    {
+      "name": "func writeImageData(toSavedPhotosAlbum: Data!, metadata: [AnyHashable : Any]!, completionBlock: ALAssetsLibraryWriteImageCompletionBlock!)",
+      "desc": "Writes given image data and metadata to the Photos Album."
+    },
+    {
+      "name": "func writeImage(toSavedPhotosAlbum: CGImage!, metadata: [AnyHashable : Any]!, completionBlock: ALAssetsLibraryWriteImageCompletionBlock!)",
+      "desc": "Writes a given image and metadata to the Photos Album."
+    },
+    {
+      "name": "func addAssetsGroupAlbum(withName: String!, resultBlock: ALAssetsLibraryGroupResultBlock!, failureBlock: ALAssetsLibraryAccessFailureBlock!)",
+      "desc": "Adds a new assets group to the library."
+    },
+    {
+      "name": "func group(for: URL!, resultBlock: ALAssetsLibraryGroupResultBlock!, failureBlock: ALAssetsLibraryAccessFailureBlock!)",
+      "desc": "Returns an assets group in the result block for a URL previously retrieved from an ALAssetsGroup object."
+    },
+    {
+      "name": "typealias ALAssetsGroupType",
+      "desc": "A bitfield to identify types of asset."
+    },
+    {
+      "name": "enum ALAssetOrientation",
+      "desc": "Constants to indicate the orientation of an asset."
+    },
+    {
+      "name": "typealias ALAssetsLibraryGroupsEnumerationResultsBlock",
+      "desc": "Signature for the block executed when a match is found during enumeration using enumerateGroups(withTypes:using:failureBlock:)."
+    },
+    {
+      "name": "typealias ALAssetsLibraryAssetForURLResultBlock",
+      "desc": "Signature for the block executed if the user has granted access to the caller to access the data managed by the framework in asset(for:resultBlock:failureBlock:)."
+    },
+    {
+      "name": "typealias ALAssetsLibraryWriteImageCompletionBlock",
+      "desc": "Signature for the block executed when writeImage(toSavedPhotosAlbum:orientation:completionBlock:) completes."
+    },
+    {
+      "name": "typealias ALAssetsLibraryWriteVideoCompletionBlock",
+      "desc": "Signature for the block executed when writeVideoAtPath(toSavedPhotosAlbum:completionBlock:) completes."
+    },
+    {
+      "name": "typealias ALAssetsLibraryAccessFailureBlock",
+      "desc": "Signature for the block executed if the user does not grant access to the caller to access the data managed by the framework."
+    },
+    {
+      "name": "typealias ALAssetsLibraryGroupResultBlock",
+      "desc": "Signature for the block executed if the user grants access to the caller to access the data managed by the framework.."
+    },
+    {
+      "name": "enum ALAuthorizationStatus",
+      "desc": "Constants to indicate authorization status."
+    },
+    {
+      "name": "static let ALAssetsLibraryChanged: NSNotification.Name",
+      "desc": "Sent when the contents of the assets library have changed from under the app that is using the data."
+    }
+  ],
+  "declaration": "class ALAssetsLibrary : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

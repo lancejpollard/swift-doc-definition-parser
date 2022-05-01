@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/combine/publishers/switchtolatest",
+  "type": "Structure",
+  "name": "Publishers.SwitchToLatest",
+  "desc": "A publisher that flattens nested publishers.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream)",
+      "desc": "Creates a publisher that “flattens” nested publishers."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    }
+  ],
+  "declaration": "struct SwitchToLatest<P, Upstream> where P : Publisher, P == Upstream.Output, Upstream : Publisher, P.Failure == Upstream.Failure",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "path": "/documentation/uikit/uiprintinteractioncontrollerdelegate",
+  "type": "Protocol",
+  "name": "UIPrintInteractionControllerDelegate",
+  "desc": "An optional set of methods that the delegate of the shared print-interaction controller implements.",
+  "items": [
+    {
+      "name": "func printInteractionControllerParentViewController(UIPrintInteractionController) -> UIViewController?",
+      "desc": "Returns a parent view controller for managing the printing-options view."
+    },
+    {
+      "name": "func printInteractionController(UIPrintInteractionController, choosePaper: [UIPrintPaper]) -> UIPrintPaper",
+      "desc": "Asks the delegate for an object that encapsulates the paper size and printing area for the print job."
+    },
+    {
+      "name": "func printInteractionController(UIPrintInteractionController, cutLengthFor: UIPrintPaper) -> CGFloat",
+      "desc": "Asks the delegate for a length to use when cutting the page."
+    },
+    {
+      "name": "func printInteractionController(UIPrintInteractionController, chooseCutterBehavior: [Any]) -> UIPrinter.CutterBehavior",
+      "desc": "Asks the delegate for the cutter behavior for the print job."
+    },
+    {
+      "name": "func printInteractionControllerWillPresentPrinterOptions(UIPrintInteractionController)",
+      "desc": "Tells the delegate that the device is about to display the printing-options user interface."
+    },
+    {
+      "name": "func printInteractionControllerDidPresentPrinterOptions(UIPrintInteractionController)",
+      "desc": "Tells the delegate that the device has presented the printing-options user interface."
+    },
+    {
+      "name": "func printInteractionControllerWillDismissPrinterOptions(UIPrintInteractionController)",
+      "desc": "Tells the delegate that the device is about to dismiss the printing-options user interface."
+    },
+    {
+      "name": "func printInteractionControllerDidDismissPrinterOptions(UIPrintInteractionController)",
+      "desc": "Tells the delegate that the device is dismissing the printing-options user interface."
+    },
+    {
+      "name": "func printInteractionControllerWillStartJob(UIPrintInteractionController)",
+      "desc": "Tells the delegate that the print job is about to start."
+    },
+    {
+      "name": "func printInteractionControllerDidFinishJob(UIPrintInteractionController)",
+      "desc": "Tells the delegate that the print job has ended."
+    },
+    {
+      "name": "enum UIPrinter.CutterBehavior",
+      "desc": "Constants that specify the cutter behavior of a roll-fed printer."
+    }
+  ],
+  "declaration": "@MainActor protocol UIPrintInteractionControllerDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "path": "/documentation/appkit/nstext",
+  "type": "Class",
+  "name": "NSText",
+  "desc": "The most general programmatic interface for objects that manage text.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder)"
+    },
+    {
+      "name": "init(frame: NSRect)"
+    },
+    {
+      "name": "var string: String",
+      "desc": "The characters of the receiver’s text."
+    },
+    {
+      "name": "var backgroundColor: NSColor?",
+      "desc": "The receiver’s background color to a given color."
+    },
+    {
+      "name": "var drawsBackground: Bool",
+      "desc": "A Boolean that controls whether the receiver draws its background."
+    },
+    {
+      "name": "var isEditable: Bool",
+      "desc": "A Boolean that controls whether the receiver allows the user to edit its text."
+    },
+    {
+      "name": "var isSelectable: Bool",
+      "desc": "A Boolean that controls whether the receiver allows the user to select its text."
+    },
+    {
+      "name": "var isFieldEditor: Bool",
+      "desc": "A Boolean that controls whether the receiver interprets Tab, Shift-Tab, and Return (Enter) as cues to end editing and possibly to change the first responder."
+    },
+    {
+      "name": "var isRichText: Bool",
+      "desc": "A Boolean that controls whether the receiver allows the user to apply attributes to specific ranges of the text."
+    },
+    {
+      "name": "var importsGraphics: Bool",
+      "desc": "A Boolean that controls whether the receiver allows the user to import files by dragging."
+    },
+    {
+      "name": "var usesFontPanel: Bool",
+      "desc": "A Boolean that controls whether the receiver uses the Font panel and Font menu."
+    },
+    {
+      "name": "func toggleRuler(Any?)",
+      "desc": "This action method shows or hides the ruler, if the receiver is enclosed in a scroll view."
+    },
+    {
+      "name": "var isRulerVisible: Bool",
+      "desc": "A Boolean value that indicates whether the receiver’s enclosing scroll view shows its ruler."
+    },
+    {
+      "name": "var selectedRange: NSRange",
+      "desc": "The receiver’s characters within aRange."
+    },
+    {
+      "name": "func replaceCharacters(in: NSRange, withRTF: Data)",
+      "desc": "Replaces the characters in the given range with RTF text interpreted from the given RTF data."
+    },
+    {
+      "name": "func replaceCharacters(in: NSRange, withRTFD: Data)",
+      "desc": "Replaces the characters in the given range with RTFD text interpreted from the given RTFD data."
+    },
+    {
+      "name": "func replaceCharacters(in: NSRange, with: String)",
+      "desc": "Replaces the characters in the given range with those in the given string."
+    },
+    {
+      "name": "func selectAll(Any?)",
+      "desc": "This action method selects all of the receiver’s text."
+    },
+    {
+      "name": "func copy(Any?)",
+      "desc": "This action method copies the selected text onto the general pasteboard, in as many formats as the receiver supports."
+    },
+    {
+      "name": "func cut(Any?)",
+      "desc": "This action method deletes the selected text and places it onto the general pasteboard, in as many formats as the receiver supports."
+    },
+    {
+      "name": "func paste(Any?)",
+      "desc": "This action method pastes text from the general pasteboard at the insertion point or over the selection."
+    },
+    {
+      "name": "func copyFont(Any?)",
+      "desc": "This action method copies the font information for the first character of the selection (or for the insertion point) onto the font pasteboard, as NSFontPboardType."
+    },
+    {
+      "name": "func pasteFont(Any?)",
+      "desc": "This action method pastes font information from the font pasteboard onto the selected text or insertion point of a rich text object, or over all text of a plain text object."
+    },
+    {
+      "name": "func copyRuler(Any?)",
+      "desc": "This action method copies the paragraph style information for first selected paragraph onto the ruler pasteboard, as NSRulerPboardType, and expands the selection to paragraph boundaries."
+    },
+    {
+      "name": "func pasteRuler(Any?)",
+      "desc": "This action method pastes paragraph style information from the ruler pasteboard onto the selected paragraphs of a rich text object."
+    },
+    {
+      "name": "func delete(Any?)",
+      "desc": "This action method deletes the selected text."
+    },
+    {
+      "name": "func changeFont(Any?)",
+      "desc": "This action method changes the font of the selection for a rich text object, or of all text for a plain text object."
+    },
+    {
+      "name": "var font: NSFont?",
+      "desc": "The font of all the receiver’s text."
+    },
+    {
+      "name": "func setFont(NSFont, range: NSRange)",
+      "desc": "Sets the font of characters within aRange to aFont."
+    },
+    {
+      "name": "var alignment: NSTextAlignment",
+      "desc": "The alignment of all the receiver’s text."
+    },
+    {
+      "name": "func alignCenter(Any?)",
+      "desc": "This action method applies center alignment to selected paragraphs (or all text if the receiver is a plain text object)."
+    },
+    {
+      "name": "func alignLeft(Any?)",
+      "desc": "This action method applies left alignment to selected paragraphs (or all text if the receiver is a plain text object)."
+    },
+    {
+      "name": "func alignRight(Any?)",
+      "desc": "This action method applies right alignment to selected paragraphs (or all text if the receiver is a plain text object)."
+    },
+    {
+      "name": "var textColor: NSColor?",
+      "desc": "The text color of all characters in the receiver."
+    },
+    {
+      "name": "func setTextColor(NSColor?, range: NSRange)",
+      "desc": "Sets the text color of characters within the specified range to the specified color."
+    },
+    {
+      "name": "var baseWritingDirection: NSWritingDirection",
+      "desc": "The initial writing direction used to determine the actual writing direction for text."
+    },
+    {
+      "name": "func superscript(Any?)",
+      "desc": "This action method applies a superscript attribute to selected text (or all text if the receiver is a plain text object), raising its baseline offset by a predefined amount."
+    },
+    {
+      "name": "func `subscript`(Any?)",
+      "desc": "This action method applies a subscript attribute to selected text (or all text if the receiver is a plain text object), lowering its baseline offset by a predefined amount."
+    },
+    {
+      "name": "func unscript(Any?)",
+      "desc": "This action method removes any superscripting or subscripting from selected text (or all text if the receiver is a plain text object)."
+    },
+    {
+      "name": "func underline(Any?)",
+      "desc": "Adds the underline attribute to the selected text attributes if absent; removes the attribute if present."
+    },
+    {
+      "name": "func readRTFD(fromFile: String) -> Bool",
+      "desc": "Attempts to read the RTFD file at path, returning true if successful and false if not."
+    },
+    {
+      "name": "func writeRTFD(toFile: String, atomically: Bool) -> Bool",
+      "desc": "Writes the receiver’s text as RTF with attachments to a file or directory at path."
+    },
+    {
+      "name": "func rtfd(from: NSRange) -> Data?",
+      "desc": "Returns an NSData object that contains an RTFD stream corresponding to the characters and attributes within aRange."
+    },
+    {
+      "name": "func rtf(from: NSRange) -> Data?",
+      "desc": "Returns an NSData object that contains an RTF stream corresponding to the characters and attributes within aRange, omitting any attachment characters and attributes."
+    },
+    {
+      "name": "func checkSpelling(Any?)",
+      "desc": "This action method searches for a misspelled word in the receiver’s text."
+    },
+    {
+      "name": "func showGuessPanel(Any?)",
+      "desc": "This action method opens the Spelling panel, allowing the user to make a correction during spell checking."
+    },
+    {
+      "name": "var maxSize: NSSize",
+      "desc": "The receiver’s maximum size."
+    },
+    {
+      "name": "var minSize: NSSize",
+      "desc": "The receiver’s minimum size."
+    },
+    {
+      "name": "var isVerticallyResizable: Bool",
+      "desc": "A Boolean that controls whether the receiver changes its height to fit the height of its text."
+    },
+    {
+      "name": "var isHorizontallyResizable: Bool",
+      "desc": "A Boolean that controls whether the receiver changes its width to fit the width of its text."
+    },
+    {
+      "name": "func sizeToFit()",
+      "desc": "Resizes the receiver to fit its text."
+    },
+    {
+      "name": "func scrollRangeToVisible(NSRange)",
+      "desc": "Scrolls the receiver in its enclosing scroll view so the first characters of aRange are visible."
+    },
+    {
+      "name": "var delegate: NSTextDelegate?",
+      "desc": "The receiver’s delegate."
+    },
+    {
+      "name": "enum NSTextAlignment",
+      "desc": "Constants that specify text alignment."
+    },
+    {
+      "name": "enum NSWritingDirection",
+      "desc": "Constants that specify the writing direction."
+    },
+    {
+      "name": "class let didBeginEditingNotification: NSNotification.Name",
+      "desc": "Posted when an NSText object begins any operation that changes characters or formatting attributes."
+    },
+    {
+      "name": "class let didChangeNotification: NSNotification.Name",
+      "desc": "Posted after an NSText object performs any operation that changes characters or formatting attributes."
+    },
+    {
+      "name": "class let didEndEditingNotification: NSNotification.Name",
+      "desc": "Posted when focus leaves an NSText object, whether or not any operation has changed characters or formatting attributes."
+    },
+    {
+      "name": "class let movementUserInfoKey: String",
+      "desc": "The userInfo dictionary key for the didEndEditingNotification notification."
+    },
+    {
+      "name": "enum NSTextMovement"
+    }
+  ],
+  "declaration": "class NSText : NSView",
+  "inheritsFrom": [
+    "NSView"
+  ],
+  "conformsTo": [
+    "NSChangeSpelling",
+    "NSIgnoreMisspelledWords"
+  ]
+}

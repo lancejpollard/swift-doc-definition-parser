@@ -1,0 +1,120 @@
+{
+  "path": "/documentation/avfoundation/avmutablemovie",
+  "type": "Class",
+  "name": "AVMutableMovie",
+  "desc": "A mutable object that represents an audiovisual container that conforms to the QuickTime movie file format or a related format like MPEG-4.",
+  "items": [
+    {
+      "name": "init(url: URL, options: [String : Any]?, error: ())",
+      "desc": "Creates a mutable movie object from a movie header stored in a QuickTime movie file of ISO base media file."
+    },
+    {
+      "name": "init(data: Data, options: [String : Any]?, error: ())",
+      "desc": "Creates a mutable movie object from a movie stored in an NSData object."
+    },
+    {
+      "name": "init(settingsFrom: AVMovie?, options: [String : Any]?)",
+      "desc": "Creates a mutable movie object without tracks."
+    },
+    {
+      "name": "var isModified: Bool",
+      "desc": "A Boolean value that indicates whether the movie is in a modified state."
+    },
+    {
+      "name": "var metadata: [AVMetadataItem]",
+      "desc": "An array of metadata the movie stores."
+    },
+    {
+      "name": "var preferredRate: Float",
+      "desc": "The natural rate for playing the movie."
+    },
+    {
+      "name": "var preferredTransform: CGAffineTransform",
+      "desc": "The transform performed on the visual media data of the movie for display purposes."
+    },
+    {
+      "name": "var preferredVolume: Float",
+      "desc": "The preferred volume for the audible medata data of the movie."
+    },
+    {
+      "name": "var timescale: CMTimeScale",
+      "desc": "The time scale of the movie."
+    },
+    {
+      "name": "var interleavingPeriod: CMTime",
+      "desc": "A time period indicating the duration for interleaving runs of samples for each track."
+    },
+    {
+      "name": "var defaultMediaDataStorage: AVMediaDataStorage?",
+      "desc": "The default storage container for media data that you add to a movie."
+    },
+    {
+      "name": "static var tracks: AVAsyncProperty<Root, [AVMutableMovieTrack]>",
+      "desc": "The tracks that a movie contains."
+    },
+    {
+      "name": "func loadTrack(withTrackID: CMPersistentTrackID, completionHandler: (AVMutableMovieTrack?, Error?) -> Void)",
+      "desc": "Loads a track that contains the specified identifier."
+    },
+    {
+      "name": "func loadTracks(withMediaType: AVMediaType, completionHandler: ([AVMutableMovieTrack]?, Error?) -> Void)",
+      "desc": "Loads tracks that contain media of a specified type."
+    },
+    {
+      "name": "func loadTracks(withMediaCharacteristic: AVMediaCharacteristic, completionHandler: ([AVMutableMovieTrack]?, Error?) -> Void)",
+      "desc": "Loads tracks that contain media of a specified characteristic."
+    },
+    {
+      "name": "var tracks: [AVMutableMovieTrack]",
+      "desc": "The tracks that a movie contains."
+    },
+    {
+      "name": "func track(withTrackID: CMPersistentTrackID) -> AVMutableMovieTrack?",
+      "desc": "Retrieves a track in the movie that contains the specified identifier."
+    },
+    {
+      "name": "func tracks(withMediaType: AVMediaType) -> [AVMutableMovieTrack]",
+      "desc": "Retrieves tracks in the movie that present media of the specified type."
+    },
+    {
+      "name": "func tracks(withMediaCharacteristic: AVMediaCharacteristic) -> [AVMutableMovieTrack]",
+      "desc": "Retrieve tracks in the movie that present media of the specified characteristic."
+    },
+    {
+      "name": "func mutableTrack(compatibleWith: AVAssetTrack) -> AVMutableMovieTrack?",
+      "desc": "Provides a reference to a track from a mutable movie into which you can insert any time range."
+    },
+    {
+      "name": "func addMutableTrack(withMediaType: AVMediaType, copySettingsFrom: AVAssetTrack?, options: [String : Any]?) -> AVMutableMovieTrack?",
+      "desc": "Adds an empty track to the target movie."
+    },
+    {
+      "name": "func addMutableTracksCopyingSettings(from: [AVAssetTrack], options: [String : Any]?) -> [AVMutableMovieTrack]",
+      "desc": "Adds one or more empty tracks to the target movie and copies the track settings from the source tracks."
+    },
+    {
+      "name": "func removeTrack(AVMovieTrack)",
+      "desc": "Removes the specified track from the target movie."
+    },
+    {
+      "name": "func insertEmptyTimeRange(CMTimeRange)",
+      "desc": "Adds an empty time range to a movie."
+    },
+    {
+      "name": "func insertTimeRange(CMTimeRange, of: AVAsset, at: CMTime, copySampleData: Bool)",
+      "desc": "Inserts all of the tracks in a specified time range of an asset into a movie."
+    },
+    {
+      "name": "func scale(CMTimeRange, toDuration: CMTime)",
+      "desc": "Changes the duration of a time range in a movie."
+    },
+    {
+      "name": "func removeTimeRange(CMTimeRange)",
+      "desc": "Removes the specified time range from a movie."
+    }
+  ],
+  "declaration": "class AVMutableMovie : AVMovie",
+  "inheritsFrom": [
+    "AVMovie"
+  ]
+}

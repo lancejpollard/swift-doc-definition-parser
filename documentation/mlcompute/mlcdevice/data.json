@@ -1,0 +1,55 @@
+{
+  "path": "/documentation/mlcompute/mlcdevice",
+  "type": "Class",
+  "name": "MLCDevice",
+  "desc": "An object that represents the CPU or one or more GPUs the framework uses to execute a neural network.",
+  "items": [
+    {
+      "name": "init?(type: MLCDeviceType)",
+      "desc": "Creates a device of the type you specify."
+    },
+    {
+      "name": "init?(type: MLCDeviceType, selectsMultipleComputeDevices: Bool)",
+      "desc": "Creates a device that you can configure to use multiple compute devices."
+    },
+    {
+      "name": "enum MLCDeviceType",
+      "desc": "A device type for execution of a neural network."
+    },
+    {
+      "name": "init?(gpuDevices: [MTLDevice])",
+      "desc": "Creates a device using the GPUs you specify."
+    },
+    {
+      "name": "class func cpu() -> Self",
+      "desc": "Creates a device that uses the CPU."
+    },
+    {
+      "name": "class func gpu() -> Self?",
+      "desc": "Creates a device that uses a GPU, if one exists."
+    },
+    {
+      "name": "class func ane() -> Self?",
+      "desc": "Creates a device that uses the Apple Neural Engine, if one exists."
+    },
+    {
+      "name": "var type: MLCDeviceType",
+      "desc": "The type you specify when creating the device."
+    },
+    {
+      "name": "var actualDeviceType: MLCDeviceType",
+      "desc": "The active device."
+    },
+    {
+      "name": "var gpuDevices: [MTLDevice]",
+      "desc": "An array that contains the specific Metal devices you use to execute neural networks."
+    }
+  ],
+  "declaration": "class MLCDevice : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/securityinterface/sfauthorizationpluginview",
+  "type": "Class",
+  "name": "SFAuthorizationPluginView",
+  "desc": "Allows authorization plug-in developers to create a custom view their plug-in can display.",
+  "items": [
+    {
+      "name": "func display()",
+      "desc": "Displays the user interface provided by the authorization plug-in view subclass."
+    },
+    {
+      "name": "func setButton(SFButtonType, enabled: Bool)",
+      "desc": "Enables or disables a button in the authorization plug-in's user interface."
+    },
+    {
+      "name": "func update()",
+      "desc": "Tells the authorization plug-in to get and display the appropriate view in the authorization plug-in’s user interface."
+    },
+    {
+      "name": "init!(callbacks: UnsafePointer<AuthorizationCallbacks>!, andEngineRef: AuthorizationEngineRef!)",
+      "desc": "Initializes a new authorization plug-in view with the specified callbacks and authorization engine handle."
+    },
+    {
+      "name": "func buttonPressed(SFButtonType)",
+      "desc": "Tells the authorization plug-in that the user pressed a button in the custom view."
+    },
+    {
+      "name": "func callbacks() -> UnsafePointer<AuthorizationCallbacks>!",
+      "desc": "Returns the authorization callbacks structure with which this instance was initialized."
+    },
+    {
+      "name": "func didActivate()",
+      "desc": "Tells the authorization plug-in when its user interface has become active."
+    },
+    {
+      "name": "func didDeactivate()",
+      "desc": "Tells the authorization plug-in that its user interface has been deactivated."
+    },
+    {
+      "name": "func engineRef() -> AuthorizationEngineRef!",
+      "desc": "Returns the authorization engine handle with which this instance was initialized."
+    },
+    {
+      "name": "func firstKeyView() -> NSView!",
+      "desc": "Returns the first view in the keyboard loop of the view."
+    },
+    {
+      "name": "func firstResponder() -> NSResponder!",
+      "desc": "Returns the view that should get focus for keyboard events."
+    },
+    {
+      "name": "func lastError() -> Error!",
+      "desc": "Returns the last error that occurred during evaluation."
+    },
+    {
+      "name": "func lastKeyView() -> NSView!",
+      "desc": "Returns the last view in the keyboard loop of the view."
+    },
+    {
+      "name": "func setEnabled(Bool)",
+      "desc": "Enables or disables the controls in the authorization plug-in's view."
+    },
+    {
+      "name": "func view(for: SFViewType) -> NSView!",
+      "desc": "Returns the appropriate view object for the specified view type."
+    },
+    {
+      "name": "func willActivate(withUser: [AnyHashable : Any]!)",
+      "desc": "Tells the authorization plug-in that its user interface is about to be made active by the Apple-provided Security Agent."
+    }
+  ],
+  "declaration": "class SFAuthorizationPluginView : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

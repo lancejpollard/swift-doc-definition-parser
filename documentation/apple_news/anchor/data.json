@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/apple_news/anchor",
+  "type": "Object",
+  "name": "Anchor",
+  "desc": "The object for anchoring one component to another component in your article’s layout.",
+  "items": [
+    {
+      "name": "targetAnchorPosition",
+      "desc": "Sets the anchor point in the target component, relative to the originAnchorPosition. Valid values:top: The top of the target component should be aligned with or near the originAnchorPosition. center: The middle of the target component should be aligned with or near the originAnchorPosition.bottom: The bottom of the target component should be aligned with or near the originAnchorPosition. If a component is anchored to a range of text in a body component and is full-width (such as on an iPhone), the following rules are used to determine the spacing before and after the anchored component:If the anchored component has explicitly defined margins, the defined margins will be applied to the component.If the anchored component does not have explicitly defined margins, space equaling half of the document gutter will be added before and after the component.  Note the following:If the component is anchored to a range of text near the beginning of the component and appears above all text in the body component, no space is added above it. If the component is anchored to a range of text near the end of the component and appears after all text in the body component, no space is added after it. If the component's targetAnchorPosition is top, no space is added above it. If the component’s targetAnchorPosition is bottom, no space is added after it. Example: To align the bottom of a component with the bottom of another component, both originAnchorPosition and targetAnchorPosition should be set to bottom."
+    },
+    {
+      "name": "originAnchorPosition",
+      "desc": "Sets which point in the origin component will get anchored to the target component. The originating anchor will be positioned as closely as possible to the intended targetAnchorPosition. If this property is omitted, the value of targetAnchorPosition is used."
+    },
+    {
+      "name": "rangeLength",
+      "desc": "The length of the range of text the component should be anchored to. If rangeLength is specified, rangeStart is required. Maximum value: (textLength - rangeStart)  where textLength is the number of characters in the component, including spaces. The length of a text range cannot exceed the length of the text."
+    },
+    {
+      "name": "rangeStart",
+      "desc": "The start index of the range of text the component should be anchored to. When a component is anchored to a component with a role of body, the text might be flowed around the component.If rangeStart is specified, rangeLength is required."
+    },
+    {
+      "name": "target",
+      "desc": "The id or name attribute of an HTML element in another component. The component containing the target element must have format set to html."
+    },
+    {
+      "name": "targetComponentIdentifier",
+      "desc": "The identifier of the component to anchor to. targetComponentIdentifier cannot refer to the current component's parent, child components, or components in another container. When this property is omitted, the anchor will be applied to the parent component, if one exists.If a parent component does not exist and targetComponentIdentifier is not specified, the anchor is ignored."
+    }
+  ]
+}

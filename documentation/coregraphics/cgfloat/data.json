@@ -1,0 +1,470 @@
+{
+  "path": "/documentation/coregraphics/cgfloat",
+  "type": "Structure",
+  "name": "CGFloat",
+  "desc": "The basic type for floating-point scalar values in Core Graphics and related frameworks.",
+  "items": [
+    {
+      "name": "typealias CGFloat.FloatLiteralType"
+    },
+    {
+      "name": "typealias CGFloat.IntegerLiteralType"
+    },
+    {
+      "name": "typealias CGFloat.Magnitude"
+    },
+    {
+      "name": "typealias CGFloat.RawExponent"
+    },
+    {
+      "name": "typealias CGFloat.Stride"
+    },
+    {
+      "name": "typealias CGFloat.Exponent",
+      "desc": "An integer type that can represent any written exponent."
+    },
+    {
+      "name": "typealias CGFloat.NativeType",
+      "desc": "The native type used to store the CGFloat, which is Float on 32-bit architectures and Double on 64-bit architectures."
+    },
+    {
+      "name": "typealias CGFloat.RawSignificand",
+      "desc": "An unsigned integer type that can represent the significand of any value."
+    },
+    {
+      "name": "init()",
+      "desc": "Create an instance initialized to zero."
+    },
+    {
+      "name": "init(Float)",
+      "desc": "value rounded to the closest representable Self."
+    },
+    {
+      "name": "init(Double)",
+      "desc": "value rounded to the closest representable Self."
+    },
+    {
+      "name": "init(CGFloat)",
+      "desc": "Create an instance initialized to value."
+    },
+    {
+      "name": "init(Float80)",
+      "desc": "value rounded to the closest representable Self."
+    },
+    {
+      "name": "init<Source>(Source)",
+      "desc": "Creates a new instance from the given value, rounded to the closest possible representation."
+    },
+    {
+      "name": "init<Source>(Source)",
+      "desc": "Creates a new value, rounded to the closest possible representation."
+    },
+    {
+      "name": "init<T>(T)"
+    },
+    {
+      "name": "init(bitPattern: UInt)"
+    },
+    {
+      "name": "init?<T>(exactly: T)"
+    },
+    {
+      "name": "init?<Source>(exactly: Source)",
+      "desc": "Creates a new instance from the given value, if it can be represented exactly."
+    },
+    {
+      "name": "init?<Source>(exactly: Source)",
+      "desc": "Creates a new value, if the given integer can be represented exactly."
+    },
+    {
+      "name": "init?(exactly: NSNumber)"
+    },
+    {
+      "name": "init(floatLiteral: CGFloat.NativeType)",
+      "desc": "Create an instance initialized to value."
+    },
+    {
+      "name": "init(floatLiteral: CGFloat.NativeType)",
+      "desc": "Create an instance initialized to value."
+    },
+    {
+      "name": "init(from: Decoder)"
+    },
+    {
+      "name": "init(integerLiteral: Int)",
+      "desc": "Create an instance initialized to value."
+    },
+    {
+      "name": "init(nan: CGFloat.RawSignificand, signaling: Bool)",
+      "desc": "NaN with specified payload."
+    },
+    {
+      "name": "init(sign: FloatingPointSign, exponent: Int, significand: CGFloat)",
+      "desc": "Initialize from sign, exponent, and significand."
+    },
+    {
+      "name": "init(sign: FloatingPointSign, exponentBitPattern: UInt, significandBitPattern: UInt)",
+      "desc": "Combines sign, exponent and significand bit patterns to produce a floating-point value."
+    },
+    {
+      "name": "init(signOf: CGFloat, magnitudeOf: CGFloat)",
+      "desc": "Creates a new floating-point value using the sign of one value and the magnitude of another."
+    },
+    {
+      "name": "init(truncating: NSNumber)"
+    },
+    {
+      "name": "var binade: CGFloat",
+      "desc": "The least-magnitude member of the binade of self."
+    },
+    {
+      "name": "var bitPattern: UInt"
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A mirror that reflects the CGFloat instance."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual representation of self."
+    },
+    {
+      "name": "var exponent: Int",
+      "desc": "The integer part of the base-r logarithm of the magnitude of self, where r is the radix (2 for binary, 10 for decimal). Implements the IEEE 754 logB operation."
+    },
+    {
+      "name": "var exponentBitPattern: UInt",
+      "desc": "The raw encoding of the exponent field of the floating-point value."
+    },
+    {
+      "name": "var floatingPointClass: FloatingPointClassification"
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "var isCanonical: Bool",
+      "desc": "True if and only if self is canonical."
+    },
+    {
+      "name": "var isFinite: Bool",
+      "desc": "true iff self is zero, subnormal, or normal (not infinity or NaN)."
+    },
+    {
+      "name": "var isInfinite: Bool",
+      "desc": "true iff self is infinity."
+    },
+    {
+      "name": "var isNaN: Bool",
+      "desc": "true iff self is NaN."
+    },
+    {
+      "name": "var isNormal: Bool",
+      "desc": "true iff self is normal (not zero, subnormal, infinity, or NaN)."
+    },
+    {
+      "name": "var isSignalingNaN: Bool",
+      "desc": "True if and only if self is a signaling NaN."
+    },
+    {
+      "name": "var isSubnormal: Bool",
+      "desc": "true iff self is subnormal."
+    },
+    {
+      "name": "var isZero: Bool",
+      "desc": "true iff self is +0.0 or -0.0."
+    },
+    {
+      "name": "var magnitude: CGFloat"
+    },
+    {
+      "name": "var magnitudeSquared: Double"
+    },
+    {
+      "name": "var native: CGFloat.NativeType",
+      "desc": "The native value."
+    },
+    {
+      "name": "var native: CGFloat.NativeType",
+      "desc": "The native value."
+    },
+    {
+      "name": "var nextDown: CGFloat",
+      "desc": "The greatest representable value that compares less than this value."
+    },
+    {
+      "name": "var nextUp: CGFloat",
+      "desc": "The least representable value that compares greater than self."
+    },
+    {
+      "name": "var sign: FloatingPointSign",
+      "desc": "minus if the sign bit of self is set, and plus otherwise. Implements the IEEE 754 signbit operation."
+    },
+    {
+      "name": "var significand: CGFloat",
+      "desc": "The significant digits, or mantissa, of the floating-point number."
+    },
+    {
+      "name": "var significandBitPattern: UInt",
+      "desc": "The raw encoding of the significand field of the floating-point value."
+    },
+    {
+      "name": "var significandWidth: Int",
+      "desc": "The number of bits required to represent significand."
+    },
+    {
+      "name": "var ulp: CGFloat",
+      "desc": "The unit in the last place of self."
+    },
+    {
+      "name": "static var exponentBitCount: Int",
+      "desc": "The number of bits used to represent the exponent."
+    },
+    {
+      "name": "static var greatestFiniteMagnitude: CGFloat",
+      "desc": "The greatest finite number."
+    },
+    {
+      "name": "static var infinity: CGFloat",
+      "desc": "The positive infinity."
+    },
+    {
+      "name": "static var leastNonzeroMagnitude: CGFloat",
+      "desc": "The least positive number."
+    },
+    {
+      "name": "static var leastNormalMagnitude: CGFloat",
+      "desc": "The least positive normal number."
+    },
+    {
+      "name": "static var nan: CGFloat",
+      "desc": "A quiet NaN."
+    },
+    {
+      "name": "static var pi: CGFloat",
+      "desc": "The mathematical constant π (3.14159…)."
+    },
+    {
+      "name": "static var radix: Int",
+      "desc": "The radix, or base of exponentiation, for a floating-point type."
+    },
+    {
+      "name": "static var signalingNaN: CGFloat",
+      "desc": "A signaling NaN (not-a-number)."
+    },
+    {
+      "name": "static var significandBitCount: Int",
+      "desc": "For fixed-width floating-point types, this is the number of fractional significand bits."
+    },
+    {
+      "name": "static var ulpOfOne: CGFloat",
+      "desc": "The unit in the last place of 1.0."
+    },
+    {
+      "name": "static var zero: CGFloat",
+      "desc": "The zero value."
+    },
+    {
+      "name": "func addProduct(CGFloat, CGFloat)"
+    },
+    {
+      "name": "func addingProduct(CGFloat, CGFloat) -> CGFloat",
+      "desc": "Returns the result of adding the product of the two given values to this value, computed without intermediate rounding."
+    },
+    {
+      "name": "func advanced(by: CGFloat) -> CGFloat",
+      "desc": "Returns a Self x such that self.distance(to: x) approximates n."
+    },
+    {
+      "name": "func distance(to: CGFloat) -> CGFloat",
+      "desc": "Returns a stride x such that self.advanced(by: x) approximates other."
+    },
+    {
+      "name": "func encode(to: Encoder)"
+    },
+    {
+      "name": "func formRemainder(dividingBy: CGFloat)"
+    },
+    {
+      "name": "func formSquareRoot()"
+    },
+    {
+      "name": "func formTruncatingRemainder(dividingBy: CGFloat)",
+      "desc": "Replace self with the remainder of self divided by other using truncating division. Similar to the C standard library function fmod."
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "func isEqual(to: CGFloat) -> Bool",
+      "desc": "IEEE 754 equality predicate."
+    },
+    {
+      "name": "func isLess(than: CGFloat) -> Bool",
+      "desc": "IEEE 754 less-than predicate."
+    },
+    {
+      "name": "func isLessThanOrEqualTo(CGFloat) -> Bool",
+      "desc": "IEEE 754 less-than-or-equal predicate."
+    },
+    {
+      "name": "func isTotallyOrdered(belowOrEqualTo: CGFloat) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this instance should precede or tie positions with the given value in an ascending sort."
+    },
+    {
+      "name": "func negate()",
+      "desc": "Replace self with its additive inverse."
+    },
+    {
+      "name": "func remainder(dividingBy: CGFloat) -> CGFloat",
+      "desc": "Returns the remainder of this value divided by the given value."
+    },
+    {
+      "name": "func round()",
+      "desc": "Rounds this value to an integral value using “schoolbook rounding.”"
+    },
+    {
+      "name": "func round(FloatingPointRoundingRule)"
+    },
+    {
+      "name": "func rounded() -> CGFloat",
+      "desc": "Returns this value rounded to an integral value using “schoolbook rounding.”"
+    },
+    {
+      "name": "func rounded(FloatingPointRoundingRule) -> CGFloat",
+      "desc": "Returns this value rounded to an integral value using the specified rounding rule."
+    },
+    {
+      "name": "func scale(by: Double)"
+    },
+    {
+      "name": "func squareRoot() -> CGFloat",
+      "desc": "Returns the square root of the value, rounded to a representable value."
+    },
+    {
+      "name": "func truncatingRemainder(dividingBy: CGFloat) -> CGFloat",
+      "desc": "Returns the remainder of this value divided by the given value using truncating division."
+    },
+    {
+      "name": "static func maximum(CGFloat, CGFloat) -> CGFloat",
+      "desc": "Returns the greater of the two given values."
+    },
+    {
+      "name": "static func maximumMagnitude(CGFloat, CGFloat) -> CGFloat",
+      "desc": "Returns the value with greater magnitude."
+    },
+    {
+      "name": "static func minimum(CGFloat, CGFloat) -> CGFloat",
+      "desc": "Returns the lesser of the two given values."
+    },
+    {
+      "name": "static func minimumMagnitude(CGFloat, CGFloat) -> CGFloat",
+      "desc": "Returns the value with lesser magnitude."
+    },
+    {
+      "name": "static func random(in: ClosedRange<CGFloat>) -> CGFloat",
+      "desc": "Returns a random value within the specified range."
+    },
+    {
+      "name": "static func random(in: Range<CGFloat>) -> CGFloat",
+      "desc": "Returns a random value within the specified range."
+    },
+    {
+      "name": "static func random<T>(in: ClosedRange<CGFloat>, using: inout T) -> CGFloat",
+      "desc": "Returns a random value within the specified range, using the given generator as a source for randomness."
+    },
+    {
+      "name": "static func random<T>(in: Range<CGFloat>, using: inout T) -> CGFloat",
+      "desc": "Returns a random value within the specified range, using the given generator as a source for randomness."
+    },
+    {
+      "name": "static func != (CGFloat, CGFloat) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func * (CGFloat, CGFloat) -> CGFloat"
+    },
+    {
+      "name": "static func *= (inout CGFloat, CGFloat)"
+    },
+    {
+      "name": "static func + (CGFloat) -> CGFloat",
+      "desc": "Returns the given number unchanged."
+    },
+    {
+      "name": "static func + (CGFloat, CGFloat) -> CGFloat"
+    },
+    {
+      "name": "static func += (inout CGFloat, CGFloat)"
+    },
+    {
+      "name": "static func - (CGFloat) -> CGFloat",
+      "desc": "Returns the additive inverse of the specified value."
+    },
+    {
+      "name": "static func - (CGFloat, CGFloat) -> CGFloat"
+    },
+    {
+      "name": "static func -= (inout CGFloat, CGFloat)"
+    },
+    {
+      "name": "static func ... (CGFloat) -> PartialRangeFrom<CGFloat>",
+      "desc": "Returns a partial range extending upward from a lower bound."
+    },
+    {
+      "name": "static func ... (CGFloat) -> PartialRangeThrough<CGFloat>",
+      "desc": "Returns a partial range up to, and including, its upper bound."
+    },
+    {
+      "name": "static func ... (CGFloat, CGFloat) -> ClosedRange<CGFloat>",
+      "desc": "Returns a closed range that contains both of its bounds."
+    },
+    {
+      "name": "static func ..< (CGFloat) -> PartialRangeUpTo<CGFloat>",
+      "desc": "Returns a partial range up to, but not including, its upper bound."
+    },
+    {
+      "name": "static func ..< (CGFloat, CGFloat) -> Range<CGFloat>",
+      "desc": "Returns a half-open range that contains its lower bound but not its upper bound."
+    },
+    {
+      "name": "static func / (CGFloat, CGFloat) -> CGFloat"
+    },
+    {
+      "name": "static func /= (inout CGFloat, CGFloat)"
+    },
+    {
+      "name": "static func < (CGFloat, CGFloat) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than that of the second argument."
+    },
+    {
+      "name": "static func <= (CGFloat, CGFloat) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than or equal to that of the second argument."
+    },
+    {
+      "name": "static func == (CGFloat, CGFloat) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "static func > (CGFloat, CGFloat) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than that of the second argument."
+    },
+    {
+      "name": "static func >= (CGFloat, CGFloat) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than or equal to that of the second argument."
+    }
+  ],
+  "declaration": "Declaration@frozen struct CGFloat",
+  "conformsTo": [
+    "BinaryFloatingPoint",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Hashable",
+    "SignedNumeric",
+    "Strideable",
+    "VectorArithmetic"
+  ]
+}

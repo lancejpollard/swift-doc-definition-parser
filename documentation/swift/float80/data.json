@@ -1,0 +1,484 @@
+{
+  "path": "/documentation/swift/float80",
+  "type": "Structure",
+  "name": "Float80",
+  "desc": "An extended-precision, floating-point value type.",
+  "items": [
+    {
+      "name": "typealias Float80.Exponent",
+      "desc": "A type that can represent any written exponent."
+    },
+    {
+      "name": "typealias Float80.FloatLiteralType",
+      "desc": "A type that represents a floating-point literal."
+    },
+    {
+      "name": "typealias Float80.IntegerLiteralType",
+      "desc": "A type that represents an integer literal."
+    },
+    {
+      "name": "typealias Float80.RawExponent",
+      "desc": "A type that represents the encoded exponent of a value."
+    },
+    {
+      "name": "typealias Float80.Stride",
+      "desc": "A type that represents the distance between two values."
+    },
+    {
+      "name": "typealias Float80.Magnitude",
+      "desc": "A type that can represent the absolute value of any possible value of the conforming type."
+    },
+    {
+      "name": "typealias Float80.RawSignificand",
+      "desc": "A type that represents the encoded significand of a value."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates a value initialized to zero."
+    },
+    {
+      "name": "init(Float80)",
+      "desc": "Creates a new instance initialized to the given value."
+    },
+    {
+      "name": "init(Double)",
+      "desc": "Creates a new instance that approximates the given value."
+    },
+    {
+      "name": "init(Int)",
+      "desc": "Creates a new value, rounded to the closest possible representation."
+    },
+    {
+      "name": "init(Float)",
+      "desc": "Creates a new instance that approximates the given value."
+    },
+    {
+      "name": "init?<S>(S)",
+      "desc": "Creates a new instance from the given string."
+    },
+    {
+      "name": "init<Source>(Source)",
+      "desc": "Creates a new value, rounded to the closest possible representation."
+    },
+    {
+      "name": "init<Source>(Source)",
+      "desc": "Creates a new instance from the given value, rounded to the closest possible representation."
+    },
+    {
+      "name": "init<Source>(Source)",
+      "desc": "Creates a new value, rounded to the closest possible representation."
+    },
+    {
+      "name": "init?(Substring)"
+    },
+    {
+      "name": "init?(exactly: Float)",
+      "desc": "Creates a new instance initialized to the given value, if it can be represented without rounding."
+    },
+    {
+      "name": "init?(exactly: Float80)",
+      "desc": "Creates a new instance initialized to the given value, if it can be represented without rounding."
+    },
+    {
+      "name": "init?(exactly: Double)",
+      "desc": "Creates a new instance initialized to the given value, if it can be represented without rounding."
+    },
+    {
+      "name": "init?<Source>(exactly: Source)",
+      "desc": "Creates a new instance from the given value, if it can be represented exactly."
+    },
+    {
+      "name": "init?<Source>(exactly: Source)",
+      "desc": "Creates a new value, if the given integer can be represented exactly."
+    },
+    {
+      "name": "init?<Source>(exactly: Source)",
+      "desc": "Creates a new value, if the given integer can be represented exactly."
+    },
+    {
+      "name": "init(floatLiteral: Float80)",
+      "desc": "Creates an instance initialized to the specified floating-point value."
+    },
+    {
+      "name": "init(integerLiteral: Int64)",
+      "desc": "Creates an instance initialized to the specified integer value."
+    },
+    {
+      "name": "init(integerLiteral: Float80)",
+      "desc": "Creates an instance initialized to the specified integer value."
+    },
+    {
+      "name": "init(nan: Float80.RawSignificand, signaling: Bool)",
+      "desc": "Creates a NaN (“not a number”) value with the specified payload."
+    },
+    {
+      "name": "init(sign: FloatingPointSign, exponent: Int, significand: Float80)",
+      "desc": "Creates a new value from the given sign, exponent, and significand."
+    },
+    {
+      "name": "init(sign: FloatingPointSign, exponentBitPattern: UInt, significandBitPattern: UInt64)",
+      "desc": "Creates a new instance from the specified sign and bit patterns."
+    },
+    {
+      "name": "init(signOf: Float80, magnitudeOf: Float80)",
+      "desc": "Creates a new floating-point value using the sign of one value and the magnitude of another."
+    },
+    {
+      "name": "var binade: Float80",
+      "desc": "The floating-point value with the same sign and exponent as this value, but with a significand of 1.0."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A mirror that reflects the Float80 instance."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual representation of the value, suitable for debugging."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual representation of the value."
+    },
+    {
+      "name": "var exponent: Int",
+      "desc": "The exponent of the floating-point value."
+    },
+    {
+      "name": "var exponentBitPattern: UInt",
+      "desc": "The raw encoding of the value’s exponent field."
+    },
+    {
+      "name": "var floatingPointClass: FloatingPointClassification",
+      "desc": "The classification of this value."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "var isCanonical: Bool",
+      "desc": "A Boolean value indicating whether the instance’s representation is in its canonical form."
+    },
+    {
+      "name": "var isFinite: Bool",
+      "desc": "A Boolean value indicating whether this instance is finite."
+    },
+    {
+      "name": "var isInfinite: Bool",
+      "desc": "A Boolean value indicating whether the instance is infinite."
+    },
+    {
+      "name": "var isNaN: Bool",
+      "desc": "A Boolean value indicating whether the instance is NaN (“not a number”)."
+    },
+    {
+      "name": "var isNormal: Bool",
+      "desc": "A Boolean value indicating whether this instance is normal."
+    },
+    {
+      "name": "var isSignalingNaN: Bool",
+      "desc": "A Boolean value indicating whether the instance is a signaling NaN."
+    },
+    {
+      "name": "var isSubnormal: Bool",
+      "desc": "A Boolean value indicating whether the instance is subnormal."
+    },
+    {
+      "name": "var isZero: Bool",
+      "desc": "A Boolean value indicating whether the instance is equal to zero."
+    },
+    {
+      "name": "var magnitude: Float80",
+      "desc": "The magnitude of this value."
+    },
+    {
+      "name": "var nextDown: Float80",
+      "desc": "The greatest representable value that compares less than this value."
+    },
+    {
+      "name": "var nextUp: Float80",
+      "desc": "The least representable value that compares greater than this value."
+    },
+    {
+      "name": "var sign: FloatingPointSign",
+      "desc": "The sign of the floating-point value."
+    },
+    {
+      "name": "var significand: Float80",
+      "desc": "The significand of the floating-point value."
+    },
+    {
+      "name": "var significandBitPattern: UInt64",
+      "desc": "The raw encoding of the value’s significand field."
+    },
+    {
+      "name": "var significandWidth: Int",
+      "desc": "The number of bits required to represent the value’s significand."
+    },
+    {
+      "name": "var ulp: Float80",
+      "desc": "The unit in the last place of this value."
+    },
+    {
+      "name": "static var exponentBitCount: Int",
+      "desc": "The number of bits used to represent the type’s exponent."
+    },
+    {
+      "name": "static var greatestFiniteMagnitude: Float80",
+      "desc": "The greatest finite number representable by this type."
+    },
+    {
+      "name": "static var infinity: Float80",
+      "desc": "Positive infinity."
+    },
+    {
+      "name": "static var leastNonzeroMagnitude: Float80",
+      "desc": "The least positive number."
+    },
+    {
+      "name": "static var leastNormalMagnitude: Float80",
+      "desc": "The least positive normal number."
+    },
+    {
+      "name": "static var nan: Float80",
+      "desc": "A quiet NaN (“not a number”)."
+    },
+    {
+      "name": "static var pi: Float80",
+      "desc": "The mathematical constant pi."
+    },
+    {
+      "name": "static var radix: Int",
+      "desc": "The radix, or base of exponentiation, for a floating-point type."
+    },
+    {
+      "name": "static var signalingNaN: Float80",
+      "desc": "A signaling NaN (“not a number”)."
+    },
+    {
+      "name": "static var significandBitCount: Int",
+      "desc": "The available number of fractional significand bits."
+    },
+    {
+      "name": "static var ulpOfOne: Float80",
+      "desc": "The unit in the last place of 1.0."
+    },
+    {
+      "name": "static var zero: Float80",
+      "desc": "The zero value."
+    },
+    {
+      "name": "func addProduct(Float80, Float80)",
+      "desc": "Adds the product of the two given values to this value in place, computed without intermediate rounding."
+    },
+    {
+      "name": "func addingProduct(Float80, Float80) -> Float80",
+      "desc": "Returns the result of adding the product of the two given values to this value, computed without intermediate rounding."
+    },
+    {
+      "name": "func advanced(by: Float80) -> Float80",
+      "desc": "Returns a value that is offset the specified distance from this value."
+    },
+    {
+      "name": "func distance(to: Float80) -> Float80",
+      "desc": "Returns the distance from this value to the given value, expressed as a stride."
+    },
+    {
+      "name": "func formRemainder(dividingBy: Float80)",
+      "desc": "Replaces this value with the remainder of itself divided by the given value."
+    },
+    {
+      "name": "func formSquareRoot()",
+      "desc": "Replaces this value with its square root, rounded to a representable value."
+    },
+    {
+      "name": "func formTruncatingRemainder(dividingBy: Float80)",
+      "desc": "Replaces this value with the remainder of itself divided by the given value using truncating division."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "func isEqual(to: Float80) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this instance is equal to the given value."
+    },
+    {
+      "name": "func isLess(than: Float80) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this instance is less than the given value."
+    },
+    {
+      "name": "func isLessThanOrEqualTo(Float80) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this instance is less than or equal to the given value."
+    },
+    {
+      "name": "func isTotallyOrdered(belowOrEqualTo: Float80) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this instance should precede or tie positions with the given value in an ascending sort."
+    },
+    {
+      "name": "func negate()",
+      "desc": "Replaces this value with its additive inverse."
+    },
+    {
+      "name": "func remainder(dividingBy: Float80) -> Float80",
+      "desc": "Returns the remainder of this value divided by the given value."
+    },
+    {
+      "name": "func round()",
+      "desc": "Rounds this value to an integral value using “schoolbook rounding.”"
+    },
+    {
+      "name": "func round(FloatingPointRoundingRule)",
+      "desc": "Rounds the value to an integral value using the specified rounding rule."
+    },
+    {
+      "name": "func rounded() -> Float80",
+      "desc": "Returns this value rounded to an integral value using “schoolbook rounding.”"
+    },
+    {
+      "name": "func rounded(FloatingPointRoundingRule) -> Float80",
+      "desc": "Returns this value rounded to an integral value using the specified rounding rule."
+    },
+    {
+      "name": "func squareRoot() -> Float80",
+      "desc": "Returns the square root of the value, rounded to a representable value."
+    },
+    {
+      "name": "func truncatingRemainder(dividingBy: Float80) -> Float80",
+      "desc": "Returns the remainder of this value divided by the given value using truncating division."
+    },
+    {
+      "name": "func write<Target>(to: inout Target)",
+      "desc": "Writes a textual representation of this instance into the given output stream."
+    },
+    {
+      "name": "static func maximum(Float80, Float80) -> Float80",
+      "desc": "Returns the greater of the two given values."
+    },
+    {
+      "name": "static func maximumMagnitude(Float80, Float80) -> Float80",
+      "desc": "Returns the value with greater magnitude."
+    },
+    {
+      "name": "static func minimum(Float80, Float80) -> Float80",
+      "desc": "Returns the lesser of the two given values."
+    },
+    {
+      "name": "static func minimumMagnitude(Float80, Float80) -> Float80",
+      "desc": "Returns the value with lesser magnitude."
+    },
+    {
+      "name": "static func random(in: ClosedRange<Float80>) -> Float80",
+      "desc": "Returns a random value within the specified range."
+    },
+    {
+      "name": "static func random(in: Range<Float80>) -> Float80",
+      "desc": "Returns a random value within the specified range."
+    },
+    {
+      "name": "static func random<T>(in: ClosedRange<Float80>, using: inout T) -> Float80",
+      "desc": "Returns a random value within the specified range, using the given generator as a source for randomness."
+    },
+    {
+      "name": "static func random<T>(in: Range<Float80>, using: inout T) -> Float80",
+      "desc": "Returns a random value within the specified range, using the given generator as a source for randomness."
+    },
+    {
+      "name": "static func != (Float80, Float80) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func * (Float80, Float80) -> Float80",
+      "desc": "Multiplies two values and produces their product, rounding to a representable value."
+    },
+    {
+      "name": "static func *= (inout Float80, Float80)",
+      "desc": "Multiplies two values and stores the result in the left-hand-side variable, rounding to a representable value."
+    },
+    {
+      "name": "static func + (Float80) -> Float80",
+      "desc": "Returns the given number unchanged."
+    },
+    {
+      "name": "static func + (Float80, Float80) -> Float80",
+      "desc": "Adds two values and produces their sum, rounded to a representable value."
+    },
+    {
+      "name": "static func += (inout Float80, Float80)",
+      "desc": "Adds two values and stores the result in the left-hand-side variable, rounded to a representable value."
+    },
+    {
+      "name": "static func - (Float80) -> Float80",
+      "desc": "Calculates the additive inverse of a value."
+    },
+    {
+      "name": "static func - (Float80, Float80) -> Float80",
+      "desc": "Subtracts one value from another and produces their difference, rounded to a representable value."
+    },
+    {
+      "name": "static func -= (inout Float80, Float80)",
+      "desc": "Subtracts the second value from the first and stores the difference in the left-hand-side variable, rounding to a representable value."
+    },
+    {
+      "name": "static func ... (Float80) -> PartialRangeFrom<Float80>",
+      "desc": "Returns a partial range extending upward from a lower bound."
+    },
+    {
+      "name": "static func ... (Float80) -> PartialRangeThrough<Float80>",
+      "desc": "Returns a partial range up to, and including, its upper bound."
+    },
+    {
+      "name": "static func ... (Float80, Float80) -> ClosedRange<Float80>",
+      "desc": "Returns a closed range that contains both of its bounds."
+    },
+    {
+      "name": "static func ..< (Float80) -> PartialRangeUpTo<Float80>",
+      "desc": "Returns a partial range up to, but not including, its upper bound."
+    },
+    {
+      "name": "static func ..< (Float80, Float80) -> Range<Float80>",
+      "desc": "Returns a half-open range that contains its lower bound but not its upper bound."
+    },
+    {
+      "name": "static func / (Float80, Float80) -> Float80",
+      "desc": "Returns the quotient of dividing the first value by the second, rounded to a representable value."
+    },
+    {
+      "name": "static func /= (inout Float80, Float80)",
+      "desc": "Divides the first value by the second and stores the quotient in the left-hand-side variable, rounding to a representable value."
+    },
+    {
+      "name": "static func < (Float80, Float80) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than that of the second argument."
+    },
+    {
+      "name": "static func <= (Float80, Float80) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than or equal to that of the second argument."
+    },
+    {
+      "name": "static func == (Float80, Float80) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "static func > (Float80, Float80) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than that of the second argument."
+    },
+    {
+      "name": "static func >= (Float80, Float80) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than or equal to that of the second argument."
+    }
+  ],
+  "declaration": "@frozen struct Float80",
+  "conformsTo": [
+    "BinaryFloatingPoint",
+    "CVarArg",
+    "CustomDebugStringConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "ExpressibleByIntegerLiteral",
+    "Hashable",
+    "LosslessStringConvertible",
+    "Strideable",
+    "TextOutputStreamable"
+  ]
+}

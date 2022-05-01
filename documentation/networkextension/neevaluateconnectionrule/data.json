@@ -1,0 +1,39 @@
+{
+  "path": "/documentation/networkextension/neevaluateconnectionrule",
+  "type": "Class",
+  "name": "NEEvaluateConnectionRule",
+  "desc": "NEEvaluateConnectionRule associates properties of network connections with an action.",
+  "items": [
+    {
+      "name": "init(matchDomains: [String], andAction: NEEvaluateConnectionRuleAction)",
+      "desc": "Initialize an NEEvaluateConnectionRule instance with a list of destination host domains and an action."
+    },
+    {
+      "name": "var matchDomains: [String]",
+      "desc": "An array of domains used to match the destination hostname of connections. If the destination hostname of a connection matches any of the domains in the array, then the connection matches the rule. Each domain is matched against the destination hostname using suffix matching, and each label in the domain must match an entire label in the hostname. For example, the domain example.com will match the hostname www.example.com but not www.anotherexample.com."
+    },
+    {
+      "name": "var useDNSServers: [String]?",
+      "desc": "If the rule matches the connection being established and the action is NEEvaluateConnectionRuleActionConnectIfNeeded, the DNS servers specified in this array are used to resolve the destination hostname of the connection while evaluating connectivity to the destination of the connection. If the resolution fails for any reason, the VPN is started."
+    },
+    {
+      "name": "var probeURL: URL?",
+      "desc": "An HTTP or HTTPS URL. If the rule matches the connection being established and the action is NEEvaluateConnectionRuleActionConnectIfNeeded and a request sent to this URL results in a response with an HTTP response code other than 200, then the VPN is started."
+    },
+    {
+      "name": "var action: NEEvaluateConnectionRuleAction",
+      "desc": "The action to take if the properties of the network connection being established match the rule."
+    },
+    {
+      "name": "enum NEEvaluateConnectionRuleAction"
+    }
+  ],
+  "declaration": "class NEEvaluateConnectionRule : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/professional_video_applications/fcpxtimeline",
+  "type": "Class",
+  "name": "FCPXTimeline",
+  "desc": "An interface that has methods and properties to communicate and interact with the Final Cut Pro timeline.",
+  "items": [
+    {
+      "name": "var activeSequence: FCPXSequence?",
+      "desc": "The sequence played in the Final Cut Pro timeline."
+    },
+    {
+      "name": "var sequenceTimeRange: CMTimeRange",
+      "desc": "The time range of an active sequence in the Final Cut Pro timeline."
+    },
+    {
+      "name": "func add(FCPXTimelineObserver)",
+      "desc": "Registers a workflow extension object as an observer for Final Cut Pro timeline changes."
+    },
+    {
+      "name": "func movePlayhead(to: CMTime) -> CMTime",
+      "desc": "Sets the Final Cut Pro timeline playhead to a specified time."
+    },
+    {
+      "name": "func playheadTime() -> CMTime",
+      "desc": "Returns the current playhead position in the Final Cut Pro timeline."
+    },
+    {
+      "name": "func remove(FCPXTimelineObserver)",
+      "desc": "Stops an observer object from receiving notifications for changes in the Final Cut Pro timeline."
+    }
+  ],
+  "declaration": "class FCPXTimeline : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "CVarArg",
+    "Equatable",
+    "Hashable"
+  ]
+}

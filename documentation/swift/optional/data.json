@@ -1,0 +1,122 @@
+{
+  "path": "/documentation/swift/optional",
+  "type": "Generic Enumeration",
+  "name": "Optional",
+  "desc": "A type that represents either a wrapped value or nil, the absence of a value.",
+  "items": [
+    {
+      "name": "case some(Wrapped)",
+      "desc": "The presence of a value, stored as Wrapped."
+    },
+    {
+      "name": "init(Wrapped)",
+      "desc": "Creates an instance that stores the given value."
+    },
+    {
+      "name": "case none",
+      "desc": "The absence of a value."
+    },
+    {
+      "name": "init(nilLiteral: ())",
+      "desc": "Creates an instance initialized with nil."
+    },
+    {
+      "name": "func map<U>((Wrapped) -> U) -> U?",
+      "desc": "Evaluates the given closure when this Optional instance is not nil, passing the unwrapped value as a parameter."
+    },
+    {
+      "name": "func flatMap<U>((Wrapped) -> U?) -> U?",
+      "desc": "Evaluates the given closure when this Optional instance is not nil, passing the unwrapped value as a parameter."
+    },
+    {
+      "name": "func ?? <T>(T?, () -> T) -> T",
+      "desc": "Performs a nil-coalescing operation, returning the wrapped value of an Optional instance or a default value."
+    },
+    {
+      "name": "func ?? <T>(T?, () -> T?) -> T?",
+      "desc": "Performs a nil-coalescing operation, returning the wrapped value of an Optional instance or a default Optional value."
+    },
+    {
+      "name": "static func == (Wrapped?, Wrapped?) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two optional instances are equal."
+    },
+    {
+      "name": "static func != (Optional<Wrapped>, Optional<Wrapped>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes this optional value into the given encoder."
+    },
+    {
+      "name": "func encode(to: Encoder, configuration: Wrapped.EncodingConfiguration)",
+      "desc": "Encodes this optional value into the specified encoder with help from the provided configuration."
+    },
+    {
+      "name": "typealias Optional.EncodingConfiguration",
+      "desc": "A type alias for the type that provides additional information for encoding."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a new instance by decoding from the given decoder."
+    },
+    {
+      "name": "init(from: Decoder, configuration: Wrapped.DecodingConfiguration)",
+      "desc": "Creates a new instance by decoding from the given decoder with help from the provided configuration."
+    },
+    {
+      "name": "typealias Optional.DecodingConfiguration",
+      "desc": "A type alias for the type that provides additional information for decoding."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "var unsafelyUnwrapped: Wrapped",
+      "desc": "The wrapped value of this instance, unwrapped without checking whether the instance is nil."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual representation of this instance, suitable for debugging."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "The custom mirror for this instance."
+    },
+    {
+      "name": "var publisher: Optional<Wrapped>.Publisher",
+      "desc": "A Combine publisher that publishes this instance’s value to each subscriber exactly once, if it has a value at all."
+    },
+    {
+      "name": "struct Optional.Publisher",
+      "desc": "The type of a Combine publisher that publishes the value of a Swift optional instance to each subscriber exactly once, if the instance has any value at all."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "typealias Optional.Body",
+      "desc": "Available when Wrapped conforms to View."
+    },
+    {
+      "name": "typealias Optional.Value",
+      "desc": "Available when Wrapped conforms to Gesture."
+    }
+  ],
+  "declaration": "@frozen enum Optional<Wrapped>",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomReflectable",
+    "Decodable",
+    "DecodableWithConfiguration",
+    "Encodable",
+    "EncodableWithConfiguration",
+    "Equatable",
+    "ExpressibleByNilLiteral",
+    "Gesture",
+    "Hashable",
+    "View"
+  ]
+}

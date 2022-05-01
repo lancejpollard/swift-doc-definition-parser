@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/coreml/mlmodelcollection",
+  "type": "Class",
+  "name": "MLModelCollection",
+  "desc": "A set of Core ML models from a model deployment.",
+  "items": [
+    {
+      "name": "class func beginAccessing(identifier: String, completionHandler: (Result<MLModelCollection, Error>) -> Void) -> Progress",
+      "desc": "Requests access to a model collection."
+    },
+    {
+      "name": "class func endAccessing(identifier: String, completionHandler: (Result<Void, Error>) -> Void)",
+      "desc": "Terminates access to a model collection."
+    },
+    {
+      "name": "var identifier: String",
+      "desc": "The name of the model collection, unique to the development team."
+    },
+    {
+      "name": "var deploymentID: String",
+      "desc": "The unique identifier of the model collection’s deployment."
+    },
+    {
+      "name": "var entries: [String : MLModelCollection.Entry]",
+      "desc": "A dictionary of model entries keyed to the models’ identifiers."
+    },
+    {
+      "name": "class MLModelCollection.Entry",
+      "desc": "A model and its identifier within a model collection."
+    },
+    {
+      "name": "class let didChangeNotification: NSNotification.Name",
+      "desc": "The notification the framework sends when it receives an update to a model collection."
+    }
+  ],
+  "declaration": "class MLModelCollection : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

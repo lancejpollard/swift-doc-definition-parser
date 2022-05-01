@@ -1,0 +1,26 @@
+{
+  "path": "/documentation/carekit/ockreadabletaskstore",
+  "type": "Protocol",
+  "name": "OCKReadableTaskStore",
+  "desc": "A read-only store that fetches task-data objects.",
+  "items": [
+    {
+      "name": "func fetchTask(withID: String, callbackQueue: DispatchQueue, completion: OCKResultClosure<Self.Task>)",
+      "desc": "Fetches a task asynchronously from the store."
+    },
+    {
+      "name": "func fetchTasks(query: Self.TaskQuery, callbackQueue: DispatchQueue, completion: OCKResultClosure<[Self.Task]>)",
+      "desc": "Fetches an array of tasks asynchronously from the store."
+    },
+    {
+      "name": "associatedtype Task"
+    },
+    {
+      "name": "associatedtype TaskQuery"
+    }
+  ],
+  "declaration": "protocol OCKReadableTaskStore",
+  "inheritsFrom": [
+    "OCKAnyReadOnlyTaskStore"
+  ]
+}

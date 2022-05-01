@@ -1,0 +1,614 @@
+{
+  "path": "/documentation/foundation/nsstring",
+  "type": "Class",
+  "name": "NSString",
+  "desc": "A static, plain-text Unicode string object that bridges to String; use NSString when you need reference semantics or other Foundation-specific behavior.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Returns an initialized NSString object that contains no characters."
+    },
+    {
+      "name": "init?(bytes: UnsafeRawPointer, length: Int, encoding: UInt)",
+      "desc": "Returns an initialized NSString object containing a given number of bytes from a given buffer of bytes interpreted in a given encoding."
+    },
+    {
+      "name": "init?(bytesNoCopy: UnsafeMutableRawPointer, length: Int, encoding: UInt, freeWhenDone: Bool)",
+      "desc": "Returns an initialized NSString object that contains a given number of bytes from a given buffer of bytes interpreted in a given encoding, and optionally frees the buffer."
+    },
+    {
+      "name": "init(characters: UnsafePointer<unichar>, length: Int)",
+      "desc": "Returns an initialized NSString object that contains a given number of characters from a given C array of UTF-16 code units."
+    },
+    {
+      "name": "init(charactersNoCopy: UnsafeMutablePointer<unichar>, length: Int, freeWhenDone: Bool)",
+      "desc": "Returns an initialized NSString object that contains a given number of characters from a given C array of UTF-16 code units."
+    },
+    {
+      "name": "init(string: String)",
+      "desc": "Returns an NSString object initialized by copying the characters from another given string."
+    },
+    {
+      "name": "init?(cString: UnsafePointer<CChar>, encoding: UInt)",
+      "desc": "Returns an NSString object initialized using the characters in a given C array, interpreted according to a given encoding."
+    },
+    {
+      "name": "init?(utf8String: UnsafePointer<CChar>)",
+      "desc": "Returns an NSString object initialized by copying the characters from a given C array of UTF8-encoded bytes."
+    },
+    {
+      "name": "init(format: String, arguments: CVaListPointer)",
+      "desc": "Returns an NSString object initialized by using a given format string as a template into which the remaining argument values are substituted without any localization."
+    },
+    {
+      "name": "init(format: String, locale: Any?, arguments: CVaListPointer)",
+      "desc": "Returns an NSString object initialized by using a given format string as a template into which the remaining argument values are substituted according to given locale information. This method is meant to be called from within a variadic function, where the argument list will be available."
+    },
+    {
+      "name": "init?(data: Data, encoding: UInt)",
+      "desc": "Returns an NSString object initialized by converting given data into UTF-16 code units using a given encoding."
+    },
+    {
+      "name": "class func localizedUserNotificationString(forKey: String, arguments: [Any]?) -> String",
+      "desc": "Returns a localized string intended for display in a notification alert."
+    },
+    {
+      "name": "class func localizedStringWithFormat(NSString, CVarArg...) -> Self"
+    },
+    {
+      "name": "typealias unichar",
+      "desc": "Type for UTF-16 code units."
+    },
+    {
+      "name": "init(contentsOfFile: String, encoding: UInt)",
+      "desc": "Returns an NSString object initialized by reading data from the file at a given path using a given encoding."
+    },
+    {
+      "name": "init(contentsOfFile: String, usedEncoding: UnsafeMutablePointer<UInt>?)",
+      "desc": "Returns an NSString object initialized by reading data from the file at a given path and returns by reference the encoding used to interpret the characters."
+    },
+    {
+      "name": "init(contentsOf: URL, encoding: UInt)",
+      "desc": "Returns an NSString object initialized by reading data from a given URL interpreted using a given encoding."
+    },
+    {
+      "name": "init(contentsOf: URL, usedEncoding: UnsafeMutablePointer<UInt>?)",
+      "desc": "Returns an NSString object initialized by reading data from a given URL and returns by reference the encoding used to interpret the data."
+    },
+    {
+      "name": "var length: Int",
+      "desc": "The number of UTF-16 code units in the receiver."
+    },
+    {
+      "name": "func lengthOfBytes(using: UInt) -> Int",
+      "desc": "Returns the number of bytes required to store the receiver in a given encoding."
+    },
+    {
+      "name": "func maximumLengthOfBytes(using: UInt) -> Int",
+      "desc": "Returns the maximum number of bytes needed to store the receiver in a given encoding."
+    },
+    {
+      "name": "func character(at: Int) -> unichar",
+      "desc": "Returns the character at a given UTF-16 code unit index."
+    },
+    {
+      "name": "func getCharacters(UnsafeMutablePointer<unichar>, range: NSRange)",
+      "desc": "Copies characters from a given range in the receiver into a given buffer."
+    },
+    {
+      "name": "func getBytes(UnsafeMutableRawPointer?, maxLength: Int, usedLength: UnsafeMutablePointer<Int>?, encoding: UInt, options: NSString.EncodingConversionOptions, range: NSRange, remaining: NSRangePointer?) -> Bool",
+      "desc": "Gets a given range of characters as bytes in a specified encoding."
+    },
+    {
+      "name": "func cString(using: UInt) -> UnsafePointer<CChar>?",
+      "desc": "Returns a representation of the string as a C string using a given encoding."
+    },
+    {
+      "name": "func getCString(UnsafeMutablePointer<CChar>, maxLength: Int, encoding: UInt) -> Bool",
+      "desc": "Converts the string to a given encoding and stores it in a buffer."
+    },
+    {
+      "name": "var utf8String: UnsafePointer<CChar>?",
+      "desc": "A null-terminated UTF8 representation of the string."
+    },
+    {
+      "name": "func caseInsensitiveCompare(String) -> ComparisonResult",
+      "desc": "Returns the result of invoking compare(_:options:) with NSCaseInsensitiveSearch as the only option."
+    },
+    {
+      "name": "func localizedCaseInsensitiveCompare(String) -> ComparisonResult",
+      "desc": "Compares the string with a given string using a case-insensitive, localized, comparison."
+    },
+    {
+      "name": "func compare(String) -> ComparisonResult",
+      "desc": "Returns the result of invoking compare(_:options:range:) with no options and the receiver’s full extent as the range."
+    },
+    {
+      "name": "func localizedCompare(String) -> ComparisonResult",
+      "desc": "Compares the string and a given string using a localized comparison."
+    },
+    {
+      "name": "func compare(String, options: NSString.CompareOptions) -> ComparisonResult",
+      "desc": "Compares the string with the specified string using the given options."
+    },
+    {
+      "name": "func compare(String, options: NSString.CompareOptions, range: NSRange) -> ComparisonResult",
+      "desc": "Returns the result of invoking compare(_:options:range:locale:) with a nil locale."
+    },
+    {
+      "name": "func compare(String, options: NSString.CompareOptions, range: NSRange, locale: Any?) -> ComparisonResult",
+      "desc": "Compares the string using the specified options and returns the lexical ordering for the range."
+    },
+    {
+      "name": "func localizedStandardCompare(String) -> ComparisonResult",
+      "desc": "Compares strings as sorted by the Finder."
+    },
+    {
+      "name": "func hasPrefix(String) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a given string matches the beginning characters of the receiver."
+    },
+    {
+      "name": "func hasSuffix(String) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a given string matches the ending characters of the receiver."
+    },
+    {
+      "name": "func isEqual(to: String) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a given string is equal to the receiver using a literal Unicode-based comparison."
+    },
+    {
+      "name": "var hash: Int",
+      "desc": "An unsigned integer that can be used as a hash table address."
+    },
+    {
+      "name": "struct NSString.CompareOptions",
+      "desc": "These values represent the options available to many of the string classes’ search and comparison methods."
+    },
+    {
+      "name": "struct NSString.EncodingConversionOptions",
+      "desc": "Options for converting string encodings."
+    },
+    {
+      "name": "func appendingFormat(NSString, CVarArg...) -> NSString"
+    },
+    {
+      "name": "func appending(String) -> String",
+      "desc": "Returns a new string made by appending a given string to the receiver."
+    },
+    {
+      "name": "func padding(toLength: Int, withPad: String, startingAt: Int) -> String",
+      "desc": "Returns a new string formed from the receiver by either removing characters from the end, or by appending as many occurrences as necessary of a given pad string."
+    },
+    {
+      "name": "var lowercased: String",
+      "desc": "A lowercase representation of the string."
+    },
+    {
+      "name": "var localizedLowercase: String",
+      "desc": "Returns a version of the string with all letters converted to lowercase, taking into account the current locale."
+    },
+    {
+      "name": "func lowercased(with: Locale?) -> String",
+      "desc": "Returns a version of the string with all letters converted to lowercase, taking into account the specified locale."
+    },
+    {
+      "name": "var uppercased: String",
+      "desc": "An uppercase representation of the string."
+    },
+    {
+      "name": "var localizedUppercase: String",
+      "desc": "Returns a version of the string with all letters converted to uppercase, taking into account the current locale."
+    },
+    {
+      "name": "func uppercased(with: Locale?) -> String",
+      "desc": "Returns a version of the string with all letters converted to uppercase, taking into account the specified locale."
+    },
+    {
+      "name": "var capitalized: String",
+      "desc": "A capitalized representation of the string."
+    },
+    {
+      "name": "var localizedCapitalized: String",
+      "desc": "Returns a capitalized representation of the receiver using the current locale."
+    },
+    {
+      "name": "func capitalized(with: Locale?) -> String",
+      "desc": "Returns a capitalized representation of the receiver using the specified locale."
+    },
+    {
+      "name": "func components(separatedBy: String) -> [String]",
+      "desc": "Returns an array containing substrings from the receiver that have been divided by a given separator."
+    },
+    {
+      "name": "func components(separatedBy: CharacterSet) -> [String]",
+      "desc": "Returns an array containing substrings from the receiver that have been divided by characters in a given set."
+    },
+    {
+      "name": "func trimmingCharacters(in: CharacterSet) -> String",
+      "desc": "Returns a new string made by removing from both ends of the receiver characters contained in a given character set."
+    },
+    {
+      "name": "func substring(from: Int) -> String",
+      "desc": "Returns a new string containing the characters of the receiver from the one at a given index to the end."
+    },
+    {
+      "name": "func substring(with: NSRange) -> String",
+      "desc": "Returns a string object containing the characters of the receiver that lie within a given range."
+    },
+    {
+      "name": "func substring(to: Int) -> String",
+      "desc": "Returns a new string containing the characters of the receiver up to, but not including, the one at a given index."
+    },
+    {
+      "name": "var decomposedStringWithCanonicalMapping: String",
+      "desc": "A string made by normalizing the string’s contents using the Unicode Normalization Form D."
+    },
+    {
+      "name": "var decomposedStringWithCompatibilityMapping: String",
+      "desc": "A string made by normalizing the receiver’s contents using the Unicode Normalization Form KD."
+    },
+    {
+      "name": "var precomposedStringWithCanonicalMapping: String",
+      "desc": "A string made by normalizing the string’s contents using the Unicode Normalization Form C."
+    },
+    {
+      "name": "var precomposedStringWithCompatibilityMapping: String",
+      "desc": "A string made by normalizing the receiver’s contents using the Unicode Normalization Form KC."
+    },
+    {
+      "name": "func folding(options: NSString.CompareOptions, locale: Locale?) -> String",
+      "desc": "Creates a string suitable for comparison by removing the specified character distinctions from a string."
+    },
+    {
+      "name": "func applyingTransform(StringTransform, reverse: Bool) -> String?",
+      "desc": "Returns a new string by applying a specified transform to the string."
+    },
+    {
+      "name": "struct StringTransform",
+      "desc": "Constants representing an ICU string transform."
+    },
+    {
+      "name": "func contains(String) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the string contains a given string by performing a case-sensitive, locale-unaware search."
+    },
+    {
+      "name": "func localizedCaseInsensitiveContains(String) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the string contains a given string by performing a case-insensitive, locale-aware search."
+    },
+    {
+      "name": "func localizedStandardContains(String) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the string contains a given string by performing a case and diacritic insensitive, locale-aware search."
+    },
+    {
+      "name": "func rangeOfCharacter(from: CharacterSet) -> NSRange",
+      "desc": "Finds and returns the range in the string of the first character from a given character set."
+    },
+    {
+      "name": "func rangeOfCharacter(from: CharacterSet, options: NSString.CompareOptions) -> NSRange",
+      "desc": "Finds and returns the range in the string of the first character, using given options, from a given character set."
+    },
+    {
+      "name": "func rangeOfCharacter(from: CharacterSet, options: NSString.CompareOptions, range: NSRange) -> NSRange",
+      "desc": "Finds and returns the range in the string of the first character from a given character set found in a given range with given options."
+    },
+    {
+      "name": "func range(of: String) -> NSRange",
+      "desc": "Finds and returns the range of the first occurrence of a given string within the string."
+    },
+    {
+      "name": "func range(of: String, options: NSString.CompareOptions) -> NSRange",
+      "desc": "Finds and returns the range of the first occurrence of a given string within the string, subject to given options."
+    },
+    {
+      "name": "func range(of: String, options: NSString.CompareOptions, range: NSRange) -> NSRange",
+      "desc": "Finds and returns the range of the first occurrence of a given string, within the given range of the string, subject to given options."
+    },
+    {
+      "name": "func range(of: String, options: NSString.CompareOptions, range: NSRange, locale: Locale?) -> NSRange",
+      "desc": "Finds and returns the range of the first occurrence of a given string within a given range of the string, subject to given options, using the specified locale, if any."
+    },
+    {
+      "name": "func localizedStandardRange(of: String) -> NSRange",
+      "desc": "Finds and returns the range of the first occurrence of a given string within the string by performing a case and diacritic insensitive, locale-aware search."
+    },
+    {
+      "name": "func enumerateLines((String, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Enumerates all the lines in the string."
+    },
+    {
+      "name": "func enumerateSubstrings(in: NSRange, options: NSString.EnumerationOptions, using: (String?, NSRange, NSRange, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Enumerates the substrings of the specified type in the specified range of the string."
+    },
+    {
+      "name": "func replacingOccurrences(of: String, with: String) -> String",
+      "desc": "Returns a new string in which all occurrences of a target string in the receiver are replaced by another given string."
+    },
+    {
+      "name": "func replacingOccurrences(of: String, with: String, options: NSString.CompareOptions, range: NSRange) -> String",
+      "desc": "Returns a new string in which all occurrences of a target string in a specified range of the receiver are replaced by another given string."
+    },
+    {
+      "name": "func replacingCharacters(in: NSRange, with: String) -> String",
+      "desc": "Returns a new string in which the characters in a specified range of the receiver are replaced by a given string."
+    },
+    {
+      "name": "func commonPrefix(with: String, options: NSString.CompareOptions) -> String",
+      "desc": "Returns a string containing characters the receiver and a given string have in common, starting from the beginning of each up to the first characters that aren’t equivalent."
+    },
+    {
+      "name": "struct NSString.EnumerationOptions",
+      "desc": "Constants to specify kinds of substrings and styles of enumeration."
+    },
+    {
+      "name": "func getLineStart(UnsafeMutablePointer<Int>?, end: UnsafeMutablePointer<Int>?, contentsEnd: UnsafeMutablePointer<Int>?, for: NSRange)",
+      "desc": "Returns by reference the beginning of the first line and the end of the last line touched by the given range."
+    },
+    {
+      "name": "func lineRange(for: NSRange) -> NSRange",
+      "desc": "Returns the range of characters representing the line or lines containing a given range."
+    },
+    {
+      "name": "func getParagraphStart(UnsafeMutablePointer<Int>?, end: UnsafeMutablePointer<Int>?, contentsEnd: UnsafeMutablePointer<Int>?, for: NSRange)",
+      "desc": "Returns by reference the beginning of the first paragraph and the end of the last paragraph touched by the given range."
+    },
+    {
+      "name": "func paragraphRange(for: NSRange) -> NSRange",
+      "desc": "Returns the range of characters representing the paragraph or paragraphs containing a given range."
+    },
+    {
+      "name": "func rangeOfComposedCharacterSequence(at: Int) -> NSRange",
+      "desc": "Returns the range in the receiver of the composed character sequence located at a given index."
+    },
+    {
+      "name": "func rangeOfComposedCharacterSequences(for: NSRange) -> NSRange",
+      "desc": "Returns the range in the string of the composed character sequences for a given range."
+    },
+    {
+      "name": "func write(toFile: String, atomically: Bool, encoding: UInt)",
+      "desc": "Writes the contents of the receiver to a file at a given path using a given encoding."
+    },
+    {
+      "name": "func write(to: URL, atomically: Bool, encoding: UInt)",
+      "desc": "Writes the contents of the receiver to the URL specified by url using the specified encoding."
+    },
+    {
+      "name": "func propertyList() -> Any",
+      "desc": "Parses the receiver as a text representation of a property list, returning an NSString, NSData, NSArray, or NSDictionary object, according to the topmost element."
+    },
+    {
+      "name": "func propertyListFromStringsFileFormat() -> [AnyHashable : Any]?",
+      "desc": "Returns a dictionary object initialized with the keys and values found in the receiver."
+    },
+    {
+      "name": "func draw(at: CGPoint, withAttributes: [NSAttributedString.Key : Any]?)",
+      "desc": "Draws the receiver with the font and other display characteristics of the given attributes, at the specified point in the current graphics context."
+    },
+    {
+      "name": "func draw(in: CGRect, withAttributes: [NSAttributedString.Key : Any]?)",
+      "desc": "Draws the attributed string inside the specified bounding rectangle."
+    },
+    {
+      "name": "func draw(with: CGRect, options: NSStringDrawingOptions, attributes: [NSAttributedString.Key : Any]?, context: NSStringDrawingContext?)",
+      "desc": "Draws the attributed string in the specified bounding rectangle using the provided options."
+    },
+    {
+      "name": "func boundingRect(with: CGSize, options: NSStringDrawingOptions, attributes: [NSAttributedString.Key : Any]?, context: NSStringDrawingContext?) -> CGRect",
+      "desc": "Calculates and returns the bounding rect for the receiver drawn using the given options and display characteristics, within the specified rectangle in the current graphics context."
+    },
+    {
+      "name": "func size(withAttributes: [NSAttributedString.Key : Any]?) -> CGSize",
+      "desc": "Returns the bounding box size the receiver occupies when drawn with the given attributes."
+    },
+    {
+      "name": "func variantFittingPresentationWidth(Int) -> String",
+      "desc": "Returns a string variation suitable for the specified presentation width."
+    },
+    {
+      "name": "struct NSStringDrawingOptions",
+      "desc": "Constants that specify the rendering options for drawing a string."
+    },
+    {
+      "name": "var doubleValue: Double",
+      "desc": "The floating-point value of the string as a double."
+    },
+    {
+      "name": "var floatValue: Float",
+      "desc": "The floating-point value of the string as a float."
+    },
+    {
+      "name": "var intValue: Int32",
+      "desc": "The integer value of the string."
+    },
+    {
+      "name": "var integerValue: Int",
+      "desc": "The NSInteger value of the string."
+    },
+    {
+      "name": "var longLongValue: Int64",
+      "desc": "The long long value of the string."
+    },
+    {
+      "name": "var boolValue: Bool",
+      "desc": "The Boolean value of the string."
+    },
+    {
+      "name": "class var availableStringEncodings: UnsafePointer<UInt>",
+      "desc": "Returns a zero-terminated list of the encodings string objects support in the application’s environment."
+    },
+    {
+      "name": "class var defaultCStringEncoding: UInt",
+      "desc": "Returns the C-string encoding assumed for any method accepting a C string as an argument."
+    },
+    {
+      "name": "class func stringEncoding(for: Data, encodingOptions: [StringEncodingDetectionOptionsKey : Any]?, convertedString: AutoreleasingUnsafeMutablePointer<NSString?>?, usedLossyConversion: UnsafeMutablePointer<ObjCBool>?) -> UInt",
+      "desc": "Returns the string encoding for the given data as detected by attempting to create a string according to the specified encoding options."
+    },
+    {
+      "name": "class func localizedName(of: UInt) -> String",
+      "desc": "Returns a human-readable string giving the name of a given encoding."
+    },
+    {
+      "name": "func canBeConverted(to: UInt) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the receiver can be converted to a given encoding without loss of information."
+    },
+    {
+      "name": "func data(using: UInt) -> Data?",
+      "desc": "Returns an NSData object containing a representation of the receiver encoded using a given encoding."
+    },
+    {
+      "name": "func data(using: UInt, allowLossyConversion: Bool) -> Data?",
+      "desc": "Returns an NSData object containing a representation of the receiver encoded using a given encoding."
+    },
+    {
+      "name": "var description: String",
+      "desc": "This NSString object."
+    },
+    {
+      "name": "var fastestEncoding: UInt",
+      "desc": "The fastest encoding to which the receiver may be converted without loss of information."
+    },
+    {
+      "name": "var smallestEncoding: UInt",
+      "desc": "The smallest encoding to which the receiver can be converted without loss of information."
+    },
+    {
+      "name": "struct StringEncodingDetectionOptionsKey"
+    },
+    {
+      "name": "class func path(withComponents: [String]) -> String",
+      "desc": "Returns a string built from the strings in a given array by concatenating them with a path separator between each pair."
+    },
+    {
+      "name": "var pathComponents: [String]",
+      "desc": "The file-system path components of the receiver."
+    },
+    {
+      "name": "func completePath(into: AutoreleasingUnsafeMutablePointer<NSString?>?, caseSensitive: Bool, matchesInto: AutoreleasingUnsafeMutablePointer<NSArray?>?, filterTypes: [String]?) -> Int",
+      "desc": "Interprets the receiver as a path in the file system and attempts to perform filename completion, returning a numeric value that indicates whether a match was possible, and by reference the longest path that matches the receiver."
+    },
+    {
+      "name": "var fileSystemRepresentation: UnsafePointer<CChar>",
+      "desc": "A file system-specific representation of the receiver."
+    },
+    {
+      "name": "func getFileSystemRepresentation(UnsafeMutablePointer<CChar>, maxLength: Int) -> Bool",
+      "desc": "Interprets the receiver as a system-independent path and fills a buffer with a C-string in a format and encoding suitable for use with file-system calls."
+    },
+    {
+      "name": "var isAbsolutePath: Bool",
+      "desc": "A Boolean value that indicates whether the receiver represents an absolute path."
+    },
+    {
+      "name": "var lastPathComponent: String",
+      "desc": "The last path component of the receiver."
+    },
+    {
+      "name": "var pathExtension: String",
+      "desc": "The path extension, if any, of the string as interpreted as a path."
+    },
+    {
+      "name": "var abbreviatingWithTildeInPath: String",
+      "desc": "A new string that replaces the current home directory portion of the current path with a tilde (~) character."
+    },
+    {
+      "name": "func appendingPathComponent(String) -> String",
+      "desc": "Returns a new string made by appending to the receiver a given string."
+    },
+    {
+      "name": "func appendingPathExtension(String) -> String?",
+      "desc": "Returns a new string made by appending to the receiver an extension separator followed by a given extension."
+    },
+    {
+      "name": "var deletingLastPathComponent: String",
+      "desc": "A new string made by deleting the last path component from the receiver, along with any final path separator."
+    },
+    {
+      "name": "var deletingPathExtension: String",
+      "desc": "A new string made by deleting the extension (if any, and only the last) from the receiver."
+    },
+    {
+      "name": "var expandingTildeInPath: String",
+      "desc": "A new string made by expanding the initial component of the receiver to its full path value."
+    },
+    {
+      "name": "var resolvingSymlinksInPath: String",
+      "desc": "A new string made from the receiver by resolving all symbolic links and standardizing path."
+    },
+    {
+      "name": "var standardizingPath: String",
+      "desc": "A new string made by removing extraneous path components from the receiver."
+    },
+    {
+      "name": "func strings(byAppendingPaths: [String]) -> [String]",
+      "desc": "Returns an array of strings made by separately appending to the receiver each string in a given array."
+    },
+    {
+      "name": "func addingPercentEncoding(withAllowedCharacters: CharacterSet) -> String?",
+      "desc": "Returns a new string made from the receiver by replacing all characters not in the specified set with percent-encoded characters."
+    },
+    {
+      "name": "var removingPercentEncoding: String?",
+      "desc": "Returns a new string made from the receiver by replacing all percent encoded sequences with the matching UTF-8 characters."
+    },
+    {
+      "name": "typealias NSString.ExtendedGraphemeClusterLiteralType"
+    },
+    {
+      "name": "typealias NSString.StringLiteralType"
+    },
+    {
+      "name": "typealias NSString.UnicodeScalarLiteralType"
+    },
+    {
+      "name": "init?(bytesNoCopy: UnsafeMutableRawPointer, length: Int, encoding: UInt, deallocator: ((UnsafeMutableRawPointer, Int) -> Void)?)"
+    },
+    {
+      "name": "init(charactersNoCopy: UnsafeMutablePointer<unichar>, length: Int, deallocator: ((UnsafeMutablePointer<unichar>, Int) -> Void)?)"
+    },
+    {
+      "name": "init?(coder: NSCoder)"
+    },
+    {
+      "name": "init(format: NSString, CVarArg...)"
+    },
+    {
+      "name": "init(format: NSString, locale: Locale?, CVarArg...)"
+    },
+    {
+      "name": "init(string: NSString)"
+    },
+    {
+      "name": "init(stringLiteral: StaticString)",
+      "desc": "Create an instance initialized to value."
+    },
+    {
+      "name": "func appendingPathComponent(String, conformingTo: UTType) -> String"
+    },
+    {
+      "name": "func appendingPathExtension(for: UTType) -> String"
+    },
+    {
+      "name": "class func deferredLocalizedIntentsString(with: String, CVarArg...) -> NSString"
+    },
+    {
+      "name": "class func deferredLocalizedIntentsString(with: String, table: String, CVarArg...) -> NSString"
+    },
+    {
+      "name": "class func deferredLocalizedIntentsString(with: String, table: String, arguments: CVaListPointer) -> NSString"
+    }
+  ],
+  "declaration": "class NSString : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "CKRecordValueProtocol",
+    "ExpressibleByStringLiteral",
+    "NSCopying",
+    "NSItemProviderReading",
+    "NSItemProviderWriting",
+    "NSMutableCopying",
+    "NSPasteboardReading",
+    "NSPasteboardWriting",
+    "NSSecureCoding"
+  ]
+}

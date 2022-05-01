@@ -1,0 +1,249 @@
+{
+  "path": "/documentation/foundation/nsdictionary",
+  "type": "Class",
+  "name": "NSDictionary",
+  "desc": "An object representing a static collection of key-value pairs, for use instead of a Dictionary constant in cases that require reference semantics.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Initializes a newly allocated dictionary."
+    },
+    {
+      "name": "init(objects: [Any], forKeys: [NSCopying])",
+      "desc": "Initializes a newly allocated dictionary with key-value pairs constructed from the provided arrays of keys and objects."
+    },
+    {
+      "name": "init(objects: UnsafePointer<AnyObject>?, forKeys: UnsafePointer<NSCopying>?, count: Int)",
+      "desc": "Initializes a newly allocated dictionary with the specified number of key-value pairs constructed from the provided C arrays of keys and objects."
+    },
+    {
+      "name": "init(object: Any, forKey: NSCopying)",
+      "desc": "Creates a dictionary containing a given key and value."
+    },
+    {
+      "name": "init(dictionary: [AnyHashable : Any])",
+      "desc": "Initializes a newly allocated dictionary by placing in it the keys and values contained in another given dictionary."
+    },
+    {
+      "name": "init(dictionary: [AnyHashable : Any], copyItems: Bool)",
+      "desc": "Initializes a newly allocated dictionary using the objects contained in another given dictionary."
+    },
+    {
+      "name": "init(dictionaryLiteral: (Any, Any)...)",
+      "desc": "Initializes a newly allocated dictionary from the given key-value pairs."
+    },
+    {
+      "name": "init(contentsOf: URL, error: ())",
+      "desc": "Initializes a newly allocated dictionary using the keys and values found at a given URL."
+    },
+    {
+      "name": "init?(coder: NSCoder)",
+      "desc": "Creates a dictionary initialized from data in the provided unarchiver."
+    },
+    {
+      "name": "class func sharedKeySet(forKeys: [NSCopying]) -> Any",
+      "desc": "Creates a shared key set object for the specified keys."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of entries in the dictionary."
+    },
+    {
+      "name": "func isEqual(to: [AnyHashable : Any]) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the contents of the receiving dictionary are equal to the contents of another given dictionary."
+    },
+    {
+      "name": "var allKeys: [Any]",
+      "desc": "A new array containing the dictionary’s keys, or an empty array if the dictionary has no entries."
+    },
+    {
+      "name": "func allKeys(for: Any) -> [Any]",
+      "desc": "Returns a new array containing the keys corresponding to all occurrences of a given object in the dictionary."
+    },
+    {
+      "name": "var allValues: [Any]",
+      "desc": "A new array containing the dictionary’s values, or an empty array if the dictionary has no entries."
+    },
+    {
+      "name": "func value(forKey: String) -> Any?",
+      "desc": "Returns the value associated with a given key."
+    },
+    {
+      "name": "func objects(forKeys: [Any], notFoundMarker: Any) -> [Any]",
+      "desc": "Returns as a static array the set of objects from the dictionary that corresponds to the specified keys."
+    },
+    {
+      "name": "func object(forKey: Any) -> Any?",
+      "desc": "Returns the value associated with a given key."
+    },
+    {
+      "name": "subscript(NSCopying) -> Any?",
+      "desc": "Returns the value associated with a given key."
+    },
+    {
+      "name": "subscript(Any) -> Any?",
+      "desc": "Accesses the value associated with a given key."
+    },
+    {
+      "name": "func keyEnumerator() -> NSEnumerator",
+      "desc": "Provides an enumerator to access the keys in the dictionary."
+    },
+    {
+      "name": "func objectEnumerator() -> NSEnumerator",
+      "desc": "Returns an enumerator object that lets you access each value in the dictionary."
+    },
+    {
+      "name": "func enumerateKeysAndObjects((Any, Any, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Applies a given block object to the entries of the dictionary."
+    },
+    {
+      "name": "func enumerateKeysAndObjects(options: NSEnumerationOptions, using: (Any, Any, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Applies a given block object to the entries of the dictionary, with options specifying how the enumeration is performed."
+    },
+    {
+      "name": "func makeIterator() -> NSDictionary.Iterator",
+      "desc": "Returns an iterator over the elements of this sequence."
+    },
+    {
+      "name": "func keysSortedByValue(using: Selector) -> [Any]",
+      "desc": "Returns an array of the dictionary’s keys, in the order they would be in if the dictionary were sorted by its values."
+    },
+    {
+      "name": "func keysSortedByValue(comparator: (Any, Any) -> ComparisonResult) -> [Any]",
+      "desc": "Returns an array of the dictionary’s keys, in the order they would be in if the dictionary were sorted by its values using a given comparator block."
+    },
+    {
+      "name": "func keysSortedByValue(options: NSSortOptions, usingComparator: (Any, Any) -> ComparisonResult) -> [Any]",
+      "desc": "Returns an array of the dictionary’s keys, in the order they would be in if the dictionary were sorted by its values using a given comparator block and a specified set of options."
+    },
+    {
+      "name": "func keysOfEntries(passingTest: (Any, Any, UnsafeMutablePointer<ObjCBool>) -> Bool) -> Set<AnyHashable>",
+      "desc": "Returns the set of keys whose corresponding value satisfies a constraint described by a block object."
+    },
+    {
+      "name": "func keysOfEntries(options: NSEnumerationOptions, passingTest: (Any, Any, UnsafeMutablePointer<ObjCBool>) -> Bool) -> Set<AnyHashable>",
+      "desc": "Returns the set of keys whose corresponding value satisfies a constraint described by a block object."
+    },
+    {
+      "name": "func write(to: URL)",
+      "desc": "Writes a property list representation of the contents of the dictionary to a given URL."
+    },
+    {
+      "name": "func fileSize() -> UInt64",
+      "desc": "Returns the file’s size, in bytes."
+    },
+    {
+      "name": "func fileType() -> String?",
+      "desc": "Returns the file type."
+    },
+    {
+      "name": "func fileCreationDate() -> Date?",
+      "desc": "Returns the file’s creation date."
+    },
+    {
+      "name": "func fileModificationDate() -> Date?",
+      "desc": "Returns file’s modification date."
+    },
+    {
+      "name": "func filePosixPermissions() -> Int",
+      "desc": "Returns the file’s POSIX permissions."
+    },
+    {
+      "name": "func fileOwnerAccountID() -> NSNumber?",
+      "desc": "Returns the file’s owner account ID."
+    },
+    {
+      "name": "func fileOwnerAccountName() -> String?",
+      "desc": "Returns the file’s owner account name."
+    },
+    {
+      "name": "func fileGroupOwnerAccountID() -> NSNumber?",
+      "desc": "Returns file’s group owner account ID."
+    },
+    {
+      "name": "func fileGroupOwnerAccountName() -> String?",
+      "desc": "Returns the file’s group owner account name."
+    },
+    {
+      "name": "func fileExtensionHidden() -> Bool",
+      "desc": "Returns a Boolean value indicating whether the file hides its extension."
+    },
+    {
+      "name": "func fileIsImmutable() -> Bool",
+      "desc": "Returns a Boolean value indicating whether the file is immutable."
+    },
+    {
+      "name": "func fileIsAppendOnly() -> Bool",
+      "desc": "Returns a Boolean value indicating whether the file is append only."
+    },
+    {
+      "name": "func fileSystemFileNumber() -> Int",
+      "desc": "Returns the filesystem file number."
+    },
+    {
+      "name": "func fileSystemNumber() -> Int",
+      "desc": "Returns the filesystem number."
+    },
+    {
+      "name": "func fileHFSTypeCode() -> OSType",
+      "desc": "Returns file’s HFS type code."
+    },
+    {
+      "name": "func fileHFSCreatorCode() -> OSType",
+      "desc": "Returns the file’s HFS creator code."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A string that represents the contents of the dictionary, formatted as a property list."
+    },
+    {
+      "name": "var descriptionInStringsFileFormat: String",
+      "desc": "A string that represents the contents of the dictionary, formatted in .strings file format."
+    },
+    {
+      "name": "func description(withLocale: Any?) -> String",
+      "desc": "Returns a string object that represents the contents of the dictionary, formatted as a property list."
+    },
+    {
+      "name": "func description(withLocale: Any?, indent: Int) -> String",
+      "desc": "Returns a string object that represents the contents of the dictionary, formatted as a property list."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A mirror that reflects the dictionary."
+    },
+    {
+      "name": "class NSDictionary.Iterator",
+      "desc": "A class that you use to provide members of a dictionary, one-by-one."
+    },
+    {
+      "name": "typealias NSDictionary.Element"
+    },
+    {
+      "name": "typealias NSDictionary.Key"
+    },
+    {
+      "name": "typealias NSDictionary.Value"
+    },
+    {
+      "name": "init(dictionary: NSDictionary)"
+    },
+    {
+      "name": "var underestimatedCount: Int"
+    }
+  ],
+  "declaration": "class NSDictionary : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "CustomReflectable",
+    "ExpressibleByDictionaryLiteral",
+    "NSCopying",
+    "NSFastEnumeration",
+    "NSFetchRequestResult",
+    "NSMutableCopying",
+    "NSSecureCoding",
+    "Sequence"
+  ]
+}

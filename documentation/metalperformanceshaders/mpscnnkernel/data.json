@@ -1,0 +1,141 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpscnnkernel",
+  "type": "Class",
+  "name": "MPSCNNKernel",
+  "desc": "Base class for neural network layers.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice)"
+    },
+    {
+      "name": "var offset: MPSOffset",
+      "desc": "The position of the destination image's clip rectangle origin, relative to the source image."
+    },
+    {
+      "name": "struct MPSOffset",
+      "desc": "A signed coordinate with x, y, and z components."
+    },
+    {
+      "name": "var clipRect: MTLRegion",
+      "desc": "An optional clip rectangle to use when writing data. Only the pixels in the clip rectangle will be overwritten."
+    },
+    {
+      "name": "struct MTLRegion",
+      "desc": "The bounds for a subset of an object's elements."
+    },
+    {
+      "name": "var destinationFeatureChannelOffset: Int",
+      "desc": "The number of channels in the destination image to skip before writing output data."
+    },
+    {
+      "name": "var edgeMode: MPSImageEdgeMode",
+      "desc": "The edge mode to use when texture reads stray off the edge of an image."
+    },
+    {
+      "name": "enum MPSImageEdgeMode",
+      "desc": "The options used to control the edge behavior of an image filter when it reads outside the bounds of a source texture."
+    },
+    {
+      "name": "var kernelHeight: Int"
+    },
+    {
+      "name": "var kernelWidth: Int"
+    },
+    {
+      "name": "var strideInPixelsX: Int"
+    },
+    {
+      "name": "var strideInPixelsY: Int"
+    },
+    {
+      "name": "var isBackwards: Bool"
+    },
+    {
+      "name": "var padding: MPSNNPadding"
+    },
+    {
+      "name": "protocol MPSNNPadding",
+      "desc": "The protocol that provides a description of how kernels should pad images."
+    },
+    {
+      "name": "var destinationImageAllocator: MPSImageAllocator"
+    },
+    {
+      "name": "protocol MPSImageAllocator"
+    },
+    {
+      "name": "var dilationRateX: Int"
+    },
+    {
+      "name": "var dilationRateY: Int"
+    },
+    {
+      "name": "var isStateModified: Bool"
+    },
+    {
+      "name": "var sourceFeatureChannelMaxCount: Int"
+    },
+    {
+      "name": "var sourceFeatureChannelOffset: Int"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, sourceImage: MPSImage) -> MPSImage"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, sourceImage: MPSImage, destinationImage: MPSImage)",
+      "desc": "Encodes a kernel into a command buffer. The ensuing operation proceeds out-of-place."
+    },
+    {
+      "name": "func appendBatchBarrier() -> Bool"
+    },
+    {
+      "name": "func batchEncodingStorageSize(sourceImage: [MPSImage], sourceStates: [[MPSState]]?, destinationImage: [MPSImage]?) -> Int"
+    },
+    {
+      "name": "func destinationImageDescriptor(sourceImages: [MPSImage], sourceStates: [MPSState]?) -> MPSImageDescriptor"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, sourceImage: MPSImage, destinationState: MPSState, destinationImage: MPSImage)"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, sourceImage: MPSImage, destinationState: AutoreleasingUnsafeMutablePointer<MPSState?>, destinationStateIsTemporary: Bool) -> MPSImage"
+    },
+    {
+      "name": "func encodeBatch(commandBuffer: MTLCommandBuffer, sourceImages: [MPSImage]) -> [MPSImage]"
+    },
+    {
+      "name": "func encodeBatch(commandBuffer: MTLCommandBuffer, sourceImages: [MPSImage], destinationImages: [MPSImage])"
+    },
+    {
+      "name": "func encodeBatch(commandBuffer: MTLCommandBuffer, sourceImages: [MPSImage], destinationStates: [MPSState]?, destinationImages: [MPSImage])"
+    },
+    {
+      "name": "func encodeBatch(commandBuffer: MTLCommandBuffer, sourceImages: [MPSImage], destinationStates: AutoreleasingUnsafeMutablePointer<NSArray?>, destinationStateIsTemporary: Bool) -> [MPSImage]"
+    },
+    {
+      "name": "func encodingStorageSize(sourceImage: MPSImage, sourceStates: [MPSState]?, destinationImage: MPSImage?) -> Int"
+    },
+    {
+      "name": "func isResultStateReusedAcrossBatch() -> Bool"
+    },
+    {
+      "name": "func resultState(sourceImage: MPSImage, sourceStates: [MPSState]?, destinationImage: MPSImage) -> MPSState?"
+    },
+    {
+      "name": "func resultStateBatch(sourceImage: [MPSImage], sourceStates: [[MPSState]]?, destinationImage: [MPSImage]) -> [MPSState]?"
+    },
+    {
+      "name": "func temporaryResultState(commandBuffer: MTLCommandBuffer, sourceImage: MPSImage, sourceStates: [MPSState]?, destinationImage: MPSImage) -> MPSState?"
+    },
+    {
+      "name": "func temporaryResultStateBatch(commandBuffer: MTLCommandBuffer, sourceImage: [MPSImage], sourceStates: [[MPSState]]?, destinationImage: [MPSImage]) -> [MPSState]?"
+    }
+  ],
+  "declaration": "class MPSCNNKernel : MPSKernel",
+  "inheritsFrom": [
+    "MPSKernel"
+  ]
+}

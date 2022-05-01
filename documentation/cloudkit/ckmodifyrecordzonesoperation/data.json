@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/cloudkit/ckmodifyrecordzonesoperation",
+  "type": "Class",
+  "name": "CKModifyRecordZonesOperation",
+  "desc": "An operation that modifies one or more record zones.",
+  "items": [
+    {
+      "name": "init(recordZonesToSave: [CKRecordZone]?, recordZoneIDsToDelete: [CKRecordZone.ID]?)",
+      "desc": "Creates an operation for modifying the specified record zones."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates an empty modify record zones operation."
+    },
+    {
+      "name": "var recordZonesToSave: [CKRecordZone]?",
+      "desc": "The record zones to save to the database."
+    },
+    {
+      "name": "var recordZoneIDsToDelete: [CKRecordZone.ID]?",
+      "desc": "The IDs of the record zones to delete permanently from the database."
+    },
+    {
+      "name": "var modifyRecordZonesCompletionBlock: (([CKRecordZone]?, [CKRecordZone.ID]?, Error?) -> Void)?",
+      "desc": "The closure to execute after CloudKit modifies all of the record zones."
+    },
+    {
+      "name": "var modifyRecordZonesResultBlock: ((Result<Void, Error>) -> Void)?"
+    },
+    {
+      "name": "var perRecordZoneDeleteBlock: ((CKRecordZone.ID, Result<Void, Error>) -> Void)?"
+    },
+    {
+      "name": "var perRecordZoneSaveBlock: ((CKRecordZone.ID, Result<CKRecordZone, Error>) -> Void)?"
+    }
+  ],
+  "declaration": "class CKModifyRecordZonesOperation : CKDatabaseOperation",
+  "inheritsFrom": [
+    "CKDatabaseOperation"
+  ]
+}

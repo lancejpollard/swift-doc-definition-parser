@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/realitykit/animationresource",
+  "type": "Class",
+  "name": "AnimationResource",
+  "desc": "An animation for the properties of scenes or entities.",
+  "items": [
+    {
+      "name": "static func generate(with: AnimationDefinition) -> AnimationResource",
+      "desc": "Creates an animation resource from a definition."
+    },
+    {
+      "name": "static func sequence(with: [AnimationResource]) -> AnimationResource",
+      "desc": "Creates an animation resource that plays a collection of animations in a specified sequence."
+    },
+    {
+      "name": "static func group(with: [AnimationResource]) -> AnimationResource",
+      "desc": "Creates an animation resource that simultaneously plays back a collection of animations."
+    },
+    {
+      "name": "func `repeat`(count: Int) -> AnimationResource",
+      "desc": "Creates an animation that repeats the specified number of times."
+    },
+    {
+      "name": "func `repeat`(duration: TimeInterval) -> AnimationResource",
+      "desc": "Repeats an animation for the specified amount of time."
+    },
+    {
+      "name": "let name: String?",
+      "desc": "The name of the animation resource."
+    },
+    {
+      "name": "var definition: AnimationDefinition",
+      "desc": "The timeframe, target object, and visual semantics of the animation."
+    },
+    {
+      "name": "func store(in: Entity)",
+      "desc": "Adds the animation to an entity without playing it."
+    }
+  ],
+  "declaration": "class AnimationResource",
+  "conformsTo": [
+    "Resource"
+  ]
+}

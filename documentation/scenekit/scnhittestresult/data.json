@@ -1,0 +1,66 @@
+{
+  "path": "/documentation/scenekit/scnhittestresult",
+  "type": "Class",
+  "name": "SCNHitTestResult",
+  "desc": "Information about the result of a scene-space or view-space search for scene elements.",
+  "items": [
+    {
+      "name": "var node: SCNNode",
+      "desc": "The node whose geometry intersects the search ray."
+    },
+    {
+      "name": "var geometryIndex: Int",
+      "desc": "The index of the geometry element whose surface the search ray intersects."
+    },
+    {
+      "name": "var faceIndex: Int",
+      "desc": "The index of the primitive in the geometry element intersected by the search ray."
+    },
+    {
+      "name": "var localCoordinates: SCNVector3",
+      "desc": "The point of intersection between the geometry and the search ray, in the local coordinate system of the node containing the geometry."
+    },
+    {
+      "name": "var worldCoordinates: SCNVector3",
+      "desc": "The point of intersection between the geometry and the search ray, in the scene’s world coordinate system."
+    },
+    {
+      "name": "var localNormal: SCNVector3",
+      "desc": "The surface normal vector at the point of intersection, in the local coordinate system of the node containing the geometry intersected by the search ray."
+    },
+    {
+      "name": "var worldNormal: SCNVector3",
+      "desc": "The surface normal vector at the point of intersection, in the scene’s world coordinate system."
+    },
+    {
+      "name": "var modelTransform: SCNMatrix4",
+      "desc": "The world transform matrix of the node containing the intersection."
+    },
+    {
+      "name": "func textureCoordinates(withMappingChannel: Int) -> CGPoint",
+      "desc": "Returns the texture coordinates at the point of intersection for the specified texture mapping channel."
+    },
+    {
+      "name": "var boneNode: SCNNode?"
+    },
+    {
+      "name": "var simdLocalCoordinates: simd_float3"
+    },
+    {
+      "name": "var simdLocalNormal: simd_float3"
+    },
+    {
+      "name": "var simdModelTransform: simd_float4x4"
+    },
+    {
+      "name": "var simdWorldCoordinates: simd_float3"
+    },
+    {
+      "name": "var simdWorldNormal: simd_float3"
+    }
+  ],
+  "declaration": "class SCNHitTestResult : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

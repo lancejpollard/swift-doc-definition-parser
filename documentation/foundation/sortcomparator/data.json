@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/foundation/sortcomparator",
+  "type": "Protocol",
+  "name": "SortComparator",
+  "desc": "A comparison algorithm for a specified type.",
+  "items": [
+    {
+      "name": "var order: SortOrder",
+      "desc": "The sort order that the comparator uses to compare."
+    },
+    {
+      "name": "static var localized: String.Comparator",
+      "desc": "A comparator that compares a string using a localized comparison in the current locale."
+    },
+    {
+      "name": "static var localizedStandard: String.Comparator",
+      "desc": "A comparator that compares a string using a localized, numeric comparison in the current locale."
+    },
+    {
+      "name": "func compare(Self.Compared, Self.Compared) -> ComparisonResult",
+      "desc": "Provides the relative ordering of two elements based on the sort order of the comparator."
+    },
+    {
+      "name": "associatedtype Compared",
+      "desc": "A type that the sort comparator can compare."
+    }
+  ],
+  "declaration": "protocol SortComparator",
+  "inheritsFrom": [
+    "Hashable"
+  ]
+}

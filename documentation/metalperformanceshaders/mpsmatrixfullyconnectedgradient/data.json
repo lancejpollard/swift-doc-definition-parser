@@ -1,0 +1,39 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsmatrixfullyconnectedgradient",
+  "type": "Class",
+  "name": "MPSMatrixFullyConnectedGradient",
+  "desc": "A kernel for applying a fully gradient connected neural network layer.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice)"
+    },
+    {
+      "name": "var alpha: Double"
+    },
+    {
+      "name": "var sourceInputFeatureChannels: Int"
+    },
+    {
+      "name": "var sourceNumberOfFeatureVectors: Int"
+    },
+    {
+      "name": "var sourceOutputFeatureChannels: Int"
+    },
+    {
+      "name": "func copy(with: NSZone?, device: MTLDevice?) -> Self"
+    },
+    {
+      "name": "func encodeForData(to: MTLCommandBuffer, gradientMatrix: MPSMatrix, weightMatrix: MPSMatrix, resultGradientForDataMatrix: MPSMatrix)"
+    },
+    {
+      "name": "func encodeForWeightsAndBias(to: MTLCommandBuffer, gradientMatrix: MPSMatrix, inputMatrix: MPSMatrix, resultGradientForWeightMatrix: MPSMatrix, resultGradientForBiasVector: MPSVector?)"
+    }
+  ],
+  "declaration": "class MPSMatrixFullyConnectedGradient : MPSMatrixBinaryKernel",
+  "inheritsFrom": [
+    "MPSMatrixBinaryKernel"
+  ]
+}

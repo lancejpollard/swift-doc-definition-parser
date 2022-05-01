@@ -1,0 +1,160 @@
+{
+  "path": "/documentation/mlcompute/mlctraininggraph",
+  "type": "Class",
+  "name": "MLCTrainingGraph",
+  "desc": "A training graph that you create from one or more graph objects plus additional layers you add directly to the training graph.",
+  "items": [
+    {
+      "name": "init(graphObjects: [MLCGraph], lossLayer: MLCLayer?, optimizer: MLCOptimizer?)",
+      "desc": "Creates a training graph with the layers from the graph objects, loss layer, and optimizer you specify."
+    },
+    {
+      "name": "class MLCTensorParameter",
+      "desc": "A tensor parameter object."
+    },
+    {
+      "name": "func addInputs([String : MLCTensor], lossLabels: [String : MLCTensor]?) -> Bool",
+      "desc": "Adds the inputs and loss label inputs that you specify to the training graph."
+    },
+    {
+      "name": "func addInputs([String : MLCTensor], lossLabels: [String : MLCTensor]?, lossLabelWeights: [String : MLCTensor]?) -> Bool",
+      "desc": "Adds the inputs, loss labels, and loss label weights that you specify to the training graph."
+    },
+    {
+      "name": "func addOutputs([String : MLCTensor]) -> Bool",
+      "desc": "Adds the outputs to the training graph you specify."
+    },
+    {
+      "name": "func stopGradient(for: [MLCTensor]) -> Bool",
+      "desc": "Adds the tensors that you specify, to indicate which contributions the graph excludes when computing gradients during gradient pass."
+    },
+    {
+      "name": "func compileOptimizer(MLCOptimizer) -> Bool",
+      "desc": "Compiles the optimizer to use with a training graph you specify."
+    },
+    {
+      "name": "func compile(options: MLCGraphCompilationOptions, device: MLCDevice) -> Bool",
+      "desc": "Compiles the training graph for the options and device you specify."
+    },
+    {
+      "name": "func compile(options: MLCGraphCompilationOptions, device: MLCDevice, inputTensors: [String : MLCTensor]?, inputTensorsData: [String : MLCTensorData]?) -> Bool",
+      "desc": "Compiles the training graph for the options, device, and input tensors you specify."
+    },
+    {
+      "name": "func link(with: [MLCTrainingGraph]) -> Bool",
+      "desc": "Links the training graphs you specify."
+    },
+    {
+      "name": "func allocateUserGradient(for: MLCTensor) -> MLCTensor?",
+      "desc": "Allocates an entry for a gradient for the result tensor you specify."
+    },
+    {
+      "name": "struct MLCGraphCompilationOptions",
+      "desc": "A bitmask that specifies the options you use when compiling a graph."
+    },
+    {
+      "name": "func execute(inputsData: [String : MLCTensorData], lossLabelsData: [String : MLCTensorData]?, lossLabelWeightsData: [String : MLCTensorData]?, batchSize: Int, options: MLCExecutionOptions, completionHandler: MLCGraphCompletionHandler?) -> Bool",
+      "desc": "Executes the training graph with the input data, batch size, execution options, and completion handler you specify."
+    },
+    {
+      "name": "func execute(inputsData: [String : MLCTensorData], lossLabelsData: [String : MLCTensorData]?, lossLabelWeightsData: [String : MLCTensorData]?, outputsData: [String : MLCTensorData]?, batchSize: Int, options: MLCExecutionOptions, completionHandler: MLCGraphCompletionHandler?) -> Bool",
+      "desc": "Executes the training graph with the input data, output data, batch size, execution options, and completion handler that you specify."
+    },
+    {
+      "name": "func synchronizeUpdates()",
+      "desc": "Synchronizes updates from device memory."
+    },
+    {
+      "name": "func setTrainingTensorParameters([MLCTensorParameter]) -> Bool",
+      "desc": "Sets the input tensor parameters, which the optimizer then updates."
+    },
+    {
+      "name": "struct MLCExecutionOptions",
+      "desc": "A bitmask that specifies the options you use when executing a graph."
+    },
+    {
+      "name": "typealias MLCGraphCompletionHandler",
+      "desc": "A callback completion handler you execute when a graph finishes execution."
+    },
+    {
+      "name": "func executeForward(batchSize: Int, options: MLCExecutionOptions, completionHandler: MLCGraphCompletionHandler?) -> Bool",
+      "desc": "Executes the forward pass of the training graph with the batch size, execution options, and completion handler you specify."
+    },
+    {
+      "name": "func executeForward(batchSize: Int, options: MLCExecutionOptions, outputsData: [String : MLCTensorData]?, completionHandler: MLCGraphCompletionHandler?) -> Bool",
+      "desc": "Executes the forward pass of the training graph with the batch size, execution options, output data, and completion handler you specify."
+    },
+    {
+      "name": "func executeForward(batchSize: Int, options: MLCExecutionOptions, outputsData: [String : MLCTensorData]?) -> (result: MLCTensor?, executionTime: TimeInterval)",
+      "desc": "Executes the forward pass of the training graph with the batch size, execution options, and output data you specify."
+    },
+    {
+      "name": "func executeGradient(batchSize: Int, options: MLCExecutionOptions, completionHandler: MLCGraphCompletionHandler?) -> Bool",
+      "desc": "Executes the gradient pass of the training graph with the batch size, execution options, and completion handler you specify."
+    },
+    {
+      "name": "func executeGradient(batchSize: Int, options: MLCExecutionOptions, outputsData: [String : MLCTensorData]?, completionHandler: MLCGraphCompletionHandler?) -> Bool",
+      "desc": "Executes the gradient pass of the training graph with the batch size, execution options, output data, and completion handler you specify."
+    },
+    {
+      "name": "func executeGradient(batchSize: Int, options: MLCExecutionOptions, outputsData: [String : MLCTensorData]?) -> TimeInterval",
+      "desc": "Executes the gradient pass of the training graph with the batch size, execution options, and output data you specify."
+    },
+    {
+      "name": "func executeOptimizerUpdate(options: MLCExecutionOptions, completionHandler: MLCGraphCompletionHandler?) -> Bool",
+      "desc": "Executes the optimizer update pass of the training graph with the execution options and completion handler you specify."
+    },
+    {
+      "name": "func executeOptimizerUpdate(options: MLCExecutionOptions) -> TimeInterval",
+      "desc": "Executes the optimizer update pass of the training graph with the execution options you specify."
+    },
+    {
+      "name": "func synchronizeUpdates()",
+      "desc": "Synchronizes updates from device memory."
+    },
+    {
+      "name": "func setTrainingTensorParameters([MLCTensorParameter]) -> Bool",
+      "desc": "Sets the input tensor parameters, which the optimizer then updates."
+    },
+    {
+      "name": "struct MLCExecutionOptions",
+      "desc": "A bitmask that specifies the options you use when executing a graph."
+    },
+    {
+      "name": "typealias MLCGraphCompletionHandler",
+      "desc": "A callback completion handler you execute when a graph finishes execution."
+    },
+    {
+      "name": "func bindOptimizerData([MLCTensorData], deviceData: [MLCTensorOptimizerDeviceData]?, with: MLCTensor) -> Bool",
+      "desc": "Associates the optimizer and device data you specify along with the tensor."
+    },
+    {
+      "name": "var optimizer: MLCOptimizer?",
+      "desc": "The optimizer to use with the training graph."
+    },
+    {
+      "name": "var deviceMemorySize: Int",
+      "desc": "The device memory size in bytes for all intermediate tensors for forward, gradient passes, and optimizer updates for all layers in the training graph."
+    },
+    {
+      "name": "func gradientTensor(forInput: MLCTensor) -> MLCTensor?",
+      "desc": "Gets the gradient tensor for the input tensor you specify."
+    },
+    {
+      "name": "func sourceGradientTensors(for: MLCLayer) -> [MLCTensor]",
+      "desc": "Gets the source gradient tensors for the layer in the training graph you specify."
+    },
+    {
+      "name": "func resultGradientTensors(for: MLCLayer) -> [MLCTensor]",
+      "desc": "Gets the result gradient tensors for the layer in the training graph you specify."
+    },
+    {
+      "name": "func gradientData(forParameter: MLCTensor, layer: MLCLayer) -> Data?",
+      "desc": "Gets the gradient data for the trainable parameter and associated layer you specify."
+    }
+  ],
+  "declaration": "class MLCTrainingGraph : MLCGraph",
+  "inheritsFrom": [
+    "MLCGraph"
+  ]
+}

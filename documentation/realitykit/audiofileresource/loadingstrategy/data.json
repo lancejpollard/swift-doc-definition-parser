@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/realitykit/audiofileresource/loadingstrategy",
+  "type": "Enumeration",
+  "name": "AudioFileResource.LoadingStrategy",
+  "desc": "Strategies that the playback controller can use to access a resource’s data during playback.",
+  "items": [
+    {
+      "name": "case preload",
+      "desc": "Load and decode all the data into memory before playback."
+    },
+    {
+      "name": "case stream",
+      "desc": "Stream data from disk, decoding in real time."
+    },
+    {
+      "name": "static func == (AudioFileResource.LoadingStrategy, AudioFileResource.LoadingStrategy) -> Bool",
+      "desc": "Indicates whether two load strategies are equal."
+    },
+    {
+      "name": "static func != (AudioFileResource.LoadingStrategy, AudioFileResource.LoadingStrategy) -> Bool",
+      "desc": "Indicates whether two load strategies are not equal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the load strategy by feeding them into the given hash function."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hashed value of the load strategy."
+    }
+  ],
+  "declaration": "enum AudioFileResource.LoadingStrategy",
+  "conformsTo": [
+    "Hashable"
+  ]
+}

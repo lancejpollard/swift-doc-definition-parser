@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/coreml/mlfeaturedescription",
+  "type": "Class",
+  "name": "MLFeatureDescription",
+  "desc": "The name, type, and constraints of an input or output feature.",
+  "items": [
+    {
+      "name": "var name: String",
+      "desc": "The name of this feature."
+    },
+    {
+      "name": "var type: MLFeatureType",
+      "desc": "The type of this feature."
+    },
+    {
+      "name": "enum MLFeatureType",
+      "desc": "The possible types for feature values, input features, and output features."
+    },
+    {
+      "name": "var isOptional: Bool",
+      "desc": "A Boolean value that indicates whether this feature is optional."
+    },
+    {
+      "name": "func isAllowedValue(MLFeatureValue) -> Bool",
+      "desc": "Checks whether the model will accept an input feature value."
+    },
+    {
+      "name": "var imageConstraint: MLImageConstraint?",
+      "desc": "The size and format constraints for an image feature."
+    },
+    {
+      "name": "class MLImageConstraint",
+      "desc": "The width, height, and pixel format constraints of an image feature."
+    },
+    {
+      "name": "var dictionaryConstraint: MLDictionaryConstraint?",
+      "desc": "The constraint for a dictionary feature."
+    },
+    {
+      "name": "class MLDictionaryConstraint",
+      "desc": "The constraint on the keys for a dictionary feature."
+    },
+    {
+      "name": "var multiArrayConstraint: MLMultiArrayConstraint?",
+      "desc": "The constraints on a multidimensional array feature."
+    },
+    {
+      "name": "class MLMultiArrayConstraint",
+      "desc": "The shape and data type constraints for a multidimensional array feature."
+    },
+    {
+      "name": "var sequenceConstraint: MLSequenceConstraint?",
+      "desc": "The constraints for a sequence feature."
+    },
+    {
+      "name": "class MLSequenceConstraint",
+      "desc": "The constraints for a sequence feature."
+    }
+  ],
+  "declaration": "class MLFeatureDescription : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

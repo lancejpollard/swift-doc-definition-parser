@@ -1,0 +1,43 @@
+{
+  "path": "/documentation/combine/publishers/combinelatest4",
+  "type": "Structure",
+  "name": "Publishers.CombineLatest4",
+  "desc": "A publisher that receives and combines the latest elements from four publishers.",
+  "items": [
+    {
+      "name": "init(A, B, C, D)"
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let a: A"
+    },
+    {
+      "name": "let b: B"
+    },
+    {
+      "name": "let c: C"
+    },
+    {
+      "name": "let d: D"
+    },
+    {
+      "name": "static func == (Publishers.CombineLatest4<A, B, C, D>, Publishers.CombineLatest4<A, B, C, D>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    }
+  ],
+  "declaration": "struct CombineLatest4<A, B, C, D> where A : Publisher, B : Publisher, C : Publisher, D : Publisher, A.Failure == B.Failure, B.Failure == C.Failure, C.Failure == D.Failure",
+  "conformsTo": [
+    "Equatable",
+    "Publisher"
+  ]
+}

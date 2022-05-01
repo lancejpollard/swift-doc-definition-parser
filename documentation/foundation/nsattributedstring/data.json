@@ -1,0 +1,296 @@
+{
+  "path": "/documentation/foundation/nsattributedstring",
+  "type": "Class",
+  "name": "NSAttributedString",
+  "desc": "A string with associated attributes (such as visual style, hyperlinks, or accessibility data) for portions of its text.",
+  "items": [
+    {
+      "name": "init(string: String)",
+      "desc": "Creates an attributed string with the characters of the specified string and no attribute information."
+    },
+    {
+      "name": "init(string: String, attributes: [NSAttributedString.Key : Any]?)",
+      "desc": "Creates an attributed string with the specified string and attributes."
+    },
+    {
+      "name": "init(attributedString: NSAttributedString)",
+      "desc": "Creates an attributed string with the characters and attributes of the specified attributed string."
+    },
+    {
+      "name": "init(data: Data, options: [NSAttributedString.DocumentReadingOptionKey : Any], documentAttributes: AutoreleasingUnsafeMutablePointer<NSDictionary?>?)",
+      "desc": "Creates an attributed string from the data in the specified data object."
+    },
+    {
+      "name": "init?(docFormat: Data, documentAttributes: AutoreleasingUnsafeMutablePointer<NSDictionary?>?)",
+      "desc": "Creates an attributed string from Microsoft Word format data in the specified data object."
+    },
+    {
+      "name": "init?(html: Data, documentAttributes: AutoreleasingUnsafeMutablePointer<NSDictionary?>?)",
+      "desc": "Creates an attributed string from the HTML in the specified data object."
+    },
+    {
+      "name": "init?(html: Data, baseURL: URL, documentAttributes: AutoreleasingUnsafeMutablePointer<NSDictionary?>?)",
+      "desc": "Creates an attributed string from the HTML in the specified data object and base URL."
+    },
+    {
+      "name": "init?(html: Data, options: [NSAttributedString.DocumentReadingOptionKey : Any], documentAttributes: AutoreleasingUnsafeMutablePointer<NSDictionary?>?)",
+      "desc": "Creates an attributed string from the HTML in the specified data object."
+    },
+    {
+      "name": "init?(rtf: Data, documentAttributes: AutoreleasingUnsafeMutablePointer<NSDictionary?>?)",
+      "desc": "Creates an attributed string by decoding the stream of RTF commands and data in the specified data object."
+    },
+    {
+      "name": "init?(rtfd: Data, documentAttributes: AutoreleasingUnsafeMutablePointer<NSDictionary?>?)",
+      "desc": "Creates an attributed string by decoding the stream of RTFD commands and data in the specified data object."
+    },
+    {
+      "name": "init?(rtfdFileWrapper: FileWrapper, documentAttributes: AutoreleasingUnsafeMutablePointer<NSDictionary?>?)",
+      "desc": "Creates an attributed string from the specified file wrapper that contains an RTFD document."
+    },
+    {
+      "name": "init(url: URL, options: [NSAttributedString.DocumentReadingOptionKey : Any], documentAttributes: AutoreleasingUnsafeMutablePointer<NSDictionary?>?)",
+      "desc": "Creates an attributed string from the contents of the specified URL."
+    },
+    {
+      "name": "init(attachment: NSTextAttachment)",
+      "desc": "Creates an attributed string with an attachment."
+    },
+    {
+      "name": "class func loadFromHTML(request: URLRequest, options: [NSAttributedString.DocumentReadingOptionKey : Any], completionHandler: NSAttributedString.CompletionHandler)",
+      "desc": "Creates an attributed string by converting the contents of the specified HTML URL request."
+    },
+    {
+      "name": "class func loadFromHTML(fileURL: URL, options: [NSAttributedString.DocumentReadingOptionKey : Any], completionHandler: NSAttributedString.CompletionHandler)",
+      "desc": "Creates an attributed string by converting the content of a local HTML file at the specified URL."
+    },
+    {
+      "name": "class func loadFromHTML(string: String, options: [NSAttributedString.DocumentReadingOptionKey : Any], completionHandler: NSAttributedString.CompletionHandler)",
+      "desc": "Creates an attributed string from the specified HTML string."
+    },
+    {
+      "name": "class func loadFromHTML(data: Data, options: [NSAttributedString.DocumentReadingOptionKey : Any], completionHandler: NSAttributedString.CompletionHandler)",
+      "desc": "Creates an attributed string from the specified HTML data."
+    },
+    {
+      "name": "typealias NSAttributedString.CompletionHandler",
+      "desc": "A completion handler for getting an asynchronous attributed string."
+    },
+    {
+      "name": "init(markdown: String, options: AttributedString.MarkdownParsingOptions, baseURL: URL?)",
+      "desc": "Creates an attributed string from a Markdown-formatted string using the provided options."
+    },
+    {
+      "name": "init(markdown: Data, options: AttributedString.MarkdownParsingOptions, baseURL: URL?)",
+      "desc": "Creates an attributed string from Markdown-formatted data using the provided options."
+    },
+    {
+      "name": "init(contentsOf: URL, options: AttributedString.MarkdownParsingOptions, baseURL: URL?)",
+      "desc": "Creates an attributed string from the contents of a specified URL that contains Markdown-formatted data using the provided options."
+    },
+    {
+      "name": "init<S>(AttributedString, including: S.Type)",
+      "desc": "Creates a reference-type attributed string from the specified value-type attributed string, including an attribute scope."
+    },
+    {
+      "name": "init<S>(AttributedString, including: KeyPath<AttributeScopes, S.Type>)",
+      "desc": "Creates a reference-type attributed string from the specified value-type attributed string, including an attribute scope that a key path identifies."
+    },
+    {
+      "name": "init(AttributedString)",
+      "desc": "Creates a reference-type attributed string from the specified value-type attributed string."
+    },
+    {
+      "name": "var string: String",
+      "desc": "The character contents of the attributed string as a string."
+    },
+    {
+      "name": "var length: Int",
+      "desc": "The length of the attributed string."
+    },
+    {
+      "name": "func attributes(at: Int, effectiveRange: NSRangePointer?) -> [NSAttributedString.Key : Any]",
+      "desc": "Returns the attributes for the character at the specified index."
+    },
+    {
+      "name": "func attributes(at: Int, longestEffectiveRange: NSRangePointer?, in: NSRange) -> [NSAttributedString.Key : Any]",
+      "desc": "Returns the attributes for the character at the specified index and, by reference, the range where the attributes apply."
+    },
+    {
+      "name": "func attribute(NSAttributedString.Key, at: Int, effectiveRange: NSRangePointer?) -> Any?",
+      "desc": "Returns the value for an attribute with the specified name of the character at the specified index and, by reference, the range where the attribute applies."
+    },
+    {
+      "name": "func attribute(NSAttributedString.Key, at: Int, longestEffectiveRange: NSRangePointer?, in: NSRange) -> Any?",
+      "desc": "Returns the value for the attribute with the specified name of the character at the specified index and, by reference, the range where the attribute applies."
+    },
+    {
+      "name": "func isEqual(to: NSAttributedString) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the attributed string is equal to another attributed string."
+    },
+    {
+      "name": "func attributedSubstring(from: NSRange) -> NSAttributedString",
+      "desc": "Returns an attributed string consisting of the characters and attributes within the specified range in the attributed string."
+    },
+    {
+      "name": "func enumerateAttribute(NSAttributedString.Key, in: NSRange, options: NSAttributedString.EnumerationOptions, using: (Any?, NSRange, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Executes the specified closure for each range of a particular attribute in the attributed string."
+    },
+    {
+      "name": "func enumerateAttributes(in: NSRange, options: NSAttributedString.EnumerationOptions, using: ([NSAttributedString.Key : Any], NSRange, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Executes the specified closure for each range of attributes in the attributed string."
+    },
+    {
+      "name": "func fontAttributes(in: NSRange) -> [NSAttributedString.Key : Any]",
+      "desc": "Returns the font attributes in effect for the character at the specified location."
+    },
+    {
+      "name": "func rulerAttributes(in: NSRange) -> [NSAttributedString.Key : Any]",
+      "desc": "Returns the ruler (paragraph) attributes in effect for the characters within the specified range."
+    },
+    {
+      "name": "func doubleClick(at: Int) -> NSRange",
+      "desc": "Returns the range of characters that form a word (or other linguistic unit) surrounding the specified index, taking language characteristics into account."
+    },
+    {
+      "name": "func lineBreak(before: Int, within: NSRange) -> Int",
+      "desc": "Returns the appropriate line break when the character at the index doesn’t fit on the same line as the character at the beginning of the range."
+    },
+    {
+      "name": "func lineBreakByHyphenating(before: Int, within: NSRange) -> Int",
+      "desc": "Returns the index of the closest character before the specified index, and within the specified range, that can fit on a new line by hyphenating."
+    },
+    {
+      "name": "func nextWord(from: Int, forward: Bool) -> Int",
+      "desc": "Returns the index of the first character of the word after or before the specified index."
+    },
+    {
+      "name": "func itemNumber(in: NSTextList, at: Int) -> Int",
+      "desc": "Returns the index of the item at the specified location within the list."
+    },
+    {
+      "name": "func range(of: NSTextBlock, at: Int) -> NSRange",
+      "desc": "Returns the range of the individual text block that contains the specified location."
+    },
+    {
+      "name": "func range(of: NSTextList, at: Int) -> NSRange",
+      "desc": "Returns the range of the specified text list that contains the specified location."
+    },
+    {
+      "name": "func range(of: NSTextTable, at: Int) -> NSRange",
+      "desc": "Returns the range of the specified text table that contains the specified location."
+    },
+    {
+      "name": "func data(from: NSRange, documentAttributes: [NSAttributedString.DocumentAttributeKey : Any]) -> Data",
+      "desc": "Returns a data object that contains a text stream corresponding to the characters and attributes within the specified range."
+    },
+    {
+      "name": "func fileWrapper(from: NSRange, documentAttributes: [NSAttributedString.DocumentAttributeKey : Any]) -> FileWrapper",
+      "desc": "Returns a file wrapper object that contains a text stream corresponding to the characters and attributes within the specified range."
+    },
+    {
+      "name": "func docFormat(from: NSRange, documentAttributes: [NSAttributedString.DocumentAttributeKey : Any]) -> Data?",
+      "desc": "Returns a data object that contains a Microsoft Word–format stream corresponding to the characters and attributes within the specified range."
+    },
+    {
+      "name": "func rtf(from: NSRange, documentAttributes: [NSAttributedString.DocumentAttributeKey : Any]) -> Data?",
+      "desc": "Returns a data object that contains an RTF stream corresponding to the characters and attributes within the specified range, omitting all attachment attributes."
+    },
+    {
+      "name": "func rtfd(from: NSRange, documentAttributes: [NSAttributedString.DocumentAttributeKey : Any]) -> Data?",
+      "desc": "Returns a data object that contains an RTFD stream corresponding to the characters and attributes within the specified range."
+    },
+    {
+      "name": "func rtfdFileWrapper(from: NSRange, documentAttributes: [NSAttributedString.DocumentAttributeKey : Any]) -> FileWrapper?",
+      "desc": "Returns a file wrapper object that contains an RTFD document corresponding to the characters and attributes within the specified range."
+    },
+    {
+      "name": "func inflecting() -> NSAttributedString"
+    },
+    {
+      "name": "func draw(at: CGPoint)",
+      "desc": "Draws the attributed string starting at the specified point in the current graphics context."
+    },
+    {
+      "name": "func draw(in: CGRect)",
+      "desc": "Draws the attributed string inside the specified bounding rectangle in the current graphics context."
+    },
+    {
+      "name": "func draw(with: CGRect, options: NSStringDrawingOptions, context: NSStringDrawingContext?)",
+      "desc": "Draws the attributed string in the specified bounding rectangle using the provided options."
+    },
+    {
+      "name": "func size() -> CGSize",
+      "desc": "Returns the size necessary to draw the string."
+    },
+    {
+      "name": "func boundingRect(with: CGSize, options: NSStringDrawingOptions, context: NSStringDrawingContext?) -> CGRect",
+      "desc": "Returns the bounding rectangle necessary to draw the string."
+    },
+    {
+      "name": "func containsAttachments(in: NSRange) -> Bool",
+      "desc": "Returns a Boolean value that indicates if the attributed string contains an attachment in the specified range."
+    },
+    {
+      "name": "class var textTypes: [String]",
+      "desc": "An array of UTI strings that identify the file types that attributed strings support, either directly or through a user-installed filter service."
+    },
+    {
+      "name": "class var textUnfilteredTypes: [String]",
+      "desc": "An array of UTI strings that identify the file types that attributed strings support directly."
+    },
+    {
+      "name": "struct NSAttributedString.Key",
+      "desc": "Attributes that you can apply to text in an attributed string."
+    },
+    {
+      "name": "struct NSAttributedString.TextEffectStyle",
+      "desc": "Constants for the text effect attribute key."
+    },
+    {
+      "name": "enum NSAttributedString.SpellingState",
+      "desc": "Constants for the spelling state attribute key."
+    },
+    {
+      "name": "enum NSWritingDirectionFormatType",
+      "desc": "Constants for the writing direction attribute key."
+    },
+    {
+      "name": "struct NSUnderlineStyle",
+      "desc": "Constants for the underline style and strikethrough style attribute keys."
+    },
+    {
+      "name": "struct NSAttributedString.DocumentAttributeKey",
+      "desc": "Attributes that apply to a document."
+    },
+    {
+      "name": "struct NSAttributedString.DocumentType",
+      "desc": "Constants for the document type document attribute key."
+    },
+    {
+      "name": "struct NSAttributedString.TextLayoutSectionKey",
+      "desc": "Constants for the text layout sections document attribute key."
+    },
+    {
+      "name": "struct NSAttributedString.DocumentReadingOptionKey",
+      "desc": "Options for importing documents."
+    },
+    {
+      "name": "struct NSAttributedString.EnumerationOptions",
+      "desc": "Options for enumerating attributes."
+    }
+  ],
+  "declaration": "class NSAttributedString : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSItemProviderReading",
+    "NSItemProviderWriting",
+    "NSMutableCopying",
+    "NSPasteboardReading",
+    "NSPasteboardWriting",
+    "NSSecureCoding"
+  ]
+}

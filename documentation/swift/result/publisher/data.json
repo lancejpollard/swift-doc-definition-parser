@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/swift/result/publisher",
+  "type": "Structure",
+  "name": "Result.Publisher",
+  "desc": "The type of a Combine publisher that publishes this instance’s result to each subscriber exactly once, or fails immediately if the result indicates failure.",
+  "items": [
+    {
+      "name": "typealias Result.Publisher.Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "init(Result<Result<Success, Failure>.Publisher.Output, Failure>)",
+      "desc": "Creates a publisher that delivers the specified result."
+    },
+    {
+      "name": "init(Failure)",
+      "desc": "Creates a publisher that immediately terminates upon subscription with the given failure."
+    },
+    {
+      "name": "init(Result<Success, Failure>.Publisher.Output)",
+      "desc": "Creates a publisher that delivers the specified output and finishes normally."
+    },
+    {
+      "name": "let result: Result<Result<Success, Failure>.Publisher.Output, Failure>",
+      "desc": "The result to deliver to each subscriber."
+    },
+    {
+      "name": "func receive<S>(subscriber: S)",
+      "desc": "Implements the publisher protocol by accepting the subscriber if the result is success, or terminating with an error immediately if it’s failure."
+    }
+  ],
+  "declaration": "struct Publisher",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

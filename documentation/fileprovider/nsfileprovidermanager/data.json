@@ -1,0 +1,136 @@
+{
+  "path": "/documentation/fileprovider/nsfileprovidermanager",
+  "type": "Class",
+  "name": "NSFileProviderManager",
+  "desc": "A manager object that you use to communicate with the file provider from either your app or your File Provider extension.",
+  "items": [
+    {
+      "name": "class var `default`: NSFileProviderManager",
+      "desc": "A property that returns the shared file provider manager object."
+    },
+    {
+      "name": "var documentStorageURL: URL",
+      "desc": "The root URL for all shared documents."
+    },
+    {
+      "name": "var providerIdentifier: String",
+      "desc": "A purpose identifier for coordinated reads and writes."
+    },
+    {
+      "name": "func getUserVisibleURL(for: NSFileProviderItemIdentifier, completionHandler: (URL?, Error?) -> Void)",
+      "desc": "Returns the user-visible URL for an item."
+    },
+    {
+      "name": "class func getIdentifierForUserVisibleFile(at: URL, completionHandler: (NSFileProviderItemIdentifier?, NSFileProviderDomainIdentifier?, Error?) -> Void)",
+      "desc": "Returns the identifier and domain for a user-visible URL."
+    },
+    {
+      "name": "func reimportItems(below: NSFileProviderItemIdentifier, completionHandler: (Error?) -> Void)",
+      "desc": "Tells the system to reimport the item and its content recursively."
+    },
+    {
+      "name": "func evictItem(identifier: NSFileProviderItemIdentifier, completionHandler: (Error?) -> Void)",
+      "desc": "Asks the system to remove an item from its cache."
+    },
+    {
+      "name": "func enumeratorForMaterializedItems() -> NSFileProviderEnumerator",
+      "desc": "Returns an enumerator for all the items the system currently stores on disk."
+    },
+    {
+      "name": "func enumeratorForPendingItems() -> NSFileProviderPendingSetEnumerator",
+      "desc": "Returns an enumerator for the set of pending items."
+    },
+    {
+      "name": "class func placeholderURL(for: URL) -> URL",
+      "desc": "Returns a placeholder URL for a given document URL."
+    },
+    {
+      "name": "class func writePlaceholder(at: URL, withMetadata: NSFileProviderItem)",
+      "desc": "Writes a document placeholder with the provided metadata."
+    },
+    {
+      "name": "func register(URLSessionTask, forItemWithIdentifier: NSFileProviderItemIdentifier, completionHandler: (Error?) -> Void)",
+      "desc": "Registers the URL session task responsible for the specified item."
+    },
+    {
+      "name": "func signalEnumerator(for: NSFileProviderItemIdentifier, completionHandler: (Error?) -> Void)",
+      "desc": "Alerts the system to changes in the specified folder’s content."
+    },
+    {
+      "name": "func waitForChanges(below: NSFileProviderItemIdentifier, completionHandler: (Error?) -> Void)",
+      "desc": "Requests a notification after the system completes all the specified changes."
+    },
+    {
+      "name": "func globalProgress(for: Progress.FileOperationKind) -> Progress",
+      "desc": "Returns a progress object that tracks either the uploading or downloading of items from the File Provider extension’s remote storage."
+    },
+    {
+      "name": "init?(for: NSFileProviderDomain)",
+      "desc": "Returns a newly created file provider manager for the specified domain."
+    },
+    {
+      "name": "class func `import`(NSFileProviderDomain, fromDirectoryAt: URL, completionHandler: (Error?) -> Void)",
+      "desc": "Creates a new domain that takes ownership of on-disk data that your app previously managed without a file provider."
+    },
+    {
+      "name": "class func add(NSFileProviderDomain, completionHandler: (Error?) -> Void)",
+      "desc": "Adds a domain to the File Provider extension."
+    },
+    {
+      "name": "class func getDomainsWithCompletionHandler(([NSFileProviderDomain], Error?) -> Void)",
+      "desc": "Returns all of the File Provider extension's domains."
+    },
+    {
+      "name": "class func remove(NSFileProviderDomain, completionHandler: (Error?) -> Void)",
+      "desc": "Removes a domain from the File Provider extension."
+    },
+    {
+      "name": "class func remove(NSFileProviderDomain, mode: NSFileProviderManager.DomainRemovalMode, completionHandler: (URL?, Error?) -> Void)",
+      "desc": "Removes a domain from the File Provider extension using the specified options."
+    },
+    {
+      "name": "class func removeAllDomains(completionHandler: (Error?) -> Void)",
+      "desc": "Removes all domains from the File Provider extension."
+    },
+    {
+      "name": "enum NSFileProviderManager.DomainRemovalMode",
+      "desc": "A mode indicating how the system handles user data when removing a domain."
+    },
+    {
+      "name": "func disconnect(reason: String, options: NSFileProviderManager.DisconnectionOptions, completionHandler: (Error?) -> Void)",
+      "desc": "Disconnects the domain from the extension."
+    },
+    {
+      "name": "struct NSFileProviderManager.DisconnectionOptions",
+      "desc": "Options for disconnecting a domain from the extension."
+    },
+    {
+      "name": "func reconnect(completionHandler: (Error?) -> Void)",
+      "desc": "Reconnects the domain with the extension."
+    },
+    {
+      "name": "func waitForStabilization(completionHandler: (Error?) -> Void)",
+      "desc": "Requests a notification after the domain stabilizes."
+    },
+    {
+      "name": "func temporaryDirectoryURL() -> URL",
+      "desc": "Returns the URL of a directory that the File Provider extension can use to temporarily store files before passing them to the system."
+    },
+    {
+      "name": "func listAvailableTestingOperations() -> [NSFileProviderTestingOperation]",
+      "desc": "Lists all the operations that are ready for scheduling."
+    },
+    {
+      "name": "func run([NSFileProviderTestingOperation]) -> [AnyHashable : Error]",
+      "desc": "Asks the system to schedule and execute the specified operations."
+    },
+    {
+      "name": "func signalErrorResolved(Error, completionHandler: (Error?) -> Void)",
+      "desc": "Indicates a resolved error."
+    }
+  ],
+  "declaration": "class NSFileProviderManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

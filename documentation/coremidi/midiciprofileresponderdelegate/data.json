@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/coremidi/midiciprofileresponderdelegate",
+  "type": "Protocol",
+  "name": "MIDICIProfileResponderDelegate",
+  "desc": "A protocol that defines the methods to respond to MIDI-CI responder life-cycle events.",
+  "items": [
+    {
+      "name": "func connectInitiator(MIDICIInitiatiorMUID, with: MIDICIDeviceInfo) -> Bool",
+      "desc": "Enables a MIDI-CI initiator to create a session or reject the connection attempt."
+    },
+    {
+      "name": "func handleData(for: MIDICIProfile, onChannel: MIDIChannelNumber, data: Data)",
+      "desc": "Processes MIDI data for a profile and channel."
+    },
+    {
+      "name": "func willSetProfile(MIDICIProfile, onChannel: MIDIChannelNumber, enabled: Bool) -> Bool",
+      "desc": "Provides an opportunity to perform an action before the system sets the profile."
+    },
+    {
+      "name": "func initiatorDisconnected(MIDICIInitiatiorMUID)",
+      "desc": "Provides an opportunity to perform an action after the system disconnects the initiator."
+    }
+  ],
+  "declaration": "protocol MIDICIProfileResponderDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

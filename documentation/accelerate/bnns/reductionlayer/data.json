@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/accelerate/bnns/reductionlayer",
+  "type": "Class",
+  "name": "BNNS.ReductionLayer",
+  "desc": "A layer object that wraps a reduction filter and manages its deinitialization.",
+  "items": [
+    {
+      "name": "init?(function: BNNS.ReductionFunction, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, weights: BNNSNDArrayDescriptor?, filterParameters: BNNSFilterParameters?)",
+      "desc": "Returns a new reduction layer."
+    },
+    {
+      "name": "enum BNNS.ReductionFunction",
+      "desc": "Constants that describe reduction functions."
+    },
+    {
+      "name": "func applyBackward(batchSize: Int, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, outputGradient: BNNSNDArrayDescriptor, generatingInputGradient: BNNSNDArrayDescriptor, generatingWeightsGradient: BNNSNDArrayDescriptor?)",
+      "desc": "Applies the layer backward to generate input gradients."
+    },
+    {
+      "name": "static func applyReduction(BNNS.ReductionFunction, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, weights: BNNSNDArrayDescriptor?, filterParameters: BNNSFilterParameters?)",
+      "desc": "Applies the specified reduction function."
+    }
+  ],
+  "declaration": "class ReductionLayer : BNNS.UnaryLayer",
+  "inheritsFrom": [
+    "BNNS.UnaryLayer"
+  ]
+}

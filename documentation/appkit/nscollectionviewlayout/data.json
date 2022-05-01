@@ -1,0 +1,167 @@
+{
+  "path": "/documentation/appkit/nscollectionviewlayout",
+  "type": "Class",
+  "name": "NSCollectionViewLayout",
+  "desc": "An abstract base class that you subclass and use to generate layout information for a collection view.",
+  "items": [
+    {
+      "name": "var collectionView: NSCollectionView?",
+      "desc": "The collection view object currently using this layout."
+    },
+    {
+      "name": "class var layoutAttributesClass: AnyClass",
+      "desc": "Returns the class to use for layout attribute objects"
+    },
+    {
+      "name": "func prepare()",
+      "desc": "Prepares the layout object to begin laying out content."
+    },
+    {
+      "name": "var collectionViewContentSize: NSSize",
+      "desc": "The width and height of the collection view’s contents."
+    },
+    {
+      "name": "func layoutAttributesForElements(in: NSRect) -> [NSCollectionViewLayoutAttributes]",
+      "desc": "Returns the layout attribute objects for all items and views in the specified rectangle."
+    },
+    {
+      "name": "func layoutAttributesForItem(at: IndexPath) -> NSCollectionViewLayoutAttributes?",
+      "desc": "Returns the layout attributes for the item at the specified index path."
+    },
+    {
+      "name": "func layoutAttributesForSupplementaryView(ofKind: NSCollectionView.SupplementaryElementKind, at: IndexPath) -> NSCollectionViewLayoutAttributes?",
+      "desc": "Returns the layout attributes of the supplementary view at the specified location in your layout."
+    },
+    {
+      "name": "func layoutAttributesForDecorationView(ofKind: NSCollectionView.DecorationElementKind, at: IndexPath) -> NSCollectionViewLayoutAttributes?",
+      "desc": "Returns the layout attributes of the decoration view at the specified location in your layout."
+    },
+    {
+      "name": "func layoutAttributesForDropTarget(at: NSPoint) -> NSCollectionViewLayoutAttributes?",
+      "desc": "Returns layout attributes for the drop target at the specified point."
+    },
+    {
+      "name": "func layoutAttributesForInterItemGap(before: IndexPath) -> NSCollectionViewLayoutAttributes?",
+      "desc": "Returns layout attributes for the inter-item gap at the specified location in your layout."
+    },
+    {
+      "name": "func targetContentOffset(forProposedContentOffset: NSPoint) -> NSPoint",
+      "desc": "Returns the offset value to use after an animated layout update or change."
+    },
+    {
+      "name": "func targetContentOffset(forProposedContentOffset: NSPoint, withScrollingVelocity: NSPoint) -> NSPoint",
+      "desc": "Returns the offset value to use for the collection view’s content at the end of scrolling."
+    },
+    {
+      "name": "func prepare(forCollectionViewUpdates: [NSCollectionViewUpdateItem])",
+      "desc": "Performs needed tasks before items are inserted, deleted, or moved within the collection view."
+    },
+    {
+      "name": "func finalizeCollectionViewUpdates()",
+      "desc": "Performs needed steps after items are inserted, deleted, or moved within a collection view."
+    },
+    {
+      "name": "func indexPathsToInsertForSupplementaryView(ofKind: NSCollectionView.SupplementaryElementKind) -> Set<IndexPath>",
+      "desc": "Returns the index paths for any supplementary views that the layout object wants to add to the collection view."
+    },
+    {
+      "name": "func indexPathsToInsertForDecorationView(ofKind: NSCollectionView.DecorationElementKind) -> Set<IndexPath>",
+      "desc": "Returns the index paths for any decoration views that the layout object wants to add to the collection view."
+    },
+    {
+      "name": "func initialLayoutAttributesForAppearingItem(at: IndexPath) -> NSCollectionViewLayoutAttributes?",
+      "desc": "Returns the starting layout information for an item being inserted into the collection view."
+    },
+    {
+      "name": "func initialLayoutAttributesForAppearingSupplementaryElement(ofKind: NSCollectionView.SupplementaryElementKind, at: IndexPath) -> NSCollectionViewLayoutAttributes?",
+      "desc": "Returns the starting layout information for a supplementary view being added to the collection view."
+    },
+    {
+      "name": "func initialLayoutAttributesForAppearingDecorationElement(ofKind: NSCollectionView.DecorationElementKind, at: IndexPath) -> NSCollectionViewLayoutAttributes?",
+      "desc": "Returns the starting layout information for a decoration view being added to the collection view."
+    },
+    {
+      "name": "func indexPathsToDeleteForSupplementaryView(ofKind: NSCollectionView.SupplementaryElementKind) -> Set<IndexPath>",
+      "desc": "Returns the index paths for any supplementary views that the layout object wants to remove from the collection view."
+    },
+    {
+      "name": "func indexPathsToDeleteForDecorationView(ofKind: NSCollectionView.DecorationElementKind) -> Set<IndexPath>",
+      "desc": "Returns index paths for any decoration views that the layout object wants to remove from the collection view."
+    },
+    {
+      "name": "func finalLayoutAttributesForDisappearingItem(at: IndexPath) -> NSCollectionViewLayoutAttributes?",
+      "desc": "Returns the ending layout information for an item being removed from the collection view."
+    },
+    {
+      "name": "func finalLayoutAttributesForDisappearingSupplementaryElement(ofKind: NSCollectionView.SupplementaryElementKind, at: IndexPath) -> NSCollectionViewLayoutAttributes?",
+      "desc": "Returns the ending layout information for a supplementary view being removed from the collection view."
+    },
+    {
+      "name": "func finalLayoutAttributesForDisappearingDecorationElement(ofKind: NSCollectionView.DecorationElementKind, at: IndexPath) -> NSCollectionViewLayoutAttributes?",
+      "desc": "Returns the ending layout information for a decoration view being removed from the collection view."
+    },
+    {
+      "name": "func invalidateLayout()",
+      "desc": "Invalidates all layout information and triggers a layout update."
+    },
+    {
+      "name": "func invalidateLayout(with: NSCollectionViewLayoutInvalidationContext)",
+      "desc": "Invalidates specific parts of the layout using the specified context object."
+    },
+    {
+      "name": "class var invalidationContextClass: AnyClass",
+      "desc": "Returns the class to use when creating an invalidation context object for the layout."
+    },
+    {
+      "name": "func shouldInvalidateLayout(forBoundsChange: NSRect) -> Bool",
+      "desc": "Returns a Boolean indicating whether a bounds change triggers a layout update."
+    },
+    {
+      "name": "func shouldInvalidateLayout(forPreferredLayoutAttributes: NSCollectionViewLayoutAttributes, withOriginalAttributes: NSCollectionViewLayoutAttributes) -> Bool",
+      "desc": "Returns a Boolean indicating whether changes to a cell’s layout attributes trigger a larger layout update."
+    },
+    {
+      "name": "func invalidationContext(forBoundsChange: NSRect) -> NSCollectionViewLayoutInvalidationContext",
+      "desc": "Returns an invalidation context object that defines the portions of the layout that need to be updated."
+    },
+    {
+      "name": "func invalidationContext(forPreferredLayoutAttributes: NSCollectionViewLayoutAttributes, withOriginalAttributes: NSCollectionViewLayoutAttributes) -> NSCollectionViewLayoutInvalidationContext",
+      "desc": "Returns an invalidation context object that defines the portions of the layout that need to be updated."
+    },
+    {
+      "name": "func prepare(forAnimatedBoundsChange: NSRect)",
+      "desc": "Prepares the layout object for animated changes to the collection view’s bounds or for the insertion or deletion of items."
+    },
+    {
+      "name": "func finalizeAnimatedBoundsChange()",
+      "desc": "Cleans up after any animated changes to the collection view’s bounds or after the insertion or deletion of items."
+    },
+    {
+      "name": "func register(AnyClass?, forDecorationViewOfKind: NSCollectionView.DecorationElementKind)",
+      "desc": "Registers a class to use when creating the layout’s decoration views."
+    },
+    {
+      "name": "func register(NSNib?, forDecorationViewOfKind: NSCollectionView.DecorationElementKind)",
+      "desc": "Registers a nib file to use when creating the layout’s decoration views."
+    },
+    {
+      "name": "func prepareForTransition(from: NSCollectionViewLayout)",
+      "desc": "Prepares the layout object to be installed in the collection view."
+    },
+    {
+      "name": "func prepareForTransition(to: NSCollectionViewLayout)",
+      "desc": "Prepares the layout object to be uninstalled from the collection view."
+    },
+    {
+      "name": "func finalizeLayoutTransition()",
+      "desc": "Performs any final steps related to a layout transition before the transition animations actually occur."
+    }
+  ],
+  "declaration": "class NSCollectionViewLayout : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding"
+  ]
+}

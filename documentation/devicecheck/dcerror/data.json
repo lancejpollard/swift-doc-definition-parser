@@ -1,0 +1,81 @@
+{
+  "path": "/documentation/devicecheck/dcerror",
+  "type": "Structure",
+  "name": "DCError",
+  "desc": "A type that indicates when DeviceCheck encounters an error.",
+  "items": [
+    {
+      "name": "static var featureUnsupported: DCError.Code",
+      "desc": "DeviceCheck is not available on this device."
+    },
+    {
+      "name": "static var invalidInput: DCError.Code",
+      "desc": "An error code that indicates when your app provides data that isn’t formatted correctly."
+    },
+    {
+      "name": "static var invalidKey: DCError.Code",
+      "desc": "An error caused by a failed attempt to use the App Attest key."
+    },
+    {
+      "name": "static var serverUnavailable: DCError.Code",
+      "desc": "An error that indicates a failed attempt to contact the App Attest service during an attestation."
+    },
+    {
+      "name": "static var unknownSystemFailure: DCError.Code",
+      "desc": "A failure has occurred, such as the failure to generate a token."
+    },
+    {
+      "name": "enum DCError.Code",
+      "desc": "DeviceCheck error codes."
+    },
+    {
+      "name": "static var errorDomain: String",
+      "desc": "The error domain for errors associated with DeviceCheck APIs."
+    },
+    {
+      "name": "let DCErrorDomain: String",
+      "desc": "The error domain for errors associated with DeviceCheck APIs."
+    },
+    {
+      "name": "var errorCode: Int",
+      "desc": "The error code."
+    },
+    {
+      "name": "var code: Code",
+      "desc": "The error code."
+    },
+    {
+      "name": "var errorUserInfo: [String : Any]",
+      "desc": "Additional details about an error."
+    },
+    {
+      "name": "var userInfo: [String : Any]",
+      "desc": "Additional details about an error."
+    },
+    {
+      "name": "var localizedDescription: String",
+      "desc": "A user-facing, localized string that describes the error."
+    },
+    {
+      "name": "static func == (DCError, DCError) -> Bool",
+      "desc": "Indicates whether two errors are equal."
+    },
+    {
+      "name": "static func != (DCError, DCError) -> Bool",
+      "desc": "Indicates whether two errors aren’t equal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the error by feeding them into the given hash function."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hashed value of the error."
+    },
+    {
+      "name": "init(Code, userInfo: [String : Any])",
+      "desc": "Creates an error."
+    }
+  ],
+  "declaration": "struct DCError"
+}

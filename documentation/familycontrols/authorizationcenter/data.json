@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/familycontrols/authorizationcenter",
+  "type": "Class",
+  "name": "AuthorizationCenter",
+  "desc": "The center for requesting authorization to provide parental controls.",
+  "items": [
+    {
+      "name": "static let shared: AuthorizationCenter",
+      "desc": "The shared center for requesting and revoking authorization."
+    },
+    {
+      "name": "func requestAuthorization(completionHandler: (Result<Void, Error>) -> Void)",
+      "desc": "Requests authorization to provide parental controls."
+    },
+    {
+      "name": "func revokeAuthorization(completionHandler: (Result<Void, Error>) -> Void)",
+      "desc": "Revokes authorization to provide parental controls."
+    },
+    {
+      "name": "var authorizationStatus: AuthorizationStatus",
+      "desc": "The status of your app’s authorization to provide parental controls."
+    },
+    {
+      "name": "var $authorizationStatus: Published<AuthorizationStatus>.Publisher",
+      "desc": "A publisher for the authorization status property."
+    },
+    {
+      "name": "var objectWillChange: ObservableObjectPublisher",
+      "desc": "A publisher that emits before the object has changed."
+    },
+    {
+      "name": "typealias ObjectWillChangePublisher",
+      "desc": "The type of publisher that emits before the object has changed."
+    }
+  ],
+  "declaration": "class AuthorizationCenter",
+  "conformsTo": [
+    "ObservableObject"
+  ]
+}

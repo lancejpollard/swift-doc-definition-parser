@@ -1,0 +1,231 @@
+{
+  "path": "/documentation/uikit/uiresponder",
+  "type": "Class",
+  "name": "UIResponder",
+  "desc": "An abstract interface for responding to and handling events.",
+  "items": [
+    {
+      "name": "var next: UIResponder?",
+      "desc": "Returns the next responder in the responder chain, or nil if there is no next responder."
+    },
+    {
+      "name": "var isFirstResponder: Bool",
+      "desc": "Returns a Boolean value indicating whether this object is the first responder."
+    },
+    {
+      "name": "var canBecomeFirstResponder: Bool",
+      "desc": "Returns a Boolean value indicating whether this object can become the first responder."
+    },
+    {
+      "name": "func becomeFirstResponder() -> Bool",
+      "desc": "Asks UIKit to make this object the first responder in its window."
+    },
+    {
+      "name": "var canResignFirstResponder: Bool",
+      "desc": "Returns a Boolean value indicating whether the receiver is willing to relinquish first-responder status."
+    },
+    {
+      "name": "func resignFirstResponder() -> Bool",
+      "desc": "Notifies this object that it has been asked to relinquish its status as first responder in its window."
+    },
+    {
+      "name": "func touchesBegan(Set<UITouch>, with: UIEvent?)",
+      "desc": "Tells this object that one or more new touches occurred in a view or window."
+    },
+    {
+      "name": "func touchesMoved(Set<UITouch>, with: UIEvent?)",
+      "desc": "Tells the responder when one or more touches associated with an event changed."
+    },
+    {
+      "name": "func touchesEnded(Set<UITouch>, with: UIEvent?)",
+      "desc": "Tells the responder when one or more fingers are raised from a view or window."
+    },
+    {
+      "name": "func touchesCancelled(Set<UITouch>, with: UIEvent?)",
+      "desc": "Tells the responder when a system event (such as a system alert) cancels a touch sequence."
+    },
+    {
+      "name": "func touchesEstimatedPropertiesUpdated(Set<UITouch>)",
+      "desc": "Tells the responder that updated values were received for previously estimated properties or that an update is no longer expected."
+    },
+    {
+      "name": "func motionBegan(UIEvent.EventSubtype, with: UIEvent?)",
+      "desc": "Tells the receiver that a motion event has begun."
+    },
+    {
+      "name": "func motionEnded(UIEvent.EventSubtype, with: UIEvent?)",
+      "desc": "Tells the receiver that a motion event has ended."
+    },
+    {
+      "name": "func motionCancelled(UIEvent.EventSubtype, with: UIEvent?)",
+      "desc": "Tells the receiver that a motion event has been cancelled."
+    },
+    {
+      "name": "func pressesBegan(Set<UIPress>, with: UIPressesEvent?)",
+      "desc": "Tells this object when a physical button is first pressed."
+    },
+    {
+      "name": "func pressesChanged(Set<UIPress>, with: UIPressesEvent?)",
+      "desc": "Tells this object when a value associated with a press has changed."
+    },
+    {
+      "name": "func pressesEnded(Set<UIPress>, with: UIPressesEvent?)",
+      "desc": "Tells the object when a button is released."
+    },
+    {
+      "name": "func pressesCancelled(Set<UIPress>, with: UIPressesEvent?)",
+      "desc": "Tells this object when a system event (such as a low-memory warning) cancels a press event."
+    },
+    {
+      "name": "func remoteControlReceived(with: UIEvent?)",
+      "desc": "Tells the object when a remote-control event is received."
+    },
+    {
+      "name": "var inputView: UIView?",
+      "desc": "The custom input view to display when the receiver becomes the first responder."
+    },
+    {
+      "name": "var inputViewController: UIInputViewController?",
+      "desc": "The custom input view controller to use when the receiver becomes the first responder."
+    },
+    {
+      "name": "var inputAccessoryView: UIView?",
+      "desc": "The custom input accessory view to display when the receiver becomes the first responder."
+    },
+    {
+      "name": "var inputAccessoryViewController: UIInputViewController?",
+      "desc": "The custom input accessory view controller to display when the receiver becomes the first responder."
+    },
+    {
+      "name": "func reloadInputViews()",
+      "desc": "Updates the custom input and accessory views when the object is the first responder."
+    },
+    {
+      "name": "var undoManager: UndoManager?",
+      "desc": "Returns the nearest shared undo manager in the responder chain."
+    },
+    {
+      "name": "func buildMenu(with: UIMenuBuilder)",
+      "desc": "Asks the receiving responder to add and remove items from a menu system."
+    },
+    {
+      "name": "func validate(UICommand)",
+      "desc": "Asks the receiving responder to validate the command."
+    },
+    {
+      "name": "func canPerformAction(Selector, withSender: Any?) -> Bool",
+      "desc": "Requests the receiving responder to enable or disable the specified command in the user interface."
+    },
+    {
+      "name": "func target(forAction: Selector, withSender: Any?) -> Any?",
+      "desc": "Returns the target object that responds to an action."
+    },
+    {
+      "name": "var keyCommands: [UIKeyCommand]?",
+      "desc": "The key commands that trigger actions on this responder."
+    },
+    {
+      "name": "var textInputMode: UITextInputMode?",
+      "desc": "The text input mode for this responder object."
+    },
+    {
+      "name": "var textInputContextIdentifier: String?",
+      "desc": "An identifier signifying that the responder should preserve its text input mode information."
+    },
+    {
+      "name": "class func clearTextInputContextIdentifier(String)",
+      "desc": "Clears text input mode information from the app’s user defaults."
+    },
+    {
+      "name": "var inputAssistantItem: UITextInputAssistantItem",
+      "desc": "The input assistant to use when configuring the keyboard’s shortcuts bar."
+    },
+    {
+      "name": "var userActivity: NSUserActivity?",
+      "desc": "An object encapsulating a user activity supported by this responder."
+    },
+    {
+      "name": "func restoreUserActivityState(NSUserActivity)",
+      "desc": "Restores the state needed to continue the given user activity."
+    },
+    {
+      "name": "func updateUserActivityState(NSUserActivity)",
+      "desc": "Updates the state of the given user activity."
+    },
+    {
+      "name": "var activityItemsConfiguration: UIActivityItemsConfigurationReading?"
+    },
+    {
+      "name": "var editingInteractionConfiguration: UIEditingInteractionConfiguration"
+    },
+    {
+      "name": "enum UIEditingInteractionConfiguration"
+    },
+    {
+      "name": "func makeTouchBar() -> NSTouchBar?",
+      "desc": "Asks the receiving responder to create and configure a Touch Bar object."
+    },
+    {
+      "name": "var touchBar: NSTouchBar?",
+      "desc": "The Touch Bar object for the responder."
+    },
+    {
+      "name": "class let keyboardAnimationCurveUserInfoKey: String",
+      "desc": "A user info key to retrieve the animation curve that the system uses to animate the keyboard onto or off the screen."
+    },
+    {
+      "name": "class let keyboardAnimationDurationUserInfoKey: String",
+      "desc": "A user info key to retrieve the duration of the keyboard animation in seconds."
+    },
+    {
+      "name": "class let keyboardDidChangeFrameNotification: NSNotification.Name",
+      "desc": "Posted immediately after a change in the keyboard’s frame."
+    },
+    {
+      "name": "class let keyboardDidHideNotification: NSNotification.Name",
+      "desc": "Posted immediately after the dismissal of the keyboard."
+    },
+    {
+      "name": "class let keyboardDidShowNotification: NSNotification.Name",
+      "desc": "Posted immediately after the display of the keyboard."
+    },
+    {
+      "name": "class let keyboardFrameBeginUserInfoKey: String",
+      "desc": "A user info key to retrieve the keyboard’s frame at the beginning of its animation."
+    },
+    {
+      "name": "class let keyboardFrameEndUserInfoKey: String",
+      "desc": "A user info key to retrieve the keyboard’s frame at the end of its animation."
+    },
+    {
+      "name": "class let keyboardIsLocalUserInfoKey: String",
+      "desc": "A user info key to retrieve a Boolean value that indicates whether the keyboard belongs to the current app."
+    },
+    {
+      "name": "class let keyboardWillChangeFrameNotification: NSNotification.Name",
+      "desc": "Posted immediately prior to a change in the keyboard’s frame."
+    },
+    {
+      "name": "class let keyboardWillHideNotification: NSNotification.Name",
+      "desc": "Posted immediately prior to the dismissal of the keyboard."
+    },
+    {
+      "name": "class let keyboardWillShowNotification: NSNotification.Name",
+      "desc": "Posted immediately prior to the display of the keyboard."
+    },
+    {
+      "name": "func captureTextFromCamera(Any?)"
+    }
+  ],
+  "declaration": "@MainActor class UIResponder : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSTouchBarProvider",
+    "UIActivityItemsConfigurationProviding",
+    "UIPasteConfigurationSupporting",
+    "UIResponderStandardEditActions",
+    "UIUserActivityRestoring"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "path": "/documentation/mlcompute/mlctensordescriptor",
+  "type": "Class",
+  "name": "MLCTensorDescriptor",
+  "desc": "A configuration object you use to create a tensor.",
+  "items": [
+    {
+      "name": "init?(shape: [Int], dataType: MLCDataType)",
+      "desc": "Creates a tensor descriptor with the shape and data type you specify."
+    },
+    {
+      "name": "init?(shape: [Int], sequenceLengths: [Int], sortedSequences: Bool, dataType: MLCDataType)",
+      "desc": "Creates a tensor descriptor with the shape, variable sequence lengths, sorting indicator, and data type you specify."
+    },
+    {
+      "name": "init?(width: Int, height: Int, featureChannelCount: Int, batchSize: Int)",
+      "desc": "Creates a tensor descriptor with the width and height, number of feature channels, and batch size you specify."
+    },
+    {
+      "name": "init?(width: Int, height: Int, featureChannelCount: Int, batchSize: Int, dataType: MLCDataType)",
+      "desc": "Creates a tensor descriptor with the width and height, number of feature channels, batch size, and data type you specify."
+    },
+    {
+      "name": "init?(convolutionWeightsWithInputFeatureChannelCount: Int, outputFeatureChannelCount: Int, dataType: MLCDataType)",
+      "desc": "Creates a tensor descriptor with the number of feature channels and data type you specify."
+    },
+    {
+      "name": "init?(convolutionWeightsWithWidth: Int, height: Int, inputFeatureChannelCount: Int, outputFeatureChannelCount: Int, dataType: MLCDataType)",
+      "desc": "Creates a tensor descriptor with the sizing, number of feature channels, and data type you specify."
+    },
+    {
+      "name": "init?(convolutionBiasesWithFeatureChannelCount: Int, dataType: MLCDataType)",
+      "desc": "Creates a tensor descriptor with the number of feature channels and data type you specify."
+    },
+    {
+      "name": "class var maxTensorDimensions: Int",
+      "desc": "The maximum number of tensor dimensions."
+    },
+    {
+      "name": "var dataType: MLCDataType",
+      "desc": "The tensor data type."
+    },
+    {
+      "name": "var dimensionCount: Int",
+      "desc": "The number of dimensions in the tensor."
+    },
+    {
+      "name": "var shape: [Int]",
+      "desc": "An array that contains the size in each dimension."
+    },
+    {
+      "name": "var stride: [Int]",
+      "desc": "An array that contains the stride, in bytes, in each dimension."
+    },
+    {
+      "name": "var tensorAllocationSizeInBytes: Int",
+      "desc": "The allocation size, in bytes, for a tensor."
+    },
+    {
+      "name": "var sequenceLengths: [Int]?",
+      "desc": "An array that contains the variable lengths of sequences stored in the tensor."
+    },
+    {
+      "name": "var sortedSequences: Bool",
+      "desc": "A Boolean that indicates whether you provided the sequence lengths sorted in descending order."
+    },
+    {
+      "name": "var batchSizePerSequenceStep: [Int]?",
+      "desc": "The batch size for each sequence."
+    }
+  ],
+  "declaration": "class MLCTensorDescriptor : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

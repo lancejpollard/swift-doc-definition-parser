@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/swift/unmanaged",
+  "type": "Generic Structure",
+  "name": "Unmanaged",
+  "desc": "A type for propagating an unmanaged object reference.",
+  "items": [
+    {
+      "name": "func autorelease() -> Unmanaged<Instance>",
+      "desc": "Performs an unbalanced autorelease of the object."
+    },
+    {
+      "name": "func release()",
+      "desc": "Performs an unbalanced release of the object."
+    },
+    {
+      "name": "func retain() -> Unmanaged<Instance>",
+      "desc": "Performs an unbalanced retain of the object."
+    },
+    {
+      "name": "func takeRetainedValue() -> Instance",
+      "desc": "Gets the value of this unmanaged reference as a managed reference and consumes an unbalanced retain of it."
+    },
+    {
+      "name": "func takeUnretainedValue() -> Instance",
+      "desc": "Gets the value of this unmanaged reference as a managed reference without consuming an unbalanced retain of it."
+    },
+    {
+      "name": "func toOpaque() -> UnsafeMutableRawPointer",
+      "desc": "Unsafely converts an unmanaged class reference to a pointer."
+    },
+    {
+      "name": "static func fromOpaque(UnsafeRawPointer) -> Unmanaged<Instance>",
+      "desc": "Unsafely turns an opaque C pointer into an unmanaged class reference."
+    },
+    {
+      "name": "static func passRetained(Instance) -> Unmanaged<Instance>",
+      "desc": "Creates an unmanaged reference with an unbalanced retain."
+    },
+    {
+      "name": "static func passUnretained(Instance) -> Unmanaged<Instance>",
+      "desc": "Creates an unmanaged reference without performing an unbalanced retain."
+    }
+  ],
+  "declaration": "@frozen struct Unmanaged<Instance> where Instance : AnyObject"
+}

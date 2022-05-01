@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/coremotion/cmaltimeter",
+  "type": "Class",
+  "name": "CMAltimeter",
+  "desc": "An object that initiates the delivery of altitude-related changes.",
+  "items": [
+    {
+      "name": "class func isAbsoluteAltitudeAvailable() -> Bool",
+      "desc": "Returns a Boolean value indicating whether the current device reports changes in the absolute altitude."
+    },
+    {
+      "name": "class func isRelativeAltitudeAvailable() -> Bool",
+      "desc": "Returns a Boolean value indicating whether the current device supports generating data for relative altitude changes."
+    },
+    {
+      "name": "class func authorizationStatus() -> CMAuthorizationStatus",
+      "desc": "Returns a value indicating whether the app is authorized to retrieve altimeter data."
+    },
+    {
+      "name": "enum CMAuthorizationStatus",
+      "desc": "The authorization status for motion-related features."
+    },
+    {
+      "name": "func startAbsoluteAltitudeUpdates(to: OperationQueue, withHandler: CMAbsoluteAltitudeHandler)",
+      "desc": "Starts the delivery of absolute altitude data to the specified handler."
+    },
+    {
+      "name": "func stopAbsoluteAltitudeUpdates()",
+      "desc": "Stops the delivery of absolute altitude data for this altimeter object."
+    },
+    {
+      "name": "typealias CMAbsoluteAltitudeHandler",
+      "desc": "A block for receiving absolute altitude data."
+    },
+    {
+      "name": "func startRelativeAltitudeUpdates(to: OperationQueue, withHandler: CMAltitudeHandler)",
+      "desc": "Starts the delivery of relative altitude data to the specified handler."
+    },
+    {
+      "name": "func stopRelativeAltitudeUpdates()",
+      "desc": "Stops the delivery of relative altitude data for the altimeter object."
+    },
+    {
+      "name": "typealias CMAltitudeHandler",
+      "desc": "A block for receiving relative altitude data."
+    }
+  ],
+  "declaration": "class CMAltimeter : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

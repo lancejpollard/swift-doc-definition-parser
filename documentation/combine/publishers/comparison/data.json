@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/combine/publishers/comparison",
+  "type": "Structure",
+  "name": "Publishers.Comparison",
+  "desc": "A publisher that republishes items from another publisher only if each new item is in increasing order from the previously-published item.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, areInIncreasingOrder: (Upstream.Output, Upstream.Output) -> Bool)",
+      "desc": "Creates a publisher that republishes items from another publisher only if each new item is in increasing order from the previously-published item."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives its elements."
+    },
+    {
+      "name": "let areInIncreasingOrder: (Upstream.Output, Upstream.Output) -> Bool",
+      "desc": "A closure that receives two elements and returns true if they are in increasing order."
+    }
+  ],
+  "declaration": "struct Comparison<Upstream> where Upstream : Publisher",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "path": "/documentation/uikit/uifocusenvironment",
+  "type": "Protocol",
+  "name": "UIFocusEnvironment",
+  "desc": "A set of methods that define the focus behavior for a branch of the view hierarchy.",
+  "items": [
+    {
+      "name": "func setNeedsFocusUpdate()",
+      "desc": "Submits a request to the focus engine for a focus update in this environment."
+    },
+    {
+      "name": "func updateFocusIfNeeded()",
+      "desc": "Tells the focus engine to force a focus update immediately."
+    },
+    {
+      "name": "func shouldUpdateFocus(in: UIFocusUpdateContext) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the focus engine should allow the focus update described by the specified context to occur."
+    },
+    {
+      "name": "func didUpdateFocus(in: UIFocusUpdateContext, with: UIFocusAnimationCoordinator)",
+      "desc": "Called immediately after the system updates the focus to a new view."
+    },
+    {
+      "name": "var preferredFocusEnvironments: [UIFocusEnvironment]",
+      "desc": "An array of focus environments, ordered by priority, to which this environment prefers focus to be directed during a focus update."
+    },
+    {
+      "name": "func soundIdentifierForFocusUpdate(in: UIFocusUpdateContext) -> UIFocusSoundIdentifier?",
+      "desc": "Asks the delegate for the identifier of the sound to play when the object gains focus."
+    },
+    {
+      "name": "struct UIFocusSoundIdentifier",
+      "desc": "An identifier for a focus-related sound."
+    },
+    {
+      "name": "func contains(UIFocusEnvironment) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the focus environment contains the specified environment."
+    },
+    {
+      "name": "var parentFocusEnvironment: UIFocusEnvironment?",
+      "desc": "The parent focus environment for this environment."
+    },
+    {
+      "name": "var focusItemContainer: UIFocusItemContainer?",
+      "desc": "The container for the child focus items in this focus environment."
+    },
+    {
+      "name": "var focusGroupIdentifier: String?"
+    }
+  ],
+  "declaration": "@MainActor protocol UIFocusEnvironment",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

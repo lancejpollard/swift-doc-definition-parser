@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/SwiftUI/Scene",
+  "type": "Protocol",
+  "name": "Scene",
+  "desc": "A part of an app’s user interface with a life cycle managed by the system.",
+  "items": [
+    {
+      "name": "var body: Self.Body",
+      "desc": "The content and behavior of the scene."
+    },
+    {
+      "name": "associatedtype Body : Scene",
+      "desc": "The type of scene that represents the body of this scene."
+    },
+    {
+      "name": "func onChange<V>(of: V, perform: (V) -> Void) -> some Scene",
+      "desc": "Adds an action to perform when the given value changes."
+    },
+    {
+      "name": "func handlesExternalEvents(matching: Set<String>) -> some Scene",
+      "desc": "Specifies a modifier to indicate if this Scene can be used when creating a new Scene for the received External Event."
+    },
+    {
+      "name": "func defaultAppStorage(UserDefaults) -> some Scene",
+      "desc": "The default store used by AppStorage contained within the scene and its view content."
+    },
+    {
+      "name": "func commands<Content>(content: () -> Content) -> some Scene",
+      "desc": "Adds commands to the scene."
+    },
+    {
+      "name": "func windowStyle<S>(S) -> some Scene",
+      "desc": "Sets the style for windows created by this scene."
+    },
+    {
+      "name": "func windowToolbarStyle<S>(S) -> some Scene",
+      "desc": "Sets the style for the toolbar defined within this scene."
+    }
+  ],
+  "declaration": "protocol Scene"
+}

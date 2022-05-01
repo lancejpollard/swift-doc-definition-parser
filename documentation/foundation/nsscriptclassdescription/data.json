@@ -1,0 +1,92 @@
+{
+  "path": "/documentation/foundation/nsscriptclassdescription",
+  "type": "Class",
+  "name": "NSScriptClassDescription",
+  "desc": "A scriptable class that a macOS app supports.",
+  "items": [
+    {
+      "name": "init?(suiteName: String, className: String, dictionary: [AnyHashable : Any]?)",
+      "desc": "Initializes and returns a newly allocated instance of NSScriptClassDescription."
+    },
+    {
+      "name": "init?(for: AnyClass)",
+      "desc": "Returns the class description for the specified class or, if it is not scriptable, for the first superclass that is."
+    },
+    {
+      "name": "func forKey(String) -> NSScriptClassDescription?",
+      "desc": "Returns the class description instance for the class type of the specified attribute or relationship."
+    },
+    {
+      "name": "var superclass: NSScriptClassDescription?",
+      "desc": "Returns the class description instance for the superclass of the receiver’s class."
+    },
+    {
+      "name": "var className: String?",
+      "desc": "Returns the name of the class the receiver describes, as provided at initialization time."
+    },
+    {
+      "name": "var defaultSubcontainerAttributeKey: String?",
+      "desc": "Returns the value of the DefaultSubcontainerAttribute entry of the class dictionary from which the receiver was instantiated."
+    },
+    {
+      "name": "var implementationClassName: String?",
+      "desc": "Returns the name of the Objective-C class instantiated to implement the scripting class."
+    },
+    {
+      "name": "func isLocationRequiredToCreate(forKey: String) -> Bool",
+      "desc": "Returns a Boolean value indicating whether an insertion location must be specified when creating a new object in the specified to-many relationship of the receiver."
+    },
+    {
+      "name": "var suiteName: String?",
+      "desc": "Returns the name of the receiver’s suite."
+    },
+    {
+      "name": "var appleEventCode: FourCharCode",
+      "desc": "Returns the Apple event code associated with the receiver’s class."
+    },
+    {
+      "name": "func appleEventCode(forKey: String) -> FourCharCode",
+      "desc": "Returns the Apple event code for the specified attribute or relationship in the receiver."
+    },
+    {
+      "name": "func matchesAppleEventCode(FourCharCode) -> Bool",
+      "desc": "Returns a Boolean value indicating whether a primary or secondary Apple event code in the receiver matches the passed code."
+    },
+    {
+      "name": "func hasOrderedToManyRelationship(forKey: String) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the described class has an ordered to-many relationship identified by the specified key."
+    },
+    {
+      "name": "func hasProperty(forKey: String) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the described class has a property identified by the specified key."
+    },
+    {
+      "name": "func hasReadableProperty(forKey: String) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the described class has a readable property identified by the specified key."
+    },
+    {
+      "name": "func hasWritableProperty(forKey: String) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the described class has a writable property identified by the specified key."
+    },
+    {
+      "name": "func key(withAppleEventCode: FourCharCode) -> String?",
+      "desc": "Given an Apple event code that identifies a property or element class, returns the key for the corresponding attribute, one-to-one relationship, or one-to-many relationship."
+    },
+    {
+      "name": "func type(forKey: String) -> String?",
+      "desc": "Returns the name of the declared type of the attribute or relationship identified by the passed key."
+    },
+    {
+      "name": "func selector(forCommand: NSScriptCommandDescription) -> Selector?",
+      "desc": "Returns the selector associated with the receiver for the specified command description."
+    },
+    {
+      "name": "func supportsCommand(NSScriptCommandDescription) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the receiver or any superclass supports the specified command."
+    }
+  ],
+  "declaration": "class NSScriptClassDescription : NSClassDescription",
+  "inheritsFrom": [
+    "NSClassDescription"
+  ]
+}

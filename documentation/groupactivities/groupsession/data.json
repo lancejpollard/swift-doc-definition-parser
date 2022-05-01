@@ -1,0 +1,86 @@
+{
+  "path": "/documentation/groupactivities/groupsession",
+  "type": "Class",
+  "name": "GroupSession",
+  "desc": "A session for an in-progress activity that synchronizes content among participant devices.",
+  "items": [
+    {
+      "name": "struct Sessions",
+      "desc": "An asynchronous sequence of sessions you use to manage a specific activity."
+    },
+    {
+      "name": "func join()",
+      "desc": "Starts the shared activity on the current device."
+    },
+    {
+      "name": "func leave()",
+      "desc": "Leaves the current activity and stops receiving synchronized data."
+    },
+    {
+      "name": "func end()",
+      "desc": "Ends the activity for the entire group and stops the transfer of synchronized data."
+    },
+    {
+      "name": "var activity: ActivityType",
+      "desc": "The current activity associated with the session."
+    },
+    {
+      "name": "var state: GroupSession<ActivityType>.State",
+      "desc": "The current state of the session."
+    },
+    {
+      "name": "enum State",
+      "desc": "The possible states of a session."
+    },
+    {
+      "name": "let id: UUID",
+      "desc": "The unique identifier of the current session."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual representation of this instance."
+    },
+    {
+      "name": "var localParticipant: Participant",
+      "desc": "The participant on the current device."
+    },
+    {
+      "name": "var activeParticipants: Set<Participant>",
+      "desc": "The set of participants currently engaged in the activity."
+    },
+    {
+      "name": "func requestForegroundPresentation()",
+      "desc": "Tells the system that your app needs to be in the foreground to continue an activity."
+    },
+    {
+      "name": "func showNotice(GroupSessionEvent)",
+      "desc": "Posts an event to the system, which displays the information in the system UI."
+    },
+    {
+      "name": "struct GroupSessionEvent",
+      "desc": "A session-related event that appears in the system UI."
+    },
+    {
+      "name": "var objectWillChange: ObservableObjectPublisher",
+      "desc": "A publisher that emits before the object has changed."
+    },
+    {
+      "name": "var $activeParticipants: Published<Set<Participant>>.Publisher"
+    },
+    {
+      "name": "var $activity: Published<ActivityType>.Publisher"
+    },
+    {
+      "name": "var $state: Published<GroupSession<ActivityType>.State>.Publisher"
+    },
+    {
+      "name": "typealias ObjectWillChangePublisher",
+      "desc": "The type of publisher that emits before the object has changed."
+    }
+  ],
+  "declaration": "final class GroupSession<ActivityType> where ActivityType : GroupActivity",
+  "conformsTo": [
+    "CustomStringConvertible",
+    "ObservableObject"
+  ]
+}

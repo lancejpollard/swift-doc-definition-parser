@@ -1,0 +1,31 @@
+{
+  "path": "/documentation/mailkit/memessageencodingresult",
+  "type": "Class",
+  "name": "MEMessageEncodingResult",
+  "desc": "An object that contains a signed or encrypted message, or errors that indicate failure to encode the message.",
+  "items": [
+    {
+      "name": "init(encodedMessage: MEEncodedOutgoingMessage?, signingError: Error?, encryptionError: Error?)",
+      "desc": "Creates an encoding result object with a signed or encrypted message, or errors if the message encoder fails to encode the message."
+    },
+    {
+      "name": "var encodedMessage: MEEncodedOutgoingMessage?",
+      "desc": "A signed or encrypted message, if the message security handler needs to encode the message."
+    },
+    {
+      "name": "var encryptionError: Error?",
+      "desc": "An error that occurred while the message encoder encrypted the message."
+    },
+    {
+      "name": "var signingError: Error?",
+      "desc": "An error that occurred while the message encoder signed the message."
+    }
+  ],
+  "declaration": "class MEMessageEncodingResult : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

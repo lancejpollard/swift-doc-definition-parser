@@ -1,0 +1,129 @@
+{
+  "path": "/documentation/fileprovider/nsfileprovidererror",
+  "type": "Structure",
+  "name": "NSFileProviderError",
+  "desc": "A structure that contains information about File Provider errors.",
+  "items": [
+    {
+      "name": "var errorCode: Int",
+      "desc": "A code that represents the error."
+    },
+    {
+      "name": "var code: Code",
+      "desc": "A code that represents the error."
+    },
+    {
+      "name": "static var errorDomain: String",
+      "desc": "A string that identifies the error domain."
+    },
+    {
+      "name": "var errorUserInfo: [String : Any]",
+      "desc": "A dictionary that contains additional information about the error."
+    },
+    {
+      "name": "var userInfo: [String : Any]",
+      "desc": "A dictionary that contains additional information about the error."
+    },
+    {
+      "name": "var localizedDescription: String",
+      "desc": "A string that contains the localized description of the error."
+    },
+    {
+      "name": "enum NSFileProviderError.Code",
+      "desc": "The error codes for the File Provider extension."
+    },
+    {
+      "name": "static var filenameCollision: NSFileProviderError.Code",
+      "desc": "An error indicating that an item with the same name already exists in the same directory."
+    },
+    {
+      "name": "static var insufficientQuota: NSFileProviderError.Code",
+      "desc": "An error indicating that the File Provider extension can’t upload the item because it would push the account over its quota."
+    },
+    {
+      "name": "static var noSuchItem: NSFileProviderError.Code",
+      "desc": "An error indicating that the specified item doesn’t exist."
+    },
+    {
+      "name": "static var notAuthenticated: NSFileProviderError.Code",
+      "desc": "An error indicating that you can’t verify the user’s credentials."
+    },
+    {
+      "name": "static var pageExpired: NSFileProviderError.Code",
+      "desc": "An error indicating that the page is too old, and that the system must restart the enumeration operation from the beginning."
+    },
+    {
+      "name": "static var serverUnreachable: NSFileProviderError.Code",
+      "desc": "An error indicating that the File Provider extension can’t reach the remote server."
+    },
+    {
+      "name": "static var syncAnchorExpired: NSFileProviderError.Code",
+      "desc": "An error indicating that the sync anchor is too old, and that the system must restart the sync operation from the beginning."
+    },
+    {
+      "name": "static var directoryNotEmpty: NSFileProviderError.Code",
+      "desc": "An error indicating an attempt to nonrecursively delete a directory that isn’t empty."
+    },
+    {
+      "name": "static var providerNotFound: NSFileProviderError.Code",
+      "desc": "An error indicating that the File Provider manager can’t find the specified provider."
+    },
+    {
+      "name": "static var providerTranslocated: NSFileProviderError.Code",
+      "desc": "An error indicating the File Provider extension is in a disabled state due to Gatekeeper’s restrictions for apps from outside the App Store."
+    },
+    {
+      "name": "static var olderExtensionVersionRunning: NSFileProviderError.Code",
+      "desc": "An error indicating that the registered provider in the system is an older version than the one the app uses."
+    },
+    {
+      "name": "static var newerExtensionVersionFound: NSFileProviderError.Code",
+      "desc": "An error indicating that the registered provider in the system is a newer version than the one the app uses."
+    },
+    {
+      "name": "static var nonEvictable: NSFileProviderError.Code",
+      "desc": "An error indicating that the File Provider extension can’t evict an item."
+    },
+    {
+      "name": "static var nonEvictableChildren: NSFileProviderError.Code",
+      "desc": "An error indicating that the File Provider extension can’t evict a directory because it contains nonevictable items."
+    },
+    {
+      "name": "static var unsyncedEdits: NSFileProviderError.Code",
+      "desc": "An error indicating that the item contains unsynced changes."
+    },
+    {
+      "name": "static var cannotSynchronize: NSFileProviderError.Code",
+      "desc": "An error indicating a failed sync attempt."
+    },
+    {
+      "name": "static var deletionRejected: NSFileProviderError.Code",
+      "desc": "An error indicating a failed deletion action."
+    },
+    {
+      "name": "static var versionNoLongerAvailable: NSFileProviderError.Code",
+      "desc": "An error that indicates whether the specified version is no longer available."
+    },
+    {
+      "name": "static func == (NSFileProviderError, NSFileProviderError) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two error values are equal."
+    },
+    {
+      "name": "static func != (NSFileProviderError, NSFileProviderError) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are unequal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of a value by feeding them to the specified hasher."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value for the instance."
+    },
+    {
+      "name": "init(Code, userInfo: [String : Any])",
+      "desc": "Returns an error object with the specified error code and user info dictionary."
+    }
+  ],
+  "declaration": "struct NSFileProviderError"
+}

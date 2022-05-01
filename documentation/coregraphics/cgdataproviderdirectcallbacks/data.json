@@ -1,0 +1,35 @@
+{
+  "path": "/documentation/coregraphics/cgdataproviderdirectcallbacks",
+  "type": "Structure",
+  "name": "CGDataProviderDirectCallbacks",
+  "desc": "Defines pointers to client-defined callback functions that manage the sending of data for a direct-access data provider.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(version: UInt32, getBytePointer: CGDataProviderGetBytePointerCallback?, releaseBytePointer: CGDataProviderReleaseBytePointerCallback?, getBytesAtPosition: CGDataProviderGetBytesAtPositionCallback?, releaseInfo: CGDataProviderReleaseInfoCallback?)"
+    },
+    {
+      "name": "var getBytePointer: CGDataProviderGetBytePointerCallback?",
+      "desc": "A pointer to a function that returns a pointer to the provider’s data. For more information, see CGDataProviderGetBytePointerCallback."
+    },
+    {
+      "name": "var getBytesAtPosition: CGDataProviderGetBytesAtPositionCallback?",
+      "desc": "A pointer to a function that copies data from the provider."
+    },
+    {
+      "name": "var releaseBytePointer: CGDataProviderReleaseBytePointerCallback?",
+      "desc": "A pointer to a function that Core Graphics calls to release a pointer to the provider’s data. For more information, see CGDataProviderReleaseBytePointerCallback."
+    },
+    {
+      "name": "var releaseInfo: CGDataProviderReleaseInfoCallback?",
+      "desc": "A pointer to a function that handles clean-up for the data provider, or NULL. For more information, see CGDataProviderReleaseInfoCallback."
+    },
+    {
+      "name": "var version: UInt32",
+      "desc": "The version of this structure. It should be set to 0."
+    }
+  ],
+  "declaration": "struct CGDataProviderDirectCallbacks"
+}

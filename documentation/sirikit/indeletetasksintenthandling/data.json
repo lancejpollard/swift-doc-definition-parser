@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/sirikit/indeletetasksintenthandling",
+  "type": "Protocol",
+  "name": "INDeleteTasksIntentHandling",
+  "desc": "An interface that handles requests to delete tasks from a task list.DeprecatedThis intent is no longer available. You may define a custom intent instead. For more information, see Deprecated SiriKit Intent Domains.",
+  "items": [
+    {
+      "name": "func resolveTaskList(for: INDeleteTasksIntent, with: (INDeleteTasksTaskListResolutionResult) -> Void)",
+      "desc": "Resolves the task list from which to delete tasks."
+    },
+    {
+      "name": "func resolveTasks(for: INDeleteTasksIntent, with: ([INDeleteTasksTaskResolutionResult]) -> Void)",
+      "desc": "Resolves the tasks to delete."
+    },
+    {
+      "name": "func confirm(intent: INDeleteTasksIntent, completion: (INDeleteTasksIntentResponse) -> Void)",
+      "desc": "Validates whether you can delete the task."
+    },
+    {
+      "name": "func handle(intent: INDeleteTasksIntent, completion: (INDeleteTasksIntentResponse) -> Void)",
+      "desc": "Handles deleting a task."
+    }
+  ],
+  "declaration": "protocol INDeleteTasksIntentHandling",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "path": "/documentation/foundation/stream",
+  "type": "Class",
+  "name": "Stream",
+  "desc": "An abstract class representing a stream.",
+  "items": [
+    {
+      "name": "func property(forKey: Stream.PropertyKey) -> Any?",
+      "desc": "Returns the receiver’s property for a given key."
+    },
+    {
+      "name": "func setProperty(Any?, forKey: Stream.PropertyKey) -> Bool",
+      "desc": "Attempts to set the value of a given property of the receiver and returns a Boolean value that indicates whether the value is accepted by the receiver."
+    },
+    {
+      "name": "var delegate: StreamDelegate?",
+      "desc": "Sets the receiver’s delegate."
+    },
+    {
+      "name": "func open()",
+      "desc": "Opens the receiving stream."
+    },
+    {
+      "name": "func close()",
+      "desc": "Closes the receiver."
+    },
+    {
+      "name": "func schedule(in: RunLoop, forMode: RunLoop.Mode)",
+      "desc": "Schedules the receiver on a given run loop in a given mode."
+    },
+    {
+      "name": "func remove(from: RunLoop, forMode: RunLoop.Mode)",
+      "desc": "Removes the receiver from a given run loop running in a given mode."
+    },
+    {
+      "name": "var streamStatus: Stream.Status",
+      "desc": "Returns the receiver’s status."
+    },
+    {
+      "name": "var streamError: Error?",
+      "desc": "Returns an NSError object representing the stream error."
+    },
+    {
+      "name": "enum Stream.Status",
+      "desc": "The type declared for the constants listed in Stream Status Constants."
+    },
+    {
+      "name": "struct Stream.Event",
+      "desc": "Describes the constants that may be sent to the delegate as a bit field in the second parameter of stream(_:handle:) to specify the kind of stream event."
+    },
+    {
+      "name": "struct StreamNetworkServiceTypeValue",
+      "desc": "NSStream defines these string constants for specifying the service type of a stream."
+    },
+    {
+      "name": "struct StreamSOCKSProxyConfiguration"
+    },
+    {
+      "name": "struct StreamSOCKSProxyVersion"
+    },
+    {
+      "name": "struct StreamSocketSecurityLevel",
+      "desc": "NSStream defines these string constants for specifying the secure-socket layer (SSL) security level."
+    },
+    {
+      "name": "struct Stream.PropertyKey",
+      "desc": "NSStream defines these string constants as keys for accessing stream properties using property(forKey:) and setting properties with setProperty(_:forKey:):"
+    },
+    {
+      "name": "let NSStreamSocketSSLErrorDomain: String",
+      "desc": "The error domain used by NSError when reporting SSL errors."
+    },
+    {
+      "name": "let NSStreamSOCKSErrorDomain: String",
+      "desc": "The error domain used by NSError when reporting SOCKS errors."
+    },
+    {
+      "name": "class func getBoundStreams(withBufferSize: Int, inputStream: AutoreleasingUnsafeMutablePointer<InputStream?>?, outputStream: AutoreleasingUnsafeMutablePointer<OutputStream?>?)",
+      "desc": "Creates and returns by reference a bound pair of input and output streams."
+    }
+  ],
+  "declaration": "class Stream : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

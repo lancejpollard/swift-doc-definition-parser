@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/createml/mltrainingsession",
+  "type": "Generic Class",
+  "name": "MLTrainingSession",
+  "desc": "The current state of a model’s asynchronous training session.",
+  "items": [
+    {
+      "name": "var phase: MLPhase",
+      "desc": "The training session’s current state."
+    },
+    {
+      "name": "enum MLPhase",
+      "desc": "The possible states of a training session."
+    },
+    {
+      "name": "var iteration: Int",
+      "desc": "The iteration number of a training session’s phase."
+    },
+    {
+      "name": "var checkpoints: [MLCheckpoint]",
+      "desc": "An array of checkpoints the training session has created so far."
+    },
+    {
+      "name": "func removeCheckpoints((MLCheckpoint) -> Bool)",
+      "desc": "Removes the checkpoints that satisfy your closure from the training session."
+    },
+    {
+      "name": "func reuseExtractedFeatures(from: MLTrainingSession<Task>)",
+      "desc": "Uses the features another session has already extracted from its dataset."
+    },
+    {
+      "name": "var date: Date",
+      "desc": "The time when you created this training session."
+    },
+    {
+      "name": "let parameters: MLTrainingSessionParameters",
+      "desc": "The parameters you used to create the training session."
+    }
+  ],
+  "declaration": "final class MLTrainingSession<Task>"
+}

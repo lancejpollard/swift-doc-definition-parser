@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/foundation/nsscriptsuiteregistry",
+  "type": "Class",
+  "name": "NSScriptSuiteRegistry",
+  "desc": "The top-level repository of scriptability information for an app at runtime.",
+  "items": [
+    {
+      "name": "class func setShared(NSScriptSuiteRegistry)",
+      "desc": "Sets the single, shared instance of NSScriptSuiteRegistry to registry."
+    },
+    {
+      "name": "class func shared() -> NSScriptSuiteRegistry",
+      "desc": "Returns the single, shared instance of NSScriptSuiteRegistry, creating it first if it doesn’t exist."
+    },
+    {
+      "name": "func suite(forAppleEventCode: FourCharCode) -> String?",
+      "desc": "Returns the name of the suite definition associated with the given four-character Apple event code, code."
+    },
+    {
+      "name": "var suiteNames: [String]",
+      "desc": "Returns the names of the suite definitions currently loaded by the application."
+    },
+    {
+      "name": "func classDescriptions(inSuite: String) -> [String : NSScriptClassDescription]?",
+      "desc": "Returns the class descriptions contained in the suite identified by suiteName."
+    },
+    {
+      "name": "func classDescription(withAppleEventCode: FourCharCode) -> NSScriptClassDescription?",
+      "desc": "Returns the class description associated with the given four-character Apple event code, code."
+    },
+    {
+      "name": "func register(NSScriptClassDescription)",
+      "desc": "Registers class description classDescription for use by Cocoa’s built-in scripting support by storing it in a per-suite internal dictionary under the class name."
+    },
+    {
+      "name": "func commandDescriptions(inSuite: String) -> [String : NSScriptCommandDescription]?",
+      "desc": "Returns the command descriptions contained in the suite identified by suiteName."
+    },
+    {
+      "name": "func commandDescription(withAppleEventClass: FourCharCode, andAppleEventCode: FourCharCode) -> NSScriptCommandDescription?",
+      "desc": "Returns the command description identified by a suite’s four-character Apple event code of the class (eventClass) and the four-character Apple event code of the command (commandCode)."
+    },
+    {
+      "name": "func register(NSScriptCommandDescription)",
+      "desc": "Registers command description commandDesc for use by Cocoa’s built-in scripting support by storing it in a per-suite internal dictionary under the command name."
+    },
+    {
+      "name": "func aeteResource(String) -> Data?",
+      "desc": "Returns an NSData object that contains data in 'aete' resource format describing the scriptability information currently known to the application."
+    },
+    {
+      "name": "func appleEventCode(forSuite: String) -> FourCharCode",
+      "desc": "Returns the Apple event code associated with the suite named suiteName, such as ‘core’ for the Core suite."
+    },
+    {
+      "name": "func bundle(forSuite: String) -> Bundle?",
+      "desc": "Returns the bundle containing the suite-definition property list (extension .scriptSuite) identified by suiteName."
+    },
+    {
+      "name": "func loadSuite(with: [AnyHashable : Any], from: Bundle)",
+      "desc": "Loads the suite definition encapsulated in dictionary; previously, this suite definition was parsed from a .scriptSuite property list contained in a framework or in bundle."
+    },
+    {
+      "name": "func loadSuites(from: Bundle)",
+      "desc": "Loads the suite definitions in bundle aBundle, invoking loadSuite(with:from:) for each suite found."
+    }
+  ],
+  "declaration": "class NSScriptSuiteRegistry : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "path": "/documentation/arkit/arscnview",
+  "type": "Class",
+  "name": "ARSCNView",
+  "desc": "A view that blends virtual 3D content from SceneKit into your augmented reality experience.",
+  "items": [
+    {
+      "name": "var session: ARSession",
+      "desc": "The AR session that manages motion tracking and camera image processing for the view's contents."
+    },
+    {
+      "name": "var scene: SCNScene",
+      "desc": "The SceneKit scene to be displayed in the view."
+    },
+    {
+      "name": "var delegate: ARSCNViewDelegate?",
+      "desc": "An object you provide to mediate synchronization of the view's AR scene information with SceneKit content."
+    },
+    {
+      "name": "protocol ARSCNViewDelegate",
+      "desc": "Methods you can implement to mediate the automatic synchronization of SceneKit content with an AR session."
+    },
+    {
+      "name": "func raycastQuery(from: CGPoint, allowing: ARRaycastQuery.Target, alignment: ARRaycastQuery.TargetAlignment) -> ARRaycastQuery?",
+      "desc": "Creates a raycast query that originates from a point on the view, aligned with the center of the camera's field of view."
+    },
+    {
+      "name": "func anchor(for: SCNNode) -> ARAnchor?",
+      "desc": "Returns the AR anchor associated with the specified SceneKit node, if any."
+    },
+    {
+      "name": "func node(for: ARAnchor) -> SCNNode?",
+      "desc": "Returns the SceneKit node associated with the specified AR anchor, if any."
+    },
+    {
+      "name": "func unprojectPoint(CGPoint, ontoPlane: simd_float4x4) -> simd_float3?",
+      "desc": "Returns the projection of a point from 2D view onto a plane in the 3D world space detected by ARKit."
+    },
+    {
+      "name": "var automaticallyUpdatesLighting: Bool",
+      "desc": "A Boolean value that specifies whether ARKit creates and updates SceneKit lights in the view's scene."
+    },
+    {
+      "name": "typealias ARSCNDebugOptions",
+      "desc": "Options for drawing overlay content to aid debugging of AR tracking in a SceneKit view."
+    },
+    {
+      "name": "var rendersMotionBlur: Bool",
+      "desc": "Determines whether the view renders motion blur."
+    },
+    {
+      "name": "var rendersCameraGrain: Bool",
+      "desc": "A flag that determines whether SceneKit applies image noise characteristics to your app's virtual content."
+    }
+  ],
+  "declaration": "class ARSCNView : SCNView",
+  "inheritsFrom": [
+    "SCNView"
+  ],
+  "conformsTo": [
+    "ARSessionProviding"
+  ]
+}

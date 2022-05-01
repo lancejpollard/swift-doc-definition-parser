@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/proximityreader/vasreadresult/readentry",
+  "type": "Structure",
+  "name": "VASReadResult.ReadEntry",
+  "desc": "An object containing encrypted data associated with a customer’s loyalty or reward pass.",
+  "items": [
+    {
+      "name": "let customerVASData: Data?",
+      "desc": "The encrypted content of the pass stored in Wallet, which contains the loyalty or reward pass identifier."
+    },
+    {
+      "name": "let status: VASReadResult.ReadEntry.Status",
+      "desc": "The status word that represents the outcome of the VAS read attempt for this reward pass."
+    },
+    {
+      "name": "enum Status",
+      "desc": "Status words that indicate the possible read outcomes."
+    },
+    {
+      "name": "let id: String",
+      "desc": "The identifier you used to retrieve the loyalty program information from Wallet."
+    },
+    {
+      "name": "typealias ID",
+      "desc": "A type representing the stable identity of the entity associated with an instance."
+    }
+  ],
+  "declaration": "struct ReadEntry",
+  "conformsTo": [
+    "Identifiable"
+  ]
+}

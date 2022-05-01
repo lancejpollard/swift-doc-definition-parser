@@ -1,0 +1,78 @@
+{
+  "path": "/documentation/createml/mlwordembedding",
+  "type": "Structure",
+  "name": "MLWordEmbedding",
+  "desc": "A map of strings in a vector space that enable your app to find similar strings by looking at a string’s neighbors.",
+  "items": [
+    {
+      "name": "init(dictionary: [String : [Double]], parameters: MLWordEmbedding.ModelParameters)",
+      "desc": "Creates a word embedding from a set of strings and their vectors provided with the given dictionary."
+    },
+    {
+      "name": "struct MLWordEmbedding.ModelParameters",
+      "desc": "Parameters that configure a word embedding."
+    },
+    {
+      "name": "let modelParameters: MLWordEmbedding.ModelParameters",
+      "desc": "The configuration parameters that the word embedding used during initialization."
+    },
+    {
+      "name": "func prediction(from: String, maxCount: Int, maxDistance: Double, distanceType: NLDistanceType) -> [(text: String, distance: Double)]",
+      "desc": "Requests an array of neighboring strings and their distances to the given string."
+    },
+    {
+      "name": "func distance(between: String, and: String, distanceType: NLDistanceType) -> Double",
+      "desc": "Requests the distance between two strings given a distance calculation method."
+    },
+    {
+      "name": "enum NLDistanceType",
+      "desc": "The means of calculating a distance between two locations in a text embedding."
+    },
+    {
+      "name": "func contains(String) -> Bool",
+      "desc": "Queries whether the given string is in the vocabulary."
+    },
+    {
+      "name": "func vector(for: String) -> [Double]?",
+      "desc": "Retrieves the vector of the string."
+    },
+    {
+      "name": "func write(to: URL, metadata: MLModelMetadata?)",
+      "desc": "Exports the word embedding contained within a Core ML model file at the given URL."
+    },
+    {
+      "name": "func write(toFile: String, metadata: MLModelMetadata?)",
+      "desc": "Exports the word embedding contained within a Core ML model file at the given file path."
+    },
+    {
+      "name": "let dimension: Int",
+      "desc": "The number of dimensions in the vocabulary’s vector space."
+    },
+    {
+      "name": "let vocabularySize: Int",
+      "desc": "The number of strings in the vocabulary."
+    },
+    {
+      "name": "var model: MLModel",
+      "desc": "The word embedding contained within a Core ML model file stored in memory."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the word embedding."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the word embedding that’s suitable for output during debugging."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the word embedding shown in a playground."
+    }
+  ],
+  "declaration": "struct MLWordEmbedding",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomStringConvertible"
+  ]
+}

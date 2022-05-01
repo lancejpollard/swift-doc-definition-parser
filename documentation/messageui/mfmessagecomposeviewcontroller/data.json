@@ -1,0 +1,84 @@
+{
+  "path": "/documentation/messageui/mfmessagecomposeviewcontroller",
+  "type": "Class",
+  "name": "MFMessageComposeViewController",
+  "desc": "A standard view controller whose interface lets the user compose and send SMS or MMS messages.",
+  "items": [
+    {
+      "name": "var messageComposeDelegate: MFMessageComposeViewControllerDelegate?",
+      "desc": "The delegate to which message-related notifications should be sent."
+    },
+    {
+      "name": "protocol MFMessageComposeViewControllerDelegate",
+      "desc": "An interface for responding to user interactions with a message compose view controller."
+    },
+    {
+      "name": "class func canSendText() -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the current device is capable of sending text messages."
+    },
+    {
+      "name": "class func canSendAttachments() -> Bool",
+      "desc": "Indicates whether or not messages can include attachments."
+    },
+    {
+      "name": "class func canSendSubject() -> Bool",
+      "desc": "Indicates whether or not messages can include subject lines, according to the user’s configuration in Settings."
+    },
+    {
+      "name": "class func isSupportedAttachmentUTI(String) -> Bool",
+      "desc": "Indicates whether or not the message can accept a file, with the specified UTI, as an attachment."
+    },
+    {
+      "name": "var recipients: [String]?",
+      "desc": "An array of strings that contains the initial recipients of the message."
+    },
+    {
+      "name": "var subject: String?",
+      "desc": "The initial subject of the message."
+    },
+    {
+      "name": "var body: String?",
+      "desc": "The initial content of the message."
+    },
+    {
+      "name": "var message: MSMessage?",
+      "desc": "A message object from your iMessage app extension."
+    },
+    {
+      "name": "func disableUserAttachments()",
+      "desc": "Disables the camera/attachment button in the message composition view."
+    },
+    {
+      "name": "var attachments: [[AnyHashable : Any]]?",
+      "desc": "Returns an array of dictionaries that describe the properties of an attachment."
+    },
+    {
+      "name": "func addAttachmentURL(URL, withAlternateFilename: String?) -> Bool",
+      "desc": "Attaches a specified file to the message."
+    },
+    {
+      "name": "func addAttachmentData(Data, typeIdentifier: String, filename: String) -> Bool",
+      "desc": "Attaches arbitrary content to the message."
+    },
+    {
+      "name": "let MFMessageComposeViewControllerAttachmentURL: String",
+      "desc": "The URL for the item that is attached to the message."
+    },
+    {
+      "name": "let MFMessageComposeViewControllerAttachmentAlternateFilename: String",
+      "desc": "The key for the alternate filename for the file-based item attached to the message."
+    },
+    {
+      "name": "static let MFMessageComposeViewControllerTextMessageAvailabilityDidChange: NSNotification.Name",
+      "desc": "Posted when the value returned by the canSendText() class method has changed."
+    },
+    {
+      "name": "let MFMessageComposeViewControllerTextMessageAvailabilityKey: String",
+      "desc": "The value of this key is a number object that contains a Boolean value."
+    }
+  ],
+  "declaration": "class MFMessageComposeViewController : UINavigationController",
+  "inheritsFrom": [
+    "UINavigationController"
+  ]
+}

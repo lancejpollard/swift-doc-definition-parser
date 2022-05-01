@@ -1,0 +1,392 @@
+{
+  "path": "/documentation/createml/mldatacolumn",
+  "type": "Generic Structure",
+  "name": "MLDataColumn",
+  "desc": "A column of typed values in a data table.",
+  "items": [
+    {
+      "name": "init(repeating: Element, count: Int)",
+      "desc": "Creates a new column with a repeating element."
+    },
+    {
+      "name": "init<S>(S)",
+      "desc": "Creates a new column from a given sequence of elements."
+    },
+    {
+      "name": "func map<T>(to: T.Type) -> MLDataColumn<T>",
+      "desc": "Creates a new column by converting this column to the given type."
+    },
+    {
+      "name": "init<T>(column: MLDataColumn<T>)",
+      "desc": "Creates a new column of integers from a given column whose elements can be converted to integers."
+    },
+    {
+      "name": "init<T>(column: MLDataColumn<T>)",
+      "desc": "Creates a new column of arrays of integers from a given column whose elements can be converted to an array of integers."
+    },
+    {
+      "name": "init<T>(column: MLDataColumn<T>)",
+      "desc": "Creates a new column of doubles from a given column whose elements can be converted to doubles."
+    },
+    {
+      "name": "init<T>(column: MLDataColumn<T>)",
+      "desc": "Creates a new column of arrays of doubles from a given column whose elements can be converted to an array of doubles."
+    },
+    {
+      "name": "init<T>(column: MLDataColumn<T>)",
+      "desc": "Creates a new column of strings from a given column whose elements can be converted to strings."
+    },
+    {
+      "name": "init<T>(column: MLDataColumn<T>)",
+      "desc": "Creates a new column of arrays of strings from a given column whose elements can be converted to an array of strings."
+    },
+    {
+      "name": "init<T>(column: MLDataColumn<T>)",
+      "desc": "Creates a new column of machine learning sequences from a given column whose elements can be converted to sequences."
+    },
+    {
+      "name": "init<T>(column: MLDataColumn<T>)",
+      "desc": "Creates a new column of machine learning dictionaries from a given column whose elements can be converted to dictionaries."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of elements in the column."
+    },
+    {
+      "name": "subscript(Int) -> Element",
+      "desc": "Accesses the element at the given row."
+    },
+    {
+      "name": "func element(at: Int) -> Element?",
+      "desc": "Accesses the element at the given index."
+    },
+    {
+      "name": "func append(contentsOf: MLDataColumn<Element>)",
+      "desc": "Appends the elements of the given column to the end of this column."
+    },
+    {
+      "name": "func copy() -> MLDataColumn<Element>"
+    },
+    {
+      "name": "func sort(byIncreasingOrder: Bool) -> MLDataColumn<Element>"
+    },
+    {
+      "name": "func map<T>((Element) -> T) -> MLDataColumn<T>",
+      "desc": "Creates a new column by applying the given thread-safe transform to every non-missing element of this column."
+    },
+    {
+      "name": "func map<T>((Element) -> T?) -> MLDataColumn<T>",
+      "desc": "Creates a new column, potentially with missing values, by applying the given thread-safe transform to every non-missing element of this column."
+    },
+    {
+      "name": "func mapMissing<T>((Element?) -> T?) -> MLDataColumn<T>",
+      "desc": "Creates a new column, potentially with missing elements, by applying the given thread-safe transform to every element of the column, including missing elements."
+    },
+    {
+      "name": "subscript(MLDataColumn<Bool>) -> MLDataColumn<Element>",
+      "desc": "Creates a subset of the column by masking its elements with a column of Booleans."
+    },
+    {
+      "name": "func dropMissing() -> MLDataColumn<Element>",
+      "desc": "Creates a subset of the column by removing all elements without a value."
+    },
+    {
+      "name": "func dropDuplicates() -> MLDataColumn<Element>",
+      "desc": "Creates a subset of the column by removing all duplicate elements."
+    },
+    {
+      "name": "subscript(Range<Int>) -> MLDataColumn<Element>",
+      "desc": "Creates a subset of the column, given a range of elements."
+    },
+    {
+      "name": "subscript<R>(R) -> MLDataColumn<Element>",
+      "desc": "Creates a subset of the column, given a range expression of elements."
+    },
+    {
+      "name": "func prefix(Int) -> MLDataColumn<Element>",
+      "desc": "Creates a subset of the column, given a number of initial elements."
+    },
+    {
+      "name": "func suffix(Int) -> MLDataColumn<Element>",
+      "desc": "Creates a subset of the column, given a number of final elements."
+    },
+    {
+      "name": "func fillMissing(with: Element) -> MLDataColumn<Element>",
+      "desc": "Creates a modified copy of the column such that every missing element is replaced with the given value."
+    },
+    {
+      "name": "func materialize() -> MLDataColumn<Element>",
+      "desc": "Creates a new column by immediately evaluating any lazily applied data processing operations stored in the column."
+    },
+    {
+      "name": "static func + (MLDataColumn<Int>, MLDataColumn<Int>) -> MLDataColumn<Int>",
+      "desc": "Creates a column of integers by adding each element in the first column to the corresponding element in the second column."
+    },
+    {
+      "name": "static func + (MLDataColumn<Double>, MLDataColumn<Double>) -> MLDataColumn<Double>",
+      "desc": "Creates a column of doubles by adding each element in the first column to the corresponding element in the second column."
+    },
+    {
+      "name": "static func - (MLDataColumn<Int>, MLDataColumn<Int>) -> MLDataColumn<Int>",
+      "desc": "Creates a column of integers by subtracting each element in the second column from the corresponding element in the first column."
+    },
+    {
+      "name": "static func - (MLDataColumn<Double>, MLDataColumn<Double>) -> MLDataColumn<Double>",
+      "desc": "Creates a column of doubles by subtracting each element in the second column from the corresponding element in the first column."
+    },
+    {
+      "name": "static func * (MLDataColumn<Int>, MLDataColumn<Int>) -> MLDataColumn<Int>",
+      "desc": "Creates a column of integers by multiplying each element in the first column by the corresponding element in the second column."
+    },
+    {
+      "name": "static func * (MLDataColumn<Double>, MLDataColumn<Double>) -> MLDataColumn<Double>",
+      "desc": "Creates a column of doubles by multiplying each element in the first column by the corresponding element in the second column."
+    },
+    {
+      "name": "static func / (MLDataColumn<Int>, MLDataColumn<Int>) -> MLDataColumn<Int>",
+      "desc": "Creates a column of integers by dividing each element in the first column by the corresponding element in the second column."
+    },
+    {
+      "name": "static func / (MLDataColumn<Double>, MLDataColumn<Double>) -> MLDataColumn<Double>",
+      "desc": "Creates a column of doubles by dividing each element in the first column by the corresponding element in the second column."
+    },
+    {
+      "name": "static func + (MLDataColumn<Int>, Int) -> MLDataColumn<Int>",
+      "desc": "Creates a column of integers by adding each element of the given column to the given integer."
+    },
+    {
+      "name": "static func + (MLDataColumn<Double>, Double) -> MLDataColumn<Double>",
+      "desc": "Creates a column of doubles by adding each element of the given column to the given double."
+    },
+    {
+      "name": "static func - (MLDataColumn<Int>, Int) -> MLDataColumn<Int>",
+      "desc": "Creates a column of integers by subtracting the given integer from each element of the given column."
+    },
+    {
+      "name": "static func - (MLDataColumn<Double>, Double) -> MLDataColumn<Double>",
+      "desc": "Creates a column of doubles by subtracting the given double from each element of the given column."
+    },
+    {
+      "name": "static func * (MLDataColumn<Int>, Int) -> MLDataColumn<Int>",
+      "desc": "Creates a column of integers by multiplying each element of the given column by the given integer."
+    },
+    {
+      "name": "static func * (MLDataColumn<Double>, Double) -> MLDataColumn<Double>",
+      "desc": "Creates a column of doubles by multiplying each element of the given column by the given double."
+    },
+    {
+      "name": "static func / (MLDataColumn<Int>, Int) -> MLDataColumn<Int>",
+      "desc": "Creates a column of integers by dividing each element of the given column by the given integer."
+    },
+    {
+      "name": "static func / (MLDataColumn<Double>, Double) -> MLDataColumn<Double>",
+      "desc": "Creates a column of doubles by dividing each element of the given column by the given double."
+    },
+    {
+      "name": "static func + (Int, MLDataColumn<Int>) -> MLDataColumn<Int>",
+      "desc": "Creates a column of integers by adding the given integer to each element of the given column."
+    },
+    {
+      "name": "static func + (Double, MLDataColumn<Double>) -> MLDataColumn<Double>",
+      "desc": "Creates a column of doubles by adding the given double to each element of the given column."
+    },
+    {
+      "name": "static func - (Int, MLDataColumn<Int>) -> MLDataColumn<Int>",
+      "desc": "Creates a column of integers by subtracting each element of the given column from the given integer."
+    },
+    {
+      "name": "static func - (Double, MLDataColumn<Double>) -> MLDataColumn<Double>",
+      "desc": "Creates a column of doubles by subtracting each element of the given column from the given double."
+    },
+    {
+      "name": "static func * (Int, MLDataColumn<Int>) -> MLDataColumn<Int>",
+      "desc": "Creates a column of integers by multiplying the given integer by each element of the given column."
+    },
+    {
+      "name": "static func * (Double, MLDataColumn<Double>) -> MLDataColumn<Double>",
+      "desc": "Creates a column of doubles by multiplying the given double by each element of the given column."
+    },
+    {
+      "name": "static func / (Int, MLDataColumn<Int>) -> MLDataColumn<Int>",
+      "desc": "Creates a column of integers by dividing the given integer by each element of the given column."
+    },
+    {
+      "name": "static func / (Double, MLDataColumn<Double>) -> MLDataColumn<Double>",
+      "desc": "Creates a column of doubles by dividing the given double by each element of the given column."
+    },
+    {
+      "name": "static func == (MLDataColumn<Element>, MLDataColumn<Element>) -> MLDataColumn<Bool>",
+      "desc": "Creates a column of Booleans by testing whether each element in the first column is equal to the corresponding element in the second column."
+    },
+    {
+      "name": "static func != (MLDataColumn<Element>, MLDataColumn<Element>) -> MLDataColumn<Bool>",
+      "desc": "Creates a column of Booleans by testing whether each element in the first column is not equal to the corresponding element in the second column."
+    },
+    {
+      "name": "static func < (MLDataColumn<Element>, MLDataColumn<Element>) -> MLDataColumn<Bool>",
+      "desc": "Creates a column of Booleans by testing whether each element in the first column is less than the corresponding element in the second column."
+    },
+    {
+      "name": "static func <= (MLDataColumn<Element>, MLDataColumn<Element>) -> MLDataColumn<Bool>",
+      "desc": "Creates a column of Booleans by testing whether each element in the first column is less than or equal to the corresponding element in the second column."
+    },
+    {
+      "name": "static func > (MLDataColumn<Element>, MLDataColumn<Element>) -> MLDataColumn<Bool>",
+      "desc": "Creates a column of Booleans by testing whether each element in the first column is greater than the corresponding element in the second column."
+    },
+    {
+      "name": "static func >= (MLDataColumn<Element>, MLDataColumn<Element>) -> MLDataColumn<Bool>",
+      "desc": "Creates a column of Booleans by testing whether each element in the first column is greater than or equal to the corresponding element in the second column."
+    },
+    {
+      "name": "static func == (MLDataColumn<Element>, Element) -> MLDataColumn<Bool>",
+      "desc": "Creates a column of Booleans by testing whether each element in the given column is equal to the given value."
+    },
+    {
+      "name": "static func != (MLDataColumn<Element>, Element) -> MLDataColumn<Bool>",
+      "desc": "Creates a column of Booleans by testing whether each element in the given column is not equal to the given value."
+    },
+    {
+      "name": "static func < (MLDataColumn<Element>, Element) -> MLDataColumn<Bool>",
+      "desc": "Creates a column of Booleans by testing whether each element in the given column is less than the given value."
+    },
+    {
+      "name": "static func <= (MLDataColumn<Element>, Element) -> MLDataColumn<Bool>",
+      "desc": "Creates a column of Booleans by testing whether each element in the given column is less than or equal to the given value."
+    },
+    {
+      "name": "static func > (MLDataColumn<Element>, Element) -> MLDataColumn<Bool>",
+      "desc": "Creates a column of Booleans by testing whether each element in the given column is greater than the given value."
+    },
+    {
+      "name": "static func >= (MLDataColumn<Element>, Element) -> MLDataColumn<Bool>",
+      "desc": "Creates a column of Booleans by testing whether each element in the given column is greater than or equal to the given value."
+    },
+    {
+      "name": "static func == (Element, MLDataColumn<Element>) -> MLDataColumn<Bool>",
+      "desc": "Creates a column of Booleans by testing whether the given value is equal to each element in the given column."
+    },
+    {
+      "name": "static func != (Element, MLDataColumn<Element>) -> MLDataColumn<Bool>",
+      "desc": "Creates a column of Booleans by testing whether the given value is not equal to each element in the given column."
+    },
+    {
+      "name": "static func < (Element, MLDataColumn<Element>) -> MLDataColumn<Bool>",
+      "desc": "Creates a column of Booleans by testing whether the given value is less than each element in the given column."
+    },
+    {
+      "name": "static func <= (Element, MLDataColumn<Element>) -> MLDataColumn<Bool>",
+      "desc": "Creates a column of Booleans by testing whether the given value is less than or equal to each element in the given column."
+    },
+    {
+      "name": "static func > (Element, MLDataColumn<Element>) -> MLDataColumn<Bool>",
+      "desc": "Creates a column of Booleans by testing whether the given value is greater than each element in the given column."
+    },
+    {
+      "name": "static func >= (Element, MLDataColumn<Element>) -> MLDataColumn<Bool>",
+      "desc": "Creates a column of Booleans by testing whether the given value is greater than or equal to each element in the given column."
+    },
+    {
+      "name": "static func && (MLDataColumn<Bool>, MLDataColumn<Bool>) -> MLDataColumn<Bool>",
+      "desc": "Creates a column of Booleans by performing a logical AND operation on each element in the first column with the corresponding element in the second column."
+    },
+    {
+      "name": "static func || (MLDataColumn<Bool>, MLDataColumn<Bool>) -> MLDataColumn<Bool>",
+      "desc": "Creates a column of Booleans by performing a logical OR operation on each element in the first column with the corresponding element in the second column."
+    },
+    {
+      "name": "func min() -> Int?",
+      "desc": "Returns the element with the lowest value in a column of integers."
+    },
+    {
+      "name": "func min() -> Double?",
+      "desc": "Returns the element with the lowest value in a column of doubles."
+    },
+    {
+      "name": "func max() -> Int?",
+      "desc": "Returns the element with the highest value in a column of integers."
+    },
+    {
+      "name": "func max() -> Double?",
+      "desc": "Returns the element with the highest value in a column of doubles."
+    },
+    {
+      "name": "func sum() -> Int?",
+      "desc": "Returns the sum of the elements in a column of integers."
+    },
+    {
+      "name": "func sum() -> Double?",
+      "desc": "Returns the sum of the elements in a column of doubles."
+    },
+    {
+      "name": "func mean() -> Double?",
+      "desc": "Returns the arithmetic mean of the elements in a column of integers."
+    },
+    {
+      "name": "func mean() -> Double?",
+      "desc": "Returns the arithmetic mean of the elements in a column of doubles."
+    },
+    {
+      "name": "func std() -> Double?",
+      "desc": "Returns the standard deviation of the elements in a column of integers."
+    },
+    {
+      "name": "func stdev() -> Double?",
+      "desc": "Returns the standard deviation of the elements in a column of doubles."
+    },
+    {
+      "name": "func std() -> Double?",
+      "desc": "Returns the standard deviation of the elements in a column of doubles."
+    },
+    {
+      "name": "func show() -> MLStreamingVisualizable",
+      "desc": "Provides a visualization for the data in the column."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the column."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the column shown in a playground."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the column for debugging."
+    },
+    {
+      "name": "var isValid: Bool",
+      "desc": "A Boolean value that indicates whether the column is valid."
+    },
+    {
+      "name": "var error: Error?",
+      "desc": "The underlying error present when the column is invalid."
+    },
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(repeating: MLDataValue, count: Int)"
+    },
+    {
+      "name": "var customMirror: Mirror"
+    },
+    {
+      "name": "var isEmpty: Bool"
+    },
+    {
+      "name": "func stdev() -> Double?",
+      "desc": "Available when Element is Int."
+    },
+    {
+      "name": "subscript(MLUntypedColumn) -> MLDataColumn<Element>"
+    }
+  ],
+  "declaration": "struct MLDataColumn<Element> where Element : MLDataValueConvertible",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible"
+  ]
+}

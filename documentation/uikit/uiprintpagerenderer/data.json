@@ -1,0 +1,74 @@
+{
+  "path": "/documentation/uikit/uiprintpagerenderer",
+  "type": "Class",
+  "name": "UIPrintPageRenderer",
+  "desc": "An object that draws pages of content that are to be printed, with or without the assistance of print formatters.",
+  "items": [
+    {
+      "name": "var numberOfPages: Int",
+      "desc": "The number of pages to render."
+    },
+    {
+      "name": "var paperRect: CGRect",
+      "desc": "The size of the paper used for printing."
+    },
+    {
+      "name": "var printableRect: CGRect",
+      "desc": "The area in which printing can occur."
+    },
+    {
+      "name": "var headerHeight: CGFloat",
+      "desc": "The height of the page header."
+    },
+    {
+      "name": "var footerHeight: CGFloat",
+      "desc": "The height of the page footer."
+    },
+    {
+      "name": "func addPrintFormatter(UIPrintFormatter, startingAtPageAt: Int)",
+      "desc": "Adds a print formatter to the page renderer starting at the specified page."
+    },
+    {
+      "name": "func printFormattersForPage(at: Int) -> [UIPrintFormatter]?",
+      "desc": "Returns the print formatters associated with a specified page."
+    },
+    {
+      "name": "var printFormatters: [UIPrintFormatter]?",
+      "desc": "The print formatters associated with the page renderer."
+    },
+    {
+      "name": "func prepare(forDrawingPages: NSRange)",
+      "desc": "Overridden by the page renderer to prepare for drawing a range of pages."
+    },
+    {
+      "name": "func drawPage(at: Int, in: CGRect)",
+      "desc": "Overridden to draw a given page of content for the printer."
+    },
+    {
+      "name": "func drawHeaderForPage(at: Int, in: CGRect)",
+      "desc": "Overridden to draw the header of the given page."
+    },
+    {
+      "name": "func drawContentForPage(at: Int, in: CGRect)",
+      "desc": "Overridden to draw the content of the given page."
+    },
+    {
+      "name": "func drawPrintFormatter(UIPrintFormatter, forPageAt: Int)",
+      "desc": "Overridden to add custom drawing to the drawing provided by a given print formatter for a page."
+    },
+    {
+      "name": "func drawFooterForPage(at: Int, in: CGRect)",
+      "desc": "Overridden to draw the footer of the given page."
+    },
+    {
+      "name": "func currentRenderingQuality(forRequested: UIPrintRenderingQuality) -> UIPrintRenderingQuality"
+    },
+    {
+      "name": "enum UIPrintRenderingQuality"
+    }
+  ],
+  "declaration": "@MainActor class UIPrintPageRenderer : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

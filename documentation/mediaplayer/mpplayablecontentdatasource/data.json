@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/mediaplayer/mpplayablecontentdatasource",
+  "type": "Protocol",
+  "name": "MPPlayableContentDataSource",
+  "desc": "The data source providing media metadata to external media players so they can build user interfaces displaying your app’s content.",
+  "items": [
+    {
+      "name": "func contentItem(at: IndexPath) -> MPContentItem?",
+      "desc": "Retrieves the media item at the specified index."
+    },
+    {
+      "name": "func contentItem(forIdentifier: String, completionHandler: (MPContentItem?, Error?) -> Void)",
+      "desc": "Retrieves the content item associated with the provided identifier."
+    },
+    {
+      "name": "func beginLoadingChildItems(at: IndexPath, completionHandler: (Error?) -> Void)",
+      "desc": "Starts to load the children of the indicated index."
+    },
+    {
+      "name": "func childItemsDisplayPlaybackProgress(at: IndexPath) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the provided content supports playback progress."
+    },
+    {
+      "name": "func numberOfChildItems(at: IndexPath) -> Int",
+      "desc": "Provides the number of child nodes for the indicated node."
+    }
+  ],
+  "declaration": "protocol MPPlayableContentDataSource",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

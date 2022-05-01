@@ -1,0 +1,170 @@
+{
+  "path": "/documentation/uikit/uicontrol",
+  "type": "Class",
+  "name": "UIControl",
+  "desc": "The base class for controls, which are visual elements that convey a specific action or intention in response to user interactions.",
+  "items": [
+    {
+      "name": "var state: UIControl.State",
+      "desc": "The state of the control, specified as a bit mask value."
+    },
+    {
+      "name": "var isEnabled: Bool",
+      "desc": "A Boolean value indicating whether the control is in the enabled state."
+    },
+    {
+      "name": "var isSelected: Bool",
+      "desc": "A Boolean value indicating whether the control is in the selected state."
+    },
+    {
+      "name": "var isHighlighted: Bool",
+      "desc": "A Boolean value indicating whether the control draws a highlight."
+    },
+    {
+      "name": "var contentVerticalAlignment: UIControl.ContentVerticalAlignment",
+      "desc": "The vertical alignment of content within the control’s bounds."
+    },
+    {
+      "name": "enum UIControl.ContentVerticalAlignment",
+      "desc": "Constants for specifying the vertical alignment of content (text and images) in a control."
+    },
+    {
+      "name": "var contentHorizontalAlignment: UIControl.ContentHorizontalAlignment",
+      "desc": "The horizontal alignment of content within the control’s bounds."
+    },
+    {
+      "name": "var effectiveContentHorizontalAlignment: UIControl.ContentHorizontalAlignment",
+      "desc": "The horizontal alignment currently in effect for the control."
+    },
+    {
+      "name": "enum UIControl.ContentHorizontalAlignment",
+      "desc": "The horizontal alignment of content (text and images) within a control."
+    },
+    {
+      "name": "func addTarget(Any?, action: Selector, for: UIControl.Event)",
+      "desc": "Associates a target object and action method with the control."
+    },
+    {
+      "name": "func removeTarget(Any?, action: Selector?, for: UIControl.Event)",
+      "desc": "Stops the delivery of events to the specified target object."
+    },
+    {
+      "name": "func actions(forTarget: Any?, forControlEvent: UIControl.Event) -> [String]?",
+      "desc": "Returns the actions performed on a target object when the specified event occurs."
+    },
+    {
+      "name": "var allControlEvents: UIControl.Event",
+      "desc": "Returns the events for which the control has associated actions."
+    },
+    {
+      "name": "var allTargets: Set<AnyHashable>",
+      "desc": "Returns all target objects associated with the control."
+    },
+    {
+      "name": "func sendAction(Selector, to: Any?, for: UIEvent?)",
+      "desc": "Calls the specified action method."
+    },
+    {
+      "name": "func sendActions(for: UIControl.Event)",
+      "desc": "Calls the action methods associated with the specified events."
+    },
+    {
+      "name": "func beginTracking(UITouch, with: UIEvent?) -> Bool",
+      "desc": "Called when a touch event enters the control’s bounds."
+    },
+    {
+      "name": "func continueTracking(UITouch, with: UIEvent?) -> Bool",
+      "desc": "Called when a touch event for the control updates."
+    },
+    {
+      "name": "func endTracking(UITouch?, with: UIEvent?)",
+      "desc": "Called when a touch event associated with the control ends."
+    },
+    {
+      "name": "func cancelTracking(with: UIEvent?)",
+      "desc": "Tells the control to cancel tracking related to the specified event."
+    },
+    {
+      "name": "var isTracking: Bool",
+      "desc": "A Boolean value indicating whether the control is currently tracking touch events."
+    },
+    {
+      "name": "var isTouchInside: Bool",
+      "desc": "A Boolean value indicating whether a tracked touch event is currently inside the control’s bounds."
+    },
+    {
+      "name": "struct UIControl.Event",
+      "desc": "Constants describing the types of events possible for controls."
+    },
+    {
+      "name": "struct UIControl.State",
+      "desc": "Constants describing the state of a control."
+    },
+    {
+      "name": "func addAction(UIAction, for: UIControl.Event)"
+    },
+    {
+      "name": "func contextMenuInteraction(UIContextMenuInteraction, configurationForMenuAtLocation: CGPoint) -> UIContextMenuConfiguration?"
+    },
+    {
+      "name": "func contextMenuInteraction(UIContextMenuInteraction, previewForDismissingMenuWithConfiguration: UIContextMenuConfiguration) -> UITargetedPreview?"
+    },
+    {
+      "name": "func contextMenuInteraction(UIContextMenuInteraction, previewForHighlightingMenuWithConfiguration: UIContextMenuConfiguration) -> UITargetedPreview?"
+    },
+    {
+      "name": "func contextMenuInteraction(UIContextMenuInteraction, willDisplayMenuFor: UIContextMenuConfiguration, animator: UIContextMenuInteractionAnimating?)"
+    },
+    {
+      "name": "func contextMenuInteraction(UIContextMenuInteraction, willEndFor: UIContextMenuConfiguration, animator: UIContextMenuInteractionAnimating?)"
+    },
+    {
+      "name": "func enumerateEventHandlers((UIAction?, (Any?, Selector)?, UIControl.Event, inout Bool) -> Void)"
+    },
+    {
+      "name": "func menuAttachmentPoint(for: UIContextMenuConfiguration) -> CGPoint"
+    },
+    {
+      "name": "func removeAction(UIAction, for: UIControl.Event)"
+    },
+    {
+      "name": "func removeAction(identifiedBy: UIAction.Identifier, for: UIControl.Event)"
+    },
+    {
+      "name": "func sendAction(UIAction)"
+    },
+    {
+      "name": "var contextMenuInteraction: UIContextMenuInteraction?"
+    },
+    {
+      "name": "var isContextMenuInteractionEnabled: Bool"
+    },
+    {
+      "name": "var showsMenuAsPrimaryAction: Bool"
+    },
+    {
+      "name": "var toolTip: String?",
+      "desc": "The default text to display in the control’s tooltip."
+    },
+    {
+      "name": "var toolTipInteraction: UIToolTipInteraction?",
+      "desc": "The tooltip interaction associated with the control."
+    },
+    {
+      "name": "init?(coder: NSCoder)"
+    },
+    {
+      "name": "init(frame: CGRect)"
+    },
+    {
+      "name": "init(frame: CGRect, primaryAction: UIAction?)"
+    }
+  ],
+  "declaration": "@MainActor class UIControl : UIView",
+  "inheritsFrom": [
+    "UIView"
+  ],
+  "conformsTo": [
+    "UIContextMenuInteractionDelegate"
+  ]
+}

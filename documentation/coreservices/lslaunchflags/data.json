@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/coreservices/lslaunchflags",
+  "type": "Structure",
+  "name": "LSLaunchFlags",
+  "desc": "The specification for launching an app.",
+  "items": [
+    {
+      "name": "init(rawValue: OptionBits)"
+    },
+    {
+      "name": "static var defaults: LSLaunchFlags",
+      "desc": "Requests launching in the default manner (as if the only flags set were kLSLaunchNoParams, kLSLaunchAsync, and kLSLaunchStartClassic)."
+    },
+    {
+      "name": "static var andPrint: LSLaunchFlags",
+      "desc": "Requests that documents opened in the application be printed."
+    },
+    {
+      "name": "static var andDisplayErrors: LSLaunchFlags",
+      "desc": "Requests that launch and open failures be displayed in the UI."
+    },
+    {
+      "name": "static var dontAddToRecents: LSLaunchFlags",
+      "desc": "Requests that the application or documents not be added to the Finder’s Recent Items menu."
+    },
+    {
+      "name": "static var dontSwitch: LSLaunchFlags",
+      "desc": "Requests that the application be launched without being brought to the foreground."
+    },
+    {
+      "name": "static var async: LSLaunchFlags",
+      "desc": "Requests that the application be launched asynchronously."
+    },
+    {
+      "name": "static var newInstance: LSLaunchFlags",
+      "desc": "Requests that a new instance of the application be started, even if one is already running."
+    },
+    {
+      "name": "static var andHide: LSLaunchFlags",
+      "desc": "Requests that the application be hidden as soon as it completes its launch sequence."
+    },
+    {
+      "name": "static var andHideOthers: LSLaunchFlags",
+      "desc": "Requests that other applications be hidden as soon as the opened application completes its launch sequence."
+    }
+  ],
+  "declaration": "struct LSLaunchFlags, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

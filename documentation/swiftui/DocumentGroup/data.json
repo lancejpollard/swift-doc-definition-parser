@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/swiftui/documentgroup",
+  "type": "Structure",
+  "name": "DocumentGroup",
+  "desc": "A scene that enables support for opening, creating, and saving documents.",
+  "items": [
+    {
+      "name": "init(newDocument: () -> Document, editor: (FileDocumentConfiguration<Document>) -> Content)",
+      "desc": "Creates a document group for creating and editing file documents."
+    },
+    {
+      "name": "init(viewing: Document.Type, viewer: (FileDocumentConfiguration<Document>) -> Content)",
+      "desc": "Creates a document group capable of viewing file documents."
+    },
+    {
+      "name": "init(newDocument: () -> Document, editor: (ReferenceFileDocumentConfiguration<Document>) -> Content)",
+      "desc": "Creates a document group that is able to create and edit reference file documents."
+    },
+    {
+      "name": "init(viewing: Document.Type, viewer: (ReferenceFileDocumentConfiguration<Document>) -> Content)",
+      "desc": "Creates a document group that is able to view reference file documents."
+    },
+    {
+      "name": "var body: some Scene",
+      "desc": "The content and behavior of the scene."
+    },
+    {
+      "name": "typealias Body",
+      "desc": "The type of scene that represents the body of this scene."
+    }
+  ],
+  "declaration": "struct DocumentGroup<Document, Content> where Content : View",
+  "conformsTo": [
+    "Scene"
+  ]
+}

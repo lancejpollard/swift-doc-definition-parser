@@ -1,0 +1,75 @@
+{
+  "path": "/documentation/appkit/nstouchbar",
+  "type": "Class",
+  "name": "NSTouchBar",
+  "desc": "An object that provides dynamic contextual controls in the Touch Bar of supported models of MacBook Pro.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a Touch Bar object."
+    },
+    {
+      "name": "init?(coder: NSCoder)",
+      "desc": "Creates a Touch Bar object from a coder object provided by a storyboard or NIB file."
+    },
+    {
+      "name": "var delegate: NSTouchBarDelegate?",
+      "desc": "The delegate that provides items to the Touch Bar."
+    },
+    {
+      "name": "var templateItems: Set<NSTouchBarItem>",
+      "desc": "The primary source of items that the Touch Bar uses to fill its private items array, unless you provide items using a delegate."
+    },
+    {
+      "name": "var defaultItemIdentifiers: [NSTouchBarItem.Identifier]",
+      "desc": "A required list of identifiers for items that you want to appear in the Touch Bar after instantiating it."
+    },
+    {
+      "name": "var principalItemIdentifier: NSTouchBarItem.Identifier?",
+      "desc": "The identifier of an item you want the system to center in the Touch Bar."
+    },
+    {
+      "name": "var escapeKeyReplacementItemIdentifier: NSTouchBarItem.Identifier?",
+      "desc": "The identifier of an item that replaces the system-provided button in the Touch Bar."
+    },
+    {
+      "name": "var isVisible: Bool",
+      "desc": "A Boolean value that Indicates whether the Touch Bar is eligible for display."
+    },
+    {
+      "name": "var itemIdentifiers: [NSTouchBarItem.Identifier]",
+      "desc": "The list of identifiers for the current items in the Touch Bar."
+    },
+    {
+      "name": "func item(forIdentifier: NSTouchBarItem.Identifier) -> NSTouchBarItem?",
+      "desc": "Returns the Touch Bar item that corresponds to a given identifier."
+    },
+    {
+      "name": "var customizationIdentifier: NSTouchBar.CustomizationIdentifier?",
+      "desc": "A globally unique string that makes the Touch Bar eligible for user customization."
+    },
+    {
+      "name": "var customizationAllowedItemIdentifiers: [NSTouchBarItem.Identifier]",
+      "desc": "A list of identifiers for items to show in the Touch Bar’s customization UI."
+    },
+    {
+      "name": "var customizationRequiredItemIdentifiers: [NSTouchBarItem.Identifier]",
+      "desc": "An optional list of identifiers for items you want to always appear in the Touch Bar and which the user can’t remove during customization."
+    },
+    {
+      "name": "typealias NSTouchBar.CustomizationIdentifier",
+      "desc": "The default type for a Touch Bar customization identifier."
+    },
+    {
+      "name": "class var isAutomaticCustomizeTouchBarMenuItemEnabled: Bool",
+      "desc": "A Boolean value indicating whether the main menu contains an item for customizing the contents of the Touch Bar."
+    }
+  ],
+  "declaration": "@MainActor class NSTouchBar : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding"
+  ]
+}

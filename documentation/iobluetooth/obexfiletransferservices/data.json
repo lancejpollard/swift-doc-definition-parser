@@ -1,0 +1,91 @@
+{
+  "path": "/documentation/iobluetooth/obexfiletransferservices",
+  "type": "Class",
+  "name": "OBEXFileTransferServices",
+  "desc": "Implements advanced OBEX operations in addition to simple PUT and GET.",
+  "items": [
+    {
+      "name": "init!(obexSession: IOBluetoothOBEXSession!)",
+      "desc": "Create a new OBEXFileTransferServices object"
+    },
+    {
+      "name": "var delegate: AnyObject!"
+    },
+    {
+      "name": "func abort() -> OBEXError",
+      "desc": "Abort the current operation"
+    },
+    {
+      "name": "func changeCurrentFolderBackward() -> OBEXError",
+      "desc": "Change to the directory above the current level if not at the root"
+    },
+    {
+      "name": "func changeCurrentFolderForward(toPath: String!) -> OBEXError",
+      "desc": "Change the remote path"
+    },
+    {
+      "name": "func changeCurrentFolderToRoot() -> OBEXError",
+      "desc": "Asynchronously change to the remote root directory"
+    },
+    {
+      "name": "func connectToFTPService() -> OBEXError",
+      "desc": "Connect to a remote device for FTP operations"
+    },
+    {
+      "name": "func connectToObjectPushService() -> OBEXError",
+      "desc": "Connect to a remote device for ObjectPush operations. Most of the FTP functionality of this object will be disabled."
+    },
+    {
+      "name": "func copyRemoteFile(String!, toLocalPath: String!) -> OBEXError",
+      "desc": "Copy a remote file to a local path"
+    },
+    {
+      "name": "func createFolder(String!) -> OBEXError",
+      "desc": "Create a folder on the remote target"
+    },
+    {
+      "name": "func currentPath() -> String!",
+      "desc": "Get the remote current directory path during an FTP session"
+    },
+    {
+      "name": "func disconnect() -> OBEXError",
+      "desc": "Disconnect from the remote device"
+    },
+    {
+      "name": "func getDefaultVCard(String!) -> OBEXError",
+      "desc": "Get the remote default VCard, if it is supported"
+    },
+    {
+      "name": "func isBusy() -> Bool",
+      "desc": "Get the action state of the module"
+    },
+    {
+      "name": "func isConnected() -> Bool",
+      "desc": "Get the connected state of this module."
+    },
+    {
+      "name": "func removeItem(String!) -> OBEXError",
+      "desc": "Remove a remote item."
+    },
+    {
+      "name": "func retrieveFolderListing() -> OBEXError",
+      "desc": "Get a remote directory listing"
+    },
+    {
+      "name": "func send(Data!, type: String!, name: String!) -> OBEXError",
+      "desc": "Send data to a remote target"
+    },
+    {
+      "name": "func sendFile(String!) -> OBEXError",
+      "desc": "Put a local file to the remote target"
+    },
+    {
+      "name": "class func withOBEXSession(IOBluetoothOBEXSession!) -> Self!",
+      "desc": "Create a new OBEXFileTransferServices object"
+    }
+  ],
+  "declaration": "class OBEXFileTransferServices : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

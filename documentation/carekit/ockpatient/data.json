@@ -1,0 +1,122 @@
+{
+  "path": "/documentation/carekit/ockpatient",
+  "type": "Structure",
+  "name": "OCKPatient",
+  "desc": "A patient object that represents the user of your application.",
+  "items": [
+    {
+      "name": "init(id: String, givenName: String, familyName: String)",
+      "desc": "Creates a new patient with an identifier, first name, and last name."
+    },
+    {
+      "name": "init(id: String, name: PersonNameComponents)",
+      "desc": "Creates a new patient with an identifier and a name."
+    },
+    {
+      "name": "var allergies: [String]?",
+      "desc": "An array of substances to which a specific patient is allergic."
+    },
+    {
+      "name": "var birthday: Date?",
+      "desc": "The patient’s birthday, which is used to compute their age."
+    },
+    {
+      "name": "var age: Int?",
+      "desc": "The age of the patient, which is based on their birthday."
+    },
+    {
+      "name": "var name: PersonNameComponents",
+      "desc": "The patient’s entire name."
+    },
+    {
+      "name": "var sex: OCKBiologicalSex?",
+      "desc": "The patient’s biological gender."
+    },
+    {
+      "name": "enum OCKBiologicalSex",
+      "desc": "A set of cases that represent the biological gender of the patient."
+    },
+    {
+      "name": "var createdDate: Date? { get }",
+      "desc": "The date the database first persisted the object."
+    },
+    {
+      "name": "var updatedDate: Date? { get }",
+      "desc": "The most recent date when the store updated the object."
+    },
+    {
+      "name": "var groupIdentifier: String?",
+      "desc": "A user-defined group identifier that can be used both for querying and sorting results."
+    },
+    {
+      "name": "var tags: [String]?",
+      "desc": "An array of user-defined tags that can be used to sort or classify objects or values."
+    },
+    {
+      "name": "var localDatabaseID: OCKLocalVersionID? { get }",
+      "desc": "A unique identifier used by the local database."
+    },
+    {
+      "name": "var remoteID: String?",
+      "desc": "A string value that represents a unique identifier, which a remote database uses optionally."
+    },
+    {
+      "name": "var userInfo: [String : String]?",
+      "desc": "A dictionary of information that can be provided by developers to support their own unique use cases."
+    },
+    {
+      "name": "var source: String?",
+      "desc": "A string that specifies from where this object originated."
+    },
+    {
+      "name": "var asset: String?",
+      "desc": "A string that specifies the location of some asset associated with this object."
+    },
+    {
+      "name": "var notes: [OCKNote]?",
+      "desc": "An array of notes associated with this object."
+    },
+    {
+      "name": "var schemaVersion: OCKSemanticVersion? { get }",
+      "desc": "The semantic version of the database schema when you create this object."
+    },
+    {
+      "name": "var timezone: TimeZone",
+      "desc": "The time zone in which this record was created in."
+    },
+    {
+      "name": "let id: String",
+      "desc": "A human-readable unique identifier that is never shown to a user."
+    },
+    {
+      "name": "var previousVersionID: OCKLocalVersionID? { get }",
+      "desc": "A database-generated identifier that uniquely identifies the previous version of this object or value."
+    },
+    {
+      "name": "var nextVersionID: OCKLocalVersionID? { get }",
+      "desc": "A database-generated identifier that uniquely identifies the next version of this object or value."
+    },
+    {
+      "name": "var effectiveDate: Date",
+      "desc": "The date when the current version of the object begins to take precedence over the previous version."
+    },
+    {
+      "name": "var deletedDate: Date? { get }",
+      "desc": "The date when this object was marked deleted from the store."
+    },
+    {
+      "name": "var id: ObjectIdentifier"
+    },
+    {
+      "name": "static func != (OCKPatient, OCKPatient) -> Bool"
+    }
+  ],
+  "declaration": "struct OCKPatient : Codable, Equatable, Identifiable, OCKAnyPatient, OCKVersionedObjectCompatible",
+  "conformsTo": [
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "Identifiable",
+    "OCKAnyPatient"
+  ]
+}

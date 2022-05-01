@@ -1,0 +1,69 @@
+{
+  "path": "/documentation/xctest/xctissue",
+  "type": "Structure",
+  "name": "XCTIssue",
+  "desc": "An object that represents a test failure, and includes source code call stacks for test reporting and investigation.",
+  "items": [
+    {
+      "name": "init(type: XCTIssue.IssueType, compactDescription: String, detailedDescription: String?, sourceCodeContext: XCTSourceCodeContext, associatedError: Error?, attachments: [XCTAttachment])",
+      "desc": "Creates an issue for a test failure, with descriptions, source code location, error, and attachments."
+    },
+    {
+      "name": "typealias XCTIssue.IssueType",
+      "desc": "Constants that indicate types of test failures, such as assertion failures, performance regressions, or thrown errors."
+    },
+    {
+      "name": "var type: XCTIssue.IssueType",
+      "desc": "A value for classifying an issue that occurs during testing."
+    },
+    {
+      "name": "var compactDescription: String",
+      "desc": "A concise description of the issue with no transient data, suitable for use in test run summaries and results aggregation across multiple test runs."
+    },
+    {
+      "name": "var detailedDescription: String?",
+      "desc": "A detailed description of the issue that may include transient data, such as numbers, object identifiers, and timestamps, to help diagnose the issue."
+    },
+    {
+      "name": "var sourceCodeContext: XCTSourceCodeContext",
+      "desc": "The source code location for the issue, including the filename, line number, and call stack."
+    },
+    {
+      "name": "var associatedError: Error?",
+      "desc": "An optional error to associate with a test issue."
+    },
+    {
+      "name": "var attachments: [XCTAttachment]",
+      "desc": "An array of data that augments an issue, such as files, images, screenshots, data blobs, or ZIP files."
+    },
+    {
+      "name": "func add(XCTAttachment)",
+      "desc": "Adds supporting data to an issue."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A string description of the issue."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the issue by feeding them into the specified hasher."
+    },
+    {
+      "name": "static func != (XCTIssue, XCTIssue) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two issue instances are unequal."
+    },
+    {
+      "name": "static func == (XCTIssue, XCTIssue) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two issue instances are equal."
+    }
+  ],
+  "declaration": "struct XCTIssue",
+  "conformsTo": [
+    "CustomStringConvertible",
+    "Hashable"
+  ]
+}

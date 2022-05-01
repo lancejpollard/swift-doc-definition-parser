@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/sirikit/ingetcarpowerlevelstatusintenthandling",
+  "type": "Protocol",
+  "name": "INGetCarPowerLevelStatusIntentHandling",
+  "desc": "The handler interface for requesting a car’s current power level.",
+  "items": [
+    {
+      "name": "func resolveCarName(for: INGetCarPowerLevelStatusIntent, with: (INSpeakableStringResolutionResult) -> Void)",
+      "desc": "Resolves the name of the user’s car."
+    },
+    {
+      "name": "func confirm(intent: INGetCarPowerLevelStatusIntent, completion: (INGetCarPowerLevelStatusIntentResponse) -> Void)",
+      "desc": "Confirms that you can access the car’s power level."
+    },
+    {
+      "name": "func handle(intent: INGetCarPowerLevelStatusIntent, completion: (INGetCarPowerLevelStatusIntentResponse) -> Void)",
+      "desc": "Accesses and returns the car’s current power level status."
+    },
+    {
+      "name": "func startSendingUpdates(for: INGetCarPowerLevelStatusIntent, to: INGetCarPowerLevelStatusIntentResponseObserver)",
+      "desc": "Starts the delivery of regular power level updates for a particular electric vehicle."
+    },
+    {
+      "name": "func stopSendingUpdates(for: INGetCarPowerLevelStatusIntent)",
+      "desc": "Stops the delivery of regular power level updates for a particular electric vehicle."
+    }
+  ],
+  "declaration": "protocol INGetCarPowerLevelStatusIntentHandling",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

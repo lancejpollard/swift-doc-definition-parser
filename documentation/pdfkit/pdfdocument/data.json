@@ -1,0 +1,90 @@
+{
+  "path": "/documentation/pdfkit/pdfdocument",
+  "type": "Class",
+  "name": "PDFDocument",
+  "desc": "An object that represents PDF data or a PDF file and defines methods for writing, searching, and selecting PDF data.",
+  "items": [
+    {
+      "name": "init?(url: URL)",
+      "desc": "Initializes a PDFDocument object with the contents at the specified URL (if the URL is invalid, this method returns NULL)."
+    },
+    {
+      "name": "init?(data: Data)",
+      "desc": "Initializes a PDFDocument object with the passed-in data."
+    },
+    {
+      "name": "init()",
+      "desc": "Initializes a PDFDocument object."
+    },
+    {
+      "name": "var delegate: PDFDocumentDelegate?",
+      "desc": "The object acting as the delegate for the PDFDocument object."
+    },
+    {
+      "name": "protocol PDFDocumentDelegate",
+      "desc": "The delegate for the PDFDocument object."
+    },
+    {
+      "name": "enum PDFDocumentPermissions",
+      "desc": "An enumeration that specifies document permissions status."
+    },
+    {
+      "name": "struct PDFDocumentAttribute",
+      "desc": "A structure that specifies document attributes."
+    },
+    {
+      "name": "struct PDFDocumentWriteOption",
+      "desc": "A structure that specifies file writing options for a document."
+    },
+    {
+      "name": "static let PDFDocumentDidUnlock: NSNotification.Name",
+      "desc": "A notification that a document unlocks after a unlock(withPassword:) message."
+    },
+    {
+      "name": "static let PDFDocumentDidBeginFind: NSNotification.Name",
+      "desc": "A notification that the beginFindString(_:withOptions:) or findString(_:withOptions:) method begins finding."
+    },
+    {
+      "name": "static let PDFDocumentDidEndFind: NSNotification.Name",
+      "desc": "A notification that the beginFindString(_:withOptions:) or findString(_:withOptions:) method returns."
+    },
+    {
+      "name": "static let PDFDocumentDidBeginPageFind: NSNotification.Name",
+      "desc": "A notification that a find operation begins working on a new page of a document."
+    },
+    {
+      "name": "static let PDFDocumentDidEndPageFind: NSNotification.Name",
+      "desc": "A notification that a find operation finishes working on a page in a document."
+    },
+    {
+      "name": "static let PDFDocumentDidFindMatch: NSNotification.Name",
+      "desc": "A notification that a string match is found in a document."
+    },
+    {
+      "name": "static let PDFDocumentDidBeginWrite: NSNotification.Name",
+      "desc": "A notification that a write operation begins working on a document."
+    },
+    {
+      "name": "static let PDFDocumentDidEndWrite: NSNotification.Name",
+      "desc": "A notification that a write operation finishes working on a document."
+    },
+    {
+      "name": "static let PDFDocumentDidBeginPageWrite: NSNotification.Name",
+      "desc": "A notification that a write operation begins working on a page in a document."
+    },
+    {
+      "name": "static let PDFDocumentDidEndPageWrite: NSNotification.Name",
+      "desc": "A notification that a write operation finishes working on a page in a document."
+    },
+    {
+      "name": "var accessPermissions: PDFAccessPermissions"
+    }
+  ],
+  "declaration": "class PDFDocument : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

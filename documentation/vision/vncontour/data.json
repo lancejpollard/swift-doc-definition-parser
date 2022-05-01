@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/vision/vncontour",
+  "type": "Class",
+  "name": "VNContour",
+  "desc": "A class that represents a detected contour in an image.",
+  "items": [
+    {
+      "name": "var aspectRatio: Float",
+      "desc": "The aspect ratio of the contour."
+    },
+    {
+      "name": "var indexPath: IndexPath",
+      "desc": "The contour object’s index path."
+    },
+    {
+      "name": "var normalizedPath: CGPath",
+      "desc": "The contour object as a path in normalized coordinates."
+    },
+    {
+      "name": "var pointCount: Int",
+      "desc": "The contour’s number of points."
+    },
+    {
+      "name": "var normalizedPoints: [simd_float2]",
+      "desc": "The contour’s array of points in normalized coordinates."
+    },
+    {
+      "name": "func polygonApproximation(epsilon: Float) -> VNContour",
+      "desc": "Simplifies the contour to a polygon using a Ramer-Douglas-Peucker algorithm."
+    },
+    {
+      "name": "var childContourCount: Int",
+      "desc": "The total number of detected child contours."
+    },
+    {
+      "name": "var childContours: [VNContour]",
+      "desc": "An array of contours that this contour encloses."
+    },
+    {
+      "name": "func childContour(at: Int) -> VNContour",
+      "desc": "Retrieves the child contour object at the specified index."
+    }
+  ],
+  "declaration": "class VNContour : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "VNRequestRevisionProviding"
+  ]
+}

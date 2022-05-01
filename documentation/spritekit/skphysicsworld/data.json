@@ -1,0 +1,67 @@
+{
+  "path": "/documentation/spritekit/skphysicsworld",
+  "type": "Class",
+  "name": "SKPhysicsWorld",
+  "desc": "The driver of the physics engine in a scene; it exposes the ability for you to configure and query the physics system.",
+  "items": [
+    {
+      "name": "var gravity: CGVector",
+      "desc": "A vector that specifies the gravitational acceleration applied to physics bodies in the physics world."
+    },
+    {
+      "name": "var speed: CGFloat",
+      "desc": "The rate at which the simulation executes."
+    },
+    {
+      "name": "func add(SKPhysicsJoint)",
+      "desc": "Adds a joint to the physics world."
+    },
+    {
+      "name": "func removeAllJoints()",
+      "desc": "Removes all joints from the physics world."
+    },
+    {
+      "name": "func remove(SKPhysicsJoint)",
+      "desc": "Removes a specific joint from the physics world."
+    },
+    {
+      "name": "var contactDelegate: SKPhysicsContactDelegate?",
+      "desc": "A delegate that is called when two physics bodies come in contact with each other."
+    },
+    {
+      "name": "func body(alongRayStart: CGPoint, end: CGPoint) -> SKPhysicsBody?",
+      "desc": "Searches for the first physics body that intersects a ray."
+    },
+    {
+      "name": "func body(at: CGPoint) -> SKPhysicsBody?",
+      "desc": "Searches for the first physics body that contains a point."
+    },
+    {
+      "name": "func body(in: CGRect) -> SKPhysicsBody?",
+      "desc": "Searches for the first physics body that intersects the specified rectangle."
+    },
+    {
+      "name": "func enumerateBodies(alongRayStart: CGPoint, end: CGPoint, using: (SKPhysicsBody, CGPoint, CGVector, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Enumerates all the physics bodies in the scene that intersect a ray."
+    },
+    {
+      "name": "func enumerateBodies(at: CGPoint, using: (SKPhysicsBody, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Enumerates all the physics bodies in the scene that contain a point."
+    },
+    {
+      "name": "func enumerateBodies(in: CGRect, using: (SKPhysicsBody, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Enumerates all the physics bodies in the scene that intersect the specified rectangle."
+    },
+    {
+      "name": "func sampleFields(at: vector_float3) -> vector_float3",
+      "desc": "Samples all of the field nodes in the scene and returns the summation of their forces at that point."
+    }
+  ],
+  "declaration": "class SKPhysicsWorld : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

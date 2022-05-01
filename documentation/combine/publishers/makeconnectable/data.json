@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/combine/publishers/makeconnectable",
+  "type": "Structure",
+  "name": "Publishers.MakeConnectable",
+  "desc": "A publisher that provides explicit connectability to another publisher.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream)",
+      "desc": "Creates a connectable publisher, attached to the provide upstream publisher."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "func connect() -> Cancellable",
+      "desc": "Connects to the publisher, allowing it to produce elements, and returns an instance with which to cancel publishing."
+    },
+    {
+      "name": "func autoconnect() -> Publishers.Autoconnect<Self>",
+      "desc": "Automates the process of connecting or disconnecting from this connectable publisher."
+    }
+  ],
+  "declaration": "struct MakeConnectable<Upstream> where Upstream : Publisher",
+  "conformsTo": [
+    "ConnectablePublisher",
+    "Publisher"
+  ]
+}

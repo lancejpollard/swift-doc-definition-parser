@@ -1,0 +1,104 @@
+{
+  "path": "/documentation/gamekit/gkgamesession",
+  "type": "Class",
+  "name": "GKGameSession",
+  "desc": "A game session you can use to save game data, invite other players, and create turn-based and real-time game apps.",
+  "items": [
+    {
+      "name": "class func createSession(inContainer: String?, withTitle: String, maxConnectedPlayers: Int, completionHandler: (GKGameSession?, Error?) -> Void)",
+      "desc": "Creates a new game session inside of an iCloud container."
+    },
+    {
+      "name": "class func load(withIdentifier: String, completionHandler: (GKGameSession?, Error?) -> Void)",
+      "desc": "Loads a specific game session."
+    },
+    {
+      "name": "class func loadSessions(inContainer: String?, completionHandler: ([GKGameSession]?, Error?) -> Void)",
+      "desc": "Retrieves all of the game sessions associated with a container."
+    },
+    {
+      "name": "class func remove(withIdentifier: String, completionHandler: (Error?) -> Void)",
+      "desc": "Removes the specified game session."
+    },
+    {
+      "name": "var identifier: String",
+      "desc": "A unique identifier for a game session."
+    },
+    {
+      "name": "var lastModifiedDate: Date",
+      "desc": "The date that the game session was last modified."
+    },
+    {
+      "name": "var lastModifiedPlayer: GKCloudPlayer",
+      "desc": "The last player to modify the game session."
+    },
+    {
+      "name": "var maxNumberOfConnectedPlayers: Int",
+      "desc": "The maximum number of players allowed to connect to the game session at the same time."
+    },
+    {
+      "name": "var owner: GKCloudPlayer",
+      "desc": "A player object that represents the owner of the game session."
+    },
+    {
+      "name": "var players: [GKCloudPlayer]",
+      "desc": "An array of player objects associated with the game session."
+    },
+    {
+      "name": "var title: String",
+      "desc": "The title of the game session."
+    },
+    {
+      "name": "func getShareURL(completionHandler: (URL?, Error?) -> Void)",
+      "desc": "Retrieves the URL used to share a game session."
+    },
+    {
+      "name": "func loadData(completionHandler: (Data?, Error?) -> Void)",
+      "desc": "Retrieves the game data from the current game session."
+    },
+    {
+      "name": "func save(Data, completionHandler: (Data?, Error?) -> Void)",
+      "desc": "Saves the current game session data."
+    },
+    {
+      "name": "class func add(listener: GKGameSessionEventListener)",
+      "desc": "Adds a new event listener object."
+    },
+    {
+      "name": "class func remove(listener: GKGameSessionEventListener)",
+      "desc": "Stops listening to the event listener object."
+    },
+    {
+      "name": "func setConnectionState(GKConnectionState, completionHandler: (Error?) -> Void)",
+      "desc": "Sets the connection state for the player."
+    },
+    {
+      "name": "func players(with: GKConnectionState) -> [GKCloudPlayer]",
+      "desc": "Retrieves a list of players with the specified connection state."
+    },
+    {
+      "name": "func send(Data, with: GKTransportType, completionHandler: (Error?) -> Void)",
+      "desc": "Sends the indicated data to all connected players."
+    },
+    {
+      "name": "enum GKTransportType",
+      "desc": "The mechanism used to send messages to other players in a game session."
+    },
+    {
+      "name": "var badgedPlayers: [GKCloudPlayer]",
+      "desc": "An array containing all of the currently badged players."
+    },
+    {
+      "name": "func clearBadge(for: [GKCloudPlayer], completionHandler: (Error?) -> Void)",
+      "desc": "Clears the badge from the designated players."
+    },
+    {
+      "name": "func sendMessage(withLocalizedFormatKey: String, arguments: [String], data: Data?, to: [GKCloudPlayer], badgePlayers: Bool, completionHandler: (Error?) -> Void)",
+      "desc": "Sends a message to players in a game session."
+    }
+  ],
+  "declaration": "class GKGameSession : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

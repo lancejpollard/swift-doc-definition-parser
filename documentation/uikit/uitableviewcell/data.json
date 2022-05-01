@@ -1,0 +1,211 @@
+{
+  "path": "/documentation/uikit/uitableviewcell",
+  "type": "Class",
+  "name": "UITableViewCell",
+  "desc": "The visual representation of a single row in a table view.",
+  "items": [
+    {
+      "name": "init(style: UITableViewCell.CellStyle, reuseIdentifier: String?)",
+      "desc": "Initializes a table cell with a style and a reuse identifier and returns it to the caller."
+    },
+    {
+      "name": "enum UITableViewCell.CellStyle",
+      "desc": "An enumeration for the various styles of cells."
+    },
+    {
+      "name": "init?(coder: NSCoder)"
+    },
+    {
+      "name": "var reuseIdentifier: String?",
+      "desc": "A string used to identify a cell that is reusable."
+    },
+    {
+      "name": "func prepareForReuse()",
+      "desc": "Prepares a reusable cell for reuse by the table view's delegate."
+    },
+    {
+      "name": "var backgroundConfiguration: UIBackgroundConfiguration?",
+      "desc": "The current background configuration of the cell."
+    },
+    {
+      "name": "var automaticallyUpdatesBackgroundConfiguration: Bool",
+      "desc": "A Boolean value that determines whether the cell automatically updates its background configuration when its state changes."
+    },
+    {
+      "name": "var backgroundView: UIView?",
+      "desc": "The view to use as the background of the cell."
+    },
+    {
+      "name": "var selectedBackgroundView: UIView?",
+      "desc": "The view to use as the background for a selected cell."
+    },
+    {
+      "name": "var multipleSelectionBackgroundView: UIView?",
+      "desc": "The background view to use for a selected cell when the table view allows multiple row selections."
+    },
+    {
+      "name": "func defaultContentConfiguration() -> UIListContentConfiguration",
+      "desc": "Retrieves a default list content configuration for the cell’s style."
+    },
+    {
+      "name": "var contentConfiguration: UIContentConfiguration?",
+      "desc": "The current content configuration of the cell."
+    },
+    {
+      "name": "var automaticallyUpdatesContentConfiguration: Bool",
+      "desc": "A Boolean value that determines whether the cell automatically updates its content configuration when its state changes."
+    },
+    {
+      "name": "var contentView: UIView",
+      "desc": "The content view of the cell object."
+    },
+    {
+      "name": "var configurationState: UICellConfigurationState",
+      "desc": "The current configuration state of the cell."
+    },
+    {
+      "name": "func setNeedsUpdateConfiguration()",
+      "desc": "Informs the cell to update its configuration for its current state."
+    },
+    {
+      "name": "func updateConfiguration(using: UICellConfigurationState)",
+      "desc": "Updates the cell’s configuration using the current state."
+    },
+    {
+      "name": "var configurationUpdateHandler: UITableViewCell.ConfigurationUpdateHandler?",
+      "desc": "A block for handling updates to the cell’s configuration using the current state."
+    },
+    {
+      "name": "typealias UITableViewCell.ConfigurationUpdateHandler",
+      "desc": "The type of block for handling updates to the cell’s configuration using the current state."
+    },
+    {
+      "name": "var accessoryType: UITableViewCell.AccessoryType",
+      "desc": "The type of standard accessory view the cell should use (normal state)."
+    },
+    {
+      "name": "var accessoryView: UIView?",
+      "desc": "A view that is used, typically as a control, on the right side of the cell (normal state)."
+    },
+    {
+      "name": "var editingAccessoryType: UITableViewCell.AccessoryType",
+      "desc": "The type of standard accessory view the cell should use in the table view’s editing state."
+    },
+    {
+      "name": "var editingAccessoryView: UIView?",
+      "desc": "A view that is used typically as a control on the right side of the cell when it is in editing mode."
+    },
+    {
+      "name": "enum UITableViewCell.AccessoryType",
+      "desc": "The type of standard accessory control used by a cell."
+    },
+    {
+      "name": "var selectionStyle: UITableViewCell.SelectionStyle",
+      "desc": "The style of selection for a cell."
+    },
+    {
+      "name": "enum UITableViewCell.SelectionStyle",
+      "desc": "The style of selected cells."
+    },
+    {
+      "name": "var isSelected: Bool",
+      "desc": "A Boolean value that indicates whether the cell is selected."
+    },
+    {
+      "name": "func setSelected(Bool, animated: Bool)",
+      "desc": "Sets the selected state of the cell, optionally animating the transition between states."
+    },
+    {
+      "name": "var isHighlighted: Bool",
+      "desc": "A Boolean value that indicates whether the cell is highlighted."
+    },
+    {
+      "name": "func setHighlighted(Bool, animated: Bool)",
+      "desc": "Sets the highlighted state of the cell, optionally animating the transition between states."
+    },
+    {
+      "name": "var isEditing: Bool",
+      "desc": "A Boolean value that indicates whether the cell is in an editable state."
+    },
+    {
+      "name": "func setEditing(Bool, animated: Bool)",
+      "desc": "Toggles the receiver into and out of editing mode."
+    },
+    {
+      "name": "var editingStyle: UITableViewCell.EditingStyle",
+      "desc": "The editing style of the cell."
+    },
+    {
+      "name": "enum UITableViewCell.EditingStyle",
+      "desc": "The editing control used by a cell."
+    },
+    {
+      "name": "var showingDeleteConfirmation: Bool",
+      "desc": "A Boolean value that indicates whether the cell is currently showing the delete-confirmation button."
+    },
+    {
+      "name": "var showsReorderControl: Bool",
+      "desc": "A Boolean value that determines whether the cell shows the reordering control."
+    },
+    {
+      "name": "var userInteractionEnabledWhileDragging: Bool",
+      "desc": "A Boolean value indicating whether users can interact with a cell while it is being dragged."
+    },
+    {
+      "name": "func dragStateDidChange(UITableViewCell.DragState)",
+      "desc": "Notifies the cell that its drag status changed."
+    },
+    {
+      "name": "enum UITableViewCell.DragState",
+      "desc": "Constants indicating the current state of a row involved in a drag operation."
+    },
+    {
+      "name": "func willTransition(to: UITableViewCell.StateMask)",
+      "desc": "Called to notify the cell that it is about to transition to a new cell state."
+    },
+    {
+      "name": "func didTransition(to: UITableViewCell.StateMask)",
+      "desc": "Called to notify the cell that it transitioned to a new cell state."
+    },
+    {
+      "name": "struct UITableViewCell.StateMask",
+      "desc": "Constants used to determine the new state of a cell as it transitions between states."
+    },
+    {
+      "name": "var indentationLevel: Int",
+      "desc": "The indentation level of the cell’s content."
+    },
+    {
+      "name": "var indentationWidth: CGFloat",
+      "desc": "The width for each level of indentation of a cell's content."
+    },
+    {
+      "name": "var shouldIndentWhileEditing: Bool",
+      "desc": "A Boolean value that controls whether the cell background is indented when the table view is in editing mode."
+    },
+    {
+      "name": "var separatorInset: UIEdgeInsets",
+      "desc": "The inset values for the separator line drawn beneath the cell."
+    },
+    {
+      "name": "enum UITableViewCell.SeparatorStyle",
+      "desc": "The style for cells to use as separators."
+    },
+    {
+      "name": "var focusStyle: UITableViewCell.FocusStyle",
+      "desc": "The appearance of the cell when focused."
+    },
+    {
+      "name": "enum UITableViewCell.FocusStyle",
+      "desc": "The style of focused cells."
+    }
+  ],
+  "declaration": "@MainActor class UITableViewCell : UIView",
+  "inheritsFrom": [
+    "UIView"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "UIGestureRecognizerDelegate"
+  ]
+}

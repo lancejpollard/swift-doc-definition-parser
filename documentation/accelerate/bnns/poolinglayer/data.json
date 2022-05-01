@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/accelerate/bnns/poolinglayer",
+  "type": "Class",
+  "name": "BNNS.PoolingLayer",
+  "desc": "A layer object that wraps a pooling filter and manages its deinitialization.",
+  "items": [
+    {
+      "name": "init?(type: BNNS.PoolingType, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, bias: BNNSNDArrayDescriptor?, activation: BNNS.ActivationFunction, kernelSize: (width: Int, height: Int), stride: (x: Int, y: Int), padding: BNNS.ConvolutionPadding, filterParameters: BNNSFilterParameters?)",
+      "desc": "Returns a new pooling layer."
+    },
+    {
+      "name": "enum BNNS.PoolingType",
+      "desc": "Constants that describe pooling types."
+    },
+    {
+      "name": "func apply(batchSize: Int, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor)",
+      "desc": "Applies the layer to a set of input objects, writing the result to a set of output objects."
+    },
+    {
+      "name": "func applyBackward(batchSize: Int, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, outputGradient: BNNSNDArrayDescriptor, generatingInputGradient: BNNSNDArrayDescriptor, generatingBiasGradient: BNNSNDArrayDescriptor?)",
+      "desc": "Applies the layer backward to generate input gradients."
+    }
+  ],
+  "declaration": "class PoolingLayer : BNNS.Layer",
+  "inheritsFrom": [
+    "BNNS.Layer"
+  ]
+}

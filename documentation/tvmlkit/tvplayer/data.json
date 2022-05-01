@@ -1,0 +1,79 @@
+{
+  "path": "/documentation/tvmlkit/tvplayer",
+  "type": "Class",
+  "name": "TVPlayer",
+  "desc": "A customizable native media player used to control playback from the JavaScript player used in an Apple TV client-server app.",
+  "items": [
+    {
+      "name": "init(player: AVPlayer)",
+      "desc": "Creates a new customizable player from an existing player."
+    },
+    {
+      "name": "var player: AVPlayer",
+      "desc": "The customizable media player."
+    },
+    {
+      "name": "var playlist: TVPlaylist?",
+      "desc": "The playlist for the media player."
+    },
+    {
+      "name": "func next()",
+      "desc": "Plays the next media item in the playlist."
+    },
+    {
+      "name": "func pause()",
+      "desc": "Pauses the currently playing item."
+    },
+    {
+      "name": "func previous()",
+      "desc": "Plays the previous media item in the playlist."
+    },
+    {
+      "name": "var state: TVPlaybackState",
+      "desc": "The current state of the player."
+    },
+    {
+      "name": "enum TVPlaybackState",
+      "desc": "The possible states of a player."
+    },
+    {
+      "name": "func dispatch(event: TVPlaybackEvent, userInfo: TVPlaybackEventMarshaling?, completion: ((Bool) -> Void)?)",
+      "desc": "Dispatches custom playback events to the JavaScript environment."
+    },
+    {
+      "name": "struct TVPlaybackEvent",
+      "desc": "Extend this structure to send your custom playback events to the JavaScript environment."
+    },
+    {
+      "name": "protocol TVPlaybackEventMarshaling",
+      "desc": "A protocol used for sending and receiving information across the JavaScript bridge."
+    },
+    {
+      "name": "class TVPlaybackCustomEventUserInfo",
+      "desc": "The user information used in a custom playback event."
+    },
+    {
+      "name": "func setCurrentMediaItem(toItemAtIndex: Int)",
+      "desc": "Sets the current media item to the designated media item."
+    },
+    {
+      "name": "var previousMediaItem: TVMediaItem?",
+      "desc": "The previously selected media item."
+    },
+    {
+      "name": "var currentMediaItem: TVMediaItem?",
+      "desc": "The currently selected media item."
+    },
+    {
+      "name": "var nextMediaItem: TVMediaItem?",
+      "desc": "The next media item in the playlist."
+    },
+    {
+      "name": "func present(animated: Bool)"
+    }
+  ],
+  "declaration": "class TVPlayer : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

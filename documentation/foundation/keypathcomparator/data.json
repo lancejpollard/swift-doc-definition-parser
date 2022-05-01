@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/foundation/keypathcomparator",
+  "type": "Generic Structure",
+  "name": "KeyPathComparator",
+  "desc": "A comparator that uses another sort comparator to provide the comparison of values at a key path.",
+  "items": [
+    {
+      "name": "init<Value>(KeyPath<Compared, Value>, order: SortOrder)",
+      "desc": "Creates a comparator using a key path."
+    },
+    {
+      "name": "init<Value>(KeyPath<Compared, Value?>, order: SortOrder)",
+      "desc": "Creates a comparator using a key path to an optional property."
+    },
+    {
+      "name": "init<Value, Comparator>(KeyPath<Compared, Value>, comparator: Comparator)",
+      "desc": "Creates a comparator using a key path and a sort comparator to compare values at that key path."
+    },
+    {
+      "name": "init<Value, Comparator>(KeyPath<Compared, Value?>, comparator: Comparator)",
+      "desc": "Creates a comparator using a key path to an optional property and a sort comparator to compare values at that key path."
+    },
+    {
+      "name": "init<Value, Comparator>(KeyPath<Compared, Value>, comparator: Comparator, order: SortOrder)",
+      "desc": "Creates a comparator using a key path, a sort comparator to compare values at that key path, and a sort order that you specify."
+    },
+    {
+      "name": "init<Value, Comparator>(KeyPath<Compared, Value?>, comparator: Comparator, order: SortOrder)",
+      "desc": "Creates a comparator using a key path to an optional value, a sort comparator to compare values at that key path, and a sort order that you specify."
+    },
+    {
+      "name": "func compare(Compared, Compared) -> ComparisonResult",
+      "desc": "Provides the relative ordering of two items according to the ordering of the properties that the comparator’s key path references."
+    },
+    {
+      "name": "let keyPath: PartialKeyPath<Compared>",
+      "desc": "The key path that the comparator uses to compare properties."
+    },
+    {
+      "name": "var order: SortOrder",
+      "desc": "The sort order that the comparator uses to compare properties."
+    },
+    {
+      "name": "static func == (KeyPathComparator<Compared>, KeyPathComparator<Compared>) -> Bool",
+      "desc": "Indicates whether two key path comparators are equal."
+    },
+    {
+      "name": "static func != (KeyPathComparator<Compared>, KeyPathComparator<Compared>) -> Bool",
+      "desc": "Indicates whether two key path comparators are unequal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the key path comparator by feeding them into the specified hash function."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hashed value of the key path comparator."
+    }
+  ],
+  "declaration": "struct KeyPathComparator<Compared>",
+  "conformsTo": [
+    "SortComparator"
+  ]
+}

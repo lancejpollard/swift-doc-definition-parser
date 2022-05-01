@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/tvmlkit/tvapplicationcontroller",
+  "type": "Class",
+  "name": "TVApplicationController",
+  "desc": "An object that bridges the UI, navigation stack, storage, and event handling from JavaScript.",
+  "items": [
+    {
+      "name": "init(context: TVApplicationControllerContext, window: UIWindow?, delegate: TVApplicationControllerDelegate?)",
+      "desc": "Initializes and returns an app controller."
+    },
+    {
+      "name": "func evaluate(inJavaScriptContext: (JSContext) -> Void, completion: ((Bool) -> Void)?)",
+      "desc": "Evaluates a block in the JavaScript execution queue."
+    },
+    {
+      "name": "func stop()",
+      "desc": "Ends the app life cycle."
+    },
+    {
+      "name": "var delegate: TVApplicationControllerDelegate?",
+      "desc": "The delegate of the app controller object."
+    },
+    {
+      "name": "protocol TVApplicationControllerDelegate",
+      "desc": "A protocol used to observe and manage the different states of an application controller."
+    },
+    {
+      "name": "var context: TVApplicationControllerContext",
+      "desc": "The launch information for the application controller."
+    },
+    {
+      "name": "var navigationController: UINavigationController",
+      "desc": "The navigation controller that is bridged from JavaScript to tvOS."
+    },
+    {
+      "name": "var window: UIWindow?",
+      "desc": "A reference to the window supplied when the app controller was initialized."
+    }
+  ],
+  "declaration": "class TVApplicationController : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

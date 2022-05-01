@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/xctest/xctwaiter/result",
+  "type": "Enumeration",
+  "name": "XCTWaiter.Result",
+  "desc": "Result states returned by a waiter when it completes, times out, fails, or is interrupted.",
+  "items": [
+    {
+      "name": "case completed",
+      "desc": "All of the waiter’s expectations were fulfilled successfully."
+    },
+    {
+      "name": "case timedOut",
+      "desc": "The waiter timed out before all of its expectations were fulfilled."
+    },
+    {
+      "name": "case incorrectOrder",
+      "desc": "The waiter’s expectations were not fulfilled in the required order."
+    },
+    {
+      "name": "case invertedFulfillment",
+      "desc": "An inverted expectation was fulfilled."
+    },
+    {
+      "name": "case interrupted",
+      "desc": "The waiter was interrupted prior to its expectations being fulfilled or timing out."
+    }
+  ],
+  "declaration": "enum Result : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

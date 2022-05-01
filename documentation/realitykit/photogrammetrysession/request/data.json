@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/realitykit/photogrammetrysession/request",
+  "type": "Enumeration",
+  "name": "PhotogrammetrySession.Request",
+  "desc": "An object that configures a photogrammetry session.",
+  "items": [
+    {
+      "name": "init(modelFile: URL)",
+      "desc": "Creates a request that saves the model to a file in the file system."
+    },
+    {
+      "name": "case modelFile(url: URL, detail: PhotogrammetrySession.Request.Detail, geometry: PhotogrammetrySession.Request.Geometry?)",
+      "desc": "An object-creation request saved to a USDZ file."
+    },
+    {
+      "name": "case modelEntity(detail: PhotogrammetrySession.Request.Detail, geometry: PhotogrammetrySession.Request.Geometry?)",
+      "desc": "An object-creation request stored in-memory."
+    },
+    {
+      "name": "case bounds",
+      "desc": "An object-creation request that returns a box the same size as the created model."
+    },
+    {
+      "name": "enum PhotogrammetrySession.Request.Detail",
+      "desc": "Supported levels of detail for a request."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hashed value."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the enumeration value by feeding it into the given hash function."
+    },
+    {
+      "name": "static func != (PhotogrammetrySession.Request, PhotogrammetrySession.Request) -> Bool",
+      "desc": "Indicates whether two enumeration values aren’t equal."
+    },
+    {
+      "name": "static func == (PhotogrammetrySession.Request, PhotogrammetrySession.Request) -> Bool",
+      "desc": "Indicates whether two enumeration values are equal."
+    },
+    {
+      "name": "struct PhotogrammetrySession.Request.Geometry",
+      "desc": "An object that holds a bounding box and transformation data for a request."
+    }
+  ],
+  "declaration": "enum PhotogrammetrySession.Request",
+  "conformsTo": [
+    "Hashable"
+  ]
+}

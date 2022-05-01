@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/corehaptics/chhapticpatternplayer",
+  "type": "Protocol",
+  "name": "CHHapticPatternPlayer",
+  "desc": "A protocol that defines a standard pattern player capable of playing haptic patterns with fixed parameters.",
+  "items": [
+    {
+      "name": "func start(atTime: TimeInterval)",
+      "desc": "Starts playing the pattern at the specified time."
+    },
+    {
+      "name": "func stop(atTime: TimeInterval)",
+      "desc": "Stops playing the pattern at the specified time."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Stops the pattern player immediately and returns the specified error."
+    },
+    {
+      "name": "func sendParameters([CHHapticDynamicParameter], atTime: TimeInterval)",
+      "desc": "Sends an array of haptic parameters, starting at the specified time."
+    },
+    {
+      "name": "func scheduleParameterCurve(CHHapticParameterCurve, atTime: TimeInterval)",
+      "desc": "Schedules a parameter curve to begin transitioning a parameter at a certain time."
+    },
+    {
+      "name": "var isMuted: Bool",
+      "desc": "A Boolean that silences all haptic and audio output from the player when set to true."
+    }
+  ],
+  "declaration": "protocol CHHapticPatternPlayer",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

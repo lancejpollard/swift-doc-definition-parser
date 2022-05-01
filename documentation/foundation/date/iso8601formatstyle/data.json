@@ -1,0 +1,154 @@
+{
+  "path": "/documentation/foundation/date/iso8601formatstyle",
+  "type": "Structure",
+  "name": "Date.ISO8601FormatStyle",
+  "desc": "A type that converts between dates and their ISO 8601 string representations.",
+  "items": [
+    {
+      "name": "static var iso8601: Date.ISO8601FormatStyle",
+      "desc": "A convenience factory variable that provides a base format for customizing ISO 8601 date format styles."
+    },
+    {
+      "name": "init(dateSeparator: Date.ISO8601FormatStyle.DateSeparator, dateTimeSeparator: Date.ISO8601FormatStyle.DateTimeSeparator, timeZone: TimeZone)",
+      "desc": "Creates an instance using the provided date separator, date and time components separator, and time zone."
+    },
+    {
+      "name": "func locale(Locale) -> Date.ISO8601FormatStyle",
+      "desc": "Modifies the date format style to use the specified locale."
+    },
+    {
+      "name": "var dateSeparator: Date.ISO8601FormatStyle.DateSeparator",
+      "desc": "The character used to separate the components of a date."
+    },
+    {
+      "name": "var dateTimeSeparator: Date.ISO8601FormatStyle.DateTimeSeparator",
+      "desc": "The character used to separate the date and time components of an ISO 8601 string representation of a date."
+    },
+    {
+      "name": "var timeZone: TimeZone",
+      "desc": "The time zone used to create and parse date representations."
+    },
+    {
+      "name": "func dateTimeSeparator(Date.ISO8601FormatStyle.DateTimeSeparator) -> Date.ISO8601FormatStyle",
+      "desc": "Sets the character that specifies the date and time components."
+    },
+    {
+      "name": "func dateSeparator(Date.ISO8601FormatStyle.DateSeparator) -> Date.ISO8601FormatStyle",
+      "desc": "Modifies the ISO 8601 date format style to use the specified date separator."
+    },
+    {
+      "name": "func year() -> Date.ISO8601FormatStyle",
+      "desc": "Modifies the ISO 8601 date format style to include the year in the formatted output."
+    },
+    {
+      "name": "func month() -> Date.ISO8601FormatStyle",
+      "desc": "Modifies the ISO 8601 date format style to include the month in the formatted output."
+    },
+    {
+      "name": "func weekOfYear() -> Date.ISO8601FormatStyle",
+      "desc": "Modifies the ISO 8601 date format style to include the week of the year in the formatted output."
+    },
+    {
+      "name": "func day() -> Date.ISO8601FormatStyle",
+      "desc": "Modifies the ISO 8601 date format style to include the day in the formatted output."
+    },
+    {
+      "name": "func time(includingFractionalSeconds: Bool) -> Date.ISO8601FormatStyle",
+      "desc": "Modifies the ISO 8601 date format style to include the time in the formatted output."
+    },
+    {
+      "name": "func timeSeparator(Date.ISO8601FormatStyle.TimeSeparator) -> Date.ISO8601FormatStyle",
+      "desc": "Modifies the ISO 8601 date format style to use the specified time separator."
+    },
+    {
+      "name": "func timeZone(separator: Date.ISO8601FormatStyle.TimeZoneSeparator) -> Date.ISO8601FormatStyle",
+      "desc": "Modifies the ISO 8601 date format style to include the time zone in the formatted output."
+    },
+    {
+      "name": "func timeZoneSeparator(Date.ISO8601FormatStyle.TimeZoneSeparator) -> Date.ISO8601FormatStyle",
+      "desc": "Modifies the ISO 8601 date format style to use the specified time zone separator."
+    },
+    {
+      "name": "func parse(String) -> Date",
+      "desc": "Parses a string into a date."
+    },
+    {
+      "name": "var parseStrategy: Date.ISO8601FormatStyle",
+      "desc": "The strategy used to parse a string into a date."
+    },
+    {
+      "name": "typealias Date.ISO8601FormatStyle.ParseInput",
+      "desc": "The type of data to parse."
+    },
+    {
+      "name": "typealias Date.ISO8601FormatStyle.ParseOutput",
+      "desc": "The result type of parsing."
+    },
+    {
+      "name": "typealias Date.ISO8601FormatStyle.Strategy",
+      "desc": "The type used to guide the parsing of a string into a date."
+    },
+    {
+      "name": "func format(Date) -> String",
+      "desc": "Creates a locale-aware ISO 8601 string representation from a date value."
+    },
+    {
+      "name": "static func != (Date.ISO8601FormatStyle, Date.ISO8601FormatStyle) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are not equal."
+    },
+    {
+      "name": "static func == (Date.ISO8601FormatStyle, Date.ISO8601FormatStyle) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are equal."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a new instance by decoding from the given decoder."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes this value into the given encoder."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value of the style format."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "typealias Date.ISO8601FormatStyle.FormatInput",
+      "desc": "The type of data to format."
+    },
+    {
+      "name": "typealias Date.ISO8601FormatStyle.FormatOutput",
+      "desc": "The type of the formatted data."
+    },
+    {
+      "name": "enum Date.ISO8601FormatStyle.DateSeparator",
+      "desc": "A type describing the character separating year, month, and day components of a date in an ISO 8601 date format."
+    },
+    {
+      "name": "enum Date.ISO8601FormatStyle.DateTimeSeparator",
+      "desc": "Type describing the character separating the date and time components of a date in an ISO 8601 date format."
+    },
+    {
+      "name": "enum Date.ISO8601FormatStyle.TimeSeparator",
+      "desc": "Type describing the character separating the time components of a date in an ISO 8601 date format."
+    },
+    {
+      "name": "enum Date.ISO8601FormatStyle.TimeZoneSeparator",
+      "desc": "A type describing the character separating the time and time zone of a date in an ISO 8601 date format."
+    },
+    {
+      "name": "static func fixed(format: Date.FormatString, timeZone: TimeZone, locale: Locale?) -> Date.ParseStrategy",
+      "desc": "Creates a fixed format parse strategy."
+    }
+  ],
+  "declaration": "struct ISO8601FormatStyle",
+  "conformsTo": [
+    "FormatStyle",
+    "ParseStrategy",
+    "ParseableFormatStyle"
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "path": "/documentation/realitykit/animationview",
+  "type": "Structure",
+  "name": "AnimationView",
+  "desc": "An animation that represents a variation of another animation.",
+  "items": [
+    {
+      "name": "init(source: AnimationDefinition, name: String, bindTarget: BindTarget?, blendLayer: Int32, repeatMode: AnimationRepeatMode, fillMode: AnimationFillMode, trimStart: TimeInterval?, trimEnd: TimeInterval?, trimDuration: TimeInterval?, offset: TimeInterval, delay: TimeInterval, speed: Float)",
+      "desc": "Creates a variation of the given animation by overriding its properties."
+    },
+    {
+      "name": "var source: AnimationDefinition?",
+      "desc": "The original animation that this structure modifies."
+    },
+    {
+      "name": "var name: String",
+      "desc": "A textual name for the animation."
+    },
+    {
+      "name": "var bindTarget: BindTarget",
+      "desc": "A textual name that identifies the animated property."
+    },
+    {
+      "name": "var blendLayer: Int32",
+      "desc": "The order in which the framework composites the animation."
+    },
+    {
+      "name": "var speed: Float",
+      "desc": "A factor that increases or decreases the animation’s rate of playback."
+    },
+    {
+      "name": "var delay: TimeInterval",
+      "desc": "An amount of time that lapses before the animation plays."
+    },
+    {
+      "name": "var duration: TimeInterval",
+      "desc": "The total playback time of the animation."
+    },
+    {
+      "name": "var offset: TimeInterval",
+      "desc": "The time, in seconds, at which the animation begins within the duration."
+    },
+    {
+      "name": "var trimDuration: TimeInterval?",
+      "desc": "An optional duration that overrides the calculated duration."
+    },
+    {
+      "name": "var trimStart: TimeInterval?",
+      "desc": "The time, in seconds, at which the source animation plays."
+    },
+    {
+      "name": "var trimEnd: TimeInterval?",
+      "desc": "The time, in seconds, at which the source animation stops."
+    },
+    {
+      "name": "func trimmed(start: TimeInterval?, end: TimeInterval?, duration: TimeInterval?) -> AnimationView",
+      "desc": "Edits the animation duration according to the specified time."
+    },
+    {
+      "name": "var repeatMode: AnimationRepeatMode",
+      "desc": "An option that determines how the animation repeats."
+    },
+    {
+      "name": "var fillMode: AnimationFillMode",
+      "desc": "An option that determines which data displays outside of the normal duration."
+    },
+    {
+      "name": "func repeated(count: TimeInterval) -> AnimationView",
+      "desc": "Repeats an animation the number of times specified by a decimal number."
+    },
+    {
+      "name": "func repeated(count: Int) -> AnimationView",
+      "desc": "Repeats an animation the number of times specified by a whole number."
+    },
+    {
+      "name": "func repeatingForever() -> AnimationView",
+      "desc": "Repeats an animation an indefinite number of times."
+    }
+  ],
+  "declaration": "struct AnimationView",
+  "conformsTo": [
+    "AnimationDefinition"
+  ]
+}

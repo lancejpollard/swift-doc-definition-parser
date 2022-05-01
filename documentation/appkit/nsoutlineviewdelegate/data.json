@@ -1,0 +1,164 @@
+{
+  "path": "/documentation/appkit/nsoutlineviewdelegate",
+  "type": "Protocol",
+  "name": "NSOutlineViewDelegate",
+  "desc": "A set of optional methods implemented by delegates of NSOutlineView objects.",
+  "items": [
+    {
+      "name": "func outlineView(NSOutlineView, shouldExpandItem: Any) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the outline view should expand a given item."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, shouldCollapseItem: Any) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the outline view should collapse a given item."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, typeSelectStringFor: NSTableColumn?, item: Any) -> String?",
+      "desc": "Returns the string that is used for type selection for a given column and item."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, nextTypeSelectMatchFromItem: Any, toItem: Any, for: String) -> Any?",
+      "desc": "Returns the first item that matches the searchString from within the range of startItem to endItem"
+    },
+    {
+      "name": "func outlineView(NSOutlineView, shouldTypeSelectFor: NSEvent, withCurrentSearch: String?) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether type select should proceed for a given event and search string."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, toolTipFor: NSCell, rect: NSRectPointer, tableColumn: NSTableColumn?, item: Any, mouseLocation: NSPoint) -> String",
+      "desc": "When the cursor pauses over a given cell, the value returned from this method is displayed in a tooltip."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, shouldSelect: NSTableColumn?) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the outline view should select a given table column."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, shouldSelectItem: Any) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the outline view should select a given item."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, selectionIndexesForProposedSelection: IndexSet) -> IndexSet",
+      "desc": "Invoked to allow the delegate to modify the proposed selection."
+    },
+    {
+      "name": "func selectionShouldChange(in: NSOutlineView) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the outline view should change its selection."
+    },
+    {
+      "name": "func outlineViewSelectionIsChanging(Notification)",
+      "desc": "Invoked when notification is posted—that is, whenever the outline view’s selection changes."
+    },
+    {
+      "name": "func outlineViewSelectionDidChange(Notification)",
+      "desc": "Invoked when the selection did change notification is posted—that is, immediately after the outline view’s selection has changed."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, willDisplayCell: Any, for: NSTableColumn?, item: Any)",
+      "desc": "Informs the delegate that the cell specified by the column and item will be displayed."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, willDisplayOutlineCell: Any, for: NSTableColumn?, item: Any)",
+      "desc": "Informs the delegate that an outline view is about to display a cell used to draw the expansion symbol."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, dataCellFor: NSTableColumn?, item: Any) -> NSCell?",
+      "desc": "Returns the cell to use in a given column for a given item."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, shouldShowOutlineCellForItem: Any) -> Bool",
+      "desc": "Returns whether the specified item should display the outline cell (the disclosure triangle)."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, shouldShowCellExpansionFor: NSTableColumn?, item: Any) -> Bool",
+      "desc": "Invoked to allow the delegate to control cell expansion for a specific column and item."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, shouldReorderColumn: Int, toColumn: Int) -> Bool",
+      "desc": "Sent to the delegate to allow or prohibit the specified column to be dragged to a new location."
+    },
+    {
+      "name": "func outlineViewColumnDidMove(Notification)",
+      "desc": "Invoked whenever the user moves a column in the outline view."
+    },
+    {
+      "name": "func outlineViewColumnDidResize(Notification)",
+      "desc": "Invoked whenever the user resizes a column in the outline view."
+    },
+    {
+      "name": "func outlineViewItemWillExpand(Notification)",
+      "desc": "Invoked when notification is posted—that is, whenever the user is about to expand an item in the outline view."
+    },
+    {
+      "name": "func outlineViewItemDidExpand(Notification)",
+      "desc": "Invoked when notification is posted—that is, whenever the user expands an item in the outline view."
+    },
+    {
+      "name": "func outlineViewItemWillCollapse(Notification)",
+      "desc": "Invoked when notification is posted—that is, whenever the user is about to collapse an item in the outline view."
+    },
+    {
+      "name": "func outlineViewItemDidCollapse(Notification)",
+      "desc": "Invoked when the did collapse notification is posted—that is, whenever the user collapses an item in the outline view."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, shouldEdit: NSTableColumn?, item: Any) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the outline view should allow editing of a given item in a given table column."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, mouseDownInHeaderOf: NSTableColumn)",
+      "desc": "Sent to the delegate whenever the mouse button is clicked in outlineView while the cursor is in a column header tableColumn."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, didClick: NSTableColumn)",
+      "desc": "Sent at the time the mouse button subsequently goes up in outlineView and tableColumn has been “clicked” without having been dragged anywhere."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, didDrag: NSTableColumn)",
+      "desc": "Sent at the time the mouse button goes up in outlineView and tableColumn has been dragged during the time the mouse button was down."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, heightOfRowByItem: Any) -> CGFloat",
+      "desc": "Returns the height in points of the row containing item."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, sizeToFitWidthOfColumn: Int) -> CGFloat",
+      "desc": "Invoked to allow the delegate to provide custom sizing behavior when a column’s resize divider is double clicked."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, tintConfigurationForItem: Any) -> NSTintConfiguration?",
+      "desc": "Customizes an item’s tinting behavior."
+    },
+    {
+      "name": "class NSTintConfiguration",
+      "desc": "An object that gives you the ability to choose from system-provided tinting behaviors."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, shouldTrackCell: NSCell, for: NSTableColumn?, item: Any) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a given cell should be tracked."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, isGroupItem: Any) -> Bool",
+      "desc": "Returns a Boolean that indicates whether a given row should be drawn in the “group row” style."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, didAdd: NSTableRowView, forRow: Int)",
+      "desc": "Implemented to know when a new row view is added to the table."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, didRemove: NSTableRowView, forRow: Int)",
+      "desc": "Implemented to know when a row view is removed from the table"
+    },
+    {
+      "name": "func outlineView(NSOutlineView, rowViewForItem: Any) -> NSTableRowView?",
+      "desc": "implement this method to return a custom NSTableRowView for a particular item."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, viewFor: NSTableColumn?, item: Any) -> NSView?",
+      "desc": "Implemented to return the view used to display the specified item and column."
+    }
+  ],
+  "declaration": "protocol NSOutlineViewDelegate",
+  "inheritsFrom": [
+    "NSControlTextEditingDelegate"
+  ]
+}

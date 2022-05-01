@@ -1,0 +1,54 @@
+{
+  "path": "/documentation/foundation/urlsessionwebsockettask",
+  "type": "Class",
+  "name": "URLSessionWebSocketTask",
+  "desc": "A URL session task that communicates over the WebSockets protocol standard.",
+  "items": [
+    {
+      "name": "func send(URLSessionWebSocketTask.Message, completionHandler: (Error?) -> Void)",
+      "desc": "Sends a WebSocket message, receiving the result in a completion handler."
+    },
+    {
+      "name": "enum URLSessionWebSocketTask.Message",
+      "desc": "An enumeration of the types of messages sent and received."
+    },
+    {
+      "name": "func receive(completionHandler: (Result<URLSessionWebSocketTask.Message, Error>) -> Void)",
+      "desc": "Reads a WebSocket message once all the frames of the message are available."
+    },
+    {
+      "name": "var maximumMessageSize: Int",
+      "desc": "The maximum number of bytes to buffer before the receive call fails with an error."
+    },
+    {
+      "name": "func sendPing(pongReceiveHandler: (Error?) -> Void)",
+      "desc": "Sends a ping frame from the client side, with a closure to receive the pong from the server endpoint."
+    },
+    {
+      "name": "func cancel(with: URLSessionWebSocketTask.CloseCode, reason: Data?)",
+      "desc": "Sends a close frame with the given close code and optional close reason."
+    },
+    {
+      "name": "var closeCode: URLSessionWebSocketTask.CloseCode",
+      "desc": "A code that indicates the reason a connection closed."
+    },
+    {
+      "name": "enum URLSessionWebSocketTask.CloseCode",
+      "desc": "A code that indicates why a WebSocket connection closed."
+    },
+    {
+      "name": "var closeReason: Data?",
+      "desc": "A block of data that provides further information about why a connection closed."
+    },
+    {
+      "name": "func receive() -> URLSessionWebSocketTask.Message"
+    },
+    {
+      "name": "func send(URLSessionWebSocketTask.Message)"
+    }
+  ],
+  "declaration": "class URLSessionWebSocketTask : URLSessionTask",
+  "inheritsFrom": [
+    "URLSessionTask"
+  ]
+}

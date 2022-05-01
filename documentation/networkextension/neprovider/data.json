@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/networkextension/neprovider",
+  "type": "Class",
+  "name": "NEProvider",
+  "desc": "An abstract base class for all NetworkExtension providers.",
+  "items": [
+    {
+      "name": "func sleep(completionHandler: () -> Void)",
+      "desc": "Handle a sleep event."
+    },
+    {
+      "name": "func wake()",
+      "desc": "Handle a wake event."
+    },
+    {
+      "name": "func createTCPConnection(to: NWEndpoint, enableTLS: Bool, tlsParameters: NWTLSParameters?, delegate: Any?) -> NWTCPConnection",
+      "desc": "Create a TCP connection."
+    },
+    {
+      "name": "func createUDPSession(to: NWEndpoint, from: NWHostEndpoint?) -> NWUDPSession",
+      "desc": "Create a UDP session."
+    },
+    {
+      "name": "var defaultPath: NWPath?",
+      "desc": "The current default network path used for connections created by the provider."
+    },
+    {
+      "name": "class func startSystemExtensionMode()",
+      "desc": "Starts the Network Extension machinery from inside a System Extension."
+    },
+    {
+      "name": "enum NEProviderStopReason",
+      "desc": "Reasons why the provider extension was stopped."
+    }
+  ],
+  "declaration": "class NEProvider : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

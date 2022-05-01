@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/sensorkit/srsensorreaderdelegate",
+  "type": "Protocol",
+  "name": "SRSensorReaderDelegate",
+  "desc": "A set of callbacks the framework invokes to notify the app of sensor-related events.",
+  "items": [
+    {
+      "name": "func sensorReader(SRSensorReader, didChange: SRAuthorizationStatus)",
+      "desc": "Notifies the delegate of the reader’s new authorization status."
+    },
+    {
+      "name": "func sensorReader(SRSensorReader, didFetch: [SRDevice])",
+      "desc": "Provides the delegate with one or more devices."
+    },
+    {
+      "name": "func sensorReader(SRSensorReader, fetchDevicesDidFailWithError: Error)",
+      "desc": "Provides the delegate a reason when the reader fails to fetch devices."
+    },
+    {
+      "name": "class SRDevice",
+      "desc": "A representation of a device that provides sample data."
+    },
+    {
+      "name": "func sensorReaderWillStartRecording(SRSensorReader)",
+      "desc": "Notifies the delegate when a reader starts recording."
+    },
+    {
+      "name": "func sensorReader(SRSensorReader, startRecordingFailedWithError: Error)",
+      "desc": "Provides the delegate with a reason when the reader fails to record."
+    },
+    {
+      "name": "func sensorReaderDidStopRecording(SRSensorReader)",
+      "desc": "Notifies the delegate when a reader stops recording."
+    },
+    {
+      "name": "func sensorReader(SRSensorReader, stopRecordingFailedWithError: Error)",
+      "desc": "Provides the delegate with a reason when the reader fails to stop recording."
+    },
+    {
+      "name": "func sensorReader(SRSensorReader, fetching: SRFetchRequest, didFetchResult: SRFetchResult<AnyObject>) -> Bool",
+      "desc": "Provides the delegate with a fetch result."
+    },
+    {
+      "name": "func sensorReader(SRSensorReader, didCompleteFetch: SRFetchRequest)",
+      "desc": "Provides the delegate with a completed fetch request."
+    },
+    {
+      "name": "func sensorReader(SRSensorReader, fetching: SRFetchRequest, failedWithError: Error)",
+      "desc": "Provides the delegate with a fetch failure reason."
+    },
+    {
+      "name": "let SRErrorDomain: String",
+      "desc": "An error domain that's unique to the framework."
+    },
+    {
+      "name": "struct SRError",
+      "desc": "An error that SensorKit reports."
+    },
+    {
+      "name": "enum SRError.Code",
+      "desc": "The kinds of problems that stop a recording or a fetch."
+    }
+  ],
+  "declaration": "protocol SRSensorReaderDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

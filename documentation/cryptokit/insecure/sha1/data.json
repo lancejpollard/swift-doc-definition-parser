@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/cryptokit/insecure/sha1",
+  "type": "Structure",
+  "name": "Insecure.SHA1",
+  "desc": "An implementation of SHA1 hashing.",
+  "items": [
+    {
+      "name": "typealias Insecure.SHA1.Digest",
+      "desc": "The digest type for a SHA1 hash function."
+    },
+    {
+      "name": "struct Insecure.SHA1Digest",
+      "desc": "The output of a SHA1 hash."
+    },
+    {
+      "name": "static var byteCount: Int",
+      "desc": "The number of bytes in a SHA1 digest."
+    },
+    {
+      "name": "static func hash<D>(data: D) -> Insecure.SHA1Digest",
+      "desc": "Computes the SHA1 digest of the bytes in the given data instance and returns the computed digest."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates a SHA1 hash function."
+    },
+    {
+      "name": "func update<D>(data: D)",
+      "desc": "Incrementally updates the hash function with the given data."
+    },
+    {
+      "name": "func update(bufferPointer: UnsafeRawBufferPointer)",
+      "desc": "Incrementally updates the hash function with the contents of the buffer."
+    },
+    {
+      "name": "func finalize() -> Insecure.SHA1.Digest",
+      "desc": "Finalizes the hash function and returns the computed digest."
+    },
+    {
+      "name": "static var blockByteCount: Int",
+      "desc": "The number of bytes that represents the hash function’s internal state."
+    }
+  ],
+  "declaration": "struct SHA1"
+}

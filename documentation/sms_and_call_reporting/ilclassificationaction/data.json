@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/sms_and_call_reporting/ilclassificationaction",
+  "type": "Enumeration",
+  "name": "ILClassificationAction",
+  "desc": "The actions the system can take in response to the reported communication.",
+  "items": [
+    {
+      "name": "case none",
+      "desc": "No action is required."
+    },
+    {
+      "name": "case reportJunk",
+      "desc": "The system should report the communication as junk."
+    },
+    {
+      "name": "case reportJunkAndBlockSender",
+      "desc": "The system should report the communication as junk and add the number to the system’s block list."
+    },
+    {
+      "name": "case reportNotJunk",
+      "desc": "The system should report that the communication is not junk."
+    }
+  ],
+  "declaration": "enum ILClassificationAction : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "path": "/documentation/combine/immediatescheduler/schedulertimetype",
+  "type": "Structure",
+  "name": "ImmediateScheduler.SchedulerTimeType",
+  "desc": "The time type used by the immediate scheduler.",
+  "items": [
+    {
+      "name": "struct Stride",
+      "desc": "The increment by which the immediate scheduler counts time."
+    },
+    {
+      "name": "func advanced(by: ImmediateScheduler.SchedulerTimeType.Stride) -> ImmediateScheduler.SchedulerTimeType",
+      "desc": "Advances the time by the specified amount; this is meaningless in the context of an immediate scheduler."
+    },
+    {
+      "name": "func distance(to: ImmediateScheduler.SchedulerTimeType) -> ImmediateScheduler.SchedulerTimeType.Stride",
+      "desc": "Returns the distance to another immediate scheduler time; this distance is always 0 in the context of an immediate scheduler."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    },
+    {
+      "name": "static func ... (Self) -> PartialRangeFrom<Self>",
+      "desc": "Returns a partial range extending upward from a lower bound."
+    },
+    {
+      "name": "static func ... (Self) -> PartialRangeThrough<Self>",
+      "desc": "Returns a partial range up to, and including, its upper bound."
+    },
+    {
+      "name": "static func ... (Self, Self) -> ClosedRange<Self>",
+      "desc": "Returns a closed range that contains both of its bounds."
+    },
+    {
+      "name": "static func ..< (Self) -> PartialRangeUpTo<Self>",
+      "desc": "Returns a partial range up to, but not including, its upper bound."
+    },
+    {
+      "name": "static func ..< (Self, Self) -> Range<Self>",
+      "desc": "Returns a half-open range that contains its lower bound but not its upper bound."
+    },
+    {
+      "name": "static func < (Self, Self) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than that of the second argument."
+    },
+    {
+      "name": "static func <= (Self, Self) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than or equal to that of the second argument."
+    },
+    {
+      "name": "static func == (Self, Self) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "static func > (Self, Self) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than that of the second argument."
+    },
+    {
+      "name": "static func >= (Self, Self) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than or equal to that of the second argument."
+    }
+  ],
+  "declaration": "struct SchedulerTimeType",
+  "conformsTo": [
+    "Comparable",
+    "Equatable",
+    "Strideable"
+  ]
+}

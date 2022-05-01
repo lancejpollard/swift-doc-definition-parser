@@ -1,0 +1,179 @@
+{
+  "path": "/documentation/scenekit/scnlight",
+  "type": "Class",
+  "name": "SCNLight",
+  "desc": "A light source that can be attached to a node to illuminate the scene.",
+  "items": [
+    {
+      "name": "var type: SCNLight.LightType",
+      "desc": "A constant identifying the general behavior of the light."
+    },
+    {
+      "name": "struct SCNLight.LightType",
+      "desc": "Constants specifying the general behavior of a light, used by the type property."
+    },
+    {
+      "name": "var color: Any",
+      "desc": "The color of the light. Animatable."
+    },
+    {
+      "name": "var temperature: CGFloat",
+      "desc": "The color temperature, in degrees Kelvin, of the light source. Animatable."
+    },
+    {
+      "name": "var intensity: CGFloat",
+      "desc": "The luminous flux, in lumens, or total brightness of the light. Animatable."
+    },
+    {
+      "name": "var sphericalHarmonicsCoefficients: Data",
+      "desc": "Data describing the estimated lighting environment in all directions for a light probe."
+    },
+    {
+      "name": "var name: String?",
+      "desc": "A name associated with the light."
+    },
+    {
+      "name": "var attenuationStartDistance: CGFloat",
+      "desc": "The distance from the light at which its intensity begins to diminish. Animatable."
+    },
+    {
+      "name": "var attenuationEndDistance: CGFloat",
+      "desc": "The distance from the light at which its intensity is completely diminished. Animatable."
+    },
+    {
+      "name": "var attenuationFalloffExponent: CGFloat",
+      "desc": "The transition curve for the light’s intensity between its attenuation start and end distances. Animatable."
+    },
+    {
+      "name": "var spotInnerAngle: CGFloat",
+      "desc": "The angle, in degrees, of the area fully lit by a spotlight. Animatable."
+    },
+    {
+      "name": "var spotOuterAngle: CGFloat",
+      "desc": "The angle, in degrees, of the area partially lit by a spotlight. Animatable."
+    },
+    {
+      "name": "var gobo: SCNMaterialProperty?",
+      "desc": "An image or other visual content affecting the shape and color of a light’s illuminated area."
+    },
+    {
+      "name": "var castsShadow: Bool",
+      "desc": "A Boolean value that determines whether the light casts shadows."
+    },
+    {
+      "name": "var shadowRadius: CGFloat",
+      "desc": "A number that specifies the amount of blurring around the edges of shadows cast by the light. Animatable."
+    },
+    {
+      "name": "var shadowColor: Any",
+      "desc": "The color of shadows cast by the light. Animatable."
+    },
+    {
+      "name": "var shadowMapSize: CGSize",
+      "desc": "The size of the shadow map image that SceneKit renders when creating shadows."
+    },
+    {
+      "name": "var shadowSampleCount: Int",
+      "desc": "The number of samples from the shadow map that SceneKit uses to render each pixel."
+    },
+    {
+      "name": "var shadowMode: SCNShadowMode",
+      "desc": "The mode SceneKit uses to render shadows."
+    },
+    {
+      "name": "enum SCNShadowMode",
+      "desc": "Options for SceneKit’s rendering of shadows cast by a light, used by the shadowMode property."
+    },
+    {
+      "name": "var shadowBias: CGFloat",
+      "desc": "The amount of correction to apply to the shadow to prevent rendering artifacts."
+    },
+    {
+      "name": "var orthographicScale: CGFloat",
+      "desc": "The orthographic scale SceneKit uses when rendering the shadow map for a directional light."
+    },
+    {
+      "name": "var zFar: CGFloat",
+      "desc": "The maximum distance between the light and a visible surface for casting shadows."
+    },
+    {
+      "name": "var zNear: CGFloat",
+      "desc": "The minimum distance between the light and a visible surface for casting shadows. Animatable."
+    },
+    {
+      "name": "var categoryBitMask: Int",
+      "desc": "A mask that defines which categories this light belongs to."
+    },
+    {
+      "name": "var iesProfileURL: URL?",
+      "desc": "The URL for a file that contains photometry data describing the intended appearance of the light."
+    },
+    {
+      "name": "var areaExtents: simd_float3"
+    },
+    {
+      "name": "var areaPolygonVertices: [NSValue]?"
+    },
+    {
+      "name": "var areaType: SCNLightAreaType"
+    },
+    {
+      "name": "var automaticallyAdjustsShadowProjection: Bool"
+    },
+    {
+      "name": "var doubleSided: Bool"
+    },
+    {
+      "name": "var drawsArea: Bool"
+    },
+    {
+      "name": "var forcesBackFaceCasters: Bool"
+    },
+    {
+      "name": "var maximumShadowDistance: CGFloat"
+    },
+    {
+      "name": "var parallaxCenterOffset: simd_float3"
+    },
+    {
+      "name": "var parallaxCorrectionEnabled: Bool"
+    },
+    {
+      "name": "var parallaxExtentsFactor: simd_float3"
+    },
+    {
+      "name": "var probeEnvironment: SCNMaterialProperty?"
+    },
+    {
+      "name": "var probeExtents: simd_float3"
+    },
+    {
+      "name": "var probeOffset: simd_float3"
+    },
+    {
+      "name": "var probeType: SCNLightProbeType"
+    },
+    {
+      "name": "var probeUpdateType: SCNLightProbeUpdateType"
+    },
+    {
+      "name": "var sampleDistributedShadowMaps: Bool"
+    },
+    {
+      "name": "var shadowCascadeCount: Int"
+    },
+    {
+      "name": "var shadowCascadeSplittingFactor: CGFloat"
+    }
+  ],
+  "declaration": "class SCNLight : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding",
+    "SCNAnimatable",
+    "SCNTechniqueSupport"
+  ]
+}

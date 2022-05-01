@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/callkit/cxcalldirectorymanager",
+  "type": "Class",
+  "name": "CXCallDirectoryManager",
+  "desc": "The programmatic interface to an object that manages a Call Directory app extension.",
+  "items": [
+    {
+      "name": "class var sharedInstance: CXCallDirectoryManager",
+      "desc": "Returns the shared call directory manager instance for the app."
+    },
+    {
+      "name": "func getEnabledStatusForExtension(withIdentifier: String, completionHandler: (CXCallDirectoryManager.EnabledStatus, Error?) -> Void)",
+      "desc": "Asynchronously returns the enabled status of the extension with the specified identifier."
+    },
+    {
+      "name": "func reloadExtension(withIdentifier: String, completionHandler: ((Error?) -> Void)?)",
+      "desc": "Asynchronously reloads the extension with the specified identifier."
+    },
+    {
+      "name": "enum CXCallDirectoryManager.EnabledStatus",
+      "desc": "The enabled status of a Call Directory app extension, as reported by the getEnabledStatusForExtension(withIdentifier:completionHandler:) method."
+    },
+    {
+      "name": "func openSettings(completionHandler: ((Error?) -> Void)?)",
+      "desc": "Opens the iOS Settings app and shows the Call Blocking & Identification settings."
+    },
+    {
+      "name": "enum CXCallDirectoryManager.EnabledStatus",
+      "desc": "The enabled status of a Call Directory app extension, as reported by the getEnabledStatusForExtension(withIdentifier:completionHandler:) method."
+    },
+    {
+      "name": "struct CXErrorCodeCallDirectoryManagerError",
+      "desc": "Errors when interacting with a call directory manager."
+    },
+    {
+      "name": "enum CXErrorCodeCallDirectoryManagerError.Code",
+      "desc": "Error codes for the CallKit Constants error domain."
+    },
+    {
+      "name": "let CXErrorDomainCallDirectoryManager: String",
+      "desc": "Domain for errors when interacting with a call directory manager. See CallKit Constants for possible error codes."
+    }
+  ],
+  "declaration": "class CXCallDirectoryManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

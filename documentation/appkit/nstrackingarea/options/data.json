@@ -1,0 +1,56 @@
+{
+  "path": "/documentation/appkit/nstrackingarea/options",
+  "type": "Structure",
+  "name": "NSTrackingArea.Options",
+  "desc": "The data type defined for the constants specified in the options parameter of init(rect:options:owner:userInfo:). These constants are described below; you can specify multiple constants by performing a bitwise-OR operation with them. In particular, you must supply one or more of the tracking-type constants (that is, mouseEnteredAndExited, mouseMoved, and cursorUpdate) and one of the active constants (that is, activeWhenFirstResponder, activeInKeyWindow, activeInActiveApp, and activeAlways). In addition, you may specify any of the behavior constants (that is, assumeInside, inVisibleRect, and enabledDuringMouseDrag).",
+  "items": [
+    {
+      "name": "static var mouseEnteredAndExited: NSTrackingArea.Options",
+      "desc": "The owner of the tracking area receives mouseEntered(with:) when the mouse cursor enters the area and mouseExited(with:) events when the mouse leaves the area. This value specifies a type of tracking area."
+    },
+    {
+      "name": "static var mouseMoved: NSTrackingArea.Options",
+      "desc": "The owner of the tracking area receives mouseMoved(with:) messages while the mouse cursor is within the area. This value specifies a type of tracking area."
+    },
+    {
+      "name": "static var cursorUpdate: NSTrackingArea.Options",
+      "desc": "The owner of the tracking area receives cursorUpdate(with:) messages when the mouse cursor enters the area; when the mouse leaves the area, the cursor is appropriately reset. This value specifies a type of tracking area."
+    },
+    {
+      "name": "static var activeWhenFirstResponder: NSTrackingArea.Options",
+      "desc": "The owner receives messages when the view is the first responder. This value specifies when the tracking area defined by an NSTrackingArea object is active."
+    },
+    {
+      "name": "static var activeInKeyWindow: NSTrackingArea.Options",
+      "desc": "The owner receives messages when the view is in the key window. This value specifies when the tracking area defined by an NSTrackingArea object is active."
+    },
+    {
+      "name": "static var activeInActiveApp: NSTrackingArea.Options",
+      "desc": "The owner receives messages when the application is active. This value specifies when the tracking area defined by an NSTrackingArea object is active."
+    },
+    {
+      "name": "static var activeAlways: NSTrackingArea.Options",
+      "desc": "The owner receives messages regardless of first-responder status, window status, or application status. The cursorUpdate(with:) message is not sent when the cursorUpdate option is specified along with this constant. This value specifies when the tracking area defined by an NSTrackingArea object is active."
+    },
+    {
+      "name": "static var assumeInside: NSTrackingArea.Options",
+      "desc": "The first event is generated when the cursor leaves the tracking area, regardless if the cursor is inside the area when the NSTrackingArea is added to a view. If this option is not specified, the first event is generated when the cursor leaves the tracking area if the cursor is initially inside the area, or when the cursor enters the area if the cursor is initially outside it. Generally, you do not want to request this behavior. This value specifies a behavior of the tracking area defined by the NSTrackingArea."
+    },
+    {
+      "name": "static var inVisibleRect: NSTrackingArea.Options",
+      "desc": "Mouse tracking occurs only in the visible rectangle of the view—in other words, that region of the tracking rectangle that is unobscured. Otherwise, the entire tracking area is active regardless of overlapping views. The NSTrackingArea object is automatically synchronized with changes in the view’s visible area (visibleRect) and the value returned from rect is ignored. This value specifies a behavior of the tracking area defined by the NSTrackingArea."
+    },
+    {
+      "name": "static var enabledDuringMouseDrag: NSTrackingArea.Options",
+      "desc": "The owner receives NSMouseEntered events when the mouse cursor is dragged into the tracking area. If this option is not specified, the owner receives mouse-entered events when the mouse is moved (no buttons pressed) into the tracking area and on NSLeftMouseUp events after a mouse drag."
+    },
+    {
+      "name": "init(rawValue: UInt)"
+    }
+  ],
+  "declaration": "struct Options, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

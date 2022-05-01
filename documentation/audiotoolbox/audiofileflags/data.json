@@ -1,0 +1,23 @@
+{
+  "path": "/documentation/audiotoolbox/audiofileflags",
+  "type": "Structure",
+  "name": "AudioFileFlags",
+  "desc": "No overview available.",
+  "items": [
+    {
+      "name": "init(rawValue: UInt32)"
+    },
+    {
+      "name": "static var dontPageAlignAudioData: AudioFileFlags",
+      "desc": "Typically, the audio data in a file is page aligned. To make reading the file data as fast as possible, you can use page-aligned data to take advantage of optimized code paths in the file system. However, when space is at a premium, you might want to avoid the additional padding required to attain alignment. To do so, set this flag when calling AudioFileCreate or AudioFileCreateWithURL(_:_:_:_:_:)."
+    },
+    {
+      "name": "static var eraseFile: AudioFileFlags"
+    }
+  ],
+  "declaration": "struct AudioFileFlags, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

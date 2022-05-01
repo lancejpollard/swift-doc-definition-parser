@@ -1,0 +1,148 @@
+{
+  "path": "/documentation/healthkit/hkhealthstore",
+  "type": "Class",
+  "name": "HKHealthStore",
+  "desc": "The access point for all data managed by HealthKit.",
+  "items": [
+    {
+      "name": "func authorizationStatus(for: HKObjectType) -> HKAuthorizationStatus",
+      "desc": "Returns the app’s authorization status for sharing the specified data type."
+    },
+    {
+      "name": "enum HKAuthorizationStatus",
+      "desc": "Constants indicating the authorization status for a particular data type."
+    },
+    {
+      "name": "func getRequestStatusForAuthorization(toShare: Set<HKSampleType>, read: Set<HKObjectType>, completion: (HKAuthorizationRequestStatus, Error?) -> Void)",
+      "desc": "Indicates whether the system presents the user with a permission sheet if your app requests authorization for the provided types."
+    },
+    {
+      "name": "enum HKAuthorizationRequestStatus",
+      "desc": "Values that indicate whether your app needs to request authorization from the user."
+    },
+    {
+      "name": "class func isHealthDataAvailable() -> Bool",
+      "desc": "Returns a Boolean value that indicates whether HealthKit is available on this device."
+    },
+    {
+      "name": "func supportsHealthRecords() -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the current device supports clinical records."
+    },
+    {
+      "name": "func requestAuthorization(toShare: Set<HKSampleType>?, read: Set<HKObjectType>?, completion: (Bool, Error?) -> Void)",
+      "desc": "Requests permission to save and read the specified data types."
+    },
+    {
+      "name": "func requestAuthorization(toShare: Set<HKSampleType>, read: Set<HKObjectType>)",
+      "desc": "Asynchronously requests permission to save and read the specified data types."
+    },
+    {
+      "name": "func handleAuthorizationForExtension(completion: (Bool, Error?) -> Void)",
+      "desc": "Requests permission to save and read the data types specified by an extension."
+    },
+    {
+      "name": "func biologicalSex() -> HKBiologicalSexObject",
+      "desc": "Reads the user’s biological sex from the HealthKit store."
+    },
+    {
+      "name": "func bloodType() -> HKBloodTypeObject",
+      "desc": "Reads the user’s blood type from the HealthKit store."
+    },
+    {
+      "name": "func dateOfBirthComponents() -> DateComponents",
+      "desc": "Reads the user’s date of birth from the HealthKit store."
+    },
+    {
+      "name": "func fitzpatrickSkinType() -> HKFitzpatrickSkinTypeObject",
+      "desc": "Reads the user’s Fitzpatrick Skin Type from the HealthKit store."
+    },
+    {
+      "name": "func wheelchairUse() -> HKWheelchairUseObject",
+      "desc": "Reads the user’s wheelchair use from the HealthKit store."
+    },
+    {
+      "name": "func delete(HKObject, withCompletion: (Bool, Error?) -> Void)",
+      "desc": "Deletes the specified object from the HealthKit store."
+    },
+    {
+      "name": "func delete([HKObject], withCompletion: (Bool, Error?) -> Void)",
+      "desc": "Deletes the specified objects from the HealthKit store."
+    },
+    {
+      "name": "func deleteObjects(of: HKObjectType, predicate: NSPredicate, withCompletion: (Bool, Int, Error?) -> Void)",
+      "desc": "Deletes objects saved by this application that match the provided type and predicate."
+    },
+    {
+      "name": "func earliestPermittedSampleDate() -> Date",
+      "desc": "Returns the earliest date permitted for samples."
+    },
+    {
+      "name": "func save(HKObject, withCompletion: (Bool, Error?) -> Void)",
+      "desc": "Saves the provided object to the HealthKit store."
+    },
+    {
+      "name": "func save([HKObject], withCompletion: (Bool, Error?) -> Void)",
+      "desc": "Saves an array of objects to the HealthKit store."
+    },
+    {
+      "name": "func add([HKSample], to: HKWorkout, completion: (Bool, Error?) -> Void)",
+      "desc": "Associates the provided samples with the specified workout."
+    },
+    {
+      "name": "func recoverActiveWorkoutSession(completion: (HKWorkoutSession?, Error?) -> Void)",
+      "desc": "Recovers an active workout session."
+    },
+    {
+      "name": "func execute(HKQuery)",
+      "desc": "Starts executing the provided query."
+    },
+    {
+      "name": "func stop(HKQuery)",
+      "desc": "Stops a long-running query."
+    },
+    {
+      "name": "func preferredUnits(for: Set<HKQuantityType>, completion: ([HKQuantityType : HKUnit], Error?) -> Void)",
+      "desc": "Returns the user’s preferred units for the given quantity types."
+    },
+    {
+      "name": "static let HKUserPreferencesDidChange: NSNotification.Name",
+      "desc": "Notifies observers whenever the user changes his or her preferred units."
+    },
+    {
+      "name": "func enableBackgroundDelivery(for: HKObjectType, frequency: HKUpdateFrequency, withCompletion: (Bool, Error?) -> Void)",
+      "desc": "Enable the delivery of updates to an app running in the background."
+    },
+    {
+      "name": "enum HKUpdateFrequency",
+      "desc": "Constants that determine how often the system will launch your app in response to changes to HealthKit data."
+    },
+    {
+      "name": "func disableBackgroundDelivery(for: HKObjectType, withCompletion: (Bool, Error?) -> Void)",
+      "desc": "Disables background deliveries of update notifications for the specified data type."
+    },
+    {
+      "name": "func disableAllBackgroundDelivery(completion: (Bool, Error?) -> Void)",
+      "desc": "Disables all background deliveries of update notifications."
+    },
+    {
+      "name": "func startWatchApp(with: HKWorkoutConfiguration, completion: (Bool, Error?) -> Void)",
+      "desc": "Launches or wakes the Watch app to create a new workout session."
+    },
+    {
+      "name": "func recalibrateEstimates(sampleType: HKSampleType, date: Date, completion: (Bool, Error?) -> Void)",
+      "desc": "Recalibrates the prediction algorithm used to calculate the specified sample type."
+    },
+    {
+      "name": "func activityMoveMode() -> HKActivityMoveModeObject",
+      "desc": "Returns the activity move mode for the current user."
+    },
+    {
+      "name": "static let HKUserPreferencesDidChange: NSNotification.Name",
+      "desc": "Notifies observers whenever the user changes his or her preferred units."
+    }
+  ],
+  "declaration": "class HKHealthStore : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

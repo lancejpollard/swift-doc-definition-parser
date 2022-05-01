@@ -1,0 +1,55 @@
+{
+  "path": "/documentation/scriptingbridge/sbapplication",
+  "type": "Class",
+  "name": "SBApplication",
+  "desc": "The SBApplication class provides a mechanism enabling an Objective-C program to send Apple events to a scriptable application and receive Apple events in response. It thereby makes it possible for that program to control the application and exchange data with it. Scripting Bridge works by bridging data types between Apple event descriptors and Cocoa objects.",
+  "items": [
+    {
+      "name": "init?(bundleIdentifier: String)",
+      "desc": "Returns an instance of an SBApplication subclass that represents the target application identified by the given bundle identifier."
+    },
+    {
+      "name": "init?(processIdentifier: pid_t)",
+      "desc": "Returns an instance of an SBApplication subclass that represents the target application identified by the given process identifier."
+    },
+    {
+      "name": "init?(url: URL)",
+      "desc": "Returns an instance of an SBApplication subclass that represents the target application identified by the given URL."
+    },
+    {
+      "name": "func `class`(forScriptingClass: String) -> AnyClass?",
+      "desc": "Returns a class object that represents a particular class in the target application."
+    },
+    {
+      "name": "func activate()",
+      "desc": "Moves the target application to the foreground immediately."
+    },
+    {
+      "name": "var isRunning: Bool",
+      "desc": "A Boolean that indicates whether the target application represented by the receiver is running"
+    },
+    {
+      "name": "var launchFlags: LSLaunchFlags",
+      "desc": "The launch flags for the application represented by the receiver."
+    },
+    {
+      "name": "var sendMode: AESendMode",
+      "desc": "The mode for sending Apple events to the target application."
+    },
+    {
+      "name": "var timeout: Int",
+      "desc": "The period the application will wait to receive reply Apple events."
+    },
+    {
+      "name": "var delegate: SBApplicationDelegate?",
+      "desc": "The error-handling delegate of the receiver."
+    }
+  ],
+  "declaration": "class SBApplication : SBObject",
+  "inheritsFrom": [
+    "SBObject"
+  ],
+  "conformsTo": [
+    "NSCoding"
+  ]
+}

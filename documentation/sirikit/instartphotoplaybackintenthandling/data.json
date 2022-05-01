@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/sirikit/instartphotoplaybackintenthandling",
+  "type": "Protocol",
+  "name": "INStartPhotoPlaybackIntentHandling",
+  "desc": "The handler interface for searching the user’s photos and the playback of the results.DeprecatedThis intent is no longer available. You may define a custom intent instead. For more information, see Deprecated SiriKit Intent Domains.",
+  "items": [
+    {
+      "name": "func resolveDateCreated(for: INStartPhotoPlaybackIntent, with: (INDateComponentsRangeResolutionResult) -> Void)",
+      "desc": "Resolves the taken dates for the photos."
+    },
+    {
+      "name": "func resolveLocationCreated(for: INStartPhotoPlaybackIntent, with: (INPlacemarkResolutionResult) -> Void)",
+      "desc": "Resolves the location of the photos."
+    },
+    {
+      "name": "func resolvePeopleInPhoto(for: INStartPhotoPlaybackIntent, with: ([INPersonResolutionResult]) -> Void)",
+      "desc": "Resolves the people in the photos."
+    },
+    {
+      "name": "func resolveAlbumName(for: INStartPhotoPlaybackIntent, with: (INStringResolutionResult) -> Void)",
+      "desc": "Resolves the name of the photo album containing the photos."
+    },
+    {
+      "name": "func confirm(intent: INStartPhotoPlaybackIntent, completion: (INStartPhotoPlaybackIntentResponse) -> Void)",
+      "desc": "Confirms whether you can perform the search."
+    },
+    {
+      "name": "func handle(intent: INStartPhotoPlaybackIntent, completion: (INStartPhotoPlaybackIntentResponse) -> Void)",
+      "desc": "Handles performing the search and returning the number of results."
+    }
+  ],
+  "declaration": "protocol INStartPhotoPlaybackIntentHandling",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

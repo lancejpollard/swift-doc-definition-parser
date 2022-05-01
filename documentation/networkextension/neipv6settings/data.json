@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/networkextension/neipv6settings",
+  "type": "Class",
+  "name": "NEIPv6Settings",
+  "desc": "NEIPv6Settings contains the Internet Protocol version 6 (IPv6) settings of a IP layer network tunnel.",
+  "items": [
+    {
+      "name": "init(addresses: [String], networkPrefixLengths: [NSNumber])",
+      "desc": "Initialize the NEIPv6Settings object."
+    },
+    {
+      "name": "var addresses: [String]",
+      "desc": "The IPv6 addresses to assign to the TUN interface."
+    },
+    {
+      "name": "var networkPrefixLengths: [NSNumber]",
+      "desc": "The IPv6 network prefix lengths to assign to the TUN interface."
+    },
+    {
+      "name": "var includedRoutes: [NEIPv6Route]?",
+      "desc": "The routes that specify what IPv6 network traffic will be routed to the TUN interface."
+    },
+    {
+      "name": "var excludedRoutes: [NEIPv6Route]?",
+      "desc": "The routes that specify what IPv6 network traffic will be routed to the primary physical interface."
+    },
+    {
+      "name": "class NEIPv6Route",
+      "desc": "NEIPv6Route contains settings for an IPv6 route."
+    }
+  ],
+  "declaration": "class NEIPv6Settings : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

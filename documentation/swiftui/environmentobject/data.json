@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/SwiftUI/EnvironmentObject",
+  "type": "Structure",
+  "name": "EnvironmentObject",
+  "desc": "A property wrapper type for an observable object supplied by a parent or ancestor view.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an environment object."
+    },
+    {
+      "name": "var wrappedValue: ObjectType",
+      "desc": "The underlying value referenced by the environment object."
+    },
+    {
+      "name": "var projectedValue: EnvironmentObject<ObjectType>.Wrapper",
+      "desc": "A projection of the environment object that creates bindings to its properties using dynamic member lookup."
+    },
+    {
+      "name": "struct Wrapper",
+      "desc": "A wrapper of the underlying environment object that can create bindings to its properties using dynamic member lookup."
+    }
+  ],
+  "declaration": "@frozen @propertyWrapper struct EnvironmentObject<ObjectType> where ObjectType : ObservableObject",
+  "conformsTo": [
+    "DynamicProperty"
+  ]
+}

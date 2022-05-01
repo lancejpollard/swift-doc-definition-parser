@@ -1,0 +1,175 @@
+{
+  "path": "/documentation/corenfc/nfciso15693tag",
+  "type": "Protocol",
+  "name": "NFCISO15693Tag",
+  "desc": "An interface for interacting with an ISO 15693 tag.",
+  "items": [
+    {
+      "name": "var icManufacturerCode: Int",
+      "desc": "The IC manufacturer code of the tag."
+    },
+    {
+      "name": "var icSerialNumber: Data",
+      "desc": "The IC serial number assigned to the tag by the manufacturer."
+    },
+    {
+      "name": "var identifier: Data",
+      "desc": "The unique hardware identifier of the tag."
+    },
+    {
+      "name": "typealias RequestFlag",
+      "desc": "A set of bit mask options that, when combined, define the request flags to use when sending a command."
+    },
+    {
+      "name": "func readSingleBlock(requestFlags: NFCISO15693RequestFlag, blockNumber: UInt8, completionHandler: (Data, Error?) -> Void)",
+      "desc": "Sends a Read Single Block command (0x20 command code), as defined in the ISO 15693-3 specification, to the tag."
+    },
+    {
+      "name": "func writeSingleBlock(requestFlags: NFCISO15693RequestFlag, blockNumber: UInt8, dataBlock: Data, completionHandler: (Error?) -> Void)",
+      "desc": "Sends the Write Single Block command (0x21 command code), as defined in the ISO 15693-3 specification, to the tag."
+    },
+    {
+      "name": "func lockBlock(requestFlags: NFCISO15693RequestFlag, blockNumber: UInt8, completionHandler: (Error?) -> Void)",
+      "desc": "Sends the Lock Block command (0x22 command code), as defined in the ISO 15693-3 specification, to the tag."
+    },
+    {
+      "name": "func readMultipleBlocks(requestFlags: NFCISO15693RequestFlag, blockRange: NSRange, completionHandler: ([Data], Error?) -> Void)",
+      "desc": "Sends the Read Multiple Blocks command (0x23 command code), as defined in the ISO 15693-3 specification, to the tag."
+    },
+    {
+      "name": "func writeMultipleBlocks(requestFlags: NFCISO15693RequestFlag, blockRange: NSRange, dataBlocks: [Data], completionHandler: (Error?) -> Void)",
+      "desc": "Sends the Write Multiple Blocks command (0x24 command code), as defined in the ISO 15693-3 specification, to the tag."
+    },
+    {
+      "name": "func getMultipleBlockSecurityStatus(requestFlags: NFCISO15693RequestFlag, blockRange: NSRange, completionHandler: ([NSNumber], Error?) -> Void)",
+      "desc": "Sends the Get Multiple Block Security Status command (0x2C command code), as defined in the ISO 15693-3 specification, to the tag."
+    },
+    {
+      "name": "func writeAFI(requestFlags: NFCISO15693RequestFlag, afi: UInt8, completionHandler: (Error?) -> Void)",
+      "desc": "Sends the Write AFI command (0x27 command code), as defined in the ISO 15693-3 specification, to the tag."
+    },
+    {
+      "name": "func lockAFI(requestFlags: NFCISO15693RequestFlag, completionHandler: (Error?) -> Void)",
+      "desc": "Sends the Lock AFI command (0x28 command code), as defined in the ISO 15693-3 specification, to the tag."
+    },
+    {
+      "name": "func writeDSFID(requestFlags: NFCISO15693RequestFlag, dsfid: UInt8, completionHandler: (Error?) -> Void)",
+      "desc": "Sends the Write DSFID command (0x29 command code), as defined in the ISO 15693-3 specification, to the tag."
+    },
+    {
+      "name": "func resetToReady(requestFlags: NFCISO15693RequestFlag, completionHandler: (Error?) -> Void)",
+      "desc": "Sends the Reset To Ready command (0x26 command code), as defined in the ISO 15693-3 specification, to the tag."
+    },
+    {
+      "name": "func select(requestFlags: NFCISO15693RequestFlag, completionHandler: (Error?) -> Void)",
+      "desc": "Sends the Select command (0x25 command code), as defined in the ISO 15693-3 specification, to the tag."
+    },
+    {
+      "name": "func stayQuiet(completionHandler: (Error?) -> Void)",
+      "desc": "Sends a Stay Quiet command (0x02 command code), as defined in the ISO 15693-3 specification, to the tag."
+    },
+    {
+      "name": "func customCommand(requestFlags: NFCISO15693RequestFlag, customCommandCode: Int, customRequestParameters: Data, completionHandler: (Data, Error?) -> Void)",
+      "desc": "Sends a custom command (0xA0 to 0xDF command code), as defined in the ISO 15693-3 specification, to the tag."
+    },
+    {
+      "name": "func extendedReadSingleBlock(requestFlags: NFCISO15693RequestFlag, blockNumber: Int, completionHandler: (Data, Error?) -> Void)",
+      "desc": "Sends the Extended Read Single Block command (0x30 command code), as defined in the NFC Forum Type 5 tag specification, to the tag."
+    },
+    {
+      "name": "func extendedWriteSingleBlock(requestFlags: NFCISO15693RequestFlag, blockNumber: Int, dataBlock: Data, completionHandler: (Error?) -> Void)",
+      "desc": "Sends the Extended Write Single Block command (0x31 command code), as defined in the NFC Forum Type 5 tag specification, to the tag."
+    },
+    {
+      "name": "func extendedLockBlock(requestFlags: NFCISO15693RequestFlag, blockNumber: Int, completionHandler: (Error?) -> Void)",
+      "desc": "Sends the Extended Lock Single Block command (0x32 command code), as defined in the NFC Forum Type 5 tag specification, to the tag."
+    },
+    {
+      "name": "func extendedReadMultipleBlocks(requestFlags: NFCISO15693RequestFlag, blockRange: NSRange, completionHandler: ([Data], Error?) -> Void)",
+      "desc": "Sends the Extended Read Multiple Block command (0x33 command code), as defined in the NFC Forum Type 5 tag specification, to the tag."
+    },
+    {
+      "name": "let NFCISO15693TagResponseErrorKey: String",
+      "desc": "A user information dictionary key indicating that a tag responded with a command error."
+    },
+    {
+      "name": "func authenticate(requestFlags: NFCISO15693RequestFlag, cryptoSuiteIdentifier: Int, message: Data) -> (NFCISO15693ResponseFlag, Data)"
+    },
+    {
+      "name": "func authenticate(requestFlags: NFCISO15693RequestFlag, cryptoSuiteIdentifier: Int, message: Data, resultHandler: (Result<(NFCISO15693ResponseFlag, Data), Error>) -> Void)"
+    },
+    {
+      "name": "func challenge(requestFlags: NFCISO15693RequestFlag, cryptoSuiteIdentifier: Int, message: Data)"
+    },
+    {
+      "name": "func challenge(requestFlags: NFCISO15693RequestFlag, cryptoSuiteIdentifier: Int, message: Data, completionHandler: (Error?) -> Void)"
+    },
+    {
+      "name": "func customCommand(requestFlags: NFCISO15693RequestFlag, customCommandCode: Int, customRequestParameters: Data, resultHandler: (Result<Data, Error>) -> Void)"
+    },
+    {
+      "name": "func extendedFastReadMultipleBlocks(requestFlags: NFCISO15693RequestFlag, blockRange: NSRange) -> [Data]"
+    },
+    {
+      "name": "func extendedFastReadMultipleBlocks(requestFlags: NFCISO15693RequestFlag, blockRange: NSRange, resultHandler: (Result<[Data], Error>) -> Void)"
+    },
+    {
+      "name": "func extendedGetMultipleBlockSecurityStatus(requestFlags: NFCISO15693RequestFlag, blockRange: NSRange) -> NFCISO15693MultipleBlockSecurityStatus"
+    },
+    {
+      "name": "func extendedGetMultipleBlockSecurityStatus(requestFlags: NFCISO15693RequestFlag, blockRange: NSRange, resultHandler: (Result<NFCISO15693MultipleBlockSecurityStatus, Error>) -> Void)"
+    },
+    {
+      "name": "func extendedReadSingleBlock(requestFlags: NFCISO15693RequestFlag, blockNumber: Int, resultHandler: (Result<Data, Error>) -> Void)"
+    },
+    {
+      "name": "func extendedWriteMultipleBlocks(requestFlags: NFCISO15693RequestFlag, blockRange: NSRange, dataBlocks: [Data])"
+    },
+    {
+      "name": "func extendedWriteMultipleBlocks(requestFlags: NFCISO15693RequestFlag, blockRange: NSRange, dataBlocks: [Data], completionHandler: (Error?) -> Void)"
+    },
+    {
+      "name": "func fastReadMultipleBlocks(requestFlags: NFCISO15693RequestFlag, blockRange: NSRange) -> [Data]"
+    },
+    {
+      "name": "func fastReadMultipleBlocks(requestFlags: NFCISO15693RequestFlag, blockRange: NSRange, resultHandler: (Result<[Data], Error>) -> Void)"
+    },
+    {
+      "name": "func getSystemInfo(requestFlags: NFCISO15693RequestFlag, resultHandler: (Result<NFCISO15693SystemInfo, Error>) -> Void)"
+    },
+    {
+      "name": "func keyUpdate(requestFlags: NFCISO15693RequestFlag, keyIdentifier: Int, message: Data) -> (NFCISO15693ResponseFlag, Data)"
+    },
+    {
+      "name": "func keyUpdate(requestFlags: NFCISO15693RequestFlag, keyIdentifier: Int, message: Data, resultHandler: (Result<(NFCISO15693ResponseFlag, Data), Error>) -> Void)"
+    },
+    {
+      "name": "func lockDSFID(requestFlags: NFCISO15693RequestFlag, completionHandler: (Error?) -> Void)"
+    },
+    {
+      "name": "func readBuffer(requestFlags: NFCISO15693RequestFlag) -> (NFCISO15693ResponseFlag, Data)"
+    },
+    {
+      "name": "func readBuffer(requestFlags: NFCISO15693RequestFlag, resultHandler: (Result<(NFCISO15693ResponseFlag, Data), Error>) -> Void)"
+    },
+    {
+      "name": "func readMultipleBlocks(requestFlags: NFCISO15693RequestFlag, blockRange: NSRange, resultHandler: (Result<[Data], Error>) -> Void)"
+    },
+    {
+      "name": "func readSingleBlock(requestFlags: NFCISO15693RequestFlag, blockNumber: UInt8, resultHandler: (Result<Data, Error>) -> Void)"
+    },
+    {
+      "name": "func sendRequest(requestFlags: Int, commandCode: Int, data: Data?) -> (NFCISO15693ResponseFlag, Data?)"
+    },
+    {
+      "name": "func sendRequest(requestFlags: Int, commandCode: Int, data: Data?, resultHandler: (Result<(NFCISO15693ResponseFlag, Data?), Error>) -> Void)"
+    },
+    {
+      "name": "func systemInfo(requestFlags: NFCISO15693RequestFlag) -> NFCISO15693SystemInfo"
+    }
+  ],
+  "declaration": "protocol NFCISO15693Tag",
+  "inheritsFrom": [
+    "NFCNDEFTag"
+  ]
+}

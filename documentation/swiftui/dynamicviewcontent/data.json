@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/swiftui/dynamicviewcontent",
+  "type": "Protocol",
+  "name": "DynamicViewContent",
+  "desc": "A type of view that generates views from an underlying collection of data.",
+  "items": [
+    {
+      "name": "var data: Self.Data",
+      "desc": "The collection of underlying data."
+    },
+    {
+      "name": "associatedtype Data : Collection",
+      "desc": "The type of the underlying collection of data."
+    },
+    {
+      "name": "func onDelete(perform: Optional<(IndexSet) -> Void>) -> some DynamicViewContent",
+      "desc": "Sets the deletion action for the dynamic view."
+    },
+    {
+      "name": "func onInsert(of: [UTType], perform: (Int, [NSItemProvider]) -> Void) -> some DynamicViewContent",
+      "desc": "Sets the insert action for the dynamic view."
+    },
+    {
+      "name": "func onMove(perform: Optional<(IndexSet, Int) -> Void>) -> some DynamicViewContent",
+      "desc": "Sets the move action for the dynamic view."
+    }
+  ],
+  "declaration": "protocol DynamicViewContent : View",
+  "inheritsFrom": [
+    "View"
+  ]
+}

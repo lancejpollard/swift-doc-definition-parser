@@ -1,0 +1,24 @@
+{
+  "path": "/documentation/accelerate/vdsp_biquadfunctions",
+  "type": "Protocol",
+  "name": "vDSP_BiquadFunctions",
+  "desc": "A protocol that defines functions for biquadratic filtering.",
+  "items": [
+    {
+      "name": "associatedtype Scalar"
+    },
+    {
+      "name": "static func applyMulti(setup: vDSP_biquadm_SetupD, pInputs: UnsafeMutablePointer<UnsafePointer<Self.Scalar>>, pOutputs: UnsafeMutablePointer<UnsafeMutablePointer<Self.Scalar>>, count: vDSP_Length)"
+    },
+    {
+      "name": "static func applySingle<U, V>(source: U, destination: inout V, delays: UnsafeMutablePointer<Self.Scalar>, setup: vDSP_biquad_Setup, sectionCount: vDSP_Length, count: vDSP_Length)"
+    },
+    {
+      "name": "static func destroySetup(channelCount: UInt, biquadSetup: OpaquePointer)"
+    },
+    {
+      "name": "static func makeBiquadSetup(channelCount: vDSP_Length, coefficients: [Double], sectionCount: vDSP_Length) -> OpaquePointer?"
+    }
+  ],
+  "declaration": "protocol vDSP_BiquadFunctions"
+}

@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/photokit/phimagemanager",
+  "type": "Class",
+  "name": "PHImageManager",
+  "desc": "An object that facilitates retrieving or generating preview thumbnails and asset data.",
+  "items": [
+    {
+      "name": "class func `default`() -> PHImageManager",
+      "desc": "Returns the shared image manager object."
+    },
+    {
+      "name": "func requestImage(for: PHAsset, targetSize: CGSize, contentMode: PHImageContentMode, options: PHImageRequestOptions?, resultHandler: (UIImage?, [AnyHashable : Any]?) -> Void) -> PHImageRequestID",
+      "desc": "Requests an image representation for the specified asset."
+    },
+    {
+      "name": "func requestImageDataAndOrientation(for: PHAsset, options: PHImageRequestOptions?, resultHandler: (Data?, String?, CGImagePropertyOrientation, [AnyHashable : Any]?) -> Void) -> PHImageRequestID",
+      "desc": "Requests the largest represented image as data bytes and EXIF orientation for the specified asset."
+    },
+    {
+      "name": "let PHImageManagerMaximumSize: CGSize",
+      "desc": "A special value for requesting original image data or the largest rendered image available. ."
+    },
+    {
+      "name": "func requestPlayerItem(forVideo: PHAsset, options: PHVideoRequestOptions?, resultHandler: (AVPlayerItem?, [AnyHashable : Any]?) -> Void) -> PHImageRequestID",
+      "desc": "Requests a representation of the video asset for playback, to be loaded asynchronously."
+    },
+    {
+      "name": "func requestExportSession(forVideo: PHAsset, options: PHVideoRequestOptions?, exportPreset: String, resultHandler: (AVAssetExportSession?, [AnyHashable : Any]?) -> Void) -> PHImageRequestID",
+      "desc": "Requests an export session for writing the video asset’s data to a file, to be loaded asynchronously."
+    },
+    {
+      "name": "func requestAVAsset(forVideo: PHAsset, options: PHVideoRequestOptions?, resultHandler: (AVAsset?, AVAudioMix?, [AnyHashable : Any]?) -> Void) -> PHImageRequestID",
+      "desc": "Requests AVFoundation objects representing the video asset’s content and state, to be loaded asynchronously."
+    },
+    {
+      "name": "func requestLivePhoto(for: PHAsset, targetSize: CGSize, contentMode: PHImageContentMode, options: PHLivePhotoRequestOptions?, resultHandler: (PHLivePhoto?, [AnyHashable : Any]?) -> Void) -> PHImageRequestID",
+      "desc": "Requests a Live Photo representation for the specified asset."
+    },
+    {
+      "name": "func cancelImageRequest(PHImageRequestID)",
+      "desc": "Cancels an asynchronous request"
+    },
+    {
+      "name": "typealias PHImageRequestID",
+      "desc": "A numeric identifier for an asynchronous image request."
+    },
+    {
+      "name": "let PHInvalidImageRequestID: PHImageRequestID",
+      "desc": "A special value provided for asynchronous image requests that cannot be canceled."
+    },
+    {
+      "name": "enum PHImageContentMode",
+      "desc": "Options for fitting an image’s aspect ratio to a requested size, used by the requestImage(for:targetSize:contentMode:options:resultHandler:) method."
+    }
+  ],
+  "declaration": "class PHImageManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

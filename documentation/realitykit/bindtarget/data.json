@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/realitykit/bindtarget",
+  "type": "Enumeration",
+  "name": "BindTarget",
+  "desc": "A reference to a particular scene, entity, or property that animates.",
+  "items": [
+    {
+      "name": "case `internal`(InternalBindPath)",
+      "desc": "A bind target that refers to a framework-provided property."
+    },
+    {
+      "name": "case jointTransforms",
+      "desc": "An option that specifies that the entity's joint transforms animate."
+    },
+    {
+      "name": "case parameter(String)",
+      "desc": "Provides a property that animates from the given textual name."
+    },
+    {
+      "name": "case path(BindPath)",
+      "desc": "Provides a complex bind path capable of animating additional entities other than the current entity."
+    },
+    {
+      "name": "case transform",
+      "desc": "A option that specifies that the target entity's transform animates."
+    },
+    {
+      "name": "static func == (BindTarget, BindTarget) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two bind targets are equal."
+    },
+    {
+      "name": "static func != (BindTarget, BindTarget) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two bind targets aren’t equal."
+    },
+    {
+      "name": "static func scene(String) -> BindTarget.ScenePath",
+      "desc": "Generates a bind path from a particular scene."
+    },
+    {
+      "name": "struct BindTarget.ScenePath",
+      "desc": "A bind path for a particular scene."
+    },
+    {
+      "name": "static func anchorEntity(String) -> BindTarget.EntityPath",
+      "desc": "Generates a complex bind path from a particular anchor entity in the scene."
+    },
+    {
+      "name": "static func entity(String) -> BindTarget.EntityPath",
+      "desc": "Generates a complex bind path from a particular child entity of the current entity."
+    },
+    {
+      "name": "struct BindTarget.EntityPath",
+      "desc": "A bind path context for a particular entity."
+    }
+  ],
+  "declaration": "enum BindTarget",
+  "conformsTo": [
+    "Equatable"
+  ]
+}

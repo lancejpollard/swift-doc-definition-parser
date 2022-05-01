@@ -1,0 +1,69 @@
+{
+  "path": "/documentation/avfoundation/avurlasset",
+  "type": "Class",
+  "name": "AVURLAsset",
+  "desc": "An asset that represents media at a local or remote URL.",
+  "items": [
+    {
+      "name": "init(url: URL, options: [String : Any]?)",
+      "desc": "Creates an asset that models the media resource at the specified URL."
+    },
+    {
+      "name": "var url: URL",
+      "desc": "The URL to the asset’s media."
+    },
+    {
+      "name": "static var tracks: AVAsyncProperty<Root, [AVAssetTrack]>",
+      "desc": "The tracks an asset contains."
+    },
+    {
+      "name": "func findCompatibleTrack(for: AVCompositionTrack, completionHandler: (AVAssetTrack?, Error?) -> Void)",
+      "desc": "Loads an asset track from which you can insert any time range into the composition track."
+    },
+    {
+      "name": "static var variants: AVAsyncProperty<Root, [AVAssetVariant]>",
+      "desc": "An array of variants that an asset contains."
+    },
+    {
+      "name": "class func audiovisualTypes() -> [AVFileType]",
+      "desc": "Returns an array of the file types the asset supports."
+    },
+    {
+      "name": "class func audiovisualMIMETypes() -> [String]",
+      "desc": "Returns an array of the MIME types the asset supports."
+    },
+    {
+      "name": "class func isPlayableExtendedMIMEType(String) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the asset is playable with the specified codecs and container type."
+    },
+    {
+      "name": "var resourceLoader: AVAssetResourceLoader",
+      "desc": "The resource loader for the asset."
+    },
+    {
+      "name": "var variants: [AVAssetVariant]",
+      "desc": "An array of variants that an asset contains."
+    },
+    {
+      "name": "func compatibleTrack(for: AVCompositionTrack) -> AVAssetTrack?",
+      "desc": "Returns an asset track from which you can insert any time range into a given composition track."
+    },
+    {
+      "name": "var mayRequireContentKeysForMediaDataProcessing: Bool",
+      "desc": "A Boolean value that indicates whether you can add this asset as a content key recipient to a content key session."
+    },
+    {
+      "name": "var assetCache: AVAssetCache?",
+      "desc": "The asset’s associated asset cache, if it exists."
+    }
+  ],
+  "declaration": "class AVURLAsset : AVAsset",
+  "inheritsFrom": [
+    "AVAsset"
+  ],
+  "conformsTo": [
+    "AVContentKeyRecipient",
+    "NSItemProviderReading",
+    "NSItemProviderWriting"
+  ]
+}

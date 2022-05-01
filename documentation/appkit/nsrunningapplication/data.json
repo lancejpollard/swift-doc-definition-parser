@@ -1,0 +1,112 @@
+{
+  "path": "/documentation/appkit/nsrunningapplication",
+  "type": "Class",
+  "name": "NSRunningApplication",
+  "desc": "An object that can manipulate and provide information for a single instance of an app.",
+  "items": [
+    {
+      "name": "init?(processIdentifier: pid_t)",
+      "desc": "Returns the running application with the given process identifier, or nil if no application has that pid."
+    },
+    {
+      "name": "class func runningApplications(withBundleIdentifier: String) -> [NSRunningApplication]",
+      "desc": "Returns an array of currently running applications with the specified bundle identifier."
+    },
+    {
+      "name": "class var current: NSRunningApplication",
+      "desc": "Returns an NSRunningApplication representing this application."
+    },
+    {
+      "name": "var isActive: Bool",
+      "desc": "Indicates whether the application is currently frontmost."
+    },
+    {
+      "name": "func activate(options: NSApplication.ActivationOptions) -> Bool",
+      "desc": "Attempts to activate the application using the specified options."
+    },
+    {
+      "name": "struct NSApplication.ActivationOptions",
+      "desc": "The following flags are for activate(options:)."
+    },
+    {
+      "name": "var activationPolicy: NSApplication.ActivationPolicy",
+      "desc": "Indicates the activation policy of the application."
+    },
+    {
+      "name": "enum NSApplication.ActivationPolicy",
+      "desc": "Activation policies (used by activationPolicy) that control whether and how an app may be activated."
+    },
+    {
+      "name": "func hide() -> Bool",
+      "desc": "Attempts to hide or the application."
+    },
+    {
+      "name": "func unhide() -> Bool",
+      "desc": "Attempts to unhide or the application."
+    },
+    {
+      "name": "var isHidden: Bool",
+      "desc": "Indicates whether the application is currently hidden."
+    },
+    {
+      "name": "var localizedName: String?",
+      "desc": "Indicates the localized name of the application."
+    },
+    {
+      "name": "var icon: NSImage?",
+      "desc": "Returns the icon for the receiver’s application."
+    },
+    {
+      "name": "var bundleIdentifier: String?",
+      "desc": "Indicates the CFBundleIdentifier of the application."
+    },
+    {
+      "name": "var bundleURL: URL?",
+      "desc": "Indicates the URL to the application's bundle."
+    },
+    {
+      "name": "var executableArchitecture: Int",
+      "desc": "Indicates the executing processor architecture for the application."
+    },
+    {
+      "name": "var executableURL: URL?",
+      "desc": "Indicates the URL to the application's executable."
+    },
+    {
+      "name": "var launchDate: Date?",
+      "desc": "Indicates the date when the application was launched."
+    },
+    {
+      "name": "var isFinishedLaunching: Bool",
+      "desc": "Indicates whether the receiver’s process has finished launching,"
+    },
+    {
+      "name": "var processIdentifier: pid_t",
+      "desc": "Indicates the process identifier (pid) of the application."
+    },
+    {
+      "name": "var ownsMenuBar: Bool",
+      "desc": "Returns whether the application owns the current menu bar."
+    },
+    {
+      "name": "func forceTerminate() -> Bool",
+      "desc": "Attempts to force the receiver to quit."
+    },
+    {
+      "name": "func terminate() -> Bool",
+      "desc": "Attempts to quit the receiver normally."
+    },
+    {
+      "name": "var isTerminated: Bool",
+      "desc": "Indicates that the receiver’s application has terminated."
+    },
+    {
+      "name": "class func terminateAutomaticallyTerminableApplications()",
+      "desc": "Terminates invisibly running applications as if triggered by system memory pressure."
+    }
+  ],
+  "declaration": "class NSRunningApplication : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

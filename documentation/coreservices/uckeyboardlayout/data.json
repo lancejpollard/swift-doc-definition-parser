@@ -1,0 +1,35 @@
+{
+  "path": "/documentation/coreservices/uckeyboardlayout",
+  "type": "Structure",
+  "name": "UCKeyboardLayout",
+  "desc": "Provides header data for a 'uchr' resource.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(keyLayoutHeaderFormat: UInt16, keyLayoutDataVersion: UInt16, keyLayoutFeatureInfoOffset: UInt32, keyboardTypeCount: UInt32, keyboardTypeList: (UCKeyboardTypeHeader))"
+    },
+    {
+      "name": "var keyLayoutDataVersion: UInt16",
+      "desc": "An unsigned 16-bit integer identifying the version of the data in the resource, in binary code decimal format. For example, 0x0100 would equal version 1.0."
+    },
+    {
+      "name": "var keyLayoutFeatureInfoOffset: UInt32",
+      "desc": "An unsigned 32-bit integer providing an offset to a structure of type UCKeyLayoutFeatureInfo, if such is used in the resource. May be 0 if no UCKeyLayoutFeatureInfo table is included in the resource."
+    },
+    {
+      "name": "var keyLayoutHeaderFormat: UInt16",
+      "desc": "An unsigned 16-bit integer identifying the format of the structure. Set to kUCLayoutHeaderFormat."
+    },
+    {
+      "name": "var keyboardTypeCount: UInt32",
+      "desc": "An unsigned 32-bit integer specifying the number of UCKeyboardTypeHeader structures in the keyboardTypeList[] field’s array."
+    },
+    {
+      "name": "var keyboardTypeList: (UCKeyboardTypeHeader)",
+      "desc": "A variable-length array containing structures of type UCKeyboardTypeHeader. Each UCKeyboardTypeHeader entry specifies a range of physical keyboard types and contains offsets to each of the key mapping sections to be used for that range of keyboard types."
+    }
+  ],
+  "declaration": "struct UCKeyboardLayout"
+}

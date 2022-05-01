@@ -1,0 +1,69 @@
+{
+  "path": "/documentation/network/nw_path_t",
+  "type": "Type Alias",
+  "name": "nw_path_t",
+  "desc": "An object that contains information about the properties of the network that a connection uses, or that are available to your app.",
+  "items": [
+    {
+      "name": "func nw_path_get_status(nw_path_t) -> nw_path_status_t",
+      "desc": "Checks whether a path can be used by connections."
+    },
+    {
+      "name": "struct nw_path_status_t",
+      "desc": "Status values indicating whether a path can be used by connections."
+    },
+    {
+      "name": "func nw_path_uses_interface_type(nw_path_t, nw_interface_type_t) -> Bool",
+      "desc": "Checks if connections using the path may send traffic over a specific interface type."
+    },
+    {
+      "name": "func nw_path_enumerate_interfaces(nw_path_t, (nw_interface_t) -> Bool)",
+      "desc": "Enumerates the list of all interfaces available to the path, in order of preference."
+    },
+    {
+      "name": "typealias nw_path_enumerate_interfaces_block_t",
+      "desc": "A block that enumerates the interfaces available to a path."
+    },
+    {
+      "name": "func nw_path_enumerate_gateways(nw_path_t, (nw_endpoint_t) -> Bool)",
+      "desc": "Enumerates the list of gateways configured on the interfaces available to a path."
+    },
+    {
+      "name": "typealias nw_path_enumerate_gateways_block_t",
+      "desc": "A block that enumerates the gateways configured on the interfaces available to a path."
+    },
+    {
+      "name": "func nw_path_has_ipv4(nw_path_t) -> Bool",
+      "desc": "Checks whether the path can route IPv4 traffic."
+    },
+    {
+      "name": "func nw_path_has_ipv6(nw_path_t) -> Bool",
+      "desc": "Checks whether the path can route IPv6 traffic."
+    },
+    {
+      "name": "func nw_path_has_dns(nw_path_t) -> Bool",
+      "desc": "Checks whether the path has a DNS server configured."
+    },
+    {
+      "name": "func nw_path_is_constrained(nw_path_t) -> Bool",
+      "desc": "Checks whether the path uses an interface in Low Data Mode."
+    },
+    {
+      "name": "func nw_path_is_expensive(nw_path_t) -> Bool",
+      "desc": "Checks whether the path uses an interface that is considered expensive, such as Cellular or a Personal Hotspot."
+    },
+    {
+      "name": "func nw_path_is_equal(nw_path_t, nw_path_t) -> Bool",
+      "desc": "Compares if two paths are identical."
+    },
+    {
+      "name": "func nw_path_copy_effective_local_endpoint(nw_path_t) -> nw_endpoint_t?",
+      "desc": "Accesses the local endpoint in use by a connection's network path."
+    },
+    {
+      "name": "func nw_path_copy_effective_remote_endpoint(nw_path_t) -> nw_endpoint_t?",
+      "desc": "Accesses the remote endpoint in use by a connection's network path."
+    }
+  ],
+  "declaration": "typealias nw_path_t = OS_nw_path"
+}

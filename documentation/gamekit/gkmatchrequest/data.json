@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/gamekit/gkmatchrequest",
+  "type": "Class",
+  "name": "GKMatchRequest",
+  "desc": "An object that encapsulates the parameters to create a real-time or turn-based match.",
+  "items": [
+    {
+      "name": "class func maxPlayersAllowedForMatch(of: GKMatchType) -> Int",
+      "desc": "Returns the maximum number of players allowed in the match request for a given match type."
+    },
+    {
+      "name": "enum GKMatchType",
+      "desc": "The kind of match managed by Game Center."
+    },
+    {
+      "name": "var maxPlayers: Int",
+      "desc": "The maximum number of players that can join the match."
+    },
+    {
+      "name": "var minPlayers: Int",
+      "desc": "The minimum number of players that can join the match."
+    },
+    {
+      "name": "var defaultNumberOfPlayers: Int",
+      "desc": "The default number of players for the match."
+    },
+    {
+      "name": "var playerGroup: Int",
+      "desc": "A number identifying a subset of players invited to join a match."
+    },
+    {
+      "name": "var playerAttributes: UInt32",
+      "desc": "A mask that specifies the role that the local player would like to play in the game."
+    },
+    {
+      "name": "var inviteMessage: String?",
+      "desc": "The message sent to other players when the local player invites them to join a match."
+    },
+    {
+      "name": "var recipients: [GKPlayer]?",
+      "desc": "The players to invite to the match."
+    },
+    {
+      "name": "var recipientResponseHandler: ((GKPlayer, GKInviteRecipientResponse) -> Void)?",
+      "desc": "A method that handles when a player responds to an invitation to join a match."
+    },
+    {
+      "name": "enum GKInviteRecipientResponse",
+      "desc": "A player’s response to an invitation to join a match."
+    },
+    {
+      "name": "typealias GKInviteeResponse",
+      "desc": "Possible responses from an invitation to a remote player."
+    }
+  ],
+  "declaration": "class GKMatchRequest : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "path": "/documentation/swift/unsafemutablepointer",
+  "type": "Generic Structure",
+  "name": "UnsafeMutablePointer",
+  "desc": "A pointer for accessing and manipulating data of a specific type.",
+  "items": [
+    {
+      "name": "typealias UnsafeMutablePointer.Distance",
+      "desc": "A type that represents the distance between two pointers."
+    },
+    {
+      "name": "typealias UnsafeMutablePointer.Stride",
+      "desc": "A type that represents the distance between two values."
+    },
+    {
+      "name": "init(UnsafeMutablePointer<Pointee>)",
+      "desc": "Creates an immutable typed pointer referencing the same memory as the given mutable pointer."
+    },
+    {
+      "name": "init?(UnsafeMutablePointer<Pointee>?)",
+      "desc": "Creates an immutable typed pointer referencing the same memory as the given mutable pointer."
+    },
+    {
+      "name": "init?(OpaquePointer?)",
+      "desc": "Creates a new typed pointer from the given opaque pointer."
+    },
+    {
+      "name": "init(OpaquePointer)",
+      "desc": "Creates a new typed pointer from the given opaque pointer."
+    },
+    {
+      "name": "init?(bitPattern: Int)",
+      "desc": "Creates a new pointer from the given address, specified as a bit pattern."
+    },
+    {
+      "name": "init?(bitPattern: UInt)",
+      "desc": "Creates a new pointer from the given address, specified as a bit pattern."
+    },
+    {
+      "name": "init?(mutating: UnsafePointer<Pointee>?)",
+      "desc": "Creates a mutable typed pointer referencing the same memory as the given immutable pointer."
+    },
+    {
+      "name": "init(mutating: UnsafePointer<Pointee>)",
+      "desc": "Creates a mutable typed pointer referencing the same memory as the given immutable pointer."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "The custom mirror for this instance."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual representation of the pointer, suitable for debugging."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "var pointee: Pointee",
+      "desc": "Accesses the instance referenced by this pointer."
+    },
+    {
+      "name": "func advanced(by: Int) -> UnsafeMutablePointer<Pointee>",
+      "desc": "Returns a pointer offset from this pointer by the specified number of instances."
+    },
+    {
+      "name": "func assign(from: UnsafePointer<Pointee>, count: Int)",
+      "desc": "Replaces this pointer’s initialized memory with the specified number of instances from the given pointer’s memory."
+    },
+    {
+      "name": "func assign(repeating: Pointee, count: Int)",
+      "desc": "Replaces this pointer’s memory with the specified number of consecutive copies of the given value."
+    },
+    {
+      "name": "func deallocate()",
+      "desc": "Deallocates the memory block previously allocated at this pointer."
+    },
+    {
+      "name": "func deinitialize(count: Int) -> UnsafeMutableRawPointer",
+      "desc": "Deinitializes the specified number of values starting at this pointer."
+    },
+    {
+      "name": "func distance(to: UnsafeMutablePointer<Pointee>) -> Int",
+      "desc": "Returns the distance from this pointer to the given pointer, counted as instances of the pointer’s Pointee type."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "func initialize(from: UnsafePointer<Pointee>, count: Int)",
+      "desc": "Initializes the memory referenced by this pointer with the values starting at the given pointer."
+    },
+    {
+      "name": "func initialize(repeating: Pointee, count: Int)",
+      "desc": "Initializes this pointer’s memory with the specified number of consecutive copies of the given value."
+    },
+    {
+      "name": "func initialize(to: Pointee)",
+      "desc": "Initializes this pointer’s memory with a single instance of the given value."
+    },
+    {
+      "name": "func move() -> Pointee",
+      "desc": "Retrieves and returns the referenced instance, returning the pointer’s memory to an uninitialized state."
+    },
+    {
+      "name": "func moveAssign(from: UnsafeMutablePointer<Pointee>, count: Int)",
+      "desc": "Replaces the memory referenced by this pointer with the values starting at the given pointer, leaving the source memory uninitialized."
+    },
+    {
+      "name": "func moveInitialize(from: UnsafeMutablePointer<Pointee>, count: Int)",
+      "desc": "Moves instances from initialized source memory into the uninitialized memory referenced by this pointer, leaving the source memory uninitialized and the memory referenced by this pointer initialized."
+    },
+    {
+      "name": "func predecessor() -> UnsafeMutablePointer<Pointee>",
+      "desc": "Returns a pointer to the previous consecutive instance."
+    },
+    {
+      "name": "func successor() -> UnsafeMutablePointer<Pointee>",
+      "desc": "Returns a pointer to the next consecutive instance."
+    },
+    {
+      "name": "func withMemoryRebound<T, Result>(to: T.Type, capacity: Int, (UnsafeMutablePointer<T>) -> Result) -> Result",
+      "desc": "Executes the given closure while temporarily binding the specified number of instances to the given type."
+    },
+    {
+      "name": "static func allocate(capacity: Int) -> UnsafeMutablePointer<Pointee>",
+      "desc": "Allocates uninitialized memory for the specified number of instances of type Pointee."
+    },
+    {
+      "name": "subscript(Int) -> Pointee",
+      "desc": "Accesses the pointee at the specified offset from this pointer."
+    },
+    {
+      "name": "static func != (UnsafeMutablePointer<Pointee>, UnsafeMutablePointer<Pointee>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func + (Int, UnsafeMutablePointer<Pointee>) -> UnsafeMutablePointer<Pointee>"
+    },
+    {
+      "name": "static func + (UnsafeMutablePointer<Pointee>, Int) -> UnsafeMutablePointer<Pointee>"
+    },
+    {
+      "name": "static func += (inout UnsafeMutablePointer<Pointee>, Int)"
+    },
+    {
+      "name": "static func - (UnsafeMutablePointer<Pointee>, UnsafeMutablePointer<Pointee>) -> Int"
+    },
+    {
+      "name": "static func - (UnsafeMutablePointer<Pointee>, Int) -> UnsafeMutablePointer<Pointee>"
+    },
+    {
+      "name": "static func -= (inout UnsafeMutablePointer<Pointee>, Int)"
+    },
+    {
+      "name": "static func ... (UnsafeMutablePointer<Pointee>) -> PartialRangeFrom<UnsafeMutablePointer<Pointee>>",
+      "desc": "Returns a partial range extending upward from a lower bound."
+    },
+    {
+      "name": "static func ... (UnsafeMutablePointer<Pointee>) -> PartialRangeThrough<UnsafeMutablePointer<Pointee>>",
+      "desc": "Returns a partial range up to, and including, its upper bound."
+    },
+    {
+      "name": "static func ... (UnsafeMutablePointer<Pointee>, UnsafeMutablePointer<Pointee>) -> ClosedRange<UnsafeMutablePointer<Pointee>>",
+      "desc": "Returns a closed range that contains both of its bounds."
+    },
+    {
+      "name": "static func ..< (UnsafeMutablePointer<Pointee>) -> PartialRangeUpTo<UnsafeMutablePointer<Pointee>>",
+      "desc": "Returns a partial range up to, but not including, its upper bound."
+    },
+    {
+      "name": "static func ..< (UnsafeMutablePointer<Pointee>, UnsafeMutablePointer<Pointee>) -> Range<UnsafeMutablePointer<Pointee>>",
+      "desc": "Returns a half-open range that contains its lower bound but not its upper bound."
+    },
+    {
+      "name": "static func < (UnsafeMutablePointer<Pointee>, UnsafeMutablePointer<Pointee>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than that of the second argument."
+    },
+    {
+      "name": "static func <= (UnsafeMutablePointer<Pointee>, UnsafeMutablePointer<Pointee>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than or equal to that of the second argument."
+    },
+    {
+      "name": "static func == (UnsafeMutablePointer<Pointee>, UnsafeMutablePointer<Pointee>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "static func > (UnsafeMutablePointer<Pointee>, UnsafeMutablePointer<Pointee>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than that of the second argument."
+    },
+    {
+      "name": "static func >= (UnsafeMutablePointer<Pointee>, UnsafeMutablePointer<Pointee>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than or equal to that of the second argument."
+    }
+  ],
+  "declaration": "@frozen struct UnsafeMutablePointer<Pointee>",
+  "conformsTo": [
+    "CVarArg"
+  ]
+}

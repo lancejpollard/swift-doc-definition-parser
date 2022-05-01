@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/networkextension/neproxysettings",
+  "type": "Class",
+  "name": "NEProxySettings",
+  "desc": "NEProxySettings contains HTTP proxy settings.",
+  "items": [
+    {
+      "name": "var autoProxyConfigurationEnabled: Bool",
+      "desc": "A Boolean indicating if proxy auto-configuration is enabled."
+    },
+    {
+      "name": "var proxyAutoConfigurationURL: URL?",
+      "desc": "A URL specifying the location from where the Proxy Auto Configuration (PAC) script should be downloaded."
+    },
+    {
+      "name": "var proxyAutoConfigurationJavaScript: String?",
+      "desc": "A string containing the Proxy Auto Configuration (PAC) JavaScript source code."
+    },
+    {
+      "name": "var httpEnabled: Bool",
+      "desc": "A Boolean indicating if a static HTTP proxy will be used."
+    },
+    {
+      "name": "var httpServer: NEProxyServer?",
+      "desc": "An NEProxyServer object containing the static HTTP proxy server settings."
+    },
+    {
+      "name": "var httpsEnabled: Bool",
+      "desc": "A Boolean indicating if a static HTTPS proxy will be used."
+    },
+    {
+      "name": "var httpsServer: NEProxyServer?",
+      "desc": "An NEProxyServer object containing the static HTTPS proxy server settings."
+    },
+    {
+      "name": "class NEProxyServer",
+      "desc": "NEProxyServer contains settings for a proxy server."
+    },
+    {
+      "name": "var excludeSimpleHostnames: Bool",
+      "desc": "A Boolean indicating if HTTP requests using single-label host names should be excluded from using the proxy settings."
+    },
+    {
+      "name": "var exceptionList: [String]?",
+      "desc": "An array of domain name patterns. If the destination host name of an HTTP connection matches one of these patterns then the proxy settings will not be used for the connection."
+    },
+    {
+      "name": "var matchDomains: [String]?",
+      "desc": "An array of domain strings."
+    }
+  ],
+  "declaration": "class NEProxySettings : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

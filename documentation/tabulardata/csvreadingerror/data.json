@@ -1,0 +1,46 @@
+{
+  "path": "/documentation/tabulardata/csvreadingerror",
+  "type": "Enumeration",
+  "name": "CSVReadingError",
+  "desc": "A CSV reading error.",
+  "items": [
+    {
+      "name": "case badEncoding(row: Int, column: Int, cellContents: Data)",
+      "desc": "An error that indicates CSV data contains an invalid UTF-8 byte sequence."
+    },
+    {
+      "name": "case failedToParse(row: Int, column: Int, type: CSVType, cellContents: Data)",
+      "desc": "An error that indicates the CSV reader can’t parse data in the file."
+    },
+    {
+      "name": "case misplacedQuote(row: Int, column: Int)",
+      "desc": "An error that indicates the CSV data contains a misplaced quote."
+    },
+    {
+      "name": "case missingColumn(columnName: String)",
+      "desc": "An error that indicates the CSV is missing a required column."
+    },
+    {
+      "name": "case unsupportedEncoding(String)",
+      "desc": "An error that indicates the CSV reader doesn’t support an encoding."
+    },
+    {
+      "name": "case wrongNumberOfColumns(row: Int, columns: Int, expected: Int)",
+      "desc": "An error that indicates the CSV data contains a row with a mismatched number of columns."
+    },
+    {
+      "name": "var column: Int?",
+      "desc": "The index of the column that contains the error."
+    },
+    {
+      "name": "var row: Int",
+      "desc": "The index of the row that contains the error."
+    }
+  ],
+  "declaration": "enum CSVReadingError",
+  "conformsTo": [
+    "CustomStringConvertible",
+    "Error",
+    "Sendable"
+  ]
+}

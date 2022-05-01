@@ -1,0 +1,71 @@
+{
+  "path": "/documentation/gameplaykit/gkobstaclegraph",
+  "type": "Generic Class",
+  "name": "GKObstacleGraph",
+  "desc": "A navigation graph for 2D game worlds that creates a minimal network for precise pathfinding around obstacles.",
+  "items": [
+    {
+      "name": "init(obstacles: [GKPolygonObstacle], bufferRadius: Float, nodeClass: AnyClass)",
+      "desc": "Initializes a graph with the specified list of obstacles, using the specified node class."
+    },
+    {
+      "name": "init(obstacles: [GKPolygonObstacle], bufferRadius: Float)",
+      "desc": "Initializes a graph with the specified list of obstacles."
+    },
+    {
+      "name": "var obstacles: [GKPolygonObstacle]",
+      "desc": "The list of obstacle objects in the graph, each of which describes a polygon-shaped impassable area."
+    },
+    {
+      "name": "func addObstacles([GKPolygonObstacle])",
+      "desc": "Adds new obstacles to the graph."
+    },
+    {
+      "name": "func removeObstacles([GKPolygonObstacle])",
+      "desc": "Removes the specified obstacle from the graph."
+    },
+    {
+      "name": "func removeAllObstacles()",
+      "desc": "Removes all obstacles from the graph."
+    },
+    {
+      "name": "func nodes(for: GKPolygonObstacle) -> [NodeType]",
+      "desc": "Returns the group of nodes corresponding to an obstacle in the graph."
+    },
+    {
+      "name": "func connectUsingObstacles(node: NodeType)",
+      "desc": "Adds the specified node to the graph, connecting it to its nearest neighbors without creating connections that pass through obstacles or their buffer regions."
+    },
+    {
+      "name": "func connectUsingObstacles(node: NodeType, ignoring: [GKPolygonObstacle])",
+      "desc": "Adds the specified node to the graph, connecting it to its nearest neighbors while ignoring the area occupied by the specified obstacles."
+    },
+    {
+      "name": "func connectUsingObstacles(node: NodeType, ignoringBufferRadiusOf: [GKPolygonObstacle])",
+      "desc": "Adds the specified node to the graph, connecting it to its nearest neighbors while ignoring the buffer regions around the specified obstacles."
+    },
+    {
+      "name": "var bufferRadius: Float",
+      "desc": "The distance from obstacle edges that should also be considered impassable."
+    },
+    {
+      "name": "func lockConnection(from: NodeType, to: NodeType)",
+      "desc": "Prevents the specified nodes from being disconnected due to the addition of obstacles."
+    },
+    {
+      "name": "func unlockConnection(from: NodeType, to: NodeType)",
+      "desc": "Allows the specified nodes to be disconnected due to the addition of obstacles."
+    },
+    {
+      "name": "func isConnectionLocked(from: NodeType, to: NodeType) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the specified nodes are protected from disconnection due to the addition of obstacles."
+    },
+    {
+      "name": "func classForGenericArgument(at: Int) -> AnyClass"
+    }
+  ],
+  "declaration": "class GKObstacleGraph<NodeType> : GKGraph where NodeType : GKGraphNode2D",
+  "inheritsFrom": [
+    "GKGraph"
+  ]
+}

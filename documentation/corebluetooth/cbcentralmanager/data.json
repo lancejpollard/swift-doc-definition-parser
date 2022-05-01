@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/corebluetooth/cbcentralmanager",
+  "type": "Class",
+  "name": "CBCentralManager",
+  "desc": "An object that scans for, discovers, connects to, and manages peripherals.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Initializes the central manager without a delegate."
+    },
+    {
+      "name": "init(delegate: CBCentralManagerDelegate?, queue: DispatchQueue?)",
+      "desc": "Initializes the central manager with a specified delegate and dispatch queue."
+    },
+    {
+      "name": "init(delegate: CBCentralManagerDelegate?, queue: DispatchQueue?, options: [String : Any]?)",
+      "desc": "Initializes the central manager with specified delegate, dispatch queue, and initialization options."
+    },
+    {
+      "name": "func connect(CBPeripheral, options: [String : Any]?)",
+      "desc": "Establishes a local connection to a peripheral."
+    },
+    {
+      "name": "func cancelPeripheralConnection(CBPeripheral)",
+      "desc": "Cancels an active or pending local connection to a peripheral."
+    },
+    {
+      "name": "func retrieveConnectedPeripherals(withServices: [CBUUID]) -> [CBPeripheral]",
+      "desc": "Returns a list of the peripherals connected to the system whose services match a given set of criteria."
+    },
+    {
+      "name": "func retrievePeripherals(withIdentifiers: [UUID]) -> [CBPeripheral]",
+      "desc": "Returns a list of known peripherals by their identifiers."
+    },
+    {
+      "name": "func scanForPeripherals(withServices: [CBUUID]?, options: [String : Any]?)",
+      "desc": "Scans for peripherals that are advertising services."
+    },
+    {
+      "name": "func stopScan()",
+      "desc": "Asks the central manager to stop scanning for peripherals."
+    },
+    {
+      "name": "var isScanning: Bool",
+      "desc": "A Boolean value that indicates whether the central is currently scanning."
+    },
+    {
+      "name": "class func supports(CBCentralManager.Feature) -> Bool",
+      "desc": "Returns a Boolean that indicates whether the device supports a specific set of features."
+    },
+    {
+      "name": "struct CBCentralManager.Feature",
+      "desc": "An option set of device-specific features."
+    },
+    {
+      "name": "var delegate: CBCentralManagerDelegate?",
+      "desc": "The delegate object that you want to receive central manager events."
+    },
+    {
+      "name": "func registerForConnectionEvents(options: [CBConnectionEventMatchingOption : Any]?)",
+      "desc": "Register for an event notification when the central manager makes a connection matching the given options."
+    },
+    {
+      "name": "enum CBConnectionEvent",
+      "desc": "A change to the connection state of a peer."
+    },
+    {
+      "name": "struct CBConnectionEventMatchingOption",
+      "desc": "A set of options to use when registering for connection events."
+    }
+  ],
+  "declaration": "class CBCentralManager : CBManager",
+  "inheritsFrom": [
+    "CBManager"
+  ]
+}

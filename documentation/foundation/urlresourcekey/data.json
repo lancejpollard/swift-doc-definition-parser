@@ -1,0 +1,480 @@
+{
+  "path": "/documentation/foundation/urlresourcekey",
+  "type": "Structure",
+  "name": "URLResourceKey",
+  "desc": "Keys that apply to file system URLs.",
+  "items": [
+    {
+      "name": "static let isApplicationKey: URLResourceKey"
+    },
+    {
+      "name": "static let applicationIsScriptableKey: URLResourceKey"
+    },
+    {
+      "name": "static let isDirectoryKey: URLResourceKey",
+      "desc": "Key for determining whether the resource is a directory, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let parentDirectoryURLKey: URLResourceKey",
+      "desc": "The parent directory of the resource, returned as an NSURL object, or nil if the resource is the root directory of its volume (read-only)."
+    },
+    {
+      "name": "static let fileAllocatedSizeKey: URLResourceKey",
+      "desc": "Key for the total size allocated on disk for the file, returned as an NSNumber object (read-only)."
+    },
+    {
+      "name": "static let fileProtectionKey: URLResourceKey"
+    },
+    {
+      "name": "struct URLFileProtection",
+      "desc": "Protection level values that can be associated with a URL resource key."
+    },
+    {
+      "name": "static let fileResourceIdentifierKey: URLResourceKey",
+      "desc": "The resource’s unique identifier, returned as an id (read-only)."
+    },
+    {
+      "name": "static let fileResourceTypeKey: URLResourceKey",
+      "desc": "The resource’s object type, returned as an NSString object (read-only). See URLFileResourceType for possible values."
+    },
+    {
+      "name": "struct URLFileResourceType",
+      "desc": "Possible values for the fileResourceTypeKey key."
+    },
+    {
+      "name": "static let fileSecurityKey: URLResourceKey",
+      "desc": "The resource’s security information, returned as an NSFileSecurity object (read-write)."
+    },
+    {
+      "name": "static let fileSizeKey: URLResourceKey",
+      "desc": "Key for the file’s size in bytes, returned as an NSNumber object (read-only)."
+    },
+    {
+      "name": "static let isAliasFileKey: URLResourceKey",
+      "desc": "Key for determining whether the file is an alias, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let isPackageKey: URLResourceKey",
+      "desc": "Key for determining whether the resource is a file package, returned as a Boolean NSNumber object (read-write in macOS 10.8 and later, read-only in previous versions). A true value means that the resource is a file package."
+    },
+    {
+      "name": "static let isRegularFileKey: URLResourceKey",
+      "desc": "Key for determining whether the resource is a regular file, as opposed to a directory or a symbolic link. Returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let preferredIOBlockSizeKey: URLResourceKey",
+      "desc": "The optimal block size to use when reading or writing this file's data, returned as an NSNumber object, or nil if the preferred size is not available (read-only)."
+    },
+    {
+      "name": "static let totalFileAllocatedSizeKey: URLResourceKey",
+      "desc": "Key for the total allocated size of the file in bytes, returned as an NSNumber object (read-only). This includes the size of any file metadata."
+    },
+    {
+      "name": "static let totalFileSizeKey: URLResourceKey",
+      "desc": "Key for the total displayable size of the file in bytes, returned as an NSNumber object (read-only). This includes the size of any file metadata."
+    },
+    {
+      "name": "static let volumeAvailableCapacityKey: URLResourceKey",
+      "desc": "Key for the volume’s available capacity in bytes (read-only)."
+    },
+    {
+      "name": "static let volumeAvailableCapacityForImportantUsageKey: URLResourceKey",
+      "desc": "Key for the volume’s available capacity in bytes for storing important resources (read-only)."
+    },
+    {
+      "name": "static let volumeAvailableCapacityForOpportunisticUsageKey: URLResourceKey",
+      "desc": "Key for the volume’s available capacity in bytes for storing nonessential resources (read-only)."
+    },
+    {
+      "name": "static let volumeTotalCapacityKey: URLResourceKey",
+      "desc": "Key for the volume’s total capacity in bytes (read-only)."
+    },
+    {
+      "name": "static let volumeIsAutomountedKey: URLResourceKey",
+      "desc": "Key for determining whether the volume is automounted, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let volumeIsBrowsableKey: URLResourceKey",
+      "desc": "Key for determining whether the volume is visible in GUI-based file-browsing environments, such as the Desktop or the Finder application, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let volumeIsEjectableKey: URLResourceKey",
+      "desc": "Key for determining whether the volume is ejectable from the drive mechanism under software control, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let volumeIsEncryptedKey: URLResourceKey",
+      "desc": "Whether the volume is encrypted, returned as NSNumber containing a Boolean value (read-only)."
+    },
+    {
+      "name": "static let volumeIsInternalKey: URLResourceKey",
+      "desc": "Key for determining whether the volume is connected to an internal bus, returned as a Boolean NSNumber object, or nil if it cannot be determined (read-only)."
+    },
+    {
+      "name": "static let volumeIsJournalingKey: URLResourceKey",
+      "desc": "Key for determining whether the volume is currently journaling, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let volumeIsLocalKey: URLResourceKey",
+      "desc": "Key for determining whether the volume is stored on a local device, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let volumeIsReadOnlyKey: URLResourceKey",
+      "desc": "Key for determining whether the volume is read-only, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let volumeIsRemovableKey: URLResourceKey",
+      "desc": "Key for determining whether the volume is removable from the drive mechanism, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let volumeIsRootFileSystemKey: URLResourceKey",
+      "desc": "Whether the volume is the root filesystem, returned as NSNumber containing a Boolean value (read-only)."
+    },
+    {
+      "name": "static let isMountTriggerKey: URLResourceKey",
+      "desc": "Key for determining whether the URL is a file system trigger directory, returned as a Boolean NSNumber object (read-only). Traversing or opening a file system trigger directory causes an attempt to mount a file system on the directory."
+    },
+    {
+      "name": "static let isVolumeKey: URLResourceKey",
+      "desc": "Key for determining whether the resource is the root directory of a volume, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let volumeCreationDateKey: URLResourceKey",
+      "desc": "Key for the volume’s creation date, returned as an NSDate object, or NULL if it cannot be determined (read-only)."
+    },
+    {
+      "name": "static let volumeIdentifierKey: URLResourceKey",
+      "desc": "The unique identifier of the resource’s volume, returned as an id (read-only)."
+    },
+    {
+      "name": "static let volumeLocalizedFormatDescriptionKey: URLResourceKey",
+      "desc": "Key for the volume’s descriptive format name, returned as an NSString object (read-only)."
+    },
+    {
+      "name": "static let volumeLocalizedNameKey: URLResourceKey",
+      "desc": "The name of the volume as it should be displayed in the user interface, returned as an NSString object (read-only)."
+    },
+    {
+      "name": "static let volumeMaximumFileSizeKey: URLResourceKey",
+      "desc": "Key for the largest file size supported by the volume in bytes, returned as a Boolean NSNumber object, or nil if it cannot be determined (read-only)."
+    },
+    {
+      "name": "static let volumeNameKey: URLResourceKey",
+      "desc": "The name of the volume, returned as an NSString object (read-write). Settable only if NSURLVolumeSupportsRenamingKey is true."
+    },
+    {
+      "name": "static let volumeResourceCountKey: URLResourceKey",
+      "desc": "Key for the total number of resources on the volume, returned as an NSNumber object (read-only)."
+    },
+    {
+      "name": "static let volumeSupportsAccessPermissionsKey: URLResourceKey"
+    },
+    {
+      "name": "static let volumeSupportsAdvisoryFileLockingKey: URLResourceKey",
+      "desc": "Key for determining whether the volume implements whole-file advisory locks in the style of flock, along with the O_EXLOCK and O_SHLOCK flags of the open function, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let volumeSupportsCasePreservedNamesKey: URLResourceKey",
+      "desc": "Key for determining whether the volume supports case-preserved names, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let volumeSupportsCaseSensitiveNamesKey: URLResourceKey",
+      "desc": "Key for determining whether the volume supports case-sensitive names, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let volumeSupportsCompressionKey: URLResourceKey",
+      "desc": "Whether the volume supports transparent decompression of compressed files using decmpfs, returned as NSNumber containing a Boolean value (read-only)."
+    },
+    {
+      "name": "static let volumeSupportsExclusiveRenamingKey: URLResourceKey",
+      "desc": "Whether the volume supports exclusive renaming using renamex_np(2) with the RENAME_EXCL option, returned as NSNumber containing a Boolean value (read-only)."
+    },
+    {
+      "name": "static let volumeSupportsExtendedSecurityKey: URLResourceKey",
+      "desc": "Key for determining whether the volume supports extended security (access control lists), returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let volumeSupportsFileCloningKey: URLResourceKey",
+      "desc": "Whether the volume supports cloning using clonefile(2), returned as NSNumber containing a Boolean value (read-only)."
+    },
+    {
+      "name": "static let volumeSupportsHardLinksKey: URLResourceKey",
+      "desc": "Key for determining whether the volume supports hard links, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let volumeSupportsImmutableFilesKey: URLResourceKey"
+    },
+    {
+      "name": "static let volumeSupportsJournalingKey: URLResourceKey",
+      "desc": "Key for determining whether the volume supports journaling, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let volumeSupportsPersistentIDsKey: URLResourceKey",
+      "desc": "Key for determining whether the volume supports persistent IDs, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let volumeSupportsRenamingKey: URLResourceKey",
+      "desc": "Key for determining whether the volume can be renamed, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let volumeSupportsRootDirectoryDatesKey: URLResourceKey",
+      "desc": "Key for determining whether the volume supports reliable storage of times for the root directory, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let volumeSupportsSparseFilesKey: URLResourceKey",
+      "desc": "Key for determining whether the volume supports sparse files, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let volumeSupportsSwapRenamingKey: URLResourceKey",
+      "desc": "Whether the volume supports renaming using renamex_np(2) with the RENAME_SWAP option, returned as NSNumber containing a Boolean value (read-only)."
+    },
+    {
+      "name": "static let volumeSupportsSymbolicLinksKey: URLResourceKey",
+      "desc": "Key for determining whether the volume supports symbolic links, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let volumeSupportsVolumeSizesKey: URLResourceKey",
+      "desc": "Key for determining whether the volume supports returning volume size information, returned as a Boolean NSNumber object (read-only). If true, volume size information is available as values of the volumeTotalCapacityKey andvolumeAvailableCapacityKey keys."
+    },
+    {
+      "name": "static let volumeSupportsZeroRunsKey: URLResourceKey",
+      "desc": "Key for determining whether the volume supports zero runs, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let volumeURLForRemountingKey: URLResourceKey",
+      "desc": "Key for the URL needed to remount the network volume, returned as an NSURL object, or nil if a URL is not available (read-only)."
+    },
+    {
+      "name": "static let volumeURLKey: URLResourceKey",
+      "desc": "The root directory of the resource’s volume, returned as an NSURL object (read-only)."
+    },
+    {
+      "name": "static let volumeUUIDStringKey: URLResourceKey",
+      "desc": "Key for the volume’s persistent UUID, returned as an NSString object, or nil if a persistent UUID is not available (read-only)."
+    },
+    {
+      "name": "static let isUbiquitousItemKey: URLResourceKey",
+      "desc": "A boolean NSNumber that contains true if this item is in iCloud storage, false if it is a local item (read-only)."
+    },
+    {
+      "name": "static let ubiquitousSharedItemMostRecentEditorNameComponentsKey: URLResourceKey"
+    },
+    {
+      "name": "static let ubiquitousItemDownloadRequestedKey: URLResourceKey",
+      "desc": "A Boolean indicating whether a call to startDownloadingUbiquitousItem(at:) has already been made to download the item. The value of this key is read-only."
+    },
+    {
+      "name": "static let ubiquitousItemIsDownloadingKey: URLResourceKey",
+      "desc": "A boolean NSNumber that contains true if this item is being downloaded from iCloud, false otherwise (read-only)."
+    },
+    {
+      "name": "static let ubiquitousItemDownloadingErrorKey: URLResourceKey",
+      "desc": "An error object that indicates why downloading the item from iCloud failed. See Foundation Constants for possible error codes."
+    },
+    {
+      "name": "static let ubiquitousItemDownloadingStatusKey: URLResourceKey",
+      "desc": "The current download state for the item, indicating whether a local copy exists and whether that copy is the most current version of the item. The possible values for this key are described in URLUbiquitousItemDownloadingStatus."
+    },
+    {
+      "name": "struct URLUbiquitousItemDownloadingStatus",
+      "desc": "Values that describe the iCloud storage state of a file."
+    },
+    {
+      "name": "static let ubiquitousItemIsUploadedKey: URLResourceKey",
+      "desc": "A boolean NSNumber that contains true if this item’s data has been uploaded to iCloud storage, false otherwise (read-only)."
+    },
+    {
+      "name": "static let ubiquitousItemIsUploadingKey: URLResourceKey",
+      "desc": "A boolean NSNumber that contains true if this item is being uploaded to iCloud, false otherwise (read-only)."
+    },
+    {
+      "name": "static let ubiquitousItemUploadingErrorKey: URLResourceKey",
+      "desc": "An error object that indicates why uploading the item to iCloud failed. See Foundation Constants for possible error codes."
+    },
+    {
+      "name": "static let ubiquitousItemHasUnresolvedConflictsKey: URLResourceKey",
+      "desc": "A boolean NSNumber that contains true if this item has conflicts outstanding, false otherwise (read-only)."
+    },
+    {
+      "name": "static let ubiquitousItemContainerDisplayNameKey: URLResourceKey",
+      "desc": "A string containing the name of the item’s container, as it is displayed to the user."
+    },
+    {
+      "name": "static let ubiquitousSharedItemOwnerNameComponentsKey: URLResourceKey"
+    },
+    {
+      "name": "static let ubiquitousSharedItemCurrentUserPermissionsKey: URLResourceKey"
+    },
+    {
+      "name": "static let ubiquitousSharedItemCurrentUserRoleKey: URLResourceKey"
+    },
+    {
+      "name": "static let ubiquitousItemIsSharedKey: URLResourceKey"
+    },
+    {
+      "name": "struct URLUbiquitousSharedItemRole"
+    },
+    {
+      "name": "struct URLUbiquitousSharedItemPermissions"
+    },
+    {
+      "name": "struct URLThumbnailDictionaryItem",
+      "desc": "Possible keys for the thumbnailDictionaryKey dictionary."
+    },
+    {
+      "name": "static let keysOfUnsetValuesKey: URLResourceKey",
+      "desc": "Key for the resource properties that have not been set after the setResourceValues(_:) method returns an error, returned as an array of NSString objects."
+    },
+    {
+      "name": "static let quarantinePropertiesKey: URLResourceKey"
+    },
+    {
+      "name": "static let addedToDirectoryDateKey: URLResourceKey",
+      "desc": "The time at which the resource’s was created or renamed into or within its parent directory, returned as an NSDate. Inconsistent behavior may be observed when this attribute is requested on hard-linked items. This property is not supported by all volumes. (read-only)"
+    },
+    {
+      "name": "static let attributeModificationDateKey: URLResourceKey",
+      "desc": "The time at which the resource’s attributes were most recently modified, returned as an NSDate object if the volume supports attribute modification dates, or nil if attribute modification dates are unsupported (read-only)."
+    },
+    {
+      "name": "static let contentAccessDateKey: URLResourceKey",
+      "desc": "The time at which the resource was most recently accessed."
+    },
+    {
+      "name": "static let contentModificationDateKey: URLResourceKey",
+      "desc": "The time at which the resource was most recently modified."
+    },
+    {
+      "name": "static let creationDateKey: URLResourceKey",
+      "desc": "The time at which the resource was created."
+    },
+    {
+      "name": "static let customIconKey: URLResourceKey",
+      "desc": "The icon stored with the resource, returned as an NSImage object, or nil if the resource has no custom icon."
+    },
+    {
+      "name": "static let documentIdentifierKey: URLResourceKey",
+      "desc": "The document identifier returned as an NSNumber (read-only)."
+    },
+    {
+      "name": "static let effectiveIconKey: URLResourceKey",
+      "desc": "The resource’s normal icon, returned as an NSImage object (read-only)."
+    },
+    {
+      "name": "static let generationIdentifierKey: URLResourceKey",
+      "desc": "An opaque generation identifier, returned as an id <NSCopying, NSCoding, NSObject> (read-only)"
+    },
+    {
+      "name": "static let hasHiddenExtensionKey: URLResourceKey",
+      "desc": "Key for determining whether the resource’s extension is normally removed from its localized name, returned as a Boolean NSNumber object (read-write)."
+    },
+    {
+      "name": "static let isExcludedFromBackupKey: URLResourceKey",
+      "desc": "A key for indicating whether the system excludes the resource from all backups of app data."
+    },
+    {
+      "name": "static let isExecutableKey: URLResourceKey",
+      "desc": "Key for determining whether the current process (as determined by the EUID) can execute the resource (if it is a file) or search the resource (if it is a directory), returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let isHiddenKey: URLResourceKey",
+      "desc": "Key for determining whether the resource is normally not displayed to users, returned as a Boolean NSNumber object (read-write)."
+    },
+    {
+      "name": "static let isReadableKey: URLResourceKey",
+      "desc": "Key for determining whether the current process (as determined by the EUID) can read the resource, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let isSymbolicLinkKey: URLResourceKey",
+      "desc": "Key for determining whether the resource is a symbolic link, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let isSystemImmutableKey: URLResourceKey",
+      "desc": "Key for determining whether the resource's system immutable bit is set, returned as a Boolean NSNumber object (read-write)."
+    },
+    {
+      "name": "static let isUserImmutableKey: URLResourceKey",
+      "desc": "Key for determining whether the resource's user immutable bit is set, returned as a Boolean NSNumber object (read-write)."
+    },
+    {
+      "name": "static let isWritableKey: URLResourceKey",
+      "desc": "Key for determining whether the current process (as determined by the EUID) can write to the resource, returned as a Boolean NSNumber object (read-only)."
+    },
+    {
+      "name": "static let labelColorKey: URLResourceKey",
+      "desc": "The resource’s label color, returned as an NSColor object, or nil if the resource has no label color (read-only)."
+    },
+    {
+      "name": "static let labelNumberKey: URLResourceKey",
+      "desc": "The resource’s label number, returned as an NSNumber object (read-write)."
+    },
+    {
+      "name": "static let linkCountKey: URLResourceKey",
+      "desc": "The number of hard links to the resource, returned as an NSNumber object (read-only)."
+    },
+    {
+      "name": "static let localizedLabelKey: URLResourceKey",
+      "desc": "The resource’s localized label text, returned as an NSString object, or nil if the resource has no localized label text (read-only)."
+    },
+    {
+      "name": "static let localizedNameKey: URLResourceKey",
+      "desc": "The resource’s localized or extension-hidden name, returned as an NSString object (read-only)."
+    },
+    {
+      "name": "static let localizedTypeDescriptionKey: URLResourceKey",
+      "desc": "The resource’s localized type description, returned as an NSString object (read-only)."
+    },
+    {
+      "name": "static let nameKey: URLResourceKey",
+      "desc": "The resource’s name in the file system, returned as an NSString object (read-write)."
+    },
+    {
+      "name": "static let pathKey: URLResourceKey",
+      "desc": "The file system path for the URL, returned as an NSString object (read-only)."
+    },
+    {
+      "name": "static let canonicalPathKey: URLResourceKey"
+    },
+    {
+      "name": "static let tagNamesKey: URLResourceKey",
+      "desc": "The names of tags attached to the resource, returned as an array of NSString values (read-write)."
+    },
+    {
+      "name": "static let contentTypeKey: URLResourceKey",
+      "desc": "The resource’s type."
+    },
+    {
+      "name": "init(String)"
+    },
+    {
+      "name": "init(rawValue: String)"
+    },
+    {
+      "name": "static let fileContentIdentifierKey: URLResourceKey"
+    },
+    {
+      "name": "static let isPurgeableKey: URLResourceKey"
+    },
+    {
+      "name": "static let isSparseKey: URLResourceKey"
+    },
+    {
+      "name": "static let mayHaveExtendedAttributesKey: URLResourceKey"
+    },
+    {
+      "name": "static let mayShareFileContentKey: URLResourceKey"
+    },
+    {
+      "name": "static let ubiquitousItemIsExcludedFromSyncKey: URLResourceKey"
+    },
+    {
+      "name": "static let volumeSupportsFileProtectionKey: URLResourceKey"
+    }
+  ],
+  "declaration": "struct URLResourceKey, @unchecked Sendable",
+  "conformsTo": [
+    "Equatable",
+    "Hashable",
+    "RawRepresentable",
+    "Sendable"
+  ]
+}

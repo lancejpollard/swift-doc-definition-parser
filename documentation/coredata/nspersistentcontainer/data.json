@@ -1,0 +1,63 @@
+{
+  "path": "/documentation/coredata/nspersistentcontainer",
+  "type": "Class",
+  "name": "NSPersistentContainer",
+  "desc": "A container that encapsulates the Core Data stack in your app.",
+  "items": [
+    {
+      "name": "init(name: String)",
+      "desc": "Creates a container with the specified name."
+    },
+    {
+      "name": "init(name: String, managedObjectModel: NSManagedObjectModel)",
+      "desc": "Create a container with the specified name and managed object model."
+    },
+    {
+      "name": "var managedObjectModel: NSManagedObjectModel",
+      "desc": "The container’s managed object model."
+    },
+    {
+      "name": "var name: String",
+      "desc": "The container’s name."
+    },
+    {
+      "name": "var persistentStoreCoordinator: NSPersistentStoreCoordinator",
+      "desc": "The container’s persistent store coordinator."
+    },
+    {
+      "name": "class var defaultDirectoryURL: URL",
+      "desc": "The location of the directory that contains the persistent stores."
+    },
+    {
+      "name": "class func defaultDirectoryURL() -> URL",
+      "desc": "Returns the location of the directory that contains the persistent stores."
+    },
+    {
+      "name": "var persistentStoreDescriptions: [NSPersistentStoreDescription]",
+      "desc": "The descriptions of the container’s persistent stores."
+    },
+    {
+      "name": "func loadPersistentStores(completionHandler: (NSPersistentStoreDescription, Error?) -> Void)",
+      "desc": "Loads the persistent stores."
+    },
+    {
+      "name": "func newBackgroundContext() -> NSManagedObjectContext",
+      "desc": "Returns a new managed object context that executes on a private queue."
+    },
+    {
+      "name": "var viewContext: NSManagedObjectContext",
+      "desc": "The main queue’s managed object context."
+    },
+    {
+      "name": "func performBackgroundTask((NSManagedObjectContext) -> Void)",
+      "desc": "Executes a closure on a private queue using an ephemeral managed object context."
+    },
+    {
+      "name": "func performBackgroundTask<T>((NSManagedObjectContext) -> T) -> T"
+    }
+  ],
+  "declaration": "class NSPersistentContainer : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

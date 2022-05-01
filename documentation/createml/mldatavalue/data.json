@@ -1,0 +1,117 @@
+{
+  "path": "/documentation/createml/mldatavalue",
+  "type": "Enumeration",
+  "name": "MLDataValue",
+  "desc": "The value of a cell in a data table.",
+  "items": [
+    {
+      "name": "protocol MLDataValueConvertible",
+      "desc": "A type that can convert itself to and from a data value."
+    },
+    {
+      "name": "case int(Int)",
+      "desc": "An integer value."
+    },
+    {
+      "name": "case double(Double)",
+      "desc": "A double value."
+    },
+    {
+      "name": "case string(String)",
+      "desc": "A string value."
+    },
+    {
+      "name": "case dictionary(MLDataValue.DictionaryType)",
+      "desc": "A dictionary of named data values."
+    },
+    {
+      "name": "case sequence(MLDataValue.SequenceType)",
+      "desc": "A sequence of data values."
+    },
+    {
+      "name": "case multiArray(MLDataValue.MultiArrayType)",
+      "desc": "A multidimensional array of data values."
+    },
+    {
+      "name": "var type: MLDataValue.ValueType",
+      "desc": "The kind of the underlying value that the data value wraps."
+    },
+    {
+      "name": "enum MLDataValue.ValueType",
+      "desc": "An enumeration describing the supported underlying types that an MLDataValue wraps."
+    },
+    {
+      "name": "var intValue: Int?",
+      "desc": "The underlying integer value."
+    },
+    {
+      "name": "var doubleValue: Double?",
+      "desc": "The underlying double value."
+    },
+    {
+      "name": "var stringValue: String?",
+      "desc": "The underlying string value."
+    },
+    {
+      "name": "var dictionaryValue: MLDataValue.DictionaryType?",
+      "desc": "The underlying dictionary."
+    },
+    {
+      "name": "struct MLDataValue.DictionaryType",
+      "desc": "A dictionary of named data values."
+    },
+    {
+      "name": "var sequenceValue: MLDataValue.SequenceType?",
+      "desc": "The underlying sequence."
+    },
+    {
+      "name": "struct MLDataValue.SequenceType",
+      "desc": "A sequence of data values."
+    },
+    {
+      "name": "var multiArrayValue: MLDataValue.MultiArrayType?",
+      "desc": "The underlying multidimensional array."
+    },
+    {
+      "name": "struct MLDataValue.MultiArrayType",
+      "desc": "A multidimensional array of data values."
+    },
+    {
+      "name": "static func != (MLDataValue, MLDataValue) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (MLDataValue, MLDataValue) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two data values wrap the same underlying value."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "A hash of the data value."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the data value."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the data value that’s suitable for output during debugging."
+    },
+    {
+      "name": "case invalid",
+      "desc": "An invalid value."
+    },
+    {
+      "name": "var isValid: Bool",
+      "desc": "A Boolean value indicating whether the data value is valid."
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    }
+  ],
+  "declaration": "enum MLDataValue",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomStringConvertible",
+    "Hashable"
+  ]
+}

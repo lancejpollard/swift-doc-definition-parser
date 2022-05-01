@@ -1,0 +1,364 @@
+{
+  "path": "/documentation/foundation/filemanager",
+  "type": "Class",
+  "name": "FileManager",
+  "desc": "A convenient interface to the contents of the file system, and the primary means of interacting with it.",
+  "items": [
+    {
+      "name": "init(authorization: NSWorkspace.Authorization)",
+      "desc": "Initializes a file manager object that is authorized to perform privileged file system operations."
+    },
+    {
+      "name": "class var `default`: FileManager",
+      "desc": "The shared file manager object for the process."
+    },
+    {
+      "name": "var homeDirectoryForCurrentUser: URL",
+      "desc": "The home directory for the current user."
+    },
+    {
+      "name": "func NSHomeDirectory() -> String",
+      "desc": "Returns the path to either the user’s or application’s home directory, depending on the platform."
+    },
+    {
+      "name": "func NSUserName() -> String",
+      "desc": "Returns the logon name of the current user."
+    },
+    {
+      "name": "func NSFullUserName() -> String",
+      "desc": "Returns a string containing the full name of the current user."
+    },
+    {
+      "name": "func homeDirectory(forUser: String) -> URL?",
+      "desc": "Returns the home directory for the specified user."
+    },
+    {
+      "name": "func NSHomeDirectoryForUser(String?) -> String?",
+      "desc": "Returns the path to a given user’s home directory."
+    },
+    {
+      "name": "var temporaryDirectory: URL",
+      "desc": "The temporary directory for the current user."
+    },
+    {
+      "name": "func NSTemporaryDirectory() -> String",
+      "desc": "Returns the path of the temporary directory for the current user."
+    },
+    {
+      "name": "func url(for: FileManager.SearchPathDirectory, in: FileManager.SearchPathDomainMask, appropriateFor: URL?, create: Bool) -> URL",
+      "desc": "Locates and optionally creates the specified common directory in a domain."
+    },
+    {
+      "name": "func urls(for: FileManager.SearchPathDirectory, in: FileManager.SearchPathDomainMask) -> [URL]",
+      "desc": "Returns an array of URLs for the specified common directory in the requested domains."
+    },
+    {
+      "name": "func NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory, FileManager.SearchPathDomainMask, Bool) -> [String]",
+      "desc": "Creates a list of directory search paths."
+    },
+    {
+      "name": "func NSOpenStepRootDirectory() -> String",
+      "desc": "Returns the root directory of the user’s system."
+    },
+    {
+      "name": "func containerURL(forSecurityApplicationGroupIdentifier: String) -> URL?",
+      "desc": "Returns the container directory associated with the specified security application group identifier."
+    },
+    {
+      "name": "func contentsOfDirectory(at: URL, includingPropertiesForKeys: [URLResourceKey]?, options: FileManager.DirectoryEnumerationOptions) -> [URL]",
+      "desc": "Performs a shallow search of the specified directory and returns URLs for the contained items."
+    },
+    {
+      "name": "func contentsOfDirectory(atPath: String) -> [String]",
+      "desc": "Performs a shallow search of the specified directory and returns the paths of any contained items."
+    },
+    {
+      "name": "func enumerator(at: URL, includingPropertiesForKeys: [URLResourceKey]?, options: FileManager.DirectoryEnumerationOptions, errorHandler: ((URL, Error) -> Bool)?) -> FileManager.DirectoryEnumerator?",
+      "desc": "Returns a directory enumerator object that can be used to perform a deep enumeration of the directory at the specified URL."
+    },
+    {
+      "name": "func enumerator(atPath: String) -> FileManager.DirectoryEnumerator?",
+      "desc": "Returns a directory enumerator object that can be used to perform a deep enumeration of the directory at the specified path."
+    },
+    {
+      "name": "class FileManager.DirectoryEnumerator",
+      "desc": "An object that enumerates the contents of a directory."
+    },
+    {
+      "name": "func mountedVolumeURLs(includingResourceValuesForKeys: [URLResourceKey]?, options: FileManager.VolumeEnumerationOptions) -> [URL]?",
+      "desc": "Returns an array of URLs that identify the mounted volumes available on the device."
+    },
+    {
+      "name": "struct FileManager.VolumeEnumerationOptions",
+      "desc": "Options for enumerating mounted volumes with the mountedVolumeURLs(includingResourceValuesForKeys:options:) method."
+    },
+    {
+      "name": "func subpathsOfDirectory(atPath: String) -> [String]",
+      "desc": "Performs a deep enumeration of the specified directory and returns the paths of all of the contained subdirectories."
+    },
+    {
+      "name": "func subpaths(atPath: String) -> [String]?",
+      "desc": "Returns an array of strings identifying the paths for all items in the specified directory."
+    },
+    {
+      "name": "func createDirectory(at: URL, withIntermediateDirectories: Bool, attributes: [FileAttributeKey : Any]?)",
+      "desc": "Creates a directory with the given attributes at the specified URL."
+    },
+    {
+      "name": "func createDirectory(atPath: String, withIntermediateDirectories: Bool, attributes: [FileAttributeKey : Any]?)",
+      "desc": "Creates a directory with given attributes at the specified path."
+    },
+    {
+      "name": "func createFile(atPath: String, contents: Data?, attributes: [FileAttributeKey : Any]?) -> Bool",
+      "desc": "Creates a file with the specified content and attributes at the given location."
+    },
+    {
+      "name": "func removeItem(at: URL)",
+      "desc": "Removes the file or directory at the specified URL."
+    },
+    {
+      "name": "func removeItem(atPath: String)",
+      "desc": "Removes the file or directory at the specified path."
+    },
+    {
+      "name": "func trashItem(at: URL, resultingItemURL: AutoreleasingUnsafeMutablePointer<NSURL?>?)",
+      "desc": "Moves an item to the trash."
+    },
+    {
+      "name": "func replaceItemAt(URL, withItemAt: URL, backupItemName: String?, options: FileManager.ItemReplacementOptions) -> URL?",
+      "desc": "Replaces the contents of the item at the specified URL in a manner that ensures no data loss occurs."
+    },
+    {
+      "name": "func replaceItem(at: URL, withItemAt: URL, backupItemName: String?, options: FileManager.ItemReplacementOptions, resultingItemURL: AutoreleasingUnsafeMutablePointer<NSURL?>?)",
+      "desc": "Replaces the contents of the item at the specified URL in a manner that ensures no data loss occurs."
+    },
+    {
+      "name": "struct FileManager.ItemReplacementOptions",
+      "desc": "Options for specifying the behavior of file replacement operations."
+    },
+    {
+      "name": "func copyItem(at: URL, to: URL)",
+      "desc": "Copies the file at the specified URL to a new location synchronously."
+    },
+    {
+      "name": "func copyItem(atPath: String, toPath: String)",
+      "desc": "Copies the item at the specified path to a new location synchronously."
+    },
+    {
+      "name": "func moveItem(at: URL, to: URL)",
+      "desc": "Moves the file or directory at the specified URL to a new location synchronously."
+    },
+    {
+      "name": "func moveItem(atPath: String, toPath: String)",
+      "desc": "Moves the file or directory at the specified path to a new location synchronously."
+    },
+    {
+      "name": "var ubiquityIdentityToken: (NSCoding & NSCopying & NSObjectProtocol)?",
+      "desc": "An opaque token that represents the current user’s iCloud Drive Documents identity."
+    },
+    {
+      "name": "func url(forUbiquityContainerIdentifier: String?) -> URL?",
+      "desc": "Returns the URL for the iCloud container associated with the specified identifier and establishes access to that container."
+    },
+    {
+      "name": "func isUbiquitousItem(at: URL) -> Bool",
+      "desc": "Returns a Boolean indicating whether the item is targeted for storage in iCloud."
+    },
+    {
+      "name": "func setUbiquitous(Bool, itemAt: URL, destinationURL: URL)",
+      "desc": "Indicates whether the item at the specified URL should be stored in iCloud."
+    },
+    {
+      "name": "func startDownloadingUbiquitousItem(at: URL)",
+      "desc": "Starts downloading (if necessary) the specified item to the local system."
+    },
+    {
+      "name": "func evictUbiquitousItem(at: URL)",
+      "desc": "Removes the local copy of the specified item that’s stored in iCloud."
+    },
+    {
+      "name": "func url(forPublishingUbiquitousItemAt: URL, expiration: AutoreleasingUnsafeMutablePointer<NSDate?>?) -> URL",
+      "desc": "Returns a URL that can be emailed to users to allow them to download a copy of a flat file item from iCloud."
+    },
+    {
+      "name": "func getFileProviderServicesForItem(at: URL, completionHandler: ([NSFileProviderServiceName : NSFileProviderService]?, Error?) -> Void)",
+      "desc": "Returns the services provided by the File Provider extension that manages the item at the given URL."
+    },
+    {
+      "name": "class NSFileProviderService",
+      "desc": "A service that provides a custom communication channel between your app and a File Provider extension."
+    },
+    {
+      "name": "struct NSFileProviderServiceName",
+      "desc": "The name used to identify a File Provider service."
+    },
+    {
+      "name": "func createSymbolicLink(at: URL, withDestinationURL: URL)",
+      "desc": "Creates a symbolic link at the specified URL that points to an item at the given URL."
+    },
+    {
+      "name": "func createSymbolicLink(atPath: String, withDestinationPath: String)",
+      "desc": "Creates a symbolic link that points to the specified destination."
+    },
+    {
+      "name": "func linkItem(at: URL, to: URL)",
+      "desc": "Creates a hard link between the items at the specified URLs."
+    },
+    {
+      "name": "func linkItem(atPath: String, toPath: String)",
+      "desc": "Creates a hard link between the items at the specified paths."
+    },
+    {
+      "name": "func destinationOfSymbolicLink(atPath: String) -> String",
+      "desc": "Returns the path of the item pointed to by a symbolic link."
+    },
+    {
+      "name": "func fileExists(atPath: String) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a file or directory exists at a specified path."
+    },
+    {
+      "name": "func fileExists(atPath: String, isDirectory: UnsafeMutablePointer<ObjCBool>?) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a file or directory exists at a specified path."
+    },
+    {
+      "name": "func isReadableFile(atPath: String) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the invoking object appears able to read a specified file."
+    },
+    {
+      "name": "func isWritableFile(atPath: String) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the invoking object appears able to write to a specified file."
+    },
+    {
+      "name": "func isExecutableFile(atPath: String) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the operating system appears able to execute a specified file."
+    },
+    {
+      "name": "func isDeletableFile(atPath: String) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the invoking object appears able to delete a specified file."
+    },
+    {
+      "name": "func componentsToDisplay(forPath: String) -> [String]?",
+      "desc": "Returns an array of strings representing the user-visible components of a given path."
+    },
+    {
+      "name": "func displayName(atPath: String) -> String",
+      "desc": "Returns the display name of the file or directory at a specified path."
+    },
+    {
+      "name": "func attributesOfItem(atPath: String) -> [FileAttributeKey : Any]",
+      "desc": "Returns the attributes of the item at a given path."
+    },
+    {
+      "name": "func attributesOfFileSystem(forPath: String) -> [FileAttributeKey : Any]",
+      "desc": "Returns a dictionary that describes the attributes of the mounted file system on which a given path resides."
+    },
+    {
+      "name": "func setAttributes([FileAttributeKey : Any], ofItemAtPath: String)",
+      "desc": "Sets the attributes of the specified file or directory."
+    },
+    {
+      "name": "func contents(atPath: String) -> Data?",
+      "desc": "Returns the contents of the file at the specified path."
+    },
+    {
+      "name": "func contentsEqual(atPath: String, andPath: String) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the files or directories in specified paths have the same contents."
+    },
+    {
+      "name": "func getRelationship(UnsafeMutablePointer<FileManager.URLRelationship>, ofDirectoryAt: URL, toItemAt: URL)",
+      "desc": "Determines the type of relationship that exists between a directory and an item."
+    },
+    {
+      "name": "func getRelationship(UnsafeMutablePointer<FileManager.URLRelationship>, of: FileManager.SearchPathDirectory, in: FileManager.SearchPathDomainMask, toItemAt: URL)",
+      "desc": "Determines the type of relationship that exists between a system directory and the specified item."
+    },
+    {
+      "name": "enum FileManager.URLRelationship",
+      "desc": "Constants indicating the relationship between a directory and an item."
+    },
+    {
+      "name": "func fileSystemRepresentation(withPath: String) -> UnsafePointer<CChar>",
+      "desc": "Returns a C-string representation of a given path that properly encodes Unicode strings for use by the file system."
+    },
+    {
+      "name": "func string(withFileSystemRepresentation: UnsafePointer<CChar>, length: Int) -> String",
+      "desc": "Returns an NSString object whose contents are derived from the specified C-string path."
+    },
+    {
+      "name": "var delegate: FileManagerDelegate?",
+      "desc": "The delegate of the file manager object."
+    },
+    {
+      "name": "func changeCurrentDirectoryPath(String) -> Bool",
+      "desc": "Changes the path of the current working directory to the specified path."
+    },
+    {
+      "name": "var currentDirectoryPath: String",
+      "desc": "The path to the program’s current directory."
+    },
+    {
+      "name": "func unmountVolume(at: URL, options: FileManager.UnmountOptions, completionHandler: (Error?) -> Void)",
+      "desc": "Starts the process of unmounting the specified volume."
+    },
+    {
+      "name": "struct FileManager.UnmountOptions",
+      "desc": "Options that specify the behavior of an unmount operation."
+    },
+    {
+      "name": "let NSFileManagerUnmountDissentingProcessIdentifierErrorKey: String",
+      "desc": "The process identifier of the process that prevented a volume from unmounting."
+    },
+    {
+      "name": "func NSFileTypeForHFSTypeCode(OSType) -> String!",
+      "desc": "Returns a string encoding a file type code."
+    },
+    {
+      "name": "func NSHFSTypeCodeFromFileType(String!) -> OSType",
+      "desc": "Returns a file type code."
+    },
+    {
+      "name": "func NSHFSTypeOfFile(String!) -> String!",
+      "desc": "Returns a string encoding a file type."
+    },
+    {
+      "name": "var NSFoundationVersionWithFileManagerResourceForkSupport: Int32",
+      "desc": "The version of the Foundation framework in which NSFileManager first supported resource forks."
+    },
+    {
+      "name": "struct FileManager.DirectoryEnumerationOptions",
+      "desc": "Options for enumerating the contents of directories."
+    },
+    {
+      "name": "enum FileManager.SearchPathDirectory",
+      "desc": "The location of significant directories."
+    },
+    {
+      "name": "struct FileManager.SearchPathDomainMask",
+      "desc": "Domain constants specifying base locations to use when you search for significant directories."
+    },
+    {
+      "name": "struct FileAttributeKey",
+      "desc": "Keys in dictionaries used to get and set file attributes."
+    },
+    {
+      "name": "struct FileAttributeType",
+      "desc": "Values representing a file’s type attribute."
+    },
+    {
+      "name": "struct FileProtectionType",
+      "desc": "Protection level values that can be associated with a file attribute key."
+    },
+    {
+      "name": "struct URLFileProtection",
+      "desc": "Protection level values that can be associated with a URL resource key."
+    },
+    {
+      "name": "static let NSUbiquityIdentityDidChange: NSNotification.Name",
+      "desc": "Sent after the iCloud (“ubiquity”) identity has changed."
+    }
+  ],
+  "declaration": "class FileManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

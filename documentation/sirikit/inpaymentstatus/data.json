@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/sirikit/inpaymentstatus",
+  "type": "Enumeration",
+  "name": "INPaymentStatus",
+  "desc": "Constants indicating the state of the financial transaction.",
+  "items": [
+    {
+      "name": "case unknown",
+      "desc": "The payment status is unknown."
+    },
+    {
+      "name": "case pending",
+      "desc": "The app hasn’t sent the payment yet."
+    },
+    {
+      "name": "case completed",
+      "desc": "The app made the payment."
+    },
+    {
+      "name": "case canceled",
+      "desc": "The app canceled the transaction before transferring the funds."
+    },
+    {
+      "name": "case failed",
+      "desc": "The transaction failed and the funds were not transferred."
+    },
+    {
+      "name": "case unpaid",
+      "desc": "The bill is currently unpaid."
+    }
+  ],
+  "declaration": "enum INPaymentStatus : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

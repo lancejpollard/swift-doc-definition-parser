@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/uikit/uigesturerecognizer/state",
+  "type": "Enumeration",
+  "name": "UIGestureRecognizer.State",
+  "desc": "The current state a gesture recognizer is in.",
+  "items": [
+    {
+      "name": "case possible",
+      "desc": "The gesture recognizer has not yet recognized its gesture, but may be evaluating touch events. This is the default state."
+    },
+    {
+      "name": "case began",
+      "desc": "The gesture recognizer has received touch objects recognized as a continuous gesture. It sends its action message (or messages) at the next cycle of the run loop."
+    },
+    {
+      "name": "case changed",
+      "desc": "The gesture recognizer has received touches recognized as a change to a continuous gesture. It sends its action message (or messages) at the next cycle of the run loop."
+    },
+    {
+      "name": "case ended",
+      "desc": "The gesture recognizer has received touches recognized as the end of a continuous gesture. It sends its action message (or messages) at the next cycle of the run loop and resets its state to UIGestureRecognizer.State.possible."
+    },
+    {
+      "name": "case cancelled",
+      "desc": "The gesture recognizer has received touches resulting in the cancellation of a continuous gesture. It sends its action message (or messages) at the next cycle of the run loop and resets its state to UIGestureRecognizer.State.possible."
+    },
+    {
+      "name": "case failed",
+      "desc": "The gesture recognizer has received a multi-touch sequence that it cannot recognize as its gesture. No action message is sent and the gesture recognizer is reset to UIGestureRecognizer.State.possible."
+    },
+    {
+      "name": "static var recognized: UIGestureRecognizer.State",
+      "desc": "The gesture recognizer has received a multi-touch sequence that it recognizes as its gesture. It sends its action message (or messages) at the next cycle of the run loop and resets its state to UIGestureRecognizer.State.possible."
+    }
+  ],
+  "declaration": "enum State : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

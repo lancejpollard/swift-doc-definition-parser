@@ -1,0 +1,46 @@
+{
+  "path": "/documentation/musickit/musicdatarequest/error",
+  "type": "Structure",
+  "name": "MusicDataRequest.Error",
+  "desc": "An error that the Apple Music API returns.",
+  "items": [
+    {
+      "name": "let code: Int",
+      "desc": "The specific code for the underlying cause of the error."
+    },
+    {
+      "name": "let detailText: String",
+      "desc": "Additional detailed information about the cause of the error."
+    },
+    {
+      "name": "let id: String",
+      "desc": "The identifier for the error."
+    },
+    {
+      "name": "let originalResponse: MusicDataResponse",
+      "desc": "The original response that contains the error."
+    },
+    {
+      "name": "let source: MusicDataRequest.Error.Source?",
+      "desc": "The source of the error."
+    },
+    {
+      "name": "let status: Int",
+      "desc": "The HTTP status code for the error."
+    },
+    {
+      "name": "let title: String",
+      "desc": "A developer-friendly title for the error."
+    },
+    {
+      "name": "enum Source",
+      "desc": "A representation of the source of an error from Apple Music API."
+    }
+  ],
+  "declaration": "struct Error",
+  "conformsTo": [
+    "CustomStringConvertible",
+    "Error",
+    "Sendable"
+  ]
+}

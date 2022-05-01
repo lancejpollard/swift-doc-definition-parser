@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/healthkit/hkcorrelation",
+  "type": "Class",
+  "name": "HKCorrelation",
+  "desc": "A sample that groups multiple related samples into a single entry.",
+  "items": [
+    {
+      "name": "init(type: HKCorrelationType, start: Date, end: Date, objects: Set<HKSample>)",
+      "desc": "Instantiates and returns a new correlation instance."
+    },
+    {
+      "name": "init(type: HKCorrelationType, start: Date, end: Date, objects: Set<HKSample>, metadata: [String : Any]?)",
+      "desc": "Instantiates and returns a new correlation instance with the provided metadata."
+    },
+    {
+      "name": "init(type: HKCorrelationType, start: Date, end: Date, objects: Set<HKSample>, device: HKDevice?, metadata: [String : Any]?)",
+      "desc": "Instantiates and returns a new correlation instance with the provided device and metadata."
+    },
+    {
+      "name": "var correlationType: HKCorrelationType",
+      "desc": "The type for this correlation."
+    },
+    {
+      "name": "var objects: Set<HKSample>",
+      "desc": "The set of sample objects that make up the correlation."
+    },
+    {
+      "name": "func objects(for: HKObjectType) -> Set<HKSample>",
+      "desc": "Returns a set containing all the objects of the specified type in the correlation."
+    },
+    {
+      "name": "let HKPredicateKeyPathCorrelation: String",
+      "desc": "The key path for accessing the object’s correlation inside a predicate format string."
+    }
+  ],
+  "declaration": "class HKCorrelation : HKSample",
+  "inheritsFrom": [
+    "HKSample"
+  ]
+}

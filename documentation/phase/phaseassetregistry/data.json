@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/phase/phaseassetregistry",
+  "type": "Class",
+  "name": "PHASEAssetRegistry",
+  "desc": "A central repository of audio assets.",
+  "items": [
+    {
+      "name": "func registerSoundAsset(url: URL, identifier: String?, assetType: PHASEAsset.AssetType, channelLayout: AVAudioChannelLayout?, normalizationMode: PHASENormalizationMode) -> PHASESoundAsset",
+      "desc": "Loads a sound asset from the argument URL and adds it to the engine’s list of registered assets."
+    },
+    {
+      "name": "func registerSoundAsset(data: Data, identifier: String?, format: AVAudioFormat, normalizationMode: PHASENormalizationMode) -> PHASESoundAsset",
+      "desc": "Loads a sound asset from memory and adds it to the engine’s list of registered assets."
+    },
+    {
+      "name": "func unregisterAsset(identifier: String, completion: ((Bool) -> Void)?)",
+      "desc": "Deallocates system memory for a given asset and removes it from the engine’s list of registered assets."
+    },
+    {
+      "name": "func registerSoundEventAsset(rootNode: PHASESoundEventNodeDefinition, identifier: String?) -> PHASESoundEventNodeAsset",
+      "desc": "Registers the root node of the sound event asset."
+    },
+    {
+      "name": "func asset(forIdentifier: String) -> PHASEAsset?",
+      "desc": "Provides the asset named with the designated identifier."
+    },
+    {
+      "name": "func registerGlobalMetaParameter(metaParameterDefinition: PHASEMetaParameterDefinition) -> PHASEGlobalMetaParameterAsset",
+      "desc": "Registers a global metaparameter with the asset registry."
+    },
+    {
+      "name": "var globalMetaParameters: [String : PHASEMetaParameter]",
+      "desc": "A dictionary of metaparameters that all sound event assets share."
+    }
+  ],
+  "declaration": "class PHASEAssetRegistry : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

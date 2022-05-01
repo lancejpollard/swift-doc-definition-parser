@@ -1,0 +1,84 @@
+{
+  "path": "/documentation/gamekit/gkleaderboard",
+  "type": "Class",
+  "name": "GKLeaderboard",
+  "desc": "A leaderboard for a game that Game Center stores.",
+  "items": [
+    {
+      "name": "var baseLeaderboardID: String",
+      "desc": "The ID that Game Center uses to identify this leaderboard."
+    },
+    {
+      "name": "var title: String?",
+      "desc": "The localized title for the leaderboard."
+    },
+    {
+      "name": "var type: GKLeaderboard.LeaderboardType",
+      "desc": "The type of leaderboard, classic or recurring."
+    },
+    {
+      "name": "enum GKLeaderboard.LeaderboardType",
+      "desc": "Specifies whether a leaderboard is recurring."
+    },
+    {
+      "name": "var groupIdentifier: String?",
+      "desc": "The identifier for the group the leaderboard belongs to."
+    },
+    {
+      "name": "var startDate: Date?",
+      "desc": "The date and time a recurring leaderboard occurrence starts accepting scores."
+    },
+    {
+      "name": "var nextStartDate: Date?",
+      "desc": "The date and time the next recurring leaderboard occurrence starts accepting scores."
+    },
+    {
+      "name": "var duration: TimeInterval",
+      "desc": "The duration from the start date that a recurring leaderboard occurrence accepts scores."
+    },
+    {
+      "name": "class func loadLeaderboards(IDs: [String]?, completionHandler: ([GKLeaderboard]?, Error?) -> Void)",
+      "desc": "Loads leaderboards for the specified leaderboard IDs that Game Center uses."
+    },
+    {
+      "name": "func loadPreviousOccurrence(completionHandler: (GKLeaderboard?, Error?) -> Void)",
+      "desc": "Loads the previous recurring leaderboard occurrence that the player submits a score to."
+    },
+    {
+      "name": "func loadImage(completionHandler: ((UIImage?, Error?) -> Void)?)",
+      "desc": "Loads the image for the default leaderboard."
+    },
+    {
+      "name": "class func submitScore(Int, context: Int, player: GKPlayer, leaderboardIDs: [String], completionHandler: (Error?) -> Void)",
+      "desc": "Submits a score to multiple leaderboards."
+    },
+    {
+      "name": "func submitScore(Int, context: Int, player: GKPlayer, completionHandler: (Error?) -> Void)",
+      "desc": "Submits a score to the leaderboard."
+    },
+    {
+      "name": "func loadEntries(for: GKLeaderboard.PlayerScope, timeScope: GKLeaderboard.TimeScope, range: NSRange, completionHandler: (GKLeaderboard.Entry?, [GKLeaderboard.Entry]?, Int, Error?) -> Void)",
+      "desc": "Returns the scores for the local player and other players for the specified type of player, time period, and ranks."
+    },
+    {
+      "name": "func loadEntries(for: [GKPlayer], timeScope: GKLeaderboard.TimeScope, completionHandler: (GKLeaderboard.Entry?, [GKLeaderboard.Entry]?, Error?) -> Void)",
+      "desc": "Returns the scores for the local player and other players for the specified time period."
+    },
+    {
+      "name": "enum GKLeaderboard.PlayerScope",
+      "desc": "Specifies the type of players for filtering data."
+    },
+    {
+      "name": "enum GKLeaderboard.TimeScope",
+      "desc": "Specifies the time period for filtering data."
+    },
+    {
+      "name": "class GKLeaderboard.Entry",
+      "desc": "Information about a single score by a player on a leaderboard."
+    }
+  ],
+  "declaration": "class GKLeaderboard : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpspurgeablestate",
+  "type": "Enumeration",
+  "name": "MPSPurgeableState",
+  "desc": "The purgeable state of an image’s underlying texture.",
+  "items": [
+    {
+      "name": "case allocationDeferred",
+      "desc": "The image’s underlying texture hasn’t been allocated yet. Attempts to set another purgeable state using the setPurgeableState(_:) method will be ignored."
+    },
+    {
+      "name": "case keepCurrent",
+      "desc": "Equivalent to the MTLPurgeableState.keepCurrent value."
+    },
+    {
+      "name": "case nonVolatile",
+      "desc": "Equivalent to the MTLPurgeableState.nonVolatile value."
+    },
+    {
+      "name": "case volatile",
+      "desc": "Equivalent to the MTLPurgeableState.volatile value."
+    },
+    {
+      "name": "case empty",
+      "desc": "Equivalent to the MTLPurgeableState.empty value."
+    }
+  ],
+  "declaration": "enum MPSPurgeableState : UInt, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

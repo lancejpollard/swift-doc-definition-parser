@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/uikit/uidynamicanimator",
+  "type": "Class",
+  "name": "UIDynamicAnimator",
+  "desc": "An object that provides physics-related capabilities and animations for its dynamic items, and provides the context for those animations.",
+  "items": [
+    {
+      "name": "init(referenceView: UIView)",
+      "desc": "Initializes a dynamic animator with a specified view as its reference view."
+    },
+    {
+      "name": "init(collectionViewLayout: UICollectionViewLayout)",
+      "desc": "Initializes a dynamic animator with a specified collection view layout."
+    },
+    {
+      "name": "func items(in: CGRect) -> [UIDynamicItem]",
+      "desc": "Returns the dynamic items, from the animator’s behaviors, that intersect a specified rectangle."
+    },
+    {
+      "name": "func addBehavior(UIDynamicBehavior)",
+      "desc": "Adds a dynamic behavior to a dynamic animator."
+    },
+    {
+      "name": "func removeBehavior(UIDynamicBehavior)",
+      "desc": "Removes a specified dynamic behavior from a dynamic animator."
+    },
+    {
+      "name": "func removeAllBehaviors()",
+      "desc": "Removes all of the dynamic behaviors from a dynamic animator."
+    },
+    {
+      "name": "var delegate: UIDynamicAnimatorDelegate?",
+      "desc": "The delegate for responding to pausing or resumption of animation."
+    },
+    {
+      "name": "protocol UIDynamicAnimatorDelegate",
+      "desc": "To respond to the pausing or resumption of UIKit dynamic animation, configure a custom class to adopt the UIDynamicAnimatorDelegate protocol. Then, in a dynamic animator (an instance of the UIDynamicAnimator class), set the delegate to be an instance of your custom class."
+    },
+    {
+      "name": "var elapsedTime: TimeInterval",
+      "desc": "Returns the time interval since the dynamic animator started running."
+    },
+    {
+      "name": "var isRunning: Bool",
+      "desc": "Returns true if the dynamic animator is running."
+    },
+    {
+      "name": "var behaviors: [UIDynamicBehavior]",
+      "desc": "The dynamic behaviors managed by a dynamic animator."
+    },
+    {
+      "name": "var referenceView: UIView?",
+      "desc": "The view that a dynamic animator was initialized with."
+    },
+    {
+      "name": "func updateItem(usingCurrentState: UIDynamicItem)",
+      "desc": "Asks a dynamic animator to read the current state of a dynamic item, replacing the animator’s internal representation of the item’s state."
+    },
+    {
+      "name": "func layoutAttributesForCell(at: IndexPath) -> UICollectionViewLayoutAttributes?",
+      "desc": "A convenience method for returning the layout attributes for a collection view cell."
+    },
+    {
+      "name": "func layoutAttributesForDecorationView(ofKind: String, at: IndexPath) -> UICollectionViewLayoutAttributes?",
+      "desc": "A convenience method for returning the layout attributes for a collection view decoration view."
+    },
+    {
+      "name": "func layoutAttributesForSupplementaryView(ofKind: String, at: IndexPath) -> UICollectionViewLayoutAttributes?",
+      "desc": "A convenience method for returning the layout attributes for a collection view supplementary view."
+    }
+  ],
+  "declaration": "class UIDynamicAnimator : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

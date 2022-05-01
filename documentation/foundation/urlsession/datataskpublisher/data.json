@@ -1,0 +1,323 @@
+{
+  "path": "/documentation/foundation/urlsession/datataskpublisher",
+  "type": "Structure",
+  "name": "URLSession.DataTaskPublisher",
+  "desc": "A publisher that delivers the results of performing URL session data tasks.",
+  "items": [
+    {
+      "name": "typealias URLSession.DataTaskPublisher.Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias URLSession.DataTaskPublisher.Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "init(request: URLRequest, session: URLSession)",
+      "desc": "Creates a data task publisher from the provided URL request and URL session."
+    },
+    {
+      "name": "let request: URLRequest",
+      "desc": "The URL request performed by the data task associated with this publisher."
+    },
+    {
+      "name": "let session: URLSession",
+      "desc": "The URL session that performs the data task associated with this publisher."
+    },
+    {
+      "name": "var values: AsyncThrowingPublisher<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func allSatisfy(((data: Data, response: URLResponse)) -> Bool) -> Publishers.AllSatisfy<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func append((data: Data, response: URLResponse)...) -> Publishers.Concatenate<URLSession.DataTaskPublisher, Publishers.Sequence<[(data: Data, response: URLResponse)], URLError>>"
+    },
+    {
+      "name": "func assertNoFailure(String, file: StaticString, line: UInt) -> Publishers.AssertNoFailure<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func breakpoint(receiveSubscription: ((Subscription) -> Bool)?, receiveOutput: (((data: Data, response: URLResponse)) -> Bool)?, receiveCompletion: ((Subscribers.Completion<URLError>) -> Bool)?) -> Publishers.Breakpoint<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func breakpointOnError() -> Publishers.Breakpoint<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func buffer(size: Int, prefetch: Publishers.PrefetchStrategy, whenFull: Publishers.BufferingStrategy<URLError>) -> Publishers.Buffer<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func `catch`<P>((URLError) -> P) -> Publishers.Catch<URLSession.DataTaskPublisher, P>"
+    },
+    {
+      "name": "func collect() -> Publishers.Collect<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func collect(Int) -> Publishers.CollectByCount<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func collect<S>(Publishers.TimeGroupingStrategy<S>, options: S.SchedulerOptions?) -> Publishers.CollectByTime<URLSession.DataTaskPublisher, S>"
+    },
+    {
+      "name": "func combineLatest<P>(P) -> Publishers.CombineLatest<URLSession.DataTaskPublisher, P>"
+    },
+    {
+      "name": "func combineLatest<P, Q>(P, Q) -> Publishers.CombineLatest3<URLSession.DataTaskPublisher, P, Q>"
+    },
+    {
+      "name": "func combineLatest<P, T>(P, ((data: Data, response: URLResponse), P.Output) -> T) -> Publishers.Map<Publishers.CombineLatest<URLSession.DataTaskPublisher, P>, T>"
+    },
+    {
+      "name": "func combineLatest<P, Q, R>(P, Q, R) -> Publishers.CombineLatest4<URLSession.DataTaskPublisher, P, Q, R>"
+    },
+    {
+      "name": "func combineLatest<P, Q, T>(P, Q, ((data: Data, response: URLResponse), P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.CombineLatest3<URLSession.DataTaskPublisher, P, Q>, T>"
+    },
+    {
+      "name": "func combineLatest<P, Q, R, T>(P, Q, R, ((data: Data, response: URLResponse), P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.CombineLatest4<URLSession.DataTaskPublisher, P, Q, R>, T>"
+    },
+    {
+      "name": "func compactMap<T>(((data: Data, response: URLResponse)) -> T?) -> Publishers.CompactMap<URLSession.DataTaskPublisher, T>"
+    },
+    {
+      "name": "func contains(where: ((data: Data, response: URLResponse)) -> Bool) -> Publishers.ContainsWhere<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func count() -> Publishers.Count<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func debounce<S>(for: S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Debounce<URLSession.DataTaskPublisher, S>"
+    },
+    {
+      "name": "func decode<Item, Coder>(type: Item.Type, decoder: Coder) -> Publishers.Decode<URLSession.DataTaskPublisher, Item, Coder>"
+    },
+    {
+      "name": "func delay<S>(for: S.SchedulerTimeType.Stride, tolerance: S.SchedulerTimeType.Stride?, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Delay<URLSession.DataTaskPublisher, S>"
+    },
+    {
+      "name": "func drop<P>(untilOutputFrom: P) -> Publishers.DropUntilOutput<URLSession.DataTaskPublisher, P>"
+    },
+    {
+      "name": "func drop(while: ((data: Data, response: URLResponse)) -> Bool) -> Publishers.DropWhile<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func dropFirst(Int) -> Publishers.Drop<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func eraseToAnyPublisher() -> AnyPublisher<(data: Data, response: URLResponse), URLError>"
+    },
+    {
+      "name": "func filter(((data: Data, response: URLResponse)) -> Bool) -> Publishers.Filter<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func first() -> Publishers.First<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func first(where: ((data: Data, response: URLResponse)) -> Bool) -> Publishers.FirstWhere<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func flatMap<T, P>(maxPublishers: Subscribers.Demand, ((data: Data, response: URLResponse)) -> P) -> Publishers.FlatMap<P, URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func flatMap<P>(maxPublishers: Subscribers.Demand, ((data: Data, response: URLResponse)) -> P) -> Publishers.FlatMap<Publishers.SetFailureType<P, URLError>, URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func handleEvents(receiveSubscription: ((Subscription) -> Void)?, receiveOutput: (((data: Data, response: URLResponse)) -> Void)?, receiveCompletion: ((Subscribers.Completion<URLError>) -> Void)?, receiveCancel: (() -> Void)?, receiveRequest: ((Subscribers.Demand) -> Void)?) -> Publishers.HandleEvents<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func ignoreOutput() -> Publishers.IgnoreOutput<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func last() -> Publishers.Last<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func last(where: ((data: Data, response: URLResponse)) -> Bool) -> Publishers.LastWhere<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func map<T>(((data: Data, response: URLResponse)) -> T) -> Publishers.Map<URLSession.DataTaskPublisher, T>"
+    },
+    {
+      "name": "func map<T>(KeyPath<(data: Data, response: URLResponse), T>) -> Publishers.MapKeyPath<URLSession.DataTaskPublisher, T>"
+    },
+    {
+      "name": "func map<T0, T1>(KeyPath<(data: Data, response: URLResponse), T0>, KeyPath<(data: Data, response: URLResponse), T1>) -> Publishers.MapKeyPath2<URLSession.DataTaskPublisher, T0, T1>"
+    },
+    {
+      "name": "func map<T0, T1, T2>(KeyPath<(data: Data, response: URLResponse), T0>, KeyPath<(data: Data, response: URLResponse), T1>, KeyPath<(data: Data, response: URLResponse), T2>) -> Publishers.MapKeyPath3<URLSession.DataTaskPublisher, T0, T1, T2>"
+    },
+    {
+      "name": "func mapError<E>((URLError) -> E) -> Publishers.MapError<URLSession.DataTaskPublisher, E>"
+    },
+    {
+      "name": "func max(by: ((data: Data, response: URLResponse), (data: Data, response: URLResponse)) -> Bool) -> Publishers.Comparison<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func measureInterval<S>(using: S, options: S.SchedulerOptions?) -> Publishers.MeasureInterval<URLSession.DataTaskPublisher, S>"
+    },
+    {
+      "name": "func merge(with: URLSession.DataTaskPublisher) -> Publishers.MergeMany<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func merge<B, C>(with: B, C) -> Publishers.Merge3<URLSession.DataTaskPublisher, B, C>"
+    },
+    {
+      "name": "func merge<B, C, D>(with: B, C, D) -> Publishers.Merge4<URLSession.DataTaskPublisher, B, C, D>"
+    },
+    {
+      "name": "func merge<B, C, D, E>(with: B, C, D, E) -> Publishers.Merge5<URLSession.DataTaskPublisher, B, C, D, E>"
+    },
+    {
+      "name": "func merge<B, C, D, E, F>(with: B, C, D, E, F) -> Publishers.Merge6<URLSession.DataTaskPublisher, B, C, D, E, F>"
+    },
+    {
+      "name": "func merge<B, C, D, E, F, G>(with: B, C, D, E, F, G) -> Publishers.Merge7<URLSession.DataTaskPublisher, B, C, D, E, F, G>"
+    },
+    {
+      "name": "func merge<B, C, D, E, F, G, H>(with: B, C, D, E, F, G, H) -> Publishers.Merge8<URLSession.DataTaskPublisher, B, C, D, E, F, G, H>"
+    },
+    {
+      "name": "func min(by: ((data: Data, response: URLResponse), (data: Data, response: URLResponse)) -> Bool) -> Publishers.Comparison<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func multicast<S>(() -> S) -> Publishers.Multicast<URLSession.DataTaskPublisher, S>"
+    },
+    {
+      "name": "func multicast<S>(subject: S) -> Publishers.Multicast<URLSession.DataTaskPublisher, S>"
+    },
+    {
+      "name": "func output(at: Int) -> Publishers.Output<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func output<R>(in: R) -> Publishers.Output<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func prefix(Int) -> Publishers.Output<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func prefix<P>(untilOutputFrom: P) -> Publishers.PrefixUntilOutput<URLSession.DataTaskPublisher, P>"
+    },
+    {
+      "name": "func prefix(while: ((data: Data, response: URLResponse)) -> Bool) -> Publishers.PrefixWhile<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func prepend((data: Data, response: URLResponse)...) -> Publishers.Concatenate<Publishers.Sequence<[(data: Data, response: URLResponse)], URLError>, URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func print(String, to: TextOutputStream?) -> Publishers.Print<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func receive<S>(on: S, options: S.SchedulerOptions?) -> Publishers.ReceiveOn<URLSession.DataTaskPublisher, S>"
+    },
+    {
+      "name": "func receive<S>(subscriber: S)"
+    },
+    {
+      "name": "func reduce<T>(T, (T, (data: Data, response: URLResponse)) -> T) -> Publishers.Reduce<URLSession.DataTaskPublisher, T>"
+    },
+    {
+      "name": "func removeDuplicates(by: ((data: Data, response: URLResponse), (data: Data, response: URLResponse)) -> Bool) -> Publishers.RemoveDuplicates<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func replaceEmpty(with: (data: Data, response: URLResponse)) -> Publishers.ReplaceEmpty<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func replaceError(with: (data: Data, response: URLResponse)) -> Publishers.ReplaceError<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func replaceNil<T>(with: T) -> Publishers.Map<URLSession.DataTaskPublisher, T>"
+    },
+    {
+      "name": "func retry(Int) -> Publishers.Retry<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func scan<T>(T, (T, (data: Data, response: URLResponse)) -> T) -> Publishers.Scan<URLSession.DataTaskPublisher, T>"
+    },
+    {
+      "name": "func share() -> Publishers.Share<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func sink(receiveCompletion: ((Subscribers.Completion<URLError>) -> Void), receiveValue: (((data: Data, response: URLResponse)) -> Void)) -> AnyCancellable"
+    },
+    {
+      "name": "func subscribe<S>(S) -> AnyCancellable"
+    },
+    {
+      "name": "func subscribe<S>(S)"
+    },
+    {
+      "name": "func subscribe<S>(on: S, options: S.SchedulerOptions?) -> Publishers.SubscribeOn<URLSession.DataTaskPublisher, S>"
+    },
+    {
+      "name": "func throttle<S>(for: S.SchedulerTimeType.Stride, scheduler: S, latest: Bool) -> Publishers.Throttle<URLSession.DataTaskPublisher, S>"
+    },
+    {
+      "name": "func timeout<S>(S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?, customError: (() -> URLError)?) -> Publishers.Timeout<URLSession.DataTaskPublisher, S>"
+    },
+    {
+      "name": "func tryAllSatisfy(((data: Data, response: URLResponse)) -> Bool) -> Publishers.TryAllSatisfy<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func tryCatch<P>((URLError) -> P) -> Publishers.TryCatch<URLSession.DataTaskPublisher, P>"
+    },
+    {
+      "name": "func tryCompactMap<T>(((data: Data, response: URLResponse)) -> T?) -> Publishers.TryCompactMap<URLSession.DataTaskPublisher, T>"
+    },
+    {
+      "name": "func tryContains(where: ((data: Data, response: URLResponse)) -> Bool) -> Publishers.TryContainsWhere<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func tryDrop(while: ((data: Data, response: URLResponse)) -> Bool) -> Publishers.TryDropWhile<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func tryFilter(((data: Data, response: URLResponse)) -> Bool) -> Publishers.TryFilter<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func tryFirst(where: ((data: Data, response: URLResponse)) -> Bool) -> Publishers.TryFirstWhere<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func tryLast(where: ((data: Data, response: URLResponse)) -> Bool) -> Publishers.TryLastWhere<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func tryMap<T>(((data: Data, response: URLResponse)) -> T) -> Publishers.TryMap<URLSession.DataTaskPublisher, T>"
+    },
+    {
+      "name": "func tryMax(by: ((data: Data, response: URLResponse), (data: Data, response: URLResponse)) -> Bool) -> Publishers.TryComparison<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func tryMin(by: ((data: Data, response: URLResponse), (data: Data, response: URLResponse)) -> Bool) -> Publishers.TryComparison<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func tryPrefix(while: ((data: Data, response: URLResponse)) -> Bool) -> Publishers.TryPrefixWhile<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func tryReduce<T>(T, (T, (data: Data, response: URLResponse)) -> T) -> Publishers.TryReduce<URLSession.DataTaskPublisher, T>"
+    },
+    {
+      "name": "func tryRemoveDuplicates(by: ((data: Data, response: URLResponse), (data: Data, response: URLResponse)) -> Bool) -> Publishers.TryRemoveDuplicates<URLSession.DataTaskPublisher>"
+    },
+    {
+      "name": "func tryScan<T>(T, (T, (data: Data, response: URLResponse)) -> T) -> Publishers.TryScan<URLSession.DataTaskPublisher, T>"
+    },
+    {
+      "name": "func zip<P>(P) -> Publishers.Zip<URLSession.DataTaskPublisher, P>"
+    },
+    {
+      "name": "func zip<P, Q>(P, Q) -> Publishers.Zip3<URLSession.DataTaskPublisher, P, Q>"
+    },
+    {
+      "name": "func zip<P, T>(P, ((data: Data, response: URLResponse), P.Output) -> T) -> Publishers.Map<Publishers.Zip<URLSession.DataTaskPublisher, P>, T>"
+    },
+    {
+      "name": "func zip<P, Q, R>(P, Q, R) -> Publishers.Zip4<URLSession.DataTaskPublisher, P, Q, R>"
+    },
+    {
+      "name": "func zip<P, Q, T>(P, Q, ((data: Data, response: URLResponse), P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.Zip3<URLSession.DataTaskPublisher, P, Q>, T>"
+    },
+    {
+      "name": "func zip<P, Q, R, T>(P, Q, R, ((data: Data, response: URLResponse), P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.Zip4<URLSession.DataTaskPublisher, P, Q, R>, T>"
+    }
+  ],
+  "declaration": "struct DataTaskPublisher",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

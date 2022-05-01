@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/swift/partialrangefrom",
+  "type": "Generic Structure",
+  "name": "PartialRangeFrom",
+  "desc": "A partial interval extending upward from a lower bound.",
+  "items": [
+    {
+      "name": "init(Bound)"
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a new instance by decoding from the given decoder."
+    },
+    {
+      "name": "let lowerBound: Bound"
+    },
+    {
+      "name": "func contains(Bound) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the given element is contained within the range expression."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes this value into the given encoder."
+    },
+    {
+      "name": "func relative<C>(to: C) -> Range<Bound>",
+      "desc": "Returns the range of indices described by this range expression within the given collection."
+    },
+    {
+      "name": "func relative(toShapedArrayAxis: Range<Int>) -> Range<Int>",
+      "desc": "Available when Bound is Int."
+    },
+    {
+      "name": "static func ~= (PartialRangeFrom<Bound>, Bound) -> Bool",
+      "desc": "Returns a Boolean value indicating whether a value is included in a range."
+    }
+  ],
+  "declaration": "@frozen struct PartialRangeFrom<Bound> where Bound : Comparable",
+  "conformsTo": [
+    "Decodable",
+    "Encodable",
+    "MLShapedArrayRangeExpression",
+    "RangeExpression"
+  ]
+}

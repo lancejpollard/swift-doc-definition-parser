@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/networkextension/nwtcpconnection",
+  "type": "Class",
+  "name": "NWTCPConnection",
+  "desc": "An object to manage a TCP connection, with or without TLS.",
+  "items": [
+    {
+      "name": "var state: NWTCPConnectionState",
+      "desc": "The status of the connection."
+    },
+    {
+      "name": "enum NWTCPConnectionState",
+      "desc": "Defined connection states. New types may be defined in the future."
+    },
+    {
+      "name": "var isViable: Bool",
+      "desc": "The viability of a TCP connection indicates whether or not data can be transferred."
+    },
+    {
+      "name": "var error: Error?",
+      "desc": "The connection-wide error property."
+    },
+    {
+      "name": "func readMinimumLength(Int, maximumLength: Int, completionHandler: (Data?, Error?) -> Void)",
+      "desc": "Read the requested range of bytes."
+    },
+    {
+      "name": "func readLength(Int, completionHandler: (Data?, Error?) -> Void)",
+      "desc": "Read a certain number of bytes on a connection."
+    },
+    {
+      "name": "func write(Data, completionHandler: (Error?) -> Void)",
+      "desc": "Write the data to the connection."
+    },
+    {
+      "name": "func writeClose()",
+      "desc": "Close the connection for writing."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Cancel the connection."
+    },
+    {
+      "name": "var hasBetterPath: Bool",
+      "desc": "If a connection has a better path, new connections would use a different interface."
+    },
+    {
+      "name": "init(upgradeFor: NWTCPConnection)",
+      "desc": "This convenience initializer can be used to create a new connection that will only be connected if there exists a better path (as determined by the system) to the remote endpoint of the original connection."
+    },
+    {
+      "name": "var endpoint: NWEndpoint",
+      "desc": "The destination endpoint with which this connection was created."
+    },
+    {
+      "name": "var localAddress: NWEndpoint?",
+      "desc": "The IP address endpoint from which the connection was established."
+    },
+    {
+      "name": "var remoteAddress: NWEndpoint?",
+      "desc": "The IP address endpoint to which the connection was established."
+    },
+    {
+      "name": "var connectedPath: NWPath?",
+      "desc": "The network path over which the connection was established."
+    },
+    {
+      "name": "var txtRecord: Data?",
+      "desc": "The TXT record associated with a connected Bonjour service endpoint."
+    }
+  ],
+  "declaration": "class NWTCPConnection : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

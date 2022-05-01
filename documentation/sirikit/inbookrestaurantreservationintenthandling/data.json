@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/sirikit/inbookrestaurantreservationintenthandling",
+  "type": "Protocol",
+  "name": "INBookRestaurantReservationIntentHandling",
+  "desc": "The handler interface booking a reservation that the user selected.",
+  "items": [
+    {
+      "name": "func resolveRestaurant(for: INBookRestaurantReservationIntent, completion: (INRestaurantResolutionResult) -> Void)",
+      "desc": "Resolves the restaurant associated with the reservation."
+    },
+    {
+      "name": "func resolveBookingDateComponents(for: INBookRestaurantReservationIntent, completion: (INDateComponentsResolutionResult) -> Void)",
+      "desc": "Resolves the date of the reservation."
+    },
+    {
+      "name": "func resolvePartySize(for: INBookRestaurantReservationIntent, completion: (INIntegerResolutionResult) -> Void)",
+      "desc": "Resolves the number of people in the user’s party."
+    },
+    {
+      "name": "func resolveGuest(for: INBookRestaurantReservationIntent, completion: (INRestaurantGuestResolutionResult) -> Void)",
+      "desc": "Resolves the identity of the guest associated with the reservation."
+    },
+    {
+      "name": "func resolveGuestProvidedSpecialRequestText(for: INBookRestaurantReservationIntent, completion: (INStringResolutionResult) -> Void)",
+      "desc": "Resolves any special requests made in connection with the reservation."
+    },
+    {
+      "name": "func confirm(bookRestaurantReservation: INBookRestaurantReservationIntent, completion: (INBookRestaurantReservationIntentResponse) -> Void)",
+      "desc": "Confirms whether you can complete the reservation."
+    },
+    {
+      "name": "func handle(bookRestaurantReservation: INBookRestaurantReservationIntent, completion: (INBookRestaurantReservationIntentResponse) -> Void)",
+      "desc": "Handles completing the user’s reservation."
+    }
+  ],
+  "declaration": "protocol INBookRestaurantReservationIntentHandling",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

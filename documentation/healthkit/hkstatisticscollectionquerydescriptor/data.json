@@ -1,0 +1,53 @@
+{
+  "path": "/documentation/healthkit/hkstatisticscollectionquerydescriptor",
+  "type": "Structure",
+  "name": "HKStatisticsCollectionQueryDescriptor",
+  "desc": "A query descriptor that gathers a collection of statistics calculated over a series of fixed-length time intervals.",
+  "items": [
+    {
+      "name": "typealias HKStatisticsCollectionQueryDescriptor.Output",
+      "desc": "The type of data that the statistics collection query returns."
+    },
+    {
+      "name": "typealias HKStatisticsCollectionQueryDescriptor.Sequence",
+      "desc": "The asynchronous sequence that the statistics collection query returns."
+    },
+    {
+      "name": "init(predicate: HKSamplePredicate<HKQuantitySample>, options: HKStatisticsOptions, anchorDate: Date, intervalComponents: DateComponents)",
+      "desc": "Creates a statistics collection query descriptor."
+    },
+    {
+      "name": "func result(for: HKHealthStore) -> HKStatisticsCollection",
+      "desc": "Runs a one-shot query and asynchronously returns statistics calculated from the current matching results."
+    },
+    {
+      "name": "func results(for: HKHealthStore) -> HKStatisticsCollectionQueryDescriptor.Results",
+      "desc": "Initiates a long-running query that returns statistics and updates using an asynchronous sequence."
+    },
+    {
+      "name": "struct HKStatisticsCollectionQueryDescriptor.Results",
+      "desc": "An asynchronous sequence that emits updates from a statistics collection query."
+    },
+    {
+      "name": "var predicate: HKSamplePredicate<HKQuantitySample>",
+      "desc": "A predicate that defines the set of data that the query uses to calculate the statistics."
+    },
+    {
+      "name": "var options: HKStatisticsOptions",
+      "desc": "A list of options that define the type of statistical calculations performed and the way in which HealthKit merges data from multiple sources."
+    },
+    {
+      "name": "var anchorDate: Date",
+      "desc": "The date that anchors the collection’s time intervals."
+    },
+    {
+      "name": "var intervalComponents: DateComponents",
+      "desc": "The date components that define the time interval for each statistics object in the collection."
+    }
+  ],
+  "declaration": "struct HKStatisticsCollectionQueryDescriptor",
+  "conformsTo": [
+    "HKAsyncQuery",
+    "HKAsyncSequenceQuery"
+  ]
+}

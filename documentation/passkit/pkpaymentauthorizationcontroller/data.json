@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/passkit/pkpaymentauthorizationcontroller",
+  "type": "Class",
+  "name": "PKPaymentAuthorizationController",
+  "desc": "An object that presents a sheet that prompts the user to authorize a payment request.",
+  "items": [
+    {
+      "name": "class func canMakePayments() -> Bool",
+      "desc": "Returns whether the user can make payments."
+    },
+    {
+      "name": "class func canMakePayments(usingNetworks: [PKPaymentNetwork]) -> Bool",
+      "desc": "Returns whether the user can make payments through the specified network."
+    },
+    {
+      "name": "class func canMakePayments(usingNetworks: [PKPaymentNetwork], capabilities: PKMerchantCapability) -> Bool",
+      "desc": "Returns whether the user can make payments using a card from the specified network with the specified capabilities."
+    },
+    {
+      "name": "var delegate: PKPaymentAuthorizationControllerDelegate?",
+      "desc": "The controller’s delegate."
+    },
+    {
+      "name": "protocol PKPaymentAuthorizationControllerDelegate",
+      "desc": "Methods that let you respond to user interactions with your payment authorization controller."
+    },
+    {
+      "name": "func present(completion: ((Bool) -> Void)?)",
+      "desc": "Presents the payment sheet modally over your app."
+    },
+    {
+      "name": "func dismiss(completion: (() -> Void)?)",
+      "desc": "Dismisses the payment sheet."
+    },
+    {
+      "name": "init(paymentRequest: PKPaymentRequest)",
+      "desc": "Initializes and returns a payment authorization controller."
+    }
+  ],
+  "declaration": "class PKPaymentAuthorizationController : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

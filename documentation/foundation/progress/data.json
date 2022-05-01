@@ -1,0 +1,192 @@
+{
+  "path": "/documentation/foundation/progress",
+  "type": "Class",
+  "name": "Progress",
+  "desc": "An object that conveys ongoing progress to the user for a specified task.",
+  "items": [
+    {
+      "name": "init(parent: Progress?, userInfo: [ProgressUserInfoKey : Any]?)",
+      "desc": "Creates a new progress instance."
+    },
+    {
+      "name": "class func discreteProgress(totalUnitCount: Int64) -> Progress",
+      "desc": "Creates and returns a progress instance with the specified unit count that isn’t part of any existing progress tree."
+    },
+    {
+      "name": "init(totalUnitCount: Int64)",
+      "desc": "Creates and returns a progress instance."
+    },
+    {
+      "name": "init(totalUnitCount: Int64, parent: Progress, pendingUnitCount: Int64)",
+      "desc": "Creates a progress instance for the specified progress object with a unit count that’s a portion of the containing object’s total unit count."
+    },
+    {
+      "name": "class func current() -> Progress?",
+      "desc": "Returns the progress instance, if any."
+    },
+    {
+      "name": "func becomeCurrent(withPendingUnitCount: Int64)",
+      "desc": "Sets the progress object as the current object of the current thread, and assigns the amount of work for the next suboperation progress object to perform."
+    },
+    {
+      "name": "func addChild(Progress, withPendingUnitCount: Int64)",
+      "desc": "Adds a process object as a suboperation of a progress tree."
+    },
+    {
+      "name": "func performAsCurrent<ReturnType>(withPendingUnitCount: Int64, using: () -> ReturnType) -> ReturnType",
+      "desc": "Retrieves the current thread’s progress object, executes the specified block, and increments the progress object by the specified units of work."
+    },
+    {
+      "name": "func resignCurrent()",
+      "desc": "Restores the previous progress object to become the current progress object on the thread."
+    },
+    {
+      "name": "var totalUnitCount: Int64",
+      "desc": "The total number of tracked units of work for the current progress."
+    },
+    {
+      "name": "var completedUnitCount: Int64",
+      "desc": "The number of completed units of work for the current job."
+    },
+    {
+      "name": "var localizedDescription: String!",
+      "desc": "A localized description of tracked progress for the receiver."
+    },
+    {
+      "name": "var localizedAdditionalDescription: String!",
+      "desc": "A more specific localized description of tracked progress for the receiver."
+    },
+    {
+      "name": "var isCancellable: Bool",
+      "desc": "A Boolean value that indicates whether the receiver is tracking work that you can cancel."
+    },
+    {
+      "name": "var isCancelled: Bool",
+      "desc": "A Boolean value that Indicates whether the receiver is tracking canceled work."
+    },
+    {
+      "name": "var cancellationHandler: (() -> Void)?",
+      "desc": "The block to invoke when canceling progress."
+    },
+    {
+      "name": "var isPausable: Bool",
+      "desc": "A Boolean value that indicates whether the receiver is tracking work that you can pause."
+    },
+    {
+      "name": "var isPaused: Bool",
+      "desc": "A Boolean value that indicates whether the receiver is tracking paused work."
+    },
+    {
+      "name": "var pausingHandler: (() -> Void)?",
+      "desc": "The block to invoke when pausing progress."
+    },
+    {
+      "name": "var isIndeterminate: Bool",
+      "desc": "A Boolean value that indicates whether the tracked progress is indeterminate."
+    },
+    {
+      "name": "var fractionCompleted: Double",
+      "desc": "The fraction of the overall work that the progress object completes, including work from its suboperations."
+    },
+    {
+      "name": "var isFinished: Bool",
+      "desc": "A Boolean value that indicates the progress object is complete."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Cancels progress tracking."
+    },
+    {
+      "name": "func pause()",
+      "desc": "Pauses progress tracking."
+    },
+    {
+      "name": "func resume()",
+      "desc": "Resumes progress tracking."
+    },
+    {
+      "name": "var resumingHandler: (() -> Void)?",
+      "desc": "The block to invoke when progress resumes."
+    },
+    {
+      "name": "var kind: ProgressKind?",
+      "desc": "An object that represents the kind of progress for the progress object."
+    },
+    {
+      "name": "var estimatedTimeRemaining: TimeInterval?",
+      "desc": "A value that indicates the estimated amount of time remaining to complete the progress."
+    },
+    {
+      "name": "var throughput: Int?",
+      "desc": "A value that represents the speed of data processing, in bytes per second."
+    },
+    {
+      "name": "func setUserInfoObject(Any?, forKey: ProgressUserInfoKey)",
+      "desc": "Sets a value in the user info dictionary."
+    },
+    {
+      "name": "var userInfo: [ProgressUserInfoKey : Any]",
+      "desc": "A dictionary of arbitrary values for the receiver."
+    },
+    {
+      "name": "struct ProgressKind",
+      "desc": "An object that represents the kind of progress."
+    },
+    {
+      "name": "struct ProgressUserInfoKey",
+      "desc": "Keys for the user info dictionary that affect the autogenerated localized additional description string."
+    },
+    {
+      "name": "var fileOperationKind: Progress.FileOperationKind?",
+      "desc": "The kind of file operation for the progress object."
+    },
+    {
+      "name": "var fileURL: URL?",
+      "desc": "A URL that represents the file for the current progress object."
+    },
+    {
+      "name": "var fileTotalCount: Int?",
+      "desc": "The total number of files for a file progress object."
+    },
+    {
+      "name": "var fileCompletedCount: Int?",
+      "desc": "The number of completed files for a file progress object."
+    },
+    {
+      "name": "struct Progress.FileOperationKind",
+      "desc": "The kind of file operation."
+    },
+    {
+      "name": "func publish()",
+      "desc": "Publishes the progress object for other processes to observe it."
+    },
+    {
+      "name": "func unpublish()",
+      "desc": "Removes a progress object from publication, making it unobservable by other processes."
+    },
+    {
+      "name": "class func addSubscriber(forFileURL: URL, withPublishingHandler: Progress.PublishingHandler) -> Any",
+      "desc": "Registers a file URL to hear about the progress of a file operation."
+    },
+    {
+      "name": "class func removeSubscriber(Any)",
+      "desc": "Removes a proxy progress object that the add subscriber method returns."
+    },
+    {
+      "name": "var isOld: Bool",
+      "desc": "A Boolean value that indicates when the observed progress object invokes the publish method before you subscribe to it."
+    },
+    {
+      "name": "typealias Progress.PublishingHandler",
+      "desc": "A block that the system calls when an observed progress object matches the subscription."
+    },
+    {
+      "name": "typealias Progress.UnpublishingHandler",
+      "desc": "A block that the system calls when an observed progress object terminates the subscription."
+    }
+  ],
+  "declaration": "class Progress : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

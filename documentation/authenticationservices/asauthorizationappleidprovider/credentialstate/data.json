@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/authenticationservices/asauthorizationappleidprovider/credentialstate",
+  "type": "Enumeration",
+  "name": "ASAuthorizationAppleIDProvider.CredentialState",
+  "desc": "Possible values for the credential state of a user.",
+  "items": [
+    {
+      "name": "case authorized",
+      "desc": "The user is authorized."
+    },
+    {
+      "name": "case notFound",
+      "desc": "The user hasn’t established a relationship with Sign in with Apple."
+    },
+    {
+      "name": "case revoked",
+      "desc": "The given user’s authorization has been revoked and they should be signed out."
+    },
+    {
+      "name": "case transferred",
+      "desc": "The app has been transferred to a different team, and you need to migrate the user’s identifier."
+    }
+  ],
+  "declaration": "enum CredentialState : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

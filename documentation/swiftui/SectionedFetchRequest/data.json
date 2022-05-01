@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/swiftui/sectionedfetchrequest",
+  "type": "Structure",
+  "name": "SectionedFetchRequest",
+  "desc": "A property wrapper type that retrieves entities, grouped into sections, from a Core Data persistent store.",
+  "items": [
+    {
+      "name": "init(sectionIdentifier: KeyPath<Result, SectionIdentifier>, sortDescriptors: [SortDescriptor<Result>], predicate: NSPredicate?, animation: Animation?)",
+      "desc": "Creates a sectioned fetch request based on a section identifier, a predicate, and value type sort parameters."
+    },
+    {
+      "name": "init(sectionIdentifier: KeyPath<Result, SectionIdentifier>, sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?, animation: Animation?)",
+      "desc": "Creates a sectioned fetch request based on a section identifier, a predicate, and reference type sort parameters."
+    },
+    {
+      "name": "init(entity: NSEntityDescription, sectionIdentifier: KeyPath<Result, SectionIdentifier>, sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?, animation: Animation?)",
+      "desc": "Creates a sectioned fetch request for a specified entity description, based on a section identifier, a predicate, and sort parameters."
+    },
+    {
+      "name": "init(fetchRequest: NSFetchRequest<Result>, sectionIdentifier: KeyPath<Result, SectionIdentifier>, animation: Animation?)",
+      "desc": "Creates a fully configured sectioned fetch request that uses the specified animation when updating results."
+    },
+    {
+      "name": "init(fetchRequest: NSFetchRequest<Result>, sectionIdentifier: KeyPath<Result, SectionIdentifier>, transaction: Transaction)",
+      "desc": "Creates a fully configured sectioned fetch request that uses the specified transaction when updating results."
+    },
+    {
+      "name": "struct Configuration",
+      "desc": "The request’s configurable properties."
+    },
+    {
+      "name": "var projectedValue: Binding<SectionedFetchRequest<SectionIdentifier, Result>.Configuration>",
+      "desc": "A binding to the request’s mutable configuration properties."
+    },
+    {
+      "name": "var wrappedValue: SectionedFetchResults<SectionIdentifier, Result>",
+      "desc": "The fetched results of the fetch request."
+    }
+  ],
+  "declaration": "@propertyWrapper struct SectionedFetchRequest<SectionIdentifier, Result> where SectionIdentifier : Hashable, Result : NSFetchRequestResult",
+  "conformsTo": [
+    "DynamicProperty"
+  ]
+}

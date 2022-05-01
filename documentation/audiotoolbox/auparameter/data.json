@@ -1,0 +1,70 @@
+{
+  "path": "/documentation/audiotoolbox/auparameter",
+  "type": "Class",
+  "name": "AUParameter",
+  "desc": "An AUParameter object represents a single audio unit parameter.",
+  "items": [
+    {
+      "name": "var minValue: AUValue",
+      "desc": "The parameter’s minimum value."
+    },
+    {
+      "name": "var maxValue: AUValue",
+      "desc": "The parameter’s maximum value."
+    },
+    {
+      "name": "var unit: AudioUnitParameterUnit",
+      "desc": "The parameter’s unit of measurement."
+    },
+    {
+      "name": "var unitName: String?",
+      "desc": "The parameter’s localized unit name."
+    },
+    {
+      "name": "var flags: AudioUnitParameterOptions",
+      "desc": "The parameter’s characteristic details."
+    },
+    {
+      "name": "var address: AUParameterAddress",
+      "desc": "The parameter’s address."
+    },
+    {
+      "name": "var valueStrings: [String]?",
+      "desc": "The parameter’s localized value strings."
+    },
+    {
+      "name": "var dependentParameters: [NSNumber]?",
+      "desc": "Any other parameter’s whose values may change as a side effect of this parameter’s value changing."
+    },
+    {
+      "name": "var value: AUValue",
+      "desc": "The parameter’s current value."
+    },
+    {
+      "name": "func setValue(AUValue, originator: AUParameterObserverToken?)",
+      "desc": "Sets the parameter’s value, avoiding redundant notifications to the originator."
+    },
+    {
+      "name": "func setValue(AUValue, originator: AUParameterObserverToken?, atHostTime: UInt64)",
+      "desc": "Sets the parameter’s value, preserving the host time of the gesture that initiated the change."
+    },
+    {
+      "name": "func setValue(AUValue, originator: AUParameterObserverToken?, atHostTime: UInt64, eventType: AUParameterAutomationEventType)"
+    },
+    {
+      "name": "func string(fromValue: UnsafePointer<AUValue>?) -> String",
+      "desc": "Gets the string representation of a parameter value."
+    },
+    {
+      "name": "func value(from: String) -> AUValue",
+      "desc": "Converts a string into a parameter value."
+    }
+  ],
+  "declaration": "class AUParameter : AUParameterNode",
+  "inheritsFrom": [
+    "AUParameterNode"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

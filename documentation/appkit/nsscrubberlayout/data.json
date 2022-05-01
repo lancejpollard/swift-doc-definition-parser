@@ -1,0 +1,71 @@
+{
+  "path": "/documentation/appkit/nsscrubberlayout",
+  "type": "Class",
+  "name": "NSScrubberLayout",
+  "desc": "An abstract class that describes the layout of items within a scrubber control.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Initializes and returns a newly allocated scrubber layout object from code."
+    },
+    {
+      "name": "init(coder: NSCoder)",
+      "desc": "Initializes and returns a newly allocated scrubber layout object from a storyboard or nib file."
+    },
+    {
+      "name": "class var layoutAttributesClass: AnyClass",
+      "desc": "A property containing a class that describes layout attributes."
+    },
+    {
+      "name": "var scrubber: NSScrubber?",
+      "desc": "The scrubber control that this layout is assigned to."
+    },
+    {
+      "name": "var visibleRect: NSRect",
+      "desc": "The currently visible rectangle, in the coordinate space of the scrubber content."
+    },
+    {
+      "name": "func invalidateLayout()",
+      "desc": "Signals that the layout has been invalidated, and that the scrubber control should perform a new layout pass."
+    },
+    {
+      "name": "func prepare()",
+      "desc": "Gives you an opportunity to perform layout calculations when the scrubber's layout is invalidated."
+    },
+    {
+      "name": "var scrubberContentSize: NSSize",
+      "desc": "The size required to contain all elements within the scrubber."
+    },
+    {
+      "name": "func layoutAttributesForItem(at: Int) -> NSScrubberLayoutAttributes?",
+      "desc": "The layout attributes for the item with the specified index."
+    },
+    {
+      "name": "func layoutAttributesForItems(in: NSRect) -> Set<NSScrubberLayoutAttributes>",
+      "desc": "The set of layout attributes for all items within the provided rectangle."
+    },
+    {
+      "name": "var shouldInvalidateLayoutForSelectionChange: Bool",
+      "desc": "Determines whether the scrubber should refresh its layout when the selection changes."
+    },
+    {
+      "name": "var shouldInvalidateLayoutForHighlightChange: Bool",
+      "desc": "Determines whether the scrubber should refresh its layout when an item is highlighted."
+    },
+    {
+      "name": "func shouldInvalidateLayoutForChange(fromVisibleRect: NSRect, toVisibleRect: NSRect) -> Bool",
+      "desc": "Determines whether the scrubber should refresh its layout in response to a change of its visible region."
+    },
+    {
+      "name": "var automaticallyMirrorsInRightToLeftLayout: Bool",
+      "desc": "Determines whether the scrubber mirrors its layout for right-to-left layouts."
+    }
+  ],
+  "declaration": "@MainActor class NSScrubberLayout : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding"
+  ]
+}

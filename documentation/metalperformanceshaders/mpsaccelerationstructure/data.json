@@ -1,0 +1,58 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsaccelerationstructure",
+  "type": "Class",
+  "name": "MPSAccelerationStructure",
+  "desc": "The base class for data structures that are built over geometry and used to accelerate ray tracing.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init?(coder: NSCoder, group: MPSAccelerationStructureGroup)"
+    },
+    {
+      "name": "init(device: MTLDevice)"
+    },
+    {
+      "name": "init(group: MPSAccelerationStructureGroup)"
+    },
+    {
+      "name": "var boundingBox: MPSAxisAlignedBoundingBox"
+    },
+    {
+      "name": "var group: MPSAccelerationStructureGroup"
+    },
+    {
+      "name": "var status: MPSAccelerationStructureStatus"
+    },
+    {
+      "name": "var usage: MPSAccelerationStructureUsage"
+    },
+    {
+      "name": "func copy(with: NSZone?, device: MTLDevice?) -> Self"
+    },
+    {
+      "name": "func copy(with: NSZone?, group: MPSAccelerationStructureGroup) -> Self"
+    },
+    {
+      "name": "func encode(with: NSCoder)"
+    },
+    {
+      "name": "func encodeRefit(commandBuffer: MTLCommandBuffer)"
+    },
+    {
+      "name": "func rebuild()"
+    },
+    {
+      "name": "func rebuild(completionHandler: MPSAccelerationStructureCompletionHandler)"
+    }
+  ],
+  "declaration": "class MPSAccelerationStructure : MPSKernel",
+  "inheritsFrom": [
+    "MPSKernel"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

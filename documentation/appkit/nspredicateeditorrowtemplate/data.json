@@ -1,0 +1,80 @@
+{
+  "path": "/documentation/appkit/nspredicateeditorrowtemplate",
+  "type": "Class",
+  "name": "NSPredicateEditorRowTemplate",
+  "desc": "A template that describes available predicates and how to display them.",
+  "items": [
+    {
+      "name": "init(leftExpressions: [NSExpression], rightExpressions: [NSExpression], modifier: NSComparisonPredicate.Modifier, operators: [NSNumber], options: Int)",
+      "desc": "Initializes and returns a “pop-up-pop-up-pop-up”–style row template."
+    },
+    {
+      "name": "init(leftExpressions: [NSExpression], rightExpressionAttributeType: NSAttributeType, modifier: NSComparisonPredicate.Modifier, operators: [NSNumber], options: Int)",
+      "desc": "Initializes and returns a “pop-up-pop-up-view”–style row template."
+    },
+    {
+      "name": "init(compoundTypes: [NSNumber])",
+      "desc": "Initializes and returns a row template suitable for displaying compound predicates."
+    },
+    {
+      "name": "class func templates(withAttributeKeyPaths: [String], in: NSEntityDescription) -> [NSPredicateEditorRowTemplate]",
+      "desc": "Returns an array of predicate templates for the given attribute key paths for a given entity."
+    },
+    {
+      "name": "func match(for: NSPredicate) -> Double",
+      "desc": "Returns a positive number if the receiver can represent a given predicate, and 0 if it cannot."
+    },
+    {
+      "name": "var templateViews: [NSView]",
+      "desc": "Returns the views that display this template’s predicate."
+    },
+    {
+      "name": "func setPredicate(NSPredicate)",
+      "desc": "Sets the value of the views according to the given predicate."
+    },
+    {
+      "name": "func displayableSubpredicates(of: NSPredicate) -> [NSPredicate]?",
+      "desc": "Returns the subpredicates that should be made sub-rows of a given predicate."
+    },
+    {
+      "name": "func predicate(withSubpredicates: [NSPredicate]?) -> NSPredicate",
+      "desc": "Returns the predicate represented by the receiver’s views' values and the given sub-predicates."
+    },
+    {
+      "name": "var leftExpressions: [NSExpression]?",
+      "desc": "Returns the left hand expressions for the receiver."
+    },
+    {
+      "name": "var rightExpressions: [NSExpression]?",
+      "desc": "Returns the right hand expressions for the receiver."
+    },
+    {
+      "name": "var compoundTypes: [NSNumber]?",
+      "desc": "Returns the compound predicate types."
+    },
+    {
+      "name": "var modifier: NSComparisonPredicate.Modifier",
+      "desc": "Returns the comparison predicate modifier for the receiver."
+    },
+    {
+      "name": "var operators: [NSNumber]?",
+      "desc": "Returns the array of comparison predicate operators."
+    },
+    {
+      "name": "var options: Int",
+      "desc": "Returns the comparison predicate options."
+    },
+    {
+      "name": "var rightExpressionAttributeType: NSAttributeType",
+      "desc": "Returns the attribute type of the receiver’s right expression."
+    }
+  ],
+  "declaration": "class NSPredicateEditorRowTemplate : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "NSCopying"
+  ]
+}

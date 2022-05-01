@@ -1,0 +1,61 @@
+{
+  "path": "/documentation/carekit/ocklogtaskview",
+  "type": "Class",
+  "name": "OCKLogTaskView",
+  "desc": "The base class for all log views, that shows a header view and a dynamic stack view of log items.",
+  "items": [
+    {
+      "name": "let contentStackView: OCKStackView",
+      "desc": "The vertical stack view that holds the main content for the view."
+    },
+    {
+      "name": "let headerView: OCKHeaderView",
+      "desc": "A header view that shows a separator and an image at the end of the view."
+    },
+    {
+      "name": "var items: [OCKLogItemButton]",
+      "desc": "The list of buttons in the log."
+    },
+    {
+      "name": "var delegate: OCKTaskViewDelegate?",
+      "desc": "The object that handles events related to changes in the event view."
+    },
+    {
+      "name": "func appendItem(withTitle: String?, detail: String?, animated: Bool) -> OCKLogItemButton",
+      "desc": "Appends an item to the list of logged items."
+    },
+    {
+      "name": "func insertItem(withTitle: String?, detail: String?, at: Int, animated: Bool) -> OCKLogItemButton",
+      "desc": "Inserts an item in the list of logged items."
+    },
+    {
+      "name": "func updateItem(at: Int, withTitle: String?, detail: String?) -> OCKLogItemButton?",
+      "desc": "Updates the text for an item at a specific index."
+    },
+    {
+      "name": "func removeItem(at: Int, animated: Bool) -> OCKLogItemButton?",
+      "desc": "Removes an item from the list of logged items."
+    },
+    {
+      "name": "func clearItems(animated: Bool)",
+      "desc": "Clear all items from the list of logged items."
+    },
+    {
+      "name": "func styleDidChange()"
+    }
+  ],
+  "declaration": "class OCKLogTaskView : OCKView",
+  "inheritsFrom": [
+    "OCKView"
+  ],
+  "conformsTo": [
+    "CVarArg",
+    "Equatable",
+    "Hashable",
+    "OCKTaskDisplayable",
+    "UIAccessibilityIdentification",
+    "UILargeContentViewerItem",
+    "UIPasteConfigurationSupporting",
+    "UIUserActivityRestoring"
+  ]
+}

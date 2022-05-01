@@ -1,0 +1,38 @@
+{
+  "path": "/documentation/corenfc/nfcndeftag",
+  "type": "Protocol",
+  "name": "NFCNDEFTag",
+  "desc": "An interface for interacting with an NDEF tag.",
+  "items": [
+    {
+      "name": "var isAvailable: Bool",
+      "desc": "A Boolean value that determines whether the NDEF tag is available in the current reader session."
+    },
+    {
+      "name": "func queryNDEFStatus(completionHandler: (NFCNDEFStatus, Int, Error?) -> Void)",
+      "desc": "Asks the reader session for the NDEF support status of the tag."
+    },
+    {
+      "name": "enum NFCNDEFStatus",
+      "desc": "Constants that indicate status for an NDEF tag."
+    },
+    {
+      "name": "func readNDEF(completionHandler: (NFCNDEFMessage?, Error?) -> Void)",
+      "desc": "Retrieves an NDEF message from the tag."
+    },
+    {
+      "name": "func writeNDEF(NFCNDEFMessage, completionHandler: (Error?) -> Void)",
+      "desc": "Saves an NDEF message to a writable tag."
+    },
+    {
+      "name": "func writeLock(completionHandler: (Error?) -> Void)",
+      "desc": "Changes the NDEF tag status to read-only, preventing future write operations."
+    }
+  ],
+  "declaration": "protocol NFCNDEFTag",
+  "inheritsFrom": [
+    "NSCopying",
+    "NSObjectProtocol",
+    "NSSecureCoding"
+  ]
+}

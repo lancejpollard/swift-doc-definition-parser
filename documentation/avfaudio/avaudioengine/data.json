@@ -1,0 +1,184 @@
+{
+  "path": "/documentation/avfaudio/avaudioengine",
+  "type": "Class",
+  "name": "AVAudioEngine",
+  "desc": "An object that manages a graph of audio nodes, controls playback, and configures real-time rendering constraints.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an audio engine instance for rendering in real time."
+    },
+    {
+      "name": "func attach(AVAudioNode)",
+      "desc": "Attaches an audio node to the audio engine."
+    },
+    {
+      "name": "func detach(AVAudioNode)",
+      "desc": "Detaches an audio node from the audio engine."
+    },
+    {
+      "name": "var attachedNodes: Set<AVAudioNode>",
+      "desc": "A read-only set that contains the nodes you attach to the audio engine."
+    },
+    {
+      "name": "var inputNode: AVAudioInputNode",
+      "desc": "The audio engine’s singleton input audio node."
+    },
+    {
+      "name": "var outputNode: AVAudioOutputNode",
+      "desc": "The audio engine’s singleton output audio node."
+    },
+    {
+      "name": "var mainMixerNode: AVAudioMixerNode",
+      "desc": "The audio engine’s optional singleton main mixer node."
+    },
+    {
+      "name": "func connect(AVAudioNode, to: AVAudioNode, format: AVAudioFormat?)",
+      "desc": "Establishes a connection between two nodes."
+    },
+    {
+      "name": "func connect(AVAudioNode, to: AVAudioNode, fromBus: AVAudioNodeBus, toBus: AVAudioNodeBus, format: AVAudioFormat?)",
+      "desc": "Establishes a connection between two nodes, specifying the input and output busses."
+    },
+    {
+      "name": "func disconnectNodeInput(AVAudioNode)",
+      "desc": "Removes all input connections of the node."
+    },
+    {
+      "name": "func disconnectNodeInput(AVAudioNode, bus: AVAudioNodeBus)",
+      "desc": "Removes the input connection of a node on the specified bus."
+    },
+    {
+      "name": "func disconnectNodeOutput(AVAudioNode)",
+      "desc": "Removes all output connections of a node."
+    },
+    {
+      "name": "func disconnectNodeOutput(AVAudioNode, bus: AVAudioNodeBus)",
+      "desc": "Removes the output connection of a node on the specified bus."
+    },
+    {
+      "name": "func connectMIDI(AVAudioNode, to: AVAudioNode, format: AVAudioFormat?, block: AUMIDIOutputEventBlock?)",
+      "desc": "Establishes a MIDI-only connection between two nodes."
+    },
+    {
+      "name": "func connectMIDI(AVAudioNode, to: [AVAudioNode], format: AVAudioFormat?, block: AUMIDIOutputEventBlock?)",
+      "desc": "Establishes a MIDI-only connection between a source node and multiple destination nodes."
+    },
+    {
+      "name": "func disconnectMIDI(AVAudioNode, from: AVAudioNode)",
+      "desc": "Removes a MIDI connection between two nodes."
+    },
+    {
+      "name": "func disconnectMIDI(AVAudioNode, from: [AVAudioNode])",
+      "desc": "Removes a MIDI connection between one source node and multiple destination nodes."
+    },
+    {
+      "name": "func disconnectMIDIInput(AVAudioNode)",
+      "desc": "Disconnects all input MIDI connections from a node."
+    },
+    {
+      "name": "func disconnectMIDIOutput(AVAudioNode)",
+      "desc": "Disconnects all output MIDI connections from a node."
+    },
+    {
+      "name": "func prepare()",
+      "desc": "Prepares the audio engine for starting."
+    },
+    {
+      "name": "func start()",
+      "desc": "Starts the audio engine."
+    },
+    {
+      "name": "var isRunning: Bool",
+      "desc": "A Boolean value that indicates whether the audio engine is running."
+    },
+    {
+      "name": "func pause()",
+      "desc": "Pauses the audio engine."
+    },
+    {
+      "name": "func stop()",
+      "desc": "Stops the audio engine and releases any previously prepared resources."
+    },
+    {
+      "name": "func reset()",
+      "desc": "Resets all audio nodes in the audio engine."
+    },
+    {
+      "name": "var musicSequence: MusicSequence?",
+      "desc": "The music sequence instance that you attach to the audio engine, if any."
+    },
+    {
+      "name": "func enableManualRenderingMode(AVAudioEngineManualRenderingMode, format: AVAudioFormat, maximumFrameCount: AVAudioFrameCount)",
+      "desc": "Sets the engine to operate in manual rendering mode with the render format and maximum frame count you specify."
+    },
+    {
+      "name": "func disableManualRenderingMode()",
+      "desc": "Sets the engine to render to or from an audio device."
+    },
+    {
+      "name": "func renderOffline(AVAudioFrameCount, to: AVAudioPCMBuffer) -> AVAudioEngineManualRenderingStatus",
+      "desc": "Makes a render call to the engine operating in the offline manual rendering mode."
+    },
+    {
+      "name": "typealias AVAudioEngineManualRenderingBlock",
+      "desc": "The type that represents a block that renders the engine when operating in manual rendering mode."
+    },
+    {
+      "name": "var manualRenderingBlock: AVAudioEngineManualRenderingBlock",
+      "desc": "The block that renders the engine when operating in manual rendering mode."
+    },
+    {
+      "name": "var manualRenderingFormat: AVAudioFormat",
+      "desc": "The render format of the engine in manual rendering mode."
+    },
+    {
+      "name": "var manualRenderingMaximumFrameCount: AVAudioFrameCount",
+      "desc": "The maximum number of PCM sample frames the engine produces in any single render call in manual rendering mode."
+    },
+    {
+      "name": "var manualRenderingMode: AVAudioEngineManualRenderingMode",
+      "desc": "The manual rendering mode configured on the engine."
+    },
+    {
+      "name": "var manualRenderingSampleTime: AVAudioFramePosition",
+      "desc": "An indication of where the engine is on its render timeline in manual rendering mode."
+    },
+    {
+      "name": "var isAutoShutdownEnabled: Bool",
+      "desc": "A Boolean value that indicates whether autoshutdown is in an enabled state."
+    },
+    {
+      "name": "var isInManualRenderingMode: Bool",
+      "desc": "A Boolean value that indicates whether the engine is operating in manual rendering mode."
+    },
+    {
+      "name": "class AVAudioConnectionPoint",
+      "desc": "A representation of either a source or destination connection point in the audio engine."
+    },
+    {
+      "name": "func connect(AVAudioNode, to: [AVAudioConnectionPoint], fromBus: AVAudioNodeBus, format: AVAudioFormat?)",
+      "desc": "Establishes a connection between a source node and multiple destination nodes."
+    },
+    {
+      "name": "static let AVAudioEngineConfigurationChange: NSNotification.Name",
+      "desc": "A notification the framework posts when the audio engine configuration changes."
+    },
+    {
+      "name": "enum AVAudioEngineManualRenderingError",
+      "desc": "Constants that describe error codes that the framework returns from manual rendering mode methods."
+    },
+    {
+      "name": "enum AVAudioEngineManualRenderingMode",
+      "desc": "The two modes for manual rendering."
+    },
+    {
+      "name": "enum AVAudioEngineManualRenderingStatus",
+      "desc": "Status codes that return from the render call to the engine operating in manual rendering mode."
+    }
+  ],
+  "declaration": "class AVAudioEngine : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "path": "/documentation/SwiftUI/NSViewRepresentable",
+  "type": "Protocol",
+  "name": "NSViewRepresentable",
+  "desc": "A wrapper that you use to integrate an AppKit view into your SwiftUI view hierarchy.",
+  "items": [
+    {
+      "name": "func makeNSView(context: Self.Context) -> Self.NSViewType",
+      "desc": "Creates the view object and configures its initial state."
+    },
+    {
+      "name": "func updateNSView(Self.NSViewType, context: Self.Context)",
+      "desc": "Updates the state of the specified view with new information from SwiftUI."
+    },
+    {
+      "name": "typealias Context"
+    },
+    {
+      "name": "associatedtype NSViewType : NSView",
+      "desc": "The type of view to present."
+    },
+    {
+      "name": "static func dismantleNSView(Self.NSViewType, coordinator: Self.Coordinator)",
+      "desc": "Cleans up the presented AppKit view (and coordinator) in anticipation of their removal."
+    },
+    {
+      "name": "func makeCoordinator() -> Self.Coordinator",
+      "desc": "Creates the custom instance that you use to communicate changes from your view to other parts of your SwiftUI interface."
+    },
+    {
+      "name": "associatedtype Coordinator = Void",
+      "desc": "A type to coordinate with the view."
+    }
+  ],
+  "declaration": "protocol NSViewRepresentable : View where Self.Body == Never",
+  "inheritsFrom": [
+    "View"
+  ]
+}

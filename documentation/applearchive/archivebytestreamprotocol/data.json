@@ -1,0 +1,37 @@
+{
+  "path": "/documentation/applearchive/archivebytestreamprotocol",
+  "type": "Protocol",
+  "name": "ArchiveByteStreamProtocol",
+  "desc": "A set of methods that defines the interface for using an archive stream that reads from and writes to buffers.",
+  "items": [
+    {
+      "name": "func read(into: UnsafeMutableRawBufferPointer) -> Int",
+      "desc": "Reads data to the specified buffer, not exceeding the buffer’s previously allocated size."
+    },
+    {
+      "name": "func read(into: UnsafeMutableRawBufferPointer, atOffset: Int64) -> Int",
+      "desc": "Reads data at the supplied offset to the specified buffer, not exceeding the buffer’s previously allocated size."
+    },
+    {
+      "name": "func write(from: UnsafeRawBufferPointer) -> Int",
+      "desc": "Writes data from the specified buffer, not exceeding the buffer’s allocated size."
+    },
+    {
+      "name": "func write(from: UnsafeRawBufferPointer, atOffset: Int64) -> Int",
+      "desc": "Writes data at the supplied offset from the specified buffer, not exceeding the buffer’s allocated size."
+    },
+    {
+      "name": "func seek(toOffset: Int64, relativeTo: FileDescriptor.SeekOrigin) -> Int64",
+      "desc": "Updates the internal stream position to the specified offset relative to the specified origin."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Cancels stream operations."
+    },
+    {
+      "name": "func close()",
+      "desc": "Closes the stream and releases associated resources."
+    }
+  ],
+  "declaration": "protocol ArchiveByteStreamProtocol"
+}

@@ -1,0 +1,154 @@
+{
+  "path": "/documentation/cloudkit/ckrecord",
+  "type": "Class",
+  "name": "CKRecord",
+  "desc": "A collection of key-value pairs that store your app’s data.",
+  "items": [
+    {
+      "name": "init(recordType: CKRecord.RecordType, recordID: CKRecord.ID)",
+      "desc": "Creates a record using an ID that you provide."
+    },
+    {
+      "name": "typealias CKRecord.RecordType",
+      "desc": "The data type that CloudKit requires for record types."
+    },
+    {
+      "name": "typealias CKRecord.FieldKey",
+      "desc": "The data type that CloudKit requires for record field names."
+    },
+    {
+      "name": "func object(forKey: CKRecord.FieldKey) -> __CKRecordObjCValue?",
+      "desc": "Returns the object that the record stores for the specified key."
+    },
+    {
+      "name": "subscript(String) -> __CKRecordObjCValue?",
+      "desc": "Returns the object that the record stores for the specified key."
+    },
+    {
+      "name": "subscript(CKRecord.FieldKey) -> __CKRecordObjCValue?",
+      "desc": "Returns the object that the record stores for the specified key."
+    },
+    {
+      "name": "func setObject(__CKRecordObjCValue?, forKey: CKRecord.FieldKey)",
+      "desc": "Stores an object in the record using the specified key."
+    },
+    {
+      "name": "func allKeys() -> [CKRecord.FieldKey]",
+      "desc": "Returns an array of the record’s keys."
+    },
+    {
+      "name": "func changedKeys() -> [CKRecord.FieldKey]",
+      "desc": "Returns an array of keys with recent changes to their values."
+    },
+    {
+      "name": "func makeIterator() -> CKRecordKeyValueIterator",
+      "desc": "Returns an iterator of the record’s key-value pairs."
+    },
+    {
+      "name": "struct CKRecordKeyValueIterator",
+      "desc": "An iterator of the record’s key-value pairs."
+    },
+    {
+      "name": "protocol CKRecordValueProtocol",
+      "desc": "A description of a CloudKit record value."
+    },
+    {
+      "name": "protocol CKRecordKeyValueSetting",
+      "desc": "A protocol for managing the key-value pairs of a CloudKit record."
+    },
+    {
+      "name": "typealias CKRecordValue",
+      "desc": "A data type for objects that CloudKit stores on the server."
+    },
+    {
+      "name": "typealias CKRecord.Iterator",
+      "desc": "A data type that CloudKit uses to iterate over a record’s key-value pairs."
+    },
+    {
+      "name": "typealias CKRecord.Element",
+      "desc": "A type that represents a single key-value pair from a record."
+    },
+    {
+      "name": "var recordID: CKRecord.ID",
+      "desc": "The unique ID of the record."
+    },
+    {
+      "name": "var recordType: CKRecord.RecordType",
+      "desc": "The value that your app defines to identify the type of record."
+    },
+    {
+      "name": "enum CKRecord.SystemType",
+      "desc": "Possible values for record types of system records."
+    },
+    {
+      "name": "var creationDate: Date?",
+      "desc": "The time when CloudKit first saves the record to the server."
+    },
+    {
+      "name": "var creatorUserRecordID: CKRecord.ID?",
+      "desc": "The ID of the user who creates the record."
+    },
+    {
+      "name": "var modificationDate: Date?",
+      "desc": "The most recent time that CloudKit saved the record to the server."
+    },
+    {
+      "name": "var lastModifiedUserRecordID: CKRecord.ID?",
+      "desc": "The ID of the user who most recently modified the record."
+    },
+    {
+      "name": "var recordChangeTag: String?",
+      "desc": "The server change token for the record."
+    },
+    {
+      "name": "class CKRecord.ID",
+      "desc": "An object that uniquely identifies a record in a database."
+    },
+    {
+      "name": "var encryptedValues: CKRecordKeyValueSetting",
+      "desc": "An object that manages the record’s encrypted key-value pairs."
+    },
+    {
+      "name": "func allTokens() -> [String]",
+      "desc": "Returns an array of strings to use for full-text searches of the field’s string-based values."
+    },
+    {
+      "name": "func encodeSystemFields(with: NSCoder)",
+      "desc": "Encodes the record’s system fields using the specified archiver."
+    },
+    {
+      "name": "var parent: CKRecord.Reference?",
+      "desc": "A reference to the record’s parent record."
+    },
+    {
+      "name": "var share: CKRecord.Reference?",
+      "desc": "A reference to the share object that determines the share status of the record."
+    },
+    {
+      "name": "class CKRecord.Reference",
+      "desc": "A relationship between two records in a record zone."
+    },
+    {
+      "name": "func setParent(CKRecord?)",
+      "desc": "Creates and sets a reference object for a parent from its record."
+    },
+    {
+      "name": "func setParent(CKRecord.ID?)",
+      "desc": "Creates and sets a reference object for a parent from the parent’s record ID."
+    },
+    {
+      "name": "enum CKRecord.SystemFieldKey",
+      "desc": "Possible values for types of system field keys on records."
+    }
+  ],
+  "declaration": "class CKRecord : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "CKRecordKeyValueSetting",
+    "NSCopying",
+    "NSSecureCoding",
+    "Sequence"
+  ]
+}

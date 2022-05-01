@@ -1,0 +1,533 @@
+{
+  "path": "/documentation/uikit/uiviewcontroller",
+  "type": "Class",
+  "name": "UIViewController",
+  "desc": "An object that manages a view hierarchy for your UIKit app.",
+  "items": [
+    {
+      "name": "init(nibName: String?, bundle: Bundle?)",
+      "desc": "Creates a view controller with the nib file in the specified bundle."
+    },
+    {
+      "name": "init?(coder: NSCoder)",
+      "desc": "Creates a view controller with data in an unarchiver."
+    },
+    {
+      "name": "var storyboard: UIStoryboard?",
+      "desc": "The storyboard from which the view controller originated."
+    },
+    {
+      "name": "var nibName: String?",
+      "desc": "The name of the view controller's nib file, if one was specified."
+    },
+    {
+      "name": "var nibBundle: Bundle?",
+      "desc": "The view controller's nib bundle if it exists."
+    },
+    {
+      "name": "var view: UIView!",
+      "desc": "The view that the controller manages."
+    },
+    {
+      "name": "var viewIfLoaded: UIView?",
+      "desc": "The view controller’s view, or nil if the view is not yet loaded."
+    },
+    {
+      "name": "var isViewLoaded: Bool",
+      "desc": "A Boolean value indicating whether the view is currently loaded into memory."
+    },
+    {
+      "name": "func loadView()",
+      "desc": "Creates the view that the controller manages."
+    },
+    {
+      "name": "func viewDidLoad()",
+      "desc": "Called after the controller's view is loaded into memory."
+    },
+    {
+      "name": "func loadViewIfNeeded()",
+      "desc": "Loads the view controller’s view if it has not yet been loaded."
+    },
+    {
+      "name": "var title: String?",
+      "desc": "A localized string that represents the view this controller manages."
+    },
+    {
+      "name": "var preferredContentSize: CGSize",
+      "desc": "The preferred size for the view controller’s view."
+    },
+    {
+      "name": "func viewWillAppear(Bool)",
+      "desc": "Notifies the view controller that its view is about to be added to a view hierarchy."
+    },
+    {
+      "name": "func viewDidAppear(Bool)",
+      "desc": "Notifies the view controller that its view was added to a view hierarchy."
+    },
+    {
+      "name": "func viewWillDisappear(Bool)",
+      "desc": "Notifies the view controller that its view is about to be removed from a view hierarchy."
+    },
+    {
+      "name": "func viewDidDisappear(Bool)",
+      "desc": "Notifies the view controller that its view was removed from a view hierarchy."
+    },
+    {
+      "name": "var isBeingDismissed: Bool",
+      "desc": "A Boolean value indicating whether the view controller is being dismissed."
+    },
+    {
+      "name": "var isBeingPresented: Bool",
+      "desc": "A Boolean value indicating whether the view controller is being presented."
+    },
+    {
+      "name": "var isMovingFromParent: Bool",
+      "desc": "A Boolean value indicating whether the view controller is being removed from a parent view controller."
+    },
+    {
+      "name": "var isMovingToParent: Bool",
+      "desc": "A Boolean value indicating whether the view controller is being moved to a parent view controller."
+    },
+    {
+      "name": "var additionalSafeAreaInsets: UIEdgeInsets",
+      "desc": "Custom insets that you specify to modify the view controller's safe area."
+    },
+    {
+      "name": "func viewSafeAreaInsetsDidChange()",
+      "desc": "Called to notify the view controller that the safe area insets of its root view changed."
+    },
+    {
+      "name": "var viewRespectsSystemMinimumLayoutMargins: Bool",
+      "desc": "A Boolean value indicating whether the view controller's view uses the system-defined minimum layout margins."
+    },
+    {
+      "name": "var systemMinimumLayoutMargins: NSDirectionalEdgeInsets",
+      "desc": "The minimum layout margins for the view controller's root view."
+    },
+    {
+      "name": "func viewLayoutMarginsDidChange()",
+      "desc": "Called to notify the view controller that the layout margins of its root view changed."
+    },
+    {
+      "name": "var edgesForExtendedLayout: UIRectEdge",
+      "desc": "The edges that you extend for your view controller."
+    },
+    {
+      "name": "struct UIRectEdge",
+      "desc": "Constants that specify the edges of a rectangle."
+    },
+    {
+      "name": "var extendedLayoutIncludesOpaqueBars: Bool",
+      "desc": "A Boolean value indicating whether or not the extended layout includes opaque bars."
+    },
+    {
+      "name": "func viewWillLayoutSubviews()",
+      "desc": "Called to notify the view controller that its view is about to layout its subviews."
+    },
+    {
+      "name": "func viewDidLayoutSubviews()",
+      "desc": "Called to notify the view controller that its view has just laid out its subviews."
+    },
+    {
+      "name": "func updateViewConstraints()",
+      "desc": "Called when the view controller's view needs to update its constraints."
+    },
+    {
+      "name": "var shouldAutorotate: Bool",
+      "desc": "A Boolean value that indicates whether the view controller's contents should autorotate."
+    },
+    {
+      "name": "var supportedInterfaceOrientations: UIInterfaceOrientationMask",
+      "desc": "The interface orientations that the view controller supports."
+    },
+    {
+      "name": "var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation",
+      "desc": "The interface orientation to use when presenting the view controller."
+    },
+    {
+      "name": "class func attemptRotationToDeviceOrientation()",
+      "desc": "Attempts to rotate all windows to the orientation of the device."
+    },
+    {
+      "name": "func shouldPerformSegue(withIdentifier: String, sender: Any?) -> Bool",
+      "desc": "Determines whether the segue with the specified identifier should be performed."
+    },
+    {
+      "name": "func prepare(for: UIStoryboardSegue, sender: Any?)",
+      "desc": "Notifies the view controller that a segue is about to be performed."
+    },
+    {
+      "name": "func performSegue(withIdentifier: String, sender: Any?)",
+      "desc": "Initiates the segue with the specified identifier from the current view controller's storyboard file."
+    },
+    {
+      "name": "func allowedChildrenForUnwinding(from: UIStoryboardUnwindSegueSource) -> [UIViewController]",
+      "desc": "Returns an array of child view controllers to search for an unwind segue destination."
+    },
+    {
+      "name": "func childContaining(UIStoryboardUnwindSegueSource) -> UIViewController?",
+      "desc": "Returns the child view controller that contains the source of the unwind segue."
+    },
+    {
+      "name": "func canPerformUnwindSegueAction(Selector, from: UIViewController, sender: Any?) -> Bool",
+      "desc": "Called on a view controller to determine whether it responds to an unwind action."
+    },
+    {
+      "name": "func unwind(for: UIStoryboardSegue, towards: UIViewController)",
+      "desc": "Called when an unwind segue transitions to a new view controller."
+    },
+    {
+      "name": "func show(UIViewController, sender: Any?)",
+      "desc": "Presents a view controller in a primary context."
+    },
+    {
+      "name": "func showDetailViewController(UIViewController, sender: Any?)",
+      "desc": "Presents a view controller in a secondary (or detail) context."
+    },
+    {
+      "name": "func present(UIViewController, animated: Bool, completion: (() -> Void)?)",
+      "desc": "Presents a view controller modally."
+    },
+    {
+      "name": "func dismiss(animated: Bool, completion: (() -> Void)?)",
+      "desc": "Dismisses the view controller that was presented modally by the view controller."
+    },
+    {
+      "name": "var modalPresentationStyle: UIModalPresentationStyle",
+      "desc": "The presentation style for modal view controllers."
+    },
+    {
+      "name": "enum UIModalPresentationStyle",
+      "desc": "Modal presentation styles available when presenting view controllers."
+    },
+    {
+      "name": "var modalTransitionStyle: UIModalTransitionStyle",
+      "desc": "The transition style to use when presenting the view controller."
+    },
+    {
+      "name": "enum UIModalTransitionStyle",
+      "desc": "Transition styles available when presenting view controllers."
+    },
+    {
+      "name": "var isModalInPresentation: Bool",
+      "desc": "A Boolean value indicating whether the view controller enforces a modal behavior."
+    },
+    {
+      "name": "var definesPresentationContext: Bool",
+      "desc": "A Boolean value that indicates whether this view controller's view is covered when the view controller or one of its descendants presents a view controller."
+    },
+    {
+      "name": "var providesPresentationContextTransitionStyle: Bool",
+      "desc": "A Boolean value that indicates whether the view controller specifies the transition style for view controllers it presents."
+    },
+    {
+      "name": "var disablesAutomaticKeyboardDismissal: Bool",
+      "desc": "Returns a Boolean indicating whether the current input view is dismissed automatically when changing controls."
+    },
+    {
+      "name": "class let showDetailTargetDidChangeNotification: NSNotification.Name",
+      "desc": "Posted when a split view controller is expanded or collapsed."
+    },
+    {
+      "name": "var transitioningDelegate: UIViewControllerTransitioningDelegate?",
+      "desc": "The delegate object that provides transition animator, interactive controller, and custom presentation controller objects."
+    },
+    {
+      "name": "var transitionCoordinator: UIViewControllerTransitionCoordinator?",
+      "desc": "Returns the active transition coordinator object."
+    },
+    {
+      "name": "func targetViewController(forAction: Selector, sender: Any?) -> UIViewController?",
+      "desc": "Returns the view controller that responds to the action."
+    },
+    {
+      "name": "var presentationController: UIPresentationController?",
+      "desc": "The presentation controller that’s managing the current view controller."
+    },
+    {
+      "name": "var popoverPresentationController: UIPopoverPresentationController?",
+      "desc": "The nearest popover presentation controller that is managing the current view controller."
+    },
+    {
+      "name": "var restoresFocusAfterTransition: Bool",
+      "desc": "A Boolean value that indicates whether an item that previously was focused should again become focused when the item's view controller becomes visible and focusable."
+    },
+    {
+      "name": "func collapseSecondaryViewController(UIViewController, for: UISplitViewController)",
+      "desc": "Called when a split view controller transitions to a compact-width size class."
+    },
+    {
+      "name": "func separateSecondaryViewController(for: UISplitViewController) -> UIViewController?",
+      "desc": "Called when a split view controller transitions to a regular-width size class."
+    },
+    {
+      "name": "var overrideUserInterfaceStyle: UIUserInterfaceStyle",
+      "desc": "The user interface style adopted by the view controller and all of its children."
+    },
+    {
+      "name": "var preferredUserInterfaceStyle: UIUserInterfaceStyle",
+      "desc": "The preferred interface style for this view controller."
+    },
+    {
+      "name": "var childViewControllerForUserInterfaceStyle: UIViewController?",
+      "desc": "The child view controller that supports the preferred user interface style."
+    },
+    {
+      "name": "func setNeedsUserInterfaceAppearanceUpdate()",
+      "desc": "Notifies the view controller that a change occurred that might affect the preferred interface style."
+    },
+    {
+      "name": "enum UIUserInterfaceStyle",
+      "desc": "Constants that indicate the interface style for the app."
+    },
+    {
+      "name": "var children: [UIViewController]",
+      "desc": "An array of view controllers that are children of the current view controller."
+    },
+    {
+      "name": "func addChild(UIViewController)",
+      "desc": "Adds the specified view controller as a child of the current view controller."
+    },
+    {
+      "name": "func removeFromParent()",
+      "desc": "Removes the view controller from its parent."
+    },
+    {
+      "name": "func transition(from: UIViewController, to: UIViewController, duration: TimeInterval, options: UIView.AnimationOptions, animations: (() -> Void)?, completion: ((Bool) -> Void)?)",
+      "desc": "Transitions between two of the view controller's child view controllers."
+    },
+    {
+      "name": "var shouldAutomaticallyForwardAppearanceMethods: Bool",
+      "desc": "Returns a Boolean value indicating whether appearance methods are forwarded to child view controllers."
+    },
+    {
+      "name": "func beginAppearanceTransition(Bool, animated: Bool)",
+      "desc": "Tells a child controller its appearance is about to change."
+    },
+    {
+      "name": "func endAppearanceTransition()",
+      "desc": "Tells a child controller its appearance has changed."
+    },
+    {
+      "name": "func setOverrideTraitCollection(UITraitCollection?, forChild: UIViewController)",
+      "desc": "Changes the traits assigned to the specified child view controller."
+    },
+    {
+      "name": "func overrideTraitCollection(forChild: UIViewController) -> UITraitCollection?",
+      "desc": "Retrieves the trait collection for a child view controller."
+    },
+    {
+      "name": "class let hierarchyInconsistencyException: NSExceptionName",
+      "desc": "Raised if the view controller hierarchy is inconsistent with the view hierarchy."
+    },
+    {
+      "name": "func willMove(toParent: UIViewController?)",
+      "desc": "Called just before the view controller is added or removed from a container view controller."
+    },
+    {
+      "name": "func didMove(toParent: UIViewController?)",
+      "desc": "Called after the view controller is added or removed from a container view controller."
+    },
+    {
+      "name": "var presentingViewController: UIViewController?",
+      "desc": "The view controller that presented this view controller."
+    },
+    {
+      "name": "var presentedViewController: UIViewController?",
+      "desc": "The view controller that is presented by this view controller, or one of its ancestors in the view controller hierarchy."
+    },
+    {
+      "name": "var parent: UIViewController?",
+      "desc": "The parent view controller of the recipient."
+    },
+    {
+      "name": "var splitViewController: UISplitViewController?",
+      "desc": "The nearest ancestor in the view controller hierarchy that is a split view controller."
+    },
+    {
+      "name": "var navigationController: UINavigationController?",
+      "desc": "The nearest ancestor in the view controller hierarchy that is a navigation controller."
+    },
+    {
+      "name": "var tabBarController: UITabBarController?",
+      "desc": "The nearest ancestor in the view controller hierarchy that is a tab bar controller."
+    },
+    {
+      "name": "var navigationItem: UINavigationItem",
+      "desc": "The navigation item used to represent the view controller in a parent's navigation bar."
+    },
+    {
+      "name": "var hidesBottomBarWhenPushed: Bool",
+      "desc": "A Boolean value indicating whether the toolbar at the bottom of the screen is hidden when the view controller is pushed on to a navigation controller."
+    },
+    {
+      "name": "func setToolbarItems([UIBarButtonItem]?, animated: Bool)",
+      "desc": "Sets the toolbar items to be displayed along with the view controller."
+    },
+    {
+      "name": "var toolbarItems: [UIBarButtonItem]?",
+      "desc": "The toolbar items associated with the view controller."
+    },
+    {
+      "name": "var tabBarItem: UITabBarItem!",
+      "desc": "The tab bar item that represents the view controller when added to a tab bar controller."
+    },
+    {
+      "name": "var extensionContext: NSExtensionContext?",
+      "desc": "Returns the extension context of the view controller."
+    },
+    {
+      "name": "var preferredScreenEdgesDeferringSystemGestures: UIRectEdge",
+      "desc": "The screen edges for which you want your gestures to take precedence over the system gestures"
+    },
+    {
+      "name": "var childForScreenEdgesDeferringSystemGestures: UIViewController?",
+      "desc": "Returns the child view controller that should be queried to see if its gestures should take precedence."
+    },
+    {
+      "name": "func setNeedsUpdateOfScreenEdgesDeferringSystemGestures()",
+      "desc": "Notifies the system of changes to the screen edges that defer system gestures."
+    },
+    {
+      "name": "var prefersHomeIndicatorAutoHidden: Bool",
+      "desc": "Returns a Boolean indicating whether the system is allowed to hide the visual indicator for returning to the Home screen."
+    },
+    {
+      "name": "var childForHomeIndicatorAutoHidden: UIViewController?",
+      "desc": "Returns the child view controller that is consulted about its preference for displaying a visual indicator for returning to the Home screen."
+    },
+    {
+      "name": "func setNeedsUpdateOfHomeIndicatorAutoHidden()",
+      "desc": "Notifies UIKit that your view controller updated its preference regarding the visual indicator for returning to the Home screen."
+    },
+    {
+      "name": "var prefersPointerLocked: Bool",
+      "desc": "A Boolean value that indicates whether the view controller prefers to lock the pointer to a specific scene."
+    },
+    {
+      "name": "func setNeedsUpdateOfPrefersPointerLocked()",
+      "desc": "Indicates that the view controller changed the pointer lock preference."
+    },
+    {
+      "name": "var childViewControllerForPointerLock: UIViewController?",
+      "desc": "A child view controller to query for the pointer lock preference."
+    },
+    {
+      "name": "var childForStatusBarHidden: UIViewController?",
+      "desc": "Called when the system needs the view controller to use for determining status bar hidden/unhidden state."
+    },
+    {
+      "name": "var childForStatusBarStyle: UIViewController?",
+      "desc": "Called when the system needs the view controller to use for determining status bar style."
+    },
+    {
+      "name": "var preferredStatusBarStyle: UIStatusBarStyle",
+      "desc": "The preferred status bar style for the view controller."
+    },
+    {
+      "name": "var prefersStatusBarHidden: Bool",
+      "desc": "Specifies whether the view controller prefers the status bar to be hidden or shown."
+    },
+    {
+      "name": "var modalPresentationCapturesStatusBarAppearance: Bool",
+      "desc": "Specifies whether a view controller, presented non-fullscreen, takes over control of status bar appearance from the presenting view controller."
+    },
+    {
+      "name": "var preferredStatusBarUpdateAnimation: UIStatusBarAnimation",
+      "desc": "Specifies the animation style to use for hiding and showing the status bar for the view controller."
+    },
+    {
+      "name": "func setNeedsStatusBarAppearanceUpdate()",
+      "desc": "Indicates to the system that the view controller status bar attributes have changed."
+    },
+    {
+      "name": "var childViewControllerForTouchBar: UIViewController?",
+      "desc": "The child view controller that the system uses to display content in the Touch Bar."
+    },
+    {
+      "name": "func setNeedsTouchBarUpdate()",
+      "desc": "Tells the system to update the Touch Bar."
+    },
+    {
+      "name": "var performsActionsWhilePresentingModally: Bool",
+      "desc": "A Boolean value indicating whether the view controller performs menu-related actions."
+    },
+    {
+      "name": "func addKeyCommand(UIKeyCommand)",
+      "desc": "Associates the specified keyboard shortcut with the view controller."
+    },
+    {
+      "name": "func removeKeyCommand(UIKeyCommand)",
+      "desc": "Removes the key command from the view controller."
+    },
+    {
+      "name": "var isEditing: Bool",
+      "desc": "A Boolean value indicating whether the view controller currently allows the user to edit the view contents."
+    },
+    {
+      "name": "func setEditing(Bool, animated: Bool)",
+      "desc": "Sets whether the view controller shows an editable view."
+    },
+    {
+      "name": "var editButtonItem: UIBarButtonItem",
+      "desc": "Returns a bar button item that toggles its title and associated state between Edit and Done."
+    },
+    {
+      "name": "func didReceiveMemoryWarning()",
+      "desc": "Sent to the view controller when the app receives a memory warning."
+    },
+    {
+      "name": "var restorationIdentifier: String?",
+      "desc": "The identifier that determines whether the view controller supports state restoration."
+    },
+    {
+      "name": "var restorationClass: UIViewControllerRestoration.Type?",
+      "desc": "The class responsible for recreating this view controller when restoring the app's state."
+    },
+    {
+      "name": "func encodeRestorableState(with: NSCoder)",
+      "desc": "Encodes state-related information for the view controller."
+    },
+    {
+      "name": "func decodeRestorableState(with: NSCoder)",
+      "desc": "Decodes and restores state-related information for the view controller."
+    },
+    {
+      "name": "func applicationFinishedRestoringState()",
+      "desc": "Called on restored view controllers after other object decoding is complete."
+    },
+    {
+      "name": "var playgroundLiveViewRepresentation: PlaygroundLiveViewRepresentation",
+      "desc": "The view or view controller to use when displaying a live view in a Swift Playground."
+    },
+    {
+      "name": "var focusGroupIdentifier: String?"
+    },
+    {
+      "name": "var sheetPresentationController: UISheetPresentationController?",
+      "desc": "The sheet presentation controller for the view controller."
+    },
+    {
+      "name": "func contentScrollView(for: NSDirectionalRectEdge) -> UIScrollView?"
+    },
+    {
+      "name": "func setContentScrollView(UIScrollView?)"
+    },
+    {
+      "name": "func setContentScrollView(UIScrollView?, for: NSDirectionalRectEdge)"
+    }
+  ],
+  "declaration": "@MainActor class UIViewController : UIResponder",
+  "inheritsFrom": [
+    "UIResponder"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "NSExtensionRequestHandling",
+    "UIAppearanceContainer",
+    "UIContentContainer",
+    "UIFocusEnvironment",
+    "UIStateRestoring",
+    "UITraitEnvironment"
+  ]
+}

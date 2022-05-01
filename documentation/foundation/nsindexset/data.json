@@ -1,0 +1,151 @@
+{
+  "path": "/documentation/foundation/nsindexset",
+  "type": "Class",
+  "name": "NSIndexSet",
+  "desc": "An object representing an immutable collection of unique integer values that bridges to IndexSet; use NSIndexSet when you need reference semantics or other Foundation-specific behavior.",
+  "items": [
+    {
+      "name": "init(index: Int)",
+      "desc": "Initializes an allocated NSIndexSet object with an index."
+    },
+    {
+      "name": "init(indexesIn: NSRange)",
+      "desc": "Initializes an allocated NSIndexSet object with an index range."
+    },
+    {
+      "name": "init(indexSet: IndexSet)",
+      "desc": "Initializes an allocated NSIndexSet object with an index set."
+    },
+    {
+      "name": "func contains(Int) -> Bool",
+      "desc": "Indicates whether the index set contains a specific index."
+    },
+    {
+      "name": "func contains(IndexSet) -> Bool",
+      "desc": "Indicates whether the receiving index set contains a superset of the indexes in another index set."
+    },
+    {
+      "name": "func contains(in: NSRange) -> Bool",
+      "desc": "Indicates whether the index set contains the indexes represented by an index range."
+    },
+    {
+      "name": "func intersects(in: NSRange) -> Bool",
+      "desc": "Indicates whether the index set contains any of the indexes in a range."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of indexes in the index set."
+    },
+    {
+      "name": "func countOfIndexes(in: NSRange) -> Int",
+      "desc": "Returns the number of indexes in the index set that are members of a given range."
+    },
+    {
+      "name": "func index(passingTest: (Int, UnsafeMutablePointer<ObjCBool>) -> Bool) -> Int",
+      "desc": "Returns the index of the first object that passes the predicate Block test."
+    },
+    {
+      "name": "func indexes(passingTest: (Int, UnsafeMutablePointer<ObjCBool>) -> Bool) -> IndexSet",
+      "desc": "Returns an NSIndexSet containing the receiving index set’s objects that pass the Block test."
+    },
+    {
+      "name": "func index(options: NSEnumerationOptions, passingTest: (Int, UnsafeMutablePointer<ObjCBool>) -> Bool) -> Int",
+      "desc": "Returns the index of the first object that passes the predicate Block test using the specified enumeration options."
+    },
+    {
+      "name": "func indexes(options: NSEnumerationOptions, passingTest: (Int, UnsafeMutablePointer<ObjCBool>) -> Bool) -> IndexSet",
+      "desc": "Returns an NSIndexSet containing the receiving index set’s objects that pass the Block test using the specified enumeration options."
+    },
+    {
+      "name": "func index(in: NSRange, options: NSEnumerationOptions, passingTest: (Int, UnsafeMutablePointer<ObjCBool>) -> Bool) -> Int",
+      "desc": "Returns the index of the first object in the specified range that passes the predicate Block test."
+    },
+    {
+      "name": "func indexes(in: NSRange, options: NSEnumerationOptions, passingTest: (Int, UnsafeMutablePointer<ObjCBool>) -> Bool) -> IndexSet",
+      "desc": "Returns an NSIndexSet containing the receiving index set’s objects in the specified range that pass the Block test."
+    },
+    {
+      "name": "func enumerateRanges(in: NSRange, options: NSEnumerationOptions, using: (NSRange, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Enumerates over the ranges in the range of objects using the block"
+    },
+    {
+      "name": "func enumerateRanges((NSRange, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Executes a given block using each object in the index set, in the specified ranges."
+    },
+    {
+      "name": "func enumerateRanges(options: NSEnumerationOptions, using: (NSRange, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Executes a given block using each object in the index set, in the specified ranges."
+    },
+    {
+      "name": "func isEqual(to: IndexSet) -> Bool",
+      "desc": "Indicates whether the indexes in the receiving index set are the same indexes contained in another index set."
+    },
+    {
+      "name": "var firstIndex: Int",
+      "desc": "The first index in the index set."
+    },
+    {
+      "name": "var lastIndex: Int",
+      "desc": "The last index in the index set."
+    },
+    {
+      "name": "func indexLessThanIndex(Int) -> Int",
+      "desc": "Returns either the closest index in the index set that is less than a specific index or the not-found indicator."
+    },
+    {
+      "name": "func indexLessThanOrEqual(to: Int) -> Int",
+      "desc": "Returns either the closest index in the index set that is less than or equal to a specific index or the not-found indicator."
+    },
+    {
+      "name": "func indexGreaterThanOrEqual(to: Int) -> Int",
+      "desc": "Returns either the closest index in the index set that is greater than or equal to a specific index or the not-found indicator."
+    },
+    {
+      "name": "func indexGreaterThanIndex(Int) -> Int",
+      "desc": "Returns either the closest index in the index set that is greater than a specific index or the not-found indicator."
+    },
+    {
+      "name": "func getIndexes(UnsafeMutablePointer<Int>, maxCount: Int, inIndexRange: NSRangePointer?) -> Int",
+      "desc": "The index set fills an index buffer with the indexes contained both in the index set and in an index range, returning the number of indexes copied."
+    },
+    {
+      "name": "func enumerate((Int, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Executes a given Block using each object in the index set."
+    },
+    {
+      "name": "func enumerate(options: NSEnumerationOptions, using: (Int, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Executes a given Block over the index set’s indexes, using the specified enumeration options."
+    },
+    {
+      "name": "func enumerate(in: NSRange, options: NSEnumerationOptions, using: (Int, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Executes a given Block using the indexes in the specified range, using the specified enumeration options."
+    },
+    {
+      "name": "func makeIterator() -> NSIndexSetIterator",
+      "desc": "Returns an iterator over the elements of this sequence."
+    },
+    {
+      "name": "struct NSIndexSetIterator",
+      "desc": "An iterator suitable for enumerating the elements of an index set."
+    },
+    {
+      "name": "typealias NSIndexSet.Element"
+    },
+    {
+      "name": "typealias NSIndexSet.Iterator"
+    },
+    {
+      "name": "var underestimatedCount: Int"
+    }
+  ],
+  "declaration": "class NSIndexSet : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSMutableCopying",
+    "NSSecureCoding",
+    "Sequence"
+  ]
+}

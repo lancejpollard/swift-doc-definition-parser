@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/apple_news/componentlayout",
+  "type": "Object",
+  "name": "ComponentLayout",
+  "desc": "The object for defining the positioning for a specific component within the article’s column system.",
+  "items": [
+    {
+      "name": "columnSpan",
+      "desc": "A number that indicates how many columns the component spans, based on the number of columns in the document. By default, the component spans the entire width of the document or the width of its container component."
+    },
+    {
+      "name": "columnStart",
+      "desc": "A number that indicates which column the component‘s start position is in, based on the number of columns in the document or parent container. By default, the component starts in the first column (note that the first column is 0, not 1)."
+    },
+    {
+      "name": "conditional",
+      "desc": "An instance or array of component layout properties that can be applied conditionally, and the conditions that cause them to be applied."
+    },
+    {
+      "name": "horizontalContentAlignment",
+      "desc": "A string value that sets the alignment of the content within the component. This property applies only when the width of the content is less than the width of the component.This property is supported for LinkButton, Image, Logo, Divider, and MediumRectangleAdvertisement. All other components ignore this property."
+    },
+    {
+      "name": "ignoreDocumentGutter",
+      "desc": "A value that indicates whether the gutters (if any) to the left and right of the component should be ignored. The gutter size is defined in the Layout object at the root level of the document. Use this option if you want to position two components right next to each other without a gutter between them. This property applies only when a gutter actually exists to the left or right of the component. The first column does not have a left gutter, and the last column does not have a right gutter.Valid values:none (default). Gutters are not ignored.left. Left gutter is ignored.right. Right gutter is ignored.both. Gutters on both sides (if any) are ignored.You can also set this property to true to indicate that both gutters should be ignored, or set it to false to ignore none of the gutters. By default, none of the gutters are ignored."
+    },
+    {
+      "name": "ignoreDocumentMargin",
+      "desc": "NoteNew behavior in iOS 13 and macOS 10.15.A value that indicates whether the component should respect or ignore the document’s margins. Ignoring document margins positions the component based on the document's width and margin. Valid values:none (default). Margins are not ignored.left. Left margin is ignored.right. Right margin is ignored.both. Margins, if any, on both sides are ignored.Instead of specifying margins, you can set this property to true to indicate that both margins should be ignored, or set it to false to ignore neither of the margins. By default, neither margin is  ignored. The layout of a parent component will always constrain any child components. As such, setting ignoreDocumentMargin to true for a component will have no effect if it is inside of a container with ignoreDocumentMargin set to false.Specifying a value other than none for ignoreViewportPadding will take precedence over any value defined for ignoreDocumentMargin.On a device with screen size wider than the document width and margin combined, a component with ignoreDocumentMargin property set to true will extend the width of the document plus the margin, but will not extend into the viewport padding."
+    },
+    {
+      "name": "ignoreViewportPadding",
+      "desc": "NoteAvailable in iOS 13 and macOS 10.15.A value that indicates whether the component should respect or ignore the viewport padding. Ignoring viewport padding positions the component at the edge of the display screen. This property affects the layout only if the component is in the first or last column. Valid values:none (default). Padding is  not ignored.left. Left padding is ignored.right. Right padding is ignored.both. Padding, if any, on both sides is ignored.Instead of specifying padding, you can set this property to true to indicate that paddings on both sides should be ignored, or set it to false to ignore neither padding. By default, neither padding is ignored.The layout of a parent component will always constrain any child components. Setting ignoreViewportPadding to true for a component will have no effect if it is inside of a container with ignoreViewportPadding set to false.If ignoreViewportPadding is set to true, left, right, or both it overrides the layout’s ignoreDocumentMargin value and spans the entire screen.If ignoreViewportPadding is set to none, the value of ignoreDocumentMargin is accepted. By default, components do not ignore the viewport padding, even if you previously specified ignoreDocumentMargin to span the entire width of the screen. To achieve the same functionality, you must update your article to use ignoreViewportPadding."
+    },
+    {
+      "name": "margin",
+      "desc": "A value that sets the margins for the top and bottom of the component, as a single integer that gets applied to the top and bottom margins, or as an object containing separate properties for top and bottom."
+    },
+    {
+      "name": "maximumContentWidth",
+      "desc": "A value that sets the maximum width of the content within the component. Specify this value as a number in points or using one of the available units of measure for components. See Specifying Measurements for Components.This property is supported for LinkButton, Image,Logo, Divider, and MediumRectangleAdvertisement. All other components ignore this property."
+    },
+    {
+      "name": "minimumHeight",
+      "desc": "A value that sets the minimum height of the component. A component is taller than its defined minimumHeight when the contents require the component to be taller. The minimum height can be defined as a number in points or using one of the available units of measure for components. See Specifying Measurements for Components."
+    },
+    {
+      "name": "minimumWidth",
+      "desc": "A value that defines the minimum width of the layout when used within a Container with HorizontalStackDisplay as the specified contentDisplay type. The minimum width can be defined as a number in points or using one of the available units of measure for components. See Specifying Measurements for Components."
+    },
+    {
+      "name": "maximumWidth",
+      "desc": "A value that defines the maximum width of the layout when used within a Container with HorizontalStackDisplay as the specified contentDisplay type. The maximum width can be defined as a number in points or using one of the available units of measure for components. See Specifying Measurements for Components."
+    },
+    {
+      "name": "padding",
+      "desc": "A value that defines the padding between the content of the component and the edges of the component. Padding can be defined as a number in points or using one of the available units of measure for components. See Specifying Measurements for Components."
+    }
+  ]
+}

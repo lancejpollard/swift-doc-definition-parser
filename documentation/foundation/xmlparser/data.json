@@ -1,0 +1,85 @@
+{
+  "path": "/documentation/foundation/xmlparser",
+  "type": "Class",
+  "name": "XMLParser",
+  "desc": "An event driven parser of XML documents (including DTD declarations).",
+  "items": [
+    {
+      "name": "init?(contentsOf: URL)",
+      "desc": "Initializes a parser with the XML content referenced by the given URL."
+    },
+    {
+      "name": "init(data: Data)",
+      "desc": "Initializes a parser with the XML contents encapsulated in a given data object."
+    },
+    {
+      "name": "init(stream: InputStream)",
+      "desc": "Initializes a parser with the XML contents from the specified stream and parses it.."
+    },
+    {
+      "name": "var delegate: XMLParserDelegate?",
+      "desc": "A delegate object that receives messages about the parsing process."
+    },
+    {
+      "name": "var shouldProcessNamespaces: Bool",
+      "desc": "A Boolean value that determines whether the parser reports the namespaces and qualified names of elements."
+    },
+    {
+      "name": "var shouldReportNamespacePrefixes: Bool",
+      "desc": "A Boolean value that determines whether the parser reports the prefixes indicating the scope of namespace declarations."
+    },
+    {
+      "name": "var shouldResolveExternalEntities: Bool",
+      "desc": "A Boolean value that determines whether the parser reports declarations of external entities."
+    },
+    {
+      "name": "func parse() -> Bool",
+      "desc": "Starts the event-driven parsing operation."
+    },
+    {
+      "name": "func abortParsing()",
+      "desc": "Stops the parser object."
+    },
+    {
+      "name": "var parserError: Error?",
+      "desc": "An NSError object from which you can obtain information about a parsing error."
+    },
+    {
+      "name": "var columnNumber: Int",
+      "desc": "The column number of the XML document being processed by the parser."
+    },
+    {
+      "name": "var lineNumber: Int",
+      "desc": "The line number of the XML document being processed by the parser."
+    },
+    {
+      "name": "var publicID: String?",
+      "desc": "The public identifier of the external entity referenced in the XML document."
+    },
+    {
+      "name": "var systemID: String?",
+      "desc": "The system identifier of the external entity referenced in the XML document."
+    },
+    {
+      "name": "enum XMLParser.ExternalEntityResolvingPolicy"
+    },
+    {
+      "name": "class let errorDomain: String",
+      "desc": "Indicates an error in XML parsing."
+    },
+    {
+      "name": "enum XMLParser.ErrorCode",
+      "desc": "The following error codes are defined by NSXMLParser. For error codes not listed here, see the <libxml/xmlerror.h> header file."
+    },
+    {
+      "name": "var allowedExternalEntityURLs: Set<URL>?"
+    },
+    {
+      "name": "var externalEntityResolvingPolicy: XMLParser.ExternalEntityResolvingPolicy"
+    }
+  ],
+  "declaration": "class XMLParser : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

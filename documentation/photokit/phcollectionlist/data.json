@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/photokit/phcollectionlist",
+  "type": "Class",
+  "name": "PHCollectionList",
+  "desc": "A group containing Photos asset collections, such as Moments, Years, or folders of user-created albums.",
+  "items": [
+    {
+      "name": "class func fetchCollectionListsContaining(PHCollection, options: PHFetchOptions?) -> PHFetchResult<PHCollectionList>",
+      "desc": "Retrieves collection lists that contain the specified collection."
+    },
+    {
+      "name": "class func fetchCollectionLists(withLocalIdentifiers: [String], options: PHFetchOptions?) -> PHFetchResult<PHCollectionList>",
+      "desc": "Retrieves collection lists with the specified local-device-specific unique identifiers."
+    },
+    {
+      "name": "class func fetchCollectionLists(with: PHCollectionListType, subtype: PHCollectionListSubtype, options: PHFetchOptions?) -> PHFetchResult<PHCollectionList>",
+      "desc": "Retrieves collection lists of the specified type."
+    },
+    {
+      "name": "class func fetchMomentLists(with: PHCollectionListSubtype, containingMoment: PHAssetCollection, options: PHFetchOptions?) -> PHFetchResult<PHCollectionList>",
+      "desc": "Retrieves collection lists of the specified moment list type containing the specified moment."
+    },
+    {
+      "name": "class func fetchMomentLists(with: PHCollectionListSubtype, options: PHFetchOptions?) -> PHFetchResult<PHCollectionList>",
+      "desc": "Retrieves collection lists of the specified moment list type."
+    },
+    {
+      "name": "var collectionListType: PHCollectionListType",
+      "desc": "The type of asset collection group that the collection list represents."
+    },
+    {
+      "name": "enum PHCollectionListType",
+      "desc": "Major distinctions between kinds of collection list, used by the collectionListType property and fetchCollectionLists(with:subtype:options:) method."
+    },
+    {
+      "name": "var collectionListSubtype: PHCollectionListSubtype",
+      "desc": "The type of asset collection grouping the collection list represents."
+    },
+    {
+      "name": "enum PHCollectionListSubtype",
+      "desc": "Major distinctions between kinds of collection list, used by the collectionListSubtype property and fetchCollectionLists(with:subtype:options:), fetchMomentLists(with:containingMoment:options:), and fetchMomentLists(with:options:) methods."
+    },
+    {
+      "name": "var startDate: Date?",
+      "desc": "The earliest creation date among all assets in the collection list."
+    },
+    {
+      "name": "var endDate: Date?",
+      "desc": "The latest creation date among all assets in the collection list."
+    },
+    {
+      "name": "var localizedLocationNames: [String]",
+      "desc": "The names of locations grouped by the collection (an array of NSString objects)."
+    },
+    {
+      "name": "class func transientCollectionList(with: [PHCollection], title: String?) -> PHCollectionList",
+      "desc": "Creates a temporary collection list that contains the specified asset collections."
+    },
+    {
+      "name": "class func transientCollectionList(withCollectionsFetchResult: PHFetchResult<PHCollection>, title: String?) -> PHCollectionList",
+      "desc": "Creates a temporary collection list containing the asset collections in the specified fetch result."
+    }
+  ],
+  "declaration": "class PHCollectionList : PHCollection",
+  "inheritsFrom": [
+    "PHCollection"
+  ]
+}

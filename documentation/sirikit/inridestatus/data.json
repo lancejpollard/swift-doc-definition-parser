@@ -1,0 +1,80 @@
+{
+  "path": "/documentation/sirikit/inridestatus",
+  "type": "Class",
+  "name": "INRideStatus",
+  "desc": "The status of a ride booked through a ride-booking service.",
+  "items": [
+    {
+      "name": "var rideIdentifier: String?",
+      "desc": "The unique string that you use to identify the ride."
+    },
+    {
+      "name": "var phase: INRidePhase",
+      "desc": "The current status of the ride."
+    },
+    {
+      "name": "enum INRidePhase",
+      "desc": "Constants indicating the current ride status."
+    },
+    {
+      "name": "var completionStatus: INRideCompletionStatus?",
+      "desc": "Information about how the ride ended."
+    },
+    {
+      "name": "var vehicle: INRideVehicle?",
+      "desc": "The vehicle assigned to pick up the user."
+    },
+    {
+      "name": "var driver: INRideDriver?",
+      "desc": "The driver providing the ride."
+    },
+    {
+      "name": "var rideOption: INRideOption?",
+      "desc": "Information about the type of ride that you are offering to the user."
+    },
+    {
+      "name": "var scheduledPickupTime: INDateComponentsRange?",
+      "desc": "The scheduled pickup time for the user."
+    },
+    {
+      "name": "var estimatedPickupDate: Date?",
+      "desc": "The estimated pickup time for the ride."
+    },
+    {
+      "name": "var estimatedPickupEndDate: Date?",
+      "desc": "The date after which the driver may stop waiting for the user."
+    },
+    {
+      "name": "var estimatedDropOffDate: Date?",
+      "desc": "The estimated drop-off time for the ride."
+    },
+    {
+      "name": "var pickupLocation: CLPlacemark?",
+      "desc": "The starting location for the ride."
+    },
+    {
+      "name": "var waypoints: [CLPlacemark]?",
+      "desc": "The intermediate waypoints for the journey."
+    },
+    {
+      "name": "var dropOffLocation: CLPlacemark?",
+      "desc": "The destination of the user."
+    },
+    {
+      "name": "var userActivityForCancelingInApplication: NSUserActivity?",
+      "desc": "A user activity object for canceling the ride request."
+    },
+    {
+      "name": "var additionalActionActivities: [NSUserActivity]?",
+      "desc": "Additional activities that the user may choose to perform while the ride request is active."
+    }
+  ],
+  "declaration": "class INRideStatus : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

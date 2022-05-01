@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/network/nwbrowser",
+  "type": "Class",
+  "name": "NWBrowser",
+  "desc": "An object you use to browse for available network services.",
+  "items": [
+    {
+      "name": "property list key NSBonjourServices",
+      "desc": "Bonjour service types browsed by the app."
+    },
+    {
+      "name": "property list key NSLocalNetworkUsageDescription",
+      "desc": "A message that tells the user why the app is requesting access to the local network."
+    },
+    {
+      "name": "init(for: NWBrowser.Descriptor, using: NWParameters)",
+      "desc": "Initializes a browser with a type of service to discover."
+    },
+    {
+      "name": "enum NWBrowser.Descriptor",
+      "desc": "A service description used to discover Bonjour services."
+    },
+    {
+      "name": "func start(queue: DispatchQueue)",
+      "desc": "Starts browsing for services, and sets the queue on which all browser events will be delivered."
+    },
+    {
+      "name": "var browseResultsChangedHandler: ((Set<NWBrowser.Result>, Set<NWBrowser.Result.Change>) -> Void)?",
+      "desc": "A handler that delivers updates about discovered services."
+    },
+    {
+      "name": "struct NWBrowser.Result",
+      "desc": "A set of discovered services and changes from the last result."
+    },
+    {
+      "name": "var browseResults: Set<NWBrowser.Result>",
+      "desc": "The list of discovered services."
+    },
+    {
+      "name": "var stateUpdateHandler: ((NWBrowser.State) -> Void)?",
+      "desc": "A handler that receives browser state updates."
+    },
+    {
+      "name": "enum NWBrowser.State",
+      "desc": "States indicating whether a browser is able to discover services."
+    },
+    {
+      "name": "var state: NWBrowser.State",
+      "desc": "The current state of the browser."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Stops browsing for services."
+    },
+    {
+      "name": "let descriptor: NWBrowser.Descriptor",
+      "desc": "The service descriptor with which the browser was initialized."
+    },
+    {
+      "name": "let parameters: NWParameters",
+      "desc": "The parameters with which the browser was initialized."
+    },
+    {
+      "name": "var queue: DispatchQueue?",
+      "desc": "The queue on which browser events are delivered."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "The description of the browser."
+    }
+  ],
+  "declaration": "final class NWBrowser",
+  "conformsTo": [
+    "CustomDebugStringConvertible"
+  ]
+}

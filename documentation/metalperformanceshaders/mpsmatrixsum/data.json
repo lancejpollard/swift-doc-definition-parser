@@ -1,0 +1,51 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsmatrixsum",
+  "type": "Class",
+  "name": "MPSMatrixSum",
+  "desc": "A kernel for performing a pointwise summation of a matrix.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice, count: Int, rows: Int, columns: Int, transpose: Bool)"
+    },
+    {
+      "name": "var columns: Int"
+    },
+    {
+      "name": "var count: Int"
+    },
+    {
+      "name": "var neuronParameterA: Float"
+    },
+    {
+      "name": "var neuronParameterB: Float"
+    },
+    {
+      "name": "var neuronParameterC: Float"
+    },
+    {
+      "name": "var resultMatrixOrigin: MTLOrigin"
+    },
+    {
+      "name": "var rows: Int"
+    },
+    {
+      "name": "var transpose: Bool"
+    },
+    {
+      "name": "func encode(to: MTLCommandBuffer, sourceMatrices: [MPSMatrix], resultMatrix: MPSMatrix, scale: MPSVector?, offsetVector: MPSVector?, biasVector: MPSVector?, start: Int)"
+    },
+    {
+      "name": "func neuronType() -> MPSCNNNeuronType"
+    },
+    {
+      "name": "func setNeuronType(MPSCNNNeuronType, parameterA: Float, parameterB: Float, parameterC: Float)"
+    }
+  ],
+  "declaration": "class MPSMatrixSum : MPSKernel",
+  "inheritsFrom": [
+    "MPSKernel"
+  ]
+}

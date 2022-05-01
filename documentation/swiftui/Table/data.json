@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/swiftui/table",
+  "type": "Structure",
+  "name": "Table",
+  "desc": "A container that presents rows of data arranged in one or more columns, optionally providing the ability to select one or more members.",
+  "items": [
+    {
+      "name": "init<Data>(Data, columns: () -> Columns)",
+      "desc": "Creates a table that computes its rows based on a collection of identifiable data."
+    },
+    {
+      "name": "init<Data>(Data, selection: Binding<Value.ID?>, columns: () -> Columns)",
+      "desc": "Creates a table that computes its rows based on a collection of identifiable data, and that supports selecting zero or one row."
+    },
+    {
+      "name": "init<Data>(Data, selection: Binding<Set<Value.ID>>, columns: () -> Columns)",
+      "desc": "Creates a table that computes its rows based on a collection of identifiable data, and that supports selecting multiple rows."
+    },
+    {
+      "name": "init<Data, Sort>(Data, sortOrder: Binding<[Sort]>, columns: () -> Columns)",
+      "desc": "Creates a sortable table that computes its rows based on a collection of identifiable data."
+    },
+    {
+      "name": "init<Data, Sort>(Data, selection: Binding<Value.ID?>, sortOrder: Binding<[Sort]>, columns: () -> Columns)",
+      "desc": "Creates a sortable table that computes its rows based on a collection of identifiable data, and that supports selecting zero or one row."
+    },
+    {
+      "name": "init<Data, Sort>(Data, selection: Binding<Set<Value.ID>>, sortOrder: Binding<[Sort]>, columns: () -> Columns)",
+      "desc": "Creates a sortable table that computes its rows based on a collection of identifiable data, and that supports selecting multiple rows."
+    },
+    {
+      "name": "init(columns: () -> Columns, rows: () -> Rows)",
+      "desc": "Creates a table with the given columns and rows."
+    },
+    {
+      "name": "init(selection: Binding<Value.ID?>, columns: () -> Columns, rows: () -> Rows)",
+      "desc": "Creates a table with the given columns and rows that supports selecting zero or one row."
+    },
+    {
+      "name": "init(selection: Binding<Set<Value.ID>>, columns: () -> Columns, rows: () -> Rows)",
+      "desc": "Creates a table with the given columns and rows that supports selecting multiple rows."
+    },
+    {
+      "name": "init<Sort>(sortOrder: Binding<[Sort]>, columns: () -> Columns, rows: () -> Rows)",
+      "desc": "Creates a sortable table with the given columns and rows."
+    },
+    {
+      "name": "init<Sort>(selection: Binding<Value.ID?>, sortOrder: Binding<[Sort]>, columns: () -> Columns, rows: () -> Rows)",
+      "desc": "Creates a sortable table with the given columns and rows that supports selecting zero or one row."
+    },
+    {
+      "name": "init<Sort>(selection: Binding<Set<Value.ID>>, sortOrder: Binding<[Sort]>, columns: () -> Columns, rows: () -> Rows)",
+      "desc": "Creates a sortable table with the given columns and rows that supports selecting multiple rows."
+    },
+    {
+      "name": "func tableStyle<S>(S) -> some View",
+      "desc": "Sets the style for tables within this view."
+    },
+    {
+      "name": "protocol TableStyle",
+      "desc": "A type that applies a custom appearance to all tables within a view."
+    },
+    {
+      "name": "struct TableStyleConfiguration",
+      "desc": "The properties of a table."
+    },
+    {
+      "name": "typealias Body",
+      "desc": "The type of view representing the body of this view."
+    }
+  ],
+  "declaration": "struct Table<Value, Rows, Columns> where Value == Rows.TableRowValue, Rows : TableRowContent, Columns : TableColumnContent, Rows.TableRowValue == Columns.TableRowValue",
+  "conformsTo": [
+    "View"
+  ]
+}

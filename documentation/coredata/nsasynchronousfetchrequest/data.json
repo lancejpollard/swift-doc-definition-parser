@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/coredata/nsasynchronousfetchrequest",
+  "type": "Generic Class",
+  "name": "NSAsynchronousFetchRequest",
+  "desc": "A fetch request that retrieves results asynchronously and supports progress notification.",
+  "items": [
+    {
+      "name": "init(fetchRequest: NSFetchRequest<ResultType>, completionBlock: ((NSAsynchronousFetchResult<ResultType>) -> Void)?)",
+      "desc": "Initializes a new asynchronous fetch request configured with the provided fetch request and completion block."
+    },
+    {
+      "name": "var completionBlock: NSPersistentStoreAsynchronousFetchResultCompletionBlock?",
+      "desc": "The block that is executed when the fetch request has completed."
+    },
+    {
+      "name": "var estimatedResultCount: Int",
+      "desc": "A configuration parameter that assists Core Data with scheduling the asynchronous fetch request."
+    },
+    {
+      "name": "var fetchRequest: NSFetchRequest<ResultType>",
+      "desc": "The underlying fetch request that is executed asynchronously."
+    }
+  ],
+  "declaration": "class NSAsynchronousFetchRequest<ResultType> : NSPersistentStoreRequest where ResultType : NSFetchRequestResult",
+  "inheritsFrom": [
+    "NSPersistentStoreRequest"
+  ]
+}

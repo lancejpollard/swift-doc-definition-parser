@@ -1,0 +1,116 @@
+{
+  "path": "/documentation/foundation/netservice",
+  "type": "Class",
+  "name": "NetService",
+  "desc": "A network service that broadcasts its availability using multicast DNS.",
+  "items": [
+    {
+      "name": "init(domain: String, type: String, name: String)",
+      "desc": "Returns the receiver, initialized as a network service of a given type and sets the initial host information."
+    },
+    {
+      "name": "init(domain: String, type: String, name: String, port: Int32)",
+      "desc": "Initializes the receiver for publishing a network service of type type at the socket location specified by domain, name, and port."
+    },
+    {
+      "name": "class func data(fromTXTRecord: [String : Data]) -> Data",
+      "desc": "Returns an NSData object representing a TXT record formed from a given dictionary."
+    },
+    {
+      "name": "class func dictionary(fromTXTRecord: Data) -> [String : Data]",
+      "desc": "Returns a dictionary representing a TXT record given as an NSData object."
+    },
+    {
+      "name": "var addresses: [Data]?",
+      "desc": "A read-only array containing NSData objects, each of which contains a socket address for the service."
+    },
+    {
+      "name": "var domain: String",
+      "desc": "A string containing the domain for this service."
+    },
+    {
+      "name": "var includesPeerToPeer: Bool",
+      "desc": "Specifies whether to also publish, resolve, or monitor this service over peer-to-peer Bluetooth and Wi-Fi, if available. false by default."
+    },
+    {
+      "name": "func getInputStream(UnsafeMutablePointer<InputStream?>?, outputStream: UnsafeMutablePointer<OutputStream?>?) -> Bool",
+      "desc": "Creates a pair of input and output streams for the receiver and returns a Boolean value that indicates whether they were retrieved successfully."
+    },
+    {
+      "name": "var name: String",
+      "desc": "A string containing the name of this service."
+    },
+    {
+      "name": "var type: String",
+      "desc": "The type of the published service."
+    },
+    {
+      "name": "func txtRecordData() -> Data?",
+      "desc": "Returns the TXT record for the receiver."
+    },
+    {
+      "name": "func setTXTRecord(Data?) -> Bool",
+      "desc": "Sets the TXT record for the receiver, and returns a Boolean value that indicates whether the operation was successful."
+    },
+    {
+      "name": "var delegate: NetServiceDelegate?",
+      "desc": "The delegate for the receiver."
+    },
+    {
+      "name": "func schedule(in: RunLoop, forMode: RunLoop.Mode)",
+      "desc": "Adds the service to the specified run loop."
+    },
+    {
+      "name": "func remove(from: RunLoop, forMode: RunLoop.Mode)",
+      "desc": "Removes the service from the given run loop for a given mode."
+    },
+    {
+      "name": "func publish()",
+      "desc": "Attempts to advertise the receiver’s on the network."
+    },
+    {
+      "name": "func publish(options: NetService.Options)",
+      "desc": "Attempts to advertise the receiver on the network, with the given options."
+    },
+    {
+      "name": "func resolve()",
+      "desc": "Starts a resolve process for the service."
+    },
+    {
+      "name": "func resolve(withTimeout: TimeInterval)",
+      "desc": "Starts a resolve process of a finite duration for the service."
+    },
+    {
+      "name": "var port: Int",
+      "desc": "The port on which the service is listening for connections."
+    },
+    {
+      "name": "func startMonitoring()",
+      "desc": "Starts the monitoring of TXT-record updates for the receiver."
+    },
+    {
+      "name": "func stop()",
+      "desc": "Halts a currently running attempt to publish or resolve a service."
+    },
+    {
+      "name": "func stopMonitoring()",
+      "desc": "Stops the monitoring of TXT-record updates for the receiver."
+    },
+    {
+      "name": "var hostName: String?",
+      "desc": "A string containing the DNS hostname for this service."
+    },
+    {
+      "name": "enum NetService.ErrorCode",
+      "desc": "These constants identify errors that can occur when accessing net services."
+    },
+    {
+      "name": "struct NetService.Options",
+      "desc": "These constants specify options for a network service."
+    }
+  ],
+  "declaration": "class NetService : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

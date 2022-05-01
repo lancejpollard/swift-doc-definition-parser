@@ -1,0 +1,138 @@
+{
+  "path": "/documentation/uniformtypeidentifiers/uttype",
+  "type": "Structure",
+  "name": "UTType",
+  "desc": "A structure that represents a type of data to load, send, or receive.",
+  "items": [
+    {
+      "name": "static func types(tag: String, tagClass: UTTagClass, conformingTo: UTType?) -> [UTType]",
+      "desc": "Returns an array of types from the provided tag and tag class."
+    },
+    {
+      "name": "init(exportedAs: String, conformingTo: UTType?)",
+      "desc": "Creates and returns a type your app owns with the provided identifier."
+    },
+    {
+      "name": "init(importedAs: String, conformingTo: UTType?)",
+      "desc": "Creates and returns a type your app uses but does not own with the provided identifier."
+    },
+    {
+      "name": "init?(String)",
+      "desc": "Creates and returns a type with the provided identifier."
+    },
+    {
+      "name": "init?(filenameExtension: String, conformingTo: UTType)",
+      "desc": "Creates and returns a type given a filename extension."
+    },
+    {
+      "name": "init?(mimeType: String, conformingTo: UTType)",
+      "desc": "Creates and returns a type given a MIME type."
+    },
+    {
+      "name": "init?(tag: String, tagClass: UTTagClass, conformingTo: UTType?)",
+      "desc": "Creates and returns a type with the provided tag and tag class."
+    },
+    {
+      "name": "typealias UTType.ReferenceType",
+      "desc": "An alias for the associated reference type."
+    },
+    {
+      "name": "var identifier: String",
+      "desc": "The string that represents the type."
+    },
+    {
+      "name": "var preferredFilenameExtension: String?",
+      "desc": "The preferred filename extension for this type."
+    },
+    {
+      "name": "var preferredMIMEType: String?",
+      "desc": "The preferred MIME type for this type."
+    },
+    {
+      "name": "var tags: [UTTagClass : [String]]",
+      "desc": "The tag specification dictionary of this type."
+    },
+    {
+      "name": "var isDeclared: Bool",
+      "desc": "A Boolean value that indicates the system declares the type."
+    },
+    {
+      "name": "var isDynamic: Bool",
+      "desc": "A Boolean that indicates the system dynamically generated the type."
+    },
+    {
+      "name": "var isPublic: Bool",
+      "desc": "A Boolean value that indicates the type is in the public domain."
+    },
+    {
+      "name": "var referenceURL: URL?",
+      "desc": "The reference URL for the type."
+    },
+    {
+      "name": "var version: Int?",
+      "desc": "The type’s version, if available."
+    },
+    {
+      "name": "var supertypes: Set<UTType>",
+      "desc": "The set of types to which this type conforms."
+    },
+    {
+      "name": "func conforms(to: UTType) -> Bool",
+      "desc": "Tests for a conformance relationship between this type and the provided type."
+    },
+    {
+      "name": "func isSubtype(of: UTType) -> Bool",
+      "desc": "Tests to determine if the provided type is higher in a hierarchy than this type."
+    },
+    {
+      "name": "func isSupertype(of: UTType) -> Bool",
+      "desc": "Tests to determine if the provided type is lower in a hierarchy than this type."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual description of the tag class."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual description of the tag class suitable for debugging."
+    },
+    {
+      "name": "var localizedDescription: String?",
+      "desc": "The localized description of the type."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes this value into the given encoder."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a new instance by decoding from the given decoder."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value of this type."
+    },
+    {
+      "name": "static func == (UTType, UTType) -> Bool",
+      "desc": "Compares two types to determine if they are equal."
+    },
+    {
+      "name": "static func != (UTType, UTType) -> Bool",
+      "desc": "Compares two types to determine if they aren’t equal."
+    }
+  ],
+  "declaration": "struct UTType",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "Hashable",
+    "ReferenceConvertible"
+  ]
+}

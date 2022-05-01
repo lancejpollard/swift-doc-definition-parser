@@ -1,0 +1,92 @@
+{
+  "path": "/documentation/realitykit/animationgroup",
+  "type": "Structure",
+  "name": "AnimationGroup",
+  "desc": "A collection of animations that play simultaneously.",
+  "items": [
+    {
+      "name": "init(group: [AnimationDefinition], name: String, repeatMode: AnimationRepeatMode, fillMode: AnimationFillMode, trimStart: TimeInterval?, trimEnd: TimeInterval?, trimDuration: TimeInterval?, offset: TimeInterval, delay: TimeInterval, speed: Float)",
+      "desc": "Creates a collection of animations that play simultaneously."
+    },
+    {
+      "name": "var group: [AnimationDefinition]",
+      "desc": "A collection of animations to run."
+    },
+    {
+      "name": "var group_: [AnimationDefinition]?",
+      "desc": "An optional collection of animations to run."
+    },
+    {
+      "name": "var name: String",
+      "desc": "A textual name for the group."
+    },
+    {
+      "name": "var bindTarget: BindTarget",
+      "desc": "A textual name that refers to a property on which to run the grouped animations."
+    },
+    {
+      "name": "var blendLayer: Int32",
+      "desc": "The order in which the framework composites the animation."
+    },
+    {
+      "name": "var additive: Bool",
+      "desc": "A Boolean value that indicates whether the animation builds on the current state of the target entity or resets the state before running."
+    },
+    {
+      "name": "var speed: Float",
+      "desc": "A factor that increases or decreases the animation's rate of playback."
+    },
+    {
+      "name": "var delay: TimeInterval",
+      "desc": "An amount of time that lapses before the animation plays."
+    },
+    {
+      "name": "var duration: TimeInterval",
+      "desc": "The total playback time of the animation."
+    },
+    {
+      "name": "var offset: TimeInterval",
+      "desc": "The time, in seconds, at which the animations begin within the duration."
+    },
+    {
+      "name": "var trimDuration: TimeInterval?",
+      "desc": "An optional duration that overrides the calculated duration."
+    },
+    {
+      "name": "var trimStart: TimeInterval?",
+      "desc": "The time, in seconds, at which the animations play."
+    },
+    {
+      "name": "var trimEnd: TimeInterval?",
+      "desc": "The time, in seconds, at which the animations stop."
+    },
+    {
+      "name": "func trimmed(start: TimeInterval?, end: TimeInterval?, duration: TimeInterval?) -> AnimationGroup",
+      "desc": "Edits the animation's duration according to the specified time."
+    },
+    {
+      "name": "var repeatMode: AnimationRepeatMode",
+      "desc": "An option that determines how the animations repeat."
+    },
+    {
+      "name": "var fillMode: AnimationFillMode",
+      "desc": "An option that determines which data displays outside of the normal duration."
+    },
+    {
+      "name": "func repeated(count: TimeInterval) -> AnimationGroup",
+      "desc": "Repeats an animation the number of times specified by a decimal number."
+    },
+    {
+      "name": "func repeated(count: Int) -> AnimationGroup",
+      "desc": "Repeats an animation the number of times specified by a whole number."
+    },
+    {
+      "name": "func repeatingForever() -> AnimationGroup",
+      "desc": "Repeats an animation an indefinite number of times."
+    }
+  ],
+  "declaration": "struct AnimationGroup",
+  "conformsTo": [
+    "AnimationDefinition"
+  ]
+}

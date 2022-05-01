@@ -1,0 +1,107 @@
+{
+  "path": "/documentation/arkit/arframe",
+  "type": "Class",
+  "name": "ARFrame",
+  "desc": "A video image captured as part of a session with position-tracking information.",
+  "items": [
+    {
+      "name": "var camera: ARCamera",
+      "desc": "Information about the camera position, orientation, and imaging parameters used to capture the frame."
+    },
+    {
+      "name": "var capturedImage: CVPixelBuffer",
+      "desc": "A pixel buffer containing the image captured by the camera."
+    },
+    {
+      "name": "var timestamp: TimeInterval",
+      "desc": "The time at which the frame was captured."
+    },
+    {
+      "name": "var cameraGrainIntensity: Float",
+      "desc": "A value that specifies the amount of grain present in the camera grain texture."
+    },
+    {
+      "name": "var cameraGrainTexture: MTLTexture?",
+      "desc": "A tileable Metal texture created by ARKit to match the visual characteristics of the current video stream."
+    },
+    {
+      "name": "var lightEstimate: ARLightEstimate?",
+      "desc": "An estimate of lighting conditions based on the camera image."
+    },
+    {
+      "name": "func displayTransform(for: UIInterfaceOrientation, viewportSize: CGSize) -> CGAffineTransform",
+      "desc": "Returns an affine transform for converting between normalized image coordinates and a coordinate space appropriate for rendering the camera image onscreen."
+    },
+    {
+      "name": "var rawFeaturePoints: ARPointCloud?",
+      "desc": "The current intermediate results of the scene analysis ARKit uses to perform world tracking."
+    },
+    {
+      "name": "var capturedDepthData: AVDepthData?",
+      "desc": "Depth data captured in front-camera experiences."
+    },
+    {
+      "name": "var capturedDepthDataTimestamp: TimeInterval",
+      "desc": "The time at which depth data for the frame (if any) was captured."
+    },
+    {
+      "name": "var sceneDepth: ARDepthData?",
+      "desc": "Data on the distance between a device's rear camera and real-world objects in an AR experience."
+    },
+    {
+      "name": "var smoothedSceneDepth: ARDepthData?",
+      "desc": "An average of distance measurements between a device's rear camera and real-world objects that creates smoother visuals in an AR experience."
+    },
+    {
+      "name": "var anchors: [ARAnchor]",
+      "desc": "The list of anchors representing positions tracked or objects detected in the scene."
+    },
+    {
+      "name": "func raycastQuery(from: CGPoint, allowing: ARRaycastQuery.Target, alignment: ARRaycastQuery.TargetAlignment) -> ARRaycastQuery",
+      "desc": "Get a ray-cast query for a screen point."
+    },
+    {
+      "name": "var worldMappingStatus: ARFrame.WorldMappingStatus",
+      "desc": "The feasibility of generating or relocalizing a world map for this frame."
+    },
+    {
+      "name": "enum ARFrame.WorldMappingStatus",
+      "desc": "Possible values describing how thoroughly ARKit has mapped the the area visible in a given frame."
+    },
+    {
+      "name": "var detectedBody: ARBody2D?",
+      "desc": "The screen position information of a body that ARKit recognizes in the camera image."
+    },
+    {
+      "name": "class ARBody2D",
+      "desc": "The screen-space representation of a person ARKit recognizes in the camera feed."
+    },
+    {
+      "name": "var segmentationBuffer: CVPixelBuffer?",
+      "desc": "A buffer that contains pixel information identifying the shape of objects from the camera feed that you use to occlude virtual content."
+    },
+    {
+      "name": "var estimatedDepthData: CVPixelBuffer?",
+      "desc": "A buffer that represents the estimated depth values from the camera feed that you use to occlude virtual content."
+    },
+    {
+      "name": "enum ARFrame.SegmentationClass",
+      "desc": "A categorization of a pixel that defines a type of content you use to occlude your app's virtual content."
+    },
+    {
+      "name": "var geoTrackingStatus: ARGeoTrackingStatus?",
+      "desc": "The session’s condition with respect to geographic tracking at the time the session captured the frame."
+    },
+    {
+      "name": "class ARGeoTrackingStatus",
+      "desc": "The state, accuracy, and reason that are possible for geo-tracking’s current condition."
+    }
+  ],
+  "declaration": "class ARFrame : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

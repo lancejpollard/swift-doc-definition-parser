@@ -1,0 +1,121 @@
+{
+  "path": "/documentation/carekit/ockscheduleelement",
+  "type": "Structure",
+  "name": "OCKScheduleElement",
+  "desc": "An object that represents a single event that repeats at fixed intervals.",
+  "items": [
+    {
+      "name": "init(start: Date, end: Date?, interval: DateComponents, text: String?, targetValues: [OCKOutcomeValue], duration: OCKScheduleElement.Duration)",
+      "desc": "Creates a schedule element by specifying the start date, end date, interval, title, target values, and duration."
+    },
+    {
+      "name": "func offset(by: DateComponents) -> OCKScheduleElement",
+      "desc": "Returns a new schedule element, with all event times offset by the given value."
+    },
+    {
+      "name": "func events(from: Date, to: Date) -> [OCKScheduleEvent]",
+      "desc": "Returns an array of events that occur between the start and end dates provided."
+    },
+    {
+      "name": "var duration: OCKScheduleElement.Duration",
+      "desc": "The amount of time the event should take, in seconds."
+    },
+    {
+      "name": "var text: String?",
+      "desc": "A description of the time the element represents."
+    },
+    {
+      "name": "let start: Date",
+      "desc": "The date and time the first event occurs."
+    },
+    {
+      "name": "var end: Date?",
+      "desc": "The latest possible time for an event to occur."
+    },
+    {
+      "name": "var interval: DateComponents",
+      "desc": "The amount of time between events."
+    },
+    {
+      "name": "var targetValues: [OCKOutcomeValue]",
+      "desc": "An array of values that specify what values the user will record."
+    },
+    {
+      "name": "var elements: [OCKScheduleElement]",
+      "desc": "The components that make up the schedule."
+    },
+    {
+      "name": "var createdDate: Date? { get }",
+      "desc": "The date the database first persisted the object."
+    },
+    {
+      "name": "var updatedDate: Date? { get }",
+      "desc": "The most recent date when the store updated the object."
+    },
+    {
+      "name": "var groupIdentifier: String?",
+      "desc": "A user-defined group identifier that can be used both for querying and sorting results."
+    },
+    {
+      "name": "var tags: [String]?",
+      "desc": "An array of user-defined tags that can be used to sort or classify objects or values."
+    },
+    {
+      "name": "var remoteID: String?",
+      "desc": "A string value that represents a unique identifier, which a remote database uses optionally."
+    },
+    {
+      "name": "var userInfo: [String : String]?",
+      "desc": "A dictionary of information that can be provided by developers to support their own unique use cases."
+    },
+    {
+      "name": "var source: String?",
+      "desc": "A string that specifies from where this object originated."
+    },
+    {
+      "name": "var asset: String?",
+      "desc": "A string that specifies the location of some asset associated with this object."
+    },
+    {
+      "name": "var notes: [OCKNote]?",
+      "desc": "An array of notes associated with this object."
+    },
+    {
+      "name": "var schemaVersion: OCKSemanticVersion? { get }",
+      "desc": "The semantic version of the database schema when you create this object."
+    },
+    {
+      "name": "var timezone: TimeZone",
+      "desc": "The time zone in which this record was created in."
+    },
+    {
+      "name": "var versionID: OCKLocalVersionID?",
+      "desc": "A unique identifier used by the local database."
+    },
+    {
+      "name": "func date(ofOccurrence: Int) -> Date?",
+      "desc": "Returns the date of the Nth occurrence of a schedule element."
+    },
+    {
+      "name": "func events(betweenOccurrenceIndex: Int, and: Int) -> [OCKScheduleEvent?]",
+      "desc": "Returns an array of events that occur between specific start and stop indexes."
+    },
+    {
+      "name": "subscript(Int) -> OCKScheduleEvent",
+      "desc": "Returns the Nth event of this schedule."
+    },
+    {
+      "name": "enum OCKScheduleElement.Duration",
+      "desc": "The amount of time the event takes."
+    },
+    {
+      "name": "static func != (OCKScheduleElement, OCKScheduleElement) -> Bool"
+    }
+  ],
+  "declaration": "struct OCKScheduleElement : Codable, Equatable, OCKObjectCompatible",
+  "conformsTo": [
+    "Decodable",
+    "Encodable",
+    "Equatable"
+  ]
+}

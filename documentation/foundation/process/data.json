@@ -1,0 +1,108 @@
+{
+  "path": "/documentation/foundation/process",
+  "type": "Class",
+  "name": "Process",
+  "desc": "An object that represents a subprocess of the current process.",
+  "items": [
+    {
+      "name": "class func run(URL, arguments: [String], terminationHandler: ((Process) -> Void)?) -> Process",
+      "desc": "Creates and runs a task with a specified executable and arguments."
+    },
+    {
+      "name": "init()",
+      "desc": "Returns an initialized process object with the environment of the current process."
+    },
+    {
+      "name": "var processIdentifier: Int32",
+      "desc": "The receiver’s process identifier."
+    },
+    {
+      "name": "func run()",
+      "desc": "Runs the process with the current environment."
+    },
+    {
+      "name": "func interrupt()",
+      "desc": "Sends an interrupt signal to the receiver and all of its subtasks."
+    },
+    {
+      "name": "func resume() -> Bool",
+      "desc": "Resumes execution of a suspended task."
+    },
+    {
+      "name": "func suspend() -> Bool",
+      "desc": "Suspends execution of the receiver task."
+    },
+    {
+      "name": "func terminate()",
+      "desc": "Sends a terminate signal to the receiver and all of its subtasks."
+    },
+    {
+      "name": "func waitUntilExit()",
+      "desc": "Blocks the process until the receiver is finished."
+    },
+    {
+      "name": "var isRunning: Bool",
+      "desc": "A status that indicates whether the receiver is still running."
+    },
+    {
+      "name": "var terminationStatus: Int32",
+      "desc": "The exit status the receiver’s executable returns."
+    },
+    {
+      "name": "var terminationReason: Process.TerminationReason",
+      "desc": "The reason the system terminated the task."
+    },
+    {
+      "name": "var arguments: [String]?",
+      "desc": "The command arguments that the system uses to launch the executable."
+    },
+    {
+      "name": "var currentDirectoryURL: URL?",
+      "desc": "The current directory for the receiver."
+    },
+    {
+      "name": "var environment: [String : String]?",
+      "desc": "The environment for the receiver."
+    },
+    {
+      "name": "var executableURL: URL?",
+      "desc": "The receiver’s executable."
+    },
+    {
+      "name": "var qualityOfService: QualityOfService",
+      "desc": "The default quality of service level the system applies to operations the task executes."
+    },
+    {
+      "name": "var standardError: Any?",
+      "desc": "The standard error for the receiver."
+    },
+    {
+      "name": "var standardInput: Any?",
+      "desc": "The standard input for the receiver."
+    },
+    {
+      "name": "var standardOutput: Any?",
+      "desc": "The standard output for the receiver."
+    },
+    {
+      "name": "var terminationHandler: ((Process) -> Void)?",
+      "desc": "A completion block the system invokes when the task completes."
+    },
+    {
+      "name": "enum Process.TerminationReason",
+      "desc": "Constants that specify the termination reason values that the system returns."
+    },
+    {
+      "name": "enum QualityOfService",
+      "desc": "Constants that indicate the nature and importance of work to the system."
+    },
+    {
+      "name": "class let didTerminateNotification: NSNotification.Name",
+      "desc": "Posted when the task has stopped execution."
+    }
+  ],
+  "declaration": "class Process : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

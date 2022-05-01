@@ -1,0 +1,51 @@
+{
+  "path": "/documentation/coreaudiotypes/audiostreambasicdescription",
+  "type": "Structure",
+  "name": "AudioStreamBasicDescription",
+  "desc": "An audio data format specification for a stream of audio.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(mSampleRate: Float64, mFormatID: AudioFormatID, mFormatFlags: AudioFormatFlags, mBytesPerPacket: UInt32, mFramesPerPacket: UInt32, mBytesPerFrame: UInt32, mChannelsPerFrame: UInt32, mBitsPerChannel: UInt32, mReserved: UInt32)"
+    },
+    {
+      "name": "var mBitsPerChannel: UInt32",
+      "desc": "The number of bits for one audio sample."
+    },
+    {
+      "name": "var mBytesPerFrame: UInt32",
+      "desc": "The number of bytes from the start of one frame to the start of the next frame in an audio buffer. Set this field to 0 for compressed formats."
+    },
+    {
+      "name": "var mBytesPerPacket: UInt32",
+      "desc": "The number of bytes in a packet of audio data. To indicate variable packet size, set this field to 0. For a format that uses variable packet size, specify the size of each packet using an AudioStreamPacketDescription structure."
+    },
+    {
+      "name": "var mChannelsPerFrame: UInt32",
+      "desc": "The number of channels in each frame of audio data. This value must be nonzero."
+    },
+    {
+      "name": "var mFormatFlags: AudioFormatFlags",
+      "desc": "Format-specific flags to specify details of the format. Set to 0 to indicate no format flags. See Audio Data Format Identifiers for the flags that apply to each format."
+    },
+    {
+      "name": "var mFormatID: AudioFormatID",
+      "desc": "An identifier specifying the general audio data format in the stream. See Audio Data Format Identifiers. This value must be nonzero."
+    },
+    {
+      "name": "var mFramesPerPacket: UInt32",
+      "desc": "The number of frames in a packet of audio data. For uncompressed audio, the value is 1. For variable bit-rate formats, the value is a larger fixed number, such as 1024 for AAC. For formats with a variable number of frames per packet, such as Ogg Vorbis, set this field to 0."
+    },
+    {
+      "name": "var mReserved: UInt32",
+      "desc": "Pads the structure out to force an even 8-byte alignment. Must be set to 0."
+    },
+    {
+      "name": "var mSampleRate: Float64",
+      "desc": "The number of frames per second of the data in the stream, when the stream is played at normal speed. For compressed formats, this field indicates the number of frames per second of equivalent decompressed data."
+    }
+  ],
+  "declaration": "struct AudioStreamBasicDescription"
+}

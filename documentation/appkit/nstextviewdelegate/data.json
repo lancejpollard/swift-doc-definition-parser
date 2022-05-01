@@ -1,0 +1,120 @@
+{
+  "path": "/documentation/appkit/nstextviewdelegate",
+  "type": "Protocol",
+  "name": "NSTextViewDelegate",
+  "desc": "A set of optional methods that text view delegates can use to manage selection, set text attributes, work with the spell checker, and more.",
+  "items": [
+    {
+      "name": "func undoManager(for: NSTextView) -> UndoManager?",
+      "desc": "Returns the undo manager for the specified text view."
+    },
+    {
+      "name": "func textView(NSTextView, willDisplayToolTip: String, forCharacterAt: Int) -> String?",
+      "desc": "Returns the actual tooltip to display."
+    },
+    {
+      "name": "func textView(NSTextView, urlForContentsOf: NSTextAttachment, at: Int) -> URL?",
+      "desc": "Returns a URL representing the document contents for a text attachment."
+    },
+    {
+      "name": "func textView(NSTextView, willChangeSelectionFromCharacterRange: NSRange, toCharacterRange: NSRange) -> NSRange",
+      "desc": "Returns the actual range to select."
+    },
+    {
+      "name": "func textView(NSTextView, willChangeSelectionFromCharacterRanges: [NSValue], toCharacterRanges: [NSValue]) -> [NSValue]",
+      "desc": "Returns the actual character ranges to select."
+    },
+    {
+      "name": "func textViewDidChangeSelection(Notification)",
+      "desc": "Sent when the selection changes in the text view."
+    },
+    {
+      "name": "func textView(NSTextView, candidates: [NSTextCheckingResult], forSelectedRange: NSRange) -> [NSTextCheckingResult]",
+      "desc": "Reutns an array of text objects to include in a text selection."
+    },
+    {
+      "name": "func textView(NSTextView, candidatesForSelectedRange: NSRange) -> [Any]?",
+      "desc": "Returns an array of objects that represent the elements of a selection."
+    },
+    {
+      "name": "func textView(NSTextView, shouldSelectCandidateAt: Int) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether to select the text object at the index."
+    },
+    {
+      "name": "func textView(NSTextView, shouldUpdateTouchBarItemIdentifiers: [NSTouchBarItem.Identifier]) -> [NSTouchBarItem.Identifier]",
+      "desc": "Returns and array of touch bar elements for the framework to update."
+    },
+    {
+      "name": "func textView(NSTextView, writablePasteboardTypesFor: NSTextAttachmentCellProtocol, at: Int) -> [NSPasteboard.PasteboardType]",
+      "desc": "Returns the writable pasteboard types for a given cell."
+    },
+    {
+      "name": "func textView(NSTextView, write: NSTextAttachmentCellProtocol, at: Int, to: NSPasteboard, type: NSPasteboard.PasteboardType) -> Bool",
+      "desc": "Returns whether data of the specified type for the given cell could be written to the specified pasteboard."
+    },
+    {
+      "name": "func textView(NSTextView, shouldChangeTextIn: NSRange, replacementString: String?) -> Bool",
+      "desc": "Sent when a text view needs to determine if text in a specified range should be changed."
+    },
+    {
+      "name": "func textView(NSTextView, shouldChangeTextInRanges: [NSValue], replacementStrings: [String]?) -> Bool",
+      "desc": "Sent when a text view needs to determine if text in an array of specified ranges should be changed."
+    },
+    {
+      "name": "func textView(NSTextView, shouldChangeTypingAttributes: [String : Any], toAttributes: [NSAttributedString.Key : Any]) -> [NSAttributedString.Key : Any]",
+      "desc": "Sent when the typing attributes are changed."
+    },
+    {
+      "name": "func textViewDidChangeTypingAttributes(Notification)",
+      "desc": "Sent when a text view’s typing attributes change."
+    },
+    {
+      "name": "func textView(NSTextView, clickedOn: NSTextAttachmentCellProtocol, in: NSRect, at: Int)",
+      "desc": "Sent when the user clicks a cell."
+    },
+    {
+      "name": "func textView(NSTextView, doubleClickedOn: NSTextAttachmentCellProtocol, in: NSRect, at: Int)",
+      "desc": "Sent when the user double-clicks a cell."
+    },
+    {
+      "name": "func textView(NSTextView, clickedOnLink: Any, at: Int) -> Bool",
+      "desc": "Sent after the user clicks a link."
+    },
+    {
+      "name": "func textView(NSTextView, shouldSetSpellingState: Int, range: NSRange) -> Int",
+      "desc": "Sent when the spelling state is changed."
+    },
+    {
+      "name": "func textView(NSTextView, willCheckTextIn: NSRange, options: [NSSpellChecker.OptionKey : Any], types: UnsafeMutablePointer<NSTextCheckingTypes>) -> [NSSpellChecker.OptionKey : Any]",
+      "desc": "Invoked to allow the delegate to modify the text checking process before it occurs."
+    },
+    {
+      "name": "func textView(NSTextView, didCheckTextIn: NSRange, types: NSTextCheckingTypes, options: [NSSpellChecker.OptionKey : Any], results: [NSTextCheckingResult], orthography: NSOrthography, wordCount: Int) -> [NSTextCheckingResult]",
+      "desc": "Invoked to allow the delegate to modify the text checking results after checking has occurred."
+    },
+    {
+      "name": "func textView(NSTextView, draggedCell: NSTextAttachmentCellProtocol, in: NSRect, event: NSEvent, at: Int)",
+      "desc": "Sent when the user attempts to drag a cell."
+    },
+    {
+      "name": "func textView(NSTextView, completions: [String], forPartialWordRange: NSRange, indexOfSelectedItem: UnsafeMutablePointer<Int>?) -> [String]",
+      "desc": "Returns the actual completions for a partial word."
+    },
+    {
+      "name": "func textView(NSTextView, willShow: NSSharingServicePicker, forItems: [Any]) -> NSSharingServicePicker?",
+      "desc": "Returns a sharing service picker for the current selection."
+    },
+    {
+      "name": "func textView(NSTextView, doCommandBy: Selector) -> Bool",
+      "desc": "Sent to allow the delegate to perform the command for the text view."
+    },
+    {
+      "name": "func textView(NSTextView, menu: NSMenu, for: NSEvent, at: Int) -> NSMenu?",
+      "desc": "Allows delegate to control the context menu returned by the text view."
+    }
+  ],
+  "declaration": "protocol NSTextViewDelegate",
+  "inheritsFrom": [
+    "NSTextDelegate"
+  ]
+}

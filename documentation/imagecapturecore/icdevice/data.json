@@ -1,0 +1,163 @@
+{
+  "path": "/documentation/imagecapturecore/icdevice",
+  "type": "Class",
+  "name": "ICDevice",
+  "desc": "An abstract object that represents a device.",
+  "items": [
+    {
+      "name": "var name: String?",
+      "desc": "The device’s name as reported by the device module, or if no device module is in control of this device, by the device transport."
+    },
+    {
+      "name": "var productKind: String?",
+      "desc": "The device’s type."
+    },
+    {
+      "name": "var icon: CGImage?",
+      "desc": "The device’s icon image."
+    },
+    {
+      "name": "var uuidString: String?",
+      "desc": "A string representation of the device’s universally unique identifier (UUID)."
+    },
+    {
+      "name": "var persistentIDString: String?",
+      "desc": "A string representation of the device’s persistent ID."
+    },
+    {
+      "name": "var serialNumberString: String?",
+      "desc": "The device’s serial number."
+    },
+    {
+      "name": "var type: ICDeviceType",
+      "desc": "A combination of the device’s type and its location type."
+    },
+    {
+      "name": "enum ICDeviceType",
+      "desc": "The type of image capture device."
+    },
+    {
+      "name": "enum ICDeviceTypeMask",
+      "desc": "Masks for detecting different device types."
+    },
+    {
+      "name": "var locationDescription: String?",
+      "desc": "A nonlocalized location description for the device."
+    },
+    {
+      "name": "var modulePath: String",
+      "desc": "The file system path of the device module associated with this device."
+    },
+    {
+      "name": "var moduleVersion: String?",
+      "desc": "The bundle version of the device module associated with this device."
+    },
+    {
+      "name": "enum ICDeviceLocationType",
+      "desc": "The location of the image capture device."
+    },
+    {
+      "name": "enum ICDeviceLocationTypeMask",
+      "desc": "Masks for detecting different device locations."
+    },
+    {
+      "name": "struct ICDeviceLocationOptions",
+      "desc": "Options for the location of the image capture device."
+    },
+    {
+      "name": "var usbLocationID: Int32",
+      "desc": "The USB location that the device is occupying."
+    },
+    {
+      "name": "var usbProductID: Int32",
+      "desc": "The USB Product ID (PID) associated with the device."
+    },
+    {
+      "name": "var usbVendorID: Int32",
+      "desc": "The USB Vendor ID (VID) associated with the device."
+    },
+    {
+      "name": "var transportType: String?",
+      "desc": "The hardware connection type the device is using."
+    },
+    {
+      "name": "struct ICDeviceTransport",
+      "desc": "The hardware connection types a device can use."
+    },
+    {
+      "name": "var capabilities: [String]",
+      "desc": "The capabilities of the device as reported by the device module."
+    },
+    {
+      "name": "struct ICDeviceCapability",
+      "desc": "Constants that describe the capabilities of a camera."
+    },
+    {
+      "name": "struct ICSessionOptions",
+      "desc": "Session options for altering the delivery of the device contents."
+    },
+    {
+      "name": "struct ICDeviceStatus",
+      "desc": "The status types that a device might deliver while in use."
+    },
+    {
+      "name": "var delegate: ICDeviceDelegate?",
+      "desc": "The delegate to receive messages once a session is opened on the device."
+    },
+    {
+      "name": "protocol ICDeviceDelegate",
+      "desc": "Methods for responding to device events and changes."
+    },
+    {
+      "name": "var hasOpenSession: Bool",
+      "desc": "A Boolean value that indicates whether the device has an open session."
+    },
+    {
+      "name": "func requestOpenSession()",
+      "desc": "Requests to open a session on the device."
+    },
+    {
+      "name": "func requestOpenSession(options: [ICSessionOptions : Any]?, completion: (Error?) -> Void)",
+      "desc": "Requests to open a session on the device, then executes the completion handler."
+    },
+    {
+      "name": "func requestSendMessage(UInt32, outData: Data, maxReturnedDataSize: UInt32, sendMessageDelegate: Any, didSendMessageSelector: Selector, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Asynchronously sends an arbitrary message with optional data to a device."
+    },
+    {
+      "name": "func requestCloseSession()",
+      "desc": "Requests to close an open session on the device."
+    },
+    {
+      "name": "func requestCloseSession(options: [ICSessionOptions : Any]?, completion: (Error?) -> Void)",
+      "desc": "Requests to close an open session on the device, then executes the completion handler."
+    },
+    {
+      "name": "func requestEject()",
+      "desc": "Requests to eject the media if permitted by the device, or to disconnect from a remote device."
+    },
+    {
+      "name": "func requestEject(completion: (Error?) -> Void)",
+      "desc": "Requests to eject the media if permitted by the device, or to disconnect from a remote device, then executes the completion handler."
+    },
+    {
+      "name": "var userData: NSMutableDictionary?",
+      "desc": "A bookkeeping object for client convenience."
+    },
+    {
+      "name": "var autolaunchApplicationPath: String?",
+      "desc": "The file system path of an application to launch automatically when this device is added."
+    },
+    {
+      "name": "var isRemote: Bool",
+      "desc": "A Boolean value indicating whether the device is published by the Image Capture device-sharing facility."
+    },
+    {
+      "name": "var systemSymbolName: String?"
+    }
+  ],
+  "declaration": "class ICDevice : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpscnnbinarykernel",
+  "type": "Class",
+  "name": "MPSCNNBinaryKernel",
+  "desc": "A convolution neural network kernel.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice)"
+    },
+    {
+      "name": "var clipRect: MTLRegion"
+    },
+    {
+      "name": "var destinationFeatureChannelOffset: Int"
+    },
+    {
+      "name": "var destinationImageAllocator: MPSImageAllocator"
+    },
+    {
+      "name": "var isBackwards: Bool"
+    },
+    {
+      "name": "var padding: MPSNNPadding"
+    },
+    {
+      "name": "var primaryEdgeMode: MPSImageEdgeMode"
+    },
+    {
+      "name": "var primaryOffset: MPSOffset"
+    },
+    {
+      "name": "var primaryStrideInPixelsX: Int"
+    },
+    {
+      "name": "var primaryStrideInPixelsY: Int"
+    },
+    {
+      "name": "var secondaryEdgeMode: MPSImageEdgeMode"
+    },
+    {
+      "name": "var secondaryOffset: MPSOffset"
+    },
+    {
+      "name": "var secondaryStrideInPixelsX: Int"
+    },
+    {
+      "name": "var secondaryStrideInPixelsY: Int"
+    },
+    {
+      "name": "var isStateModified: Bool"
+    },
+    {
+      "name": "var primaryDilationRateX: Int"
+    },
+    {
+      "name": "var primaryDilationRateY: Int"
+    },
+    {
+      "name": "var primaryKernelHeight: Int"
+    },
+    {
+      "name": "var primaryKernelWidth: Int"
+    },
+    {
+      "name": "var primarySourceFeatureChannelMaxCount: Int"
+    },
+    {
+      "name": "var primarySourceFeatureChannelOffset: Int"
+    },
+    {
+      "name": "var secondaryDilationRateX: Int"
+    },
+    {
+      "name": "var secondaryDilationRateY: Int"
+    },
+    {
+      "name": "var secondaryKernelHeight: Int"
+    },
+    {
+      "name": "var secondaryKernelWidth: Int"
+    },
+    {
+      "name": "var secondarySourceFeatureChannelMaxCount: Int"
+    },
+    {
+      "name": "var secondarySourceFeatureChannelOffset: Int"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, primaryImage: MPSImage, secondaryImage: MPSImage) -> MPSImage"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, primaryImage: MPSImage, secondaryImage: MPSImage, destinationImage: MPSImage)"
+    },
+    {
+      "name": "func appendBatchBarrier() -> Bool"
+    },
+    {
+      "name": "func batchEncodingStorageSize(primaryImage: [MPSImage], secondaryImage: [MPSImage], sourceStates: [[MPSState]]?, destinationImage: [MPSImage]?) -> Int"
+    },
+    {
+      "name": "func destinationImageDescriptor(forSourceImages: [MPSImage], sourceStates: [MPSState]?) -> MPSImageDescriptor"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, primaryImage: MPSImage, secondaryImage: MPSImage, destinationState: AutoreleasingUnsafeMutablePointer<MPSState?>, destinationStateIsTemporary: Bool) -> MPSImage"
+    },
+    {
+      "name": "func encodeBatch(commandBuffer: MTLCommandBuffer, primaryImages: [MPSImage], secondaryImages: [MPSImage]) -> [MPSImage]"
+    },
+    {
+      "name": "func encodeBatch(commandBuffer: MTLCommandBuffer, primaryImages: [MPSImage], secondaryImages: [MPSImage], destinationImages: [MPSImage])"
+    },
+    {
+      "name": "func encodeBatch(commandBuffer: MTLCommandBuffer, primaryImages: [MPSImage], secondaryImages: [MPSImage], destinationStates: AutoreleasingUnsafeMutablePointer<NSArray?>, destinationStateIsTemporary: Bool) -> [MPSImage]"
+    },
+    {
+      "name": "func encodingStorageSize(primaryImage: MPSImage, secondaryImage: MPSImage, sourceStates: [MPSState]?, destinationImage: MPSImage?) -> Int"
+    },
+    {
+      "name": "func isResultStateReusedAcrossBatch() -> Bool"
+    },
+    {
+      "name": "func resultState(primaryImage: MPSImage, secondaryImage: MPSImage, sourceStates: [MPSState]?, destinationImage: MPSImage) -> MPSState?"
+    },
+    {
+      "name": "func resultStateBatch(primaryImage: [MPSImage], secondaryImage: [MPSImage], sourceStates: [[MPSState]]?, destinationImage: [MPSImage]) -> [MPSState]?"
+    },
+    {
+      "name": "func temporaryResultState(commandBuffer: MTLCommandBuffer, primaryImage: MPSImage, secondaryImage: MPSImage, sourceStates: [MPSState]?, destinationImage: MPSImage) -> MPSState?"
+    },
+    {
+      "name": "func temporaryResultStateBatch(commandBuffer: MTLCommandBuffer, primaryImage: [MPSImage], secondaryImage: [MPSImage], sourceStates: [[MPSState]]?, destinationImage: [MPSImage]) -> [MPSState]?"
+    }
+  ],
+  "declaration": "class MPSCNNBinaryKernel : MPSKernel",
+  "inheritsFrom": [
+    "MPSKernel"
+  ]
+}

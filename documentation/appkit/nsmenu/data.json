@@ -1,0 +1,235 @@
+{
+  "path": "/documentation/appkit/nsmenu",
+  "type": "Class",
+  "name": "NSMenu",
+  "desc": "An object that manages an app’s menus.",
+  "items": [
+    {
+      "name": "class func menuBarVisible() -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the menu bar is visible."
+    },
+    {
+      "name": "class func setMenuBarVisible(Bool)",
+      "desc": "Sets whether the menu bar is visible and selectable by the user."
+    },
+    {
+      "name": "var menuBarHeight: CGFloat",
+      "desc": "The menu bar height for the main menu in pixels."
+    },
+    {
+      "name": "init(title: String)",
+      "desc": "Initializes and returns a menu having the specified title and with autoenabling of menu items turned on."
+    },
+    {
+      "name": "func insertItem(NSMenuItem, at: Int)",
+      "desc": "Inserts a menu item into the menu at a specific location."
+    },
+    {
+      "name": "func insertItem(withTitle: String, action: Selector?, keyEquivalent: String, at: Int) -> NSMenuItem",
+      "desc": "Creates and adds a menu item at a specified location in the menu."
+    },
+    {
+      "name": "func addItem(NSMenuItem)",
+      "desc": "Adds a menu item to the end of the menu."
+    },
+    {
+      "name": "func addItem(withTitle: String, action: Selector?, keyEquivalent: String) -> NSMenuItem",
+      "desc": "Creates a new menu item and adds it to the end of the menu."
+    },
+    {
+      "name": "func removeItem(NSMenuItem)",
+      "desc": "Removes a menu item from the menu."
+    },
+    {
+      "name": "func removeItem(at: Int)",
+      "desc": "Removes the menu item at a specified location in the menu."
+    },
+    {
+      "name": "func itemChanged(NSMenuItem)",
+      "desc": "Invoked when a menu item is modified visually (for example, its title changes)."
+    },
+    {
+      "name": "func removeAllItems()",
+      "desc": "Removes all the menu items in the menu."
+    },
+    {
+      "name": "func item(withTag: Int) -> NSMenuItem?",
+      "desc": "Returns the first menu item in the menu with the specified tag."
+    },
+    {
+      "name": "func item(withTitle: String) -> NSMenuItem?",
+      "desc": "Returns the first menu item in the menu with a specified title."
+    },
+    {
+      "name": "func item(at: Int) -> NSMenuItem?",
+      "desc": "Returns the menu item at a specific location of the menu."
+    },
+    {
+      "name": "var numberOfItems: Int",
+      "desc": "The number of menu items in the menu, including separator items."
+    },
+    {
+      "name": "var items: [NSMenuItem]",
+      "desc": "An array containing the menu items in the menu."
+    },
+    {
+      "name": "func index(of: NSMenuItem) -> Int",
+      "desc": "Returns the index identifying the location of a specified menu item in the menu."
+    },
+    {
+      "name": "func indexOfItem(withTitle: String) -> Int",
+      "desc": "Returns the index of the first menu item in the menu that has a specified title."
+    },
+    {
+      "name": "func indexOfItem(withTag: Int) -> Int",
+      "desc": "Returns the index of the first menu item in the menu identified by a tag."
+    },
+    {
+      "name": "func indexOfItem(withTarget: Any?, andAction: Selector?) -> Int",
+      "desc": "Returns the index of the first menu item in the menu that has a specified action and target."
+    },
+    {
+      "name": "func indexOfItem(withRepresentedObject: Any?) -> Int",
+      "desc": "Returns the index of the first menu item in the menu that has a given represented object."
+    },
+    {
+      "name": "func indexOfItem(withSubmenu: NSMenu?) -> Int",
+      "desc": "Returns the index of the menu item in the menu with the given submenu."
+    },
+    {
+      "name": "func setSubmenu(NSMenu?, for: NSMenuItem)",
+      "desc": "Assigns a menu to be a submenu of the menu controlled by a given menu item."
+    },
+    {
+      "name": "func submenuAction(Any?)",
+      "desc": "The action method assigned to menu items that open submenus."
+    },
+    {
+      "name": "var supermenu: NSMenu?",
+      "desc": "The parent menu that contains the menu as a submenu."
+    },
+    {
+      "name": "var autoenablesItems: Bool",
+      "desc": "Indicates whether the menu automatically enables and disables its menu items."
+    },
+    {
+      "name": "func update()",
+      "desc": "Enables or disables the menu items of the menu based on the NSMenuValidation informal protocol and sizes the menu to fit its current menu items if necessary."
+    },
+    {
+      "name": "var font: NSFont!",
+      "desc": "The font of the menu and its submenus."
+    },
+    {
+      "name": "func performKeyEquivalent(with: NSEvent) -> Bool",
+      "desc": "Performs the action for the menu item that corresponds to the given key equivalent."
+    },
+    {
+      "name": "func performActionForItem(at: Int)",
+      "desc": "Causes the application to send the action message of a specified menu item to its target."
+    },
+    {
+      "name": "var title: String",
+      "desc": "The title of the menu."
+    },
+    {
+      "name": "var minimumWidth: CGFloat",
+      "desc": "The minimum width of the menu in screen coordinates."
+    },
+    {
+      "name": "var size: NSSize",
+      "desc": "The size of the menu in screen coordinates"
+    },
+    {
+      "name": "var propertiesToUpdate: NSMenu.Properties",
+      "desc": "The available properties for the menu."
+    },
+    {
+      "name": "var allowsContextMenuPlugIns: Bool",
+      "desc": "Indicates whether the pop-up menu allows appending of contextual menu plug-in items."
+    },
+    {
+      "name": "class func popUpContextMenu(NSMenu, with: NSEvent, for: NSView)",
+      "desc": "Displays a contextual menu over a view for an event."
+    },
+    {
+      "name": "class func popUpContextMenu(NSMenu, with: NSEvent, for: NSView, with: NSFont?)",
+      "desc": "Displays a contextual menu over a view for an event using a specified font."
+    },
+    {
+      "name": "func popUp(positioning: NSMenuItem?, at: NSPoint, in: NSView?) -> Bool",
+      "desc": "Pops up the menu at the specified location."
+    },
+    {
+      "name": "var showsStateColumn: Bool",
+      "desc": "Indicates whether the menu displays the state column."
+    },
+    {
+      "name": "var highlightedItem: NSMenuItem?",
+      "desc": "Indicates the currently highlighted item in the menu."
+    },
+    {
+      "name": "var userInterfaceLayoutDirection: NSUserInterfaceLayoutDirection",
+      "desc": "Configures the layout direction of menu items in the menu."
+    },
+    {
+      "name": "var delegate: NSMenuDelegate?",
+      "desc": "The delegate of the menu."
+    },
+    {
+      "name": "func cancelTracking()",
+      "desc": "Dismisses the menu and ends all menu tracking."
+    },
+    {
+      "name": "func cancelTrackingWithoutAnimation()",
+      "desc": "Dismisses the menu and ends all menu tracking without displaying the associated animation."
+    },
+    {
+      "name": "struct NSMenu.Properties",
+      "desc": "These constants are used as a bitmask for specifying a set of menu or menu item properties, and are contained by the propertiesToUpdate property."
+    },
+    {
+      "name": "class let didAddItemNotification: NSNotification.Name",
+      "desc": "Posted after a menu item is added to the menu."
+    },
+    {
+      "name": "class let didChangeItemNotification: NSNotification.Name",
+      "desc": "Posted after a menu item in the menu changes appearance."
+    },
+    {
+      "name": "class let didBeginTrackingNotification: NSNotification.Name",
+      "desc": "Posted when menu tracking begins."
+    },
+    {
+      "name": "class let didEndTrackingNotification: NSNotification.Name",
+      "desc": "Posted when menu tracking ends, even if no action is sent."
+    },
+    {
+      "name": "class let didRemoveItemNotification: NSNotification.Name",
+      "desc": "Posted after a menu item is removed from the menu."
+    },
+    {
+      "name": "class let didSendActionNotification: NSNotification.Name",
+      "desc": "Posted just after the application dispatches a menu item’s action method to the menu item’s target."
+    },
+    {
+      "name": "class let willSendActionNotification: NSNotification.Name",
+      "desc": "Posted just before the application dispatches a menu item’s action method to the menu item’s target."
+    },
+    {
+      "name": "init(coder: NSCoder)"
+    }
+  ],
+  "declaration": "class NSMenu : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSAccessibilityProtocol",
+    "NSAccessibilityElementProtocol",
+    "NSAppearanceCustomization",
+    "NSCoding",
+    "NSCopying",
+    "NSUserInterfaceItemIdentification"
+  ]
+}

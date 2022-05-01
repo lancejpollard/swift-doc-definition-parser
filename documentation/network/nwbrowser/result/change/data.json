@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/network/nwbrowser/result/change",
+  "type": "Enumeration",
+  "name": "NWBrowser.Result.Change",
+  "desc": "Ways in which discovered services can change between specific results.",
+  "items": [
+    {
+      "name": "case identical",
+      "desc": "No change was detected for the result."
+    },
+    {
+      "name": "case added(NWBrowser.Result)",
+      "desc": "A new result was discovered."
+    },
+    {
+      "name": "case removed(NWBrowser.Result)",
+      "desc": "A previously discovered result was removed."
+    },
+    {
+      "name": "case changed(old: NWBrowser.Result, new: NWBrowser.Result, flags: NWBrowser.Result.Change.Flags)",
+      "desc": "A result changed properties but was not removed."
+    },
+    {
+      "name": "struct NWBrowser.Result.Change.Flags",
+      "desc": "Flags providing details about a change in a discovered service."
+    },
+    {
+      "name": "init(between: NWBrowser.Result?, NWBrowser.Result?)",
+      "desc": "Initializes a change between two results."
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "static func == (NWBrowser.Result.Change, NWBrowser.Result.Change) -> Bool"
+    },
+    {
+      "name": "static func != (NWBrowser.Result.Change, NWBrowser.Result.Change) -> Bool"
+    },
+    {
+      "name": "var hashValue: Int"
+    }
+  ],
+  "declaration": "enum NWBrowser.Result.Change",
+  "conformsTo": [
+    "Hashable"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "path": "/documentation/cfnetwork/cfhostclientcontext",
+  "type": "Structure",
+  "name": "CFHostClientContext",
+  "desc": "A structure containing user-defined data and callbacks for CFHost objects.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Initializes an object that contains user-defined data and callbacks for a network host."
+    },
+    {
+      "name": "init(version: CFIndex, info: UnsafeMutableRawPointer?, retain: CFAllocatorRetainCallBack?, release: CFAllocatorReleaseCallBack?, copyDescription: CFAllocatorCopyDescriptionCallBack?)",
+      "desc": "Initializes an object that contains user-defined data and callbacks for a network host using the specified values."
+    },
+    {
+      "name": "var copyDescription: CFAllocatorCopyDescriptionCallBack?",
+      "desc": "The callback used to create a descriptive string representation of the info pointer (or the data pointed to by the info pointer) for debugging purposes. This callback is called by the CFCopyDescription(_:) function."
+    },
+    {
+      "name": "var info: UnsafeMutableRawPointer?",
+      "desc": "An arbitrary pointer to allocated memory containing user-defined data that can be associated with the host and that is passed to the callbacks."
+    },
+    {
+      "name": "var release: CFAllocatorReleaseCallBack?",
+      "desc": "The callback used to remove a retain previously added for the host on the info pointer."
+    },
+    {
+      "name": "var retain: CFAllocatorRetainCallBack?",
+      "desc": "The callback used to add a retain for the host on the info pointer for the life of the host, and may be used for temporary references the host needs to take. This callback returns the actual info pointer to store in the host, almost always just the pointer passed as the parameter."
+    },
+    {
+      "name": "var version: CFIndex",
+      "desc": "The version number of the structure type passed as a parameter to the host client function. The only valid version number is 0."
+    }
+  ],
+  "declaration": "struct CFHostClientContext"
+}

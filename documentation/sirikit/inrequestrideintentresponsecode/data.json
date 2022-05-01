@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/sirikit/inrequestrideintentresponsecode",
+  "type": "Enumeration",
+  "name": "INRequestRideIntentResponseCode",
+  "desc": "Constants indicating the state of the response.",
+  "items": [
+    {
+      "name": "case unspecified",
+      "desc": "There is no specified response code."
+    },
+    {
+      "name": "case ready",
+      "desc": "You are ready to handle the intent."
+    },
+    {
+      "name": "case success",
+      "desc": "You successfully handled the intent."
+    },
+    {
+      "name": "case failure",
+      "desc": "You were unable to book the ride."
+    },
+    {
+      "name": "case failureRequiringAppLaunch",
+      "desc": "The user must launch your app to book the ride."
+    },
+    {
+      "name": "case failureRequiringAppLaunchMustVerifyCredentials",
+      "desc": "The user must launch your app and verify their credentials to continue."
+    },
+    {
+      "name": "case failureRequiringAppLaunchNoServiceInArea",
+      "desc": "You do not provide rides in the area requested by the user."
+    },
+    {
+      "name": "case failureRequiringAppLaunchServiceTemporarilyUnavailable",
+      "desc": "Your service is temporarily unavailable."
+    },
+    {
+      "name": "case failureRequiringAppLaunchPreviousRideNeedsCompletion",
+      "desc": "An existing ride is currently in progress and the app can’t book a new ride."
+    },
+    {
+      "name": "case failureRequiringAppLaunchRideScheduledTooFar",
+      "desc": "The scheduled ride is out of the ride area and requires the user to open the app to fix the problem."
+    }
+  ],
+  "declaration": "enum INRequestRideIntentResponseCode : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

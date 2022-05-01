@@ -1,0 +1,31 @@
+{
+  "path": "/documentation/groupactivities/groupsession/state-swift.enum",
+  "type": "Enumeration",
+  "name": "GroupSession.State",
+  "desc": "The possible states of a session.",
+  "items": [
+    {
+      "name": "case waiting",
+      "desc": "An idle state that indicates the session is waiting for the app to join the activity."
+    },
+    {
+      "name": "case joined",
+      "desc": "An active state that indicates the session allows data synchronization between devices."
+    },
+    {
+      "name": "case invalidated(reason: Error)",
+      "desc": "A state that indicates the session is no longer valid and can’t be used for shared activities."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    },
+    {
+      "name": "static func == (GroupSession<ActivityType>.State, GroupSession<ActivityType>.State) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    }
+  ],
+  "declaration": "enum State",
+  "conformsTo": [
+    "Equatable"
+  ]
+}

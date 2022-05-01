@@ -1,0 +1,39 @@
+{
+  "path": "/documentation/network/nwlistener/state",
+  "type": "Enumeration",
+  "name": "NWListener.State",
+  "desc": "States indicating whether a listener is able to accept incoming connections.",
+  "items": [
+    {
+      "name": "case setup",
+      "desc": "The listener has been initialized but not started."
+    },
+    {
+      "name": "case waiting(NWError)",
+      "desc": "The listener is waiting for a network to become available."
+    },
+    {
+      "name": "case ready",
+      "desc": "The listener is running and able to receive incoming connections."
+    },
+    {
+      "name": "case failed(NWError)",
+      "desc": "The listener has encountered a fatal error."
+    },
+    {
+      "name": "case cancelled",
+      "desc": "The listener has been canceled."
+    },
+    {
+      "name": "static func != (NWListener.State, NWListener.State) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (NWListener.State, NWListener.State) -> Bool"
+    }
+  ],
+  "declaration": "enum NWListener.State",
+  "conformsTo": [
+    "Equatable"
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "path": "/documentation/system/filedescriptor/openoptions",
+  "type": "Structure",
+  "name": "FileDescriptor.OpenOptions",
+  "desc": "Options that specify behavior for a newly-opened file.",
+  "items": [
+    {
+      "name": "static var append: FileDescriptor.OpenOptions",
+      "desc": "Indicates that each write operation appends to the file."
+    },
+    {
+      "name": "static var closeOnExec: FileDescriptor.OpenOptions",
+      "desc": "Indicates that executing a program closes the file."
+    },
+    {
+      "name": "static var create: FileDescriptor.OpenOptions",
+      "desc": "Indicates that opening the file creates the file if it doesn’t exist."
+    },
+    {
+      "name": "static var eventOnly: FileDescriptor.OpenOptions",
+      "desc": "Indicates that opening the file monitors a file for changes."
+    },
+    {
+      "name": "static var exclusiveCreate: FileDescriptor.OpenOptions",
+      "desc": "Indicates that opening the file creates the file, expecting that it doesn’t exist."
+    },
+    {
+      "name": "static var exclusiveLock: FileDescriptor.OpenOptions",
+      "desc": "Indicates that opening the file atomically obtains an exclusive lock."
+    },
+    {
+      "name": "static var noFollow: FileDescriptor.OpenOptions",
+      "desc": "Indicates that opening the file doesn’t follow symlinks."
+    },
+    {
+      "name": "static var nonBlocking: FileDescriptor.OpenOptions",
+      "desc": "Indicates that opening the file doesn’t wait for the file or device to become available."
+    },
+    {
+      "name": "static var sharedLock: FileDescriptor.OpenOptions",
+      "desc": "Indicates that opening the file atomically obtains a shared lock on the file."
+    },
+    {
+      "name": "static var symlink: FileDescriptor.OpenOptions",
+      "desc": "Indicates that opening the file opens symbolic links instead of following them."
+    },
+    {
+      "name": "static var truncate: FileDescriptor.OpenOptions",
+      "desc": "Indicates that opening the file truncates the file if it exists."
+    },
+    {
+      "name": "init(rawValue: CInt)",
+      "desc": "Create a strongly-typed options value from raw C options."
+    },
+    {
+      "name": "var rawValue: CInt",
+      "desc": "The raw C options."
+    },
+    {
+      "name": "typealias RawValue",
+      "desc": "The raw type that can be used to represent all values of the conforming type."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual representation of the open options."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual representation of the open options, suitable for debugging."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": ""
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": ""
+    },
+    {
+      "name": "init(from: Decoder) throws",
+      "desc": "Creates a new instance by decoding from the given decoder, when the type’s RawValue is Int32."
+    },
+    {
+      "name": "func encode(to: Encoder) throws",
+      "desc": "Encodes this value into the given encoder, when the type’s RawValue is Int32."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates an empty option set."
+    },
+    {
+      "name": "init<S>(S)",
+      "desc": "Creates a new set from a finite sequence of items."
+    },
+    {
+      "name": "init(arrayLiteral: Self.Element...)",
+      "desc": "Creates a set containing the elements of the given array literal."
+    },
+    {
+      "name": "func contains(Self) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a given element is a member of the option set."
+    },
+    {
+      "name": "func formIntersection(Self)",
+      "desc": "Removes all elements of this option set that are not also present in the given set."
+    },
+    {
+      "name": "func formIntersection(Self)",
+      "desc": "Removes all elements of this option set that are not also present in the given set."
+    },
+    {
+      "name": "func formSymmetricDifference(Self)",
+      "desc": "Replaces this set with a new set containing all elements contained in either this set or the given set, but not in both."
+    },
+    {
+      "name": "func formUnion(Self)",
+      "desc": "Inserts the elements of another set into this option set."
+    },
+    {
+      "name": "func insert(Self.Element) -> (inserted: Bool, memberAfterInsert: Self.Element)",
+      "desc": "Adds the given element to the option set if it is not already a member."
+    },
+    {
+      "name": "func intersection(Self) -> Self",
+      "desc": "Returns a new option set with only the elements contained in both this set and the given set."
+    },
+    {
+      "name": "func isDisjoint(with: Self) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the set has no members in common with the given set."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value that indicates whether the set has no elements."
+    },
+    {
+      "name": "func isStrictSubset(of: Self) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether this set is a strict subset of the given set."
+    },
+    {
+      "name": "func isStrictSuperset(of: Self) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether this set is a strict superset of the given set."
+    },
+    {
+      "name": "func isSubset(of: Self) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the set is a subset of another set."
+    },
+    {
+      "name": "func isSuperset(of: Self) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the set is a superset of the given set."
+    },
+    {
+      "name": "func remove(Self.Element) -> Self.Element?",
+      "desc": "Removes the given element and all elements subsumed by it."
+    },
+    {
+      "name": "func subtract(Self)",
+      "desc": "Removes the elements of the given set from this set."
+    },
+    {
+      "name": "func subtracting(Self) -> Self",
+      "desc": "Returns a new set containing the elements of this set that do not occur in the given set."
+    },
+    {
+      "name": "func symmetricDifference(Self) -> Self",
+      "desc": "Returns a new option set with the elements contained in this set or in the given set, but not in both."
+    },
+    {
+      "name": "func union(Self) -> Self",
+      "desc": "Returns a new option set of the elements contained in this set, in the given set, or in both."
+    },
+    {
+      "name": "func update(with: Self.Element) -> Self.Element?",
+      "desc": "Inserts the given element into the set."
+    },
+    {
+      "name": "typealias ArrayLiteralElement",
+      "desc": "The type of the elements of an array literal."
+    },
+    {
+      "name": "typealias Element",
+      "desc": "The element type of the option set."
+    },
+    {
+      "name": "static var directory: FileDescriptor.OpenOptions",
+      "desc": "Indicates that opening the file only succeeds if the file is a directory."
+    }
+  ],
+  "declaration": "@frozen struct OpenOptions",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "ExpressibleByArrayLiteral",
+    "Hashable",
+    "OptionSet",
+    "RawRepresentable",
+    "Sendable",
+    "SetAlgebra"
+  ]
+}

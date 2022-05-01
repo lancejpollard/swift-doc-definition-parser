@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/metal/mtlstoreaction",
+  "type": "Enumeration",
+  "name": "MTLStoreAction",
+  "desc": "Types of actions performed for an attachment at the end of a rendering pass.",
+  "items": [
+    {
+      "name": "case dontCare",
+      "desc": "The GPU has permission to discard the rendered contents of the attachment at the end of the render pass, replacing them with arbitrary data."
+    },
+    {
+      "name": "case store",
+      "desc": "The GPU stores the rendered contents to the texture."
+    },
+    {
+      "name": "case multisampleResolve",
+      "desc": "The GPU resolves the multisampled data to one sample per pixel and stores the data to the resolve texture, discarding the multisample data afterwards."
+    },
+    {
+      "name": "case storeAndMultisampleResolve",
+      "desc": "The GPU stores the multisample data to the multisample texture, resolves the data to a sample per pixel, and stores the data to the resolve texture."
+    },
+    {
+      "name": "case unknown",
+      "desc": "The app will specify the store action when it encodes the render pass."
+    },
+    {
+      "name": "case customSampleDepthStore",
+      "desc": "The GPU stores depth data in a sample-position–agnostic representation."
+    }
+  ],
+  "declaration": "enum MTLStoreAction : UInt, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "path": "/documentation/arkit/arcamera",
+  "type": "Class",
+  "name": "ARCamera",
+  "desc": "Information about the camera position and imaging characteristics for a given frame.",
+  "items": [
+    {
+      "name": "var trackingState: ARCamera.TrackingState",
+      "desc": "The general quality of position tracking available when the camera captured a frame."
+    },
+    {
+      "name": "enum ARCamera.TrackingState",
+      "desc": "Values for position tracking quality, with possible causes when tracking quality is limited."
+    },
+    {
+      "name": "var transform: simd_float4x4",
+      "desc": "The position and orientation of the camera in world coordinate space."
+    },
+    {
+      "name": "var eulerAngles: simd_float3",
+      "desc": "The orientation of the camera, expressed as roll, pitch, and yaw values."
+    },
+    {
+      "name": "var imageResolution: CGSize",
+      "desc": "The width and height, in pixels, of the captured camera image."
+    },
+    {
+      "name": "var intrinsics: simd_float3x3",
+      "desc": "A matrix that converts between the 2D camera plane and 3D world coordinate space."
+    },
+    {
+      "name": "var projectionMatrix: simd_float4x4",
+      "desc": "A transform matrix appropriate for rendering 3D content to match the image captured by the camera."
+    },
+    {
+      "name": "func projectionMatrix(for: UIInterfaceOrientation, viewportSize: CGSize, zNear: CGFloat, zFar: CGFloat) -> simd_float4x4",
+      "desc": "Returns a transform matrix appropriate for rendering 3D content to match the image captured by the camera, using the specified parameters."
+    },
+    {
+      "name": "func viewMatrix(for: UIInterfaceOrientation) -> simd_float4x4",
+      "desc": "Returns a transform matrix for converting from world space to camera space."
+    },
+    {
+      "name": "func projectPoint(simd_float3, orientation: UIInterfaceOrientation, viewportSize: CGSize) -> CGPoint",
+      "desc": "Returns the projection of a point from the 3D world space detected by ARKit into the 2D space of a view rendering the scene."
+    },
+    {
+      "name": "func unprojectPoint(CGPoint, ontoPlane: simd_float4x4, orientation: UIInterfaceOrientation, viewportSize: CGSize) -> simd_float3?",
+      "desc": "Returns the projection of a point from the 2D space of a view rendering the scene onto a plane in the 3D world space detected by ARKit."
+    },
+    {
+      "name": "var exposureDuration: TimeInterval",
+      "desc": "A value you use to effect motion blur when rendering your app's virtual content."
+    },
+    {
+      "name": "var exposureOffset: Float",
+      "desc": "A value you supply to your custom renderer to light your scene."
+    }
+  ],
+  "declaration": "class ARCamera : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

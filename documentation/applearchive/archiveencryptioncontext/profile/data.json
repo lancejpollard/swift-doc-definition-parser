@@ -1,0 +1,66 @@
+{
+  "path": "/documentation/applearchive/archiveencryptioncontext/profile",
+  "type": "Structure",
+  "name": "ArchiveEncryptionContext.Profile",
+  "desc": "Constants that describe the profile of an encryption context.",
+  "items": [
+    {
+      "name": "static let hkdf_sha256_hmac__none__ecdsa_p256: ArchiveEncryptionContext.Profile",
+      "desc": "A constant that represents no encryption, authenticated container, signature is mandatory."
+    },
+    {
+      "name": "static let hkdf_sha256_aesctr_hmac__symmetric__none: ArchiveEncryptionContext.Profile",
+      "desc": "A constant that represents unsigned, symmetric key encryption."
+    },
+    {
+      "name": "static let hkdf_sha256_aesctr_hmac__symmetric__ecdsa_p256: ArchiveEncryptionContext.Profile",
+      "desc": "A constant that represents signed symmetric key encryption, signed with encrypted signature."
+    },
+    {
+      "name": "static let hkdf_sha256_aesctr_hmac__ecdhe_p256__none: ArchiveEncryptionContext.Profile",
+      "desc": "A constant that represents unsigned ECDHE public key encryption, where only the recipient with the corresponding private key can unlock the container."
+    },
+    {
+      "name": "static let hkdf_sha256_aesctr_hmac__ecdhe_p256__ecdsa_p256: ArchiveEncryptionContext.Profile",
+      "desc": "A constant that represents signed ECDHE public key encryption, where only the recipient with the corresponding private key can unlock the container."
+    },
+    {
+      "name": "static let hkdf_sha256_aesctr_hmac__scrypt__none: ArchiveEncryptionContext.Profile",
+      "desc": "A constant that represents unsigned password encryption using scrypt."
+    },
+    {
+      "name": "init(rawValue: UInt32)",
+      "desc": "Creates a new instance with the specified raw value."
+    },
+    {
+      "name": "typealias ArchiveEncryptionContext.Profile.RawValue",
+      "desc": "The raw type that can be used to represent all values of the conforming type."
+    },
+    {
+      "name": "var rawValue: UInt32",
+      "desc": "The corresponding value of the raw type."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual representation of this structure."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "static func != (ArchiveEncryptionContext.Profile, ArchiveEncryptionContext.Profile) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are not equal."
+    }
+  ],
+  "declaration": "struct Profile",
+  "conformsTo": [
+    "CustomStringConvertible",
+    "Equatable",
+    "Hashable",
+    "RawRepresentable"
+  ]
+}

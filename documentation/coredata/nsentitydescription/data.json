@@ -1,0 +1,105 @@
+{
+  "path": "/documentation/coredata/nsentitydescription",
+  "type": "Class",
+  "name": "NSEntityDescription",
+  "desc": "A description of an entity in Core Data.",
+  "items": [
+    {
+      "name": "var name: String?",
+      "desc": "The entity name of the receiver."
+    },
+    {
+      "name": "var managedObjectModel: NSManagedObjectModel",
+      "desc": "The managed object model with which the receiver is associated."
+    },
+    {
+      "name": "var managedObjectClassName: String!",
+      "desc": "The name of the class that represents the receiver’s entity."
+    },
+    {
+      "name": "var renamingIdentifier: String?",
+      "desc": "The renaming identifier for the receiver."
+    },
+    {
+      "name": "var isAbstract: Bool",
+      "desc": "A Boolean value that indicates whether the receiver represents an abstract entity."
+    },
+    {
+      "name": "var userInfo: [AnyHashable : Any]?",
+      "desc": "The user info dictionary of the receiver."
+    },
+    {
+      "name": "var coreSpotlightDisplayNameExpression: NSExpression",
+      "desc": "The expression that computes the CoreSpotlight display name for instances of the entity."
+    },
+    {
+      "name": "var subentitiesByName: [String : NSEntityDescription]",
+      "desc": "A dictionary containing the receiver’s sub-entities."
+    },
+    {
+      "name": "var subentities: [NSEntityDescription]",
+      "desc": "An array containing the sub-entities of the receiver."
+    },
+    {
+      "name": "var superentity: NSEntityDescription?",
+      "desc": "The super-entity of the receiver."
+    },
+    {
+      "name": "func isKindOf(entity: NSEntityDescription) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the receiver is a sub-entity of another given entity."
+    },
+    {
+      "name": "var propertiesByName: [String : NSPropertyDescription]",
+      "desc": "A dictionary containing the properties of the receiver."
+    },
+    {
+      "name": "var properties: [NSPropertyDescription]",
+      "desc": "An array containing the properties of the receiver."
+    },
+    {
+      "name": "var attributesByName: [String : NSAttributeDescription]",
+      "desc": "The attributes of the receiver in a dictionary."
+    },
+    {
+      "name": "var relationshipsByName: [String : NSRelationshipDescription]",
+      "desc": "The relationships of the receiver in a dictionary."
+    },
+    {
+      "name": "func relationships(forDestination: NSEntityDescription) -> [NSRelationshipDescription]",
+      "desc": "Returns an array containing the relationships of the receiver where the entity description of the relationship is a given entity."
+    },
+    {
+      "name": "class func entity(forEntityName: String, in: NSManagedObjectContext) -> NSEntityDescription?",
+      "desc": "Returns the entity with the specified name from the managed object model associated with the specified managed object context’s persistent store coordinator."
+    },
+    {
+      "name": "class func insertNewObject(forEntityName: String, into: NSManagedObjectContext) -> NSManagedObject",
+      "desc": "Creates, configures, and returns an instance of the class for the entity with a given name."
+    },
+    {
+      "name": "var versionHash: Data",
+      "desc": "The version hash for the receiver."
+    },
+    {
+      "name": "var versionHashModifier: String?",
+      "desc": "The version hash modifier for the receiver."
+    },
+    {
+      "name": "var indexes: [NSFetchIndexDescription]",
+      "desc": "An array of fetch index descriptions for the entity."
+    },
+    {
+      "name": "var uniquenessConstraints: [[Any]]",
+      "desc": "An array of arrays that contains one or more attributes with a value that must be unique over the instances of that entity."
+    }
+  ],
+  "declaration": "class NSEntityDescription : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "NSCopying",
+    "NSFastEnumeration"
+  ]
+}

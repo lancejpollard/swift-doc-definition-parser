@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/cryptokit/cryptokitasn1error",
+  "type": "Enumeration",
+  "name": "CryptoKitASN1Error",
+  "desc": "Errors from decoding ASN.1 content.",
+  "items": [
+    {
+      "name": "case invalidASN1IntegerEncoding",
+      "desc": "An ASN.1 integer doesn’t use the minimum number of bytes for its encoding."
+    },
+    {
+      "name": "case invalidASN1Object",
+      "desc": "The format of the parsed ASN.1 object doesn’t match the format required for the data type being decoded."
+    },
+    {
+      "name": "case invalidFieldIdentifier",
+      "desc": "The ASN.1 tag for this field is invalid or unsupported."
+    },
+    {
+      "name": "case invalidObjectIdentifier",
+      "desc": "An ASN.1 object identifier is invalid."
+    },
+    {
+      "name": "case invalidPEMDocument",
+      "desc": "The string doesn’t parse as a PEM document."
+    },
+    {
+      "name": "case truncatedASN1Field",
+      "desc": "An ASN.1 field is truncated."
+    },
+    {
+      "name": "case unexpectedFieldType",
+      "desc": "The ASN.1 tag for the parsed field doesn’t match the required format."
+    },
+    {
+      "name": "case unsupportedFieldLength",
+      "desc": "The encoding used for the field length is unsupported."
+    },
+    {
+      "name": "var localizedDescription: String",
+      "desc": "A localized description of the error suitable for display to the user."
+    },
+    {
+      "name": "static func != (CryptoKitASN1Error, CryptoKitASN1Error) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two errors aren’t equal."
+    },
+    {
+      "name": "static func == (CryptoKitASN1Error, CryptoKitASN1Error) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two errors are equal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the error by feeding them into the given hasher."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value of the error."
+    }
+  ],
+  "declaration": "enum CryptoKitASN1Error",
+  "conformsTo": [
+    "Error"
+  ]
+}

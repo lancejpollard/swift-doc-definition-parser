@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/metal/mtlprimitivetype",
+  "type": "Enumeration",
+  "name": "MTLPrimitiveType",
+  "desc": "The geometric primitive type for drawing commands.",
+  "items": [
+    {
+      "name": "case point",
+      "desc": "Rasterize a point at each vertex. The vertex shader must provide [[point_size]], or the point size is undefined."
+    },
+    {
+      "name": "case line",
+      "desc": "Rasterize a line between each separate pair of vertices, resulting in a series of unconnected lines. If there are an odd number of vertices, the last vertex is ignored."
+    },
+    {
+      "name": "case lineStrip",
+      "desc": "Rasterize a line between each pair of adjacent vertices, resulting in a series of connected lines (also called a polyline)."
+    },
+    {
+      "name": "case triangle",
+      "desc": "For every separate set of three vertices, rasterize a triangle. If the number of vertices is not a multiple of three, either one or two vertices is ignored."
+    },
+    {
+      "name": "case triangleStrip",
+      "desc": "For every three adjacent vertices, rasterize a triangle."
+    }
+  ],
+  "declaration": "enum MTLPrimitiveType : UInt, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

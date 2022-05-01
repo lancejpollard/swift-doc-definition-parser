@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/arkit/arskviewdelegate",
+  "type": "Protocol",
+  "name": "ARSKViewDelegate",
+  "desc": "Methods you can implement to mediate the automatic synchronization of SpriteKit content with an AR session.",
+  "items": [
+    {
+      "name": "func view(ARSKView, nodeFor: ARAnchor) -> SKNode?",
+      "desc": "Asks the delegate to provide a SpriteKit node corresponding to a newly added anchor."
+    },
+    {
+      "name": "func view(ARSKView, didAdd: SKNode, for: ARAnchor)",
+      "desc": "Tells the delegate that a SpriteKit node corresponding to a new AR anchor has been added to the scene."
+    },
+    {
+      "name": "func view(ARSKView, willUpdate: SKNode, for: ARAnchor)",
+      "desc": "Tells the delegate that a SpriteKit node's properties will be updated to match the current state of its corresponding anchor."
+    },
+    {
+      "name": "func view(ARSKView, didUpdate: SKNode, for: ARAnchor)",
+      "desc": "Tells the delegate that a SpriteKit node's properties have been updated to match the current state of its corresponding anchor."
+    },
+    {
+      "name": "func view(ARSKView, didRemove: SKNode, for: ARAnchor)",
+      "desc": "Tells the delegate that the SpriteKit node corresponding to an AR anchor has been removed from the scene."
+    }
+  ],
+  "declaration": "protocol ARSKViewDelegate",
+  "inheritsFrom": [
+    "ARSessionObserver",
+    "SKViewDelegate"
+  ]
+}

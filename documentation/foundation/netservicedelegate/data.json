@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/foundation/netservicedelegate",
+  "type": "Protocol",
+  "name": "NetServiceDelegate",
+  "desc": "The interface a net service uses to inform its delegate about the state of the service it offers.",
+  "items": [
+    {
+      "name": "func netServiceWillPublish(NetService)",
+      "desc": "Notifies the delegate that the network is ready to publish the service."
+    },
+    {
+      "name": "func netService(NetService, didNotPublish: [String : NSNumber])",
+      "desc": "Notifies the delegate that a service could not be published."
+    },
+    {
+      "name": "func netServiceDidPublish(NetService)",
+      "desc": "Notifies the delegate that a service was successfully published."
+    },
+    {
+      "name": "func netServiceWillResolve(NetService)",
+      "desc": "Notifies the delegate that the network is ready to resolve the service."
+    },
+    {
+      "name": "func netService(NetService, didNotResolve: [String : NSNumber])",
+      "desc": "Informs the delegate that an error occurred during resolution of a given service."
+    },
+    {
+      "name": "func netServiceDidResolveAddress(NetService)",
+      "desc": "Informs the delegate that the address for a given service was resolved."
+    },
+    {
+      "name": "func netService(NetService, didUpdateTXTRecord: Data)",
+      "desc": "Notifies the delegate that the TXT record for a given service has been updated."
+    },
+    {
+      "name": "func netServiceDidStop(NetService)",
+      "desc": "Informs the delegate that a publish() or resolve(withTimeout:) request was stopped."
+    },
+    {
+      "name": "func netService(NetService, didAcceptConnectionWith: InputStream, outputStream: OutputStream)",
+      "desc": "Called when a client connects to a service managed by Bonjour."
+    }
+  ],
+  "declaration": "protocol NetServiceDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

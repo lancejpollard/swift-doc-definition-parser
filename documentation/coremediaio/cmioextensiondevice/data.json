@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/coremediaio/cmioextensiondevice",
+  "type": "Class",
+  "name": "CMIOExtensionDevice",
+  "desc": "An object that represents a physical or virtual device.",
+  "items": [
+    {
+      "name": "init(localizedName: String, deviceID: UUID, source: CMIOExtensionDeviceSource)",
+      "desc": "Creates an extension device."
+    },
+    {
+      "name": "init(localizedName: String, deviceID: UUID, legacyDeviceID: String?, source: CMIOExtensionDeviceSource)",
+      "desc": "Creates an extension device with an optional legacy device identifier."
+    },
+    {
+      "name": "var localizedName: String",
+      "desc": "A localized name for a device."
+    },
+    {
+      "name": "var deviceID: UUID",
+      "desc": "A universally unique device identifier value."
+    },
+    {
+      "name": "var legacyDeviceID: String",
+      "desc": "A legacy device identifier."
+    },
+    {
+      "name": "var streams: [CMIOExtensionStream]",
+      "desc": "An array of media streams attached to this device."
+    },
+    {
+      "name": "func addStream(CMIOExtensionStream)",
+      "desc": "Adds a stream to a device."
+    },
+    {
+      "name": "func removeStream(CMIOExtensionStream)",
+      "desc": "Removes a stream from the device."
+    },
+    {
+      "name": "var source: CMIOExtensionDeviceSource?",
+      "desc": "A source object for a device."
+    },
+    {
+      "name": "func notifyPropertiesChanged([CMIOExtensionProperty : CMIOExtensionPropertyState<AnyObject>])",
+      "desc": "Notifies clients of property changes."
+    }
+  ],
+  "declaration": "class CMIOExtensionDevice : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

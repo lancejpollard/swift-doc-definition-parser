@@ -1,0 +1,123 @@
+{
+  "path": "/documentation/uikit/uiscreen",
+  "type": "Class",
+  "name": "UIScreen",
+  "desc": "An object that defines the properties associated with a hardware-based display.",
+  "items": [
+    {
+      "name": "class var main: UIScreen",
+      "desc": "Returns the screen object representing the device’s screen."
+    },
+    {
+      "name": "class var screens: [UIScreen]",
+      "desc": "Returns an array containing all of the screens attached to the device."
+    },
+    {
+      "name": "var mirrored: UIScreen?",
+      "desc": "The screen being mirrored by an external display."
+    },
+    {
+      "name": "var coordinateSpace: UICoordinateSpace",
+      "desc": "The current coordinate space of the screen."
+    },
+    {
+      "name": "var fixedCoordinateSpace: UICoordinateSpace",
+      "desc": "The fixed coordinate space of the screen."
+    },
+    {
+      "name": "var bounds: CGRect",
+      "desc": "The bounding rectangle of the screen, measured in points."
+    },
+    {
+      "name": "var nativeBounds: CGRect",
+      "desc": "The bounding rectangle of the physical screen, measured in pixels."
+    },
+    {
+      "name": "var nativeScale: CGFloat",
+      "desc": "The native scale factor for the physical screen."
+    },
+    {
+      "name": "var scale: CGFloat",
+      "desc": "The natural scale factor associated with the screen."
+    },
+    {
+      "name": "var currentMode: UIScreenMode?",
+      "desc": "The current screen mode associated with the screen."
+    },
+    {
+      "name": "var preferredMode: UIScreenMode?",
+      "desc": "The preferred display mode for the screen."
+    },
+    {
+      "name": "var availableModes: [UIScreenMode]",
+      "desc": "The display modes that can be associated with the screen."
+    },
+    {
+      "name": "func displayLink(withTarget: Any, selector: Selector) -> CADisplayLink?",
+      "desc": "Returns a display link object for the current screen."
+    },
+    {
+      "name": "var maximumFramesPerSecond: Int",
+      "desc": "The maximum number of frames per second a screen can render."
+    },
+    {
+      "name": "var brightness: CGFloat",
+      "desc": "The brightness level of the screen."
+    },
+    {
+      "name": "var wantsSoftwareDimming: Bool",
+      "desc": "A Boolean value that indicates whether the screen may be dimmed lower than the hardware is normally capable of by emulating it in software."
+    },
+    {
+      "name": "var overscanCompensationInsets: UIEdgeInsets",
+      "desc": "The edge inset values needed to avoid clipping the rectangle."
+    },
+    {
+      "name": "var overscanCompensation: UIScreen.OverscanCompensation",
+      "desc": "For an external screen, this property sets the desired technique to compensate for overscan."
+    },
+    {
+      "name": "enum UIScreen.OverscanCompensation",
+      "desc": "Describes different techniques for compensating for pixel loss at the edge of the screen."
+    },
+    {
+      "name": "func snapshotView(afterScreenUpdates: Bool) -> UIView",
+      "desc": "Returns a snapshot view based on the current screen contents."
+    },
+    {
+      "name": "var isCaptured: Bool",
+      "desc": "A Boolean value that indicates whether the system is actively cloning the screen to another destination."
+    },
+    {
+      "name": "var calibratedLatency: CFTimeInterval",
+      "desc": "The user-calibrated latency for the current screen."
+    },
+    {
+      "name": "class let didConnectNotification: NSNotification.Name",
+      "desc": "This notification is posted when a new screen is connected to the device."
+    },
+    {
+      "name": "class let didDisconnectNotification: NSNotification.Name",
+      "desc": "This notification is posted when a screen is disconnected from the device."
+    },
+    {
+      "name": "class let modeDidChangeNotification: NSNotification.Name",
+      "desc": "This notification is posted when the current mode of a screen changes."
+    },
+    {
+      "name": "class let brightnessDidChangeNotification: NSNotification.Name",
+      "desc": "This notification is posted when the brightness of a screen changes."
+    },
+    {
+      "name": "class let capturedDidChangeNotification: NSNotification.Name",
+      "desc": "A notification sent when the captured status of the screen changes."
+    }
+  ],
+  "declaration": "@MainActor class UIScreen : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "UITraitEnvironment"
+  ]
+}

@@ -1,0 +1,288 @@
+{
+  "path": "/documentation/avfoundation/avassettrack",
+  "type": "Class",
+  "name": "AVAssetTrack",
+  "desc": "An object that models a track of media that an asset contains.",
+  "items": [
+    {
+      "name": "var trackID: CMPersistentTrackID",
+      "desc": "The persistent unique identifier for this track."
+    },
+    {
+      "name": "var mediaType: AVMediaType",
+      "desc": "The type of media that a track presents."
+    },
+    {
+      "name": "var asset: AVAsset?",
+      "desc": "The asset object that contains this track."
+    },
+    {
+      "name": "static var formatDescriptions: AVAsyncProperty<Root, [CMFormatDescription]>",
+      "desc": "The format descriptions of the media samples that a track references."
+    },
+    {
+      "name": "static var isPlayable: AVAsyncProperty<Root, Bool>",
+      "desc": "A Boolean value that indicates whether the track is playable in the current environment."
+    },
+    {
+      "name": "static var isDecodable: AVAsyncProperty<Root, Bool>",
+      "desc": "A Boolean value that indicates whether the track is decodable in the current environment."
+    },
+    {
+      "name": "static var isEnabled: AVAsyncProperty<Root, Bool>",
+      "desc": "A Boolean value that indicates whether the track’s container enables it."
+    },
+    {
+      "name": "static var isSelfContained: AVAsyncProperty<Root, Bool>",
+      "desc": "A Boolean value that indicates whether the track references sample data only within its container file."
+    },
+    {
+      "name": "static var totalSampleDataLength: AVAsyncProperty<Root, Int64>",
+      "desc": "The total number of bytes of sample data the track requires."
+    },
+    {
+      "name": "static var mediaCharacteristics: AVAsyncProperty<Root, [AVMediaCharacteristic]>",
+      "desc": "The media characteristics for the track."
+    },
+    {
+      "name": "static var timeRange: AVAsyncProperty<Root, CMTimeRange>",
+      "desc": "The time range of the track within the overall timeline of the asset."
+    },
+    {
+      "name": "static var naturalTimeScale: AVAsyncProperty<Root, CMTimeScale>",
+      "desc": "The natural time scale of the media that a track references."
+    },
+    {
+      "name": "static var estimatedDataRate: AVAsyncProperty<Root, Float>",
+      "desc": "The estimated data rate, in bits per second, of the media that the track references."
+    },
+    {
+      "name": "static var languageCode: AVAsyncProperty<Root, String?>",
+      "desc": "The language code of the track."
+    },
+    {
+      "name": "static var extendedLanguageTag: AVAsyncProperty<Root, String?>",
+      "desc": "The language tag of the track."
+    },
+    {
+      "name": "static var naturalSize: AVAsyncProperty<Root, CGSize>",
+      "desc": "The natural dimensions of the media data that the track references."
+    },
+    {
+      "name": "static var preferredTransform: AVAsyncProperty<Root, CGAffineTransform>",
+      "desc": "The track’s transform preference to apply to its visual content during presentation or processing."
+    },
+    {
+      "name": "static var preferredVolume: AVAsyncProperty<Root, Float>",
+      "desc": "The track’s volume preference for playing its audible media."
+    },
+    {
+      "name": "static var hasAudioSampleDependencies: AVAsyncProperty<Root, Bool>",
+      "desc": "A Boolean value that indicates whether the track has sample dependencies."
+    },
+    {
+      "name": "static var nominalFrameRate: AVAsyncProperty<Root, Float>",
+      "desc": "The frame rate of the track, in frames per second."
+    },
+    {
+      "name": "static var minFrameDuration: AVAsyncProperty<Root, CMTime>",
+      "desc": "The minimum duration of the track’s frames."
+    },
+    {
+      "name": "static var requiresFrameReordering: AVAsyncProperty<Root, Bool>",
+      "desc": "A Boolean value that indicates whether samples in the track may have different presentation and decode timestamps."
+    },
+    {
+      "name": "static var metadata: AVAsyncProperty<Root, [AVMetadataItem]>",
+      "desc": "An array of metadata items for all metadata identifiers that have a value."
+    },
+    {
+      "name": "static var commonMetadata: AVAsyncProperty<Root, [AVMetadataItem]>",
+      "desc": "An array of metadata items for all common metadata keys that have a value."
+    },
+    {
+      "name": "static var availableMetadataFormats: AVAsyncProperty<Root, [AVMetadataFormat]>",
+      "desc": "An array of metadata formats available for the track."
+    },
+    {
+      "name": "func loadMetadata(for: AVMetadataFormat, completionHandler: ([AVMetadataItem]?, Error?) -> Void)",
+      "desc": "Loads metadata items that a track contains for the specified format."
+    },
+    {
+      "name": "static var segments: AVAsyncProperty<Root, [AVAssetTrackSegment]>",
+      "desc": "The time mappings from the track’s media samples to its timeline."
+    },
+    {
+      "name": "func loadSegment(forTrackTime: CMTime, completionHandler: (AVAssetTrackSegment?, Error?) -> Void)",
+      "desc": "Loads a segment with a target time range that contains, or is closest to, the specified track time."
+    },
+    {
+      "name": "func loadSamplePresentationTime(forTrackTime: CMTime, completionHandler: (CMTime, Error?) -> Void)",
+      "desc": "Loads a sample presentation time that maps to the specified track time."
+    },
+    {
+      "name": "class AVAssetTrackSegment",
+      "desc": "An object that represents a segment of an asset track that consists of a time mapping from the source to the asset track timeline."
+    },
+    {
+      "name": "static var availableTrackAssociationTypes: AVAsyncProperty<Root, [AVAssetTrack.AssociationType]>",
+      "desc": "An array of association types that the track uses to associate with other tracks."
+    },
+    {
+      "name": "func loadAssociatedTracks(ofType: AVAssetTrack.AssociationType, completionHandler: ([AVAssetTrack]?, Error?) -> Void)",
+      "desc": "Loads associated tracks that have the specified association type."
+    },
+    {
+      "name": "struct AVAssetTrack.AssociationType",
+      "desc": "Constants that define track association types."
+    },
+    {
+      "name": "var formatDescriptions: [Any]",
+      "desc": "The format descriptions of the media samples that a track references."
+    },
+    {
+      "name": "var isPlayable: Bool",
+      "desc": "A Boolean value that indicates whether the track is playable in the current environment."
+    },
+    {
+      "name": "var isDecodable: Bool",
+      "desc": "A Boolean value that indicates whether the track is decodable in the current environment."
+    },
+    {
+      "name": "var isEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the track’s container enables it."
+    },
+    {
+      "name": "var isSelfContained: Bool",
+      "desc": "A Boolean value that indicates whether this track references sample data only within its container file."
+    },
+    {
+      "name": "var totalSampleDataLength: Int64",
+      "desc": "The total number of bytes of sample data the track requires."
+    },
+    {
+      "name": "func hasMediaCharacteristic(AVMediaCharacteristic) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the track references media with the specified media characteristic."
+    },
+    {
+      "name": "var timeRange: CMTimeRange",
+      "desc": "The time range of the track within the overall timeline of the asset."
+    },
+    {
+      "name": "var naturalTimeScale: CMTimeScale",
+      "desc": "The natural time scale of the media that a track references."
+    },
+    {
+      "name": "var estimatedDataRate: Float",
+      "desc": "The estimated data rate, in bits per second, of the media that the track references."
+    },
+    {
+      "name": "var languageCode: String?",
+      "desc": "The language code of the track."
+    },
+    {
+      "name": "var extendedLanguageTag: String?",
+      "desc": "The language tag of the track."
+    },
+    {
+      "name": "var naturalSize: CGSize",
+      "desc": "The natural dimensions of the media data that the track references."
+    },
+    {
+      "name": "var preferredTransform: CGAffineTransform",
+      "desc": "The track’s transform preference to apply to its visual content during presentation or processing."
+    },
+    {
+      "name": "var preferredVolume: Float",
+      "desc": "The track’s volume preference for playing its audible media."
+    },
+    {
+      "name": "var hasAudioSampleDependencies: Bool",
+      "desc": "A Boolean value that indicates whether the track has sample dependencies."
+    },
+    {
+      "name": "var nominalFrameRate: Float",
+      "desc": "The frame rate of the track, in frames per second."
+    },
+    {
+      "name": "var minFrameDuration: CMTime",
+      "desc": "The minimum duration of the track’s frames."
+    },
+    {
+      "name": "var requiresFrameReordering: Bool",
+      "desc": "A Boolean value that indicates whether samples in the track may have different presentation and decode timestamps."
+    },
+    {
+      "name": "var metadata: [AVMetadataItem]",
+      "desc": "An array of metadata items for all metadata identifiers that have a value."
+    },
+    {
+      "name": "var commonMetadata: [AVMetadataItem]",
+      "desc": "An array of metadata items for all common metadata keys that have a value."
+    },
+    {
+      "name": "var availableMetadataFormats: [AVMetadataFormat]",
+      "desc": "An array of metadata formats available for the track."
+    },
+    {
+      "name": "func metadata(forFormat: AVMetadataFormat) -> [AVMetadataItem]",
+      "desc": "Returns metadata items that a track contains for the specified format."
+    },
+    {
+      "name": "var segments: [AVAssetTrackSegment]",
+      "desc": "The time mappings from the track’s media samples to its timeline."
+    },
+    {
+      "name": "func segment(forTrackTime: CMTime) -> AVAssetTrackSegment?",
+      "desc": "Retrieves a segment with a target time range that contains, or is closest to, the specified track time."
+    },
+    {
+      "name": "func samplePresentationTime(forTrackTime: CMTime) -> CMTime",
+      "desc": "Maps the specified track time through the appropriate time mapping and returns the resulting sample presentation time."
+    },
+    {
+      "name": "class AVAssetTrackSegment",
+      "desc": "An object that represents a segment of an asset track that consists of a time mapping from the source to the asset track timeline."
+    },
+    {
+      "name": "var availableTrackAssociationTypes: [AVAssetTrack.AssociationType]",
+      "desc": "An array of association types that the track uses to associate with other tracks."
+    },
+    {
+      "name": "func associatedTracks(ofType: AVAssetTrack.AssociationType) -> [AVAssetTrack]",
+      "desc": "Returns an array of associated tracks that have the specified association type."
+    },
+    {
+      "name": "struct AVAssetTrack.AssociationType",
+      "desc": "Constants that define track association types."
+    },
+    {
+      "name": "var canProvideSampleCursors: Bool",
+      "desc": "A Boolean value that indicates whether the track can provide instances of sample cursors to traverse its media samples and discover information."
+    },
+    {
+      "name": "func makeSampleCursor(presentationTimeStamp: CMTime) -> AVSampleCursor?",
+      "desc": "Creates a sample cursor and positions it at or near the specified presentation timestamp."
+    },
+    {
+      "name": "func makeSampleCursorAtFirstSampleInDecodeOrder() -> AVSampleCursor?",
+      "desc": "Creates a sample cursor and positions it at the track’s first media sample in decode order."
+    },
+    {
+      "name": "func makeSampleCursorAtLastSampleInDecodeOrder() -> AVSampleCursor?",
+      "desc": "Creates a sample cursor and positions it at the track’s last media sample in decode order."
+    },
+    {
+      "name": "class AVSampleCursor",
+      "desc": "An object that provides information about the media sample at the cursor’s current position."
+    }
+  ],
+  "declaration": "class AVAssetTrack : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "AVAsynchronousKeyValueLoading",
+    "NSCopying"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/foundation/nspredicate",
+  "type": "Class",
+  "name": "NSPredicate",
+  "desc": "A definition of logical conditions for constraining a search for a fetch or for in-memory filtering.",
+  "items": [
+    {
+      "name": "init(format: String, argumentArray: [Any]?)",
+      "desc": "Creates a predicate by substituting the values in a specified array into a format string and parsing the result."
+    },
+    {
+      "name": "init(format: String, arguments: CVaListPointer)",
+      "desc": "Creates a predicate by substituting the values in an argument list into a format string and parsing the result."
+    },
+    {
+      "name": "init(format: String, CVarArg...)",
+      "desc": "Creates a predicate by substituting the values in an argument list into a format string and parsing the result."
+    },
+    {
+      "name": "func withSubstitutionVariables([String : Any]) -> Self",
+      "desc": "Returns a copy of the predicate and substitutes the predicates variables with specified values from a specified substitution variables dictionary."
+    },
+    {
+      "name": "init(value: Bool)",
+      "desc": "Creates and returns a predicate that always evaluates to a specified Boolean value."
+    },
+    {
+      "name": "init(block: (Any?, [String : Any]?) -> Bool)",
+      "desc": "Creates a predicate that evaluates using a specified block object and bindings dictionary."
+    },
+    {
+      "name": "init?(fromMetadataQueryString: String)",
+      "desc": "Creates a predicate with a metadata query string."
+    },
+    {
+      "name": "func evaluate(with: Any?) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the specified object matches the conditions that the predicate specifies."
+    },
+    {
+      "name": "func evaluate(with: Any?, substitutionVariables: [String : Any]?) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the specified object matches the conditions that the predicate specifies after substituting in the values from a specified variables dictionary."
+    },
+    {
+      "name": "func allowEvaluation()",
+      "desc": "Forces a securely decoded predicate to allow evaluation."
+    },
+    {
+      "name": "var predicateFormat: String",
+      "desc": "The predicate's format string."
+    }
+  ],
+  "declaration": "class NSPredicate : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

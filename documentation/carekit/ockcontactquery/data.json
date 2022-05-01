@@ -1,0 +1,89 @@
+{
+  "path": "/documentation/carekit/ockcontactquery",
+  "type": "Structure",
+  "name": "OCKContactQuery",
+  "desc": "A query that limits which contacts the store returns, when you are fetching.",
+  "items": [
+    {
+      "name": "init(for: Date)",
+      "desc": "Creates a new contact query with a specific date."
+    },
+    {
+      "name": "init(dateInterval: DateInterval)",
+      "desc": "Creates a new contact query with a specific date interval."
+    },
+    {
+      "name": "init(OCKAnyContactQuery)",
+      "desc": "Creates a new contact query from a specific query."
+    },
+    {
+      "name": "var carePlanIDs: [String]",
+      "desc": "An array of care plan identifiers you can use to match contacts in the query-returned results."
+    },
+    {
+      "name": "var carePlanVersionIDs: [OCKLocalVersionID]",
+      "desc": "An array of care plan version identifiers you can use to match contacts in the query-returned results."
+    },
+    {
+      "name": "var carePlanRemoteIDs: [String]",
+      "desc": "An array of care plan remote identifiers you can use to match contacts in the query-returned results."
+    },
+    {
+      "name": "var limit: Int?",
+      "desc": "The maximum number of results the query returns."
+    },
+    {
+      "name": "var dateInterval: DateInterval?",
+      "desc": "A date interval for entities that match the query."
+    },
+    {
+      "name": "var groupIdentifiers: [String]",
+      "desc": "An array of group identifers that match the query."
+    },
+    {
+      "name": "var ids: [String]",
+      "desc": "An array of unique identifiers that belong to the entities that match the query."
+    },
+    {
+      "name": "var offset: Int",
+      "desc": "An integer value that indicates how much to offset the query results, and which can be used to paginate results."
+    },
+    {
+      "name": "var remoteIDs: [String]",
+      "desc": "An array of remote IDs for entities that match the query."
+    },
+    {
+      "name": "var tags: [String]",
+      "desc": "An array of tags by which to limit the query results."
+    },
+    {
+      "name": "var versionIDs: [OCKLocalVersionID]",
+      "desc": "An array of version identifiers by which to limit the query results."
+    },
+    {
+      "name": "var sortDescriptors: [OCKContactSortDescriptor]",
+      "desc": "The order in which you want to sort the query results."
+    },
+    {
+      "name": "enum OCKContactSortDescriptor",
+      "desc": "The values that indicate how you want to sort queried contacts."
+    },
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(OCKEntityQuery)"
+    },
+    {
+      "name": "init(id: String)"
+    },
+    {
+      "name": "static func != (OCKContactQuery, OCKContactQuery) -> Bool"
+    }
+  ],
+  "declaration": "struct OCKContactQuery",
+  "conformsTo": [
+    "Equatable",
+    "OCKAnyContactQuery"
+  ]
+}

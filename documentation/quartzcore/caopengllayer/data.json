@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/quartzcore/caopengllayer",
+  "type": "Class",
+  "name": "CAOpenGLLayer",
+  "desc": "A layer that provides a layer suitable for rendering OpenGL content.",
+  "items": [
+    {
+      "name": "var colorspace: CGColorSpace?",
+      "desc": "The layer's colorspace in Core Graphics."
+    },
+    {
+      "name": "var wantsExtendedDynamicRangeContent: Bool",
+      "desc": "Tells whether or not the layer supports content with extended dynamic range."
+    },
+    {
+      "name": "var isAsynchronous: Bool",
+      "desc": "Determines when the contents of the layer are updated."
+    },
+    {
+      "name": "func canDraw(inCGLContext: CGLContextObj, pixelFormat: CGLPixelFormatObj, forLayerTime: CFTimeInterval, displayTime: UnsafePointer<CVTimeStamp>?) -> Bool",
+      "desc": "Returns whether the receiver should draw OpenGL content for the specified time."
+    },
+    {
+      "name": "func draw(inCGLContext: CGLContextObj, pixelFormat: CGLPixelFormatObj, forLayerTime: CFTimeInterval, displayTime: UnsafePointer<CVTimeStamp>?)",
+      "desc": "Draws the OpenGL content for the specified time."
+    },
+    {
+      "name": "func copyCGLPixelFormat(forDisplayMask: UInt32) -> CGLPixelFormatObj",
+      "desc": "Returns the OpenGL pixel format suitable for rendering to the set of displays specified by the display mask."
+    },
+    {
+      "name": "func releaseCGLPixelFormat(CGLPixelFormatObj)",
+      "desc": "Releases the specified OpenGL pixel format object."
+    },
+    {
+      "name": "func copyCGLContext(forPixelFormat: CGLPixelFormatObj) -> CGLContextObj",
+      "desc": "Returns the rendering context the receiver requires for the specified pixel format."
+    },
+    {
+      "name": "func releaseCGLContext(CGLContextObj)",
+      "desc": "Releases the specified rendering context."
+    }
+  ],
+  "declaration": "class CAOpenGLLayer : CALayer",
+  "inheritsFrom": [
+    "CALayer"
+  ]
+}

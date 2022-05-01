@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/quartz/qccompositionrepository",
+  "type": "Class",
+  "name": "QCCompositionRepository",
+  "desc": "The QCCompositionRepository class represents a system-wide centralized repository of built-in and installed Quartz Composer compositions (/Library/Compositions and ~/Library/Compositions). The QCCompositionRepository class cannot be subclassed.",
+  "items": [
+    {
+      "name": "class func shared() -> QCCompositionRepository!",
+      "desc": "Returns the shared instance of the composition repository."
+    },
+    {
+      "name": "func composition(withIdentifier: String!) -> QCComposition!",
+      "desc": "Returns the composition that corresponds to the identifier."
+    },
+    {
+      "name": "func compositions(withProtocols: [Any]!, andAttributes: [AnyHashable : Any]!) -> [Any]!",
+      "desc": "Returns an array of compositions that match a set of criteria."
+    },
+    {
+      "name": "func allCompositions() -> [Any]!",
+      "desc": "Returns an array that contains all compositions currently in the composition repository."
+    },
+    {
+      "name": "static let QCCompositionRepositoryDidUpdate: NSNotification.Name",
+      "desc": "Posted whenever the list of compositions in the composition repository is updated."
+    }
+  ],
+  "declaration": "class QCCompositionRepository : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

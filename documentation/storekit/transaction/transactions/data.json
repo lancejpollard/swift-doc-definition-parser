@@ -1,0 +1,100 @@
+{
+  "path": "/documentation/storekit/transaction/transactions",
+  "type": "Structure",
+  "name": "Transaction.Transactions",
+  "desc": "An asynchronous sequence of transactions.",
+  "items": [
+    {
+      "name": "func makeAsyncIterator() -> Transaction.Transactions.AsyncIterator",
+      "desc": "Creates the asynchronous iterator that produces elements of this asynchronous sequence."
+    },
+    {
+      "name": "struct Transaction.Transactions.AsyncIterator",
+      "desc": "The asynchronous iterator that produces elements of the asynchronous sequence."
+    },
+    {
+      "name": "typealias Transaction.Transactions.Element",
+      "desc": "The type of element traversed by the iterator."
+    },
+    {
+      "name": "func allSatisfy((VerificationResult<Transaction>) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether all elements produced by the asynchronous sequence satisfies the given predicate."
+    },
+    {
+      "name": "func contains(VerificationResult<Transaction>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the asynchronous sequence contains the given element."
+    },
+    {
+      "name": "func contains(where: (VerificationResult<Transaction>) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the asynchronous sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func first(where: (VerificationResult<Transaction>) -> Bool) -> VerificationResult<Transaction>?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func max(by: (VerificationResult<Transaction>, VerificationResult<Transaction>) -> Bool) -> VerificationResult<Transaction>?",
+      "desc": "Returns the maximum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func min(by: (VerificationResult<Transaction>, VerificationResult<Transaction>) -> Bool) -> VerificationResult<Transaction>?",
+      "desc": "Returns the minimum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func prefix(Int) -> AsyncPrefixSequence<Transaction.Transactions>",
+      "desc": "Returns an asynchronous sequence, up to the specified maximum length, containing the initial elements of the base asynchronous sequence."
+    },
+    {
+      "name": "func prefix(while: (VerificationResult<Transaction>) -> Bool) -> AsyncPrefixWhileSequence<Transaction.Transactions>",
+      "desc": "Returns an asynchronous sequence, containing the initial, consecutive elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func drop(while: (VerificationResult<Transaction>) -> Bool) -> AsyncDropWhileSequence<Transaction.Transactions>",
+      "desc": "Omits elements from the base asynchronous sequence until a given closure returns false, after which it passes through all remaining elements."
+    },
+    {
+      "name": "func dropFirst(Int) -> AsyncDropFirstSequence<Transaction.Transactions>",
+      "desc": "Omits a specified number of elements from the base asynchronous sequence, then passes through all remaining elements."
+    },
+    {
+      "name": "func filter((VerificationResult<Transaction>) -> Bool) -> AsyncFilterSequence<Transaction.Transactions>",
+      "desc": "Creates an asynchronous sequence that contains, in order, the elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((VerificationResult<Transaction>) -> ElementOfResult?) -> AsyncThrowingCompactMapSequence<Transaction.Transactions, ElementOfResult>",
+      "desc": "Creates an asynchronous sequence that maps an error-throwing closure over the base sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((VerificationResult<Transaction>) -> ElementOfResult?) -> AsyncCompactMapSequence<Transaction.Transactions, ElementOfResult>",
+      "desc": "Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((VerificationResult<Transaction>) -> SegmentOfResult) -> AsyncThrowingFlatMapSequence<Transaction.Transactions, SegmentOfResult>",
+      "desc": "Creates an asynchronous sequence that concatenates the results of calling the given error-throwing transformation with each element of this sequence."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((VerificationResult<Transaction>) -> SegmentOfResult) -> AsyncFlatMapSequence<Transaction.Transactions, SegmentOfResult>",
+      "desc": "Creates an asynchronous sequence that concatenates the results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func map<Transformed>((VerificationResult<Transaction>) -> Transformed) -> AsyncThrowingMapSequence<Transaction.Transactions, Transformed>",
+      "desc": "Creates an asynchronous sequence that maps the given error-throwing closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "func map<Transformed>((VerificationResult<Transaction>) -> Transformed) -> AsyncMapSequence<Transaction.Transactions, Transformed>",
+      "desc": "Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, VerificationResult<Transaction>) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, VerificationResult<Transaction>) -> Void) -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure, given a mutable initial value."
+    }
+  ],
+  "declaration": "struct Transactions",
+  "conformsTo": [
+    "AsyncSequence"
+  ]
+}

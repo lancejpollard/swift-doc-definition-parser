@@ -1,0 +1,35 @@
+{
+  "path": "/documentation/arkit/arskview",
+  "type": "Class",
+  "name": "ARSKView",
+  "desc": "A view that blends virtual 2D content from SpriteKit into the 3D space of an augmented reality experience.",
+  "items": [
+    {
+      "name": "var session: ARSession",
+      "desc": "The AR session that manages motion tracking and camera image processing for the view's contents."
+    },
+    {
+      "name": "var delegate: ARSKViewDelegate?",
+      "desc": "An object you provide to mediate synchronization of the view's AR scene information with SpriteKit content."
+    },
+    {
+      "name": "protocol ARSKViewDelegate",
+      "desc": "Methods you can implement to mediate the automatic synchronization of SpriteKit content with an AR session."
+    },
+    {
+      "name": "func anchor(for: SKNode) -> ARAnchor?",
+      "desc": "Returns the AR anchor associated with the specified SpriteKit node, if any."
+    },
+    {
+      "name": "func node(for: ARAnchor) -> SKNode?",
+      "desc": "Returns the SpriteKit node associated with the specified AR anchor, if any."
+    }
+  ],
+  "declaration": "class ARSKView : SKView",
+  "inheritsFrom": [
+    "SKView"
+  ],
+  "conformsTo": [
+    "ARSessionProviding"
+  ]
+}

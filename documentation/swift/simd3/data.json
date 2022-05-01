@@ -1,0 +1,1218 @@
+{
+  "path": "/documentation/swift/simd3",
+  "type": "Generic Structure",
+  "name": "SIMD3",
+  "desc": "A vector of three scalar values.",
+  "items": [
+    {
+      "name": "typealias SIMD3.ArrayLiteralElement",
+      "desc": "The type of the elements of an array literal."
+    },
+    {
+      "name": "typealias SIMD3.MaskStorage",
+      "desc": "The mask type resulting from pointwise comparisons of this vector type."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates a vector with zero in all lanes."
+    },
+    {
+      "name": "init(SCNVector3)",
+      "desc": "Available when Scalar is Double."
+    },
+    {
+      "name": "init(SCNVector3)",
+      "desc": "Available when Scalar is Float."
+    },
+    {
+      "name": "init<S>(S)",
+      "desc": "Creates a vector from the given sequence."
+    },
+    {
+      "name": "init<Other>(SIMD3<Other>)",
+      "desc": "Creates a new vector from the given vector of floating-point values."
+    },
+    {
+      "name": "init<Other>(SIMD3<Other>)",
+      "desc": "Creates a new vector from the given vector of integers."
+    },
+    {
+      "name": "init(SIMD2<Scalar>, Scalar)",
+      "desc": "A three-element vector created by appending a scalar to a two-element vector."
+    },
+    {
+      "name": "init(Scalar, Scalar, Scalar)",
+      "desc": "Creates a new vector from the given elements."
+    },
+    {
+      "name": "init<Other>(SIMD3<Other>, rounding: FloatingPointRoundingRule)",
+      "desc": "Creates a new vector from the given vector, rounding the given vector’s of elements using the specified rounding rule."
+    },
+    {
+      "name": "init(arrayLiteral: Scalar...)",
+      "desc": "Creates a vector from the specified elements."
+    },
+    {
+      "name": "init<Other>(clamping: SIMD3<Other>)",
+      "desc": "Creates a new vector from the given vector, clamping the values of the given vector’s elements if necessary."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a new vector by decoding scalars from the given decoder."
+    },
+    {
+      "name": "init(repeating: Scalar)",
+      "desc": "A vector with the specified value in all lanes."
+    },
+    {
+      "name": "init<Other>(truncatingIfNeeded: SIMD3<Other>)",
+      "desc": "Creates a new vector from the given vector, truncating the bit patterns of the given vector’s elements if necessary."
+    },
+    {
+      "name": "init(x: Scalar, y: Scalar, z: Scalar)",
+      "desc": "Creates a new vector from the given elements."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual representation of this instance, suitable for debugging."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual description of the vector."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "var indices: Range<Int>",
+      "desc": "The valid indices for subscripting the vector."
+    },
+    {
+      "name": "var leadingZeroBitCount: SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "var nonzeroBitCount: SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "var scalarCount: Int",
+      "desc": "The number of scalars in the vector."
+    },
+    {
+      "name": "var trailingZeroBitCount: SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "var x: Scalar",
+      "desc": "The first element of the vector."
+    },
+    {
+      "name": "var y: Scalar",
+      "desc": "The second element of the vector."
+    },
+    {
+      "name": "var z: Scalar",
+      "desc": "The third element of the vector."
+    },
+    {
+      "name": "static var one: SIMD3<Scalar>",
+      "desc": "A vector with one in all lanes."
+    },
+    {
+      "name": "static var one: SIMD3<Scalar>",
+      "desc": "A vector with one in all lanes."
+    },
+    {
+      "name": "static var scalarCount: Int",
+      "desc": "The number of scalars, or elements, in a vector of this type."
+    },
+    {
+      "name": "static var zero: SIMD3<Scalar>",
+      "desc": "A vector with zero in all lanes."
+    },
+    {
+      "name": "static var zero: SIMD3<Scalar>",
+      "desc": "A vector with zero in all lanes."
+    },
+    {
+      "name": "func addProduct(Scalar, SIMD3<Scalar>)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "func addProduct(SIMD3<Scalar>, Scalar)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "func addProduct(SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "func addingProduct(Scalar, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "func addingProduct(SIMD3<Scalar>, Scalar) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "func addingProduct(SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "func clamp(lowerBound: SIMD3<Scalar>, upperBound: SIMD3<Scalar>)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "func clamp(lowerBound: SIMD3<Scalar>, upperBound: SIMD3<Scalar>)",
+      "desc": "Available when Scalar conforms to Comparable."
+    },
+    {
+      "name": "func clamped(lowerBound: SIMD3<Scalar>, upperBound: SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "func clamped(lowerBound: SIMD3<Scalar>, upperBound: SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to Comparable."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes the scalars of this vector into the given encoder in an unkeyed container."
+    },
+    {
+      "name": "func formSquareRoot()",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the elements of the vector using the given hasher."
+    },
+    {
+      "name": "func max() -> Scalar",
+      "desc": "The greatest scalar in the vector."
+    },
+    {
+      "name": "func max() -> Scalar",
+      "desc": "The greatest element in the vector."
+    },
+    {
+      "name": "func min() -> Scalar",
+      "desc": "The least scalar in the vector."
+    },
+    {
+      "name": "func min() -> Scalar",
+      "desc": "The least element in the vector."
+    },
+    {
+      "name": "func replace(with: Scalar, where: SIMDMask<SIMD3<Scalar.SIMDMaskScalar>>)",
+      "desc": "Replaces elements of this vector with other in the lanes where mask is true."
+    },
+    {
+      "name": "func replace(with: SIMD3<Scalar>, where: SIMDMask<SIMD3<Scalar.SIMDMaskScalar>>)",
+      "desc": "Replaces elements of this vector with elements of other in the lanes where mask is true."
+    },
+    {
+      "name": "func replacing(with: Scalar, where: SIMDMask<SIMD3<Scalar.SIMDMaskScalar>>) -> SIMD3<Scalar>",
+      "desc": "Returns a copy of this vector, with elements other in the lanes where mask is true."
+    },
+    {
+      "name": "func replacing(with: SIMD3<Scalar>, where: SIMDMask<SIMD3<Scalar.SIMDMaskScalar>>) -> SIMD3<Scalar>",
+      "desc": "Returns a copy of this vector, with elements replaced by elements of other in the lanes where mask is true."
+    },
+    {
+      "name": "func round(FloatingPointRoundingRule)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "func rounded(FloatingPointRoundingRule) -> SIMD3<Scalar>",
+      "desc": "A vector formed by rounding each lane of the source vector to an integral value according to the specified rounding rule."
+    },
+    {
+      "name": "func squareRoot() -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "func sum() -> Scalar",
+      "desc": "The sum of the scalars in the vector."
+    },
+    {
+      "name": "func wrappedSum() -> Scalar",
+      "desc": "Returns the sum of the scalars in the vector, computed with wrapping addition."
+    },
+    {
+      "name": "static func random(in: ClosedRange<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Returns a vector with random values from within the specified range in all lanes."
+    },
+    {
+      "name": "static func random(in: Range<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Returns a vector with random values from within the specified range in all lanes."
+    },
+    {
+      "name": "static func random<T>(in: ClosedRange<Scalar>, using: inout T) -> SIMD3<Scalar>",
+      "desc": "Returns a vector with random values from within the specified range in all lanes, using the given generator as a source for randomness."
+    },
+    {
+      "name": "static func random<T>(in: Range<Scalar>, using: inout T) -> SIMD3<Scalar>",
+      "desc": "Returns a vector with random values from within the specified range in all lanes, using the given generator as a source for randomness."
+    },
+    {
+      "name": "subscript(Int) -> Scalar",
+      "desc": "Accesses the scalar at the specified position."
+    },
+    {
+      "name": "subscript<Index>(SIMD2<Index>) -> SIMD2<Scalar>",
+      "desc": "Extracts the scalars at specified indices to form a SIMD2."
+    },
+    {
+      "name": "subscript<Index>(SIMD3<Index>) -> SIMD3<Scalar>",
+      "desc": "Extracts the scalars at specified indices to form a SIMD3."
+    },
+    {
+      "name": "subscript<Index>(SIMD4<Index>) -> SIMD4<Scalar>",
+      "desc": "Extracts the scalars at specified indices to form a SIMD4."
+    },
+    {
+      "name": "subscript<Index>(SIMD8<Index>) -> SIMD8<Scalar>",
+      "desc": "Extracts the scalars at specified indices to form a SIMD8."
+    },
+    {
+      "name": "subscript<Index>(SIMD16<Index>) -> SIMD16<Scalar>",
+      "desc": "Extracts the scalars at specified indices to form a SIMD16."
+    },
+    {
+      "name": "subscript<Index>(SIMD32<Index>) -> SIMD32<Scalar>",
+      "desc": "Extracts the scalars at specified indices to form a SIMD32."
+    },
+    {
+      "name": "subscript<Index>(SIMD64<Index>) -> SIMD64<Scalar>",
+      "desc": "Extracts the scalars at specified indices to form a SIMD64."
+    },
+    {
+      "name": "static func != (SIMD3<Scalar>, SIMD3<Scalar>) -> Bool"
+    },
+    {
+      "name": "static func % (Scalar, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func % (SIMD3<Scalar>, Scalar) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func % (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func %= (inout SIMD3<Scalar>, Scalar)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func %= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func & (Scalar, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func & (SIMD3<Scalar>, Scalar) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func & (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &* (Scalar, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &* (SIMD3<Scalar>, Scalar) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &* (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &* (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The pointwise wrapping product of two vectors."
+    },
+    {
+      "name": "static func &* (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The pointwise wrapping product of two vectors."
+    },
+    {
+      "name": "static func &* (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The pointwise wrapping product of two vectors."
+    },
+    {
+      "name": "static func &* (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The pointwise wrapping product of two vectors."
+    },
+    {
+      "name": "static func &* (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The pointwise wrapping product of two vectors."
+    },
+    {
+      "name": "static func &* (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The pointwise wrapping product of two vectors."
+    },
+    {
+      "name": "static func &* (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The pointwise wrapping product of two vectors."
+    },
+    {
+      "name": "static func &* (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The pointwise wrapping product of two vectors."
+    },
+    {
+      "name": "static func &* (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The pointwise wrapping product of two vectors."
+    },
+    {
+      "name": "static func &* (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The pointwise wrapping product of two vectors."
+    },
+    {
+      "name": "static func &*= (inout SIMD3<Scalar>, Scalar)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &*= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &*= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the pointwise wrapping product of two vectors."
+    },
+    {
+      "name": "static func &*= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the pointwise wrapping product of two vectors."
+    },
+    {
+      "name": "static func &*= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the pointwise wrapping product of two vectors."
+    },
+    {
+      "name": "static func &*= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the pointwise wrapping product of two vectors."
+    },
+    {
+      "name": "static func &*= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the pointwise wrapping product of two vectors."
+    },
+    {
+      "name": "static func &*= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the pointwise wrapping product of two vectors."
+    },
+    {
+      "name": "static func &*= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the pointwise wrapping product of two vectors."
+    },
+    {
+      "name": "static func &*= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the pointwise wrapping product of two vectors."
+    },
+    {
+      "name": "static func &*= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the pointwise wrapping product of two vectors."
+    },
+    {
+      "name": "static func &*= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the pointwise wrapping product of two vectors."
+    },
+    {
+      "name": "static func &+ (Scalar, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &+ (SIMD3<Scalar>, Scalar) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &+ (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &+ (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The wrapping sum of two vectors."
+    },
+    {
+      "name": "static func &+ (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The wrapping sum of two vectors."
+    },
+    {
+      "name": "static func &+ (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The wrapping sum of two vectors."
+    },
+    {
+      "name": "static func &+ (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The wrapping sum of two vectors."
+    },
+    {
+      "name": "static func &+ (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The wrapping sum of two vectors."
+    },
+    {
+      "name": "static func &+ (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The wrapping sum of two vectors."
+    },
+    {
+      "name": "static func &+ (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The wrapping sum of two vectors."
+    },
+    {
+      "name": "static func &+ (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The wrapping sum of two vectors."
+    },
+    {
+      "name": "static func &+ (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The wrapping sum of two vectors."
+    },
+    {
+      "name": "static func &+ (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The wrapping sum of two vectors."
+    },
+    {
+      "name": "static func &+= (inout SIMD3<Scalar>, Scalar)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &+= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &+= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the wrapping sum of the two vectors."
+    },
+    {
+      "name": "static func &+= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the wrapping sum of the two vectors."
+    },
+    {
+      "name": "static func &+= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the wrapping sum of the two vectors."
+    },
+    {
+      "name": "static func &+= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the wrapping sum of the two vectors."
+    },
+    {
+      "name": "static func &+= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the wrapping sum of the two vectors."
+    },
+    {
+      "name": "static func &+= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the wrapping sum of the two vectors."
+    },
+    {
+      "name": "static func &+= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the wrapping sum of the two vectors."
+    },
+    {
+      "name": "static func &+= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the wrapping sum of the two vectors."
+    },
+    {
+      "name": "static func &+= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the wrapping sum of the two vectors."
+    },
+    {
+      "name": "static func &+= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the wrapping sum of the two vectors."
+    },
+    {
+      "name": "static func &- (Scalar, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &- (SIMD3<Scalar>, Scalar) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &- (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &- (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The wrapping difference of two vectors."
+    },
+    {
+      "name": "static func &- (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The wrapping difference of two vectors."
+    },
+    {
+      "name": "static func &- (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The wrapping difference of two vectors."
+    },
+    {
+      "name": "static func &- (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The wrapping difference of two vectors."
+    },
+    {
+      "name": "static func &- (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The wrapping difference of two vectors."
+    },
+    {
+      "name": "static func &- (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The wrapping difference of two vectors."
+    },
+    {
+      "name": "static func &- (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The wrapping difference of two vectors."
+    },
+    {
+      "name": "static func &- (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The wrapping difference of two vectors."
+    },
+    {
+      "name": "static func &- (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The wrapping difference of two vectors."
+    },
+    {
+      "name": "static func &- (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "The wrapping difference of two vectors."
+    },
+    {
+      "name": "static func &-= (inout SIMD3<Scalar>, Scalar)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &-= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &-= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the wrapping difference of the two vectors."
+    },
+    {
+      "name": "static func &-= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the wrapping difference of the two vectors."
+    },
+    {
+      "name": "static func &-= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the wrapping difference of the two vectors."
+    },
+    {
+      "name": "static func &-= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the wrapping difference of the two vectors."
+    },
+    {
+      "name": "static func &-= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the wrapping difference of the two vectors."
+    },
+    {
+      "name": "static func &-= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the wrapping difference of the two vectors."
+    },
+    {
+      "name": "static func &-= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the wrapping difference of the two vectors."
+    },
+    {
+      "name": "static func &-= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the wrapping difference of the two vectors."
+    },
+    {
+      "name": "static func &-= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the wrapping difference of the two vectors."
+    },
+    {
+      "name": "static func &-= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Updates the left hand side with the wrapping difference of the two vectors."
+    },
+    {
+      "name": "static func &<< (Scalar, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &<< (SIMD3<Scalar>, Scalar) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &<< (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &<<= (inout SIMD3<Scalar>, Scalar)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &<<= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &= (inout SIMD3<Scalar>, Scalar)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &>> (Scalar, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &>> (SIMD3<Scalar>, Scalar) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &>> (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &>>= (inout SIMD3<Scalar>, Scalar)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func &>>= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func * (Scalar, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func * (SIMD3<Scalar>, Scalar) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func * (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func *= (inout SIMD3<Scalar>, Scalar)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func *= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func + (Scalar, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func + (SIMD3<Scalar>, Scalar) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func + (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func += (inout SIMD3<Scalar>, Scalar)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func += (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func - (SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func - (Scalar, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func - (SIMD3<Scalar>, Scalar) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func - (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func -= (inout SIMD3<Scalar>, Scalar)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func -= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func .!= (Scalar, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar.SIMDMaskScalar>>",
+      "desc": "Returns a vector mask with the result of a pointwise inequality comparison."
+    },
+    {
+      "name": "static func .!= (SIMD3<Scalar>, Scalar) -> SIMDMask<SIMD3<Scalar.SIMDMaskScalar>>",
+      "desc": "Returns a vector mask with the result of a pointwise inequality comparison."
+    },
+    {
+      "name": "static func .!= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar.SIMDMaskScalar>>",
+      "desc": "A vector mask with the result of a pointwise inequality comparison."
+    },
+    {
+      "name": "static func .!= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise inequality comparison."
+    },
+    {
+      "name": "static func .!= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise inequality comparison."
+    },
+    {
+      "name": "static func .!= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise inequality comparison."
+    },
+    {
+      "name": "static func .!= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise inequality comparison."
+    },
+    {
+      "name": "static func .!= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise inequality comparison."
+    },
+    {
+      "name": "static func .!= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise inequality comparison."
+    },
+    {
+      "name": "static func .!= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise inequality comparison."
+    },
+    {
+      "name": "static func .!= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise inequality comparison."
+    },
+    {
+      "name": "static func .!= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise inequality comparison."
+    },
+    {
+      "name": "static func .!= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise inequality comparison."
+    },
+    {
+      "name": "static func .!= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise inequality comparison."
+    },
+    {
+      "name": "static func .!= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise inequality comparison."
+    },
+    {
+      "name": "static func .!= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise inequality comparison."
+    },
+    {
+      "name": "static func .< (Scalar, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar.SIMDMaskScalar>>",
+      "desc": "Returns a vector mask with the result of a pointwise less than comparison."
+    },
+    {
+      "name": "static func .< (SIMD3<Scalar>, Scalar) -> SIMDMask<SIMD3<Scalar.SIMDMaskScalar>>",
+      "desc": "Returns a vector mask with the result of a pointwise less than comparison."
+    },
+    {
+      "name": "static func .< (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar.SIMDMaskScalar>>",
+      "desc": "Returns a vector mask with the result of a pointwise less than comparison."
+    },
+    {
+      "name": "static func .< (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than comparison."
+    },
+    {
+      "name": "static func .< (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than comparison."
+    },
+    {
+      "name": "static func .< (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than comparison."
+    },
+    {
+      "name": "static func .< (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than comparison."
+    },
+    {
+      "name": "static func .< (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than comparison."
+    },
+    {
+      "name": "static func .< (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than comparison."
+    },
+    {
+      "name": "static func .< (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than comparison."
+    },
+    {
+      "name": "static func .< (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than comparison."
+    },
+    {
+      "name": "static func .< (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than comparison."
+    },
+    {
+      "name": "static func .< (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than comparison."
+    },
+    {
+      "name": "static func .< (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than comparison."
+    },
+    {
+      "name": "static func .< (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than comparison."
+    },
+    {
+      "name": "static func .< (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than comparison."
+    },
+    {
+      "name": "static func .<= (Scalar, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar.SIMDMaskScalar>>",
+      "desc": "Returns a vector mask with the result of a pointwise less than or equal comparison."
+    },
+    {
+      "name": "static func .<= (SIMD3<Scalar>, Scalar) -> SIMDMask<SIMD3<Scalar.SIMDMaskScalar>>",
+      "desc": "Returns a vector mask with the result of a pointwise less than or equal comparison."
+    },
+    {
+      "name": "static func .<= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar.SIMDMaskScalar>>",
+      "desc": "Returns a vector mask with the result of a pointwise less than or equal comparison."
+    },
+    {
+      "name": "static func .<= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .<= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .<= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .<= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .<= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .<= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .<= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .<= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .<= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .<= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .<= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .<= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .<= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise less-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .== (Scalar, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar.SIMDMaskScalar>>",
+      "desc": "Returns a vector mask with the result of a pointwise equality comparison."
+    },
+    {
+      "name": "static func .== (SIMD3<Scalar>, Scalar) -> SIMDMask<SIMD3<Scalar.SIMDMaskScalar>>",
+      "desc": "Returns a vector mask with the result of a pointwise equality comparison."
+    },
+    {
+      "name": "static func .== (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar.SIMDMaskScalar>>",
+      "desc": "A vector mask with the result of a pointwise equality comparison."
+    },
+    {
+      "name": "static func .== (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise equality comparison."
+    },
+    {
+      "name": "static func .== (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise equality comparison."
+    },
+    {
+      "name": "static func .== (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise equality comparison."
+    },
+    {
+      "name": "static func .== (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise equality comparison."
+    },
+    {
+      "name": "static func .== (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise equality comparison."
+    },
+    {
+      "name": "static func .== (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise equality comparison."
+    },
+    {
+      "name": "static func .== (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise equality comparison."
+    },
+    {
+      "name": "static func .== (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise equality comparison."
+    },
+    {
+      "name": "static func .== (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise equality comparison."
+    },
+    {
+      "name": "static func .== (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise equality comparison."
+    },
+    {
+      "name": "static func .== (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise equality comparison."
+    },
+    {
+      "name": "static func .== (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise equality comparison."
+    },
+    {
+      "name": "static func .== (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise equality comparison."
+    },
+    {
+      "name": "static func .> (Scalar, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar.SIMDMaskScalar>>",
+      "desc": "Returns a vector mask with the result of a pointwise greater than comparison."
+    },
+    {
+      "name": "static func .> (SIMD3<Scalar>, Scalar) -> SIMDMask<SIMD3<Scalar.SIMDMaskScalar>>",
+      "desc": "Returns a vector mask with the result of a pointwise greater than comparison."
+    },
+    {
+      "name": "static func .> (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar.SIMDMaskScalar>>",
+      "desc": "Returns a vector mask with the result of a pointwise greater than comparison."
+    },
+    {
+      "name": "static func .> (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than comparison."
+    },
+    {
+      "name": "static func .> (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than comparison."
+    },
+    {
+      "name": "static func .> (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than comparison."
+    },
+    {
+      "name": "static func .> (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than comparison."
+    },
+    {
+      "name": "static func .> (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than comparison."
+    },
+    {
+      "name": "static func .> (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than comparison."
+    },
+    {
+      "name": "static func .> (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than comparison."
+    },
+    {
+      "name": "static func .> (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than comparison."
+    },
+    {
+      "name": "static func .> (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than comparison."
+    },
+    {
+      "name": "static func .> (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than comparison."
+    },
+    {
+      "name": "static func .> (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than comparison."
+    },
+    {
+      "name": "static func .> (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than comparison."
+    },
+    {
+      "name": "static func .> (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than comparison."
+    },
+    {
+      "name": "static func .>= (Scalar, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar.SIMDMaskScalar>>",
+      "desc": "Returns a vector mask with the result of a pointwise greater than or equal comparison."
+    },
+    {
+      "name": "static func .>= (SIMD3<Scalar>, Scalar) -> SIMDMask<SIMD3<Scalar.SIMDMaskScalar>>",
+      "desc": "Returns a vector mask with the result of a pointwise greater than or equal comparison."
+    },
+    {
+      "name": "static func .>= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar.SIMDMaskScalar>>",
+      "desc": "Returns a vector mask with the result of a pointwise greater than or equal comparison."
+    },
+    {
+      "name": "static func .>= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .>= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .>= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .>= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .>= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .>= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .>= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .>= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .>= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .>= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .>= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .>= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func .>= (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMDMask<SIMD3<Scalar>.MaskStorage>",
+      "desc": "A vector mask with the result of a pointwise greater-than-or-equal-to comparison."
+    },
+    {
+      "name": "static func / (Scalar, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func / (SIMD3<Scalar>, Scalar) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func / (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func / (Scalar, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func / (SIMD3<Scalar>, Scalar) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func / (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func /= (inout SIMD3<Scalar>, Scalar)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func /= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Available when Scalar conforms to FloatingPoint."
+    },
+    {
+      "name": "static func /= (inout SIMD3<Scalar>, Scalar)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func /= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func == (SIMD3<Scalar>, SIMD3<Scalar>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two vectors are equal."
+    },
+    {
+      "name": "static func ^ (Scalar, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func ^ (SIMD3<Scalar>, Scalar) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func ^ (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func ^= (inout SIMD3<Scalar>, Scalar)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func ^= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func | (Scalar, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func | (SIMD3<Scalar>, Scalar) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func | (SIMD3<Scalar>, SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func |= (inout SIMD3<Scalar>, Scalar)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func |= (inout SIMD3<Scalar>, SIMD3<Scalar>)",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    },
+    {
+      "name": "static func ~ (SIMD3<Scalar>) -> SIMD3<Scalar>",
+      "desc": "Available when Scalar conforms to FixedWidthInteger."
+    }
+  ],
+  "declaration": "@frozen struct SIMD3<Scalar> where Scalar : SIMDScalar",
+  "conformsTo": [
+    "AnimatableData",
+    "BindableData",
+    "CustomDebugStringConvertible",
+    "SIMD"
+  ]
+}

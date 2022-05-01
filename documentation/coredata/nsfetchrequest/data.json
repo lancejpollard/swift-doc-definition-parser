@@ -1,0 +1,128 @@
+{
+  "path": "/documentation/coredata/nsfetchrequest",
+  "type": "Generic Class",
+  "name": "NSFetchRequest",
+  "desc": "A description of search criteria used to retrieve data from a persistent store.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a new fetch request."
+    },
+    {
+      "name": "init(entityName: String)",
+      "desc": "Initializes a fetch request configured with a given entity name."
+    },
+    {
+      "name": "var entityName: String?",
+      "desc": "The name of the entity the request is configured to fetch."
+    },
+    {
+      "name": "var entity: NSEntityDescription?",
+      "desc": "The entity specified for the fetch request."
+    },
+    {
+      "name": "var includesSubentities: Bool",
+      "desc": "A Boolean value that indicates whether the fetch request includes subentities in the results."
+    },
+    {
+      "name": "struct NSFetchRequestResultType",
+      "desc": "Constants that specify the possible result types a fetch request can return."
+    },
+    {
+      "name": "var predicate: NSPredicate?",
+      "desc": "The predicate of the fetch request."
+    },
+    {
+      "name": "var fetchLimit: Int",
+      "desc": "The fetch limit of the fetch request."
+    },
+    {
+      "name": "var fetchOffset: Int",
+      "desc": "The fetch offset of the fetch request."
+    },
+    {
+      "name": "var fetchBatchSize: Int",
+      "desc": "The batch size of the objects specified in the fetch request."
+    },
+    {
+      "name": "var affectedStores: [NSPersistentStore]?",
+      "desc": "An array of persistent stores specified for the fetch request."
+    },
+    {
+      "name": "class NSFetchRequestExpression",
+      "desc": "An expression that evaluates the result of a fetch request on a managed object context."
+    },
+    {
+      "name": "class NSExpressionDescription",
+      "desc": "An object that describes an expression to include with a fetch request."
+    },
+    {
+      "name": "class NSFetchedPropertyDescription",
+      "desc": "A description object used to define which properties are fetched from Core Data."
+    },
+    {
+      "name": "var sortDescriptors: [NSSortDescriptor]?",
+      "desc": "The sort descriptors of the fetch request."
+    },
+    {
+      "name": "var relationshipKeyPathsForPrefetching: [String]?",
+      "desc": "The relationship key paths to prefetch along with the entity for the request."
+    },
+    {
+      "name": "var resultType: NSFetchRequestResultType",
+      "desc": "The result type of the fetch request."
+    },
+    {
+      "name": "var includesPendingChanges: Bool",
+      "desc": "A Boolean value that indicates whether, when the fetch is executed, it matches against currently unsaved changes in the managed object context."
+    },
+    {
+      "name": "var propertiesToFetch: [Any]?",
+      "desc": "A collection of either property descriptions or string property names that specify which properties should be returned by the fetch."
+    },
+    {
+      "name": "var returnsDistinctResults: Bool",
+      "desc": "A Boolean value that indicates whether the fetch request returns only distinct values for the fields specified by propertiesToFetch."
+    },
+    {
+      "name": "var includesPropertyValues: Bool",
+      "desc": "A Boolean value that indicates whether, when the fetch is executed, property data is obtained from the persistent store."
+    },
+    {
+      "name": "var shouldRefreshRefetchedObjects: Bool",
+      "desc": "A Boolean value that indicates whether the property values of fetched objects will be updated with the current values in the persistent store."
+    },
+    {
+      "name": "var returnsObjectsAsFaults: Bool",
+      "desc": "A Boolean value that indicates whether the objects resulting from a fetch request are faults."
+    },
+    {
+      "name": "struct NSFetchRequestResultType",
+      "desc": "Constants that specify the possible result types a fetch request can return."
+    },
+    {
+      "name": "protocol NSFetchRequestResult",
+      "desc": "An abstract protocol used with parameterized fetch requests."
+    },
+    {
+      "name": "var propertiesToGroupBy: [Any]?",
+      "desc": "An array of objects that indicates how data should be grouped before a select statement is run in a SQL database."
+    },
+    {
+      "name": "var havingPredicate: NSPredicate?",
+      "desc": "The predicate used to filter rows being returned by a query containing a GROUP BY directive."
+    },
+    {
+      "name": "func execute() -> [ResultType]",
+      "desc": "Executes the fetch request against the managed object context that is associated with the current queue."
+    }
+  ],
+  "declaration": "class NSFetchRequest<ResultType> : NSPersistentStoreRequest where ResultType : NSFetchRequestResult",
+  "inheritsFrom": [
+    "NSPersistentStoreRequest"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "NSCopying"
+  ]
+}

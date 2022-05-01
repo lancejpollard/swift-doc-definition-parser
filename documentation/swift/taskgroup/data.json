@@ -1,0 +1,140 @@
+{
+  "path": "/documentation/swift/taskgroup",
+  "type": "Generic Structure",
+  "name": "TaskGroup",
+  "desc": "A group that contains dynamically created child tasks.",
+  "items": [
+    {
+      "name": "func addTask(priority: TaskPriority?, operation: @Sendable () -> ChildTaskResult)",
+      "desc": "Adds a child task to the group."
+    },
+    {
+      "name": "func addTaskUnlessCancelled(priority: TaskPriority?, operation: @Sendable () -> ChildTaskResult) -> Bool",
+      "desc": "Adds a child task to the group, unless the group has been canceled."
+    },
+    {
+      "name": "func next() -> ChildTaskResult?",
+      "desc": "Wait for the next child task to complete, and return the value it returned."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value that indicates whether the group has any remaining tasks."
+    },
+    {
+      "name": "func waitForAll()",
+      "desc": "Wait for all of the group’s remaining tasks to complete."
+    },
+    {
+      "name": "func makeAsyncIterator() -> TaskGroup<ChildTaskResult>.Iterator",
+      "desc": "Creates the asynchronous iterator that produces elements of this asynchronous sequence."
+    },
+    {
+      "name": "func allSatisfy((ChildTaskResult) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether all elements produced by the asynchronous sequence satisfies the given predicate."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((ChildTaskResult) -> ElementOfResult?) -> AsyncThrowingCompactMapSequence<TaskGroup<ChildTaskResult>, ElementOfResult>",
+      "desc": "Creates an asynchronous sequence that maps an error-throwing closure over the base sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((ChildTaskResult) -> ElementOfResult?) -> AsyncCompactMapSequence<TaskGroup<ChildTaskResult>, ElementOfResult>",
+      "desc": "Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "func contains(ChildTaskResult) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the asynchronous sequence contains the given element."
+    },
+    {
+      "name": "func contains(where: (ChildTaskResult) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the asynchronous sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func drop(while: (ChildTaskResult) -> Bool) -> AsyncDropWhileSequence<TaskGroup<ChildTaskResult>>",
+      "desc": "Omits elements from the base asynchronous sequence until a given closure returns false, after which it passes through all remaining elements."
+    },
+    {
+      "name": "func dropFirst(Int) -> AsyncDropFirstSequence<TaskGroup<ChildTaskResult>>",
+      "desc": "Omits a specified number of elements from the base asynchronous sequence, then passes through all remaining elements."
+    },
+    {
+      "name": "func filter((ChildTaskResult) -> Bool) -> AsyncFilterSequence<TaskGroup<ChildTaskResult>>",
+      "desc": "Creates an asynchronous sequence that contains, in order, the elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func first(where: (ChildTaskResult) -> Bool) -> ChildTaskResult?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((ChildTaskResult) -> SegmentOfResult) -> AsyncThrowingFlatMapSequence<TaskGroup<ChildTaskResult>, SegmentOfResult>",
+      "desc": "Creates an asynchronous sequence that concatenates the results of calling the given error-throwing transformation with each element of this sequence."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((ChildTaskResult) -> SegmentOfResult) -> AsyncFlatMapSequence<TaskGroup<ChildTaskResult>, SegmentOfResult>",
+      "desc": "Creates an asynchronous sequence that concatenates the results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func map<Transformed>((ChildTaskResult) -> Transformed) -> AsyncThrowingMapSequence<TaskGroup<ChildTaskResult>, Transformed>",
+      "desc": "Creates an asynchronous sequence that maps the given error-throwing closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "func map<Transformed>((ChildTaskResult) -> Transformed) -> AsyncMapSequence<TaskGroup<ChildTaskResult>, Transformed>",
+      "desc": "Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "func max() -> ChildTaskResult?",
+      "desc": "Returns the maximum element in an asynchronous sequence of comparable elements."
+    },
+    {
+      "name": "func max(by: (ChildTaskResult, ChildTaskResult) -> Bool) -> ChildTaskResult?",
+      "desc": "Returns the maximum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func min() -> ChildTaskResult?",
+      "desc": "Returns the minimum element in an asynchronous sequence of comparable elements."
+    },
+    {
+      "name": "func min(by: (ChildTaskResult, ChildTaskResult) -> Bool) -> ChildTaskResult?",
+      "desc": "Returns the minimum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func prefix(Int) -> AsyncPrefixSequence<TaskGroup<ChildTaskResult>>",
+      "desc": "Returns an asynchronous sequence, up to the specified maximum length, containing the initial elements of the base asynchronous sequence."
+    },
+    {
+      "name": "func prefix(while: (ChildTaskResult) -> Bool) -> AsyncPrefixWhileSequence<TaskGroup<ChildTaskResult>>",
+      "desc": "Returns an asynchronous sequence, containing the initial, consecutive elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, ChildTaskResult) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, ChildTaskResult) -> Void) -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure, given a mutable initial value."
+    },
+    {
+      "name": "var isCancelled: Bool",
+      "desc": "A Boolean value that indicates whether the group was canceled."
+    },
+    {
+      "name": "func cancelAll()",
+      "desc": "Cancel all of the remaining tasks in the group."
+    },
+    {
+      "name": "typealias TaskGroup.Element",
+      "desc": "The type of element produced by this asynchronous sequence."
+    },
+    {
+      "name": "struct TaskGroup.Iterator",
+      "desc": "A type that provides an iteration interface over the results of tasks added to the group."
+    },
+    {
+      "name": "typealias TaskGroup.AsyncIterator",
+      "desc": "The type of asynchronous iterator that produces elements of this asynchronous sequence."
+    }
+  ],
+  "declaration": "@frozen struct TaskGroup<ChildTaskResult> where ChildTaskResult : Sendable",
+  "conformsTo": [
+    "AsyncSequence"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "path": "/documentation/combine/publishers/firstwhere",
+  "type": "Structure",
+  "name": "Publishers.FirstWhere",
+  "desc": "A publisher that only publishes the first element of a stream to satisfy a predicate closure.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, predicate: (Publishers.FirstWhere<Upstream>.Output) -> Bool)"
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let predicate: (Publishers.FirstWhere<Upstream>.Output) -> Bool",
+      "desc": "The closure that determines whether to publish an element."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    }
+  ],
+  "declaration": "struct FirstWhere<Upstream> where Upstream : Publisher",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "path": "/documentation/metalkit/mtktextureloader",
+  "type": "Class",
+  "name": "MTKTextureLoader",
+  "desc": "An object that decodes common image formats into Metal textures for use in your app.",
+  "items": [
+    {
+      "name": "init(device: MTLDevice)",
+      "desc": "Initializes a new texture loader object."
+    },
+    {
+      "name": "var device: MTLDevice",
+      "desc": "The device object that the texture loader uses to create textures."
+    },
+    {
+      "name": "func newTexture(URL: URL, options: [MTKTextureLoader.Option : Any]?) -> MTLTexture",
+      "desc": "Synchronously loads image data and creates a new Metal texture from a given URL."
+    },
+    {
+      "name": "func newTexture(URL: URL, options: [MTKTextureLoader.Option : Any]?, completionHandler: MTKTextureLoader.Callback)",
+      "desc": "Asynchronously loads image data and creates a new Metal texture from a given URL."
+    },
+    {
+      "name": "func newTextures(URLs: [URL], options: [MTKTextureLoader.Option : Any]?, error: NSErrorPointer) -> [MTLTexture]",
+      "desc": "Synchronously loads image data and creates new Metal textures from the specified list of URLs."
+    },
+    {
+      "name": "func newTextures(URLs: [URL], options: [MTKTextureLoader.Option : Any]?, completionHandler: MTKTextureLoader.ArrayCallback)",
+      "desc": "Asynchronously loads image data and creates new Metal textures from the specified list of URLs."
+    },
+    {
+      "name": "func newTexture(name: String, scaleFactor: CGFloat, bundle: Bundle?, options: [MTKTextureLoader.Option : Any]?) -> MTLTexture",
+      "desc": "Synchronously loads image data and creates a Metal texture from the named texture asset in an asset catalog."
+    },
+    {
+      "name": "func newTexture(name: String, scaleFactor: CGFloat, bundle: Bundle?, options: [MTKTextureLoader.Option : Any]?, completionHandler: MTKTextureLoader.Callback)",
+      "desc": "Asynchronously loads image data and creates a Metal texture from the named texture asset in an asset catalog."
+    },
+    {
+      "name": "func newTextures(names: [String], scaleFactor: CGFloat, bundle: Bundle?, options: [MTKTextureLoader.Option : Any]?, completionHandler: MTKTextureLoader.ArrayCallback)",
+      "desc": "Asynchronously loads image data and creates Metal textures from the specified list of named texture assets in an asset catalog."
+    },
+    {
+      "name": "func newTexture(name: String, scaleFactor: CGFloat, displayGamut: NSDisplayGamut, bundle: Bundle?, options: [MTKTextureLoader.Option : Any]?) -> MTLTexture",
+      "desc": "Synchronously loads image data and creates a Metal texture from the named texture asset in an asset catalog, using a specified display gamut."
+    },
+    {
+      "name": "func newTexture(name: String, scaleFactor: CGFloat, displayGamut: NSDisplayGamut, bundle: Bundle?, options: [MTKTextureLoader.Option : Any]?, completionHandler: MTKTextureLoader.Callback)",
+      "desc": "Asynchronously loads image data and creates a Metal texture from the named texture asset in an asset catalog."
+    },
+    {
+      "name": "func newTextures(names: [String], scaleFactor: CGFloat, displayGamut: NSDisplayGamut, bundle: Bundle?, options: [MTKTextureLoader.Option : Any]?, completionHandler: MTKTextureLoader.ArrayCallback)",
+      "desc": "Asynchronously loads image data and creates Metal textures from the specified list of named texture assets in an asset catalog."
+    },
+    {
+      "name": "func newTexture(cgImage: CGImage, options: [MTKTextureLoader.Option : Any]?) -> MTLTexture",
+      "desc": "Synchronously loads image data and creates a new Metal texture from a given bitmap image."
+    },
+    {
+      "name": "func newTexture(cgImage: CGImage, options: [MTKTextureLoader.Option : Any]?, completionHandler: MTKTextureLoader.Callback)",
+      "desc": "Asynchronously loads image data and creates a new Metal texture from a given bitmap image."
+    },
+    {
+      "name": "func newTexture(data: Data, options: [MTKTextureLoader.Option : Any]?) -> MTLTexture",
+      "desc": "Synchronously creates a new Metal texture from an in-memory representation of the texture's data."
+    },
+    {
+      "name": "func newTexture(data: Data, options: [MTKTextureLoader.Option : Any]?, completionHandler: MTKTextureLoader.Callback)",
+      "desc": "Asynchronously creates a new Metal texture from an in-memory representation of the texture's data."
+    },
+    {
+      "name": "func newTexture(texture: MDLTexture, options: [MTKTextureLoader.Option : Any]?) -> MTLTexture",
+      "desc": "Synchronously loads image data and creates a Metal texture from the specified Model I/O texture."
+    },
+    {
+      "name": "func newTexture(texture: MDLTexture, options: [MTKTextureLoader.Option : Any]?, completionHandler: MTKTextureLoader.Callback)",
+      "desc": "Asynchronously loads image data and creates a Metal texture from the specified Model I/O texture."
+    },
+    {
+      "name": "struct MTKTextureLoader.Option",
+      "desc": "Keys and values used to specify loading options."
+    },
+    {
+      "name": "typealias MTKTextureLoader.ArrayCallback",
+      "desc": "The signature for the block executed after an asynchronous loading operation for multiple textures has completed."
+    },
+    {
+      "name": "typealias MTKTextureLoader.Callback",
+      "desc": "The signature for the block executed after an asynchronous loading operation for a single texture has completed."
+    },
+    {
+      "name": "struct MTKTextureLoader.Error",
+      "desc": "Errors returned by the texture loader."
+    }
+  ],
+  "declaration": "class MTKTextureLoader : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

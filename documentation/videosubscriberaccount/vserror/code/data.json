@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/videosubscriberaccount/vserror/code",
+  "type": "Enumeration",
+  "name": "VSError.Code",
+  "desc": "Error codes in the framework error domain.",
+  "items": [
+    {
+      "name": "case accessNotGranted",
+      "desc": "The user hasn’t granted access to their subscription information."
+    },
+    {
+      "name": "case invalidVerificationToken",
+      "desc": "The user’s subscription provider rejected the verification token that the app sent with the request."
+    },
+    {
+      "name": "case providerRejected",
+      "desc": "The user’s subscription provider didn’t allow the request to proceed."
+    },
+    {
+      "name": "case rejected",
+      "desc": "The system rejected the request."
+    },
+    {
+      "name": "case serviceTemporarilyUnavailable",
+      "desc": "The request failed due to a timeout or unreachable host, but a subsequent attempt might succeed."
+    },
+    {
+      "name": "case unsupported",
+      "desc": "The provider doesn’t support the feature the user requested in the device’s current region."
+    },
+    {
+      "name": "case unsupportedProvider",
+      "desc": "The system doesn’t support the user’s subscription provider."
+    },
+    {
+      "name": "case userCancelled",
+      "desc": "The user canceled the request."
+    }
+  ],
+  "declaration": "enum VSError.Code : Int, _ErrorCodeProtocol, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

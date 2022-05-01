@@ -1,0 +1,140 @@
+{
+  "path": "/documentation/professional_video_applications/fxtileableeffect",
+  "type": "Protocol",
+  "name": "FxTileableEffect",
+  "desc": "The designated initializer for your plug-in for rendering only certain portions of the plug-in's output, referred to as tiles.",
+  "items": [
+    {
+      "name": "init?(apiManager: PROAPIAccessing)",
+      "desc": "Initializes the API manager for your plug-in."
+    },
+    {
+      "name": "func finishInitialSetup()",
+      "desc": "Finishes the initial setup and is called exactly once on first application of your plug-in to allow it to do anything else it needs to in order to finish setting itself up."
+    },
+    {
+      "name": "func pluginInstanceAddedToDocument()",
+      "desc": "Notifies your plug-in when it becomes part of user’s document."
+    },
+    {
+      "name": "func properties(AutoreleasingUnsafeMutablePointer<NSDictionary>?)",
+      "desc": "Tells the host application about what the plug-in needs and supports, such as whether it renders in a gamma-corrected color space or a linear one."
+    },
+    {
+      "name": "func addParameters()",
+      "desc": "Tells the host application what parameters your plug-in requires."
+    },
+    {
+      "name": "func `class`(forCustomParameterID: UInt32) -> AnyClass",
+      "desc": "Returns the class of the object contained in the custom parameter with the given ID."
+    },
+    {
+      "name": "func classes(forCustomParameterID: UInt32) -> Set<AnyHashable>",
+      "desc": "Returns the classes of the objects contained in the custom parameter with the given ID."
+    },
+    {
+      "name": "func parameterChanged(UInt32, at: CMTime)",
+      "desc": "Executes when the host detects that a parameter has changed."
+    },
+    {
+      "name": "func sourceTileRect(UnsafeMutablePointer<FxRect>, sourceImageIndex: Int, sourceImages: [FxImageTile], destinationTileRect: FxRect, destinationImage: FxImageTile, pluginState: Data?, at: CMTime)",
+      "desc": "Calculate the input rectangle needed for the given image input and the output tile to be rendered."
+    },
+    {
+      "name": "func destinationImageRect(UnsafeMutablePointer<FxRect>, sourceImages: [FxImageTile], destinationImage: FxImageTile, pluginState: Data?, at: CMTime)",
+      "desc": "Calculates the bounds of the output image determined by the various inputs and plug-in state at the given render time."
+    },
+    {
+      "name": "func FxRectsAreEqual(FxRect, FxRect) -> Bool",
+      "desc": "Compares two rectangle structures and determines if they are equal."
+    },
+    {
+      "name": "func pluginState(AutoreleasingUnsafeMutablePointer<NSData>?, at: CMTime, quality: FxQuality)",
+      "desc": "Retrieves the plug-in's parameter values, performs any calculations it needs to from those values, and packages up the result to be used later with rendering."
+    },
+    {
+      "name": "func scheduleInputs(AutoreleasingUnsafeMutablePointer<NSArray?>?, withPluginState: Data?, at: CMTime)",
+      "desc": "Tells the host application how many frames from the given input sources your plug-in requires in order to render at the given render time."
+    },
+    {
+      "name": "func renderDestinationImage(FxImageTile, sourceImages: [FxImageTile], pluginState: Data?, at: CMTime)",
+      "desc": "Sends a request that the host wants your plug-in to do its rendering for a given output image tile."
+    },
+    {
+      "name": "typealias FxDepth",
+      "desc": "Constants used to identify bit depth."
+    },
+    {
+      "name": "typealias FxField",
+      "desc": "Constants used to identify a field."
+    },
+    {
+      "name": "typealias FxFieldOrder",
+      "desc": "Constants used to identify the field order of an image stream."
+    },
+    {
+      "name": "typealias FxPoint2D",
+      "desc": "A 2D point representation."
+    },
+    {
+      "name": "struct FxPoint3D",
+      "desc": "A 3D point representation"
+    },
+    {
+      "name": "typealias FxQuality",
+      "desc": "Constants used to identify rendering quality."
+    },
+    {
+      "name": "struct FxRect",
+      "desc": "A 2D axis-aligned rectangle with integer coordinates."
+    },
+    {
+      "name": "struct FxRenderInfo",
+      "desc": "Type definition used to specify a render request."
+    },
+    {
+      "name": "typealias FxSize",
+      "desc": "A structure to store width and height values."
+    },
+    {
+      "name": "typealias FxDrawingCoordinates",
+      "desc": "Constants used to identify coordinate spaces."
+    },
+    {
+      "name": "typealias FxError",
+      "desc": "Errors returned by plug-in hosts applications."
+    },
+    {
+      "name": "var kFxRect_Empty: FxRect",
+      "desc": "An empty rectangle."
+    },
+    {
+      "name": "var kFxRect_Infinite: FxRect",
+      "desc": "An infinite rectangle."
+    },
+    {
+      "name": "typealias FxPixelFormat",
+      "desc": "The format of the pixels for an image."
+    },
+    {
+      "name": "let FxPlugErrorDomain: String",
+      "desc": "The error domain for FxPlug-related errors."
+    },
+    {
+      "name": "var kFxKeyframeInfo_CurrentVersion: Int32",
+      "desc": "Used to define a keyframe information structure as being the most current version."
+    },
+    {
+      "name": "var kFxKeyframeInfo_V1: Int32",
+      "desc": "The version number of the keyframe information."
+    },
+    {
+      "name": "var kFxKeyframeInfo_V2: Int32",
+      "desc": "The version number for FxKeyframeAPI_v2 keyframe information."
+    }
+  ],
+  "declaration": "protocol FxTileableEffect",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

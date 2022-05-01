@@ -1,0 +1,43 @@
+{
+  "path": "/documentation/iobluetooth/iobluetoothdevicepair",
+  "type": "Class",
+  "name": "IOBluetoothDevicePair",
+  "desc": "An instance of IOBluetoothDevicePair represents a pairing attempt to a remote Bluetooth device.",
+  "items": [
+    {
+      "name": "init!(device: IOBluetoothDevice!)",
+      "desc": "Creates an autorelease IOBluetoothDevicePair object with a device as the pairing target."
+    },
+    {
+      "name": "var delegate: AnyObject!"
+    },
+    {
+      "name": "func device() -> IOBluetoothDevice!",
+      "desc": "Get the IOBluetoothDevice being used by the object."
+    },
+    {
+      "name": "func replyPINCode(Int, pinCode: UnsafeMutablePointer<BluetoothPINCode>!)",
+      "desc": "This is the required reply to the devicePairingPINCodeRequest delegate message. Set the PIN code to use during pairing if required."
+    },
+    {
+      "name": "func replyUserConfirmation(Bool)",
+      "desc": "This is the required reply to the devicePairingUserConfirmationRequest delegate message."
+    },
+    {
+      "name": "func setDevice(IOBluetoothDevice!)",
+      "desc": "Set the device object to pair with. It is retained by the object."
+    },
+    {
+      "name": "func start() -> IOReturn",
+      "desc": "Kicks off the pairing with the device."
+    },
+    {
+      "name": "func stop()",
+      "desc": "Stops the current pairing. Removes the delegate and disconnects if device was connected."
+    }
+  ],
+  "declaration": "class IOBluetoothDevicePair : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

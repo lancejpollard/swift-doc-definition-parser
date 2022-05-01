@@ -1,0 +1,77 @@
+{
+  "path": "/documentation/carekit/ocksemanticversion",
+  "type": "Structure",
+  "name": "OCKSemanticVersion",
+  "desc": "A three-component number format for specifying version numbers.",
+  "items": [
+    {
+      "name": "init(majorVersion: Int, minorVersion: Int, patchNumber: Int)",
+      "desc": "Creates a new semantic version with specific major, minor, and patch versions."
+    },
+    {
+      "name": "init?(String)",
+      "desc": "Creates a new semantic version from a string."
+    },
+    {
+      "name": "static func parse(String) -> OCKSemanticVersion",
+      "desc": "Creates a semantic version by parsing a string."
+    },
+    {
+      "name": "let majorVersion: Int",
+      "desc": "An integer value that specifies the major number, for example the 3 in 3.11.2."
+    },
+    {
+      "name": "let minorVersion: Int",
+      "desc": "An integer value that specifies the minor number, for example the 11 in 3.11.2."
+    },
+    {
+      "name": "let patchNumber: Int",
+      "desc": "An integer value that specifies the patch number, for example the 2 in 3.11.2."
+    },
+    {
+      "name": "enum OCKSemanticVersion.ParsingError",
+      "desc": "The errors that can occur while you atttempt to parse a string into a semantic version."
+    },
+    {
+      "name": "var description: String"
+    },
+    {
+      "name": "static func != (OCKSemanticVersion, OCKSemanticVersion) -> Bool"
+    },
+    {
+      "name": "static func ... (OCKSemanticVersion) -> PartialRangeFrom<OCKSemanticVersion>"
+    },
+    {
+      "name": "static func ... (OCKSemanticVersion) -> PartialRangeThrough<OCKSemanticVersion>"
+    },
+    {
+      "name": "static func ... (OCKSemanticVersion, OCKSemanticVersion) -> ClosedRange<OCKSemanticVersion>"
+    },
+    {
+      "name": "static func ..< (OCKSemanticVersion) -> PartialRangeUpTo<OCKSemanticVersion>"
+    },
+    {
+      "name": "static func ..< (OCKSemanticVersion, OCKSemanticVersion) -> Range<OCKSemanticVersion>"
+    },
+    {
+      "name": "static func < (OCKSemanticVersion, OCKSemanticVersion) -> Bool"
+    },
+    {
+      "name": "static func <= (OCKSemanticVersion, OCKSemanticVersion) -> Bool"
+    },
+    {
+      "name": "static func > (OCKSemanticVersion, OCKSemanticVersion) -> Bool"
+    },
+    {
+      "name": "static func >= (OCKSemanticVersion, OCKSemanticVersion) -> Bool"
+    }
+  ],
+  "declaration": "struct OCKSemanticVersion : Codable, Equatable, Comparable, LosslessStringConvertible",
+  "conformsTo": [
+    "Comparable",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "LosslessStringConvertible"
+  ]
+}

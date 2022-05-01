@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/tvservices/tvusermanager",
+  "type": "Class",
+  "name": "TVUserManager",
+  "desc": "An object for mapping Apple TV user accounts to app-specific user preferences.",
+  "items": [
+    {
+      "name": "var currentUserIdentifier: TVUserIdentifier?",
+      "desc": "A unique identifier representing the currently active Apple TV user."
+    },
+    {
+      "name": "typealias TVUserIdentifier",
+      "desc": "A unique string for differentiating between accounts on Apple TV."
+    },
+    {
+      "name": "func shouldStorePreferenceForCurrentUser(to: TVAppProfileDescriptor, completion: (Bool) -> Void)",
+      "desc": "Prompts the user to save the specified profile as the preferred profile for the current user."
+    },
+    {
+      "name": "func presentProfilePreferencePanel(currentSettings: [TVUserIdentifier : TVAppProfileDescriptor], availableProfiles: [TVAppProfileDescriptor], completion: ([TVUserIdentifier : TVAppProfileDescriptor]) -> Void)",
+      "desc": "Presents a user-to-profile configuration panel, which lets the user specify their preferred profile."
+    },
+    {
+      "name": "class TVAppProfileDescriptor",
+      "desc": "A model object that you use to represent an app-specific profile."
+    },
+    {
+      "name": "var userIdentifiersForCurrentProfile: [TVUserIdentifier]",
+      "desc": "An array of system user identifiers that you associated with the current app-specific profile."
+    },
+    {
+      "name": "class let currentUserIdentifierDidChangeNotification: NSNotification.Name",
+      "desc": "Posted after the current user identifier changes."
+    }
+  ],
+  "declaration": "class TVUserManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

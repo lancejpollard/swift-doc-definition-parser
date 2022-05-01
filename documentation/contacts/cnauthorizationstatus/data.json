@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/contacts/cnauthorizationstatus",
+  "type": "Enumeration",
+  "name": "CNAuthorizationStatus",
+  "desc": "An authorization status the user can grant for an app to access the specified entity type.",
+  "items": [
+    {
+      "name": "case notDetermined",
+      "desc": "The user has not yet made a choice regarding whether the application may access contact data."
+    },
+    {
+      "name": "case restricted",
+      "desc": "The application is not authorized to access contact data. The user cannot change this application’s status, possibly due to active restrictions such as parental controls being in place."
+    },
+    {
+      "name": "case denied",
+      "desc": "The user explicitly denied access to contact data for the application."
+    },
+    {
+      "name": "case authorized",
+      "desc": "The application is authorized to access contact data."
+    }
+  ],
+  "declaration": "enum CNAuthorizationStatus : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/foundation/nsmachport",
+  "type": "Class",
+  "name": "NSMachPort",
+  "desc": "A port that can be used as an endpoint for distributed object connections (or raw messaging).",
+  "items": [
+    {
+      "name": "class func port(withMachPort: UInt32) -> Port",
+      "desc": "Creates and returns a port object configured with the given Mach port."
+    },
+    {
+      "name": "class func port(withMachPort: UInt32, options: NSMachPort.Options) -> Port",
+      "desc": "Creates and returns a port object configured with the specified options and the given Mach port."
+    },
+    {
+      "name": "init(machPort: UInt32)",
+      "desc": "Initializes a newly allocated NSMachPort object with a given Mach port."
+    },
+    {
+      "name": "init(machPort: UInt32, options: NSMachPort.Options)",
+      "desc": "Initializes a newly allocated NSMachPort object with a given Mach port and the specified options."
+    },
+    {
+      "name": "var machPort: UInt32",
+      "desc": "The Mach port used by the receiver, represented as an integer."
+    },
+    {
+      "name": "func remove(from: RunLoop, forMode: RunLoop.Mode)",
+      "desc": "Removes the receiver from the run loop mode mode of runLoop."
+    },
+    {
+      "name": "func schedule(in: RunLoop, forMode: RunLoop.Mode)",
+      "desc": "Schedules the receiver into the run loop mode mode of runLoop."
+    },
+    {
+      "name": "func delegate() -> NSMachPortDelegate?",
+      "desc": "Returns the receiver’s delegate."
+    },
+    {
+      "name": "func setDelegate(NSMachPortDelegate?)",
+      "desc": "Sets the receiver’s delegate to a given object."
+    },
+    {
+      "name": "struct NSMachPort.Options",
+      "desc": "Used to remove access rights to a mach port when the NSMachPort object is invalidated or destroyed."
+    }
+  ],
+  "declaration": "class NSMachPort : Port",
+  "inheritsFrom": [
+    "Port"
+  ]
+}

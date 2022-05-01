@@ -1,0 +1,363 @@
+{
+  "path": "/documentation/foundation/attributedstring/runs",
+  "type": "Structure",
+  "name": "AttributedString.Runs",
+  "desc": "An iterable view into segments of the attributed string, each of which indicates where a run of identical attributes begins or ends.",
+  "items": [
+    {
+      "name": "typealias AttributedString.Runs.Element"
+    },
+    {
+      "name": "typealias AttributedString.Runs.Indices"
+    },
+    {
+      "name": "typealias AttributedString.Runs.Iterator"
+    },
+    {
+      "name": "typealias AttributedString.Runs.SubSequence"
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of elements in the collection."
+    },
+    {
+      "name": "var description: String"
+    },
+    {
+      "name": "var endIndex: AttributedString.Runs.Index"
+    },
+    {
+      "name": "var first: Run?",
+      "desc": "The first element of the collection."
+    },
+    {
+      "name": "var indices: DefaultIndices<AttributedString.Runs>",
+      "desc": "The indices that are valid for subscripting the collection, in ascending order."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value indicating whether the collection is empty."
+    },
+    {
+      "name": "var last: Run?",
+      "desc": "The last element of the collection."
+    },
+    {
+      "name": "var lazy: LazySequence<AttributedString.Runs>",
+      "desc": "A sequence containing the same elements as this sequence, but on which some operations, such as map and filter, are implemented lazily."
+    },
+    {
+      "name": "var publisher: Publishers.Sequence<AttributedString.Runs, Never>"
+    },
+    {
+      "name": "var startIndex: AttributedString.Runs.Index"
+    },
+    {
+      "name": "var underestimatedCount: Int",
+      "desc": "A value less than or equal to the number of elements in the collection."
+    },
+    {
+      "name": "func allSatisfy((Run) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether every element of a sequence satisfies a given predicate."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((Run) -> ElementOfResult?) -> [ElementOfResult]",
+      "desc": "Returns an array containing the non-nil results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func compare<Comparator>(Comparator.Compared, Comparator.Compared) -> ComparisonResult"
+    },
+    {
+      "name": "func contains(Run) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence contains the given element."
+    },
+    {
+      "name": "func contains(where: (Run) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func difference<C>(from: C) -> CollectionDifference<Run>",
+      "desc": "Returns the difference needed to produce this collection’s ordered elements from the given collection."
+    },
+    {
+      "name": "func difference<C>(from: C, by: (C.Element, Run) -> Bool) -> CollectionDifference<Run>",
+      "desc": "Returns the difference needed to produce this collection’s ordered elements from the given collection, using the given predicate as an equivalence test."
+    },
+    {
+      "name": "func distance(from: Index, to: Index) -> Int"
+    },
+    {
+      "name": "func drop(while: (Run) -> Bool) -> Slice<AttributedString.Runs>",
+      "desc": "Returns a subsequence by skipping elements while predicate returns true and returning the remaining elements."
+    },
+    {
+      "name": "func dropFirst(Int) -> Slice<AttributedString.Runs>",
+      "desc": "Returns a subsequence containing all but the given number of initial elements."
+    },
+    {
+      "name": "func dropLast(Int) -> Slice<AttributedString.Runs>",
+      "desc": "Returns a subsequence containing all but the specified number of final elements."
+    },
+    {
+      "name": "func elementsEqual<OtherSequence>(OtherSequence) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this sequence and another sequence contain the same elements in the same order."
+    },
+    {
+      "name": "func elementsEqual<OtherSequence>(OtherSequence, by: (Run, OtherSequence.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this sequence and another sequence contain equivalent elements in the same order, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func enumerated() -> EnumeratedSequence<AttributedString.Runs>",
+      "desc": "Returns a sequence of pairs (n, x), where n represents a consecutive integer starting at zero and x represents an element of the sequence."
+    },
+    {
+      "name": "func filter((Run) -> Bool) -> [Run]",
+      "desc": "Returns an array containing, in order, the elements of the sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func first(where: (Run) -> Bool) -> Run?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func firstIndex(of: Run) -> Index?",
+      "desc": "Returns the first index where the specified value appears in the collection."
+    },
+    {
+      "name": "func firstIndex(where: (Run) -> Bool) -> Index?",
+      "desc": "Returns the first index in which an element of the collection satisfies the given predicate."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((Run) -> SegmentOfResult) -> [SegmentOfResult.Element]",
+      "desc": "Returns an array containing the concatenated results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func forEach((Run) -> Void)",
+      "desc": "Calls the given closure on each element in the sequence in the same order as a for-in loop."
+    },
+    {
+      "name": "func formIndex(inout Index, offsetBy: Int)",
+      "desc": "Offsets the given index by the specified distance."
+    },
+    {
+      "name": "func formIndex(inout Index, offsetBy: Int, limitedBy: Index) -> Bool",
+      "desc": "Offsets the given index by the specified distance, or so that it equals the given limiting index."
+    },
+    {
+      "name": "func formIndex(after: inout Index)",
+      "desc": "Replaces the given index with its successor."
+    },
+    {
+      "name": "func formIndex(before: inout Index)",
+      "desc": "Replaces the given index with its predecessor."
+    },
+    {
+      "name": "func formatted<S>(S) -> S.FormatOutput"
+    },
+    {
+      "name": "func index(Index, offsetBy: Int) -> Index"
+    },
+    {
+      "name": "func index(Index, offsetBy: Int, limitedBy: Index) -> Index?"
+    },
+    {
+      "name": "func index(after: AttributedString.Runs.Index) -> AttributedString.Runs.Index"
+    },
+    {
+      "name": "func index(before: AttributedString.Runs.Index) -> AttributedString.Runs.Index"
+    },
+    {
+      "name": "func last(where: (Run) -> Bool) -> Run?",
+      "desc": "Returns the last element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func lastIndex(of: Run) -> Index?",
+      "desc": "Returns the last index where the specified value appears in the collection."
+    },
+    {
+      "name": "func lastIndex(where: (Run) -> Bool) -> Index?",
+      "desc": "Returns the index of the last element in the collection that matches the given predicate."
+    },
+    {
+      "name": "func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Run, Run) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the given predicate to compare elements."
+    },
+    {
+      "name": "func makeIterator() -> IndexingIterator<AttributedString.Runs>",
+      "desc": "Returns an iterator over the elements of the collection."
+    },
+    {
+      "name": "func map<T>((Run) -> T) -> [T]",
+      "desc": "Returns an array containing the results of mapping the given closure over the sequence’s elements."
+    },
+    {
+      "name": "func max(by: (Run, Run) -> Bool) -> Run?",
+      "desc": "Returns the maximum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func min(by: (Run, Run) -> Bool) -> Run?",
+      "desc": "Returns the minimum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func prefix(Int) -> Slice<AttributedString.Runs>",
+      "desc": "Returns a subsequence, up to the specified maximum length, containing the initial elements of the collection."
+    },
+    {
+      "name": "func prefix(through: Index) -> Slice<AttributedString.Runs>",
+      "desc": "Returns a subsequence from the start of the collection through the specified position."
+    },
+    {
+      "name": "func prefix(upTo: Index) -> Slice<AttributedString.Runs>",
+      "desc": "Returns a subsequence from the start of the collection up to, but not including, the specified position."
+    },
+    {
+      "name": "func prefix(while: (Run) -> Bool) -> Slice<AttributedString.Runs>",
+      "desc": "Returns a subsequence containing the initial elements until predicate returns false and skipping the remaining elements."
+    },
+    {
+      "name": "func randomElement() -> Run?",
+      "desc": "Returns a random element of the collection."
+    },
+    {
+      "name": "func randomElement<T>(using: inout T) -> Run?",
+      "desc": "Returns a random element of the collection, using the given generator as a source for randomness."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, Run) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, Run) -> ()) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "func reversed() -> ReversedCollection<AttributedString.Runs>",
+      "desc": "Returns a view presenting the elements of the collection in reverse order."
+    },
+    {
+      "name": "func shuffled() -> [Run]",
+      "desc": "Returns the elements of the sequence, shuffled."
+    },
+    {
+      "name": "func shuffled<T>(using: inout T) -> [Run]",
+      "desc": "Returns the elements of the sequence, shuffled using the given generator as a source for randomness."
+    },
+    {
+      "name": "func sorted(by: (Run, Run) -> Bool) -> [Run]",
+      "desc": "Returns the elements of the sequence, sorted using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func sorted<Comparator>(using: Comparator) -> [Run]"
+    },
+    {
+      "name": "func sorted<S, Comparator>(using: S) -> [Run]"
+    },
+    {
+      "name": "func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Run) -> Bool) -> [Slice<AttributedString.Runs>]",
+      "desc": "Returns the longest possible subsequences of the collection, in order, that don’t contain elements satisfying the given predicate."
+    },
+    {
+      "name": "func split(separator: Run, maxSplits: Int, omittingEmptySubsequences: Bool) -> [Slice<AttributedString.Runs>]",
+      "desc": "Returns the longest possible subsequences of the collection, in order, around elements equal to the given element."
+    },
+    {
+      "name": "func starts<PossiblePrefix>(with: PossiblePrefix) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the initial elements of the sequence are the same as the elements in another sequence."
+    },
+    {
+      "name": "func starts<PossiblePrefix>(with: PossiblePrefix, by: (Run, PossiblePrefix.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the initial elements of the sequence are equivalent to the elements in another sequence, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func suffix(Int) -> Slice<AttributedString.Runs>",
+      "desc": "Returns a subsequence, up to the given maximum length, containing the final elements of the collection."
+    },
+    {
+      "name": "func suffix(from: Index) -> Slice<AttributedString.Runs>",
+      "desc": "Returns a subsequence from the specified position to the end of the collection."
+    },
+    {
+      "name": "func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<Run>) -> R) -> R?",
+      "desc": "Executes a closure on the sequence’s contiguous storage."
+    },
+    {
+      "name": "subscript<T>(KeyPath<AttributeDynamicLookup, T>) -> AttributedString.Runs.AttributesSlice1<T>"
+    },
+    {
+      "name": "subscript(AttributedString.Index) -> AttributedString.Runs.Run"
+    },
+    {
+      "name": "subscript(AttributedString.Runs.Index) -> AttributedString.Runs.Run"
+    },
+    {
+      "name": "subscript<R>(R) -> Slice<AttributedString.Runs>",
+      "desc": "Accesses the contiguous subrange of the collection’s elements specified by a range expression."
+    },
+    {
+      "name": "subscript((UnboundedRange_) -> ()) -> Slice<AttributedString.Runs>"
+    },
+    {
+      "name": "subscript(Range<Index>) -> Slice<AttributedString.Runs>",
+      "desc": "Accesses a contiguous subrange of the collection’s elements."
+    },
+    {
+      "name": "subscript<T>(T.Type) -> AttributedString.Runs.AttributesSlice1<T>"
+    },
+    {
+      "name": "subscript<T, U>(KeyPath<AttributeDynamicLookup, T>, KeyPath<AttributeDynamicLookup, U>) -> AttributedString.Runs.AttributesSlice2<T, U>"
+    },
+    {
+      "name": "subscript<T, U>(T.Type, U.Type) -> AttributedString.Runs.AttributesSlice2<T, U>"
+    },
+    {
+      "name": "subscript<T, U, V>(KeyPath<AttributeDynamicLookup, T>, KeyPath<AttributeDynamicLookup, U>, KeyPath<AttributeDynamicLookup, V>) -> AttributedString.Runs.AttributesSlice3<T, U, V>"
+    },
+    {
+      "name": "subscript<T, U, V>(T.Type, U.Type, V.Type) -> AttributedString.Runs.AttributesSlice3<T, U, V>"
+    },
+    {
+      "name": "subscript<T, U, V, W>(KeyPath<AttributeDynamicLookup, T>, KeyPath<AttributeDynamicLookup, U>, KeyPath<AttributeDynamicLookup, V>, KeyPath<AttributeDynamicLookup, W>) -> AttributedString.Runs.AttributesSlice4<T, U, V, W>"
+    },
+    {
+      "name": "subscript<T, U, V, W>(T.Type, U.Type, V.Type, W.Type) -> AttributedString.Runs.AttributesSlice4<T, U, V, W>"
+    },
+    {
+      "name": "subscript<T, U, V, W, X>(KeyPath<AttributeDynamicLookup, T>, KeyPath<AttributeDynamicLookup, U>, KeyPath<AttributeDynamicLookup, V>, KeyPath<AttributeDynamicLookup, W>, KeyPath<AttributeDynamicLookup, X>) -> AttributedString.Runs.AttributesSlice5<T, U, V, W, X>"
+    },
+    {
+      "name": "subscript<T, U, V, W, X>(T.Type, U.Type, V.Type, W.Type, X.Type) -> AttributedString.Runs.AttributesSlice5<T, U, V, W, X>"
+    },
+    {
+      "name": "static func != (AttributedString.Runs, AttributedString.Runs) -> Bool"
+    },
+    {
+      "name": "static func == (AttributedString.Runs, AttributedString.Runs) -> Bool"
+    },
+    {
+      "name": "struct AttributedString.Runs.AttributesSlice1"
+    },
+    {
+      "name": "struct AttributedString.Runs.AttributesSlice2"
+    },
+    {
+      "name": "struct AttributedString.Runs.AttributesSlice3"
+    },
+    {
+      "name": "struct AttributedString.Runs.AttributesSlice4"
+    },
+    {
+      "name": "struct AttributedString.Runs.AttributesSlice5"
+    },
+    {
+      "name": "struct AttributedString.Runs.Index"
+    },
+    {
+      "name": "struct AttributedString.Runs.Run"
+    }
+  ],
+  "declaration": "struct AttributedString.Runs",
+  "conformsTo": [
+    "BidirectionalCollection",
+    "CustomStringConvertible",
+    "Equatable"
+  ]
+}

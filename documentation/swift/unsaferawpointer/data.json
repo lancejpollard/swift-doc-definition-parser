@@ -1,0 +1,185 @@
+{
+  "path": "/documentation/swift/unsaferawpointer",
+  "type": "Structure",
+  "name": "UnsafeRawPointer",
+  "desc": "A raw pointer for accessing untyped data.",
+  "items": [
+    {
+      "name": "typealias UnsafeRawPointer.Pointee"
+    },
+    {
+      "name": "typealias UnsafeRawPointer.Stride",
+      "desc": "A type that represents the distance between two values."
+    },
+    {
+      "name": "init?<T>(UnsafeMutablePointer<T>?)",
+      "desc": "Creates a new raw pointer from the given typed pointer."
+    },
+    {
+      "name": "init<T>(UnsafePointer<T>)",
+      "desc": "Creates a new raw pointer from the given typed pointer."
+    },
+    {
+      "name": "init?(UnsafeMutableRawPointer?)",
+      "desc": "Creates a new raw pointer from the given mutable raw pointer."
+    },
+    {
+      "name": "init?<T>(AutoreleasingUnsafeMutablePointer<T>?)",
+      "desc": "Creates a new raw pointer from an AutoreleasingUnsafeMutablePointer instance."
+    },
+    {
+      "name": "init<T>(AutoreleasingUnsafeMutablePointer<T>)",
+      "desc": "Creates a new raw pointer from an AutoreleasingUnsafeMutablePointer instance."
+    },
+    {
+      "name": "init<T>(UnsafeMutablePointer<T>)",
+      "desc": "Creates a new raw pointer from the given typed pointer."
+    },
+    {
+      "name": "init(UnsafeMutableRawPointer)",
+      "desc": "Creates a new raw pointer from the given mutable raw pointer."
+    },
+    {
+      "name": "init?<T>(UnsafePointer<T>?)",
+      "desc": "Creates a new raw pointer from the given typed pointer."
+    },
+    {
+      "name": "init?(UnsafeRawPointer?)",
+      "desc": "Creates a new pointer from the given pointer."
+    },
+    {
+      "name": "init?(OpaquePointer?)",
+      "desc": "Creates a new typed pointer from the given opaque pointer."
+    },
+    {
+      "name": "init(OpaquePointer)",
+      "desc": "Creates a new typed pointer from the given opaque pointer."
+    },
+    {
+      "name": "init(UnsafeRawPointer)",
+      "desc": "Creates a new pointer from the given pointer."
+    },
+    {
+      "name": "init?(bitPattern: Int)",
+      "desc": "Creates a new pointer from the given address, specified as a bit pattern."
+    },
+    {
+      "name": "init?(bitPattern: UInt)",
+      "desc": "Creates a new pointer from the given address, specified as a bit pattern."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "The custom mirror for this instance."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual representation of the pointer, suitable for debugging."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "func advanced(by: Int) -> UnsafeRawPointer",
+      "desc": "Returns a value that is offset the specified distance from this value."
+    },
+    {
+      "name": "func assumingMemoryBound<T>(to: T.Type) -> UnsafePointer<T>",
+      "desc": "Returns a typed pointer to the memory referenced by this pointer, assuming that the memory is already bound to the specified type."
+    },
+    {
+      "name": "func bindMemory<T>(to: T.Type, capacity: Int) -> UnsafePointer<T>",
+      "desc": "Binds the memory to the specified type and returns a typed pointer to the bound memory."
+    },
+    {
+      "name": "func deallocate()",
+      "desc": "Deallocates the previously allocated memory block referenced by this pointer."
+    },
+    {
+      "name": "func distance(to: UnsafeRawPointer) -> Int",
+      "desc": "Returns the distance from this pointer to the given pointer, counted as instances of the pointer’s Pointee type."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "func load<T>(fromByteOffset: Int, as: T.Type) -> T",
+      "desc": "Returns a new instance of the given type, constructed from the raw memory at the specified offset."
+    },
+    {
+      "name": "func predecessor() -> UnsafeRawPointer",
+      "desc": "Returns a pointer to the previous consecutive instance."
+    },
+    {
+      "name": "func successor() -> UnsafeRawPointer",
+      "desc": "Returns a pointer to the next consecutive instance."
+    },
+    {
+      "name": "static func != (UnsafeRawPointer, UnsafeRawPointer) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func + (UnsafeRawPointer, Int) -> UnsafeRawPointer"
+    },
+    {
+      "name": "static func + (Int, UnsafeRawPointer) -> UnsafeRawPointer"
+    },
+    {
+      "name": "static func += (inout UnsafeRawPointer, Int)"
+    },
+    {
+      "name": "static func - (UnsafeRawPointer, Int) -> UnsafeRawPointer"
+    },
+    {
+      "name": "static func - (UnsafeRawPointer, UnsafeRawPointer) -> Int"
+    },
+    {
+      "name": "static func -= (inout UnsafeRawPointer, Int)"
+    },
+    {
+      "name": "static func ... (UnsafeRawPointer) -> PartialRangeFrom<UnsafeRawPointer>",
+      "desc": "Returns a partial range extending upward from a lower bound."
+    },
+    {
+      "name": "static func ... (UnsafeRawPointer) -> PartialRangeThrough<UnsafeRawPointer>",
+      "desc": "Returns a partial range up to, and including, its upper bound."
+    },
+    {
+      "name": "static func ... (UnsafeRawPointer, UnsafeRawPointer) -> ClosedRange<UnsafeRawPointer>",
+      "desc": "Returns a closed range that contains both of its bounds."
+    },
+    {
+      "name": "static func ..< (UnsafeRawPointer) -> PartialRangeUpTo<UnsafeRawPointer>",
+      "desc": "Returns a partial range up to, but not including, its upper bound."
+    },
+    {
+      "name": "static func ..< (UnsafeRawPointer, UnsafeRawPointer) -> Range<UnsafeRawPointer>",
+      "desc": "Returns a half-open range that contains its lower bound but not its upper bound."
+    },
+    {
+      "name": "static func < (UnsafeRawPointer, UnsafeRawPointer) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than that of the second argument."
+    },
+    {
+      "name": "static func <= (UnsafeRawPointer, UnsafeRawPointer) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than or equal to that of the second argument."
+    },
+    {
+      "name": "static func == (UnsafeRawPointer, UnsafeRawPointer) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "static func > (UnsafeRawPointer, UnsafeRawPointer) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than that of the second argument."
+    },
+    {
+      "name": "static func >= (UnsafeRawPointer, UnsafeRawPointer) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than or equal to that of the second argument."
+    }
+  ],
+  "declaration": "@frozen struct UnsafeRawPointer",
+  "conformsTo": [
+    "Strideable"
+  ]
+}

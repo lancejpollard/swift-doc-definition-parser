@@ -1,0 +1,95 @@
+{
+  "path": "/documentation/metrickit/mxmetricpayload",
+  "type": "Class",
+  "name": "MXMetricPayload",
+  "desc": "An object that encapsulates a daily metrics report.",
+  "items": [
+    {
+      "name": "var cellularConditionMetrics: MXCellularConditionMetric?",
+      "desc": "The cellular condition measurements for the reporting period."
+    },
+    {
+      "name": "var cpuMetrics: MXCPUMetric?",
+      "desc": "The CPU metrics for the reporting period."
+    },
+    {
+      "name": "var displayMetrics: MXDisplayMetric?",
+      "desc": "The display metrics for the reporting period."
+    },
+    {
+      "name": "var gpuMetrics: MXGPUMetric?",
+      "desc": "The GPU metrics for the reporting period."
+    },
+    {
+      "name": "var locationActivityMetrics: MXLocationActivityMetric?",
+      "desc": "The location-tracking activity for the reporting period."
+    },
+    {
+      "name": "var networkTransferMetrics: MXNetworkTransferMetric?",
+      "desc": "The network-transfer activity for the reporting period."
+    },
+    {
+      "name": "var applicationExitMetrics: MXAppExitMetric?",
+      "desc": "The app foreground and background exit metrics for the reporting period."
+    },
+    {
+      "name": "var applicationTimeMetrics: MXAppRunTimeMetric?",
+      "desc": "The app foreground and background time metrics for the reporting period."
+    },
+    {
+      "name": "var memoryMetrics: MXMemoryMetric?",
+      "desc": "The memory metrics for the reporting period."
+    },
+    {
+      "name": "var applicationLaunchMetrics: MXAppLaunchMetric?",
+      "desc": "The app launch and resume metrics for the reporting period."
+    },
+    {
+      "name": "var animationMetrics: MXAnimationMetric?",
+      "desc": "The metrics for the responsiveness of app animations for the reporting period."
+    },
+    {
+      "name": "var applicationResponsivenessMetrics: MXAppResponsivenessMetric?",
+      "desc": "The metrics indicating an app's responsiveness to user interaction for the reporting period."
+    },
+    {
+      "name": "var diskIOMetrics: MXDiskIOMetric?",
+      "desc": "The storage metrics for the reporting period."
+    },
+    {
+      "name": "var signpostMetrics: [MXSignpostMetric]?",
+      "desc": "An array of the custom metrics for the reporting period."
+    },
+    {
+      "name": "func jsonRepresentation() -> Data",
+      "desc": "Returns the contents of the payload in JSON format."
+    },
+    {
+      "name": "var timeStampBegin: Date",
+      "desc": "The starting time of the reporting period."
+    },
+    {
+      "name": "var timeStampEnd: Date",
+      "desc": "The ending time of the reporting period."
+    },
+    {
+      "name": "var includesMultipleApplicationVersions: Bool",
+      "desc": "A Boolean indicating if the version of the app changed at least once during the reporting period."
+    },
+    {
+      "name": "var latestApplicationVersion: String",
+      "desc": "The version of the app on the device at the end of the reporting period."
+    },
+    {
+      "name": "var metaData: MXMetaData?",
+      "desc": "A set of system-level information for the device."
+    }
+  ],
+  "declaration": "class MXMetricPayload : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

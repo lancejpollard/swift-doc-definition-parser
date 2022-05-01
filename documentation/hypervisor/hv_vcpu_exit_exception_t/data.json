@@ -1,0 +1,29 @@
+{
+  "path": "/documentation/hypervisor/hv_vcpu_exit_exception_t",
+  "type": "Structure",
+  "name": "hv_vcpu_exit_exception_t",
+  "desc": "The structure that describes information about an exit from the virtual CPU (vCPU) to the host.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a new VCPU exit exception instance."
+    },
+    {
+      "name": "init(syndrome: hv_exception_syndrome_t, virtual_address: hv_exception_address_t, physical_address: hv_ipa_t)",
+      "desc": "Creates a new VCPU exit exception instance.with the parameters you provide."
+    },
+    {
+      "name": "var physical_address: hv_ipa_t",
+      "desc": "The intermediate physical address of the exception in the client."
+    },
+    {
+      "name": "var syndrome: hv_exception_syndrome_t",
+      "desc": "The vCPU exception syndrome causing the exception."
+    },
+    {
+      "name": "var virtual_address: hv_exception_address_t",
+      "desc": "The vCPU virtual address of the exception."
+    }
+  ],
+  "declaration": "struct hv_vcpu_exit_exception_t"
+}

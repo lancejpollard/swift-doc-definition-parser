@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/accelerate/sparseopaquefactorization_double",
+  "type": "Structure",
+  "name": "SparseOpaqueFactorization_Double",
+  "desc": "A structure that represents the factorization of a matrix of double-precision, floating-point values.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a new opaque factorization."
+    },
+    {
+      "name": "init(status: SparseStatus_t, attributes: SparseAttributes_t, symbolicFactorization: SparseOpaqueSymbolicFactorization, userFactorStorage: Bool, numericFactorization: UnsafeMutableRawPointer?, solveWorkspaceRequiredStatic: Int, solveWorkspaceRequiredPerRHS: Int)",
+      "desc": "Creates a new opaque factorization with the specified parameters."
+    },
+    {
+      "name": "var attributes: SparseAttributes_t",
+      "desc": "The attributes of a factorization object."
+    },
+    {
+      "name": "var numericFactorization: UnsafeMutableRawPointer?",
+      "desc": "The pointer to a private internal representation of a numeric factor."
+    },
+    {
+      "name": "var solveWorkspaceRequiredPerRHS: Int",
+      "desc": "The required size of the per-right-hand-side workspace for a call to a sparse solve function."
+    },
+    {
+      "name": "var solveWorkspaceRequiredStatic: Int",
+      "desc": "The required size of the static workspace for a call to a sparse solve function."
+    },
+    {
+      "name": "var status: SparseStatus_t",
+      "desc": "The status of the factorization object."
+    },
+    {
+      "name": "var symbolicFactorization: SparseOpaqueSymbolicFactorization",
+      "desc": "The symbolic factorization that this numeric factorization depends on."
+    },
+    {
+      "name": "var userFactorStorage: Bool",
+      "desc": "A Boolean value that indicates whether user-provided storage backs this object."
+    }
+  ],
+  "declaration": "struct SparseOpaqueFactorization_Double"
+}

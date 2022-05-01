@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/corefoundation/cfnotificationsuspensionbehavior",
+  "type": "Enumeration",
+  "name": "CFNotificationSuspensionBehavior",
+  "desc": "Suspension flags that indicate how distributed notifications should be handled when the receiving application is in the background.",
+  "items": [
+    {
+      "name": "case drop",
+      "desc": "The server will not queue any notifications of the specified name and object while the receiving application is in the background."
+    },
+    {
+      "name": "case coalesce",
+      "desc": "The server will only queue the last notification of the specified name and object; earlier notifications are dropped."
+    },
+    {
+      "name": "case hold",
+      "desc": "The server will hold all matching notifications until the queue has been filled (queue size determined by the server) at which point the server may flush queued notifications."
+    },
+    {
+      "name": "case deliverImmediately",
+      "desc": "The server will deliver notifications of the specified name and object whether or not the application is in the background. When a notification with this suspension behavior is matched, it has the effect of first flushing any queued notifications."
+    }
+  ],
+  "declaration": "enum CFNotificationSuspensionBehavior, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

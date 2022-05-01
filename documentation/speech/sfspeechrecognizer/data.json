@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/speech/sfspeechrecognizer",
+  "type": "Class",
+  "name": "SFSpeechRecognizer",
+  "desc": "An object you use to check for the availability of the speech recognition service, and to initiate the speech recognition process.",
+  "items": [
+    {
+      "name": "init?()",
+      "desc": "Creates a speech recognizer associated with the user's default language settings."
+    },
+    {
+      "name": "init?(locale: Locale)",
+      "desc": "Creates a speech recognizer associated with the specified locale."
+    },
+    {
+      "name": "var delegate: SFSpeechRecognizerDelegate?",
+      "desc": "The delegate object that handles changes to the availability of speech recognition services."
+    },
+    {
+      "name": "protocol SFSpeechRecognizerDelegate",
+      "desc": "A protocol that you adopt in your objects to track the availability of a speech recognizer."
+    },
+    {
+      "name": "var isAvailable: Bool",
+      "desc": "A Boolean value that indicates whether the speech recognizer is currently available."
+    },
+    {
+      "name": "var supportsOnDeviceRecognition: Bool",
+      "desc": "A Boolean value that indicates whether the speech recognizer can operate without network access."
+    },
+    {
+      "name": "class func requestAuthorization((SFSpeechRecognizerAuthorizationStatus) -> Void)",
+      "desc": "Asks the user to allow your app to perform speech recognition."
+    },
+    {
+      "name": "class func authorizationStatus() -> SFSpeechRecognizerAuthorizationStatus",
+      "desc": "Returns your app's current authorization to perform speech recognition."
+    },
+    {
+      "name": "enum SFSpeechRecognizerAuthorizationStatus",
+      "desc": "The app's authorization to perform speech recognition."
+    },
+    {
+      "name": "var defaultTaskHint: SFSpeechRecognitionTaskHint",
+      "desc": "A hint that indicates the type of speech recognition being requested."
+    },
+    {
+      "name": "var queue: OperationQueue",
+      "desc": "The queue on which to execute recognition task handlers and delegate methods."
+    },
+    {
+      "name": "func recognitionTask(with: SFSpeechRecognitionRequest, resultHandler: (SFSpeechRecognitionResult?, Error?) -> Void) -> SFSpeechRecognitionTask",
+      "desc": "Executes the speech recognition request and delivers the results to the specified handler block."
+    },
+    {
+      "name": "func recognitionTask(with: SFSpeechRecognitionRequest, delegate: SFSpeechRecognitionTaskDelegate) -> SFSpeechRecognitionTask",
+      "desc": "Recognizes speech from the audio source associated with the specified request, using the specified delegate to manage the results."
+    },
+    {
+      "name": "protocol SFSpeechRecognitionTaskDelegate",
+      "desc": "A protocol with methods for managing multi-utterance speech recognition requests."
+    },
+    {
+      "name": "var locale: Locale",
+      "desc": "The locale of the speech recognizer."
+    },
+    {
+      "name": "class func supportedLocales() -> Set<Locale>",
+      "desc": "Returns the set of locales that are supported by the speech recognizer."
+    }
+  ],
+  "declaration": "class SFSpeechRecognizer : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

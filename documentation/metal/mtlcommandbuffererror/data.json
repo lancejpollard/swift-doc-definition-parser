@@ -1,0 +1,97 @@
+{
+  "path": "/documentation/metal/mtlcommandbuffererror",
+  "type": "Structure",
+  "name": "MTLCommandBufferError",
+  "desc": "Error codes that indicate why the execution of the command buffer has failed.",
+  "items": [
+    {
+      "name": "var errorCode: Int",
+      "desc": "The error code."
+    },
+    {
+      "name": "var errorUserInfo: [String : Any]",
+      "desc": "The user info dictionary."
+    },
+    {
+      "name": "var localizedDescription: String",
+      "desc": "A string containing the localized description of the error."
+    },
+    {
+      "name": "static var none: MTLCommandBufferError.Code",
+      "desc": "No error occurred."
+    },
+    {
+      "name": "static var timeout: MTLCommandBufferError.Code",
+      "desc": "Execution of the command buffer took more time than the system allows, so execution was interrupted and aborted."
+    },
+    {
+      "name": "static var pageFault: MTLCommandBufferError.Code",
+      "desc": "Execution of the command buffer generated an unserviceable GPU page fault."
+    },
+    {
+      "name": "static var blacklisted: MTLCommandBufferError.Code",
+      "desc": "Access to the Metal device has been revoked because this client has been responsible for too many timeouts or hangs."
+    },
+    {
+      "name": "static var notPermitted: MTLCommandBufferError.Code",
+      "desc": "The process does not have permission to use the Metal device."
+    },
+    {
+      "name": "static var outOfMemory: MTLCommandBufferError.Code",
+      "desc": "Insufficient memory was available to execute the command buffer."
+    },
+    {
+      "name": "static var invalidResource: MTLCommandBufferError.Code",
+      "desc": "The command buffer referenced an invalid resource."
+    },
+    {
+      "name": "static var memoryless: MTLCommandBufferError.Code",
+      "desc": "One or more internal resource limits were reached that prevent using memoryless render pass attachments."
+    },
+    {
+      "name": "static var deviceRemoved: MTLCommandBufferError.Code",
+      "desc": "The GPU that executes the commands has been removed."
+    },
+    {
+      "name": "static var `internal`: MTLCommandBufferError.Code",
+      "desc": "An internal error that doesn't fit into the other categories."
+    },
+    {
+      "name": "static var errorDomain: String",
+      "desc": "The error domain used by a command buffer when returning command buffer execution errors."
+    },
+    {
+      "name": "static func != (MTLCommandBufferError, MTLCommandBufferError) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "init(Code, userInfo: [String : Any])"
+    },
+    {
+      "name": "var code: Code"
+    },
+    {
+      "name": "var hashValue: Int"
+    },
+    {
+      "name": "var userInfo: [String : Any]"
+    },
+    {
+      "name": "static var accessRevoked: MTLCommandBufferError.Code"
+    },
+    {
+      "name": "static var stackOverflow: MTLCommandBufferError.Code"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "static func == (MTLCommandBufferError, MTLCommandBufferError) -> Bool"
+    },
+    {
+      "name": "enum MTLCommandBufferError.Code",
+      "desc": "Error codes that indicate why the execution of the command buffer has failed. The error property contains the error code."
+    }
+  ],
+  "declaration": "struct MTLCommandBufferError"
+}

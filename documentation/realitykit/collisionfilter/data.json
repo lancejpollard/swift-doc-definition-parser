@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/realitykit/collisionfilter",
+  "type": "Structure",
+  "name": "CollisionFilter",
+  "desc": "A set of masks that determine whether entities can collide during simulations.",
+  "items": [
+    {
+      "name": "init(group: CollisionGroup, mask: CollisionGroup)",
+      "desc": "Creates a collision filter."
+    },
+    {
+      "name": "static let `default`: CollisionFilter",
+      "desc": "The default collision filter."
+    },
+    {
+      "name": "static let sensor: CollisionFilter",
+      "desc": "A collision filter for an entity that collides with everything."
+    },
+    {
+      "name": "var group: CollisionGroup",
+      "desc": "The collision group or groups, stored as a bit mask, to which the entity belongs."
+    },
+    {
+      "name": "var mask: CollisionGroup",
+      "desc": "The collision group or groups, stored as a bitmask, with which the entity can collide."
+    },
+    {
+      "name": "struct CollisionGroup",
+      "desc": "A bitmask that defines the collision group to which an entity belongs."
+    },
+    {
+      "name": "static func == (CollisionFilter, CollisionFilter) -> Bool",
+      "desc": "Indicates whether two collision filters are equal."
+    },
+    {
+      "name": "static func != (CollisionFilter, CollisionFilter) -> Bool",
+      "desc": "Indicates whether two collision filters are not equal."
+    }
+  ],
+  "declaration": "struct CollisionFilter",
+  "conformsTo": [
+    "Equatable"
+  ]
+}

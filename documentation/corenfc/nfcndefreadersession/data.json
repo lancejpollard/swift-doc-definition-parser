@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/corenfc/nfcndefreadersession",
+  "type": "Class",
+  "name": "NFCNDEFReaderSession",
+  "desc": "A reader session for detecting NFC Data Exchange Format (NDEF) tags.",
+  "items": [
+    {
+      "name": "init(delegate: NFCNDEFReaderSessionDelegate, queue: DispatchQueue?, invalidateAfterFirstRead: Bool)",
+      "desc": "Creates and initializes a new NFC NDEF reader session."
+    },
+    {
+      "name": "protocol NFCNDEFReaderSessionDelegate",
+      "desc": "A protocol that an object implements to serve as an NDEF reader session delegate."
+    },
+    {
+      "name": "func connect(to: NFCNDEFTag, completionHandler: (Error?) -> Void)",
+      "desc": "Connects the reader session to a tag and activates that tag."
+    },
+    {
+      "name": "func restartPolling()",
+      "desc": "Restarts the polling sequence so the reader session can discover new tags."
+    }
+  ],
+  "declaration": "class NFCNDEFReaderSession : NFCReaderSession",
+  "inheritsFrom": [
+    "NFCReaderSession"
+  ]
+}

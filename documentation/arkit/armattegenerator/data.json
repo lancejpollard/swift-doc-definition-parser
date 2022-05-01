@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/arkit/armattegenerator",
+  "type": "Class",
+  "name": "ARMatteGenerator",
+  "desc": "An object that creates matte textures you use to occlude your app's virtual content with people, that ARKit recognizes in the camera feed.",
+  "items": [
+    {
+      "name": "init(device: MTLDevice, matteResolution: ARMatteGenerator.Resolution)",
+      "desc": "Creates an AR matte generator."
+    },
+    {
+      "name": "func generateMatte(from: ARFrame, commandBuffer: MTLCommandBuffer) -> MTLTexture",
+      "desc": "Generates alpha matte at either full resolution or half the resolution of the captured image."
+    },
+    {
+      "name": "func generateDilatedDepth(from: ARFrame, commandBuffer: MTLCommandBuffer) -> MTLTexture",
+      "desc": "Generates dilated depth at the resolution of the segmentation stencil."
+    },
+    {
+      "name": "enum ARMatteGenerator.Resolution",
+      "desc": "A resolution for a matte texture."
+    }
+  ],
+  "declaration": "class ARMatteGenerator : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

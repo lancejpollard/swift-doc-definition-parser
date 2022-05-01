@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/authenticationservices/aswebauthenticationsessionrequest",
+  "type": "Class",
+  "name": "ASWebAuthenticationSessionRequest",
+  "desc": "A login session request that a web browser receives from an app.",
+  "items": [
+    {
+      "name": "var url: URL",
+      "desc": "The web address the browser should use to perform the authentication request."
+    },
+    {
+      "name": "var callbackURLScheme: String?",
+      "desc": "The scheme the browser should use to return the result of the authentication attempt to the app requesting it."
+    },
+    {
+      "name": "var shouldUseEphemeralSession: Bool",
+      "desc": "A Boolean that indicates whether the browser should use a private browsing session."
+    },
+    {
+      "name": "var uuid: UUID",
+      "desc": "A unique identifier for the request."
+    },
+    {
+      "name": "func complete(withCallbackURL: URL)",
+      "desc": "Indicates that the browser successfully completed the authentication attempt."
+    },
+    {
+      "name": "func cancelWithError(Error)",
+      "desc": "Indicates that the browser canceled the authentication attempt."
+    },
+    {
+      "name": "var delegate: ASWebAuthenticationSessionRequestDelegate?",
+      "desc": "A delegate that the session request instance informs about authentication completion."
+    },
+    {
+      "name": "protocol ASWebAuthenticationSessionRequestDelegate",
+      "desc": "An interface through which the session request can inform its delegate, which is typically a browser, about the outcome of the authentication attempt."
+    }
+  ],
+  "declaration": "class ASWebAuthenticationSessionRequest : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "path": "/documentation/swiftui/anytransition",
+  "type": "Structure",
+  "name": "AnyTransition",
+  "desc": "A type-erased transition.",
+  "items": [
+    {
+      "name": "static let identity: AnyTransition",
+      "desc": "A transition that returns the input view, unmodified, as the output view."
+    },
+    {
+      "name": "static func move(edge: Edge) -> AnyTransition",
+      "desc": "Returns a transition that moves the view away, towards the specified edge of the view."
+    },
+    {
+      "name": "static func offset(CGSize) -> AnyTransition"
+    },
+    {
+      "name": "static func offset(x: CGFloat, y: CGFloat) -> AnyTransition"
+    },
+    {
+      "name": "static let opacity: AnyTransition",
+      "desc": "A transition from transparent to opaque on insertion, and from opaque to transparent on removal."
+    },
+    {
+      "name": "static var scale: AnyTransition"
+    },
+    {
+      "name": "static func scale(scale: CGFloat, anchor: UnitPoint) -> AnyTransition"
+    },
+    {
+      "name": "static var slide: AnyTransition",
+      "desc": "A transition that inserts by moving in from the leading edge, and removes by moving out towards the trailing edge."
+    },
+    {
+      "name": "func animation(Animation?) -> AnyTransition",
+      "desc": "Attaches an animation to this transition."
+    },
+    {
+      "name": "static func asymmetric(insertion: AnyTransition, removal: AnyTransition) -> AnyTransition",
+      "desc": "Provides a composite transition that uses a different transition for insertion versus removal."
+    },
+    {
+      "name": "func combined(with: AnyTransition) -> AnyTransition",
+      "desc": "Combines this transition with another, returning a new transition that is the result of both transitions being applied."
+    },
+    {
+      "name": "static func modifier<E>(active: E, identity: E) -> AnyTransition",
+      "desc": "Returns a transition defined between an active modifier and an identity modifier."
+    }
+  ],
+  "declaration": "@frozen struct AnyTransition"
+}

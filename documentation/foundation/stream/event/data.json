@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/foundation/stream/event",
+  "type": "Structure",
+  "name": "Stream.Event",
+  "desc": "Describes the constants that may be sent to the delegate as a bit field in the second parameter of stream(_:handle:) to specify the kind of stream event.",
+  "items": [
+    {
+      "name": "static var openCompleted: Stream.Event",
+      "desc": "The open has completed successfully."
+    },
+    {
+      "name": "static var hasBytesAvailable: Stream.Event",
+      "desc": "The stream has bytes to be read."
+    },
+    {
+      "name": "static var hasSpaceAvailable: Stream.Event",
+      "desc": "The stream can accept bytes for writing."
+    },
+    {
+      "name": "static var errorOccurred: Stream.Event",
+      "desc": "An error has occurred on the stream."
+    },
+    {
+      "name": "static var endEncountered: Stream.Event",
+      "desc": "The end of the stream has been reached."
+    },
+    {
+      "name": "init(rawValue: UInt)"
+    }
+  ],
+  "declaration": "struct Event, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

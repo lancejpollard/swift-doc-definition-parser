@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/audiotoolbox/auhosttransportstateflags",
+  "type": "Structure",
+  "name": "AUHostTransportStateFlags",
+  "desc": "No overview available.",
+  "items": [
+    {
+      "name": "init(rawValue: UInt)"
+    },
+    {
+      "name": "static var changed: AUHostTransportStateFlags",
+      "desc": "Indicates such state changes as start, stop, or seeking to another position in the timeline. Can be active if there was a change to the state of, or discontinuities in, the audio transport since the AUHostTransportStateBlock callback was last called."
+    },
+    {
+      "name": "static var cycling: AUHostTransportStateFlags",
+      "desc": "Indicates that the host is cycling or looping."
+    },
+    {
+      "name": "static var moving: AUHostTransportStateFlags",
+      "desc": "Indicates that the audio transport is moving."
+    },
+    {
+      "name": "static var recording: AUHostTransportStateFlags",
+      "desc": "Indicates that the host is recording, or is prepared to record. Can be active with or without a moving state."
+    }
+  ],
+  "declaration": "struct AUHostTransportStateFlags, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

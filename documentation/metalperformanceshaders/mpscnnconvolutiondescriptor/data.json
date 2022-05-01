@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpscnnconvolutiondescriptor",
+  "type": "Class",
+  "name": "MPSCNNConvolutionDescriptor",
+  "desc": "A description of the attributes of a convolution kernel.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder)"
+    },
+    {
+      "name": "init(kernelWidth: Int, kernelHeight: Int, inputFeatureChannels: Int, outputFeatureChannels: Int)"
+    },
+    {
+      "name": "init(kernelWidth: Int, kernelHeight: Int, inputFeatureChannels: Int, outputFeatureChannels: Int, neuronFilter: MPSCNNNeuron?)",
+      "desc": "Creates a convolution descriptor with an optional neuron filter."
+    },
+    {
+      "name": "var groups: Int",
+      "desc": "The number of groups that the input and output channels are divided into."
+    },
+    {
+      "name": "var inputFeatureChannels: Int",
+      "desc": "The number of feature channels per pixel in the input image."
+    },
+    {
+      "name": "var kernelHeight: Int",
+      "desc": "The height of the kernel window."
+    },
+    {
+      "name": "var kernelWidth: Int",
+      "desc": "The width of the kernel window."
+    },
+    {
+      "name": "var outputFeatureChannels: Int",
+      "desc": "The number of feature channels per pixel in the output image."
+    },
+    {
+      "name": "var strideInPixelsX: Int",
+      "desc": "The output stride (downsampling factor) in the x dimension."
+    },
+    {
+      "name": "var strideInPixelsY: Int",
+      "desc": "The output stride (downsampling factor) in the y dimension."
+    },
+    {
+      "name": "var neuron: MPSCNNNeuron?",
+      "desc": "The neuron filter to be applied as part of the convolution operation."
+    },
+    {
+      "name": "var dilationRateX: Int"
+    },
+    {
+      "name": "var dilationRateY: Int"
+    },
+    {
+      "name": "var fusedNeuronDescriptor: MPSNNNeuronDescriptor"
+    },
+    {
+      "name": "func encode(with: NSCoder)"
+    },
+    {
+      "name": "func setBatchNormalizationParametersForInferenceWithMean(UnsafePointer<Float>?, variance: UnsafePointer<Float>?, gamma: UnsafePointer<Float>?, beta: UnsafePointer<Float>?, epsilon: Float)"
+    },
+    {
+      "name": "class var supportsSecureCoding: Bool"
+    }
+  ],
+  "declaration": "class MPSCNNConvolutionDescriptor : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/combine/publishers/removeduplicates",
+  "type": "Structure",
+  "name": "Publishers.RemoveDuplicates",
+  "desc": "A publisher that publishes only elements that don’t match the previous element.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, predicate: (Publishers.RemoveDuplicates<Upstream>.Output, Publishers.RemoveDuplicates<Upstream>.Output) -> Bool)",
+      "desc": "Creates a publisher that publishes only elements that don’t match the previous element, as evaluated by a provided closure."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    },
+    {
+      "name": "let predicate: (Publishers.RemoveDuplicates<Upstream>.Output, Publishers.RemoveDuplicates<Upstream>.Output) -> Bool",
+      "desc": "The predicate closure used to evaluate whether two elements are duplicates."
+    }
+  ],
+  "declaration": "struct RemoveDuplicates<Upstream> where Upstream : Publisher",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

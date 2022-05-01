@@ -1,0 +1,50 @@
+{
+  "path": "/documentation/quartz/qcrenderer",
+  "type": "Class",
+  "name": "QCRenderer",
+  "desc": "A QCRenderer class is designed for low-level rendering of Quartz Composer compositions. This is the class to use if you want to be in charge of rendering a composition to a specific OpenGL context—either using the NSOpenGLContext class or a CGLContextObj object. QCRenderer also allows you to load, play, and control a composition.",
+  "items": [
+    {
+      "name": "init!(composition: QCComposition!, colorSpace: CGColorSpace!)",
+      "desc": "Creates a renderer object with a composition object and a color space."
+    },
+    {
+      "name": "init!(openGLContext: NSOpenGLContext!, pixelFormat: NSOpenGLPixelFormat!, file: String!)",
+      "desc": "Creates a renderer object with an NSOpenGLContext object and a composition file."
+    },
+    {
+      "name": "init!(cglContext: CGLContextObj!, pixelFormat: CGLPixelFormatObj!, colorSpace: CGColorSpace!, composition: QCComposition!)",
+      "desc": "Creates a renderer object with a CGLContextObj object, a pixel format, a color space, and a composition object."
+    },
+    {
+      "name": "init!(offScreenWith: NSSize, colorSpace: CGColorSpace!, composition: QCComposition!)",
+      "desc": "Creates an offscreen renderer of a given size with the provided color space and composition object."
+    },
+    {
+      "name": "func render(atTime: TimeInterval, arguments: [AnyHashable : Any]!) -> Bool",
+      "desc": "Renders a frame of a composition at the specified time."
+    },
+    {
+      "name": "func composition() -> QCComposition!",
+      "desc": "Returns the composition object associated with the renderer."
+    },
+    {
+      "name": "func snapshotImage() -> NSImage!",
+      "desc": "Returns an NSImage object of the current image in the OpenGL context associated with the renderer."
+    },
+    {
+      "name": "func createSnapshotImage(ofType: String!) -> Any!",
+      "desc": "Returns the current image in the OpenGL context associated with the renderer, as an image object of the provided image type."
+    },
+    {
+      "name": "func renderingTime(forTime: TimeInterval, arguments: [AnyHashable : Any]!) -> TimeInterval"
+    }
+  ],
+  "declaration": "class QCRenderer : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "QCCompositionRenderer"
+  ]
+}

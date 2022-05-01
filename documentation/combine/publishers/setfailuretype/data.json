@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/combine/publishers/setfailuretype",
+  "type": "Structure",
+  "name": "Publishers.SetFailureType",
+  "desc": "A publisher that appears to send a specified failure type.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream)",
+      "desc": "Creates a publisher that appears to send a specified failure type."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    },
+    {
+      "name": "static func == (Publishers.SetFailureType<Upstream, Failure>, Publishers.SetFailureType<Upstream, Failure>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two publishers are equivalent."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    }
+  ],
+  "declaration": "struct SetFailureType<Upstream, Failure> where Upstream : Publisher, Failure : Error, Upstream.Failure == Never",
+  "conformsTo": [
+    "Equatable",
+    "Publisher"
+  ]
+}

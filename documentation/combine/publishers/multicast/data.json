@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/combine/publishers/multicast",
+  "type": "Class",
+  "name": "Publishers.Multicast",
+  "desc": "A publisher that uses a subject to deliver elements to multiple subscribers.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, createSubject: () -> SubjectType)",
+      "desc": "Creates a multicast publisher that applies a closure to create a subject that delivers elements to subscribers."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives its elements."
+    },
+    {
+      "name": "let createSubject: () -> SubjectType",
+      "desc": "A closure that returns a subject each time a subscriber attaches to the multicast publisher."
+    },
+    {
+      "name": "func connect() -> Cancellable",
+      "desc": "Connects to the publisher, allowing it to produce elements, and returns an instance with which to cancel publishing."
+    },
+    {
+      "name": "func autoconnect() -> Publishers.Autoconnect<Self>",
+      "desc": "Automates the process of connecting or disconnecting from this connectable publisher."
+    }
+  ],
+  "declaration": "final class Multicast<Upstream, SubjectType> where Upstream : Publisher, SubjectType : Subject, Upstream.Failure == SubjectType.Failure, Upstream.Output == SubjectType.Output",
+  "conformsTo": [
+    "ConnectablePublisher",
+    "Publisher"
+  ]
+}

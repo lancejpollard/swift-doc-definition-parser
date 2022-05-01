@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/foundation/urlsessiondelegate",
+  "type": "Protocol",
+  "name": "URLSessionDelegate",
+  "desc": "A protocol that defines methods that URL session instances call on their delegates to handle session-level events, like session life cycle changes.",
+  "items": [
+    {
+      "name": "func urlSession(URLSession, didBecomeInvalidWithError: Error?)",
+      "desc": "Tells the URL session that the session has been invalidated."
+    },
+    {
+      "name": "func urlSessionDidFinishEvents(forBackgroundURLSession: URLSession)",
+      "desc": "Tells the delegate that all messages enqueued for a session have been delivered."
+    },
+    {
+      "name": "func urlSession(URLSession, didReceive: URLAuthenticationChallenge, completionHandler: (URLSession.AuthChallengeDisposition, URLCredential?) -> Void)",
+      "desc": "Requests credentials from the delegate in response to a session-level authentication request from the remote server."
+    },
+    {
+      "name": "enum URLSession.AuthChallengeDisposition",
+      "desc": "Constants passed by session or task delegates to the provided continuation block in response to an authentication challenge."
+    }
+  ],
+  "declaration": "protocol URLSessionDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/webkit/wkuidelegate",
+  "type": "Protocol",
+  "name": "WKUIDelegate",
+  "desc": "The methods for presenting native user interface elements on behalf of a webpage.",
+  "items": [
+    {
+      "name": "func webView(WKWebView, createWebViewWith: WKWebViewConfiguration, for: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView?",
+      "desc": "Creates a new web view."
+    },
+    {
+      "name": "func webViewDidClose(WKWebView)",
+      "desc": "Notifies your app that the DOM window closed successfully."
+    },
+    {
+      "name": "func webView(WKWebView, runJavaScriptAlertPanelWithMessage: String, initiatedByFrame: WKFrameInfo, completionHandler: () -> Void)",
+      "desc": "Displays a JavaScript alert panel."
+    },
+    {
+      "name": "func webView(WKWebView, runJavaScriptConfirmPanelWithMessage: String, initiatedByFrame: WKFrameInfo, completionHandler: (Bool) -> Void)",
+      "desc": "Displays a JavaScript confirm panel."
+    },
+    {
+      "name": "func webView(WKWebView, runJavaScriptTextInputPanelWithPrompt: String, defaultText: String?, initiatedByFrame: WKFrameInfo, completionHandler: (String?) -> Void)",
+      "desc": "Displays a JavaScript text input panel."
+    },
+    {
+      "name": "func webView(WKWebView, runOpenPanelWith: WKOpenPanelParameters, initiatedByFrame: WKFrameInfo, completionHandler: ([URL]?) -> Void)",
+      "desc": "Displays a file upload panel."
+    },
+    {
+      "name": "class WKOpenPanelParameters",
+      "desc": "The configuration details of a file upload control in your web content."
+    },
+    {
+      "name": "func webView(WKWebView, contextMenuConfigurationForElement: WKContextMenuElementInfo, completionHandler: (UIContextMenuConfiguration?) -> Void)",
+      "desc": "Tells the delegate that a contextual menu interaction began."
+    },
+    {
+      "name": "func webView(WKWebView, contextMenuForElement: WKContextMenuElementInfo, willCommitWithAnimator: UIContextMenuInteractionCommitAnimating)",
+      "desc": "Provides the delegate with the animator object that the web view uses to display the contextual menu."
+    },
+    {
+      "name": "func webView(WKWebView, contextMenuWillPresentForElement: WKContextMenuElementInfo)",
+      "desc": "Tells the delegate that the web view is about to present the contextual menu for the specified element."
+    },
+    {
+      "name": "func webView(WKWebView, contextMenuDidEndForElement: WKContextMenuElementInfo)",
+      "desc": "Tells the delegate that the web view dismissed the contextual menu for the specified element."
+    },
+    {
+      "name": "class UIContextMenuConfiguration",
+      "desc": "An object containing the configuration details for the contextual menu."
+    },
+    {
+      "name": "func webView(WKWebView, requestDeviceOrientationAndMotionPermissionFor: WKSecurityOrigin, initiatedByFrame: WKFrameInfo, decisionHandler: (WKPermissionDecision) -> Void)",
+      "desc": "Determines whether a web resource, which the security origin object describes, can access the device’s orientation and motion."
+    },
+    {
+      "name": "func webView(WKWebView, requestMediaCapturePermissionFor: WKSecurityOrigin, initiatedByFrame: WKFrameInfo, type: WKMediaCaptureType, decisionHandler: (WKPermissionDecision) -> Void)",
+      "desc": "Determines whether a web resource, which the security origin object describes, can access to the device’s microphone audio and camera video."
+    },
+    {
+      "name": "enum WKPermissionDecision",
+      "desc": "An enumeration of possible permission decisions for device resource access."
+    },
+    {
+      "name": "enum WKMediaCaptureType",
+      "desc": "An enumeration listing the types of media devices that can capture audio, video, or both."
+    }
+  ],
+  "declaration": "protocol WKUIDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

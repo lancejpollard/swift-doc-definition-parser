@@ -1,0 +1,57 @@
+{
+  "path": "/documentation/security/seckeychaineventmask",
+  "type": "Structure",
+  "name": "SecKeychainEventMask",
+  "desc": "Bit masks corresponding to the events that can trigger a keychain callback.",
+  "items": [
+    {
+      "name": "init(rawValue: UInt32)",
+      "desc": "Initializes an event mask value."
+    },
+    {
+      "name": "static var lockEventMask: SecKeychainEventMask",
+      "desc": "If the bit specified by this mask is set, your callback function is invoked when a keychain is locked."
+    },
+    {
+      "name": "static var unlockEventMask: SecKeychainEventMask",
+      "desc": "If the bit specified by this mask is set, your callback function is invoked when a keychain is unlocked."
+    },
+    {
+      "name": "static var addEventMask: SecKeychainEventMask",
+      "desc": "If the bit specified by this mask is set, your callback function is invoked when an item is added to a keychain."
+    },
+    {
+      "name": "static var deleteEventMask: SecKeychainEventMask",
+      "desc": "If the bit specified by this mask is set, your callback function is invoked when an item is deleted from a keychain."
+    },
+    {
+      "name": "static var updateEventMask: SecKeychainEventMask",
+      "desc": "If the bit specified by this mask is set, your callback function is invoked when a keychain item is updated."
+    },
+    {
+      "name": "static var passwordChangedEventMask: SecKeychainEventMask",
+      "desc": "If the bit specified by this mask is set, your callback function is invoked when the keychain password is changed."
+    },
+    {
+      "name": "static var defaultChangedEventMask: SecKeychainEventMask",
+      "desc": "If the bit specified by this mask is set, your callback function is invoked when a different keychain is specified as the default."
+    },
+    {
+      "name": "static var keychainListChangedMask: SecKeychainEventMask",
+      "desc": "If the bit specified by this mask is set, your callback function is invoked when a keychain list is changed."
+    },
+    {
+      "name": "static var trustSettingsChangedEventMask: SecKeychainEventMask",
+      "desc": "If the bit specified by this mask is set, your callback function is invoked when there is a change in certificate trust settings."
+    },
+    {
+      "name": "static var everyEventMask: SecKeychainEventMask",
+      "desc": "If all the bits are set, your callback function is invoked whenever any event occurs."
+    }
+  ],
+  "declaration": "struct SecKeychainEventMask, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

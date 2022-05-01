@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/gameplaykit/gkrule",
+  "type": "Class",
+  "name": "GKRule",
+  "desc": "A rule to be used in the context of a rule system, with a predicate to be tested and an action to be executed when the test succeeds.",
+  "items": [
+    {
+      "name": "init(predicate: NSPredicate, assertingFact: NSObjectProtocol, grade: Float)",
+      "desc": "Creates a data-driven rule with the specified predicate, whose action asserts a fact in the rule system evaluating the rule."
+    },
+    {
+      "name": "init(predicate: NSPredicate, retractingFact: NSObjectProtocol, grade: Float)",
+      "desc": "Creates a data-driven rule with the specified predicate, whose action retracts a fact in the rule system evaluating the rule."
+    },
+    {
+      "name": "init(blockPredicate: (GKRuleSystem) -> Bool, action: (GKRuleSystem) -> Void)",
+      "desc": "Creates a rule whose predicate is evaluated and action is executed through the specified blocks."
+    },
+    {
+      "name": "var salience: Int",
+      "desc": "The importance of the rule relative to others in a rule system’s agenda."
+    },
+    {
+      "name": "func evaluatePredicate(in: GKRuleSystem) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the rule has been satisfied in the context of the specified rule system."
+    },
+    {
+      "name": "func performAction(in: GKRuleSystem)",
+      "desc": "Performs actions that should result when the rule is satisfied in the context of the specified rule system."
+    }
+  ],
+  "declaration": "class GKRule : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

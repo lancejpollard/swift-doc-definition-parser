@@ -1,0 +1,288 @@
+{
+  "path": "/documentation/foundation/nscalendar",
+  "type": "Class",
+  "name": "NSCalendar",
+  "desc": "An encapsulation of calendar information and calculations that bridges to Calendar; use NSCalendar when you need reference semantics or other Foundation-specific behavior.",
+  "items": [
+    {
+      "name": "init?(identifier: NSCalendar.Identifier)",
+      "desc": "Creates a new calendar specified by a given identifier."
+    },
+    {
+      "name": "init?(calendarIdentifier: NSCalendar.Identifier)",
+      "desc": "Initializes a calendar according to a given identifier."
+    },
+    {
+      "name": "struct NSCalendar.Identifier",
+      "desc": "The supported calendar types."
+    },
+    {
+      "name": "class var current: Calendar",
+      "desc": "The user’s current calendar."
+    },
+    {
+      "name": "class var autoupdatingCurrent: Calendar",
+      "desc": "A calendar that tracks changes to user’s preferred calendar."
+    },
+    {
+      "name": "func date(Date, matchesComponents: DateComponents) -> Bool",
+      "desc": "Returns whether a given date matches all of the given date components."
+    },
+    {
+      "name": "func component(NSCalendar.Unit, from: Date) -> Int",
+      "desc": "Returns the specified date component from a given date."
+    },
+    {
+      "name": "func components(NSCalendar.Unit, from: Date) -> DateComponents",
+      "desc": "Returns the date components representing a given date."
+    },
+    {
+      "name": "func components(NSCalendar.Unit, from: Date, to: Date, options: NSCalendar.Options) -> DateComponents",
+      "desc": "Returns the difference between two supplied dates as date components."
+    },
+    {
+      "name": "func components(NSCalendar.Unit, from: DateComponents, to: DateComponents, options: NSCalendar.Options) -> DateComponents",
+      "desc": "Returns the difference between start and end dates given as date components."
+    },
+    {
+      "name": "func components(in: TimeZone, from: Date) -> DateComponents",
+      "desc": "Returns all the date components of a date, as if in a given time zone (instead of the receiving calendar’s time zone)."
+    },
+    {
+      "name": "func getEra(UnsafeMutablePointer<Int>?, year: UnsafeMutablePointer<Int>?, month: UnsafeMutablePointer<Int>?, day: UnsafeMutablePointer<Int>?, from: Date)",
+      "desc": "Returns by reference the era, year, week of year, and weekday component values for a given date."
+    },
+    {
+      "name": "func getEra(UnsafeMutablePointer<Int>?, yearForWeekOfYear: UnsafeMutablePointer<Int>?, weekOfYear: UnsafeMutablePointer<Int>?, weekday: UnsafeMutablePointer<Int>?, from: Date)",
+      "desc": "Returns by reference the era, year, week of year, and weekday component values for a given date."
+    },
+    {
+      "name": "func getHour(UnsafeMutablePointer<Int>?, minute: UnsafeMutablePointer<Int>?, second: UnsafeMutablePointer<Int>?, nanosecond: UnsafeMutablePointer<Int>?, from: Date)",
+      "desc": "Returns by reference the hour, minute, second, and nanosecond component values for a given date."
+    },
+    {
+      "name": "var calendarIdentifier: NSCalendar.Identifier",
+      "desc": "An identifier for the calendar."
+    },
+    {
+      "name": "var firstWeekday: Int",
+      "desc": "The index of the first weekday of the receiver."
+    },
+    {
+      "name": "var locale: Locale?",
+      "desc": "The locale of the receiver."
+    },
+    {
+      "name": "var timeZone: TimeZone",
+      "desc": "The time zone for the calendar."
+    },
+    {
+      "name": "func maximumRange(of: NSCalendar.Unit) -> NSRange",
+      "desc": "Returns the maximum range limits of the values that a given unit can take on."
+    },
+    {
+      "name": "func minimumRange(of: NSCalendar.Unit) -> NSRange",
+      "desc": "Returns the minimum range limits of the values that a given unit can take on."
+    },
+    {
+      "name": "var minimumDaysInFirstWeek: Int",
+      "desc": "The minimum number of days in the first week of the receiver."
+    },
+    {
+      "name": "func ordinality(of: NSCalendar.Unit, in: NSCalendar.Unit, for: Date) -> Int",
+      "desc": "Returns, for a given absolute time, the ordinal number of a smaller calendar unit (such as a day) within a specified larger calendar unit (such as a week)."
+    },
+    {
+      "name": "func range(of: NSCalendar.Unit, in: NSCalendar.Unit, for: Date) -> NSRange",
+      "desc": "Returns the range of absolute time values that a smaller calendar unit (such as a day) can take on in a larger calendar unit (such as a month) that includes a specified absolute time."
+    },
+    {
+      "name": "func range(of: NSCalendar.Unit, start: AutoreleasingUnsafeMutablePointer<NSDate?>?, interval: UnsafeMutablePointer<TimeInterval>?, for: Date) -> Bool",
+      "desc": "Returns by reference the starting time and duration of a given calendar unit that contains a given date."
+    },
+    {
+      "name": "func range(ofWeekendStart: AutoreleasingUnsafeMutablePointer<NSDate?>?, interval: UnsafeMutablePointer<TimeInterval>?, containing: Date) -> Bool",
+      "desc": "Returns whether a given date falls within a weekend period, and if so, returns by reference the start date and time interval of the weekend range."
+    },
+    {
+      "name": "struct NSCalendar.Unit",
+      "desc": "Calendrical units such as year, month, day and hour."
+    },
+    {
+      "name": "func startOfDay(for: Date) -> Date",
+      "desc": "Returns the first moment of a given date as a date instance."
+    },
+    {
+      "name": "func enumerateDates(startingAfter: Date, matching: DateComponents, options: NSCalendar.Options, using: (Date?, Bool, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Computes the dates that match (or most closely match) a given set of components, and calls the block once for each of them, until the enumeration is stopped."
+    },
+    {
+      "name": "func nextDate(after: Date, matching: DateComponents, options: NSCalendar.Options) -> Date?",
+      "desc": "Returns the next date after a given date matching the given components."
+    },
+    {
+      "name": "func nextDate(after: Date, matchingHour: Int, minute: Int, second: Int, options: NSCalendar.Options) -> Date?",
+      "desc": "Returns the next date after a given date that matches the given hour, minute, and second, component values."
+    },
+    {
+      "name": "func nextDate(after: Date, matching: NSCalendar.Unit, value: Int, options: NSCalendar.Options) -> Date?",
+      "desc": "Returns the next date after a given date matching the given calendar unit value."
+    },
+    {
+      "name": "struct NSCalendar.Options",
+      "desc": "The options for arithmetic operations involving calendars."
+    },
+    {
+      "name": "func date(from: DateComponents) -> Date?",
+      "desc": "Returns a date representing the absolute time calculated from given components."
+    },
+    {
+      "name": "func date(byAdding: DateComponents, to: Date, options: NSCalendar.Options) -> Date?",
+      "desc": "Returns a date representing the absolute time calculated by adding given components to a given date."
+    },
+    {
+      "name": "func date(byAdding: NSCalendar.Unit, value: Int, to: Date, options: NSCalendar.Options) -> Date?",
+      "desc": "Returns a date representing the absolute time calculated by adding the value of a given component to a given date."
+    },
+    {
+      "name": "func date(bySettingHour: Int, minute: Int, second: Int, of: Date, options: NSCalendar.Options) -> Date?",
+      "desc": "Creates a new date calculated with the given time."
+    },
+    {
+      "name": "func date(bySettingUnit: NSCalendar.Unit, value: Int, of: Date, options: NSCalendar.Options) -> Date?",
+      "desc": "Returns a new date representing the date calculated by setting a specific component of a given date to a given value, while trying to keep lower components the same."
+    },
+    {
+      "name": "func date(era: Int, year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int, nanosecond: Int) -> Date?",
+      "desc": "Returns a date created with the given components."
+    },
+    {
+      "name": "func date(era: Int, yearForWeekOfYear: Int, weekOfYear: Int, weekday: Int, hour: Int, minute: Int, second: Int, nanosecond: Int) -> Date?",
+      "desc": "Returns a new date created with the given components base on a week-of-year value."
+    },
+    {
+      "name": "func nextWeekendStart(AutoreleasingUnsafeMutablePointer<NSDate?>?, interval: UnsafeMutablePointer<TimeInterval>?, options: NSCalendar.Options, after: Date) -> Bool",
+      "desc": "Returns by reference the starting date and time interval range of the next weekend period after a given date."
+    },
+    {
+      "name": "func compare(Date, to: Date, toUnitGranularity: NSCalendar.Unit) -> ComparisonResult",
+      "desc": "Indicates the ordering of two given dates based on their components down to a given unit granularity."
+    },
+    {
+      "name": "func isDate(Date, equalTo: Date, toUnitGranularity: NSCalendar.Unit) -> Bool",
+      "desc": "Indicates whether two dates are equal to a given unit of granularity."
+    },
+    {
+      "name": "func isDate(Date, inSameDayAs: Date) -> Bool",
+      "desc": "Indicates whether two dates are in the same day."
+    },
+    {
+      "name": "func isDateInToday(Date) -> Bool",
+      "desc": "Indicates whether the given date is in “today.”"
+    },
+    {
+      "name": "func isDateInTomorrow(Date) -> Bool",
+      "desc": "Indicates whether the given date is in “tomorrow.”"
+    },
+    {
+      "name": "func isDateInWeekend(Date) -> Bool",
+      "desc": "Indicates whether a given date falls within a weekend period, as defined by the calendar and the calendar's locale."
+    },
+    {
+      "name": "func isDateInYesterday(Date) -> Bool",
+      "desc": "Indicates whether the given date is in “yesterday.”"
+    },
+    {
+      "name": "var amSymbol: String",
+      "desc": "The symbol used to represent “AM” for this calendar."
+    },
+    {
+      "name": "var pmSymbol: String",
+      "desc": "The symbol used to represent “PM” for this calendar."
+    },
+    {
+      "name": "var weekdaySymbols: [String]",
+      "desc": "A list of weekdays in this calendar."
+    },
+    {
+      "name": "var shortWeekdaySymbols: [String]",
+      "desc": "A list of shorter-named weekdays in this calendar."
+    },
+    {
+      "name": "var veryShortWeekdaySymbols: [String]",
+      "desc": "A list of very-shortly-named weekdays in this calendar."
+    },
+    {
+      "name": "var standaloneWeekdaySymbols: [String]",
+      "desc": "A list of standalone weekday symbols for this calendar."
+    },
+    {
+      "name": "var shortStandaloneWeekdaySymbols: [String]",
+      "desc": "A list of short standalone weekday symbols for this calendar."
+    },
+    {
+      "name": "var veryShortStandaloneWeekdaySymbols: [String]",
+      "desc": "A list of very short standalone weekday symbols for this calendar."
+    },
+    {
+      "name": "var monthSymbols: [String]",
+      "desc": "A list of month symbols for this calendar."
+    },
+    {
+      "name": "var shortMonthSymbols: [String]",
+      "desc": "A list of short month symbols for this calendar."
+    },
+    {
+      "name": "var veryShortMonthSymbols: [String]",
+      "desc": "A list of very short month symbols for this calendar."
+    },
+    {
+      "name": "var standaloneMonthSymbols: [String]",
+      "desc": "A list of standalone month symbols for this calendar."
+    },
+    {
+      "name": "var shortStandaloneMonthSymbols: [String]",
+      "desc": "A list of short standalone month symbols for this calendar."
+    },
+    {
+      "name": "var veryShortStandaloneMonthSymbols: [String]",
+      "desc": "A list of very short month symbols for this calendar."
+    },
+    {
+      "name": "var quarterSymbols: [String]",
+      "desc": "A list of quarter symbols for this calendar."
+    },
+    {
+      "name": "var shortQuarterSymbols: [String]",
+      "desc": "A list of short quarter symbols for this calendar."
+    },
+    {
+      "name": "var standaloneQuarterSymbols: [String]",
+      "desc": "A list of standalone quarter symbols for this calendar."
+    },
+    {
+      "name": "var shortStandaloneQuarterSymbols: [String]",
+      "desc": "A list of short standalone quarter symbols for this calendar."
+    },
+    {
+      "name": "var eraSymbols: [String]",
+      "desc": "A list of era symbols for this calendar."
+    },
+    {
+      "name": "var longEraSymbols: [String]",
+      "desc": "A list of long era symbols for this calendar."
+    },
+    {
+      "name": "static let NSCalendarDayChanged: NSNotification.Name",
+      "desc": "A notification that is posted whenever the calendar day of the system changes, as determined by the system calendar, locale, and time zone."
+    }
+  ],
+  "declaration": "class NSCalendar : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

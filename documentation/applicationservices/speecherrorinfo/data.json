@@ -1,0 +1,35 @@
+{
+  "path": "/documentation/applicationservices/speecherrorinfo",
+  "type": "Structure",
+  "name": "SpeechErrorInfo",
+  "desc": "Defines a speech error information structure.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(count: Int16, oldest: OSErr, oldPos: Int, newest: OSErr, newPos: Int)"
+    },
+    {
+      "name": "var count: Int16",
+      "desc": "The number of errors that have occurred in processing the current text buffer since the last call to the GetSpeechInfo function with the soErrors selector. Of these errors, you can find information about only the first and last error that occurred."
+    },
+    {
+      "name": "var newPos: Int",
+      "desc": "The character position within the text buffer being processed of the most recent error."
+    },
+    {
+      "name": "var newest: OSErr",
+      "desc": "The error code of the most recent error."
+    },
+    {
+      "name": "var oldPos: Int",
+      "desc": "The character position within the text buffer being processed of the first error that occurred after the previous call to the GetSpeechInfo function with the soErrors selector."
+    },
+    {
+      "name": "var oldest: OSErr",
+      "desc": "The error code of the first error that occurred after the previous call to the GetSpeechInfo function with the soErrors selector."
+    }
+  ],
+  "declaration": "struct SpeechErrorInfo"
+}

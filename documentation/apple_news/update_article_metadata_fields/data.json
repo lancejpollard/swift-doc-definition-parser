@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/apple_news/update_article_metadata_fields",
+  "type": "Object",
+  "name": "Update Article Metadata Fields",
+  "desc": "See the metadata fields for the update article request.",
+  "items": [
+    {
+      "name": "revision",
+      "desc": "The current revision token for the article. The value of this field must match the latest revision from an earlier Create, Read, or Update Article call. This field prevents multiple users from updating an article simultaneously, which would result in data loss."
+    },
+    {
+      "name": "accessoryText",
+      "desc": "The text to include below the article excerpt in the channel view, such as a byline or category label."
+    },
+    {
+      "name": "isCandidateToBeFeatured",
+      "desc": "A Boolean that indicates whether this article should be considered for featuring in News."
+    },
+    {
+      "name": "isHidden",
+      "desc": "A Boolean that indicates whether the article should be temporarily hidden from display in the News feed."
+    },
+    {
+      "name": "isPreview",
+      "desc": "A Boolean that indicates whether this article should be public (live) or should be a preview that is only visible to members of your channel. Set isPreview to false to publish the article immediately and make it visible to all News users. If your channel has not yet been approved to publish articles in Apple News Format, setting isPreview to false results in an ONLY_PREVIEW_ALLOWED error."
+    },
+    {
+      "name": "isSponsored",
+      "desc": "A Boolean that indicates whether this article consists of sponsored content for promotional purposes. Sponsored content must be marked as such; channels that do not follow this policy may be suspended.When using isSponsored, if you do not want the sponsored article to appear in your channel’s feed, set sections to [] (an empty array)."
+    },
+    {
+      "name": "links",
+      "desc": "The section links for the article."
+    },
+    {
+      "name": "maturityRating",
+      "desc": "A string that indicates the viewing audience for the content. A MATURE rating indicates explicit content that is only appropriate for a specific audience."
+    },
+    {
+      "name": "targetTerritoryCountryCodes",
+      "desc": "The target country codes required for publishing the updated article. If targetTerritoryCountryCodes is not specified in Create Article Metadata Fields, or in Update Article Metadata Fields, the updated article is visible in all of your channel's territories.If targetTerritoryCountryCodes is specified in Create Article Metadata Fields and no targetTerritoryCountryCodes is specified in Update Article Metadata Fields, the article is visible in all the countries specified in Create Article Metadata Fields.If targetTerritoryCountryCodes is specified in Create Article Metadata Fields, and a subset of country codes are specified in Update Article Metadata Fields, the article is visible only in the subset of countries specified in Update Article Metadata Fields.Country codes must be in ISO 3166-1 alpha-2 code format; for example, AU for Australia. For a complete list of ISO country codes, see App Store Territories.If you specify a country code that is not defined in your channel's territories, the  ARTICLE_TERRITORY_NOT_ALLOWED error is generated. If you specify an invalid country code, the INVALID_ARTICLE_TERRITORY error is generated."
+    }
+  ]
+}

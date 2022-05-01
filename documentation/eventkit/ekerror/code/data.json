@@ -1,0 +1,163 @@
+{
+  "path": "/documentation/eventkit/ekerror/code",
+  "type": "Enumeration",
+  "name": "EKError.Code",
+  "desc": "Error codes for EventKit errors.",
+  "items": [
+    {
+      "name": "case eventNotMutable",
+      "desc": "The event isn't mutable and you can’t save or delete it."
+    },
+    {
+      "name": "case noCalendar",
+      "desc": "The event isn't associated with a calendar."
+    },
+    {
+      "name": "case noStartDate",
+      "desc": "The event has no start date set."
+    },
+    {
+      "name": "case noEndDate",
+      "desc": "The event has no end date set."
+    },
+    {
+      "name": "case datesInverted",
+      "desc": "The event’s end date occurs before its start date."
+    },
+    {
+      "name": "case internalFailure",
+      "desc": "An internal error occurred."
+    },
+    {
+      "name": "case calendarReadOnly",
+      "desc": "The calendar is read-only and you can’t add events to it."
+    },
+    {
+      "name": "case durationGreaterThanRecurrence",
+      "desc": "The duration of an event is greater than its recurrence interval."
+    },
+    {
+      "name": "case alarmGreaterThanRecurrence",
+      "desc": "The alarm interval is greater than the recurrence interval."
+    },
+    {
+      "name": "case startDateTooFarInFuture",
+      "desc": "The start date is further into the future than the calendar can display."
+    },
+    {
+      "name": "case startDateCollidesWithOtherOccurrence",
+      "desc": "The event’s start date collides with another occurrence of the event."
+    },
+    {
+      "name": "case objectBelongsToDifferentStore",
+      "desc": "The object belongs to a different calendar store."
+    },
+    {
+      "name": "case invitesCannotBeMoved",
+      "desc": "You can’t move the event because it’s an invitation."
+    },
+    {
+      "name": "case invalidSpan",
+      "desc": "The system encountered an invalid span during a save or deletion."
+    },
+    {
+      "name": "case calendarHasNoSource",
+      "desc": "You can’t save the calendar without setting a source first."
+    },
+    {
+      "name": "case calendarSourceCannotBeModified",
+      "desc": "You can’t move the calendar to another source."
+    },
+    {
+      "name": "case calendarIsImmutable",
+      "desc": "The calendar is immutable and you can’t modify or delete it."
+    },
+    {
+      "name": "case sourceDoesNotAllowCalendarAddDelete",
+      "desc": "The source doesn’t allow you to add or delete calendars."
+    },
+    {
+      "name": "case recurringReminderRequiresDueDate",
+      "desc": "The recurring reminder requires a due date."
+    },
+    {
+      "name": "case structuredLocationsNotSupported",
+      "desc": "The source to which this calendar belongs doesn't support structured locations."
+    },
+    {
+      "name": "case reminderLocationsNotSupported",
+      "desc": "The source doesn't support locations on reminders."
+    },
+    {
+      "name": "case alarmProximityNotSupported",
+      "desc": "The source doesn't allow geofences on alarms."
+    },
+    {
+      "name": "case calendarDoesNotAllowEvents",
+      "desc": "The calendar doesn’t allow you to add events."
+    },
+    {
+      "name": "case calendarDoesNotAllowReminders",
+      "desc": "The calendar doesn’t allow you to add reminders."
+    },
+    {
+      "name": "case sourceDoesNotAllowReminders",
+      "desc": "The source doesn't allow calendars supporting reminder entity types."
+    },
+    {
+      "name": "case sourceDoesNotAllowEvents",
+      "desc": "The source doesn't allow calendars supporting event entity types."
+    },
+    {
+      "name": "case priorityIsInvalid",
+      "desc": "The priority number for the reminder is invalid."
+    },
+    {
+      "name": "case invalidEntityType",
+      "desc": "The entity type is invalid."
+    },
+    {
+      "name": "case procedureAlarmsNotMutable",
+      "desc": "You can’t create or modify procedure alarms."
+    },
+    {
+      "name": "case eventStoreNotAuthorized",
+      "desc": "The user hasn't authorized your app to access events or reminders."
+    },
+    {
+      "name": "case osNotSupported",
+      "desc": "The action isn't supported on the current operating system."
+    },
+    {
+      "name": "case invalidInviteReplyCalendar",
+      "desc": "The calendar is invalid or nil."
+    },
+    {
+      "name": "case notificationsCollectionFlagNotSet",
+      "desc": "The notification collection doesn't have the notifications collection flag."
+    },
+    {
+      "name": "case sourceMismatch",
+      "desc": "The object's source doesn't match its container's source."
+    },
+    {
+      "name": "case notificationCollectionMismatch",
+      "desc": "The notification collection that contains this notification doesn’t match the collection the system is trying to save."
+    },
+    {
+      "name": "case notificationSavedWithoutCollection",
+      "desc": "The notification can’t save because you haven’t added it to a notification collection and saved the collection first."
+    },
+    {
+      "name": "case last",
+      "desc": "This error is for internal use."
+    },
+    {
+      "name": "case reminderAlarmContainsEmailOrUrl"
+    }
+  ],
+  "declaration": "enum EKError.Code : Int, _ErrorCodeProtocol, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

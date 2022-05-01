@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/healthkit/hkliveworkoutdatasource",
+  "type": "Class",
+  "name": "HKLiveWorkoutDataSource",
+  "desc": "A data source that automatically provides live data from an active workout session.",
+  "items": [
+    {
+      "name": "init(healthStore: HKHealthStore, workoutConfiguration: HKWorkoutConfiguration?)",
+      "desc": "Creates a new data source based on the provided workout configuration."
+    },
+    {
+      "name": "var typesToCollect: Set<HKQuantityType>",
+      "desc": "The quantity type samples that the data source automatically sends to the workout builder."
+    },
+    {
+      "name": "func enableCollection(for: HKQuantityType, predicate: NSPredicate?)",
+      "desc": "Begins automatically calculating statistics for samples that match the quantity type and predicate."
+    },
+    {
+      "name": "func disableCollection(for: HKQuantityType)",
+      "desc": "Stops automatically calculating statistics for the quantity type."
+    }
+  ],
+  "declaration": "class HKLiveWorkoutDataSource : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

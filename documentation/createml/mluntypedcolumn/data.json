@@ -1,0 +1,331 @@
+{
+  "path": "/documentation/createml/mluntypedcolumn",
+  "type": "Structure",
+  "name": "MLUntypedColumn",
+  "desc": "A column of untyped values in a data table.",
+  "items": [
+    {
+      "name": "init<T>(repeating: T, count: Int)",
+      "desc": "Creates a new column with a repeating value."
+    },
+    {
+      "name": "init(repeating: MLDataValue, count: Int)",
+      "desc": "Creates a new column with a repeating value."
+    },
+    {
+      "name": "init(Range<Int>)",
+      "desc": "Creates a new column of integers from a given range."
+    },
+    {
+      "name": "init(ClosedRange<Int>)",
+      "desc": "Creates a new column of integers from a given closed range."
+    },
+    {
+      "name": "init<S>(S)",
+      "desc": "Creates a new column from a given sequence of elements that can be converted to machine learning data values."
+    },
+    {
+      "name": "init<S>(S)",
+      "desc": "Creates a new column from a given sequence of machine learning data values."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates an empty, invalid column used to remove an existing column from a data table."
+    },
+    {
+      "name": "init(ints: MLUntypedColumn)",
+      "desc": "Creates a new column of integers by converting the elements of another column."
+    },
+    {
+      "name": "init(doubles: MLUntypedColumn)",
+      "desc": "Creates a new column of doubles by converting the elements of another column."
+    },
+    {
+      "name": "init(strings: MLUntypedColumn)",
+      "desc": "Creates a new column of strings by converting the elements of another column."
+    },
+    {
+      "name": "init(sequences: MLUntypedColumn)",
+      "desc": "Creates a new column of machine learning sequences by converting the elements of another column."
+    },
+    {
+      "name": "init(dictionaries: MLUntypedColumn)",
+      "desc": "Creates a new column of machine learning dictionaries by converting the elements of another column."
+    },
+    {
+      "name": "init(multiArrays: MLUntypedColumn)"
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of elements in the column."
+    },
+    {
+      "name": "subscript(Int) -> MLDataValue",
+      "desc": "Accesses the element at the given position."
+    },
+    {
+      "name": "func append(contentsOf: MLUntypedColumn)",
+      "desc": "Appends the elements of the given column to the end of this column."
+    },
+    {
+      "name": "func copy() -> MLUntypedColumn"
+    },
+    {
+      "name": "func sort(byIncreasingOrder: Bool) -> MLUntypedColumn"
+    },
+    {
+      "name": "func map<T>(to: T.Type) -> MLDataColumn<T>",
+      "desc": "Creates a new column of typed values by converting this untyped column to the given type."
+    },
+    {
+      "name": "var type: MLDataValue.ValueType",
+      "desc": "The underlying type of the column."
+    },
+    {
+      "name": "var ints: MLDataColumn<Int>?",
+      "desc": "A cloned data column of integers."
+    },
+    {
+      "name": "var doubles: MLDataColumn<Double>?",
+      "desc": "A cloned data column of doubles."
+    },
+    {
+      "name": "var strings: MLDataColumn<String>?",
+      "desc": "A cloned data column of strings."
+    },
+    {
+      "name": "var sequences: MLDataColumn<MLDataValue.SequenceType>?",
+      "desc": "A cloned data column of machine learning sequences."
+    },
+    {
+      "name": "var dictionaries: MLDataColumn<MLDataValue.DictionaryType>?",
+      "desc": "A cloned data column of machine learning dictionaries."
+    },
+    {
+      "name": "var multiArrays: MLDataColumn<MLDataValue.MultiArrayType>?",
+      "desc": "A cloned data column of machine learning multi-arrays."
+    },
+    {
+      "name": "func column<T>(type: T.Type) -> MLDataColumn<T>?",
+      "desc": "Clones the column to a data column of the given type."
+    },
+    {
+      "name": "func map<T>((MLDataValue) -> T) -> MLDataColumn<T>",
+      "desc": "Creates a new column of typed values by applying the given thread-safe transform to every non-missing element of this untyped column."
+    },
+    {
+      "name": "func map<T>((MLDataValue) -> T?) -> MLDataColumn<T>",
+      "desc": "Creates a new column of typed values, potentially with missing values, by applying the given thread-safe transform to every non-missing element of this untyped column."
+    },
+    {
+      "name": "func mapMissing<T>((MLDataValue) -> T?) -> MLDataColumn<T>",
+      "desc": "Creates a new column of typed values by applying the given thread-safe transform to every element of this untyped column, including missing elements."
+    },
+    {
+      "name": "subscript(MLDataColumn<Bool>) -> MLUntypedColumn",
+      "desc": "Creates a subset of the column by masking its elements with a data column of Booleans."
+    },
+    {
+      "name": "subscript(MLUntypedColumn) -> MLUntypedColumn",
+      "desc": "Creates a subset of the column by masking its elements with another untyped column."
+    },
+    {
+      "name": "func dropMissing() -> MLUntypedColumn",
+      "desc": "Creates a subset of the column by removing all elements without a value."
+    },
+    {
+      "name": "func dropDuplicates() -> MLUntypedColumn",
+      "desc": "Creates a subset of the column by removing all duplicate elements."
+    },
+    {
+      "name": "subscript(Range<Int>) -> MLUntypedColumn",
+      "desc": "Creates a subset of the column, given a range of elements."
+    },
+    {
+      "name": "subscript<R>(R) -> MLUntypedColumn",
+      "desc": "Creates a subset of the column, given a range expression of elements."
+    },
+    {
+      "name": "func prefix(Int) -> MLUntypedColumn",
+      "desc": "Creates a subset of the column, given a number of initial elements."
+    },
+    {
+      "name": "func suffix(Int) -> MLUntypedColumn",
+      "desc": "Creates a subset of the column, given a number of final elements."
+    },
+    {
+      "name": "func fillMissing(with: MLDataValue) -> MLUntypedColumn",
+      "desc": "Creates a modified copy of the column such that every missing element is replaced with the given value."
+    },
+    {
+      "name": "func materialize() -> MLUntypedColumn",
+      "desc": "Creates a new column by immediately evaluating any lazily applied data processing operations stored in the column."
+    },
+    {
+      "name": "static func + (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn",
+      "desc": "Creates a column by adding each element in the first column to the corresponding element in the second column."
+    },
+    {
+      "name": "static func - (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn",
+      "desc": "Creates a column by subtracting each element in the second column from the corresponding element in the first column."
+    },
+    {
+      "name": "static func * (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn",
+      "desc": "Creates a column by multiplying each element in the first column by the corresponding element in the second column."
+    },
+    {
+      "name": "static func / (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn",
+      "desc": "Creates a column by dividing each element in the first column by the corresponding element in the second column."
+    },
+    {
+      "name": "static func + (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn",
+      "desc": "Creates a column by adding each element of the given column to the given value."
+    },
+    {
+      "name": "static func - (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn",
+      "desc": "Creates a column by subtracting the given value from each element of the given column."
+    },
+    {
+      "name": "static func * (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn",
+      "desc": "Creates a column by multiplying each element of the given column by the given value."
+    },
+    {
+      "name": "static func / (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn",
+      "desc": "Creates a column by dividing each element of the given column by the given value."
+    },
+    {
+      "name": "static func + (MLDataValueConvertible, MLUntypedColumn) -> MLUntypedColumn",
+      "desc": "Creates a column by adding the given value to each element of the given column."
+    },
+    {
+      "name": "static func - (MLDataValueConvertible, MLUntypedColumn) -> MLUntypedColumn",
+      "desc": "Creates a column by subtracting each element of the given column from the given value."
+    },
+    {
+      "name": "static func * (MLDataValueConvertible, MLUntypedColumn) -> MLUntypedColumn",
+      "desc": "Creates a column by multiplying the given value by each element of the given column."
+    },
+    {
+      "name": "static func / (MLDataValueConvertible, MLUntypedColumn) -> MLUntypedColumn",
+      "desc": "Creates a column by dividing the given value by each element of the given column."
+    },
+    {
+      "name": "static func == (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn",
+      "desc": "Creates a column of Booleans by testing whether each element in the first column is equal to the corresponding element in the second column."
+    },
+    {
+      "name": "static func != (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn",
+      "desc": "Creates a column of Booleans by testing whether each element in the first column is not equal to the corresponding element in the second column."
+    },
+    {
+      "name": "static func < (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn",
+      "desc": "Creates a column of Booleans by testing whether each element in the first column is less than the corresponding element in the second column."
+    },
+    {
+      "name": "static func <= (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn",
+      "desc": "Creates a column of Booleans by testing whether each element in the first column is less than or equal to the corresponding element in the second column."
+    },
+    {
+      "name": "static func > (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn",
+      "desc": "Creates a column of Booleans by testing whether each element in the first column is greater than the corresponding element in the second column."
+    },
+    {
+      "name": "static func >= (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn",
+      "desc": "Creates a column of Booleans by testing whether each element in the first column is greater than or equal to the corresponding element in the second column."
+    },
+    {
+      "name": "static func == (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn",
+      "desc": "Creates a column of Booleans by testing whether each element in the given column is equal to the given value."
+    },
+    {
+      "name": "static func != (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn",
+      "desc": "Creates a column of Booleans by testing whether each element in the given column is not equal to the given value."
+    },
+    {
+      "name": "static func < (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn",
+      "desc": "Creates a column of Booleans by testing whether each element in the given column is less than the given value."
+    },
+    {
+      "name": "static func <= (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn",
+      "desc": "Creates a column of Booleans by testing whether each element in the given column is less than or equal to the given value."
+    },
+    {
+      "name": "static func > (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn",
+      "desc": "Creates a column of Booleans by testing whether each element in the given column is greater than the given value."
+    },
+    {
+      "name": "static func >= (MLUntypedColumn, MLDataValueConvertible) -> MLUntypedColumn",
+      "desc": "Creates a column of Booleans by testing whether each element in the given column is greater than or equal to the given value."
+    },
+    {
+      "name": "static func == (MLDataValueConvertible, MLUntypedColumn) -> MLUntypedColumn",
+      "desc": "Creates a column of Booleans by testing whether the given value is equal to each element in the given column."
+    },
+    {
+      "name": "static func != (MLDataValueConvertible, MLUntypedColumn) -> MLUntypedColumn",
+      "desc": "Creates a column of Booleans by testing whether the given value is not equal to each element in the given column."
+    },
+    {
+      "name": "static func < (MLDataValueConvertible, MLUntypedColumn) -> MLUntypedColumn",
+      "desc": "Creates a column of Booleans by testing whether the given value is less than each element in the given column."
+    },
+    {
+      "name": "static func <= (MLDataValueConvertible, MLUntypedColumn) -> MLUntypedColumn",
+      "desc": "Creates a column of Booleans by testing whether the given value is less than or equal to each element in the given column."
+    },
+    {
+      "name": "static func > (MLDataValueConvertible, MLUntypedColumn) -> MLUntypedColumn",
+      "desc": "Creates a column of Booleans by testing whether the given value is greater than each element in the given column."
+    },
+    {
+      "name": "static func >= (MLDataValueConvertible, MLUntypedColumn) -> MLUntypedColumn",
+      "desc": "Creates a column of Booleans by testing whether the given value is greater than or equal to each element in the given column."
+    },
+    {
+      "name": "static func && (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn",
+      "desc": "Creates a column of Booleans by performing a logical AND operation on each row of two columns of Booleans."
+    },
+    {
+      "name": "static func || (MLUntypedColumn, MLUntypedColumn) -> MLUntypedColumn",
+      "desc": "Creates a column of Booleans by performing a logical OR operation on each row of two columns of Booleans."
+    },
+    {
+      "name": "func show() -> MLStreamingVisualizable",
+      "desc": "Provides a visualization for the data in the column."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the column."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the column shown in a playground."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the column for debugging."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A view of the column for Xcode Playgrounds and lldb."
+    },
+    {
+      "name": "var isValid: Bool",
+      "desc": "A Boolean value that indicates whether the column is valid."
+    },
+    {
+      "name": "var error: Error?",
+      "desc": "The underlying error present when the column is invalid."
+    },
+    {
+      "name": "var isEmpty: Bool"
+    }
+  ],
+  "declaration": "struct MLUntypedColumn",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible"
+  ]
+}

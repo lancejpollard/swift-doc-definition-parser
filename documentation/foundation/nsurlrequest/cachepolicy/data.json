@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/foundation/nsurlrequest/cachepolicy",
+  "type": "Enumeration",
+  "name": "NSURLRequest.CachePolicy",
+  "desc": "The constants used to specify interaction with the cached responses.",
+  "items": [
+    {
+      "name": "case useProtocolCachePolicy",
+      "desc": "Use the caching logic defined in the protocol implementation, if any, for a particular URL load request."
+    },
+    {
+      "name": "case reloadIgnoringLocalCacheData",
+      "desc": "The URL load should be loaded only from the originating source."
+    },
+    {
+      "name": "case reloadIgnoringLocalAndRemoteCacheData",
+      "desc": "Ignore local cache data, and instruct proxies and other intermediates to disregard their caches so far as the protocol allows."
+    },
+    {
+      "name": "static var reloadIgnoringCacheData: NSURLRequest.CachePolicy",
+      "desc": "Replaced by NSURLRequest.CachePolicy.reloadIgnoringLocalCacheData."
+    },
+    {
+      "name": "case returnCacheDataElseLoad",
+      "desc": "Use existing cache data, regardless or age or expiration date, loading from originating source only if there is no cached data."
+    },
+    {
+      "name": "case returnCacheDataDontLoad",
+      "desc": "Use existing cache data, regardless or age or expiration date, and fail if no cached data is available."
+    },
+    {
+      "name": "case reloadRevalidatingCacheData",
+      "desc": "Use cache data if the origin source can validate it; otherwise, load from the origin."
+    }
+  ],
+  "declaration": "enum CachePolicy : UInt, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

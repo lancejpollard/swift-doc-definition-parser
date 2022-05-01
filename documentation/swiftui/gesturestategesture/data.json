@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/swiftui/gesturestategesture",
+  "type": "Structure",
+  "name": "GestureStateGesture",
+  "desc": "A gesture that updates the state provided by a gesture’s updating callback.",
+  "items": [
+    {
+      "name": "init(base: Base, state: GestureState<State>, body: (GestureStateGesture<Base, State>.Value, inout State, inout Transaction) -> Void)",
+      "desc": "Creates a new gesture that’s the result of an ongoing gesture."
+    },
+    {
+      "name": "var base: Base",
+      "desc": "The originating gesture."
+    },
+    {
+      "name": "var state: GestureState<State>",
+      "desc": "A value that changes as the user performs the gesture."
+    },
+    {
+      "name": "var body: (GestureStateGesture<Base, State>.Value, inout State, inout Transaction) -> Void",
+      "desc": "The updating gesture containing the originating gesture’s value, the updated state of the gesture, and a transaction."
+    },
+    {
+      "name": "typealias Body",
+      "desc": "The type of gesture representing the body of Self."
+    },
+    {
+      "name": "typealias Value",
+      "desc": "The type representing the gesture’s value."
+    }
+  ],
+  "declaration": "@frozen struct GestureStateGesture<Base, State> where Base : Gesture",
+  "conformsTo": [
+    "Gesture"
+  ]
+}

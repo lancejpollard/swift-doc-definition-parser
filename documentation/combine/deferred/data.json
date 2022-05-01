@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/combine/deferred",
+  "type": "Structure",
+  "name": "Deferred",
+  "desc": "A publisher that awaits subscription before running the supplied closure to create a publisher for the new subscriber.",
+  "items": [
+    {
+      "name": "init(createPublisher: () -> DeferredPublisher)",
+      "desc": "Creates a deferred publisher."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let createPublisher: () -> DeferredPublisher",
+      "desc": "The closure to execute when this deferred publisher receives a subscription."
+    }
+  ],
+  "declaration": "struct Deferred<DeferredPublisher> where DeferredPublisher : Publisher",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

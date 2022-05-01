@@ -1,0 +1,83 @@
+{
+  "path": "/documentation/metal/mtlrenderpassdescriptor",
+  "type": "Class",
+  "name": "MTLRenderPassDescriptor",
+  "desc": "A group of render targets that hold the results of a render pass.",
+  "items": [
+    {
+      "name": "var colorAttachments: MTLRenderPassColorAttachmentDescriptorArray",
+      "desc": "An array of state information for attachments that store color data."
+    },
+    {
+      "name": "var depthAttachment: MTLRenderPassDepthAttachmentDescriptor!",
+      "desc": "State information for an attachment that stores depth data."
+    },
+    {
+      "name": "var stencilAttachment: MTLRenderPassStencilAttachmentDescriptor!",
+      "desc": "State information for an attachment that stores stencil data."
+    },
+    {
+      "name": "var visibilityResultBuffer: MTLBuffer?",
+      "desc": "A buffer where the GPU writes visibility test results when fragments pass depth and stencil tests."
+    },
+    {
+      "name": "var renderTargetArrayLength: Int",
+      "desc": "The number of active layers that all attachments must have for layered rendering."
+    },
+    {
+      "name": "var renderTargetWidth: Int",
+      "desc": "The width, in pixels, to constrain the render target to."
+    },
+    {
+      "name": "var renderTargetHeight: Int",
+      "desc": "The height, in pixels, to constrain the render target to."
+    },
+    {
+      "name": "func MTLSamplePositionMake(Float, Float) -> MTLSamplePosition",
+      "desc": "Returns a new sample position on a subpixel grid."
+    },
+    {
+      "name": "func setSamplePositions([MTLSamplePosition])",
+      "desc": "Sets the programmable sample positions for a render pass."
+    },
+    {
+      "name": "func getSamplePositions() -> [MTLSamplePosition]",
+      "desc": "Returns the programmable sample positions set for a render pass."
+    },
+    {
+      "name": "var imageblockSampleLength: Int",
+      "desc": "The per-sample size, in bytes, of the largest explicit imageblock layout in the render pass."
+    },
+    {
+      "name": "var threadgroupMemoryLength: Int",
+      "desc": "The per-tile size, in bytes, of the persistent threadgroup memory allocation."
+    },
+    {
+      "name": "var tileWidth: Int",
+      "desc": "The tile width, in pixels."
+    },
+    {
+      "name": "var tileHeight: Int",
+      "desc": "The tile height, in pixels."
+    },
+    {
+      "name": "var defaultRasterSampleCount: Int",
+      "desc": "The raster sample count for the render pass when the render pass doesn’t have explicit attachments."
+    },
+    {
+      "name": "var rasterizationRateMap: MTLRasterizationRateMap?",
+      "desc": "The rasterization rate map to use when executing the render pass."
+    },
+    {
+      "name": "var sampleBufferAttachments: MTLRenderPassSampleBufferAttachmentDescriptorArray",
+      "desc": "The array of sample buffers that the render pass can access."
+    }
+  ],
+  "declaration": "class MTLRenderPassDescriptor : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

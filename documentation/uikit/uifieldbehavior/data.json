@@ -1,0 +1,100 @@
+{
+  "path": "/documentation/uikit/uifieldbehavior",
+  "type": "Class",
+  "name": "UIFieldBehavior",
+  "desc": "An object that applies field-based physics to dynamic items.",
+  "items": [
+    {
+      "name": "class func dragField() -> Self",
+      "desc": "Creates and returns a field behavior for slowing an object’s velocity."
+    },
+    {
+      "name": "class func springField() -> Self",
+      "desc": "Creates and returns a spring field behavior."
+    },
+    {
+      "name": "class func velocityField(direction: CGVector) -> Self",
+      "desc": "Creates and returns a field behavior object that applies a directional velocity to items."
+    },
+    {
+      "name": "class func electricField() -> Self",
+      "desc": "Creates and returns a field behavior object that interacts with charged items."
+    },
+    {
+      "name": "class func magneticField() -> Self",
+      "desc": "Creates and returns a field behavior that interacts with charged items."
+    },
+    {
+      "name": "class func radialGravityField(position: CGPoint) -> Self",
+      "desc": "Creates and returns a field behavior object that models a radial gravitational force."
+    },
+    {
+      "name": "class func linearGravityField(direction: CGVector) -> Self",
+      "desc": "Creates and returns a field behavior object that models a linear gravitational force."
+    },
+    {
+      "name": "class func vortexField() -> Self",
+      "desc": "Creates and returns a field behavior object that applies a rotational force relative to the field’s position."
+    },
+    {
+      "name": "class func noiseField(smoothness: CGFloat, animationSpeed: CGFloat) -> Self",
+      "desc": "Creates and returns a field behavior object that applies random noise to other forces."
+    },
+    {
+      "name": "class func turbulenceField(smoothness: CGFloat, animationSpeed: CGFloat) -> Self",
+      "desc": "Creates and returns a field behavior object that applies noise to an item in motion."
+    },
+    {
+      "name": "class func field(evaluationBlock: (UIFieldBehavior, CGPoint, CGVector, CGFloat, CGFloat, TimeInterval) -> CGVector) -> Self",
+      "desc": "Creates and returns a field behavior object that applies an app-specified field to items."
+    },
+    {
+      "name": "func addItem(UIDynamicItem)",
+      "desc": "Associates the field behavior with the specified dynamic item."
+    },
+    {
+      "name": "func removeItem(UIDynamicItem)",
+      "desc": "Removes the field behavior from the specified dynamic item."
+    },
+    {
+      "name": "var items: [UIDynamicItem]",
+      "desc": "The dynamic items associated with the current field behavior."
+    },
+    {
+      "name": "var position: CGPoint",
+      "desc": "The position of the field in the reference coordinate system."
+    },
+    {
+      "name": "var region: UIRegion",
+      "desc": "The shape of the field."
+    },
+    {
+      "name": "var strength: CGFloat",
+      "desc": "The strength of the field."
+    },
+    {
+      "name": "var falloff: CGFloat",
+      "desc": "The rate of decay for the field strength."
+    },
+    {
+      "name": "var minimumRadius: CGFloat",
+      "desc": "The minimum distance at which to start calculating new values for the field."
+    },
+    {
+      "name": "var direction: CGVector",
+      "desc": "The direction of motion for a linear field."
+    },
+    {
+      "name": "var smoothness: CGFloat",
+      "desc": "The smoothness of the noise used to generate the field."
+    },
+    {
+      "name": "var animationSpeed: CGFloat",
+      "desc": "The rate at which the animation should proceed."
+    }
+  ],
+  "declaration": "@MainActor class UIFieldBehavior : UIDynamicBehavior",
+  "inheritsFrom": [
+    "UIDynamicBehavior"
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "path": "/documentation/corebluetooth/cbatterror",
+  "type": "Structure",
+  "name": "CBATTError",
+  "desc": "An error that Core Bluetooth returns while using Attribute Protocol (ATT).",
+  "items": [
+    {
+      "name": "static var errorDomain: String",
+      "desc": "The domain of Core Bluetooth errors."
+    },
+    {
+      "name": "var errorCode: Int",
+      "desc": "The code that identifies the error."
+    },
+    {
+      "name": "var errorUserInfo: [String : Any]",
+      "desc": "A dictionary that provides details about the error."
+    },
+    {
+      "name": "var localizedDescription: String",
+      "desc": "A string that contains the localized description of the error."
+    },
+    {
+      "name": "static var success: CBATTError.Code",
+      "desc": "The ATT command or request successfully completed."
+    },
+    {
+      "name": "static var invalidHandle: CBATTError.Code",
+      "desc": "The attribute handle is invalid on this peripheral."
+    },
+    {
+      "name": "static var readNotPermitted: CBATTError.Code",
+      "desc": "The permissions prohibit reading the attribute’s value."
+    },
+    {
+      "name": "static var writeNotPermitted: CBATTError.Code",
+      "desc": "The permissions prohibit writing the attribute’s value."
+    },
+    {
+      "name": "static var invalidPdu: CBATTError.Code",
+      "desc": "The attribute Protocol Data Unit (PDU) is invalid."
+    },
+    {
+      "name": "static var insufficientAuthentication: CBATTError.Code",
+      "desc": "Reading or writing the attribute’s value failed for lack of authentication."
+    },
+    {
+      "name": "static var requestNotSupported: CBATTError.Code",
+      "desc": "The attribute server doesn’t support the request received from the client."
+    },
+    {
+      "name": "static var invalidOffset: CBATTError.Code",
+      "desc": "The specified offset value was past the end of the attribute’s value."
+    },
+    {
+      "name": "static var insufficientAuthorization: CBATTError.Code",
+      "desc": "Reading or writing the attribute’s value failed for lack of authorization."
+    },
+    {
+      "name": "static var prepareQueueFull: CBATTError.Code",
+      "desc": "The prepare queue is full, as a result of there being too many write requests in the queue."
+    },
+    {
+      "name": "static var attributeNotFound: CBATTError.Code",
+      "desc": "The attribute wasn’t found within the specified attribute handle range."
+    },
+    {
+      "name": "static var attributeNotLong: CBATTError.Code",
+      "desc": "The ATT read blob request can’t read or write the attribute."
+    },
+    {
+      "name": "static var insufficientEncryptionKeySize: CBATTError.Code",
+      "desc": "The encryption key size used for encrypting this link is insufficient."
+    },
+    {
+      "name": "static var invalidAttributeValueLength: CBATTError.Code",
+      "desc": "The length of the attribute’s value is invalid for the intended operation."
+    },
+    {
+      "name": "static var unlikelyError: CBATTError.Code",
+      "desc": "The ATT request encountered an unlikely error and wasn’t completed."
+    },
+    {
+      "name": "static var insufficientEncryption: CBATTError.Code",
+      "desc": "Reading or writing the attribute’s value failed for lack of encryption."
+    },
+    {
+      "name": "static var unsupportedGroupType: CBATTError.Code",
+      "desc": "The attribute type isn’t a supported grouping attribute as defined by a higher-layer specification."
+    },
+    {
+      "name": "static var insufficientResources: CBATTError.Code",
+      "desc": "Resources are insufficient to complete the ATT request."
+    },
+    {
+      "name": "static func != (CBATTError, CBATTError) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are unequal."
+    },
+    {
+      "name": "init(Code, userInfo: [String : Any])"
+    },
+    {
+      "name": "var code: Code"
+    },
+    {
+      "name": "var hashValue: Int"
+    },
+    {
+      "name": "var userInfo: [String : Any]"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "static func == (CBATTError, CBATTError) -> Bool"
+    },
+    {
+      "name": "enum CBATTError.Code",
+      "desc": "The possible errors returned by a GATT server (a remote peripheral) during Bluetooth low energy ATT transactions."
+    }
+  ],
+  "declaration": "struct CBATTError"
+}

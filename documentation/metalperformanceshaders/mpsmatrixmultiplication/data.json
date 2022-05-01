@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsmatrixmultiplication",
+  "type": "Class",
+  "name": "MPSMatrixMultiplication",
+  "desc": "A matrix multiplication kernel.",
+  "items": [
+    {
+      "name": "init(device: MTLDevice, transposeLeft: Bool, transposeRight: Bool, resultRows: Int, resultColumns: Int, interiorColumns: Int, alpha: Double, beta: Double)",
+      "desc": "Initializes a matrix multiplication kernel."
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, leftMatrix: MPSMatrix, rightMatrix: MPSMatrix, resultMatrix: MPSMatrix)",
+      "desc": "Encodes a matrix multiplication kernel to a command buffer."
+    },
+    {
+      "name": "var leftMatrixOrigin: MTLOrigin",
+      "desc": "The origin of the left input matrix."
+    },
+    {
+      "name": "var rightMatrixOrigin: MTLOrigin",
+      "desc": "The origin of the right input matrix."
+    },
+    {
+      "name": "var resultMatrixOrigin: MTLOrigin",
+      "desc": "The origin of the result matrix."
+    },
+    {
+      "name": "var batchSize: Int"
+    },
+    {
+      "name": "var batchStart: Int"
+    },
+    {
+      "name": "init(device: MTLDevice, resultRows: Int, resultColumns: Int, interiorColumns: Int)"
+    }
+  ],
+  "declaration": "class MPSMatrixMultiplication : MPSKernel",
+  "inheritsFrom": [
+    "MPSKernel"
+  ]
+}

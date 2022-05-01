@@ -1,0 +1,90 @@
+{
+  "path": "/documentation/iousbhost/iousbhostpipe",
+  "type": "Class",
+  "name": "IOUSBHostPipe",
+  "desc": "The class that sends control, bulk, interrupt, and isochronous input/output requests for function drivers, and manages stream capabilities.",
+  "items": [
+    {
+      "name": "typealias IOUSBHostCompletionHandler",
+      "desc": "The completion handler for asynchronous control, bulk, and interrupt transfers."
+    },
+    {
+      "name": "let IOUSBHostDefaultControlCompletionTimeout: TimeInterval",
+      "desc": "The default completion timeout for input/output requests."
+    },
+    {
+      "name": "func enqueueIORequest(with: NSMutableData?, completionTimeout: TimeInterval, completionHandler: IOUSBHostCompletionHandler?)",
+      "desc": "Enqueues an input/output request on the pipe."
+    },
+    {
+      "name": "func clearStall()",
+      "desc": "Clears the halt condition of the pipe."
+    },
+    {
+      "name": "typealias IOUSBHostIsochronousCompletionHandler",
+      "desc": "A completion handler for asynchronous isochronous transfers."
+    },
+    {
+      "name": "typealias IOUSBHostTime",
+      "desc": "The absolute time."
+    },
+    {
+      "name": "func IOUSBHostDeviceRequestType(tIOUSBDeviceRequestDirectionValue, tIOUSBDeviceRequestTypeValue, tIOUSBDeviceRequestRecipientValue) -> UInt8",
+      "desc": "Creates the request type field of a device request."
+    },
+    {
+      "name": "let IOUSBHostDefaultControlCompletionTimeout: TimeInterval",
+      "desc": "The default completion timeout for input/output requests."
+    },
+    {
+      "name": "typealias IOUSBHostCompletionHandler",
+      "desc": "The completion handler for asynchronous control, bulk, and interrupt transfers."
+    },
+    {
+      "name": "struct IOUSBHostIOSourceDescriptors",
+      "desc": "The descriptors for a single endpoint."
+    },
+    {
+      "name": "func adjust(with: UnsafePointer<IOUSBHostIOSourceDescriptors>)",
+      "desc": "Adjusts the behavior of periodic endpoints to consume a different amount of bus bandwidth."
+    },
+    {
+      "name": "var descriptors: UnsafePointer<IOUSBHostIOSourceDescriptors>",
+      "desc": "A property that retrieves the current endpoint descriptors controlling the endpoint."
+    },
+    {
+      "name": "var originalDescriptors: UnsafePointer<IOUSBHostIOSourceDescriptors>",
+      "desc": "A property that retrieves the original endpoint descriptors from the pipe at the point of creation."
+    },
+    {
+      "name": "func setIdleTimeout(TimeInterval)",
+      "desc": "Sets the desired idle suspend timeout for the interface."
+    },
+    {
+      "name": "var idleTimeout: TimeInterval",
+      "desc": "A property that retrieves the current idle suspend timeout."
+    },
+    {
+      "name": "func enableStreams()",
+      "desc": "Enables streams for the pipe."
+    },
+    {
+      "name": "func copyStream(withStreamID: Int) -> IOUSBHostStream",
+      "desc": "Returns the stream for a stream ID."
+    },
+    {
+      "name": "func disableStreams()",
+      "desc": "Disables streams for the pipe."
+    },
+    {
+      "name": "func enqueueIORequest(with: NSMutableData, transactionList: UnsafeMutablePointer<IOUSBHostIsochronousTransaction>, transactionListCount: Int, firstFrameNumber: UInt64, options: IOUSBHostIsochronousTransferOptions, completionHandler: IOUSBHostIsochronousTransactionCompletionHandler?)"
+    },
+    {
+      "name": "func sendIORequest(with: NSMutableData, transactionList: UnsafeMutablePointer<IOUSBHostIsochronousTransaction>, transactionListCount: Int, firstFrameNumber: UInt64, options: IOUSBHostIsochronousTransferOptions)"
+    }
+  ],
+  "declaration": "class IOUSBHostPipe : IOUSBHostIOSource",
+  "inheritsFrom": [
+    "IOUSBHostIOSource"
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "path": "/documentation/accelerate/simd_double4x3",
+  "type": "Structure",
+  "name": "simd_double4x3",
+  "desc": "A matrix of four columns and three rows that contains double-precision values.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a new matrix."
+    },
+    {
+      "name": "init(Double)",
+      "desc": "Creates a new matrix with the specified scalar value on the main diagonal."
+    },
+    {
+      "name": "init(diagonal: SIMD3<Double>)",
+      "desc": "Creates a new matrix with the specified vector on the main diagonal."
+    },
+    {
+      "name": "init([SIMD3<Double>])",
+      "desc": "Creates a new matrix from an array."
+    },
+    {
+      "name": "init(SIMD3<Double>, SIMD3<Double>, SIMD3<Double>, SIMD3<Double>)",
+      "desc": "Creates a new matrix with the specified vectors as columns."
+    },
+    {
+      "name": "init(columns: (simd_double3, simd_double3, simd_double3, simd_double3))",
+      "desc": "Creates a new matrix with the specified columns."
+    },
+    {
+      "name": "init(rows: [SIMD4<Double>])",
+      "desc": "Creates a new matrix with the specified rows."
+    },
+    {
+      "name": "var transpose: double3x4",
+      "desc": "The transpose of the matrix."
+    },
+    {
+      "name": "var columns: (simd_double3, simd_double3, simd_double3, simd_double3)",
+      "desc": "The columns of the matrix."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A representation of the matrix that is suitable for debugging."
+    },
+    {
+      "name": "func simd_matrix(simd_double3, simd_double3, simd_double3, simd_double3) -> simd_double4x3",
+      "desc": "Returns a new matrix with the specified columns."
+    },
+    {
+      "name": "func simd_matrix_from_rows(simd_double4, simd_double4, simd_double4) -> simd_double4x3",
+      "desc": "Returns a new matrix with the specified rows."
+    },
+    {
+      "name": "func matrix_from_rows(SIMD4<Double>, SIMD4<Double>, SIMD4<Double>) -> simd_double4x3",
+      "desc": "Returns a new matrix with the specified rows."
+    },
+    {
+      "name": "func simd_add(simd_double4x3, simd_double4x3) -> simd_double4x3",
+      "desc": "Returns the sum of two matrices."
+    },
+    {
+      "name": "func simd_sub(simd_double4x3, simd_double4x3) -> simd_double4x3",
+      "desc": "Returns the difference of two matrices."
+    },
+    {
+      "name": "func matrix_scale(Double, simd_double4x3) -> simd_double4x3",
+      "desc": "Returns the product of a scalar value and a matrix."
+    },
+    {
+      "name": "func simd_mul(Double, simd_double4x3) -> simd_double4x3",
+      "desc": "Returns the product of a scalar value and a 4 x 3 matrix."
+    },
+    {
+      "name": "func simd_mul(simd_double3, simd_double4x3) -> simd_double4",
+      "desc": "Returns the product of a three-element vector and a 4 x 3 matrix."
+    },
+    {
+      "name": "func matrix_multiply(simd_double3, simd_double4x3) -> simd_double4",
+      "desc": "Returns the product of a three-element vector and a 4 x 3 matrix."
+    },
+    {
+      "name": "func simd_mul(simd_double4x3, simd_double4) -> simd_double3",
+      "desc": "Returns the product of a 4 x 3 matrix and a four-element vector."
+    },
+    {
+      "name": "func matrix_multiply(simd_double4x3, simd_double4) -> simd_double3",
+      "desc": "Returns the product of a 4 x 3 matrix and a four-element vector."
+    },
+    {
+      "name": "func simd_mul(simd_double2x3, simd_double4x2) -> simd_double4x3",
+      "desc": "Returns the product of a 2 x 3 matrix and a 4 x 2 matrix."
+    },
+    {
+      "name": "func matrix_multiply(simd_double2x3, simd_double4x2) -> simd_double4x3",
+      "desc": "Returns the product of a 2 x 3 matrix and a 4 x 2 matrix."
+    },
+    {
+      "name": "func simd_mul(simd_double3x3, simd_double4x3) -> simd_double4x3",
+      "desc": "Returns the product of a 3 x 3 matrix and a 4 x 3 matrix."
+    },
+    {
+      "name": "func matrix_multiply(simd_double3x3, simd_double4x3) -> simd_double4x3",
+      "desc": "Returns the product of a 3 x 3 matrix and a 4 x 3 matrix."
+    },
+    {
+      "name": "func simd_mul(simd_double4x3, simd_double4x4) -> simd_double4x3",
+      "desc": "Returns the product of a 4 x 3 matrix and a 4 x 4 matrix."
+    },
+    {
+      "name": "func matrix_multiply(simd_double4x3, simd_double4x4) -> simd_double4x3",
+      "desc": "Returns the product of a 4 x 3 matrix and a 4 x 4 matrix."
+    },
+    {
+      "name": "func simd_equal(simd_double4x3, simd_double4x3) -> simd_bool",
+      "desc": "Returns true if every element in a matrix is exactly equal to the corresponding element in a second matrix."
+    },
+    {
+      "name": "func simd_almost_equal_elements(simd_double4x3, simd_double4x3, Double) -> simd_bool",
+      "desc": "Returns true if every element in a matrix is within a specified tolerance to the corresponding element in a second matrix."
+    },
+    {
+      "name": "func simd_almost_equal_elements_relative(simd_double4x3, simd_double4x3, Double) -> simd_bool",
+      "desc": "Returns true if every element in a matrix is within a specified double-precision relative tolerance to the corresponding element in a second matrix."
+    },
+    {
+      "name": "func simd_linear_combination(Double, simd_double4x3, Double, simd_double4x3) -> simd_double4x3",
+      "desc": "Returns the linear combination of two scalar values and two matrices."
+    },
+    {
+      "name": "func simd_transpose(simd_double4x3) -> simd_double3x4",
+      "desc": "Returns the transpose of a matrix."
+    },
+    {
+      "name": "subscript(Int) -> SIMD3<Double>",
+      "desc": "Accesses the column at the specified position."
+    },
+    {
+      "name": "subscript(Int, Int) -> Double",
+      "desc": "Accesses the element at the specified position."
+    },
+    {
+      "name": "typealias double4x3",
+      "desc": "A type alias for a double-precision 4 x 3 matrix."
+    },
+    {
+      "name": "typealias matrix_double4x3",
+      "desc": "A type alias for a double-precision 4 x 3 matrix."
+    },
+    {
+      "name": "static func * (simd_double4x3, Double) -> simd_double4x3"
+    },
+    {
+      "name": "static func * (simd_double4x3, SIMD4<Double>) -> SIMD3<Double>"
+    },
+    {
+      "name": "static func * (Double, simd_double4x3) -> simd_double4x3"
+    },
+    {
+      "name": "static func * (simd_double4x3, double4x4) -> double4x3"
+    },
+    {
+      "name": "static func * (simd_double4x3, double3x4) -> double3x3"
+    },
+    {
+      "name": "static func * (SIMD3<Double>, simd_double4x3) -> SIMD4<Double>"
+    },
+    {
+      "name": "static func * (simd_double4x3, double2x4) -> double2x3"
+    },
+    {
+      "name": "static func *= (inout simd_double4x3, Double)"
+    },
+    {
+      "name": "static func *= (inout simd_double4x3, double4x4)"
+    },
+    {
+      "name": "static func + (simd_double4x3, simd_double4x3) -> simd_double4x3"
+    },
+    {
+      "name": "static func += (inout simd_double4x3, simd_double4x3)"
+    },
+    {
+      "name": "static func - (simd_double4x3) -> simd_double4x3"
+    },
+    {
+      "name": "static func - (simd_double4x3, simd_double4x3) -> simd_double4x3"
+    },
+    {
+      "name": "static func -= (inout simd_double4x3, simd_double4x3)"
+    },
+    {
+      "name": "static func == (simd_double4x3, simd_double4x3) -> Bool"
+    }
+  ],
+  "declaration": "struct simd_double4x3",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "Equatable"
+  ]
+}

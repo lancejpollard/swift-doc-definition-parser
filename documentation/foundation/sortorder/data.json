@@ -1,0 +1,46 @@
+{
+  "path": "/documentation/foundation/sortorder",
+  "type": "Enumeration",
+  "name": "SortOrder",
+  "desc": "The orderings that you can perform sorts with.",
+  "items": [
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a sort order by decoding from the decoder you specify."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes the sort order into the encoder you specify."
+    },
+    {
+      "name": "case forward",
+      "desc": "The ordering that places the first item before the second when comparing two items using an ascending order."
+    },
+    {
+      "name": "case reverse",
+      "desc": "The ordering that places the first item after the second when comparing two items using an ascending order."
+    },
+    {
+      "name": "static func == (SortOrder, SortOrder) -> Bool",
+      "desc": "A Boolean value that indicates whether two sort orders are equal."
+    },
+    {
+      "name": "static func != (SortOrder, SortOrder) -> Bool",
+      "desc": "A Boolean value that indicates whether two sort orders are unequal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the sort order by feeding them into the specified hash function."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hashed value of the sort order."
+    }
+  ],
+  "declaration": "@frozen enum SortOrder",
+  "conformsTo": [
+    "Decodable",
+    "Encodable",
+    "Hashable"
+  ]
+}

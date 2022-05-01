@@ -1,0 +1,89 @@
+{
+  "path": "/documentation/shazamkit/sherror",
+  "type": "Structure",
+  "name": "SHError",
+  "desc": "An error type that you create, or the system creates, to indicate problems with a catalog, match attempt, or signature, or when saving to a user’s Shazam library.",
+  "items": [
+    {
+      "name": "init(Code, userInfo: [String : Any])",
+      "desc": "Creates a ShazamKit error of the specified type with the specified user information."
+    },
+    {
+      "name": "static var matchAttemptFailed: SHError.Code",
+      "desc": "The error code to indicate when a Shazam Music catalog server issue prevents finding a match."
+    },
+    {
+      "name": "static var signatureInvalid: SHError.Code",
+      "desc": "The error code to indicate that the system is unable to generate a signature from the audio."
+    },
+    {
+      "name": "static var signatureDurationInvalid: SHError.Code",
+      "desc": "The error code to indicate that the length of the generated signature is too long or too short to make a match in the catalog."
+    },
+    {
+      "name": "static var invalidAudioFormat: SHError.Code",
+      "desc": "The error code to indicate an unsupported audio format."
+    },
+    {
+      "name": "static var audioDiscontinuity: SHError.Code",
+      "desc": "The error code to indicate the use of noncontiguous audio to request a match."
+    },
+    {
+      "name": "static var customCatalogInvalidURL: SHError.Code",
+      "desc": "The error code to indicate that the format for the custom catalog URL is invalid."
+    },
+    {
+      "name": "static var customCatalogInvalid: SHError.Code",
+      "desc": "The error code to indicate when the custom catalog fails to load due to an invalid format."
+    },
+    {
+      "name": "static var mediaLibrarySyncFailed: SHError.Code",
+      "desc": "The error code to indicate when the system fails to add one or more media items to the user’s Shazam library."
+    },
+    {
+      "name": "enum SHError.Code",
+      "desc": "Codes for the errors that Shazam produces."
+    },
+    {
+      "name": "var code: Code",
+      "desc": "The error code for the instance."
+    },
+    {
+      "name": "var errorCode: Int",
+      "desc": "The error code for the instance."
+    },
+    {
+      "name": "var userInfo: [String : Any]",
+      "desc": "Additional details about the error."
+    },
+    {
+      "name": "var errorUserInfo: [String : Any]",
+      "desc": "Additional details about an error."
+    },
+    {
+      "name": "var localizedDescription: String",
+      "desc": "A user-facing, localized string that describes the error."
+    },
+    {
+      "name": "static var errorDomain: String",
+      "desc": "The error domain for specific errors for ShazamKit."
+    },
+    {
+      "name": "static func == (SHError, SHError) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two ShazamKit error objects are equal."
+    },
+    {
+      "name": "static func != (SHError, SHError) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two ShazamKit error objects are unequal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the payment error object by feeding the item into a specified hasher."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value for the payment error."
+    }
+  ],
+  "declaration": "struct SHError"
+}

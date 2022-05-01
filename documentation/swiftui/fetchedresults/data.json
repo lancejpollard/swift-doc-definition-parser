@@ -1,0 +1,59 @@
+{
+  "path": "/documentation/swiftui/fetchedresults",
+  "type": "Structure",
+  "name": "FetchedResults",
+  "desc": "A collection of results retrieved from a Core Data store.",
+  "items": [
+    {
+      "name": "var nsPredicate: NSPredicate?",
+      "desc": "The request’s predicate."
+    },
+    {
+      "name": "var sortDescriptors: [SortDescriptor<Result>]",
+      "desc": "The request’s sort descriptors, accessed as value types."
+    },
+    {
+      "name": "var nsSortDescriptors: [NSSortDescriptor]",
+      "desc": "The request’s sort descriptors, accessed as reference types."
+    },
+    {
+      "name": "var startIndex: Int",
+      "desc": "The index of the first entity in the results collection."
+    },
+    {
+      "name": "var endIndex: Int",
+      "desc": "The index that’s one greater than the last valid subscript argument."
+    },
+    {
+      "name": "subscript(Int) -> Result",
+      "desc": "Gets the entity at the specified index."
+    },
+    {
+      "name": "typealias Element",
+      "desc": "A type representing the sequence’s elements."
+    },
+    {
+      "name": "typealias Index",
+      "desc": "A type that represents a position in the collection."
+    },
+    {
+      "name": "typealias Indices",
+      "desc": "A type that represents the indices that are valid for subscripting the collection, in ascending order."
+    },
+    {
+      "name": "typealias Iterator",
+      "desc": "A type that provides the collection’s iteration interface and encapsulates its iteration state."
+    },
+    {
+      "name": "typealias SubSequence",
+      "desc": "A collection representing a contiguous subrange of this collection’s elements. The subsequence shares indices with the original collection."
+    }
+  ],
+  "declaration": "struct FetchedResults<Result> where Result : NSFetchRequestResult",
+  "conformsTo": [
+    "BidirectionalCollection",
+    "Collection",
+    "RandomAccessCollection",
+    "Sequence"
+  ]
+}

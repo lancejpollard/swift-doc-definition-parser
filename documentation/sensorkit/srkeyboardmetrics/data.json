@@ -1,0 +1,328 @@
+{
+  "path": "/documentation/sensorkit/srkeyboardmetrics",
+  "type": "Class",
+  "name": "SRKeyboardMetrics",
+  "desc": "The configuration of a device’s keyboard and its usage patterns.",
+  "items": [
+    {
+      "name": "var duration: TimeInterval",
+      "desc": "The duration that the report spans."
+    },
+    {
+      "name": "var keyboardIdentifier: String",
+      "desc": "The identifier of the keyboard in the keyboard list."
+    },
+    {
+      "name": "var version: String",
+      "desc": "The version of keyboard metrics."
+    },
+    {
+      "name": "var width: Measurement<UnitLength>",
+      "desc": "The width, in millimeters, of the keyboard in the report."
+    },
+    {
+      "name": "var height: Measurement<UnitLength>",
+      "desc": "The height, in millimeters, of the keyboard in the report."
+    },
+    {
+      "name": "var inputModes: [String]",
+      "desc": "The active keyboard languages in the session."
+    },
+    {
+      "name": "var totalWords: Int",
+      "desc": "The total number of typed words for the keyboard."
+    },
+    {
+      "name": "var totalAlteredWords: Int",
+      "desc": "The total number of altered words for the keyboard."
+    },
+    {
+      "name": "var totalTaps: Int",
+      "desc": "The total number of taps for the keyboard."
+    },
+    {
+      "name": "var totalDrags: Int",
+      "desc": "The total number of drags for the keyboard."
+    },
+    {
+      "name": "var totalDeletes: Int",
+      "desc": "The total number of deletions for the keyboard."
+    },
+    {
+      "name": "var totalEmojis: Int",
+      "desc": "The total number of emojis for the keyboard."
+    },
+    {
+      "name": "var totalPaths: Int",
+      "desc": "The total number of completed paths for the keyboard."
+    },
+    {
+      "name": "var totalPathTime: TimeInterval",
+      "desc": "The total time to complete paths for the keyboard."
+    },
+    {
+      "name": "var totalPathLength: Measurement<UnitLength>",
+      "desc": "The total length of completed paths for the keyboard."
+    },
+    {
+      "name": "var totalAutoCorrections: Int",
+      "desc": "The total number of autocorrections for the keyboard."
+    },
+    {
+      "name": "var totalSpaceCorrections: Int",
+      "desc": "The total number of space corrections for the keyboard."
+    },
+    {
+      "name": "var totalRetroCorrections: Int",
+      "desc": "The total number of retro corrections for the keyboard."
+    },
+    {
+      "name": "var totalTranspositionCorrections: Int",
+      "desc": "The total number of transposition corrections for the keyboard."
+    },
+    {
+      "name": "var totalInsertKeyCorrections: Int",
+      "desc": "The total number of Insert key corrections for the keyboard."
+    },
+    {
+      "name": "var totalSkipTouchCorrections: Int",
+      "desc": "The total number of skip touch corrections for the keyboard."
+    },
+    {
+      "name": "var totalNearKeyCorrections: Int",
+      "desc": "The total number of near key corrections for the keyboard."
+    },
+    {
+      "name": "var totalSubstitutionCorrections: Int",
+      "desc": "The total number of substitution corrections for the keyboard."
+    },
+    {
+      "name": "var totalHitTestCorrections: Int",
+      "desc": "The total number of hit test corrections for the keyboard."
+    },
+    {
+      "name": "var totalTypingDuration: TimeInterval",
+      "desc": "The total amount of typing time for the keyboard."
+    },
+    {
+      "name": "var totalPathPauses: Int",
+      "desc": "The total number of pauses while drawing a path for a word."
+    },
+    {
+      "name": "var totalPauses: Int",
+      "desc": "The total number of pauses during the session."
+    },
+    {
+      "name": "var totalTypingEpisodes: Int",
+      "desc": "The total number of continuous typing episodes during the session."
+    },
+    {
+      "name": "class SRKeyboardMetrics.ProbabilityMetric",
+      "desc": "A likelihood of occurrence."
+    },
+    {
+      "name": "var touchDownUp: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch down to touch up for any key."
+    },
+    {
+      "name": "var spaceTouchDownUp: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch down and touch up of all Space bar events for the keyboard."
+    },
+    {
+      "name": "var deleteTouchDownUp: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch down and touch up of all Delete key events for the keyboard."
+    },
+    {
+      "name": "var shortWordCharKeyTouchDownUp: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch down and touch up of all character keys in short words for the keyboard."
+    },
+    {
+      "name": "var touchDownDown: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch down to touch down for any key."
+    },
+    {
+      "name": "var charKeyToPrediction: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up on a character key and touch down on a word in the prediction bar."
+    },
+    {
+      "name": "var shortWordCharKeyToCharKey: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up on a character key and touch down on any sequential character key in a short word."
+    },
+    {
+      "name": "var charKeyToAnyTapKey: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up on a character key and touch down on the next sequential key."
+    },
+    {
+      "name": "var anyTapToCharKey: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up of any key and touch down on a sequential character key."
+    },
+    {
+      "name": "var spaceToCharKey: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up of the Space bar and touch down of a sequential character key."
+    },
+    {
+      "name": "var charKeyToSpaceKey: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up of a character key and touch down of a sequential Space bar."
+    },
+    {
+      "name": "var spaceToDeleteKey: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up of the Space bar and touch down of a sequential Delete key."
+    },
+    {
+      "name": "var deleteToSpaceKey: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up of the Delete key and touch down of a sequential Space bar."
+    },
+    {
+      "name": "var spaceToSpaceKey: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up of the Space bar and touch down of a sequential Space bar."
+    },
+    {
+      "name": "var spaceToShiftKey: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up of the Space bar and touch down of a sequential Shift key."
+    },
+    {
+      "name": "var spaceToPlaneChangeKey: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up of the Space bar and touch down of a sequential plane change key."
+    },
+    {
+      "name": "var spaceToPredictionKey: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up of the Space bar and touch down of a sequential selection from the prediction bar."
+    },
+    {
+      "name": "var deleteToCharKey: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up of the Delete key and touch down of a sequential character key."
+    },
+    {
+      "name": "var charKeyToDelete: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up of a character key and touch down of a sequential Delete key."
+    },
+    {
+      "name": "var deleteToDelete: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up of the Delete key and touch down of a sequential Delete key."
+    },
+    {
+      "name": "var deleteToDeletes: [ProbabilityMetric<UnitDuration>]",
+      "desc": "The duration between touch up of the Delete key and touch down of a sequential Delete key for an entire word."
+    },
+    {
+      "name": "var deleteToShiftKey: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up of the Delete key and touch down of a sequential Shift key."
+    },
+    {
+      "name": "var deleteToPlaneChangeKey: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up of the Delete key and touch down of a sequential plane change key."
+    },
+    {
+      "name": "var anyTapToPlaneChangeKey: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up of any key and touch down on a plane change key."
+    },
+    {
+      "name": "var planeChangeToAnyTap: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up on a plane change key and touch down on the next sequential key."
+    },
+    {
+      "name": "var charKeyToPlaneChangeKey: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up of a character key and touch down of a sequential plane change key."
+    },
+    {
+      "name": "var planeChangeKeyToCharKey: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up of a plane change key and touch down of any key."
+    },
+    {
+      "name": "var deleteToPath: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up of the Delete key and touch down of a sequential path."
+    },
+    {
+      "name": "var pathToDelete: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up of the Delete key and touch down of a continuous path."
+    },
+    {
+      "name": "var spaceToPath: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up of the Space bar and touch down to begin a sequential path."
+    },
+    {
+      "name": "var pathToSpace: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up of a path and touch down of a sequential Space bar."
+    },
+    {
+      "name": "var pathToPath: ProbabilityMetric<UnitDuration>",
+      "desc": "The duration between touch up of a path and touch down of a sequential path."
+    },
+    {
+      "name": "var longWordTouchDownUp: [ProbabilityMetric<UnitDuration>]",
+      "desc": "The duration between touch down and touch up of the character keys of all the long words for the keyboard."
+    },
+    {
+      "name": "var longWordTouchDownDown: [ProbabilityMetric<UnitDuration>]",
+      "desc": "The duration between touch down and touch down of the character keys of all the long words for the keyboard."
+    },
+    {
+      "name": "var pathTypingSpeed: Double",
+      "desc": "The QuickType words per minute in the session."
+    },
+    {
+      "name": "var typingSpeed: Double",
+      "desc": "The user's typing rate in characters per second."
+    },
+    {
+      "name": "var longWordUpErrorDistance: [ProbabilityMetric<UnitLength>]",
+      "desc": "The distance from the touch up to the center of the intended key of the characters of a long word."
+    },
+    {
+      "name": "var longWordDownErrorDistance: [ProbabilityMetric<UnitLength>]",
+      "desc": "The distance from the touch down to the center of the intended key of the characters of a long word."
+    },
+    {
+      "name": "var upErrorDistance: ProbabilityMetric<UnitLength>",
+      "desc": "The distance from the touch up to the center of any key."
+    },
+    {
+      "name": "var downErrorDistance: ProbabilityMetric<UnitLength>",
+      "desc": "The distance from the touch down to the center of any key."
+    },
+    {
+      "name": "var spaceUpErrorDistance: ProbabilityMetric<UnitLength>",
+      "desc": "The distance from the touch up to the right centroid of the Space bar."
+    },
+    {
+      "name": "var spaceDownErrorDistance: ProbabilityMetric<UnitLength>",
+      "desc": "The distance from the touch down to the right centroid of the Space bar."
+    },
+    {
+      "name": "var deleteUpErrorDistance: ProbabilityMetric<UnitLength>",
+      "desc": "The distance from the touch up to the center of the Delete key."
+    },
+    {
+      "name": "var deleteDownErrorDistance: ProbabilityMetric<UnitLength>",
+      "desc": "The distance from the touch down to the center of the Delete key."
+    },
+    {
+      "name": "var shortWordCharKeyUpErrorDistance: ProbabilityMetric<UnitLength>",
+      "desc": "The distance from the touch up to the center of the intended key of a character in a short word."
+    },
+    {
+      "name": "var shortWordCharKeyDownErrorDistance: ProbabilityMetric<UnitLength>",
+      "desc": "The distance from the touch down to the center of the intended key of a character in a short word."
+    },
+    {
+      "name": "var pathErrorDistanceRatio: [NSNumber]",
+      "desc": "Sample values of the ratio of error distance between the intended and actual path."
+    },
+    {
+      "name": "func wordCount(for: SRKeyboardMetrics.SentimentCategory) -> Int",
+      "desc": "Provides the number of typed words for the specified sentiment in the report."
+    },
+    {
+      "name": "func emojiCount(for: SRKeyboardMetrics.SentimentCategory) -> Int",
+      "desc": "Provides the number of typed emojis for the specified sentiment in the report."
+    },
+    {
+      "name": "enum SRKeyboardMetrics.SentimentCategory",
+      "desc": "Moods that the framework determines by analyzing the user's input."
+    }
+  ],
+  "declaration": "class SRKeyboardMetrics : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

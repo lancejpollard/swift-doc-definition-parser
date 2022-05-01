@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/quicklookthumbnailing/qlthumbnailgenerator",
+  "type": "Class",
+  "name": "QLThumbnailGenerator",
+  "desc": "An object that generates thumbnail images based on provided requirements.",
+  "items": [
+    {
+      "name": "class var shared: QLThumbnailGenerator",
+      "desc": "The singleton thumbnail generator instance."
+    },
+    {
+      "name": "func generateBestRepresentation(for: QLThumbnailGenerator.Request, completion: (QLThumbnailRepresentation?, Error?) -> Void)",
+      "desc": "Generates the best possible thumbnail representation for a file and calls a handler upon completion."
+    },
+    {
+      "name": "func generateRepresentations(for: QLThumbnailGenerator.Request, update: ((QLThumbnailRepresentation?, QLThumbnailRepresentation.RepresentationType, Error?) -> Void)?)",
+      "desc": "Generates various thumbnail representations for a file and calls the update handler for each thumbnail representation."
+    },
+    {
+      "name": "class QLThumbnailGenerator.Request",
+      "desc": "A request to generate a thumbnail for a file."
+    },
+    {
+      "name": "func saveBestRepresentation(for: QLThumbnailGenerator.Request, to: URL, contentType: String, completion: (Error?) -> Void)",
+      "desc": "Saves the best representation of thumbnail for a specific request to the specified URL."
+    },
+    {
+      "name": "func cancel(QLThumbnailGenerator.Request)",
+      "desc": "Cancels the generation of a thumbnail for a given request."
+    }
+  ],
+  "declaration": "class QLThumbnailGenerator : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

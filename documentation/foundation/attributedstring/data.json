@@ -1,0 +1,341 @@
+{
+  "path": "/documentation/foundation/attributedstring",
+  "type": "Structure",
+  "name": "AttributedString",
+  "desc": "A value type for a string with associated attributes for portions of its text.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an empty attributed string."
+    },
+    {
+      "name": "init(AttributedSubstring)",
+      "desc": "Creates an attributed string from an attributed substring."
+    },
+    {
+      "name": "init(String, attributes: AttributeContainer)",
+      "desc": "Creates an attributed string from a string and an attribute container."
+    },
+    {
+      "name": "init(Substring, attributes: AttributeContainer)",
+      "desc": "Creates an attributed string from a substring and an attribute container."
+    },
+    {
+      "name": "init<S>(S, attributes: AttributeContainer)",
+      "desc": "Creates an attributed string from a character sequence and an attribute container."
+    },
+    {
+      "name": "struct AttributeContainer",
+      "desc": "A container for attribute keys and values."
+    },
+    {
+      "name": "init(stringLiteral: String)",
+      "desc": "Creates an attributed string from the specified string literal, with no attributes."
+    },
+    {
+      "name": "typealias AttributedString.StringLiteralType",
+      "desc": "The type that string literal initializers use."
+    },
+    {
+      "name": "init(unicodeScalarLiteral: String)",
+      "desc": "Creates an instance initialized to the given value."
+    },
+    {
+      "name": "typealias AttributedString.UnicodeScalarLiteralType",
+      "desc": "The type that Unicode scalar literal initializers use."
+    },
+    {
+      "name": "init(extendedGraphemeClusterLiteral: String)",
+      "desc": "Creates an instance initialized to the given value."
+    },
+    {
+      "name": "typealias AttributedString.ExtendedGraphemeClusterLiteralType",
+      "desc": "The type that extended grapheme cluster literal initializers use."
+    },
+    {
+      "name": "init(localized: String.LocalizationValue, options: AttributedString.FormattingOptions, table: String?, bundle: Bundle?, locale: Locale?, comment: StaticString?)",
+      "desc": "Creates an attributed string by looking up a localized string from the app’s bundle."
+    },
+    {
+      "name": "init<S>(localized: String.LocalizationValue, options: AttributedString.FormattingOptions, table: String?, bundle: Bundle?, locale: Locale?, comment: StaticString?, including: S.Type)",
+      "desc": "Creates an attributed string by looking up a localized string from the app’s bundle, including an attribute scope."
+    },
+    {
+      "name": "init<S>(localized: String.LocalizationValue, options: AttributedString.FormattingOptions, table: String?, bundle: Bundle?, locale: Locale?, comment: StaticString?, including: KeyPath<AttributeScopes, S.Type>)",
+      "desc": "Creates an attributed string by looking up a localized string from the app’s bundle, including an attribute scope that a key path identifies."
+    },
+    {
+      "name": "struct String.LocalizationValue",
+      "desc": "A value — created from a string literal or string interpolation — used to look up a localized entry in a strings file or strings dictionary file."
+    },
+    {
+      "name": "struct AttributedString.FormattingOptions",
+      "desc": "Options that affect the handling of attributes."
+    },
+    {
+      "name": "init<S>(NSAttributedString, including: S.Type)",
+      "desc": "Creates a value-type attributed string from a reference type, including an attribute scope."
+    },
+    {
+      "name": "init<S>(NSAttributedString, including: KeyPath<AttributeScopes, S.Type>)",
+      "desc": "Creates a value-type attributed string from a reference type, including an attribute scope that a key path identifies."
+    },
+    {
+      "name": "init(NSAttributedString)",
+      "desc": "Creates a value-type attributed string from a reference type."
+    },
+    {
+      "name": "init<S, T>(T, including: S.Type)",
+      "desc": "Creates an attributed string from another attributed string, including an attribute scope."
+    },
+    {
+      "name": "init<S, T>(T, including: KeyPath<AttributeScopes, S.Type>)",
+      "desc": "Creates an attributed string from another attributed string, including an attribute scope that a key path identifies."
+    },
+    {
+      "name": "func setAttributes(AttributeContainer)",
+      "desc": "Sets the attributed string’s attributes to those in a specified attribute container."
+    },
+    {
+      "name": "func settingAttributes(AttributeContainer) -> AttributedString",
+      "desc": "Returns an attributed string by setting the attributed string’s attributes to those in a specified attribute container."
+    },
+    {
+      "name": "func mergeAttributes(AttributeContainer, mergePolicy: AttributedString.AttributeMergePolicy)",
+      "desc": "Merges the attributed string’s attributes with those in a specified attribute container."
+    },
+    {
+      "name": "func mergingAttributes(AttributeContainer, mergePolicy: AttributeMergePolicy) -> AttributedString",
+      "desc": "Returns an attributed string by merging the attributed string’s attributes with those in a specified attribute container."
+    },
+    {
+      "name": "enum AttributedString.AttributeMergePolicy",
+      "desc": "An enumeration of behaviors to apply when merging attributes."
+    },
+    {
+      "name": "func replaceAttributes(AttributeContainer, with: AttributeContainer)",
+      "desc": "Replaces occurrences of attributes in one attribute container with those in another attribute container."
+    },
+    {
+      "name": "func replacingAttributes(AttributeContainer, with: AttributeContainer) -> AttributedString",
+      "desc": "Returns an attributed string by replacing occurrences of attributes in one attribute container with those in another attribute container."
+    },
+    {
+      "name": "protocol AttributedStringAttributeMutation",
+      "desc": "A protocol that defines in-place mutations for attributes in an attributed string."
+    },
+    {
+      "name": "enum AttributeScopes",
+      "desc": "Collections of attributes that system frameworks define."
+    },
+    {
+      "name": "enum AttributeDynamicLookup",
+      "desc": "A type to support dynamic member lookup of attributes and containers."
+    },
+    {
+      "name": "struct ScopedAttributeContainer",
+      "desc": "An attribute container that allows dynamic member lookup of its contents within the specified attribute scope."
+    },
+    {
+      "name": "func range<T>(of: T, options: String.CompareOptions, locale: Locale?) -> Range<Index>?",
+      "desc": "Returns the range of a substring in the attributed string, if it exists."
+    },
+    {
+      "name": "subscript<R>(R) -> AttributedSubstring",
+      "desc": "Returns a substring of the attributed string using a range to indicate the substring bounds."
+    },
+    {
+      "name": "var characters: AttributedString.CharacterView",
+      "desc": "The characters of the attributed string, as a view into the underlying string."
+    },
+    {
+      "name": "struct AttributedString.CharacterView",
+      "desc": "A view into the underlying storage of the attributed string, as Unicode characters."
+    },
+    {
+      "name": "var unicodeScalars: AttributedString.UnicodeScalarView",
+      "desc": "The Unicode scalars of the attributed string, as a view into the underlying string."
+    },
+    {
+      "name": "struct AttributedString.UnicodeScalarView",
+      "desc": "A view into the underlying storage of the attributed string, as Unicode scalars."
+    },
+    {
+      "name": "var runs: AttributedString.Runs",
+      "desc": "The attributed runs of the attributed string, as a view into the underlying string."
+    },
+    {
+      "name": "struct AttributedString.Runs",
+      "desc": "An iterable view into segments of the attributed string, each of which indicates where a run of identical attributes begins or ends."
+    },
+    {
+      "name": "func insert<S>(S, at: AttributedString.Index)",
+      "desc": "Inserts the specified string at a specific index in the attributed string."
+    },
+    {
+      "name": "struct AttributedString.Index",
+      "desc": "A type that represents the position of a character or code unit within an attributed string."
+    },
+    {
+      "name": "func removeSubrange<R>(R)",
+      "desc": "Removes a range of characters from the attributed string."
+    },
+    {
+      "name": "func replaceSubrange<R, S>(R, with: S)",
+      "desc": "Replaces the contents in a range of the attributed string."
+    },
+    {
+      "name": "func transformingAttributes<K>(K.Type, (inout AttributedString.SingleAttributeTransformer<K>) -> Void) -> AttributedString",
+      "desc": "Returns an attributed string by calling a closure that transforms one attribute of a source attributed string."
+    },
+    {
+      "name": "func transformingAttributes<K>(KeyPath<AttributeDynamicLookup, K>, (inout AttributedString.SingleAttributeTransformer<K>) -> Void) -> AttributedString",
+      "desc": "Returns an attributed string by calling a closure that transforms one attribute, which a key path identifies, of a source attributed string."
+    },
+    {
+      "name": "func transformingAttributes<K1, K2>(K1.Type, K2.Type, (inout AttributedString.SingleAttributeTransformer<K1>, inout AttributedString.SingleAttributeTransformer<K2>) -> Void) -> AttributedString",
+      "desc": "Returns an attributed string by calling a closure that transforms two attributes of a source attributed string."
+    },
+    {
+      "name": "func transformingAttributes<K1, K2>(KeyPath<AttributeDynamicLookup, K1>, KeyPath<AttributeDynamicLookup, K2>, (inout AttributedString.SingleAttributeTransformer<K1>, inout AttributedString.SingleAttributeTransformer<K2>) -> Void) -> AttributedString",
+      "desc": "Returns an attributed string created by calling a closure that transforms two attributes, which key paths identify, of a source attributed string."
+    },
+    {
+      "name": "func transformingAttributes<K1, K2, K3>(K1.Type, K2.Type, K3.Type, (inout AttributedString.SingleAttributeTransformer<K1>, inout AttributedString.SingleAttributeTransformer<K2>, inout AttributedString.SingleAttributeTransformer<K3>) -> Void) -> AttributedString",
+      "desc": "Returns an attributed string by calling a closure that transforms three attributes of a source attributed string."
+    },
+    {
+      "name": "func transformingAttributes<K1, K2, K3>(KeyPath<AttributeDynamicLookup, K1>, KeyPath<AttributeDynamicLookup, K2>, KeyPath<AttributeDynamicLookup, K3>, (inout AttributedString.SingleAttributeTransformer<K1>, inout AttributedString.SingleAttributeTransformer<K2>, inout AttributedString.SingleAttributeTransformer<K3>) -> Void) -> AttributedString",
+      "desc": "Returns an attributed string by calling a closure that transforms three attributes, which key paths identify, of a source attributed string."
+    },
+    {
+      "name": "func transformingAttributes<K1, K2, K3, K4>(K1.Type, K2.Type, K3.Type, K4.Type, (inout AttributedString.SingleAttributeTransformer<K1>, inout AttributedString.SingleAttributeTransformer<K2>, inout AttributedString.SingleAttributeTransformer<K3>, inout AttributedString.SingleAttributeTransformer<K4>) -> Void) -> AttributedString",
+      "desc": "Returns an attributed string by calling a closure that transforms four attributes of a source attributed string."
+    },
+    {
+      "name": "func transformingAttributes<K1, K2, K3, K4>(KeyPath<AttributeDynamicLookup, K1>, KeyPath<AttributeDynamicLookup, K2>, KeyPath<AttributeDynamicLookup, K3>, KeyPath<AttributeDynamicLookup, K4>, (inout AttributedString.SingleAttributeTransformer<K1>, inout AttributedString.SingleAttributeTransformer<K2>, inout AttributedString.SingleAttributeTransformer<K3>, inout AttributedString.SingleAttributeTransformer<K4>) -> Void) -> AttributedString",
+      "desc": "Returns an attributed string created by calling a closure that transforms four attributes, which key paths identify, of a source attributed string."
+    },
+    {
+      "name": "func transformingAttributes<K1, K2, K3, K4, K5>(K1.Type, K2.Type, K3.Type, K4.Type, K5.Type, (inout AttributedString.SingleAttributeTransformer<K1>, inout AttributedString.SingleAttributeTransformer<K2>, inout AttributedString.SingleAttributeTransformer<K3>, inout AttributedString.SingleAttributeTransformer<K4>, inout AttributedString.SingleAttributeTransformer<K5>) -> Void) -> AttributedString",
+      "desc": "Returns an attributed string created by calling a closure that transforms five attributes of a source attributed string."
+    },
+    {
+      "name": "func transformingAttributes<K1, K2, K3, K4, K5>(KeyPath<AttributeDynamicLookup, K1>, KeyPath<AttributeDynamicLookup, K2>, KeyPath<AttributeDynamicLookup, K3>, KeyPath<AttributeDynamicLookup, K4>, KeyPath<AttributeDynamicLookup, K5>, (inout AttributedString.SingleAttributeTransformer<K1>, inout AttributedString.SingleAttributeTransformer<K2>, inout AttributedString.SingleAttributeTransformer<K3>, inout AttributedString.SingleAttributeTransformer<K4>, inout AttributedString.SingleAttributeTransformer<K5>) -> Void) -> AttributedString",
+      "desc": "Returns an attributed string created by calling a closure that transforms five attributes, which key paths identify, of a source attributed string."
+    },
+    {
+      "name": "struct AttributedString.SingleAttributeTransformer",
+      "desc": "A type that transforms an attribute by altering its range or value, or by replacing it entirely."
+    },
+    {
+      "name": "subscript<K>(K.Type) -> K.Value?",
+      "desc": "Returns an attribute value that corresponds to an attributed string key."
+    },
+    {
+      "name": "subscript<K>(dynamicMember: KeyPath<AttributeDynamicLookup, K>) -> K.Value?",
+      "desc": "Returns an attribute value that a key path indicates."
+    },
+    {
+      "name": "enum AttributeDynamicLookup",
+      "desc": "A type to support dynamic member lookup of attributes and containers."
+    },
+    {
+      "name": "subscript<S>(dynamicMember: KeyPath<AttributeScopes, S.Type>) -> ScopedAttributeContainer<S>",
+      "desc": "Returns a scoped attribute container that a key path indicates."
+    },
+    {
+      "name": "struct ScopedAttributeContainer",
+      "desc": "An attribute container that allows dynamic member lookup of its contents within the specified attribute scope."
+    },
+    {
+      "name": "func append<S>(S)",
+      "desc": "Appends a string to the attributed string."
+    },
+    {
+      "name": "static func + (AttributedString, AttributedString) -> AttributedString",
+      "desc": "Concatenates two attributed strings."
+    },
+    {
+      "name": "static func + <T>(AttributedString, T) -> AttributedString",
+      "desc": "Concatenates two attributed strings or substrings."
+    },
+    {
+      "name": "static func += (inout AttributedString, AttributedString)",
+      "desc": "Appends an attributed string to another attributed string."
+    },
+    {
+      "name": "static func += <T>(inout AttributedString, T)",
+      "desc": "Appends an attributed string or substring to another attributed string."
+    },
+    {
+      "name": "func inflected() -> AttributedString",
+      "desc": "Applies automatic grammar agreement inflection rules to the attributed string and returns the result."
+    },
+    {
+      "name": "struct AttributedString.InterpolationOptions",
+      "desc": "Options that affect the behavior of string interpolation on the attributed string."
+    },
+    {
+      "name": "static func == (AttributedString, AttributedString) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two attributed strings are equal."
+    },
+    {
+      "name": "static func == <RHS>(AttributedString, RHS) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether an attributed string and another attributed string or substring are equal."
+    },
+    {
+      "name": "static func != (AttributedString, AttributedString) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two attributed strings are unequal."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a new instance by decoding from the given decoder."
+    },
+    {
+      "name": "init(from: Decoder, configuration: AttributeScopeCodableConfiguration)",
+      "desc": "Creates a new instance by decoding from the specified decoder, with help from the provided configuration."
+    },
+    {
+      "name": "typealias AttributedString.DecodingConfiguration",
+      "desc": "The configuration type for decoding attributed strings."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes the value into the given encoder."
+    },
+    {
+      "name": "func encode(to: Encoder, configuration: AttributeScopeCodableConfiguration)",
+      "desc": "Encodes the value into the specified encoder, with help from the provided configuration."
+    },
+    {
+      "name": "typealias AttributedString.EncodingConfiguration",
+      "desc": "The configuration type for encoding attributed strings."
+    },
+    {
+      "name": "struct AttributeScopeCodableConfiguration",
+      "desc": "A configuration type for encoding and decoding attributed strings."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual representation of the instance."
+    }
+  ],
+  "declaration": "@dynamicMemberLookup struct AttributedString",
+  "conformsTo": [
+    "AttributedStringProtocol",
+    "Decodable",
+    "DecodableWithConfiguration",
+    "Encodable",
+    "EncodableWithConfiguration",
+    "ExpressibleByStringLiteral"
+  ]
+}

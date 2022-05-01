@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/multipeerconnectivity/mcbrowserviewcontroller",
+  "type": "Class",
+  "name": "MCBrowserViewController",
+  "desc": "The MCBrowserViewController class presents nearby devices to the user and enables the user to invite nearby devices to a session. To use this class in iOS or tvOS, call methods from the underlying UIViewController class (prepare(for:sender:) and performSegue(withIdentifier:sender:) for storyboards or present(_:animated:completion:) and dismiss(animated:completion:) for nib-based views) to present and dismiss the view controller. In macOS, use the comparable NSViewController methods presentAsSheet(_:) and dismiss(_:) instead.",
+  "items": [
+    {
+      "name": "init(serviceType: String, session: MCSession)",
+      "desc": "Initializes a browser view controller using the provided service type and session."
+    },
+    {
+      "name": "init(browser: MCNearbyServiceBrowser, session: MCSession)",
+      "desc": "Initializes a browser view controller with the provided browser and session."
+    },
+    {
+      "name": "var delegate: MCBrowserViewControllerDelegate?",
+      "desc": "The delegate object that handles browser-view-controller-related events."
+    },
+    {
+      "name": "var browser: MCNearbyServiceBrowser?",
+      "desc": "The browser object that is used for discovering peers."
+    },
+    {
+      "name": "var session: MCSession",
+      "desc": "The multipeer session to which the invited peers are connected."
+    },
+    {
+      "name": "var maximumNumberOfPeers: Int",
+      "desc": "The maximum number of peers allowed in a session, including the local peer."
+    },
+    {
+      "name": "var minimumNumberOfPeers: Int",
+      "desc": "The minimum number of peers that need to be in a session, including the local peer."
+    }
+  ],
+  "declaration": "class MCBrowserViewController : UIViewController",
+  "inheritsFrom": [
+    "NSViewController",
+    "UIViewController"
+  ],
+  "conformsTo": [
+    "MCNearbyServiceBrowserDelegate"
+  ]
+}

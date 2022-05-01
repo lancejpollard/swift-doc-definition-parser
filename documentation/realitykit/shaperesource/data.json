@@ -1,0 +1,69 @@
+{
+  "path": "/documentation/realitykit/shaperesource",
+  "type": "Class",
+  "name": "ShapeResource",
+  "desc": "A representation of a shape.",
+  "items": [
+    {
+      "name": "func offsetBy(rotation: simd_quatf) -> ShapeResource",
+      "desc": "Creates a new shape resource by applying a rotation."
+    },
+    {
+      "name": "func offsetBy(translation: SIMD3<Float>) -> ShapeResource",
+      "desc": "Creates a new shape resource by applying a translation."
+    },
+    {
+      "name": "func offsetBy(rotation: simd_quatf, translation: SIMD3<Float>) -> ShapeResource",
+      "desc": "Creates a new shape resource by applying a rotation and a translation."
+    },
+    {
+      "name": "static func generateBox(size: SIMD3<Float>) -> ShapeResource",
+      "desc": "Creates a box shape with the specified extent."
+    },
+    {
+      "name": "static func generateBox(width: Float, height: Float, depth: Float) -> ShapeResource",
+      "desc": "Creates a box shape with the specified dimensions."
+    },
+    {
+      "name": "static func generateSphere(radius: Float) -> ShapeResource",
+      "desc": "Creates a sphere shape with the specified radius."
+    },
+    {
+      "name": "static func generateCapsule(height: Float, radius: Float) -> ShapeResource",
+      "desc": "Creates a capsule shape with the specified height and radius."
+    },
+    {
+      "name": "static func generateConvex(from: [SIMD3<Float>]) -> ShapeResource",
+      "desc": "Creates a convex shape from the given points."
+    },
+    {
+      "name": "static func generateConvex(from: MeshResource) -> ShapeResource",
+      "desc": "Creates a convex shape from the given mesh."
+    },
+    {
+      "name": "class MeshResource",
+      "desc": "A high-level representation of a collection of vertices and edges that define a shape."
+    },
+    {
+      "name": "static func == (ShapeResource, ShapeResource) -> Bool",
+      "desc": "Indicates whether two shapes are equal."
+    },
+    {
+      "name": "static func != (ShapeResource, ShapeResource) -> Bool",
+      "desc": "Indicates whether two shapes are not equal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the shape by feeding them into the given hash function."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hashed value of the shape."
+    }
+  ],
+  "declaration": "class ShapeResource",
+  "conformsTo": [
+    "Hashable",
+    "Resource"
+  ]
+}

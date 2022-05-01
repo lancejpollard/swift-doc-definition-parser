@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/createml/mlobjectdetector/datasource",
+  "type": "Enumeration",
+  "name": "MLObjectDetector.DataSource",
+  "desc": "A data source for an object detector.",
+  "items": [
+    {
+      "name": "case directoryWithImagesAndJsonAnnotation(at: URL)",
+      "desc": "An object-detector data source you create by selecting a directory that contains image files and exactly one JSON annotation file."
+    },
+    {
+      "name": "case directoryWithImages(at: URL, annotationFile: URL)",
+      "desc": "An object-detector data source you create by selecting the location of a directory of image files, and the location of a JSON annotation file."
+    },
+    {
+      "name": "case table(MLDataTable, imageColumn: String, annotationColumn: String)",
+      "desc": "An object-detector data source you create with a data table."
+    },
+    {
+      "name": "func imagesWithObjectAnnotations() -> MLDataTable",
+      "desc": "Generates a data table where each row represents an image, and its columns are the image file URLs and its annotations."
+    },
+    {
+      "name": "func stratifiedSplit(proportions: [Double], seed: Int, annotationColumn: String) -> MLDataTable",
+      "desc": "Generates a new data table by splitting the data source using the specified proportions."
+    },
+    {
+      "name": "case frame(DataFrame, imageColumn: String, annotationColumn: String)"
+    }
+  ],
+  "declaration": "enum MLObjectDetector.DataSource"
+}

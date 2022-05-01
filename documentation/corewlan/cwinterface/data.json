@@ -1,0 +1,136 @@
+{
+  "path": "/documentation/corewlan/cwinterface",
+  "type": "Class",
+  "name": "CWInterface",
+  "desc": "Encapsulates an IEEE 802.11 interface.",
+  "items": [
+    {
+      "name": "func setPairwiseMasterKey(Data?)",
+      "desc": "Sets the interface pairwise primary key (PMK)."
+    },
+    {
+      "name": "func setPower(Bool)",
+      "desc": "Sets the interface power state."
+    },
+    {
+      "name": "func setWEPKey(Data?, flags: CWCipherKeyFlags, index: Int)",
+      "desc": "Sets the interface WEP key."
+    },
+    {
+      "name": "func setWLANChannel(CWChannel)",
+      "desc": "Sets the interface channel."
+    },
+    {
+      "name": "func scanForNetworks(withName: String?) -> Set<CWNetwork>",
+      "desc": "Scans for networks."
+    },
+    {
+      "name": "func scanForNetworks(withSSID: Data?) -> Set<CWNetwork>",
+      "desc": "Scans for networks."
+    },
+    {
+      "name": "func disassociate()",
+      "desc": "Disassociates from the current network."
+    },
+    {
+      "name": "func commitConfiguration(CWConfiguration, authorization: SFAuthorization?)",
+      "desc": "Commit a configuration for the given WLAN interface."
+    },
+    {
+      "name": "func associate(toEnterpriseNetwork: CWNetwork, identity: SecIdentity?, username: String?, password: String?)",
+      "desc": "Connects to the given enterprise network."
+    },
+    {
+      "name": "func associate(to: CWNetwork, password: String?)",
+      "desc": "Associates to a given network using the given network passphrase."
+    },
+    {
+      "name": "var interfaceName: String?",
+      "desc": "The BSD name of the interface."
+    },
+    {
+      "name": "func activePHYMode() -> CWPHYMode",
+      "desc": "The current active PHY modes for the interface."
+    },
+    {
+      "name": "func bssid() -> String?",
+      "desc": "The current basic service set identifier (BSSID) for the interface, returned as a UTF-8 string."
+    },
+    {
+      "name": "func cachedScanResults() -> Set<CWNetwork>?",
+      "desc": "The networks currently in the scan cache for the WLAN interface."
+    },
+    {
+      "name": "func configuration() -> CWConfiguration?",
+      "desc": "The current configuration for the given WLAN interface."
+    },
+    {
+      "name": "func countryCode() -> String?",
+      "desc": "The current country code (ISO/IEC 3166-1:1997) for the interface."
+    },
+    {
+      "name": "func hardwareAddress() -> String?",
+      "desc": "The hardware media access control (MAC) address for the interface, returned as a UTF-8 string."
+    },
+    {
+      "name": "func interfaceMode() -> CWInterfaceMode",
+      "desc": "The current mode for the interface."
+    },
+    {
+      "name": "func noiseMeasurement() -> Int",
+      "desc": "The current aggregate noise measurement (dBm) for the interface."
+    },
+    {
+      "name": "func powerOn() -> Bool",
+      "desc": "The interface power state is set to \"ON\"."
+    },
+    {
+      "name": "func rssiValue() -> Int",
+      "desc": "The current aggregate received signal strength indication (RSSI) measurement (dBm) for the interface."
+    },
+    {
+      "name": "func scanForNetworks(withName: String?, includeHidden: Bool) -> Set<CWNetwork>",
+      "desc": "Scans for networks with the name you specify, optionally including hidden networks."
+    },
+    {
+      "name": "func scanForNetworks(withSSID: Data?, includeHidden: Bool) -> Set<CWNetwork>",
+      "desc": "Scans for networks with the SSID you specify, optionally including hidden networks."
+    },
+    {
+      "name": "func security() -> CWSecurity",
+      "desc": "The current security mode for the interface."
+    },
+    {
+      "name": "func serviceActive() -> Bool",
+      "desc": "The interface has its corresponding network service enabled."
+    },
+    {
+      "name": "func ssid() -> String?",
+      "desc": "The current service set identifier (SSID) for the interface, encoded as a string."
+    },
+    {
+      "name": "func ssidData() -> Data?",
+      "desc": "The current service set identifier (SSID) for the interface, returned as data."
+    },
+    {
+      "name": "func supportedWLANChannels() -> Set<CWChannel>?",
+      "desc": "An array of channels supported by the interface for the active country code."
+    },
+    {
+      "name": "func transmitPower() -> Int",
+      "desc": "The current transmit power (mW) for the interface."
+    },
+    {
+      "name": "func transmitRate() -> Double",
+      "desc": "The current transmit rate (Mbps) for the interface."
+    },
+    {
+      "name": "func wlanChannel() -> CWChannel?",
+      "desc": "The current channel for the interface."
+    }
+  ],
+  "declaration": "class CWInterface : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

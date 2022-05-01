@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/swift/anykeypath",
+  "type": "Class",
+  "name": "AnyKeyPath",
+  "desc": "A type-erased key path, from any root type to any resulting value type.",
+  "items": [
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "static var rootType: Any.Type",
+      "desc": "The root type for this key path."
+    },
+    {
+      "name": "static var valueType: Any.Type",
+      "desc": "The value type for this key path."
+    },
+    {
+      "name": "func appending(path: AnyKeyPath) -> AnyKeyPath?",
+      "desc": "Returns a new key path created by appending the given key path to this one."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "static func != (AnyKeyPath, AnyKeyPath) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (AnyKeyPath, AnyKeyPath) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    }
+  ],
+  "declaration": "class AnyKeyPath",
+  "conformsTo": [
+    "Hashable",
+    "_AppendKeyPath"
+  ]
+}

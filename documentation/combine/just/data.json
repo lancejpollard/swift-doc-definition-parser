@@ -1,0 +1,162 @@
+{
+  "path": "/documentation/combine/just",
+  "type": "Structure",
+  "name": "Just",
+  "desc": "A publisher that emits an output to each subscriber just once, and then finishes.",
+  "items": [
+    {
+      "name": "init(Output)",
+      "desc": "Initializes a publisher that emits the specified output just once."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let output: Output",
+      "desc": "The one element that the publisher emits."
+    },
+    {
+      "name": "static func == (Just<Output>, Just<Output>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two publishers are equivalent."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    },
+    {
+      "name": "func allSatisfy((Output) -> Bool) -> Just<Bool>"
+    },
+    {
+      "name": "func append(Output...) -> Publishers.Sequence<[Output], Just<Output>.Failure>"
+    },
+    {
+      "name": "func append<S>(S) -> Publishers.Sequence<[Output], Just<Output>.Failure>"
+    },
+    {
+      "name": "func collect() -> Just<[Output]>"
+    },
+    {
+      "name": "func compactMap<T>((Output) -> T?) -> Optional<T>.Publisher"
+    },
+    {
+      "name": "func contains(Output) -> Just<Bool>",
+      "desc": ""
+    },
+    {
+      "name": "func contains(where: (Output) -> Bool) -> Just<Bool>"
+    },
+    {
+      "name": "func count() -> Just<Int>"
+    },
+    {
+      "name": "func drop(while: (Output) -> Bool) -> Optional<Output>.Publisher"
+    },
+    {
+      "name": "func dropFirst(Int) -> Optional<Output>.Publisher"
+    },
+    {
+      "name": "func filter((Output) -> Bool) -> Optional<Output>.Publisher"
+    },
+    {
+      "name": "func first() -> Just<Output>"
+    },
+    {
+      "name": "func first(where: (Output) -> Bool) -> Optional<Output>.Publisher"
+    },
+    {
+      "name": "func ignoreOutput() -> Empty<Output, Just<Output>.Failure>"
+    },
+    {
+      "name": "func last() -> Just<Output>"
+    },
+    {
+      "name": "func last(where: (Output) -> Bool) -> Optional<Output>.Publisher"
+    },
+    {
+      "name": "func map<T>((Output) -> T) -> Just<T>"
+    },
+    {
+      "name": "func mapError<E>((Just<Output>.Failure) -> E) -> Result<Output, E>.Publisher"
+    },
+    {
+      "name": "func max() -> Just<Output>",
+      "desc": ""
+    },
+    {
+      "name": "func max(by: (Output, Output) -> Bool) -> Just<Output>"
+    },
+    {
+      "name": "func min() -> Just<Output>",
+      "desc": ""
+    },
+    {
+      "name": "func min(by: (Output, Output) -> Bool) -> Just<Output>"
+    },
+    {
+      "name": "func output(at: Int) -> Optional<Output>.Publisher"
+    },
+    {
+      "name": "func output<R>(in: R) -> Optional<Output>.Publisher"
+    },
+    {
+      "name": "func prefix(Int) -> Optional<Output>.Publisher"
+    },
+    {
+      "name": "func prefix(while: (Output) -> Bool) -> Optional<Output>.Publisher"
+    },
+    {
+      "name": "func prepend<S>(S) -> Publishers.Sequence<[Output], Just<Output>.Failure>"
+    },
+    {
+      "name": "func prepend(Output...) -> Publishers.Sequence<[Output], Just<Output>.Failure>"
+    },
+    {
+      "name": "func reduce<T>(T, (T, Output) -> T) -> Result<T, Just<Output>.Failure>.Publisher"
+    },
+    {
+      "name": "func removeDuplicates() -> Just<Output>",
+      "desc": ""
+    },
+    {
+      "name": "func removeDuplicates(by: (Output, Output) -> Bool) -> Just<Output>"
+    },
+    {
+      "name": "func replaceEmpty(with: Output) -> Just<Output>"
+    },
+    {
+      "name": "func replaceError(with: Output) -> Just<Output>"
+    },
+    {
+      "name": "func retry(Int) -> Just<Output>"
+    },
+    {
+      "name": "func scan<T>(T, (T, Output) -> T) -> Result<T, Just<Output>.Failure>.Publisher"
+    },
+    {
+      "name": "func setFailureType<E>(to: E.Type) -> Result<Output, E>.Publisher"
+    },
+    {
+      "name": "func tryAllSatisfy((Output) throws -> Bool) -> Result<Bool, Error>.Publisher"
+    },
+    {
+      "name": "func tryContains(where: (Output) throws -> Bool) -> Result<Bool, Error>.Publisher"
+    },
+    {
+      "name": "func tryMap<T>((Output) throws -> T) -> Result<T, Error>.Publisher"
+    },
+    {
+      "name": "func tryReduce<T>(T, (T, Output) throws -> T) -> Result<T, Error>.Publisher"
+    },
+    {
+      "name": "func tryRemoveDuplicates(by: (Output, Output) throws -> Bool) -> Result<Output, Error>.Publisher"
+    },
+    {
+      "name": "func tryScan<T>(T, (T, Output) throws -> T) -> Result<T, Error>.Publisher"
+    }
+  ],
+  "declaration": "struct Just<Output>",
+  "conformsTo": [
+    "Equatable",
+    "Publisher"
+  ]
+}

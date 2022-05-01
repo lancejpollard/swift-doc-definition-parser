@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsmatrixfindtopk",
+  "type": "Class",
+  "name": "MPSMatrixFindTopK",
+  "desc": "A kernel for computing the top-K values and their corresponding indices in a matrix.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice, numberOfTopKValues: Int)"
+    },
+    {
+      "name": "var indexOffset: Int"
+    },
+    {
+      "name": "var numberOfTopKValues: Int"
+    },
+    {
+      "name": "var sourceColumns: Int"
+    },
+    {
+      "name": "var sourceRows: Int"
+    },
+    {
+      "name": "func copy(with: NSZone?, device: MTLDevice?) -> Self"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, inputMatrix: MPSMatrix, resultIndexMatrix: MPSMatrix, resultValueMatrix: MPSMatrix)"
+    }
+  ],
+  "declaration": "class MPSMatrixFindTopK : MPSMatrixUnaryKernel",
+  "inheritsFrom": [
+    "MPSMatrixUnaryKernel"
+  ]
+}

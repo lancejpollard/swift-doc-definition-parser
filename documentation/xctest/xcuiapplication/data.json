@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/xctest/xcuiapplication",
+  "type": "Class",
+  "name": "XCUIApplication",
+  "desc": "A proxy that can launch, monitor, and terminate a test application.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a proxy for the application as the Target Application in Xcode’s target settings."
+    },
+    {
+      "name": "init(bundleIdentifier: String)",
+      "desc": "Creates a proxy for an application for the specified bundle identifier."
+    },
+    {
+      "name": "init(url: URL)",
+      "desc": "Creates a proxy for the application at the specified file system URL."
+    },
+    {
+      "name": "func launch()",
+      "desc": "Launches the application."
+    },
+    {
+      "name": "var launchArguments: [String]",
+      "desc": "The arguments that pass to the application on launch."
+    },
+    {
+      "name": "var launchEnvironment: [String : String]",
+      "desc": "The environment variables that pass to the application on launch."
+    },
+    {
+      "name": "func activate()",
+      "desc": "Activates the application."
+    },
+    {
+      "name": "func terminate()",
+      "desc": "Terminates any running instance of the application."
+    },
+    {
+      "name": "var state: XCUIApplication.State",
+      "desc": "The most recent state of the application."
+    },
+    {
+      "name": "enum XCUIApplication.State",
+      "desc": "The possible states of an application during UI testing."
+    },
+    {
+      "name": "func wait(for: XCUIApplication.State, timeout: TimeInterval) -> Bool",
+      "desc": "Waits for the application to reach the specified state or timeout."
+    },
+    {
+      "name": "func resetAuthorizationStatus(for: XCUIProtectedResource)",
+      "desc": "Resets the authorization status for a protected resource."
+    },
+    {
+      "name": "enum XCUIProtectedResource",
+      "desc": "A system resource that requires user authorization to access."
+    }
+  ],
+  "declaration": "class XCUIApplication : XCUIElement",
+  "inheritsFrom": [
+    "XCUIElement"
+  ]
+}

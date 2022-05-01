@@ -1,0 +1,94 @@
+{
+  "path": "/documentation/authenticationservices/asauthorizationproviderextensionauthorizationrequest",
+  "type": "Class",
+  "name": "ASAuthorizationProviderExtensionAuthorizationRequest",
+  "desc": "An authorization request that your provider extension handles.",
+  "items": [
+    {
+      "name": "var url: URL",
+      "desc": "The complete URL of the request, including all components."
+    },
+    {
+      "name": "var httpHeaders: [String : String]",
+      "desc": "The HTTP headers of the request."
+    },
+    {
+      "name": "var httpBody: Data",
+      "desc": "The HTTP body of the request."
+    },
+    {
+      "name": "var realm: String",
+      "desc": "The realm to which the request applies."
+    },
+    {
+      "name": "var requestedOperation: ASAuthorizationProviderAuthorizationOperation",
+      "desc": "The operation for the extension to execute."
+    },
+    {
+      "name": "struct ASAuthorizationProviderAuthorizationOperation",
+      "desc": "A type that represents an authorization operation."
+    },
+    {
+      "name": "var authorizationOptions: [AnyHashable : Any]",
+      "desc": "A collection of options associated with the request."
+    },
+    {
+      "name": "var callerBundleIdentifier: String",
+      "desc": "The bundle ID of the app making the request."
+    },
+    {
+      "name": "var callerTeamIdentifier: String",
+      "desc": "The team identifier of the app making the request."
+    },
+    {
+      "name": "var localizedCallerDisplayName: String",
+      "desc": "The localized display name of the app making the request."
+    },
+    {
+      "name": "var isCallerManaged: Bool",
+      "desc": "A Boolean value that indicates whether the app making the request is managed."
+    },
+    {
+      "name": "var extensionData: [AnyHashable : Any]",
+      "desc": "Extension data from the Mobile Device Management (MDM) configuration."
+    },
+    {
+      "name": "func presentAuthorizationViewController(completion: (Bool, Error?) -> Void)",
+      "desc": "Asks the authorization service to show the extension’s view controller to the user."
+    },
+    {
+      "name": "func complete(authorizationResult: ASAuthorizationProviderExtensionAuthorizationResult)"
+    },
+    {
+      "name": "func complete()",
+      "desc": "Indicates the requested authorization completed with no output."
+    },
+    {
+      "name": "func complete(httpAuthorizationHeaders: [String : String])",
+      "desc": "Indicates the requested authorization succeeded with tokens in the HTTP headers."
+    },
+    {
+      "name": "func complete(httpResponse: HTTPURLResponse, httpBody: Data?)",
+      "desc": "Indicates the requested authorization succeeded with an HTTP response."
+    },
+    {
+      "name": "func complete(error: Error)",
+      "desc": "Indicates the requested authorization failed."
+    },
+    {
+      "name": "func doNotHandle()",
+      "desc": "Indicates the request wasn’t handled."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Cancels the request, for example, because the user taps a cancel button."
+    },
+    {
+      "name": "var isUserInterfaceEnabled: Bool"
+    }
+  ],
+  "declaration": "class ASAuthorizationProviderExtensionAuthorizationRequest : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

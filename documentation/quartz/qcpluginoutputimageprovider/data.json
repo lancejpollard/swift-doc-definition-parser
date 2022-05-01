@@ -1,0 +1,49 @@
+{
+  "path": "/documentation/quartz/qcpluginoutputimageprovider",
+  "type": "Protocol",
+  "name": "QCPlugInOutputImageProvider",
+  "desc": "The QCPlugInOuputImageProvider protocol eliminates the need to use explicit image types for the image output ports on a custom patch. The methods in this protocol are called by the Quartz Composer engine when the output image is needed. If your custom patch has an image output port, you need to implement the appropriate methods for rendering image data and to supply information about the rendering destination and the image bounds.",
+  "items": [
+    {
+      "name": "func render(toBuffer: UnsafeMutableRawPointer!, withBytesPerRow: Int, pixelFormat: String!, forBounds: NSRect) -> Bool",
+      "desc": "Renders a subregion of the image into the supplied memory buffer using the specified pixel format."
+    },
+    {
+      "name": "func copyRenderedTexture(forCGLContext: CGLContextObj!, pixelFormat: String!, bounds: NSRect, isFlipped: UnsafeMutablePointer<ObjCBool>!) -> GLuint",
+      "desc": "Returns the name of an OpenGL texture of type GL_TEXTURE_RECTANGLE_EXT that contains a subregion of the image in a given pixel format."
+    },
+    {
+      "name": "func render(withCGLContext: CGLContextObj!, forBounds: NSRect) -> Bool",
+      "desc": "Renders a subregion of the image to the provided CGL context."
+    },
+    {
+      "name": "func releaseRenderedTexture(GLuint, forCGLContext: CGLContextObj!)",
+      "desc": "Releases the previously copied texture."
+    },
+    {
+      "name": "func imageBounds() -> NSRect",
+      "desc": "Returns the bounds of the image expressed in pixels and aligned to integer boundaries."
+    },
+    {
+      "name": "func imageColorSpace() -> Unmanaged<CGColorSpace>!",
+      "desc": "Returns the color space of the image or NULL if the image should not be color matched."
+    },
+    {
+      "name": "func shouldColorMatch() -> Bool",
+      "desc": "Returns whether the image should be color matched."
+    },
+    {
+      "name": "func supportedBufferPixelFormats() -> [Any]!",
+      "desc": "Returns a list of pixel formats that are supported for rendering to a memory buffer."
+    },
+    {
+      "name": "func supportedRenderedTexturePixelFormats() -> [Any]!",
+      "desc": "Returns a list of pixel formats that are supported for rendering to an onscreen OpenGL context."
+    },
+    {
+      "name": "func canRender(withCGLContext: CGLContextObj!) -> Bool",
+      "desc": "Returns whether the image data can be rendered into the provided CGL context."
+    }
+  ],
+  "declaration": "protocol QCPlugInOutputImageProvider"
+}

@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/hypervisor/hv_exit_reason_t",
+  "type": "Structure",
+  "name": "hv_exit_reason_t",
+  "desc": "The type that describes the event that triggered a guest exit to the host.",
+  "items": [
+    {
+      "name": "var rawValue: UInt32",
+      "desc": "The unsigned 32-bit integer that represents virual macine exit reasons."
+    },
+    {
+      "name": "init(UInt32)",
+      "desc": "Creates a new exit reason instance with the value you provide."
+    },
+    {
+      "name": "init(rawValue: UInt32)",
+      "desc": "Creates a new exit reason instance with the value you provide."
+    },
+    {
+      "name": "var HV_EXIT_REASON_CANCELED: hv_exit_reason_t",
+      "desc": "The value that identifies exits requested by exit handler on the host."
+    },
+    {
+      "name": "var HV_EXIT_REASON_EXCEPTION: hv_exit_reason_t",
+      "desc": "The value that identifies traps caused by the guest operations."
+    },
+    {
+      "name": "var HV_EXIT_REASON_VTIMER_ACTIVATED: hv_exit_reason_t",
+      "desc": "The value that identifies when the virtual timer enters the pending state."
+    },
+    {
+      "name": "var HV_EXIT_REASON_UNKNOWN: hv_exit_reason_t",
+      "desc": "The value that identifies unexpected exits."
+    }
+  ],
+  "declaration": "struct hv_exit_reason_t",
+  "conformsTo": [
+    "Equatable",
+    "RawRepresentable"
+  ]
+}

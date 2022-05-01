@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/arkit/argeotrackingconfiguration",
+  "type": "Class",
+  "name": "ARGeoTrackingConfiguration",
+  "desc": "A configuration that tracks locations with GPS, map data, and a device's compass.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Initializes a new geotracking configuration."
+    },
+    {
+      "name": "class func checkAvailability(completionHandler: (Bool, Error?) -> Void)",
+      "desc": "Determines if geotracking supports the user’s current location."
+    },
+    {
+      "name": "class func checkAvailability(at: CLLocationCoordinate2D, completionHandler: (Bool, Error?) -> Void)",
+      "desc": "Determines if geotracking supports a particular location."
+    },
+    {
+      "name": "var planeDetection: ARWorldTrackingConfiguration.PlaneDetection",
+      "desc": "A value that specifies whether and how the session automatically attempts to detect flat surfaces in the camera-captured image."
+    },
+    {
+      "name": "struct ARWorldTrackingConfiguration.PlaneDetection",
+      "desc": "Options for whether and how the framework detects flat surfaces in captured images."
+    },
+    {
+      "name": "var detectionImages: Set<ARReferenceImage>!",
+      "desc": "A set of images that ARKit searches for in the user's environment."
+    },
+    {
+      "name": "var maximumNumberOfTrackedImages: Int",
+      "desc": "The number of image anchors to monitor closely for position and orientation updates."
+    },
+    {
+      "name": "var automaticImageScaleEstimationEnabled: Bool",
+      "desc": "A flag that instructs the framework to estimate and set the scale of a detected or tracked image on your behalf."
+    },
+    {
+      "name": "var detectionObjects: Set<ARReferenceObject>",
+      "desc": "A set of 3D objects that the framework attempts to detect in the user's environment."
+    },
+    {
+      "name": "var environmentTexturing: ARWorldTrackingConfiguration.EnvironmentTexturing",
+      "desc": "An option that determines how the framework generates environment textures."
+    },
+    {
+      "name": "enum ARWorldTrackingConfiguration.EnvironmentTexturing",
+      "desc": "Options to generate environment textures in a world-tracking AR session."
+    },
+    {
+      "name": "class AREnvironmentProbeAnchor",
+      "desc": "An object that provides environmental lighting information for a specific area of space in a world-tracking AR session."
+    },
+    {
+      "name": "var wantsHDREnvironmentTextures: Bool",
+      "desc": "A flag that instructs the framework to create environment textures in HDR format."
+    },
+    {
+      "name": "class var supportsAppClipCodeTracking: Bool",
+      "desc": "A flag that indicates if the device tracks App Clip Codes."
+    },
+    {
+      "name": "var appClipCodeTrackingEnabled: Bool",
+      "desc": "A Boolean value that indicates if the framework searches the physical environment for App Clip Codes."
+    },
+    {
+      "name": "class ARAppClipCodeAnchor",
+      "desc": "An anchor that tracks the position and orientation of an App Clip Code in the physical environment."
+    }
+  ],
+  "declaration": "class ARGeoTrackingConfiguration : ARConfiguration",
+  "inheritsFrom": [
+    "ARConfiguration"
+  ]
+}

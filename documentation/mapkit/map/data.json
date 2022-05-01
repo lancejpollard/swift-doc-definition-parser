@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/mapkit/map",
+  "type": "Generic Structure",
+  "name": "Map",
+  "desc": "A view that displays an embedded map interface.",
+  "items": [
+    {
+      "name": "init(coordinateRegion: Binding<MKCoordinateRegion>, interactionModes: MapInteractionModes, showsUserLocation: Bool, userTrackingMode: Binding<MapUserTrackingMode>?)",
+      "desc": "Creates a map that displays a coordinate region and optionally configures available interactions, user location, and tracking behavior."
+    },
+    {
+      "name": "init<Items, Annotation>(coordinateRegion: Binding<MKCoordinateRegion>, interactionModes: MapInteractionModes, showsUserLocation: Bool, userTrackingMode: Binding<MapUserTrackingMode>?, annotationItems: Items, annotationContent: (Items.Element) -> Annotation)",
+      "desc": "Creates a map that displays a coordinate region with annotations, and optionally configures available interactions, user location, and tracking behavior."
+    },
+    {
+      "name": "init(mapRect: Binding<MKMapRect>, interactionModes: MapInteractionModes, showsUserLocation: Bool, userTrackingMode: Binding<MapUserTrackingMode>?)",
+      "desc": "Creates a map that displays a map rectangle and optionally configures available interactions, user location, and tracking behavior."
+    },
+    {
+      "name": "init<Items, Annotation>(mapRect: Binding<MKMapRect>, interactionModes: MapInteractionModes, showsUserLocation: Bool, userTrackingMode: Binding<MapUserTrackingMode>?, annotationItems: Items, annotationContent: (Items.Element) -> Annotation)",
+      "desc": "Creates a map that displays a map rectangle with annotations, and optionally configures available interactions, user location, and tracking behavior."
+    },
+    {
+      "name": "struct MapInteractionModes",
+      "desc": "Options that indicate the user interactions that the map responds to."
+    },
+    {
+      "name": "enum MapUserTrackingMode",
+      "desc": "The modes available for user tracking."
+    },
+    {
+      "name": "func accessibilityShowsLargeContentViewer() -> View"
+    },
+    {
+      "name": "func accessibilityShowsLargeContentViewer<V>(() -> V) -> View"
+    },
+    {
+      "name": "func keyboardShortcut(KeyboardShortcut?) -> View"
+    }
+  ],
+  "declaration": "struct Map<Content> where Content : View",
+  "conformsTo": [
+    "View"
+  ]
+}

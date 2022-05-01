@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/accelerate/vdsp/vectorizabledouble",
+  "type": "Structure",
+  "name": "vDSP.VectorizableDouble",
+  "desc": "A structure that represents a double-precision real value for biquadratic filtering and discrete Fourier transforms.",
+  "items": [
+    {
+      "name": "typealias vDSP.VectorizableDouble.Scalar"
+    },
+    {
+      "name": "static func applyMulti(setup: vDSP_biquadm_SetupD, pInputs: UnsafeMutablePointer<UnsafePointer<vDSP.VectorizableDouble.Scalar>>, pOutputs: UnsafeMutablePointer<UnsafeMutablePointer<vDSP.VectorizableDouble.Scalar>>, count: vDSP_Length)"
+    },
+    {
+      "name": "static func applySingle<U, V>(source: U, destination: inout V, delays: UnsafeMutablePointer<vDSP.VectorizableDouble.Scalar>, setup: vDSP_biquad_Setup, sectionCount: vDSP_Length, count: vDSP_Length)"
+    },
+    {
+      "name": "static func destroySetup(channelCount: UInt, biquadSetup: OpaquePointer)"
+    },
+    {
+      "name": "static func makeBiquadSetup(channelCount: vDSP_Length, coefficients: [Double], sectionCount: vDSP_Length) -> OpaquePointer?"
+    }
+  ],
+  "declaration": "struct VectorizableDouble",
+  "conformsTo": [
+    "vDSP_BiquadFunctions",
+    "vDSP_DFTFunctions"
+  ]
+}

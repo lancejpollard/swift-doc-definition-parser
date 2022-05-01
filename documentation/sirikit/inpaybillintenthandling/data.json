@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/sirikit/inpaybillintenthandling",
+  "type": "Protocol",
+  "name": "INPayBillIntentHandling",
+  "desc": "The handler interface for paying a bill using money from the user’s account.DeprecatedThis intent is no longer available. You may define a custom intent instead. For more information, see Deprecated SiriKit Intent Domains.",
+  "items": [
+    {
+      "name": "func resolveBillPayee(for: INPayBillIntent, with: (INBillPayeeResolutionResult) -> Void)",
+      "desc": "Resolves the entity that originated the bill."
+    },
+    {
+      "name": "func resolveBillType(for: INPayBillIntent, with: (INBillTypeResolutionResult) -> Void)",
+      "desc": "Resolves the type of the bill."
+    },
+    {
+      "name": "func resolveFromAccount(for: INPayBillIntent, with: (INPaymentAccountResolutionResult) -> Void)",
+      "desc": "Resolves the user account that provides the funds for paying the bill."
+    },
+    {
+      "name": "func resolveTransactionAmount(for: INPayBillIntent, with: (INPaymentAmountResolutionResult) -> Void)",
+      "desc": "Resolves the amount to pay toward the bill."
+    },
+    {
+      "name": "func resolveDueDate(for: INPayBillIntent, with: (INDateComponentsRangeResolutionResult) -> Void)",
+      "desc": "Resolves the due date of the bill."
+    },
+    {
+      "name": "func resolveTransactionScheduledDate(for: INPayBillIntent, with: (INDateComponentsRangeResolutionResult) -> Void)",
+      "desc": "Resolves the date for the payment to occur."
+    },
+    {
+      "name": "func resolveTransactionNote(for: INPayBillIntent, with: (INStringResolutionResult) -> Void)",
+      "desc": "Resolves any custom notes associated with the transaction."
+    },
+    {
+      "name": "func confirm(intent: INPayBillIntent, completion: (INPayBillIntentResponse) -> Void)",
+      "desc": "Confirms the transaction details."
+    },
+    {
+      "name": "func handle(intent: INPayBillIntent, completion: (INPayBillIntentResponse) -> Void)",
+      "desc": "Handles scheduling payment of the bill."
+    }
+  ],
+  "declaration": "protocol INPayBillIntentHandling",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

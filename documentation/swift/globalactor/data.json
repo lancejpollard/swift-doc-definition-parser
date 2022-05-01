@@ -1,0 +1,21 @@
+{
+  "path": "/documentation/swift/globalactor",
+  "type": "Protocol",
+  "name": "GlobalActor",
+  "desc": "A type that represents a globally-unique actor that can be used to isolate various declarations anywhere in the program.",
+  "items": [
+    {
+      "name": "associatedtype ActorType",
+      "desc": "The type of the shared actor instance that will be used to provide mutually-exclusive access to declarations annotated with the given global actor type."
+    },
+    {
+      "name": "static var shared: Self.ActorType",
+      "desc": "The shared actor instance that will be used to provide mutually-exclusive access to declarations annotated with the given global actor type."
+    },
+    {
+      "name": "static var sharedUnownedExecutor: UnownedSerialExecutor",
+      "desc": "The shared executor instance that will be used to provide mutually-exclusive access for the global actor."
+    }
+  ],
+  "declaration": "protocol GlobalActor"
+}

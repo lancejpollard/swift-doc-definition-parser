@@ -1,0 +1,54 @@
+{
+  "path": "/documentation/iousbhost/iousbhostcontrollerinterface",
+  "type": "Class",
+  "name": "IOUSBHostControllerInterface",
+  "desc": "No overview available.",
+  "items": [
+    {
+      "name": "var capabilities: UnsafePointer<IOUSBHostCIMessage>"
+    },
+    {
+      "name": "var controllerStateMachine: IOUSBHostCIControllerStateMachine"
+    },
+    {
+      "name": "var interruptRateHz: Int"
+    },
+    {
+      "name": "var queue: DispatchQueue"
+    },
+    {
+      "name": "var uuid: UUID"
+    },
+    {
+      "name": "func capabilities(forPort: Int) -> UnsafePointer<IOUSBHostCIMessage>"
+    },
+    {
+      "name": "func description(for: UnsafePointer<IOUSBHostCIMessage>) -> String"
+    },
+    {
+      "name": "func destroy()"
+    },
+    {
+      "name": "func enqueueInterrupt(UnsafePointer<IOUSBHostCIMessage>)"
+    },
+    {
+      "name": "func enqueueInterrupt(UnsafePointer<IOUSBHostCIMessage>, expedite: Bool)"
+    },
+    {
+      "name": "func enqueueInterrupts(UnsafePointer<IOUSBHostCIMessage>, count: Int)"
+    },
+    {
+      "name": "func enqueueInterrupts(UnsafePointer<IOUSBHostCIMessage>, count: Int, expedite: Bool)"
+    },
+    {
+      "name": "func getPortStateMachine(forCommand: UnsafePointer<IOUSBHostCIMessage>, error: NSErrorPointer) -> IOUSBHostCIPortStateMachine"
+    },
+    {
+      "name": "func getPortStateMachine(forPort: Int, error: NSErrorPointer) -> IOUSBHostCIPortStateMachine"
+    }
+  ],
+  "declaration": "class IOUSBHostControllerInterface : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

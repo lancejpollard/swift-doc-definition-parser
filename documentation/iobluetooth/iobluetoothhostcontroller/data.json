@@ -1,0 +1,39 @@
+{
+  "path": "/documentation/iobluetooth/iobluetoothhostcontroller",
+  "type": "Class",
+  "name": "IOBluetoothHostController",
+  "desc": "This class is a representation of a Bluetooth Host Controller Interface that is present on the local computer (either plugged in externally or available internally).",
+  "items": [
+    {
+      "name": "var delegate: AnyObject!"
+    },
+    {
+      "name": "var powerState: BluetoothHCIPowerState",
+      "desc": "Gets the controller power state"
+    },
+    {
+      "name": "func addressAsString() -> String!",
+      "desc": "Convience routine to get the HCI controller's Bluetooth address as an NSString object."
+    },
+    {
+      "name": "func classOfDevice() -> BluetoothClassOfDevice",
+      "desc": "Gets the current class of device value."
+    },
+    {
+      "name": "func nameAsString() -> String!",
+      "desc": "Gets the \"friendly\" name of HCI controller."
+    },
+    {
+      "name": "func setClassOfDevice(BluetoothClassOfDevice, forTimeInterval: TimeInterval) -> IOReturn",
+      "desc": "Sets the current class of device value, for the specified amount of time. Note that the time interval *must* be set and valid. The range of acceptable values is 30-120 seconds. Anything above or below will be rounded up, or down, as appropriate."
+    },
+    {
+      "name": "class func `default`() -> Self!",
+      "desc": "Gets the default HCI controller object."
+    }
+  ],
+  "declaration": "class IOBluetoothHostController : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/gamekit/gkmatchdelegate",
+  "type": "Protocol",
+  "name": "GKMatchDelegate",
+  "desc": "An object that receives connection status and data transmitted in a multiplayer game.",
+  "items": [
+    {
+      "name": "func match(GKMatch, didReceive: Data, forRecipient: GKPlayer, fromRemotePlayer: GKPlayer)",
+      "desc": "Processes the data sent from one player to another."
+    },
+    {
+      "name": "func match(GKMatch, didReceive: Data, fromRemotePlayer: GKPlayer)",
+      "desc": "Processes the data sent from another player to the local player."
+    },
+    {
+      "name": "func match(GKMatch, player: GKPlayer, didChange: GKPlayerConnectionState)",
+      "desc": "Handles when players connect or disconnect from a match."
+    },
+    {
+      "name": "enum GKPlayerConnectionState",
+      "desc": "The possible states of a connection to a match."
+    },
+    {
+      "name": "func match(GKMatch, didFailWithError: Error?)",
+      "desc": "Handles the local player’s connection errors to a match."
+    },
+    {
+      "name": "func match(GKMatch, shouldReinviteDisconnectedPlayer: GKPlayer) -> Bool",
+      "desc": "Determines whether the local player should reinvite another player who disconnected from a two-player match."
+    }
+  ],
+  "declaration": "protocol GKMatchDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "path": "/documentation/appkit/nsbrowserdelegate",
+  "type": "Protocol",
+  "name": "NSBrowserDelegate",
+  "desc": "A set of methods that a browser delegate implements to manage selection, scrolling, sizing, and other behavior.",
+  "items": [
+    {
+      "name": "func browser(NSBrowser, isColumnValid: Int) -> Bool",
+      "desc": "Returns whether the contents of the specified column are valid."
+    },
+    {
+      "name": "func browser(NSBrowser, numberOfRowsInColumn: Int) -> Int",
+      "desc": "Returns the number of rows of data in the specified column."
+    },
+    {
+      "name": "func browser(NSBrowser, numberOfChildrenOfItem: Any?) -> Int",
+      "desc": "Asks the delegate for the number of children the given item has."
+    },
+    {
+      "name": "func browser(NSBrowser, titleOfColumn: Int) -> String?",
+      "desc": "Asks the delegate for the title to display above the specified column."
+    },
+    {
+      "name": "func browser(NSBrowser, shouldTypeSelectFor: NSEvent, withCurrentSearch: String?) -> Bool",
+      "desc": "Sent to the delegate to determine whether keyboard-based selection (type select) for a given event and search string should proceed."
+    },
+    {
+      "name": "func browser(NSBrowser, typeSelectStringForRow: Int, inColumn: Int) -> String?",
+      "desc": "Sent to the delegate to get the keyboard-based selection (type select) string for the specified row and column."
+    },
+    {
+      "name": "func browser(NSBrowser, nextTypeSelectMatchFromRow: Int, toRow: Int, inColumn: Int, for: String?) -> Int",
+      "desc": "Sent to the delegate to customize a browser’s keyboard-based selection (type select) behavior."
+    },
+    {
+      "name": "func browser(NSBrowser, selectCellWith: String, inColumn: Int) -> Bool",
+      "desc": "Asks the delegate to select the cell with the given title in the specified column."
+    },
+    {
+      "name": "func browser(NSBrowser, selectRow: Int, inColumn: Int) -> Bool",
+      "desc": "Asks the delegate to select the cell at the specified row and column location."
+    },
+    {
+      "name": "func browser(NSBrowser, selectionIndexesForProposedSelection: IndexSet, inColumn: Int) -> IndexSet",
+      "desc": "Asks the delegate for a set of indexes to select when the user changes the selection in the browser with the keyboard or mouse."
+    },
+    {
+      "name": "func browser(NSBrowser, child: Int, ofItem: Any?) -> Any",
+      "desc": "Asks the delegate to return the child of the specified item at the specified index."
+    },
+    {
+      "name": "func browser(NSBrowser, isLeafItem: Any?) -> Bool",
+      "desc": "Asks the delegate whether the specified item is a leaf item (an item that cannot be expanded)."
+    },
+    {
+      "name": "func browser(NSBrowser, shouldEditItem: Any?) -> Bool",
+      "desc": "Asks the delegate whether the browser may start an editing session for the specified item."
+    },
+    {
+      "name": "func browser(NSBrowser, objectValueForItem: Any?) -> Any?",
+      "desc": "Returns the object that the specified item uses to draw its contents."
+    },
+    {
+      "name": "func browser(NSBrowser, setObjectValue: Any?, forItem: Any?)",
+      "desc": "Sets the object that the specified item uses to draw its contents to the specified object."
+    },
+    {
+      "name": "func rootItem(for: NSBrowser) -> Any?",
+      "desc": "Asks the delegate to return the root item of the browser."
+    },
+    {
+      "name": "func browser(NSBrowser, previewViewControllerForLeafItem: Any) -> NSViewController?",
+      "desc": "Asks the delegate for a controller that provides a preview column for the specified leaf item."
+    },
+    {
+      "name": "func browser(NSBrowser, headerViewControllerForItem: Any?) -> NSViewController?",
+      "desc": "Asks the delegate for a controller that provides a header view for the specified column item."
+    },
+    {
+      "name": "func browser(NSBrowser, createRowsForColumn: Int, in: NSMatrix)",
+      "desc": "Creates a row in the given matrix for each row of data in the specified column of the browser."
+    },
+    {
+      "name": "func browser(NSBrowser, willDisplayCell: Any, atRow: Int, column: Int)",
+      "desc": "Gives the delegate the opportunity to modify the specified cell at the given row and column location before the browser displays it."
+    },
+    {
+      "name": "func browser(NSBrowser, didChangeLastColumn: Int, toColumn: Int)",
+      "desc": "Tells the delegate that the browser’s last column changed."
+    },
+    {
+      "name": "func browserWillScroll(NSBrowser)",
+      "desc": "Notifies the delegate when the browser will scroll."
+    },
+    {
+      "name": "func browserDidScroll(NSBrowser)",
+      "desc": "Notifies the delegate when the browser has scrolled."
+    },
+    {
+      "name": "func browser(NSBrowser, canDragRowsWith: IndexSet, inColumn: Int, with: NSEvent) -> Bool",
+      "desc": "Sent to the delegate to determine whether the browser can attempt to initiate a drag of the specified rows for the specified event."
+    },
+    {
+      "name": "func browser(NSBrowser, draggingImageForRowsWith: IndexSet, inColumn: Int, with: NSEvent, offset: NSPointPointer) -> NSImage?",
+      "desc": "Sent to the delegate to obtain an image to represent dragged rows during a drag operation on a browser."
+    },
+    {
+      "name": "func browser(NSBrowser, validateDrop: NSDraggingInfo, proposedRow: UnsafeMutablePointer<Int>, column: UnsafeMutablePointer<Int>, dropOperation: UnsafeMutablePointer<NSBrowser.DropOperation>) -> NSDragOperation",
+      "desc": "Sent to the delegate during a dragging session to determine whether a drop should be accepted and to obtain the drop location. This method is required for a browser to be a drag destination."
+    },
+    {
+      "name": "func browser(NSBrowser, acceptDrop: NSDraggingInfo, atRow: Int, column: Int, dropOperation: NSBrowser.DropOperation) -> Bool",
+      "desc": "Sent to the delegate during a dragging session to determine whether to accept the drop."
+    },
+    {
+      "name": "func browser(NSBrowser, writeRowsWith: IndexSet, inColumn: Int, to: NSPasteboard) -> Bool",
+      "desc": "Determines whether a drag operation can proceed. This method is required for a browser to be a drag source."
+    },
+    {
+      "name": "func browser(NSBrowser, shouldSizeColumn: Int, forUserResize: Bool, toWidth: CGFloat) -> CGFloat",
+      "desc": "Used to determine a column’s initial size."
+    },
+    {
+      "name": "func browser(NSBrowser, sizeToFitWidthOfColumn: Int) -> CGFloat",
+      "desc": "Returns the ideal width for a column."
+    },
+    {
+      "name": "func browserColumnConfigurationDidChange(Notification)",
+      "desc": "Used by clients to implement their own column width persistence."
+    },
+    {
+      "name": "func browser(NSBrowser, heightOfRow: Int, inColumn: Int) -> CGFloat",
+      "desc": "Specifies the height of the specified row in the specified column."
+    },
+    {
+      "name": "func browser(NSBrowser, shouldShowCellExpansionForRow: Int, column: Int) -> Bool",
+      "desc": "Invoked to allow the delegate to control cell expansion for a specific row and column."
+    }
+  ],
+  "declaration": "protocol NSBrowserDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

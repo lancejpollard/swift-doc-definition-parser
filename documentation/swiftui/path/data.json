@@ -1,0 +1,165 @@
+{
+  "path": "/documentation/SwiftUI/Path",
+  "type": "Structure",
+  "name": "Path",
+  "desc": "The outline of a 2D shape.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an empty path."
+    },
+    {
+      "name": "init((inout Path) -> ())",
+      "desc": "Creates an empty path, and then executes the closure to add the initial elements."
+    },
+    {
+      "name": "init(CGMutablePath)",
+      "desc": "Creates a path from a copy of a mutable shape path."
+    },
+    {
+      "name": "init(CGPath)",
+      "desc": "Creates a path from an immutable shape path."
+    },
+    {
+      "name": "init?(String)",
+      "desc": "Initializes from the result of a previous call to Path.stringRepresentation. Fails if the string does not describe a valid path."
+    },
+    {
+      "name": "init(CGRect)",
+      "desc": "Creates a path as the given rectangle."
+    },
+    {
+      "name": "init(ellipseIn: CGRect)",
+      "desc": "Creates a path as an ellipse inscribed within the given rectangle."
+    },
+    {
+      "name": "init(roundedRect: CGRect, cornerRadius: CGFloat, style: RoundedCornerStyle)",
+      "desc": "Creates a path as the given rounded rectangle."
+    },
+    {
+      "name": "init(roundedRect: CGRect, cornerSize: CGSize, style: RoundedCornerStyle)",
+      "desc": "Creates a path as the given rounded rectangle."
+    },
+    {
+      "name": "var boundingRect: CGRect",
+      "desc": "A rectangle containing all path segments."
+    },
+    {
+      "name": "var cgPath: CGPath",
+      "desc": "An immutable path representing the elements in the path."
+    },
+    {
+      "name": "func contains(CGPoint, eoFill: Bool) -> Bool",
+      "desc": "Returns true if the path contains a specified point."
+    },
+    {
+      "name": "var currentPoint: CGPoint?",
+      "desc": "Returns the last point in the path, or nil if the path contains no points."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A description of the path that may be used to recreate the path via init?(_:)."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value indicating whether the path contains zero elements."
+    },
+    {
+      "name": "func move(to: CGPoint)",
+      "desc": "Begins a new subpath at the specified point."
+    },
+    {
+      "name": "func addArc(center: CGPoint, radius: CGFloat, startAngle: Angle, endAngle: Angle, clockwise: Bool, transform: CGAffineTransform)",
+      "desc": "Adds an arc of a circle to the path, specified with a radius and angles."
+    },
+    {
+      "name": "func addArc(tangent1End: CGPoint, tangent2End: CGPoint, radius: CGFloat, transform: CGAffineTransform)",
+      "desc": "Adds an arc of a circle to the path, specified with a radius and two tangent lines."
+    },
+    {
+      "name": "func addCurve(to: CGPoint, control1: CGPoint, control2: CGPoint)",
+      "desc": "Adds a cubic Bézier curve to the path, with the specified end point and control points."
+    },
+    {
+      "name": "func addEllipse(in: CGRect, transform: CGAffineTransform)",
+      "desc": "Adds an ellipse to the path."
+    },
+    {
+      "name": "func addLine(to: CGPoint)",
+      "desc": "Appends a straight line segment from the current point to the specified point."
+    },
+    {
+      "name": "func addLines([CGPoint])",
+      "desc": "Adds a sequence of connected straight-line segments to the path."
+    },
+    {
+      "name": "func addPath(Path, transform: CGAffineTransform)",
+      "desc": "Appends a copy of the given path to this path."
+    },
+    {
+      "name": "func addQuadCurve(to: CGPoint, control: CGPoint)",
+      "desc": "Adds a quadratic Bézier curve to the path, with the specified end point and control point."
+    },
+    {
+      "name": "func addRect(CGRect, transform: CGAffineTransform)",
+      "desc": "Adds a rectangular subpath to the path."
+    },
+    {
+      "name": "func addRects([CGRect], transform: CGAffineTransform)",
+      "desc": "Adds a sequence of rectangular subpaths to the path."
+    },
+    {
+      "name": "func addRelativeArc(center: CGPoint, radius: CGFloat, startAngle: Angle, delta: Angle, transform: CGAffineTransform)",
+      "desc": "Adds an arc of a circle to the path, specified with a radius and a difference in angle."
+    },
+    {
+      "name": "func addRoundedRect(in: CGRect, cornerSize: CGSize, style: RoundedCornerStyle, transform: CGAffineTransform)",
+      "desc": "Adds a rounded rectangle to the path."
+    },
+    {
+      "name": "func closeSubpath()",
+      "desc": "Closes and completes the current subpath."
+    },
+    {
+      "name": "func applying(CGAffineTransform) -> Path",
+      "desc": "Returns a path constructed by applying the transform to all points of the path."
+    },
+    {
+      "name": "func offsetBy(dx: CGFloat, dy: CGFloat) -> Path",
+      "desc": "Returns a path constructed by translating self by (dx, dy)."
+    },
+    {
+      "name": "func trimmedPath(from: CGFloat, to: CGFloat) -> Path",
+      "desc": "Returns a partial copy of the path."
+    },
+    {
+      "name": "func forEach((Path.Element) -> Void)",
+      "desc": "Calls body with each element in the path."
+    },
+    {
+      "name": "enum Element",
+      "desc": "An element of a path."
+    },
+    {
+      "name": "func strokedPath(StrokeStyle) -> Path",
+      "desc": "Returns a stroked copy of the path using style to define how the stroked outline is created."
+    },
+    {
+      "name": "static func == (Path, Path) -> Bool",
+      "desc": "Indicates whether two paths are equal."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool",
+      "desc": "Indicates whether two paths are unequal."
+    }
+  ],
+  "declaration": "@frozen struct Path",
+  "conformsTo": [
+    "Animatable",
+    "CustomStringConvertible",
+    "Equatable",
+    "LosslessStringConvertible",
+    "Shape",
+    "View"
+  ]
+}

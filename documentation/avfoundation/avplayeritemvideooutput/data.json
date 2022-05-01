@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/avfoundation/avplayeritemvideooutput",
+  "type": "Class",
+  "name": "AVPlayerItemVideoOutput",
+  "desc": "An object that outputs video frames from a player item.",
+  "items": [
+    {
+      "name": "init(pixelBufferAttributes: [String : Any]?)",
+      "desc": "Creates a video output object using the specified pixel buffer attributes."
+    },
+    {
+      "name": "init(outputSettings: [String : Any]?)",
+      "desc": "Creates a video output object initialized with the specified output settings."
+    },
+    {
+      "name": "func setDelegate(AVPlayerItemOutputPullDelegate?, queue: DispatchQueue?)",
+      "desc": "Sets the delegate and dispatch queue for the receiver."
+    },
+    {
+      "name": "var delegate: AVPlayerItemOutputPullDelegate?",
+      "desc": "The delegate for the video output object."
+    },
+    {
+      "name": "protocol AVPlayerItemOutputPullDelegate",
+      "desc": "Methods you can implement to respond to pixel buffer changes."
+    },
+    {
+      "name": "var delegateQueue: DispatchQueue?",
+      "desc": "The dispatch queue on which to call delegate methods."
+    },
+    {
+      "name": "func requestNotificationOfMediaDataChange(withAdvanceInterval: TimeInterval)",
+      "desc": "Tells the receiver that the video out put client is entering a quiescent state."
+    },
+    {
+      "name": "func hasNewPixelBuffer(forItemTime: CMTime) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether video output is available for the specified item time."
+    },
+    {
+      "name": "func copyPixelBuffer(forItemTime: CMTime, itemTimeForDisplay: UnsafeMutablePointer<CMTime>?) -> CVPixelBuffer?",
+      "desc": "Retrieves an image that is appropriate for display at the specified item time, and marks the image as acquired."
+    }
+  ],
+  "declaration": "class AVPlayerItemVideoOutput : AVPlayerItemOutput",
+  "inheritsFrom": [
+    "AVPlayerItemOutput"
+  ]
+}

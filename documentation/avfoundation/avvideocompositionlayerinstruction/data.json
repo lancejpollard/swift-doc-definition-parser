@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/avfoundation/avvideocompositionlayerinstruction",
+  "type": "Class",
+  "name": "AVVideoCompositionLayerInstruction",
+  "desc": "An object used to modify the transform, cropping, and opacity ramps applied to a given track in a composition.",
+  "items": [
+    {
+      "name": "var trackID: CMPersistentTrackID",
+      "desc": "The track identifier of the source track to which the compositor will apply the instruction."
+    },
+    {
+      "name": "func getOpacityRamp(for: CMTime, startOpacity: UnsafeMutablePointer<Float>?, endOpacity: UnsafeMutablePointer<Float>?, timeRange: UnsafeMutablePointer<CMTimeRange>?) -> Bool",
+      "desc": "Obtains the opacity ramp that includes a specified time."
+    },
+    {
+      "name": "func getTransformRamp(for: CMTime, start: UnsafeMutablePointer<CGAffineTransform>?, end: UnsafeMutablePointer<CGAffineTransform>?, timeRange: UnsafeMutablePointer<CMTimeRange>?) -> Bool",
+      "desc": "Obtains the transform ramp that includes a specified time."
+    },
+    {
+      "name": "func getCropRectangleRamp(for: CMTime, startCropRectangle: UnsafeMutablePointer<CGRect>?, endCropRectangle: UnsafeMutablePointer<CGRect>?, timeRange: UnsafeMutablePointer<CMTimeRange>?) -> Bool",
+      "desc": "Obtains the crop rectangle ramp that includes the specified time."
+    }
+  ],
+  "declaration": "class AVVideoCompositionLayerInstruction : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSMutableCopying",
+    "NSSecureCoding"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/avfoundation/avcapturevideodataoutput",
+  "type": "Class",
+  "name": "AVCaptureVideoDataOutput",
+  "desc": "A capture output that records video and provides access to video frames for processing.",
+  "items": [
+    {
+      "name": "var videoSettings: [String : Any]!",
+      "desc": "The compression settings for the output."
+    },
+    {
+      "name": "var alwaysDiscardsLateVideoFrames: Bool",
+      "desc": "Indicates whether to drop video frames if they arrive late."
+    },
+    {
+      "name": "var automaticallyConfiguresOutputBufferDimensions: Bool",
+      "desc": "A Boolean value that indicates whether the output automatically configures the size of output buffers."
+    },
+    {
+      "name": "var deliversPreviewSizedOutputBuffers: Bool",
+      "desc": "A Boolean value that indicates whether the output is configured to deliver preview-sized buffers."
+    },
+    {
+      "name": "func recommendedVideoSettings(forVideoCodecType: AVVideoCodecType, assetWriterOutputFileType: AVFileType) -> [String : Any]?",
+      "desc": "Returns a video settings dictionary appropriate for capturing video to be recorded to a file with the specified codec and type."
+    },
+    {
+      "name": "func recommendedVideoSettingsForAssetWriter(writingTo: AVFileType) -> [String : Any]?",
+      "desc": "Specifies the recommended settings for use with an AVAssetWriterInput."
+    },
+    {
+      "name": "var availableVideoPixelFormatTypes: [OSType]",
+      "desc": "The video pixel formats the output supports."
+    },
+    {
+      "name": "var availableVideoCodecTypes: [AVVideoCodecType]",
+      "desc": "The video codecs the output supports."
+    },
+    {
+      "name": "func availableVideoCodecTypesForAssetWriter(writingTo: AVFileType) -> [AVVideoCodecType]",
+      "desc": "The video codecs the output supports for writing video to the output file."
+    },
+    {
+      "name": "struct AVVideoCodecType",
+      "desc": "A set of constants that describe the codecs the system supports for video capture."
+    },
+    {
+      "name": "func setSampleBufferDelegate(AVCaptureVideoDataOutputSampleBufferDelegate?, queue: DispatchQueue?)",
+      "desc": "Sets the sample buffer delegate and the queue for invoking callbacks."
+    },
+    {
+      "name": "var sampleBufferDelegate: AVCaptureVideoDataOutputSampleBufferDelegate?",
+      "desc": "The capture object’s delegate."
+    },
+    {
+      "name": "var sampleBufferCallbackQueue: DispatchQueue?",
+      "desc": "The queue on which the system invokes delegate callbacks."
+    },
+    {
+      "name": "protocol AVCaptureVideoDataOutputSampleBufferDelegate",
+      "desc": "Methods for receiving sample buffers from, and monitoring the status of, a video data output."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates a new video file output."
+    }
+  ],
+  "declaration": "class AVCaptureVideoDataOutput : AVCaptureOutput",
+  "inheritsFrom": [
+    "AVCaptureOutput"
+  ]
+}

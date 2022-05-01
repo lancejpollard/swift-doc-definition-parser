@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/managedsettings/applicationsettings",
+  "type": "Structure",
+  "name": "ApplicationSettings",
+  "desc": "Constraints on the apps and categories of apps a user can run on their device.",
+  "items": [
+    {
+      "name": "var blockedApplications: Set<Application>?",
+      "desc": "A set of applications for the system to block."
+    },
+    {
+      "name": "static let blockedApplications: SettingMetadata<Set<Application>>",
+      "desc": "A description of the setting that controls which apps a user can launch on their device."
+    },
+    {
+      "name": "var denyAppInstallation: Bool?",
+      "desc": "A Boolean value that indicates whether to prevent the user from installing applications."
+    },
+    {
+      "name": "static let denyAppInstallation: SettingMetadata<Bool>",
+      "desc": "The metadata for the setting to prevent app installation."
+    },
+    {
+      "name": "var denyAppRemoval: Bool?",
+      "desc": "A Boolean value that indicates whether to prevent the user from removing applications."
+    },
+    {
+      "name": "static let denyAppRemoval: SettingMetadata<Bool>",
+      "desc": "The metadata for the setting to prevent app removal."
+    }
+  ],
+  "declaration": "struct ApplicationSettings",
+  "conformsTo": [
+    "ManagedSettingsGroup"
+  ]
+}

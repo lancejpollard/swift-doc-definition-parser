@@ -1,0 +1,191 @@
+{
+  "path": "/documentation/uikit/uicollectionviewlayout",
+  "type": "Class",
+  "name": "UICollectionViewLayout",
+  "desc": "An abstract base class for generating layout information for a collection view.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a collection view layout object."
+    },
+    {
+      "name": "init?(coder: NSCoder)",
+      "desc": "Creates a collection view layout object from data in a given unarchiver."
+    },
+    {
+      "name": "var collectionView: UICollectionView?",
+      "desc": "The collection view object currently using this layout object."
+    },
+    {
+      "name": "var collectionViewContentSize: CGSize",
+      "desc": "The width and height of the collection view’s contents."
+    },
+    {
+      "name": "class var layoutAttributesClass: AnyClass",
+      "desc": "The class to use when creating layout attributes objects."
+    },
+    {
+      "name": "func prepare()",
+      "desc": "Tells the layout object to update the current layout."
+    },
+    {
+      "name": "func layoutAttributesForElements(in: CGRect) -> [UICollectionViewLayoutAttributes]?",
+      "desc": "Retrieves the layout attributes for all of the cells and views in the specified rectangle."
+    },
+    {
+      "name": "func layoutAttributesForItem(at: IndexPath) -> UICollectionViewLayoutAttributes?",
+      "desc": "Retrieves layout information for an item at the specified index path with a corresponding cell."
+    },
+    {
+      "name": "func layoutAttributesForInteractivelyMovingItem(at: IndexPath, withTargetPosition: CGPoint) -> UICollectionViewLayoutAttributes",
+      "desc": "Retrieves the layout attributes of an item when it is being moved interactively by the user."
+    },
+    {
+      "name": "func layoutAttributesForSupplementaryView(ofKind: String, at: IndexPath) -> UICollectionViewLayoutAttributes?",
+      "desc": "Retrieves the layout attributes for the specified supplementary view."
+    },
+    {
+      "name": "func layoutAttributesForDecorationView(ofKind: String, at: IndexPath) -> UICollectionViewLayoutAttributes?",
+      "desc": "Retrieves the layout attributes for the specified decoration view."
+    },
+    {
+      "name": "func targetContentOffset(forProposedContentOffset: CGPoint) -> CGPoint",
+      "desc": "Retrieves the content offset to use after an animated layout update or change."
+    },
+    {
+      "name": "func targetContentOffset(forProposedContentOffset: CGPoint, withScrollingVelocity: CGPoint) -> CGPoint",
+      "desc": "Retrieves the point at which to stop scrolling."
+    },
+    {
+      "name": "func prepare(forCollectionViewUpdates: [UICollectionViewUpdateItem])",
+      "desc": "Notifies the layout object that the contents of the collection view are about to change."
+    },
+    {
+      "name": "func finalizeCollectionViewUpdates()",
+      "desc": "Performs any additional animations or clean up needed during a collection view update."
+    },
+    {
+      "name": "func indexPathsToInsertForSupplementaryView(ofKind: String) -> [IndexPath]",
+      "desc": "Retrieves an array of index paths for the supplementary views you want to add to the layout."
+    },
+    {
+      "name": "func indexPathsToInsertForDecorationView(ofKind: String) -> [IndexPath]",
+      "desc": "Retrieves an array of index paths representing the decoration views to add."
+    },
+    {
+      "name": "func initialLayoutAttributesForAppearingItem(at: IndexPath) -> UICollectionViewLayoutAttributes?",
+      "desc": "Retrieves the starting layout information for an item being inserted into the collection view."
+    },
+    {
+      "name": "func initialLayoutAttributesForAppearingSupplementaryElement(ofKind: String, at: IndexPath) -> UICollectionViewLayoutAttributes?",
+      "desc": "Retrieves the starting layout information for a supplementary view being inserted into the collection view."
+    },
+    {
+      "name": "func initialLayoutAttributesForAppearingDecorationElement(ofKind: String, at: IndexPath) -> UICollectionViewLayoutAttributes?",
+      "desc": "Retrieves the starting layout information for a decoration view being inserted into the collection view."
+    },
+    {
+      "name": "func indexPathsToDeleteForSupplementaryView(ofKind: String) -> [IndexPath]",
+      "desc": "Retrieves an array of index paths representing the supplementary views to remove."
+    },
+    {
+      "name": "func indexPathsToDeleteForDecorationView(ofKind: String) -> [IndexPath]",
+      "desc": "Retrieves an array of index paths representing the decoration views to remove."
+    },
+    {
+      "name": "func finalLayoutAttributesForDisappearingItem(at: IndexPath) -> UICollectionViewLayoutAttributes?",
+      "desc": "Retrieves the final layout information for an item that is about to be removed from the collection view."
+    },
+    {
+      "name": "func finalLayoutAttributesForDisappearingSupplementaryElement(ofKind: String, at: IndexPath) -> UICollectionViewLayoutAttributes?",
+      "desc": "Retrieves the final layout information for a supplementary view that is about to be removed from the collection view."
+    },
+    {
+      "name": "func finalLayoutAttributesForDisappearingDecorationElement(ofKind: String, at: IndexPath) -> UICollectionViewLayoutAttributes?",
+      "desc": "Retrieves the final layout information for a decoration view that is about to be removed from the collection view."
+    },
+    {
+      "name": "func targetIndexPath(forInteractivelyMovingItem: IndexPath, withPosition: CGPoint) -> IndexPath",
+      "desc": "Retrieves the index path to for an item when it is at the specified location in the collection view’s bounds."
+    },
+    {
+      "name": "func invalidateLayout()",
+      "desc": "Invalidates the current layout and triggers a layout update."
+    },
+    {
+      "name": "func invalidateLayout(with: UICollectionViewLayoutInvalidationContext)",
+      "desc": "Invalidates the current layout using the information in the provided context object."
+    },
+    {
+      "name": "class var invalidationContextClass: AnyClass",
+      "desc": "Returns the class to use when creating an invalidation context for the layout."
+    },
+    {
+      "name": "func shouldInvalidateLayout(forBoundsChange: CGRect) -> Bool",
+      "desc": "Asks the layout object if the new bounds require a layout update."
+    },
+    {
+      "name": "func invalidationContext(forBoundsChange: CGRect) -> UICollectionViewLayoutInvalidationContext",
+      "desc": "Retrieves a context object that defines the portions of the layout that should change when a bounds change occurs."
+    },
+    {
+      "name": "func shouldInvalidateLayout(forPreferredLayoutAttributes: UICollectionViewLayoutAttributes, withOriginalAttributes: UICollectionViewLayoutAttributes) -> Bool",
+      "desc": "Asks the layout object if changes to a self-sizing cell require a layout update."
+    },
+    {
+      "name": "func invalidationContext(forPreferredLayoutAttributes: UICollectionViewLayoutAttributes, withOriginalAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutInvalidationContext",
+      "desc": "Retrieves a context object that identifies the portions of the layout that should change in response to dynamic cell changes."
+    },
+    {
+      "name": "func invalidationContext(forInteractivelyMovingItems: [IndexPath], withTargetPosition: CGPoint, previousIndexPaths: [IndexPath], previousPosition: CGPoint) -> UICollectionViewLayoutInvalidationContext",
+      "desc": "Retrieves a context object that identifies the items that are being interactively moved in the layout."
+    },
+    {
+      "name": "func invalidationContextForEndingInteractiveMovementOfItems(toFinalIndexPaths: [IndexPath], previousIndexPaths: [IndexPath], movementCancelled: Bool) -> UICollectionViewLayoutInvalidationContext",
+      "desc": "Retrieves a context object that identifies the items that were moved"
+    },
+    {
+      "name": "func prepare(forAnimatedBoundsChange: CGRect)",
+      "desc": "Prepares the layout object for animated changes to the view’s bounds or the insertion or deletion of items."
+    },
+    {
+      "name": "func finalizeAnimatedBoundsChange()",
+      "desc": "Cleans up after any animated changes to the view’s bounds or after the insertion or deletion of items."
+    },
+    {
+      "name": "func prepareForTransition(from: UICollectionViewLayout)",
+      "desc": "Tells the layout object to prepare to be installed as the layout for the collection view."
+    },
+    {
+      "name": "func prepareForTransition(to: UICollectionViewLayout)",
+      "desc": "Tells the layout object that it is about to be removed as the layout for the collection view."
+    },
+    {
+      "name": "func finalizeLayoutTransition()",
+      "desc": "Tells the layout object to perform any final steps before the transition animations occur."
+    },
+    {
+      "name": "func register(AnyClass?, forDecorationViewOfKind: String)",
+      "desc": "Registers a class for use in creating decoration views for a collection view."
+    },
+    {
+      "name": "func register(UINib?, forDecorationViewOfKind: String)",
+      "desc": "Registers a nib file for use in creating decoration views for a collection view."
+    },
+    {
+      "name": "var developmentLayoutDirection: UIUserInterfaceLayoutDirection",
+      "desc": "The direction of the language you used when designing your custom layout."
+    },
+    {
+      "name": "var flipsHorizontallyInOppositeLayoutDirection: Bool",
+      "desc": "A Boolean value that indicates whether the horizontal coordinate system is automatically flipped at appropriate times."
+    }
+  ],
+  "declaration": "@MainActor class UICollectionViewLayout : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding"
+  ]
+}

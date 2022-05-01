@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/foundation/urlcredentialstorage",
+  "type": "Class",
+  "name": "URLCredentialStorage",
+  "desc": "The manager of a shared credentials cache.",
+  "items": [
+    {
+      "name": "class var shared: URLCredentialStorage",
+      "desc": "The shared URL credential storage instance."
+    },
+    {
+      "name": "func defaultCredential(for: URLProtectionSpace) -> URLCredential?",
+      "desc": "Returns the default credential for the specified protection space."
+    },
+    {
+      "name": "func getDefaultCredential(for: URLProtectionSpace, task: URLSessionTask, completionHandler: (URLCredential?) -> Void)",
+      "desc": "Gets the default credential for the specified protection space, which is being accessed by the given task, and passes it to the provided completion handler."
+    },
+    {
+      "name": "func setDefaultCredential(URLCredential, for: URLProtectionSpace)",
+      "desc": "Sets the default credential for a specified protection space."
+    },
+    {
+      "name": "func setDefaultCredential(URLCredential, for: URLProtectionSpace, task: URLSessionTask)",
+      "desc": "Sets the default credential for a given protection space, which is being accessed by the given task."
+    },
+    {
+      "name": "func remove(URLCredential, for: URLProtectionSpace)",
+      "desc": "Removes the specified credential from the credential storage for the specified protection space."
+    },
+    {
+      "name": "func remove(URLCredential, for: URLProtectionSpace, options: [String : Any]?)",
+      "desc": "Removes the specified credential from the credential storage for the specified protection space using the given options."
+    },
+    {
+      "name": "func remove(URLCredential, for: URLProtectionSpace, options: [String : Any]?, task: URLSessionTask)",
+      "desc": "Removes the specified credential from the credential storage for the specified protection space, on behalf of the given task and using the given options."
+    },
+    {
+      "name": "func set(URLCredential, for: URLProtectionSpace)",
+      "desc": "Adds a credential to the credential storage for the specified protection space."
+    },
+    {
+      "name": "func set(URLCredential, for: URLProtectionSpace, task: URLSessionTask)",
+      "desc": "Adds a credential to the credential storage for the specified protection space, on behalf of the specified task."
+    },
+    {
+      "name": "var allCredentials: [URLProtectionSpace : [String : URLCredential]]",
+      "desc": "The credentials for all available protection spaces."
+    },
+    {
+      "name": "func credentials(for: URLProtectionSpace) -> [String : URLCredential]?",
+      "desc": "Returns a dictionary containing the credentials for the specified protection space."
+    },
+    {
+      "name": "func getCredentials(for: URLProtectionSpace, task: URLSessionTask, completionHandler: ([String : URLCredential]?) -> Void)",
+      "desc": "Gets a dictionary containing the credentials for the specified protection space, on behalf of the given task, and passes the dictionary to the provided completion handler."
+    },
+    {
+      "name": "static let NSURLCredentialStorageChanged: NSNotification.Name",
+      "desc": "A notification posted when the set of stored credentials changes."
+    }
+  ],
+  "declaration": "class URLCredentialStorage : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/mlcompute/mlcinstancenormalizationlayer",
+  "type": "Class",
+  "name": "MLCInstanceNormalizationLayer",
+  "desc": "A layer that normalizes all features of one channel.",
+  "items": [
+    {
+      "name": "init?(featureChannelCount: Int, beta: MLCTensor?, gamma: MLCTensor?, varianceEpsilon: Float)",
+      "desc": "Creates an instance normalization layer with the number of feature channels, beta and gamma tensors, and variance epsilon you specify."
+    },
+    {
+      "name": "init?(featureChannelCount: Int, beta: MLCTensor?, gamma: MLCTensor?, varianceEpsilon: Float, momentum: Float)",
+      "desc": "Creates an instance normalization layer with the number of feature channels, beta and gamma tensors, variance epsilon, and momentum you specify."
+    },
+    {
+      "name": "init?(featureChannelCount: Int, mean: MLCTensor, variance: MLCTensor, beta: MLCTensor?, gamma: MLCTensor?, varianceEpsilon: Float, momentum: Float)",
+      "desc": "Creates an instance normalization layer with the number of feature channels, mean, variance, beta and gamma tensors, variance epsilon, and momentum you specify."
+    },
+    {
+      "name": "var beta: MLCTensor?",
+      "desc": "The beta tensor."
+    },
+    {
+      "name": "var betaParameter: MLCTensorParameter?",
+      "desc": "The beta tensor parameter you use for optimizer updates."
+    },
+    {
+      "name": "var featureChannelCount: Int",
+      "desc": "The number of feature channels."
+    },
+    {
+      "name": "var gamma: MLCTensor?",
+      "desc": "The gamma tensor."
+    },
+    {
+      "name": "var gammaParameter: MLCTensorParameter?",
+      "desc": "The gamma tensor parameter you use for optimizer updates."
+    },
+    {
+      "name": "var mean: MLCTensor?",
+      "desc": "The running mean tensor."
+    },
+    {
+      "name": "var momentum: Float",
+      "desc": "The momentum value for the running mean and variance computation."
+    },
+    {
+      "name": "var variance: MLCTensor?",
+      "desc": "The running variance tensor."
+    },
+    {
+      "name": "var varianceEpsilon: Float",
+      "desc": "The variance epsilon you use for numerical stability."
+    }
+  ],
+  "declaration": "class MLCInstanceNormalizationLayer : MLCLayer",
+  "inheritsFrom": [
+    "MLCLayer"
+  ]
+}

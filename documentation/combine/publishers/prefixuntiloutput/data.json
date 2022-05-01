@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/combine/publishers/prefixuntiloutput",
+  "type": "Structure",
+  "name": "Publishers.PrefixUntilOutput",
+  "desc": "A publisher that republishes elements until another publisher emits an element.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, other: Other)",
+      "desc": "Creates a publisher that republishes elements until another publisher emits an element."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    },
+    {
+      "name": "let other: Other",
+      "desc": "Another publisher, whose first output causes this publisher to finish."
+    }
+  ],
+  "declaration": "struct PrefixUntilOutput<Upstream, Other> where Upstream : Publisher, Other : Publisher",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

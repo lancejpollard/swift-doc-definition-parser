@@ -1,0 +1,54 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpscnnloss",
+  "type": "Class",
+  "name": "MPSCNNLoss",
+  "desc": "A kernel that computes the loss and loss gradient between specified predictions and labels.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice, lossDescriptor: MPSCNNLossDescriptor)"
+    },
+    {
+      "name": "var delta: Float"
+    },
+    {
+      "name": "var epsilon: Float"
+    },
+    {
+      "name": "var labelSmoothing: Float"
+    },
+    {
+      "name": "var lossType: MPSCNNLossType"
+    },
+    {
+      "name": "var numberOfClasses: Int"
+    },
+    {
+      "name": "var reduceAcrossBatch: Bool"
+    },
+    {
+      "name": "var reductionType: MPSCNNReductionType"
+    },
+    {
+      "name": "var weight: Float"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, sourceImage: MPSImage, labels: MPSCNNLossLabels) -> MPSImage"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, sourceImage: MPSImage, labels: MPSCNNLossLabels, destinationImage: MPSImage)"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, sourceImages: [MPSImage], labels: [MPSCNNLossLabels]) -> [MPSImage]"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, sourceImages: [MPSImage], labels: [MPSCNNLossLabels], destinationImages: [MPSImage])"
+    }
+  ],
+  "declaration": "class MPSCNNLoss : MPSCNNKernel",
+  "inheritsFrom": [
+    "MPSCNNKernel"
+  ]
+}

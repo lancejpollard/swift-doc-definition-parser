@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/combine/publishers/merge",
+  "type": "Structure",
+  "name": "Publishers.Merge",
+  "desc": "A publisher created by applying the merge function to two upstream publishers.",
+  "items": [
+    {
+      "name": "init(A, B)",
+      "desc": "Creates a publisher created by applying the merge function to two upstream publishers."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let a: A",
+      "desc": "A publisher to merge."
+    },
+    {
+      "name": "let b: B",
+      "desc": "A second publisher to merge."
+    },
+    {
+      "name": "static func == (Publishers.Merge<A, B>, Publishers.Merge<A, B>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two publishers are equivalent."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    }
+  ],
+  "declaration": "struct Merge<A, B> where A : Publisher, B : Publisher, A.Failure == B.Failure, A.Output == B.Output",
+  "conformsTo": [
+    "Equatable",
+    "Publisher"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "path": "/documentation/uikit/uitableviewdropcoordinator",
+  "type": "Protocol",
+  "name": "UITableViewDropCoordinator",
+  "desc": "An interface for coordinating your custom drop-related actions with the table view.",
+  "items": [
+    {
+      "name": "var items: [UITableViewDropItem]",
+      "desc": "The items being dragged."
+    },
+    {
+      "name": "var destinationIndexPath: IndexPath?",
+      "desc": "The index path at which to insert the item into the table view."
+    },
+    {
+      "name": "func drop(UIDragItem, toRowAt: IndexPath) -> UIDragAnimating",
+      "desc": "Animates the item to the specified index path in the table view."
+    },
+    {
+      "name": "func drop(UIDragItem, intoRowAt: IndexPath, rect: CGRect) -> UIDragAnimating"
+    },
+    {
+      "name": "func drop(UIDragItem, to: UIDragPreviewTarget) -> UIDragAnimating",
+      "desc": "Animates the item to an arbitrary location in your view hierarchy."
+    },
+    {
+      "name": "func drop(UIDragItem, to: UITableViewDropPlaceholder) -> UITableViewDropPlaceholderContext",
+      "desc": "Animates the item to the specified location and inserts a placeholder cell at that location."
+    },
+    {
+      "name": "var session: UIDropSession",
+      "desc": "The drop session containing information about the transaction."
+    },
+    {
+      "name": "var proposal: UITableViewDropProposal",
+      "desc": "The proposal for how to incorporate the dropped items."
+    }
+  ],
+  "declaration": "@MainActor protocol UITableViewDropCoordinator",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

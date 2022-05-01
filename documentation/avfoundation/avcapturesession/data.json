@@ -1,0 +1,156 @@
+{
+  "path": "/documentation/avfoundation/avcapturesession",
+  "type": "Class",
+  "name": "AVCaptureSession",
+  "desc": "An object that manages capture activity and coordinates the flow of data from input devices to capture outputs.",
+  "items": [
+    {
+      "name": "var inputs: [AVCaptureInput]",
+      "desc": "The capture session’s inputs."
+    },
+    {
+      "name": "func canAddInput(AVCaptureInput) -> Bool",
+      "desc": "Determines whether you can add an input to the session."
+    },
+    {
+      "name": "func addInput(AVCaptureInput)",
+      "desc": "Adds a given input to the session."
+    },
+    {
+      "name": "func removeInput(AVCaptureInput)",
+      "desc": "Removes a given input."
+    },
+    {
+      "name": "var outputs: [AVCaptureOutput]",
+      "desc": "The capture session’s outputs."
+    },
+    {
+      "name": "func canAddOutput(AVCaptureOutput) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a given output can be added to the session."
+    },
+    {
+      "name": "func addOutput(AVCaptureOutput)",
+      "desc": "Adds a given output to the session."
+    },
+    {
+      "name": "func removeOutput(AVCaptureOutput)",
+      "desc": "Removes a given output."
+    },
+    {
+      "name": "func startRunning()",
+      "desc": "Tells the receiver to start running."
+    },
+    {
+      "name": "func stopRunning()",
+      "desc": "Tells the receiver to stop running."
+    },
+    {
+      "name": "var isRunning: Bool",
+      "desc": "Indicates whether the receiver is running."
+    },
+    {
+      "name": "var isInterrupted: Bool",
+      "desc": "Indicates whether the receiver has been interrupted."
+    },
+    {
+      "name": "static let AVCaptureSessionRuntimeError: NSNotification.Name",
+      "desc": "A notification the system posts when an error occurs during a capture session."
+    },
+    {
+      "name": "static let AVCaptureSessionDidStartRunning: NSNotification.Name",
+      "desc": "A notification the system posts when a capture session starts."
+    },
+    {
+      "name": "static let AVCaptureSessionDidStopRunning: NSNotification.Name",
+      "desc": "A notification the system posts when a capture session stops."
+    },
+    {
+      "name": "static let AVCaptureSessionWasInterrupted: NSNotification.Name",
+      "desc": "A notification the system posts when it interrupts a capture session."
+    },
+    {
+      "name": "static let AVCaptureSessionInterruptionEnded: NSNotification.Name",
+      "desc": "A notification the system posts when an interruption to a capture session finishes."
+    },
+    {
+      "name": "let AVCaptureSessionErrorKey: String",
+      "desc": "Key to retrieve the error object from a AVCaptureSessionRuntimeError user info dictionary."
+    },
+    {
+      "name": "let AVCaptureSessionInterruptionReasonKey: String",
+      "desc": "Key to retrieve information about a capture interruption from a AVCaptureSessionWasInterrupted user info dictionary."
+    },
+    {
+      "name": "let AVCaptureSessionInterruptionSystemPressureStateKey: String",
+      "desc": "The key for retrieving information about system pressure factors that caused a capture session interruption."
+    },
+    {
+      "name": "enum AVCaptureSession.InterruptionReason",
+      "desc": "Constants identifying the reason a capture session was interrupted, found in an AVCaptureSessionWasInterrupted user info dictionary."
+    },
+    {
+      "name": "func beginConfiguration()",
+      "desc": "Indicates the start of a set of configuration changes to be made atomically."
+    },
+    {
+      "name": "func commitConfiguration()",
+      "desc": "Commits a set of configuration changes."
+    },
+    {
+      "name": "struct AVCaptureSession.Preset",
+      "desc": "Constants to define capture setting presets using the sessionPreset property."
+    },
+    {
+      "name": "var sessionPreset: AVCaptureSession.Preset",
+      "desc": "A preset value that indicates the quality level or bit rate of the output."
+    },
+    {
+      "name": "func canSetSessionPreset(AVCaptureSession.Preset) -> Bool",
+      "desc": "Determines whether you can configure a capture session with the specified preset."
+    },
+    {
+      "name": "var connections: [AVCaptureConnection]",
+      "desc": "An array of connections managed by the capture session."
+    },
+    {
+      "name": "func addConnection(AVCaptureConnection)",
+      "desc": "Adds a given capture connection to the session."
+    },
+    {
+      "name": "func canAddConnection(AVCaptureConnection) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a given connection can be added to the receiver."
+    },
+    {
+      "name": "func addInputWithNoConnections(AVCaptureInput)",
+      "desc": "Adds a capture input to the session without forming any connections."
+    },
+    {
+      "name": "func addOutputWithNoConnections(AVCaptureOutput)",
+      "desc": "Adds a capture output to the session without forming any connections."
+    },
+    {
+      "name": "func removeConnection(AVCaptureConnection)",
+      "desc": "Removes a capture connection from the session."
+    },
+    {
+      "name": "var usesApplicationAudioSession: Bool",
+      "desc": "Indicates whether the capture session will make use of the app’s shared audio session."
+    },
+    {
+      "name": "var automaticallyConfiguresApplicationAudioSession: Bool",
+      "desc": "A Boolean value that indicates whether the capture session automatically changes settings in the app’s shared audio session."
+    },
+    {
+      "name": "var synchronizationClock: CMClock?",
+      "desc": "A clock to use for output synchronization."
+    },
+    {
+      "name": "var automaticallyConfiguresCaptureDeviceForWideColor: Bool",
+      "desc": "A Boolean value that specifies whether the session should automatically use wide-gamut color where available."
+    }
+  ],
+  "declaration": "class AVCaptureSession : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

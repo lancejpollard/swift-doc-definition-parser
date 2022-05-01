@@ -1,0 +1,180 @@
+{
+  "path": "/documentation/metal/mtlcommandbuffer",
+  "type": "Protocol",
+  "name": "MTLCommandBuffer",
+  "desc": "A container that stores encoded commands for the GPU to execute.",
+  "items": [
+    {
+      "name": "func makeRenderCommandEncoder(descriptor: MTLRenderPassDescriptor) -> MTLRenderCommandEncoder?",
+      "desc": "Creates an object from a descriptor to encode a rendering pass into the command buffer."
+    },
+    {
+      "name": "func makeParallelRenderCommandEncoder(descriptor: MTLRenderPassDescriptor) -> MTLParallelRenderCommandEncoder?",
+      "desc": "Creates an object that can split the work of encoding commands for a single render pass."
+    },
+    {
+      "name": "func makeComputeCommandEncoder(descriptor: MTLComputePassDescriptor) -> MTLComputeCommandEncoder?",
+      "desc": "Creates an object from a descriptor to encode a compute pass into the command buffer."
+    },
+    {
+      "name": "func makeComputeCommandEncoder(dispatchType: MTLDispatchType) -> MTLComputeCommandEncoder?",
+      "desc": "Creates an object to encode a compute pass into the command buffer."
+    },
+    {
+      "name": "func makeComputeCommandEncoder() -> MTLComputeCommandEncoder?",
+      "desc": "Creates an object to encode a sequential compute pass into the command buffer."
+    },
+    {
+      "name": "func makeBlitCommandEncoder() -> MTLBlitCommandEncoder?",
+      "desc": "Creates an object to encode a block information transfer (blit) pass into the command buffer."
+    },
+    {
+      "name": "func makeBlitCommandEncoder(descriptor: MTLBlitPassDescriptor) -> MTLBlitCommandEncoder?",
+      "desc": "Creates an object from a descriptor to encode a block information transfer (blit) pass into the command buffer."
+    },
+    {
+      "name": "func makeResourceStateCommandEncoder() -> MTLResourceStateCommandEncoder?",
+      "desc": "Creates an object to encode a resource state pass into the command buffer."
+    },
+    {
+      "name": "func resourceStateCommandEncoder(with: MTLResourceStatePassDescriptor) -> MTLResourceStateCommandEncoder?",
+      "desc": "Creates an object from a descriptor to encode resource state pass into the command buffer."
+    },
+    {
+      "name": "func makeAccelerationStructureCommandEncoder() -> MTLAccelerationStructureCommandEncoder?",
+      "desc": "Creates an object to encode an acceleration structure pass into the command buffer."
+    },
+    {
+      "name": "enum MTLDispatchType",
+      "desc": "Constants indicating how the compute command encoder's commands are dispatched."
+    },
+    {
+      "name": "var device: MTLDevice",
+      "desc": "The device from which this command buffer was created."
+    },
+    {
+      "name": "var commandQueue: MTLCommandQueue",
+      "desc": "The command queue that created the command buffer."
+    },
+    {
+      "name": "var label: String?",
+      "desc": "A string that identifies this object."
+    },
+    {
+      "name": "func enqueue()",
+      "desc": "Reserves a place for the command buffer on the associated command queue."
+    },
+    {
+      "name": "func commit()",
+      "desc": "Commits the command buffer for execution."
+    },
+    {
+      "name": "func addScheduledHandler(MTLCommandBufferHandler)",
+      "desc": "Registers a block of code that Metal calls immediately after it schedules the command buffer for execution on the GPU."
+    },
+    {
+      "name": "func addCompletedHandler(MTLCommandBufferHandler)",
+      "desc": "Registers a block of code that Metal calls immediately after the GPU finishes executing the commands in the command buffer."
+    },
+    {
+      "name": "func waitUntilScheduled()",
+      "desc": "Blocks execution of the current thread until the command buffer is scheduled."
+    },
+    {
+      "name": "func waitUntilCompleted()",
+      "desc": "Blocks execution of the current thread until execution of the command buffer is completed."
+    },
+    {
+      "name": "typealias MTLCommandBufferHandler",
+      "desc": "A block of code invoked when a command buffer is scheduled for execution or has completed execution."
+    },
+    {
+      "name": "func pushDebugGroup(String)",
+      "desc": "A string that identifies this object."
+    },
+    {
+      "name": "func popDebugGroup()",
+      "desc": "A string that identifies this object."
+    },
+    {
+      "name": "func present(MTLDrawable)",
+      "desc": "Registers a drawable presentation to occur as soon as possible."
+    },
+    {
+      "name": "func present(MTLDrawable, afterMinimumDuration: CFTimeInterval)",
+      "desc": "Registers a drawable presentation to occur after waiting for the previous drawable to meet the minimum display time."
+    },
+    {
+      "name": "func present(MTLDrawable, atTime: CFTimeInterval)",
+      "desc": "Registers a drawable presentation to occur at a specific host time."
+    },
+    {
+      "name": "var status: MTLCommandBufferStatus",
+      "desc": "The current stage in the lifetime of the command buffer."
+    },
+    {
+      "name": "enum MTLCommandBufferStatus",
+      "desc": "The stages in the lifetime of the command buffer."
+    },
+    {
+      "name": "var errorOptions: MTLCommandBufferErrorOption",
+      "desc": "Settings that determine what and how the command buffer records information about execution errors."
+    },
+    {
+      "name": "var error: Error?",
+      "desc": "The error that occurred when the command buffer was executed."
+    },
+    {
+      "name": "let MTLCommandBufferErrorDomain: String",
+      "desc": "The error domain used by MTLCommandBuffer when returning command buffer execution errors."
+    },
+    {
+      "name": "enum MTLCommandBufferError.Code",
+      "desc": "Error codes that indicate why the execution of the command buffer has failed. The error property contains the error code."
+    },
+    {
+      "name": "let MTLCommandBufferEncoderInfoErrorKey: String",
+      "desc": "The key to use to get details about specific execution errors."
+    },
+    {
+      "name": "protocol MTLCommandBufferEncoderInfo",
+      "desc": "An object describing the execution of commands from a specific command encoder."
+    },
+    {
+      "name": "var logs: MTLLogContainer",
+      "desc": "Logged messages that were recorded when the queue executed the command buffer."
+    },
+    {
+      "name": "var kernelStartTime: CFTimeInterval",
+      "desc": "The host time, in seconds, when the CPU began scheduling this command buffer for execution."
+    },
+    {
+      "name": "var kernelEndTime: CFTimeInterval",
+      "desc": "The host time, in seconds, when the CPU finished scheduling this command buffer for execution."
+    },
+    {
+      "name": "var gpuStartTime: CFTimeInterval",
+      "desc": "The host time, in seconds, when the GPU began executing this command buffer."
+    },
+    {
+      "name": "var gpuEndTime: CFTimeInterval",
+      "desc": "The host time, in seconds, when the GPU finished executing this command buffer."
+    },
+    {
+      "name": "func encodeSignalEvent(MTLEvent, value: UInt64)",
+      "desc": "Encodes a command that signals the given event, updating it to a new value."
+    },
+    {
+      "name": "func encodeWaitForEvent(MTLEvent, value: UInt64)",
+      "desc": "Encodes a command that blocks the execution of the command buffer until the given event reaches the given value."
+    },
+    {
+      "name": "var retainedReferences: Bool",
+      "desc": "A Boolean value that indicates whether the command buffer maintains strong references to associated resource objects (textures, buffers) necessary to complete execution of any encoded commands."
+    }
+  ],
+  "declaration": "protocol MTLCommandBuffer",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

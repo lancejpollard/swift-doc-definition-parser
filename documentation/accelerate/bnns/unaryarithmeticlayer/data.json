@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/accelerate/bnns/unaryarithmeticlayer",
+  "type": "Class",
+  "name": "BNNS.UnaryArithmeticLayer",
+  "desc": "A layer object that wraps a unary arithmetic filter and manages its deinitialization.",
+  "items": [
+    {
+      "name": "init?(input: BNNSNDArrayDescriptor, inputDescriptorType: BNNS.DescriptorType, output: BNNSNDArrayDescriptor, outputDescriptorType: BNNS.DescriptorType, function: BNNS.ArithmeticUnaryFunction, activation: BNNS.ActivationFunction, filterParameters: BNNSFilterParameters?)",
+      "desc": "Returns a new unary arithmetic layer."
+    },
+    {
+      "name": "enum BNNS.ArithmeticUnaryFunction",
+      "desc": "Constants that describe unary arithmetic functions."
+    },
+    {
+      "name": "enum BNNS.DescriptorType",
+      "desc": "Constants that describe the input and output types of an arithmetic operation."
+    },
+    {
+      "name": "func apply(batchSize: Int, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor)",
+      "desc": "Applies the layer to a set of input objects, writing the result to a set of output objects."
+    },
+    {
+      "name": "func applyBackward(batchSize: Int, input: BNNSNDArrayDescriptor, output: BNNSNDArrayDescriptor, outputGradient: BNNSNDArrayDescriptor, generatingInputGradient: BNNSNDArrayDescriptor)",
+      "desc": "Applies the layer backward to generate input gradients."
+    }
+  ],
+  "declaration": "class UnaryArithmeticLayer : BNNS.Layer",
+  "inheritsFrom": [
+    "BNNS.Layer"
+  ]
+}

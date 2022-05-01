@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/coreimage/ciimageprocessoroutput",
+  "type": "Protocol",
+  "name": "CIImageProcessorOutput",
+  "desc": "A container for writing image data and information produced by a custom image processor.",
+  "items": [
+    {
+      "name": "var baseAddress: UnsafeMutableRawPointer",
+      "desc": "A pointer to CPU memory at which to write output pixel data."
+    },
+    {
+      "name": "var metalTexture: MTLTexture?",
+      "desc": "A Metal texture to which you can write output pixel data."
+    },
+    {
+      "name": "var pixelBuffer: CVPixelBuffer?",
+      "desc": "A CoreVideo pixel buffer to which you can write output pixel data."
+    },
+    {
+      "name": "var surface: IOSurfaceRef",
+      "desc": "An IOSurface object to which you can write output pixel data."
+    },
+    {
+      "name": "var region: CGRect",
+      "desc": "The rectangular region of the output image that your processor must provide."
+    },
+    {
+      "name": "var metalCommandBuffer: MTLCommandBuffer?",
+      "desc": "A command buffer to use for image processing using Metal."
+    },
+    {
+      "name": "var bytesPerRow: Int",
+      "desc": "The number of bytes per row of pixels for the output image."
+    },
+    {
+      "name": "var format: CIFormat",
+      "desc": "The per-pixel data format expected of the output image."
+    }
+  ],
+  "declaration": "protocol CIImageProcessorOutput"
+}

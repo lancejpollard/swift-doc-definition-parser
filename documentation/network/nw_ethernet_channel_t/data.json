@@ -1,0 +1,57 @@
+{
+  "path": "/documentation/network/nw_ethernet_channel_t",
+  "type": "Type Alias",
+  "name": "nw_ethernet_channel_t",
+  "desc": "An object you use to send and receive custom Ethernet frames.",
+  "items": [
+    {
+      "name": "func nw_ethernet_channel_create(UInt16, nw_interface_t) -> nw_ethernet_channel_t",
+      "desc": "Initializes an Ethernet channel on a specific interface with a custom Ethernet type."
+    },
+    {
+      "name": "func nw_ethernet_channel_set_queue(nw_ethernet_channel_t, DispatchQueue)",
+      "desc": "Sets the queue on which all channel events are delivered."
+    },
+    {
+      "name": "func nw_ethernet_channel_start(nw_ethernet_channel_t)",
+      "desc": "Starts the process of registering the channel."
+    },
+    {
+      "name": "func nw_ethernet_channel_cancel(nw_ethernet_channel_t)",
+      "desc": "Unregisters the channel from the interface."
+    },
+    {
+      "name": "func nw_ethernet_channel_set_state_changed_handler(nw_ethernet_channel_t, nw_ethernet_channel_state_changed_handler_t?)",
+      "desc": "Sets a handler to receive channel state updates."
+    },
+    {
+      "name": "typealias nw_ethernet_channel_state_changed_handler_t",
+      "desc": "A handler that delivers Ethernet channel state updates with associated errors."
+    },
+    {
+      "name": "struct nw_ethernet_channel_state_t",
+      "desc": "States indicating whether an Ethernet channel is able to send and receive frames."
+    },
+    {
+      "name": "func nw_ethernet_channel_send(nw_ethernet_channel_t, __DispatchData, UInt16, UnsafeMutablePointer<UInt8>, nw_ethernet_channel_send_completion_t)",
+      "desc": "Sends a single Ethernet frame over a channel to a specific Ethernet address."
+    },
+    {
+      "name": "typealias nw_ethernet_channel_send_completion_t",
+      "desc": "A handler that indicates when an Ethernet frame has been sent, or if an error was encountered."
+    },
+    {
+      "name": "func nw_ethernet_channel_set_receive_handler(nw_ethernet_channel_t, nw_ethernet_channel_receive_handler_t?)",
+      "desc": "Sets a handler to receive inbound Ethernet frames."
+    },
+    {
+      "name": "typealias nw_ethernet_channel_receive_handler_t",
+      "desc": "A handler that delivers inbound Ethernet frames."
+    },
+    {
+      "name": "typealias nw_ethernet_address_t",
+      "desc": "A 48-bit Ethernet address."
+    }
+  ],
+  "declaration": "typealias nw_ethernet_channel_t = OS_nw_ethernet_channel"
+}

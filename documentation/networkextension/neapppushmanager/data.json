@@ -1,0 +1,75 @@
+{
+  "path": "/documentation/networkextension/neapppushmanager",
+  "type": "Class",
+  "name": "NEAppPushManager",
+  "desc": "An object that configures a push provider and manages its life cycle.",
+  "items": [
+    {
+      "name": "var matchSSIDs: [String]",
+      "desc": "An array of Wi-Fi SSID strings that the system matches for local push activation."
+    },
+    {
+      "name": "func loadFromPreferences(completionHandler: (Error?) -> Void)",
+      "desc": "Loads the manager’s saved configuration from the persistent store."
+    },
+    {
+      "name": "class func loadAllFromPreferences(completionHandler: ([NEAppPushManager]?, Error?) -> Void)",
+      "desc": "Loads all saved manager configurations asynchronously."
+    },
+    {
+      "name": "func saveToPreferences(completionHandler: (Error?) -> Void)",
+      "desc": "Saves the manager’s configuration in the persistent store."
+    },
+    {
+      "name": "func removeFromPreferences(completionHandler: (Error?) -> Void)",
+      "desc": "Removes the manager’s configuration from the persistent store."
+    },
+    {
+      "name": "var delegate: NEAppPushDelegate?",
+      "desc": "A delegate that receives incoming call information from the provider."
+    },
+    {
+      "name": "protocol NEAppPushDelegate",
+      "desc": "A protocol that defines how an app push manager instance interacts with the framework."
+    },
+    {
+      "name": "var isActive: Bool",
+      "desc": "A Boolean value that indicates whether a configuration is in use."
+    },
+    {
+      "name": "var isEnabled: Bool",
+      "desc": "A property you use to toggle enabling the configuration."
+    },
+    {
+      "name": "var localizedDescription: String?",
+      "desc": "A string that contains the localized description of the app push manager."
+    },
+    {
+      "name": "var providerConfiguration: [String : Any]",
+      "desc": "A dictionary that contains vendor-specific key-value pairs, that you use to configure a provider."
+    },
+    {
+      "name": "var providerBundleIdentifier: String?",
+      "desc": "A string that contains the bundle identifier of the push provider."
+    },
+    {
+      "name": "struct NEAppPushManagerError",
+      "desc": "An error that the push manager encounters."
+    },
+    {
+      "name": "let NEAppPushErrorDomain: String",
+      "desc": "The error domain string for local push errors."
+    },
+    {
+      "name": "enum NEAppPushManagerError.Code",
+      "desc": "Error codes that the local push API declares."
+    },
+    {
+      "name": "var matchPrivateLTENetworks: [NEPrivateLTENetwork]"
+    }
+  ],
+  "declaration": "class NEAppPushManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

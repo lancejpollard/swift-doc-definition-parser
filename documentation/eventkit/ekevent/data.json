@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/eventkit/ekevent",
+  "type": "Class",
+  "name": "EKEvent",
+  "desc": "A class that represents an event in a calendar.",
+  "items": [
+    {
+      "name": "init(eventStore: EKEventStore)",
+      "desc": "Creates and returns a new event belonging to a specified event store."
+    },
+    {
+      "name": "enum EKEventStatus",
+      "desc": "The event’s status."
+    },
+    {
+      "name": "enum EKEventAvailability",
+      "desc": "The event’s availability setting for scheduling purposes."
+    },
+    {
+      "name": "func compareStartDate(with: EKEvent) -> ComparisonResult",
+      "desc": "Compares the start date of the receiving event with the start date of another event."
+    },
+    {
+      "name": "var eventIdentifier: String!",
+      "desc": "A unique identifier for the event."
+    },
+    {
+      "name": "var availability: EKEventAvailability",
+      "desc": "The availability setting for the event."
+    },
+    {
+      "name": "var startDate: Date!",
+      "desc": "The start date of the event."
+    },
+    {
+      "name": "var endDate: Date!",
+      "desc": "The end date for the event."
+    },
+    {
+      "name": "var isAllDay: Bool",
+      "desc": "A Boolean value that indicates whether the event is an all-day event."
+    },
+    {
+      "name": "var occurrenceDate: Date!",
+      "desc": "The original occurrence date of an event if it is part of a recurring series."
+    },
+    {
+      "name": "var isDetached: Bool",
+      "desc": "A Boolean value that indicates whether an event is a detached instance of a repeating event."
+    },
+    {
+      "name": "var organizer: EKParticipant?",
+      "desc": "The organizer associated with the event."
+    },
+    {
+      "name": "var status: EKEventStatus",
+      "desc": "The status of the event."
+    },
+    {
+      "name": "var birthdayContactIdentifier: String?",
+      "desc": "The contact identifier of the person for this birthday event."
+    },
+    {
+      "name": "var structuredLocation: EKStructuredLocation?",
+      "desc": "The event's location with a potential geocoordinate."
+    },
+    {
+      "name": "func refresh() -> Bool",
+      "desc": "Updates the event’s data with the current information in the Calendar database."
+    }
+  ],
+  "declaration": "class EKEvent : EKCalendarItem",
+  "inheritsFrom": [
+    "EKCalendarItem"
+  ]
+}

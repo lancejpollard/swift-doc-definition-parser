@@ -1,0 +1,220 @@
+{
+  "path": "/documentation/coredata/nsmanagedobject",
+  "type": "Class",
+  "name": "NSManagedObject",
+  "desc": "A base class that implements the behavior for a Core Data model object.",
+  "items": [
+    {
+      "name": "init(entity: NSEntityDescription, insertInto: NSManagedObjectContext?)",
+      "desc": "Initializes a managed object from an entity description and inserts it into the specified managed object context."
+    },
+    {
+      "name": "init(context: NSManagedObjectContext)",
+      "desc": "Initializes a managed object subclass and inserts it into the specified managed object context."
+    },
+    {
+      "name": "var entity: NSEntityDescription",
+      "desc": "The entity description of the managed object."
+    },
+    {
+      "name": "var objectID: NSManagedObjectID",
+      "desc": "The object ID of the managed object."
+    },
+    {
+      "name": "class func entity() -> NSEntityDescription",
+      "desc": "Returns the entity description that is associated with this subclass."
+    },
+    {
+      "name": "var managedObjectContext: NSManagedObjectContext?",
+      "desc": "The managed object context with which the managed object is registered."
+    },
+    {
+      "name": "var hasChanges: Bool",
+      "desc": "A Boolean value that indicates whether the managed object has been inserted, has been deleted, or has unsaved changes."
+    },
+    {
+      "name": "var isInserted: Bool",
+      "desc": "A Boolean value that indicates whether the managed object has been inserted in a managed object context."
+    },
+    {
+      "name": "var isUpdated: Bool",
+      "desc": "A Boolean value that indicates whether the managed object has unsaved changes."
+    },
+    {
+      "name": "var isDeleted: Bool",
+      "desc": "A Boolean value that indicates whether the managed object will be deleted during the next save."
+    },
+    {
+      "name": "var isFault: Bool",
+      "desc": "A Boolean value that indicates whether the managed object is a fault."
+    },
+    {
+      "name": "var faultingState: Int",
+      "desc": "The faulting state of the managed object."
+    },
+    {
+      "name": "func hasFault(forRelationshipNamed: String) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the relationship for a given key is a fault."
+    },
+    {
+      "name": "var hasPersistentChangedValues: Bool",
+      "desc": "A Boolean value that indicates whether the managed object has persistent changes."
+    },
+    {
+      "name": "class var contextShouldIgnoreUnmodeledPropertyChanges: Bool",
+      "desc": "A Boolean value that indicates whether to mark instances of the class as having changes when an unmodeled property changes."
+    },
+    {
+      "name": "func awakeFromFetch()",
+      "desc": "Provides an opportunity to add code into the life cycle of the managed object when fufilling it from a fault."
+    },
+    {
+      "name": "func awakeFromInsert()",
+      "desc": "Provides an opportunity to add code into the life cycle of the managed object when initially creating it."
+    },
+    {
+      "name": "func awake(fromSnapshotEvents: NSSnapshotEventType)",
+      "desc": "Provides an opportunity to add code into the life cycle of the managed object when fulfilling it from a snapshot."
+    },
+    {
+      "name": "func changedValues() -> [String : Any]",
+      "desc": "Returns a dictionary containing the keys and new values of persistent properties with changes since the last fetching or saving of the managed object."
+    },
+    {
+      "name": "func changedValuesForCurrentEvent() -> [String : Any]",
+      "desc": "Returns a dictionary containing the keys and new values of persistent properties with changes since the last fetching or saving of the managed object."
+    },
+    {
+      "name": "func committedValues(forKeys: [String]?) -> [String : Any]",
+      "desc": "Returns a dictionary of the most recent fetched or saved values of the managed object for the properties of the specified keys."
+    },
+    {
+      "name": "func prepareForDeletion()",
+      "desc": "Provides an opportunity to add code into the life cycle of the managed object before deleting it."
+    },
+    {
+      "name": "func willSave()",
+      "desc": "Provides an opportunity to add code into the life cycle of the managed object before saving it."
+    },
+    {
+      "name": "func didSave()",
+      "desc": "Provides an opportunity to add code into the life cycle of the managed object after the managed object’s context completes a save operation."
+    },
+    {
+      "name": "func willTurnIntoFault()",
+      "desc": "Provides an opportunity to add code into the life cycle of the managed object before converting it to a fault."
+    },
+    {
+      "name": "func didTurnIntoFault()",
+      "desc": "Provides an opportunity to add code into the life cycle of the managed object after converting it to a fault."
+    },
+    {
+      "name": "class func fetchRequest() -> NSFetchRequest<NSFetchRequestResult>",
+      "desc": "Returns an initialized fetch request with the entity this subclass represents."
+    },
+    {
+      "name": "var objectWillChange: ObservableObjectPublisher",
+      "desc": "A publisher that emits before the object changes."
+    },
+    {
+      "name": "typealias NSManagedObject.ObjectWillChangePublisher",
+      "desc": "An object that publishes changes from observable objects."
+    },
+    {
+      "name": "func value(forKey: String) -> Any?",
+      "desc": "Returns the value for the property specified by key."
+    },
+    {
+      "name": "func setValue(Any?, forKey: String)",
+      "desc": "Sets the specified property of the managed object to the specified value."
+    },
+    {
+      "name": "func primitiveValue(forKey: String) -> Any?",
+      "desc": "Returns the value for the specified property from the managed object’s private internal storage ."
+    },
+    {
+      "name": "func setPrimitiveValue(Any?, forKey: String)",
+      "desc": "Sets the value of a given property in the managed object's private internal storage."
+    },
+    {
+      "name": "func objectIDs(forRelationshipNamed: String) -> [NSManagedObjectID]",
+      "desc": "Returns the object IDs for all of the managed objects that are in the named relationship."
+    },
+    {
+      "name": "func validateValue(AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey: String)",
+      "desc": "Validates a property value for a given key."
+    },
+    {
+      "name": "func validateForDelete()",
+      "desc": "Determines whether the managed object can be deleted in its current state."
+    },
+    {
+      "name": "func validateForInsert()",
+      "desc": "Determines whether the managed object can be inserted in its current state."
+    },
+    {
+      "name": "func validateForUpdate()",
+      "desc": "Determines whether the managed object's current state is valid."
+    },
+    {
+      "name": "let NSValidationKeyErrorKey: String",
+      "desc": "The error key for the attribute that failed to validate."
+    },
+    {
+      "name": "let NSValidationObjectErrorKey: String",
+      "desc": "The error key for the object that failed to validate."
+    },
+    {
+      "name": "let NSValidationPredicateErrorKey: String",
+      "desc": "The error key for the predicate that failed to validate."
+    },
+    {
+      "name": "let NSValidationValueErrorKey: String",
+      "desc": "The error key for the value that failed to validate."
+    },
+    {
+      "name": "func didAccessValue(forKey: String?)",
+      "desc": "Provides support for key-value observing access notification."
+    },
+    {
+      "name": "func observationInfo() -> UnsafeMutableRawPointer?",
+      "desc": "Returns the observation info of the managed object."
+    },
+    {
+      "name": "func setObservationInfo(UnsafeMutableRawPointer?)",
+      "desc": "Sets the observation info of the managed object."
+    },
+    {
+      "name": "func willAccessValue(forKey: String?)",
+      "desc": "Provides support for key-value observing access notification."
+    },
+    {
+      "name": "func didChangeValue(forKey: String)",
+      "desc": "Provides an opportunity to respond when a value of a given property has changed."
+    },
+    {
+      "name": "func didChangeValue(forKey: String, withSetMutation: NSKeyValueSetMutationKind, using: Set<AnyHashable>)",
+      "desc": "Provides an opportunity to respond when a change was made to a specified to-many relationship."
+    },
+    {
+      "name": "func willChangeValue(forKey: String)",
+      "desc": "Provides an opportunity to respond when a value of a given property is about to change."
+    },
+    {
+      "name": "func willChangeValue(forKey: String, withSetMutation: NSKeyValueSetMutationKind, using: Set<AnyHashable>)",
+      "desc": "Provides an opportunity to respond when a change is about to be made to a specified to-many relationship."
+    },
+    {
+      "name": "struct NSSnapshotEventType",
+      "desc": "Constants that specify the reason the managed object may need to reinitialize its values."
+    }
+  ],
+  "declaration": "class NSManagedObject : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSFetchRequestResult",
+    "ObservableObject"
+  ]
+}

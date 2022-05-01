@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/metal/mtlstoragemode",
+  "type": "Enumeration",
+  "name": "MTLStorageMode",
+  "desc": "Options for the memory location and access permissions for a resource.",
+  "items": [
+    {
+      "name": "case shared",
+      "desc": "The resource is stored in system memory and is accessible to both the CPU and the GPU."
+    },
+    {
+      "name": "case managed",
+      "desc": "The CPU and GPU may maintain separate copies of the resource, and any changes must be explicitly synchronized."
+    },
+    {
+      "name": "case `private`",
+      "desc": "The resource can be accessed only by the GPU."
+    },
+    {
+      "name": "case memoryless",
+      "desc": "The resource’s contents can be accessed only by the GPU and only exist temporarily during a render pass."
+    }
+  ],
+  "declaration": "enum MTLStorageMode : UInt, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

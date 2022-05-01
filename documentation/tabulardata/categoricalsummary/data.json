@@ -1,0 +1,58 @@
+{
+  "path": "/documentation/tabulardata/categoricalsummary",
+  "type": "Structure",
+  "name": "CategoricalSummary",
+  "desc": "A categorical summary of a collection’s elements.",
+  "items": [
+    {
+      "name": "static func == (CategoricalSummary<Element>, CategoricalSummary<Element>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates a categorical summary with default values."
+    },
+    {
+      "name": "init(someCount: Int, noneCount: Int, uniqueCount: Int, mode: [Element])",
+      "desc": "Creates a categorical summary."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the summary’s statistics suitable for debugging."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "var mode: [Element]",
+      "desc": "The most common values in a column, ignoring missing elements."
+    },
+    {
+      "name": "var noneCount: Int",
+      "desc": "The number of missing elements in the column."
+    },
+    {
+      "name": "var someCount: Int",
+      "desc": "The number of non-missing elements in the column."
+    },
+    {
+      "name": "var totalCount: Int",
+      "desc": "The total number of elements in the column."
+    },
+    {
+      "name": "var uniqueCount: Int",
+      "desc": "The number of elements with distinct values in a column that excludes missing elements."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    }
+  ],
+  "declaration": "struct CategoricalSummary<Element> where Element : Hashable",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "Equatable",
+    "Hashable"
+  ]
+}

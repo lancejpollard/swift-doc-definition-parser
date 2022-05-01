@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/security/sectrustoptionflags",
+  "type": "Structure",
+  "name": "SecTrustOptionFlags",
+  "desc": "The option flags used to condition a trust evaluation.",
+  "items": [
+    {
+      "name": "init(rawValue: UInt32)",
+      "desc": "Initializes a trust option flags structure."
+    },
+    {
+      "name": "static var allowExpired: SecTrustOptionFlags",
+      "desc": "Allow expired certificates (except for the root certificate)."
+    },
+    {
+      "name": "static var leafIsCA: SecTrustOptionFlags",
+      "desc": "Allow CA certificates as leaf certificates."
+    },
+    {
+      "name": "static var fetchIssuerFromNet: SecTrustOptionFlags",
+      "desc": "Allow network downloads of CA certificates."
+    },
+    {
+      "name": "static var allowExpiredRoot: SecTrustOptionFlags",
+      "desc": "Allow expired root certificates."
+    },
+    {
+      "name": "static var requireRevPerCert: SecTrustOptionFlags",
+      "desc": "Require a positive revocation check for each certificate."
+    },
+    {
+      "name": "static var useTrustSettings: SecTrustOptionFlags",
+      "desc": "Use TrustSettings instead of anchors."
+    },
+    {
+      "name": "static var implicitAnchors: SecTrustOptionFlags",
+      "desc": "Treat properly self-signed certificates as anchors implicitly."
+    }
+  ],
+  "declaration": "struct SecTrustOptionFlags, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "path": "/documentation/SwiftUI/TransformedShape",
+  "type": "Structure",
+  "name": "TransformedShape",
+  "desc": "A shape with an affine transform applied to it.",
+  "items": [
+    {
+      "name": "init(shape: Content, transform: CGAffineTransform)"
+    },
+    {
+      "name": "var shape: Content"
+    },
+    {
+      "name": "var transform: CGAffineTransform"
+    },
+    {
+      "name": "typealias Body",
+      "desc": "The type of view representing the body of this view."
+    },
+    {
+      "name": "var animatableData: TransformedShape<Content>.AnimatableData",
+      "desc": "The data to animate."
+    },
+    {
+      "name": "typealias AnimatableData",
+      "desc": "The type defining the data to animate."
+    },
+    {
+      "name": "static var role: ShapeRole",
+      "desc": "An indication of how to style a shape."
+    },
+    {
+      "name": "func path(in: CGRect) -> Path",
+      "desc": "Describes this shape as a path within a rectangular frame of reference."
+    }
+  ],
+  "declaration": "@frozen struct TransformedShape<Content> where Content : Shape",
+  "conformsTo": [
+    "Animatable",
+    "Shape",
+    "View"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsimagehistogramequalization",
+  "type": "Class",
+  "name": "MPSImageHistogramEqualization",
+  "desc": "A filter that equalizes the histogram of an image.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice, histogramInfo: UnsafePointer<MPSImageHistogramInfo>)",
+      "desc": "Initializes a histogram with specific information."
+    },
+    {
+      "name": "func encodeTransform(to: MTLCommandBuffer, sourceTexture: MTLTexture, histogram: MTLBuffer, histogramOffset: Int)",
+      "desc": "Encodes the transform function to a command buffer using a compute command encoder. The transform function computes the equalization lookup table."
+    },
+    {
+      "name": "var histogramInfo: MPSImageHistogramInfo",
+      "desc": "A structure describing the histogram content."
+    }
+  ],
+  "declaration": "class MPSImageHistogramEqualization : MPSUnaryImageKernel",
+  "inheritsFrom": [
+    "MPSUnaryImageKernel"
+  ]
+}

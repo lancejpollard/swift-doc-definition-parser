@@ -1,0 +1,34 @@
+{
+  "path": "/documentation/quartz/qcpluginexecutionmode",
+  "type": "Structure",
+  "name": "QCPlugInExecutionMode",
+  "desc": "Execution modes for custom patches.",
+  "items": [
+    {
+      "name": "var kQCPlugInExecutionModeProvider: QCPlugInExecutionMode",
+      "desc": "A provider execution mode. The custom patch executes on demand—that is, whenever data is requested of it, but at most once per frame."
+    },
+    {
+      "name": "var kQCPlugInExecutionModeProcessor: QCPlugInExecutionMode",
+      "desc": "A processor execution mode. The custom patch executes whenever its inputs change or if the time change (assuming it's time-dependent)."
+    },
+    {
+      "name": "var kQCPlugInExecutionModeConsumer: QCPlugInExecutionMode",
+      "desc": "A consumer execution mode. The custom patch always executes assuming the value of its Enable input port is true. (The Enable port is automatically added by the system.)"
+    },
+    {
+      "name": "init(UInt32)"
+    },
+    {
+      "name": "init(rawValue: UInt32)"
+    },
+    {
+      "name": "var rawValue: UInt32"
+    }
+  ],
+  "declaration": "struct QCPlugInExecutionMode",
+  "conformsTo": [
+    "Equatable",
+    "RawRepresentable"
+  ]
+}

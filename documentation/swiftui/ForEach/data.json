@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/swiftui/foreach",
+  "type": "Structure",
+  "name": "ForEach",
+  "desc": "A structure that computes views on demand from an underlying collection of identified data.",
+  "items": [
+    {
+      "name": "init(Range<Int>, content: (Int) -> Content)",
+      "desc": "Creates an instance that computes views on demand over a given constant range."
+    },
+    {
+      "name": "init(Data, content: (Data.Element) -> Content)",
+      "desc": "Creates an instance that uniquely identifies and creates views across updates based on the identity of the underlying data."
+    },
+    {
+      "name": "init<C>(Binding<C>, content: (Binding<C.Element>) -> Content)",
+      "desc": "Creates an instance that uniquely identifies and creates views across updates based on the identity of the underlying data."
+    },
+    {
+      "name": "init(Data, id: KeyPath<Data.Element, ID>, content: (Data.Element) -> Content)",
+      "desc": "Creates an instance that uniquely identifies and creates views across updates based on the provided key path to the underlying data’s identifier."
+    },
+    {
+      "name": "init<C>(Binding<C>, id: KeyPath<C.Element, ID>, content: (Binding<C.Element>) -> Content)",
+      "desc": "Creates an instance that uniquely identifies and creates views across updates based on the identity of the underlying data."
+    },
+    {
+      "name": "init(Data, content: (Data.Element) -> Content)",
+      "desc": "Creates an instance that generates Rotor content by combining, in order, individual Rotor content for each element in the data given to this ForEach."
+    },
+    {
+      "name": "init(Data, id: KeyPath<Data.Element, ID>, content: (Data.Element) -> Content)",
+      "desc": "Creates an instance that generates Rotor content by combining, in order, individual Rotor content for each element in the data given to this ForEach."
+    },
+    {
+      "name": "init<V>(Range<Int>, content: (Int) -> Content)",
+      "desc": "Creates an instance that computes table rows on demand over a given constant range."
+    },
+    {
+      "name": "init(Data, content: (Data.Element) -> Content)",
+      "desc": "Creates an instance that uniquely identifies and creates table rows across updates based on the identity of the underlying data."
+    },
+    {
+      "name": "init<V>(Data, id: KeyPath<Data.Element, ID>, content: (Data.Element) -> Content)",
+      "desc": "Creates an instance that uniquely identifies and creates table rows across updates based on the provided key path to the underlying data’s identifier."
+    },
+    {
+      "name": "var content: (Data.Element) -> Content",
+      "desc": "A function to create content on demand using the underlying data."
+    },
+    {
+      "name": "var data: Data",
+      "desc": "The collection of underlying identified data that SwiftUI uses to create views dynamically."
+    }
+  ],
+  "declaration": "struct ForEach<Data, ID, Content> where Data : RandomAccessCollection, ID : Hashable",
+  "conformsTo": [
+    "AccessibilityRotorContent",
+    "DynamicTableRowContent",
+    "DynamicViewContent",
+    "TableRowContent",
+    "View"
+  ]
+}

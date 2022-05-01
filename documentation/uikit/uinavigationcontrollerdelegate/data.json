@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/uikit/uinavigationcontrollerdelegate",
+  "type": "Protocol",
+  "name": "UINavigationControllerDelegate",
+  "desc": "Use a navigation controller delegate (a custom object that implements this protocol) to modify behavior when a view controller is pushed or popped from the navigation stack of a UINavigationController object.",
+  "items": [
+    {
+      "name": "func navigationController(UINavigationController, willShow: UIViewController, animated: Bool)",
+      "desc": "Called just before the navigation controller displays a view controller’s view and navigation item properties."
+    },
+    {
+      "name": "func navigationController(UINavigationController, didShow: UIViewController, animated: Bool)",
+      "desc": "Called just after the navigation controller displays a view controller’s view and navigation item properties."
+    },
+    {
+      "name": "func navigationController(UINavigationController, animationControllerFor: UINavigationController.Operation, from: UIViewController, to: UIViewController) -> UIViewControllerAnimatedTransitioning?",
+      "desc": "Called to allow the delegate to return a noninteractive animator object for use during view controller transitions."
+    },
+    {
+      "name": "func navigationController(UINavigationController, interactionControllerFor: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning?",
+      "desc": "Called to allow the delegate to return an interactive animator object for use during view controller transitions."
+    },
+    {
+      "name": "func navigationControllerPreferredInterfaceOrientationForPresentation(UINavigationController) -> UIInterfaceOrientation",
+      "desc": "Returns the preferred orientation for presentation of the navigation controller, as determined by the delegate."
+    },
+    {
+      "name": "func navigationControllerSupportedInterfaceOrientations(UINavigationController) -> UIInterfaceOrientationMask",
+      "desc": "Returns the complete set of supported interface orientations for the navigation controller, as determined by the delegate."
+    },
+    {
+      "name": "enum UINavigationController.Operation",
+      "desc": "These constants define the type of navigation controller transitions that can occur."
+    }
+  ],
+  "declaration": "@MainActor protocol UINavigationControllerDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

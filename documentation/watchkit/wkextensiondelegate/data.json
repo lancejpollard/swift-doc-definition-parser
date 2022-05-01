@@ -1,0 +1,88 @@
+{
+  "path": "/documentation/watchkit/wkextensiondelegate",
+  "type": "Protocol",
+  "name": "WKExtensionDelegate",
+  "desc": "A collection of methods that manages the app-level behavior of a WatchKit extension.",
+  "items": [
+    {
+      "name": "func applicationDidFinishLaunching()",
+      "desc": "Tells the delegate that the launch process is almost done and the extension is almost ready to run."
+    },
+    {
+      "name": "func applicationDidBecomeActive()",
+      "desc": "Tells the delegate that the watchOS app is visible and processing events."
+    },
+    {
+      "name": "func applicationWillResignActive()",
+      "desc": "Tells the delegate that the system is about to deactivate the watchOS app."
+    },
+    {
+      "name": "func applicationWillEnterForeground()",
+      "desc": "Tells the delegate that the app is about to transition from the background to the foreground."
+    },
+    {
+      "name": "func applicationDidEnterBackground()",
+      "desc": "Tells the delegate that the app has transitioned from the foreground to the background."
+    },
+    {
+      "name": "func deviceOrientationDidChange()",
+      "desc": "Tells the delegate that the device's orientation has changed."
+    },
+    {
+      "name": "func handle(INIntent, completionHandler: (INIntentResponse) -> Void)",
+      "desc": "Responds to a SiriKit intent."
+    },
+    {
+      "name": "func handleRemoteNowPlayingActivity()",
+      "desc": "Tells the delegate when the user plays audio in the corresponding iOS app."
+    },
+    {
+      "name": "func handle(HKWorkoutConfiguration)",
+      "desc": "Tells the delegate that the user started a workout session on the paired iPhone."
+    },
+    {
+      "name": "func handleActiveWorkoutRecovery()",
+      "desc": "Tells the delegate when the app relaunches after crashing during an active workout session."
+    },
+    {
+      "name": "func handle(Set<WKRefreshBackgroundTask>)",
+      "desc": "Tells the delegate that the app has received one or more background tasks."
+    },
+    {
+      "name": "func handle(WKExtendedRuntimeSession)",
+      "desc": "Tells the delegate that the system launched your app to resume an extended runtime session."
+    },
+    {
+      "name": "func didRegisterForRemoteNotifications(withDeviceToken: Data)",
+      "desc": "Tells the delegate that the app successfully registered with Apple Push Notification service (APNs)."
+    },
+    {
+      "name": "func didFailToRegisterForRemoteNotificationsWithError(Error)",
+      "desc": "Tells the delegate that Apple Push Notification service (APNs) cannot successfully complete the registration process."
+    },
+    {
+      "name": "func didReceiveRemoteNotification([AnyHashable : Any], fetchCompletionHandler: (WKBackgroundFetchResult) -> Void)",
+      "desc": "Tells the delegate that a background notification has arrived."
+    },
+    {
+      "name": "enum WKBackgroundFetchResult",
+      "desc": "The result of an attempt to download the content associated with a remote notification."
+    },
+    {
+      "name": "func handleUserActivity([AnyHashable : Any]?)",
+      "desc": "Responds to Handoff–related activity from complications and notifications."
+    },
+    {
+      "name": "func handle(NSUserActivity)",
+      "desc": "Responds to Handoff–related activity from Siri."
+    },
+    {
+      "name": "func userDidAcceptCloudKitShare(with: CKShareMetadata)",
+      "desc": "Tells the delegate that the app has access to shared information in CloudKit."
+    }
+  ],
+  "declaration": "@MainActor protocol WKExtensionDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

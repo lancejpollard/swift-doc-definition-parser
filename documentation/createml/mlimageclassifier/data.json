@@ -1,0 +1,105 @@
+{
+  "path": "/documentation/createml/mlimageclassifier",
+  "type": "Structure",
+  "name": "MLImageClassifier",
+  "desc": "A model you train to classify images.",
+  "items": [
+    {
+      "name": "static func train(trainingData: MLImageClassifier.DataSource, parameters: MLImageClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLJob<MLImageClassifier>",
+      "desc": "Begins an asynchronous image classifier training session with a training dataset represented by a data source."
+    },
+    {
+      "name": "static func resume(MLTrainingSession<MLImageClassifier>) -> MLJob<MLImageClassifier>",
+      "desc": "Begins or continues an asynchronous image classifier training session."
+    },
+    {
+      "name": "static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) -> MLTrainingSession<MLImageClassifier>",
+      "desc": "Creates an asynchronous training session for an image classifier by restoring an existing training session’s state from its parameters."
+    },
+    {
+      "name": "init(checkpoint: MLCheckpoint)",
+      "desc": "Creates an image classifier from a training session checkpoint."
+    },
+    {
+      "name": "init(trainingData: MLImageClassifier.DataSource, parameters: MLImageClassifier.ModelParameters)",
+      "desc": "Creates an image classifier with a training dataset represented by a data source."
+    },
+    {
+      "name": "init(trainingData: [String : [URL]], parameters: MLImageClassifier.ModelParameters)",
+      "desc": "Creates an image classifier with a training dataset represented by a dictionary."
+    },
+    {
+      "name": "var trainingMetrics: MLClassifierMetrics",
+      "desc": "Measurements of the image classifier’s performance on the training dataset."
+    },
+    {
+      "name": "var validationMetrics: MLClassifierMetrics",
+      "desc": "Measurements of the image classifier’s performance on the validation dataset."
+    },
+    {
+      "name": "func evaluation(on: MLImageClassifier.DataSource) -> MLClassifierMetrics",
+      "desc": "Generates metrics describing the image classifier’s performance on labeled images represented by a data source."
+    },
+    {
+      "name": "func evaluation(on: [String : [URL]]) -> MLClassifierMetrics",
+      "desc": "Generates metrics describing the image classifier’s performance on labeled images represented by a dictionary."
+    },
+    {
+      "name": "func prediction(from: CGImage) -> String",
+      "desc": "Generates a prediction for an image."
+    },
+    {
+      "name": "func prediction(from: URL) -> String",
+      "desc": "Generates a prediction for an image at the URL."
+    },
+    {
+      "name": "func predictions(from: [URL]) -> [String]",
+      "desc": "Generates predictions for an array of images."
+    },
+    {
+      "name": "func write(to: URL, metadata: MLModelMetadata?)",
+      "desc": "Exports the image classifier as a Core ML model file to a location in the file system."
+    },
+    {
+      "name": "func write(toFile: String, metadata: MLModelMetadata?)",
+      "desc": "Exports the image classifier as a Core ML model file to the file path."
+    },
+    {
+      "name": "var model: MLModel",
+      "desc": "The underlying Core ML model of the image classifier stored in memory."
+    },
+    {
+      "name": "let modelParameters: MLImageClassifier.ModelParameters",
+      "desc": "The model configuration parameters the image classifier used during its training session."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the image classifier."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the image classifier that’s suitable for output during debugging."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the image classifier shown in a playground."
+    },
+    {
+      "name": "enum MLImageClassifier.DataSource",
+      "desc": "A data source for an image classifier."
+    },
+    {
+      "name": "struct MLImageClassifier.ModelParameters",
+      "desc": "Parameters that affect the process of training an image classifier model."
+    },
+    {
+      "name": "static func makeTrainingSession(trainingData: MLImageClassifier.DataSource, parameters: MLImageClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLTrainingSession<MLImageClassifier>"
+    }
+  ],
+  "declaration": "struct MLImageClassifier",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomStringConvertible"
+  ]
+}

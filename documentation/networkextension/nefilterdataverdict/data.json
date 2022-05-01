@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/networkextension/nefilterdataverdict",
+  "type": "Class",
+  "name": "NEFilterDataVerdict",
+  "desc": "The result from a filter data provder for subsequent chunks of data on a flow.",
+  "items": [
+    {
+      "name": "class func allow() -> NEFilterDataVerdict",
+      "desc": "Creates a verdict that tells the system to pass the current chunk of network data and all subsequent data for the current flow to its final destination."
+    },
+    {
+      "name": "class func drop() -> NEFilterDataVerdict",
+      "desc": "Creates a verdict that tells the system to drop the current chunk of network data and all subsequent data for the current flow."
+    },
+    {
+      "name": "class func pause() -> NEFilterDataVerdict",
+      "desc": "Creates a verdict that tells the system to pause the flow."
+    },
+    {
+      "name": "class func remediateVerdict(withRemediationURLMapKey: String?, remediationButtonTextMapKey: String?) -> NEFilterDataVerdict",
+      "desc": "Creates a verdict to drop the current chunk of network data and all subsequent data for the current flow, and provides a remediation URL."
+    },
+    {
+      "name": "class func needRules() -> NEFilterDataVerdict",
+      "desc": "Creates a verdict that tells the system that the Filter Control Provider needs to update the rules before making a decision about the flow’s data."
+    },
+    {
+      "name": "init(passBytes: Int, peekBytes: Int)",
+      "desc": "Creates a verdict that tells the system to pass a chunk of network data to its final destination, and specifies the next chunk of data to provide."
+    },
+    {
+      "name": "var statisticsReportFrequency: NEFilterReport.Frequency",
+      "desc": "The frequencty at which to provide flow statistics to the data provider."
+    }
+  ],
+  "declaration": "class NEFilterDataVerdict : NEFilterVerdict",
+  "inheritsFrom": [
+    "NEFilterVerdict"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

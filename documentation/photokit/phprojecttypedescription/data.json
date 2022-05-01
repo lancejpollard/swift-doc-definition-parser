@@ -1,0 +1,63 @@
+{
+  "path": "/documentation/photokit/phprojecttypedescription",
+  "type": "Class",
+  "name": "PHProjectTypeDescription",
+  "desc": "An extensible enumerator for PHProjectType that's presented to users in the project picker.",
+  "items": [
+    {
+      "name": "init(projectType: PHProjectType, title: String, description: String?, image: NSImage?)",
+      "desc": "A convenience initializer without subtype descriptions."
+    },
+    {
+      "name": "init(projectType: PHProjectType, title: String, description: String?, image: NSImage?, subtypeDescriptions: [PHProjectTypeDescription])",
+      "desc": "A designated initializer for project type descriptions with the full subtype hierarchy specified up front and a standard string for description text."
+    },
+    {
+      "name": "init(projectType: PHProjectType, title: String, attributedDescription: NSAttributedString?, image: NSImage?, subtypeDescriptions: [PHProjectTypeDescription])",
+      "desc": "A designated initializer for project type descriptions with the full subtype hierarchy specified up front and an attributed string for description text."
+    },
+    {
+      "name": "init(projectType: PHProjectType, title: String, description: String?, image: NSImage?, canProvideSubtypes: Bool)",
+      "desc": "A designated initializer for project type descriptions with lazily fetched subtypes and a standard description string."
+    },
+    {
+      "name": "init(projectType: PHProjectType, title: String, attributedDescription: NSAttributedString?, image: NSImage?, canProvideSubtypes: Bool)",
+      "desc": "A designated initializer for project type descriptions with lazily fetched subtypes and an attributed description string."
+    },
+    {
+      "name": "var projectType: PHProjectType",
+      "desc": "An identifier for the project type."
+    },
+    {
+      "name": "var localizedTitle: String",
+      "desc": "The localized title of the project type as shown to the user."
+    },
+    {
+      "name": "var localizedDescription: String?",
+      "desc": "The localized description of the project type as shown to the user."
+    },
+    {
+      "name": "var localizedAttributedDescription: NSAttributedString?",
+      "desc": "The localized attributed description of the project type as shown to the user."
+    },
+    {
+      "name": "var image: NSImage?",
+      "desc": "An optional image associated with the project type in the picker."
+    },
+    {
+      "name": "var subtypeDescriptions: [PHProjectTypeDescription]",
+      "desc": "An array of type descriptions used for subtype descriptions."
+    },
+    {
+      "name": "var canProvideSubtypes: Bool",
+      "desc": "A Boolean variable indicating whether subtypes can be fetched from the data source."
+    }
+  ],
+  "declaration": "class PHProjectTypeDescription : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

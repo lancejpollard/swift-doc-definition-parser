@@ -1,0 +1,102 @@
+{
+  "path": "/documentation/pencilkit/pkstrokepath/interpolatedslice",
+  "type": "Structure",
+  "name": "PKStrokePath.InterpolatedSlice",
+  "desc": "A struct representing an interpolated slice of stroke points with a specific stride across a range of this stroke data.",
+  "items": [
+    {
+      "name": "var lazy: LazySequence<PKStrokePath.InterpolatedSlice>",
+      "desc": "A sequence containing the same elements as this sequence, but on which some operations, such as map and filter, are implemented lazily."
+    },
+    {
+      "name": "var publisher: Publishers.Sequence<PKStrokePath.InterpolatedSlice, Never>",
+      "desc": "A publisher of interpolated slices of stroke path elements."
+    },
+    {
+      "name": "var underestimatedCount: Int",
+      "desc": "A value less than or equal to the number of elements in the sequence, calculated nondestructively."
+    },
+    {
+      "name": "enum PKStrokePath.InterpolatedSlice.Stride",
+      "desc": "The stride between elements of this slice."
+    },
+    {
+      "name": "func elementsEqual<OtherSequence>(OtherSequence, by: (PKStrokePoint, OtherSequence.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this sequence and another sequence contain equivalent elements in the same order, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func enumerated() -> EnumeratedSequence<PKStrokePath.InterpolatedSlice>",
+      "desc": "Returns a sequence of pairs (n, x), where n represents a consecutive integer starting at zero and x represents an element of the sequence."
+    },
+    {
+      "name": "func forEach((PKStrokePoint) -> Void)",
+      "desc": "Calls the given closure on each element in the sequence in the same order as a for-in loop."
+    },
+    {
+      "name": "func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (PKStrokePoint, PKStrokePoint) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the given predicate to compare elements."
+    },
+    {
+      "name": "func makeIterator() -> PKStrokePath.InterpolatedSlice",
+      "desc": "Returns an iterator over the elements of this sequence."
+    },
+    {
+      "name": "func next() -> PKStrokePoint?"
+    },
+    {
+      "name": "func reversed() -> [PKStrokePoint]",
+      "desc": "Returns an array containing the elements of this sequence in reverse order."
+    },
+    {
+      "name": "func shuffled() -> [PKStrokePoint]",
+      "desc": "Returns the elements of the sequence, shuffled."
+    },
+    {
+      "name": "func shuffled<T>(using: inout T) -> [PKStrokePoint]",
+      "desc": "Returns the elements of the sequence, shuffled using the given generator as a source for randomness."
+    },
+    {
+      "name": "func sorted(by: (PKStrokePoint, PKStrokePoint) -> Bool) -> [PKStrokePoint]",
+      "desc": "Returns the elements of the sequence, sorted using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (PKStrokePoint) -> Bool) -> [ArraySlice<PKStrokePoint>]",
+      "desc": "Returns the longest possible subsequences of the sequence, in order, that don’t contain elements satisfying the given predicate. Elements that are used to split the sequence are not returned as part of any subsequence."
+    },
+    {
+      "name": "func starts<PossiblePrefix>(with: PossiblePrefix, by: (PKStrokePoint, PossiblePrefix.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the initial elements of the sequence are equivalent to the elements in another sequence, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func suffix(Int) -> [PKStrokePoint]",
+      "desc": "Returns a subsequence, up to the given maximum length, containing the final elements of the sequence."
+    },
+    {
+      "name": "func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<PKStrokePoint>) -> R) -> R?",
+      "desc": "Executes a closure on the sequence’s contiguous storage."
+    },
+    {
+      "name": "func compare<Comparator>(Comparator.Compared, Comparator.Compared) -> ComparisonResult"
+    },
+    {
+      "name": "func formatted<S>(S) -> S.FormatOutput"
+    },
+    {
+      "name": "func sorted<Comparator>(using: Comparator) -> [PKStrokePoint]"
+    },
+    {
+      "name": "func sorted<S, Comparator>(using: S) -> [PKStrokePoint]"
+    },
+    {
+      "name": "typealias PKStrokePath.InterpolatedSlice.Element"
+    },
+    {
+      "name": "typealias PKStrokePath.InterpolatedSlice.Iterator"
+    }
+  ],
+  "declaration": "struct PKStrokePath.InterpolatedSlice",
+  "conformsTo": [
+    "IteratorProtocol",
+    "Sequence"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "path": "/documentation/healthkit/hkanchoredobjectquerydescriptor",
+  "type": "Generic Structure",
+  "name": "HKAnchoredObjectQueryDescriptor",
+  "desc": "A query descriptor that lets you run anchored object queries using Swift concurrency.",
+  "items": [
+    {
+      "name": "typealias HKAnchoredObjectQueryDescriptor.Output",
+      "desc": "The type of data that the anchored object query returns."
+    },
+    {
+      "name": "typealias HKAnchoredObjectQueryDescriptor.Sequence",
+      "desc": "The asynchronous sequence that the anchored object query returns."
+    },
+    {
+      "name": "init(predicates: [HKSamplePredicate<Sample>], anchor: HKQueryAnchor?, limit: Int?)",
+      "desc": "Creates an anchored object query descriptor."
+    },
+    {
+      "name": "func result(for: HKHealthStore) -> HKAnchoredObjectQueryDescriptor<Sample>.Result",
+      "desc": "Runs a one-shot query and asynchronously returns a snapshot of the current matching results."
+    },
+    {
+      "name": "func results(for: HKHealthStore) -> HKAnchoredObjectQueryDescriptor<Sample>.Results",
+      "desc": "Initiates a long-running query that returns its results using an asynchronous sequence."
+    },
+    {
+      "name": "struct HKAnchoredObjectQueryDescriptor.Result",
+      "desc": "A set of results from an anchored object query."
+    },
+    {
+      "name": "struct HKAnchoredObjectQueryDescriptor.Results",
+      "desc": "An asynchronous sequence that emits updates from an anchored object query."
+    },
+    {
+      "name": "var predicates: [HKSamplePredicate<Sample>]",
+      "desc": "A predicate that limits the results that the query returns."
+    },
+    {
+      "name": "var anchor: HKQueryAnchor?",
+      "desc": "An anchor that a previous anchored object query returned."
+    },
+    {
+      "name": "var limit: Int?",
+      "desc": "The maximum number of samples that the query returns."
+    }
+  ],
+  "declaration": "struct HKAnchoredObjectQueryDescriptor<Sample> where Sample : HKSample",
+  "conformsTo": [
+    "HKAsyncQuery",
+    "HKAsyncSequenceQuery"
+  ]
+}

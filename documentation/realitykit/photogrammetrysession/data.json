@@ -1,0 +1,57 @@
+{
+  "path": "/documentation/realitykit/photogrammetrysession",
+  "type": "Class",
+  "name": "PhotogrammetrySession",
+  "desc": "An object that manages the creation of 3D objects from photographs.",
+  "items": [
+    {
+      "name": "init(input: URL, configuration: PhotogrammetrySession.Configuration)",
+      "desc": "Creates a session from images in a specified directory URL."
+    },
+    {
+      "name": "init<S>(input: S, configuration: PhotogrammetrySession.Configuration)",
+      "desc": "Creates a session from a sequence of samples."
+    },
+    {
+      "name": "var configuration: PhotogrammetrySession.Configuration",
+      "desc": "The session’s configuration parameters."
+    },
+    {
+      "name": "struct PhotogrammetrySession.Configuration",
+      "desc": "The configuration parameters for a photogrammetry session."
+    },
+    {
+      "name": "var activeRequests: [PhotogrammetrySession.Request]",
+      "desc": "The session’s active request objects."
+    },
+    {
+      "name": "var isProcessing: Bool",
+      "desc": "A Boolean value that indicates whether the session is currently processing a request."
+    },
+    {
+      "name": "var outputs: PhotogrammetrySession.Outputs",
+      "desc": "An asynchronous sequence of status updates for this session."
+    },
+    {
+      "name": "enum PhotogrammetrySession.Output",
+      "desc": "Status updates on the object-creation process."
+    },
+    {
+      "name": "func process(requests: [PhotogrammetrySession.Request])",
+      "desc": "Begins the object-creation process."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Cancels object creation."
+    },
+    {
+      "name": "enum PhotogrammetrySession.Request",
+      "desc": "An object that configures a photogrammetry session."
+    },
+    {
+      "name": "enum PhotogrammetrySession.Result",
+      "desc": "An object that holds the created 3D object."
+    }
+  ],
+  "declaration": "class PhotogrammetrySession"
+}

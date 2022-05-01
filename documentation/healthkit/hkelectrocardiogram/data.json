@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/healthkit/hkelectrocardiogram",
+  "type": "Class",
+  "name": "HKElectrocardiogram",
+  "desc": "A sample for electrocardiogram data.",
+  "items": [
+    {
+      "name": "var classification: HKElectrocardiogram.Classification",
+      "desc": "The ECG’s classification."
+    },
+    {
+      "name": "enum HKElectrocardiogram.Classification",
+      "desc": "Classifications returned by Apple Watch’s ECG algorithm."
+    },
+    {
+      "name": "var averageHeartRate: HKQuantity?",
+      "desc": "The user’s average heart rate during the ECG."
+    },
+    {
+      "name": "var symptomsStatus: HKElectrocardiogram.SymptomsStatus",
+      "desc": "A value that indicates whether the user entered a symptom when they recorded the ECG."
+    },
+    {
+      "name": "enum HKElectrocardiogram.SymptomsStatus",
+      "desc": "Values indicating whether the user entered a symptom when they recorded the ECG."
+    },
+    {
+      "name": "var numberOfVoltageMeasurements: Int",
+      "desc": "The number of voltage measurements associated with this sample."
+    },
+    {
+      "name": "var samplingFrequency: HKQuantity?",
+      "desc": "The frequency at which the Apple Watch sampled the voltage."
+    },
+    {
+      "name": "class HKElectrocardiogram.VoltageMeasurement",
+      "desc": "The voltage for all leads at a single point in time."
+    },
+    {
+      "name": "enum HKElectrocardiogram.Lead",
+      "desc": "The lead used to record a voltage measurement."
+    },
+    {
+      "name": "let HKMetadataKeyAppleECGAlgorithmVersion: String",
+      "desc": "A key for metadata indicating the version number of the algorithm Apple Watch uses to generate an ECG reading."
+    },
+    {
+      "name": "enum HKAppleECGAlgorithmVersion",
+      "desc": "Version numbers for the algorithm Apple Watch uses to generate an ECG reading."
+    },
+    {
+      "name": "let HKPredicateKeyPathECGClassification: String",
+      "desc": "The key path for the sample’s classification."
+    },
+    {
+      "name": "let HKPredicateKeyPathECGSymptomsStatus: String",
+      "desc": "The key path for the sample’s symptom status."
+    },
+    {
+      "name": "let HKPredicateKeyPathAverageHeartRate: String",
+      "desc": "The key path for the sample’s average heart rate."
+    }
+  ],
+  "declaration": "class HKElectrocardiogram : HKSample",
+  "inheritsFrom": [
+    "HKSample"
+  ]
+}

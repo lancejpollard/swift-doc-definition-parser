@@ -1,0 +1,42 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsimageguidedfilter",
+  "type": "Class",
+  "name": "MPSImageGuidedFilter",
+  "desc": "A filter that performs edge-aware filtering on an image.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice, kernelDiameter: Int)"
+    },
+    {
+      "name": "var epsilon: Float"
+    },
+    {
+      "name": "var kernelDiameter: Int"
+    },
+    {
+      "name": "var reconstructOffset: Float"
+    },
+    {
+      "name": "var reconstructScale: Float"
+    },
+    {
+      "name": "func encodeReconstruction(commandBuffer: MTLCommandBuffer, guidance: MTLTexture, coefficientsA: MTLTexture, coefficientsB: MTLTexture, destination: MTLTexture)"
+    },
+    {
+      "name": "func encodeReconstruction(to: MTLCommandBuffer, guidanceTexture: MTLTexture, coefficientsTexture: MTLTexture, destinationTexture: MTLTexture)"
+    },
+    {
+      "name": "func encodeRegression(commandBuffer: MTLCommandBuffer, source: MTLTexture, guidance: MTLTexture, weights: MTLTexture?, destinationCoefficientsA: MTLTexture, destinationCoefficientsB: MTLTexture)"
+    },
+    {
+      "name": "func encodeRegression(to: MTLCommandBuffer, sourceTexture: MTLTexture, guidanceTexture: MTLTexture, weightsTexture: MTLTexture?, destinationCoefficientsTexture: MTLTexture)"
+    }
+  ],
+  "declaration": "class MPSImageGuidedFilter : MPSKernel",
+  "inheritsFrom": [
+    "MPSKernel"
+  ]
+}

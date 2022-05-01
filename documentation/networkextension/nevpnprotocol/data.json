@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/networkextension/nevpnprotocol",
+  "type": "Class",
+  "name": "NEVPNProtocol",
+  "desc": "Settings common to both IKEv2 and IPsec VPN configurations.",
+  "items": [
+    {
+      "name": "var serverAddress: String?",
+      "desc": "The address of the tunneling server."
+    },
+    {
+      "name": "var username: String?",
+      "desc": "The user name component of the tunneling protocol authentication credential."
+    },
+    {
+      "name": "var passwordReference: Data?",
+      "desc": "A persistent keychain reference to a keychain item containing the password component of the tunneling protocol authentication credential."
+    },
+    {
+      "name": "var identityReference: Data?",
+      "desc": "A persistent keychain reference to a keychain item containing the certificate and private key components of the tunneling protocol authentication credential."
+    },
+    {
+      "name": "var identityData: Data?",
+      "desc": "The certificate and private key components of the tunneling protocol authentication credential, in PKCS12 format."
+    },
+    {
+      "name": "var identityDataPassword: String?",
+      "desc": "The password to decrypt the PKCS12 data set in the identityData property."
+    },
+    {
+      "name": "var disconnectOnSleep: Bool",
+      "desc": "A Boolean value that indicates whether the VPN disconnects when the device sleeps."
+    },
+    {
+      "name": "var proxySettings: NEProxySettings?",
+      "desc": "The proxy settings to use for HTTP and HTTPS connections that route through the VPN."
+    },
+    {
+      "name": "var includeAllNetworks: Bool",
+      "desc": "A Boolean value that indicates whether the system sends all network traffic over the tunnel."
+    },
+    {
+      "name": "var excludeLocalNetworks: Bool",
+      "desc": "A Boolean value that indicates whether the system excludes all traffic destined for local networks from the tunnel."
+    },
+    {
+      "name": "var enforceRoutes: Bool",
+      "desc": "A Boolean value that indicates whether route rules for this tunnel take precedence over any locally defined routes."
+    }
+  ],
+  "declaration": "class NEVPNProtocol : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/metal/mtlcountersamplingpoint",
+  "type": "Enumeration",
+  "name": "MTLCounterSamplingPoint",
+  "desc": "Options for different times when you can sample GPU counters.",
+  "items": [
+    {
+      "name": "case atBlitBoundary",
+      "desc": "Counter sampling is allowed between blit commands in a blit pass."
+    },
+    {
+      "name": "case atDispatchBoundary",
+      "desc": "Counter sampling is allowed between kernel dispatches in a compute pass."
+    },
+    {
+      "name": "case atDrawBoundary",
+      "desc": "Counter sampling is allowed between draw commands in a render pass."
+    },
+    {
+      "name": "case atStageBoundary",
+      "desc": "Counter sampling is allowed at the start and end of a render pass’s vertex and fragment stages, and at the start and end of compute and blit passes."
+    },
+    {
+      "name": "case atTileDispatchBoundary",
+      "desc": "Counter sampling is allowed between tile dispatches in a render pass."
+    }
+  ],
+  "declaration": "enum MTLCounterSamplingPoint : UInt, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/healthkit/hkstatisticsquerydescriptor",
+  "type": "Structure",
+  "name": "HKStatisticsQueryDescriptor",
+  "desc": "A query descriptor that calculates the minimum, maximum, average, or sum over a set of samples from the HealthKit store.",
+  "items": [
+    {
+      "name": "typealias HKStatisticsQueryDescriptor.Output",
+      "desc": "The type of data that the statistics query returns."
+    },
+    {
+      "name": "init(predicate: HKSamplePredicate<HKQuantitySample>, options: HKStatisticsOptions)",
+      "desc": "Creates a statistics query descriptor."
+    },
+    {
+      "name": "func result(for: HKHealthStore) -> HKStatistics?",
+      "desc": "Runs a one-shot query and asynchronously returns a snapshot of the current matching results."
+    },
+    {
+      "name": "var predicate: HKSamplePredicate<HKQuantitySample>",
+      "desc": "A predicate that defines the set of data that the query uses to calculate the statistics."
+    },
+    {
+      "name": "var options: HKStatisticsOptions",
+      "desc": "A list of options that define the type of statistical calculations performed and the way in which HealthKit merges data from multiple sources."
+    }
+  ],
+  "declaration": "struct HKStatisticsQueryDescriptor",
+  "conformsTo": [
+    "HKAsyncQuery"
+  ]
+}

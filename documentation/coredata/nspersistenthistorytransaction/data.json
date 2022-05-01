@@ -1,0 +1,67 @@
+{
+  "path": "/documentation/coredata/nspersistenthistorytransaction",
+  "type": "Class",
+  "name": "NSPersistentHistoryTransaction",
+  "desc": "A set of changes in the persistent history based on a context save or batch operation.",
+  "items": [
+    {
+      "name": "func objectIDNotification() -> Notification",
+      "desc": "Obtains a notification for use in merging the transaction’s changes into a managed object context."
+    },
+    {
+      "name": "class var fetchRequest: NSFetchRequest<NSFetchRequestResult>?",
+      "desc": "A fetch request that has the persistent history transaction as the entity."
+    },
+    {
+      "name": "class var entityDescription: NSEntityDescription?",
+      "desc": "The entity description of the persistent history transaction entity."
+    },
+    {
+      "name": "class func entityDescription(with: NSManagedObjectContext) -> NSEntityDescription?",
+      "desc": "Requests an entity description using the provided context for the managed object type affected by the transaction."
+    },
+    {
+      "name": "var author: String?",
+      "desc": "A granular description of the context that made the persistent history change, if available."
+    },
+    {
+      "name": "var bundleID: String",
+      "desc": "The originating bundle’s identifier."
+    },
+    {
+      "name": "var changes: [NSPersistentHistoryChange]?",
+      "desc": "The array of persistent history changes."
+    },
+    {
+      "name": "var contextName: String?",
+      "desc": "The originating context’s name."
+    },
+    {
+      "name": "var processID: String",
+      "desc": "The originating process’s identifier."
+    },
+    {
+      "name": "var storeID: String",
+      "desc": "The originating store’s identifier."
+    },
+    {
+      "name": "var timestamp: Date",
+      "desc": "The date of the persistent history change."
+    },
+    {
+      "name": "var token: NSPersistentHistoryToken",
+      "desc": "The token that represents this transaction in the persistent history."
+    },
+    {
+      "name": "var transactionNumber: Int64",
+      "desc": "The transaction’s numeric identifier."
+    }
+  ],
+  "declaration": "class NSPersistentHistoryTransaction : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

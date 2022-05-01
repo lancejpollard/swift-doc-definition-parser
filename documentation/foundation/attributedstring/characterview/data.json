@@ -1,0 +1,415 @@
+{
+  "path": "/documentation/foundation/attributedstring/characterview",
+  "type": "Structure",
+  "name": "AttributedString.CharacterView",
+  "desc": "A view into the underlying storage of the attributed string, as Unicode characters.",
+  "items": [
+    {
+      "name": "typealias AttributedString.CharacterView.Element"
+    },
+    {
+      "name": "typealias AttributedString.CharacterView.Index"
+    },
+    {
+      "name": "typealias AttributedString.CharacterView.Indices"
+    },
+    {
+      "name": "typealias AttributedString.CharacterView.Iterator"
+    },
+    {
+      "name": "typealias AttributedString.CharacterView.SubSequence"
+    },
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init<S>(S)",
+      "desc": "Creates a new instance of a collection containing the elements of a sequence."
+    },
+    {
+      "name": "init(repeating: Character, count: Int)",
+      "desc": "Creates a new collection containing the specified number of a single, repeated value."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of elements in the collection."
+    },
+    {
+      "name": "var endIndex: AttributedString.Index"
+    },
+    {
+      "name": "var first: Character?",
+      "desc": "The first element of the collection."
+    },
+    {
+      "name": "var indices: DefaultIndices<AttributedString.CharacterView>",
+      "desc": "The indices that are valid for subscripting the collection, in ascending order."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value indicating whether the collection is empty."
+    },
+    {
+      "name": "var last: Character?",
+      "desc": "The last element of the collection."
+    },
+    {
+      "name": "var lazy: LazySequence<AttributedString.CharacterView>",
+      "desc": "A sequence containing the same elements as this sequence, but on which some operations, such as map and filter, are implemented lazily."
+    },
+    {
+      "name": "var publisher: Publishers.Sequence<AttributedString.CharacterView, Never>"
+    },
+    {
+      "name": "var startIndex: AttributedString.Index"
+    },
+    {
+      "name": "var underestimatedCount: Int",
+      "desc": "A value less than or equal to the number of elements in the collection."
+    },
+    {
+      "name": "func allSatisfy((Character) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether every element of a sequence satisfies a given predicate."
+    },
+    {
+      "name": "func append(Character)",
+      "desc": "Adds an element to the end of the collection."
+    },
+    {
+      "name": "func append<S>(contentsOf: S)",
+      "desc": "Adds the elements of a sequence or collection to the end of this collection."
+    },
+    {
+      "name": "func applying(CollectionDifference<Character>) -> AttributedString.CharacterView?",
+      "desc": "Applies the given difference to this collection."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((Character) -> ElementOfResult?) -> [ElementOfResult]",
+      "desc": "Returns an array containing the non-nil results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func compare<Comparator>(Comparator.Compared, Comparator.Compared) -> ComparisonResult"
+    },
+    {
+      "name": "func contains(Character) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence contains the given element."
+    },
+    {
+      "name": "func contains(where: (Character) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func difference<C>(from: C) -> CollectionDifference<Character>",
+      "desc": "Returns the difference needed to produce this collection’s ordered elements from the given collection."
+    },
+    {
+      "name": "func difference<C>(from: C, by: (C.Element, Character) -> Bool) -> CollectionDifference<Character>",
+      "desc": "Returns the difference needed to produce this collection’s ordered elements from the given collection, using the given predicate as an equivalence test."
+    },
+    {
+      "name": "func distance(from: AttributedString.Index, to: AttributedString.Index) -> Int"
+    },
+    {
+      "name": "func drop(while: (Character) -> Bool) -> Slice<AttributedString.CharacterView>",
+      "desc": "Returns a subsequence by skipping elements while predicate returns true and returning the remaining elements."
+    },
+    {
+      "name": "func dropFirst(Int) -> Slice<AttributedString.CharacterView>",
+      "desc": "Returns a subsequence containing all but the given number of initial elements."
+    },
+    {
+      "name": "func dropLast(Int) -> Slice<AttributedString.CharacterView>",
+      "desc": "Returns a subsequence containing all but the specified number of final elements."
+    },
+    {
+      "name": "func elementsEqual<OtherSequence>(OtherSequence) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this sequence and another sequence contain the same elements in the same order."
+    },
+    {
+      "name": "func elementsEqual<OtherSequence>(OtherSequence, by: (Character, OtherSequence.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this sequence and another sequence contain equivalent elements in the same order, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func enumerated() -> EnumeratedSequence<AttributedString.CharacterView>",
+      "desc": "Returns a sequence of pairs (n, x), where n represents a consecutive integer starting at zero and x represents an element of the sequence."
+    },
+    {
+      "name": "func filter((Character) -> Bool) -> AttributedString.CharacterView",
+      "desc": "Returns a new collection of the same type containing, in order, the elements of the original collection that satisfy the given predicate."
+    },
+    {
+      "name": "func first(where: (Character) -> Bool) -> Character?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func firstIndex(of: Character) -> AttributedString.Index?",
+      "desc": "Returns the first index where the specified value appears in the collection."
+    },
+    {
+      "name": "func firstIndex(where: (Character) -> Bool) -> AttributedString.Index?",
+      "desc": "Returns the first index in which an element of the collection satisfies the given predicate."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((Character) -> SegmentOfResult) -> [SegmentOfResult.Element]",
+      "desc": "Returns an array containing the concatenated results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func forEach((Character) -> Void)",
+      "desc": "Calls the given closure on each element in the sequence in the same order as a for-in loop."
+    },
+    {
+      "name": "func formIndex(inout AttributedString.Index, offsetBy: Int)",
+      "desc": "Offsets the given index by the specified distance."
+    },
+    {
+      "name": "func formIndex(inout AttributedString.Index, offsetBy: Int, limitedBy: AttributedString.Index) -> Bool",
+      "desc": "Offsets the given index by the specified distance, or so that it equals the given limiting index."
+    },
+    {
+      "name": "func formIndex(after: inout AttributedString.Index)",
+      "desc": "Replaces the given index with its successor."
+    },
+    {
+      "name": "func formIndex(before: inout AttributedString.Index)",
+      "desc": "Replaces the given index with its predecessor."
+    },
+    {
+      "name": "func formatted<S>(S) -> S.FormatOutput"
+    },
+    {
+      "name": "func index(AttributedString.Index, offsetBy: Int) -> AttributedString.Index"
+    },
+    {
+      "name": "func index(AttributedString.Index, offsetBy: Int, limitedBy: AttributedString.Index) -> AttributedString.Index?"
+    },
+    {
+      "name": "func index(after: AttributedString.Index) -> AttributedString.Index"
+    },
+    {
+      "name": "func index(before: AttributedString.Index) -> AttributedString.Index"
+    },
+    {
+      "name": "func insert(Character, at: AttributedString.Index)",
+      "desc": "Inserts a new element into the collection at the specified position."
+    },
+    {
+      "name": "func insert<C>(contentsOf: C, at: AttributedString.Index)",
+      "desc": "Inserts the elements of a sequence into the collection at the specified position."
+    },
+    {
+      "name": "func last(where: (Character) -> Bool) -> Character?",
+      "desc": "Returns the last element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func lastIndex(of: Character) -> AttributedString.Index?",
+      "desc": "Returns the last index where the specified value appears in the collection."
+    },
+    {
+      "name": "func lastIndex(where: (Character) -> Bool) -> AttributedString.Index?",
+      "desc": "Returns the index of the last element in the collection that matches the given predicate."
+    },
+    {
+      "name": "func lexicographicallyPrecedes<OtherSequence>(OtherSequence) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the less-than operator (<) to compare elements."
+    },
+    {
+      "name": "func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Character, Character) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the given predicate to compare elements."
+    },
+    {
+      "name": "func makeIterator() -> IndexingIterator<AttributedString.CharacterView>",
+      "desc": "Returns an iterator over the elements of the collection."
+    },
+    {
+      "name": "func map<T>((Character) -> T) -> [T]",
+      "desc": "Returns an array containing the results of mapping the given closure over the sequence’s elements."
+    },
+    {
+      "name": "func max() -> Character?",
+      "desc": "Returns the maximum element in the sequence."
+    },
+    {
+      "name": "func max(by: (Character, Character) -> Bool) -> Character?",
+      "desc": "Returns the maximum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func min() -> Character?",
+      "desc": "Returns the minimum element in the sequence."
+    },
+    {
+      "name": "func min(by: (Character, Character) -> Bool) -> Character?",
+      "desc": "Returns the minimum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func popLast() -> Character?",
+      "desc": "Removes and returns the last element of the collection."
+    },
+    {
+      "name": "func prefix(Int) -> Slice<AttributedString.CharacterView>",
+      "desc": "Returns a subsequence, up to the specified maximum length, containing the initial elements of the collection."
+    },
+    {
+      "name": "func prefix(through: AttributedString.Index) -> Slice<AttributedString.CharacterView>",
+      "desc": "Returns a subsequence from the start of the collection through the specified position."
+    },
+    {
+      "name": "func prefix(upTo: AttributedString.Index) -> Slice<AttributedString.CharacterView>",
+      "desc": "Returns a subsequence from the start of the collection up to, but not including, the specified position."
+    },
+    {
+      "name": "func prefix(while: (Character) -> Bool) -> Slice<AttributedString.CharacterView>",
+      "desc": "Returns a subsequence containing the initial elements until predicate returns false and skipping the remaining elements."
+    },
+    {
+      "name": "func randomElement() -> Character?",
+      "desc": "Returns a random element of the collection."
+    },
+    {
+      "name": "func randomElement<T>(using: inout T) -> Character?",
+      "desc": "Returns a random element of the collection, using the given generator as a source for randomness."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, Character) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, Character) -> ()) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "func remove(at: AttributedString.Index) -> Character",
+      "desc": "Removes and returns the element at the specified position."
+    },
+    {
+      "name": "func removeAll(keepingCapacity: Bool)",
+      "desc": "Removes all elements from the collection."
+    },
+    {
+      "name": "func removeAll(where: (Character) -> Bool)",
+      "desc": "Removes all the elements that satisfy the given predicate."
+    },
+    {
+      "name": "func removeFirst() -> Character",
+      "desc": "Removes and returns the first element of the collection."
+    },
+    {
+      "name": "func removeFirst(Int)",
+      "desc": "Removes the specified number of elements from the beginning of the collection."
+    },
+    {
+      "name": "func removeLast() -> Character",
+      "desc": "Removes and returns the last element of the collection."
+    },
+    {
+      "name": "func removeLast(Int)",
+      "desc": "Removes the specified number of elements from the end of the collection."
+    },
+    {
+      "name": "func removeSubrange(Range<AttributedString.Index>)",
+      "desc": "Removes the elements in the specified subrange from the collection."
+    },
+    {
+      "name": "func removeSubrange<R>(R)",
+      "desc": "Removes the elements in the specified subrange from the collection."
+    },
+    {
+      "name": "func replaceSubrange<C>(Range<AttributedString.CharacterView.Index>, with: C)"
+    },
+    {
+      "name": "func replaceSubrange<C, R>(R, with: C)",
+      "desc": "Replaces the specified subrange of elements with the given collection."
+    },
+    {
+      "name": "func reserveCapacity(Int)",
+      "desc": "Prepares the collection to store the specified number of elements, when doing so is appropriate for the underlying type."
+    },
+    {
+      "name": "func reversed() -> ReversedCollection<AttributedString.CharacterView>",
+      "desc": "Returns a view presenting the elements of the collection in reverse order."
+    },
+    {
+      "name": "func shuffled() -> [Character]",
+      "desc": "Returns the elements of the sequence, shuffled."
+    },
+    {
+      "name": "func shuffled<T>(using: inout T) -> [Character]",
+      "desc": "Returns the elements of the sequence, shuffled using the given generator as a source for randomness."
+    },
+    {
+      "name": "func sorted() -> [Character]",
+      "desc": "Returns the elements of the sequence, sorted."
+    },
+    {
+      "name": "func sorted(by: (Character, Character) -> Bool) -> [Character]",
+      "desc": "Returns the elements of the sequence, sorted using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func sorted<Comparator>(using: Comparator) -> [Character]"
+    },
+    {
+      "name": "func sorted<S, Comparator>(using: S) -> [Character]"
+    },
+    {
+      "name": "func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Character) -> Bool) -> [Slice<AttributedString.CharacterView>]",
+      "desc": "Returns the longest possible subsequences of the collection, in order, that don’t contain elements satisfying the given predicate."
+    },
+    {
+      "name": "func split(separator: Character, maxSplits: Int, omittingEmptySubsequences: Bool) -> [Slice<AttributedString.CharacterView>]",
+      "desc": "Returns the longest possible subsequences of the collection, in order, around elements equal to the given element."
+    },
+    {
+      "name": "func starts<PossiblePrefix>(with: PossiblePrefix) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the initial elements of the sequence are the same as the elements in another sequence."
+    },
+    {
+      "name": "func starts<PossiblePrefix>(with: PossiblePrefix, by: (Character, PossiblePrefix.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the initial elements of the sequence are equivalent to the elements in another sequence, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func suffix(Int) -> Slice<AttributedString.CharacterView>",
+      "desc": "Returns a subsequence, up to the given maximum length, containing the final elements of the collection."
+    },
+    {
+      "name": "func suffix(from: AttributedString.Index) -> Slice<AttributedString.CharacterView>",
+      "desc": "Returns a subsequence from the specified position to the end of the collection."
+    },
+    {
+      "name": "func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<Character>) -> R) -> R?",
+      "desc": "Executes a closure on the sequence’s contiguous storage."
+    },
+    {
+      "name": "subscript(AttributedString.Index) -> Character"
+    },
+    {
+      "name": "subscript(Range<AttributedString.Index>) -> Slice<AttributedString.CharacterView>"
+    },
+    {
+      "name": "subscript<R>(R) -> Slice<AttributedString.CharacterView>",
+      "desc": "Accesses the contiguous subrange of the collection’s elements specified by a range expression."
+    },
+    {
+      "name": "subscript((UnboundedRange_) -> ()) -> Slice<AttributedString.CharacterView>"
+    },
+    {
+      "name": "static func + <Other>(Other, AttributedString.CharacterView) -> AttributedString.CharacterView",
+      "desc": "Creates a new collection by concatenating the elements of a sequence and a collection."
+    },
+    {
+      "name": "static func + <Other>(AttributedString.CharacterView, Other) -> AttributedString.CharacterView",
+      "desc": "Creates a new collection by concatenating the elements of a collection and a sequence."
+    },
+    {
+      "name": "static func + <Other>(AttributedString.CharacterView, Other) -> AttributedString.CharacterView",
+      "desc": "Creates a new collection by concatenating the elements of two collections."
+    },
+    {
+      "name": "static func += <Other>(inout AttributedString.CharacterView, Other)",
+      "desc": "Appends the elements of a sequence to a range-replaceable collection."
+    }
+  ],
+  "declaration": "struct AttributedString.CharacterView",
+  "conformsTo": [
+    "BidirectionalCollection",
+    "RangeReplaceableCollection"
+  ]
+}

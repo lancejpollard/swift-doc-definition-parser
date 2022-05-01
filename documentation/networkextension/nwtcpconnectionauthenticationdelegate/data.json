@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/networkextension/nwtcpconnectionauthenticationdelegate",
+  "type": "Protocol",
+  "name": "NWTCPConnectionAuthenticationDelegate",
+  "desc": "A delegate protocol to customize the TLS authentication done by a connection.",
+  "items": [
+    {
+      "name": "func shouldEvaluateTrust(for: NWTCPConnection) -> Bool",
+      "desc": "Indicate that the delegate should override the default trust evaluation for the connection."
+    },
+    {
+      "name": "func evaluateTrust(for: NWTCPConnection, peerCertificateChain: [Any], completionHandler: (SecTrust) -> Void)",
+      "desc": "Override the default trust evaluation for the connection."
+    },
+    {
+      "name": "func shouldProvideIdentity(for: NWTCPConnection) -> Bool",
+      "desc": "Indicate that the delegate can provide an identity for the connection authentication."
+    },
+    {
+      "name": "func provideIdentity(for: NWTCPConnection, completionHandler: (SecIdentity, [Any]) -> Void)",
+      "desc": "Provide the identity and an optional certificate chain to be used for authentication."
+    }
+  ],
+  "declaration": "protocol NWTCPConnectionAuthenticationDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

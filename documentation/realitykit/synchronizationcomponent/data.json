@@ -1,0 +1,49 @@
+{
+  "path": "/documentation/realitykit/synchronizationcomponent",
+  "type": "Structure",
+  "name": "SynchronizationComponent",
+  "desc": "A component that synchronizes an entity between processes and networked applications.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a synchronization component."
+    },
+    {
+      "name": "var identifier: UInt64",
+      "desc": "A unique identifier of an entity within a network session."
+    },
+    {
+      "name": "var isOwner: Bool",
+      "desc": "A Boolean that indicates whether the calling process owns the entity."
+    },
+    {
+      "name": "var ownershipTransferMode: SynchronizationComponent.OwnershipTransferMode",
+      "desc": "The entity’s transfer ownership mode."
+    },
+    {
+      "name": "enum SynchronizationComponent.OwnershipTransferMode",
+      "desc": "Modes of ownership transfer."
+    },
+    {
+      "name": "enum SynchronizationComponent.OwnershipTransferCompletionResult",
+      "desc": "The result of an ownership transfer request."
+    },
+    {
+      "name": "static func registerComponent()",
+      "desc": "Registers a new component type."
+    },
+    {
+      "name": "static func == (SynchronizationComponent, SynchronizationComponent) -> Bool",
+      "desc": "Indicates whether two synchronization components are equal."
+    },
+    {
+      "name": "static func != (SynchronizationComponent, SynchronizationComponent) -> Bool",
+      "desc": "Indicates whether two synchronization components are not equal."
+    }
+  ],
+  "declaration": "struct SynchronizationComponent",
+  "conformsTo": [
+    "Component",
+    "Equatable"
+  ]
+}

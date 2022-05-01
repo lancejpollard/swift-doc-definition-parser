@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/snapshots/annotation",
+  "type": "Object",
+  "name": "Annotation",
+  "desc": "An object for a Snapshot URL that describes annotation characteristics.",
+  "items": [
+    {
+      "name": "color",
+      "desc": "The color of the annotation. Supported values are HTML color names or hexadecimal color codes. For example:\nannotations=[{\"point\":\"37.78,-122.42\", \"color\":\"449944\"}]If the annotation has an “img” markerStyle, the Maps Web Snapshots API ignores this parameter."
+    },
+    {
+      "name": "glyphText",
+      "desc": "A single alphanumeric character from the set {a-z, A-Z, 0-9}, displayed inside the annotation. If the annotation has a “dot” or “img” markerStyle, the Maps Web Snapshots API ignores this parameter."
+    },
+    {
+      "name": "markerStyle",
+      "desc": "The style of the annotation. Supported styles include “dot”, “balloon”, “large” or “img”. If you use “img”, you must also specify imgIdx, and may specify offset."
+    },
+    {
+      "name": "point",
+      "desc": "A single point that defines the location at which to place an annotation. Supported values include latitude and longitude coordinates, addresses, or the keyword center, which places an annotation on the map’s center point."
+    },
+    {
+      "name": "imgIdx",
+      "desc": "The zero-based index of the image referenced in the array of images to use for this annotation. The Maps Web Snapshots API requires this property if markerStyle is “img”."
+    },
+    {
+      "name": "offset",
+      "desc": "An optional offset in scale indepdendent pixels of the image from the bottom center. Specify the offset as a comma-separated string with x and y values. X values move the element to the left or right with positive and negative values, respectively. Y values move the element up or down with positive and negative values, respectively. For example, the following value moves the element down 5 scale-independent pixels:\n\"offset\": \"0,-5\"The Maps Web Snapshots API ignores the offset property if markerStyle is dot, balloon, or large."
+    }
+  ]
+}

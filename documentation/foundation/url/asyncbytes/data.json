@@ -1,0 +1,118 @@
+{
+  "path": "/documentation/foundation/url/asyncbytes",
+  "type": "Structure",
+  "name": "URL.AsyncBytes",
+  "desc": "An asynchronous sequence of bytes loaded from the URL.",
+  "items": [
+    {
+      "name": "var characters: AsyncCharacterSequence<URL.AsyncBytes>",
+      "desc": "The bytes loaded from the resource, as an asychronous sequence of characters."
+    },
+    {
+      "name": "var unicodeScalars: AsyncUnicodeScalarSequence<URL.AsyncBytes>",
+      "desc": "The bytes loaded from the resource, as an asychronous sequence of Unicode scalar values."
+    },
+    {
+      "name": "var lines: AsyncLineSequence<URL.AsyncBytes>",
+      "desc": "The bytes loaded from the resource, as an asychronous sequence of lines of text."
+    },
+    {
+      "name": "func contains(UInt8) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the asynchronous sequence contains the given element."
+    },
+    {
+      "name": "func contains(where: (UInt8) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the asynchronous sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func allSatisfy((UInt8) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether all elements produced by the asynchronous sequence satisfies the given predicate."
+    },
+    {
+      "name": "func first(where: (UInt8) -> Bool) -> UInt8?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func min() -> UInt8?",
+      "desc": "Returns the minimum element in an asynchronous sequence of comparable elements."
+    },
+    {
+      "name": "func min(by: (UInt8, UInt8) -> Bool) -> UInt8?",
+      "desc": "Returns the minimum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func max() -> UInt8?",
+      "desc": "Returns the maximum element in an asynchronous sequence of comparable elements."
+    },
+    {
+      "name": "func max(by: (UInt8, UInt8) -> Bool) -> UInt8?",
+      "desc": "Returns the maximum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func prefix(Int) -> AsyncPrefixSequence<URL.AsyncBytes>",
+      "desc": "Returns an asynchronous sequence, up to the specified maximum length, containing the initial elements of the base asynchronous sequence."
+    },
+    {
+      "name": "func prefix(while: (UInt8) -> Bool) -> AsyncPrefixWhileSequence<URL.AsyncBytes>",
+      "desc": "Returns an asynchronous sequence, containing the initial, consecutive elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func dropFirst(Int) -> AsyncDropFirstSequence<URL.AsyncBytes>",
+      "desc": "Omits a specified number of elements from the base asynchronous sequence, then passes through all remaining elements."
+    },
+    {
+      "name": "func drop(while: (UInt8) -> Bool) -> AsyncDropWhileSequence<URL.AsyncBytes>",
+      "desc": "Omits elements from the base asynchronous sequence until a given closure returns false, after which it passes through all remaining elements."
+    },
+    {
+      "name": "func filter((UInt8) -> Bool) -> AsyncFilterSequence<URL.AsyncBytes>",
+      "desc": "Creates an asynchronous sequence that contains, in order, the elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func map<Transformed>((UInt8) -> Transformed) -> AsyncThrowingMapSequence<URL.AsyncBytes, Transformed>",
+      "desc": "Creates an asynchronous sequence that maps the given error-throwing closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "func map<Transformed>((UInt8) -> Transformed) -> AsyncMapSequence<URL.AsyncBytes, Transformed>",
+      "desc": "Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((UInt8) -> ElementOfResult?) -> AsyncThrowingCompactMapSequence<URL.AsyncBytes, ElementOfResult>",
+      "desc": "Creates an asynchronous sequence that maps an error-throwing closure over the base sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((UInt8) -> ElementOfResult?) -> AsyncCompactMapSequence<URL.AsyncBytes, ElementOfResult>",
+      "desc": "Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((UInt8) -> SegmentOfResult) -> AsyncThrowingFlatMapSequence<URL.AsyncBytes, SegmentOfResult>",
+      "desc": "Creates an asynchronous sequence that concatenates the results of calling the given error-throwing transformation with each element of this sequence."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((UInt8) -> SegmentOfResult) -> AsyncFlatMapSequence<URL.AsyncBytes, SegmentOfResult>",
+      "desc": "Creates an asynchronous sequence that concatenates the results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, UInt8) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, UInt8) -> Void) -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure, given a mutable initial value."
+    },
+    {
+      "name": "typealias URL.AsyncBytes.Element",
+      "desc": "The type of element produced by this asynchronous sequence."
+    },
+    {
+      "name": "func makeAsyncIterator() -> URL.AsyncBytes.AsyncIterator"
+    },
+    {
+      "name": "struct URL.AsyncBytes.AsyncIterator"
+    }
+  ],
+  "declaration": "struct AsyncBytes",
+  "conformsTo": [
+    "AsyncSequence"
+  ]
+}

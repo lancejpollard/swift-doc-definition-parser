@@ -1,0 +1,415 @@
+{
+  "path": "/documentation/avfoundation/avplayeritem",
+  "type": "Class",
+  "name": "AVPlayerItem",
+  "desc": "An object that models the timing and presentation state of an asset that a player object presents.",
+  "items": [
+    {
+      "name": "init(url: URL)",
+      "desc": "Creates a player item with a specified URL."
+    },
+    {
+      "name": "init(asset: AVAsset)",
+      "desc": "Creates a player item for a specified asset."
+    },
+    {
+      "name": "init(asset: AVAsset, automaticallyLoadedAssetKeys: [String]?)",
+      "desc": "Creates a player item with the specified asset and the asset keys to automatically load."
+    },
+    {
+      "name": "init(asset: AVAsset, automaticallyLoadedAssetKeys: [AVPartialAsyncProperty<AVAsset>])",
+      "desc": "Creates a player item for the asset, and automatically loads values for the specified properties."
+    },
+    {
+      "name": "var tracks: [AVPlayerItemTrack]",
+      "desc": "An array of player item track objects."
+    },
+    {
+      "name": "class AVPlayerItemTrack",
+      "desc": "An object that represents the presentation state of an asset track that the player presents."
+    },
+    {
+      "name": "var externalMetadata: [AVMetadataItem]",
+      "desc": "An array of additional metadata for the player item to supplement or replace an asset’s embedded metadata."
+    },
+    {
+      "name": "var automaticallyLoadedAssetKeys: [String]",
+      "desc": "The array of asset keys to be automatically loaded before the player item is ready to play."
+    },
+    {
+      "name": "var status: AVPlayerItem.Status",
+      "desc": "The status of the player item."
+    },
+    {
+      "name": "enum AVPlayerItem.Status",
+      "desc": "The statuses for a player item."
+    },
+    {
+      "name": "var error: Error?",
+      "desc": "The error that caused the player item to fail."
+    },
+    {
+      "name": "var canPlayReverse: Bool",
+      "desc": "A Boolean value that indicates whether the item can be played in reverse."
+    },
+    {
+      "name": "var canPlayFastForward: Bool",
+      "desc": "A Boolean value that indicates whether the item can be fast forwared."
+    },
+    {
+      "name": "var canPlayFastReverse: Bool",
+      "desc": "A Boolean value that indicates whether the item can be quickly reversed."
+    },
+    {
+      "name": "var canPlaySlowForward: Bool",
+      "desc": "A Boolean value that indicates whether the item can be played slower than normal."
+    },
+    {
+      "name": "var canPlaySlowReverse: Bool",
+      "desc": "A Boolean value that indicates whether the item can be played slowly backward."
+    },
+    {
+      "name": "var variantPreferences: AVVariantPreferences",
+      "desc": "The preferences the player item uses when selecting variant playlists."
+    },
+    {
+      "name": "struct AVVariantPreferences",
+      "desc": "Defines the preferences the player item uses when selecting variant playlists."
+    },
+    {
+      "name": "var startsOnFirstEligibleVariant: Bool",
+      "desc": "A Boolean value that indicates whether playback starts with the first eligible variant that appears in the stream’s main playlist."
+    },
+    {
+      "name": "var template: AVPlayerItem?",
+      "desc": "The template player item that initializes this instance."
+    },
+    {
+      "name": "var automaticallyHandlesInterstitialEvents: Bool",
+      "desc": "A Boolean value that indicates whether the player item automatically plays interstitial events according to server-side directives."
+    },
+    {
+      "name": "var translatesPlayerInterstitialEvents: Bool",
+      "desc": "A Boolean value that indicates whether the player translates interstitial events to interstitial time ranges."
+    },
+    {
+      "name": "var forwardPlaybackEndTime: CMTime",
+      "desc": "The time at which forward playback ends."
+    },
+    {
+      "name": "var reversePlaybackEndTime: CMTime",
+      "desc": "The time at which reverse playback ends."
+    },
+    {
+      "name": "var canStepForward: Bool",
+      "desc": "A Boolean value that indicates whether the item supports stepping forward."
+    },
+    {
+      "name": "var canStepBackward: Bool",
+      "desc": "A Boolean value that indicates whether the item supports stepping backward."
+    },
+    {
+      "name": "func step(byCount: Int)",
+      "desc": "Moves the player item’s current time forward or backward by a specified number of steps."
+    },
+    {
+      "name": "func seek(to: CMTime, completionHandler: ((Bool) -> Void)?)",
+      "desc": "Sets the current playback time to the specified time and executes the specified block when the seek operation completes or is interrupted."
+    },
+    {
+      "name": "func seek(to: CMTime, toleranceBefore: CMTime, toleranceAfter: CMTime, completionHandler: ((Bool) -> Void)?)",
+      "desc": "Sets the current playback time within a specified time bound and invokes the specified block when the seek operation completes or is interrupted."
+    },
+    {
+      "name": "func seek(to: Date, completionHandler: ((Bool) -> Void)?) -> Bool",
+      "desc": "Sets the current playback time to the time specified by the date object."
+    },
+    {
+      "name": "func cancelPendingSeeks()",
+      "desc": "Cancels any pending seek requests and invokes the corresponding completion handlers if present."
+    },
+    {
+      "name": "func currentTime() -> CMTime",
+      "desc": "Returns the current time of the item."
+    },
+    {
+      "name": "func currentDate() -> Date?",
+      "desc": "Returns the current time of the item as an NSDate object."
+    },
+    {
+      "name": "var duration: CMTime",
+      "desc": "The duration of the item."
+    },
+    {
+      "name": "var timebase: CMTimebase?",
+      "desc": "The timebase information for the item."
+    },
+    {
+      "name": "var loadedTimeRanges: [NSValue]",
+      "desc": "An array of time ranges indicating media data that is readily available."
+    },
+    {
+      "name": "var seekableTimeRanges: [NSValue]",
+      "desc": "An array of time ranges within which it is possible to seek."
+    },
+    {
+      "name": "var isPlaybackLikelyToKeepUp: Bool",
+      "desc": "A Boolean value that indicates whether the item will likely play through without stalling."
+    },
+    {
+      "name": "var isPlaybackBufferFull: Bool",
+      "desc": "A Boolean value that indicates whether the internal media buffer is full and that further I/O is suspended."
+    },
+    {
+      "name": "var isPlaybackBufferEmpty: Bool",
+      "desc": "A Boolean value that indicates whether playback has consumed all buffered media and that playback will stall or end."
+    },
+    {
+      "name": "var preferredPeakBitRateForExpensiveNetworks: Double",
+      "desc": "A limit of network bandwidth consumption by the item when connecting over expensive networks."
+    },
+    {
+      "name": "var preferredMaximumResolutionForExpensiveNetworks: CGSize",
+      "desc": "An upper limit on the resolution of video to download when connecting over expensive networks."
+    },
+    {
+      "name": "var currentMediaSelection: AVMediaSelection",
+      "desc": "The current media selections for each of the receiver's media selection groups."
+    },
+    {
+      "name": "func select(AVMediaSelectionOption?, in: AVMediaSelectionGroup)",
+      "desc": "Selects a media option in a given media selection group and deselects all other options in that group."
+    },
+    {
+      "name": "func selectMediaOptionAutomatically(in: AVMediaSelectionGroup)",
+      "desc": "Selects the media option in the specified media selection group that best matches the receiver’s automatic selection criteria."
+    },
+    {
+      "name": "var textStyleRules: [AVTextStyleRule]?",
+      "desc": "An array of text style rules that specify the formatting and presentation of Web Video Text Tracks (WebVTT) subtitles."
+    },
+    {
+      "name": "class AVTextStyleRule",
+      "desc": "An object that represents the text styling rules to apply to a media item’s textual content."
+    },
+    {
+      "name": "func accessLog() -> AVPlayerItemAccessLog?",
+      "desc": "Returns an object that represents a snapshot of the network access log."
+    },
+    {
+      "name": "class AVPlayerItemAccessLog",
+      "desc": "An object used to retrieve the access log associated with a player item."
+    },
+    {
+      "name": "class AVPlayerItemAccessLogEvent",
+      "desc": "A single entry in a player item's access log."
+    },
+    {
+      "name": "func errorLog() -> AVPlayerItemErrorLog?",
+      "desc": "Returns an object that represents a snapshot of the error log."
+    },
+    {
+      "name": "class AVPlayerItemErrorLog",
+      "desc": "The error log associated with a player item."
+    },
+    {
+      "name": "class AVPlayerItemErrorLogEvent",
+      "desc": "A single item in a player item's error log."
+    },
+    {
+      "name": "static let AVPlayerItemDidPlayToEndTime: NSNotification.Name",
+      "desc": "A notification the system posts when a player item plays to its end time."
+    },
+    {
+      "name": "static let AVPlayerItemFailedToPlayToEndTime: NSNotification.Name",
+      "desc": "A notification that the system posts when a player item fails to play to its end time."
+    },
+    {
+      "name": "class let timeJumpedNotification: NSNotification.Name",
+      "desc": "A notification the system posts when a player item’s time changes discontinuously."
+    },
+    {
+      "name": "static let AVPlayerItemPlaybackStalled: NSNotification.Name",
+      "desc": "A notification the system posts when a player item media doesn’t arrive in time to continue playback."
+    },
+    {
+      "name": "class let mediaSelectionDidChangeNotification: NSNotification.Name",
+      "desc": "A notification the player item posts when its media selection changes."
+    },
+    {
+      "name": "class let recommendedTimeOffsetFromLiveDidChangeNotification: NSNotification.Name",
+      "desc": "A notification the player item posts when its offset from the live time changes."
+    },
+    {
+      "name": "static let AVPlayerItemNewAccessLogEntry: NSNotification.Name",
+      "desc": "A notification the system posts when a player item adds a new entry to its access log."
+    },
+    {
+      "name": "static let AVPlayerItemNewErrorLogEntry: NSNotification.Name",
+      "desc": "A notification the system posts when a player item adds a new entry to its error log."
+    },
+    {
+      "name": "var automaticallyPreservesTimeOffsetFromLive: Bool",
+      "desc": "A Boolean value that indicates whether the player preserves its time offset from the live time after a buffering operation."
+    },
+    {
+      "name": "var recommendedTimeOffsetFromLive: CMTime",
+      "desc": "A recommended time offset from the live time based on observed network conditions."
+    },
+    {
+      "name": "var configuredTimeOffsetFromLive: CMTime",
+      "desc": "A time value that indicates the offset from the live time to start playback, or resume playback after a seek to positive infinity."
+    },
+    {
+      "name": "var presentationSize: CGSize",
+      "desc": "The size at which the visual portion of the item is presented by the player."
+    },
+    {
+      "name": "var preferredMaximumResolution: CGSize",
+      "desc": "The desired maximum resolution of a video that is to be downloaded."
+    },
+    {
+      "name": "var videoApertureMode: AVVideoApertureMode",
+      "desc": "The video aperture mode to apply during playback."
+    },
+    {
+      "name": "struct AVVideoApertureMode",
+      "desc": "A value that describes how a video is scaled or cropped."
+    },
+    {
+      "name": "var appliesPerFrameHDRDisplayMetadata: Bool",
+      "desc": "A Boolean value that indicates whether the player item applies per-frame HDR display metadata during playback."
+    },
+    {
+      "name": "var videoComposition: AVVideoComposition?",
+      "desc": "The video composition settings to be applied during playback."
+    },
+    {
+      "name": "var customVideoCompositor: AVVideoCompositing?",
+      "desc": "The custom video compositor."
+    },
+    {
+      "name": "var seekingWaitsForVideoCompositionRendering: Bool",
+      "desc": "A Boolean value that indicates whether the item’s timing follows the displayed video frame when seeking with a video composition."
+    },
+    {
+      "name": "var audioMix: AVAudioMix?",
+      "desc": "The audio mix parameters to be applied during playback."
+    },
+    {
+      "name": "var audioTimePitchAlgorithm: AVAudioTimePitchAlgorithm",
+      "desc": "The processing algorithm used to manage audio pitch for scaled audio edits."
+    },
+    {
+      "name": "var allowedAudioSpatializationFormats: AVAudioSpatializationFormats",
+      "desc": "The source audio channel layouts the player item supports for spatialization."
+    },
+    {
+      "name": "struct AVAudioSpatializationFormats",
+      "desc": "A structure that defines the spatialization formats that a player item supports."
+    },
+    {
+      "name": "var outputs: [AVPlayerItemOutput]",
+      "desc": "An array of outputs associated with the player item."
+    },
+    {
+      "name": "func add(AVPlayerItemOutput)",
+      "desc": "Adds the specified player item output object to the receiver."
+    },
+    {
+      "name": "func remove(AVPlayerItemOutput)",
+      "desc": "Removes the specified player item output object from the receiver."
+    },
+    {
+      "name": "var mediaDataCollectors: [AVPlayerItemMediaDataCollector]",
+      "desc": "The collection of associated media data collectors."
+    },
+    {
+      "name": "func add(AVPlayerItemMediaDataCollector)",
+      "desc": "Adds the specified media data collector to the player item’s collection of media collectors."
+    },
+    {
+      "name": "func remove(AVPlayerItemMediaDataCollector)",
+      "desc": "Removes the specified media data collector from the player item’s collection of media collectors."
+    },
+    {
+      "name": "var preferredPeakBitRate: Double",
+      "desc": "The desired limit, in bits per second, of network bandwidth consumption for this item."
+    },
+    {
+      "name": "var preferredForwardBufferDuration: TimeInterval",
+      "desc": "The duration the player should buffer media from the network ahead of the playhead to guard against playback disruption."
+    },
+    {
+      "name": "var canUseNetworkResourcesForLiveStreamingWhilePaused: Bool",
+      "desc": "A Boolean value that indicates whether the player item can use network resources to keep the playback state up to date while paused."
+    },
+    {
+      "name": "var navigationMarkerGroups: [AVNavigationMarkersGroup]",
+      "desc": "The time marker groups that provide ways to navigate the player item’s content."
+    },
+    {
+      "name": "var interstitialTimeRanges: [AVInterstitialTimeRange]",
+      "desc": "The time ranges of the player item’s time line that represent interstitial content."
+    },
+    {
+      "name": "var nextContentProposal: AVContentProposal?",
+      "desc": "The item proposed to follow the current content."
+    },
+    {
+      "name": "func requestPlaybackRestrictionsAuthorization((Bool, Error?) -> Void)",
+      "desc": "Determines whether this item is subject to parental restrictions, and, if so, prompts the user to enter the restrictions passcode."
+    },
+    {
+      "name": "func cancelPlaybackRestrictionsAuthorizationRequest()",
+      "desc": "Cancels a pending authorization request and dismisses the passcode entry, if displayed."
+    },
+    {
+      "name": "var isContentAuthorizedForPlayback: Bool",
+      "desc": "A Boolean value that indicates whether the content has been authorized by the user."
+    },
+    {
+      "name": "var isAuthorizationRequiredForPlayback: Bool",
+      "desc": "A Boolean value that indicates whether authorization is required to play the content."
+    },
+    {
+      "name": "var isApplicationAuthorizedForPlayback: Bool",
+      "desc": "A Boolean value that indicates whether the application can be used to play the content."
+    },
+    {
+      "name": "func requestContentAuthorizationAsynchronously(withTimeoutInterval: TimeInterval, completionHandler: () -> Void)",
+      "desc": "Presents the user the opportunity to authorize the content for playback."
+    },
+    {
+      "name": "var contentAuthorizationRequestStatus: AVContentAuthorizationStatus",
+      "desc": "The status of the most recent content authorization request."
+    },
+    {
+      "name": "enum AVContentAuthorizationStatus",
+      "desc": "A value representing the status of a content authorization request."
+    },
+    {
+      "name": "func cancelContentAuthorizationRequest()",
+      "desc": "Cancels the currently outstanding content authorization request."
+    },
+    {
+      "name": "var asset: AVAsset",
+      "desc": "The asset provided during initialization."
+    },
+    {
+      "name": "func copy() -> Any",
+      "desc": "Creates a copy of the object."
+    },
+    {
+      "name": "func copy(with: NSZone?) -> Any",
+      "desc": "Creates a copy of the object with the specified zone."
+    }
+  ],
+  "declaration": "class AVPlayerItem : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

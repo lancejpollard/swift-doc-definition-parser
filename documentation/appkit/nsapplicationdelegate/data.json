@@ -1,0 +1,204 @@
+{
+  "path": "/documentation/appkit/nsapplicationdelegate",
+  "type": "Protocol",
+  "name": "NSApplicationDelegate",
+  "desc": "A set of methods that manage your app’s life cycle and its interaction with common system services.",
+  "items": [
+    {
+      "name": "func applicationWillFinishLaunching(Notification)",
+      "desc": "Tells the delegate that the app’s initialization is about to complete."
+    },
+    {
+      "name": "func applicationDidFinishLaunching(Notification)",
+      "desc": "Tells the delegate that the app’s initialization is complete but it hasn’t received its first event."
+    },
+    {
+      "name": "func applicationWillBecomeActive(Notification)",
+      "desc": "Tells the delegate that the app is about to become active."
+    },
+    {
+      "name": "func applicationDidBecomeActive(Notification)",
+      "desc": "Tells the delegate that the app is now active."
+    },
+    {
+      "name": "func applicationWillResignActive(Notification)",
+      "desc": "Tells the delegate that the app is about to become inactive and will lose focus."
+    },
+    {
+      "name": "func applicationDidResignActive(Notification)",
+      "desc": "Tells the delegate that the app is no longer active and doesn’t have focus."
+    },
+    {
+      "name": "func applicationShouldTerminate(NSApplication) -> NSApplication.TerminateReply",
+      "desc": "Returns a value that indicates if the app should terminate."
+    },
+    {
+      "name": "enum NSApplication.TerminateReply",
+      "desc": "Constants that determine whether an app should terminate."
+    },
+    {
+      "name": "func applicationShouldTerminateAfterLastWindowClosed(NSApplication) -> Bool",
+      "desc": "Returns a Boolean value that indicates if the app terminates once the last window closes."
+    },
+    {
+      "name": "func applicationWillTerminate(Notification)",
+      "desc": "Tells the delegate that the app is about to terminate."
+    },
+    {
+      "name": "func applicationWillHide(Notification)",
+      "desc": "Tells the delegate that the app is about to be hidden."
+    },
+    {
+      "name": "func applicationDidHide(Notification)",
+      "desc": "Tells the delegate that the app is now hidden."
+    },
+    {
+      "name": "func applicationWillUnhide(Notification)",
+      "desc": "Tells the delegate that the app is about to become visible."
+    },
+    {
+      "name": "func applicationDidUnhide(Notification)",
+      "desc": "Tells the delegate that the app is now visible."
+    },
+    {
+      "name": "func applicationWillUpdate(Notification)",
+      "desc": "Tells the delegate that the app is about to update its windows."
+    },
+    {
+      "name": "func applicationDidUpdate(Notification)",
+      "desc": "Tells the delegate that the app’s windows did update."
+    },
+    {
+      "name": "func applicationShouldHandleReopen(NSApplication, hasVisibleWindows: Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates if the app responds to reopen AppleEvents."
+    },
+    {
+      "name": "func applicationDockMenu(NSApplication) -> NSMenu?",
+      "desc": "Returns the app’s dock menu."
+    },
+    {
+      "name": "func applicationShouldAutomaticallyLocalizeKeyEquivalents(NSApplication) -> Bool",
+      "desc": "Returns a Boolean value that tells the system whether to remap menu shortcuts to support localized keyboards."
+    },
+    {
+      "name": "func application(NSApplication, willPresentError: Error) -> Error",
+      "desc": "Returns an error for the app to display to the user."
+    },
+    {
+      "name": "func applicationDidChangeScreenParameters(Notification)",
+      "desc": "Tells the delegate about changes to the configuration of any attached displays."
+    },
+    {
+      "name": "func application(NSApplication, willContinueUserActivityWithType: String) -> Bool",
+      "desc": "Returns a Boolean value that indicates if the app can continue the specified activity."
+    },
+    {
+      "name": "func application(NSApplication, continue: NSUserActivity, restorationHandler: ([NSUserActivityRestoring]) -> Void) -> Bool",
+      "desc": "Returns a Boolean value that indicates if the app successfully recreates the specified activity."
+    },
+    {
+      "name": "func application(NSApplication, didFailToContinueUserActivityWithType: String, error: Error)",
+      "desc": "Tells the delegate that the app couldn’t continue the specified activity."
+    },
+    {
+      "name": "func application(NSApplication, didUpdate: NSUserActivity)",
+      "desc": "Tells the delegate that there are changes to the specified activity."
+    },
+    {
+      "name": "func application(NSApplication, didRegisterForRemoteNotificationsWithDeviceToken: Data)",
+      "desc": "Tells the delegate that the app registered for Apple Push Services."
+    },
+    {
+      "name": "func application(NSApplication, didFailToRegisterForRemoteNotificationsWithError: Error)",
+      "desc": "Tells the delegate that the app was unable to register for Apple Push Services."
+    },
+    {
+      "name": "func application(NSApplication, didReceiveRemoteNotification: [String : Any])",
+      "desc": "Tells the delegate when the app receives a remote notification."
+    },
+    {
+      "name": "func application(NSApplication, userDidAcceptCloudKitShareWith: CKShareMetadata)",
+      "desc": "Tells the delegate when the user accepts a CloudKit sharing invitation."
+    },
+    {
+      "name": "func application(NSApplication, handlerFor: INIntent) -> Any?",
+      "desc": "Returns an intent handler that’s capable of handling the specified intent."
+    },
+    {
+      "name": "func application(NSApplication, open: [URL])",
+      "desc": "Tells the delegate to open the resource at the specified URL."
+    },
+    {
+      "name": "func application(NSApplication, openFile: String) -> Bool",
+      "desc": "Returns a Boolean value that indicates if the app opens the specified file."
+    },
+    {
+      "name": "func application(Any, openFileWithoutUI: String) -> Bool",
+      "desc": "Returns a Boolean value that indicates if the app opens the specified file without showing its user interface."
+    },
+    {
+      "name": "func application(NSApplication, openTempFile: String) -> Bool",
+      "desc": "Returns a Boolean value that indicates if the app opens the specified temporary file."
+    },
+    {
+      "name": "func application(NSApplication, openFiles: [String])",
+      "desc": "Tells the delegate to open the specified files."
+    },
+    {
+      "name": "func applicationShouldOpenUntitledFile(NSApplication) -> Bool",
+      "desc": "Returns a Boolean value that indicates if the app can open an untitled file."
+    },
+    {
+      "name": "func applicationOpenUntitledFile(NSApplication) -> Bool",
+      "desc": "Returns a Boolean value that indicates if the app opens an untitled file."
+    },
+    {
+      "name": "func application(NSApplication, printFile: String) -> Bool",
+      "desc": "Returns a Boolean value that indicates if the app prints the specified file in its entirety."
+    },
+    {
+      "name": "func application(NSApplication, printFiles: [String], withSettings: [NSPrintInfo.AttributeKey : Any], showPrintPanels: Bool) -> NSApplication.PrintReply",
+      "desc": "Returns a value that indicates if the app prints the specified files."
+    },
+    {
+      "name": "enum NSApplication.PrintReply",
+      "desc": "Constants that indicate the outcome of a print request."
+    },
+    {
+      "name": "func applicationSupportsSecureRestorableState(NSApplication) -> Bool",
+      "desc": "Returns a Boolean value that indicates if the app supports secure state restoration."
+    },
+    {
+      "name": "func applicationProtectedDataDidBecomeAvailable(Notification)",
+      "desc": "Tells the delegate that protected data is now available."
+    },
+    {
+      "name": "func applicationProtectedDataWillBecomeUnavailable(Notification)",
+      "desc": "Tells the delegate that protected data is about to become unavailable."
+    },
+    {
+      "name": "func application(NSApplication, willEncodeRestorableState: NSCoder)",
+      "desc": "Tells the delegate that the app is about to encode its restorable state."
+    },
+    {
+      "name": "func application(NSApplication, didDecodeRestorableState: NSCoder)",
+      "desc": "Tells the delegate when the app finished decoding its restorable state."
+    },
+    {
+      "name": "func applicationDidChangeOcclusionState(Notification)",
+      "desc": "Tells the delegate about changes to the app’s occlusion state."
+    },
+    {
+      "name": "func application(NSApplication, delegateHandlesKey: String) -> Bool",
+      "desc": "Returns a Boolean value that indicates if the app supports the specified scripting key."
+    },
+    {
+      "name": "static func main()",
+      "desc": "Provides the top-level entry point for the app."
+    }
+  ],
+  "declaration": "protocol NSApplicationDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

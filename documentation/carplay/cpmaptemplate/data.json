@@ -1,0 +1,119 @@
+{
+  "path": "/documentation/carplay/cpmaptemplate",
+  "type": "Class",
+  "name": "CPMapTemplate",
+  "desc": "A template that displays a navigation overlay that your app draws on the map.",
+  "items": [
+    {
+      "name": "var automaticallyHidesNavigationBar: Bool",
+      "desc": "A Boolean value that indicates whether the template should automatically hide the navigation bar."
+    },
+    {
+      "name": "var hidesButtonsWithNavigationBar: Bool",
+      "desc": "A Boolean value that tells the system to hide the map buttons when hiding the navigation bar."
+    },
+    {
+      "name": "var guidanceBackgroundColor: UIColor",
+      "desc": "The background color the map template uses when displaying guidance."
+    },
+    {
+      "name": "var mapDelegate: CPMapTemplateDelegate?",
+      "desc": "The object that serves as the delegate of the map template."
+    },
+    {
+      "name": "protocol CPMapTemplateDelegate",
+      "desc": "The protocol an object implements to handle events from a map template."
+    },
+    {
+      "name": "var mapButtons: [CPMapButton]",
+      "desc": "An array of map buttons on the trailing bottom corner of the map template."
+    },
+    {
+      "name": "class CPMapButton",
+      "desc": "A button that represents an action that a map template displays on the CarPlay screen."
+    },
+    {
+      "name": "func showTripPreviews([CPTrip], textConfiguration: CPTripPreviewTextConfiguration?)",
+      "desc": "Displays the preview for one or more trips, and allows route selection."
+    },
+    {
+      "name": "func showTripPreviews([CPTrip], selectedTrip: CPTrip?, textConfiguration: CPTripPreviewTextConfiguration?)",
+      "desc": "Displays the previews for a collection of trips, with a single selected trip."
+    },
+    {
+      "name": "func hideTripPreviews()",
+      "desc": "Hides the display of trip previews."
+    },
+    {
+      "name": "func showRouteChoicesPreview(for: CPTrip, textConfiguration: CPTripPreviewTextConfiguration?)",
+      "desc": "Displays the route choices for a single trip."
+    },
+    {
+      "name": "class CPTripPreviewTextConfiguration",
+      "desc": "A configuration object for changing the button titles on a trip preview."
+    },
+    {
+      "name": "func startNavigationSession(for: CPTrip) -> CPNavigationSession",
+      "desc": "Begins navigational guidance for a trip."
+    },
+    {
+      "name": "class CPNavigationSession",
+      "desc": "An object that represents an active route guidance session."
+    },
+    {
+      "name": "func updateEstimates(CPTravelEstimates, for: CPTrip)",
+      "desc": "Updates travel estimates, such as arrival time and the remaining time and distance for a trip."
+    },
+    {
+      "name": "func update(CPTravelEstimates, for: CPTrip, with: CPTimeRemainingColor)",
+      "desc": "Updates travel estimates, such as arrival time and the remaining time and distance for a trip, with the specified time-remaining color."
+    },
+    {
+      "name": "enum CPTimeRemainingColor",
+      "desc": "The color the system uses when displaying the time remaining for a trip."
+    },
+    {
+      "name": "var tripEstimateStyle: CPTripEstimateStyle",
+      "desc": "The style that the map template uses when displaying trip estimates during active nagivation."
+    },
+    {
+      "name": "enum CPTripEstimateStyle",
+      "desc": "The set of display styles for trip estimates."
+    },
+    {
+      "name": "func present(navigationAlert: CPNavigationAlert, animated: Bool)",
+      "desc": "Displays a navigation alert on the map template."
+    },
+    {
+      "name": "func dismissNavigationAlert(animated: Bool, completion: (Bool) -> Void)",
+      "desc": "Tells the map template to dismiss the visable navigation alert."
+    },
+    {
+      "name": "var currentNavigationAlert: CPNavigationAlert?",
+      "desc": "The visible navigation alert."
+    },
+    {
+      "name": "class CPNavigationAlert",
+      "desc": "An alert that displays map- or navigation-related information to the user."
+    },
+    {
+      "name": "func showPanningInterface(animated: Bool)",
+      "desc": "Shows the panning interface on the map."
+    },
+    {
+      "name": "func dismissPanningInterface(animated: Bool)",
+      "desc": "Dismisses the panning interface."
+    },
+    {
+      "name": "var isPanningInterfaceVisible: Bool",
+      "desc": "A Boolean value that indicates whether the map template is displaying the panning interface."
+    }
+  ],
+  "declaration": "class CPMapTemplate : CPTemplate",
+  "inheritsFrom": [
+    "CPTemplate"
+  ],
+  "conformsTo": [
+    "CPBarButtonProviding"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "path": "/documentation/realitykit/hassynchronization",
+  "type": "Protocol",
+  "name": "HasSynchronization",
+  "desc": "An interface that enables an entity to be synchronized between processes and networked applications.",
+  "items": [
+    {
+      "name": "var synchronization: SynchronizationComponent?",
+      "desc": "The entity’s synchronization component."
+    },
+    {
+      "name": "struct SynchronizationComponent",
+      "desc": "A component that synchronizes an entity between processes and networked applications."
+    },
+    {
+      "name": "var isOwner: Bool",
+      "desc": "A Boolean that indicates whether the calling process owns the entity."
+    },
+    {
+      "name": "func requestOwnership(timeout: TimeInterval, (SynchronizationComponent.OwnershipTransferCompletionResult) -> Void)",
+      "desc": "Requests ownership of the entity."
+    },
+    {
+      "name": "func withUnsynchronized(() -> Void)",
+      "desc": "Calls the given closure in a way such that component changes that the closure makes don’t trigger synchronization."
+    }
+  ],
+  "declaration": "protocol HasSynchronization : Entity"
+}

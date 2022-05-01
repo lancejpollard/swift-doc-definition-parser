@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/metal/mtlsampleraddressmode",
+  "type": "Enumeration",
+  "name": "MTLSamplerAddressMode",
+  "desc": "Modes that determine the texture coordinate at each pixel when a fetch falls outside the bounds of a texture.",
+  "items": [
+    {
+      "name": "case clampToEdge",
+      "desc": "Texture coordinates are clamped between 0.0 and 1.0, inclusive."
+    },
+    {
+      "name": "case mirrorClampToEdge",
+      "desc": "Between -1.0 and 1.0, the texture coordinates are mirrored across the axis; outside -1.0 and 1.0, texture coordinates are clamped."
+    },
+    {
+      "name": "case `repeat`",
+      "desc": "Texture coordinates wrap to the other side of the texture, effectively keeping only the fractional part of the texture coordinate."
+    },
+    {
+      "name": "case mirrorRepeat",
+      "desc": "Between -1.0 and 1.0, the texture coordinates are mirrored across the axis; outside -1.0 and 1.0, the image is repeated."
+    },
+    {
+      "name": "case clampToZero",
+      "desc": "Out-of-range texture coordinates return transparent zero (0,0,0,0) for images with an alpha channel and return opaque zero (0,0,0,1) for images without an alpha channel."
+    },
+    {
+      "name": "case clampToBorderColor",
+      "desc": "Out-of-range texture coordinates return the value specified by the borderColor property."
+    }
+  ],
+  "declaration": "enum MTLSamplerAddressMode : UInt, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

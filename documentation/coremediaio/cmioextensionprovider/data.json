@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/coremediaio/cmioextensionprovider",
+  "type": "Class",
+  "name": "CMIOExtensionProvider",
+  "desc": "An object that manages device connections for a provider.",
+  "items": [
+    {
+      "name": "init(source: CMIOExtensionProviderSource, clientQueue: DispatchQueue?)",
+      "desc": "Creates an extension provider with the specified source and dispatch queue."
+    },
+    {
+      "name": "var clientQueue: DispatchQueue",
+      "desc": "The dispatch queue on which the system performs client operations."
+    },
+    {
+      "name": "var source: CMIOExtensionProviderSource?",
+      "desc": "The source for the provider."
+    },
+    {
+      "name": "class func startService(provider: CMIOExtensionProvider)",
+      "desc": "Starts the system extension."
+    },
+    {
+      "name": "var devices: [CMIOExtensionDevice]",
+      "desc": "An array of connected devices."
+    },
+    {
+      "name": "func addDevice(CMIOExtensionDevice)",
+      "desc": "Adds a device to a provider."
+    },
+    {
+      "name": "func removeDevice(CMIOExtensionDevice)",
+      "desc": "Removes a device from a provider."
+    },
+    {
+      "name": "var connectedClients: [CMIOExtensionClient]",
+      "desc": "An array of connected clients."
+    },
+    {
+      "name": "func notifyPropertiesChanged([CMIOExtensionProperty : CMIOExtensionPropertyState<AnyObject>])",
+      "desc": "Notifies connected clients of device property changes."
+    }
+  ],
+  "declaration": "class CMIOExtensionProvider : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

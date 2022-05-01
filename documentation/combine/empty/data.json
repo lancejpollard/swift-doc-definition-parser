@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/combine/empty",
+  "type": "Structure",
+  "name": "Empty",
+  "desc": "A publisher that never publishes any values, and optionally finishes immediately.",
+  "items": [
+    {
+      "name": "init(completeImmediately: Bool)",
+      "desc": "Creates an empty publisher."
+    },
+    {
+      "name": "init(completeImmediately: Bool, outputType: Output.Type, failureType: Failure.Type)",
+      "desc": "Creates an empty publisher with the given completion behavior and output and failure types."
+    },
+    {
+      "name": "let completeImmediately: Bool",
+      "desc": "A Boolean value that indicates whether the publisher immediately sends a completion."
+    },
+    {
+      "name": "static func == (Empty<Output, Failure>, Empty<Output, Failure>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two publishers are equivalent."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    }
+  ],
+  "declaration": "struct Empty<Output, Failure> where Failure : Error",
+  "conformsTo": [
+    "Equatable",
+    "Publisher"
+  ]
+}

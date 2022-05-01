@@ -1,0 +1,30 @@
+{
+  "path": "/documentation/network/nw_framer_start_result_t",
+  "type": "Structure",
+  "name": "nw_framer_start_result_t",
+  "desc": "Results that you send to indicate the disposition of your protocol after the start handler is invoked.",
+  "items": [
+    {
+      "name": "var nw_framer_start_result_ready: nw_framer_start_result_t",
+      "desc": "The protocol is immediately ready to send and receive data."
+    },
+    {
+      "name": "var nw_framer_start_result_will_mark_ready: nw_framer_start_result_t",
+      "desc": "The protocol will perform a handshake, preventing the overall connection from becoming ready until nw_framer_mark_ready(_:) is called."
+    },
+    {
+      "name": "init(UInt32)"
+    },
+    {
+      "name": "init(rawValue: UInt32)"
+    },
+    {
+      "name": "var rawValue: UInt32"
+    }
+  ],
+  "declaration": "struct nw_framer_start_result_t",
+  "conformsTo": [
+    "Equatable",
+    "RawRepresentable"
+  ]
+}

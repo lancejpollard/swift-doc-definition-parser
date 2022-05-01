@@ -1,0 +1,38 @@
+{
+  "path": "/documentation/network/nwconnectiongroup/state",
+  "type": "Enumeration",
+  "name": "NWConnectionGroup.State",
+  "desc": "States that indicate whether you can use a connection group to send and receive messages.",
+  "items": [
+    {
+      "name": "case setup",
+      "desc": "You have not yet started the connection group."
+    },
+    {
+      "name": "case waiting(NWError)",
+      "desc": "The connection group is waiting for a network path change."
+    },
+    {
+      "name": "case ready",
+      "desc": "The connection group is joined, and ready to send and receive data."
+    },
+    {
+      "name": "case failed(NWError)",
+      "desc": "The connection group encountered a fatal error."
+    },
+    {
+      "name": "case cancelled",
+      "desc": "The connection group has been canceled."
+    },
+    {
+      "name": "static func != (NWConnectionGroup.State, NWConnectionGroup.State) -> Bool"
+    },
+    {
+      "name": "static func == (NWConnectionGroup.State, NWConnectionGroup.State) -> Bool"
+    }
+  ],
+  "declaration": "enum NWConnectionGroup.State",
+  "conformsTo": [
+    "Equatable"
+  ]
+}

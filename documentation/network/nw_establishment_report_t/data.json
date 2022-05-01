@@ -1,0 +1,92 @@
+{
+  "path": "/documentation/network/nw_establishment_report_t",
+  "type": "Type Alias",
+  "name": "nw_establishment_report_t",
+  "desc": "A report that provides metrics about how a connection was established.",
+  "items": [
+    {
+      "name": "func nw_establishment_report_get_duration_milliseconds(nw_establishment_report_t) -> UInt64",
+      "desc": "Checks the total duration of the successful connection establishment attempt, from the preparing state to the ready state."
+    },
+    {
+      "name": "func nw_establishment_report_get_previous_attempt_count(nw_establishment_report_t) -> UInt32",
+      "desc": "Checks the number of attempts made before the successful attempt, when the connection moved from the preparing state back to the waiting state."
+    },
+    {
+      "name": "func nw_establishment_report_get_attempt_started_after_milliseconds(nw_establishment_report_t) -> UInt64",
+      "desc": "Accesses the time between the call to start and the beginning of the successful connection attempt, in milliseconds."
+    },
+    {
+      "name": "func nw_establishment_report_enumerate_resolution_reports(nw_establishment_report_t, (nw_resolution_report_t) -> Bool)"
+    },
+    {
+      "name": "typealias nw_report_resolution_report_enumerator_t",
+      "desc": "Iterates a list of resolution steps, as nw_resolution_report_t objects, performed during connection establishment, in order from first resolved to last resolved."
+    },
+    {
+      "name": "typealias nw_resolution_report_t",
+      "desc": "A description of a single DNS resolution step."
+    },
+    {
+      "name": "func nw_resolution_report_get_milliseconds(nw_resolution_report_t) -> UInt64",
+      "desc": "Accesses the duration of this resolution step, from when the query was issued to when the response was complete."
+    },
+    {
+      "name": "func nw_resolution_report_get_source(nw_resolution_report_t) -> nw_report_resolution_source_t",
+      "desc": "Accesses the source of the DNS response."
+    },
+    {
+      "name": "struct nw_report_resolution_source_t",
+      "desc": "Sources that may provide DNS responses."
+    },
+    {
+      "name": "func nw_resolution_report_get_protocol(nw_resolution_report_t) -> nw_report_resolution_protocol_t",
+      "desc": "Accesses the transport protocol your connection used for DNS resolution."
+    },
+    {
+      "name": "struct nw_report_resolution_protocol_t",
+      "desc": "A set of transport protocols connections use for DNS resolution."
+    },
+    {
+      "name": "func nw_resolution_report_copy_successful_endpoint(nw_resolution_report_t) -> nw_endpoint_t",
+      "desc": "Accesses the resolved endpoint that led to the established connection."
+    },
+    {
+      "name": "func nw_resolution_report_copy_preferred_endpoint(nw_resolution_report_t) -> nw_endpoint_t",
+      "desc": "Accesses the resolved endpoint that the connection used for its first connection attempt."
+    },
+    {
+      "name": "func nw_resolution_report_get_endpoint_count(nw_resolution_report_t) -> UInt32",
+      "desc": "Accesses the number of endpoints resolved in this step."
+    },
+    {
+      "name": "func nw_establishment_report_enumerate_resolutions(nw_establishment_report_t, (nw_report_resolution_source_t, UInt64, UInt32, nw_endpoint_t, nw_endpoint_t) -> Bool)",
+      "desc": "Iterates a list of resolution steps performed during connection establishment, in order from first resolved to last resolved."
+    },
+    {
+      "name": "typealias nw_report_resolution_enumerator_t",
+      "desc": "A block used to enumerate resolution steps performed during connection establishment."
+    },
+    {
+      "name": "func nw_establishment_report_enumerate_protocols(nw_establishment_report_t, (nw_protocol_definition_t, UInt64, UInt64) -> Bool)",
+      "desc": "Iterates a list of protocol handshakes in order from first completed to last completed."
+    },
+    {
+      "name": "typealias nw_report_protocol_enumerator_t",
+      "desc": "A block used to enumerate protocol handshakes performed during connection establishment."
+    },
+    {
+      "name": "func nw_establishment_report_get_proxy_configured(nw_establishment_report_t) -> Bool",
+      "desc": "Checks whether a proxy was configured on the connection."
+    },
+    {
+      "name": "func nw_establishment_report_get_used_proxy(nw_establishment_report_t) -> Bool",
+      "desc": "Checks whether the connection used a proxy."
+    },
+    {
+      "name": "func nw_establishment_report_copy_proxy_endpoint(nw_establishment_report_t) -> nw_endpoint_t?",
+      "desc": "Accesses the endpoint of the proxy the connection used."
+    }
+  ],
+  "declaration": "typealias nw_establishment_report_t = OS_nw_establishment_report"
+}

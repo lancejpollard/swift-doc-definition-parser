@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/combine/publishers/tryprefixwhile",
+  "type": "Structure",
+  "name": "Publishers.TryPrefixWhile",
+  "desc": "A publisher that republishes elements while an error-throwing predicate closure indicates publishing should continue.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, predicate: (Publishers.TryPrefixWhile<Upstream>.Output) throws -> Bool)",
+      "desc": "Creates a publisher that republishes elements while an error-throwing predicate closure indicates publishing should continue."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    },
+    {
+      "name": "let predicate: (Publishers.TryPrefixWhile<Upstream>.Output) throws -> Bool",
+      "desc": "The error-throwing closure that determines whether publishing should continue."
+    }
+  ],
+  "declaration": "struct TryPrefixWhile<Upstream> where Upstream : Publisher",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

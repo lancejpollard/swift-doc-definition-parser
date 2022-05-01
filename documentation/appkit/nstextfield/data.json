@@ -1,0 +1,141 @@
+{
+  "path": "/documentation/appkit/nstextfield",
+  "type": "Class",
+  "name": "NSTextField",
+  "desc": "Text the user can select or edit to send an action message to a target when the user presses the Return key.",
+  "items": [
+    {
+      "name": "init(labelWithAttributedString: NSAttributedString)",
+      "desc": "Creates a text field for use as a static label that displays styled text, doesn’t wrap, and doesn’t have selectable text."
+    },
+    {
+      "name": "init(labelWithString: String)",
+      "desc": "Initializes a text field for use as a static label that uses the system default font, doesn’t wrap, and doesn’t have selectable text."
+    },
+    {
+      "name": "init(string: String)",
+      "desc": "Initializes a single-line editable text field for user input using the system default font and standard visual appearance."
+    },
+    {
+      "name": "init(wrappingLabelWithString: String)",
+      "desc": "Initializes a text field for use as a multiline static label with selectable text that uses the system default font."
+    },
+    {
+      "name": "var isSelectable: Bool",
+      "desc": "A Boolean value that determines whether the user can select the content of the text field."
+    },
+    {
+      "name": "var isEditable: Bool",
+      "desc": "A Boolean value that controls whether the user can edit the value in the text field."
+    },
+    {
+      "name": "var allowsEditingTextAttributes: Bool",
+      "desc": "A Boolean value that controls whether the user can change font attributes of the text field’s string."
+    },
+    {
+      "name": "var importsGraphics: Bool",
+      "desc": "A Boolean value that controls whether the user can drag image files into the text field."
+    },
+    {
+      "name": "var placeholderString: String?",
+      "desc": "The string the text field displays when empty to help the user understand the text field’s purpose."
+    },
+    {
+      "name": "var placeholderAttributedString: NSAttributedString?",
+      "desc": "The attributed string the text field displays when empty to help the user understand the text field’s purpose."
+    },
+    {
+      "name": "var lineBreakStrategy: NSParagraphStyle.LineBreakStrategy",
+      "desc": "The strategy that the system uses to break lines when laying out multiple lines of text."
+    },
+    {
+      "name": "var allowsDefaultTighteningForTruncation: Bool",
+      "desc": "A Boolean value that controls whether single-line text fields tighten intercharacter spacing before truncating the text."
+    },
+    {
+      "name": "var maximumNumberOfLines: Int",
+      "desc": "The maximum number of lines a wrapping text field displays before clipping or truncating the text."
+    },
+    {
+      "name": "var preferredMaxLayoutWidth: CGFloat",
+      "desc": "The maximum width of the text field’s intrinsic content size."
+    },
+    {
+      "name": "var textColor: NSColor?",
+      "desc": "The color of the text field’s content."
+    },
+    {
+      "name": "var backgroundColor: NSColor?",
+      "desc": "The color of the background the text field’s cell draws behind the text."
+    },
+    {
+      "name": "var drawsBackground: Bool",
+      "desc": "A Boolean value that controls whether the text field’s cell draws a background color behind the text."
+    },
+    {
+      "name": "var isBezeled: Bool",
+      "desc": "A Boolean value that controls whether the text field draws a bezeled background around its contents."
+    },
+    {
+      "name": "var bezelStyle: NSTextField.BezelStyle",
+      "desc": "The text field’s bezel style, square or rounded."
+    },
+    {
+      "name": "enum NSTextField.BezelStyle",
+      "desc": "The style of bezel the text field displays."
+    },
+    {
+      "name": "var isBordered: Bool",
+      "desc": "A Boolean value that controls whether the text field draws a solid black border around its contents."
+    },
+    {
+      "name": "func selectText(Any?)",
+      "desc": "Ends editing in the text field and, if it’s selectable, selects the entire text content."
+    },
+    {
+      "name": "var acceptsFirstResponder: Bool",
+      "desc": "A Boolean value that indicates whether the text field is editable and accepts first responder status."
+    },
+    {
+      "name": "var isAutomaticTextCompletionEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the text field automatically completes text as the user types."
+    },
+    {
+      "name": "var delegate: NSTextFieldDelegate?",
+      "desc": "The text field’s delegate."
+    },
+    {
+      "name": "func textShouldBeginEditing(NSText) -> Bool",
+      "desc": "Requests permission to begin editing a text object."
+    },
+    {
+      "name": "func textDidBeginEditing(Notification)",
+      "desc": "Posts a notification to the default notification center that the text is about to go into edit mode."
+    },
+    {
+      "name": "func textDidChange(Notification)",
+      "desc": "Posts a notification when the text changes, and forwards the message to the text field’s cell if it responds."
+    },
+    {
+      "name": "func textShouldEndEditing(NSText) -> Bool",
+      "desc": "Performs validation on the text field’s new value."
+    },
+    {
+      "name": "func textDidEndEditing(Notification)",
+      "desc": "Posts a notification when the text is no longer in edit mode."
+    },
+    {
+      "name": "var allowsCharacterPickerTouchBarItem: Bool",
+      "desc": "A Boolean value that controls whether the Touch Bar displays the character picker item for rich text fields."
+    }
+  ],
+  "declaration": "class NSTextField : NSControl",
+  "inheritsFrom": [
+    "NSControl"
+  ],
+  "conformsTo": [
+    "NSAccessibilityNavigableStaticText",
+    "NSTextContent",
+    "NSUserInterfaceValidations"
+  ]
+}

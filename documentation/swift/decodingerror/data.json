@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/swift/decodingerror",
+  "type": "Enumeration",
+  "name": "DecodingError",
+  "desc": "An error that occurs during the decoding of a value.",
+  "items": [
+    {
+      "name": "case dataCorrupted(DecodingError.Context)",
+      "desc": "An indication that the data is corrupted or otherwise invalid."
+    },
+    {
+      "name": "case keyNotFound(CodingKey, DecodingError.Context)",
+      "desc": "An indication that a keyed decoding container was asked for an entry for the given key, but did not contain one."
+    },
+    {
+      "name": "case typeMismatch(Any.Type, DecodingError.Context)",
+      "desc": "An indication that a value of the given type could not be decoded because it did not match the type of what was found in the encoded payload."
+    },
+    {
+      "name": "case valueNotFound(Any.Type, DecodingError.Context)",
+      "desc": "An indication that a non-optional value of the given type was expected, but a null value was found."
+    },
+    {
+      "name": "static func dataCorruptedError<C>(forKey: C.Key, in: C, debugDescription: String) -> DecodingError",
+      "desc": "Returns a new .dataCorrupted error using a constructed coding path and the given debug description."
+    },
+    {
+      "name": "static func dataCorruptedError(in: SingleValueDecodingContainer, debugDescription: String) -> DecodingError",
+      "desc": "Returns a new .dataCorrupted error using a constructed coding path and the given debug description."
+    },
+    {
+      "name": "static func dataCorruptedError(in: UnkeyedDecodingContainer, debugDescription: String) -> DecodingError",
+      "desc": "Returns a new .dataCorrupted error using a constructed coding path and the given debug description."
+    },
+    {
+      "name": "struct DecodingError.Context",
+      "desc": "The context in which the error occurred."
+    }
+  ],
+  "declaration": "enum DecodingError",
+  "conformsTo": [
+    "Error",
+    "LocalizedError"
+  ]
+}

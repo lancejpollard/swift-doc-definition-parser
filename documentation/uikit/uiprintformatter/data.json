@@ -1,0 +1,51 @@
+{
+  "path": "/documentation/uikit/uiprintformatter",
+  "type": "Class",
+  "name": "UIPrintFormatter",
+  "desc": "An abstract base class for print formatters, which are objects that lay out custom printable content that can cross page boundaries.",
+  "items": [
+    {
+      "name": "var perPageContentInsets: UIEdgeInsets",
+      "desc": "The margins for each printed page."
+    },
+    {
+      "name": "var maximumContentHeight: CGFloat",
+      "desc": "The maximum height of the content area."
+    },
+    {
+      "name": "var maximumContentWidth: CGFloat",
+      "desc": "The maximum width of the content area."
+    },
+    {
+      "name": "var startPage: Int",
+      "desc": "The index of the first page that the print formatter lays out."
+    },
+    {
+      "name": "var pageCount: Int",
+      "desc": "The number of pages to print."
+    },
+    {
+      "name": "func draw(in: CGRect, forPageAt: Int)",
+      "desc": "Draws the portion of a print formatter’s content for the specified area of the specified page."
+    },
+    {
+      "name": "func rectForPage(at: Int) -> CGRect",
+      "desc": "Returns the area that encloses a specified page of content."
+    },
+    {
+      "name": "func removeFromPrintPageRenderer()",
+      "desc": "Removes the print formatter from the page renderer."
+    },
+    {
+      "name": "var printPageRenderer: UIPrintPageRenderer?",
+      "desc": "Returns the page renderer for the print formatter."
+    }
+  ],
+  "declaration": "@MainActor class UIPrintFormatter : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/realitykit/multipeerconnectivityservice",
+  "type": "Class",
+  "name": "MultipeerConnectivityService",
+  "desc": "A service that provides scene synchronization among all peers in a multipeer connectivity session.",
+  "items": [
+    {
+      "name": "init(session: MCSession)",
+      "desc": "Creates a new connectivity service."
+    },
+    {
+      "name": "let session: MCSession",
+      "desc": "The multipeer connectivity session used by the service."
+    },
+    {
+      "name": "func owner(of: Entity) -> SynchronizationPeerID?",
+      "desc": "Gets the device that owns a given entity."
+    },
+    {
+      "name": "func giveOwnership(of: Entity, toPeer: SynchronizationPeerID) -> Bool",
+      "desc": "Transfers ownership of the given entity to the named network device."
+    },
+    {
+      "name": "protocol SynchronizationPeerID",
+      "desc": "A type that represents a peer among a group of networked devices."
+    },
+    {
+      "name": "func entity(for: MultipeerConnectivityService.Identifier) -> Entity?",
+      "desc": "Gets the entity with the given identifier."
+    },
+    {
+      "name": "func stopSync()",
+      "desc": "Stops multipeer synchronization."
+    },
+    {
+      "name": "func startSync()",
+      "desc": "Begins multipeer synchronization."
+    },
+    {
+      "name": "func setHandshake(count: UInt32, timeoutMs: UInt32)",
+      "desc": "Configures handshake and timeout settings."
+    }
+  ],
+  "declaration": "class MultipeerConnectivityService",
+  "conformsTo": [
+    "SynchronizationService"
+  ]
+}

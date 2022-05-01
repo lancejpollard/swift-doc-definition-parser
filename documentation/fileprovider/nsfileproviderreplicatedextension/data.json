@@ -1,0 +1,65 @@
+{
+  "path": "/documentation/fileprovider/nsfileproviderreplicatedextension",
+  "type": "Protocol",
+  "name": "NSFileProviderReplicatedExtension",
+  "desc": "A File Provider extension in which the system replicates the contents on disk.",
+  "items": [
+    {
+      "name": "init(domain: NSFileProviderDomain)",
+      "desc": "Creates an instance of the file provider for the specified domain."
+    },
+    {
+      "name": "func invalidate()",
+      "desc": "Tells the file provider to perform any necessary cleanup so that the system can deallocate it."
+    },
+    {
+      "name": "func item(for: NSFileProviderItemIdentifier, request: NSFileProviderRequest, completionHandler: (NSFileProviderItem?, Error?) -> Void) -> Progress",
+      "desc": "Asks the file provider for the metadata of the provided item."
+    },
+    {
+      "name": "func fetchContents(for: NSFileProviderItemIdentifier, version: NSFileProviderItemVersion?, request: NSFileProviderRequest, completionHandler: (URL?, NSFileProviderItem?, Error?) -> Void) -> Progress",
+      "desc": "Tells the file provider to download the requested item from remote storage."
+    },
+    {
+      "name": "func createItem(basedOn: NSFileProviderItem, fields: NSFileProviderItemFields, contents: URL?, options: NSFileProviderCreateItemOptions, request: NSFileProviderRequest, completionHandler: (NSFileProviderItem?, NSFileProviderItemFields, Bool, Error?) -> Void) -> Progress",
+      "desc": "Tells the file provider to create or import an item based on a template."
+    },
+    {
+      "name": "struct NSFileProviderCreateItemOptions",
+      "desc": "Options for creating items."
+    },
+    {
+      "name": "func modifyItem(NSFileProviderItem, baseVersion: NSFileProviderItemVersion, changedFields: NSFileProviderItemFields, contents: URL?, options: NSFileProviderModifyItemOptions, request: NSFileProviderRequest, completionHandler: (NSFileProviderItem?, NSFileProviderItemFields, Bool, Error?) -> Void) -> Progress",
+      "desc": "Tells the file provider that an item’s content or metadata changed."
+    },
+    {
+      "name": "struct NSFileProviderModifyItemOptions",
+      "desc": "Options for modifying items."
+    },
+    {
+      "name": "func deleteItem(identifier: NSFileProviderItemIdentifier, baseVersion: NSFileProviderItemVersion, options: NSFileProviderDeleteItemOptions, request: NSFileProviderRequest, completionHandler: (Error?) -> Void) -> Progress",
+      "desc": "Tells the file provider to delete an item forever."
+    },
+    {
+      "name": "struct NSFileProviderDeleteItemOptions",
+      "desc": "Options for deleting items."
+    },
+    {
+      "name": "func materializedItemsDidChange(completionHandler: () -> Void)",
+      "desc": "Tells the file provider that the set of materialized items changed."
+    },
+    {
+      "name": "func pendingItemsDidChange(completionHandler: () -> Void)",
+      "desc": "Tells the file provider extension that the set of pending items has changed."
+    },
+    {
+      "name": "func importDidFinish(completionHandler: () -> Void)",
+      "desc": "Tells the File Provider extension that the system finished importing items."
+    }
+  ],
+  "declaration": "protocol NSFileProviderReplicatedExtension",
+  "inheritsFrom": [
+    "NSFileProviderEnumerating",
+    "NSObjectProtocol"
+  ]
+}

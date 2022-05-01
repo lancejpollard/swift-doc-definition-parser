@@ -1,0 +1,140 @@
+{
+  "path": "/documentation/healthkit/hkquery",
+  "type": "Class",
+  "name": "HKQuery",
+  "desc": "An abstract class for all the query classes in HealthKit.",
+  "items": [
+    {
+      "name": "var predicate: NSPredicate?",
+      "desc": "A predicate used to filter the objects returned from the HealthKit store."
+    },
+    {
+      "name": "var objectType: HKObjectType?",
+      "desc": "The type of objects being queried."
+    },
+    {
+      "name": "class func predicateForObject(with: UUID) -> NSPredicate",
+      "desc": "Returns a predicate that matches an object with the specified universally unique identifier (UUID)."
+    },
+    {
+      "name": "class func predicateForObjects(with: Set<UUID>) -> NSPredicate",
+      "desc": "Returns a predicate that matches the objects with the specified universally unique identifiers (UUIDs)."
+    },
+    {
+      "name": "class func predicateForObjects(from: HKSource) -> NSPredicate",
+      "desc": "Returns a predicate that matches all the objects that were created by the provided source."
+    },
+    {
+      "name": "class func predicateForObjects(from: Set<HKSource>) -> NSPredicate",
+      "desc": "Returns a predicate that matches all the objects that were created by any of the provided sources."
+    },
+    {
+      "name": "class func predicateForObjects(from: Set<HKDevice>) -> NSPredicate",
+      "desc": "Returns a predicate that matches all the objects that were created by any of the provided devices."
+    },
+    {
+      "name": "class func predicateForObjects(withDeviceProperty: String, allowedValues: Set<String>) -> NSPredicate",
+      "desc": "Returns a predicate that matches all objects created by devices with the specified properties."
+    },
+    {
+      "name": "class func predicateForObjects(from: Set<HKSourceRevision>) -> NSPredicate",
+      "desc": "Returns a predicate that matches all the objects that were created by any of the provided source revisions."
+    },
+    {
+      "name": "class func predicateForObjects(withMetadataKey: String) -> NSPredicate",
+      "desc": "Returns a predicate that matches any object whose metadata contains the provided key."
+    },
+    {
+      "name": "class func predicateForObjects(withMetadataKey: String, allowedValues: [Any]) -> NSPredicate",
+      "desc": "Returns a predicate that matches objects based on the provided metadata key and an array of target values."
+    },
+    {
+      "name": "class func predicateForObjects(withMetadataKey: String, operatorType: NSComparisonPredicate.Operator, value: Any) -> NSPredicate",
+      "desc": "Returns a predicate that matches objects based on the provided metadata key, value, and operator."
+    },
+    {
+      "name": "class func predicateForObjectsWithNoCorrelation() -> NSPredicate",
+      "desc": "Returns a predicate that matches all objects that are not associated with a HealthKit correlation."
+    },
+    {
+      "name": "class func predicateForSamples(withStart: Date?, end: Date?, options: HKQueryOptions) -> NSPredicate",
+      "desc": "Returns a predicate for samples whose start and end dates fall within the specified time interval."
+    },
+    {
+      "name": "struct HKQueryOptions",
+      "desc": "Constants that describe how a sample’s time period overlaps with the target time period."
+    },
+    {
+      "name": "class func predicateForQuantitySamples(with: NSComparisonPredicate.Operator, quantity: HKQuantity) -> NSPredicate",
+      "desc": "Returns a predicate that matches samples based on the target quantity."
+    },
+    {
+      "name": "class func predicateForCategorySamples(with: NSComparisonPredicate.Operator, value: Int) -> NSPredicate",
+      "desc": "Returns a predicate that checks a category sample’s value."
+    },
+    {
+      "name": "class func predicateForClinicalRecords(from: HKSource, fhirResourceType: HKFHIRResourceType, identifier: String) -> NSPredicate",
+      "desc": "Returns a predicate for a specific FHIR resource."
+    },
+    {
+      "name": "class func predicateForClinicalRecords(withFHIRResourceType: HKFHIRResourceType) -> NSPredicate",
+      "desc": "Returns a predicate for a specific FHIR type."
+    },
+    {
+      "name": "class func predicateForVerifiableClinicalRecords(withRelevantDateWithin: DateInterval) -> NSPredicate",
+      "desc": "Returns a predicate that finds verifiable health records with a relevant date within the specified range."
+    },
+    {
+      "name": "class func predicateForObjects(from: HKWorkout) -> NSPredicate",
+      "desc": "Returns a predicate that matches any objects that have been associated with the provided workout."
+    },
+    {
+      "name": "class func predicateForWorkouts(with: NSComparisonPredicate.Operator, duration: TimeInterval) -> NSPredicate",
+      "desc": "Returns a predicate for matching workouts based on their duration."
+    },
+    {
+      "name": "class func predicateForWorkouts(with: NSComparisonPredicate.Operator, totalDistance: HKQuantity) -> NSPredicate",
+      "desc": "Returns a predicate for matching workouts based on the total distance traveled."
+    },
+    {
+      "name": "class func predicateForWorkouts(with: NSComparisonPredicate.Operator, totalEnergyBurned: HKQuantity) -> NSPredicate",
+      "desc": "Returns a predicate for matching workouts based on the total energy burned."
+    },
+    {
+      "name": "class func predicateForWorkouts(with: NSComparisonPredicate.Operator, totalFlightsClimbed: HKQuantity) -> NSPredicate",
+      "desc": "Returns a predicate that matches workout samples based on the number of flights climbed."
+    },
+    {
+      "name": "class func predicateForWorkouts(with: NSComparisonPredicate.Operator, totalSwimmingStrokeCount: HKQuantity) -> NSPredicate",
+      "desc": "Returns a predicate that matches workout samples based on the number of strokes while swimming."
+    },
+    {
+      "name": "class func predicateForWorkouts(with: HKWorkoutActivityType) -> NSPredicate",
+      "desc": "Returns a predicate for matching workouts based on the type of activity."
+    },
+    {
+      "name": "class func predicateForActivitySummary(with: DateComponents) -> NSPredicate",
+      "desc": "Returns a predicate that matches the activity summary for the specified day."
+    },
+    {
+      "name": "class func predicate(forActivitySummariesBetweenStart: DateComponents, end: DateComponents) -> NSPredicate",
+      "desc": "Returns a predicate for matching all the activity summaries that fall between the days identified by the start and end date components."
+    },
+    {
+      "name": "class func predicateForElectrocardiograms(classification: HKElectrocardiogram.Classification) -> NSPredicate",
+      "desc": "Returns a predicate that matches electrocardiogram samples with the specified classification."
+    },
+    {
+      "name": "class func predicateForElectrocardiograms(symptomsStatus: HKElectrocardiogram.SymptomsStatus) -> NSPredicate",
+      "desc": "Returns a predicate that matches electrocardiogram samples with the specified symptom status."
+    },
+    {
+      "name": "class func predicateForObjectsAssociated(electrocardiogram: HKElectrocardiogram) -> NSPredicate",
+      "desc": "Returns a predicate that matches symptom samples associated with the specified electrocardiogram."
+    }
+  ],
+  "declaration": "class HKQuery : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

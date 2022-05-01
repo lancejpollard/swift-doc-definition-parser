@@ -1,0 +1,133 @@
+{
+  "path": "/documentation/coremedia/cmtime",
+  "type": "Structure",
+  "name": "CMTime",
+  "desc": "A structure that represents time.",
+  "items": [
+    {
+      "name": "init(value: CMTimeValue, timescale: CMTimeScale)",
+      "desc": "Creates a time with a value and timescale."
+    },
+    {
+      "name": "init(value: CMTimeValue, timescale: CMTimeScale, flags: CMTimeFlags, epoch: CMTimeEpoch)",
+      "desc": "Creates a time with a value, timescale, flags, and epoch."
+    },
+    {
+      "name": "init(seconds: Double, preferredTimescale: CMTimeScale)",
+      "desc": "Creates a time that represents number of seconds in a preferred timescale."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates a time with an invalid value."
+    },
+    {
+      "name": "var seconds: Double",
+      "desc": "A representation of the time in seconds."
+    },
+    {
+      "name": "var hasBeenRounded: Bool",
+      "desc": "A Boolean value that indicates whether the system rounded the time."
+    },
+    {
+      "name": "var isValid: Bool",
+      "desc": "A Boolean value that indicates whether a time is valid."
+    },
+    {
+      "name": "var isNumeric: Bool",
+      "desc": "A Boolean value that indicates whether a time is numeric."
+    },
+    {
+      "name": "var isIndefinite: Bool",
+      "desc": "A Boolean value that indicates whether a time is indefinite."
+    },
+    {
+      "name": "var isPositiveInfinity: Bool",
+      "desc": "A Boolean value that indicates whether a time represents positive infinity."
+    },
+    {
+      "name": "var isNegativeInfinity: Bool",
+      "desc": "A Boolean value that indicates whether a time represents negative infinity."
+    },
+    {
+      "name": "static func + (CMTime, CMTime) -> CMTime",
+      "desc": "Returns a new time that represents the sum of two times."
+    },
+    {
+      "name": "static func - (CMTime, CMTime) -> CMTime",
+      "desc": "Returns a new time that represents the difference between two times."
+    },
+    {
+      "name": "func convertScale(Int32, method: CMTimeRoundingMethod) -> CMTime",
+      "desc": "Converts the source time to a new timescale using the specified rounding method."
+    },
+    {
+      "name": "enum CMTimeRoundingMethod",
+      "desc": "An enumeration of rounding methods to use when performing time calculations."
+    },
+    {
+      "name": "static func == (CMTime, CMTime) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two times are equal."
+    },
+    {
+      "name": "static func != (CMTime, CMTime) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two times aren’t equal."
+    },
+    {
+      "name": "static func < (CMTime, CMTime) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a time is earlier than another time."
+    },
+    {
+      "name": "static func <= (CMTime, CMTime) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a time is earlier than or equal to another time."
+    },
+    {
+      "name": "static func > (CMTime, CMTime) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a time is later than another time."
+    },
+    {
+      "name": "static func >= (CMTime, CMTime) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a time is equal to or later than another time."
+    },
+    {
+      "name": "var value: CMTimeValue",
+      "desc": "A time value that represents the numerator of a rational time."
+    },
+    {
+      "name": "var timescale: CMTimeScale",
+      "desc": "A timescale that represents the denominator of a rational time."
+    },
+    {
+      "name": "var flags: CMTimeFlags",
+      "desc": "The flags associated with a time."
+    },
+    {
+      "name": "var epoch: CMTimeEpoch",
+      "desc": "The epoch of the time."
+    },
+    {
+      "name": "static let zero: CMTime",
+      "desc": "A value that represents time zero."
+    },
+    {
+      "name": "static let invalid: CMTime",
+      "desc": "A value that represents an invalid time."
+    },
+    {
+      "name": "static let indefinite: CMTime",
+      "desc": "A value that represents an indefinite time."
+    },
+    {
+      "name": "static let negativeInfinity: CMTime",
+      "desc": "A value that represents negative infinity."
+    },
+    {
+      "name": "static let positiveInfinity: CMTime",
+      "desc": "A value that represents positive infinity."
+    }
+  ],
+  "declaration": "struct CMTime",
+  "conformsTo": [
+    "Comparable",
+    "Equatable"
+  ]
+}

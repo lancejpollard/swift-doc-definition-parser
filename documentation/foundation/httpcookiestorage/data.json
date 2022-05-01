@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/foundation/httpcookiestorage",
+  "type": "Class",
+  "name": "HTTPCookieStorage",
+  "desc": "A container that manages the storage of cookies.",
+  "items": [
+    {
+      "name": "class var shared: HTTPCookieStorage",
+      "desc": "The shared cookie storage instance."
+    },
+    {
+      "name": "class func sharedCookieStorage(forGroupContainerIdentifier: String) -> HTTPCookieStorage",
+      "desc": "Returns the cookie storage instance for the container associated with the specified app group identifier."
+    },
+    {
+      "name": "var cookieAcceptPolicy: HTTPCookie.AcceptPolicy",
+      "desc": "The cookie storage’s cookie accept policy."
+    },
+    {
+      "name": "enum HTTPCookie.AcceptPolicy",
+      "desc": "Cookie acceptance policies implemented by the HTTPCookieStorage class."
+    },
+    {
+      "name": "func removeCookies(since: Date)",
+      "desc": "Removes cookies that were stored after a given date."
+    },
+    {
+      "name": "func deleteCookie(HTTPCookie)",
+      "desc": "Deletes the specified cookie from the cookie storage."
+    },
+    {
+      "name": "func setCookie(HTTPCookie)",
+      "desc": "Stores a specified cookie in the cookie storage if the cookie accept policy permits."
+    },
+    {
+      "name": "func setCookies([HTTPCookie], for: URL?, mainDocumentURL: URL?)",
+      "desc": "Adds an array of cookies to the cookie storage if the storage’s cookie acceptance policy permits."
+    },
+    {
+      "name": "func storeCookies([HTTPCookie], for: URLSessionTask)",
+      "desc": "Stores an array of cookies in the cookie storage, on behalf of the provided task, if the cookie accept policy permits."
+    },
+    {
+      "name": "var cookies: [HTTPCookie]?",
+      "desc": "The cookie storage’s cookies."
+    },
+    {
+      "name": "func getCookiesFor(URLSessionTask, completionHandler: ([HTTPCookie]?) -> Void)",
+      "desc": "Fetches cookies relevant to the specified task and passes them to the completion handler."
+    },
+    {
+      "name": "func cookies(for: URL) -> [HTTPCookie]?",
+      "desc": "Returns all the cookie storage’s cookies that are sent to a specified URL."
+    },
+    {
+      "name": "func sortedCookies(using: [NSSortDescriptor]) -> [HTTPCookie]",
+      "desc": "Returns all of the cookie storage’s cookies, sorted according to a given set of sort descriptors."
+    },
+    {
+      "name": "static let NSHTTPCookieManagerCookiesChanged: NSNotification.Name",
+      "desc": "A notification posted when the cookies stored in the cookie storage have changed."
+    },
+    {
+      "name": "static let NSHTTPCookieManagerAcceptPolicyChanged: NSNotification.Name",
+      "desc": "A notification posted when the acceptance policy of the cookie storage has changed."
+    }
+  ],
+  "declaration": "class HTTPCookieStorage : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

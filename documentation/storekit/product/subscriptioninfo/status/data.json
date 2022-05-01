@@ -1,0 +1,57 @@
+{
+  "path": "/documentation/storekit/product/subscriptioninfo/status",
+  "type": "Structure",
+  "name": "Product.SubscriptionInfo.Status",
+  "desc": "The renewal status information for an auto-renewable subscription.",
+  "items": [
+    {
+      "name": "static var updates: Product.SubscriptionInfo.Status.Statuses",
+      "desc": "The asynchronous sequence that emits status information when a subscription’s status changes."
+    },
+    {
+      "name": "struct Product.SubscriptionInfo.Status.Statuses",
+      "desc": "An asynchronous sequence that listens for new subscription status information."
+    },
+    {
+      "name": "let state: Product.SubscriptionInfo.RenewalState",
+      "desc": "The renewal state of the auto-renewable subscription."
+    },
+    {
+      "name": "let renewalInfo: VerificationResult<Product.SubscriptionInfo.RenewalInfo>",
+      "desc": "The signed renewal information for the auto-renewable subscription."
+    },
+    {
+      "name": "let transaction: VerificationResult<Transaction>",
+      "desc": "The lastest transaction for the subscription group."
+    },
+    {
+      "name": "struct Product.SubscriptionInfo.RenewalInfo",
+      "desc": "The renewal information for an auto-renewable subscription."
+    },
+    {
+      "name": "struct Product.SubscriptionInfo.RenewalState",
+      "desc": "The renewal states of auto-renewable subscriptions."
+    },
+    {
+      "name": "static func != (Product.SubscriptionInfo.Status, Product.SubscriptionInfo.Status) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (Product.SubscriptionInfo.Status, Product.SubscriptionInfo.Status) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    }
+  ],
+  "declaration": "struct Status",
+  "conformsTo": [
+    "Equatable",
+    "Hashable"
+  ]
+}

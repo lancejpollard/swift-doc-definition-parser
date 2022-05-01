@@ -1,0 +1,180 @@
+{
+  "path": "/documentation/foundation/date/formatstyle",
+  "type": "Structure",
+  "name": "Date.FormatStyle",
+  "desc": "A structure that creates a locale-appropriate string representation of a date instance and converts strings of dates and times into date instances.",
+  "items": [
+    {
+      "name": "init(date: Date.FormatStyle.DateStyle?, time: Date.FormatStyle.TimeStyle?, locale: Locale, calendar: Calendar, timeZone: TimeZone, capitalizationContext: FormatStyleCapitalizationContext)",
+      "desc": "Creates an instance using the provided date, time, locale, calendar, time zone, and capitalization context."
+    },
+    {
+      "name": "static var dateTime: Date.FormatStyle",
+      "desc": "A factory variable used as a base for custom date format styles."
+    },
+    {
+      "name": "func day(Date.FormatStyle.Symbol.Day) -> Date.FormatStyle",
+      "desc": "Modifies the date format style to use the specified day format style."
+    },
+    {
+      "name": "func dayOfYear(Date.FormatStyle.Symbol.DayOfYear) -> Date.FormatStyle",
+      "desc": "Modifies the date format style to use the specified day of the year format style."
+    },
+    {
+      "name": "func era(Date.FormatStyle.Symbol.Era) -> Date.FormatStyle",
+      "desc": "Modifies the date format style to use the specified era format style."
+    },
+    {
+      "name": "func month(Date.FormatStyle.Symbol.Month) -> Date.FormatStyle",
+      "desc": "Modifies the date format style to use the specified month format style."
+    },
+    {
+      "name": "func quarter(Date.FormatStyle.Symbol.Quarter) -> Date.FormatStyle",
+      "desc": "Modifies the date format style to use the specified quarter format style."
+    },
+    {
+      "name": "func week(Date.FormatStyle.Symbol.Week) -> Date.FormatStyle",
+      "desc": "Modifies the date format style to use the specified week format style."
+    },
+    {
+      "name": "func weekday(Date.FormatStyle.Symbol.Weekday) -> Date.FormatStyle",
+      "desc": "Modifies the date format style to use the specified weekday format style."
+    },
+    {
+      "name": "func year(Date.FormatStyle.Symbol.Year) -> Date.FormatStyle",
+      "desc": "Modifies the date format style to use the specified year format style."
+    },
+    {
+      "name": "struct Date.FormatStyle.DateStyle",
+      "desc": "Type that defines date styles varied in length or components included."
+    },
+    {
+      "name": "func hour(Date.FormatStyle.Symbol.Hour) -> Date.FormatStyle",
+      "desc": "Modifies the date format style to use the specified hour format style."
+    },
+    {
+      "name": "func minute(Date.FormatStyle.Symbol.Minute) -> Date.FormatStyle",
+      "desc": "Modifies the date format style to use the specified minute format style."
+    },
+    {
+      "name": "func second(Date.FormatStyle.Symbol.Second) -> Date.FormatStyle",
+      "desc": "Modifies the date format style to use the specified second format style."
+    },
+    {
+      "name": "func secondFraction(Date.FormatStyle.Symbol.SecondFraction) -> Date.FormatStyle",
+      "desc": "Modifies the date format style to use the specified second fraction format style."
+    },
+    {
+      "name": "func timeZone(Date.FormatStyle.Symbol.TimeZone) -> Date.FormatStyle",
+      "desc": "Modifies the date format style to use the specified time zone format style."
+    },
+    {
+      "name": "struct Date.FormatStyle.TimeStyle",
+      "desc": "Type that defines time styles varied in length or components included."
+    },
+    {
+      "name": "func locale(Locale) -> Date.FormatStyle",
+      "desc": "Modifies the date format style to use the specified locale."
+    },
+    {
+      "name": "var timeZone: TimeZone",
+      "desc": "The time zone to use when formatting the date and time components."
+    },
+    {
+      "name": "var calendar: Calendar",
+      "desc": "The calendar to use when formatting the date."
+    },
+    {
+      "name": "var capitalizationContext: FormatStyleCapitalizationContext",
+      "desc": "The capitalization context to use when formatting the date."
+    },
+    {
+      "name": "var locale: Locale",
+      "desc": "The locale to use when formatting the date and time components."
+    },
+    {
+      "name": "var attributed: Date.AttributedStyle",
+      "desc": "An attributed format style created from the date format style."
+    },
+    {
+      "name": "struct Date.AttributedStyle",
+      "desc": "A structure that creates a locale-appropriate attributed string representation of a date instance."
+    },
+    {
+      "name": "func format(Date) -> String",
+      "desc": "Creates a locale-aware string representation from a date value."
+    },
+    {
+      "name": "func parse(String) -> Date",
+      "desc": "Parses a string into a date."
+    },
+    {
+      "name": "var parseStrategy: Date.FormatStyle",
+      "desc": "The strategy used to parse a string into a date."
+    },
+    {
+      "name": "struct Date.ParseStrategy"
+    },
+    {
+      "name": "typealias Date.FormatStyle.ParseInput",
+      "desc": "The type of data to parse."
+    },
+    {
+      "name": "typealias Date.FormatStyle.ParseOutput",
+      "desc": "The result type of parsing."
+    },
+    {
+      "name": "typealias Date.FormatStyle.Strategy",
+      "desc": "The type that guides parsing of a string into a date."
+    },
+    {
+      "name": "static func fixed(format: Date.FormatString, timeZone: TimeZone, locale: Locale?) -> Date.ParseStrategy",
+      "desc": "Creates a fixed-format parse strategy."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a new instance by decoding from the given decoder."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes the value into the given encoder."
+    },
+    {
+      "name": "typealias Date.FormatStyle.FormatInput",
+      "desc": "The type of data to format."
+    },
+    {
+      "name": "typealias Date.FormatStyle.FormatOutput",
+      "desc": "The type of the formatted data."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value of the style format."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the value by feeding them into the given hasher."
+    },
+    {
+      "name": "static func != (Date.FormatStyle, Date.FormatStyle) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are not equal."
+    },
+    {
+      "name": "static func == (Date.FormatStyle, Date.FormatStyle) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are equal."
+    },
+    {
+      "name": "struct Date.FormatStyle.Symbol",
+      "desc": "Types that customize formatting templates either by using the date format style’s modifier functions or by constructing fixed-pattern date format strings."
+    }
+  ],
+  "declaration": "struct FormatStyle",
+  "conformsTo": [
+    "Decodable",
+    "Encodable",
+    "FormatStyle",
+    "Hashable",
+    "ParseStrategy",
+    "ParseableFormatStyle"
+  ]
+}

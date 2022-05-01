@@ -1,0 +1,199 @@
+{
+  "path": "/documentation/appkit/nsviewcontroller",
+  "type": "Class",
+  "name": "NSViewController",
+  "desc": "A controller that manages a view, typically loaded from a nib file.",
+  "items": [
+    {
+      "name": "init(nibName: NSNib.Name?, bundle: Bundle?)",
+      "desc": "Returns a view controller object initialized to the nib file in the specified bundle."
+    },
+    {
+      "name": "func loadView()",
+      "desc": "Instantiates a view from a nib file and sets the value of the view property."
+    },
+    {
+      "name": "var representedObject: Any?",
+      "desc": "The object whose value is presented in the receiver’s primary view."
+    },
+    {
+      "name": "var nibBundle: Bundle?",
+      "desc": "The nib bundle to be loaded to instantiate the receiver’s primary view."
+    },
+    {
+      "name": "var nibName: NSNib.Name?",
+      "desc": "The name of the nib file to be loaded to instantiate the receiver’s primary view."
+    },
+    {
+      "name": "var view: NSView",
+      "desc": "The view controller’s primary view."
+    },
+    {
+      "name": "var title: String?",
+      "desc": "The localized title of the receiver’s primary view."
+    },
+    {
+      "name": "func commitEditing(withDelegate: Any?, didCommit: Selector?, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Attempt to commit any currently edited results of the receiver."
+    },
+    {
+      "name": "func commitEditing() -> Bool",
+      "desc": "Returns whether the receiver was able to commit any pending edits."
+    },
+    {
+      "name": "func discardEditing()",
+      "desc": "Causes the receiver to discard any changes, restoring the previous values."
+    },
+    {
+      "name": "var storyboard: NSStoryboard?",
+      "desc": "The storyboard from which the view controller was loaded."
+    },
+    {
+      "name": "func dismiss(Any?)"
+    },
+    {
+      "name": "func viewDidLoad()",
+      "desc": "Called after the view controller’s view has been loaded into memory."
+    },
+    {
+      "name": "var isViewLoaded: Bool",
+      "desc": "A Boolean value indicating whether the view controller’s view is loaded into memory."
+    },
+    {
+      "name": "func viewWillAppear()",
+      "desc": "Called after the view controller’s view has been loaded into memory is about to be added to the view hierarchy in the window."
+    },
+    {
+      "name": "func viewDidAppear()",
+      "desc": "Called when the view controller’s view is fully transitioned onto the screen."
+    },
+    {
+      "name": "func viewWillDisappear()",
+      "desc": "Called when the view controller’s view is about to be removed from the view hierarchy in the window."
+    },
+    {
+      "name": "func viewDidDisappear()",
+      "desc": "Called after the view controller’s view is removed from the view hierarchy in a window."
+    },
+    {
+      "name": "var preferredContentSize: NSSize",
+      "desc": "The desired size of the view controller’s view, in screen units."
+    },
+    {
+      "name": "func updateViewConstraints()",
+      "desc": "Called during Auto Layout constraint updating to enable the view controller to mediate the process."
+    },
+    {
+      "name": "func viewWillLayout()",
+      "desc": "Called just before the layout() method of the view controller's view is called."
+    },
+    {
+      "name": "func viewDidLayout()",
+      "desc": "Called immediately after the layout() method of the view controller's view is called."
+    },
+    {
+      "name": "func addChild(NSViewController)",
+      "desc": "A convenience method for adding a child view controller at the end of the children array."
+    },
+    {
+      "name": "var children: [NSViewController]",
+      "desc": "An array of view controllers that are hierarchical children of the view controller."
+    },
+    {
+      "name": "func transition(from: NSViewController, to: NSViewController, options: NSViewController.TransitionOptions, completionHandler: (() -> Void)?)",
+      "desc": "Performs a transition between two sibling child view controllers of the view controller."
+    },
+    {
+      "name": "func insertChild(NSViewController, at: Int)",
+      "desc": "Inserts a specified child view controller into the children array at a specified position."
+    },
+    {
+      "name": "func removeChild(at: Int)",
+      "desc": "Removes a specified child controller from the view controller."
+    },
+    {
+      "name": "func removeFromParent()",
+      "desc": "Removes the called view controller from its parent view controller."
+    },
+    {
+      "name": "func preferredContentSizeDidChange(for: NSViewController)",
+      "desc": "Called when there is a change in value of the preferredContentSize property of a child view controller or a presented view controller."
+    },
+    {
+      "name": "func present(NSViewController, animator: NSViewControllerPresentationAnimator)",
+      "desc": "Presents another view controller using a specified, custom animator for presentation and dismissal."
+    },
+    {
+      "name": "func dismiss(NSViewController)",
+      "desc": "Dismisses a presented view controller, using the same animator that presented it."
+    },
+    {
+      "name": "func present(NSViewController, asPopoverRelativeTo: NSRect, of: NSView, preferredEdge: NSRectEdge, behavior: NSPopover.Behavior)",
+      "desc": "Presents another view controller as a popover."
+    },
+    {
+      "name": "func presentAsModalWindow(NSViewController)",
+      "desc": "Presents another view controller as a modal window, also known as an alert."
+    },
+    {
+      "name": "func presentAsSheet(NSViewController)",
+      "desc": "Presents another view controller as a sheet."
+    },
+    {
+      "name": "var parent: NSViewController?",
+      "desc": "The immediate ancestor view controller of the view controller."
+    },
+    {
+      "name": "var presentedViewControllers: [NSViewController]?",
+      "desc": "The view controllers, if any, that are currently presented by the view controller."
+    },
+    {
+      "name": "var presentingViewController: NSViewController?",
+      "desc": "The view controller that presented the view controller or that presented its farthest ancestor view controller."
+    },
+    {
+      "name": "var extensionContext: NSExtensionContext?",
+      "desc": "For a view controller that is part of an app extension, the app extension context."
+    },
+    {
+      "name": "var preferredScreenOrigin: NSPoint",
+      "desc": "For a view controller that is part of an app extension, the preferred screen origin."
+    },
+    {
+      "name": "var preferredMaximumSize: NSSize",
+      "desc": "For a view controller that is part of an app extension, the largest allowable size for the app extension’s primary view, in screen units."
+    },
+    {
+      "name": "var preferredMinimumSize: NSSize",
+      "desc": "For a view controller that is part of an app extension, the smallest allowable size for the app extension’s primary view, in screen units."
+    },
+    {
+      "name": "func viewWillTransition(to: NSSize)",
+      "desc": "For a view controller that is part of an app extension, called when its view is about to be resized."
+    },
+    {
+      "name": "var sourceItemView: NSView?"
+    },
+    {
+      "name": "struct NSViewController.TransitionOptions",
+      "desc": "Animation options for view transitions in a view controller."
+    },
+    {
+      "name": "init?(coder: NSCoder)"
+    },
+    {
+      "name": "var playgroundLiveViewRepresentation: PlaygroundLiveViewRepresentation"
+    }
+  ],
+  "declaration": "class NSViewController : NSResponder",
+  "inheritsFrom": [
+    "NSResponder"
+  ],
+  "conformsTo": [
+    "NSEditor",
+    "NSExtensionRequestHandling",
+    "NSSeguePerforming",
+    "NSUserInterfaceItemIdentification",
+    "PlaygroundLiveViewable"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "path": "/documentation/swiftui/animatablepair",
+  "type": "Structure",
+  "name": "AnimatablePair",
+  "desc": "A pair of animatable values, which is itself animatable.",
+  "items": [
+    {
+      "name": "init(First, Second)",
+      "desc": "Creates an animated pair with the provided values."
+    },
+    {
+      "name": "var first: First",
+      "desc": "The first value."
+    },
+    {
+      "name": "var second: Second",
+      "desc": "The second value."
+    },
+    {
+      "name": "static var zero: AnimatablePair<First, Second>",
+      "desc": "The zero value."
+    },
+    {
+      "name": "static func + (AnimatablePair<First, Second>, AnimatablePair<First, Second>) -> AnimatablePair<First, Second>",
+      "desc": "Adds two values and produces their sum."
+    },
+    {
+      "name": "static func += (inout AnimatablePair<First, Second>, AnimatablePair<First, Second>)",
+      "desc": "Adds two values and stores the result in the left-hand-side variable."
+    },
+    {
+      "name": "static func - (AnimatablePair<First, Second>, AnimatablePair<First, Second>) -> AnimatablePair<First, Second>",
+      "desc": "Subtracts one value from another and produces their difference."
+    },
+    {
+      "name": "static func -= (inout AnimatablePair<First, Second>, AnimatablePair<First, Second>)",
+      "desc": "Subtracts the second value from the first and stores the difference in the left-hand-side variable."
+    },
+    {
+      "name": "var magnitudeSquared: Double",
+      "desc": "The dot-product of this animated pair with itself."
+    },
+    {
+      "name": "func scale(by: Double)",
+      "desc": "Multiplies each component of this value by the given value."
+    },
+    {
+      "name": "static func == (AnimatablePair<First, Second>, AnimatablePair<First, Second>) -> Bool",
+      "desc": "Indicates whether two animatable pairs are equal."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool",
+      "desc": "Indicates whether two animatable pairs are unequal."
+    }
+  ],
+  "declaration": "@frozen struct AnimatablePair<First, Second> where First : VectorArithmetic, Second : VectorArithmetic",
+  "conformsTo": [
+    "AdditiveArithmetic",
+    "Equatable",
+    "VectorArithmetic"
+  ]
+}

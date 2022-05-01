@@ -1,0 +1,73 @@
+{
+  "path": "/documentation/imagecapturecore/icdevicebrowser",
+  "type": "Class",
+  "name": "ICDeviceBrowser",
+  "desc": "An object for finding digital cameras and scanners.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an ImageCaptureCore device browser."
+    },
+    {
+      "name": "var delegate: ICDeviceBrowserDelegate?",
+      "desc": "The object that acts as the delegate of the device browser."
+    },
+    {
+      "name": "protocol ICDeviceBrowserDelegate",
+      "desc": "Methods for managing the addition and removal of devices and responding to device changes."
+    },
+    {
+      "name": "var isBrowsing: Bool",
+      "desc": "A Boolean value indicating whether the device browser is browsing for devices."
+    },
+    {
+      "name": "var devices: [ICDevice]?",
+      "desc": "All devices found by the browser."
+    },
+    {
+      "name": "class ICDevice",
+      "desc": "An abstract object that represents a device."
+    },
+    {
+      "name": "var browsedDeviceTypeMask: ICDeviceTypeMask",
+      "desc": "A mask whose set bits indicate the type of devices being browsed after the delegate receives the start message."
+    },
+    {
+      "name": "func start()",
+      "desc": "Tells the delegate to start looking for devices."
+    },
+    {
+      "name": "func stop()",
+      "desc": "Tells the delegate to stop looking for devices."
+    },
+    {
+      "name": "func preferredDevice() -> ICDevice?",
+      "desc": "Returns a device object that the client application should select when it launches."
+    },
+    {
+      "name": "var isSuspended: Bool"
+    },
+    {
+      "name": "func contentsAuthorizationStatus() -> ICAuthorizationStatus"
+    },
+    {
+      "name": "func controlAuthorizationStatus() -> ICAuthorizationStatus"
+    },
+    {
+      "name": "func requestContentsAuthorization(completion: (ICAuthorizationStatus) -> Void)"
+    },
+    {
+      "name": "func requestControlAuthorization(completion: (ICAuthorizationStatus) -> Void)"
+    },
+    {
+      "name": "func resetContentsAuthorization(completion: (ICAuthorizationStatus) -> Void)"
+    },
+    {
+      "name": "func resetControlAuthorization(completion: (ICAuthorizationStatus) -> Void)"
+    }
+  ],
+  "declaration": "class ICDeviceBrowser : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

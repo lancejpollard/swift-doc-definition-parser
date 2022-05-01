@@ -1,0 +1,67 @@
+{
+  "path": "/documentation/musickit/musicplayer/queue",
+  "type": "Class",
+  "name": "MusicPlayer.Queue",
+  "desc": "A representation of the playback queue for a music player.",
+  "items": [
+    {
+      "name": "struct Entry",
+      "desc": "An entry for the playback queue of the music player."
+    },
+    {
+      "name": "init<S>(S, startingAt: S.Element?)",
+      "desc": "Creates a playback queue with playback queue entries."
+    },
+    {
+      "name": "convenience init(arrayLiteral: PlayableMusicItem...)",
+      "desc": "Creates an instance initialized with the given elements."
+    },
+    {
+      "name": "init<S, PlayableMusicItemType>(for: S, startingAt: S.Element?)",
+      "desc": "Creates a playback queue with playable music items."
+    },
+    {
+      "name": "var currentEntry: MusicPlayer.Queue.Entry?",
+      "desc": "The currently active entry in the playback queue."
+    },
+    {
+      "name": "var objectWillChange: AnyPublisher<Void, Never>",
+      "desc": "A publisher that emits before the object has changed."
+    },
+    {
+      "name": "func insert<PlayableMusicItemType>(PlayableMusicItemType, position: MusicPlayer.Queue.EntryInsertionPosition) async throws",
+      "desc": "Inserts a playable music item into the playback queue."
+    },
+    {
+      "name": "func insert<S, PlayableMusicItemType>(S, position: MusicPlayer.Queue.EntryInsertionPosition) async throws",
+      "desc": "Inserts playable music items into the playback queue."
+    },
+    {
+      "name": "func insert(MusicPlayer.Queue.Entry, position: MusicPlayer.Queue.EntryInsertionPosition) async throws",
+      "desc": "Inserts an entry into the playback queue."
+    },
+    {
+      "name": "func insert<S>(S, position: MusicPlayer.Queue.EntryInsertionPosition) async throws",
+      "desc": "Inserts entries into the playback queue."
+    },
+    {
+      "name": "typealias ArrayLiteralElement",
+      "desc": "The type of the elements of an array literal."
+    },
+    {
+      "name": "typealias ObjectWillChangePublisher",
+      "desc": "The type of publisher that emits before the object has changed."
+    },
+    {
+      "name": "enum EntryInsertionPosition",
+      "desc": "An enumeration for the various supported positions for inserting playable music items or entries in the playback queue."
+    }
+  ],
+  "declaration": "class Queue",
+  "conformsTo": [
+    "Equatable",
+    "ExpressibleByArrayLiteral",
+    "Hashable",
+    "ObservableObject"
+  ]
+}

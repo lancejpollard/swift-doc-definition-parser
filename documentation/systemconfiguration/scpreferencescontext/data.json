@@ -1,0 +1,37 @@
+{
+  "path": "/documentation/systemconfiguration/scpreferencescontext",
+  "type": "Structure",
+  "name": "SCPreferencesContext",
+  "desc": "A structure containing user-specified data and callbacks for accessing system configuration preferences.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a preferences context."
+    },
+    {
+      "name": "init(version: CFIndex, info: UnsafeMutableRawPointer?, retain: ((UnsafeRawPointer) -> UnsafeRawPointer)?, release: ((UnsafeRawPointer) -> Void)?, copyDescription: ((UnsafeRawPointer) -> Unmanaged<CFString>)?)",
+      "desc": "Creates a preferences context with the specified raw values."
+    },
+    {
+      "name": "var copyDescription: ((UnsafeRawPointer) -> Unmanaged<CFString>)?",
+      "desc": "The callback used to provide a description of the info field."
+    },
+    {
+      "name": "var info: UnsafeMutableRawPointer?",
+      "desc": "A C pointer to a user-specified block of data."
+    },
+    {
+      "name": "var release: ((UnsafeRawPointer) -> Void)?",
+      "desc": "The calllback used to remove a retain previously added for the info field. If this parameter is not a pointer to a function of the correct prototype, the behavior is undefined. The value may be NULL."
+    },
+    {
+      "name": "var retain: ((UnsafeRawPointer) -> UnsafeRawPointer)?",
+      "desc": "The callback used to add a retain for the info field. If this parameter is not a pointer to a function of the correct prototype, the behavior is undefined. The value may be NULL."
+    },
+    {
+      "name": "var version: CFIndex",
+      "desc": "The version number of the structure type being passed in as a parameter to SCPreferencesSetCallback(_:_:_:). This structure is version 0."
+    }
+  ],
+  "declaration": "struct SCPreferencesContext"
+}

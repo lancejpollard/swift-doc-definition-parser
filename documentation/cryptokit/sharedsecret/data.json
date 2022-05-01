@@ -1,0 +1,55 @@
+{
+  "path": "/documentation/cryptokit/sharedsecret",
+  "type": "Structure",
+  "name": "SharedSecret",
+  "desc": "A key agreement result from which you can derive a symmetric cryptographic key.",
+  "items": [
+    {
+      "name": "func hkdfDerivedSymmetricKey<H, Salt, SI>(using: H.Type, salt: Salt, sharedInfo: SI, outputByteCount: Int) -> SymmetricKey",
+      "desc": "Derives a symmetric encryption key from the secret using HKDF key derivation."
+    },
+    {
+      "name": "func x963DerivedSymmetricKey<H, SI>(using: H.Type, sharedInfo: SI, outputByteCount: Int) -> SymmetricKey",
+      "desc": "Derives a symmetric encryption key from the secret using x9.63 key derivation."
+    },
+    {
+      "name": "struct SymmetricKey",
+      "desc": "A symmetric cryptographic key."
+    },
+    {
+      "name": "static func == <D>(SharedSecret, D) -> Bool",
+      "desc": "Determines whether a shared secret is equivalent to a collection of contiguous bytes."
+    },
+    {
+      "name": "static func == (SharedSecret, SharedSecret) -> Bool",
+      "desc": "Returns a Boolean indicating whether two shared secrets are equal."
+    },
+    {
+      "name": "static func != (SharedSecret, SharedSecret) -> Bool",
+      "desc": "Returns a Boolean indicating whether two shared secrets aren’t equal."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A human-readable description of the secret."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the shared secret by feeding them into the given hasher."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value of the shared secret."
+    },
+    {
+      "name": "func withUnsafeBytes<R>((UnsafeRawBufferPointer) -> R) -> R",
+      "desc": "Invokes the given closure with a buffer pointer covering the raw bytes of the shared secret."
+    }
+  ],
+  "declaration": "struct SharedSecret",
+  "conformsTo": [
+    "ContiguousBytes",
+    "CustomStringConvertible",
+    "Equatable",
+    "Hashable"
+  ]
+}

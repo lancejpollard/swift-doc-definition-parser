@@ -1,0 +1,87 @@
+{
+  "path": "/documentation/messages/msmessagesappviewcontroller",
+  "type": "Class",
+  "name": "MSMessagesAppViewController",
+  "desc": "The principal view controller for iMessage apps.",
+  "items": [
+    {
+      "name": "var activeConversation: MSConversation?",
+      "desc": "The conversation currently displayed in the transcript."
+    },
+    {
+      "name": "func dismiss()",
+      "desc": "Dismisses the extension and marks it for termination."
+    },
+    {
+      "name": "func willBecomeActive(with: MSConversation)",
+      "desc": "Invoked just before the Messages extension becomes active."
+    },
+    {
+      "name": "func didBecomeActive(with: MSConversation)",
+      "desc": "Invoked after the Messages extension becomes active."
+    },
+    {
+      "name": "func willResignActive(with: MSConversation)",
+      "desc": "Invoked just before the message resigns its active status."
+    },
+    {
+      "name": "func didResignActive(with: MSConversation)",
+      "desc": "Invoked after the message resigns its active status."
+    },
+    {
+      "name": "func willSelect(MSMessage, conversation: MSConversation)",
+      "desc": "Invoked in response to the user selecting a message object in the transcript, before the system updates the conversation’s selectedMessage property."
+    },
+    {
+      "name": "func didSelect(MSMessage, conversation: MSConversation)",
+      "desc": "Invoked in response to the user selecting a message object in the transcript, after the system updates the conversation’s selectedMessage property."
+    },
+    {
+      "name": "func didReceive(MSMessage, conversation: MSConversation)",
+      "desc": "Invoked when the iMessage app receives a new message object."
+    },
+    {
+      "name": "func didStartSending(MSMessage, conversation: MSConversation)",
+      "desc": "Invoked when the user sends a message object."
+    },
+    {
+      "name": "func didCancelSending(MSMessage, conversation: MSConversation)",
+      "desc": "Invoked when the user deletes a message object from the Messages app’s input field."
+    },
+    {
+      "name": "var presentationStyle: MSMessagesAppPresentationStyle",
+      "desc": "The extension’s current presentation style."
+    },
+    {
+      "name": "func requestPresentationStyle(MSMessagesAppPresentationStyle)",
+      "desc": "Asks the extension’s user interface to transition to the provided style."
+    },
+    {
+      "name": "func willTransition(to: MSMessagesAppPresentationStyle)",
+      "desc": "Tells the view controller that the extension is about to transition to a new presentation style."
+    },
+    {
+      "name": "func didTransition(to: MSMessagesAppPresentationStyle)",
+      "desc": "Tells the view controller that the extension has transitioned to a new presentation style."
+    },
+    {
+      "name": "enum MSMessagesAppPresentationStyle",
+      "desc": "Presentation styles that describe your iMessage app’s appearance."
+    },
+    {
+      "name": "var presentationContext: MSMessagesAppPresentationContext",
+      "desc": "The context describing where your iMessage app is presented."
+    },
+    {
+      "name": "enum MSMessagesAppPresentationContext",
+      "desc": "Presentation contexts describing where your iMessage app appears."
+    }
+  ],
+  "declaration": "class MSMessagesAppViewController : UIViewController",
+  "inheritsFrom": [
+    "UIViewController"
+  ],
+  "conformsTo": [
+    "MSMessagesAppTranscriptPresentation"
+  ]
+}

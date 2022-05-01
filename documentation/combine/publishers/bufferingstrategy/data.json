@@ -1,0 +1,21 @@
+{
+  "path": "/documentation/combine/publishers/bufferingstrategy",
+  "type": "Enumeration",
+  "name": "Publishers.BufferingStrategy",
+  "desc": "A strategy that handles exhaustion of a buffer’s capacity.",
+  "items": [
+    {
+      "name": "case dropNewest",
+      "desc": "When the buffer is full, discard the newly received element."
+    },
+    {
+      "name": "case dropOldest",
+      "desc": "When the buffer is full, discard the oldest element in the buffer."
+    },
+    {
+      "name": "case customError(() -> Failure)",
+      "desc": "When the buffer is full, execute the closure to provide a custom error."
+    }
+  ],
+  "declaration": "enum BufferingStrategy<Failure> where Failure : Error"
+}

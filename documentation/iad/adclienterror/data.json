@@ -1,0 +1,89 @@
+{
+  "path": "/documentation/iad/adclienterror",
+  "type": "Structure",
+  "name": "ADClientError",
+  "desc": "The group of error codes passed from the attribution response to the completion handler block.",
+  "items": [
+    {
+      "name": "static var corruptResponse: ADClientError.Code",
+      "desc": "The response received from the attribution server was corrupt."
+    },
+    {
+      "name": "static var requestClientError: ADClientError.Code",
+      "desc": "The response received from the attribution server had an HTTP 4xx status code."
+    },
+    {
+      "name": "static var requestNetworkError: ADClientError.Code",
+      "desc": "The communication with the attribution server had a network error."
+    },
+    {
+      "name": "static var requestServerError: ADClientError.Code",
+      "desc": "The response received from the attribution server had an HTTP 5xx status code."
+    },
+    {
+      "name": "static var trackingRestrictedOrDenied: ADClientError.Code",
+      "desc": "The user is restricted or has denied tracking for the calling application."
+    },
+    {
+      "name": "static var missingData: ADClientError.Code",
+      "desc": "The downloaded app received a payload lacking enough data to perform an attribution check."
+    },
+    {
+      "name": "static var unsupportedPlatform: ADClientError.Code",
+      "desc": "The attribution API was called on an unsupported platform."
+    },
+    {
+      "name": "static var limitAdTracking: ADClientError.Code"
+    },
+    {
+      "name": "static var unknown: ADClientError.Code"
+    },
+    {
+      "name": "enum ADClientError.Code",
+      "desc": "The error codes that are passed from the attribution response to the completion handler."
+    },
+    {
+      "name": "let ADClientErrorDomain: String",
+      "desc": "The error domain that is passed to the completion handler."
+    },
+    {
+      "name": "static var errorDomain: String",
+      "desc": "A domain for the error."
+    },
+    {
+      "name": "var errorCode: Int",
+      "desc": "A code for the error."
+    },
+    {
+      "name": "var errorUserInfo: [String : Any]",
+      "desc": "Information about the error."
+    },
+    {
+      "name": "var localizedDescription: String",
+      "desc": "A localized, human-readable explanation of the error."
+    },
+    {
+      "name": "static func != (ADClientError, ADClientError) -> Bool",
+      "desc": "A Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "init(Code, userInfo: [String : Any])"
+    },
+    {
+      "name": "var code: Code"
+    },
+    {
+      "name": "var hashValue: Int"
+    },
+    {
+      "name": "var userInfo: [String : Any]"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "static func == (ADClientError, ADClientError) -> Bool"
+    }
+  ],
+  "declaration": "struct ADClientError"
+}

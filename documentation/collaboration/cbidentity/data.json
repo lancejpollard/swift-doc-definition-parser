@@ -1,0 +1,65 @@
+{
+  "path": "/documentation/collaboration/cbidentity",
+  "type": "Class",
+  "name": "CBIdentity",
+  "desc": "A CBIdentity object is used for accessing the attributes of an identity stored in an identity authority. You can use an identity object for finding identities, and storing them in an access control list (ACL). If you need to edit these attributes, take advantage of the CSIdentity class in Core Services.",
+  "items": [
+    {
+      "name": "init?(name: String, authority: CBIdentityAuthority)",
+      "desc": "Returns the identity object with the given name from the specified identity authority."
+    },
+    {
+      "name": "init?(persistentReference: Data)",
+      "desc": "Returns the identity object matching the persistent reference data."
+    },
+    {
+      "name": "var aliases: [String]",
+      "desc": "Returns an array of aliases (alternate names) for the identity."
+    },
+    {
+      "name": "var authority: CBIdentityAuthority",
+      "desc": "Returns the identity authority where the identity is stored."
+    },
+    {
+      "name": "var emailAddress: String?",
+      "desc": "Returns the email address of an identity."
+    },
+    {
+      "name": "var fullName: String",
+      "desc": "Returns the full name of the identity."
+    },
+    {
+      "name": "var image: NSImage?",
+      "desc": "Returns the image associated with an identity."
+    },
+    {
+      "name": "func isMember(ofGroup: CBGroupIdentity) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the identity is a member of the specified group."
+    },
+    {
+      "name": "var posixName: String",
+      "desc": "Returns the POSIX name of the identity."
+    },
+    {
+      "name": "var persistentReference: Data?",
+      "desc": "Returns a persistent reference to store a reference to an identity."
+    },
+    {
+      "name": "init?(uniqueIdentifier: UUID, authority: CBIdentityAuthority)"
+    },
+    {
+      "name": "var isHidden: Bool"
+    },
+    {
+      "name": "var uniqueIdentifier: UUID"
+    }
+  ],
+  "declaration": "class CBIdentity : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "NSCopying"
+  ]
+}

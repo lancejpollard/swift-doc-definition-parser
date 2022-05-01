@@ -1,0 +1,177 @@
+{
+  "path": "/documentation/swiftui/graphicscontext",
+  "type": "Structure",
+  "name": "GraphicsContext",
+  "desc": "An immediate mode drawing destination, and its current state.",
+  "items": [
+    {
+      "name": "func stroke(Path, with: GraphicsContext.Shading, lineWidth: CGFloat)",
+      "desc": "Draws a path into the context with a specified line width."
+    },
+    {
+      "name": "func stroke(Path, with: GraphicsContext.Shading, style: StrokeStyle)",
+      "desc": "Draws a path into the context with a specified stroke style."
+    },
+    {
+      "name": "func fill(Path, with: GraphicsContext.Shading, style: FillStyle)",
+      "desc": "Draws a path into the context and fills the outlined region."
+    },
+    {
+      "name": "func resolve(GraphicsContext.Shading) -> GraphicsContext.Shading",
+      "desc": "Returns a version of a shading resolved with the current values of the graphics context’s environment."
+    },
+    {
+      "name": "struct Shading",
+      "desc": "A color or pattern that you can use to outline or fill a path."
+    },
+    {
+      "name": "struct GradientOptions",
+      "desc": "Options that affect the rendering of color gradients."
+    },
+    {
+      "name": "func draw(Image, at: CGPoint, anchor: UnitPoint)",
+      "desc": "Draws an image into the context, aligning an anchor within the image to a point in the context."
+    },
+    {
+      "name": "func draw(Image, in: CGRect, style: FillStyle)",
+      "desc": "Draws an image into the context, using the specified rectangle as a layout frame."
+    },
+    {
+      "name": "func draw(GraphicsContext.ResolvedImage, at: CGPoint, anchor: UnitPoint)",
+      "desc": "Draws a resolved image into the context, aligning an anchor within the image to a point in the context."
+    },
+    {
+      "name": "func draw(GraphicsContext.ResolvedImage, in: CGRect, style: FillStyle)",
+      "desc": "Draws a resolved image into the context, using the specified rectangle as a layout frame."
+    },
+    {
+      "name": "func resolve(Image) -> GraphicsContext.ResolvedImage",
+      "desc": "Gets a version of an image that’s fixed with the current values of the graphics context’s environment."
+    },
+    {
+      "name": "struct ResolvedImage",
+      "desc": "An image resolved to a particular environment."
+    },
+    {
+      "name": "func draw(Text, at: CGPoint, anchor: UnitPoint)",
+      "desc": "Draws text into the context, aligning an anchor within the ideal size of the rendered text to a point in the context."
+    },
+    {
+      "name": "func draw(Text, in: CGRect)",
+      "desc": "Draws text into the context using the specified rectangle as a layout frame."
+    },
+    {
+      "name": "func draw(GraphicsContext.ResolvedText, at: CGPoint, anchor: UnitPoint)",
+      "desc": "Draws resolved text into the context, aligning an anchor within the ideal size of the text to a point in the context."
+    },
+    {
+      "name": "func draw(GraphicsContext.ResolvedText, in: CGRect)",
+      "desc": "Draws resolved text into the context using the specified rectangle as a layout frame."
+    },
+    {
+      "name": "func resolve(Text) -> GraphicsContext.ResolvedText",
+      "desc": "Gets a version of a text view that’s fixed with the current values of the graphics context’s environment."
+    },
+    {
+      "name": "struct ResolvedText",
+      "desc": "A text view resolved to a particular environment."
+    },
+    {
+      "name": "func draw(GraphicsContext.ResolvedSymbol, at: CGPoint, anchor: UnitPoint)",
+      "desc": "Draws a resolved symbol into the context, aligning an anchor within the symbol to a point in the context."
+    },
+    {
+      "name": "func draw(GraphicsContext.ResolvedSymbol, in: CGRect)",
+      "desc": "Draws a resolved symbol into the context, using the specified rectangle as a layout frame."
+    },
+    {
+      "name": "func resolveSymbol<ID>(id: ID) -> GraphicsContext.ResolvedSymbol?",
+      "desc": "Gets the identified child view as a resolved symbol, if the view exists."
+    },
+    {
+      "name": "struct ResolvedSymbol",
+      "desc": "A static sequence of drawing operations that may be drawn multiple times, preserving their resolution independence."
+    },
+    {
+      "name": "func drawLayer(content: (inout GraphicsContext) throws -> Void) rethrows",
+      "desc": "Draws a new layer, created by drawing code that you provide, into the context."
+    },
+    {
+      "name": "func clip(to: Path, style: FillStyle, options: GraphicsContext.ClipOptions)",
+      "desc": "Adds a path to the context’s array of clip shapes."
+    },
+    {
+      "name": "func clipToLayer(opacity: Double, options: GraphicsContext.ClipOptions, content: (inout GraphicsContext) throws -> Void) rethrows",
+      "desc": "Adds a clip shape that you define in a new layer to the context’s array of clip shapes."
+    },
+    {
+      "name": "var clipBoundingRect: CGRect",
+      "desc": "The bounding rectangle of the intersection of all current clip shapes in the current user space."
+    },
+    {
+      "name": "struct ClipOptions",
+      "desc": "Options that affect the use of clip shapes."
+    },
+    {
+      "name": "var opacity: Double",
+      "desc": "The opacity of drawing operations in the context."
+    },
+    {
+      "name": "var blendMode: GraphicsContext.BlendMode",
+      "desc": "The blend mode used by drawing operations in the context."
+    },
+    {
+      "name": "struct BlendMode",
+      "desc": "The ways that a graphics context combines new content with background content."
+    },
+    {
+      "name": "func addFilter(GraphicsContext.Filter, options: GraphicsContext.FilterOptions)",
+      "desc": "Adds a filter that applies to subsequent drawing operations."
+    },
+    {
+      "name": "struct Filter",
+      "desc": "A type that applies image processing operations to rendered content."
+    },
+    {
+      "name": "struct FilterOptions",
+      "desc": "Options that configure a filter that you add to a graphics context."
+    },
+    {
+      "name": "struct BlurOptions",
+      "desc": "Options that configure the graphics context filter that creates blur."
+    },
+    {
+      "name": "struct ShadowOptions",
+      "desc": "Options that configure the graphics context filter that creates shadows."
+    },
+    {
+      "name": "func scaleBy(x: CGFloat, y: CGFloat)",
+      "desc": "Scales subsequent drawing operations by an amount in each dimension."
+    },
+    {
+      "name": "func rotate(by: Angle)",
+      "desc": "Rotates subsequent drawing operations by an angle."
+    },
+    {
+      "name": "func translateBy(x: CGFloat, y: CGFloat)",
+      "desc": "Moves subsequent drawing operations by an amount in each dimension."
+    },
+    {
+      "name": "func concatenate(CGAffineTransform)",
+      "desc": "Appends the given transform to the context’s existing transform."
+    },
+    {
+      "name": "var transform: CGAffineTransform",
+      "desc": "The current transform matrix, defining user space coordinates."
+    },
+    {
+      "name": "func withCGContext(content: (CGContext) throws -> Void) rethrows",
+      "desc": "Provides a Core Graphics context that you can use as a proxy to draw into this context."
+    },
+    {
+      "name": "var environment: EnvironmentValues",
+      "desc": "The environment associated with the graphics context."
+    }
+  ],
+  "declaration": "@frozen struct GraphicsContext"
+}

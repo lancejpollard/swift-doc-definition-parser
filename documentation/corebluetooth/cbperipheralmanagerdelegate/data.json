@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/corebluetooth/cbperipheralmanagerdelegate",
+  "type": "Protocol",
+  "name": "CBPeripheralManagerDelegate",
+  "desc": "A protocol that provides updates for local peripheral state and interactions with remote central devices.",
+  "items": [
+    {
+      "name": "func peripheralManagerDidUpdateState(CBPeripheralManager)",
+      "desc": "Tells the delegate the peripheral manager’s state updated."
+    },
+    {
+      "name": "func peripheralManager(CBPeripheralManager, willRestoreState: [String : Any])",
+      "desc": "Tells the delegate the system is about to restore the peripheral manager."
+    },
+    {
+      "name": "func peripheralManager(CBPeripheralManager, didAdd: CBService, error: Error?)",
+      "desc": "Tells the delegate the peripheral manager published a service to the local GATT database."
+    },
+    {
+      "name": "func peripheralManagerDidStartAdvertising(CBPeripheralManager, error: Error?)",
+      "desc": "Tells the delegate the peripheral manager started advertising the local peripheral device’s data."
+    },
+    {
+      "name": "func peripheralManager(CBPeripheralManager, central: CBCentral, didSubscribeTo: CBCharacteristic)",
+      "desc": "Tells the delegate that a remote central device subscribed to a characteristic’s value."
+    },
+    {
+      "name": "func peripheralManager(CBPeripheralManager, central: CBCentral, didUnsubscribeFrom: CBCharacteristic)",
+      "desc": "Tells the delegate that a remote central device unsubscribed from a characteristic’s value."
+    },
+    {
+      "name": "func peripheralManagerIsReady(toUpdateSubscribers: CBPeripheralManager)",
+      "desc": "Tells the delegate that a local peripheral device is ready to send characteristic value updates."
+    },
+    {
+      "name": "func peripheralManager(CBPeripheralManager, didReceiveRead: CBATTRequest)",
+      "desc": "Tells the delegate that a local peripheral received an Attribute Protocol (ATT) read request for a characteristic with a dynamic value."
+    },
+    {
+      "name": "func peripheralManager(CBPeripheralManager, didReceiveWrite: [CBATTRequest])",
+      "desc": "Tells the delegate that a local peripheral device received an Attribute Protocol (ATT) write request for a characteristic with a dynamic value."
+    },
+    {
+      "name": "func peripheralManager(CBPeripheralManager, didPublishL2CAPChannel: CBL2CAPPSM, error: Error?)",
+      "desc": "Tells the delegate that the peripheral manager created a listener for incoming L2CAP channel connections."
+    },
+    {
+      "name": "func peripheralManager(CBPeripheralManager, didUnpublishL2CAPChannel: CBL2CAPPSM, error: Error?)",
+      "desc": "Tells the delegate that the peripheral manager removed a published service from the local system."
+    },
+    {
+      "name": "func peripheralManager(CBPeripheralManager, didOpen: CBL2CAPChannel?, error: Error?)",
+      "desc": "Tells the delegate that the peripheral manager opened an L2CAP channel."
+    }
+  ],
+  "declaration": "protocol CBPeripheralManagerDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

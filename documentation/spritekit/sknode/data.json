@@ -1,0 +1,278 @@
+{
+  "path": "/documentation/spritekit/sknode",
+  "type": "Class",
+  "name": "SKNode",
+  "desc": "The base class of all SpriteKit nodes.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Initializes a blank node."
+    },
+    {
+      "name": "init?(fileNamed: String)",
+      "desc": "Creates a new node by loading an archive file from the game’s main bundle."
+    },
+    {
+      "name": "init?(coder: NSCoder)",
+      "desc": "Called when a node is initialized from an .sks file."
+    },
+    {
+      "name": "init(fileNamed: String, securelyWithClasses: Set<AnyHashable>)"
+    },
+    {
+      "name": "var position: CGPoint",
+      "desc": "The position of the node in its parent's coordinate system."
+    },
+    {
+      "name": "var frame: CGRect",
+      "desc": "A rectangle in the parent’s coordinate system that contains the node’s content, ignoring the node’s children."
+    },
+    {
+      "name": "func calculateAccumulatedFrame() -> CGRect",
+      "desc": "Returns a rectangle in the parent’s coordinate system that contains the position and size of itself and all child nodes."
+    },
+    {
+      "name": "var zPosition: CGFloat",
+      "desc": "The height of the node relative to its parent."
+    },
+    {
+      "name": "var zRotation: CGFloat",
+      "desc": "The Euler rotation about the z axis (in radians)."
+    },
+    {
+      "name": "func setScale(CGFloat)",
+      "desc": "Sets the xScale and yScale properties of the node."
+    },
+    {
+      "name": "var xScale: CGFloat",
+      "desc": "A scaling factor that multiplies the width of a node and its children."
+    },
+    {
+      "name": "var yScale: CGFloat",
+      "desc": "A scaling factor that multiplies the height of a node and its children."
+    },
+    {
+      "name": "var scene: SKScene?",
+      "desc": "The scene node that contains this node."
+    },
+    {
+      "name": "var parent: SKNode?",
+      "desc": "The node’s parent node."
+    },
+    {
+      "name": "var children: [SKNode]",
+      "desc": "The node’s children."
+    },
+    {
+      "name": "func addChild(SKNode)",
+      "desc": "Adds a node to the end of the receiver’s list of child nodes."
+    },
+    {
+      "name": "func insertChild(SKNode, at: Int)",
+      "desc": "Inserts a node into a specific position in the receiver’s list of child nodes."
+    },
+    {
+      "name": "func isEqual(to: SKNode) -> Bool",
+      "desc": "Compares the parameter node to the receiving node."
+    },
+    {
+      "name": "func move(toParent: SKNode)",
+      "desc": "Moves the node to a new parent node in the scene."
+    },
+    {
+      "name": "func removeFromParent()",
+      "desc": "Removes the receiving node from its parent."
+    },
+    {
+      "name": "func removeAllChildren()",
+      "desc": "Removes all of the node’s children."
+    },
+    {
+      "name": "func removeChildren(in: [SKNode])",
+      "desc": "Removes a list of children from the receiving node."
+    },
+    {
+      "name": "func inParentHierarchy(SKNode) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the node is a descendant of the target node."
+    },
+    {
+      "name": "var name: String?",
+      "desc": "The node’s assignable name."
+    },
+    {
+      "name": "func childNode(withName: String) -> SKNode?",
+      "desc": "Searches the children of the receiving node for a node with a specific name."
+    },
+    {
+      "name": "func enumerateChildNodes(withName: String, using: (SKNode, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Searches the children of the receiving node to perform processing for nodes that share a name."
+    },
+    {
+      "name": "subscript(String) -> [SKNode]",
+      "desc": "Returns an array of nodes that match the name parameter."
+    },
+    {
+      "name": "var alpha: CGFloat",
+      "desc": "The transparency value applied to the node’s contents."
+    },
+    {
+      "name": "var isHidden: Bool",
+      "desc": "A Boolean value that determines whether a node and its descendants are rendered."
+    },
+    {
+      "name": "func run(SKAction)",
+      "desc": "Adds an action to the list of actions executed by the node."
+    },
+    {
+      "name": "func run(SKAction, completion: () -> Void)",
+      "desc": "Adds an action to the list of actions executed by the node and schedules the argument block to be run upon completion of the action."
+    },
+    {
+      "name": "func run(SKAction, withKey: String)",
+      "desc": "Adds an identifiable action to the list of actions executed by the node."
+    },
+    {
+      "name": "var speed: CGFloat",
+      "desc": "A speed modifier applied to all actions executed by a node and its descendants."
+    },
+    {
+      "name": "var isPaused: Bool",
+      "desc": "A Boolean value that determines whether actions on the node and its descendants are processed."
+    },
+    {
+      "name": "func action(forKey: String) -> SKAction?",
+      "desc": "Returns an action associated with a specific key."
+    },
+    {
+      "name": "func hasActions() -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the node is executing actions."
+    },
+    {
+      "name": "func removeAllActions()",
+      "desc": "Ends and removes all actions from the node."
+    },
+    {
+      "name": "func removeAction(forKey: String)",
+      "desc": "Removes an action associated with a specific key."
+    },
+    {
+      "name": "var physicsBody: SKPhysicsBody?",
+      "desc": "The physics body associated with the node."
+    },
+    {
+      "name": "var constraints: [SKConstraint]?",
+      "desc": "A list of constraints to apply to the node."
+    },
+    {
+      "name": "var reachConstraints: SKReachConstraints?",
+      "desc": "The reach constraints to apply to the node when executing a reach action."
+    },
+    {
+      "name": "func intersects(SKNode) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether this node intersects the specified node."
+    },
+    {
+      "name": "var entity: GKEntity?",
+      "desc": "The GameplayKit entity this node represents."
+    },
+    {
+      "name": "class func obstacles(fromNodeBounds: [SKNode]) -> [GKPolygonObstacle]",
+      "desc": "Converts each node into an obstacle by transforming its bounds into the scene’s coordinate system."
+    },
+    {
+      "name": "class func obstacles(fromNodePhysicsBodies: [SKNode]) -> [GKPolygonObstacle]",
+      "desc": "Converts each node into an obstacle by transforming the node’s physics body shape into the scene’s coordinate system."
+    },
+    {
+      "name": "class func obstacles(fromSpriteTextures: [SKNode], accuracy: Float) -> [GKPolygonObstacle]",
+      "desc": "Turns each node into an obstacle by changing the node’s texture into a physics shape and converting it into the scene’s coordinate system."
+    },
+    {
+      "name": "var isUserInteractionEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the node receives touch events."
+    },
+    {
+      "name": "var focusBehavior: SKNodeFocusBehavior",
+      "desc": "The focus behavior for a node."
+    },
+    {
+      "name": "func contains(CGPoint) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a point lies inside the parent’s coordinate system."
+    },
+    {
+      "name": "func atPoint(CGPoint) -> SKNode",
+      "desc": "Returns the deepest visible descendant that intersects a point."
+    },
+    {
+      "name": "func nodes(at: CGPoint) -> [SKNode]",
+      "desc": "Returns an array of all visible descendants that intersect a point."
+    },
+    {
+      "name": "func convert(CGPoint, from: SKNode) -> CGPoint",
+      "desc": "Converts a point from the coordinate system of another node in the node tree to the coordinate system of this node."
+    },
+    {
+      "name": "func convert(CGPoint, to: SKNode) -> CGPoint",
+      "desc": "Converts a point in this node’s coordinate system to the coordinate system of another node in the node tree."
+    },
+    {
+      "name": "var userData: NSMutableDictionary?",
+      "desc": "A dictionary containing arbitrary data."
+    },
+    {
+      "name": "var accessibilityChildren: [Any]?",
+      "desc": "An array of user interface elements that represent children of this element."
+    },
+    {
+      "name": "var accessibilityFrame: CGRect",
+      "desc": "The size of this user interface element, in screen points."
+    },
+    {
+      "name": "var accessibilityHelp: String?",
+      "desc": "The help description of this user interface element; for example, the text shown in a tooltip."
+    },
+    {
+      "name": "var accessibilityLabel: String?",
+      "desc": "A short description of this user interface element."
+    },
+    {
+      "name": "var accessibilityParent: AnyObject?",
+      "desc": "The user interface element that contains this element."
+    },
+    {
+      "name": "var accessibilityRole: String?",
+      "desc": "A string value describing the user interface element type; for example, a button."
+    },
+    {
+      "name": "var accessibilityRoleDescription: String?",
+      "desc": "A string value describing the user interface element name and type; for example, the Buy button."
+    },
+    {
+      "name": "var accessibilitySubrole: String?",
+      "desc": "A string that defines this user interface element's subrole; for example, a full-screen button."
+    },
+    {
+      "name": "var isAccessibilityElement: Bool",
+      "desc": "A toggle you implement to indicate to the system whether this user interface element should be exposed to the user."
+    },
+    {
+      "name": "var isAccessibilityEnabled: Bool",
+      "desc": "A toggle you implement to indicate to the system whether this user interface element should respond to user input."
+    },
+    {
+      "name": "func accessibilityHitTest(CGPoint) -> Any?",
+      "desc": "Returns the frontmost user interface element in the element hierarchy."
+    }
+  ],
+  "declaration": "class SKNode : UIResponder",
+  "inheritsFrom": [
+    "NSObject",
+    "NSResponder",
+    "UIResponder"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding",
+    "UIFocusItem"
+  ]
+}

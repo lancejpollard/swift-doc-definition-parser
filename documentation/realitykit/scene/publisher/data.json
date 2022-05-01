@@ -1,0 +1,357 @@
+{
+  "path": "/documentation/realitykit/scene/publisher",
+  "type": "Generic Structure",
+  "name": "Scene.Publisher",
+  "desc": "A publisher for the given event type in the scene.",
+  "items": [
+    {
+      "name": "typealias Scene.Publisher.Output"
+    },
+    {
+      "name": "typealias Scene.Publisher.Failure"
+    },
+    {
+      "name": "func receive<S>(subscriber: S)"
+    },
+    {
+      "name": "func subscribe<S>(S)"
+    },
+    {
+      "name": "func subscribe<S>(S) -> AnyCancellable"
+    },
+    {
+      "name": "func map<T>((E) -> T) -> Publishers.Map<Scene.Publisher<E>, T>"
+    },
+    {
+      "name": "func tryMap<T>((E) -> T) -> Publishers.TryMap<Scene.Publisher<E>, T>"
+    },
+    {
+      "name": "func flatMap<T, P>(maxPublishers: Subscribers.Demand, (E) -> P) -> Publishers.FlatMap<P, Scene.Publisher<E>>"
+    },
+    {
+      "name": "func mapError<E>((Never) -> E) -> Publishers.MapError<Scene.Publisher<E>, E>"
+    },
+    {
+      "name": "func replaceNil<T>(with: T) -> Publishers.Map<Scene.Publisher<E>, T>"
+    },
+    {
+      "name": "func scan<T>(T, (T, E) -> T) -> Publishers.Scan<Scene.Publisher<E>, T>"
+    },
+    {
+      "name": "func tryScan<T>(T, (T, E) -> T) -> Publishers.TryScan<Scene.Publisher<E>, T>"
+    },
+    {
+      "name": "func setFailureType<E>(to: E.Type) -> Publishers.SetFailureType<Scene.Publisher<E>, E>"
+    },
+    {
+      "name": "func filter((E) -> Bool) -> Publishers.Filter<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func tryFilter((E) -> Bool) -> Publishers.TryFilter<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func compactMap<T>((E) -> T?) -> Publishers.CompactMap<Scene.Publisher<E>, T>"
+    },
+    {
+      "name": "func tryCompactMap<T>((E) -> T?) -> Publishers.TryCompactMap<Scene.Publisher<E>, T>"
+    },
+    {
+      "name": "func removeDuplicates() -> Publishers.RemoveDuplicates<Scene.Publisher<E>>",
+      "desc": "Available when E conforms to Equatable."
+    },
+    {
+      "name": "func removeDuplicates(by: (E, E) -> Bool) -> Publishers.RemoveDuplicates<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func tryRemoveDuplicates(by: (E, E) -> Bool) -> Publishers.TryRemoveDuplicates<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func replaceEmpty(with: E) -> Publishers.ReplaceEmpty<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func replaceError(with: E) -> Publishers.ReplaceError<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func collect() -> Publishers.Collect<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func collect(Int) -> Publishers.CollectByCount<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func collect<S>(Publishers.TimeGroupingStrategy<S>, options: S.SchedulerOptions?) -> Publishers.CollectByTime<Scene.Publisher<E>, S>"
+    },
+    {
+      "name": "func ignoreOutput() -> Publishers.IgnoreOutput<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func reduce<T>(T, (T, E) -> T) -> Publishers.Reduce<Scene.Publisher<E>, T>"
+    },
+    {
+      "name": "func tryReduce<T>(T, (T, E) -> T) -> Publishers.TryReduce<Scene.Publisher<E>, T>"
+    },
+    {
+      "name": "func count() -> Publishers.Count<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func max() -> Publishers.Comparison<Scene.Publisher<E>>",
+      "desc": "Available when E conforms to Comparable."
+    },
+    {
+      "name": "func max(by: (E, E) -> Bool) -> Publishers.Comparison<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func tryMax(by: (E, E) -> Bool) -> Publishers.TryComparison<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func min() -> Publishers.Comparison<Scene.Publisher<E>>",
+      "desc": "Available when E conforms to Comparable."
+    },
+    {
+      "name": "func min(by: (E, E) -> Bool) -> Publishers.Comparison<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func tryMin(by: (E, E) -> Bool) -> Publishers.TryComparison<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func contains(E) -> Publishers.Contains<Scene.Publisher<E>>",
+      "desc": "Available when E conforms to Equatable."
+    },
+    {
+      "name": "func contains(where: (E) -> Bool) -> Publishers.ContainsWhere<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func tryContains(where: (E) -> Bool) -> Publishers.TryContainsWhere<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func allSatisfy((E) -> Bool) -> Publishers.AllSatisfy<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func tryAllSatisfy((E) -> Bool) -> Publishers.TryAllSatisfy<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func drop<P>(untilOutputFrom: P) -> Publishers.DropUntilOutput<Scene.Publisher<E>, P>"
+    },
+    {
+      "name": "func drop(while: (E) -> Bool) -> Publishers.DropWhile<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func dropFirst(Int) -> Publishers.Drop<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func tryDrop(while: (E) -> Bool) -> Publishers.TryDropWhile<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func append(E...) -> Publishers.Concatenate<Scene.Publisher<E>, Publishers.Sequence<[E], Never>>"
+    },
+    {
+      "name": "func prepend(E...) -> Publishers.Concatenate<Publishers.Sequence<[E], Never>, Scene.Publisher<E>>"
+    },
+    {
+      "name": "func prefix(Int) -> Publishers.Output<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func prefix<P>(untilOutputFrom: P) -> Publishers.PrefixUntilOutput<Scene.Publisher<E>, P>"
+    },
+    {
+      "name": "func prefix(while: (E) -> Bool) -> Publishers.PrefixWhile<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func tryPrefix(while: (E) -> Bool) -> Publishers.TryPrefixWhile<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func first() -> Publishers.First<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func first(where: (E) -> Bool) -> Publishers.FirstWhere<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func tryFirst(where: (E) -> Bool) -> Publishers.TryFirstWhere<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func last() -> Publishers.Last<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func last(where: (E) -> Bool) -> Publishers.LastWhere<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func tryLast(where: (E) -> Bool) -> Publishers.TryLastWhere<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func output(at: Int) -> Publishers.Output<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func output<R>(in: R) -> Publishers.Output<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func combineLatest<P, T>(P, (E, P.Output) -> T) -> Publishers.Map<Publishers.CombineLatest<Scene.Publisher<E>, P>, T>"
+    },
+    {
+      "name": "func combineLatest<P>(P) -> Publishers.CombineLatest<Scene.Publisher<E>, P>"
+    },
+    {
+      "name": "func combineLatest<P, Q, T>(P, Q, (E, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.CombineLatest3<Scene.Publisher<E>, P, Q>, T>"
+    },
+    {
+      "name": "func combineLatest<P, Q>(P, Q) -> Publishers.CombineLatest3<Scene.Publisher<E>, P, Q>"
+    },
+    {
+      "name": "func combineLatest<P, Q, R, T>(P, Q, R, (E, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.CombineLatest4<Scene.Publisher<E>, P, Q, R>, T>"
+    },
+    {
+      "name": "func combineLatest<P, Q, R>(P, Q, R) -> Publishers.CombineLatest4<Scene.Publisher<E>, P, Q, R>"
+    },
+    {
+      "name": "func merge(with: Scene.Publisher<E>) -> Publishers.MergeMany<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func merge<B, C>(with: B, C) -> Publishers.Merge3<Scene.Publisher<E>, B, C>"
+    },
+    {
+      "name": "func merge<B, C, D>(with: B, C, D) -> Publishers.Merge4<Scene.Publisher<E>, B, C, D>"
+    },
+    {
+      "name": "func merge<B, C, D, E>(with: B, C, D, E) -> Publishers.Merge5<Scene.Publisher<E>, B, C, D, E>"
+    },
+    {
+      "name": "func merge<B, C, D, E, F>(with: B, C, D, E, F) -> Publishers.Merge6<Scene.Publisher<E>, B, C, D, E, F>"
+    },
+    {
+      "name": "func merge<B, C, D, E, F, G>(with: B, C, D, E, F, G) -> Publishers.Merge7<Scene.Publisher<E>, B, C, D, E, F, G>"
+    },
+    {
+      "name": "func merge<B, C, D, E, F, G, H>(with: B, C, D, E, F, G, H) -> Publishers.Merge8<Scene.Publisher<E>, B, C, D, E, F, G, H>"
+    },
+    {
+      "name": "func zip<P>(P) -> Publishers.Zip<Scene.Publisher<E>, P>"
+    },
+    {
+      "name": "func zip<P, T>(P, (E, P.Output) -> T) -> Publishers.Map<Publishers.Zip<Scene.Publisher<E>, P>, T>"
+    },
+    {
+      "name": "func zip<P, Q>(P, Q) -> Publishers.Zip3<Scene.Publisher<E>, P, Q>"
+    },
+    {
+      "name": "func zip<P, Q, T>(P, Q, (E, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.Zip3<Scene.Publisher<E>, P, Q>, T>"
+    },
+    {
+      "name": "func zip<P, Q, R>(P, Q, R) -> Publishers.Zip4<Scene.Publisher<E>, P, Q, R>"
+    },
+    {
+      "name": "func zip<P, Q, R, T>(P, Q, R, (E, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.Zip4<Scene.Publisher<E>, P, Q, R>, T>"
+    },
+    {
+      "name": "func assertNoFailure(String, file: StaticString, line: UInt) -> Publishers.AssertNoFailure<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func `catch`<P>((Never) -> P) -> Publishers.Catch<Scene.Publisher<E>, P>"
+    },
+    {
+      "name": "func tryCatch<P>((Never) -> P) -> Publishers.TryCatch<Scene.Publisher<E>, P>"
+    },
+    {
+      "name": "func retry(Int) -> Publishers.Retry<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func measureInterval<S>(using: S, options: S.SchedulerOptions?) -> Publishers.MeasureInterval<Scene.Publisher<E>, S>"
+    },
+    {
+      "name": "func debounce<S>(for: S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Debounce<Scene.Publisher<E>, S>"
+    },
+    {
+      "name": "func delay<S>(for: S.SchedulerTimeType.Stride, tolerance: S.SchedulerTimeType.Stride?, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Delay<Scene.Publisher<E>, S>"
+    },
+    {
+      "name": "func throttle<S>(for: S.SchedulerTimeType.Stride, scheduler: S, latest: Bool) -> Publishers.Throttle<Scene.Publisher<E>, S>"
+    },
+    {
+      "name": "func timeout<S>(S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?, customError: (() -> Never)?) -> Publishers.Timeout<Scene.Publisher<E>, S>"
+    },
+    {
+      "name": "func share() -> Publishers.Share<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func encode<Coder>(encoder: Coder) -> Publishers.Encode<Scene.Publisher<E>, Coder>",
+      "desc": "Available when E conforms to Encodable."
+    },
+    {
+      "name": "func decode<Item, Coder>(type: Item.Type, decoder: Coder) -> Publishers.Decode<Scene.Publisher<E>, Item, Coder>"
+    },
+    {
+      "name": "func map<T>(KeyPath<E, T>) -> Publishers.MapKeyPath<Scene.Publisher<E>, T>"
+    },
+    {
+      "name": "func map<T0, T1>(KeyPath<E, T0>, KeyPath<E, T1>) -> Publishers.MapKeyPath2<Scene.Publisher<E>, T0, T1>"
+    },
+    {
+      "name": "func map<T0, T1, T2>(KeyPath<E, T0>, KeyPath<E, T1>, KeyPath<E, T2>) -> Publishers.MapKeyPath3<Scene.Publisher<E>, T0, T1, T2>"
+    },
+    {
+      "name": "func multicast<S>(() -> S) -> Publishers.Multicast<Scene.Publisher<E>, S>"
+    },
+    {
+      "name": "func multicast<S>(subject: S) -> Publishers.Multicast<Scene.Publisher<E>, S>"
+    },
+    {
+      "name": "func buffer(size: Int, prefetch: Publishers.PrefetchStrategy, whenFull: Publishers.BufferingStrategy<Never>) -> Publishers.Buffer<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func eraseToAnyPublisher() -> AnyPublisher<E, Never>"
+    },
+    {
+      "name": "func subscribe<S>(on: S, options: S.SchedulerOptions?) -> Publishers.SubscribeOn<Scene.Publisher<E>, S>"
+    },
+    {
+      "name": "func receive<S>(on: S, options: S.SchedulerOptions?) -> Publishers.ReceiveOn<Scene.Publisher<E>, S>"
+    },
+    {
+      "name": "func makeConnectable() -> Publishers.MakeConnectable<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func assign<Root>(to: ReferenceWritableKeyPath<Root, E>, on: Root) -> AnyCancellable"
+    },
+    {
+      "name": "func sink(receiveCompletion: ((Subscribers.Completion<Never>) -> Void), receiveValue: ((E) -> Void)) -> AnyCancellable"
+    },
+    {
+      "name": "func sink(receiveValue: ((E) -> Void)) -> AnyCancellable"
+    },
+    {
+      "name": "func breakpoint(receiveSubscription: ((Subscription) -> Bool)?, receiveOutput: ((E) -> Bool)?, receiveCompletion: ((Subscribers.Completion<Never>) -> Bool)?) -> Publishers.Breakpoint<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func breakpointOnError() -> Publishers.Breakpoint<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func handleEvents(receiveSubscription: ((Subscription) -> Void)?, receiveOutput: ((E) -> Void)?, receiveCompletion: ((Subscribers.Completion<Never>) -> Void)?, receiveCancel: (() -> Void)?, receiveRequest: ((Subscribers.Demand) -> Void)?) -> Publishers.HandleEvents<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func print(String, to: TextOutputStream?) -> Publishers.Print<Scene.Publisher<E>>"
+    },
+    {
+      "name": "var values: AsyncThrowingPublisher<Scene.Publisher<E>>"
+    },
+    {
+      "name": "var values: AsyncPublisher<Scene.Publisher<E>>"
+    },
+    {
+      "name": "func assign(to: inout Published<E>.Publisher)"
+    },
+    {
+      "name": "func flatMap<P>(maxPublishers: Subscribers.Demand, (E) -> P) -> Publishers.FlatMap<Publishers.SetFailureType<P, Never>, Scene.Publisher<E>>"
+    },
+    {
+      "name": "func flatMap<P>(maxPublishers: Subscribers.Demand, (E) -> P) -> Publishers.FlatMap<P, Publishers.SetFailureType<Scene.Publisher<E>, P.Failure>>"
+    },
+    {
+      "name": "func flatMap<P>(maxPublishers: Subscribers.Demand, (E) -> P) -> Publishers.FlatMap<P, Scene.Publisher<E>>"
+    },
+    {
+      "name": "func switchToLatest() -> Publishers.SwitchToLatest<E, Publishers.SetFailureType<Scene.Publisher<E>, E.Failure>>",
+      "desc": "Available when E conforms to Publisher."
+    }
+  ],
+  "declaration": "struct Publisher<E> where E : Event",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

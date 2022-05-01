@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/coregraphics/cgimagealphainfo",
+  "type": "Enumeration",
+  "name": "CGImageAlphaInfo",
+  "desc": "Storage options for alpha component data.",
+  "items": [
+    {
+      "name": "case first",
+      "desc": "The alpha component is stored in the most significant bits of each pixel. For example, non-premultiplied ARGB."
+    },
+    {
+      "name": "case last",
+      "desc": "The alpha component is stored in the least significant bits of each pixel. For example, non-premultiplied RGBA."
+    },
+    {
+      "name": "case none",
+      "desc": "There is no alpha channel."
+    },
+    {
+      "name": "case noneSkipFirst",
+      "desc": "There is no alpha channel. If the total size of the pixel is greater than the space required for the number of color components in the color space, the most significant bits are ignored."
+    },
+    {
+      "name": "case alphaOnly",
+      "desc": "There is no color data, only an alpha channel."
+    },
+    {
+      "name": "case noneSkipLast",
+      "desc": "There is no alpha channel."
+    },
+    {
+      "name": "case premultipliedFirst",
+      "desc": "The alpha component is stored in the most significant bits of each pixel and the color components have already been multiplied by this alpha value. For example, premultiplied ARGB."
+    },
+    {
+      "name": "case premultipliedLast",
+      "desc": "The alpha component is stored in the least significant bits of each pixel and the color components have already been multiplied by this alpha value. For example, premultiplied RGBA."
+    }
+  ],
+  "declaration": "enum CGImageAlphaInfo : UInt32, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

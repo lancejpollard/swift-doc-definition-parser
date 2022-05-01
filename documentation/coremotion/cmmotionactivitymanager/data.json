@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/coremotion/cmmotionactivitymanager",
+  "type": "Class",
+  "name": "CMMotionActivityManager",
+  "desc": "An object that manages access to the motion data stored by the device.",
+  "items": [
+    {
+      "name": "class func isActivityAvailable() -> Bool",
+      "desc": "Returns a Boolean indicating whether motion data is available on the current device."
+    },
+    {
+      "name": "class func authorizationStatus() -> CMAuthorizationStatus",
+      "desc": "Returns a value indicating whether the app is authorized to retrieve stored motion data."
+    },
+    {
+      "name": "enum CMAuthorizationStatus",
+      "desc": "The authorization status for motion-related features."
+    },
+    {
+      "name": "func startActivityUpdates(to: OperationQueue, withHandler: CMMotionActivityHandler)",
+      "desc": "Starts the delivery of current motion data updates to your app."
+    },
+    {
+      "name": "func stopActivityUpdates()",
+      "desc": "Stops the delivery of motion updates to your app"
+    },
+    {
+      "name": "typealias CMMotionActivityHandler",
+      "desc": "A block that reports the current motion associated with the device."
+    },
+    {
+      "name": "func queryActivityStarting(from: Date, to: Date, to: OperationQueue, withHandler: CMMotionActivityQueryHandler)",
+      "desc": "Gathers and returns historical motion data for the specified time period"
+    },
+    {
+      "name": "typealias CMMotionActivityQueryHandler",
+      "desc": "A block that reports the motion updates that occurred between the specified query interval."
+    }
+  ],
+  "declaration": "class CMMotionActivityManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

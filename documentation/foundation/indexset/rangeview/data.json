@@ -1,0 +1,399 @@
+{
+  "path": "/documentation/foundation/indexset/rangeview",
+  "type": "Structure",
+  "name": "IndexSet.RangeView",
+  "desc": "A view of the contents of an IndexSet, organized by range.",
+  "items": [
+    {
+      "name": "var count: Int",
+      "desc": "The number of elements in the collection."
+    },
+    {
+      "name": "let endIndex: IndexSet.RangeView.Index",
+      "desc": "The ending index in the range."
+    },
+    {
+      "name": "var first: Range<IndexSet.Element>?",
+      "desc": "The first element of the collection."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value indicating whether the collection is empty."
+    },
+    {
+      "name": "var last: Range<IndexSet.Element>?",
+      "desc": "The last element of the collection."
+    },
+    {
+      "name": "var lazy: LazySequence<IndexSet.RangeView>",
+      "desc": "A sequence containing the same elements as this sequence, but on which some operations, such as map and filter, are implemented lazily."
+    },
+    {
+      "name": "let startIndex: IndexSet.RangeView.Index",
+      "desc": "The beginning index in the range."
+    },
+    {
+      "name": "subscript(Range<IndexSet.RangeView.Index>) -> Slice<IndexSet.RangeView>",
+      "desc": "Accesses the items at the given range of indexes."
+    },
+    {
+      "name": "subscript(IndexSet.RangeView.Index) -> Range<IndexSet.Element>",
+      "desc": "Accesses the item at the given index."
+    },
+    {
+      "name": "subscript(Range<Int>) -> Slice<IndexSet.RangeView>",
+      "desc": "Accesses a contiguous subrange of the collection’s elements."
+    },
+    {
+      "name": "let startIndex: IndexSet.RangeView.Index",
+      "desc": "The beginning index in the range."
+    },
+    {
+      "name": "let endIndex: IndexSet.RangeView.Index",
+      "desc": "The ending index in the range."
+    },
+    {
+      "name": "func index(after: IndexSet.RangeView.Index) -> IndexSet.RangeView.Index",
+      "desc": "Returns the index in the range after the specified one."
+    },
+    {
+      "name": "func index(before: IndexSet.RangeView.Index) -> IndexSet.RangeView.Index",
+      "desc": "Returns the index in the range before the specified one."
+    },
+    {
+      "name": "func prefix(Int) -> Slice<IndexSet.RangeView>",
+      "desc": "Returns a subsequence, up to the specified maximum length, containing the initial elements of the collection."
+    },
+    {
+      "name": "func prefix(through: Int) -> Slice<IndexSet.RangeView>",
+      "desc": "Returns a subsequence from the start of the collection through the specified position."
+    },
+    {
+      "name": "func prefix(upTo: Int) -> Slice<IndexSet.RangeView>",
+      "desc": "Returns a subsequence from the start of the collection up to, but not including, the specified position."
+    },
+    {
+      "name": "func suffix(Int) -> Slice<IndexSet.RangeView>",
+      "desc": "Returns a subsequence, up to the given maximum length, containing the final elements of the collection."
+    },
+    {
+      "name": "func suffix(from: Int) -> Slice<IndexSet.RangeView>",
+      "desc": "Returns a subsequence from the specified position to the end of the collection."
+    },
+    {
+      "name": "func dropFirst(Int) -> Slice<IndexSet.RangeView>",
+      "desc": "Returns a subsequence containing all but the given number of initial elements."
+    },
+    {
+      "name": "func dropLast(Int) -> Slice<IndexSet.RangeView>",
+      "desc": "Returns a subsequence containing all but the specified number of final elements."
+    },
+    {
+      "name": "var lazy: LazySequence<IndexSet.RangeView>",
+      "desc": "A sequence containing the same elements as this sequence, but on which some operations, such as map and filter, are implemented lazily."
+    },
+    {
+      "name": "func enumerated() -> EnumeratedSequence<IndexSet.RangeView>",
+      "desc": "Returns a sequence of pairs (n, x), where n represents a consecutive integer starting at zero and x represents an element of the sequence."
+    },
+    {
+      "name": "func makeIterator() -> IndexingIterator<IndexSet.RangeView>",
+      "desc": "Returns an iterator over the indexes of this range view."
+    },
+    {
+      "name": "func reversed() -> ReversedCollection<IndexSet.RangeView>",
+      "desc": "Returns a view presenting the elements of the collection in reverse order."
+    },
+    {
+      "name": "func split(separator: Range<IndexSet.Element>, maxSplits: Int, omittingEmptySubsequences: Bool) -> [Slice<IndexSet.RangeView>]",
+      "desc": "Returns the longest possible subsequences of the collection, in order, around elements equal to the given element."
+    },
+    {
+      "name": "func joined<Separator>(separator: Separator) -> JoinedSequence<IndexSet.RangeView>",
+      "desc": "Returns the concatenated elements of this sequence of sequences, inserting the given separator between each element."
+    },
+    {
+      "name": "func contains(Range<IndexSet.Element>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence contains the given element."
+    },
+    {
+      "name": "func dropFirst(Int) -> Slice<IndexSet.RangeView>",
+      "desc": "Returns a subsequence containing all but the given number of initial elements."
+    },
+    {
+      "name": "func dropLast(Int) -> Slice<IndexSet.RangeView>",
+      "desc": "Returns a subsequence containing all but the specified number of final elements."
+    },
+    {
+      "name": "func elementsEqual<OtherSequence>(OtherSequence) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this sequence and another sequence contain the same elements in the same order."
+    },
+    {
+      "name": "func enumerated() -> EnumeratedSequence<IndexSet.RangeView>",
+      "desc": "Returns a sequence of pairs (n, x), where n represents a consecutive integer starting at zero and x represents an element of the sequence."
+    },
+    {
+      "name": "func index(after: IndexSet.RangeView.Index) -> IndexSet.RangeView.Index",
+      "desc": "Returns the index in the range after the specified one."
+    },
+    {
+      "name": "func index(before: IndexSet.RangeView.Index) -> IndexSet.RangeView.Index",
+      "desc": "Returns the index in the range before the specified one."
+    },
+    {
+      "name": "func joined<Separator>(separator: Separator) -> JoinedSequence<IndexSet.RangeView>",
+      "desc": "Returns the concatenated elements of this sequence of sequences, inserting the given separator between each element."
+    },
+    {
+      "name": "func makeIterator() -> IndexingIterator<IndexSet.RangeView>",
+      "desc": "Returns an iterator over the indexes of this range view."
+    },
+    {
+      "name": "func prefix(Int) -> Slice<IndexSet.RangeView>",
+      "desc": "Returns a subsequence, up to the specified maximum length, containing the initial elements of the collection."
+    },
+    {
+      "name": "func prefix(through: Int) -> Slice<IndexSet.RangeView>",
+      "desc": "Returns a subsequence from the start of the collection through the specified position."
+    },
+    {
+      "name": "func prefix(upTo: Int) -> Slice<IndexSet.RangeView>",
+      "desc": "Returns a subsequence from the start of the collection up to, but not including, the specified position."
+    },
+    {
+      "name": "func reversed() -> ReversedCollection<IndexSet.RangeView>",
+      "desc": "Returns a view presenting the elements of the collection in reverse order."
+    },
+    {
+      "name": "func split(separator: Range<IndexSet.Element>, maxSplits: Int, omittingEmptySubsequences: Bool) -> [Slice<IndexSet.RangeView>]",
+      "desc": "Returns the longest possible subsequences of the collection, in order, around elements equal to the given element."
+    },
+    {
+      "name": "func starts<PossiblePrefix>(with: PossiblePrefix) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the initial elements of the sequence are the same as the elements in another sequence."
+    },
+    {
+      "name": "func suffix(Int) -> Slice<IndexSet.RangeView>",
+      "desc": "Returns a subsequence, up to the given maximum length, containing the final elements of the collection."
+    },
+    {
+      "name": "func suffix(from: Int) -> Slice<IndexSet.RangeView>",
+      "desc": "Returns a subsequence from the specified position to the end of the collection."
+    },
+    {
+      "name": "static func != (IndexSet.RangeView, IndexSet.RangeView) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (IndexSet.RangeView, IndexSet.RangeView) -> Bool",
+      "desc": "Indicates whether two range views are the same."
+    },
+    {
+      "name": "typealias IndexSet.RangeView.Index",
+      "desc": "An alias for the type of an index."
+    },
+    {
+      "name": "typealias IndexSet.RangeView.Element"
+    },
+    {
+      "name": "typealias IndexSet.RangeView.Indices"
+    },
+    {
+      "name": "typealias IndexSet.RangeView.Iterator"
+    },
+    {
+      "name": "typealias IndexSet.RangeView.SubSequence"
+    },
+    {
+      "name": "var indices: DefaultIndices<IndexSet.RangeView>",
+      "desc": "The indices that are valid for subscripting the collection, in ascending order."
+    },
+    {
+      "name": "var publisher: Publishers.Sequence<IndexSet.RangeView, Never>"
+    },
+    {
+      "name": "var underestimatedCount: Int",
+      "desc": "A value less than or equal to the number of elements in the collection."
+    },
+    {
+      "name": "func allSatisfy((Range<IndexSet.Element>) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether every element of a sequence satisfies a given predicate."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((Range<IndexSet.Element>) -> ElementOfResult?) -> [ElementOfResult]",
+      "desc": "Returns an array containing the non-nil results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func compare<Comparator>(Comparator.Compared, Comparator.Compared) -> ComparisonResult"
+    },
+    {
+      "name": "func contains(where: (Range<IndexSet.Element>) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func difference<C>(from: C) -> CollectionDifference<Range<IndexSet.Element>>",
+      "desc": "Returns the difference needed to produce this collection’s ordered elements from the given collection."
+    },
+    {
+      "name": "func difference<C>(from: C, by: (C.Element, Range<IndexSet.Element>) -> Bool) -> CollectionDifference<Range<IndexSet.Element>>",
+      "desc": "Returns the difference needed to produce this collection’s ordered elements from the given collection, using the given predicate as an equivalence test."
+    },
+    {
+      "name": "func distance(from: Int, to: Int) -> Int",
+      "desc": "Returns the distance between two indices."
+    },
+    {
+      "name": "func drop(while: (Range<IndexSet.Element>) -> Bool) -> Slice<IndexSet.RangeView>",
+      "desc": "Returns a subsequence by skipping elements while predicate returns true and returning the remaining elements."
+    },
+    {
+      "name": "func elementsEqual<OtherSequence>(OtherSequence, by: (Range<IndexSet.Element>, OtherSequence.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this sequence and another sequence contain equivalent elements in the same order, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func filter((Range<IndexSet.Element>) -> Bool) -> [Range<IndexSet.Element>]",
+      "desc": "Returns an array containing, in order, the elements of the sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func first(where: (Range<IndexSet.Element>) -> Bool) -> Range<IndexSet.Element>?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func firstIndex(of: Range<IndexSet.Element>) -> Int?",
+      "desc": "Returns the first index where the specified value appears in the collection."
+    },
+    {
+      "name": "func firstIndex(where: (Range<IndexSet.Element>) -> Bool) -> Int?",
+      "desc": "Returns the first index in which an element of the collection satisfies the given predicate."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((Range<IndexSet.Element>) -> SegmentOfResult) -> [SegmentOfResult.Element]",
+      "desc": "Returns an array containing the concatenated results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func forEach((Range<IndexSet.Element>) -> Void)",
+      "desc": "Calls the given closure on each element in the sequence in the same order as a for-in loop."
+    },
+    {
+      "name": "func formIndex(inout Int, offsetBy: Int)",
+      "desc": "Offsets the given index by the specified distance."
+    },
+    {
+      "name": "func formIndex(inout Int, offsetBy: Int, limitedBy: Int) -> Bool",
+      "desc": "Offsets the given index by the specified distance, or so that it equals the given limiting index."
+    },
+    {
+      "name": "func formIndex(after: inout Int)",
+      "desc": "Replaces the given index with its successor."
+    },
+    {
+      "name": "func formIndex(before: inout Int)",
+      "desc": "Replaces the given index with its predecessor."
+    },
+    {
+      "name": "func formatted<S>(S) -> S.FormatOutput"
+    },
+    {
+      "name": "func index(Int, offsetBy: Int) -> Int",
+      "desc": "Returns an index that is the specified distance from the given index."
+    },
+    {
+      "name": "func index(Int, offsetBy: Int, limitedBy: Int) -> Int?",
+      "desc": "Returns an index that is the specified distance from the given index, unless that distance is beyond a given limiting index."
+    },
+    {
+      "name": "func joined() -> FlattenSequence<IndexSet.RangeView>",
+      "desc": "Returns the elements of this sequence of sequences, concatenated."
+    },
+    {
+      "name": "func last(where: (Range<IndexSet.Element>) -> Bool) -> Range<IndexSet.Element>?",
+      "desc": "Returns the last element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func lastIndex(of: Range<IndexSet.Element>) -> Int?",
+      "desc": "Returns the last index where the specified value appears in the collection."
+    },
+    {
+      "name": "func lastIndex(where: (Range<IndexSet.Element>) -> Bool) -> Int?",
+      "desc": "Returns the index of the last element in the collection that matches the given predicate."
+    },
+    {
+      "name": "func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Range<IndexSet.Element>, Range<IndexSet.Element>) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the given predicate to compare elements."
+    },
+    {
+      "name": "func map<T>((Range<IndexSet.Element>) -> T) -> [T]",
+      "desc": "Returns an array containing the results of mapping the given closure over the sequence’s elements."
+    },
+    {
+      "name": "func max(by: (Range<IndexSet.Element>, Range<IndexSet.Element>) -> Bool) -> Range<IndexSet.Element>?",
+      "desc": "Returns the maximum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func min(by: (Range<IndexSet.Element>, Range<IndexSet.Element>) -> Bool) -> Range<IndexSet.Element>?",
+      "desc": "Returns the minimum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func prefix(while: (Range<IndexSet.Element>) -> Bool) -> Slice<IndexSet.RangeView>",
+      "desc": "Returns a subsequence containing the initial elements until predicate returns false and skipping the remaining elements."
+    },
+    {
+      "name": "func randomElement() -> Range<IndexSet.Element>?",
+      "desc": "Returns a random element of the collection."
+    },
+    {
+      "name": "func randomElement<T>(using: inout T) -> Range<IndexSet.Element>?",
+      "desc": "Returns a random element of the collection, using the given generator as a source for randomness."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, Range<IndexSet.Element>) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, Range<IndexSet.Element>) -> ()) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "func shuffled() -> [Range<IndexSet.Element>]",
+      "desc": "Returns the elements of the sequence, shuffled."
+    },
+    {
+      "name": "func shuffled<T>(using: inout T) -> [Range<IndexSet.Element>]",
+      "desc": "Returns the elements of the sequence, shuffled using the given generator as a source for randomness."
+    },
+    {
+      "name": "func sorted(by: (Range<IndexSet.Element>, Range<IndexSet.Element>) -> Bool) -> [Range<IndexSet.Element>]",
+      "desc": "Returns the elements of the sequence, sorted using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func sorted<Comparator>(using: Comparator) -> [Range<IndexSet.Element>]"
+    },
+    {
+      "name": "func sorted<S, Comparator>(using: S) -> [Range<IndexSet.Element>]"
+    },
+    {
+      "name": "func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Range<IndexSet.Element>) -> Bool) -> [Slice<IndexSet.RangeView>]",
+      "desc": "Returns the longest possible subsequences of the collection, in order, that don’t contain elements satisfying the given predicate."
+    },
+    {
+      "name": "func starts<PossiblePrefix>(with: PossiblePrefix, by: (Range<IndexSet.Element>, PossiblePrefix.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the initial elements of the sequence are equivalent to the elements in another sequence, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<Range<IndexSet.Element>>) -> R) -> R?",
+      "desc": "Executes a closure on the sequence’s contiguous storage."
+    },
+    {
+      "name": "subscript((UnboundedRange_) -> ()) -> Slice<IndexSet.RangeView>"
+    },
+    {
+      "name": "subscript<R>(R) -> Slice<IndexSet.RangeView>",
+      "desc": "Accesses the contiguous subrange of the collection’s elements specified by a range expression."
+    }
+  ],
+  "declaration": "struct IndexSet.RangeView",
+  "conformsTo": [
+    "BidirectionalCollection",
+    "Equatable"
+  ]
+}

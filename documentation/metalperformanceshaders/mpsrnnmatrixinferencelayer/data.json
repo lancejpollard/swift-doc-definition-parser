@@ -1,0 +1,63 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsrnnmatrixinferencelayer",
+  "type": "Class",
+  "name": "MPSRNNMatrixInferenceLayer",
+  "desc": "A recurrent neural network layer for inference on Metal Performance Shaders matrices.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice, rnnDescriptor: MPSRNNDescriptor)"
+    },
+    {
+      "name": "init(device: MTLDevice, rnnDescriptors: [MPSRNNDescriptor])"
+    },
+    {
+      "name": "class MPSRNNDescriptor",
+      "desc": "A description of a recursive neural network block or layer."
+    },
+    {
+      "name": "var bidirectionalCombineMode: MPSRNNBidirectionalCombineMode"
+    },
+    {
+      "name": "enum MPSRNNBidirectionalCombineMode",
+      "desc": "Modes that define how two images or matrices are combined."
+    },
+    {
+      "name": "var inputFeatureChannels: Int"
+    },
+    {
+      "name": "var numberOfLayers: Int"
+    },
+    {
+      "name": "var outputFeatureChannels: Int"
+    },
+    {
+      "name": "var recurrentOutputIsTemporary: Bool"
+    },
+    {
+      "name": "var storeAllIntermediateStates: Bool"
+    },
+    {
+      "name": "func copy(with: NSZone?, device: MTLDevice?) -> Self"
+    },
+    {
+      "name": "func encodeBidirectionalSequence(commandBuffer: MTLCommandBuffer, sourceSequence: [MPSMatrix], destinationForwardMatrices: [MPSMatrix], destinationBackwardMatrices: [MPSMatrix]?)"
+    },
+    {
+      "name": "func encodeSequence(commandBuffer: MTLCommandBuffer, sourceMatrices: [MPSMatrix], destinationMatrices: [MPSMatrix], recurrentInputState: MPSRNNRecurrentMatrixState?, recurrentOutputStates: NSMutableArray?)"
+    },
+    {
+      "name": "class MPSRNNRecurrentMatrixState",
+      "desc": "A class holds all the data that's passed from one sequence iteration of the matrix-based recurrent neural network layer to the next."
+    },
+    {
+      "name": "func encodeSequence(commandBuffer: MTLCommandBuffer, sourceMatrices: [MPSMatrix], sourceOffsets: UnsafeMutablePointer<Int>?, destinationMatrices: [MPSMatrix], destinationOffsets: UnsafeMutablePointer<Int>?, recurrentInputState: MPSRNNRecurrentMatrixState?, recurrentOutputStates: NSMutableArray?)"
+    }
+  ],
+  "declaration": "class MPSRNNMatrixInferenceLayer : MPSKernel",
+  "inheritsFrom": [
+    "MPSKernel"
+  ]
+}

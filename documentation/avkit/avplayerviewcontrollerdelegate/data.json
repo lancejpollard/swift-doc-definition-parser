@@ -1,0 +1,128 @@
+{
+  "path": "/documentation/avkit/avplayerviewcontrollerdelegate",
+  "type": "Protocol",
+  "name": "AVPlayerViewControllerDelegate",
+  "desc": "A protocol that defines the methods to implement to respond to player view controller events.",
+  "items": [
+    {
+      "name": "func playerViewControllerShouldDismiss(AVPlayerViewController) -> Bool",
+      "desc": "Asks the delegate object whether the player view controller dismisses itself upon request."
+    },
+    {
+      "name": "func playerViewControllerWillBeginDismissalTransition(AVPlayerViewController)",
+      "desc": "Tells the delegate when the player view controller is about to start its dismissal transition."
+    },
+    {
+      "name": "func playerViewControllerDidEndDismissalTransition(AVPlayerViewController)",
+      "desc": "Tells the delegate when the player view controller ends its dismissal transition."
+    },
+    {
+      "name": "func playerViewControllerShouldAutomaticallyDismissAtPictureInPictureStart(AVPlayerViewController) -> Bool",
+      "desc": "Asks the delegate whether the player view controller automatically dismisses itself when Picture in Picture starts."
+    },
+    {
+      "name": "func playerViewControllerWillStartPictureInPicture(AVPlayerViewController)",
+      "desc": "Tells the delegate when Picture in Picture is about to start."
+    },
+    {
+      "name": "func playerViewControllerDidStartPictureInPicture(AVPlayerViewController)",
+      "desc": "Tells the delegate when Picture in Picture starts."
+    },
+    {
+      "name": "func playerViewController(AVPlayerViewController, failedToStartPictureInPictureWithError: Error)",
+      "desc": "Tells the delegate when Picture in Picture fails to start."
+    },
+    {
+      "name": "func playerViewControllerWillStopPictureInPicture(AVPlayerViewController)",
+      "desc": "Tells the delegate when Picture in Picture is about to stop."
+    },
+    {
+      "name": "func playerViewControllerDidStopPictureInPicture(AVPlayerViewController)",
+      "desc": "Tells the delegate when Picture in Picture stops."
+    },
+    {
+      "name": "func playerViewController(AVPlayerViewController, restoreUserInterfaceForPictureInPictureStopWithCompletionHandler: (Bool) -> Void)",
+      "desc": "Tells the delegate when Picture in Picture is about to stop so you can restore your app’s user interface."
+    },
+    {
+      "name": "func playerViewController(AVPlayerViewController, timeToSeekAfterUserNavigatedFrom: CMTime, to: CMTime) -> CMTime",
+      "desc": "Tells the delegate when the user skips, scrubs, or otherwise navigates to a new time and wants to resume playback at the target time."
+    },
+    {
+      "name": "func playerViewController(AVPlayerViewController, willResumePlaybackAfterUserNavigatedFrom: CMTime, to: CMTime)",
+      "desc": "Tells the delegate when the user navigates to a new time and playback is about to begin."
+    },
+    {
+      "name": "func skipToPreviousItem(for: AVPlayerViewController)",
+      "desc": "Tells the delegate when the user requests skipping to the previous item in the timeline."
+    },
+    {
+      "name": "func skipToNextItem(for: AVPlayerViewController)",
+      "desc": "Tells the delegate when the user requests skipping to the next item in the timeline."
+    },
+    {
+      "name": "func playerViewController(AVPlayerViewController, willPresent: AVInterstitialTimeRange)",
+      "desc": "Tells the delegate when the player view controller is about to start playing a range of interstitial content."
+    },
+    {
+      "name": "func playerViewController(AVPlayerViewController, didPresent: AVInterstitialTimeRange)",
+      "desc": "Tells the delegate when the player view controller finishes playing a range of interstitial content."
+    },
+    {
+      "name": "func playerViewController(AVPlayerViewController, shouldPresent: AVContentProposal) -> Bool",
+      "desc": "Asks the delegate whether the player view controller presents a content proposal."
+    },
+    {
+      "name": "func playerViewController(AVPlayerViewController, didAccept: AVContentProposal)",
+      "desc": "Tells the delegate when the user accepts the proposed content."
+    },
+    {
+      "name": "func playerViewController(AVPlayerViewController, didReject: AVContentProposal)",
+      "desc": "Tells the delegate when the user rejects the proposed content."
+    },
+    {
+      "name": "func playerViewController(AVPlayerViewController, didSelect: AVMediaSelectionOption?, in: AVMediaSelectionGroup)",
+      "desc": "Tells the delegate when the user selects a media option from a media selection group."
+    },
+    {
+      "name": "func playerViewController(AVPlayerViewController, willTransitionToVisibilityOfTransportBar: Bool, with: AVPlayerViewControllerAnimationCoordinator)",
+      "desc": "Tells the delegate when the transport bar’s visibility is about to change."
+    },
+    {
+      "name": "protocol AVPlayerViewControllerAnimationCoordinator",
+      "desc": "A protocol that defines the methods to implement to synchronize animations with playback controls' visibility animation."
+    },
+    {
+      "name": "func playerViewController(AVPlayerViewController, skipToNextChannel: (Bool) -> Void)",
+      "desc": "Tells the delegate when the user wants to skip to the next channel."
+    },
+    {
+      "name": "func playerViewController(AVPlayerViewController, skipToPreviousChannel: (Bool) -> Void)",
+      "desc": "Tells the delegate when the user wants to skip to the previous channel."
+    },
+    {
+      "name": "func nextChannelInterstitialViewController(for: AVPlayerViewController) -> UIViewController",
+      "desc": "Asks the delegate for a view controller that describes the layout of the next channel’s interstitial view."
+    },
+    {
+      "name": "func previousChannelInterstitialViewController(for: AVPlayerViewController) -> UIViewController",
+      "desc": "Asks the delegate for a view controller that describes the layout of the previous channel’s interstitial view."
+    },
+    {
+      "name": "func playerViewController(AVPlayerViewController, willBeginFullScreenPresentationWithAnimationCoordinator: UIViewControllerTransitionCoordinator)",
+      "desc": "Tells the delegate when the player view controller is about to start full-screen display."
+    },
+    {
+      "name": "func playerViewController(AVPlayerViewController, willEndFullScreenPresentationWithAnimationCoordinator: UIViewControllerTransitionCoordinator)",
+      "desc": "Tells the delegate when the player view controller is about to end full-screen display."
+    },
+    {
+      "name": "func playerViewController(AVPlayerViewController, restoreUserInterfaceForFullScreenExitWithCompletionHandler: (Bool) -> Void)",
+      "desc": "Tells the delegate to restore the app’s user interface after returning from a full-screen presentation."
+    }
+  ],
+  "declaration": "protocol AVPlayerViewControllerDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

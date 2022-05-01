@@ -1,0 +1,49 @@
+{
+  "path": "/documentation/imageio/cgimagemetadata",
+  "type": "Class",
+  "name": "CGImageMetadata",
+  "desc": "An immutable object that contains the XMP metadata associated with an image.",
+  "items": [
+    {
+      "name": "func CGImageMetadataCreateFromXMPData(CFData) -> CGImageMetadata?",
+      "desc": "Creates a collection of metadata tags from the specified XMP data."
+    },
+    {
+      "name": "func CGImageMetadataCopyTagWithPath(CGImageMetadata, CGImageMetadataTag?, CFString) -> CGImageMetadataTag?",
+      "desc": "Searches for a specific metadata tag within a metadata collection."
+    },
+    {
+      "name": "func CGImageMetadataCopyTags(CGImageMetadata) -> CFArray?",
+      "desc": "Returns an array of root-level metadata tags from the specified metadata object."
+    },
+    {
+      "name": "func CGImageMetadataCopyTagMatchingImageProperty(CGImageMetadata, CFString, CFString) -> CGImageMetadataTag?",
+      "desc": "Searches for the specified image property and, if found, returns the corresponding tag object."
+    },
+    {
+      "name": "func CGImageMetadataCopyStringValueWithPath(CGImageMetadata, CGImageMetadataTag?, CFString) -> CFString?",
+      "desc": "Searches the metadata for the specified tag, and returns its string value if it exists."
+    },
+    {
+      "name": "func CGImageMetadataEnumerateTagsUsingBlock(CGImageMetadata, CFString?, CFDictionary?, CGImageMetadataTagBlock)",
+      "desc": "Enumerates the tags of a metadata object and executes the specified block on each tag."
+    },
+    {
+      "name": "typealias CGImageMetadataTagBlock",
+      "desc": "The block to execute when enumerating the tags of a metadata object."
+    },
+    {
+      "name": "let kCGImageMetadataEnumerateRecursively: CFString",
+      "desc": "An option to enumerate recursively through a set of metadata tags."
+    },
+    {
+      "name": "func CGImageMetadataCreateXMPData(CGImageMetadata, CFDictionary?) -> CFData?",
+      "desc": "Returns a data object that contains the metadata object’s contents serialized into the XMP format."
+    },
+    {
+      "name": "func CGImageMetadataGetTypeID() -> CFTypeID",
+      "desc": "Returns the type identifier for metadata objects."
+    }
+  ],
+  "declaration": "class CGImageMetadata"
+}

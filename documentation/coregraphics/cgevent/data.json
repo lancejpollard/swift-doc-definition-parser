@@ -1,0 +1,118 @@
+{
+  "path": "/documentation/coregraphics/cgevent",
+  "type": "Class",
+  "name": "CGEvent",
+  "desc": "Defines an opaque type that represents a low-level hardware event.",
+  "items": [
+    {
+      "name": "func copy() -> CGEvent?",
+      "desc": "Returns a copy of an existing Quartz event."
+    },
+    {
+      "name": "init?(keyboardEventSource: CGEventSource?, virtualKey: CGKeyCode, keyDown: Bool)",
+      "desc": "Returns a new Quartz keyboard event."
+    },
+    {
+      "name": "init?(mouseEventSource: CGEventSource?, mouseType: CGEventType, mouseCursorPosition: CGPoint, mouseButton: CGMouseButton)",
+      "desc": "Returns a new Quartz mouse event."
+    },
+    {
+      "name": "init?(source: CGEventSource?)",
+      "desc": "Returns a new Quartz event."
+    },
+    {
+      "name": "init?(withDataAllocator: CFAllocator?, data: CFData?)",
+      "desc": "Returns a Quartz event created from a flattened data representation of the event."
+    },
+    {
+      "name": "init?(scrollWheelEvent2Source: CGEventSource?, units: CGScrollEventUnit, wheelCount: UInt32, wheel1: Int32, wheel2: Int32, wheel3: Int32)"
+    },
+    {
+      "name": "var flags: CGEventFlags",
+      "desc": "Returns the event flags of a Quartz event."
+    },
+    {
+      "name": "var location: CGPoint",
+      "desc": "Returns the location of a Quartz mouse event."
+    },
+    {
+      "name": "var timestamp: CGEventTimestamp",
+      "desc": "Returns the timestamp of a Quartz event."
+    },
+    {
+      "name": "var type: CGEventType",
+      "desc": "Returns the event type of a Quartz event (left mouse down, for example)."
+    },
+    {
+      "name": "var unflippedLocation: CGPoint",
+      "desc": "Returns the location of a Quartz mouse event."
+    },
+    {
+      "name": "class var typeID: CFTypeID",
+      "desc": "Returns the type identifier for the opaque type CGEventRef."
+    },
+    {
+      "name": "func getDoubleValueField(CGEventField) -> Double",
+      "desc": "Returns the floating-point value of a field in a Quartz event."
+    },
+    {
+      "name": "func getIntegerValueField(CGEventField) -> Int64",
+      "desc": "Returns the integer value of a field in a Quartz event."
+    },
+    {
+      "name": "func keyboardGetUnicodeString(maxStringLength: Int, actualStringLength: UnsafeMutablePointer<Int>?, unicodeString: UnsafeMutablePointer<UniChar>?)",
+      "desc": "Returns the Unicode string associated with a Quartz keyboard event."
+    },
+    {
+      "name": "func keyboardSetUnicodeString(stringLength: Int, unicodeString: UnsafePointer<UniChar>?)",
+      "desc": "Sets the Unicode string associated with a Quartz keyboard event."
+    },
+    {
+      "name": "func post(tap: CGEventTapLocation)",
+      "desc": "Posts a Quartz event into the event stream at a specified location."
+    },
+    {
+      "name": "func postToPSN(processSerialNumber: UnsafeMutableRawPointer?)",
+      "desc": "Posts a Quartz event into the event stream for a specific application."
+    },
+    {
+      "name": "func postToPid(pid_t)"
+    },
+    {
+      "name": "func setDoubleValueField(CGEventField, value: Double)",
+      "desc": "Sets the floating-point value of a field in a Quartz event."
+    },
+    {
+      "name": "func setIntegerValueField(CGEventField, value: Int64)",
+      "desc": "Sets the integer value of a field in a Quartz event."
+    },
+    {
+      "name": "func setSource(CGEventSource?)",
+      "desc": "Sets the event source of a Quartz event."
+    },
+    {
+      "name": "func tapPostEvent(CGEventTapProxy?)",
+      "desc": "Posts a Quartz event from an event tap into the event stream."
+    },
+    {
+      "name": "class func tapCreate(tap: CGEventTapLocation, place: CGEventTapPlacement, options: CGEventTapOptions, eventsOfInterest: CGEventMask, callback: CGEventTapCallBack, userInfo: UnsafeMutableRawPointer?) -> CFMachPort?",
+      "desc": "Creates an event tap."
+    },
+    {
+      "name": "class func tapCreateForPSN(processSerialNumber: UnsafeMutableRawPointer, place: CGEventTapPlacement, options: CGEventTapOptions, eventsOfInterest: CGEventMask, callback: CGEventTapCallBack, userInfo: UnsafeMutableRawPointer?) -> CFMachPort?",
+      "desc": "Creates an event tap for a specified process."
+    },
+    {
+      "name": "class func tapCreateForPid(pid: pid_t, place: CGEventTapPlacement, options: CGEventTapOptions, eventsOfInterest: CGEventMask, callback: CGEventTapCallBack, userInfo: UnsafeMutableRawPointer?) -> CFMachPort?"
+    },
+    {
+      "name": "class func tapEnable(tap: CFMachPort, enable: Bool)",
+      "desc": "Enables or disables an event tap."
+    },
+    {
+      "name": "class func tapIsEnabled(tap: CFMachPort) -> Bool",
+      "desc": "Returns a Boolean value indicating whether an event tap is enabled."
+    }
+  ],
+  "declaration": "class CGEvent"
+}

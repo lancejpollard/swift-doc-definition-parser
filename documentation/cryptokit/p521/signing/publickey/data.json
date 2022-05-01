@@ -1,0 +1,61 @@
+{
+  "path": "/documentation/cryptokit/p521/signing/publickey",
+  "type": "Structure",
+  "name": "P521.Signing.PublicKey",
+  "desc": "A P-521 public key used to verify cryptographic signatures.",
+  "items": [
+    {
+      "name": "init<D>(rawRepresentation: D)",
+      "desc": "Creates a P-521 public key for signing from a collection of bytes."
+    },
+    {
+      "name": "init<Bytes>(compactRepresentation: Bytes)",
+      "desc": "Creates a P-521 public key for signing from a compact representation of the key."
+    },
+    {
+      "name": "init<Bytes>(derRepresentation: Bytes)",
+      "desc": "Creates a P-521 public key for signing from a Distinguished Encoding Rules (DER) encoded representation of the key."
+    },
+    {
+      "name": "init(pemRepresentation: String)",
+      "desc": "Creates a P-521 public key for signing from a Privacy-Enhanced Mail (PEM) representation of the key."
+    },
+    {
+      "name": "init<Bytes>(x963Representation: Bytes)",
+      "desc": "Creates a P-521 public key for signing from an ANSI x9.63 representation."
+    },
+    {
+      "name": "var rawRepresentation: Data",
+      "desc": "A full representation of the public key."
+    },
+    {
+      "name": "var compactRepresentation: Data?",
+      "desc": "A compact representation of the public key."
+    },
+    {
+      "name": "var derRepresentation: Data",
+      "desc": "A Distinguished Encoding Rules (DER) encoded representation of the public key."
+    },
+    {
+      "name": "var pemRepresentation: String",
+      "desc": "A Privacy-Enhanced Mail (PEM) representation of the public key."
+    },
+    {
+      "name": "var x963Representation: Data",
+      "desc": "An ANSI x9.63 representation of the public key."
+    },
+    {
+      "name": "func isValidSignature<D>(P521.Signing.ECDSASignature, for: D) -> Bool",
+      "desc": "Verifies an elliptic curve digital signature algorithm (ECDSA) signature on a block of data over the P-521 elliptic curve."
+    },
+    {
+      "name": "func isValidSignature<D>(P521.Signing.ECDSASignature, for: D) -> Bool",
+      "desc": "Verifies an elliptic curve digital signature algorithm (ECDSA) signature on a digest over the P-521 elliptic curve."
+    },
+    {
+      "name": "struct P521.Signing.ECDSASignature",
+      "desc": "A P-521 elliptic curve digital signature algorithm (ECDSA) signature."
+    }
+  ],
+  "declaration": "struct P521.Signing.PublicKey"
+}

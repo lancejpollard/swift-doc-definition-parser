@@ -1,0 +1,59 @@
+{
+  "path": "/documentation/paravirtualizedgraphics/pgdisplaydescriptor",
+  "type": "Class",
+  "name": "PGDisplayDescriptor",
+  "desc": "A descriptor for a virtual display.",
+  "items": [
+    {
+      "name": "var name: String?",
+      "desc": "The display’s name as seen in the guest operating environment."
+    },
+    {
+      "name": "var sizeInMillimeters: NSSize",
+      "desc": "The size in millimeters of the virtual display."
+    },
+    {
+      "name": "var queue: DispatchQueue?",
+      "desc": "The queue that the framework uses when dispatching messages to any of the display’s registered handlers."
+    },
+    {
+      "name": "var cursorGlyphHandler: PGDisplayCursorGlyphHandler?",
+      "desc": "A handler that the framework calls to change the cursor’s appearance."
+    },
+    {
+      "name": "var cursorShowHandler: PGDisplayCursorShowHandler?",
+      "desc": "A handler that the framework calls to change the cursor’s visibility."
+    },
+    {
+      "name": "typealias PGDisplayCursorGlyphHandler",
+      "desc": "The block signature for a routine that handles changes to the cursor’s appearance."
+    },
+    {
+      "name": "typealias PGDisplayCursorShowHandler",
+      "desc": "The block signature for a routine that handles changes to the cursor’s visibility."
+    },
+    {
+      "name": "var modeChangeHandler: PGDisplayModeChangeHandler?",
+      "desc": "A handler that the framework calls to change the virtual display’s graphics mode."
+    },
+    {
+      "name": "typealias PGDisplayModeChangeHandler",
+      "desc": "The block signature for a routine that handles changes to the display’s graphics mode."
+    },
+    {
+      "name": "var newFrameEventHandler: PGDisplayNewFrameEventHandler?",
+      "desc": "A handler that the framework calls when the guest environment has a new frame to display."
+    },
+    {
+      "name": "typealias PGDisplayNewFrameEventHandler",
+      "desc": "The block signature for a routine that handles frame updates from the guest."
+    },
+    {
+      "name": "var cursorMoveHandler: PGDisplayCursorMoveHandler?"
+    }
+  ],
+  "declaration": "class PGDisplayDescriptor : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

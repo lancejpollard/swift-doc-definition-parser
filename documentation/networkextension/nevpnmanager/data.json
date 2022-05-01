@@ -1,0 +1,69 @@
+{
+  "path": "/documentation/networkextension/nevpnmanager",
+  "type": "Class",
+  "name": "NEVPNManager",
+  "desc": "An object to create and manage a Personal VPN configuration.",
+  "items": [
+    {
+      "name": "class func shared() -> NEVPNManager",
+      "desc": "Access the single instance of NEVPNManager."
+    },
+    {
+      "name": "func loadFromPreferences(completionHandler: (Error?) -> Void)",
+      "desc": "Load the VPN configuration from the Network Extension preferences."
+    },
+    {
+      "name": "func saveToPreferences(completionHandler: ((Error?) -> Void)?)",
+      "desc": "Save the VPN configuration in the Network Extension preferences."
+    },
+    {
+      "name": "func setAuthorization(AuthorizationRef)"
+    },
+    {
+      "name": "func removeFromPreferences(completionHandler: ((Error?) -> Void)?)",
+      "desc": "Remove the VPN configuration from the Network Extension preferences."
+    },
+    {
+      "name": "var isEnabled: Bool",
+      "desc": "A Boolean used to toggle the enabled state of the VPN configuration."
+    },
+    {
+      "name": "var protocolConfiguration: NEVPNProtocol?",
+      "desc": "An NEVPNProtocol object containing the configuration settings of the VPN tunneling protocol."
+    },
+    {
+      "name": "var localizedDescription: String?",
+      "desc": "A string containing the display name of the VPN configuration."
+    },
+    {
+      "name": "var isOnDemandEnabled: Bool",
+      "desc": "A Boolean used to toggle the Connect On Demand capability."
+    },
+    {
+      "name": "var onDemandRules: [NEOnDemandRule]?",
+      "desc": "An ordered list of Connect On Demand rules."
+    },
+    {
+      "name": "var connection: NEVPNConnection",
+      "desc": "An NEVPNConnection object that is used to control the VPN tunnel specified by the VPN configuration."
+    },
+    {
+      "name": "struct NEVPNError",
+      "desc": "Information about an error encountered while configuring or using a VPN."
+    },
+    {
+      "name": "let NEVPNErrorDomain: String"
+    },
+    {
+      "name": "enum NEVPNError.Code"
+    },
+    {
+      "name": "static let NEVPNConfigurationChange: NSNotification.Name",
+      "desc": "Posted after the VPN configuration stored in the Network Extension preferences changes."
+    }
+  ],
+  "declaration": "class NEVPNManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

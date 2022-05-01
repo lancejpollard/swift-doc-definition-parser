@@ -1,0 +1,82 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsrayintersector",
+  "type": "Class",
+  "name": "MPSRayIntersector",
+  "desc": "A kernel that performs intersection tests between rays and geometry.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice)"
+    },
+    {
+      "name": "var boundingBoxIntersectionTestType: MPSBoundingBoxIntersectionTestType"
+    },
+    {
+      "name": "var cullMode: MTLCullMode"
+    },
+    {
+      "name": "var frontFacingWinding: MTLWinding"
+    },
+    {
+      "name": "var intersectionDataType: MPSIntersectionDataType"
+    },
+    {
+      "name": "var intersectionStride: Int"
+    },
+    {
+      "name": "var rayDataType: MPSRayDataType"
+    },
+    {
+      "name": "var rayIndexDataType: MPSDataType"
+    },
+    {
+      "name": "var rayMask: UInt32"
+    },
+    {
+      "name": "var rayMaskOperator: MPSRayMaskOperator"
+    },
+    {
+      "name": "var rayMaskOptions: MPSRayMaskOptions"
+    },
+    {
+      "name": "var rayStride: Int"
+    },
+    {
+      "name": "var triangleIntersectionTestType: MPSTriangleIntersectionTestType"
+    },
+    {
+      "name": "func copy(with: NSZone?, device: MTLDevice?) -> Self"
+    },
+    {
+      "name": "func encode(with: NSCoder)"
+    },
+    {
+      "name": "func encodeIntersection(commandBuffer: MTLCommandBuffer, intersectionType: MPSIntersectionType, rayBuffer: MTLBuffer, rayBufferOffset: Int, intersectionBuffer: MTLBuffer, intersectionBufferOffset: Int, rayCount: Int, accelerationStructure: MPSAccelerationStructure)"
+    },
+    {
+      "name": "func encodeIntersection(commandBuffer: MTLCommandBuffer, intersectionType: MPSIntersectionType, rayBuffer: MTLBuffer, rayBufferOffset: Int, intersectionBuffer: MTLBuffer, intersectionBufferOffset: Int, rayCountBuffer: MTLBuffer, rayCountBufferOffset: Int, accelerationStructure: MPSAccelerationStructure)"
+    },
+    {
+      "name": "func encodeIntersection(commandBuffer: MTLCommandBuffer, intersectionType: MPSIntersectionType, rayBuffer: MTLBuffer, rayBufferOffset: Int, rayIndexBuffer: MTLBuffer, rayIndexBufferOffset: Int, intersectionBuffer: MTLBuffer, intersectionBufferOffset: Int, rayIndexCount: Int, accelerationStructure: MPSAccelerationStructure)"
+    },
+    {
+      "name": "func encodeIntersection(commandBuffer: MTLCommandBuffer, intersectionType: MPSIntersectionType, rayBuffer: MTLBuffer, rayBufferOffset: Int, rayIndexBuffer: MTLBuffer, rayIndexBufferOffset: Int, intersectionBuffer: MTLBuffer, intersectionBufferOffset: Int, rayIndexCountBuffer: MTLBuffer, rayIndexCountBufferOffset: Int, accelerationStructure: MPSAccelerationStructure)"
+    },
+    {
+      "name": "func encodeIntersection(commandBuffer: MTLCommandBuffer, intersectionType: MPSIntersectionType, rayTexture: MTLTexture, intersectionTexture: MTLTexture, accelerationStructure: MPSAccelerationStructure)"
+    },
+    {
+      "name": "func recommendedMinimumRayBatchSize(rayCount: Int) -> Int"
+    }
+  ],
+  "declaration": "class MPSRayIntersector : MPSKernel",
+  "inheritsFrom": [
+    "MPSKernel"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

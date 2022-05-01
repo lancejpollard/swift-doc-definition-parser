@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/scenekit/scnactionable",
+  "type": "Protocol",
+  "name": "SCNActionable",
+  "desc": "Methods for running actions on nodes.",
+  "items": [
+    {
+      "name": "func runAction(SCNAction)",
+      "desc": "Adds an action to the list of actions executed by the node."
+    },
+    {
+      "name": "func runAction(SCNAction, completionHandler: (() -> Void)?)",
+      "desc": "Adds an action to the list of actions executed by the node. SceneKit calls the specified block when the action completes."
+    },
+    {
+      "name": "func runAction(SCNAction, forKey: String?)",
+      "desc": "Adds an identifiable action to the list of actions executed by the node."
+    },
+    {
+      "name": "func runAction(SCNAction, forKey: String?, completionHandler: (() -> Void)?)",
+      "desc": "Adds an identifiable action to the list of actions executed by the node. SceneKit calls the specified block when the action completes."
+    },
+    {
+      "name": "func action(forKey: String) -> SCNAction?",
+      "desc": "Returns an action associated with a specific key."
+    },
+    {
+      "name": "var hasActions: Bool",
+      "desc": "A Boolean value that indicates whether the node is currently executing any actions."
+    },
+    {
+      "name": "var actionKeys: [String]",
+      "desc": "The list of keys for which the node has attached actions."
+    },
+    {
+      "name": "func removeAction(forKey: String)",
+      "desc": "Removes an action associated with a specific key."
+    },
+    {
+      "name": "func removeAllActions()",
+      "desc": "Ends and removes all actions from the node."
+    }
+  ],
+  "declaration": "protocol SCNActionable",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

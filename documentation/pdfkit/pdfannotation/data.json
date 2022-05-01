@@ -1,0 +1,304 @@
+{
+  "path": "/documentation/pdfkit/pdfannotation",
+  "type": "Class",
+  "name": "PDFAnnotation",
+  "desc": "An annotation in a PDF document.",
+  "items": [
+    {
+      "name": "init(bounds: CGRect, forType: PDFAnnotationSubtype, withProperties: [AnyHashable : Any]?)",
+      "desc": "Creates a PDF annotation with the specified bounds, type, and optional properties."
+    },
+    {
+      "name": "struct PDFAnnotationSubtype",
+      "desc": "The type of annotation, such as circle, text, or ink."
+    },
+    {
+      "name": "var page: PDFPage?",
+      "desc": "Returns the page that the annotation is associated with."
+    },
+    {
+      "name": "var modificationDate: Date?",
+      "desc": "Returns the modification date of the annotation."
+    },
+    {
+      "name": "var userName: String?",
+      "desc": "Returns the name of the user who created the annotation."
+    },
+    {
+      "name": "var type: String?",
+      "desc": "Returns the type of the annotation."
+    },
+    {
+      "name": "var action: PDFAction?",
+      "desc": "An object that represents an action for a PDF element, such as a link annotation."
+    },
+    {
+      "name": "class PDFAction",
+      "desc": "An action that is performed when, for example, a PDF annotation is activated or an outline item is clicked."
+    },
+    {
+      "name": "class PDFDestination",
+      "desc": "A PDFDestination object describes a point on a PDF page."
+    },
+    {
+      "name": "func draw(with: PDFDisplayBox, in: CGContext)",
+      "desc": "Draws the annotation in a graphics context using page-space coordinates relative to the origin of the specified box."
+    },
+    {
+      "name": "var shouldDisplay: Bool",
+      "desc": "Returns a Boolean value indicating whether the annotation should be displayed."
+    },
+    {
+      "name": "var shouldPrint: Bool",
+      "desc": "Returns a Boolean value indicating whether the annotation should appear when the document is printed."
+    },
+    {
+      "name": "var annotationKeyValues: [AnyHashable : Any]",
+      "desc": "A dictionary that contains a deep copy of the widget’s properties."
+    },
+    {
+      "name": "func value(forAnnotationKey: PDFAnnotationKey) -> Any?",
+      "desc": "Returns a deep copy of the key-value pairs of properties for the specified key."
+    },
+    {
+      "name": "func setValue(Any, forAnnotationKey: PDFAnnotationKey) -> Bool",
+      "desc": "Sets a value in the annotation’s dictionary."
+    },
+    {
+      "name": "func setBoolean(Bool, forAnnotationKey: PDFAnnotationKey) -> Bool",
+      "desc": "Sets a Boolean value in the annotation’s dictionary."
+    },
+    {
+      "name": "func setRect(CGRect, forAnnotationKey: PDFAnnotationKey) -> Bool",
+      "desc": "Sets a rectangle value in the annotation’s dictionary."
+    },
+    {
+      "name": "func removeValue(forAnnotationKey: PDFAnnotationKey)",
+      "desc": "Removes a value from the annotation’s dictionary."
+    },
+    {
+      "name": "struct PDFAnnotationKey",
+      "desc": "Keys for setting properties of annotations."
+    },
+    {
+      "name": "var alignment: NSTextAlignment",
+      "desc": "The alignment of the free text and text widget annotation’s text content."
+    },
+    {
+      "name": "var bounds: CGRect",
+      "desc": "Returns the bounding box for the annotation in page space."
+    },
+    {
+      "name": "var contents: String?",
+      "desc": "Returns the textual content (if any) associated with the annotation."
+    },
+    {
+      "name": "var font: UIFont?",
+      "desc": "The font the annotation uses to display text."
+    },
+    {
+      "name": "var fontColor: UIColor?",
+      "desc": "The font color the annotation uses to display text."
+    },
+    {
+      "name": "var border: PDFBorder?",
+      "desc": "Sets the border style for the annotation."
+    },
+    {
+      "name": "class PDFBorder",
+      "desc": "An optional border for an annotation that lies completely within the annotation rectangle."
+    },
+    {
+      "name": "var isHighlighted: Bool",
+      "desc": "A Boolean value that indicates whether the annotation is in a highlighted state, such as when the mouse is down on a link annotation."
+    },
+    {
+      "name": "var color: UIColor",
+      "desc": "Sets the stroke color for the annotation."
+    },
+    {
+      "name": "var hasAppearanceStream: Bool",
+      "desc": "Returns a Boolean value that indicates whether the annotation has an appearance stream associated with it."
+    },
+    {
+      "name": "var interiorColor: UIColor?",
+      "desc": "The fill color for drawing a circle, line, or square annotation."
+    },
+    {
+      "name": "var startPoint: CGPoint",
+      "desc": "The point where a line begins, in annotation-space coordinates."
+    },
+    {
+      "name": "var endPoint: CGPoint",
+      "desc": "The point where a line ends, in annotation-space coordinates."
+    },
+    {
+      "name": "var startLineStyle: PDFLineStyle",
+      "desc": "The style of the line annotation’s starting point, such as square or filled arrowhead."
+    },
+    {
+      "name": "var endLineStyle: PDFLineStyle",
+      "desc": "The style of the line annotation’s ending point, such as square or filled arrowhead."
+    },
+    {
+      "name": "class func lineStyle(fromName: String) -> PDFLineStyle",
+      "desc": "Returns a line style that corresponds to the specified name."
+    },
+    {
+      "name": "class func name(for: PDFLineStyle) -> String",
+      "desc": "Returns the name of the line style, which matches the definition in the Adobe PDF Specification."
+    },
+    {
+      "name": "var destination: PDFDestination?",
+      "desc": "The destination for a link annotation."
+    },
+    {
+      "name": "var url: URL?",
+      "desc": "A URL for a link annotation."
+    },
+    {
+      "name": "var iconType: PDFTextAnnotationIconType",
+      "desc": "The type of icon to display for a pop-up text annotation."
+    },
+    {
+      "name": "enum PDFTextAnnotationIconType",
+      "desc": "The types of icons that a text annotation can use."
+    },
+    {
+      "name": "struct PDFAnnotationTextIconType",
+      "desc": "Constants for icon type values in text annotation property dictionaries."
+    },
+    {
+      "name": "var popup: PDFAnnotation?",
+      "desc": "Returns the pop-up annotation associated with an annotation."
+    },
+    {
+      "name": "var isOpen: Bool",
+      "desc": "A Boolean value that indicates whether the pop-up annotation is in an opened state, displaying its text content, or in a closed state, displaying an icon."
+    },
+    {
+      "name": "var markupType: PDFMarkupType",
+      "desc": "The markup type that the annotation displays, either highlight, strikethrough, underline, or redact."
+    },
+    {
+      "name": "enum PDFMarkupType",
+      "desc": "The styles available for markup annotations in PDFKit."
+    },
+    {
+      "name": "var quadrilateralPoints: [NSValue]?",
+      "desc": "An array of values that represents the points bounding the marked-up text."
+    },
+    {
+      "name": "var widgetFieldType: PDFAnnotationWidgetSubtype",
+      "desc": "The type of widget annotation, such as button, choice, or text."
+    },
+    {
+      "name": "var widgetStringValue: String?",
+      "desc": "The string value of the widget annotation."
+    },
+    {
+      "name": "var widgetDefaultStringValue: String?",
+      "desc": "The string value that the widget reverts to when performing a reset form action."
+    },
+    {
+      "name": "var fieldName: String?",
+      "desc": "The widget identifier for form annotation actions and behaviors."
+    },
+    {
+      "name": "var backgroundColor: UIColor?",
+      "desc": "The color of the widget’s background."
+    },
+    {
+      "name": "var isReadOnly: Bool",
+      "desc": "A Boolean value that determines whether the widget is editable."
+    },
+    {
+      "name": "enum PDFWidgetControlType",
+      "desc": "The types of annotation buttons."
+    },
+    {
+      "name": "class PDFAppearanceCharacteristics",
+      "desc": "An object that represents appearance characteristics of a widget annotation."
+    },
+    {
+      "name": "var isMultiline: Bool",
+      "desc": "A Boolean value that indicates whether the text widget annotation displays multiple lines."
+    },
+    {
+      "name": "var isPasswordField: Bool",
+      "desc": "A Boolean value that indicates whether the text widget annotation displays a password field using bullet characters."
+    },
+    {
+      "name": "var maximumLength: Int",
+      "desc": "The maximum number of characters the text widget annotation allows."
+    },
+    {
+      "name": "var hasComb: Bool",
+      "desc": "A Boolean value that indicates whether the annotation divides the text widget’s bounds into equally spaced segments, such as in a form entry field."
+    },
+    {
+      "name": "var widgetControlType: PDFWidgetControlType",
+      "desc": "The type of button widget control, either radio button, push button, or checkbox."
+    },
+    {
+      "name": "var buttonWidgetState: PDFWidgetCellState",
+      "desc": "The current state of the button widget annotation."
+    },
+    {
+      "name": "enum PDFWidgetCellState",
+      "desc": "The state of a button annotation, either on, off, or mixed."
+    },
+    {
+      "name": "var buttonWidgetStateString: String",
+      "desc": "A string value that differentiates button widgets in the same group, such as to identify mutually exclusive radio buttons from each other."
+    },
+    {
+      "name": "var caption: String?",
+      "desc": "The title of push button widget annotations."
+    },
+    {
+      "name": "var allowsToggleToOff: Bool",
+      "desc": "A Boolean value that indicates whether clicking or tapping a selected radio button toggles it to an unselected state."
+    },
+    {
+      "name": "var radiosInUnison: Bool",
+      "desc": "A Boolean value that indicates whether radio buttons in a group turn on and off in unison."
+    },
+    {
+      "name": "var choices: [String]?",
+      "desc": "An array of strings that specifies the options in either a list or a pop-up menu."
+    },
+    {
+      "name": "var isListChoice: Bool",
+      "desc": "A Boolean value that indicates whether the choice widget annotation is a list or a pop-up menu."
+    },
+    {
+      "name": "var values: [String]?",
+      "desc": "An array of strings that specifies the export values for items in a list or a pop-up menu."
+    },
+    {
+      "name": "var paths: [UIBezierPath]?",
+      "desc": "An array of bezier paths, in annotation-space coordinates, that compose the annotation."
+    },
+    {
+      "name": "func add(UIBezierPath)",
+      "desc": "Adds a bezier path to the ink annotation."
+    },
+    {
+      "name": "func remove(UIBezierPath)",
+      "desc": "Removes a bezier path from an ink annotation."
+    },
+    {
+      "name": "var stampName: String?",
+      "desc": "The name of the stamp, a text or graphics annotation that emulates a rubber stamp effect."
+    }
+  ],
+  "declaration": "class PDFAnnotation : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "NSCopying"
+  ]
+}

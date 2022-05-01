@@ -1,0 +1,55 @@
+{
+  "path": "/documentation/security/seccodesignatureflags",
+  "type": "Structure",
+  "name": "SecCodeSignatureFlags",
+  "desc": "Specify option flags that can be embedded in a code signature during signing and that govern the use of the signature.",
+  "items": [
+    {
+      "name": "init(rawValue: UInt32)"
+    },
+    {
+      "name": "static var host: SecCodeSignatureFlags",
+      "desc": "May host guest code."
+    },
+    {
+      "name": "static var adhoc: SecCodeSignatureFlags",
+      "desc": "Must be used without a signing identity."
+    },
+    {
+      "name": "static var forceHard: SecCodeSignatureFlags",
+      "desc": "Always set the hard status flag on launch."
+    },
+    {
+      "name": "static var forceKill: SecCodeSignatureFlags",
+      "desc": "Always set the termination status flag on launch."
+    },
+    {
+      "name": "static var forceExpiration: SecCodeSignatureFlags",
+      "desc": "Always set the considerExpiration flag when validating the code."
+    },
+    {
+      "name": "static var enforcement: SecCodeSignatureFlags",
+      "desc": "Enforce code signing."
+    },
+    {
+      "name": "static var libraryValidation: SecCodeSignatureFlags",
+      "desc": "Require library validation."
+    },
+    {
+      "name": "static var restrict: SecCodeSignatureFlags",
+      "desc": "Restrict dyld loading."
+    },
+    {
+      "name": "static var runtime: SecCodeSignatureFlags",
+      "desc": "Apply runtime hardening policies as required by the hardened runtime version."
+    },
+    {
+      "name": "static var linkerSigned: SecCodeSignatureFlags"
+    }
+  ],
+  "declaration": "struct SecCodeSignatureFlags, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

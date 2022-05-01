@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/metal/mtlvertexstepfunction",
+  "type": "Enumeration",
+  "name": "MTLVertexStepFunction",
+  "desc": "The frequency with which the vertex function or post-tessellation vertex function fetches attribute data.",
+  "items": [
+    {
+      "name": "case constant",
+      "desc": "The vertex function fetches attribute data once and uses that data for every vertex."
+    },
+    {
+      "name": "case perVertex",
+      "desc": "The vertex function fetches and uses new attribute data for every vertex."
+    },
+    {
+      "name": "case perInstance",
+      "desc": "The vertex function regularly fetches new attribute data for a number of instances that is determined by stepRate."
+    },
+    {
+      "name": "case perPatch",
+      "desc": "The post-tessellation vertex function fetches data based on the patch index of the patch."
+    },
+    {
+      "name": "case perPatchControlPoint",
+      "desc": "The post-tessellation vertex function fetches data based on the control-point indices associated with the patch."
+    }
+  ],
+  "declaration": "enum MTLVertexStepFunction : UInt, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

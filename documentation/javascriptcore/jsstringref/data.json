@@ -1,0 +1,61 @@
+{
+  "path": "/documentation/javascriptcore/jsstringref",
+  "type": "Type Alias",
+  "name": "JSStringRef",
+  "desc": "A UTF-16 character buffer.",
+  "items": [
+    {
+      "name": "func JSStringCreateWithCharacters(UnsafePointer<JSChar>!, Int) -> JSStringRef!",
+      "desc": "Creates a JavaScript string from a buffer of Unicode characters."
+    },
+    {
+      "name": "typealias JSChar",
+      "desc": "A Unicode character."
+    },
+    {
+      "name": "func JSStringCreateWithUTF8CString(UnsafePointer<CChar>!) -> JSStringRef!",
+      "desc": "Creates a JavaScript string from a null-terminated UTF-8 string."
+    },
+    {
+      "name": "func JSStringRetain(JSStringRef!) -> JSStringRef!",
+      "desc": "Retains a JavaScript string."
+    },
+    {
+      "name": "func JSStringRelease(JSStringRef!)",
+      "desc": "Releases a JavaScript string."
+    },
+    {
+      "name": "func JSStringGetLength(JSStringRef!) -> Int",
+      "desc": "Returns the number of Unicode characters in a JavaScript string."
+    },
+    {
+      "name": "func JSStringGetCharactersPtr(JSStringRef!) -> UnsafePointer<JSChar>!",
+      "desc": "Returns a pointer to the Unicode character buffer that serves as the backing store for a JavaScript string."
+    },
+    {
+      "name": "func JSStringGetMaximumUTF8CStringSize(JSStringRef!) -> Int",
+      "desc": "Returns the maximum number of bytes a JavaScript string uses when you convert it into a null-terminated UTF-8 string."
+    },
+    {
+      "name": "func JSStringGetUTF8CString(JSStringRef!, UnsafeMutablePointer<CChar>!, Int) -> Int",
+      "desc": "Converts a JavaScript string into a null-terminated UTF-8 string, and copies the result into an external byte buffer."
+    },
+    {
+      "name": "func JSStringIsEqual(JSStringRef!, JSStringRef!) -> Bool",
+      "desc": "Tests whether two JavaScript strings match."
+    },
+    {
+      "name": "func JSStringIsEqualToUTF8CString(JSStringRef!, UnsafePointer<CChar>!) -> Bool",
+      "desc": "Tests whether a JavaScript string matches a null-terminated UTF-8 string."
+    },
+    {
+      "name": "func JSStringCreateWithCFString(CFString!) -> JSStringRef!",
+      "desc": "Creates a JavaScript string from a Core Foundation string."
+    },
+    {
+      "name": "func JSStringCopyCFString(CFAllocator!, JSStringRef!) -> CFString!",
+      "desc": "Creates a Core Foundation string from a JavaScript string."
+    }
+  ],
+  "declaration": "typealias JSStringRef = OpaquePointer"
+}

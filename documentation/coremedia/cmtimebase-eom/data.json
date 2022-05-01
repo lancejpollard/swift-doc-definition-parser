@@ -1,0 +1,144 @@
+{
+  "path": "/documentation/coremedia/cmtimebase-eom",
+  "type": "Class",
+  "name": "CMTimebase",
+  "desc": "A model of a timeline under application control.",
+  "items": [
+    {
+      "name": "static let farFuture: CFAbsoluteTime",
+      "desc": "A time far into the future that represents the year 2257."
+    },
+    {
+      "name": "static let veryLongTimeInterval: CFTimeInterval",
+      "desc": "A time far into the future that represents 256 years."
+    },
+    {
+      "name": "var time: CMTime",
+      "desc": "The current time."
+    },
+    {
+      "name": "var rate: Double",
+      "desc": "The current rate relative to its immediate primary clock or timebase."
+    },
+    {
+      "name": "var source: CMSyncProtocol",
+      "desc": "The immediate source that represents the clock or timebase."
+    },
+    {
+      "name": "var sourceClock: CMClock?",
+      "desc": "Returns the immediate source clock, if any."
+    },
+    {
+      "name": "var sourceTimebase: CMTimebase?",
+      "desc": "Returns the immediate source timebase, if any."
+    },
+    {
+      "name": "var effectiveRate: Double",
+      "desc": "The effective rate that combines its rate with the rates of all its primary timebases."
+    },
+    {
+      "name": "var timeAndRate: (time: CMTime, rate: Double)",
+      "desc": "Returns the current time and rate."
+    },
+    {
+      "name": "var ultimateSourceClock: CMClock",
+      "desc": "Returns the source clock that’s the source of all the other source timebases."
+    },
+    {
+      "name": "func addTimer(Timer, on: RunLoop)",
+      "desc": "Adds the timer to the list of timers the timebase manages."
+    },
+    {
+      "name": "func addTimer<T>(T)",
+      "desc": "Adds the timer dispatch source to the list of timers the timebase manages."
+    },
+    {
+      "name": "func removeTimer(Timer)",
+      "desc": "Removes the timer from the list of timers the timebase manages."
+    },
+    {
+      "name": "func removeTimer<T>(T)",
+      "desc": "Removes the timer dispatch source from the list of timers the timebase manages."
+    },
+    {
+      "name": "func convertTime<T>(CMTime, to: T) -> CMTime",
+      "desc": "Converts a time from one timebase or clock to another timebase or clock."
+    },
+    {
+      "name": "func setTime(CMTime)",
+      "desc": "Sets the current time."
+    },
+    {
+      "name": "func time(withTimescale: CMTimeScale, rounding: CMTimeRoundingMethod) -> CMTime",
+      "desc": "Returns the current time in the timescale you request."
+    },
+    {
+      "name": "func setRate(Double)",
+      "desc": "Sets the rate."
+    },
+    {
+      "name": "func setRateAndAnchorTime(rate: Double, anchorTime: CMTime, referenceTime: CMTime)",
+      "desc": "Sets the time at a particular primary time, and changes the rate at exactly that time."
+    },
+    {
+      "name": "func rateAndAnchorTime<T>(relativeTo: T) -> (rate: Double, anchorTime: CMTime, referenceTime: CMTime)",
+      "desc": "Queries the relative rate of one timebase or clock relative to another timebase or clock, and the times of each timebase or clock at which the relative rate went into effect."
+    },
+    {
+      "name": "func rate<T>(relativeTo: T) -> Double",
+      "desc": "Queries the relative rate of one timebase or clock relative to another timebase or clock."
+    },
+    {
+      "name": "func mightDrift<T>(relativeTo: T) -> Bool",
+      "desc": "Queries whether it’s possible for one timebase or clock to drive relative to the other."
+    },
+    {
+      "name": "func setTimerNextFireTime(Timer, fireTime: CMTime)",
+      "desc": "Sets the time on the timebase’s timeline at which the timer should fire next."
+    },
+    {
+      "name": "func setTimerNextFireTime<T>(T, fireTime: CMTime)",
+      "desc": "Sets the time on the timebase’s timeline at which the timer dispatch source should fire next."
+    },
+    {
+      "name": "func setTimerToFireImmediately(Timer)",
+      "desc": "Sets the timer to fire immediately once, overriding any previous calls."
+    },
+    {
+      "name": "func setTimerToFireImmediately<T>(T)",
+      "desc": "Sets the timer dispatch source to fire immediately once, overriding any previous calls."
+    },
+    {
+      "name": "func notificationBarrier()",
+      "desc": "Requests that the timebase wait until it isn’t posting notifications."
+    },
+    {
+      "name": "func setAnchorTime(CMTime, referenceTime: CMTime)",
+      "desc": "Sets the time at a particular source time."
+    },
+    {
+      "name": "static let effectiveRateChanged: NSNotification.Name",
+      "desc": "A notification that posts by a timebase after the effective rate changes."
+    },
+    {
+      "name": "static let timeJumped: NSNotification.Name",
+      "desc": "A notification that posts by a timebase after a discontinuous time jump."
+    },
+    {
+      "name": "struct CMTimebase.Error",
+      "desc": "Constants that describe timebase errors."
+    },
+    {
+      "name": "struct CMTimebase.NotificationKey",
+      "desc": "Constants that describe notification keys."
+    },
+    {
+      "name": "static var typeID: CFTypeID",
+      "desc": "A Core Foundation type identifier that represents a timebase object."
+    }
+  ],
+  "declaration": "class CMTimebase",
+  "conformsTo": [
+    "CMSyncProtocol"
+  ]
+}

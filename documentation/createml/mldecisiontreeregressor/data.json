@@ -1,0 +1,104 @@
+{
+  "path": "/documentation/createml/mldecisiontreeregressor",
+  "type": "Structure",
+  "name": "MLDecisionTreeRegressor",
+  "desc": "A regressor that estimates the target by learning rules to split the data.",
+  "items": [
+    {
+      "name": "init(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]?, parameters: MLDecisionTreeRegressor.ModelParameters)",
+      "desc": "Creates a Decision Tree Regressor from the feature columns in the training data to predict the values in the target column."
+    },
+    {
+      "name": "struct MLDecisionTreeRegressor.ModelParameters",
+      "desc": "Parameters that affect the process of training a model."
+    },
+    {
+      "name": "let modelParameters: MLDecisionTreeRegressor.ModelParameters",
+      "desc": "The underlying parameters used when training the model."
+    },
+    {
+      "name": "var targetColumn: String",
+      "desc": "The name of the column you selected at initialization to define which feature the regressor predicts."
+    },
+    {
+      "name": "var featureColumns: [String]",
+      "desc": "The names of the columns you selected at initialization to train the regressor."
+    },
+    {
+      "name": "var trainingMetrics: MLRegressorMetrics",
+      "desc": "Measurements of the regressor’s performance on the training data set."
+    },
+    {
+      "name": "var validationMetrics: MLRegressorMetrics",
+      "desc": "Measurements of the regressor’s performance on the validation data set."
+    },
+    {
+      "name": "func evaluation(on: MLDataTable) -> MLRegressorMetrics",
+      "desc": "Returns metrics describing the regressor’s performance on the provided labeled data."
+    },
+    {
+      "name": "func predictions(from: MLDataTable) -> MLUntypedColumn",
+      "desc": "Predicts the target value from the provided data."
+    },
+    {
+      "name": "func write(to: URL, metadata: MLModelMetadata?)",
+      "desc": "Exports a Core ML model file for use in your app."
+    },
+    {
+      "name": "func write(toFile: String, metadata: MLModelMetadata?)",
+      "desc": "Exports a Core ML model file for use in your app."
+    },
+    {
+      "name": "var model: MLModel",
+      "desc": "The underlying Core ML model stored in memory."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the decision tree regressor."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the decision tree regressor that’s suitable for output during debugging."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the decision tree regressor shown in a playground."
+    },
+    {
+      "name": "init(checkpoint: MLCheckpoint)"
+    },
+    {
+      "name": "init(trainingData: DataFrame, targetColumn: String, featureColumns: [String]?, parameters: MLDecisionTreeRegressor.ModelParameters)"
+    },
+    {
+      "name": "func evaluation(on: DataFrame) -> MLRegressorMetrics"
+    },
+    {
+      "name": "func predictions(from: DataFrame) -> AnyColumn"
+    },
+    {
+      "name": "static func makeTrainingSession(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]?, parameters: MLDecisionTreeRegressor.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLTrainingSession<MLDecisionTreeRegressor>"
+    },
+    {
+      "name": "static func makeTrainingSession(trainingData: DataFrame, targetColumn: String, featureColumns: [String]?, parameters: MLDecisionTreeRegressor.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLTrainingSession<MLDecisionTreeRegressor>"
+    },
+    {
+      "name": "static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) -> MLTrainingSession<MLDecisionTreeRegressor>"
+    },
+    {
+      "name": "static func resume(MLTrainingSession<MLDecisionTreeRegressor>) -> MLJob<MLDecisionTreeRegressor>"
+    },
+    {
+      "name": "static func train(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]?, parameters: MLDecisionTreeRegressor.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLJob<MLDecisionTreeRegressor>"
+    },
+    {
+      "name": "static func train(trainingData: DataFrame, targetColumn: String, featureColumns: [String]?, parameters: MLDecisionTreeRegressor.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLJob<MLDecisionTreeRegressor>"
+    }
+  ],
+  "declaration": "struct MLDecisionTreeRegressor",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomStringConvertible"
+  ]
+}

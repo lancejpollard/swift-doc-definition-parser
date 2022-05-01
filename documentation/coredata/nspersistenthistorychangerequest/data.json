@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/coredata/nspersistenthistorychangerequest",
+  "type": "Class",
+  "name": "NSPersistentHistoryChangeRequest",
+  "desc": "A request to fetch or purge persistent history.",
+  "items": [
+    {
+      "name": "var fetchRequest: NSFetchRequest<NSFetchRequestResult>?",
+      "desc": "The specified fetch request, when retrieving history."
+    },
+    {
+      "name": "var resultType: NSPersistentHistoryResultType",
+      "desc": "The type of result that this request returns."
+    },
+    {
+      "name": "var token: NSPersistentHistoryToken?",
+      "desc": "The specified token, when retrieving history defined by a token."
+    },
+    {
+      "name": "class func fetchHistory(after: Date) -> Self",
+      "desc": "Retrieves history since a given date."
+    },
+    {
+      "name": "class func fetchHistory(after: NSPersistentHistoryToken?) -> Self",
+      "desc": "Retrieves the request history after a given token."
+    },
+    {
+      "name": "class func fetchHistory(after: NSPersistentHistoryTransaction?) -> Self",
+      "desc": "Retrieves history since a given transaction."
+    },
+    {
+      "name": "class func fetchHistory(withFetch: NSFetchRequest<NSFetchRequestResult>) -> Self",
+      "desc": "Retrieves history based on a fetch request."
+    },
+    {
+      "name": "class func deleteHistory(before: Date) -> Self",
+      "desc": "Purges history older than a given date."
+    },
+    {
+      "name": "class func deleteHistory(before: NSPersistentHistoryToken?) -> Self",
+      "desc": "Purges history older than that defined by a given token."
+    },
+    {
+      "name": "class func deleteHistory(before: NSPersistentHistoryTransaction?) -> Self",
+      "desc": "Purges history older than a given transaction."
+    }
+  ],
+  "declaration": "class NSPersistentHistoryChangeRequest : NSPersistentStoreRequest",
+  "inheritsFrom": [
+    "NSPersistentStoreRequest"
+  ]
+}

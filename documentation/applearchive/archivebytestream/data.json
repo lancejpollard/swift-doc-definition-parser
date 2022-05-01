@@ -1,0 +1,136 @@
+{
+  "path": "/documentation/applearchive/archivebytestream",
+  "type": "Class",
+  "name": "ArchiveByteStream",
+  "desc": "An archive stream that reads from and writes to buffers.",
+  "items": [
+    {
+      "name": "init(object: _AAOptionalObjectWrapper<_AAByteStreamTraits>.AAType?, owned: Bool)",
+      "desc": "Returns a new archive byte stream from the specified traits and entry message processing callback."
+    },
+    {
+      "name": "func read(into: UnsafeMutableRawBufferPointer) -> Int",
+      "desc": "Reads data to the specified buffer, not exceeding the buffer’s previously allocated size."
+    },
+    {
+      "name": "func read(into: UnsafeMutableRawBufferPointer, atOffset: Int64) -> Int",
+      "desc": "Reads data at the supplied offset to the specified buffer, not exceeding the buffer’s previously allocated size."
+    },
+    {
+      "name": "func write(from: UnsafeRawBufferPointer) -> Int",
+      "desc": "Writes data from the specified buffer, not exceeding the buffer’s allocated size."
+    },
+    {
+      "name": "func write(from: UnsafeRawBufferPointer, atOffset: Int64) -> Int",
+      "desc": "Writes data at the supplied offset from the specified buffer, not exceeding the buffer’s allocated size."
+    },
+    {
+      "name": "func seek(toOffset: Int64, relativeTo: FileDescriptor.SeekOrigin) -> Int64",
+      "desc": "Updates the internal stream position to the specified offset relative to the specified origin."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Cancels stream operations."
+    },
+    {
+      "name": "func close()",
+      "desc": "Closes the stream and releases associated resources."
+    },
+    {
+      "name": "func close(updatingContext: ArchiveEncryptionContext)",
+      "desc": "Closes the stream, releases associated resources, and writes the sealed container attributes to the specified encryption context."
+    },
+    {
+      "name": "static func compressionStream(using: ArchiveCompression, writingTo: ArchiveByteStream, blockSize: Int, flags: ArchiveFlags, threadCount: Int) -> ArchiveByteStream?",
+      "desc": "Creates a compression sequential output stream."
+    },
+    {
+      "name": "static func withCompressionStream<E>(using: ArchiveCompression, writingTo: ArchiveByteStream, blockSize: Int, flags: ArchiveFlags, threadCount: Int, (ArchiveByteStream) -> E) -> E",
+      "desc": "Calls the given closure with a compression sequential output stream."
+    },
+    {
+      "name": "static func compressionStream(appendingTo: ArchiveByteStream, flags: ArchiveFlags, threadCount: Int) -> ArchiveByteStream?",
+      "desc": "Reopens a compression sequential output stream."
+    },
+    {
+      "name": "static func withCompressionStream<E>(appendingTo: ArchiveByteStream, flags: ArchiveFlags, threadCount: Int, (ArchiveByteStream) -> E) -> E",
+      "desc": "Reopens a compression sequential output stream and calls the given closure."
+    },
+    {
+      "name": "static func decompressionStream(readingFrom: ArchiveByteStream, flags: ArchiveFlags, threadCount: Int) -> ArchiveByteStream?",
+      "desc": "Creates a decompression sequential input stream."
+    },
+    {
+      "name": "static func withDecompressionStream<E>(readingFrom: ArchiveByteStream, flags: ArchiveFlags, threadCount: Int, (ArchiveByteStream) -> E) -> E",
+      "desc": "Calls the given closure with a decompression sequential input stream."
+    },
+    {
+      "name": "static func randomAccessDecompressionStream(readingFrom: ArchiveByteStream, allocationLimit: Int, flags: ArchiveFlags, threadCount: Int) -> ArchiveByteStream?",
+      "desc": "Creates a decompression random-access input stream."
+    },
+    {
+      "name": "static func withRandomAccessDecompressionStream<E>(readingFrom: ArchiveByteStream, allocationLimit: Int, flags: ArchiveFlags, threadCount: Int, (ArchiveByteStream) -> E) -> E",
+      "desc": "Calls the given closure with a decompression random access input stream."
+    },
+    {
+      "name": "static func encryptionStream(appendingTo: ArchiveByteStream, encryptionContext: ArchiveEncryptionContext, flags: ArchiveFlags, threadCount: Int) -> ArchiveByteStream?",
+      "desc": "Reopens an existing encryption sequential output stream."
+    },
+    {
+      "name": "static func encryptionStream(writingTo: ArchiveByteStream, encryptionContext: ArchiveEncryptionContext, flags: ArchiveFlags, threadCount: Int) -> ArchiveByteStream?",
+      "desc": "Creates a encryption sequential input stream."
+    },
+    {
+      "name": "static func decryptionStream(readingFrom: ArchiveByteStream, encryptionContext: ArchiveEncryptionContext, flags: ArchiveFlags, threadCount: Int) -> ArchiveByteStream?",
+      "desc": "Creates a decryption sequential input stream."
+    },
+    {
+      "name": "static func randomAccessDecryptionStream(readingFrom: ArchiveByteStream, encryptionContext: ArchiveEncryptionContext, allocationLimit: Int, flags: ArchiveFlags, threadCount: Int) -> ArchiveByteStream?",
+      "desc": "Creates a decryption random access input stream."
+    },
+    {
+      "name": "static func process(readingFrom: ArchiveByteStream, writingTo: ArchiveByteStream) -> Int64",
+      "desc": "Processes data between two byte streams."
+    },
+    {
+      "name": "static func fileStream(fd: FileDescriptor, automaticClose: Bool) -> ArchiveByteStream?",
+      "desc": "Creates a stream from an open file descriptor."
+    },
+    {
+      "name": "static func withFileStream<E>(fd: FileDescriptor, automaticClose: Bool, (ArchiveByteStream) -> E) -> E",
+      "desc": "Calls the given closure with a file stream created from the specified file descriptor."
+    },
+    {
+      "name": "static func fileStream(path: FilePath, mode: FileDescriptor.AccessMode, options: FileDescriptor.OpenOptions, permissions: FilePermissions) -> ArchiveByteStream?",
+      "desc": "Opens a new file descriptor using the given path and parameters, and creates a stream from the file descriptor."
+    },
+    {
+      "name": "static func withFileStream<E>(path: FilePath, mode: FileDescriptor.AccessMode, options: FileDescriptor.OpenOptions, permissions: FilePermissions, (ArchiveByteStream) -> E) -> E",
+      "desc": "Calls the given closure with a file stream."
+    },
+    {
+      "name": "static func temporaryFileStream() -> ArchiveByteStream?",
+      "desc": "Creates a new temporary file stream."
+    },
+    {
+      "name": "static func withTemporaryFileStream<E>((ArchiveByteStream) -> E) -> E",
+      "desc": "Calls the given closure with a temporary file stream."
+    },
+    {
+      "name": "static func customStream<C>(instance: C) -> ArchiveByteStream?",
+      "desc": "Returns a new archive byte stream instance mapped to an object that conforms to the archive byte stream protocol."
+    },
+    {
+      "name": "static func withStream<C, E>(wrapping: C, (ArchiveByteStream) -> E) -> E",
+      "desc": "Calls the given closure with an archive byte stream instance mapped to an object that conforms to the archive byte stream protocol."
+    },
+    {
+      "name": "static func sharedBufferPipe(capacity: Int) -> (output: ArchiveByteStream, input: ArchiveByteStream)?",
+      "desc": "Creates a pair of streams and links them by a shared buffer."
+    }
+  ],
+  "declaration": "class ArchiveByteStream",
+  "conformsTo": [
+    "ArchiveByteStreamProtocol"
+  ]
+}

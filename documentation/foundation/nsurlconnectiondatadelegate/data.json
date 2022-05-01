@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/foundation/nsurlconnectiondatadelegate",
+  "type": "Protocol",
+  "name": "NSURLConnectionDataDelegate",
+  "desc": "A protocol that most delegates of a URL connection implement to receive data associated with the connection.",
+  "items": [
+    {
+      "name": "func connection(NSURLConnection, didReceive: URLResponse)",
+      "desc": "Sent when the connection has received sufficient data to construct the URL response for its request."
+    },
+    {
+      "name": "func connection(NSURLConnection, didReceive: Data)",
+      "desc": "Sent as a connection loads data incrementally."
+    },
+    {
+      "name": "func connection(NSURLConnection, didSendBodyData: Int, totalBytesWritten: Int, totalBytesExpectedToWrite: Int)",
+      "desc": "Sent as the body (message data) of a request is transmitted (such as in an HTTP POST request)."
+    },
+    {
+      "name": "func connectionDidFinishLoading(NSURLConnection)",
+      "desc": "Sent when a connection has finished loading successfully."
+    },
+    {
+      "name": "func connection(NSURLConnection, willSend: URLRequest, redirectResponse: URLResponse?) -> URLRequest?",
+      "desc": "Sent when the connection determines that it must change URLs in order to continue loading a request."
+    },
+    {
+      "name": "func connection(NSURLConnection, needNewBodyStream: URLRequest) -> InputStream?",
+      "desc": "Called when an NSURLConnection needs to retransmit a request that has a body stream to provide a new, unopened stream."
+    },
+    {
+      "name": "func connection(NSURLConnection, willCacheResponse: CachedURLResponse) -> CachedURLResponse?",
+      "desc": "Sent before the connection stores a cached response in the cache, to give the delegate an opportunity to alter it."
+    }
+  ],
+  "declaration": "protocol NSURLConnectionDataDelegate",
+  "inheritsFrom": [
+    "NSURLConnectionDelegate"
+  ]
+}

@@ -1,0 +1,626 @@
+{
+  "path": "/documentation/swift/array",
+  "type": "Generic Structure",
+  "name": "Array",
+  "desc": "An ordered, random-access collection.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a new, empty array."
+    },
+    {
+      "name": "init<S>(S)",
+      "desc": "Creates a new instance of a collection containing the elements of a sequence."
+    },
+    {
+      "name": "init<S>(S)",
+      "desc": "Creates an array containing the elements of a sequence."
+    },
+    {
+      "name": "init(repeating: Element, count: Int)",
+      "desc": "Creates a new array containing the specified number of a single, repeated value."
+    },
+    {
+      "name": "init(unsafeUninitializedCapacity: Int, initializingWith: (inout UnsafeMutableBufferPointer<Element>, inout Int) -> Void)",
+      "desc": "Creates an array with the specified capacity, then calls the given closure with a buffer covering the array’s uninitialized memory."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value indicating whether the collection is empty."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of elements in the array."
+    },
+    {
+      "name": "var capacity: Int",
+      "desc": "The total number of elements that the array can contain without allocating new storage."
+    },
+    {
+      "name": "subscript(Int) -> Element",
+      "desc": "Accesses the element at the specified position."
+    },
+    {
+      "name": "var first: Element?",
+      "desc": "The first element of the collection."
+    },
+    {
+      "name": "var last: Element?",
+      "desc": "The last element of the collection."
+    },
+    {
+      "name": "subscript(Range<Int>) -> ArraySlice<Element>",
+      "desc": "Accesses a contiguous subrange of the array’s elements."
+    },
+    {
+      "name": "subscript<R>(R) -> ArraySlice<Element>"
+    },
+    {
+      "name": "subscript<R>(R) -> ArraySlice<Element>",
+      "desc": "Accesses the contiguous subrange of the collection’s elements specified by a range expression."
+    },
+    {
+      "name": "subscript((UnboundedRange_) -> ()) -> ArraySlice<Element>"
+    },
+    {
+      "name": "func randomElement() -> Element?",
+      "desc": "Returns a random element of the collection."
+    },
+    {
+      "name": "func randomElement<T>(using: inout T) -> Element?",
+      "desc": "Returns a random element of the collection, using the given generator as a source for randomness."
+    },
+    {
+      "name": "func append(Element)",
+      "desc": "Adds a new element at the end of the array."
+    },
+    {
+      "name": "func insert(Element, at: Int)",
+      "desc": "Inserts a new element at the specified position."
+    },
+    {
+      "name": "func insert<C>(contentsOf: C, at: Int)",
+      "desc": "Inserts the elements of a sequence into the collection at the specified position."
+    },
+    {
+      "name": "func replaceSubrange<C>(Range<Int>, with: C)",
+      "desc": "Replaces a range of elements with the elements in the specified collection."
+    },
+    {
+      "name": "func replaceSubrange<C, R>(R, with: C)",
+      "desc": "Replaces the specified subrange of elements with the given collection."
+    },
+    {
+      "name": "func reserveCapacity(Int)",
+      "desc": "Reserves enough space to store the specified number of elements."
+    },
+    {
+      "name": "func append<S>(contentsOf: S)",
+      "desc": "Adds the elements of a sequence to the end of the array."
+    },
+    {
+      "name": "func append<S>(contentsOf: S)",
+      "desc": "Adds the elements of a sequence or collection to the end of this collection."
+    },
+    {
+      "name": "static func + <Other>(Other, Array<Element>) -> Array<Element>",
+      "desc": "Creates a new collection by concatenating the elements of a sequence and a collection."
+    },
+    {
+      "name": "static func + <Other>(Array<Element>, Other) -> Array<Element>",
+      "desc": "Creates a new collection by concatenating the elements of a collection and a sequence."
+    },
+    {
+      "name": "static func + (Array<Element>, Array<Element>) -> Array<Element>"
+    },
+    {
+      "name": "static func + <Other>(Array<Element>, Other) -> Array<Element>",
+      "desc": "Creates a new collection by concatenating the elements of two collections."
+    },
+    {
+      "name": "static func += <Other>(inout Array<Element>, Other)",
+      "desc": "Appends the elements of a sequence to a range-replaceable collection."
+    },
+    {
+      "name": "static func += (inout Array<Element>, Array<Element>)"
+    },
+    {
+      "name": "func remove(at: Int) -> Element",
+      "desc": "Removes and returns the element at the specified position."
+    },
+    {
+      "name": "func removeFirst() -> Element",
+      "desc": "Removes and returns the first element of the collection."
+    },
+    {
+      "name": "func removeFirst(Int)",
+      "desc": "Removes the specified number of elements from the beginning of the collection."
+    },
+    {
+      "name": "func removeLast() -> Element",
+      "desc": "Removes and returns the last element of the collection."
+    },
+    {
+      "name": "func removeLast(Int)",
+      "desc": "Removes the specified number of elements from the end of the collection."
+    },
+    {
+      "name": "func removeSubrange(Range<Int>)",
+      "desc": "Removes the elements in the specified subrange from the collection."
+    },
+    {
+      "name": "func removeSubrange<R>(R)",
+      "desc": "Removes the elements in the specified subrange from the collection."
+    },
+    {
+      "name": "func removeAll(where: (Element) -> Bool)",
+      "desc": "Removes all the elements that satisfy the given predicate."
+    },
+    {
+      "name": "func removeAll(keepingCapacity: Bool)",
+      "desc": "Removes all elements from the array."
+    },
+    {
+      "name": "func popLast() -> Element?",
+      "desc": "Removes and returns the last element of the collection."
+    },
+    {
+      "name": "func contains(Element) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence contains the given element."
+    },
+    {
+      "name": "func contains(where: (Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func allSatisfy((Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether every element of a sequence satisfies a given predicate."
+    },
+    {
+      "name": "func first(where: (Element) -> Bool) -> Element?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func firstIndex(of: Element) -> Int?",
+      "desc": "Returns the first index where the specified value appears in the collection."
+    },
+    {
+      "name": "func firstIndex(where: (Element) -> Bool) -> Int?",
+      "desc": "Returns the first index in which an element of the collection satisfies the given predicate."
+    },
+    {
+      "name": "func last(where: (Element) -> Bool) -> Element?",
+      "desc": "Returns the last element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func lastIndex(of: Element) -> Int?",
+      "desc": "Returns the last index where the specified value appears in the collection."
+    },
+    {
+      "name": "func lastIndex(where: (Element) -> Bool) -> Int?",
+      "desc": "Returns the index of the last element in the collection that matches the given predicate."
+    },
+    {
+      "name": "func min() -> Element?",
+      "desc": "Returns the minimum element in the sequence."
+    },
+    {
+      "name": "func min(by: (Element, Element) -> Bool) -> Element?",
+      "desc": "Returns the minimum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func max() -> Element?",
+      "desc": "Returns the maximum element in the sequence."
+    },
+    {
+      "name": "func max(by: (Element, Element) -> Bool) -> Element?",
+      "desc": "Returns the maximum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func prefix(Int) -> ArraySlice<Element>",
+      "desc": "Returns a subsequence, up to the specified maximum length, containing the initial elements of the collection."
+    },
+    {
+      "name": "func prefix(through: Int) -> ArraySlice<Element>",
+      "desc": "Returns a subsequence from the start of the collection through the specified position."
+    },
+    {
+      "name": "func prefix(upTo: Int) -> ArraySlice<Element>",
+      "desc": "Returns a subsequence from the start of the collection up to, but not including, the specified position."
+    },
+    {
+      "name": "func prefix(while: (Element) -> Bool) -> ArraySlice<Element>",
+      "desc": "Returns a subsequence containing the initial elements until predicate returns false and skipping the remaining elements."
+    },
+    {
+      "name": "func suffix(Int) -> ArraySlice<Element>",
+      "desc": "Returns a subsequence, up to the given maximum length, containing the final elements of the collection."
+    },
+    {
+      "name": "func suffix(from: Int) -> ArraySlice<Element>",
+      "desc": "Returns a subsequence from the specified position to the end of the collection."
+    },
+    {
+      "name": "func dropFirst(Int) -> ArraySlice<Element>",
+      "desc": "Returns a subsequence containing all but the given number of initial elements."
+    },
+    {
+      "name": "func dropLast(Int) -> ArraySlice<Element>",
+      "desc": "Returns a subsequence containing all but the specified number of final elements."
+    },
+    {
+      "name": "func drop(while: (Element) -> Bool) -> ArraySlice<Element>",
+      "desc": "Returns a subsequence by skipping elements while predicate returns true and returning the remaining elements."
+    },
+    {
+      "name": "func map<T>((Element) -> T) -> [T]",
+      "desc": "Returns an array containing the results of mapping the given closure over the sequence’s elements."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((Element) -> SegmentOfResult) -> [SegmentOfResult.Element]",
+      "desc": "Returns an array containing the concatenated results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((Element) -> ElementOfResult?) -> [ElementOfResult]",
+      "desc": "Returns an array containing the non-nil results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, Element) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, Element) -> ()) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "var lazy: LazySequence<Array<Element>>",
+      "desc": "A sequence containing the same elements as this sequence, but on which some operations, such as map and filter, are implemented lazily."
+    },
+    {
+      "name": "func forEach((Element) -> Void)",
+      "desc": "Calls the given closure on each element in the sequence in the same order as a for-in loop."
+    },
+    {
+      "name": "func enumerated() -> EnumeratedSequence<Array<Element>>",
+      "desc": "Returns a sequence of pairs (n, x), where n represents a consecutive integer starting at zero and x represents an element of the sequence."
+    },
+    {
+      "name": "func makeIterator() -> IndexingIterator<Array<Element>>",
+      "desc": "Returns an iterator over the elements of the collection."
+    },
+    {
+      "name": "var underestimatedCount: Int",
+      "desc": "A value less than or equal to the number of elements in the collection."
+    },
+    {
+      "name": "func sort()",
+      "desc": "Sorts the collection in place."
+    },
+    {
+      "name": "func sort(by: (Element, Element) -> Bool)",
+      "desc": "Sorts the collection in place, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func sorted() -> [Element]",
+      "desc": "Returns the elements of the sequence, sorted."
+    },
+    {
+      "name": "func sorted(by: (Element, Element) -> Bool) -> [Element]",
+      "desc": "Returns the elements of the sequence, sorted using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func reverse()",
+      "desc": "Reverses the elements of the collection in place."
+    },
+    {
+      "name": "func reversed() -> ReversedCollection<Array<Element>>",
+      "desc": "Returns a view presenting the elements of the collection in reverse order."
+    },
+    {
+      "name": "func shuffle()",
+      "desc": "Shuffles the collection in place."
+    },
+    {
+      "name": "func shuffle<T>(using: inout T)",
+      "desc": "Shuffles the collection in place, using the given generator as a source for randomness."
+    },
+    {
+      "name": "func shuffled() -> [Element]",
+      "desc": "Returns the elements of the sequence, shuffled."
+    },
+    {
+      "name": "func shuffled<T>(using: inout T) -> [Element]",
+      "desc": "Returns the elements of the sequence, shuffled using the given generator as a source for randomness."
+    },
+    {
+      "name": "func partition(by: (Element) -> Bool) -> Int",
+      "desc": "Reorders the elements of the collection such that all the elements that match the given predicate are after all the elements that don’t match."
+    },
+    {
+      "name": "func swapAt(Int, Int)",
+      "desc": "Exchanges the values at the specified indices of the collection."
+    },
+    {
+      "name": "func split(separator: Element, maxSplits: Int, omittingEmptySubsequences: Bool) -> [ArraySlice<Element>]",
+      "desc": "Returns the longest possible subsequences of the collection, in order, around elements equal to the given element."
+    },
+    {
+      "name": "func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Element) -> Bool) -> [ArraySlice<Element>]",
+      "desc": "Returns the longest possible subsequences of the collection, in order, that don’t contain elements satisfying the given predicate."
+    },
+    {
+      "name": "func joined() -> FlattenSequence<Array<Element>>",
+      "desc": "Returns the elements of this sequence of sequences, concatenated."
+    },
+    {
+      "name": "func joined<Separator>(separator: Separator) -> JoinedSequence<Array<Element>>",
+      "desc": "Returns the concatenated elements of this sequence of sequences, inserting the given separator between each element."
+    },
+    {
+      "name": "func joined(separator: String) -> String",
+      "desc": "Returns a new string by concatenating the elements of the sequence, adding the given separator between each element."
+    },
+    {
+      "name": "func joined(separator: String) -> String",
+      "desc": "Returns a new string by concatenating the elements of the sequence, adding the given separator between each element."
+    },
+    {
+      "name": "func applying(CollectionDifference<Element>) -> Array<Element>?",
+      "desc": "Applies the given difference to this collection."
+    },
+    {
+      "name": "func difference<C>(from: C) -> CollectionDifference<Element>",
+      "desc": "Returns the difference needed to produce this collection’s ordered elements from the given collection."
+    },
+    {
+      "name": "func difference<C>(from: C, by: (C.Element, Element) -> Bool) -> CollectionDifference<Element>",
+      "desc": "Returns the difference needed to produce this collection’s ordered elements from the given collection, using the given predicate as an equivalence test."
+    },
+    {
+      "name": "static func == (Array<Element>, Array<Element>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two arrays contain the same elements in the same order."
+    },
+    {
+      "name": "static func != (Array<Element>, Array<Element>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "func elementsEqual<OtherSequence>(OtherSequence) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this sequence and another sequence contain the same elements in the same order."
+    },
+    {
+      "name": "func elementsEqual<OtherSequence>(OtherSequence, by: (Element, OtherSequence.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this sequence and another sequence contain equivalent elements in the same order, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func starts<PossiblePrefix>(with: PossiblePrefix) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the initial elements of the sequence are the same as the elements in another sequence."
+    },
+    {
+      "name": "func starts<PossiblePrefix>(with: PossiblePrefix, by: (Element, PossiblePrefix.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the initial elements of the sequence are equivalent to the elements in another sequence, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func lexicographicallyPrecedes<OtherSequence>(OtherSequence) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the less-than operator (<) to compare elements."
+    },
+    {
+      "name": "func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Element, Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the given predicate to compare elements."
+    },
+    {
+      "name": "var startIndex: Int",
+      "desc": "The position of the first element in a nonempty array."
+    },
+    {
+      "name": "var endIndex: Int",
+      "desc": "The array’s “past the end” position—that is, the position one greater than the last valid subscript argument."
+    },
+    {
+      "name": "func index(after: Int) -> Int",
+      "desc": "Returns the position immediately after the given index."
+    },
+    {
+      "name": "func formIndex(after: inout Int)",
+      "desc": "Replaces the given index with its successor."
+    },
+    {
+      "name": "func index(before: Int) -> Int",
+      "desc": "Returns the position immediately before the given index."
+    },
+    {
+      "name": "func formIndex(before: inout Int)",
+      "desc": "Replaces the given index with its predecessor."
+    },
+    {
+      "name": "func index(Int, offsetBy: Int) -> Int",
+      "desc": "Returns an index that is the specified distance from the given index."
+    },
+    {
+      "name": "func formIndex(inout Int, offsetBy: Int)",
+      "desc": "Offsets the given index by the specified distance."
+    },
+    {
+      "name": "func index(Int, offsetBy: Int, limitedBy: Int) -> Int?",
+      "desc": "Returns an index that is the specified distance from the given index, unless that distance is beyond a given limiting index."
+    },
+    {
+      "name": "func formIndex(inout Int, offsetBy: Int, limitedBy: Int) -> Bool",
+      "desc": "Offsets the given index by the specified distance, or so that it equals the given limiting index."
+    },
+    {
+      "name": "func distance(from: Int, to: Int) -> Int",
+      "desc": "Returns the distance between two indices."
+    },
+    {
+      "name": "func withUnsafeBufferPointer<R>((UnsafeBufferPointer<Element>) -> R) -> R",
+      "desc": "Calls a closure with a pointer to the array’s contiguous storage."
+    },
+    {
+      "name": "func withUnsafeMutableBufferPointer<R>((inout UnsafeMutableBufferPointer<Element>) -> R) -> R",
+      "desc": "Calls the given closure with a pointer to the array’s mutable contiguous storage."
+    },
+    {
+      "name": "func withUnsafeBytes<R>((UnsafeRawBufferPointer) -> R) -> R",
+      "desc": "Calls the given closure with a pointer to the underlying bytes of the array’s contiguous storage."
+    },
+    {
+      "name": "func withUnsafeMutableBytes<R>((UnsafeMutableRawBufferPointer) -> R) -> R",
+      "desc": "Calls the given closure with a pointer to the underlying bytes of the array’s mutable contiguous storage."
+    },
+    {
+      "name": "func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<Element>) -> R) -> R?",
+      "desc": "Executes a closure on the sequence’s contiguous storage."
+    },
+    {
+      "name": "func withContiguousMutableStorageIfAvailable<R>((inout UnsafeMutableBufferPointer<Element>) -> R) -> R?",
+      "desc": "Executes a closure on the collection’s contiguous storage."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes the elements of this array into the given encoder in an unkeyed container."
+    },
+    {
+      "name": "func encode(to: Encoder, configuration: Element.EncodingConfiguration)",
+      "desc": "Encodes the elements of the array into the specified encoder with help from the provided configuration."
+    },
+    {
+      "name": "typealias Array.EncodingConfiguration",
+      "desc": "A type alias for the type that provides additional information for encoding."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a new array by decoding from the given decoder."
+    },
+    {
+      "name": "init(from: Decoder, configuration: Element.DecodingConfiguration)",
+      "desc": "Creates a new array by decoding from the given decoder with help from the provided configuration."
+    },
+    {
+      "name": "typealias Array.DecodingConfiguration",
+      "desc": "A type alias for the type that provides additional information for decoding."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual representation of the array and its elements."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual representation of the array and its elements, suitable for debugging."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A mirror that reflects the array."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "init(MLDataColumn<Element>)",
+      "desc": "Creates an array from a column in a machine learning data table."
+    },
+    {
+      "name": "init(MLUntypedColumn)",
+      "desc": "Creates an array from an untyped column in a machine learning data table."
+    },
+    {
+      "name": "init?(from: MLDataValue)",
+      "desc": "Creates an array from a sequence wrapped in a data value."
+    },
+    {
+      "name": "var dataValue: MLDataValue",
+      "desc": "The array wrapped in a data value."
+    },
+    {
+      "name": "static var dataValueType: MLDataValue.ValueType",
+      "desc": "The underlying type an array uses when it wraps itself in a data value."
+    },
+    {
+      "name": "struct ContiguousArray",
+      "desc": "A contiguously stored array."
+    },
+    {
+      "name": "struct ArraySlice",
+      "desc": "A slice of an Array, ContiguousArray, or ArraySlice instance."
+    },
+    {
+      "name": "class NSArray",
+      "desc": "An object representing a static ordered collection, for use instead of an Array constant in cases that require reference semantics."
+    },
+    {
+      "name": "class NSMutableArray",
+      "desc": "An object representing a dynamic ordered collection, for use instead of an Array variable in cases that require reference semantics."
+    },
+    {
+      "name": "typealias Array.Index",
+      "desc": "The index type for arrays, Int."
+    },
+    {
+      "name": "typealias Array.Indices",
+      "desc": "The type that represents the indices that are valid for subscripting an array, in ascending order."
+    },
+    {
+      "name": "typealias Array.Iterator",
+      "desc": "The type that allows iteration over an array’s elements."
+    },
+    {
+      "name": "typealias Array.ArrayLiteralElement",
+      "desc": "The type of the elements of an array literal."
+    },
+    {
+      "name": "typealias Array.SubSequence",
+      "desc": "A collection representing a contiguous subrange of this collection’s elements. The subsequence shares indices with the original collection."
+    },
+    {
+      "name": "init(arrayLiteral: Element...)",
+      "desc": "Creates an array from the given array literal."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "typealias Array.Regions",
+      "desc": "Available when Element is UInt8."
+    },
+    {
+      "name": "init(fromSplitComplex: DSPDoubleSplitComplex, scale: Double, count: Int)",
+      "desc": "Available when Element is Double."
+    },
+    {
+      "name": "init(fromSplitComplex: DSPSplitComplex, scale: Float, count: Int)",
+      "desc": "Available when Element is Float."
+    },
+    {
+      "name": "var regions: CollectionOfOne<Array<UInt8>>",
+      "desc": "Available when Element is UInt8."
+    },
+    {
+      "name": "func filter((Element) -> Bool) -> [Element]"
+    }
+  ],
+  "declaration": "@frozen struct Array<Element>",
+  "conformsTo": [
+    "AccelerateMutableBuffer",
+    "CKRecordValueProtocol",
+    "CVarArg",
+    "ContiguousBytes",
+    "CustomDebugStringConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "DataProtocol",
+    "Decodable",
+    "DecodableWithConfiguration",
+    "Encodable",
+    "EncodableWithConfiguration",
+    "Equatable",
+    "ExpressibleByArrayLiteral",
+    "Hashable",
+    "MLDataValueConvertible",
+    "MutableCollection",
+    "MutableDataProtocol",
+    "RandomAccessCollection",
+    "RangeReplaceableCollection"
+  ]
+}

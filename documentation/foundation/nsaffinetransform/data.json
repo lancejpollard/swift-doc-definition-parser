@@ -1,0 +1,84 @@
+{
+  "path": "/documentation/foundation/nsaffinetransform",
+  "type": "Class",
+  "name": "NSAffineTransform",
+  "desc": "An object representing a graphics coordinate transformation that bridges to AffineTransform; use NSAffineTransform when you need reference semantics or other Foundation-specific behavior.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Initializes an affine transform matrix to the identity matrix."
+    },
+    {
+      "name": "init(transform: AffineTransform)",
+      "desc": "Initializes the receiver’s matrix using another transform object."
+    },
+    {
+      "name": "func rotate(byDegrees: CGFloat)",
+      "desc": "Applies a rotation factor (measured in degrees) to the receiver’s transformation matrix."
+    },
+    {
+      "name": "func rotate(byRadians: CGFloat)",
+      "desc": "Applies a rotation factor (measured in radians) to the receiver’s transformation matrix."
+    },
+    {
+      "name": "func scale(by: CGFloat)",
+      "desc": "Applies the specified scaling factor along both x and y axes to the receiver’s transformation matrix."
+    },
+    {
+      "name": "func scaleX(by: CGFloat, yBy: CGFloat)",
+      "desc": "Applies scaling factors to each axis of the receiver’s transformation matrix."
+    },
+    {
+      "name": "func translateX(by: CGFloat, yBy: CGFloat)",
+      "desc": "Applies the specified translation factors to the receiver’s transformation matrix."
+    },
+    {
+      "name": "func append(AffineTransform)",
+      "desc": "Appends the specified matrix to the receiver’s matrix."
+    },
+    {
+      "name": "func prepend(AffineTransform)",
+      "desc": "Prepends the specified matrix to the receiver’s matrix."
+    },
+    {
+      "name": "func invert()",
+      "desc": "Replaces the receiver’s matrix with its inverse matrix."
+    },
+    {
+      "name": "func transform(NSPoint) -> NSPoint",
+      "desc": "Applies the receiver’s transform to the specified point and returns the result."
+    },
+    {
+      "name": "func transform(NSSize) -> NSSize",
+      "desc": "Applies the receiver’s transform to the specified size and returns the results."
+    },
+    {
+      "name": "func transform(NSBezierPath) -> NSBezierPath",
+      "desc": "Creates and returns a new NSBezierPath object with each point in the given path transformed by the receiver."
+    },
+    {
+      "name": "var transformStruct: NSAffineTransformStruct",
+      "desc": "The matrix coefficients stored as the transformation matrix."
+    },
+    {
+      "name": "struct NSAffineTransformStruct",
+      "desc": "A structure that defines the three-by-three matrix that performs an affine transform between two coordinate systems."
+    },
+    {
+      "name": "func set()",
+      "desc": "Sets the current transformation matrix to the receiver’s transformation matrix."
+    },
+    {
+      "name": "func concat()",
+      "desc": "Appends the receiver’s matrix to the current transformation matrix stored in the current graphics context, replacing the current transformation matrix with the result."
+    }
+  ],
+  "declaration": "class NSAffineTransform : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

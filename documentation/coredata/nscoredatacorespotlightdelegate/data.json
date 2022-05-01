@@ -1,0 +1,56 @@
+{
+  "path": "/documentation/coredata/nscoredatacorespotlightdelegate",
+  "type": "Class",
+  "name": "NSCoreDataCoreSpotlightDelegate",
+  "desc": "A set of methods that enable integration with Core Spotlight.",
+  "items": [
+    {
+      "name": "init(forStoreWith: NSPersistentStoreDescription, coordinator: NSPersistentStoreCoordinator)",
+      "desc": "Creates a Core Spotlight delegate with the specified store description and coordinator."
+    },
+    {
+      "name": "var isIndexingEnabled: Bool",
+      "desc": "A Boolean value that indicates whether Core Data is currently updating the Core Spotlight index with the persistent store’s entities."
+    },
+    {
+      "name": "func domainIdentifier() -> String",
+      "desc": "Returns the domain identifier."
+    },
+    {
+      "name": "func indexName() -> String?",
+      "desc": "Returns the index’s name."
+    },
+    {
+      "name": "func attributeSet(for: NSManagedObject) -> CSSearchableItemAttributeSet?",
+      "desc": "Returns the searchable attributes for the specified managed object."
+    },
+    {
+      "name": "func deleteSpotlightIndex(completionHandler: (Error?) -> Void)",
+      "desc": "Deletes all searchable items from the configured index."
+    },
+    {
+      "name": "func startSpotlightIndexing()",
+      "desc": "Starts the indexing of the store’s entities."
+    },
+    {
+      "name": "func stopSpotlightIndexing()",
+      "desc": "Stops the indexing of the store’s entities."
+    },
+    {
+      "name": "static let indexDidUpdateNotification: Notification.Name",
+      "desc": "The notification the delegate posts after Spotlight updates the index."
+    },
+    {
+      "name": "func searchableIndex(CSSearchableIndex, reindexAllSearchableItemsWithAcknowledgementHandler: () -> Void)",
+      "desc": "Reindexes all searchable items and clears any local state."
+    },
+    {
+      "name": "func searchableIndex(CSSearchableIndex, reindexSearchableItemsWithIdentifiers: [String], acknowledgementHandler: () -> Void)",
+      "desc": "Reindexes the searchable items for the specified identifiers."
+    }
+  ],
+  "declaration": "class NSCoreDataCoreSpotlightDelegate : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

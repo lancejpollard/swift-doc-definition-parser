@@ -1,0 +1,37 @@
+{
+  "path": "/documentation/realitykit/hashierarchy",
+  "type": "Protocol",
+  "name": "HasHierarchy",
+  "desc": "An interface that provides access to a parent entity and child entities.",
+  "items": [
+    {
+      "name": "var parent: Entity?",
+      "desc": "The parent entity."
+    },
+    {
+      "name": "func setParent(Entity?, preservingWorldTransform: Bool)",
+      "desc": "Attaches the entity as a child to the specified entity."
+    },
+    {
+      "name": "func removeFromParent(preservingWorldTransform: Bool)",
+      "desc": "Removes the entity from its current parent or from the scene if it is a root entity."
+    },
+    {
+      "name": "var children: Entity.ChildCollection",
+      "desc": "The child entities that the entity manages."
+    },
+    {
+      "name": "func addChild(Entity, preservingWorldTransform: Bool)",
+      "desc": "Adds the given entity to the collection of child entities."
+    },
+    {
+      "name": "func removeChild(Entity, preservingWorldTransform: Bool)",
+      "desc": "Removes the given child from the entity."
+    },
+    {
+      "name": "struct Entity.ChildCollection",
+      "desc": "A collection of child entities."
+    }
+  ],
+  "declaration": "protocol HasHierarchy : Entity"
+}

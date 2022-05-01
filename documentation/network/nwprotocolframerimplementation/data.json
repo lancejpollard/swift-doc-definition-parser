@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/network/nwprotocolframerimplementation",
+  "type": "Protocol",
+  "name": "NWProtocolFramerImplementation",
+  "desc": "A protocol to which your classes can conform in order to implement a custom framing protocol.",
+  "items": [
+    {
+      "name": "init(framer: NWProtocolFramer.Instance)",
+      "desc": "Initializes your custom framing protocol for use in one connection attempt."
+    },
+    {
+      "name": "func start(framer: NWProtocolFramer.Instance) -> NWProtocolFramer.StartResult",
+      "desc": "Requests that your protocol set up its state and begin a handshake, if necessary."
+    },
+    {
+      "name": "enum NWProtocolFramer.StartResult",
+      "desc": "Results that you send to indicate the disposition of your protocol after receiving the call to start."
+    },
+    {
+      "name": "func wakeup(framer: NWProtocolFramer.Instance)",
+      "desc": "Delivers a scheduled wakeup event."
+    },
+    {
+      "name": "func stop(framer: NWProtocolFramer.Instance) -> Bool",
+      "desc": "Requests that your protocol send any final messages to close the connection."
+    },
+    {
+      "name": "func cleanup(framer: NWProtocolFramer.Instance)",
+      "desc": "Indicates that your protocol should clean up all allocations before being deallocated."
+    },
+    {
+      "name": "static var label: String",
+      "desc": "A label defined by your custom protocol for use in debugging."
+    },
+    {
+      "name": "func handleOutput(framer: NWProtocolFramer.Instance, message: NWProtocolFramer.Message, messageLength: Int, isComplete: Bool)",
+      "desc": "Notifies your protocol about a new outbound message."
+    },
+    {
+      "name": "func handleInput(framer: NWProtocolFramer.Instance) -> Int",
+      "desc": "Notifies your protocol that new inbound data is available to parse."
+    }
+  ],
+  "declaration": "protocol NWProtocolFramerImplementation : AnyObject"
+}

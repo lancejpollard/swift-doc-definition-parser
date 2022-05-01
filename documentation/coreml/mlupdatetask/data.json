@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/coreml/mlupdatetask",
+  "type": "Class",
+  "name": "MLUpdateTask",
+  "desc": "A task that updates a model with additional training data.",
+  "items": [
+    {
+      "name": "init(forModelAt: URL, trainingData: MLBatchProvider, completionHandler: (MLUpdateContext) -> Void)",
+      "desc": "Creates a task that updates the model at the URL with the training data, and calls the completion handler when the update completes."
+    },
+    {
+      "name": "init(forModelAt: URL, trainingData: MLBatchProvider, progressHandlers: MLUpdateProgressHandlers)",
+      "desc": "Creates a task that updates the model at the URL with the training data, and calls the progress handlers during and after the update."
+    },
+    {
+      "name": "init(forModelAt: URL, trainingData: MLBatchProvider, configuration: MLModelConfiguration?, completionHandler: (MLUpdateContext) -> Void)",
+      "desc": "Creates a task that updates the model at the URL with the training data and configuration, and calls the completion handler when the update completes."
+    },
+    {
+      "name": "init(forModelAt: URL, trainingData: MLBatchProvider, configuration: MLModelConfiguration?, progressHandlers: MLUpdateProgressHandlers)",
+      "desc": "Creates a task that updates the model at the URL with the training data and configuration, and calls the progress handlers during and after the update."
+    },
+    {
+      "name": "protocol MLBatchProvider",
+      "desc": "An interface that represents a collection of feature providers."
+    },
+    {
+      "name": "class MLModelConfiguration",
+      "desc": "The settings for creating or updating a machine learning model."
+    },
+    {
+      "name": "class MLUpdateContext",
+      "desc": "The context an update task provides to your app’s completion and update progress handlers."
+    },
+    {
+      "name": "class MLUpdateProgressHandlers",
+      "desc": "A collection of closures an update task uses to notify your app of its progress."
+    },
+    {
+      "name": "func resume(withParameters: [MLParameterKey : Any])",
+      "desc": "Resumes a model update with updated parameter values."
+    },
+    {
+      "name": "class MLParameterKey",
+      "desc": "The keys for the parameter dictionary in a model configuration or a model update context."
+    }
+  ],
+  "declaration": "class MLUpdateTask : MLTask",
+  "inheritsFrom": [
+    "MLTask"
+  ]
+}

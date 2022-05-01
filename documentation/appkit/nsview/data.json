@@ -1,0 +1,1130 @@
+{
+  "path": "/documentation/appkit/nsview",
+  "type": "Class",
+  "name": "NSView",
+  "desc": "The infrastructure for drawing, printing, and handling events in an app.",
+  "items": [
+    {
+      "name": "init(frame: NSRect)",
+      "desc": "Initializes and returns a newly allocated NSView object with a specified frame rectangle."
+    },
+    {
+      "name": "func prepareForReuse()",
+      "desc": "Restores the view to an initial state so that it can be reused."
+    },
+    {
+      "name": "var superview: NSView?",
+      "desc": "The view that is the parent of the current view."
+    },
+    {
+      "name": "var subviews: [NSView]",
+      "desc": "The array of views embedded in the current view."
+    },
+    {
+      "name": "var window: NSWindow?",
+      "desc": "The view’s window object, if it is installed in a window."
+    },
+    {
+      "name": "func addSubview(NSView)",
+      "desc": "Adds a view to the view’s subviews so it’s displayed above its siblings."
+    },
+    {
+      "name": "func addSubview(NSView, positioned: NSWindow.OrderingMode, relativeTo: NSView?)",
+      "desc": "Inserts a view among the view’s subviews so it’s displayed immediately above or below another view."
+    },
+    {
+      "name": "func didAddSubview(NSView)",
+      "desc": "Overridden by subclasses to perform additional actions when subviews are added to the view."
+    },
+    {
+      "name": "func removeFromSuperview()",
+      "desc": "Unlinks the view from its superview and its window, removes it from the responder chain, and invalidates its cursor rectangles."
+    },
+    {
+      "name": "func removeFromSuperviewWithoutNeedingDisplay()",
+      "desc": "Unlinks the view from its superview and its window and removes it from the responder chain, but does not invalidate its cursor rectangles to cause redrawing."
+    },
+    {
+      "name": "func replaceSubview(NSView, with: NSView)",
+      "desc": "Replaces one of the view’s subviews with another view."
+    },
+    {
+      "name": "func isDescendant(of: NSView) -> Bool",
+      "desc": "Returns true if the view is a subview of a given view or if it’s identical to that view; otherwise, it returns false."
+    },
+    {
+      "name": "var opaqueAncestor: NSView?",
+      "desc": "The view’s closest opaque ancestor, which might be the view itself."
+    },
+    {
+      "name": "func ancestorShared(with: NSView) -> NSView?",
+      "desc": "Returns the closest ancestor shared by the view and another specified view."
+    },
+    {
+      "name": "func sortSubviews((NSView, NSView, UnsafeMutableRawPointer?) -> ComparisonResult, context: UnsafeMutableRawPointer?)",
+      "desc": "Orders the view's immediate subviews using the specified comparator function."
+    },
+    {
+      "name": "func viewDidMoveToSuperview()",
+      "desc": "Informs the view that its superview has changed (possibly to nil)."
+    },
+    {
+      "name": "func viewDidMoveToWindow()",
+      "desc": "Informs the view that it has been added to a new view hierarchy."
+    },
+    {
+      "name": "func viewWillMove(toSuperview: NSView?)",
+      "desc": "Informs the view that its superview is about to change to the specified superview (which may be nil)."
+    },
+    {
+      "name": "func viewWillMove(toWindow: NSWindow?)",
+      "desc": "Informs the view that it’s being added to the view hierarchy of the specified window object (which may be nil)."
+    },
+    {
+      "name": "func willRemoveSubview(NSView)",
+      "desc": "Overridden by subclasses to perform additional actions before subviews are removed from the view."
+    },
+    {
+      "name": "var enclosingMenuItem: NSMenuItem?",
+      "desc": "The menu item containing the view or any of its superviews in the view hierarchy."
+    },
+    {
+      "name": "var frame: NSRect",
+      "desc": "The view’s frame rectangle, which defines its position and size in its superview’s coordinate system."
+    },
+    {
+      "name": "func setFrameOrigin(NSPoint)",
+      "desc": "Sets the origin of the view’s frame rectangle to the specified point, effectively repositioning it within its superview."
+    },
+    {
+      "name": "func setFrameSize(NSSize)",
+      "desc": "Sets the size of the view’s frame rectangle to the specified dimensions, resizing it within its superview without affecting its coordinate system."
+    },
+    {
+      "name": "var frameRotation: CGFloat",
+      "desc": "The angle of rotation, measured in degrees, applied to the view’s frame rectangle relative to its superview’s coordinate system."
+    },
+    {
+      "name": "var bounds: NSRect",
+      "desc": "The view’s bounds rectangle, which expresses its location and size in its own coordinate system."
+    },
+    {
+      "name": "func setBoundsOrigin(NSPoint)",
+      "desc": "Sets the origin of the view’s bounds rectangle to a specified point."
+    },
+    {
+      "name": "func setBoundsSize(NSSize)",
+      "desc": "Sets the size of the view’s bounds rectangle to specified dimensions, inversely scaling its coordinate system relative to its frame rectangle."
+    },
+    {
+      "name": "var boundsRotation: CGFloat",
+      "desc": "The angle of rotation, measured in degrees, applied to the view’s bounds rectangle relative to its frame rectangle."
+    },
+    {
+      "name": "var wantsLayer: Bool",
+      "desc": "A Boolean value indicating whether the view uses a layer as its backing store."
+    },
+    {
+      "name": "var wantsUpdateLayer: Bool",
+      "desc": "A Boolean value indicating which drawing path the view takes when updating its contents."
+    },
+    {
+      "name": "var layer: CALayer?",
+      "desc": "The Core Animation layer that the view uses as its backing store."
+    },
+    {
+      "name": "func makeBackingLayer() -> CALayer",
+      "desc": "Creates the view’s backing layer."
+    },
+    {
+      "name": "var layerContentsPlacement: NSView.LayerContentsPlacement",
+      "desc": "The current layer contents placement policy."
+    },
+    {
+      "name": "var layerContentsRedrawPolicy: NSView.LayerContentsRedrawPolicy",
+      "desc": "The contents redraw policy for the view’s layer."
+    },
+    {
+      "name": "var canDrawSubviewsIntoLayer: Bool",
+      "desc": "A Boolean value indicating whether the view incorporates content from its subviews into its own layer."
+    },
+    {
+      "name": "var layerUsesCoreImageFilters: Bool",
+      "desc": "A Boolean value indicating whether the view’s layer uses Core Image filters and needs in-process rendering."
+    },
+    {
+      "name": "protocol NSViewLayerContentScaleDelegate",
+      "desc": "An optional layer delegate method for handling resolution changes."
+    },
+    {
+      "name": "var alphaValue: CGFloat",
+      "desc": "The opacity of the view."
+    },
+    {
+      "name": "var frameCenterRotation: CGFloat",
+      "desc": "The rotation angle of the view around the center of its layer."
+    },
+    {
+      "name": "var backgroundFilters: [CIFilter]",
+      "desc": "An array of Core Image filters to apply to the view’s background."
+    },
+    {
+      "name": "var compositingFilter: CIFilter?",
+      "desc": "The Core Image filter used to composite the view’s contents with its background."
+    },
+    {
+      "name": "var contentFilters: [CIFilter]",
+      "desc": "An array of Core Image filters to apply to the contents of the view and its sublayers."
+    },
+    {
+      "name": "var shadow: NSShadow?",
+      "desc": "The shadow displayed underneath the view."
+    },
+    {
+      "name": "func updateLayer()",
+      "desc": "Updates the view’s content by modifying its underlying layer."
+    },
+    {
+      "name": "func draw(NSRect)",
+      "desc": "Overridden by subclasses to draw the view’s image within the specified rectangle."
+    },
+    {
+      "name": "var canDrawConcurrently: Bool",
+      "desc": "A Boolean value indicating whether the view can draw its contents on a background thread."
+    },
+    {
+      "name": "var visibleRect: NSRect",
+      "desc": "The portion of the view that is not clipped by its superviews."
+    },
+    {
+      "name": "func getRectsBeingDrawn(UnsafeMutablePointer<UnsafePointer<NSRect>?>?, count: UnsafeMutablePointer<Int>?)",
+      "desc": "Returns by indirection a list of nonoverlapping rectangles that define the area the view is being asked to draw in draw(_:)."
+    },
+    {
+      "name": "func needsToDraw(NSRect) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the specified rectangle intersects any part of the area that the view is being asked to draw."
+    },
+    {
+      "name": "var wantsDefaultClipping: Bool",
+      "desc": "A Boolean value indicating whether AppKit’s default clipping behavior is in effect."
+    },
+    {
+      "name": "func bitmapImageRepForCachingDisplay(in: NSRect) -> NSBitmapImageRep?",
+      "desc": "Returns a bitmap-representation object suitable for caching the specified portion of the view."
+    },
+    {
+      "name": "func cacheDisplay(in: NSRect, to: NSBitmapImageRep)",
+      "desc": "Draws the specified area of the view, and its descendants, into a provided bitmap-representation object."
+    },
+    {
+      "name": "func printView(Any?)",
+      "desc": "This action method opens the Print panel, and if the user chooses an option other than canceling, prints the view and all its subviews to the device specified in the Print panel."
+    },
+    {
+      "name": "func beginPage(in: NSRect, atPlacement: NSPoint)",
+      "desc": "Called at the beginning of each page, this method sets up the coordinate system so that a region inside the view’s bounds is translated to a specified location."
+    },
+    {
+      "name": "func dataWithEPS(inside: NSRect) -> Data",
+      "desc": "Returns EPS data that draws the region of the view within a specified rectangle."
+    },
+    {
+      "name": "func dataWithPDF(inside: NSRect) -> Data",
+      "desc": "Returns PDF data that draws the region of the view within a specified rectangle."
+    },
+    {
+      "name": "var printJobTitle: String",
+      "desc": "The view’s print job title."
+    },
+    {
+      "name": "var pageHeader: NSAttributedString",
+      "desc": "A default header string that includes the print job title and date."
+    },
+    {
+      "name": "var pageFooter: NSAttributedString",
+      "desc": "A default footer string that includes the current page number and page count."
+    },
+    {
+      "name": "func writeEPS(inside: NSRect, to: NSPasteboard)",
+      "desc": "Writes EPS data that draws the region of the view within a specified rectangle onto a pasteboard."
+    },
+    {
+      "name": "func writePDF(inside: NSRect, to: NSPasteboard)",
+      "desc": "Writes PDF data that draws the region of the view within a specified rectangle onto a pasteboard."
+    },
+    {
+      "name": "func drawPageBorder(with: NSSize)",
+      "desc": "Allows applications that use the AppKit pagination facility to draw additional marks on each logical page."
+    },
+    {
+      "name": "var heightAdjustLimit: CGFloat",
+      "desc": "The fraction of the page that can be pushed onto the next page during automatic pagination to prevent items such as lines of text from being divided across pages."
+    },
+    {
+      "name": "var widthAdjustLimit: CGFloat",
+      "desc": "The fraction of the page that can be pushed onto the next page during automatic pagination to prevent items such as small images or text columns from being divided across pages."
+    },
+    {
+      "name": "func adjustPageWidthNew(UnsafeMutablePointer<CGFloat>, left: CGFloat, right: CGFloat, limit: CGFloat)",
+      "desc": "Overridden by subclasses to adjust page width during automatic pagination."
+    },
+    {
+      "name": "func adjustPageHeightNew(UnsafeMutablePointer<CGFloat>, top: CGFloat, bottom: CGFloat, limit: CGFloat)",
+      "desc": "Overridden by subclasses to adjust page height during automatic pagination."
+    },
+    {
+      "name": "func knowsPageRange(NSRangePointer) -> Bool",
+      "desc": "Returns true if the view handles page boundaries, false otherwise."
+    },
+    {
+      "name": "func rectForPage(Int) -> NSRect",
+      "desc": "Implemented by subclasses to determine the portion of the view to be printed for the specified page number."
+    },
+    {
+      "name": "func locationOfPrintRect(NSRect) -> NSPoint",
+      "desc": "Invoked by printView(_:) to determine the location of the region of the view being printed on the physical page."
+    },
+    {
+      "name": "struct NSView.Invalidating",
+      "desc": "A property wrapper that notifies the system that a property value change has invalidated an aspect of the containing view."
+    },
+    {
+      "name": "protocol NSViewInvalidating",
+      "desc": "Implements a type of invalidation that can occur on a view that requires an update."
+    },
+    {
+      "name": "func setNeedsDisplay(NSRect)",
+      "desc": "Marks the region of the view within the specified rectangle as needing display, increasing the view’s existing invalid region to include it."
+    },
+    {
+      "name": "var needsDisplay: Bool",
+      "desc": "A Boolean value that determines whether the view needs to be redrawn before being displayed."
+    },
+    {
+      "name": "func display()",
+      "desc": "Displays the view and all its subviews if possible, invoking each of the NSView methods lockFocus(), draw(_:), and unlockFocus() as necessary."
+    },
+    {
+      "name": "func display(NSRect)",
+      "desc": "Acts as display(), but confining drawing to a rectangular region of the view."
+    },
+    {
+      "name": "func displayIgnoringOpacity(NSRect)",
+      "desc": "Displays the view but confines drawing to a specified region and does not back up to the first opaque ancestor—it simply causes the view and its descendants to execute their drawing code."
+    },
+    {
+      "name": "func displayIgnoringOpacity(NSRect, in: NSGraphicsContext)",
+      "desc": "Causes the view and its descendants to be redrawn to the specified graphics context."
+    },
+    {
+      "name": "func displayIfNeeded()",
+      "desc": "Displays the view and all its subviews if any part of the view has been marked as needing display."
+    },
+    {
+      "name": "func displayIfNeeded(NSRect)",
+      "desc": "Acts as displayIfNeeded(), confining drawing to a specified region of the view."
+    },
+    {
+      "name": "func displayIfNeededIgnoringOpacity()",
+      "desc": "Acts as displayIfNeeded(), except that this method doesn’t back up to the first opaque ancestor—it simply causes the view and its descendants to execute their drawing code."
+    },
+    {
+      "name": "func displayIfNeededIgnoringOpacity(NSRect)",
+      "desc": "Acts as displayIfNeeded(), but confining drawing to aRect and not backing up to the first opaque ancestor—it simply causes the view and its descendants to execute their drawing code."
+    },
+    {
+      "name": "func translateRectsNeedingDisplay(in: NSRect, by: NSSize)",
+      "desc": "Translates the display rectangles by the specified delta."
+    },
+    {
+      "name": "var isOpaque: Bool",
+      "desc": "A Boolean value indicating whether the view fills its frame rectangle with opaque content."
+    },
+    {
+      "name": "func viewWillDraw()",
+      "desc": "Informs the view that it’s required to draw content."
+    },
+    {
+      "name": "func backingAlignedRect(NSRect, options: AlignmentOptions) -> NSRect",
+      "desc": "Returns a backing store pixel-aligned rectangle in local view coordinates."
+    },
+    {
+      "name": "func convertFromBacking(NSPoint) -> NSPoint",
+      "desc": "Converts a point from its pixel aligned backing store coordinate system to the view’s interior coordinate system."
+    },
+    {
+      "name": "func convertToBacking(NSPoint) -> NSPoint",
+      "desc": "Converts a point from the view’s interior coordinate system to its pixel aligned backing store coordinate system."
+    },
+    {
+      "name": "func convertFromLayer(NSPoint) -> NSPoint",
+      "desc": "Convert the point from the layer's interior coordinate system to the view’s interior coordinate system."
+    },
+    {
+      "name": "func convertToLayer(NSPoint) -> NSPoint",
+      "desc": "Convert the size from the view’s interior coordinate system to the layer's interior coordinate system."
+    },
+    {
+      "name": "func convertFromBacking(NSRect) -> NSRect",
+      "desc": "Converts a rectangle from its pixel aligned backing store coordinate system to the view’s interior coordinate system."
+    },
+    {
+      "name": "func convertToBacking(NSRect) -> NSRect",
+      "desc": "Converts a rectangle from the view’s interior coordinate system to its pixel aligned backing store coordinate system."
+    },
+    {
+      "name": "func convertFromLayer(NSRect) -> NSRect",
+      "desc": "Convert the rectangle from the layer's interior coordinate system to the view’s interior coordinate system."
+    },
+    {
+      "name": "func convertToLayer(NSRect) -> NSRect",
+      "desc": "Convert the size from the view’s interior coordinate system to the layer's interior coordinate system."
+    },
+    {
+      "name": "func convertFromBacking(NSSize) -> NSSize",
+      "desc": "Converts a size from its pixel aligned backing store coordinate system to the view’s interior coordinate system."
+    },
+    {
+      "name": "func convertToBacking(NSSize) -> NSSize",
+      "desc": "Converts a size from the view’s interior coordinate system to its pixel aligned backing store coordinate system."
+    },
+    {
+      "name": "func convertFromLayer(NSSize) -> NSSize",
+      "desc": "Convert the size from the layer's interior coordinate system to the view’s interior coordinate system."
+    },
+    {
+      "name": "func convertToLayer(NSSize) -> NSSize",
+      "desc": "Convert the size from the view’s interior coordinate system to the layer's interior coordinate system."
+    },
+    {
+      "name": "func convert(NSPoint, from: NSView?) -> NSPoint",
+      "desc": "Converts a point from the coordinate system of a given view to that of the view."
+    },
+    {
+      "name": "func convert(NSPoint, to: NSView?) -> NSPoint",
+      "desc": "Converts a point from the view’s coordinate system to that of a given view."
+    },
+    {
+      "name": "func convert(NSSize, from: NSView?) -> NSSize",
+      "desc": "Converts a size from another view’s coordinate system to that of the view."
+    },
+    {
+      "name": "func convert(NSSize, to: NSView?) -> NSSize",
+      "desc": "Converts a size from the view’s coordinate system to that of another view."
+    },
+    {
+      "name": "func convert(NSRect, from: NSView?) -> NSRect",
+      "desc": "Converts a rectangle from the coordinate system of another view to that of the view."
+    },
+    {
+      "name": "func convert(NSRect, to: NSView?) -> NSRect",
+      "desc": "Converts a rectangle from the view’s coordinate system to that of another view."
+    },
+    {
+      "name": "func centerScanRect(NSRect) -> NSRect",
+      "desc": "Converts the corners of a specified rectangle to lie on the center of device pixels, which is useful in compensating for rendering overscanning when the coordinate system has been scaled."
+    },
+    {
+      "name": "func translateOrigin(to: NSPoint)",
+      "desc": "Translates the view’s coordinate system so that its origin moves to a new location."
+    },
+    {
+      "name": "func scaleUnitSquare(to: NSSize)",
+      "desc": "Scales the view’s coordinate system so that the unit square scales to the specified dimensions."
+    },
+    {
+      "name": "func rotate(byDegrees: CGFloat)",
+      "desc": "Rotates the view’s bounds rectangle by a specified degree value around the origin of the coordinate system, (0.0, 0.0)."
+    },
+    {
+      "name": "var isFlipped: Bool",
+      "desc": "A Boolean value indicating whether the view uses a flipped coordinate system."
+    },
+    {
+      "name": "var isRotatedFromBase: Bool",
+      "desc": "A Boolean value indicating whether the view or any of its ancestors has ever had a rotation factor applied to its frame or bounds."
+    },
+    {
+      "name": "var isRotatedOrScaledFromBase: Bool",
+      "desc": "A Boolean value indicating whether the view or any of its ancestors has ever had a rotation factor applied to its frame or bounds, or has been scaled from the window’s base coordinate system."
+    },
+    {
+      "name": "var autoresizesSubviews: Bool",
+      "desc": "A Boolean value indicating whether the view applies the autoresizing behavior to its subviews when its frame size changes."
+    },
+    {
+      "name": "var autoresizingMask: NSView.AutoresizingMask",
+      "desc": "The options that determine how the view is resized relative to its superview."
+    },
+    {
+      "name": "func resizeSubviews(withOldSize: NSSize)",
+      "desc": "Informs the view’s subviews that the view’s bounds rectangle size has changed."
+    },
+    {
+      "name": "func resize(withOldSuperviewSize: NSSize)",
+      "desc": "Informs the view that the bounds size of its superview has changed."
+    },
+    {
+      "name": "var bottomAnchor: NSLayoutYAxisAnchor",
+      "desc": "A layout anchor representing the bottom edge of the view’s frame."
+    },
+    {
+      "name": "var centerXAnchor: NSLayoutXAxisAnchor",
+      "desc": "A layout anchor representing the horizontal center of the view’s frame."
+    },
+    {
+      "name": "var centerYAnchor: NSLayoutYAxisAnchor",
+      "desc": "A layout anchor representing the vertical center of the view’s frame."
+    },
+    {
+      "name": "var firstBaselineAnchor: NSLayoutYAxisAnchor",
+      "desc": "A layout anchor representing the baseline for the topmost line of text in the view."
+    },
+    {
+      "name": "var heightAnchor: NSLayoutDimension",
+      "desc": "A layout anchor representing the height of the view’s frame."
+    },
+    {
+      "name": "var lastBaselineAnchor: NSLayoutYAxisAnchor",
+      "desc": "A layout anchor representing the baseline for the bottommost line of text in the view."
+    },
+    {
+      "name": "var leadingAnchor: NSLayoutXAxisAnchor",
+      "desc": "A layout anchor representing the leading edge of the view’s frame."
+    },
+    {
+      "name": "var leftAnchor: NSLayoutXAxisAnchor",
+      "desc": "A layout anchor representing the left edge of the view’s frame."
+    },
+    {
+      "name": "var rightAnchor: NSLayoutXAxisAnchor",
+      "desc": "A layout anchor representing the right edge of the view’s frame."
+    },
+    {
+      "name": "var topAnchor: NSLayoutYAxisAnchor",
+      "desc": "A layout anchor representing the top edge of the view’s frame."
+    },
+    {
+      "name": "var trailingAnchor: NSLayoutXAxisAnchor",
+      "desc": "A layout anchor representing the trailing edge of the view’s frame."
+    },
+    {
+      "name": "var widthAnchor: NSLayoutDimension",
+      "desc": "A layout anchor representing the width of the view’s frame."
+    },
+    {
+      "name": "var constraints: [NSLayoutConstraint]",
+      "desc": "Returns the constraints held by the view."
+    },
+    {
+      "name": "func addConstraint(NSLayoutConstraint)",
+      "desc": "Adds a constraint on the layout of the receiving view or its subviews."
+    },
+    {
+      "name": "func addConstraints([NSLayoutConstraint])",
+      "desc": "Adds multiple constraints on the layout of the receiving view or its subviews."
+    },
+    {
+      "name": "func removeConstraint(NSLayoutConstraint)",
+      "desc": "Removes the specified constraint from the view."
+    },
+    {
+      "name": "func removeConstraints([NSLayoutConstraint])",
+      "desc": "Removes the specified constraints from the view."
+    },
+    {
+      "name": "func addLayoutGuide(NSLayoutGuide)",
+      "desc": "Adds the provided layout guide to the view."
+    },
+    {
+      "name": "var layoutGuides: [NSLayoutGuide]",
+      "desc": "The array of layout guide objects owned by this view."
+    },
+    {
+      "name": "var layoutMarginsGuide: NSLayoutGuide",
+      "desc": "A layout guide that provides the recommended amount of padding for content inside of a view."
+    },
+    {
+      "name": "var safeAreaLayoutGuide: NSLayoutGuide"
+    },
+    {
+      "name": "func removeLayoutGuide(NSLayoutGuide)",
+      "desc": "Removes the provided layout guide from the view."
+    },
+    {
+      "name": "var fittingSize: NSSize",
+      "desc": "The minimum size of the view that satisfies the constraints it holds."
+    },
+    {
+      "name": "var intrinsicContentSize: NSSize",
+      "desc": "The natural size for the receiving view, considering only properties of the view itself."
+    },
+    {
+      "name": "func invalidateIntrinsicContentSize()",
+      "desc": "Invalidates the view’s intrinsic content size."
+    },
+    {
+      "name": "func contentCompressionResistancePriority(for: NSLayoutConstraint.Orientation) -> NSLayoutConstraint.Priority",
+      "desc": "Returns the priority with which a view resists being made smaller than its intrinsic size."
+    },
+    {
+      "name": "func setContentCompressionResistancePriority(NSLayoutConstraint.Priority, for: NSLayoutConstraint.Orientation)",
+      "desc": "Sets the priority with which a view resists being made smaller than its intrinsic size."
+    },
+    {
+      "name": "func contentHuggingPriority(for: NSLayoutConstraint.Orientation) -> NSLayoutConstraint.Priority",
+      "desc": "Returns the priority with which a view resists being made larger than its intrinsic size."
+    },
+    {
+      "name": "func setContentHuggingPriority(NSLayoutConstraint.Priority, for: NSLayoutConstraint.Orientation)",
+      "desc": "Sets the priority with which a view resists being made larger than its intrinsic size."
+    },
+    {
+      "name": "func alignmentRect(forFrame: NSRect) -> NSRect",
+      "desc": "Returns the view’s alignment rectangle for a given frame."
+    },
+    {
+      "name": "func frame(forAlignmentRect: NSRect) -> NSRect",
+      "desc": "Returns the view’s frame for a given alignment rectangle."
+    },
+    {
+      "name": "var alignmentRectInsets: NSEdgeInsets",
+      "desc": "The insets (in points) from the view’s frame that define its content rectangle."
+    },
+    {
+      "name": "var baselineOffsetFromBottom: CGFloat",
+      "desc": "The distance (in points) between the bottom of the view’s alignment rectangle and its baseline."
+    },
+    {
+      "name": "var firstBaselineOffsetFromTop: CGFloat",
+      "desc": "The distance (in points) between the top of the view’s alignment rectangle and its topmost baseline."
+    },
+    {
+      "name": "var lastBaselineOffsetFromBottom: CGFloat",
+      "desc": "The distance (in points) between the bottom of the view’s alignment rectangle and its bottommost baseline."
+    },
+    {
+      "name": "var needsLayout: Bool",
+      "desc": "A Boolean value indicating whether the view needs a layout pass before it can be drawn."
+    },
+    {
+      "name": "func layout()",
+      "desc": "Perform layout in concert with the constraint-based layout system."
+    },
+    {
+      "name": "func layoutSubtreeIfNeeded()",
+      "desc": "Updates the layout of the receiving view and its subviews based on the current views and constraints."
+    },
+    {
+      "name": "var needsUpdateConstraints: Bool",
+      "desc": "A Boolean value indicating whether the view’s constraints need to be updated."
+    },
+    {
+      "name": "func updateConstraints()",
+      "desc": "Update constraints for the view."
+    },
+    {
+      "name": "func updateConstraintsForSubtreeIfNeeded()",
+      "desc": "Updates the constraints for the receiving view and its subviews."
+    },
+    {
+      "name": "class var requiresConstraintBasedLayout: Bool",
+      "desc": "Returns a Boolean value indicating whether the view depends on the constraint-based layout system."
+    },
+    {
+      "name": "var translatesAutoresizingMaskIntoConstraints: Bool",
+      "desc": "A Boolean value indicating whether the view’s autoresizing mask is translated into constraints for the constraint-based layout system."
+    },
+    {
+      "name": "func constraintsAffectingLayout(for: NSLayoutConstraint.Orientation) -> [NSLayoutConstraint]",
+      "desc": "Returns the constraints impacting the layout of the view for a given orientation."
+    },
+    {
+      "name": "var hasAmbiguousLayout: Bool",
+      "desc": "A Boolean value indicating whether the constraints impacting the layout of the view incompletely specify the location of the view."
+    },
+    {
+      "name": "func exerciseAmbiguityInLayout()",
+      "desc": "Randomly changes the frame of a view with an ambiguous layout between the different valid values."
+    },
+    {
+      "name": "class var focusView: NSView?",
+      "desc": "Returns the currently focused NSView object, or nil if there is none."
+    },
+    {
+      "name": "var focusRingType: NSFocusRingType",
+      "desc": "The type of focus ring drawn around the view."
+    },
+    {
+      "name": "var focusRingMaskBounds: NSRect",
+      "desc": "The focus ring mask bounds, specified in the view’s coordinate space."
+    },
+    {
+      "name": "func drawFocusRingMask()",
+      "desc": "Draws the focus ring mask for the view."
+    },
+    {
+      "name": "func noteFocusRingMaskChanged()",
+      "desc": "Invoked to notify the view that the focus ring mask requires updating."
+    },
+    {
+      "name": "func setKeyboardFocusRingNeedsDisplay(NSRect)",
+      "desc": "Invalidates the area around the focus ring."
+    },
+    {
+      "name": "class var defaultFocusRingType: NSFocusRingType",
+      "desc": "Returns the default focus ring type."
+    },
+    {
+      "name": "var allowsVibrancy: Bool",
+      "desc": "A Boolean value indicating whether the view ensures it is vibrant on top of other content."
+    },
+    {
+      "name": "func enterFullScreenMode(NSScreen, withOptions: [NSView.FullScreenModeOptionKey : Any]?) -> Bool",
+      "desc": "Sets the view to full screen mode."
+    },
+    {
+      "name": "func exitFullScreenMode(options: [NSView.FullScreenModeOptionKey : Any]?)",
+      "desc": "Instructs the view to exit full screen mode."
+    },
+    {
+      "name": "var isInFullScreenMode: Bool",
+      "desc": "A Boolean value indicating whether the view is in full screen mode."
+    },
+    {
+      "name": "struct NSView.FullScreenModeOptionKey",
+      "desc": "These constants are keys that you can use in the options dictionary in enterFullScreenMode(_:withOptions:) and exitFullScreenMode(options:)."
+    },
+    {
+      "name": "var isHidden: Bool",
+      "desc": "A Boolean value indicating whether the view is hidden."
+    },
+    {
+      "name": "var isHiddenOrHasHiddenAncestor: Bool",
+      "desc": "A Boolean value indicating whether the view is hidden from sight because it, or one of its ancestors, is marked as hidden."
+    },
+    {
+      "name": "func viewDidHide()",
+      "desc": "Invoked when the view is hidden, either directly, or in response to an ancestor being hidden."
+    },
+    {
+      "name": "func viewDidUnhide()",
+      "desc": "Invoked when the view is unhidden, either directly, or in response to an ancestor being unhidden"
+    },
+    {
+      "name": "var inLiveResize: Bool",
+      "desc": "A Boolean value indicating whether the view is being rendered as part of a live resizing operation."
+    },
+    {
+      "name": "var preservesContentDuringLiveResize: Bool",
+      "desc": "A Boolean value indicating whether the view optimizes live-resize operations by preserving content that has not moved."
+    },
+    {
+      "name": "func getRectsExposedDuringLiveResize(UnsafeMutablePointer<NSRect>, count: UnsafeMutablePointer<Int>)",
+      "desc": "Returns a list of rectangles indicating the newly exposed areas of the view."
+    },
+    {
+      "name": "var rectPreservedDuringLiveResize: NSRect",
+      "desc": "The rectangle identifying the portion of your view that did not change during a live resize operation."
+    },
+    {
+      "name": "func viewWillStartLiveResize()",
+      "desc": "Informs the view of the start of a live resize—the user has started resizing the view."
+    },
+    {
+      "name": "func viewDidEndLiveResize()",
+      "desc": "Informs the view of the end of a live resize—the user has finished resizing the view."
+    },
+    {
+      "name": "var gestureRecognizers: [NSGestureRecognizer]",
+      "desc": "The gesture recognize objects currently attached to the view."
+    },
+    {
+      "name": "func addGestureRecognizer(NSGestureRecognizer)",
+      "desc": "Attaches a gesture recognizer to the view."
+    },
+    {
+      "name": "func removeGestureRecognizer(NSGestureRecognizer)",
+      "desc": "Detaches a gesture recognizer from the view."
+    },
+    {
+      "name": "func acceptsFirstMouse(for: NSEvent?) -> Bool",
+      "desc": "Overridden by subclasses to return true if the view should be sent a mouseDown(with:) message for an initial mouse-down event, false if not."
+    },
+    {
+      "name": "func hitTest(NSPoint) -> NSView?",
+      "desc": "Returns the farthest descendant of the view in the view hierarchy (including itself) that contains a specified point, or nil if that point lies completely outside the view."
+    },
+    {
+      "name": "func isMousePoint(NSPoint, in: NSRect) -> Bool",
+      "desc": "Returns whether a region of the view contains a specified point, accounting for whether the view is flipped or not."
+    },
+    {
+      "name": "func performKeyEquivalent(with: NSEvent) -> Bool",
+      "desc": "Implemented by subclasses to respond to key equivalents (also known as keyboard shortcuts)."
+    },
+    {
+      "name": "var mouseDownCanMoveWindow: Bool",
+      "desc": "A Boolean value indicating whether the view can pass mouse down events through to its superviews."
+    },
+    {
+      "name": "var inputContext: NSTextInputContext?",
+      "desc": "The text input context object for the view."
+    },
+    {
+      "name": "var wantsRestingTouches: Bool",
+      "desc": "A Boolean value indicating whether the view wants resting touches."
+    },
+    {
+      "name": "var canBecomeKeyView: Bool",
+      "desc": "A Boolean value indicating whether the view can become key view."
+    },
+    {
+      "name": "var needsPanelToBecomeKey: Bool",
+      "desc": "A Boolean value indicating whether the view needs its panel to become the key window before it can handle keyboard input and navigation."
+    },
+    {
+      "name": "var nextKeyView: NSView?",
+      "desc": "The view object that follows the current view in the key view loop."
+    },
+    {
+      "name": "var nextValidKeyView: NSView?",
+      "desc": "The closest view object in the key view loop that follows the current view in the key view loop and accepts first responder status."
+    },
+    {
+      "name": "var previousKeyView: NSView?",
+      "desc": "The view object preceding the current view in the key view loop."
+    },
+    {
+      "name": "var previousValidKeyView: NSView?",
+      "desc": "The closest view object in the key view loop that precedes the current view and accepts first responder status."
+    },
+    {
+      "name": "func prepareContent(in: NSRect)",
+      "desc": "Prepares the overdraw region for drawing."
+    },
+    {
+      "name": "var preparedContentRect: NSRect",
+      "desc": "The portion of the view that has been rendered and is available for responsive scrolling."
+    },
+    {
+      "name": "func scroll(NSPoint)",
+      "desc": "Scrolls the view’s closest ancestor NSClipView object so a point in the view lies at the origin of the clip view's bounds rectangle."
+    },
+    {
+      "name": "func scrollToVisible(NSRect) -> Bool",
+      "desc": "Scrolls the view’s closest ancestor NSClipView object the minimum distance needed so a specified region of the view becomes visible in the clip view."
+    },
+    {
+      "name": "func autoscroll(with: NSEvent) -> Bool",
+      "desc": "Scrolls the view’s closest ancestor NSClipView object proportionally to the distance of an event that occurs outside of it."
+    },
+    {
+      "name": "func adjustScroll(NSRect) -> NSRect",
+      "desc": "Overridden by subclasses to modify a given rectangle, returning the altered rectangle."
+    },
+    {
+      "name": "var enclosingScrollView: NSScrollView?",
+      "desc": "The nearest ancestor scroll view that contains the current view."
+    },
+    {
+      "name": "func scroll(NSClipView, to: NSPoint)",
+      "desc": "Notifies the superview of a clip view that the clip view needs to reset the origin of its bounds rectangle."
+    },
+    {
+      "name": "func reflectScrolledClipView(NSClipView)",
+      "desc": "Notifies a clip view’s superview that either the clip view’s bounds rectangle or the document view’s frame rectangle has changed, and that any indicators of the scroll position need to be adjusted."
+    },
+    {
+      "name": "func registerForDraggedTypes([NSPasteboard.PasteboardType])",
+      "desc": "Registers the pasteboard types that the view will accept as the destination of an image-dragging session."
+    },
+    {
+      "name": "func unregisterDraggedTypes()",
+      "desc": "Unregisters the view as a possible destination in a dragging session."
+    },
+    {
+      "name": "var registeredDraggedTypes: [NSPasteboard.PasteboardType]",
+      "desc": "The array of pasteboard drag types that the view can accept."
+    },
+    {
+      "name": "func beginDraggingSession(with: [NSDraggingItem], event: NSEvent, source: NSDraggingSource) -> NSDraggingSession",
+      "desc": "Initiates a dragging session with a group of dragging items."
+    },
+    {
+      "name": "func shouldDelayWindowOrdering(for: NSEvent) -> Bool",
+      "desc": "Allows the user to drag objects from the view without activating the app or moving the window of the view forward, possibly obscuring the destination."
+    },
+    {
+      "name": "func rectForSmartMagnification(at: NSPoint, in: NSRect) -> NSRect",
+      "desc": "Returns the appropriate rectangle to use when magnifying around the specified point."
+    },
+    {
+      "name": "var postsFrameChangedNotifications: Bool",
+      "desc": "A Boolean value indicating whether the view posts notifications when its frame rectangle changes."
+    },
+    {
+      "name": "var postsBoundsChangedNotifications: Bool",
+      "desc": "A Boolean value indicating whether the view posts notifications when its bounds rectangle changes."
+    },
+    {
+      "name": "func viewDidChangeBackingProperties()",
+      "desc": "Responds when the view’s backing store properties change."
+    },
+    {
+      "name": "func viewWithTag(Int) -> NSView?",
+      "desc": "Returns the view’s nearest descendant (including itself) with a specific tag, or nil if no subview has that tag."
+    },
+    {
+      "name": "var tag: Int",
+      "desc": "The view’s tag, which is an integer that you use to identify the view within your app."
+    },
+    {
+      "name": "func addToolTip(NSRect, owner: Any, userData: UnsafeMutableRawPointer?) -> NSView.ToolTipTag",
+      "desc": "Creates a tooltip for a defined area in the view and returns a tag that identifies the tooltip rectangle."
+    },
+    {
+      "name": "func removeAllToolTips()",
+      "desc": "Removes all tooltips assigned to the view."
+    },
+    {
+      "name": "func removeToolTip(NSView.ToolTipTag)",
+      "desc": "Removes the tooltip identified by specified tag."
+    },
+    {
+      "name": "var toolTip: String?",
+      "desc": "The text for the view’s tooltip."
+    },
+    {
+      "name": "func addTrackingRect(NSRect, owner: Any, userData: UnsafeMutableRawPointer?, assumeInside: Bool) -> NSView.TrackingRectTag",
+      "desc": "Establishes an area for tracking mouse-entered and mouse-exited events within the view and returns a tag that identifies the tracking rectangle."
+    },
+    {
+      "name": "func removeTrackingRect(NSView.TrackingRectTag)",
+      "desc": "Removes the tracking rectangle identified by a tag."
+    },
+    {
+      "name": "func addTrackingArea(NSTrackingArea)",
+      "desc": "Adds a given tracking area to the view."
+    },
+    {
+      "name": "func removeTrackingArea(NSTrackingArea)",
+      "desc": "Removes a given tracking area from the view."
+    },
+    {
+      "name": "var trackingAreas: [NSTrackingArea]",
+      "desc": "An array of the view’s tracking areas."
+    },
+    {
+      "name": "func updateTrackingAreas()",
+      "desc": "Invoked automatically when the view’s geometry changes such that its tracking areas need to be recalculated."
+    },
+    {
+      "name": "func addCursorRect(NSRect, cursor: NSCursor)",
+      "desc": "Establishes the cursor to be used when the mouse pointer lies within a specified region."
+    },
+    {
+      "name": "func removeCursorRect(NSRect, cursor: NSCursor)",
+      "desc": "Completely removes a cursor rectangle from the view."
+    },
+    {
+      "name": "func discardCursorRects()",
+      "desc": "Invalidates all cursor rectangles set up using addCursorRect(_:cursor:)."
+    },
+    {
+      "name": "func resetCursorRects()",
+      "desc": "Overridden by subclasses to define their default cursor rectangles."
+    },
+    {
+      "name": "func menu(for: NSEvent) -> NSMenu?",
+      "desc": "Overridden by subclasses to return a context-sensitive pop-up menu for a given mouse-down event."
+    },
+    {
+      "name": "class var defaultMenu: NSMenu?",
+      "desc": "Overridden by subclasses to return the default pop-up menu for instances of the receiving class."
+    },
+    {
+      "name": "func willOpenMenu(NSMenu, with: NSEvent)",
+      "desc": "Called just before a contextual menu for a view is opened on screen."
+    },
+    {
+      "name": "func didCloseMenu(NSMenu, with: NSEvent?)",
+      "desc": "Called after a contextual menu that was displayed from the receiving view has been closed."
+    },
+    {
+      "name": "func beginDocument()",
+      "desc": "Invoked at the beginning of the printing session, this method sets up the current graphics context."
+    },
+    {
+      "name": "func endDocument()",
+      "desc": "This method is invoked at the end of the printing session."
+    },
+    {
+      "name": "func endPage()",
+      "desc": "Writes the end of a conforming page."
+    },
+    {
+      "name": "func showDefinition(for: NSAttributedString?, at: NSPoint)",
+      "desc": "Shows a window displaying the definition of the attributed string at the specified point."
+    },
+    {
+      "name": "func showDefinition(for: NSAttributedString?, range: NSRange, options: [NSView.DefinitionOptionKey : Any]?, baselineOriginProvider: ((NSRange) -> NSPoint)?)",
+      "desc": "Shows a window displaying the definition of the specified range of the attributed string."
+    },
+    {
+      "name": "struct NSView.DefinitionOptionKey",
+      "desc": "Keys to include in your definition."
+    },
+    {
+      "name": "struct NSView.DefinitionPresentationType",
+      "desc": "Presentation options for the window."
+    },
+    {
+      "name": "var isDrawingFindIndicator: Bool",
+      "desc": "A Boolean value indicating whether the view or one of its ancestors is being drawn for a find indicator."
+    },
+    {
+      "name": "var userInterfaceLayoutDirection: NSUserInterfaceLayoutDirection",
+      "desc": "The layout direction for content in the view."
+    },
+    {
+      "name": "var pressureConfiguration: NSPressureConfiguration?",
+      "desc": "Configures the behavior and progression of the Force Touch trackpad when responding to touch input produced by the user when the cursor is over the view."
+    },
+    {
+      "name": "enum NSBorderType",
+      "desc": "These constants specify the type of a view’s border."
+    },
+    {
+      "name": "struct NSView.AutoresizingMask",
+      "desc": "Constants used by the autoresizingMask property."
+    },
+    {
+      "name": "typealias NSView.ToolTipTag",
+      "desc": "This type describes the rectangle used to identify a tooltip rectangle."
+    },
+    {
+      "name": "typealias NSView.TrackingRectTag",
+      "desc": "This type describes the rectangle used to track the mouse."
+    },
+    {
+      "name": "enum NSView.LayerContentsRedrawPolicy",
+      "desc": "Constants that specify how layer resizing is handled when a view is layer-backed or layer-hosting. For more information, see the layerContentsRedrawPolicy property."
+    },
+    {
+      "name": "enum NSView.LayerContentsPlacement",
+      "desc": "These constants specify the location of the layer content when the content is not rerendered in response to view resizing. For more information, see the layerContentsPlacement property."
+    },
+    {
+      "name": "class let boundsDidChangeNotification: NSNotification.Name",
+      "desc": "Posted whenever the NSView’s bounds rectangle changes to a new value independently of the frame rectangle, but only when the view’s postsBoundsChangedNotifications property is true."
+    },
+    {
+      "name": "class let frameDidChangeNotification: NSNotification.Name",
+      "desc": "Posted whenever the view’s frame rectangle changes to a new value, but only when the view’s postsFrameChangedNotifications property is true."
+    },
+    {
+      "name": "class let didUpdateTrackingAreasNotification: NSNotification.Name",
+      "desc": "Posted whenever an NSView object recalculates its tracking areas."
+    },
+    {
+      "name": "init?(coder: NSCoder)"
+    },
+    {
+      "name": "var additionalSafeAreaInsets: NSEdgeInsets"
+    },
+    {
+      "name": "var allowedTouchTypes: NSTouch.TouchTypeMask"
+    },
+    {
+      "name": "var candidateListTouchBarItem: NSCandidateListTouchBarItem<AnyObject>?"
+    },
+    {
+      "name": "var isHorizontalContentSizeConstraintActive: Bool"
+    },
+    {
+      "name": "var isVerticalContentSizeConstraintActive: Bool"
+    },
+    {
+      "name": "var playgroundLiveViewRepresentation: PlaygroundLiveViewRepresentation"
+    },
+    {
+      "name": "var safeAreaInsets: NSEdgeInsets"
+    },
+    {
+      "name": "var safeAreaRect: NSRect"
+    },
+    {
+      "name": "class var isCompatibleWithResponsiveScrolling: Bool"
+    },
+    {
+      "name": "class let noIntrinsicMetric: CGFloat"
+    },
+    {
+      "name": "func rulerView(NSRulerView, didAdd: NSRulerMarker)",
+      "desc": "Informs the client that aRulerView allowed the user to add aMarker."
+    },
+    {
+      "name": "func rulerView(NSRulerView, didMove: NSRulerMarker)",
+      "desc": "Informs the client that aRulerView allowed the user to move aMarker."
+    },
+    {
+      "name": "func rulerView(NSRulerView, didRemove: NSRulerMarker)",
+      "desc": "Informs the client that aRulerView allowed the user to remove aMarker."
+    },
+    {
+      "name": "func rulerView(NSRulerView, handleMouseDownWith: NSEvent)",
+      "desc": "Informs the client that the user has pressed the mouse button while the cursor is in the ruler area of aRulerView."
+    },
+    {
+      "name": "func rulerView(NSRulerView, locationFor: NSPoint) -> CGFloat"
+    },
+    {
+      "name": "func rulerView(NSRulerView, pointForLocation: CGFloat) -> NSPoint"
+    },
+    {
+      "name": "func rulerView(NSRulerView, shouldAdd: NSRulerMarker) -> Bool",
+      "desc": "Requests permission for aRulerView to add aMarker, an NSRulerMarker being dragged onto the ruler by the user."
+    },
+    {
+      "name": "func rulerView(NSRulerView, shouldMove: NSRulerMarker) -> Bool",
+      "desc": "Requests permission for aRulerView to move aMarker."
+    },
+    {
+      "name": "func rulerView(NSRulerView, shouldRemove: NSRulerMarker) -> Bool",
+      "desc": "Requests permission for aRulerView to remove aMarker."
+    },
+    {
+      "name": "func rulerView(NSRulerView, willAdd: NSRulerMarker, atLocation: CGFloat) -> CGFloat",
+      "desc": "Informs the client that aRulerView will add the new NSRulerMarker, aMarker."
+    },
+    {
+      "name": "func rulerView(NSRulerView, willMove: NSRulerMarker, toLocation: CGFloat) -> CGFloat",
+      "desc": "Informs the client that aRulerView will move aMarker, an NSRulerMarker already on the ruler view."
+    },
+    {
+      "name": "func rulerView(NSRulerView, willSetClientView: NSView)",
+      "desc": "Informs the client view that aRulerView is about to be appropriated by newClient."
+    },
+    {
+      "name": "func viewDidChangeEffectiveAppearance()"
+    },
+    {
+      "name": "enum NSView.BackgroundStyle",
+      "desc": "Background styles used with the backgroundStyle and interiorBackgroundStyle properties."
+    }
+  ],
+  "declaration": "class NSView : NSResponder",
+  "inheritsFrom": [
+    "NSResponder"
+  ],
+  "conformsTo": [
+    "NSAccessibilityProtocol",
+    "NSAccessibilityElementProtocol",
+    "NSAnimatablePropertyContainer",
+    "NSAppearanceCustomization",
+    "NSDraggingDestination",
+    "NSUserInterfaceItemIdentification",
+    "PlaygroundLiveViewable"
+  ]
+}

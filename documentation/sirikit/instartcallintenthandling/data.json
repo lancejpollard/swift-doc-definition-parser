@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/sirikit/instartcallintenthandling",
+  "type": "Protocol",
+  "name": "INStartCallIntentHandling",
+  "desc": "An interface that handles requests to start audio and video calls.",
+  "items": [
+    {
+      "name": "func resolveCallCapability(for: INStartCallIntent, with: (INStartCallCallCapabilityResolutionResult) -> Void)",
+      "desc": "Resolves the type of call to start."
+    },
+    {
+      "name": "func resolveContacts(for: INStartCallIntent, with: ([INStartCallContactResolutionResult]) -> Void)",
+      "desc": "Resolves the recipients of the call."
+    },
+    {
+      "name": "func resolveDestinationType(for: INStartCallIntent, with: (INCallDestinationTypeResolutionResult) -> Void)",
+      "desc": "Resolves the destination of the call."
+    },
+    {
+      "name": "func resolveCallRecordToCallBack(for: INStartCallIntent, with: (INCallRecordResolutionResult) -> Void)",
+      "desc": "Resolves the redial of a missed call."
+    },
+    {
+      "name": "func confirm(intent: INStartCallIntent, completion: (INStartCallIntentResponse) -> Void)",
+      "desc": "Confirms whether your app is able to initiate the call."
+    },
+    {
+      "name": "func handle(intent: INStartCallIntent, completion: (INStartCallIntentResponse) -> Void)",
+      "desc": "Handles handing off the call to your app."
+    }
+  ],
+  "declaration": "protocol INStartCallIntentHandling",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

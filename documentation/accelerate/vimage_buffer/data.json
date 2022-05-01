@@ -1,0 +1,66 @@
+{
+  "path": "/documentation/accelerate/vimage_buffer",
+  "type": "Structure",
+  "name": "vImage_Buffer",
+  "desc": "The basic data structure vimage functions use to pass image data.",
+  "items": [
+    {
+      "name": "init(data: UnsafeMutableRawPointer!, height: vImagePixelCount, width: vImagePixelCount, rowBytes: Int)",
+      "desc": "Returns a new, empty buffer of the specified size."
+    },
+    {
+      "name": "init(width: Int, height: Int, bitsPerPixel: UInt32)",
+      "desc": "Returns a new, initialized buffer of the specified size and bits per pixel."
+    },
+    {
+      "name": "init(cgImage: CGImage, flags: vImage.Options)",
+      "desc": "Returns a new, initialized buffer with the contents of a Core Graphics image."
+    },
+    {
+      "name": "init(cgImage: CGImage, format: vImage_CGImageFormat, flags: vImage.Options)",
+      "desc": "Returns a new, initialized buffer with the contents of a Core Graphics image, that uses the supplied image format."
+    },
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(size: CGSize, bitsPerPixel: UInt32)"
+    },
+    {
+      "name": "func createCGImage(format: vImage_CGImageFormat, flags: vImage.Options) -> CGImage",
+      "desc": "Creates a Core Graphics image from the vImage buffer."
+    },
+    {
+      "name": "func free()",
+      "desc": "Frees the resoures associated with the vImage buffer."
+    },
+    {
+      "name": "var data: UnsafeMutableRawPointer!",
+      "desc": "A pointer to memory for image data."
+    },
+    {
+      "name": "var height: vImagePixelCount",
+      "desc": "The height of the image, in pixels."
+    },
+    {
+      "name": "var width: vImagePixelCount",
+      "desc": "The width of the image, in pixels."
+    },
+    {
+      "name": "var size: CGSize",
+      "desc": "The size of the image, in pixels."
+    },
+    {
+      "name": "var rowBytes: Int",
+      "desc": "The distance, in bytes, between the start of one pixel row and the next in an image, including any unused space between them."
+    },
+    {
+      "name": "static func preferredAlignmentAndRowBytes(width: Int, height: Int, bitsPerPixel: UInt32) -> (alignment: Int, rowBytes: Int)",
+      "desc": "Returns the preferred alignment and row bytes for a specified size and bits per pixel."
+    },
+    {
+      "name": "func copy(destinationBuffer: inout vImage_Buffer, pixelSize: Int, flags: vImage.Options)"
+    }
+  ],
+  "declaration": "struct vImage_Buffer"
+}

@@ -1,0 +1,65 @@
+{
+  "path": "/documentation/network/nw_content_context_t",
+  "type": "Type Alias",
+  "name": "nw_content_context_t",
+  "desc": "A representation of a message to send or receive, containing protocol metadata and send properties.",
+  "items": [
+    {
+      "name": "func nw_content_context_create(UnsafePointer<CChar>) -> nw_content_context_t",
+      "desc": "Initializes a custom message context."
+    },
+    {
+      "name": "func nw_content_context_set_metadata_for_protocol(nw_content_context_t, nw_protocol_metadata_t)",
+      "desc": "Sets protocol metadata to configure per-message or per-packet properties."
+    },
+    {
+      "name": "typealias nw_protocol_metadata_t",
+      "desc": "The abstract superclass for specifying metadata about a network protocol."
+    },
+    {
+      "name": "func nw_content_context_set_antecedent(nw_content_context_t, nw_content_context_t?)",
+      "desc": "Set an optional message context that must be sent before the context you are sending."
+    },
+    {
+      "name": "func nw_content_context_copy_antecedent(nw_content_context_t) -> nw_content_context_t?",
+      "desc": "Accesses the optional message context that must be sent before the context you are sending."
+    },
+    {
+      "name": "func nw_content_context_set_expiration_milliseconds(nw_content_context_t, UInt64)",
+      "desc": "Sets the number of milliseconds after which sending the data associated with this context must begin, otherwise the data is discarded."
+    },
+    {
+      "name": "func nw_content_context_get_expiration_milliseconds(nw_content_context_t) -> UInt64",
+      "desc": "Accesses the expiration set for this message context."
+    },
+    {
+      "name": "func nw_content_context_set_relative_priority(nw_content_context_t, Double)",
+      "desc": "Sets the relative value of priority used to reorder contexts when sending."
+    },
+    {
+      "name": "func nw_content_context_get_relative_priority(nw_content_context_t) -> Double",
+      "desc": "Accesses the relative value of priority used to reorder contexts when sending."
+    },
+    {
+      "name": "func nw_content_context_set_is_final(nw_content_context_t, Bool)",
+      "desc": "Sets a Boolean indicating if this context represents the final message being sent."
+    },
+    {
+      "name": "func nw_content_context_get_identifier(nw_content_context_t) -> UnsafePointer<CChar>",
+      "desc": "Accesses the identifier used to create this message context."
+    },
+    {
+      "name": "func nw_content_context_get_is_final(nw_content_context_t) -> Bool",
+      "desc": "Checks whether this context represents the final message being received."
+    },
+    {
+      "name": "func nw_content_context_copy_protocol_metadata(nw_content_context_t, nw_protocol_definition_t) -> nw_protocol_metadata_t?",
+      "desc": "Retreives the metadata associated with a specific protocol."
+    },
+    {
+      "name": "func nw_content_context_foreach_protocol_metadata(nw_content_context_t, (nw_protocol_definition_t, nw_protocol_metadata_t) -> Void)",
+      "desc": "Iterates through all protocol metadata associated with the message context."
+    }
+  ],
+  "declaration": "typealias nw_content_context_t = OS_nw_content_context"
+}

@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/appkit/nstouch/phase",
+  "type": "Structure",
+  "name": "NSTouch.Phase",
+  "desc": "The possible phases of a touch.",
+  "items": [
+    {
+      "name": "init(rawValue: UInt)",
+      "desc": "Creates a new touch phase from the given raw value."
+    },
+    {
+      "name": "static var began: NSTouch.Phase",
+      "desc": "A finger touched the device. Or, a resting touch transitioned to an active touch and resting touches are not wanted by the view hierarchy."
+    },
+    {
+      "name": "static var moved: NSTouch.Phase",
+      "desc": "A finger moved on the device."
+    },
+    {
+      "name": "static var stationary: NSTouch.Phase",
+      "desc": "A finger is touching the device, but hasn't moved since the previous event."
+    },
+    {
+      "name": "static var ended: NSTouch.Phase",
+      "desc": "A finger was lifted from the screen. Or, an active touch transitioned to a resting touch and resting touches are not wanted by the view hierarchy."
+    },
+    {
+      "name": "static var cancelled: NSTouch.Phase",
+      "desc": "The system cancelled tracking for the touch, as when (for example) the window associated with the touch resigns key or is deactivated."
+    },
+    {
+      "name": "static var touching: NSTouch.Phase",
+      "desc": "Matches the began, moved, or stationary phases of a touch."
+    },
+    {
+      "name": "static var any: NSTouch.Phase",
+      "desc": "Matches any phase of a touch."
+    }
+  ],
+  "declaration": "struct Phase, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

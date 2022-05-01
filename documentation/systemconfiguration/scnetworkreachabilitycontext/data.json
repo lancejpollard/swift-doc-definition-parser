@@ -1,0 +1,37 @@
+{
+  "path": "/documentation/systemconfiguration/scnetworkreachabilitycontext",
+  "type": "Structure",
+  "name": "SCNetworkReachabilityContext",
+  "desc": "Structure containing user-specified data and callbacks used with SCNetworkReachabilitySetCallback(_:_:_:).",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a network reachability context."
+    },
+    {
+      "name": "init(version: CFIndex, info: UnsafeMutableRawPointer?, retain: ((UnsafeRawPointer) -> UnsafeRawPointer)?, release: ((UnsafeRawPointer) -> Void)?, copyDescription: ((UnsafeRawPointer) -> Unmanaged<CFString>)?)",
+      "desc": "Creates a network reachability context with the specified values."
+    },
+    {
+      "name": "var copyDescription: ((UnsafeRawPointer) -> Unmanaged<CFString>)?",
+      "desc": "The callback used to provide a description of the info field."
+    },
+    {
+      "name": "var info: UnsafeMutableRawPointer?",
+      "desc": "A C pointer to a user-specified block of data."
+    },
+    {
+      "name": "var release: ((UnsafeRawPointer) -> Void)?",
+      "desc": "The callback used to remove a retain previously added for the info field. If this parameter is not a pointer to a function of the correct prototype, the behavior is undefined. The value can be NULL."
+    },
+    {
+      "name": "var retain: ((UnsafeRawPointer) -> UnsafeRawPointer)?",
+      "desc": "The callback used to add a retain for the info field. If this parameter is not a pointer to a function of the correct prototype, the behavior is undefined. The value can be NULL."
+    },
+    {
+      "name": "var version: CFIndex",
+      "desc": "The version number of the structure type being passed in as a parameter to an SCDynamicStore creation function. This structure is version 0."
+    }
+  ],
+  "declaration": "struct SCNetworkReachabilityContext"
+}

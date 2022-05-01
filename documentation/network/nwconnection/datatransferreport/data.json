@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/network/nwconnection/datatransferreport",
+  "type": "Structure",
+  "name": "NWConnection.DataTransferReport",
+  "desc": "A report that provides metrics about data being sent and received on a connection.",
+  "items": [
+    {
+      "name": "let aggregatePathReport: NWConnection.DataTransferReport.PathReport",
+      "desc": "A report that sums counts across all network paths."
+    },
+    {
+      "name": "let pathReports: [NWConnection.DataTransferReport.PathReport]",
+      "desc": "An array of reports for each network path the connection used."
+    },
+    {
+      "name": "struct NWConnection.DataTransferReport.PathReport",
+      "desc": "A report that contains details about data transfer over a single network path."
+    },
+    {
+      "name": "let duration: TimeInterval",
+      "desc": "The duration of the data transfer report, from when it was started to when it was collected."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "The description of the report."
+    }
+  ],
+  "declaration": "struct NWConnection.DataTransferReport",
+  "conformsTo": [
+    "CustomDebugStringConvertible"
+  ]
+}

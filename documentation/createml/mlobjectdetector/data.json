@@ -1,0 +1,114 @@
+{
+  "path": "/documentation/createml/mlobjectdetector",
+  "type": "Structure",
+  "name": "MLObjectDetector",
+  "desc": "A model you train to classify one or more objects within an image.",
+  "items": [
+    {
+      "name": "static func train(trainingData: MLObjectDetector.DataSource, annotationType: MLObjectDetector.AnnotationType, parameters: MLObjectDetector.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLJob<MLObjectDetector>",
+      "desc": "Begins an asynchronous object-detector training session."
+    },
+    {
+      "name": "static func makeTrainingSession(trainingData: MLObjectDetector.DataSource, annotationType: MLObjectDetector.AnnotationType, parameters: MLObjectDetector.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLTrainingSession<MLObjectDetector>",
+      "desc": "Creates an asynchronous object-detector training session."
+    },
+    {
+      "name": "static func resume(MLTrainingSession<MLObjectDetector>) -> MLJob<MLObjectDetector>",
+      "desc": "Begins or continues an asynchronous object-detector training session."
+    },
+    {
+      "name": "static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) -> MLTrainingSession<MLObjectDetector>",
+      "desc": "Creates an asynchronous training session for an object detector by restoring an existing training session’s state from its parameters."
+    },
+    {
+      "name": "init(checkpoint: MLCheckpoint)",
+      "desc": "Creates an object detector from a training session checkpoint."
+    },
+    {
+      "name": "init(trainingData: MLObjectDetector.DataSource, parameters: MLObjectDetector.ModelParameters, annotationType: MLObjectDetector.AnnotationType)",
+      "desc": "Creates an object detector with a data source."
+    },
+    {
+      "name": "init(trainingData: MLDataTable, imageColumn: String, annotationColumn: String, annotationType: MLObjectDetector.AnnotationType, parameters: MLObjectDetector.ModelParameters)",
+      "desc": "Creates an object detector with a data table."
+    },
+    {
+      "name": "var trainingMetrics: MLObjectDetectorMetrics",
+      "desc": "Measurements of the object detector’s performance on the training dataset."
+    },
+    {
+      "name": "var validationMetrics: MLObjectDetectorMetrics",
+      "desc": "Measurements of the object detector’s performance on the validation dataset."
+    },
+    {
+      "name": "func evaluation(on: MLObjectDetector.DataSource) -> MLObjectDetectorMetrics",
+      "desc": "Generates metrics by evaluating the object detector’s performance using annotated images in a data source."
+    },
+    {
+      "name": "func evaluation(on: MLDataTable, imageColumn: String, annotationColumn: String) -> MLObjectDetectorMetrics",
+      "desc": "Generates metrics by evaluating the object detector’s performance using annotated images in a data table."
+    },
+    {
+      "name": "func prediction(from: URL) -> MLObjectDetector.DetectedObjects",
+      "desc": "Locates objects in an image and generates an annotation for each object it detects."
+    },
+    {
+      "name": "func predictions(from: [URL]) -> [MLObjectDetector.DetectedObjects]",
+      "desc": "Locates objects in an array of images and generates an array of annotation collections, one for each input image."
+    },
+    {
+      "name": "typealias MLObjectDetector.DetectedObjects",
+      "desc": "An array of annotations that represent the items an object detector found in an image."
+    },
+    {
+      "name": "struct MLObjectDetector.ObjectAnnotation",
+      "desc": "The label, location, and confidence score of an item the object detector found in an image."
+    },
+    {
+      "name": "func write(to: URL, metadata: MLModelMetadata?)",
+      "desc": "Exports the object detector as a Core ML model file to a location in the file system."
+    },
+    {
+      "name": "func write(toFile: String, metadata: MLModelMetadata?)",
+      "desc": "Exports the object detector as a Core ML model file to the file path."
+    },
+    {
+      "name": "var model: MLModel",
+      "desc": "The object detector’s underlying Core ML model instance."
+    },
+    {
+      "name": "let modelParameters: MLObjectDetector.ModelParameters",
+      "desc": "The object detector’s model configuration parameters you provided to its training session."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the object detector."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the object detector that’s suitable for output during debugging."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the object detector within a playground."
+    },
+    {
+      "name": "enum MLObjectDetector.DataSource",
+      "desc": "A data source for an object detector."
+    },
+    {
+      "name": "enum MLObjectDetector.AnnotationType",
+      "desc": "The available types of image annotations."
+    },
+    {
+      "name": "struct MLObjectDetector.ModelParameters",
+      "desc": "Parameters that affect the process of training an object detection model."
+    }
+  ],
+  "declaration": "struct MLObjectDetector",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomStringConvertible"
+  ]
+}

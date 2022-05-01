@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/uikit/uidropinteractiondelegate",
+  "type": "Protocol",
+  "name": "UIDropInteractionDelegate",
+  "desc": "The interface for configuring and controlling a drop interaction.",
+  "items": [
+    {
+      "name": "func dropInteraction(UIDropInteraction, canHandle: UIDropSession) -> Bool",
+      "desc": "Asks the delegate whether it can handle the session’s drag items."
+    },
+    {
+      "name": "func dropInteraction(UIDropInteraction, performDrop: UIDropSession)",
+      "desc": "Tells the delegate it can request the item provider data from the session’s drag items."
+    },
+    {
+      "name": "func dropInteraction(UIDropInteraction, sessionDidEnter: UIDropSession)",
+      "desc": "Tells the delegate the drop session has moved into the drop interaction’s view."
+    },
+    {
+      "name": "func dropInteraction(UIDropInteraction, sessionDidUpdate: UIDropSession) -> UIDropProposal",
+      "desc": "Tells the delegate the drop session has changed."
+    },
+    {
+      "name": "func dropInteraction(UIDropInteraction, sessionDidExit: UIDropSession)",
+      "desc": "Tells the delegate the drop session has moved out of the drop interaction’s view."
+    },
+    {
+      "name": "func dropInteraction(UIDropInteraction, sessionDidEnd: UIDropSession)",
+      "desc": "Tells the delegate the drop session has ended."
+    },
+    {
+      "name": "func dropInteraction(UIDropInteraction, item: UIDragItem, willAnimateDropWith: UIDragAnimating)",
+      "desc": "Tells the delegate the system's drop animation is about to start."
+    },
+    {
+      "name": "func dropInteraction(UIDropInteraction, previewForDropping: UIDragItem, withDefault: UITargetedDragPreview) -> UITargetedDragPreview?",
+      "desc": "Asks the delegate for the targeted drag item preview to show during the drop animation."
+    },
+    {
+      "name": "func dropInteraction(UIDropInteraction, concludeDrop: UIDropSession)",
+      "desc": "Tells the delegate the drop activity and its related animations have finished."
+    }
+  ],
+  "declaration": "@MainActor protocol UIDropInteractionDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

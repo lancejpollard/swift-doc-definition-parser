@@ -1,0 +1,30 @@
+{
+  "path": "/documentation/foundation/calendar/repeatedtimepolicy",
+  "type": "Enumeration",
+  "name": "Calendar.RepeatedTimePolicy",
+  "desc": "Determines which result to use when a time is repeated on a day in a calendar (for example, during a daylight saving transition when the times between 2:00am and 3:00am may happen twice).",
+  "items": [
+    {
+      "name": "case first",
+      "desc": "If there are two or more matching times (all the components are the same, including isLeapMonth) before the end of the next instance of the next higher component to the highest specified component, then the algorithm will return the first occurrence."
+    },
+    {
+      "name": "case last",
+      "desc": "If there are two or more matching times (all the components are the same, including isLeapMonth) before the end of the next instance of the next higher component to the highest specified component, then the algorithm will return the last occurrence."
+    },
+    {
+      "name": "var hashValue: Int"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "static func != (Calendar.RepeatedTimePolicy, Calendar.RepeatedTimePolicy) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (Calendar.RepeatedTimePolicy, Calendar.RepeatedTimePolicy) -> Bool"
+    }
+  ],
+  "declaration": "enum Calendar.RepeatedTimePolicy"
+}

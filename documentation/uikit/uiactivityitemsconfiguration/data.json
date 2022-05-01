@@ -1,0 +1,59 @@
+{
+  "path": "/documentation/uikit/uiactivityitemsconfiguration",
+  "type": "Class",
+  "name": "UIActivityItemsConfiguration",
+  "desc": "A configuration that allows a responder to export data through a variety of interactions.",
+  "items": [
+    {
+      "name": "init(objects: [NSItemProviderWriting])",
+      "desc": "Initializes and returns an activity items configuration with the specified objects."
+    },
+    {
+      "name": "init(itemProviders: [NSItemProvider])",
+      "desc": "Initializes and returns an activity items configuration with the specified item providers."
+    },
+    {
+      "name": "var localObject: Any?",
+      "desc": "A local object that represents the configuration."
+    },
+    {
+      "name": "var metadataProvider: ((UIActivityItemsConfigurationMetadataKey) -> Any?)?",
+      "desc": "A closure that provides metadata for the activity items."
+    },
+    {
+      "name": "var perItemMetadataProvider: ((Int, UIActivityItemsConfigurationMetadataKey) -> Any?)?",
+      "desc": "A closure that provides metadata for each activity item."
+    },
+    {
+      "name": "var applicationActivitiesProvider: (() -> [UIActivity])?",
+      "desc": "A closure that provides application acitivites for the activity items."
+    },
+    {
+      "name": "struct UIActivityItemsConfigurationMetadataKey",
+      "desc": "A structure that defines keys for the metadata associated with an activity items configuration."
+    },
+    {
+      "name": "var supportedInteractions: [UIActivityItemsConfigurationInteraction]",
+      "desc": "The types of interactions that the configuration supports."
+    },
+    {
+      "name": "struct UIActivityItemsConfigurationInteraction",
+      "desc": "A structure that describes types of interactions."
+    },
+    {
+      "name": "var previewProvider: ((Int, UIActivityItemsConfigurationPreviewIntent, CGSize) -> NSItemProvider?)?",
+      "desc": "A closure that provides previews for the activity items."
+    },
+    {
+      "name": "struct UIActivityItemsConfigurationPreviewIntent",
+      "desc": "A structure that specifies the types of activity item previews."
+    }
+  ],
+  "declaration": "@MainActor class UIActivityItemsConfiguration : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "UIActivityItemsConfigurationReading"
+  ]
+}

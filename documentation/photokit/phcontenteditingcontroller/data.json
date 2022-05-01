@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/photokit/phcontenteditingcontroller",
+  "type": "Protocol",
+  "name": "PHContentEditingController",
+  "desc": "A protocol your custom view controller class implements to provide a user interface for your Photos extension.",
+  "items": [
+    {
+      "name": "func canHandle(PHAdjustmentData) -> Bool",
+      "desc": "Asks your extension whether it can continue working with the most recent edit that was made to an asset."
+    },
+    {
+      "name": "func startContentEditing(with: PHContentEditingInput, placeholderImage: UIImage)",
+      "desc": "Tells your extension that asset data is available for editing."
+    },
+    {
+      "name": "func finishContentEditing(completionHandler: (PHContentEditingOutput?) -> Void)",
+      "desc": "Asks your extension for edited asset data to finish the editing session."
+    },
+    {
+      "name": "var shouldShowCancelConfirmation: Bool",
+      "desc": "A Boolean value that determines whether Photos should prompt the user when canceling the editing session."
+    },
+    {
+      "name": "func cancelContentEditing()",
+      "desc": "Tells your extension to cancel editing."
+    }
+  ],
+  "declaration": "protocol PHContentEditingController",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

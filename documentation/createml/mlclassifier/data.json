@@ -1,0 +1,115 @@
+{
+  "path": "/documentation/createml/mlclassifier",
+  "type": "Enumeration",
+  "name": "MLClassifier",
+  "desc": "A model you train to classify data into discrete categories.",
+  "items": [
+    {
+      "name": "init(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]?)",
+      "desc": "Creates a classifier from the feature columns in the training data to predict the categories in the target column."
+    },
+    {
+      "name": "var targetColumn: String",
+      "desc": "The name of the column you selected at initialization to define which categories the classifier predicts."
+    },
+    {
+      "name": "var featureColumns: [String]",
+      "desc": "The names of the columns you selected at initialization to train the classifier."
+    },
+    {
+      "name": "var trainingMetrics: MLClassifierMetrics",
+      "desc": "Measurements of the classifier’s performance on the training data set."
+    },
+    {
+      "name": "var validationMetrics: MLClassifierMetrics",
+      "desc": "Measurements of the classifier’s performance on the validation data set."
+    },
+    {
+      "name": "func evaluation(on: MLDataTable) -> MLClassifierMetrics",
+      "desc": "Returns metrics describing the classifier’s performance on the provided labeled data."
+    },
+    {
+      "name": "func predictions(from: MLDataTable) -> MLUntypedColumn",
+      "desc": "Classifies the provided data into the target categories."
+    },
+    {
+      "name": "func write(to: URL, metadata: MLModelMetadata?)",
+      "desc": "Exports a Core ML model file for use in your app."
+    },
+    {
+      "name": "func write(toFile: String, metadata: MLModelMetadata?)",
+      "desc": "Exports a Core ML model file for use in your app."
+    },
+    {
+      "name": "var model: MLModel",
+      "desc": "The underlying Core ML model stored in memory."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the classifier."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the classifier that’s suitable for output during debugging."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the classifier shown in a playground."
+    },
+    {
+      "name": "case decisionTree(MLDecisionTreeClassifier)",
+      "desc": "A classifier that predicts the target by creating rules to split the data."
+    },
+    {
+      "name": "case randomForest(MLRandomForestClassifier)",
+      "desc": "A classifier based on a collection of decision trees trained on subsets of the data."
+    },
+    {
+      "name": "case boostedTree(MLBoostedTreeClassifier)",
+      "desc": "A classifier based on a collection of decision trees combined with gradient boosting."
+    },
+    {
+      "name": "case logisticRegression(MLLogisticRegressionClassifier)",
+      "desc": "A classifier that predicts a discrete target value as a function of data features."
+    },
+    {
+      "name": "case supportVector(MLSupportVectorClassifier)",
+      "desc": "A classifier that predicts a binary target value by maximizing the separation between categories."
+    },
+    {
+      "name": "struct MLDecisionTreeClassifier",
+      "desc": "A classifier that predicts the target by creating rules to split the data."
+    },
+    {
+      "name": "struct MLRandomForestClassifier",
+      "desc": "A classifier based on a collection of decision trees trained on subsets of the data."
+    },
+    {
+      "name": "struct MLBoostedTreeClassifier",
+      "desc": "A classifier based on a collection of decision trees combined with gradient boosting."
+    },
+    {
+      "name": "struct MLLogisticRegressionClassifier",
+      "desc": "A classifier that predicts a discrete target value as a function of data features."
+    },
+    {
+      "name": "struct MLSupportVectorClassifier",
+      "desc": "A classifier that predicts a binary target value by maximizing the separation between categories."
+    },
+    {
+      "name": "init(trainingData: DataFrame, targetColumn: String, featureColumns: [String]?)"
+    },
+    {
+      "name": "func evaluation(on: DataFrame) -> MLClassifierMetrics"
+    },
+    {
+      "name": "func predictions(from: DataFrame) -> AnyColumn"
+    }
+  ],
+  "declaration": "enum MLClassifier",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomStringConvertible"
+  ]
+}

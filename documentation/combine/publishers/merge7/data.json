@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/combine/publishers/merge7",
+  "type": "Structure",
+  "name": "Publishers.Merge7",
+  "desc": "A publisher created by applying the merge function to seven upstream publishers.",
+  "items": [
+    {
+      "name": "init(A, B, C, D, E, F, G)",
+      "desc": "Creates a publisher created by applying the merge function to seven upstream publishers."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let a: A",
+      "desc": "A publisher to merge."
+    },
+    {
+      "name": "let b: B",
+      "desc": "A second publisher to merge."
+    },
+    {
+      "name": "let c: C",
+      "desc": "A third publisher to merge."
+    },
+    {
+      "name": "let d: D",
+      "desc": "A fourth publisher to merge."
+    },
+    {
+      "name": "let e: E",
+      "desc": "A fifth publisher to merge."
+    },
+    {
+      "name": "let f: F",
+      "desc": "A sixth publisher to merge."
+    },
+    {
+      "name": "let g: G",
+      "desc": "An seventh publisher to merge."
+    },
+    {
+      "name": "static func == (Publishers.Merge7<A, B, C, D, E, F, G>, Publishers.Merge7<A, B, C, D, E, F, G>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two publishers are equivalent."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    }
+  ],
+  "declaration": "struct Merge7<A, B, C, D, E, F, G> where A : Publisher, B : Publisher, C : Publisher, D : Publisher, E : Publisher, F : Publisher, G : Publisher, A.Failure == B.Failure, A.Output == B.Output, B.Failure == C.Failure, B.Output == C.Output, C.Failure == D.Failure, C.Output == D.Output, D.Failure == E.Failure, D.Output == E.Output, E.Failure == F.Failure, E.Output == F.Output, F.Failure == G.Failure, F.Output == G.Output",
+  "conformsTo": [
+    "Equatable",
+    "Publisher"
+  ]
+}

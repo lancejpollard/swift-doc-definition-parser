@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/audiotoolbox/audiounitparameterinfo",
+  "type": "Structure",
+  "name": "AudioUnitParameterInfo",
+  "desc": "",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(name: (CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar), unitName: Unmanaged<CFString>?, clumpID: UInt32, cfNameString: Unmanaged<CFString>?, unit: AudioUnitParameterUnit, minValue: AudioUnitParameterValue, maxValue: AudioUnitParameterValue, defaultValue: AudioUnitParameterValue, flags: AudioUnitParameterOptions)"
+    },
+    {
+      "name": "var cfNameString: Unmanaged<CFString>?",
+      "desc": "Only valid if kAudioUnitParameterFlag_HasCFNameString is set."
+    },
+    {
+      "name": "var clumpID: UInt32",
+      "desc": "Only valid if kAudioUnitParameterFlag_HasClump is set."
+    },
+    {
+      "name": "var defaultValue: AudioUnitParameterValue"
+    },
+    {
+      "name": "var flags: AudioUnitParameterOptions",
+      "desc": "Due to some vagaries about the ways in which Parameter’s CFNames have been described, it was necessary to add a flag: flag_CFNameRelease. In normal usage a parameter name is essentially a static object, but sometimes an audio unit will generate parameter names dynamically. As these are expected to be CFString objects, in that case the host should release those names when it is finished with them, but there was no way to communicate this distinction in behavior. Thus, if an audio unit can generate a name dynamically, it should set this flag in the parameter’s info. The host should check for this flag and, if present, release the parameter name when it is finished with it."
+    },
+    {
+      "name": "var maxValue: AudioUnitParameterValue"
+    },
+    {
+      "name": "var minValue: AudioUnitParameterValue"
+    },
+    {
+      "name": "var name: (CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar, CChar)",
+      "desc": "Must be set to 0."
+    },
+    {
+      "name": "var unit: AudioUnitParameterUnit",
+      "desc": "If the unit field contains a value not in the AudioUnitParameterUnit enumeration, then assume the unit type is kAudioUnitParameterUnit_Generic."
+    },
+    {
+      "name": "var unitName: Unmanaged<CFString>?",
+      "desc": "If kAudioUnitParameterUnit_CustomUnit is set, this field must contain a valid CFString object. Only valid if kAudioUnitParameterUnit_CustomUnit is set."
+    }
+  ],
+  "declaration": "struct AudioUnitParameterInfo"
+}

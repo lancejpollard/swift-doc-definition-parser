@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/sirikit/insearchformessagesintenthandling",
+  "type": "Protocol",
+  "name": "INSearchForMessagesIntentHandling",
+  "desc": "An interface that handles requests to search the current user’s messages.",
+  "items": [
+    {
+      "name": "func resolveRecipients(for: INSearchForMessagesIntent, with: ([INPersonResolutionResult]) -> Void)",
+      "desc": "Resolves the user’s input when they search for messages sent to specific people."
+    },
+    {
+      "name": "func resolveSenders(for: INSearchForMessagesIntent, with: ([INPersonResolutionResult]) -> Void)",
+      "desc": "Resolves the user’s input when they search for messages sent by specific people."
+    },
+    {
+      "name": "func resolveAttributes(for: INSearchForMessagesIntent, with: (INMessageAttributeOptionsResolutionResult) -> Void)",
+      "desc": "Resolves the user’s input when they search for messages with specific attributes."
+    },
+    {
+      "name": "func resolveDateTimeRange(for: INSearchForMessagesIntent, with: (INDateComponentsRangeResolutionResult) -> Void)",
+      "desc": "Resolves the user’s input when they search for messages sent in a specific time period."
+    },
+    {
+      "name": "func resolveSpeakableGroupNames(for: INSearchForMessagesIntent, with: ([INSpeakableStringResolutionResult]) -> Void)",
+      "desc": "Resolves the user’s input when they search for messages sent to a specific group of people."
+    },
+    {
+      "name": "func confirm(intent: INSearchForMessagesIntent, completion: (INSearchForMessagesIntentResponse) -> Void)",
+      "desc": "Confirms whether you can perform the search."
+    },
+    {
+      "name": "func handle(intent: INSearchForMessagesIntent, completion: (INSearchForMessagesIntentResponse) -> Void)",
+      "desc": "Performs the search and returns the results."
+    }
+  ],
+  "declaration": "protocol INSearchForMessagesIntentHandling",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

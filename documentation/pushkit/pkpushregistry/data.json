@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/pushkit/pkpushregistry",
+  "type": "Class",
+  "name": "PKPushRegistry",
+  "desc": "An object that requests the delivery and handles the receipt of PushKit notifications.",
+  "items": [
+    {
+      "name": "init(queue: DispatchQueue?)",
+      "desc": "Creates a push registry with the specified dispatch queue."
+    },
+    {
+      "name": "var delegate: PKPushRegistryDelegate?",
+      "desc": "The delegate object that receives notifications coming from the push registry object."
+    },
+    {
+      "name": "protocol PKPushRegistryDelegate",
+      "desc": "The methods that you use to handle incoming PushKit notifications and registration events."
+    },
+    {
+      "name": "var desiredPushTypes: Set<PKPushType>?",
+      "desc": "Registers the push types for this push registry object."
+    },
+    {
+      "name": "func pushToken(for: PKPushType) -> Data?",
+      "desc": "Retrieves the locally cached push token for the specified push type."
+    }
+  ],
+  "declaration": "class PKPushRegistry : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

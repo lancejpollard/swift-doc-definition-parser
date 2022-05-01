@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/sirikit/intransfermoneyintenthandling",
+  "type": "Protocol",
+  "name": "INTransferMoneyIntentHandling",
+  "desc": "The handler interface for transferring money between accounts.DeprecatedThis intent is no longer available. You may define a custom intent instead. For more information, see Deprecated SiriKit Intent Domains.",
+  "items": [
+    {
+      "name": "func resolveFromAccount(for: INTransferMoneyIntent, with: (INPaymentAccountResolutionResult) -> Void)",
+      "desc": "Resolves the user account that’s the source of the funds."
+    },
+    {
+      "name": "func resolveToAccount(for: INTransferMoneyIntent, with: (INPaymentAccountResolutionResult) -> Void)",
+      "desc": "Resolves the user account that’s the destination of the funds."
+    },
+    {
+      "name": "func resolveTransactionAmount(for: INTransferMoneyIntent, with: (INPaymentAmountResolutionResult) -> Void)",
+      "desc": "Resolves the amount that the user wants to transfer."
+    },
+    {
+      "name": "func resolveTransactionScheduledDate(for: INTransferMoneyIntent, with: (INDateComponentsRangeResolutionResult) -> Void)",
+      "desc": "Resolves the date on which the transfer is to occur."
+    },
+    {
+      "name": "func resolveTransactionNote(for: INTransferMoneyIntent, with: (INStringResolutionResult) -> Void)",
+      "desc": "Resolves any custom notes associated with the transaction."
+    },
+    {
+      "name": "func confirm(intent: INTransferMoneyIntent, completion: (INTransferMoneyIntentResponse) -> Void)",
+      "desc": "Confirms the transaction details and validates the transaciton."
+    },
+    {
+      "name": "func handle(intent: INTransferMoneyIntent, completion: (INTransferMoneyIntentResponse) -> Void)",
+      "desc": "Handles the scheduling of the transfer."
+    }
+  ],
+  "declaration": "protocol INTransferMoneyIntentHandling",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

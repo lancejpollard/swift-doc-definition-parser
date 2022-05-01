@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/sirikit/incar",
+  "type": "Class",
+  "name": "INCar",
+  "desc": "A specific electric vehicle that Maps uses during route planning and navigation.",
+  "items": [
+    {
+      "name": "init(carIdentifier: String, displayName: String?, year: String?, make: String?, model: String?, color: CGColor?, headUnit: INCar.HeadUnit?, supportedChargingConnectors: [INCar.ChargingConnectorType])",
+      "desc": "Creates a car object with the specified attributes, head unit, and supported charging connectors."
+    },
+    {
+      "name": "var carIdentifier: String",
+      "desc": "The electric vehicle’s unique identifier."
+    },
+    {
+      "name": "var displayName: String?",
+      "desc": "The electric vehicle’s user-defined display name."
+    },
+    {
+      "name": "var make: String?",
+      "desc": "The electric vehicle’s manufacturer."
+    },
+    {
+      "name": "var model: String?",
+      "desc": "The manufacturer’s model name for the electric vehicle."
+    },
+    {
+      "name": "var color: CGColor?",
+      "desc": "The electric vehicle’s color."
+    },
+    {
+      "name": "var year: String?",
+      "desc": "The electric vehicle’s year of manufacture."
+    },
+    {
+      "name": "var headUnit: INCar.HeadUnit?",
+      "desc": "The Bluetooth and iAP2 identifiers of the electric vehicle’s physical head unit."
+    },
+    {
+      "name": "class INCar.HeadUnit",
+      "desc": "An object that contains the Bluetooth and iAP2 identifiers of the vehicle’s physical head unit."
+    },
+    {
+      "name": "var supportedChargingConnectors: [INCar.ChargingConnectorType]",
+      "desc": "The charging connectors that the electric vehicle supports."
+    },
+    {
+      "name": "struct INCar.ChargingConnectorType",
+      "desc": "Constants that describe the available charging connector types."
+    },
+    {
+      "name": "func maximumPower(for: INCar.ChargingConnectorType) -> Measurement<UnitPower>?",
+      "desc": "Gets the maximum power for a specific type of charging connector."
+    },
+    {
+      "name": "func setMaximumPower(Measurement<UnitPower>, for: INCar.ChargingConnectorType)",
+      "desc": "Sets the maximum power for a specific type of charging connector."
+    }
+  ],
+  "declaration": "class INCar : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

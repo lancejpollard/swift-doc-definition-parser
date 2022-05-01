@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/metal/mtlfunction",
+  "type": "Protocol",
+  "name": "MTLFunction",
+  "desc": "An object that represents a public shader function in a Metal library.",
+  "items": [
+    {
+      "name": "var device: MTLDevice",
+      "desc": "The device object that created the shader function."
+    },
+    {
+      "name": "var label: String?",
+      "desc": "A string that identifies the shader function."
+    },
+    {
+      "name": "var functionType: MTLFunctionType",
+      "desc": "The shader function’s type."
+    },
+    {
+      "name": "var name: String",
+      "desc": "The function’s name."
+    },
+    {
+      "name": "enum MTLFunctionType",
+      "desc": "The type of a top-level Metal Shading Language (MSL) function."
+    },
+    {
+      "name": "var options: MTLFunctionOptions",
+      "desc": "The options that Metal used to compile this function."
+    },
+    {
+      "name": "struct MTLFunctionOptions",
+      "desc": "Options that define how Metal creates the function object."
+    },
+    {
+      "name": "var patchType: MTLPatchType",
+      "desc": "The tessellation patch type of a post-tessellation vertex function."
+    },
+    {
+      "name": "var patchControlPointCount: Int",
+      "desc": "The number of patch control points in the post-tessellation vertex function."
+    },
+    {
+      "name": "enum MTLPatchType",
+      "desc": "Types of tessellation patches that can be inputs of a post-tessellation vertex function."
+    },
+    {
+      "name": "var vertexAttributes: [MTLVertexAttribute]?",
+      "desc": "An array that describes the vertex input attributes to a vertex function."
+    },
+    {
+      "name": "var stageInputAttributes: [MTLAttribute]?",
+      "desc": "An array that describes the input attributes to the function."
+    },
+    {
+      "name": "var functionConstantsDictionary: [String : MTLFunctionConstant]",
+      "desc": "A dictionary of function constants for a specialized function."
+    },
+    {
+      "name": "func makeArgumentEncoder(bufferIndex: Int) -> MTLArgumentEncoder",
+      "desc": "Creates an argument encoder for an argument buffer that’s one of this function's arguments."
+    },
+    {
+      "name": "func makeArgumentEncoder(bufferIndex: Int, reflection: AutoreleasingUnsafeMutablePointer<MTLAutoreleasedArgument?>?) -> MTLArgumentEncoder",
+      "desc": "Creates an argument encoder and returns reflection information for an argument buffer that’s one of this function's arguments"
+    }
+  ],
+  "declaration": "protocol MTLFunction",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

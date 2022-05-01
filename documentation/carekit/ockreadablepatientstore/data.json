@@ -1,0 +1,26 @@
+{
+  "path": "/documentation/carekit/ockreadablepatientstore",
+  "type": "Protocol",
+  "name": "OCKReadablePatientStore",
+  "desc": "A read-only store that fetches patient data objects.",
+  "items": [
+    {
+      "name": "func fetchPatient(withID: String, callbackQueue: DispatchQueue, completion: OCKResultClosure<Self.Patient>)",
+      "desc": "Fetches a patient asynchronously from the store."
+    },
+    {
+      "name": "func fetchPatients(query: Self.PatientQuery, callbackQueue: DispatchQueue, completion: OCKResultClosure<[Self.Patient]>)",
+      "desc": "Fetches an array of patients asynchronously from the store."
+    },
+    {
+      "name": "associatedtype Patient"
+    },
+    {
+      "name": "associatedtype PatientQuery"
+    }
+  ],
+  "declaration": "protocol OCKReadablePatientStore",
+  "inheritsFrom": [
+    "OCKAnyReadOnlyPatientStore"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "path": "/documentation/scenekit/scntransaction",
+  "type": "Class",
+  "name": "SCNTransaction",
+  "desc": "A mechanism for creating implicit animations and combining scene graph changes into atomic updates.",
+  "items": [
+    {
+      "name": "class func begin()",
+      "desc": "Begins a new transaction for the current thread."
+    },
+    {
+      "name": "class func commit()",
+      "desc": "Commits all changes made during the current transaction."
+    },
+    {
+      "name": "class func flush()",
+      "desc": "Applies all changes from the current automatic transaction."
+    },
+    {
+      "name": "class var animationDuration: CFTimeInterval",
+      "desc": "Returns the duration, in seconds, of all animations within the current transaction."
+    },
+    {
+      "name": "class var animationTimingFunction: CAMediaTimingFunction?",
+      "desc": "Returns the timing function that SceneKit uses for all animations within this transaction group."
+    },
+    {
+      "name": "class var disableActions: Bool",
+      "desc": "Returns a Boolean value indicating whether changes to animatable properties during the transaction are implicitly animated."
+    },
+    {
+      "name": "class var completionBlock: (() -> Void)?",
+      "desc": "Returns the block previously associated with the current transaction."
+    },
+    {
+      "name": "class func lock()",
+      "desc": "Attempts to acquire a recursive spinlock to ensure the validity of values you retrieve during the transaction."
+    },
+    {
+      "name": "class func unlock()",
+      "desc": "Relinquishes a previously acquired transaction lock."
+    },
+    {
+      "name": "class func setValue(Any?, forKey: String)",
+      "desc": "Associates an arbitrary object with the current transaction using the specified key."
+    },
+    {
+      "name": "class func value(forKey: String) -> Any?",
+      "desc": "Returns the object previously associated with the current transaction using the specified key."
+    }
+  ],
+  "declaration": "class SCNTransaction : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

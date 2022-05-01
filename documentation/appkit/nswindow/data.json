@@ -1,0 +1,1217 @@
+{
+  "path": "/documentation/appkit/nswindow",
+  "type": "Class",
+  "name": "NSWindow",
+  "desc": "A window that an app displays on the screen.",
+  "items": [
+    {
+      "name": "init(contentViewController: NSViewController)",
+      "desc": "Creates a titled window that contains the specified content view controller."
+    },
+    {
+      "name": "init(contentRect: NSRect, styleMask: NSWindow.StyleMask, backing: NSWindow.BackingStoreType, defer: Bool)",
+      "desc": "Initializes the window with the specified values."
+    },
+    {
+      "name": "init(contentRect: NSRect, styleMask: NSWindow.StyleMask, backing: NSWindow.BackingStoreType, defer: Bool, screen: NSScreen?)",
+      "desc": "Initializes an allocated window with the specified values."
+    },
+    {
+      "name": "var delegate: NSWindowDelegate?",
+      "desc": "The window’s delegate."
+    },
+    {
+      "name": "protocol NSWindowDelegate",
+      "desc": "A set of optional methods that a window’s delegate can implement to respond to events, such as window resizing, moving, exposing, and minimizing."
+    },
+    {
+      "name": "var contentViewController: NSViewController?",
+      "desc": "The main content view controller for the window."
+    },
+    {
+      "name": "var contentView: NSView?",
+      "desc": "The window’s content view, the highest accessible view object in the window’s view hierarchy."
+    },
+    {
+      "name": "var styleMask: NSWindow.StyleMask",
+      "desc": "Flags that describe the window’s current style, such as if it’s resizable or in full-screen mode."
+    },
+    {
+      "name": "struct NSWindow.StyleMask",
+      "desc": "Constants that specify the style of a window, and that you can combine with the C bitwise OR operator."
+    },
+    {
+      "name": "func toggleFullScreen(Any?)",
+      "desc": "Takes the window into or out of fullscreen mode,"
+    },
+    {
+      "name": "var worksWhenModal: Bool",
+      "desc": "A Boolean value that indicates whether the window is able to receive keyboard and mouse events even when some other window is being run modally."
+    },
+    {
+      "name": "var alphaValue: CGFloat",
+      "desc": "The window’s alpha value."
+    },
+    {
+      "name": "var backgroundColor: NSColor!",
+      "desc": "The color of the window’s background."
+    },
+    {
+      "name": "var colorSpace: NSColorSpace?",
+      "desc": "The window’s color space."
+    },
+    {
+      "name": "func setDynamicDepthLimit(Bool)",
+      "desc": "Sets a Boolean value that indicates whether the window’s depth limit can change to match the depth of the screen it’s on."
+    },
+    {
+      "name": "var canHide: Bool",
+      "desc": "A Boolean value that indicates whether the window can hide when its application becomes hidden."
+    },
+    {
+      "name": "var isOnActiveSpace: Bool",
+      "desc": "A Boolean value that indicates whether the window is on the currently active space."
+    },
+    {
+      "name": "var hidesOnDeactivate: Bool",
+      "desc": "A Boolean value that indicates whether the window is removed from the screen when its application becomes inactive."
+    },
+    {
+      "name": "var collectionBehavior: NSWindow.CollectionBehavior",
+      "desc": "A value that identifies the window’s behavior in window collections."
+    },
+    {
+      "name": "var isOpaque: Bool",
+      "desc": "A Boolean value that indicates whether the window is opaque."
+    },
+    {
+      "name": "var hasShadow: Bool",
+      "desc": "A Boolean value that indicates whether the window has a shadow."
+    },
+    {
+      "name": "func invalidateShadow()",
+      "desc": "Invalidates the window shadow so that it is recomputed based on the current window shape."
+    },
+    {
+      "name": "func autorecalculatesContentBorderThickness(for: NSRectEdge) -> Bool",
+      "desc": "Indicates whether the window calculates the thickness of a given border automatically."
+    },
+    {
+      "name": "func setAutorecalculatesContentBorderThickness(Bool, for: NSRectEdge)",
+      "desc": "Specifies whether the window calculates the thickness of a given border automatically."
+    },
+    {
+      "name": "func contentBorderThickness(for: NSRectEdge) -> CGFloat",
+      "desc": "Indicates the thickness of a given border of the window."
+    },
+    {
+      "name": "func setContentBorderThickness(CGFloat, for: NSRectEdge)",
+      "desc": "Specifies the thickness of a given border of the window."
+    },
+    {
+      "name": "var preventsApplicationTerminationWhenModal: Bool",
+      "desc": "A Boolean value that indicates whether the window prevents application termination when modal."
+    },
+    {
+      "name": "var appearanceSource: NSAppearanceCustomization!",
+      "desc": "An object that the window inherits its appearance from."
+    },
+    {
+      "name": "var depthLimit: NSWindow.Depth",
+      "desc": "The depth limit of the window."
+    },
+    {
+      "name": "var hasDynamicDepthLimit: Bool",
+      "desc": "A Boolean value that indicates whether the window’s depth limit can change to match the depth of the screen it’s on."
+    },
+    {
+      "name": "class var defaultDepthLimit: NSWindow.Depth",
+      "desc": "Returns the default depth limit for instances of NSWindow."
+    },
+    {
+      "name": "var windowNumber: Int",
+      "desc": "The window number of the window’s window device."
+    },
+    {
+      "name": "class func windowNumbers(options: NSWindow.NumberListOptions) -> [NSNumber]?",
+      "desc": "Returns the window numbers for all visible windows satisfying the specified options."
+    },
+    {
+      "name": "var deviceDescription: [NSDeviceDescriptionKey : Any]",
+      "desc": "A dictionary containing information about the window’s resolution, such as color, depth, and so on."
+    },
+    {
+      "name": "struct NSDeviceDescriptionKey",
+      "desc": "These constants are the keys for device description dictionaries."
+    },
+    {
+      "name": "var canBecomeVisibleWithoutLogin: Bool",
+      "desc": "A Boolean value that indicates whether the window can be displayed at the login window."
+    },
+    {
+      "name": "var sharingType: NSWindow.SharingType",
+      "desc": "A Boolean value that indicates the level of access other processes have to the window’s content."
+    },
+    {
+      "name": "var backingType: NSWindow.BackingStoreType",
+      "desc": "The window’s backing store type."
+    },
+    {
+      "name": "class func contentRect(forFrameRect: NSRect, styleMask: NSWindow.StyleMask) -> NSRect",
+      "desc": "Returns the content rectangle used by a window with a given frame rectangle and window style."
+    },
+    {
+      "name": "class func frameRect(forContentRect: NSRect, styleMask: NSWindow.StyleMask) -> NSRect",
+      "desc": "Returns the frame rectangle used by a window with a given content rectangle and window style."
+    },
+    {
+      "name": "class func minFrameWidth(withTitle: String, styleMask: NSWindow.StyleMask) -> CGFloat",
+      "desc": "Returns the minimum width a window’s frame rectangle must have for it to display a title, with a given window style."
+    },
+    {
+      "name": "func contentRect(forFrameRect: NSRect) -> NSRect",
+      "desc": "Returns the window’s content rectangle with a given frame rectangle."
+    },
+    {
+      "name": "func frameRect(forContentRect: NSRect) -> NSRect",
+      "desc": "Returns the window’s frame rectangle with a given content rectangle."
+    },
+    {
+      "name": "var windowController: NSWindowController?",
+      "desc": "The window’s window controller."
+    },
+    {
+      "name": "var attachedSheet: NSWindow?",
+      "desc": "The sheet attached to the window."
+    },
+    {
+      "name": "var isSheet: Bool",
+      "desc": "A Boolean value that indicates whether the window has ever run as a modal sheet."
+    },
+    {
+      "name": "func beginSheet(NSWindow, completionHandler: ((NSApplication.ModalResponse) -> Void)?)",
+      "desc": "Starts a document-modal session and presents—or queues for presentation—a sheet."
+    },
+    {
+      "name": "func beginCriticalSheet(NSWindow, completionHandler: ((NSApplication.ModalResponse) -> Void)?)",
+      "desc": "Starts a document-modal session and presents the specified critical sheet."
+    },
+    {
+      "name": "func endSheet(NSWindow)",
+      "desc": "Ends a document-modal session and dismisses the specified sheet."
+    },
+    {
+      "name": "func endSheet(NSWindow, returnCode: NSApplication.ModalResponse)",
+      "desc": "Ends a document-modal session and dismisses the specified sheet."
+    },
+    {
+      "name": "var sheetParent: NSWindow?",
+      "desc": "The window to which the sheet is attached."
+    },
+    {
+      "name": "var sheets: [NSWindow]",
+      "desc": "An array of the sheets currently attached to the window."
+    },
+    {
+      "name": "var frame: NSRect",
+      "desc": "The window’s frame rectangle in screen coordinates, including the title bar."
+    },
+    {
+      "name": "func setFrameOrigin(NSPoint)",
+      "desc": "Positions the bottom-left corner of the window’s frame rectangle at a given point in screen coordinates."
+    },
+    {
+      "name": "func setFrameTopLeftPoint(NSPoint)",
+      "desc": "Positions the top-left corner of the window’s frame rectangle at a given point in screen coordinates."
+    },
+    {
+      "name": "func constrainFrameRect(NSRect, to: NSScreen?) -> NSRect",
+      "desc": "Modifies and returns a frame rectangle so that its top edge lies on a specific screen."
+    },
+    {
+      "name": "func cascadeTopLeft(from: NSPoint) -> NSPoint",
+      "desc": "Positions the window’s top-left to a given point."
+    },
+    {
+      "name": "func setFrame(NSRect, display: Bool)",
+      "desc": "Sets the origin and size of the window’s frame rectangle according to a given frame rectangle, thereby setting its position and size onscreen."
+    },
+    {
+      "name": "func setFrame(NSRect, display: Bool, animate: Bool)",
+      "desc": "Sets the origin and size of the window’s frame rectangle, with optional animation, according to a given frame rectangle, thereby setting its position and size onscreen."
+    },
+    {
+      "name": "func animationResizeTime(NSRect) -> TimeInterval",
+      "desc": "Specifies the duration of a smooth frame-size change."
+    },
+    {
+      "name": "var aspectRatio: NSSize",
+      "desc": "The window’s aspect ratio, which constrains the size of its frame rectangle to integral multiples of this ratio when the user resizes it."
+    },
+    {
+      "name": "var minSize: NSSize",
+      "desc": "The minimum size to which the window’s frame (including its title bar) can be sized."
+    },
+    {
+      "name": "var maxSize: NSSize",
+      "desc": "The maximum size to which the window’s frame (including its title bar) can be sized."
+    },
+    {
+      "name": "var isZoomed: Bool",
+      "desc": "A Boolean value that indicates whether the window is in a zoomed state."
+    },
+    {
+      "name": "func performZoom(Any?)",
+      "desc": "This action method simulates the user clicking the zoom box by momentarily highlighting the button and then zooming the window."
+    },
+    {
+      "name": "func zoom(Any?)",
+      "desc": "Toggles the size and location of the window between its standard state (which the application provides as the best size to display the window’s data) and its user state (a new size and location the user may have set by moving or resizing the window)."
+    },
+    {
+      "name": "var resizeFlags: NSEvent.ModifierFlags",
+      "desc": "The flags field of the event record for the mouse-down event that initiated the resizing session."
+    },
+    {
+      "name": "var resizeIncrements: NSSize",
+      "desc": "The window’s resizing increments."
+    },
+    {
+      "name": "var preservesContentDuringLiveResize: Bool",
+      "desc": "A Boolean value that indicates whether the window tries to optimize user-initiated resize operations by preserving the content of views that have not changed."
+    },
+    {
+      "name": "var inLiveResize: Bool",
+      "desc": "A Boolean value that indicates whether the window is being resized by the user."
+    },
+    {
+      "name": "var contentAspectRatio: NSSize",
+      "desc": "The window’s content aspect ratio."
+    },
+    {
+      "name": "var contentMinSize: NSSize",
+      "desc": "The minimum size of the window’s content view in the window’s base coordinate system."
+    },
+    {
+      "name": "func setContentSize(NSSize)",
+      "desc": "Sets the size of the window’s content view to a given size, which is expressed in the window’s base coordinate system."
+    },
+    {
+      "name": "var contentMaxSize: NSSize",
+      "desc": "The maximum size of the window’s content view in the window’s base coordinate system."
+    },
+    {
+      "name": "var contentResizeIncrements: NSSize",
+      "desc": "The window’s content-view resizing increments."
+    },
+    {
+      "name": "var contentLayoutGuide: Any?",
+      "desc": "A value used by Auto Layout constraints to automatically bind to the value of contentLayoutRect."
+    },
+    {
+      "name": "var contentLayoutRect: NSRect",
+      "desc": "The area inside the window that is for non-obscured content, in window coordinates."
+    },
+    {
+      "name": "var maxFullScreenContentSize: NSSize",
+      "desc": "A maximum size that is used to determine if a window can fit when it is in full screen in a tile."
+    },
+    {
+      "name": "var minFullScreenContentSize: NSSize",
+      "desc": "A minimum size that is used to determine if a window can fit when it is in full screen in a tile."
+    },
+    {
+      "name": "func orderOut(Any?)",
+      "desc": "Removes the window from the screen list, which hides the window."
+    },
+    {
+      "name": "func orderBack(Any?)",
+      "desc": "Moves the window to the back of its level in the screen list, without changing either the key window or the main window."
+    },
+    {
+      "name": "func orderFront(Any?)",
+      "desc": "Moves the window to the front of its level in the screen list, without changing either the key window or the main window."
+    },
+    {
+      "name": "func orderFrontRegardless()",
+      "desc": "Moves the window to the front of its level, even if its application isn’t active, without changing either the key window or the main window."
+    },
+    {
+      "name": "func order(NSWindow.OrderingMode, relativeTo: Int)",
+      "desc": "Repositions the window’s window device in the window server’s screen list."
+    },
+    {
+      "name": "var level: NSWindow.Level",
+      "desc": "The window level of the window."
+    },
+    {
+      "name": "struct NSWindow.Level",
+      "desc": "The standard window levels in macOS."
+    },
+    {
+      "name": "var isVisible: Bool",
+      "desc": "A Boolean value that indicates whether the window is visible onscreen (even when it’s obscured by other windows)."
+    },
+    {
+      "name": "var occlusionState: NSWindow.OcclusionState",
+      "desc": "The occlusion state of the window."
+    },
+    {
+      "name": "class func removeFrame(usingName: NSWindow.FrameAutosaveName)",
+      "desc": "Removes the frame data stored under a given name from the application’s user defaults."
+    },
+    {
+      "name": "func setFrameUsingName(NSWindow.FrameAutosaveName) -> Bool",
+      "desc": "Sets the window’s frame rectangle by reading the rectangle data stored under a given name from the defaults system."
+    },
+    {
+      "name": "func setFrameUsingName(NSWindow.FrameAutosaveName, force: Bool) -> Bool",
+      "desc": "Sets the window’s frame rectangle by reading the rectangle data stored under a given name from the defaults system. Can operate on non-resizable windows."
+    },
+    {
+      "name": "func saveFrame(usingName: NSWindow.FrameAutosaveName)",
+      "desc": "Saves the window’s frame rectangle in the user defaults system under a given name."
+    },
+    {
+      "name": "func setFrameAutosaveName(NSWindow.FrameAutosaveName) -> Bool",
+      "desc": "Sets the name AppKit uses to automatically save the window’s frame rectangle data in the defaults system."
+    },
+    {
+      "name": "var frameAutosaveName: NSWindow.FrameAutosaveName",
+      "desc": "The name used to automatically save the window’s frame rectangle data in the defaults system."
+    },
+    {
+      "name": "typealias NSWindow.FrameAutosaveName",
+      "desc": "The type of a window’s frame autosave name."
+    },
+    {
+      "name": "var frameDescriptor: NSWindow.PersistableFrameDescriptor",
+      "desc": "A string representation of the window’s frame rectangle."
+    },
+    {
+      "name": "func setFrame(from: NSWindow.PersistableFrameDescriptor)",
+      "desc": "Sets the window’s frame rectangle from a given string representation."
+    },
+    {
+      "name": "typealias NSWindow.PersistableFrameDescriptor",
+      "desc": "The type of a window’s frame descriptor."
+    },
+    {
+      "name": "var isKeyWindow: Bool",
+      "desc": "A Boolean value that indicates whether the window is the key window for the application."
+    },
+    {
+      "name": "var canBecomeKey: Bool",
+      "desc": "A Boolean value that indicates whether the window can become the key window."
+    },
+    {
+      "name": "func makeKey()",
+      "desc": "Makes the window the key window."
+    },
+    {
+      "name": "func makeKeyAndOrderFront(Any?)",
+      "desc": "Moves the window to the front of the screen list, within its level, and makes it the key window; that is, it shows the window."
+    },
+    {
+      "name": "func becomeKey()",
+      "desc": "Informs the window that it has become the key window."
+    },
+    {
+      "name": "func resignKey()",
+      "desc": "Resigns the window’s key window status."
+    },
+    {
+      "name": "var isMainWindow: Bool",
+      "desc": "A Boolean value that indicates whether the window is the application’s main window."
+    },
+    {
+      "name": "var canBecomeMain: Bool",
+      "desc": "A Boolean value that indicates whether the window can become the application’s main window."
+    },
+    {
+      "name": "func makeMain()",
+      "desc": "Makes the window the main window."
+    },
+    {
+      "name": "func becomeMain()",
+      "desc": "Informs the window that it has become the main window."
+    },
+    {
+      "name": "func resignMain()",
+      "desc": "Resigns the window’s main window status."
+    },
+    {
+      "name": "var toolbar: NSToolbar?",
+      "desc": "The window’s toolbar."
+    },
+    {
+      "name": "func toggleToolbarShown(Any?)",
+      "desc": "Toggles the visibility of the window’s toolbar."
+    },
+    {
+      "name": "func runToolbarCustomizationPalette(Any?)",
+      "desc": "Presents the toolbar customization user interface."
+    },
+    {
+      "name": "var childWindows: [NSWindow]?",
+      "desc": "An array of the window’s attached child windows."
+    },
+    {
+      "name": "func addChildWindow(NSWindow, ordered: NSWindow.OrderingMode)",
+      "desc": "Adds a given window as a child window of the window."
+    },
+    {
+      "name": "func removeChildWindow(NSWindow)",
+      "desc": "Detaches a given child window from the window."
+    },
+    {
+      "name": "var parent: NSWindow?",
+      "desc": "The parent window to which the window is attached as a child."
+    },
+    {
+      "name": "var defaultButtonCell: NSButtonCell?",
+      "desc": "The button cell that performs as if clicked when the window receives a Return (or Enter) key event."
+    },
+    {
+      "name": "func enableKeyEquivalentForDefaultButtonCell()",
+      "desc": "Reenables the default button cell’s key equivalent, so it performs a click when the user presses Return (or Enter)."
+    },
+    {
+      "name": "func disableKeyEquivalentForDefaultButtonCell()",
+      "desc": "Disables the default button cell’s key equivalent, so it doesn’t perform a click when the user presses Return (or Enter)."
+    },
+    {
+      "name": "func fieldEditor(Bool, for: Any?) -> NSText?",
+      "desc": "Returns the window’s field editor, creating it if requested."
+    },
+    {
+      "name": "func endEditing(for: Any?)",
+      "desc": "Forces the field editor to give up its first responder status and prepares it for its next assignment."
+    },
+    {
+      "name": "var isExcludedFromWindowsMenu: Bool",
+      "desc": "A Boolean value that indicates whether the window is excluded from the application’s Windows menu."
+    },
+    {
+      "name": "var areCursorRectsEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the window’s cursor rectangles are enabled."
+    },
+    {
+      "name": "func enableCursorRects()",
+      "desc": "Reenables cursor rectangle management within the window after a disableCursorRects() message."
+    },
+    {
+      "name": "func disableCursorRects()",
+      "desc": "Disables all cursor rectangle management within the window."
+    },
+    {
+      "name": "func discardCursorRects()",
+      "desc": "Invalidates all cursor rectangles in the window."
+    },
+    {
+      "name": "func invalidateCursorRects(for: NSView)",
+      "desc": "Marks as invalid the cursor rectangles of a given view object in the window, so they’ll be set up again when the window becomes key."
+    },
+    {
+      "name": "func resetCursorRects()",
+      "desc": "Clears the window’s cursor rectangles and the cursor rectangles of the NSView objects in its view hierarchy."
+    },
+    {
+      "name": "class func standardWindowButton(NSWindow.ButtonType, for: NSWindow.StyleMask) -> NSButton?",
+      "desc": "Returns a new instance of a given standard window button, sized appropriately for a given window style."
+    },
+    {
+      "name": "func standardWindowButton(NSWindow.ButtonType) -> NSButton?",
+      "desc": "Returns the window button of a given window button kind in the window’s view hierarchy."
+    },
+    {
+      "name": "var showsToolbarButton: Bool",
+      "desc": "A Boolean value that indicates whether the toolbar control button is currently displayed."
+    },
+    {
+      "name": "var titlebarAppearsTransparent: Bool",
+      "desc": "A Boolean value that indicates whether the title bar draws its background."
+    },
+    {
+      "name": "var toolbarStyle: NSWindow.ToolbarStyle",
+      "desc": "The style that determines the appearance and location of the toolbar in relation to the title bar."
+    },
+    {
+      "name": "enum NSWindow.ToolbarStyle",
+      "desc": "Styles that determine the appearance and location of the toolbar in relation to the title bar."
+    },
+    {
+      "name": "var titlebarSeparatorStyle: NSTitlebarSeparatorStyle",
+      "desc": "The type of separator that the app displays between the title bar and content of a window."
+    },
+    {
+      "name": "enum NSTitlebarSeparatorStyle",
+      "desc": "Styles that determine the type of separator displayed between the title bar and content of a window."
+    },
+    {
+      "name": "var windowTitlebarLayoutDirection: NSUserInterfaceLayoutDirection",
+      "desc": "The direction the window’s title bar lays text out, either left to right or right to left."
+    },
+    {
+      "name": "func addTitlebarAccessoryViewController(NSTitlebarAccessoryViewController)",
+      "desc": "Adds the specified title bar accessory view controller to the window."
+    },
+    {
+      "name": "func insertTitlebarAccessoryViewController(NSTitlebarAccessoryViewController, at: Int)",
+      "desc": "Inserts the view controller into the window’s array of title bar accessory view controllers at the specified index."
+    },
+    {
+      "name": "func removeTitlebarAccessoryViewController(at: Int)",
+      "desc": "Removes the view controller at the specified index from the window’s array of title bar accessory view controllers."
+    },
+    {
+      "name": "var titlebarAccessoryViewControllers: [NSTitlebarAccessoryViewController]",
+      "desc": "An array of title bar accessory view controllers that are currently added to the window."
+    },
+    {
+      "name": "class var allowsAutomaticWindowTabbing: Bool",
+      "desc": "A Boolean value that indicates whether the app can automatically organize windows into tabs."
+    },
+    {
+      "name": "class var userTabbingPreference: NSWindow.UserTabbingPreference",
+      "desc": "A value that indicates the user’s preference for window tabbing."
+    },
+    {
+      "name": "var tab: NSWindowTab",
+      "desc": "An object that represents information about a window when it displays as a tab."
+    },
+    {
+      "name": "var tabbingIdentifier: NSWindow.TabbingIdentifier",
+      "desc": "A value that allows a group of related windows."
+    },
+    {
+      "name": "typealias NSWindow.TabbingIdentifier",
+      "desc": "A value that allows a group of related windows."
+    },
+    {
+      "name": "func addTabbedWindow(NSWindow, ordered: NSWindow.OrderingMode)",
+      "desc": "Adds the provided window as a new tab in a tabbed window using the specified ordering instruction."
+    },
+    {
+      "name": "var tabbingMode: NSWindow.TabbingMode",
+      "desc": "A value that indicates when a window displays tabs."
+    },
+    {
+      "name": "var tabbedWindows: [NSWindow]?",
+      "desc": "An array of windows that display as tabs."
+    },
+    {
+      "name": "func mergeAllWindows(Any?)",
+      "desc": "Merges all open windows into a single tabbed window."
+    },
+    {
+      "name": "func selectNextTab(Any?)",
+      "desc": "Selects the next tab in the tab group in the trailing direction."
+    },
+    {
+      "name": "func selectPreviousTab(Any?)",
+      "desc": "Selects the previous tab in the tab group in the leading direction."
+    },
+    {
+      "name": "func moveTabToNewWindow(Any?)",
+      "desc": "Moves the tab to a new containing window."
+    },
+    {
+      "name": "func toggleTabBar(Any?)",
+      "desc": "Shows or hides the tab bar."
+    },
+    {
+      "name": "func toggleTabOverview(Any?)",
+      "desc": "Shows or hides the tab overview."
+    },
+    {
+      "name": "var tabGroup: NSWindowTabGroup?",
+      "desc": "A group of windows that display together as a tab group."
+    },
+    {
+      "name": "var allowsToolTipsWhenApplicationIsInactive: Bool",
+      "desc": "A Boolean value that indicates whether the window can display tooltips even when the application is in the background."
+    },
+    {
+      "name": "var currentEvent: NSEvent?",
+      "desc": "The event currently being processed by the application."
+    },
+    {
+      "name": "func nextEvent(matching: NSEvent.EventTypeMask) -> NSEvent?",
+      "desc": "Returns the next event matching a given mask."
+    },
+    {
+      "name": "func nextEvent(matching: NSEvent.EventTypeMask, until: Date?, inMode: RunLoop.Mode, dequeue: Bool) -> NSEvent?",
+      "desc": "Forwards the message to the global application object."
+    },
+    {
+      "name": "func discardEvents(matching: NSEvent.EventTypeMask, before: NSEvent?)",
+      "desc": "Forwards the message to the global application object."
+    },
+    {
+      "name": "func postEvent(NSEvent, atStart: Bool)",
+      "desc": "Forwards the message to the global application object."
+    },
+    {
+      "name": "func sendEvent(NSEvent)",
+      "desc": "This action method dispatches mouse and keyboard events the global application object sends to the window."
+    },
+    {
+      "name": "func tryToPerform(Selector, with: Any?) -> Bool",
+      "desc": "Dispatches action messages with a given argument."
+    },
+    {
+      "name": "var initialFirstResponder: NSView?",
+      "desc": "The view that’s made first responder (also called the key view) the first time the window is placed onscreen."
+    },
+    {
+      "name": "var firstResponder: NSResponder?",
+      "desc": "The window’s first responder."
+    },
+    {
+      "name": "func makeFirstResponder(NSResponder?) -> Bool",
+      "desc": "Attempts to make a given responder the first responder for the window."
+    },
+    {
+      "name": "func selectKeyView(preceding: NSView)",
+      "desc": "Gives key view status to the view that precedes the given view."
+    },
+    {
+      "name": "func selectKeyView(following: NSView)",
+      "desc": "Gives key view status to the view that follows the given view."
+    },
+    {
+      "name": "func selectPreviousKeyView(Any?)",
+      "desc": "Searches for a candidate previous key view and, if it finds one, tries to make it the first responder."
+    },
+    {
+      "name": "func selectNextKeyView(Any?)",
+      "desc": "Searches for a candidate next key view and, if it finds one, tries to make it the first responder."
+    },
+    {
+      "name": "var keyViewSelectionDirection: NSWindow.SelectionDirection",
+      "desc": "The direction the window is currently using to change the key view."
+    },
+    {
+      "name": "var autorecalculatesKeyViewLoop: Bool",
+      "desc": "A Boolean value that indicates whether the window automatically recalculates the key view loop when views are added."
+    },
+    {
+      "name": "func recalculateKeyViewLoop()",
+      "desc": "Marks the key view loop as “dirty” and in need of recalculation."
+    },
+    {
+      "name": "var acceptsMouseMovedEvents: Bool",
+      "desc": "A Boolean value that indicates whether the window accepts mouse-moved events."
+    },
+    {
+      "name": "var ignoresMouseEvents: Bool",
+      "desc": "A Boolean value that indicates whether the window is transparent to mouse events."
+    },
+    {
+      "name": "var mouseLocationOutsideOfEventStream: NSPoint",
+      "desc": "The current location of the pointer reckoned in the window’s base coordinate system, regardless of the current event being handled or of any events pending."
+    },
+    {
+      "name": "class func windowNumber(at: NSPoint, belowWindowWithWindowNumber: Int) -> Int",
+      "desc": "Returns the number of the frontmost window that would be hit by a mouse-down at the specified screen location."
+    },
+    {
+      "name": "func trackEvents(matching: NSEvent.EventTypeMask, timeout: TimeInterval, mode: RunLoop.Mode, handler: (NSEvent?, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Tracks events that match the specified mask using the specified tracking handler until the tracking handler explicitly terminates tracking."
+    },
+    {
+      "name": "func performDrag(with: NSEvent)",
+      "desc": "Starts a window drag based on the specified mouse-down event."
+    },
+    {
+      "name": "class let foreverDuration: TimeInterval",
+      "desc": "The longest time duration possible."
+    },
+    {
+      "name": "var isRestorable: Bool",
+      "desc": "A Boolean value indicating whether the window configuration is preserved between application launches."
+    },
+    {
+      "name": "var restorationClass: NSWindowRestoration.Type?",
+      "desc": "The restoration class associated with the window."
+    },
+    {
+      "name": "func disableSnapshotRestoration()",
+      "desc": "Disables snapshot restoration."
+    },
+    {
+      "name": "func enableSnapshotRestoration()",
+      "desc": "Enables snapshot restoration."
+    },
+    {
+      "name": "func display()",
+      "desc": "Passes a display message down the window’s view hierarchy, thus redrawing all views within the window."
+    },
+    {
+      "name": "func displayIfNeeded()",
+      "desc": "Passes a display message down the window’s view hierarchy, thus redrawing all views that need displaying."
+    },
+    {
+      "name": "var viewsNeedDisplay: Bool",
+      "desc": "A Boolean value that indicates whether any of the window’s views need to be displayed."
+    },
+    {
+      "name": "var allowsConcurrentViewDrawing: Bool",
+      "desc": "A Boolean value that indicates whether the window allows multithreaded view drawing."
+    },
+    {
+      "name": "var animationBehavior: NSWindow.AnimationBehavior",
+      "desc": "The window’s automatic animation behavior."
+    },
+    {
+      "name": "func disableScreenUpdatesUntilFlush()",
+      "desc": "Disables the window’s screen updates until the window is flushed."
+    },
+    {
+      "name": "func update()",
+      "desc": "Updates the window."
+    },
+    {
+      "name": "func drag(NSImage, at: NSPoint, offset: NSSize, event: NSEvent, pasteboard: NSPasteboard, source: Any, slideBack: Bool)",
+      "desc": "Begins a dragging session."
+    },
+    {
+      "name": "func registerForDraggedTypes([NSPasteboard.PasteboardType])",
+      "desc": "Registers a set of pasteboard types that the window accepts as the destination of an image-dragging session."
+    },
+    {
+      "name": "func unregisterDraggedTypes()",
+      "desc": "Unregisters the window as a possible destination for dragging operations."
+    },
+    {
+      "name": "var isDocumentEdited: Bool",
+      "desc": "A Boolean value that indicates whether the window’s document has been edited."
+    },
+    {
+      "name": "var backingScaleFactor: CGFloat",
+      "desc": "The backing scale factor."
+    },
+    {
+      "name": "func backingAlignedRect(NSRect, options: AlignmentOptions) -> NSRect",
+      "desc": "Returns a backing store pixel-aligned rectangle in window coordinates."
+    },
+    {
+      "name": "func convertFromBacking(NSRect) -> NSRect",
+      "desc": "Converts a rectangle from its pixel-aligned backing store coordinate system to the window’s coordinate system."
+    },
+    {
+      "name": "func convertFromScreen(NSRect) -> NSRect",
+      "desc": "Converts a rectangle from the screen coordinate system to the window’s coordinate system."
+    },
+    {
+      "name": "func convertPointFromBacking(NSPoint) -> NSPoint",
+      "desc": "Converts a point from its pixel-aligned backing store coordinate system to the window’s coordinate system."
+    },
+    {
+      "name": "func convertPoint(fromScreen: NSPoint) -> NSPoint",
+      "desc": "Converts a point from the screen coordinate system to the window’s coordinate system."
+    },
+    {
+      "name": "func convertToBacking(NSRect) -> NSRect",
+      "desc": "Converts a rectangle from the window’s coordinate system to its pixel-aligned backing store coordinate system."
+    },
+    {
+      "name": "func convertToScreen(NSRect) -> NSRect",
+      "desc": "Converts a rectangle to the screen coordinate system from the window’s coordinate system."
+    },
+    {
+      "name": "func convertPointToBacking(NSPoint) -> NSPoint",
+      "desc": "Converts a point from the window’s coordinate system to its pixel-aligned backing store coordinate system."
+    },
+    {
+      "name": "func convertPoint(toScreen: NSPoint) -> NSPoint",
+      "desc": "Converts a point to the screen coordinate system from the window’s coordinate system."
+    },
+    {
+      "name": "var title: String",
+      "desc": "The string that appears in the title bar of the window or the path to the represented file."
+    },
+    {
+      "name": "var subtitle: String",
+      "desc": "A secondary line of text that appears in the title bar of the window."
+    },
+    {
+      "name": "var titleVisibility: NSWindow.TitleVisibility",
+      "desc": "A value that indicates the visibility of the window’s title and title bar buttons."
+    },
+    {
+      "name": "func setTitleWithRepresentedFilename(String)",
+      "desc": "Sets a given path as the window’s title, formatting it as a file-system path, and records this path as the window’s associated file."
+    },
+    {
+      "name": "var representedFilename: String",
+      "desc": "The path to the file of the window’s represented file."
+    },
+    {
+      "name": "var representedURL: URL?",
+      "desc": "The URL of the file the window represents."
+    },
+    {
+      "name": "var screen: NSScreen?",
+      "desc": "The screen the window is on."
+    },
+    {
+      "name": "var deepestScreen: NSScreen?",
+      "desc": "The deepest screen the window is on (it may be split over several screens)."
+    },
+    {
+      "name": "var displaysWhenScreenProfileChanges: Bool",
+      "desc": "A Boolean value that indicates whether the window context should be updated when the screen profile changes or when the window moves to a different screen."
+    },
+    {
+      "name": "var isMovableByWindowBackground: Bool",
+      "desc": "A Boolean value that indicates whether the window is movable by clicking and dragging anywhere in its background."
+    },
+    {
+      "name": "var isMovable: Bool",
+      "desc": "A Boolean value that indicates whether the window can be dragged by clicking in its title bar or background."
+    },
+    {
+      "name": "func center()",
+      "desc": "Sets the window’s location to the center of the screen."
+    },
+    {
+      "name": "func performClose(Any?)",
+      "desc": "Simulates the user clicking the close button by momentarily highlighting the button and then closing the window."
+    },
+    {
+      "name": "func close()",
+      "desc": "Removes the window from the screen."
+    },
+    {
+      "name": "var isReleasedWhenClosed: Bool",
+      "desc": "A Boolean value that indicates whether the window is released when it receives the close message."
+    },
+    {
+      "name": "var isMiniaturized: Bool",
+      "desc": "A Boolean value that indicates whether the window is minimized."
+    },
+    {
+      "name": "func performMiniaturize(Any?)",
+      "desc": "Simulates the user clicking the minimize button by momentarily highlighting the button, then minimizing the window."
+    },
+    {
+      "name": "func miniaturize(Any?)",
+      "desc": "Removes the window from the screen list and displays the minimized window in the Dock."
+    },
+    {
+      "name": "func deminiaturize(Any?)",
+      "desc": "De-minimizes the window."
+    },
+    {
+      "name": "var miniwindowImage: NSImage?",
+      "desc": "The custom miniaturized window image of the window."
+    },
+    {
+      "name": "var miniwindowTitle: String!",
+      "desc": "The title displayed in the window’s minimized window."
+    },
+    {
+      "name": "var dockTile: NSDockTile",
+      "desc": "The application’s Dock tile."
+    },
+    {
+      "name": "func printWindow(Any?)",
+      "desc": "Runs the Print panel, and if the user chooses an option other than canceling, prints the window (its frame view and all subviews)."
+    },
+    {
+      "name": "func dataWithEPS(inside: NSRect) -> Data",
+      "desc": "Returns EPS data that draws the region of the window within a given rectangle."
+    },
+    {
+      "name": "func dataWithPDF(inside: NSRect) -> Data",
+      "desc": "Returns PDF data that draws the region of the window within a given rectangle."
+    },
+    {
+      "name": "func validRequestor(forSendType: NSPasteboard.PasteboardType?, returnType: NSPasteboard.PasteboardType?) -> Any?",
+      "desc": "Searches for an object that responds to a Services request."
+    },
+    {
+      "name": "func updateConstraintsIfNeeded()",
+      "desc": "Updates the constraints based on changes to views in the window since the last layout."
+    },
+    {
+      "name": "func layoutIfNeeded()",
+      "desc": "Updates the layout of views in the window based on the current views and constraints."
+    },
+    {
+      "name": "func visualizeConstraints([NSLayoutConstraint]?)",
+      "desc": "Displays a visual representation of the supplied constraints in the window."
+    },
+    {
+      "name": "func anchorAttribute(for: NSLayoutConstraint.Orientation) -> NSLayoutConstraint.Attribute",
+      "desc": "Returns the part of the window that stays stationary during constraint-based layout."
+    },
+    {
+      "name": "func setAnchorAttribute(NSLayoutConstraint.Attribute, for: NSLayoutConstraint.Orientation)",
+      "desc": "Sets the part of the window that stays stationary during constraint-based layout."
+    },
+    {
+      "name": "var bitsPerPixel: Int",
+      "desc": "Returns the bits per pixel for the specified window depth."
+    },
+    {
+      "name": "var bitsPerSample: Int",
+      "desc": "Returns the bits per sample for the specified window depth."
+    },
+    {
+      "name": "var colorSpaceName: NSColorSpaceName?",
+      "desc": "Returns the name of the color space corresponding to the passed window depth."
+    },
+    {
+      "name": "var numberOfColorComponents: Int",
+      "desc": "Returns the number of color components in the specified color space."
+    },
+    {
+      "name": "var isPlanar: Bool",
+      "desc": "Returns whether the specified window depth is planar."
+    },
+    {
+      "name": "func canRepresent(NSDisplayGamut) -> Bool",
+      "desc": "A Boolean value that indicates if the window and its screen use a color space that can represent the specified display gamut."
+    },
+    {
+      "name": "var hasCloseBox: Bool",
+      "desc": "A Boolean value that indicates if the window has a close box."
+    },
+    {
+      "name": "var hasTitleBar: Bool",
+      "desc": "A Boolean value that indicates if the window has a title bar."
+    },
+    {
+      "name": "var isModalPanel: Bool",
+      "desc": "A Boolean value that indicates whether the window is a modal panel."
+    },
+    {
+      "name": "var isFloatingPanel: Bool",
+      "desc": "A Boolean value that indicates whether the window is a floating panel."
+    },
+    {
+      "name": "var isZoomable: Bool",
+      "desc": "A Boolean value that indicates whether the window allows zooming."
+    },
+    {
+      "name": "var isResizable: Bool",
+      "desc": "A Boolean value that indicates if the user can resize the window."
+    },
+    {
+      "name": "var isMiniaturizable: Bool",
+      "desc": "A Boolean value that indicates whether the window can minimize."
+    },
+    {
+      "name": "var orderedIndex: Int",
+      "desc": "The zero-based position of the window, based on its order from front to back among all visible application windows."
+    },
+    {
+      "name": "func setIsMiniaturized(Bool)",
+      "desc": "Sets the window’s miniaturized state to the value you specify."
+    },
+    {
+      "name": "func setIsVisible(Bool)",
+      "desc": "Sets the window’s visible state to the value you specify."
+    },
+    {
+      "name": "func setIsZoomed(Bool)",
+      "desc": "Sets the window’s zoomed state to the value you specify."
+    },
+    {
+      "name": "func handleClose(NSCloseCommand) -> Any?",
+      "desc": "Handles the AppleScript command to close the window (and its associated document, if any)."
+    },
+    {
+      "name": "func handlePrint(NSScriptCommand) -> Any?",
+      "desc": "Handles the AppleScript command to print the contents of the window (or its associated document, if any)."
+    },
+    {
+      "name": "func handleSave(NSScriptCommand) -> Any?",
+      "desc": "Handles the AppleScript command to save the window (and its associated document, if any)."
+    },
+    {
+      "name": "enum NSWindow.SelectionDirection",
+      "desc": "Constants that specify the direction a window is currently using to change the key view."
+    },
+    {
+      "name": "enum NSWindow.ButtonType",
+      "desc": "Constants that provide a way to access standard title bar buttons."
+    },
+    {
+      "name": "enum NSWindow.Depth",
+      "desc": "A type that represents the depth, or amount of memory, for a single pixel in a window or screen."
+    },
+    {
+      "name": "enum NSWindow.BackingStoreType",
+      "desc": "Constants that specify how the window device buffers the drawing done in a window."
+    },
+    {
+      "name": "enum NSWindow.OrderingMode",
+      "desc": "Constants that let you specify how a window is ordered relative to another window."
+    },
+    {
+      "name": "enum NSWindow.SharingType",
+      "desc": "Constants that represent the access levels other processes can have to a window’s content."
+    },
+    {
+      "name": "struct NSWindow.NumberListOptions",
+      "desc": "Options to use when retrieving window numbers from the system."
+    },
+    {
+      "name": "enum NSWindow.AnimationBehavior",
+      "desc": "Constants that control the automatic window animation behavior windows use when ordering to the front or out of view."
+    },
+    {
+      "name": "struct NSWindow.CollectionBehavior",
+      "desc": "Window collection behaviors related to Exposé and Spaces."
+    },
+    {
+      "name": "struct NSWindow.OcclusionState",
+      "desc": "Specifies whether the window is occluded."
+    },
+    {
+      "name": "enum NSWindow.TitleVisibility",
+      "desc": "Specifies the appearance of the window’s title bar area."
+    },
+    {
+      "name": "enum NSWindow.UserTabbingPreference",
+      "desc": "A value that indicates the user’s preference for window tabbing."
+    },
+    {
+      "name": "enum NSWindow.TabbingMode",
+      "desc": "The preferred tabbing behavior of a window."
+    },
+    {
+      "name": "class let didBecomeKeyNotification: NSNotification.Name",
+      "desc": "A notification that the window object became the key window."
+    },
+    {
+      "name": "class let didBecomeMainNotification: NSNotification.Name",
+      "desc": "A notification that the window object became the main window."
+    },
+    {
+      "name": "class let didChangeScreenNotification: NSNotification.Name",
+      "desc": "A notification that a portion of the window object’s frame moved onto or off of a screen."
+    },
+    {
+      "name": "class let didChangeScreenProfileNotification: NSNotification.Name",
+      "desc": "A notification that the screen containing the window changed."
+    },
+    {
+      "name": "class let didDeminiaturizeNotification: NSNotification.Name",
+      "desc": "A notification that the window is no longer minimized."
+    },
+    {
+      "name": "class let didEndSheetNotification: NSNotification.Name",
+      "desc": "A notification that the window object closed an attached sheet."
+    },
+    {
+      "name": "class let didEndLiveResizeNotification: NSNotification.Name",
+      "desc": "A notification that the user resized the window object."
+    },
+    {
+      "name": "class let didExposeNotification: NSNotification.Name",
+      "desc": "A notification that a window exposed a portion of its nonretained content."
+    },
+    {
+      "name": "class let didMiniaturizeNotification: NSNotification.Name",
+      "desc": "A notification that the window object minimized."
+    },
+    {
+      "name": "class let didMoveNotification: NSNotification.Name",
+      "desc": "A notification that the window object moved."
+    },
+    {
+      "name": "class let didResignKeyNotification: NSNotification.Name",
+      "desc": "A notification that the window object resigned its status as key window."
+    },
+    {
+      "name": "class let didResignMainNotification: NSNotification.Name",
+      "desc": "A notification that the window object resigned its status as main window."
+    },
+    {
+      "name": "class let didResizeNotification: NSNotification.Name",
+      "desc": "A notification that the window object size changed."
+    },
+    {
+      "name": "class let didUpdateNotification: NSNotification.Name",
+      "desc": "A notification that the window object received an update message."
+    },
+    {
+      "name": "class let willBeginSheetNotification: NSNotification.Name",
+      "desc": "A notification that the window object is about to open a sheet."
+    },
+    {
+      "name": "class let willCloseNotification: NSNotification.Name",
+      "desc": "A notification that the window object is about to close."
+    },
+    {
+      "name": "class let willMiniaturizeNotification: NSNotification.Name",
+      "desc": "A notification that the window object is about to minimize."
+    },
+    {
+      "name": "class let willMoveNotification: NSNotification.Name",
+      "desc": "A notification that the window object is about to move."
+    },
+    {
+      "name": "class let willStartLiveResizeNotification: NSNotification.Name",
+      "desc": "A notification that the user is about to resize the window."
+    },
+    {
+      "name": "class let willEnterFullScreenNotification: NSNotification.Name",
+      "desc": "A notification that the window will enter full-screen mode."
+    },
+    {
+      "name": "class let didEnterFullScreenNotification: NSNotification.Name",
+      "desc": "A notification that the window entered full-screen mode."
+    },
+    {
+      "name": "class let willExitFullScreenNotification: NSNotification.Name",
+      "desc": "A notification that the window object will exit full-screen mode."
+    },
+    {
+      "name": "class let didExitFullScreenNotification: NSNotification.Name",
+      "desc": "A notification that the window object exited full-screen mode."
+    },
+    {
+      "name": "class let willEnterVersionBrowserNotification: NSNotification.Name",
+      "desc": "A notification that the window object will enter version browser mode."
+    },
+    {
+      "name": "class let didEnterVersionBrowserNotification: NSNotification.Name",
+      "desc": "A notification that the window object entered version browser mode."
+    },
+    {
+      "name": "class let willExitVersionBrowserNotification: NSNotification.Name",
+      "desc": "A notification that the window object will exit version browser mode."
+    },
+    {
+      "name": "class let didExitVersionBrowserNotification: NSNotification.Name",
+      "desc": "A notification that the window object exited version browser mode."
+    },
+    {
+      "name": "class let didChangeBackingPropertiesNotification: NSNotification.Name",
+      "desc": "A notification that the window object backing properties changed."
+    },
+    {
+      "name": "class let didChangeOcclusionStateNotification: NSNotification.Name",
+      "desc": "A notification that the window object’s occlusion state changed."
+    }
+  ],
+  "declaration": "class NSWindow : NSResponder",
+  "inheritsFrom": [
+    "NSResponder"
+  ],
+  "conformsTo": [
+    "NSAccessibilityProtocol",
+    "NSAccessibilityElementProtocol",
+    "NSAnimatablePropertyContainer",
+    "NSAppearanceCustomization",
+    "NSMenuItemValidation",
+    "NSUserInterfaceItemIdentification",
+    "NSUserInterfaceValidations"
+  ]
+}

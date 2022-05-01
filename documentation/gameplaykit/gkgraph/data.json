@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/gameplaykit/gkgraph",
+  "type": "Class",
+  "name": "GKGraph",
+  "desc": "A collection of nodes that describes the navigability of a game world and provides pathfinding methods to search for routes through that space.",
+  "items": [
+    {
+      "name": "init([GKGraphNode])",
+      "desc": "Initializes a graph with the specified list of nodes."
+    },
+    {
+      "name": "func add([GKGraphNode])",
+      "desc": "Adds the specified nodes to the graph."
+    },
+    {
+      "name": "func connectToLowestCostNode(node: GKGraphNode, bidirectional: Bool)",
+      "desc": "Adds a node to the graph, connecting it to the node already in the graph for which the connection has the lowest cost."
+    },
+    {
+      "name": "func remove([GKGraphNode])",
+      "desc": "Removes the specified nodes from the graph."
+    },
+    {
+      "name": "var nodes: [GKGraphNode]?",
+      "desc": "The list of nodes in the graph."
+    },
+    {
+      "name": "func findPath(from: GKGraphNode, to: GKGraphNode) -> [GKGraphNode]",
+      "desc": "Computes and returns a sequence of nodes that represents the shortest traversal of the graph between the specified nodes."
+    }
+  ],
+  "declaration": "class GKGraph : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

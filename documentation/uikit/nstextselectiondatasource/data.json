@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/uikit/nstextselectiondatasource",
+  "type": "Protocol",
+  "name": "NSTextSelectionDataSource",
+  "desc": "A set of methods that objects implement to provide data for, and manage text selections.",
+  "items": [
+    {
+      "name": "var documentRange: NSTextRange",
+      "desc": "Returns the starting and ending locations for the document."
+    },
+    {
+      "name": "func enumerateCaretOffsetsInLineFragment(at: NSTextLocation, using: (CGFloat, NSTextLocation, Bool, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Enumerates all the insertion point caret offsets from left to right in visual order."
+    },
+    {
+      "name": "func enumerateContainerBoundaries(from: NSTextLocation, reverse: Bool, using: (NSTextLocation, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Enumerates all the container boundaries starting from the location you specify."
+    },
+    {
+      "name": "func enumerateSubstrings(from: NSTextLocation, options: NSString.EnumerationOptions, using: (String?, NSTextRange, NSTextRange?, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Enumerates the textual segment boundaries starting at the location you specify."
+    },
+    {
+      "name": "func location(NSTextLocation, offsetBy: Int) -> NSTextLocation?",
+      "desc": "Returns a new location using the location and offset you specify."
+    },
+    {
+      "name": "func lineFragmentRange(for: CGPoint, inContainerAt: NSTextLocation) -> NSTextRange?",
+      "desc": "Returns the range of the line fragment that contains the point you specify."
+    },
+    {
+      "name": "func offset(from: NSTextLocation, to: NSTextLocation) -> Int",
+      "desc": "Returns the offset between the two locations you specify."
+    },
+    {
+      "name": "func textRange(for: NSTextSelection.Granularity, enclosing: NSTextLocation) -> NSTextRange?",
+      "desc": "Returns a text range that corresponds to selection granularity of the enclosing location."
+    },
+    {
+      "name": "func baseWritingDirection(at: NSTextLocation) -> NSTextSelectionNavigation.WritingDirection",
+      "desc": "Returns the base writing direction at the location you specify."
+    },
+    {
+      "name": "enum NSTextSelectionNavigation.WritingDirection",
+      "desc": "Values that describe the writing direction inside a text selection."
+    },
+    {
+      "name": "func textLayoutOrientation(at: NSTextLocation) -> NSTextSelectionNavigation.LayoutOrientation",
+      "desc": "Returns the layout orientation at the location you specify."
+    },
+    {
+      "name": "enum NSTextSelectionNavigation.LayoutOrientation",
+      "desc": "Values that describe the possible layout orientations."
+    }
+  ],
+  "declaration": "protocol NSTextSelectionDataSource",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

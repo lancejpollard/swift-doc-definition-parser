@@ -1,0 +1,30 @@
+{
+  "path": "/documentation/tabulardata/jsonreadingerror",
+  "type": "Enumeration",
+  "name": "JSONReadingError",
+  "desc": "A JSON reading error.",
+  "items": [
+    {
+      "name": "case failedToParse(row: Int, column: String, type: JSONType, contents: String)",
+      "desc": "An error that occurs when a JSON value fails to parse as the specified type."
+    },
+    {
+      "name": "case incompatibleValues(column: String)",
+      "desc": "An error that occurs when the JSON data contains incompatible values in a column."
+    },
+    {
+      "name": "case unsupportedStructure",
+      "desc": "An error that occurs when the JSON structure is incompatible with a data frame."
+    },
+    {
+      "name": "case wrongType(row: Int, column: String, expectedType: JSONType, value: Any)",
+      "desc": "An error that occurs when the JSON data contains a value of the wrong type for a type-constrained column."
+    }
+  ],
+  "declaration": "enum JSONReadingError",
+  "conformsTo": [
+    "CustomStringConvertible",
+    "Error",
+    "Sendable"
+  ]
+}

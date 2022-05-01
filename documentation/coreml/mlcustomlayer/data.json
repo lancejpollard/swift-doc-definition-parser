@@ -1,0 +1,29 @@
+{
+  "path": "/documentation/coreml/mlcustomlayer",
+  "type": "Protocol",
+  "name": "MLCustomLayer",
+  "desc": "An interface that defines the behavior of a custom layer in your neural network model.",
+  "items": [
+    {
+      "name": "init(parameters: [String : Any])",
+      "desc": "Initializes the custom layer implementation."
+    },
+    {
+      "name": "func setWeightData([Data])",
+      "desc": "Assigns the weights for the connections within the layer."
+    },
+    {
+      "name": "func outputShapes(forInputShapes: [[NSNumber]]) -> [[NSNumber]]",
+      "desc": "Calculates the shapes of the output of this layer for the given input shapes."
+    },
+    {
+      "name": "func evaluate(inputs: [MLMultiArray], outputs: [MLMultiArray])",
+      "desc": "Evaluates the custom layer with the given inputs."
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, inputs: [MTLTexture], outputs: [MTLTexture])",
+      "desc": "Encodes GPU commands to evaluate the custom layer."
+    }
+  ],
+  "declaration": "protocol MLCustomLayer"
+}

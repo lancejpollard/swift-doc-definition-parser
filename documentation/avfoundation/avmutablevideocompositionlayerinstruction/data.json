@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/avfoundation/avmutablevideocompositionlayerinstruction",
+  "type": "Class",
+  "name": "AVMutableVideoCompositionLayerInstruction",
+  "desc": "An object used to modify the transform, cropping, and opacity ramps applied to a given track in a mutable composition.",
+  "items": [
+    {
+      "name": "init(assetTrack: AVAssetTrack)",
+      "desc": "Creates a new mutable video composition layer instruction for the given track."
+    },
+    {
+      "name": "var trackID: CMPersistentTrackID",
+      "desc": "The track identifier of the source track to which the compositor applies the instruction."
+    },
+    {
+      "name": "func setOpacity(Float, at: CMTime)",
+      "desc": "Sets the opacity value at a specific time within the time range of the instruction."
+    },
+    {
+      "name": "func setOpacityRamp(fromStartOpacity: Float, toEndOpacity: Float, timeRange: CMTimeRange)",
+      "desc": "Sets an opacity ramp to apply during a specified time range."
+    },
+    {
+      "name": "func setTransform(CGAffineTransform, at: CMTime)",
+      "desc": "Sets the transform value at a time within the time range of the instruction."
+    },
+    {
+      "name": "func setTransformRamp(fromStart: CGAffineTransform, toEnd: CGAffineTransform, timeRange: CMTimeRange)",
+      "desc": "Sets a transform ramp to apply during a given time range."
+    },
+    {
+      "name": "func setCropRectangle(CGRect, at: CMTime)",
+      "desc": "Sets the crop rectangle value at a time within the time range of the instruction."
+    },
+    {
+      "name": "func setCropRectangleRamp(fromStartCropRectangle: CGRect, toEndCropRectangle: CGRect, timeRange: CMTimeRange)",
+      "desc": "Sets a crop rectangle ramp to apply during the specified time range."
+    }
+  ],
+  "declaration": "class AVMutableVideoCompositionLayerInstruction : AVVideoCompositionLayerInstruction",
+  "inheritsFrom": [
+    "AVVideoCompositionLayerInstruction"
+  ]
+}

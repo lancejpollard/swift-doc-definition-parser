@@ -1,0 +1,100 @@
+{
+  "path": "/documentation/corenfc/nfcreadererror/code",
+  "type": "Enumeration",
+  "name": "NFCReaderError.Code",
+  "desc": "Reader session and tag error codes.",
+  "items": [
+    {
+      "name": "case readerSessionInvalidationErrorFirstNDEFTagRead",
+      "desc": "The first NDEF tag read by this session is invalid."
+    },
+    {
+      "name": "case readerSessionInvalidationErrorSessionTerminatedUnexpectedly",
+      "desc": "The reader session terminated unexpectedly."
+    },
+    {
+      "name": "case readerSessionInvalidationErrorSessionTimeout",
+      "desc": "The reader session timed out."
+    },
+    {
+      "name": "case readerSessionInvalidationErrorSystemIsBusy",
+      "desc": "The reader session failed because the system is busy."
+    },
+    {
+      "name": "case readerSessionInvalidationErrorUserCanceled",
+      "desc": "The user canceled the reader session."
+    },
+    {
+      "name": "case ndefReaderSessionErrorTagNotWritable",
+      "desc": "The NDEF tag isn’t writable."
+    },
+    {
+      "name": "case ndefReaderSessionErrorTagSizeTooSmall",
+      "desc": "The NDEF tag memory size is too small to store the data."
+    },
+    {
+      "name": "case ndefReaderSessionErrorTagUpdateFailure",
+      "desc": "The reader session failed to update the NDEF tag."
+    },
+    {
+      "name": "case ndefReaderSessionErrorZeroLengthMessage",
+      "desc": "The NDEF tag doesn’t contain an NDEF message."
+    },
+    {
+      "name": "case readerTransceiveErrorRetryExceeded",
+      "desc": "Too many retries have occurred."
+    },
+    {
+      "name": "case readerTransceiveErrorTagConnectionLost",
+      "desc": "The reader lost the connection to the tag."
+    },
+    {
+      "name": "case readerTransceiveErrorTagNotConnected",
+      "desc": "The tag isn’t in the connected state."
+    },
+    {
+      "name": "case readerTransceiveErrorTagResponseError",
+      "desc": "The tag has responded with an error."
+    },
+    {
+      "name": "case readerTransceiveErrorSessionInvalidated",
+      "desc": "The reader session is invalid."
+    },
+    {
+      "name": "case readerTransceiveErrorPacketTooLong",
+      "desc": "The packet length exceeds the limit supported by the tag."
+    },
+    {
+      "name": "case tagCommandConfigurationErrorInvalidParameters",
+      "desc": "The tag has been configured with invalid parameters."
+    },
+    {
+      "name": "case readerErrorUnsupportedFeature",
+      "desc": "The reader session does not support this feature."
+    },
+    {
+      "name": "case readerErrorInvalidParameter",
+      "desc": "An input parameter is invalid."
+    },
+    {
+      "name": "case readerErrorInvalidParameterLength",
+      "desc": "The length of an input parameter is invalid."
+    },
+    {
+      "name": "case readerErrorParameterOutOfBound",
+      "desc": "A parameter value is outside of the acceptable boundary."
+    },
+    {
+      "name": "case readerErrorRadioDisabled",
+      "desc": "The NFC wireless radio on the device is disabled."
+    },
+    {
+      "name": "case readerErrorSecurityViolation",
+      "desc": "A security violation associated with the reader session has occurred."
+    }
+  ],
+  "declaration": "enum NFCReaderError.Code : Int, _ErrorCodeProtocol, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

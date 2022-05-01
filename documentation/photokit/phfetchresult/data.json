@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/photokit/phfetchresult",
+  "type": "Generic Class",
+  "name": "PHFetchResult",
+  "desc": "An ordered list of assets or collections returned from a Photos fetch method.",
+  "items": [
+    {
+      "name": "func contains(ObjectType) -> Bool",
+      "desc": "Returns whether the specified object is present in the fetch result."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of objects in the fetch result."
+    },
+    {
+      "name": "func countOfAssets(with: PHAssetMediaType) -> Int",
+      "desc": "Returns the number of assets in the fetch result of a specified type."
+    },
+    {
+      "name": "var firstObject: ObjectType?",
+      "desc": "The first object in the fetch result."
+    },
+    {
+      "name": "var lastObject: ObjectType?",
+      "desc": "The last object in the fetch result."
+    },
+    {
+      "name": "func object(at: Int) -> ObjectType",
+      "desc": "Returns the object located at the specified index."
+    },
+    {
+      "name": "subscript(Int) -> ObjectType",
+      "desc": "Returns the object located at the specified index."
+    },
+    {
+      "name": "func objects(at: IndexSet) -> [ObjectType]",
+      "desc": "Returns an array containing the objects in the fetch result at the indexes in the specified index set."
+    },
+    {
+      "name": "func index(of: ObjectType) -> Int",
+      "desc": "Returns the lowest index whose corresponding object in the fetch result is equal to the specified object."
+    },
+    {
+      "name": "func index(of: ObjectType, in: NSRange) -> Int",
+      "desc": "Returns the lowest index within the specified range whose corresponding object in the fetch result is equal to the specified object."
+    },
+    {
+      "name": "func enumerateObjects(at: IndexSet, options: NSEnumerationOptions, using: (ObjectType, Int, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Executes the specified block using the objects in the fetch result at the specified indexes."
+    },
+    {
+      "name": "func enumerateObjects((ObjectType, Int, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Executes the specified block using each object in the fetch result, starting with the first object and continuing in order to the last object."
+    },
+    {
+      "name": "func enumerateObjects(options: NSEnumerationOptions, using: (ObjectType, Int, UnsafeMutablePointer<ObjCBool>) -> Void)",
+      "desc": "Executes the specified block using each object in the fetch result."
+    }
+  ],
+  "declaration": "class PHFetchResult<ObjectType> : NSObject where ObjectType : AnyObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSFastEnumeration"
+  ]
+}

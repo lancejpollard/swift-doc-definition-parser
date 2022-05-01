@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/foundation/data/deallocator",
+  "type": "Enumeration",
+  "name": "Data.Deallocator",
+  "desc": "A deallocator you use to customize how the backing store is deallocated for data created with the no-copy initializer.",
+  "items": [
+    {
+      "name": "case custom((UnsafeMutableRawPointer, Int) -> Void)",
+      "desc": "A custom deallocator."
+    },
+    {
+      "name": "case free",
+      "desc": "Use free."
+    },
+    {
+      "name": "case none",
+      "desc": "Do nothing upon deallocation."
+    },
+    {
+      "name": "case unmap",
+      "desc": "Use munmap."
+    },
+    {
+      "name": "case virtualMemory"
+    }
+  ],
+  "declaration": "enum Data.Deallocator"
+}

@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpscnnbatchnormalizationdatasource",
+  "type": "Protocol",
+  "name": "MPSCNNBatchNormalizationDataSource",
+  "desc": "A protocol that defines methods that a batch normalization state uses to initialize scale factors, bias terms, and batch statistics.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder)"
+    },
+    {
+      "name": "static var supportsSecureCoding: Bool"
+    },
+    {
+      "name": "func beta() -> UnsafeMutablePointer<Float>?"
+    },
+    {
+      "name": "func copy(with: NSZone?, device: MTLDevice?) -> Self"
+    },
+    {
+      "name": "func encode(with: NSCoder)"
+    },
+    {
+      "name": "func epsilon() -> Float"
+    },
+    {
+      "name": "func gamma() -> UnsafeMutablePointer<Float>?"
+    },
+    {
+      "name": "func label() -> String?"
+    },
+    {
+      "name": "func load() -> Bool"
+    },
+    {
+      "name": "func mean() -> UnsafeMutablePointer<Float>?"
+    },
+    {
+      "name": "func numberOfFeatureChannels() -> Int"
+    },
+    {
+      "name": "func purge()"
+    },
+    {
+      "name": "func updateGammaAndBeta(with: MPSCNNBatchNormalizationState) -> Bool"
+    },
+    {
+      "name": "func updateGammaAndBeta(with: MTLCommandBuffer, batchNormalizationState: MPSCNNBatchNormalizationState) -> MPSCNNNormalizationGammaAndBetaState?"
+    },
+    {
+      "name": "func updateMeanAndVariance(with: MPSCNNBatchNormalizationState) -> Bool"
+    },
+    {
+      "name": "func updateMeanAndVariance(with: MTLCommandBuffer, batchNormalizationState: MPSCNNBatchNormalizationState) -> MPSCNNNormalizationMeanAndVarianceState?"
+    },
+    {
+      "name": "func variance() -> UnsafeMutablePointer<Float>?"
+    }
+  ],
+  "declaration": "protocol MPSCNNBatchNormalizationDataSource",
+  "inheritsFrom": [
+    "NSCopying",
+    "NSObjectProtocol"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "path": "/documentation/appkit/nssharingservicedelegate",
+  "type": "Protocol",
+  "name": "NSSharingServiceDelegate",
+  "desc": "A set of methods that you use to customize the position and animation of a share sheet, and to be notified whether the item is successfully shared.",
+  "items": [
+    {
+      "name": "func sharingService(NSSharingService, willShareItems: [Any])",
+      "desc": "Invoked when the sharing service will share the specified items."
+    },
+    {
+      "name": "func sharingService(NSSharingService, didShareItems: [Any])",
+      "desc": "Invoked when the sharing service has finished sharing the items."
+    },
+    {
+      "name": "func sharingService(NSSharingService, didFailToShareItems: [Any], error: Error)",
+      "desc": "Invoked when the sharing service encountered an error when sharing items."
+    },
+    {
+      "name": "func sharingService(NSSharingService, sourceFrameOnScreenForShareItem: Any) -> NSRect",
+      "desc": "Invoked when the sharing service is performed and the sharing window is displayed, to present a transition between the original items and the sharing window."
+    },
+    {
+      "name": "func sharingService(NSSharingService, transitionImageForShareItem: Any, contentRect: UnsafeMutablePointer<NSRect>) -> NSImage?",
+      "desc": "Invoked to allow returning a custom transition image when sharing an item."
+    },
+    {
+      "name": "func sharingService(NSSharingService, sourceWindowForShareItems: [Any], sharingContentScope: UnsafeMutablePointer<NSSharingService.SharingContentScope>) -> NSWindow?",
+      "desc": "Returns the window that contained the share items."
+    },
+    {
+      "name": "enum NSSharingService.SharingContentScope",
+      "desc": "The sharing scope constants specify the nature of the things you are sharing."
+    },
+    {
+      "name": "func anchoringView(for: NSSharingService, showRelativeTo: UnsafeMutablePointer<NSRect>, preferredEdge: UnsafeMutablePointer<NSRectEdge>) -> NSView?"
+    }
+  ],
+  "declaration": "protocol NSSharingServiceDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

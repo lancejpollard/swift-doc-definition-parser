@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/foundation/distributednotificationcenter",
+  "type": "Class",
+  "name": "DistributedNotificationCenter",
+  "desc": "A notification dispatch mechanism that enables the broadcast of notifications across task boundaries.",
+  "items": [
+    {
+      "name": "class func `default`() -> DistributedNotificationCenter",
+      "desc": "Returns the default distributed notification center, representing the local notification center for the computer."
+    },
+    {
+      "name": "class func forType(DistributedNotificationCenter.CenterType) -> DistributedNotificationCenter",
+      "desc": "Returns the distributed notification center for a particular notification center type."
+    },
+    {
+      "name": "func addObserver(Any, selector: Selector, name: NSNotification.Name?, object: String?)",
+      "desc": "Adds an entry to the notification center's dispatch table with an observer, a selector, and an optional notification name and sender."
+    },
+    {
+      "name": "func addObserver(Any, selector: Selector, name: NSNotification.Name?, object: String?, suspensionBehavior: DistributedNotificationCenter.SuspensionBehavior)",
+      "desc": "Adds an entry to the receiver’s dispatch table with a specific observer and suspended-notifications behavior, and optional notification name and sender."
+    },
+    {
+      "name": "func removeObserver(Any, name: NSNotification.Name?, object: String?)",
+      "desc": "Removes matching entries from the receiver’s dispatch table."
+    },
+    {
+      "name": "func post(name: NSNotification.Name, object: String?)",
+      "desc": "Creates a notification, and posts it to the receiver."
+    },
+    {
+      "name": "func post(name: NSNotification.Name, object: String?, userInfo: [AnyHashable : Any]?)",
+      "desc": "Creates a notification with information, and posts it to the receiver."
+    },
+    {
+      "name": "func postNotificationName(NSNotification.Name, object: String?, userInfo: [AnyHashable : Any]?, deliverImmediately: Bool)",
+      "desc": "Creates a notification with information and an immediate-delivery specifier, and posts it to the receiver."
+    },
+    {
+      "name": "func postNotificationName(NSNotification.Name, object: String?, userInfo: [AnyHashable : Any]?, options: DistributedNotificationCenter.Options)",
+      "desc": "Creates a notification with information, and posts it to the receiver."
+    },
+    {
+      "name": "var suspended: Bool",
+      "desc": "Suspends or resumes notification delivery."
+    },
+    {
+      "name": "struct DistributedNotificationCenter.Options",
+      "desc": "These constants specify the behavior of notifications posted using the postNotificationName(_:object:userInfo:options:) method."
+    },
+    {
+      "name": "struct DistributedNotificationCenter.CenterType",
+      "desc": "This constant specifies the notification center type."
+    },
+    {
+      "name": "enum DistributedNotificationCenter.SuspensionBehavior",
+      "desc": "These constants specify the types of notification delivery suspension behaviors."
+    }
+  ],
+  "declaration": "class DistributedNotificationCenter : NotificationCenter",
+  "inheritsFrom": [
+    "NotificationCenter"
+  ]
+}

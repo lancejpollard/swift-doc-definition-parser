@@ -1,0 +1,79 @@
+{
+  "path": "/documentation/carekit/ockcalendarviewcontroller",
+  "type": "Generic Class",
+  "name": "OCKCalendarViewController",
+  "desc": "A view controller that displays a calendar view and synchronizes with a store.",
+  "items": [
+    {
+      "name": "init(controller: Controller, viewSynchronizer: ViewSynchronizer)",
+      "desc": "Creates a new calendar view controller with a specific controller and synchronizer."
+    },
+    {
+      "name": "init(viewSynchronizer: ViewSynchronizer, dateInterval: DateInterval, aggregator: OCKAdherenceAggregator, storeManager: OCKSynchronizedStoreManager)",
+      "desc": "Creates a new calendar view controller with a specific synchronizer, date interval, and aggregator."
+    },
+    {
+      "name": "init(weekOfDate: Date, aggregator: OCKAdherenceAggregator, storeManager: OCKSynchronizedStoreManager)",
+      "desc": "Creates a new calendar view controller for a specific week."
+    },
+    {
+      "name": "var delegate: OCKCalendarViewControllerDelegate?",
+      "desc": "The object that handles errors related to a calendar view controller."
+    },
+    {
+      "name": "protocol OCKCalendarViewControllerDelegate",
+      "desc": "A protocol that handles errors in calender view controllers."
+    },
+    {
+      "name": "var calendarView: ViewSynchronizer.View",
+      "desc": "A week-long calendar view, which synchronizes with the store."
+    },
+    {
+      "name": "let controller: Controller",
+      "desc": "The object that handles interacting with data from the store."
+    },
+    {
+      "name": "let viewSynchronizer: ViewSynchronizer",
+      "desc": "The object that handles updating the view when data in the store changes."
+    },
+    {
+      "name": "func calendarView(UIView & OCKCalendarDisplayable, didSelectDate: Date, at: Int, sender: Any?)",
+      "desc": "Notifies the delegate that a date has been selected in the calendar view."
+    },
+    {
+      "name": "var hashValue: Int"
+    },
+    {
+      "name": "func contains(UIFocusEnvironment) -> Bool"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "func viewDidLoad()"
+    },
+    {
+      "name": "static func != (OCKCalendarViewController<Controller, ViewSynchronizer>, OCKCalendarViewController<Controller, ViewSynchronizer>) -> Bool"
+    },
+    {
+      "name": "static func == (NSObject, NSObject) -> Bool"
+    },
+    {
+      "name": "struct OCKCalendarViewController.KeyValueObservingPublisher"
+    }
+  ],
+  "declaration": "class OCKCalendarViewController<Controller, ViewSynchronizer> : UIViewController where Controller : OCKCalendarControllerProtocol, ViewSynchronizer : OCKCalendarViewSynchronizerProtocol",
+  "inheritsFrom": [
+    "UIViewController"
+  ],
+  "conformsTo": [
+    "CVarArg",
+    "Equatable",
+    "Hashable",
+    "NSExtensionRequestHandling",
+    "OCKCalendarViewDelegate",
+    "UIPasteConfigurationSupporting",
+    "UIStateRestoring",
+    "UIUserActivityRestoring"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "path": "/documentation/uikit/uiindirectscribbleinteractiondelegate",
+  "type": "Protocol",
+  "name": "UIIndirectScribbleInteractionDelegate",
+  "desc": "Methods that customize behavior on views that aren’t formally text input views.",
+  "items": [
+    {
+      "name": "associatedtype ElementIdentifier",
+      "desc": "A unique identifier for a control that is not a text field in a Scribble interaction."
+    },
+    {
+      "name": "func indirectScribbleInteraction(UIInteraction, isElementFocused: Self.ElementIdentifier) -> Bool",
+      "desc": "Asks the delegate if an element is currently focused, according to the internal state of the interaction’s view."
+    },
+    {
+      "name": "func indirectScribbleInteraction(UIInteraction, focusElementIfNeeded: Self.ElementIdentifier, referencePoint: CGPoint, completion: ((UIResponder & UITextInput)?) -> Void)",
+      "desc": "Asks the delegate to focus an element to handle text edits."
+    },
+    {
+      "name": "func indirectScribbleInteraction(UIInteraction, shouldDelayFocusForElement: Self.ElementIdentifier) -> Bool",
+      "desc": "Allow the delegate to delay focusing an element."
+    },
+    {
+      "name": "func indirectScribbleInteraction(UIInteraction, willBeginWritingInElement: Self.ElementIdentifier)",
+      "desc": "Informs the delegate when the user begins writing."
+    },
+    {
+      "name": "func indirectScribbleInteraction(UIInteraction, didFinishWritingInElement: Self.ElementIdentifier)",
+      "desc": "Informs the delegate when the user finishes writing."
+    },
+    {
+      "name": "func indirectScribbleInteraction(UIInteraction, frameForElement: Self.ElementIdentifier) -> CGRect",
+      "desc": "Asks the delegate to provide the frame of an element."
+    },
+    {
+      "name": "func indirectScribbleInteraction(UIInteraction, requestElementsIn: CGRect, completion: ([Self.ElementIdentifier]) -> Void)",
+      "desc": "Asks the delegate to return the locations of text input elements inside the specified rectangle of the view."
+    },
+    {
+      "name": "func indirectScribbleInteraction(UIInteraction, focusElementIfNeeded: Self.ElementIdentifier, referencePoint: CGPoint) -> (UIResponder & UITextInput)?"
+    },
+    {
+      "name": "func indirectScribbleInteraction(UIInteraction, requestElementsIn: CGRect) -> [Self.ElementIdentifier]"
+    }
+  ],
+  "declaration": "protocol UIIndirectScribbleInteractionDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "path": "/documentation/quartz/qcplugintimemode",
+  "type": "Structure",
+  "name": "QCPlugInTimeMode",
+  "desc": "Time modes for custom patches.",
+  "items": [
+    {
+      "name": "var kQCPlugInTimeModeNone: QCPlugInTimeMode",
+      "desc": "No time dependency. The custom patch does not depend on time at all. (It does not use the time parameter of the execute:atTime:withArguments: method.)"
+    },
+    {
+      "name": "var kQCPlugInTimeModeIdle: QCPlugInTimeMode",
+      "desc": "An idle time dependency. The custom patch does not depend on time but needs the system to execute it periodically. For example if the custom patch connects to a piece of hardware, to ensure that it pulls data from the hardware, you would set the custom patch time dependency to idle time mode. This time mode is typically used with providers.]]"
+    },
+    {
+      "name": "var kQCPlugInTimeModeTimeBase: QCPlugInTimeMode",
+      "desc": "A time base dependency. The custom patch does depend on time explicitly and has a time base defined by the system. (It uses the time parameter of the execute:atTime:withArguments: method.)"
+    },
+    {
+      "name": "init(UInt32)"
+    },
+    {
+      "name": "init(rawValue: UInt32)"
+    },
+    {
+      "name": "var rawValue: UInt32"
+    }
+  ],
+  "declaration": "struct QCPlugInTimeMode",
+  "conformsTo": [
+    "Equatable",
+    "RawRepresentable"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/cryptokit/chachapoly/sealedbox",
+  "type": "Structure",
+  "name": "ChaChaPoly.SealedBox",
+  "desc": "A secure container for your data that you access using a cipher.",
+  "items": [
+    {
+      "name": "init<D>(combined: D)",
+      "desc": "Creates a sealed box from the given data."
+    },
+    {
+      "name": "init<C, T>(nonce: ChaChaPoly.Nonce, ciphertext: C, tag: T)",
+      "desc": "Creates a sealed box from the given tag, nonce, and ciphertext."
+    },
+    {
+      "name": "let combined: Data",
+      "desc": "A combined element composed of the tag, the nonce, and the ciphertext."
+    },
+    {
+      "name": "var nonce: ChaChaPoly.Nonce",
+      "desc": "The nonce used to encrypt the data."
+    },
+    {
+      "name": "var ciphertext: Data",
+      "desc": "The encrypted data."
+    },
+    {
+      "name": "var tag: Data",
+      "desc": "An authentication tag."
+    }
+  ],
+  "declaration": "@frozen struct SealedBox"
+}

@@ -1,0 +1,92 @@
+{
+  "path": "/documentation/preferencepanes/nspreferencepane",
+  "type": "Class",
+  "name": "NSPreferencePane",
+  "desc": "The interface for providing preference panes to System Preferences or other apps.",
+  "items": [
+    {
+      "name": "init(bundle: Bundle)",
+      "desc": "Initializes a preference pane with the specified bundle."
+    },
+    {
+      "name": "func loadMainView() -> NSView",
+      "desc": "Loads the preference pane's user interface into its main view."
+    },
+    {
+      "name": "func assignMainView()",
+      "desc": "Locates and assigns the preference pane's main view from the nib file loaded by loadMainView()."
+    },
+    {
+      "name": "func mainViewDidLoad()",
+      "desc": "Notifies the preference pane that the main view is set up and prepared to be displayed."
+    },
+    {
+      "name": "var bundle: Bundle",
+      "desc": "The preference pane’s bundle."
+    },
+    {
+      "name": "var mainNibName: String",
+      "desc": "The name of the preference pane’s nib file."
+    },
+    {
+      "name": "var mainView: NSView",
+      "desc": "The main view of the preference pane."
+    },
+    {
+      "name": "func willSelect()",
+      "desc": "Notifies the preference pane that the main app is about to display the preference pane’s main view."
+    },
+    {
+      "name": "func didSelect()",
+      "desc": "Notifies the preference pane that the main app has just displayed the preference pane’s main view."
+    },
+    {
+      "name": "func willUnselect()",
+      "desc": "Notifies the preference pane that the main app is about to stop displaying the preference pane’s main view."
+    },
+    {
+      "name": "func didUnselect()",
+      "desc": "Notifies the preference pane that the main app has just stopped displaying the preference pane’s main view."
+    },
+    {
+      "name": "var isSelected: Bool",
+      "desc": "A Boolean value that indicates whether the preference pane is currently selected."
+    },
+    {
+      "name": "var shouldUnselect: NSPreferencePaneUnselectReply",
+      "desc": "A Boolean value that indicates whether the preference pane is able to be deselected."
+    },
+    {
+      "name": "enum NSPreferencePaneUnselectReply",
+      "desc": "Constants that indicate the preference pane's availability to be deselected."
+    },
+    {
+      "name": "func reply(toShouldUnselect: Bool)",
+      "desc": "Notifies the main application of the preference pane's ability to be deselected."
+    },
+    {
+      "name": "var firstKeyView: NSView?",
+      "desc": "The first view in the keyboard focus chain."
+    },
+    {
+      "name": "var initialKeyView: NSView?",
+      "desc": "The view that should have keyboard focus when the pane is selected."
+    },
+    {
+      "name": "var lastKeyView: NSView?",
+      "desc": "The last view in the keyboard focus chain."
+    },
+    {
+      "name": "var autoSaveTextFields: Bool",
+      "desc": "A Boolean value that indicates whether text fields save their values before changing preference panes."
+    },
+    {
+      "name": "func updateHelpMenu(with: [[String : String]]?)",
+      "desc": "Updates the help menu."
+    }
+  ],
+  "declaration": "class NSPreferencePane : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

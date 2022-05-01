@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/uikit/nslayoutmanagerdelegate",
+  "type": "Protocol",
+  "name": "NSLayoutManagerDelegate",
+  "desc": "A set of optional methods that delegates of layout manager objects implement.",
+  "items": [
+    {
+      "name": "func layoutManagerDidInvalidateLayout(NSLayoutManager)",
+      "desc": "Informs the delegate when the specified layout manager invalidates layout information (not glyph information)."
+    },
+    {
+      "name": "func layoutManager(NSLayoutManager, shouldGenerateGlyphs: UnsafePointer<CGGlyph>, properties: UnsafePointer<NSLayoutManager.GlyphProperty>, characterIndexes: UnsafePointer<Int>, font: UIFont, forGlyphRange: NSRange) -> Int",
+      "desc": "Enables customization of the initial glyph generation process."
+    },
+    {
+      "name": "func layoutManager(NSLayoutManager, shouldUse: NSLayoutManager.ControlCharacterAction, forControlCharacterAt: Int) -> NSLayoutManager.ControlCharacterAction",
+      "desc": "Returns the control character action for the control character at the specified character index."
+    },
+    {
+      "name": "struct NSLayoutManager.ControlCharacterAction",
+      "desc": "Constants that describe actions for control characters."
+    },
+    {
+      "name": "func layoutManager(NSLayoutManager, didCompleteLayoutFor: NSTextContainer?, atEnd: Bool)",
+      "desc": "Informs the delegate when the layout manager finishes laying out text in the specified text container."
+    },
+    {
+      "name": "func layoutManager(NSLayoutManager, textContainer: NSTextContainer, didChangeGeometryFrom: CGSize)",
+      "desc": "Informs the delegate when the layout manager invalidates layout due to a change in the geometry of the specified text container."
+    },
+    {
+      "name": "func layoutManager(NSLayoutManager, shouldBreakLineByHyphenatingBeforeCharacterAt: Int) -> Bool",
+      "desc": "Asks the delegate whether to break the line at the specified character."
+    },
+    {
+      "name": "func layoutManager(NSLayoutManager, shouldBreakLineByWordBeforeCharacterAt: Int) -> Bool",
+      "desc": "Asks the delegate whether to break the line at the specified word."
+    },
+    {
+      "name": "func layoutManager(NSLayoutManager, lineSpacingAfterGlyphAt: Int, withProposedLineFragmentRect: CGRect) -> CGFloat",
+      "desc": "Returns the amount of space to add to the end of a line."
+    },
+    {
+      "name": "func layoutManager(NSLayoutManager, paragraphSpacingAfterGlyphAt: Int, withProposedLineFragmentRect: CGRect) -> CGFloat",
+      "desc": "Returns the amount of space to add at the end of a paragraph."
+    },
+    {
+      "name": "func layoutManager(NSLayoutManager, paragraphSpacingBeforeGlyphAt: Int, withProposedLineFragmentRect: CGRect) -> CGFloat",
+      "desc": "Returns the amount of space to add at the beginning of a paragraph."
+    },
+    {
+      "name": "func layoutManager(NSLayoutManager, boundingBoxForControlGlyphAt: Int, for: NSTextContainer, proposedLineFragment: CGRect, glyphPosition: CGPoint, characterIndex: Int) -> CGRect",
+      "desc": "Returns the bounding rectangle for the specified control glyph with the specified parameters."
+    },
+    {
+      "name": "func layoutManager(NSLayoutManager, shouldSetLineFragmentRect: UnsafeMutablePointer<CGRect>, lineFragmentUsedRect: UnsafeMutablePointer<CGRect>, baselineOffset: UnsafeMutablePointer<CGFloat>, in: NSTextContainer, forGlyphRange: NSRange) -> Bool",
+      "desc": "Customizes the line fragment geometry before committing it to the layout cache."
+    },
+    {
+      "name": "func layoutManager(NSLayoutManager, shouldUseTemporaryAttributes: [NSAttributedString.Key : Any], forDrawingToScreen: Bool, atCharacterIndex: Int, effectiveRange: NSRangePointer?) -> [NSAttributedString.Key : Any]?",
+      "desc": "Asks the delegate whether to use temporary attributes when drawing the text."
+    }
+  ],
+  "declaration": "protocol NSLayoutManagerDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

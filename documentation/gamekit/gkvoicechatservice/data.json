@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/gamekit/gkvoicechatservice",
+  "type": "Class",
+  "name": "GKVoiceChatService",
+  "desc": "The GKVoiceChatService class allows your application to connect two iOS devices into a voice chat.",
+  "items": [
+    {
+      "name": "class func isVoIPAllowed() -> Bool",
+      "desc": "Returns whether voice chat is allowed to be used on the device."
+    },
+    {
+      "name": "class func `default`() -> GKVoiceChatService!",
+      "desc": "Retrieves the singleton chat service."
+    },
+    {
+      "name": "var client: GKVoiceChatClient!",
+      "desc": "An object that the voice chat service uses to communicate with remote participants."
+    },
+    {
+      "name": "func startVoiceChat(withParticipantID: String!)",
+      "desc": "Sends a request to another participant to join the voice chat."
+    },
+    {
+      "name": "var isMicrophoneMuted: Bool",
+      "desc": "A Boolean value that determines whether the user’s microphone is muted."
+    },
+    {
+      "name": "var remoteParticipantVolume: Float",
+      "desc": "A float that scales the volume of all remote participants."
+    },
+    {
+      "name": "var isInputMeteringEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the microphone’s sound level is being monitored."
+    },
+    {
+      "name": "var inputMeterLevel: Float",
+      "desc": "The volume, in decibels (db), being received by the microphone."
+    },
+    {
+      "name": "var isOutputMeteringEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the voice level of remote participants is monitored."
+    },
+    {
+      "name": "var outputMeterLevel: Float",
+      "desc": "The volume, in decibels (db), being received from all other participants."
+    },
+    {
+      "name": "func stopVoiceChat(withParticipantID: String!)",
+      "desc": "Ends a previously established voice chat."
+    },
+    {
+      "name": "func acceptCallID(Int)",
+      "desc": "Accepts a request from a remote user to establish a voice chat."
+    },
+    {
+      "name": "func denyCallID(Int)",
+      "desc": "Rejects a request to establish a voice chat."
+    },
+    {
+      "name": "func receivedData(Data!, fromParticipantID: String!)",
+      "desc": "Called by the client to deliver new data received from a remote participant."
+    },
+    {
+      "name": "func receivedRealTime(Data!, fromParticipantID: String!)",
+      "desc": "Called by the client to deliver voice data received from a remote participant.."
+    },
+    {
+      "name": "enum GKVoiceChatServiceError.Code",
+      "desc": "Error codes for the GKVoiceChatService error domain."
+    }
+  ],
+  "declaration": "class GKVoiceChatService : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

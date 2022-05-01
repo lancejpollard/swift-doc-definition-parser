@@ -1,0 +1,123 @@
+{
+  "path": "/documentation/apple_news/componenttextstyle",
+  "type": "Object",
+  "name": "ComponentTextStyle",
+  "desc": "The object for defining the style for a text component, including spacing, alignment, and drop caps.",
+  "items": [
+    {
+      "name": "backgroundColor",
+      "desc": "The background color for text lines. The value defaults to transparent.The none value is used for conditional design elements. Adding it here has no effect."
+    },
+    {
+      "name": "conditional",
+      "desc": "An instance or array of component text style properties that can be applied conditionally, and the conditions that cause them to be applied."
+    },
+    {
+      "name": "dropCapStyle",
+      "desc": "The style of drop cap to apply to the first paragraph of the component.The none value is used for conditional design elements. Adding it here has no effect."
+    },
+    {
+      "name": "firstLineIndent",
+      "desc": "The indent of the first line of each paragraph in points."
+    },
+    {
+      "name": "fontFamily",
+      "desc": "The font family to use for text rendering; for example, Gill Sans. Using a combination of fontFamily, fontWidth, fontWeight, and fontStyle, you can define the appearance of the text. Apple News automatically selects the appropriate font variant from the available variants in that family. See Applying Apple News Format Fonts. In iOS 13, iPadOS 13, and macOS 10.15, you can use the value system to show text in the default font used by the operating system."
+    },
+    {
+      "name": "fontName",
+      "desc": "The fontName to refer to an explicit font variant’s Postscript name, such as GillSans-Bold. Alternatively, you can use a combination of fontFamily, fontWeight, fontWidth and/or fontStyle to have News automatically select the appropriate variant depending on the text formatting used.See Applying Apple News Format Fonts."
+    },
+    {
+      "name": "fontScaling",
+      "desc": "NoteAvailable in iOS 13, iPadOS 13, and macOS 10.15.A Boolean value that indicates whether scaling of font sizes for various screen sizes is enabled.By default, text in Apple News Format articles is  scaled down when viewed on devices with screens that are narrower than the width specified in the document layout. This scaling effect occurs at a faster rate for heading roles (Title, Heading, and so on) than for body roles (Body, Byline, Caption, and so on). To disable this effect, set fontScaling to false. When doing so, be mindful of how larger text appears on smaller devices and make use of conditions as appropriate. See ConditionalComponentTextStyle."
+    },
+    {
+      "name": "fontSize",
+      "desc": "The size of the font, in points. By default, the font size will be inherited from a parent component or a default style. As a best practice, try not to go below 16 points for body text. The fontSize may be automatically resized for different device sizes or for iOS and iPadOS devices with Larger Accessibility Sizes enabled."
+    },
+    {
+      "name": "fontStyle",
+      "desc": "The font style to apply. Valid values:normal. Selects from the font family a font that is defined as normal italic. Selects from the font family a font that is defined as italic. If the family does not contain an italic font variant, but contains an oblique variant, then oblique is selected instead.oblique. Selects from the font family a font  that is defined as oblique. If the family does not contain an oblique font variant, but contains an italic variant, then italic is selected."
+    },
+    {
+      "name": "fontWeight",
+      "desc": "The font weight to apply for font selection. In addition to explicit weights (named or numerical), lighter and bolder are available, to set text in a lighter or bolder font as compared to its surrounding text.If a font variant with the given specifications cannot be found in the provided font family, an alternative is selected that has the closest match. If no bold/bolder font is found, News will not create a faux-bold alternative, but will fall back to the closest match. Similarly, if no italic or oblique font variant is found, text will not be slanted to make text appear italicized.Valid values:thin or 100. Thin/hairline weight. extra-light, ultra-light or 200. Extra-light/ultra-light weight.light or 300. Light weight.regular, normal, book, roman or 400 (default). Regular weight. This is the default weight if no weight is defined or inherited. medium or 500. Medium weight. semi-bold, demi-bold or 600. Semi-bold/demi-bold weight. bold or 700. Bold weight. This is the default when using <strong> or <b> tags in HTML formatted text with default fontWeight. extra-bold, ultra-bold or 800. Extra-bold/ultra-bold weight. black, heavy or 900. Black/heavy weight. lighter. A weight lighter than its surrounding text. When surrounding text is made bold, a value of lighter would make it medium. bolder. A weight heavier than its surrounding text. When surrounding text is made light, a value of bolder would make it regular."
+    },
+    {
+      "name": "fontWidth",
+      "desc": "The font width to apply for font selection (known in CSS as font-stretch) defines the width characteristics of a font variant between normal, condensed and expanded. Some font families have separate families assigned for different widths (for example, Avenir Next and Avenir Next Condensed), so make sure that the fontFamily you select supports the specified fontWidth. Valid values:ultra-condensed. Specifies the most condensed variant.extra-condensed. Specifies a very condensed variant.condensed. Specifies a condensed variant.semi-condensed. Specifies a semi-condensed variant. normal (default). Specifies the font variant classified as normal.semi-expanded. Specifies a semi-expanded variant.expanded. Specifies an expanded variant.extra-expanded. Specifies a very expanded variant. ultra-expanded. Specifies the most expanded variant."
+    },
+    {
+      "name": "hangingPunctuation",
+      "desc": "A Boolean value that defines whether punctuation should be positioned outside the margins of the text."
+    },
+    {
+      "name": "hyphenation",
+      "desc": "A Boolean value that indicates whether text should be hyphenated when necessary. By default, only components with a role of body or intro have hyphenation enabled. All other components default to false."
+    },
+    {
+      "name": "lineHeight",
+      "desc": "A number that provides the default line height, in points. The lineHeight is recalculated as necessary, relative to the fontSize. For example, when the font is automatically resized to fit a smaller screen, the line height will also be adjusted accordingly."
+    },
+    {
+      "name": "linkStyle",
+      "desc": "An object that provides text styling for all links within a text component.The none value is used for conditional design elements. Adding it here has no effect."
+    },
+    {
+      "name": "orderedListItems",
+      "desc": "An object for use with text components with HTML markup. You can create text styles containing an orderedListItems definition to configure how list items inside <ol> tags should be displayed.The none value is used for conditional design elements. Adding it here has no effect."
+    },
+    {
+      "name": "paragraphSpacingAfter",
+      "desc": "A number that defines the spacing after each paragraph in points relative to the lineHeight."
+    },
+    {
+      "name": "paragraphSpacingBefore",
+      "desc": "A number that defines the spacing before each paragraph in points relative to the lineHeight."
+    },
+    {
+      "name": "strikethrough",
+      "desc": "The text strikethrough. Set strikethrough to true to use the text color inherited from the textColor property as the strikethrough color, or provide a text decoration definition with a different color."
+    },
+    {
+      "name": "stroke",
+      "desc": "The stroke style for the text outline. By default, stroke will be omitted.The none value is used for conditional design elements. Adding it here has no effect."
+    },
+    {
+      "name": "textAlignment",
+      "desc": "The justification for all text within the component. If textAlignment is omitted or set to none, the justification will be determined by the text direction (left-to-right text will be aligned to the left and right-to-left text will be aligned to the right)."
+    },
+    {
+      "name": "textColor",
+      "desc": "The text color."
+    },
+    {
+      "name": "textShadow",
+      "desc": "The text shadow for this style.The none value is used for conditional design elements. Adding it here has no effect."
+    },
+    {
+      "name": "textTransform",
+      "desc": "The transform to apply to the text. Valid values: uppercaselowercasecapitalize. Capitalizes the first letter of all words in the string.smallcaps. Capitalizes the lower case letters as short capital letters.none (default)"
+    },
+    {
+      "name": "tracking",
+      "desc": "The amount of tracking (spacing between characters) in text, as a percentage of the fontSize. The actual spacing between letters is determined by combining information from the font and font size. Example: Set tracking to 0.5 to make the distance between characters increase by 50% of the fontSize. With a font size of 10, the additional space between characters is 5 points."
+    },
+    {
+      "name": "underline",
+      "desc": "The text underlining. This style can be used for links. Set underline to true to use the text color as the underline color, or provide a text decoration with a different color."
+    },
+    {
+      "name": "unorderedListItems",
+      "desc": "The object for use with text components with HTML markup. You can create text styles containing an unorderedListItems definition to configure how list items inside <ul> tags should be displayed.The none value is used for conditional design elements. Adding it here has no effect."
+    },
+    {
+      "name": "verticalAlignment",
+      "desc": "The vertical alignment of the text. You can use this property for superscripts and subscripts. To override values specified in parent text styles, use baseline.Defaults to baseline when unspecified, and inherits the value specified in a TextStyle applied to the same range.The values superscript and subscript also adjust the font size to 2/3 of the size defined for that character range."
+    }
+  ],
+  "inheritsFrom": [
+    "TextStyle"
+  ]
+}

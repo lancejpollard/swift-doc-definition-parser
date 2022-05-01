@@ -1,0 +1,27 @@
+{
+  "path": "/documentation/combine/publishers/decode",
+  "type": "Structure",
+  "name": "Publishers.Decode",
+  "desc": "A publisher that decodes elements received from an upstream publisher, using a given decoder.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, decoder: Coder)",
+      "desc": "Creates a publisher that decodes elements received from an upstream publisher, using a given decoder."
+    },
+    {
+      "name": "struct Output",
+      "desc": "A publisher that publishes elements specified by a range in the sequence of published elements."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream"
+    }
+  ],
+  "declaration": "struct Decode<Upstream, Output, Coder> where Upstream : Publisher, Output : Decodable, Coder : TopLevelDecoder, Upstream.Output == Coder.Input",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

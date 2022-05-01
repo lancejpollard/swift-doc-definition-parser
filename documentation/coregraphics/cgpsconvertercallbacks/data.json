@@ -1,0 +1,47 @@
+{
+  "path": "/documentation/coregraphics/cgpsconvertercallbacks",
+  "type": "Structure",
+  "name": "CGPSConverterCallbacks",
+  "desc": "A structure for holding the callbacks provided when you create a PostScript converter object.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(version: UInt32, beginDocument: CGPSConverterBeginDocumentCallback?, endDocument: CGPSConverterEndDocumentCallback?, beginPage: CGPSConverterBeginPageCallback?, endPage: CGPSConverterEndPageCallback?, noteProgress: CGPSConverterProgressCallback?, noteMessage: CGPSConverterMessageCallback?, releaseInfo: CGPSConverterReleaseInfoCallback?)"
+    },
+    {
+      "name": "var beginDocument: CGPSConverterBeginDocumentCallback?",
+      "desc": "The callback called at the beginning of the conversion of the PostScript document, or NULL."
+    },
+    {
+      "name": "var beginPage: CGPSConverterBeginPageCallback?",
+      "desc": "The callback called at the start of the conversion of each page in the PostScript document, or NULL."
+    },
+    {
+      "name": "var endDocument: CGPSConverterEndDocumentCallback?",
+      "desc": "The callback called at the end of conversion of the PostScript document, or NULL."
+    },
+    {
+      "name": "var endPage: CGPSConverterEndPageCallback?",
+      "desc": "The callback called at the end of the conversion of each page in the PostScript document, or NULL."
+    },
+    {
+      "name": "var noteMessage: CGPSConverterMessageCallback?",
+      "desc": "The callback called to pass any messages that might result during the conversion, or NULL."
+    },
+    {
+      "name": "var noteProgress: CGPSConverterProgressCallback?",
+      "desc": "The callback called periodically during the conversion to indicate that conversion is proceeding, or NULL."
+    },
+    {
+      "name": "var releaseInfo: CGPSConverterReleaseInfoCallback?",
+      "desc": "The callback called when the converter is deallocated, or NULL."
+    },
+    {
+      "name": "var version: UInt32",
+      "desc": "The version number of the structure passed in as a parameter to the converter creation functions. The structure defined below is version 0."
+    }
+  ],
+  "declaration": "struct CGPSConverterCallbacks"
+}

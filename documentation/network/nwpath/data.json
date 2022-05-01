@@ -1,0 +1,78 @@
+{
+  "path": "/documentation/network/nwpath",
+  "type": "Structure",
+  "name": "NWPath",
+  "desc": "An object that contains information about the properties of the network that a connection uses, or that are available to your app.",
+  "items": [
+    {
+      "name": "let status: NWPath.Status",
+      "desc": "A status indicating whether a path can be used by connections."
+    },
+    {
+      "name": "enum NWPath.Status",
+      "desc": "Status values indicating whether a path can be used by connections."
+    },
+    {
+      "name": "func usesInterfaceType(NWInterface.InterfaceType) -> Bool",
+      "desc": "Checks if connections using the path may send traffic over a specific interface type."
+    },
+    {
+      "name": "let availableInterfaces: [NWInterface]",
+      "desc": "A list of all interfaces available to the path, in order of preference."
+    },
+    {
+      "name": "var gateways: [NWEndpoint]",
+      "desc": "A list of gateways configured on the interfaces available to a path."
+    },
+    {
+      "name": "let supportsIPv4: Bool",
+      "desc": "A Boolean indicating whether the path can route IPv4 traffic."
+    },
+    {
+      "name": "let supportsIPv6: Bool",
+      "desc": "A Boolean indicating whether the path can route IPv6 traffic."
+    },
+    {
+      "name": "let supportsDNS: Bool",
+      "desc": "A Boolean indicating whether the path has a DNS server configured."
+    },
+    {
+      "name": "var isConstrained: Bool",
+      "desc": "A Boolean indicating whether the path uses an interface in Low Data Mode."
+    },
+    {
+      "name": "let isExpensive: Bool",
+      "desc": "A Boolean indicating whether the path uses an interface that is considered expensive, such as Cellular or a Personal Hotspot."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "The description of the network path."
+    },
+    {
+      "name": "let localEndpoint: NWEndpoint?",
+      "desc": "The local endpoint in use by a connection's network path."
+    },
+    {
+      "name": "let remoteEndpoint: NWEndpoint?",
+      "desc": "The remote endpoint in use by a connection's network path."
+    },
+    {
+      "name": "static func == (NWPath, NWPath) -> Bool"
+    },
+    {
+      "name": "static func != (NWPath, NWPath) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "var unsatisfiedReason: NWPath.UnsatisfiedReason"
+    },
+    {
+      "name": "enum NWPath.UnsatisfiedReason"
+    }
+  ],
+  "declaration": "struct NWPath",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "Equatable"
+  ]
+}

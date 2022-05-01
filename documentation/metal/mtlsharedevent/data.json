@@ -1,0 +1,24 @@
+{
+  "path": "/documentation/metal/mtlsharedevent",
+  "type": "Protocol",
+  "name": "MTLSharedEvent",
+  "desc": "An object you use to synchronize access to Metal resources across multiple CPUs, GPUs, and processes.",
+  "items": [
+    {
+      "name": "var signaledValue: UInt64",
+      "desc": "The current signal value for the shareable event."
+    },
+    {
+      "name": "func notify(MTLSharedEventListener, atValue: UInt64, block: MTLSharedEventNotificationBlock)",
+      "desc": "Schedules a notification handler to be called after the shareable event’s signal value equals or exceeds a given value."
+    },
+    {
+      "name": "func makeSharedEventHandle() -> MTLSharedEventHandle",
+      "desc": "Creates a new shareable event handle."
+    }
+  ],
+  "declaration": "protocol MTLSharedEvent",
+  "inheritsFrom": [
+    "MTLEvent"
+  ]
+}

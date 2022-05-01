@@ -1,0 +1,140 @@
+{
+  "path": "/documentation/foundation/thread",
+  "type": "Class",
+  "name": "Thread",
+  "desc": "A thread of execution.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Returns an initialized NSThread object."
+    },
+    {
+      "name": "init(target: Any, selector: Selector, object: Any?)",
+      "desc": "Returns an NSThread object initialized with the given arguments."
+    },
+    {
+      "name": "class func detachNewThreadSelector(Selector, toTarget: Any, with: Any?)",
+      "desc": "Detaches a new thread and uses the specified selector as the thread entry point."
+    },
+    {
+      "name": "func start()",
+      "desc": "Starts the receiver."
+    },
+    {
+      "name": "func main()",
+      "desc": "The main entry point routine for the thread."
+    },
+    {
+      "name": "class func sleep(until: Date)",
+      "desc": "Blocks the current thread until the time specified."
+    },
+    {
+      "name": "class func sleep(forTimeInterval: TimeInterval)",
+      "desc": "Sleeps the thread for a given time interval."
+    },
+    {
+      "name": "class func exit()",
+      "desc": "Terminates the current thread."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Changes the cancelled state of the receiver to indicate that it should exit."
+    },
+    {
+      "name": "var isExecuting: Bool",
+      "desc": "A Boolean value that indicates whether the receiver is executing."
+    },
+    {
+      "name": "var isFinished: Bool",
+      "desc": "A Boolean value that indicates whether the receiver has finished execution."
+    },
+    {
+      "name": "var isCancelled: Bool",
+      "desc": "A Boolean value that indicates whether the receiver is cancelled."
+    },
+    {
+      "name": "class var isMainThread: Bool",
+      "desc": "Returns a Boolean value that indicates whether the current thread is the main thread."
+    },
+    {
+      "name": "var isMainThread: Bool",
+      "desc": "A Boolean value that indicates whether the receiver is the main thread."
+    },
+    {
+      "name": "class var main: Thread",
+      "desc": "Returns the NSThread object representing the main thread."
+    },
+    {
+      "name": "class func isMultiThreaded() -> Bool",
+      "desc": "Returns whether the application is multithreaded."
+    },
+    {
+      "name": "class var current: Thread",
+      "desc": "Returns the thread object representing the current thread of execution."
+    },
+    {
+      "name": "class var callStackReturnAddresses: [NSNumber]",
+      "desc": "Returns an array containing the call stack return addresses."
+    },
+    {
+      "name": "class var callStackSymbols: [String]",
+      "desc": "Returns an array containing the call stack symbols."
+    },
+    {
+      "name": "var threadDictionary: NSMutableDictionary",
+      "desc": "The thread object's dictionary."
+    },
+    {
+      "name": "let NSAssertionHandlerKey: String"
+    },
+    {
+      "name": "var name: String?",
+      "desc": "The name of the receiver."
+    },
+    {
+      "name": "var stackSize: Int",
+      "desc": "The stack size of the receiver, in bytes."
+    },
+    {
+      "name": "var qualityOfService: QualityOfService"
+    },
+    {
+      "name": "enum QualityOfService",
+      "desc": "Constants that indicate the nature and importance of work to the system."
+    },
+    {
+      "name": "class func threadPriority() -> Double",
+      "desc": "Returns the current thread’s priority."
+    },
+    {
+      "name": "var threadPriority: Double",
+      "desc": "The receiver’s priority"
+    },
+    {
+      "name": "class func setThreadPriority(Double) -> Bool",
+      "desc": "Sets the current thread’s priority."
+    },
+    {
+      "name": "static let NSDidBecomeSingleThreaded: NSNotification.Name",
+      "desc": "Not implemented."
+    },
+    {
+      "name": "static let NSThreadWillExit: NSNotification.Name",
+      "desc": "An NSThread object posts this notification when it receives the exit() message, before the thread exits. Observer methods invoked to receive this notification execute in the exiting thread, before it exits."
+    },
+    {
+      "name": "static let NSWillBecomeMultiThreaded: NSNotification.Name",
+      "desc": "Posted when the first thread is detached from the current thread. The NSThread class posts this notification at most once—the first time a thread is detached using detachNewThreadSelector(_:toTarget:with:) or the start() method. Subsequent invocations of those methods do not post this notification. Observers of this notification have their notification method invoked in the main thread, not the new thread. The observer notification methods always execute before the new thread begins executing."
+    },
+    {
+      "name": "init(block: () -> Void)"
+    },
+    {
+      "name": "class func detachNewThread(() -> Void)"
+    }
+  ],
+  "declaration": "class Thread : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

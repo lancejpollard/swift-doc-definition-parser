@@ -1,0 +1,56 @@
+{
+  "path": "/documentation/sensorkit/srdeviceusagereport",
+  "type": "Class",
+  "name": "SRDeviceUsageReport",
+  "desc": "The frequency and relative duration that the user uses their device, particular Apple apps, or websites.",
+  "items": [
+    {
+      "name": "var duration: TimeInterval",
+      "desc": "The duration that the report spans."
+    },
+    {
+      "name": "var totalScreenWakes: Int",
+      "desc": "The total number of screen wakes for the device."
+    },
+    {
+      "name": "var totalUnlocks: Int",
+      "desc": "The total number of unlocks for the device."
+    },
+    {
+      "name": "var totalUnlockDuration: TimeInterval",
+      "desc": "The duration of time the device is in an unlocked state."
+    },
+    {
+      "name": "var applicationUsageByCategory: [SRDeviceUsageReport.CategoryKey : [SRDeviceUsageReport.ApplicationUsage]]",
+      "desc": "The usage time of apps per category."
+    },
+    {
+      "name": "class SRDeviceUsageReport.ApplicationUsage",
+      "desc": "An object that describes the user’s app activity over a period of time."
+    },
+    {
+      "name": "struct SRDeviceUsageReport.CategoryKey",
+      "desc": "Categories of apps or websites that the user uses."
+    },
+    {
+      "name": "var notificationUsageByCategory: [SRDeviceUsageReport.CategoryKey : [SRDeviceUsageReport.NotificationUsage]]",
+      "desc": "The frequency of notifications per category."
+    },
+    {
+      "name": "class SRDeviceUsageReport.NotificationUsage",
+      "desc": "An object that describes notification frequency and the manner in which the user interacts with notifications."
+    },
+    {
+      "name": "var webUsageByCategory: [SRDeviceUsageReport.CategoryKey : [SRDeviceUsageReport.WebUsage]]",
+      "desc": "The amount of time the user accesses domains per category."
+    },
+    {
+      "name": "class SRDeviceUsageReport.WebUsage",
+      "desc": "An object that describes a user’s website usage."
+    }
+  ],
+  "declaration": "class SRDeviceUsageReport : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

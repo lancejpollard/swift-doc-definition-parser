@@ -1,0 +1,192 @@
+{
+  "path": "/documentation/appkit/nsdocumentcontroller",
+  "type": "Class",
+  "name": "NSDocumentController",
+  "desc": "An object that manages an app's documents.",
+  "items": [
+    {
+      "name": "class var shared: NSDocumentController",
+      "desc": "Returns the shared NSDocumentController instance."
+    },
+    {
+      "name": "init()",
+      "desc": "This method is the designated initializer for NSDocumentController."
+    },
+    {
+      "name": "init?(coder: NSCoder)",
+      "desc": "This method initializes a new NSDocumentController from the coder."
+    },
+    {
+      "name": "func document(for: URL) -> NSDocument?",
+      "desc": "Returns, for a given URL, the open document whose file or file package is located by the URL, or nil if there is no such open document."
+    },
+    {
+      "name": "func duplicateDocument(withContentsOf: URL, copying: Bool, displayName: String?) -> NSDocument",
+      "desc": "Creates a new document by reading the contents for the document from another URL, presents its user interface, and returns the document if successful."
+    },
+    {
+      "name": "func openDocument(withContentsOf: URL, display: Bool, completionHandler: (NSDocument?, Bool, Error?) -> Void)",
+      "desc": "Opens a document located by a URL, optionally presents its user interface, and calls the passed-in completion handler."
+    },
+    {
+      "name": "func openUntitledDocumentAndDisplay(Bool) -> NSDocument",
+      "desc": "Creates a new untitled document, presents its user interface if displayDocument is true, and returns the document if successful."
+    },
+    {
+      "name": "func makeDocument(for: URL?, withContentsOf: URL, ofType: String) -> NSDocument",
+      "desc": "Instantiates a document located by a URL, of a specified type, but by reading the contents for the document from another URL, and returns it if successful."
+    },
+    {
+      "name": "func makeDocument(withContentsOf: URL, ofType: String) -> NSDocument",
+      "desc": "Instantiates a document located by a URL, of a specified type, and returns it if successful."
+    },
+    {
+      "name": "func makeUntitledDocument(ofType: String) -> NSDocument",
+      "desc": "Instantiates a new untitled document of the specified type and returns it if successful."
+    },
+    {
+      "name": "func reopenDocument(for: URL?, withContentsOf: URL, display: Bool, completionHandler: (NSDocument?, Bool, Error?) -> Void)",
+      "desc": "Reopens a document, optionally located by a URL, by reading the contents for the document from another URL, optionally presents its user interface, and calls the passed-in completion handler."
+    },
+    {
+      "name": "var documents: [NSDocument]",
+      "desc": "The document objects managed by the receiver."
+    },
+    {
+      "name": "func addDocument(NSDocument)",
+      "desc": "Adds the given document to the list of open documents."
+    },
+    {
+      "name": "var currentDocument: NSDocument?",
+      "desc": "The document object associated with the main window."
+    },
+    {
+      "name": "func document(for: NSWindow) -> NSDocument?",
+      "desc": "Returns the document object whose window controller owns a specified window."
+    },
+    {
+      "name": "var hasEditedDocuments: Bool",
+      "desc": "A Boolean value indicating whether the receiver has any documents with unsaved changes."
+    },
+    {
+      "name": "func removeDocument(NSDocument)",
+      "desc": "Removes the given document from the list of open documents."
+    },
+    {
+      "name": "var documentClassNames: [String]",
+      "desc": "An array of strings representing the custom document classes supported by this app."
+    },
+    {
+      "name": "var defaultType: String?",
+      "desc": "Returns the name of the document type that should be used when creating new documents."
+    },
+    {
+      "name": "func documentClass(forType: String) -> AnyClass?",
+      "desc": "Returns the NSDocument subclass associated with a given document type."
+    },
+    {
+      "name": "func displayName(forType: String) -> String?",
+      "desc": "Returns the descriptive name for the specified document type, which is used in the File Format pop-up menu of the Save As dialog."
+    },
+    {
+      "name": "func typeForContents(of: URL) -> String",
+      "desc": "Returns, for a specified URL, the document type identifier to use when opening the document at that location, if successful."
+    },
+    {
+      "name": "var autosavingDelay: TimeInterval",
+      "desc": "The time interval (in seconds) for periodic autosaving."
+    },
+    {
+      "name": "func closeAllDocuments(withDelegate: Any?, didCloseAllSelector: Selector?, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Iterates through all the open documents and tries to close them one by one using the specified delegate."
+    },
+    {
+      "name": "func reviewUnsavedDocuments(withAlertTitle: String?, cancellable: Bool, delegate: Any?, didReviewAllSelector: Selector?, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Displays an alert asking if the user wants to review unsaved documents, quit regardless of unsaved documents, or cancel the save operation."
+    },
+    {
+      "name": "func newDocument(Any?)",
+      "desc": "An action method called by the New menu command, this method creates a new NSDocument object and adds it to the list of such objects managed by the document controller."
+    },
+    {
+      "name": "func openDocument(Any?)",
+      "desc": "An action method called by the Open menu command, it runs the modal Open panel and, based on the selected filenames, creates one or more NSDocument objects from the contents of the files."
+    },
+    {
+      "name": "func saveAllDocuments(Any?)",
+      "desc": "As the action method called by the Save All command, saves all open documents of the application that need to be saved."
+    },
+    {
+      "name": "func beginOpenPanel(completionHandler: ([URL]?) -> Void)",
+      "desc": "Presents an Open dialog and delivers the results to a completion handler as an array of URLs for the chosen files (or nil)."
+    },
+    {
+      "name": "func beginOpenPanel(NSOpenPanel, forTypes: [String]?, completionHandler: (Int) -> Void)",
+      "desc": "Presents a nonmodal Open dialog that displays files you can open from a list of UTIs."
+    },
+    {
+      "name": "func runModalOpenPanel(NSOpenPanel, forTypes: [String]?) -> Int",
+      "desc": "Presents a modal Open dialog and limits selection to specific file types."
+    },
+    {
+      "name": "var currentDirectory: String?",
+      "desc": "The directory path to be used as the starting point in the Open panel."
+    },
+    {
+      "name": "func urlsFromRunningOpenPanel() -> [URL]?",
+      "desc": "An array of URLs corresponding to the files selected in a running open panel."
+    },
+    {
+      "name": "var maximumRecentDocumentCount: Int",
+      "desc": "The maximum number of items that may be presented in the standard Open Recent menu."
+    },
+    {
+      "name": "func clearRecentDocuments(Any?)",
+      "desc": "Empties the recent documents list for the application."
+    },
+    {
+      "name": "func noteNewRecentDocumentURL(URL)",
+      "desc": "Adds or replaces an Open Recent menu item corresponding to the data located by the URL."
+    },
+    {
+      "name": "func noteNewRecentDocument(NSDocument)",
+      "desc": "Adds or replaces an Open Recent menu item corresponding to the document."
+    },
+    {
+      "name": "var recentDocumentURLs: [URL]",
+      "desc": "The list of recent-document URLs."
+    },
+    {
+      "name": "func validateUserInterfaceItem(NSValidatedUserInterfaceItem) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a given user interface item should be enabled."
+    },
+    {
+      "name": "func presentError(Error) -> Bool",
+      "desc": "Presents an error alert to the user as a modal panel."
+    },
+    {
+      "name": "func presentError(Error, modalFor: NSWindow, delegate: Any?, didPresent: Selector?, contextInfo: UnsafeMutableRawPointer?)",
+      "desc": "Presents an error alert to the user as a modal panel."
+    },
+    {
+      "name": "func willPresentError(Error) -> Error",
+      "desc": "Indicates an error condition and provides the opportunity to return the same or a different error."
+    },
+    {
+      "name": "var allowsAutomaticShareMenu: Bool"
+    },
+    {
+      "name": "func standardShareMenuItem() -> NSMenuItem"
+    }
+  ],
+  "declaration": "@MainActor class NSDocumentController : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "NSMenuItemValidation",
+    "NSUserInterfaceValidations",
+    "NSWindowRestoration"
+  ]
+}

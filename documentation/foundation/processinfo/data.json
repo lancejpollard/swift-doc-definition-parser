@@ -1,0 +1,148 @@
+{
+  "path": "/documentation/foundation/processinfo",
+  "type": "Class",
+  "name": "ProcessInfo",
+  "desc": "A collection of information about the current process.",
+  "items": [
+    {
+      "name": "class var processInfo: ProcessInfo",
+      "desc": "Returns the process information agent for the process."
+    },
+    {
+      "name": "var arguments: [String]",
+      "desc": "Array of strings with the command-line arguments for the process."
+    },
+    {
+      "name": "var environment: [String : String]",
+      "desc": "The variable names (keys) and their values in the environment from which the process was launched."
+    },
+    {
+      "name": "var globallyUniqueString: String",
+      "desc": "Global unique identifier for the process."
+    },
+    {
+      "name": "var isMacCatalystApp: Bool",
+      "desc": "A Boolean value that indicates whether the process originated as an iOS app and runs on macOS."
+    },
+    {
+      "name": "var isiOSAppOnMac: Bool",
+      "desc": "A Boolean value that indicates whether the process is an iPhone or iPad app running on a Mac."
+    },
+    {
+      "name": "var processIdentifier: Int32",
+      "desc": "The identifier of the process (often called process ID)."
+    },
+    {
+      "name": "var processName: String",
+      "desc": "The name of the process."
+    },
+    {
+      "name": "var userName: String",
+      "desc": "Returns the account name of the current user."
+    },
+    {
+      "name": "var fullUserName: String",
+      "desc": "Returns the full name of the current user."
+    },
+    {
+      "name": "func disableSuddenTermination()",
+      "desc": "Disables the application for quickly killing using sudden termination."
+    },
+    {
+      "name": "func enableSuddenTermination()",
+      "desc": "Enables the application for quick killing using sudden termination."
+    },
+    {
+      "name": "func disableAutomaticTermination(String)",
+      "desc": "Disables automatic termination for the application."
+    },
+    {
+      "name": "func enableAutomaticTermination(String)",
+      "desc": "Enables automatic termination for the application."
+    },
+    {
+      "name": "var automaticTerminationSupportEnabled: Bool",
+      "desc": "A Boolean value indicating whether the app supports automatic termination."
+    },
+    {
+      "name": "var hostName: String",
+      "desc": "The name of the host computer on which the process is executing."
+    },
+    {
+      "name": "var operatingSystemVersionString: String",
+      "desc": "A string containing the version of the operating system on which the process is executing."
+    },
+    {
+      "name": "var operatingSystemVersion: OperatingSystemVersion",
+      "desc": "The version of the operating system on which the process is executing."
+    },
+    {
+      "name": "func isOperatingSystemAtLeast(OperatingSystemVersion) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the version of the operating system on which the process is executing is the same or later than the given version."
+    },
+    {
+      "name": "var processorCount: Int",
+      "desc": "The number of processing cores available on the computer."
+    },
+    {
+      "name": "var activeProcessorCount: Int",
+      "desc": "The number of active processing cores available on the computer."
+    },
+    {
+      "name": "var physicalMemory: UInt64",
+      "desc": "The amount of physical memory on the computer in bytes."
+    },
+    {
+      "name": "var systemUptime: TimeInterval",
+      "desc": "The amount of time the system has been awake since the last time it was restarted."
+    },
+    {
+      "name": "func beginActivity(options: ProcessInfo.ActivityOptions, reason: String) -> NSObjectProtocol",
+      "desc": "Begin an activity using the given options and reason."
+    },
+    {
+      "name": "func endActivity(NSObjectProtocol)",
+      "desc": "Ends the given activity."
+    },
+    {
+      "name": "func performActivity(options: ProcessInfo.ActivityOptions, reason: String, using: () -> Void)",
+      "desc": "Synchronously perform an activity defined by a given block using the given options."
+    },
+    {
+      "name": "func performExpiringActivity(withReason: String, using: (Bool) -> Void)",
+      "desc": "Performs the specified block asynchronously and notifies you if the process is about to be suspended."
+    },
+    {
+      "name": "var thermalState: ProcessInfo.ThermalState",
+      "desc": "The current thermal state of the system."
+    },
+    {
+      "name": "var isLowPowerModeEnabled: Bool",
+      "desc": "A Boolean value that indicates the current state of Low Power Mode."
+    },
+    {
+      "name": "struct OperatingSystemVersion",
+      "desc": "A structure that contains version information about the currently executing operating system, including major, minor, and patch version numbers."
+    },
+    {
+      "name": "struct ProcessInfo.ActivityOptions",
+      "desc": "Option flags used with beginActivity(options:reason:) and performActivity(options:reason:using:)."
+    },
+    {
+      "name": "enum ProcessInfo.ThermalState",
+      "desc": "Values used to indicate the system’s thermal state."
+    },
+    {
+      "name": "class let thermalStateDidChangeNotification: NSNotification.Name",
+      "desc": "Posts when the thermal state of the system changes."
+    },
+    {
+      "name": "static let NSProcessInfoPowerStateDidChange: NSNotification.Name",
+      "desc": "Posts when the power state of a device changes."
+    }
+  ],
+  "declaration": "class ProcessInfo : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

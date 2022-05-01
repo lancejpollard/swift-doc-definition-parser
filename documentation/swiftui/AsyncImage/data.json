@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/swiftui/asyncimage",
+  "type": "Structure",
+  "name": "AsyncImage",
+  "desc": "A view that asynchronously loads and displays an image.",
+  "items": [
+    {
+      "name": "init(url: URL?, scale: CGFloat)",
+      "desc": "Loads and displays an image from the specified URL."
+    },
+    {
+      "name": "init<I, P>(url: URL?, scale: CGFloat, content: (Image) -> I, placeholder: () -> P)",
+      "desc": "Loads and displays a modifiable image from the specified URL using a custom placeholder until the image loads."
+    },
+    {
+      "name": "init(url: URL?, scale: CGFloat, transaction: Transaction, content: (AsyncImagePhase) -> Content)",
+      "desc": "Loads and displays a modifiable image from the specified URL in phases."
+    },
+    {
+      "name": "var body: some View",
+      "desc": "The content and behavior of the view."
+    },
+    {
+      "name": "typealias Body",
+      "desc": "The type of view representing the body of this view."
+    }
+  ],
+  "declaration": "struct AsyncImage<Content> where Content : View",
+  "conformsTo": [
+    "View"
+  ]
+}

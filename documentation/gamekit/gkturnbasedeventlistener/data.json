@@ -1,0 +1,37 @@
+{
+  "path": "/documentation/gamekit/gkturnbasedeventlistener",
+  "type": "Protocol",
+  "name": "GKTurnBasedEventListener",
+  "desc": "The protocol that handles turn-based and data-exchange events between participants in a match.",
+  "items": [
+    {
+      "name": "func player(GKPlayer, receivedTurnEventFor: GKTurnBasedMatch, didBecomeActive: Bool)",
+      "desc": "Handles turn-based match events, such as accepting invitations, passing turns, and saving match data."
+    },
+    {
+      "name": "func player(GKPlayer, didRequestMatchWithOtherPlayers: [GKPlayer])",
+      "desc": "Handles when the player uses Game Center to start a match with other players."
+    },
+    {
+      "name": "func player(GKPlayer, matchEnded: GKTurnBasedMatch)",
+      "desc": "Handles when the match ends."
+    },
+    {
+      "name": "func player(GKPlayer, wantsToQuitMatch: GKTurnBasedMatch)",
+      "desc": "Handles when the current participant wants to quit a match."
+    },
+    {
+      "name": "func player(GKPlayer, receivedExchangeRequest: GKTurnBasedExchange, for: GKTurnBasedMatch)",
+      "desc": "Handles when the local player receives an exchange request from another participant."
+    },
+    {
+      "name": "func player(GKPlayer, receivedExchangeReplies: [GKTurnBasedExchangeReply], forCompletedExchange: GKTurnBasedExchange, for: GKTurnBasedMatch)",
+      "desc": "Handles when all recipients of an exchange request respond."
+    },
+    {
+      "name": "func player(GKPlayer, receivedExchangeCancellation: GKTurnBasedExchange, for: GKTurnBasedMatch)",
+      "desc": "Handles when the sender cancels an exchange request they intiated."
+    }
+  ],
+  "declaration": "protocol GKTurnBasedEventListener"
+}

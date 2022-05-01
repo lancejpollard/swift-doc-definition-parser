@@ -1,0 +1,115 @@
+{
+  "path": "/documentation/foundation/xmlelement",
+  "type": "Class",
+  "name": "XMLElement",
+  "desc": "The element nodes in an XML tree structure.",
+  "items": [
+    {
+      "name": "init(name: String)",
+      "desc": "Returns an NSXMLElement object initialized with the specified name."
+    },
+    {
+      "name": "init(name: String, stringValue: String?)",
+      "desc": "Returns an NSXMLElement object initialized with a specified name and a single text-node child containing a specified value."
+    },
+    {
+      "name": "init(xmlString: String)",
+      "desc": "Returns an NSXMLElement object created from a specified string containing XML markup."
+    },
+    {
+      "name": "init(name: String, uri: String?)",
+      "desc": "Returns an NSXMLElement object initialized with the specified name and URI."
+    },
+    {
+      "name": "func elements(forName: String) -> [XMLElement]",
+      "desc": "Returns the child element nodes (as NSXMLElement objects) of the receiver that have a specified name."
+    },
+    {
+      "name": "func elements(forLocalName: String, uri: String?) -> [XMLElement]",
+      "desc": "Returns the child element nodes (as NSXMLElement objects) of the receiver that are matched with the specified local name and URI."
+    },
+    {
+      "name": "func addChild(XMLNode)",
+      "desc": "Adds a child node at the end of the receiver’s current list of children."
+    },
+    {
+      "name": "func insertChild(XMLNode, at: Int)",
+      "desc": "Inserts a new child node at a specified location in the receiver’s list of child nodes."
+    },
+    {
+      "name": "func insertChildren([XMLNode], at: Int)",
+      "desc": "Inserts an array of child nodes at a specified location in the receiver’s list of children."
+    },
+    {
+      "name": "func removeChild(at: Int)",
+      "desc": "Removes the child node of the receiver identified by a given index."
+    },
+    {
+      "name": "func replaceChild(at: Int, with: XMLNode)",
+      "desc": "Replaces a child node at a specified location with another child node."
+    },
+    {
+      "name": "func setChildren([XMLNode]?)",
+      "desc": "Sets all child nodes of the receiver at once, replacing any existing children."
+    },
+    {
+      "name": "func normalizeAdjacentTextNodesPreservingCDATA(Bool)",
+      "desc": "Coalesces adjacent text nodes of the receiver that you have explicitly added, optionally including CDATA sections."
+    },
+    {
+      "name": "func addAttribute(XMLNode)",
+      "desc": "Adds an attribute node to the receiver."
+    },
+    {
+      "name": "func attribute(forName: String) -> XMLNode?",
+      "desc": "Returns the attribute node of the receiver with the specified name."
+    },
+    {
+      "name": "func attribute(forLocalName: String, uri: String?) -> XMLNode?",
+      "desc": "Returns the attribute node of the receiver that is identified by a local name and URI."
+    },
+    {
+      "name": "var attributes: [XMLNode]?",
+      "desc": "Sets all attributes of the receiver at once, replacing any existing attribute nodes."
+    },
+    {
+      "name": "func removeAttribute(forName: String)",
+      "desc": "Removes an attribute node identified by name."
+    },
+    {
+      "name": "func setAttributesWith([String : String])",
+      "desc": "Sets the attributes of the receiver based on the key-value pairs specified in the passed dictionary."
+    },
+    {
+      "name": "func addNamespace(XMLNode)",
+      "desc": "Adds a namespace node to the receiver."
+    },
+    {
+      "name": "var namespaces: [XMLNode]?",
+      "desc": "Sets all of the namespace nodes of the receiver at once, replacing any existing namespace nodes."
+    },
+    {
+      "name": "func namespace(forPrefix: String) -> XMLNode?",
+      "desc": "Returns the namespace node with a specified prefix."
+    },
+    {
+      "name": "func removeNamespace(forPrefix: String)",
+      "desc": "Removes a namespace node that is identified by a given prefix."
+    },
+    {
+      "name": "func resolveNamespace(forName: String) -> XMLNode?",
+      "desc": "Returns the namespace node with the prefix matching the given qualified name."
+    },
+    {
+      "name": "func resolvePrefix(forNamespaceURI: String) -> String?",
+      "desc": "Returns the prefix associated with the specified URI."
+    },
+    {
+      "name": "init(kind: XMLNode.Kind, options: XMLNode.Options)"
+    }
+  ],
+  "declaration": "class XMLElement : XMLNode",
+  "inheritsFrom": [
+    "XMLNode"
+  ]
+}

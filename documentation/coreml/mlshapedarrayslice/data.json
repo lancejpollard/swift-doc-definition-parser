@@ -1,0 +1,194 @@
+{
+  "path": "/documentation/coreml/mlshapedarrayslice",
+  "type": "Generic Structure",
+  "name": "MLShapedArraySlice",
+  "desc": "A multidimensional subset of elements from a shaped array type.",
+  "items": [
+    {
+      "name": "init(scalar: Scalar)",
+      "desc": "Creates a shaped array slice with exactly one value and zero dimensions."
+    },
+    {
+      "name": "init(arrayLiteral: Scalar...)",
+      "desc": "Creates a shaped array slice from a list of values."
+    },
+    {
+      "name": "init<S>(scalars: S, shape: [Int])",
+      "desc": "Creates a shaped array slice from an array of values."
+    },
+    {
+      "name": "init(repeating: Scalar, shape: [Int])",
+      "desc": "Creates a shaped array slice that initializes every element to the same value."
+    },
+    {
+      "name": "init(identityMatrixOfSize: Int)",
+      "desc": "Creates a shaped array slice that’s an identity matrix of integers."
+    },
+    {
+      "name": "init(randomScalarsIn: Range<Scalar>, shape: [Int])",
+      "desc": "Creates a shaped array that initializes the elements to random integer values within a range."
+    },
+    {
+      "name": "init(MLMultiArray)",
+      "desc": "Creates a shaped array slice from a multiarray."
+    },
+    {
+      "name": "init(converting: MLMultiArray)",
+      "desc": "Creates a shaped array slice by converting a multiarray."
+    },
+    {
+      "name": "init<T>(converting: T)",
+      "desc": "Creates a shaped array slice by converting another shaped array type."
+    },
+    {
+      "name": "init<S>(concatenating: S, alongAxis: Int)",
+      "desc": "Merges a sequence of shaped arrays into one shaped array along an axis."
+    },
+    {
+      "name": "init(bytesNoCopy: UnsafeRawPointer, shape: [Int], deallocator: Data.Deallocator)",
+      "desc": "Creates a shaped array slice from a data pointer."
+    },
+    {
+      "name": "init(bytesNoCopy: UnsafeRawPointer, shape: [Int], strides: [Int], deallocator: Data.Deallocator)",
+      "desc": "Creates a shaped array slice from a data pointer with memory strides."
+    },
+    {
+      "name": "init(unsafeUninitializedShape: [Int], initializingWith: (inout UnsafeMutableBufferPointer<Scalar>, [Int]) -> Void)",
+      "desc": "Creates a shaped array slice from a shape and a closure that initializes its memory."
+    },
+    {
+      "name": "var isScalar: Bool",
+      "desc": "A Boolean value that indicates whether the shaped array slice has zero dimensions."
+    },
+    {
+      "name": "let shape: [Int]",
+      "desc": "An integer array in which each element represents the size of the corresponding dimension."
+    },
+    {
+      "name": "var strides: [Int]",
+      "desc": "An integer array in which each element is the number of memory locations that spans the length of the corresponding dimension."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value indicating whether the collection is empty."
+    },
+    {
+      "name": "var scalarCount: Int",
+      "desc": "The total number of elements in the shaped array slice."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of elements in the collection."
+    },
+    {
+      "name": "var underestimatedCount: Int",
+      "desc": "A value less than or equal to the number of elements in the collection."
+    },
+    {
+      "name": "var scalar: Scalar?",
+      "desc": "A computed property that returns the first element when the shape isn’t empty, or sets the shaped array’s underlying scalar type."
+    },
+    {
+      "name": "var scalars: [Scalar]",
+      "desc": "A computed property that generates a linear array that contains every element, or assigns the elements of an array to the shaped array’s elements."
+    },
+    {
+      "name": "subscript(scalarAt: Int...) -> Scalar",
+      "desc": "Accesses an element in the shaped array using a list of indices that represent a multidimensional location."
+    },
+    {
+      "name": "subscript<C>(scalarAt: C) -> Scalar",
+      "desc": "Accesses an element in the shaped array using a collection of indices that represent a multidimensional location."
+    },
+    {
+      "name": "subscript(Int) -> MLShapedArraySlice<Scalar>",
+      "desc": "Accesses a slice at an index in the shaped array slice’s first dimension."
+    },
+    {
+      "name": "subscript<R>(R) -> MLShapedArraySlice<Scalar>",
+      "desc": "Accesses a slice with an integer range expression in the shaped array slice’s first dimension."
+    },
+    {
+      "name": "subscript(MLShapedArrayRangeExpression) -> MLShapedArraySlice<Scalar>",
+      "desc": "Accesses a slice with a shaped-array range expression in the shaped array slice’s first dimension."
+    },
+    {
+      "name": "subscript((UnboundedRange_) -> Void) -> MLShapedArraySlice<Scalar>",
+      "desc": "Accesses a slice with an unbounded range in the shaped array slice’s first dimension."
+    },
+    {
+      "name": "subscript((UnboundedRange_) -> ()) -> MLShapedArraySlice<Scalar>",
+      "desc": "Accesses a slice with an unbounded range in the shaped array slice’s first dimension."
+    },
+    {
+      "name": "subscript(Int...) -> MLShapedArraySlice<Scalar>",
+      "desc": "Accesses a slice using a list of integers, in which each element is an index in the corresponding dimension."
+    },
+    {
+      "name": "subscript<C>(C) -> MLShapedArraySlice<Scalar>",
+      "desc": "Accesses a slice using a collection of integers, in which each element is an index in the corresponding dimension."
+    },
+    {
+      "name": "subscript<C>(C) -> MLShapedArraySlice<Scalar>",
+      "desc": "Accesses a slice using a collection of integer ranges, in which each element is a range in the corresponding dimension."
+    },
+    {
+      "name": "subscript(MLShapedArrayRangeExpression...) -> MLShapedArraySlice<Scalar>",
+      "desc": "Accesses a slice using a list of range expressions, in which each element is a range in the corresponding dimension."
+    },
+    {
+      "name": "subscript<C>(C) -> MLShapedArraySlice<Scalar>",
+      "desc": "Accesses a slice using a collection of range expressions, in which each element is a range in the corresponding dimension."
+    },
+    {
+      "name": "func withUnsafeShapedBufferPointer<R>((UnsafeBufferPointer<Scalar>, [Int], [Int]) -> R) -> R",
+      "desc": "Provides a closure with a read-only pointer to the shaped array slice’s underlying memory."
+    },
+    {
+      "name": "func fill(with: Scalar)",
+      "desc": "Sets all the shaped array’s elements to a scalar value."
+    },
+    {
+      "name": "func fill<C>(with: C)",
+      "desc": "Assigns the shaped array’s elements to the elements in a collection, repeatedly, if necessary."
+    },
+    {
+      "name": "func withUnsafeMutableShapedBufferPointer<R>((inout UnsafeMutableBufferPointer<Scalar>, [Int], [Int]) -> R) -> R",
+      "desc": "Provides a closure with a read-write pointer to the shaped array slice’s underlying memory."
+    },
+    {
+      "name": "typealias MLShapedArraySlice.Element",
+      "desc": "A type that defines the shaped array’s elements."
+    },
+    {
+      "name": "typealias MLShapedArraySlice.Index",
+      "desc": "A type that defines the shaped array’s indices."
+    },
+    {
+      "name": "typealias MLShapedArraySlice.Indices",
+      "desc": "A type that defines the shaped array’s index ranges."
+    },
+    {
+      "name": "typealias MLShapedArraySlice.Iterator",
+      "desc": "A type that defines the shaped array’s iterator."
+    },
+    {
+      "name": "typealias MLShapedArraySlice.SubSequence",
+      "desc": "A type that defines the shaped array’s slices."
+    },
+    {
+      "name": "typealias MLShapedArraySlice.ArrayLiteralElement",
+      "desc": "A type that restricts the elements of an array literal that initializes the shaped array."
+    },
+    {
+      "name": "init(data: Data, shape: [Int])"
+    },
+    {
+      "name": "init(data: Data, shape: [Int], strides: [Int])"
+    }
+  ],
+  "declaration": "struct MLShapedArraySlice<Scalar> where Scalar : MLShapedArrayScalar",
+  "conformsTo": [
+    "MLShapedArrayProtocol"
+  ]
+}

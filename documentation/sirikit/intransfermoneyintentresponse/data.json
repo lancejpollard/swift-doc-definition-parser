@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/sirikit/intransfermoneyintentresponse",
+  "type": "Class",
+  "name": "INTransferMoneyIntentResponse",
+  "desc": "Your app’s response to a request to transfer money.DeprecatedThis intent is no longer available. You may define a custom intent instead. For more information, see Deprecated SiriKit Intent Domains.",
+  "items": [
+    {
+      "name": "init(code: INTransferMoneyIntentResponseCode, userActivity: NSUserActivity?)",
+      "desc": "Initializes the response object with the specified code and user activity object."
+    },
+    {
+      "name": "var code: INTransferMoneyIntentResponseCode",
+      "desc": "The code indicating whether you successfully handled the intent."
+    },
+    {
+      "name": "enum INTransferMoneyIntentResponseCode",
+      "desc": "Constants indicating the state of the response."
+    },
+    {
+      "name": "var fromAccount: INPaymentAccount?",
+      "desc": "The user account providing the funds."
+    },
+    {
+      "name": "var toAccount: INPaymentAccount?",
+      "desc": "The user account receiving the funds."
+    },
+    {
+      "name": "var transactionAmount: INPaymentAmount?",
+      "desc": "The amount of money to transfer between accounts."
+    },
+    {
+      "name": "var transactionScheduledDate: INDateComponentsRange?",
+      "desc": "The date on which the transfer is to occur."
+    },
+    {
+      "name": "var transactionNote: String?",
+      "desc": "Notes to include with the transaction."
+    },
+    {
+      "name": "var transferFee: INCurrencyAmount?",
+      "desc": "The fee charged for performing the transaction."
+    }
+  ],
+  "declaration": "class INTransferMoneyIntentResponse : INIntentResponse",
+  "inheritsFrom": [
+    "INIntentResponse"
+  ]
+}

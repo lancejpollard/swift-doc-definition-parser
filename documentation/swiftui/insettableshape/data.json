@@ -1,0 +1,38 @@
+{
+  "path": "/documentation/swiftui/insettableshape",
+  "type": "Protocol",
+  "name": "InsettableShape",
+  "desc": "A shape type that is able to inset itself to produce another shape.",
+  "items": [
+    {
+      "name": "func strokeBorder<S>(S, lineWidth: CGFloat, antialiased: Bool) -> some View",
+      "desc": "Returns a view that is the result of filling the width-sized border (aka inner stroke) of self with content. This is equivalent to insetting self by width / 2 and stroking the resulting shape with width as the line-width."
+    },
+    {
+      "name": "func strokeBorder<S>(S, style: StrokeStyle, antialiased: Bool) -> some View",
+      "desc": "Returns a view that is the result of insetting self by style.lineWidth / 2, stroking the resulting shape with style, and then filling with content."
+    },
+    {
+      "name": "func strokeBorder(lineWidth: CGFloat, antialiased: Bool) -> some View",
+      "desc": "Returns a view that is the result of filling the width-sized border (aka inner stroke) of self with the foreground color. This is equivalent to insetting self by width / 2 and stroking the resulting shape with width as the line-width."
+    },
+    {
+      "name": "func strokeBorder(style: StrokeStyle, antialiased: Bool) -> some View",
+      "desc": "Returns a view that is the result of insetting self by style.lineWidth / 2, stroking the resulting shape with style, and then filling with the foreground color."
+    },
+    {
+      "name": "func inset(by: CGFloat) -> Self.InsetShape",
+      "desc": "Returns self inset by amount."
+    },
+    {
+      "name": "associatedtype InsetShape : InsettableShape",
+      "desc": "The type of the inset shape."
+    }
+  ],
+  "declaration": "protocol InsettableShape : Shape",
+  "inheritsFrom": [
+    "Animatable",
+    "Shape",
+    "View"
+  ]
+}

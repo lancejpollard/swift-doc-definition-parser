@@ -1,0 +1,57 @@
+{
+  "path": "/documentation/combine/scheduler",
+  "type": "Protocol",
+  "name": "Scheduler",
+  "desc": "A protocol that defines when and how to execute a closure.",
+  "items": [
+    {
+      "name": "associatedtype SchedulerTimeType : Strideable",
+      "desc": "Describes an instant in time for this scheduler."
+    },
+    {
+      "name": "associatedtype SchedulerOptions",
+      "desc": "A type that defines options accepted by the scheduler."
+    },
+    {
+      "name": "var minimumTolerance: Self.SchedulerTimeType.Stride",
+      "desc": "The minimum tolerance allowed by the scheduler."
+    },
+    {
+      "name": "var now: Self.SchedulerTimeType",
+      "desc": "This scheduler’s definition of the current moment in time."
+    },
+    {
+      "name": "func schedule(() -> Void)",
+      "desc": "Performs the action at the next possible opportunity, without options."
+    },
+    {
+      "name": "func schedule(after: Self.SchedulerTimeType, () -> Void)",
+      "desc": "Performs the action at some time after the specified date, using the scheduler’s minimum tolerance."
+    },
+    {
+      "name": "func schedule(after: Self.SchedulerTimeType, interval: Self.SchedulerTimeType.Stride, () -> Void) -> Cancellable",
+      "desc": "Performs the action at some time after the specified date, at the specified frequency, using minimum tolerance possible for this Scheduler."
+    },
+    {
+      "name": "func schedule(after: Self.SchedulerTimeType, interval: Self.SchedulerTimeType.Stride, tolerance: Self.SchedulerTimeType.Stride, () -> Void) -> Cancellable",
+      "desc": "Performs the action at some time after the specified date, at the specified frequency, taking into account tolerance if possible."
+    },
+    {
+      "name": "func schedule(after: Self.SchedulerTimeType, interval: Self.SchedulerTimeType.Stride, tolerance: Self.SchedulerTimeType.Stride, options: Self.SchedulerOptions?, () -> Void) -> Cancellable",
+      "desc": "Performs the action at some time after the specified date, at the specified frequency, optionally taking into account tolerance if possible."
+    },
+    {
+      "name": "func schedule(after: Self.SchedulerTimeType, tolerance: Self.SchedulerTimeType.Stride, () -> Void)",
+      "desc": "Performs the action at some time after the specified date."
+    },
+    {
+      "name": "func schedule(after: Self.SchedulerTimeType, tolerance: Self.SchedulerTimeType.Stride, options: Self.SchedulerOptions?, () -> Void)",
+      "desc": "Performs the action at some time after the specified date."
+    },
+    {
+      "name": "func schedule(options: Self.SchedulerOptions?, () -> Void)",
+      "desc": "Performs the action at the next possible opportunity."
+    }
+  ],
+  "declaration": "protocol Scheduler"
+}

@@ -1,0 +1,35 @@
+{
+  "path": "/documentation/coreservices/uckeystateentryrange",
+  "type": "Structure",
+  "name": "UCKeyStateEntryRange",
+  "desc": "Maps from a dead-key state to either the resultant Unicode character(s) or the new dead key state produced when the current state is terminated by a given character key for a 'uchr' resource.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(curStateStart: UInt16, curStateRange: UInt8, deltaMultiplier: UInt8, charData: UCKeyCharSeq, nextState: UInt16)"
+    },
+    {
+      "name": "var charData: UCKeyCharSeq",
+      "desc": "A value of type UCKeyCharSeq. This base character value is used to determine the actual Unicode character(s) produced when a given dead-key state terminates."
+    },
+    {
+      "name": "var curStateRange: UInt8",
+      "desc": "An unsigned 8-bit integer specifying the number of entries in a given dead-key state range."
+    },
+    {
+      "name": "var curStateStart: UInt16",
+      "desc": "An unsigned 16-bit integer specifying the beginning of a given dead-key state range."
+    },
+    {
+      "name": "var deltaMultiplier: UInt8",
+      "desc": "An unsigned 8-bit integer."
+    },
+    {
+      "name": "var nextState: UInt16",
+      "desc": "An unsigned 16-bit integer. This base dead-key state value is used to determine the following dead-key state, if any."
+    }
+  ],
+  "declaration": "struct UCKeyStateEntryRange"
+}

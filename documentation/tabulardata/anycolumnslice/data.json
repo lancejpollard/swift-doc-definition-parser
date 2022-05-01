@@ -1,0 +1,90 @@
+{
+  "path": "/documentation/tabulardata/anycolumnslice",
+  "type": "Structure",
+  "name": "AnyColumnSlice",
+  "desc": "A type-erased column slice.",
+  "items": [
+    {
+      "name": "var name: String",
+      "desc": "The name of the slice’s parent column."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of elements in the column slice."
+    },
+    {
+      "name": "var wrappedElementType: Any.Type",
+      "desc": "The underlying type of the column’s elements."
+    },
+    {
+      "name": "func isNil(at: Int) -> Bool",
+      "desc": "Returns a Boolean that indicates whether the element at the index is missing."
+    },
+    {
+      "name": "func assumingType<T>(T.Type) -> DiscontiguousColumnSlice<T>",
+      "desc": "Returns a slice of the underlying typed column."
+    },
+    {
+      "name": "subscript(Int) -> Any?",
+      "desc": "Accesses an element at an index."
+    },
+    {
+      "name": "subscript(Range<Int>) -> AnyColumnSlice",
+      "desc": "Accesses a contiguous range of elements."
+    },
+    {
+      "name": "func distinct() -> AnyColumnSlice",
+      "desc": "Generates a column slice that contains unique elements."
+    },
+    {
+      "name": "func summary() -> AnyCategoricalSummary",
+      "desc": "Generates a categorical summary of the column slice’s elements."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the column slice."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the column slice suitable for debugging."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A mirror that reflects the column slice."
+    },
+    {
+      "name": "static func == (AnyColumnSlice, AnyColumnSlice) -> Bool",
+      "desc": "Returns a Boolean that indicates whether the column slices are equal."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool",
+      "desc": "Returns a Boolean that indicates whether the column slices are unequal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the column slice by feeding them into a hasher."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "var missingCount: Int",
+      "desc": "The number of missing elements in the column slice."
+    }
+  ],
+  "declaration": "struct AnyColumnSlice",
+  "conformsTo": [
+    "AnyColumnProtocol",
+    "BidirectionalCollection",
+    "Collection",
+    "CustomDebugStringConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "Equatable",
+    "Hashable",
+    "MutableCollection",
+    "RandomAccessCollection",
+    "Sequence"
+  ]
+}

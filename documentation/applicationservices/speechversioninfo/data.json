@@ -1,0 +1,35 @@
+{
+  "path": "/documentation/applicationservices/speechversioninfo",
+  "type": "Structure",
+  "name": "SpeechVersionInfo",
+  "desc": "Defines a speech version information structure.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(synthType: OSType, synthSubType: OSType, synthManufacturer: OSType, synthFlags: Int32, synthVersion: NumVersion)"
+    },
+    {
+      "name": "var synthFlags: Int32",
+      "desc": "A set of flags indicating which synthesizer features are activated. Specific constants define the bits in this field whose meanings are defined for all synthesizers."
+    },
+    {
+      "name": "var synthManufacturer: OSType",
+      "desc": "A unique identification of a synthesizer engine. If you develop synthesizers, then you should register a different four-character code for each synthesizer you develop with Developer Technical Support. The creatorID field of the voice specification structure and the synthCreator field of a speech extension data structure should each be set to the value stored in this field for the desired synthesizer."
+    },
+    {
+      "name": "var synthSubType: OSType",
+      "desc": "The specific type of the synthesizer. Currently, no specific types of synthesizer are defined. If you define a new type of synthesizer, you should register the four-character code for your type with Developer Technical Support."
+    },
+    {
+      "name": "var synthType: OSType",
+      "desc": "The general type of the synthesizer. For the current version of the Speech Synthesis Manager, this field always contains the value kTextToSpeechSynthType, indicating that the synthesizer converts text into speech."
+    },
+    {
+      "name": "var synthVersion: NumVersion",
+      "desc": "The version number of the synthesizer."
+    }
+  ],
+  "declaration": "struct SpeechVersionInfo"
+}

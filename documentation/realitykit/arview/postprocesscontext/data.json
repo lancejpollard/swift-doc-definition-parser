@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/realitykit/arview/postprocesscontext",
+  "type": "Structure",
+  "name": "ARView.PostProcessContext",
+  "desc": "An object the framework uses to pass data to a postprocess callback.",
+  "items": [
+    {
+      "name": "init(MTLDevice, MTLCommandBuffer, MTLTexture, MTLTexture, MTLTexture, float4x4, TimeInterval)",
+      "desc": "Creates a new context object."
+    },
+    {
+      "name": "var commandBuffer: MTLCommandBuffer",
+      "desc": "The Metal command buffer for encoding the frame."
+    },
+    {
+      "name": "var device: MTLDevice",
+      "desc": "The Metal device where the scene renders."
+    },
+    {
+      "name": "var projection: float4x4",
+      "desc": "The projection matrix used to render the frame."
+    },
+    {
+      "name": "var sourceColorTexture: MTLTexture",
+      "desc": "The rendered frame buffer."
+    },
+    {
+      "name": "var sourceDepthTexture: MTLTexture",
+      "desc": "The frame’s depth buffer."
+    },
+    {
+      "name": "var targetColorTexture: MTLTexture",
+      "desc": "The output texture where the postprocess callback writes the modified frame buffer."
+    },
+    {
+      "name": "var time: TimeInterval",
+      "desc": "The scene’s elapsed time."
+    }
+  ],
+  "declaration": "struct PostProcessContext"
+}

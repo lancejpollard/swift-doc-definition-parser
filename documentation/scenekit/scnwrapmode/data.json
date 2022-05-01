@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/scenekit/scnwrapmode",
+  "type": "Enumeration",
+  "name": "SCNWrapMode",
+  "desc": "Modes to apply to texture wrapping, used by the wrapT and wrapS properties.",
+  "items": [
+    {
+      "name": "case clamp",
+      "desc": "Texture coordinates are clamped to the range from 0.0 to 1.0, inclusive."
+    },
+    {
+      "name": "case `repeat`",
+      "desc": "Texture sampling uses only the fractional part of texture coordinates, passing through the range from 0.0 to (but not including) 1.0."
+    },
+    {
+      "name": "case clampToBorder",
+      "desc": "Texture sampling uses texture colors for coordinates in the range from 0.0 to 1.0 (inclusive) and the material property’s borderColor value otherwise."
+    },
+    {
+      "name": "case mirror",
+      "desc": "Texture sampling of texture coordinates outside range from 0.0 to 1.0 should behave as if the range reverses before repeating."
+    }
+  ],
+  "declaration": "enum SCNWrapMode : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

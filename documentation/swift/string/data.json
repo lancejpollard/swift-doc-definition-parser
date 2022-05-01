@@ -1,0 +1,957 @@
+{
+  "path": "/documentation/swift/string",
+  "type": "Structure",
+  "name": "String",
+  "desc": "A Unicode string value that is a collection of characters.",
+  "items": [
+    {
+      "name": "init(decoding: FilePath)"
+    },
+    {
+      "name": "init()",
+      "desc": "Creates an empty string."
+    },
+    {
+      "name": "init(Character)",
+      "desc": "Creates a string containing the given character."
+    },
+    {
+      "name": "init<S>(S)",
+      "desc": "Creates a new string containing the characters in the given sequence."
+    },
+    {
+      "name": "init<S>(S)",
+      "desc": "Creates a new instance of a collection containing the elements of a sequence."
+    },
+    {
+      "name": "init<S>(S)",
+      "desc": "Creates a new string containing the characters in the given sequence."
+    },
+    {
+      "name": "init(Substring)",
+      "desc": "Creates a new string from the given substring."
+    },
+    {
+      "name": "init(repeating: String, count: Int)",
+      "desc": "Creates a new string representing the given string repeated the specified number of times."
+    },
+    {
+      "name": "init(repeating: Character, count: Int)",
+      "desc": "Creates a string representing the given character repeated the specified number of times."
+    },
+    {
+      "name": "init(unsafeUninitializedCapacity: Int, initializingUTF8With: (UnsafeMutableBufferPointer<UInt8>) -> Int)",
+      "desc": "Creates a new string with the specified capacity in UTF-8 code units, and then calls the given closure with a buffer covering the string’s uninitialized memory."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value indicating whether a string has no characters."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of characters in a string."
+    },
+    {
+      "name": "init(Unicode.Scalar)"
+    },
+    {
+      "name": "init?(data: Data, encoding: String.Encoding)"
+    },
+    {
+      "name": "init?(utf8String: UnsafePointer<CChar>)",
+      "desc": "Produces a string created by copying the data from a given C array of UTF8-encoded bytes."
+    },
+    {
+      "name": "init?(validatingUTF8: UnsafePointer<CChar>)",
+      "desc": "Creates a new string by copying and validating the null-terminated UTF-8 data referenced by the given pointer."
+    },
+    {
+      "name": "init(utf16CodeUnits: UnsafePointer<unichar>, count: Int)",
+      "desc": "Returns an initialized String object that contains a given number of characters from a given array of Unicode characters."
+    },
+    {
+      "name": "init(utf16CodeUnitsNoCopy: UnsafePointer<unichar>, count: Int, freeWhenDone: Bool)",
+      "desc": "Returns an initialized String object that contains a given number of characters from a given array of UTF-16 Code Units"
+    },
+    {
+      "name": "init<C, Encoding>(decoding: C, as: Encoding.Type)",
+      "desc": "Creates a string from the given Unicode code units in the specified encoding."
+    },
+    {
+      "name": "init(format: String, CVarArg...)"
+    },
+    {
+      "name": "init(format: String, arguments: [CVarArg])"
+    },
+    {
+      "name": "init(format: String, locale: Locale?, CVarArg...)"
+    },
+    {
+      "name": "init(format: String, locale: Locale?, arguments: [CVarArg])"
+    },
+    {
+      "name": "static func localizedStringWithFormat(String, CVarArg...) -> String",
+      "desc": "Returns a string created by using a given format string as a template into which the remaining argument values are substituted according to the user’s default locale."
+    },
+    {
+      "name": "init<T>(T, radix: Int, uppercase: Bool)",
+      "desc": "Creates a string representing the given value in base 10, or some other specified base."
+    },
+    {
+      "name": "init?<S>(bytes: S, encoding: String.Encoding)"
+    },
+    {
+      "name": "init?(bytesNoCopy: UnsafeMutableRawPointer, length: Int, encoding: String.Encoding, freeWhenDone: Bool)",
+      "desc": "Produces an initialized String object that contains a given number of bytes from a given buffer of bytes interpreted in a given encoding, and optionally frees the buffer. WARNING: this initializer is not memory-safe!"
+    },
+    {
+      "name": "init(cString: UnsafePointer<CChar>)",
+      "desc": "Creates a new string by copying the null-terminated UTF-8 data referenced by the given pointer."
+    },
+    {
+      "name": "init(cString: UnsafePointer<UInt8>)",
+      "desc": "Creates a new string by copying the null-terminated UTF-8 data referenced by the given pointer."
+    },
+    {
+      "name": "init?(cString: UnsafePointer<CChar>, encoding: String.Encoding)",
+      "desc": "Produces a string containing the bytes in a given C array, interpreted according to a given encoding."
+    },
+    {
+      "name": "init<Encoding>(decodingCString: UnsafePointer<Encoding.CodeUnit>, as: Encoding.Type)",
+      "desc": "Creates a string from the null-terminated sequence of bytes at the given pointer."
+    },
+    {
+      "name": "static func decodeCString<Encoding>(UnsafePointer<Encoding.CodeUnit>?, as: Encoding.Type, repairingInvalidCodeUnits: Bool) -> (result: String, repairsMade: Bool)?",
+      "desc": "Creates a new string by copying the null-terminated data referenced by the given pointer using the specified encoding."
+    },
+    {
+      "name": "init<T>(T)",
+      "desc": "Creates an instance from the description of a given LosslessStringConvertible instance."
+    },
+    {
+      "name": "init<Subject>(describing: Subject)",
+      "desc": "Creates a string representing the given value."
+    },
+    {
+      "name": "init<Subject>(describing: Subject)",
+      "desc": "Creates a string representing the given value."
+    },
+    {
+      "name": "init<Subject>(describing: Subject)",
+      "desc": "Creates a string representing the given value."
+    },
+    {
+      "name": "init<Subject>(describing: Subject)",
+      "desc": "Creates a string representing the given value."
+    },
+    {
+      "name": "init<Subject>(reflecting: Subject)",
+      "desc": "Creates a string with a detailed representation of the given value, suitable for debugging."
+    },
+    {
+      "name": "init(contentsOf: URL)"
+    },
+    {
+      "name": "init(contentsOf: URL, encoding: String.Encoding)"
+    },
+    {
+      "name": "init(contentsOf: URL, usedEncoding: inout String.Encoding)"
+    },
+    {
+      "name": "init(contentsOfFile: String)"
+    },
+    {
+      "name": "init(contentsOfFile: String, encoding: String.Encoding)"
+    },
+    {
+      "name": "init(contentsOfFile: String, usedEncoding: inout String.Encoding)"
+    },
+    {
+      "name": "func write(String)",
+      "desc": "Appends the given string to this string."
+    },
+    {
+      "name": "func write<Target>(to: inout Target)",
+      "desc": "Writes the string into the given output stream."
+    },
+    {
+      "name": "func append(String)",
+      "desc": "Appends the given string to this string."
+    },
+    {
+      "name": "func append(Character)",
+      "desc": "Appends the given character to the string."
+    },
+    {
+      "name": "func append(contentsOf: String)"
+    },
+    {
+      "name": "func append(contentsOf: Substring)"
+    },
+    {
+      "name": "func append<S>(contentsOf: S)",
+      "desc": "Appends the characters in the given sequence to the string."
+    },
+    {
+      "name": "func append<S>(contentsOf: S)",
+      "desc": "Adds the elements of a sequence or collection to the end of this collection."
+    },
+    {
+      "name": "func reserveCapacity(Int)",
+      "desc": "Reserves enough space in the string’s underlying storage to store the specified number of ASCII characters."
+    },
+    {
+      "name": "static func + (String, String) -> String"
+    },
+    {
+      "name": "static func += (inout String, String)"
+    },
+    {
+      "name": "static func + <Other>(Other, String) -> String",
+      "desc": "Creates a new collection by concatenating the elements of a sequence and a collection."
+    },
+    {
+      "name": "static func + <Other>(String, Other) -> String",
+      "desc": "Creates a new collection by concatenating the elements of a collection and a sequence."
+    },
+    {
+      "name": "static func + <Other>(String, Other) -> String",
+      "desc": "Creates a new collection by concatenating the elements of two collections."
+    },
+    {
+      "name": "static func += <Other>(inout String, Other)",
+      "desc": "Appends the elements of a sequence to a range-replaceable collection."
+    },
+    {
+      "name": "func insert(Character, at: String.Index)",
+      "desc": "Inserts a new character at the specified position."
+    },
+    {
+      "name": "func insert(Character, at: Index)",
+      "desc": "Inserts a new element into the collection at the specified position."
+    },
+    {
+      "name": "func insert<C>(contentsOf: C, at: Index)",
+      "desc": "Inserts the elements of a sequence into the collection at the specified position."
+    },
+    {
+      "name": "func insert<S>(contentsOf: S, at: String.Index)",
+      "desc": "Inserts a collection of characters at the specified position."
+    },
+    {
+      "name": "func replaceSubrange<C>(Range<String.Index>, with: C)",
+      "desc": "Replaces the text within the specified bounds with the given characters."
+    },
+    {
+      "name": "func replaceSubrange<C, R>(R, with: C)",
+      "desc": "Replaces the specified subrange of elements with the given collection."
+    },
+    {
+      "name": "func remove(at: String.Index) -> Character",
+      "desc": "Removes and returns the character at the specified position."
+    },
+    {
+      "name": "func remove(at: Index) -> Character",
+      "desc": "Removes and returns the element at the specified position."
+    },
+    {
+      "name": "func removeAll(keepingCapacity: Bool)",
+      "desc": "Replaces this string with the empty string."
+    },
+    {
+      "name": "func removeAll(where: (Character) -> Bool)",
+      "desc": "Removes all the elements that satisfy the given predicate."
+    },
+    {
+      "name": "func removeFirst() -> Character",
+      "desc": "Removes and returns the first element of the collection."
+    },
+    {
+      "name": "func removeFirst(Int)",
+      "desc": "Removes the specified number of elements from the beginning of the collection."
+    },
+    {
+      "name": "func removeLast() -> Character",
+      "desc": "Removes and returns the last element of the collection."
+    },
+    {
+      "name": "func removeLast(Int)",
+      "desc": "Removes the specified number of elements from the end of the collection."
+    },
+    {
+      "name": "func removeSubrange(Range<String.Index>)",
+      "desc": "Removes the characters in the given range."
+    },
+    {
+      "name": "func removeSubrange(Range<Index>)",
+      "desc": "Removes the elements in the specified subrange from the collection."
+    },
+    {
+      "name": "func removeSubrange<R>(R)",
+      "desc": "Removes the elements in the specified subrange from the collection."
+    },
+    {
+      "name": "func filter((Character) -> Bool) -> String",
+      "desc": "Returns a new collection of the same type containing, in order, the elements of the original collection that satisfy the given predicate."
+    },
+    {
+      "name": "func drop(while: (Character) -> Bool) -> Substring",
+      "desc": "Returns a subsequence by skipping elements while predicate returns true and returning the remaining elements."
+    },
+    {
+      "name": "func dropFirst(Int) -> Substring",
+      "desc": "Returns a subsequence containing all but the given number of initial elements."
+    },
+    {
+      "name": "func dropLast(Int) -> Substring",
+      "desc": "Returns a subsequence containing all but the specified number of final elements."
+    },
+    {
+      "name": "func popLast() -> Character?",
+      "desc": "Removes and returns the last element of the collection."
+    },
+    {
+      "name": "func lowercased() -> String",
+      "desc": "Returns a lowercase version of the string."
+    },
+    {
+      "name": "func uppercased() -> String",
+      "desc": "Returns an uppercase version of the string."
+    },
+    {
+      "name": "static func == (String, String) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "static func == <RHS>(String, RHS) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "static func != (String, String) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func != <RHS>(String, RHS) -> Bool"
+    },
+    {
+      "name": "static func < (String, String) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than that of the second argument."
+    },
+    {
+      "name": "static func < <RHS>(String, RHS) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than that of the second argument."
+    },
+    {
+      "name": "static func <= (String, String) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than or equal to that of the second argument."
+    },
+    {
+      "name": "static func <= <RHS>(String, RHS) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than or equal to that of the second argument."
+    },
+    {
+      "name": "static func > (String, String) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than that of the second argument."
+    },
+    {
+      "name": "static func > <RHS>(String, RHS) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than that of the second argument."
+    },
+    {
+      "name": "static func >= (String, String) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than or equal to that of the second argument."
+    },
+    {
+      "name": "static func >= <RHS>(String, RHS) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than or equal to that of the second argument."
+    },
+    {
+      "name": "static func ~= (String, Substring) -> Bool"
+    },
+    {
+      "name": "func elementsEqual<OtherSequence>(OtherSequence) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this sequence and another sequence contain the same elements in the same order."
+    },
+    {
+      "name": "func elementsEqual<OtherSequence>(OtherSequence, by: (Character, OtherSequence.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this sequence and another sequence contain equivalent elements in the same order, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func starts<PossiblePrefix>(with: PossiblePrefix) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the initial elements of the sequence are the same as the elements in another sequence."
+    },
+    {
+      "name": "func starts<PossiblePrefix>(with: PossiblePrefix, by: (Character, PossiblePrefix.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the initial elements of the sequence are equivalent to the elements in another sequence, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func lexicographicallyPrecedes<OtherSequence>(OtherSequence) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the less-than operator (<) to compare elements."
+    },
+    {
+      "name": "func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Character, Character) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the given predicate to compare elements."
+    },
+    {
+      "name": "func applying(CollectionDifference<Character>) -> String?",
+      "desc": "Applies the given difference to this collection."
+    },
+    {
+      "name": "func difference<C>(from: C) -> CollectionDifference<Character>",
+      "desc": "Returns the difference needed to produce this collection’s ordered elements from the given collection."
+    },
+    {
+      "name": "func difference<C>(from: C, by: (C.Element, Character) -> Bool) -> CollectionDifference<Character>",
+      "desc": "Returns the difference needed to produce this collection’s ordered elements from the given collection, using the given predicate as an equivalence test."
+    },
+    {
+      "name": "func hasPrefix(String) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the string begins with the specified prefix."
+    },
+    {
+      "name": "func hasSuffix(String) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the string ends with the specified suffix."
+    },
+    {
+      "name": "func contains(Character) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence contains the given element."
+    },
+    {
+      "name": "func allSatisfy((Character) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether every element of a sequence satisfies a given predicate."
+    },
+    {
+      "name": "func contains(where: (Character) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func first(where: (Character) -> Bool) -> Character?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func firstIndex(of: Character) -> Index?",
+      "desc": "Returns the first index where the specified value appears in the collection."
+    },
+    {
+      "name": "func firstIndex(where: (Character) -> Bool) -> Index?",
+      "desc": "Returns the first index in which an element of the collection satisfies the given predicate."
+    },
+    {
+      "name": "func last(where: (Character) -> Bool) -> Character?",
+      "desc": "Returns the last element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func lastIndex(of: Character) -> Index?",
+      "desc": "Returns the last index where the specified value appears in the collection."
+    },
+    {
+      "name": "func lastIndex(where: (Character) -> Bool) -> Index?",
+      "desc": "Returns the index of the last element in the collection that matches the given predicate."
+    },
+    {
+      "name": "func max() -> Character?",
+      "desc": "Returns the maximum element in the sequence."
+    },
+    {
+      "name": "func max<T>(T, T) -> T"
+    },
+    {
+      "name": "func max(by: (Character, Character) -> Bool) -> Character?",
+      "desc": "Returns the maximum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func min() -> Character?",
+      "desc": "Returns the minimum element in the sequence."
+    },
+    {
+      "name": "func min<T>(T, T) -> T"
+    },
+    {
+      "name": "func min(by: (Character, Character) -> Bool) -> Character?",
+      "desc": "Returns the minimum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "subscript(Range<String.Index>) -> Substring",
+      "desc": "Accesses a contiguous subrange of the collection’s elements."
+    },
+    {
+      "name": "subscript<R>(R) -> Substring",
+      "desc": "Accesses the contiguous subrange of the collection’s elements specified by a range expression."
+    },
+    {
+      "name": "subscript((UnboundedRange_) -> ()) -> Substring"
+    },
+    {
+      "name": "func prefix(Int) -> Substring",
+      "desc": "Returns a subsequence, up to the specified maximum length, containing the initial elements of the collection."
+    },
+    {
+      "name": "func prefix(through: Index) -> Substring",
+      "desc": "Returns a subsequence from the start of the collection through the specified position."
+    },
+    {
+      "name": "func prefix(upTo: Index) -> Substring",
+      "desc": "Returns a subsequence from the start of the collection up to, but not including, the specified position."
+    },
+    {
+      "name": "func prefix(while: (Character) -> Bool) -> Substring",
+      "desc": "Returns a subsequence containing the initial elements until predicate returns false and skipping the remaining elements."
+    },
+    {
+      "name": "func suffix(Int) -> Substring",
+      "desc": "Returns a subsequence, up to the given maximum length, containing the final elements of the collection."
+    },
+    {
+      "name": "func suffix(from: Index) -> Substring",
+      "desc": "Returns a subsequence from the specified position to the end of the collection."
+    },
+    {
+      "name": "func split(separator: Character, maxSplits: Int, omittingEmptySubsequences: Bool) -> [Substring]",
+      "desc": "Returns the longest possible subsequences of the collection, in order, around elements equal to the given element."
+    },
+    {
+      "name": "func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Character) -> Bool) -> [Substring]",
+      "desc": "Returns the longest possible subsequences of the collection, in order, that don’t contain elements satisfying the given predicate."
+    },
+    {
+      "name": "subscript(String.Index) -> Character",
+      "desc": "Accesses the character at the given position."
+    },
+    {
+      "name": "var first: Character?",
+      "desc": "The first element of the collection."
+    },
+    {
+      "name": "var last: Character?",
+      "desc": "The last element of the collection."
+    },
+    {
+      "name": "func randomElement() -> Character?",
+      "desc": "Returns a random element of the collection."
+    },
+    {
+      "name": "func randomElement<T>(using: inout T) -> Character?",
+      "desc": "Returns a random element of the collection, using the given generator as a source for randomness."
+    },
+    {
+      "name": "static var availableStringEncodings: [String.Encoding]",
+      "desc": "Returns an Array of the encodings string objects support in the application’s environment."
+    },
+    {
+      "name": "static var defaultCStringEncoding: String.Encoding",
+      "desc": "Returns the C-string encoding assumed for any method accepting a C string as an argument."
+    },
+    {
+      "name": "static func localizedName(of: String.Encoding) -> String",
+      "desc": "Returns a human-readable string giving the name of a given encoding."
+    },
+    {
+      "name": "var isContiguousUTF8: Bool",
+      "desc": "Returns whether this string is capable of providing access to validly-encoded UTF-8 contents in contiguous memory in O(1) time."
+    },
+    {
+      "name": "func makeContiguousUTF8()",
+      "desc": "If this string is not contiguous, make it so. If this mutates the string, it will invalidate any pre-existing indices."
+    },
+    {
+      "name": "func withUTF8<R>((UnsafeBufferPointer<UInt8>) -> R) -> R",
+      "desc": "Runs body over the content of this string in contiguous memory. If this string is not contiguous, this will first make it contiguous, which will also speed up subsequent access. If this mutates the string, it will invalidate any pre-existing indices."
+    },
+    {
+      "name": "var unicodeScalars: String.UnicodeScalarView",
+      "desc": "The string’s value represented as a collection of Unicode scalar values."
+    },
+    {
+      "name": "init(String.UnicodeScalarView)",
+      "desc": "Creates a string corresponding to the given collection of Unicode scalars."
+    },
+    {
+      "name": "init(Substring.UnicodeScalarView)",
+      "desc": "Creates a String having the given content."
+    },
+    {
+      "name": "var utf16: String.UTF16View",
+      "desc": "A UTF-16 encoding of self."
+    },
+    {
+      "name": "init(String.UTF16View)",
+      "desc": "Creates a string corresponding to the given sequence of UTF-16 code units."
+    },
+    {
+      "name": "init?(Substring.UTF16View)",
+      "desc": "Creates a String having the given content."
+    },
+    {
+      "name": "var utf8: String.UTF8View",
+      "desc": "A UTF-8 encoding of self."
+    },
+    {
+      "name": "init(String.UTF8View)",
+      "desc": "Creates a string corresponding to the given sequence of UTF-8 code units."
+    },
+    {
+      "name": "init?(Substring.UTF8View)",
+      "desc": "Creates a String having the given content."
+    },
+    {
+      "name": "func map<T>((Character) -> T) -> [T]",
+      "desc": "Returns an array containing the results of mapping the given closure over the sequence’s elements."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((Character) -> ElementOfResult?) -> [ElementOfResult]",
+      "desc": "Returns an array containing the non-nil results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((Character) -> SegmentOfResult) -> [SegmentOfResult.Element]",
+      "desc": "Returns an array containing the concatenated results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, Character) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, Character) -> ()) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "var lazy: LazySequence<String>",
+      "desc": "A sequence containing the same elements as this sequence, but on which some operations, such as map and filter, are implemented lazily."
+    },
+    {
+      "name": "func forEach((Character) -> Void)",
+      "desc": "Calls the given closure on each element in the sequence in the same order as a for-in loop."
+    },
+    {
+      "name": "func enumerated() -> EnumeratedSequence<String>",
+      "desc": "Returns a sequence of pairs (n, x), where n represents a consecutive integer starting at zero and x represents an element of the sequence."
+    },
+    {
+      "name": "func makeIterator() -> String.Iterator",
+      "desc": "Returns an iterator over the elements of the collection."
+    },
+    {
+      "name": "var underestimatedCount: Int",
+      "desc": "A value less than or equal to the number of elements in the collection."
+    },
+    {
+      "name": "func sorted() -> [Character]",
+      "desc": "Returns the elements of the sequence, sorted."
+    },
+    {
+      "name": "func sorted(by: (Character, Character) -> Bool) -> [Character]",
+      "desc": "Returns the elements of the sequence, sorted using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func reversed() -> ReversedCollection<String>",
+      "desc": "Returns a view presenting the elements of the collection in reverse order."
+    },
+    {
+      "name": "func shuffled() -> [Character]",
+      "desc": "Returns the elements of the sequence, shuffled."
+    },
+    {
+      "name": "func shuffled<T>(using: inout T) -> [Character]",
+      "desc": "Returns the elements of the sequence, shuffled using the given generator as a source for randomness."
+    },
+    {
+      "name": "var utf8CString: ContiguousArray<CChar>",
+      "desc": "A contiguously stored null-terminated UTF-8 representation of the string."
+    },
+    {
+      "name": "func withCString<Result>((UnsafePointer<Int8>) -> Result) -> Result",
+      "desc": "Calls the given closure with a pointer to the contents of the string, represented as a null-terminated sequence of UTF-8 code units."
+    },
+    {
+      "name": "func withCString<Result, TargetEncoding>(encodedAs: TargetEncoding.Type, (UnsafePointer<TargetEncoding.CodeUnit>) -> Result) -> Result",
+      "desc": "Calls the given closure with a pointer to the contents of the string, represented as a null-terminated sequence of code units."
+    },
+    {
+      "name": "var startIndex: String.Index",
+      "desc": "The position of the first character in a nonempty string."
+    },
+    {
+      "name": "var endIndex: String.Index",
+      "desc": "A string’s “past the end” position—that is, the position one greater than the last valid subscript argument."
+    },
+    {
+      "name": "func index(after: String.Index) -> String.Index",
+      "desc": "Returns the position immediately after the given index."
+    },
+    {
+      "name": "func formIndex(after: inout Index)",
+      "desc": "Replaces the given index with its successor."
+    },
+    {
+      "name": "func index(before: String.Index) -> String.Index",
+      "desc": "Returns the position immediately before the given index."
+    },
+    {
+      "name": "func formIndex(before: inout Index)",
+      "desc": "Replaces the given index with its predecessor."
+    },
+    {
+      "name": "func index(String.Index, offsetBy: String.IndexDistance) -> String.Index",
+      "desc": "Returns an index that is the specified distance from the given index."
+    },
+    {
+      "name": "func index(String.Index, offsetBy: String.IndexDistance, limitedBy: String.Index) -> String.Index?",
+      "desc": "Returns an index that is the specified distance from the given index, unless that distance is beyond a given limiting index."
+    },
+    {
+      "name": "func formIndex(inout Index, offsetBy: Int)",
+      "desc": "Offsets the given index by the specified distance."
+    },
+    {
+      "name": "func formIndex(inout Index, offsetBy: Int, limitedBy: Index) -> Bool",
+      "desc": "Offsets the given index by the specified distance, or so that it equals the given limiting index."
+    },
+    {
+      "name": "func distance(from: String.Index, to: String.Index) -> String.IndexDistance",
+      "desc": "Returns the distance between two indices."
+    },
+    {
+      "name": "var indices: DefaultIndices<String>",
+      "desc": "The indices that are valid for subscripting the collection, in ascending order."
+    },
+    {
+      "name": "static func ..< (String, String) -> Range<String>",
+      "desc": "Returns a half-open range that contains its lower bound but not its upper bound."
+    },
+    {
+      "name": "static func ... (String, String) -> ClosedRange<String>",
+      "desc": "Returns a closed range that contains both of its bounds."
+    },
+    {
+      "name": "static func ..< (String) -> PartialRangeUpTo<String>",
+      "desc": "Returns a partial range up to, but not including, its upper bound."
+    },
+    {
+      "name": "static func ... (String) -> PartialRangeThrough<String>",
+      "desc": "Returns a partial range up to, and including, its upper bound."
+    },
+    {
+      "name": "static func ... (String) -> PartialRangeFrom<String>",
+      "desc": "Returns a partial range extending upward from a lower bound."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes this value into the given encoder."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a new instance by decoding from the given decoder."
+    },
+    {
+      "name": "var description: String",
+      "desc": "The value of this string."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A representation of the string that is suitable for debugging."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A mirror that reflects the String instance."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "init?(from: MLDataValue)",
+      "desc": "Creates a string from another string wrapped in a data value."
+    },
+    {
+      "name": "var dataValue: MLDataValue",
+      "desc": "The string wrapped in a data value."
+    },
+    {
+      "name": "var identifierValue: MLDataValue",
+      "desc": "The string value of the unique identifier wrapped in a data value."
+    },
+    {
+      "name": "static var dataValueType: MLDataValue.ValueType",
+      "desc": "The underlying type a string uses when it wraps itself in a data value."
+    },
+    {
+      "name": "init(NSString)"
+    },
+    {
+      "name": "init(stringInterpolation: DefaultStringInterpolation)",
+      "desc": "Creates a new instance from an interpolated string literal."
+    },
+    {
+      "name": "init(stringLiteral: String)",
+      "desc": "Creates an instance initialized to the given string value."
+    },
+    {
+      "name": "init(unicodeScalarLiteral: String)",
+      "desc": "Creates an instance initialized to the given value."
+    },
+    {
+      "name": "init(extendedGraphemeClusterLiteral: String)",
+      "desc": "Creates an instance initialized to the given value."
+    },
+    {
+      "name": "func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<Character>) -> R) -> R?",
+      "desc": "Executes a closure on the sequence’s contiguous storage."
+    },
+    {
+      "name": "class NSString",
+      "desc": "A static, plain-text Unicode string object that bridges to String; use NSString when you need reference semantics or other Foundation-specific behavior."
+    },
+    {
+      "name": "class NSMutableString",
+      "desc": "A dynamic plain-text Unicode string object, for use instead of a String variable in cases that require reference semantics."
+    },
+    {
+      "name": "struct Substring",
+      "desc": "A slice of a string."
+    },
+    {
+      "name": "protocol StringProtocol",
+      "desc": "A type that can represent a string as a collection of characters."
+    },
+    {
+      "name": "struct String.Index",
+      "desc": "A position of a character or code unit in a string."
+    },
+    {
+      "name": "struct String.UnicodeScalarView",
+      "desc": "A view of a string’s contents as a collection of Unicode scalar values."
+    },
+    {
+      "name": "struct String.UTF16View",
+      "desc": "A view of a string’s contents as a collection of UTF-16 code units."
+    },
+    {
+      "name": "struct String.UTF8View",
+      "desc": "A view of a string’s contents as a collection of UTF-8 code units."
+    },
+    {
+      "name": "struct String.Iterator",
+      "desc": "A type that provides the collection’s iteration interface and encapsulates its iteration state."
+    },
+    {
+      "name": "struct String.Encoding"
+    },
+    {
+      "name": "typealias String.Element",
+      "desc": "A type representing the sequence’s elements."
+    },
+    {
+      "name": "typealias String.SubSequence",
+      "desc": "A collection representing a contiguous subrange of this collection’s elements. The subsequence shares indices with the original collection."
+    },
+    {
+      "name": "typealias String.CompareOptions"
+    },
+    {
+      "name": "typealias String.EncodingConversionOptions"
+    },
+    {
+      "name": "typealias String.EnumerationOptions"
+    },
+    {
+      "name": "typealias String.IndexDistance",
+      "desc": "A type that represents the number of steps between two String.Index values, where one value is reachable from the other."
+    },
+    {
+      "name": "typealias String.UnicodeScalarIndex",
+      "desc": "The index type for a string’s unicodeScalars view."
+    },
+    {
+      "name": "typealias String.ExtendedGraphemeClusterLiteralType",
+      "desc": "A type that represents an extended grapheme cluster literal."
+    },
+    {
+      "name": "typealias String.Indices",
+      "desc": "A type that represents the indices that are valid for subscripting the collection, in ascending order."
+    },
+    {
+      "name": "typealias String.StringInterpolation",
+      "desc": "The type each segment of a string literal containing interpolations should be appended to."
+    },
+    {
+      "name": "typealias String.StringLiteralType",
+      "desc": "A type that represents a string literal."
+    },
+    {
+      "name": "typealias String.UnicodeScalarLiteralType",
+      "desc": "A type that represents a Unicode scalar literal."
+    },
+    {
+      "name": "init(Slice<AttributedString.CharacterView>)"
+    },
+    {
+      "name": "init?<T>(codingKey: T)"
+    },
+    {
+      "name": "init(decoding: FilePath.Root)"
+    },
+    {
+      "name": "init(decoding: FilePath.Component)"
+    },
+    {
+      "name": "init(localized: String.LocalizationValue, table: String?, bundle: Bundle?, locale: Locale, comment: StaticString?)"
+    },
+    {
+      "name": "init(platformString: UnsafePointer<CInterop.PlatformChar>)"
+    },
+    {
+      "name": "init?(validating: FilePath.Root)"
+    },
+    {
+      "name": "init?(validating: FilePath.Component)"
+    },
+    {
+      "name": "init?(validating: FilePath)"
+    },
+    {
+      "name": "init?(validatingPlatformString: UnsafePointer<CInterop.PlatformChar>)"
+    },
+    {
+      "name": "var codingKey: CodingKey"
+    },
+    {
+      "name": "func withPlatformString<Result>((UnsafePointer<CInterop.PlatformChar>) -> Result) -> Result"
+    },
+    {
+      "name": "struct String.Comparator"
+    },
+    {
+      "name": "struct String.LocalizationValue",
+      "desc": "A value — created from a string literal or string interpolation — used to look up a localized entry in a strings file or strings dictionary file."
+    },
+    {
+      "name": "struct String.StandardComparator"
+    }
+  ],
+  "declaration": "@frozen struct String",
+  "conformsTo": [
+    "BidirectionalCollection",
+    "BindableData",
+    "CKRecordValueProtocol",
+    "CVarArg",
+    "CodingKeyRepresentable",
+    "Comparable",
+    "CustomDebugStringConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "ExpressibleByStringLiteral",
+    "Hashable",
+    "MLDataValueConvertible",
+    "MLIdentifier",
+    "RangeReplaceableCollection",
+    "StringProtocol",
+    "TextOutputStream",
+    "TextOutputStreamable"
+  ]
+}

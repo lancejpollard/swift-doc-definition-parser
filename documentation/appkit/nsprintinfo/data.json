@@ -1,0 +1,168 @@
+{
+  "path": "/documentation/appkit/nsprintinfo",
+  "type": "Class",
+  "name": "NSPrintInfo",
+  "desc": "An object that stores information that’s used to generate printed output.",
+  "items": [
+    {
+      "name": "class var shared: NSPrintInfo",
+      "desc": "The shared printing information object."
+    },
+    {
+      "name": "init(dictionary: [NSPrintInfo.AttributeKey : Any])",
+      "desc": "Returns a printing information object initialized with the parameters in the specified dictionary."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates a printing information object."
+    },
+    {
+      "name": "init(coder: NSCoder)",
+      "desc": "Creates a printing information object from data in an unarchiver."
+    },
+    {
+      "name": "var paperSize: NSSize",
+      "desc": "The size of the paper."
+    },
+    {
+      "name": "var topMargin: CGFloat",
+      "desc": "The top margin to the specified size."
+    },
+    {
+      "name": "var bottomMargin: CGFloat",
+      "desc": "The height of the bottom margin."
+    },
+    {
+      "name": "var leftMargin: CGFloat",
+      "desc": "The width of the left margin."
+    },
+    {
+      "name": "var rightMargin: CGFloat",
+      "desc": "The width of the right margin."
+    },
+    {
+      "name": "var imageablePageBounds: NSRect",
+      "desc": "The imageable area of a sheet of paper specified by the print info."
+    },
+    {
+      "name": "var orientation: NSPrintInfo.PaperOrientation",
+      "desc": "The orientation attribute."
+    },
+    {
+      "name": "enum NSPrintInfo.PaperOrientation",
+      "desc": "Constants that describe the orientation of printing on a page."
+    },
+    {
+      "name": "var paperName: NSPrinter.PaperName?",
+      "desc": "The name of the currently selected paper size."
+    },
+    {
+      "name": "struct NSPrinter.PaperName",
+      "desc": "The type you use to specify the name of a type of paper."
+    },
+    {
+      "name": "var localizedPaperName: String?",
+      "desc": "The human-readable name of the currently selected paper size, suitable for presentation in user interfaces."
+    },
+    {
+      "name": "var horizontalPagination: NSPrintInfo.PaginationMode",
+      "desc": "The horizontal pagination mode."
+    },
+    {
+      "name": "var verticalPagination: NSPrintInfo.PaginationMode",
+      "desc": "The vertical pagination to the specified mode."
+    },
+    {
+      "name": "enum NSPrintInfo.PaginationMode",
+      "desc": "Constants that specify the different ways in which an image is divided into pages."
+    },
+    {
+      "name": "var isHorizontallyCentered: Bool",
+      "desc": "A Boolean value that indicates whether the image is centered horizontally."
+    },
+    {
+      "name": "var isVerticallyCentered: Bool",
+      "desc": "A Boolean value that indicates whether the image is centered vertically."
+    },
+    {
+      "name": "var printer: NSPrinter",
+      "desc": "The printer object to be used for printing."
+    },
+    {
+      "name": "class NSPrinter",
+      "desc": "An object that describes a printer’s capabilities."
+    },
+    {
+      "name": "var jobDisposition: NSPrintInfo.JobDisposition",
+      "desc": "The action specified for the job."
+    },
+    {
+      "name": "struct NSPrintInfo.JobDisposition",
+      "desc": "Constants that specify values for the print job disposition."
+    },
+    {
+      "name": "func setUpPrintOperationDefaultValues()",
+      "desc": "Validates the attributes encapsulated by the print info."
+    },
+    {
+      "name": "func dictionary() -> NSMutableDictionary",
+      "desc": "Returns the print info’s dictionary that contains the printing attributes."
+    },
+    {
+      "name": "var isSelectionOnly: Bool",
+      "desc": "A Boolean value that indicates whether only the currently selected contents should be printed."
+    },
+    {
+      "name": "var scalingFactor: CGFloat",
+      "desc": "The current scaling factor."
+    },
+    {
+      "name": "var printSettings: NSMutableDictionary",
+      "desc": "A mutable dictionary containing the print settings from Core Printing."
+    },
+    {
+      "name": "typealias NSPrintInfo.SettingKey",
+      "desc": "The type you use to specify a print info setting key."
+    },
+    {
+      "name": "func pmPrintSession() -> UnsafeMutableRawPointer",
+      "desc": "Returns a Core Printing object configured with the print info’s session information."
+    },
+    {
+      "name": "func pmPageFormat() -> UnsafeMutableRawPointer",
+      "desc": "Returns a Core Printing object configured with the print info’s page format information."
+    },
+    {
+      "name": "func pmPrintSettings() -> UnsafeMutableRawPointer",
+      "desc": "Returns a Core Printing object configured with the print info’s print settings information"
+    },
+    {
+      "name": "func updateFromPMPageFormat()",
+      "desc": "Synchronizes the print info’s page format information with information from its associated page format object."
+    },
+    {
+      "name": "func updateFromPMPrintSettings()",
+      "desc": "Synchronizes the print info’s print settings information with information from its associated print settings object."
+    },
+    {
+      "name": "func takeSettings(from: NSPDFInfo)",
+      "desc": "Updates the print info with all the settings and attributes in the specified PDF info object."
+    },
+    {
+      "name": "struct NSPrintInfo.AttributeKey",
+      "desc": "Constants that specify print job attributes."
+    },
+    {
+      "name": "class var defaultPrinter: NSPrinter?",
+      "desc": "Deprecated."
+    }
+  ],
+  "declaration": "class NSPrintInfo : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "NSCopying"
+  ]
+}

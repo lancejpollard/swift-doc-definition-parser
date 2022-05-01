@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/avkit/avpictureinpicturesamplebufferplaybackdelegate",
+  "type": "Protocol",
+  "name": "AVPictureInPictureSampleBufferPlaybackDelegate",
+  "desc": "A protocol for controlling playback from a sample buffer display layer in Picture in Picture.",
+  "items": [
+    {
+      "name": "func pictureInPictureController(AVPictureInPictureController, setPlaying: Bool)",
+      "desc": "Tells the delegate that the user requested to begin or pause playback."
+    },
+    {
+      "name": "func pictureInPictureControllerTimeRangeForPlayback(AVPictureInPictureController) -> CMTimeRange",
+      "desc": "Asks the delegate for the current playable time range."
+    },
+    {
+      "name": "func pictureInPictureControllerIsPlaybackPaused(AVPictureInPictureController) -> Bool",
+      "desc": "Asks delegate to indicate whether the playback UI reflects a playing or paused state, regardless of the current playback rate."
+    },
+    {
+      "name": "func pictureInPictureController(AVPictureInPictureController, didTransitionToRenderSize: CMVideoDimensions)",
+      "desc": "Tells the delegate when the system Picture in Picture window changes size."
+    },
+    {
+      "name": "func pictureInPictureController(AVPictureInPictureController, skipByInterval: CMTime, completion: () -> Void)",
+      "desc": "Tells the delegate that the user has requested skipping forward or backward by the indicated time interval."
+    },
+    {
+      "name": "func pictureInPictureControllerShouldProhibitBackgroundAudioPlayback(AVPictureInPictureController) -> Bool",
+      "desc": "Asks the delegate whether to always prohibit background audio playback."
+    }
+  ],
+  "declaration": "protocol AVPictureInPictureSampleBufferPlaybackDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/homekit/hmcharacteristicwriteaction",
+  "type": "Generic Class",
+  "name": "HMCharacteristicWriteAction",
+  "desc": "An action in an action set that writes a value to a characteristic.",
+  "items": [
+    {
+      "name": "init(characteristic: HMCharacteristic, targetValue: TargetValueType)",
+      "desc": "Initialize a characteristic write action with a specified characteristic and target value."
+    },
+    {
+      "name": "var characteristic: HMCharacteristic",
+      "desc": "The characteristic whose value is to be written by the action."
+    },
+    {
+      "name": "var targetValue: TargetValueType",
+      "desc": "The value that will be written to the characteristic when the action is executed."
+    },
+    {
+      "name": "func updateTargetValue(TargetValueType, completionHandler: (Error?) -> Void)",
+      "desc": "Updates the target value."
+    }
+  ],
+  "declaration": "class HMCharacteristicWriteAction<TargetValueType> : HMAction where TargetValueType : NSCopying",
+  "inheritsFrom": [
+    "HMAction"
+  ]
+}

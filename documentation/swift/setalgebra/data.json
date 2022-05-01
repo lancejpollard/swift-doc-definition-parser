@@ -1,0 +1,97 @@
+{
+  "path": "/documentation/swift/setalgebra",
+  "type": "Protocol",
+  "name": "SetAlgebra",
+  "desc": "A type that provides mathematical set operations.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an empty set."
+    },
+    {
+      "name": "func contains(Self.Element) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the given element exists in the set."
+    },
+    {
+      "name": "associatedtype Element",
+      "desc": "A type for which the conforming type provides a containment test."
+    },
+    {
+      "name": "func insert(Self.Element) -> (inserted: Bool, memberAfterInsert: Self.Element)",
+      "desc": "Inserts the given element in the set if it is not already present."
+    },
+    {
+      "name": "func update(with: Self.Element) -> Self.Element?",
+      "desc": "Inserts the given element into the set unconditionally."
+    },
+    {
+      "name": "func remove(Self.Element) -> Self.Element?",
+      "desc": "Removes the given element and any elements subsumed by the given element."
+    },
+    {
+      "name": "func union(Self) -> Self",
+      "desc": "Returns a new set with the elements of both this and the given set."
+    },
+    {
+      "name": "func formUnion(Self)",
+      "desc": "Adds the elements of the given set to the set."
+    },
+    {
+      "name": "func intersection(Self) -> Self",
+      "desc": "Returns a new set with the elements that are common to both this set and the given set."
+    },
+    {
+      "name": "func formIntersection(Self)",
+      "desc": "Removes the elements of this set that aren’t also in the given set."
+    },
+    {
+      "name": "func symmetricDifference(Self) -> Self",
+      "desc": "Returns a new set with the elements that are either in this set or in the given set, but not in both."
+    },
+    {
+      "name": "func formSymmetricDifference(Self)",
+      "desc": "Removes the elements of the set that are also in the given set and adds the members of the given set that are not already in the set."
+    },
+    {
+      "name": "func isStrictSubset(of: Self) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether this set is a strict subset of the given set."
+    },
+    {
+      "name": "func isStrictSuperset(of: Self) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether this set is a strict superset of the given set."
+    },
+    {
+      "name": "init<S>(S)",
+      "desc": "Creates a new set from a finite sequence of items."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value that indicates whether the set has no elements."
+    },
+    {
+      "name": "func isDisjoint(with: Self) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the set has no members in common with the given set."
+    },
+    {
+      "name": "func isSubset(of: Self) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the set is a subset of another set."
+    },
+    {
+      "name": "func isSuperset(of: Self) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the set is a superset of the given set."
+    },
+    {
+      "name": "func subtract(Self)",
+      "desc": "Removes the elements of the given set from this set."
+    },
+    {
+      "name": "func subtracting(Self) -> Self",
+      "desc": "Returns a new set containing the elements of this set that do not occur in the given set."
+    }
+  ],
+  "declaration": "protocol SetAlgebra",
+  "inheritsFrom": [
+    "Equatable",
+    "ExpressibleByArrayLiteral"
+  ]
+}

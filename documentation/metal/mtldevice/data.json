@@ -1,0 +1,480 @@
+{
+  "path": "/documentation/metal/mtldevice",
+  "type": "Protocol",
+  "name": "MTLDevice",
+  "desc": "The Metal interface to a GPU that you use to draw graphics or do parallel computation.",
+  "items": [
+    {
+      "name": "func MTLCreateSystemDefaultDevice() -> MTLDevice?",
+      "desc": "Returns the device instance Metal selects as the default."
+    },
+    {
+      "name": "func MTLCopyAllDevices() -> [MTLDevice]",
+      "desc": "Returns an array of references to all Metal device objects in the system."
+    },
+    {
+      "name": "func MTLCopyAllDevicesWithObserver(handler: MTLDeviceNotificationHandler) -> (devices: [MTLDevice], observer: NSObject)",
+      "desc": "Fetches the available Metal devices and registers a notification observer for changes to the list."
+    },
+    {
+      "name": "func MTLRemoveDeviceObserver(NSObjectProtocol)",
+      "desc": "Removes a registered observer of device notifications."
+    },
+    {
+      "name": "var recommendedMaxWorkingSetSize: UInt64",
+      "desc": "An approximation of how much memory, in bytes, this device can use with good performance."
+    },
+    {
+      "name": "var hasUnifiedMemory: Bool",
+      "desc": "A Boolean that indicates whether the GPU shares all of its memory with the CPU."
+    },
+    {
+      "name": "var maxTransferRate: UInt64",
+      "desc": "The highest theoretical rate of transfer between system RAM and dedicated GPU memory (VRAM), measured in bytes per second."
+    },
+    {
+      "name": "var name: String",
+      "desc": "The name of the device."
+    },
+    {
+      "name": "var isHeadless: Bool",
+      "desc": "A Boolean value that indicates whether a device is configured as headless."
+    },
+    {
+      "name": "var isLowPower: Bool",
+      "desc": "A Boolean value that indicates whether the GPU trades performance to run with lower power consumption."
+    },
+    {
+      "name": "var isRemovable: Bool",
+      "desc": "A Boolean value that determines whether or not a GPU is removable."
+    },
+    {
+      "name": "var registryID: UInt64",
+      "desc": "The registry ID value for the device."
+    },
+    {
+      "name": "var location: MTLDeviceLocation",
+      "desc": "The physical location of the GPU relative to the host computer."
+    },
+    {
+      "name": "var locationNumber: Int",
+      "desc": "A more detailed specifier for the GPU's location."
+    },
+    {
+      "name": "enum MTLDeviceLocation",
+      "desc": "Options describing possible locations for the GPU."
+    },
+    {
+      "name": "var peerGroupID: UInt64",
+      "desc": "The peer group, if any, that the GPU belongs to."
+    },
+    {
+      "name": "var peerCount: UInt32",
+      "desc": "The number of GPUs in the peer group."
+    },
+    {
+      "name": "var peerIndex: UInt32",
+      "desc": "The unique identifier for a GPU in a peer group."
+    },
+    {
+      "name": "func supportsFamily(MTLGPUFamily) -> Bool",
+      "desc": "Determines whether the device object supports the feature set of a particular GPU family."
+    },
+    {
+      "name": "func supportsFeatureSet(MTLFeatureSet) -> Bool",
+      "desc": "Determines whether a device supports a particular feature set."
+    },
+    {
+      "name": "enum MTLGPUFamily",
+      "desc": "Options for families of GPUs."
+    },
+    {
+      "name": "enum MTLFeatureSet",
+      "desc": "The device feature sets that define specific platform, hardware, and software configurations."
+    },
+    {
+      "name": "var argumentBuffersSupport: MTLArgumentBuffersTier",
+      "desc": "Determines the argument buffers tier supported by the device."
+    },
+    {
+      "name": "var maxArgumentBufferSamplerCount: Int",
+      "desc": "The maximum number of unique argument buffer samplers per app."
+    },
+    {
+      "name": "var counterSets: [MTLCounterSet]?",
+      "desc": "The counter sets supported by the device object."
+    },
+    {
+      "name": "func supportsCounterSampling(MTLCounterSamplingPoint) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether you can read GPU counters at the specified command boundary."
+    },
+    {
+      "name": "enum MTLCounterSamplingPoint",
+      "desc": "Options for different times when you can sample GPU counters."
+    },
+    {
+      "name": "var supportsDynamicLibraries: Bool",
+      "desc": "A Boolean value that indicates whether the device object supports dynamic libraries."
+    },
+    {
+      "name": "var supportsFunctionPointers: Bool",
+      "desc": "A Boolean value that indicates whether you can provide function pointers as arguments to a compute shader."
+    },
+    {
+      "name": "var supportsFunctionPointersFromRender: Bool",
+      "desc": "A Boolean value that indicates whether you can provide function pointers as arguments to a vertex or fragment shader."
+    },
+    {
+      "name": "var supportsRaytracing: Bool",
+      "desc": "A Boolean value that indicates whether the device object supports ray tracing."
+    },
+    {
+      "name": "var supportsRaytracingFromRender: Bool",
+      "desc": "A Boolean value that indicates whether you can call raytracing functions from a vertex or fragment shader."
+    },
+    {
+      "name": "var areBarycentricCoordsSupported: Bool",
+      "desc": "A Boolean value that indicates whether the GPU supports barycentric coordinates."
+    },
+    {
+      "name": "var areProgrammableSamplePositionsSupported: Bool",
+      "desc": "A Boolean that indicates whether a device supports programmable sample positions."
+    },
+    {
+      "name": "func getDefaultSamplePositions(sampleCount: Int) -> [MTLSamplePosition]",
+      "desc": "Retrieves the default sample positions for a specific sample count."
+    },
+    {
+      "name": "var areRasterOrderGroupsSupported: Bool",
+      "desc": "A Boolean value that indicates whether a device supports raster order groups."
+    },
+    {
+      "name": "var supports32BitMSAA: Bool",
+      "desc": "A Boolean value that indicates whether you can render to multisample textures whose pixel format contains 32-bit floating-point components."
+    },
+    {
+      "name": "var supportsPullModelInterpolation: Bool",
+      "desc": "A Boolean value that indicates whether you can use pull model interpolation from within a shader."
+    },
+    {
+      "name": "var supportsShaderBarycentricCoordinates: Bool",
+      "desc": "A Boolean value that indicates whether the GPU supports barycentric coordinates."
+    },
+    {
+      "name": "func supportsVertexAmplificationCount(Int) -> Bool",
+      "desc": "Determines whether a given amplification count is supported by the device object."
+    },
+    {
+      "name": "var isDepth24Stencil8PixelFormatSupported: Bool",
+      "desc": "A Boolean value that indicates whether a device supports a packed depth-and-stencil pixel format."
+    },
+    {
+      "name": "var supports32BitFloatFiltering: Bool",
+      "desc": "A Boolean value that indicates whether you can use linear filtering when sampling from a texture whose format contains 32-bit floating point components."
+    },
+    {
+      "name": "var supportsBCTextureCompression: Bool",
+      "desc": "A Boolean value that indicates whether you can use textures that use BC compression."
+    },
+    {
+      "name": "var supportsQueryTextureLOD: Bool",
+      "desc": "A Boolean value that indicates whether you can query texture level of detail from within a shader."
+    },
+    {
+      "name": "func supportsTextureSampleCount(Int) -> Bool",
+      "desc": "Determines whether a device supports a given texture sample count."
+    },
+    {
+      "name": "var readWriteTextureSupport: MTLReadWriteTextureTier",
+      "desc": "The device objects's read-write texture support tier."
+    },
+    {
+      "name": "func minimumLinearTextureAlignment(for: MTLPixelFormat) -> Int",
+      "desc": "Calculates the minimum alignment required for creating a linear texture with a given pixel format."
+    },
+    {
+      "name": "func minimumTextureBufferAlignment(for: MTLPixelFormat) -> Int",
+      "desc": "Calculates the minimum alignment required when creating a texture buffer from a buffer."
+    },
+    {
+      "name": "var maxThreadgroupMemoryLength: Int",
+      "desc": "The maximum threadgroup memory available to a compute kernel, in bytes."
+    },
+    {
+      "name": "var maxThreadsPerThreadgroup: MTLSize",
+      "desc": "The maximum number of threads along each dimension of a threadgroup."
+    },
+    {
+      "name": "func makeAccelerationStructure(descriptor: MTLAccelerationStructureDescriptor) -> MTLAccelerationStructure?",
+      "desc": "Creates a new ray-tracing acceleration structure."
+    },
+    {
+      "name": "func makeAccelerationStructure(size: Int) -> MTLAccelerationStructure?",
+      "desc": "Creates a new acceleration structure with the specified size."
+    },
+    {
+      "name": "func accelerationStructureSizes(descriptor: MTLAccelerationStructureDescriptor) -> MTLAccelerationStructureSizes",
+      "desc": "Gets the buffer space necessary to build, refit, and hold an acceleration structure."
+    },
+    {
+      "name": "struct MTLAccelerationStructureSizes",
+      "desc": "The expected sizes for a ray-tracing acceleration structure."
+    },
+    {
+      "name": "func makeArgumentEncoder(arguments: [MTLArgumentDescriptor]) -> MTLArgumentEncoder?",
+      "desc": "Creates an argument encoder for a specific array of arguments."
+    },
+    {
+      "name": "func makeBinaryArchive(descriptor: MTLBinaryArchiveDescriptor) -> MTLBinaryArchive",
+      "desc": "Creates an object representing a binary archive."
+    },
+    {
+      "name": "class MTLBinaryArchiveDescriptor",
+      "desc": "A description of a binary shader archive that you want to create."
+    },
+    {
+      "name": "struct MTLBinaryArchiveError",
+      "desc": "An error that occurred when creating a binary shader archive."
+    },
+    {
+      "name": "let MTLBinaryArchiveDomain: String",
+      "desc": "The domain for Metal binary archive errors."
+    },
+    {
+      "name": "enum MTLBinaryArchiveError.Code",
+      "desc": "Error codes when creating binary archives of compiled shader code."
+    },
+    {
+      "name": "var maxBufferLength: Int",
+      "desc": "The maximum size of a buffer, in bytes."
+    },
+    {
+      "name": "func makeBuffer(length: Int, options: MTLResourceOptions) -> MTLBuffer?",
+      "desc": "Allocates a new zero-filled buffer of a given length."
+    },
+    {
+      "name": "func makeBuffer(bytes: UnsafeRawPointer, length: Int, options: MTLResourceOptions) -> MTLBuffer?",
+      "desc": "Allocates a new buffer of a given length and initializes its contents by copying existing data into it."
+    },
+    {
+      "name": "func makeBuffer(bytesNoCopy: UnsafeMutableRawPointer, length: Int, options: MTLResourceOptions, deallocator: ((UnsafeMutableRawPointer, Int) -> Void)?) -> MTLBuffer?",
+      "desc": "Creates a buffer by wrapping an existing contiguous memory allocation."
+    },
+    {
+      "name": "func makeCommandQueue() -> MTLCommandQueue?",
+      "desc": "Creates a command submission queue."
+    },
+    {
+      "name": "func makeCommandQueue(maxCommandBufferCount: Int) -> MTLCommandQueue?",
+      "desc": "Creates a command submission queue with a fixed maximum number of uncompleted command buffers."
+    },
+    {
+      "name": "func makeComputePipelineState(descriptor: MTLComputePipelineDescriptor, options: MTLPipelineOption, completionHandler: MTLNewComputePipelineStateWithReflectionCompletionHandler)",
+      "desc": "Asynchronously creates a compute pipeline state object, and associated reflection information, using a compute pipeline descriptor."
+    },
+    {
+      "name": "func makeComputePipelineState(function: MTLFunction, completionHandler: MTLNewComputePipelineStateCompletionHandler)",
+      "desc": "Asynchronously creates a new compute pipeline state object using a function object."
+    },
+    {
+      "name": "func makeComputePipelineState(function: MTLFunction, options: MTLPipelineOption, completionHandler: MTLNewComputePipelineStateWithReflectionCompletionHandler)",
+      "desc": "Asynchronously creates a new compute pipeline state object, and associated reflection information, using a function object."
+    },
+    {
+      "name": "func makeComputePipelineState(descriptor: MTLComputePipelineDescriptor, options: MTLPipelineOption, reflection: AutoreleasingUnsafeMutablePointer<MTLAutoreleasedComputePipelineReflection?>?) -> MTLComputePipelineState",
+      "desc": "Synchronously creates a compute pipeline state object, and associated reflection information, using a compute pipeline descriptor."
+    },
+    {
+      "name": "func makeComputePipelineState(function: MTLFunction) -> MTLComputePipelineState",
+      "desc": "Synchronously creates a new compute pipeline state object using a function object."
+    },
+    {
+      "name": "func makeComputePipelineState(function: MTLFunction, options: MTLPipelineOption, reflection: AutoreleasingUnsafeMutablePointer<MTLAutoreleasedComputePipelineReflection?>?) -> MTLComputePipelineState",
+      "desc": "Synchronously creates a new compute pipeline state object, and associated reflection information, using a function object."
+    },
+    {
+      "name": "func makeCounterSampleBuffer(descriptor: MTLCounterSampleBufferDescriptor) -> MTLCounterSampleBuffer",
+      "desc": "Creates a counter sample buffer."
+    },
+    {
+      "name": "func makeDepthStencilState(descriptor: MTLDepthStencilDescriptor) -> MTLDepthStencilState?",
+      "desc": "Creates a new object that contains depth and stencil test state."
+    },
+    {
+      "name": "func makeDynamicLibrary(library: MTLLibrary) -> MTLDynamicLibrary",
+      "desc": "Converts a regular Metal library into a dynamic library."
+    },
+    {
+      "name": "func makeDynamicLibrary(url: URL) -> MTLDynamicLibrary",
+      "desc": "Creates an object representing a dynamic linked library of Metal shader code."
+    },
+    {
+      "name": "struct MTLDynamicLibraryError",
+      "desc": "Errors when compiling dynamic libraries."
+    },
+    {
+      "name": "let MTLDynamicLibraryDomain: String",
+      "desc": "The domain for Metal dynamic library errors."
+    },
+    {
+      "name": "enum MTLDynamicLibraryError.Code",
+      "desc": "Error codes that Metal can generate when creating dynamic libraries."
+    },
+    {
+      "name": "func makeEvent() -> MTLEvent?",
+      "desc": "Creates a new event whose use is limited to the device object."
+    },
+    {
+      "name": "func makeSharedEvent() -> MTLSharedEvent?",
+      "desc": "Creates a shareable event."
+    },
+    {
+      "name": "func makeSharedEvent(handle: MTLSharedEventHandle) -> MTLSharedEvent?",
+      "desc": "Re-creates a shareable event from a shareable event handle."
+    },
+    {
+      "name": "func makeFence() -> MTLFence?",
+      "desc": "Creates a new fence."
+    },
+    {
+      "name": "func makeIndirectCommandBuffer(descriptor: MTLIndirectCommandBufferDescriptor, maxCommandCount: Int, options: MTLResourceOptions) -> MTLIndirectCommandBuffer?",
+      "desc": "Creates an indirect command buffer."
+    },
+    {
+      "name": "func supportsRasterizationRateMap(layerCount: Int) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the device object supports the desired number of layers in a rasterization rate map."
+    },
+    {
+      "name": "func makeRasterizationRateMap(descriptor: MTLRasterizationRateMapDescriptor) -> MTLRasterizationRateMap?",
+      "desc": "Creates a rasterization rate map."
+    },
+    {
+      "name": "func makeRenderPipelineState(descriptor: MTLRenderPipelineDescriptor, completionHandler: MTLNewRenderPipelineStateCompletionHandler)",
+      "desc": "Asynchronously creates a render pipeline state object."
+    },
+    {
+      "name": "func makeRenderPipelineState(descriptor: MTLRenderPipelineDescriptor, options: MTLPipelineOption, completionHandler: MTLNewRenderPipelineStateWithReflectionCompletionHandler)",
+      "desc": "Asynchronously creates a render pipeline state object and associated reflection information."
+    },
+    {
+      "name": "func makeRenderPipelineState(descriptor: MTLRenderPipelineDescriptor) -> MTLRenderPipelineState",
+      "desc": "Synchronously creates a render pipeline state object."
+    },
+    {
+      "name": "func makeRenderPipelineState(descriptor: MTLRenderPipelineDescriptor, options: MTLPipelineOption, reflection: AutoreleasingUnsafeMutablePointer<MTLAutoreleasedRenderPipelineReflection?>?) -> MTLRenderPipelineState",
+      "desc": "Synchronously creates a render pipeline state object and associated reflection information."
+    },
+    {
+      "name": "func makeRenderPipelineState(tileDescriptor: MTLTileRenderPipelineDescriptor, options: MTLPipelineOption, completionHandler: MTLNewRenderPipelineStateWithReflectionCompletionHandler)",
+      "desc": "Asynchronously creates a render pipeline state object, and associated reflection information, for a tile shader."
+    },
+    {
+      "name": "func makeRenderPipelineState(tileDescriptor: MTLTileRenderPipelineDescriptor, options: MTLPipelineOption, reflection: AutoreleasingUnsafeMutablePointer<MTLAutoreleasedRenderPipelineReflection?>?) -> MTLRenderPipelineState",
+      "desc": "Synchronously creates a render pipeline state object, and associated reflection information, for a tile shader."
+    },
+    {
+      "name": "func makeHeap(descriptor: MTLHeapDescriptor) -> MTLHeap?",
+      "desc": "Creates a heap."
+    },
+    {
+      "name": "func heapBufferSizeAndAlign(length: Int, options: MTLResourceOptions) -> MTLSizeAndAlign",
+      "desc": "Returns the size and alignment, in bytes, of a buffer sub-allocated from a heap."
+    },
+    {
+      "name": "func heapTextureSizeAndAlign(descriptor: MTLTextureDescriptor) -> MTLSizeAndAlign",
+      "desc": "Returns the size and alignment, in bytes, of a texture sub-allocated from a heap."
+    },
+    {
+      "name": "func makeSamplerState(descriptor: MTLSamplerDescriptor) -> MTLSamplerState?",
+      "desc": "Creates a sampler state object."
+    },
+    {
+      "name": "func makeDefaultLibrary() -> MTLLibrary?",
+      "desc": "Creates a library object that contains the functions in the app’s default Metal library."
+    },
+    {
+      "name": "func makeDefaultLibrary(bundle: Bundle) -> MTLLibrary",
+      "desc": "Creates a library object that contains the functions in the specified bundle’s default Metal library."
+    },
+    {
+      "name": "func makeLibrary(filepath: String) -> MTLLibrary",
+      "desc": "Creates a library object that contains the functions in a Metal library file at a specified path."
+    },
+    {
+      "name": "func makeLibrary(URL: URL) -> MTLLibrary",
+      "desc": "Creates a library object that contains the functions in a Metal library file at a specified URL."
+    },
+    {
+      "name": "func makeLibrary(data: __DispatchData) -> MTLLibrary",
+      "desc": "Creates a library object that contains the functions in a binary data object that you create from a precompiled Metal library."
+    },
+    {
+      "name": "func makeLibrary(source: String, options: MTLCompileOptions?, completionHandler: MTLNewLibraryCompletionHandler)",
+      "desc": "Creates a library object asynchronously by compiling the functions in the specified source string."
+    },
+    {
+      "name": "func makeLibrary(source: String, options: MTLCompileOptions?) -> MTLLibrary",
+      "desc": "Creates a library object synchronously by compiling the functions in the specified source string."
+    },
+    {
+      "name": "func makeTexture(descriptor: MTLTextureDescriptor) -> MTLTexture?",
+      "desc": "Creates a texture."
+    },
+    {
+      "name": "func makeTexture(descriptor: MTLTextureDescriptor, iosurface: IOSurfaceRef, plane: Int) -> MTLTexture?",
+      "desc": "Creates a texture using an IOSurface to store the texture data."
+    },
+    {
+      "name": "func makeSharedTexture(descriptor: MTLTextureDescriptor) -> MTLTexture?",
+      "desc": "Create a texture that can be shared across process boundaries."
+    },
+    {
+      "name": "func makeSharedTexture(handle: MTLSharedTextureHandle) -> MTLTexture?",
+      "desc": "Creates a texture referencing an existing shared texture."
+    },
+    {
+      "name": "var currentAllocatedSize: Int",
+      "desc": "The current size, in bytes, of all resources allocated on this device for this process."
+    },
+    {
+      "name": "func sampleTimestamps() -> (cpu: MTLTimestamp, gpu: MTLTimestamp)",
+      "desc": "Samples the CPU and GPU timestamps."
+    },
+    {
+      "name": "var sparseTileSizeInBytes: Int",
+      "desc": "The size of sparse tiles created by this device object, measured in bytes."
+    },
+    {
+      "name": "func sparseTileSize(with: MTLTextureType, pixelFormat: MTLPixelFormat, sampleCount: Int) -> MTLSize",
+      "desc": "Returns the dimensions of a sparse tile for a specific texture."
+    },
+    {
+      "name": "func convertSparsePixelRegions(UnsafePointer<MTLRegion>, toTileRegions: UnsafeMutablePointer<MTLRegion>, withTileSize: MTLSize, alignmentMode: MTLSparseTextureRegionAlignmentMode, numRegions: Int)",
+      "desc": "Converts a list of regions, specified in pixel coordinates, to sparse tile units."
+    },
+    {
+      "name": "func convertSparseTileRegions(UnsafePointer<MTLRegion>, toPixelRegions: UnsafeMutablePointer<MTLRegion>, withTileSize: MTLSize, numRegions: Int)",
+      "desc": "Converts a list of regions, specified in sparse tile coordinates, to pixel units."
+    },
+    {
+      "name": "enum MTLSparseTextureRegionAlignmentMode",
+      "desc": "Options used when converting between a pixel-based region within a texture to a tile-based region."
+    },
+    {
+      "name": "var supportsPrimitiveMotionBlur: Bool"
+    },
+    {
+      "name": "var supportsRenderDynamicLibraries: Bool"
+    },
+    {
+      "name": "func makeLibrary(stitchedDescriptor: MTLStitchedLibraryDescriptor) -> MTLLibrary"
+    },
+    {
+      "name": "func makeLibrary(stitchedDescriptor: MTLStitchedLibraryDescriptor, completionHandler: MTLNewLibraryCompletionHandler)"
+    }
+  ],
+  "declaration": "protocol MTLDevice",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

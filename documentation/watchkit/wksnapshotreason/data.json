@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/watchkit/wksnapshotreason",
+  "type": "Enumeration",
+  "name": "WKSnapshotReason",
+  "desc": "The reason for a background snapshot task.",
+  "items": [
+    {
+      "name": "case appBackgrounded",
+      "desc": "The app transitioned from the foreground to the background."
+    },
+    {
+      "name": "case appScheduled",
+      "desc": "The app scheduled this snapshot."
+    },
+    {
+      "name": "case complicationUpdate",
+      "desc": "The app updated the complication timeline."
+    },
+    {
+      "name": "case prelaunch",
+      "desc": "The system needs a snapshot for the dock, but the app has not been launched yet."
+    },
+    {
+      "name": "case returnToDefaultState",
+      "desc": "It has been more than an hour since the user’s last interaction with the app; the app’s snapshot should return to its default state."
+    }
+  ],
+  "declaration": "enum WKSnapshotReason : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/healthkit/hkactivitysummaryquerydescriptor",
+  "type": "Structure",
+  "name": "HKActivitySummaryQueryDescriptor",
+  "desc": "A query descriptor that lets you run activity summary queries using Swift concurrency.",
+  "items": [
+    {
+      "name": "typealias HKActivitySummaryQueryDescriptor.Output",
+      "desc": "The type of data that the active summary query returns."
+    },
+    {
+      "name": "typealias HKActivitySummaryQueryDescriptor.Sequence",
+      "desc": "The asynchronous sequence that the active summary query returns."
+    },
+    {
+      "name": "init(predicate: NSPredicate?)",
+      "desc": "Instantiates an activity summary query descriptor."
+    },
+    {
+      "name": "func result(for: HKHealthStore) -> [HKActivitySummary]",
+      "desc": "Runs a one-shot query and asynchronously returns a snapshot of the current matching results."
+    },
+    {
+      "name": "func results(for: HKHealthStore) -> HKActivitySummaryQueryDescriptor.Results",
+      "desc": "Initiates a long-running query that returns its results using an asynchronous sequence."
+    },
+    {
+      "name": "struct HKActivitySummaryQueryDescriptor.Results",
+      "desc": "An asynchronous sequence that emits updates from an activity summary query."
+    },
+    {
+      "name": "var predicate: NSPredicate?",
+      "desc": "A predicate that limits the results that the query returned."
+    }
+  ],
+  "declaration": "struct HKActivitySummaryQueryDescriptor",
+  "conformsTo": [
+    "HKAsyncQuery",
+    "HKAsyncSequenceQuery"
+  ]
+}

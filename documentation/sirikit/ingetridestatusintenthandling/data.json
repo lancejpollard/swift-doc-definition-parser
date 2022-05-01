@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/sirikit/ingetridestatusintenthandling",
+  "type": "Protocol",
+  "name": "INGetRideStatusIntentHandling",
+  "desc": "The handler interface for fetching the status of the user’s current ride.",
+  "items": [
+    {
+      "name": "func confirm(intent: INGetRideStatusIntent, completion: (INGetRideStatusIntentResponse) -> Void)",
+      "desc": "Confirms the details of the user’s request."
+    },
+    {
+      "name": "func handle(intent: INGetRideStatusIntent, completion: (INGetRideStatusIntentResponse) -> Void)",
+      "desc": "Handles providing the current status of the user’s ride."
+    },
+    {
+      "name": "func startSendingUpdates(for: INGetRideStatusIntent, to: INGetRideStatusIntentResponseObserver)",
+      "desc": "Start delivering regular updates about the specified ride."
+    },
+    {
+      "name": "func stopSendingUpdates(for: INGetRideStatusIntent)",
+      "desc": "Stops the delivery of status updates for the specified ride."
+    }
+  ],
+  "declaration": "protocol INGetRideStatusIntentHandling",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

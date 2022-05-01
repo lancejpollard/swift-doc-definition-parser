@@ -1,0 +1,43 @@
+{
+  "path": "/documentation/foundation/nsapplescript",
+  "type": "Class",
+  "name": "NSAppleScript",
+  "desc": "An object that provides the ability to load, compile, and execute scripts.",
+  "items": [
+    {
+      "name": "init?(contentsOf: URL, error: AutoreleasingUnsafeMutablePointer<NSDictionary?>?)",
+      "desc": "Initializes a newly allocated script instance from the source identified by the passed URL."
+    },
+    {
+      "name": "init?(source: String)",
+      "desc": "Initializes a newly allocated script instance from the passed source."
+    },
+    {
+      "name": "var isCompiled: Bool",
+      "desc": "A Boolean value that indicates whether the receiver's script has been compiled."
+    },
+    {
+      "name": "var source: String?",
+      "desc": "The script source for the receiver."
+    },
+    {
+      "name": "func compileAndReturnError(AutoreleasingUnsafeMutablePointer<NSDictionary?>?) -> Bool",
+      "desc": "Compiles the receiver, if it is not already compiled."
+    },
+    {
+      "name": "func executeAndReturnError(AutoreleasingUnsafeMutablePointer<NSDictionary?>?) -> NSAppleEventDescriptor",
+      "desc": "Executes the receiver, compiling it first if it is not already compiled."
+    },
+    {
+      "name": "func executeAppleEvent(NSAppleEventDescriptor, error: AutoreleasingUnsafeMutablePointer<NSDictionary?>?) -> NSAppleEventDescriptor",
+      "desc": "Executes an Apple event in the context of the receiver, as a means of allowing the application to invoke a handler in the script."
+    }
+  ],
+  "declaration": "class NSAppleScript : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

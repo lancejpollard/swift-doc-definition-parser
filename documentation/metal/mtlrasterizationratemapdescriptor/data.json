@@ -1,0 +1,55 @@
+{
+  "path": "/documentation/metal/mtlrasterizationratemapdescriptor",
+  "type": "Class",
+  "name": "MTLRasterizationRateMapDescriptor",
+  "desc": "An object that you use to configure new rasterization rate maps.",
+  "items": [
+    {
+      "name": "init(screenSize: MTLSize, label: String?)",
+      "desc": "A convenience initializer that creates a rate map descriptor with a given size and identifier."
+    },
+    {
+      "name": "init(screenSize: MTLSize, layer: MTLRasterizationRateLayerDescriptor, label: String?)",
+      "desc": "A convenience initializer that creates a rate map descriptor with a single rate layer."
+    },
+    {
+      "name": "init(screenSize: MTLSize, layers: [MTLRasterizationRateLayerDescriptor], label: String?)",
+      "desc": "A convenience initializer that creates a rate map descriptor with a set of layer descriptors."
+    },
+    {
+      "name": "var label: String?",
+      "desc": "A string used to identify the rate map you create with the descriptor."
+    },
+    {
+      "name": "var screenSize: MTLSize",
+      "desc": "The size of the viewport coordinate system, in logical pixels."
+    },
+    {
+      "name": "var layerCount: Int",
+      "desc": "The number of layers in the rate map."
+    },
+    {
+      "name": "func layer(at: Int) -> MTLRasterizationRateLayerDescriptor?",
+      "desc": "Returns the layer description for a layer in the rate map."
+    },
+    {
+      "name": "func setLayer(MTLRasterizationRateLayerDescriptor?, at: Int)",
+      "desc": "Sets a configuration for a layer rate map."
+    },
+    {
+      "name": "var layers: MTLRasterizationRateLayerArray",
+      "desc": "The rasterization rates for one or more layers in the rate map."
+    },
+    {
+      "name": "class MTLRasterizationRateLayerArray",
+      "desc": "Descriptions for the rasterization rates to apply to the set of layers in a rate map."
+    }
+  ],
+  "declaration": "class MTLRasterizationRateMapDescriptor : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

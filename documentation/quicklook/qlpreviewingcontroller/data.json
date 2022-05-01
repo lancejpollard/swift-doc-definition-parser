@@ -1,0 +1,24 @@
+{
+  "path": "/documentation/quicklook/qlpreviewingcontroller",
+  "type": "Protocol",
+  "name": "QLPreviewingController",
+  "desc": "A protocol for implementing a custom controller to create previews of files.",
+  "items": [
+    {
+      "name": "func preparePreviewOfFile(at: URL, completionHandler: (Error?) -> Void)",
+      "desc": "Prepares the preview of a file at the specified file’s URL."
+    },
+    {
+      "name": "func preparePreviewOfSearchableItem(identifier: String, queryString: String?, completionHandler: (Error?) -> Void)",
+      "desc": "Prepares the preview for a file by using the data from Spotlight’s searchable item."
+    },
+    {
+      "name": "func providePreview(for: QLFilePreviewRequest, completionHandler: (QLPreviewReply?, Error?) -> Void)",
+      "desc": "Prepares the preview of a file identified within a file preview request."
+    }
+  ],
+  "declaration": "protocol QLPreviewingController",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

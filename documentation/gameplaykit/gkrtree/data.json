@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/gameplaykit/gkrtree",
+  "type": "Generic Class",
+  "name": "GKRTree",
+  "desc": "A data structure that adaptively organizes objects based on their locations in a two-dimensional space.",
+  "items": [
+    {
+      "name": "init(maxNumberOfChildren: Int)",
+      "desc": "Initializes a new R-tree object."
+    },
+    {
+      "name": "func addElement(ElementType, boundingRectMin: vector_float2, boundingRectMax: vector_float2, splitStrategy: GKRTreeSplitStrategy)",
+      "desc": "Adds the specified object to the tree."
+    },
+    {
+      "name": "func removeElement(ElementType, boundingRectMin: vector_float2, boundingRectMax: vector_float2)",
+      "desc": "Removes the specified object from the tree."
+    },
+    {
+      "name": "func elements(inBoundingRectMin: vector_float2, rectMax: vector_float2) -> [ElementType]",
+      "desc": "Searches the tree and returns all elements found within the specified bounding region."
+    },
+    {
+      "name": "var queryReserve: Int",
+      "desc": "The number of elements to reserve space for when searching."
+    },
+    {
+      "name": "enum GKRTreeSplitStrategy",
+      "desc": "Options that control how a tree balances its internal structure when adding elements, used with the addElement(_:boundingRectMin:boundingRectMax:splitStrategy:) method."
+    }
+  ],
+  "declaration": "class GKRTree<ElementType> : NSObject where ElementType : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

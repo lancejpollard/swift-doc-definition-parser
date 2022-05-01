@@ -1,0 +1,65 @@
+{
+  "path": "/documentation/storekit/product/subscriptionoffer",
+  "type": "Structure",
+  "name": "Product.SubscriptionOffer",
+  "desc": "Information about a subscription offer that you configured in App Store Connect.",
+  "items": [
+    {
+      "name": "let displayPrice: String",
+      "desc": "The localized string representation of the discounted price of the subscription offer."
+    },
+    {
+      "name": "let price: Decimal",
+      "desc": "The decimal representation of the discounted price of the subscription offer."
+    },
+    {
+      "name": "let paymentMode: Product.SubscriptionOffer.PaymentMode",
+      "desc": "The offer's payment mode."
+    },
+    {
+      "name": "struct Product.SubscriptionOffer.PaymentMode",
+      "desc": "The payment modes for subscription offers."
+    },
+    {
+      "name": "let period: Product.SubscriptionPeriod",
+      "desc": "The subscription period for the subscription offer."
+    },
+    {
+      "name": "let periodCount: Int",
+      "desc": "The number of periods that the subscription offer renews for."
+    },
+    {
+      "name": "let type: Product.SubscriptionOffer.OfferType",
+      "desc": "The type of subscription offer, either introductory or promotional."
+    },
+    {
+      "name": "struct Product.SubscriptionOffer.OfferType",
+      "desc": "The types of subscription offers."
+    },
+    {
+      "name": "let id: String?",
+      "desc": "The promotional offer identifier."
+    },
+    {
+      "name": "static func != (Product.SubscriptionOffer, Product.SubscriptionOffer) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (Product.SubscriptionOffer, Product.SubscriptionOffer) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    }
+  ],
+  "declaration": "struct SubscriptionOffer",
+  "conformsTo": [
+    "Equatable",
+    "Hashable"
+  ]
+}

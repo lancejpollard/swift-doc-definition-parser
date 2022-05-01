@@ -1,0 +1,472 @@
+{
+  "path": "/documentation/homekit/hmerror",
+  "type": "Structure",
+  "name": "HMError",
+  "desc": "An error HomeKit returns.",
+  "items": [
+    {
+      "name": "init(Code, userInfo: [String : Any])",
+      "desc": "Initialize the error object."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "A hash value."
+    },
+    {
+      "name": "static var errorDomain: String",
+      "desc": "A string that identifies the HomeKit error domain."
+    },
+    {
+      "name": "let HMErrorDomain: String",
+      "desc": "A string that identifies the HomeKit error domain."
+    },
+    {
+      "name": "var code: Code",
+      "desc": "The error code."
+    },
+    {
+      "name": "var errorCode: Int",
+      "desc": "A code for the error."
+    },
+    {
+      "name": "var userInfo: [String : Any]",
+      "desc": "User-specific information."
+    },
+    {
+      "name": "var errorUserInfo: [String : Any]",
+      "desc": "Information about the error."
+    },
+    {
+      "name": "var localizedDescription: String",
+      "desc": "A localized, human-readable explanation of the error."
+    },
+    {
+      "name": "static var accessoryIsBlocked: HMError.Code",
+      "desc": "An error indicating a blocked accessory."
+    },
+    {
+      "name": "static var accessoryIsBusy: HMError.Code",
+      "desc": "An error indicating the accessory is busy."
+    },
+    {
+      "name": "static var accessoryIsSuspended: HMError.Code",
+      "desc": "The accessory is suspended."
+    },
+    {
+      "name": "static var accessoryNotReachable: HMError.Code",
+      "desc": "An error indicating the accessory is not reachable over the network."
+    },
+    {
+      "name": "static var accessoryOutOfCompliance: HMError.Code",
+      "desc": "An error indicating the accessory is out of compliance."
+    },
+    {
+      "name": "static var accessoryOutOfResources: HMError.Code",
+      "desc": "An error indicating the accessory is out of resources."
+    },
+    {
+      "name": "static var accessoryPoweredOff: HMError.Code",
+      "desc": "An error indicating the accessory is off."
+    },
+    {
+      "name": "static var accessoryResponseError: HMError.Code",
+      "desc": "An error with the accessory’s response."
+    },
+    {
+      "name": "static var addAccessoryFailed: HMError.Code",
+      "desc": "A failed attempt to add an accessory."
+    },
+    {
+      "name": "static var incompatibleAccessory: HMError.Code",
+      "desc": "The accessory is incompatible."
+    },
+    {
+      "name": "static var actionInAnotherActionSet: HMError.Code",
+      "desc": "An attempt to add an action that exists in one action set to another action set."
+    },
+    {
+      "name": "static var actionSetExecutionFailed: HMError.Code",
+      "desc": "An attempt to execute the action set failed."
+    },
+    {
+      "name": "static var actionSetExecutionInProgress: HMError.Code",
+      "desc": "An error indicating the execution of the action set is in progress."
+    },
+    {
+      "name": "static var actionSetExecutionPartialSuccess: HMError.Code",
+      "desc": "An attempt to execute the action set was only partially successful."
+    },
+    {
+      "name": "static var cannotRemoveBuiltinActionSet: HMError.Code",
+      "desc": "An error indicating the built-in action set cannot be removed."
+    },
+    {
+      "name": "static var noActionsInActionSet: HMError.Code",
+      "desc": "An attempt to execute an action set with no actions."
+    },
+    {
+      "name": "static var noRegisteredActionSets: HMError.Code",
+      "desc": "An attempt to activate a trigger with no action sets."
+    },
+    {
+      "name": "static var invalidAssociatedServiceType: HMError.Code",
+      "desc": "An error indicating an invalid service type."
+    },
+    {
+      "name": "static var objectAlreadyAssociatedToHome: HMError.Code",
+      "desc": "An attempt to associate an object with a home when it’s already associated with that home."
+    },
+    {
+      "name": "static var objectAssociatedToAnotherHome: HMError.Code",
+      "desc": "An attempt to associate an object with a home when it’s already associated with another home."
+    },
+    {
+      "name": "static var objectNotAssociatedToAnyHome: HMError.Code",
+      "desc": "An attempt to perform an operation on an object that is not associated to any home."
+    },
+    {
+      "name": "static var invalidOrMissingAuthorizationData: HMError.Code",
+      "desc": "An error indicating the authorization data is invalid or missing."
+    },
+    {
+      "name": "static var locationForHomeDisabled: HMError.Code",
+      "desc": "An error indicating the home’s location is disabled."
+    },
+    {
+      "name": "static var homeAccessNotAuthorized: HMError.Code",
+      "desc": "An error indicating access to the home is not authorized."
+    },
+    {
+      "name": "static var insufficientPrivileges: HMError.Code",
+      "desc": "An error indicating insufficient privileges for the operation."
+    },
+    {
+      "name": "static var messageAuthenticationFailed: HMError.Code",
+      "desc": "A message authentication failure."
+    },
+    {
+      "name": "static var notAuthorizedForLocationServices: HMError.Code",
+      "desc": "An error indicating location services are not authorized."
+    },
+    {
+      "name": "static var notAuthorizedForMicrophoneAccess: HMError.Code",
+      "desc": "An error indicating microphone access is not authorized."
+    },
+    {
+      "name": "static var notSignedIntoiCloud: HMError.Code",
+      "desc": "An error indicating the user is not signed into iCloud."
+    },
+    {
+      "name": "static var ownershipFailure: HMError.Code",
+      "desc": "The ownership code did not match."
+    },
+    {
+      "name": "static var securityFailure: HMError.Code",
+      "desc": "A security failure."
+    },
+    {
+      "name": "static var bridgedAccessoryNotReachable: HMError.Code",
+      "desc": "An error indicating the bridged accessory cannot be reached."
+    },
+    {
+      "name": "static var cannotRemoveNonBridgeAccessory: HMError.Code",
+      "desc": "An attempt to remove a bridged accessory."
+    },
+    {
+      "name": "static var cannotUnblockNonBridgeAccessory: HMError.Code",
+      "desc": "An error indicating a non-bridge accessory cannot be unblocked."
+    },
+    {
+      "name": "static var readOnlyCharacteristic: HMError.Code",
+      "desc": "An attempt to modify a read-only value."
+    },
+    {
+      "name": "static var writeOnlyCharacteristic: HMError.Code",
+      "desc": "An attempt to read from a write-only characteristic."
+    },
+    {
+      "name": "static var homeWithSimilarNameExists: HMError.Code",
+      "desc": "An attempt to assign a home the same name as an existing home."
+    },
+    {
+      "name": "static var objectWithSimilarNameExists: HMError.Code",
+      "desc": "An object with a similar name already exists."
+    },
+    {
+      "name": "static var objectWithSimilarNameExistsInHome: HMError.Code",
+      "desc": "An attempt to give the name of one object to another object in the home."
+    },
+    {
+      "name": "static var renameWithSimilarName: HMError.Code",
+      "desc": "An attempt to rename an object with its current name."
+    },
+    {
+      "name": "static var accessDenied: HMError.Code",
+      "desc": "An error indicating the current user doesn’t have privileges to perform the operation."
+    },
+    {
+      "name": "static var accessoryCommunicationFailure: HMError.Code",
+      "desc": "The accessory failed to communicate."
+    },
+    {
+      "name": "static var accessoryPairingFailed: HMError.Code",
+      "desc": "An attempt to pair with the accessory has failed."
+    },
+    {
+      "name": "static var accessorySentInvalidResponse: HMError.Code",
+      "desc": "An error indicating the accessory sent an invalid response."
+    },
+    {
+      "name": "static var clientRequestError: HMError.Code",
+      "desc": "An error with the client request."
+    },
+    {
+      "name": "static var communicationFailure: HMError.Code",
+      "desc": "A communication failure."
+    },
+    {
+      "name": "static var dataResetFailure: HMError.Code",
+      "desc": "An attempt to reset the data failed."
+    },
+    {
+      "name": "static var timedOutWaitingForAccessory: HMError.Code",
+      "desc": "An accessory did not respond timely."
+    },
+    {
+      "name": "static var deviceLocked: HMError.Code",
+      "desc": "An error indicating the device is locked."
+    },
+    {
+      "name": "static var accessoryDiscoveryFailed: HMError.Code",
+      "desc": "An error indicating that accessory discovery failed."
+    },
+    {
+      "name": "static var alreadyExists: HMError.Code",
+      "desc": "An error indicating the container already contains the object you are trying to add."
+    },
+    {
+      "name": "static var genericError: HMError.Code",
+      "desc": "An error that does not have a more specific error code."
+    },
+    {
+      "name": "static var invalidClass: HMError.Code",
+      "desc": "An attempt to use an abstract base class in an operation instead of a concrete subclass."
+    },
+    {
+      "name": "static var notFound: HMError.Code",
+      "desc": "An error indicating the object was not found in the container."
+    },
+    {
+      "name": "static var notificationAlreadyEnabled: HMError.Code",
+      "desc": "An error indicating the notification is already enabled."
+    },
+    {
+      "name": "static var notificationNotSupported: HMError.Code",
+      "desc": "An attempt to register for notifications from an accessory that does not support notifications."
+    },
+    {
+      "name": "static var operationNotSupported: HMError.Code",
+      "desc": "An attempt to use an unsupported operation."
+    },
+    {
+      "name": "static var unexpectedError: HMError.Code",
+      "desc": "An unexpected error."
+    },
+    {
+      "name": "static var missingEntitlement: HMError.Code",
+      "desc": "An error indicating a required entitlement is not available."
+    },
+    {
+      "name": "static var referToUserManual: HMError.Code",
+      "desc": "An error described in the device’s user manual."
+    },
+    {
+      "name": "static var maximumAccessoriesOfTypeInHome: HMError.Code",
+      "desc": "The home already has the maximum number of accessories of the given type."
+    },
+    {
+      "name": "static var roomForHomeCannotBeInZone: HMError.Code",
+      "desc": "An attempt to add the room that represents the entire home to a zone."
+    },
+    {
+      "name": "static var roomForHomeCannotBeUpdated: HMError.Code",
+      "desc": "An attempt to change the room that represents the entire home."
+    },
+    {
+      "name": "static var noHomeHub: HMError.Code",
+      "desc": "An error indicating no home hub found."
+    },
+    {
+      "name": "static var noCompatibleHomeHub: HMError.Code",
+      "desc": "An error indicating no compatible home hub found."
+    },
+    {
+      "name": "static var cannotActivateTriggerTooFarInFuture: HMError.Code",
+      "desc": "An error indicating the trigger cannot be activated because it is set too far in the future."
+    },
+    {
+      "name": "static var dateMustBeOnSpecifiedBoundaries: HMError.Code",
+      "desc": "An error indicating the date is not on the specified boundaries."
+    },
+    {
+      "name": "static var fireDateInPast: HMError.Code",
+      "desc": "An attempt to activate a timer trigger with a date in the past."
+    },
+    {
+      "name": "static var invalidMessageSize: HMError.Code",
+      "desc": "An error indicating an invalid message size."
+    },
+    {
+      "name": "static var maximumObjectLimitReached: HMError.Code",
+      "desc": "An error indicating the maximum object count has been reached."
+    },
+    {
+      "name": "static var recurrenceTooLarge: HMError.Code",
+      "desc": "An attempt to use a recurrence period that is too large."
+    },
+    {
+      "name": "static var recurrenceTooSmall: HMError.Code",
+      "desc": "An error indicating the recurrence interval is too short."
+    },
+    {
+      "name": "static var recurrenceMustBeOnSpecifiedBoundaries: HMError.Code",
+      "desc": "An error indicating the recurrence rule is not on the specified boundaries."
+    },
+    {
+      "name": "static var enterpriseNetworkNotSupported: HMError.Code",
+      "desc": "An enterprise network doesn’t support this accessory."
+    },
+    {
+      "name": "static var failedToJoinNetwork: HMError.Code",
+      "desc": "The accessory failed to join the network."
+    },
+    {
+      "name": "static var incompatibleNetwork: HMError.Code",
+      "desc": "An error indicating an incompatible network."
+    },
+    {
+      "name": "static var networkUnavailable: HMError.Code",
+      "desc": "An error indicating the network is unavailable."
+    },
+    {
+      "name": "static var wiFiCredentialGenerationFailed: HMError.Code",
+      "desc": "WiFi credential generation failed."
+    },
+    {
+      "name": "static var operationCancelled: HMError.Code",
+      "desc": "An error indicating the user canceled the operation."
+    },
+    {
+      "name": "static var operationInProgress: HMError.Code",
+      "desc": "An error indicating the operation is already in progress."
+    },
+    {
+      "name": "static var operationTimedOut: HMError.Code",
+      "desc": "An error indicating the operation timed out."
+    },
+    {
+      "name": "static var invalidParameter: HMError.Code",
+      "desc": "An error indicating the object is invalid for the given operation."
+    },
+    {
+      "name": "static var missingParameter: HMError.Code",
+      "desc": "An error indicating a missing parameter."
+    },
+    {
+      "name": "static var nilParameter: HMError.Code",
+      "desc": "An error indicating that nil was passed for an operation that does not accept nil."
+    },
+    {
+      "name": "static var unconfiguredParameter: HMError.Code",
+      "desc": "An error indicating an unconfigured parameter."
+    },
+    {
+      "name": "static var readWriteFailure: HMError.Code",
+      "desc": "An error indicating a failed read/write operation."
+    },
+    {
+      "name": "static var readWritePartialSuccess: HMError.Code",
+      "desc": "An error indicating a partially successful read/write operation."
+    },
+    {
+      "name": "static var cloudDataSyncInProgress: HMError.Code",
+      "desc": "An error indicating a data synchronization operation is in progress."
+    },
+    {
+      "name": "static var keychainSyncNotEnabled: HMError.Code",
+      "desc": "An error indicating Keychain syncing is not enabled for the user."
+    },
+    {
+      "name": "static var userDeclinedAddingUser: HMError.Code",
+      "desc": "An error indicating the user canceled the add user operation."
+    },
+    {
+      "name": "static var userDeclinedRemovingUser: HMError.Code",
+      "desc": "An error indicating the user canceled the remove user operation."
+    },
+    {
+      "name": "static var userDeclinedInvite: HMError.Code",
+      "desc": "An error indicating the user declined the invitation."
+    },
+    {
+      "name": "static var userIDNotEmailAddress: HMError.Code",
+      "desc": "An error indicating the user’s ID is not a valid email address."
+    },
+    {
+      "name": "static var userManagementFailed: HMError.Code",
+      "desc": "A user management error not covered by the other errors."
+    },
+    {
+      "name": "static var invalidDataFormatSpecified: HMError.Code",
+      "desc": "An error indicating an invalid data format was specified."
+    },
+    {
+      "name": "static var invalidValueType: HMError.Code",
+      "desc": "An attempt to use an invalid value type."
+    },
+    {
+      "name": "static var nameContainsProhibitedCharacters: HMError.Code",
+      "desc": "An attempt to name an object with prohibited characters."
+    },
+    {
+      "name": "static var nameDoesNotEndWithValidCharacters: HMError.Code",
+      "desc": "An error indicating the provided name has invalid characters at the end."
+    },
+    {
+      "name": "static var nameDoesNotStartWithValidCharacters: HMError.Code",
+      "desc": "An attempt to start the name of an object with invalid characters."
+    },
+    {
+      "name": "static var stringLongerThanMaximum: HMError.Code",
+      "desc": "An attempt to use a string longer than the maximum allowed."
+    },
+    {
+      "name": "static var stringShorterThanMinimum: HMError.Code",
+      "desc": "An attempt to use a string shorter than the required minimum."
+    },
+    {
+      "name": "static var valueHigherThanMaximum: HMError.Code",
+      "desc": "An attempt to use a numeric value higher than the specified maximum value."
+    },
+    {
+      "name": "static var valueLowerThanMinimum: HMError.Code",
+      "desc": "An attempt to use a numeric value lower than the specified minimum value."
+    },
+    {
+      "name": "static func != (HMError, HMError) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (HMError, HMError) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "enum HMError.Code",
+      "desc": "Possible error values that can be returned from HomeKit APIs."
+    }
+  ],
+  "declaration": "struct HMError"
+}

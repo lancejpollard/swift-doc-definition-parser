@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/accelerate/bnns/adamwoptimizer",
+  "type": "Structure",
+  "name": "BNNS.AdamWOptimizer",
+  "desc": "An optimizer that uses the AdamW optimization algorithm.",
+  "items": [
+    {
+      "name": "init(learningRate: Float, beta1: Float, beta2: Float, timeStep: Float, epsilon: Float, gradientScale: Float, weightDecay: Float, gradientClipping: BNNS.GradientClipping, usesAMSGrad: Bool)",
+      "desc": "Returns a new AdamW optimizer object with gradient clipped by value or clipped by norm."
+    },
+    {
+      "name": "var learningRate: Float",
+      "desc": "A value that specifies the learning rate."
+    },
+    {
+      "name": "var beta1: Float",
+      "desc": "A value that specifies the first-moment constant, in the range 0 to 1."
+    },
+    {
+      "name": "var beta2: Float",
+      "desc": "A value that specifies the second-moment constant, in the range 0 to 1."
+    },
+    {
+      "name": "var timeStep: Float",
+      "desc": "A value that’s at least 1 and represents the optimizer’s current time."
+    },
+    {
+      "name": "var epsilon: Float",
+      "desc": "The epsilon value you use to improve numerical stability."
+    },
+    {
+      "name": "var gradientScale: Float",
+      "desc": "A value that specifies the gradient scaling factor."
+    },
+    {
+      "name": "var weightDecay: Float",
+      "desc": "The weight decay coefficient."
+    },
+    {
+      "name": "var gradientClipping: BNNS.GradientClipping",
+      "desc": "The gradient clipping function and bounds."
+    },
+    {
+      "name": "enum BNNS.GradientClipping",
+      "desc": "Constants that describe clipping functions."
+    },
+    {
+      "name": "var accumulatorCountMultiplier: Int",
+      "desc": "The number of accumulators required for each parameter."
+    },
+    {
+      "name": "var bnnsOptimizerFunction: BNNSOptimizerFunction",
+      "desc": "The underlying optimizer function structure."
+    },
+    {
+      "name": "func step(parameters: [BNNSNDArrayDescriptor], gradients: [BNNSNDArrayDescriptor], accumulators: [BNNSNDArrayDescriptor], filterParameters: BNNSFilterParameters?)",
+      "desc": "Applies a single optimization step to one or more parameters."
+    }
+  ],
+  "declaration": "struct AdamWOptimizer",
+  "conformsTo": [
+    "BNNSOptimizer"
+  ]
+}

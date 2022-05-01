@@ -1,0 +1,104 @@
+{
+  "path": "/documentation/modelio/mdlvoxelarray",
+  "type": "Class",
+  "name": "MDLVoxelArray",
+  "desc": "A model of a 3D object's solid volume as a collection of voxels, or cubic units.",
+  "items": [
+    {
+      "name": "init(data: Data, boundingBox: MDLAxisAlignedBoundingBox, voxelExtent: Float)",
+      "desc": "Initializes a voxel array with the specified voxel data."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of voxels in the array."
+    },
+    {
+      "name": "var voxelIndexExtent: MDLVoxelIndexExtent",
+      "desc": "The indexes that define the corners of the three-dimensional voxel grid."
+    },
+    {
+      "name": "func voxelExists(atIndex: MDLVoxelIndex, allowAnyX: Bool, allowAnyY: Bool, allowAnyZ: Bool, allowAnyShell: Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the voxel array contains voxel data for the specified index."
+    },
+    {
+      "name": "func voxels(within: MDLVoxelIndexExtent) -> Data?",
+      "desc": "Returns a data object containing all voxels within the specified volume."
+    },
+    {
+      "name": "func voxelIndices() -> Data?",
+      "desc": "Returns a data object containing all voxels within the voxel array."
+    },
+    {
+      "name": "func setVoxelAtIndex(MDLVoxelIndex)",
+      "desc": "Sets voxel characteristics at the specified index in the array."
+    },
+    {
+      "name": "func union(with: MDLVoxelArray)",
+      "desc": "Extends the voxel array to also cover the volume of the specified voxel array."
+    },
+    {
+      "name": "func intersect(with: MDLVoxelArray)",
+      "desc": "Reduces the voxel array to cover only the volume within both it and another voxel array."
+    },
+    {
+      "name": "func difference(with: MDLVoxelArray)",
+      "desc": "Reduces the voxel array to cover only the portion of its volume not covered by another voxel array."
+    },
+    {
+      "name": "var boundingBox: MDLAxisAlignedBoundingBox",
+      "desc": "The extent of the voxel array’s volume in world coordinate space."
+    },
+    {
+      "name": "func index(ofSpatialLocation: vector_float3) -> MDLVoxelIndex",
+      "desc": "Returns voxel information corresponding to the specified point in the world coordinate space of the asset from which the voxel array was created."
+    },
+    {
+      "name": "func spatialLocation(ofIndex: MDLVoxelIndex) -> vector_float3",
+      "desc": "Returns the location of the specified voxel in world coordinate space."
+    },
+    {
+      "name": "func voxelBoundingBox(atIndex: MDLVoxelIndex) -> MDLAxisAlignedBoundingBox",
+      "desc": "Returns the extent of the specified voxel’s volume in the world coordinate space of the asset from which the voxel array was created."
+    },
+    {
+      "name": "func mesh(using: MDLMeshBufferAllocator?) -> MDLMesh?",
+      "desc": "Generates a closed polygon mesh around the volume of space the voxel array describes."
+    },
+    {
+      "name": "typealias MDLVoxelIndex",
+      "desc": "A 4-component vector encoding the location of a voxel in a voxel array and describing its relation to an object’s volume."
+    },
+    {
+      "name": "struct MDLVoxelIndexExtent",
+      "desc": "The corner voxel indices defining a solid rectangular volume of voxels. Used by the voxelIndexExtent property and voxels(within:) method."
+    },
+    {
+      "name": "init(asset: MDLAsset, divisions: Int32, patchRadius: Float)"
+    },
+    {
+      "name": "var isValidSignedShellField: Bool"
+    },
+    {
+      "name": "var shellFieldExteriorThickness: Float"
+    },
+    {
+      "name": "var shellFieldInteriorThickness: Float"
+    },
+    {
+      "name": "func coarseMesh() -> MDLMesh?"
+    },
+    {
+      "name": "func coarseMesh(using: MDLMeshBufferAllocator?) -> MDLMesh?"
+    },
+    {
+      "name": "func convertToSignedShellField()"
+    },
+    {
+      "name": "func setVoxelsFor(MDLMesh, divisions: Int32, patchRadius: Float)"
+    }
+  ],
+  "declaration": "class MDLVoxelArray : MDLObject",
+  "inheritsFrom": [
+    "MDLObject"
+  ]
+}

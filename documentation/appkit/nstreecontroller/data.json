@@ -1,0 +1,156 @@
+{
+  "path": "/documentation/appkit/nstreecontroller",
+  "type": "Class",
+  "name": "NSTreeController",
+  "desc": "A bindings-compatible controller that manages a tree of objects.",
+  "items": [
+    {
+      "name": "var sortDescriptors: [NSSortDescriptor]",
+      "desc": "An array containing the sort descriptors used to arrange the tree controller’s content."
+    },
+    {
+      "name": "var content: Any?",
+      "desc": "The tree controller’s content object."
+    },
+    {
+      "name": "var arrangedObjects: NSTreeNode",
+      "desc": "The tree controller’s sorted content objects."
+    },
+    {
+      "name": "func rearrangeObjects()",
+      "desc": "Use this method to trigger reordering of the tree controller’s content."
+    },
+    {
+      "name": "func setSelectionIndexPath(IndexPath?) -> Bool",
+      "desc": "Sets the tree controller’s current selection."
+    },
+    {
+      "name": "var selectionIndexPath: IndexPath?",
+      "desc": "The index path of the first selected object."
+    },
+    {
+      "name": "func setSelectionIndexPaths([IndexPath]) -> Bool",
+      "desc": "Sets the tree controller’s current selection to the specified index paths."
+    },
+    {
+      "name": "var selectionIndexPaths: [IndexPath]",
+      "desc": "An array containing the index paths of the currently selected objects."
+    },
+    {
+      "name": "var selectedObjects: [Any]",
+      "desc": "An array containing the currently selected objects in the tree controller’s content."
+    },
+    {
+      "name": "var selectedNodes: [NSTreeNode]",
+      "desc": "An array containing the tree controller’s selected tree nodes."
+    },
+    {
+      "name": "var selectsInsertedObjects: Bool",
+      "desc": "A Boolean value that indicates whether the tree controller automatically selects objects as they are inserted."
+    },
+    {
+      "name": "func addSelectionIndexPaths([IndexPath]) -> Bool",
+      "desc": "Adds the objects at the specified indexPaths in the tree controller’s content to the current selection."
+    },
+    {
+      "name": "func removeSelectionIndexPaths([IndexPath]) -> Bool",
+      "desc": "Removes the objects at the specified indexPaths from the tree controller’s current selection, returning true if the selection was changed."
+    },
+    {
+      "name": "var avoidsEmptySelection: Bool",
+      "desc": "A Boolean value that indicates whether the tree controller requires the content array to attempt to maintain a selection at all times, avoiding an empty selection."
+    },
+    {
+      "name": "var preservesSelection: Bool",
+      "desc": "A Boolean value that indicates whether the tree controller will attempt to preserve the current selection when the content changes."
+    },
+    {
+      "name": "var alwaysUsesMultipleValuesMarker: Bool",
+      "desc": "A Boolean value that indicates whether the tree controller always returns the multiple values marker when multiple objects are selected, even if the selected items have the same value."
+    },
+    {
+      "name": "func add(Any?)",
+      "desc": "Adds an object to the tree controller’s content after the current selection."
+    },
+    {
+      "name": "func addChild(Any?)",
+      "desc": "Adds a child object to the currently selected item."
+    },
+    {
+      "name": "var canAddChild: Bool",
+      "desc": "A Boolean value that indicates if a child object can be added to the tree controller’s content."
+    },
+    {
+      "name": "var canInsert: Bool",
+      "desc": "A Boolean value that indicates if an object can be inserted into the tree controller’s content."
+    },
+    {
+      "name": "var canInsertChild: Bool",
+      "desc": "A Boolean value that indicates if a child object can be inserted into the tree controller’s content."
+    },
+    {
+      "name": "func insert(Any?)",
+      "desc": "Creates a new object of the class specified by objectClass and inserts it into the tree controller’s content."
+    },
+    {
+      "name": "func insertChild(Any?)",
+      "desc": "Creates a new object of the class specified by objectClass and inserts it into the tree controller’s content as a child of the current selection."
+    },
+    {
+      "name": "func insert(Any?, atArrangedObjectIndexPath: IndexPath)",
+      "desc": "Inserts object into the tree controller’s arranged objects array at the location specified by indexPath, and adds it to the tree controller’s content."
+    },
+    {
+      "name": "func insert([Any], atArrangedObjectIndexPaths: [IndexPath])",
+      "desc": "Inserts objects into the tree controller’s arranged objects array at the locations specified in indexPaths, and adds them to the tree controller’s content."
+    },
+    {
+      "name": "func remove(Any?)",
+      "desc": "Removes the tree controller’s selected objects from the content."
+    },
+    {
+      "name": "func removeObject(atArrangedObjectIndexPath: IndexPath)",
+      "desc": "Removes the object at the specified indexPath in the tree controller’s arranged objects from the tree controller’s content."
+    },
+    {
+      "name": "func removeObjects(atArrangedObjectIndexPaths: [IndexPath])",
+      "desc": "Removes the objects at the specified indexPaths in the tree controller’s arranged objects from the tree controller’s content."
+    },
+    {
+      "name": "func move(NSTreeNode, to: IndexPath)",
+      "desc": "Moves the specified tree node to the new index path."
+    },
+    {
+      "name": "func move([NSTreeNode], to: IndexPath)",
+      "desc": "Moves the specified tree nodes to the new index path."
+    },
+    {
+      "name": "var childrenKeyPath: String?",
+      "desc": "The key path used to find the children in the tree controller’s objects."
+    },
+    {
+      "name": "func childrenKeyPath(for: NSTreeNode) -> String?",
+      "desc": "Returns the key path used to find the children in the specified tree node."
+    },
+    {
+      "name": "var countKeyPath: String?",
+      "desc": "The key path used to find the number of children for a node."
+    },
+    {
+      "name": "func countKeyPath(for: NSTreeNode) -> String?",
+      "desc": "Returns the key path that provides the number of children for a specified node."
+    },
+    {
+      "name": "var leafKeyPath: String?",
+      "desc": "The key path used by the tree controller to determine if a node is a leaf key."
+    },
+    {
+      "name": "func leafKeyPath(for: NSTreeNode) -> String?",
+      "desc": "Returns the key path that specifies whether the node is a leaf node."
+    }
+  ],
+  "declaration": "class NSTreeController : NSObjectController",
+  "inheritsFrom": [
+    "NSObjectController"
+  ]
+}

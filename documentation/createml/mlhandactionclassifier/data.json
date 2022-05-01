@@ -1,0 +1,98 @@
+{
+  "path": "/documentation/createml/mlhandactionclassifier",
+  "type": "Structure",
+  "name": "MLHandActionClassifier",
+  "desc": "A task that creates a hand action classification model by training with videos of people’s hand movements that you provide.",
+  "items": [
+    {
+      "name": "static func train(trainingData: MLHandActionClassifier.DataSource, parameters: MLHandActionClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLJob<MLHandActionClassifier>",
+      "desc": "Begins an asynchronous hand action classifier’s training session."
+    },
+    {
+      "name": "static func makeTrainingSession(trainingData: MLHandActionClassifier.DataSource, parameters: MLHandActionClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLTrainingSession<MLHandActionClassifier>",
+      "desc": "Creates an asynchronous hand action classifier’s training session."
+    },
+    {
+      "name": "static func resume(MLTrainingSession<MLHandActionClassifier>) -> MLJob<MLHandActionClassifier>",
+      "desc": "Begins or continues an asynchronous hand action classifier’s training session."
+    },
+    {
+      "name": "static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) -> MLTrainingSession<MLHandActionClassifier>",
+      "desc": "Recreates an asynchronous hand action classifier’s training session by restoring its saved state from the file system."
+    },
+    {
+      "name": "init(checkpoint: MLCheckpoint)",
+      "desc": "Creates a hand action classifier from a training session checkpoint."
+    },
+    {
+      "name": "init(trainingData: MLHandActionClassifier.DataSource, parameters: MLHandActionClassifier.ModelParameters)",
+      "desc": "Creates a hand action classifier by starting a synchronous training session."
+    },
+    {
+      "name": "var trainingMetrics: MLClassifierMetrics",
+      "desc": "Measurements of the hand action classifier’s performance on the training dataset."
+    },
+    {
+      "name": "var validationMetrics: MLClassifierMetrics",
+      "desc": "Measurements of the hand action classifier’s performance on the validation dataset."
+    },
+    {
+      "name": "func evaluation(on: MLHandActionClassifier.DataSource) -> MLClassifierMetrics",
+      "desc": "Generates metrics describing the hand action classifier’s performance on labeled videos."
+    },
+    {
+      "name": "func prediction(from: URL) -> [MLHandActionClassifier.Prediction]",
+      "desc": "Generates a hand action prediction for a video."
+    },
+    {
+      "name": "func predictions(from: [URL]) -> [[MLHandActionClassifier.Prediction]]",
+      "desc": "Generates an array of hand action predictions for each video in a URL array."
+    },
+    {
+      "name": "struct MLHandActionClassifier.Prediction",
+      "desc": "A collection of predictions, each paired with its confidence, for a range of video frames."
+    },
+    {
+      "name": "func write(to: URL, metadata: MLModelMetadata?)",
+      "desc": "Exports the hand action classifier as a Core ML model file to a file system URL."
+    },
+    {
+      "name": "func write(toFile: String, metadata: MLModelMetadata?)",
+      "desc": "Exports the hand action classifier as a Core ML model file to a file system path."
+    },
+    {
+      "name": "var model: MLModel",
+      "desc": "The underlying Core ML model of the hand action classifier stored in memory."
+    },
+    {
+      "name": "let modelParameters: MLHandActionClassifier.ModelParameters",
+      "desc": "The hand action model’s configuration parameters."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the hand action classifier."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the hand action classifier suitable for debugging."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the hand action classifier that’s viewable in a playground."
+    },
+    {
+      "name": "enum MLHandActionClassifier.DataSource",
+      "desc": "A hand action classifier dataset that contains annotated videos or hand joint location data."
+    },
+    {
+      "name": "struct MLHandActionClassifier.ModelParameters",
+      "desc": "A set of parameters that affect the training process of a hand action classifier task."
+    }
+  ],
+  "declaration": "struct MLHandActionClassifier",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomStringConvertible"
+  ]
+}

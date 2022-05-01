@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/foundation/port",
+  "type": "Class",
+  "name": "Port",
+  "desc": "An abstract class that represents a communication channel.",
+  "items": [
+    {
+      "name": "func invalidate()",
+      "desc": "Marks the receiver as invalid and posts an didBecomeInvalidNotification to the default notification center."
+    },
+    {
+      "name": "var isValid: Bool",
+      "desc": "A Boolean value that indicates whether the receiver is valid."
+    },
+    {
+      "name": "func setDelegate(PortDelegate?)",
+      "desc": "Sets the receiver’s delegate to a given object."
+    },
+    {
+      "name": "func delegate() -> PortDelegate?",
+      "desc": "Returns the receiver’s delegate."
+    },
+    {
+      "name": "func send(before: Date, components: NSMutableArray?, from: Port?, reserved: Int) -> Bool",
+      "desc": "This method is provided for subclasses that have custom types of NSPort."
+    },
+    {
+      "name": "func send(before: Date, msgid: Int, components: NSMutableArray?, from: Port?, reserved: Int) -> Bool",
+      "desc": "This method is provided for subclasses that have custom types of NSPort."
+    },
+    {
+      "name": "var reservedSpaceLength: Int",
+      "desc": "The number of bytes of space reserved by the receiver for sending data."
+    },
+    {
+      "name": "func remove(from: RunLoop, forMode: RunLoop.Mode)",
+      "desc": "This method should be implemented by a subclass to stop monitoring of a port when removed from a give run loop in a given input mode."
+    },
+    {
+      "name": "func schedule(in: RunLoop, forMode: RunLoop.Mode)",
+      "desc": "This method should be implemented by a subclass to set up monitoring of a port when added to a given run loop in a given input mode."
+    },
+    {
+      "name": "class let didBecomeInvalidNotification: NSNotification.Name",
+      "desc": "Posted from the invalidate() method, which is invoked when the NSPort is deallocated or when it notices that its communication channel has been damaged. The notification object is the NSPort object that has become invalid. This notification does not contain a userInfo dictionary."
+    },
+    {
+      "name": "typealias SocketNativeHandle",
+      "desc": "Type for the platform-specific native socket handle."
+    }
+  ],
+  "declaration": "class Port : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "NSCopying"
+  ]
+}

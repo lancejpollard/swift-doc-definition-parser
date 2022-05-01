@@ -1,0 +1,62 @@
+{
+  "path": "/documentation/foundation/nsexception",
+  "type": "Class",
+  "name": "NSException",
+  "desc": "An object that represents a special condition that interrupts the normal flow of program execution.",
+  "items": [
+    {
+      "name": "class func raise(NSExceptionName, format: String, arguments: CVaListPointer)",
+      "desc": "Creates and raises an exception with the specified name, reason, and arguments."
+    },
+    {
+      "name": "init(name: NSExceptionName, reason: String?, userInfo: [AnyHashable : Any]?)",
+      "desc": "Initializes and returns a newly allocated exception object."
+    },
+    {
+      "name": "func raise()",
+      "desc": "Raises the receiver, causing program flow to jump to the local exception handler."
+    },
+    {
+      "name": "var name: NSExceptionName",
+      "desc": "A string used to uniquely identify the receiver."
+    },
+    {
+      "name": "var reason: String?",
+      "desc": "A string containing a “human-readable” reason for the receiver."
+    },
+    {
+      "name": "var userInfo: [AnyHashable : Any]?",
+      "desc": "A dictionary containing application-specific data pertaining to the receiver."
+    },
+    {
+      "name": "var callStackReturnAddresses: [NSNumber]",
+      "desc": "The call return addresses related to a raised exception."
+    },
+    {
+      "name": "var callStackSymbols: [String]",
+      "desc": "An array containing the current call stack symbols."
+    },
+    {
+      "name": "typealias NSUncaughtExceptionHandler"
+    },
+    {
+      "name": "struct NSExceptionName"
+    },
+    {
+      "name": "func NSGetUncaughtExceptionHandler() -> ((NSException) -> Void)?",
+      "desc": "Returns the top-level error handler."
+    },
+    {
+      "name": "func NSSetUncaughtExceptionHandler(((NSException) -> Void)?)",
+      "desc": "Changes the top-level error handler."
+    }
+  ],
+  "declaration": "class NSException : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

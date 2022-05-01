@@ -1,0 +1,437 @@
+{
+  "path": "/documentation/metal/mtlrendercommandencoder",
+  "type": "Protocol",
+  "name": "MTLRenderCommandEncoder",
+  "desc": "The object to use for encoding commands for a render pass.",
+  "items": [
+    {
+      "name": "func setRenderPipelineState(MTLRenderPipelineState)",
+      "desc": "Sets the current render pipeline state object."
+    },
+    {
+      "name": "func setTriangleFillMode(MTLTriangleFillMode)",
+      "desc": "Sets how to rasterize triangle and triangle strip primitives."
+    },
+    {
+      "name": "enum MTLTriangleFillMode",
+      "desc": "Specifies how to rasterize triangle and triangle strip primitives."
+    },
+    {
+      "name": "func setFrontFacing(MTLWinding)",
+      "desc": "Sets the winding order of front-facing primitives."
+    },
+    {
+      "name": "enum MTLWinding",
+      "desc": "The vertex winding rule that determines a front-facing primitive."
+    },
+    {
+      "name": "func setCullMode(MTLCullMode)",
+      "desc": "Specifies whether to cull primitives when front- or back-facing."
+    },
+    {
+      "name": "enum MTLCullMode",
+      "desc": "The mode that determines whether to perform culling and which type of primitive to cull."
+    },
+    {
+      "name": "func setDepthStencilState(MTLDepthStencilState?)",
+      "desc": "Sets the depth and stencil test state."
+    },
+    {
+      "name": "func setDepthBias(Float, slopeScale: Float, clamp: Float)",
+      "desc": "Adjusts the depth values from fragment functions by a scaling factor and a scaling bias, clamping the bias to a maximum amount."
+    },
+    {
+      "name": "func setDepthClipMode(MTLDepthClipMode)",
+      "desc": "Controls what is done with fragments outside of the near or far planes."
+    },
+    {
+      "name": "enum MTLDepthClipMode",
+      "desc": "The mode that determines how to deal with fragments outside of the near or far planes."
+    },
+    {
+      "name": "func setStencilReferenceValues(front: UInt32, back: UInt32)",
+      "desc": "Sets the stencil reference values for front and back stencil comparison tests."
+    },
+    {
+      "name": "func setStencilReferenceValue(UInt32)",
+      "desc": "Sets a stencil reference value for both front and back stencil comparison tests."
+    },
+    {
+      "name": "func setViewport(MTLViewport)",
+      "desc": "Sets the viewport used for transformations and clipping."
+    },
+    {
+      "name": "func setViewports([MTLViewport])",
+      "desc": "Sets an array of viewports."
+    },
+    {
+      "name": "func setScissorRect(MTLScissorRect)",
+      "desc": "Sets the scissor rectangle for a fragment scissor test."
+    },
+    {
+      "name": "func setScissorRects([MTLScissorRect])",
+      "desc": "Sets an array of scissor rectangles."
+    },
+    {
+      "name": "func setBlendColor(red: Float, green: Float, blue: Float, alpha: Float)",
+      "desc": "Specifies the constant blend color and alpha values."
+    },
+    {
+      "name": "func setVisibilityResultMode(MTLVisibilityResultMode, offset: Int)",
+      "desc": "Configures which visibility test the GPU executes and the destination for any results it generates."
+    },
+    {
+      "name": "enum MTLVisibilityResultMode",
+      "desc": "The mode that determines what, if anything, the GPU writes to the results buffer, after the GPU executes the render pass."
+    },
+    {
+      "name": "func use(MTLResource, usage: MTLResourceUsage, stages: MTLRenderStages)",
+      "desc": "Adds an untracked resource to the render pass, specifying which render stages need it."
+    },
+    {
+      "name": "func use(UnsafePointer<MTLResource>, count: Int, usage: MTLResourceUsage, stages: MTLRenderStages)",
+      "desc": "Adds an array of untracked resources to the render pass, specifying which stages need them."
+    },
+    {
+      "name": "func use(MTLHeap, stages: MTLRenderStages)",
+      "desc": "Adds the resources in a heap to the render pass, specifying which render stages need them."
+    },
+    {
+      "name": "func use(UnsafePointer<MTLHeap>, count: Int, stages: MTLRenderStages)",
+      "desc": "Adds the resources in an array of heaps to the render pass, specifying which render stages need them."
+    },
+    {
+      "name": "func useResource(MTLResource, usage: MTLResourceUsage)",
+      "desc": "Adds an untracked resource to the render pass."
+    },
+    {
+      "name": "func useHeap(MTLHeap)",
+      "desc": "Adds the resources in a heap to the render pass."
+    },
+    {
+      "name": "func useHeaps([MTLHeap])",
+      "desc": "Adds the resources in an array of heaps to the render pass."
+    },
+    {
+      "name": "func useResources([MTLResource], usage: MTLResourceUsage)",
+      "desc": "Adds an array of untracked resources to the render pass."
+    },
+    {
+      "name": "func setVertexBuffer(MTLBuffer?, offset: Int, index: Int)",
+      "desc": "Sets a buffer for the vertex function."
+    },
+    {
+      "name": "func setVertexBuffers([MTLBuffer?], offsets: [Int], range: Range<Int>)",
+      "desc": "Sets an array of buffers for the vertex function."
+    },
+    {
+      "name": "func setVertexBufferOffset(Int, index: Int)",
+      "desc": "Sets where the data begins in a buffer already bound to the vertex shader."
+    },
+    {
+      "name": "func setVertexBytes(UnsafeRawPointer, length: Int, index: Int)",
+      "desc": "Sets a block of data for the vertex shader."
+    },
+    {
+      "name": "func setVertexSamplerState(MTLSamplerState?, index: Int)",
+      "desc": "Sets a sampler for the vertex function."
+    },
+    {
+      "name": "func setVertexSamplerState(MTLSamplerState?, lodMinClamp: Float, lodMaxClamp: Float, index: Int)",
+      "desc": "Sets a sampler for the vertex function, specifying clamp values for the level of detail."
+    },
+    {
+      "name": "func setVertexSamplerStates([MTLSamplerState?], range: Range<Int>)",
+      "desc": "Sets multiple samplers for the vertex function."
+    },
+    {
+      "name": "func setVertexSamplerStates([MTLSamplerState?], lodMinClamps: [Float], lodMaxClamps: [Float], range: Range<Int>)",
+      "desc": "Sets a sampler state for the vertex function in a range of indices in the sampler state argument table, with clamp values for the level of detail."
+    },
+    {
+      "name": "func setVertexTexture(MTLTexture?, index: Int)",
+      "desc": "Sets a texture for the vertex function."
+    },
+    {
+      "name": "func setVertexTextures([MTLTexture?], range: Range<Int>)",
+      "desc": "Sets an array of textures for the vertex function."
+    },
+    {
+      "name": "func setVertexVisibleFunctionTable(MTLVisibleFunctionTable?, bufferIndex: Int)",
+      "desc": "Sets a visible function table for the vertex function."
+    },
+    {
+      "name": "func setVertexIntersectionFunctionTable(MTLIntersectionFunctionTable?, bufferIndex: Int)",
+      "desc": "Sets a intersection function table for the vertex function."
+    },
+    {
+      "name": "func setVertexAccelerationStructure(MTLAccelerationStructure?, bufferIndex: Int)",
+      "desc": "Sets an acceleration structure for the vertex function."
+    },
+    {
+      "name": "func setFragmentBuffer(MTLBuffer?, offset: Int, index: Int)",
+      "desc": "Sets a buffer for the fragment function."
+    },
+    {
+      "name": "func setFragmentBuffers([MTLBuffer?], offsets: [Int], range: Range<Int>)",
+      "desc": "Sets an array of buffers for the fragment function in a range of indices in the buffer argument table."
+    },
+    {
+      "name": "func setFragmentBufferOffset(Int, index: Int)",
+      "desc": "Sets where the data begins in a buffer already bound to the fragment shader."
+    },
+    {
+      "name": "func setFragmentBytes(UnsafeRawPointer, length: Int, index: Int)",
+      "desc": "Sets a block of data for the fragment shader."
+    },
+    {
+      "name": "func setFragmentSamplerState(MTLSamplerState?, index: Int)",
+      "desc": "Sets a sampler state for the fragment function at an index in the sampler state argument table."
+    },
+    {
+      "name": "func setFragmentSamplerState(MTLSamplerState?, lodMinClamp: Float, lodMaxClamp: Float, index: Int)",
+      "desc": "Sets a sampler state for the fragment function at an index in the sampler state argument table, specifying clamp values for the minimum and maximum level of detail."
+    },
+    {
+      "name": "func setFragmentSamplerStates([MTLSamplerState?], lodMinClamps: [Float], lodMaxClamps: [Float], range: Range<Int>)",
+      "desc": "Sets sampler states for the fragment function in a range of indices in the sampler state argument table, specifying clamp values for levels of detail."
+    },
+    {
+      "name": "func setFragmentSamplerStates([MTLSamplerState?], range: Range<Int>)",
+      "desc": "Sets an array of sampler states for the fragment shader function in a range of indices in the sampler state argument table."
+    },
+    {
+      "name": "func setFragmentTexture(MTLTexture?, index: Int)",
+      "desc": "Sets a texture for the fragment function at an index in the texture argument table."
+    },
+    {
+      "name": "func setFragmentTextures([MTLTexture?], range: Range<Int>)",
+      "desc": "Sets an array of textures for the fragment function in a range of indices in the texture argument table."
+    },
+    {
+      "name": "func setFragmentVisibleFunctionTable(MTLVisibleFunctionTable?, bufferIndex: Int)",
+      "desc": "Sets a visible function table for the fragment function."
+    },
+    {
+      "name": "func setFragmentIntersectionFunctionTable(MTLIntersectionFunctionTable?, bufferIndex: Int)",
+      "desc": "Sets a intersection function table for the fragment function."
+    },
+    {
+      "name": "func setFragmentAccelerationStructure(MTLAccelerationStructure?, bufferIndex: Int)",
+      "desc": "Sets an acceleration structure for the fragment function."
+    },
+    {
+      "name": "func setTessellationFactorBuffer(MTLBuffer?, offset: Int, instanceStride: Int)",
+      "desc": "Sets the per-patch tessellation factors buffer for the tessellator."
+    },
+    {
+      "name": "func setTessellationFactorScale(Float)",
+      "desc": "Sets the scale factor applied to the per-patch tessellation factors."
+    },
+    {
+      "name": "func setVertexAmplificationCount(Int, viewMappings: UnsafePointer<MTLVertexAmplificationViewMapping>?)",
+      "desc": "Sets the number of output vertices for each input vertex, along with offsets into the layer and viewport lists."
+    },
+    {
+      "name": "func drawPrimitives(type: MTLPrimitiveType, vertexStart: Int, vertexCount: Int, instanceCount: Int, baseInstance: Int)",
+      "desc": "Encodes a command to render a number of instances of primitives using vertex data in contiguous array elements, starting from the base instance."
+    },
+    {
+      "name": "func drawPrimitives(type: MTLPrimitiveType, vertexStart: Int, vertexCount: Int, instanceCount: Int)",
+      "desc": "Encodes a command to render a number of instances of primitives using vertex data in contiguous array elements."
+    },
+    {
+      "name": "func drawPrimitives(type: MTLPrimitiveType, vertexStart: Int, vertexCount: Int)",
+      "desc": "Encodes a command to render one instance of primitives using vertex data in contiguous array elements."
+    },
+    {
+      "name": "func drawIndexedPrimitives(type: MTLPrimitiveType, indexCount: Int, indexType: MTLIndexType, indexBuffer: MTLBuffer, indexBufferOffset: Int, instanceCount: Int, baseVertex: Int, baseInstance: Int)",
+      "desc": "Encodes a command to render a number of instances of primitives using an index list specified in a buffer, starting from the base vertex of the base instance."
+    },
+    {
+      "name": "func drawIndexedPrimitives(type: MTLPrimitiveType, indexCount: Int, indexType: MTLIndexType, indexBuffer: MTLBuffer, indexBufferOffset: Int, instanceCount: Int)",
+      "desc": "Encodes a command to render a number of instances of primitives using an index list specified in a buffer."
+    },
+    {
+      "name": "func drawIndexedPrimitives(type: MTLPrimitiveType, indexCount: Int, indexType: MTLIndexType, indexBuffer: MTLBuffer, indexBufferOffset: Int)",
+      "desc": "Encodes a command to render one instance of primitives using an index list specified in a buffer."
+    },
+    {
+      "name": "func drawPatches(numberOfPatchControlPoints: Int, patchStart: Int, patchCount: Int, patchIndexBuffer: MTLBuffer?, patchIndexBufferOffset: Int, instanceCount: Int, baseInstance: Int)",
+      "desc": "Encodes a command to render a number of instances of tessellated patches."
+    },
+    {
+      "name": "func drawIndexedPatches(numberOfPatchControlPoints: Int, patchStart: Int, patchCount: Int, patchIndexBuffer: MTLBuffer?, patchIndexBufferOffset: Int, controlPointIndexBuffer: MTLBuffer, controlPointIndexBufferOffset: Int, instanceCount: Int, baseInstance: Int)",
+      "desc": "Encodes a command to render a number of instances of tessellated patches, using a control point index buffer."
+    },
+    {
+      "name": "enum MTLPrimitiveType",
+      "desc": "The geometric primitive type for drawing commands."
+    },
+    {
+      "name": "enum MTLIndexType",
+      "desc": "The index type for an index buffer that references vertices of geometric primitives."
+    },
+    {
+      "name": "func drawPrimitives(type: MTLPrimitiveType, indirectBuffer: MTLBuffer, indirectBufferOffset: Int)",
+      "desc": "Encodes a command to render a number of instances of primitives using vertex data in contiguous array elements, starting from a base instance."
+    },
+    {
+      "name": "func drawIndexedPrimitives(type: MTLPrimitiveType, indexType: MTLIndexType, indexBuffer: MTLBuffer, indexBufferOffset: Int, indirectBuffer: MTLBuffer, indirectBufferOffset: Int)",
+      "desc": "Encodes a command to render a number of instances of primitives using index data in contiguous array elements, starting from the base vertex of a base instance."
+    },
+    {
+      "name": "func drawPatches(numberOfPatchControlPoints: Int, patchIndexBuffer: MTLBuffer?, patchIndexBufferOffset: Int, indirectBuffer: MTLBuffer, indirectBufferOffset: Int)",
+      "desc": "Encodes a command to render a number of instances of tessellated patches, using an indirect buffer."
+    },
+    {
+      "name": "func drawIndexedPatches(numberOfPatchControlPoints: Int, patchIndexBuffer: MTLBuffer?, patchIndexBufferOffset: Int, controlPointIndexBuffer: MTLBuffer, controlPointIndexBufferOffset: Int, indirectBuffer: MTLBuffer, indirectBufferOffset: Int)",
+      "desc": "Encodes a command to render a number of instances of tessellated patches, using a control point index buffer and an indirect buffer."
+    },
+    {
+      "name": "func sampleCounters(sampleBuffer: MTLCounterSampleBuffer, sampleIndex: Int, barrier: Bool)",
+      "desc": "Encodes a command to sample hardware counters at this point in the render pass and store the samples into a counter sample buffer."
+    },
+    {
+      "name": "func setThreadgroupMemoryLength(Int, offset: Int, index: Int)",
+      "desc": "Sets the size of a threadgroup memory buffer for the tile function at an index in the argument table."
+    },
+    {
+      "name": "func setTileBuffer(MTLBuffer?, offset: Int, index: Int)",
+      "desc": "Sets a buffer for the tile function at an index in the buffer argument table."
+    },
+    {
+      "name": "func setTileBuffers([MTLBuffer?], offsets: [Int], range: Range<Int>)",
+      "desc": "Sets an array of buffers for the tile function in a range of indices in the buffer argument table."
+    },
+    {
+      "name": "func setTileBufferOffset(Int, index: Int)",
+      "desc": "Sets an offset specifying the start of the data for a buffer already bound to the tile function."
+    },
+    {
+      "name": "func setTileBytes(UnsafeRawPointer, length: Int, index: Int)",
+      "desc": "Sets a block of data for the tile function at an index in the buffer argument table."
+    },
+    {
+      "name": "func setTileSamplerState(MTLSamplerState?, index: Int)",
+      "desc": "Sets a sampler state for the tile function at an index in the sampler state argument table."
+    },
+    {
+      "name": "func setTileSamplerState(MTLSamplerState?, lodMinClamp: Float, lodMaxClamp: Float, index: Int)",
+      "desc": "Sets a sampler state for the tile function at an index in the sampler state argument table, specifying clamp values for the level of detail."
+    },
+    {
+      "name": "func setTileSamplerStates([MTLSamplerState?], range: Range<Int>)",
+      "desc": "Sets a sampler state for the tile function in a range of indices in the sampler state argument table."
+    },
+    {
+      "name": "func setTileSamplerStates([MTLSamplerState?], lodMinClamps: [Float], lodMaxClamps: [Float], range: Range<Int>)",
+      "desc": "Sets a sampler state for the tile function in a range of indices in the sampler state argument table, specifying clamp values for the level of detail."
+    },
+    {
+      "name": "func setTileTexture(MTLTexture?, index: Int)",
+      "desc": "Sets a texture for the tile function at an index in the texture argument table."
+    },
+    {
+      "name": "func setTileTextures([MTLTexture?], range: Range<Int>)",
+      "desc": "Sets an array of textures for the tile function in a range of indices in the texture argument table."
+    },
+    {
+      "name": "func setTileVisibleFunctionTable(MTLVisibleFunctionTable?, bufferIndex: Int)",
+      "desc": "Sets a visible function table for the tile function."
+    },
+    {
+      "name": "func setTileIntersectionFunctionTable(MTLIntersectionFunctionTable?, bufferIndex: Int)",
+      "desc": "Sets a intersection function table for the tile function."
+    },
+    {
+      "name": "func setTileAccelerationStructure(MTLAccelerationStructure?, bufferIndex: Int)",
+      "desc": "Sets an acceleration structure for the tile function."
+    },
+    {
+      "name": "func setRenderPipelineState(MTLRenderPipelineState)",
+      "desc": "Sets the current render pipeline state object."
+    },
+    {
+      "name": "var tileWidth: Int",
+      "desc": "The width of the tile, in pixels, for this render pass."
+    },
+    {
+      "name": "var tileHeight: Int",
+      "desc": "The height of the tile, in pixels, for this render pass."
+    },
+    {
+      "name": "func dispatchThreadsPerTile(MTLSize)",
+      "desc": "Encodes a dispatch call to perform a midrender compute operation."
+    },
+    {
+      "name": "func executeCommandsInBuffer(MTLIndirectCommandBuffer, range: Range<Int>)",
+      "desc": "Encodes a command to execute commands in an indirect command buffer."
+    },
+    {
+      "name": "func executeCommandsInBuffer(MTLIndirectCommandBuffer, indirectBuffer: MTLBuffer, offset: Int)",
+      "desc": "Encodes a command to execute commands in an indirect command buffer, specifying the range indirectly."
+    },
+    {
+      "name": "func updateFence(MTLFence, after: MTLRenderStages)",
+      "desc": "Updates the given fence to capture all GPU work enqueued by the command encoder up to the given render stage."
+    },
+    {
+      "name": "func waitForFence(MTLFence, before: MTLRenderStages)",
+      "desc": "Prevents further GPU work to be enqueued by the command encoder until the given fence is reached for the given render stage."
+    },
+    {
+      "name": "func memoryBarrier(scope: MTLBarrierScope, after: MTLRenderStages, before: MTLRenderStages)",
+      "desc": "Encodes a barrier so that data written to memory by commands encoded before the barrier is available to commands encoded after the barrier."
+    },
+    {
+      "name": "func memoryBarrier(resources: [MTLResource], after: MTLRenderStages, before: MTLRenderStages)"
+    },
+    {
+      "name": "func setColorStoreAction(MTLStoreAction, index: Int)",
+      "desc": "Specifies a store action for a color attachment."
+    },
+    {
+      "name": "func setColorStoreActionOptions(MTLStoreActionOptions, index: Int)",
+      "desc": "Specifies store action options for a color attachment."
+    },
+    {
+      "name": "func setDepthStoreAction(MTLStoreAction)",
+      "desc": "Specifies the depth store action for the depth attachment."
+    },
+    {
+      "name": "func setDepthStoreActionOptions(MTLStoreActionOptions)",
+      "desc": "Specifies store action options for the depth attachment."
+    },
+    {
+      "name": "func setStencilStoreAction(MTLStoreAction)",
+      "desc": "Specifies the stencil store action for the stencil attachment."
+    },
+    {
+      "name": "func setStencilStoreActionOptions(MTLStoreActionOptions)",
+      "desc": "Specifies store action options for the stencil attachment."
+    },
+    {
+      "name": "func setFragmentIntersectionFunctionTables([MTLIntersectionFunctionTable?], bufferRange: Range<Int>)"
+    },
+    {
+      "name": "func setFragmentVisibleFunctionTables([MTLVisibleFunctionTable?], bufferRange: Range<Int>)"
+    },
+    {
+      "name": "func setTileIntersectionFunctionTables([MTLIntersectionFunctionTable?], bufferRange: Range<Int>)"
+    },
+    {
+      "name": "func setTileVisibleFunctionTables([MTLVisibleFunctionTable?], bufferRange: Range<Int>)"
+    },
+    {
+      "name": "func setVertexIntersectionFunctionTables([MTLIntersectionFunctionTable?], bufferRange: Range<Int>)"
+    },
+    {
+      "name": "func setVertexVisibleFunctionTables([MTLVisibleFunctionTable?], bufferRange: Range<Int>)"
+    }
+  ],
+  "declaration": "protocol MTLRenderCommandEncoder",
+  "inheritsFrom": [
+    "MTLCommandEncoder"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/clockkit/clkcomplicationdatasource",
+  "type": "Protocol",
+  "name": "CLKComplicationDataSource",
+  "desc": "A protocol that provides ClockKit with information about your complication.",
+  "items": [
+    {
+      "name": "func getTimelineEndDate(for: CLKComplication, withHandler: (Date?) -> Void)",
+      "desc": "Retrieves the last date for the data that your app can supply."
+    },
+    {
+      "name": "func getCurrentTimelineEntry(for: CLKComplication, withHandler: (CLKComplicationTimelineEntry?) -> Void)",
+      "desc": "Retrieves the timeline entry that you want to display now."
+    },
+    {
+      "name": "func getTimelineEntries(for: CLKComplication, after: Date, limit: Int, withHandler: ([CLKComplicationTimelineEntry]?) -> Void)",
+      "desc": "Retrieves future timeline entries for the complication."
+    },
+    {
+      "name": "func getTimelineAnimationBehavior(for: CLKComplication, withHandler: (CLKComplicationTimelineAnimationBehavior) -> Void)",
+      "desc": "Gets the animation behavior when transitioning between timeline entries."
+    },
+    {
+      "name": "func getAlwaysOnTemplate(for: CLKComplication, withHandler: (CLKComplicationTemplate?) -> Void)",
+      "desc": "Returns the template to use during Always On."
+    },
+    {
+      "name": "func getLocalizableSampleTemplate(for: CLKComplication, withHandler: (CLKComplicationTemplate?) -> Void)",
+      "desc": "Gets a localizable template that shows sample data for the specified complication."
+    },
+    {
+      "name": "func getPrivacyBehavior(for: CLKComplication, withHandler: (CLKComplicationPrivacyBehavior) -> Void)",
+      "desc": "Returns the privacy behavior for the specified complication."
+    },
+    {
+      "name": "func getComplicationDescriptors(handler: ([CLKComplicationDescriptor]) -> Void)",
+      "desc": "Returns the list of complication descriptors."
+    },
+    {
+      "name": "func handleSharedComplicationDescriptors([CLKComplicationDescriptor])",
+      "desc": "Informs the app about complications from a shared watch face."
+    },
+    {
+      "name": "let CLKLaunchedTimelineEntryDateKey: String",
+      "desc": "A key that indicates the date when the system launched the complication."
+    },
+    {
+      "name": "let CLKLaunchedComplicationIdentifierKey: String",
+      "desc": "A key that indicates the identifier of a complication the system launched."
+    },
+    {
+      "name": "property list key CLKComplicationPrincipalClass",
+      "desc": "The name of the class that implements the complication data source protocol."
+    }
+  ],
+  "declaration": "@MainActor protocol CLKComplicationDataSource",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

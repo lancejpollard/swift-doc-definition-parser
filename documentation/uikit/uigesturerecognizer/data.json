@@ -1,0 +1,173 @@
+{
+  "path": "/documentation/uikit/uigesturerecognizer",
+  "type": "Class",
+  "name": "UIGestureRecognizer",
+  "desc": "The base class for concrete gesture recognizers.",
+  "items": [
+    {
+      "name": "init(target: Any?, action: Selector?)",
+      "desc": "Initializes an allocated gesture-recognizer object with a target and an action selector."
+    },
+    {
+      "name": "var delegate: UIGestureRecognizerDelegate?",
+      "desc": "The delegate of the gesture recognizer."
+    },
+    {
+      "name": "protocol UIGestureRecognizerDelegate",
+      "desc": "A set of methods implemented by the delegate of a gesture recognizer to fine-tune an app’s gesture-recognition behavior."
+    },
+    {
+      "name": "func addTarget(Any, action: Selector)",
+      "desc": "Adds a target and an action to a gesture-recognizer object."
+    },
+    {
+      "name": "func removeTarget(Any?, action: Selector?)",
+      "desc": "Removes a target and an action from a gesture-recognizer object."
+    },
+    {
+      "name": "func location(in: UIView?) -> CGPoint",
+      "desc": "Returns the point computed as the location in a given view of the gesture represented by the receiver."
+    },
+    {
+      "name": "func location(ofTouch: Int, in: UIView?) -> CGPoint",
+      "desc": "Returns the location of one of the gesture’s touches in the local coordinate system of a given view."
+    },
+    {
+      "name": "var numberOfTouches: Int",
+      "desc": "Returns the number of touches involved in the gesture represented by the receiver."
+    },
+    {
+      "name": "var state: UIGestureRecognizer.State",
+      "desc": "The current state of the gesture recognizer."
+    },
+    {
+      "name": "var view: UIView?",
+      "desc": "The view the gesture recognizer is attached to."
+    },
+    {
+      "name": "var isEnabled: Bool",
+      "desc": "A Boolean property that indicates whether the gesture recognizer is enabled."
+    },
+    {
+      "name": "var buttonMask: UIEvent.ButtonMask",
+      "desc": "A bit mask of the button (or buttons) in the gesture represented by the receiver."
+    },
+    {
+      "name": "var modifierFlags: UIKeyModifierFlags",
+      "desc": "The bit mask of modifier flags in the gesture represented by the receiver."
+    },
+    {
+      "name": "var cancelsTouchesInView: Bool",
+      "desc": "A Boolean value affecting whether touches are delivered to a view when a gesture is recognized."
+    },
+    {
+      "name": "var delaysTouchesBegan: Bool",
+      "desc": "A Boolean value determining whether the receiver delays sending touches in a begin phase to its view."
+    },
+    {
+      "name": "var delaysTouchesEnded: Bool",
+      "desc": "A Boolean value determining whether the receiver delays sending touches in a end phase to its view."
+    },
+    {
+      "name": "func require(toFail: UIGestureRecognizer)",
+      "desc": "Creates a dependency relationship between the receiver and another gesture recognizer when the objects are created."
+    },
+    {
+      "name": "var allowedPressTypes: [NSNumber]",
+      "desc": "An array of press types used to distinguish the type of button press."
+    },
+    {
+      "name": "var allowedTouchTypes: [NSNumber]",
+      "desc": "An array of touch types used to distinguish type of touches."
+    },
+    {
+      "name": "var requiresExclusiveTouchType: Bool",
+      "desc": "A Boolean indicating whether the gesture recognizer considers touches of different types simultaneously."
+    },
+    {
+      "name": "func touchesBegan(Set<UITouch>, with: UIEvent)",
+      "desc": "Sent to the gesture recognizer when one or more fingers touch down in the associated view."
+    },
+    {
+      "name": "func touchesMoved(Set<UITouch>, with: UIEvent)",
+      "desc": "Sent to the gesture recognizer when one or more fingers move in the associated view."
+    },
+    {
+      "name": "func touchesEnded(Set<UITouch>, with: UIEvent)",
+      "desc": "Sent to the gesture recognizer when one or more fingers lift from the associated view."
+    },
+    {
+      "name": "func touchesCancelled(Set<UITouch>, with: UIEvent)",
+      "desc": "Sent to the gesture recognizer when a system event (such as an incoming phone call) cancels a touch event."
+    },
+    {
+      "name": "func touchesEstimatedPropertiesUpdated(Set<UITouch>)",
+      "desc": "Sent to the gesture recognizer when the estimated properties for a touch have changed so that they are no longer estimated, or an update is no longer expected."
+    },
+    {
+      "name": "func reset()",
+      "desc": "Overridden to reset internal state when a gesture recognition attempt completes."
+    },
+    {
+      "name": "func ignore(UITouch, for: UIEvent)",
+      "desc": "Tells the gesture recognizer to ignore a specific touch of the given event."
+    },
+    {
+      "name": "func canBePrevented(by: UIGestureRecognizer) -> Bool",
+      "desc": "Overridden to indicate that the specified gesture recognizer can prevent the receiver from recognizing a gesture."
+    },
+    {
+      "name": "func canPrevent(UIGestureRecognizer) -> Bool",
+      "desc": "Overridden to indicate that the receiver can prevent the specified gesture recognizer from recognizing its gesture."
+    },
+    {
+      "name": "func shouldRequireFailure(of: UIGestureRecognizer) -> Bool",
+      "desc": "Overridden to indicate that the receiver requires the specified gesture recognizer to fail."
+    },
+    {
+      "name": "func shouldBeRequiredToFail(by: UIGestureRecognizer) -> Bool",
+      "desc": "Overridden to indicate that the receiver should be required to fail by the specified gesture recognizer."
+    },
+    {
+      "name": "func ignore(UIPress, for: UIPressesEvent)",
+      "desc": "Tells the gesture recognizer to ignore a specific press of the given event."
+    },
+    {
+      "name": "func pressesBegan(Set<UIPress>, with: UIPressesEvent)",
+      "desc": "Sent to the receiver when a physical button is pressed in the associated view."
+    },
+    {
+      "name": "func pressesChanged(Set<UIPress>, with: UIPressesEvent)",
+      "desc": "Sent to the receiver when the force of the press has changed in the associated view."
+    },
+    {
+      "name": "func pressesEnded(Set<UIPress>, with: UIPressesEvent)",
+      "desc": "Sent to the receiver when a button is released from the associated view."
+    },
+    {
+      "name": "func pressesCancelled(Set<UIPress>, with: UIPressesEvent)",
+      "desc": "Sent to the receiver when a system event (such as a low-memory warning) cancels a press event."
+    },
+    {
+      "name": "var name: String?",
+      "desc": "The name associated with the gesture recognizer."
+    },
+    {
+      "name": "enum UIGestureRecognizer.State",
+      "desc": "The current state a gesture recognizer is in."
+    },
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init?(coder: NSCoder)"
+    },
+    {
+      "name": "func shouldReceive(UIEvent) -> Bool"
+    }
+  ],
+  "declaration": "@MainActor class UIGestureRecognizer : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

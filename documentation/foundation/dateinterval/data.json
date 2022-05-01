@@ -1,0 +1,136 @@
+{
+  "path": "/documentation/foundation/dateinterval",
+  "type": "Structure",
+  "name": "DateInterval",
+  "desc": "The span of time between a specific start date and end date.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Initializes an interval with start and end dates set to the current date and the duration set to 0."
+    },
+    {
+      "name": "init(start: Date, duration: TimeInterval)",
+      "desc": "Initializes an interval with the specified start date and duration."
+    },
+    {
+      "name": "init(start: Date, end: Date)",
+      "desc": "Initializes an interval with the specified start and end date."
+    },
+    {
+      "name": "var start: Date",
+      "desc": "The start date."
+    },
+    {
+      "name": "var end: Date",
+      "desc": "The end date."
+    },
+    {
+      "name": "var duration: TimeInterval",
+      "desc": "The duration."
+    },
+    {
+      "name": "static func != (DateInterval, DateInterval) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func < (DateInterval, DateInterval) -> Bool",
+      "desc": "Indicates whether one date interval is strictly less than another."
+    },
+    {
+      "name": "static func <= (DateInterval, DateInterval) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than or equal to that of the second argument."
+    },
+    {
+      "name": "static func == (DateInterval, DateInterval) -> Bool",
+      "desc": "Indicates whether two date intervals are the same."
+    },
+    {
+      "name": "static func > (DateInterval, DateInterval) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than that of the second argument."
+    },
+    {
+      "name": "static func >= (DateInterval, DateInterval) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than or equal to that of the second argument."
+    },
+    {
+      "name": "func intersection(with: DateInterval) -> DateInterval?",
+      "desc": "Returns an interval that represents the interval where the given date interval and the current instance intersect."
+    },
+    {
+      "name": "func intersects(DateInterval) -> Bool",
+      "desc": "Indicates whether this interval intersects the specified interval."
+    },
+    {
+      "name": "func contains(Date) -> Bool",
+      "desc": "Indicates whether this interval contains the given date."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual description of the date interval."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual description of the date interval suitable for debugging."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A mirror that reflects the date interval."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The computed hash value for the date interval."
+    },
+    {
+      "name": "class NSDateInterval",
+      "desc": "An object representing the span of time between two dates that bridges to DateInterval; use NSDateInterval when you need reference semantics or other Foundation-specific behavior."
+    },
+    {
+      "name": "typealias DateInterval.ReferenceType",
+      "desc": "An alias for this value type's equivalent reference type."
+    },
+    {
+      "name": "init(from: Decoder)"
+    },
+    {
+      "name": "func compare(DateInterval) -> ComparisonResult",
+      "desc": "Compares two intervals."
+    },
+    {
+      "name": "func encode(to: Encoder)"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "static func ... (DateInterval) -> PartialRangeFrom<DateInterval>",
+      "desc": "Returns a partial range extending upward from a lower bound."
+    },
+    {
+      "name": "static func ... (DateInterval) -> PartialRangeThrough<DateInterval>",
+      "desc": "Returns a partial range up to, and including, its upper bound."
+    },
+    {
+      "name": "static func ... (DateInterval, DateInterval) -> ClosedRange<DateInterval>",
+      "desc": "Returns a closed range that contains both of its bounds."
+    },
+    {
+      "name": "static func ..< (DateInterval) -> PartialRangeUpTo<DateInterval>",
+      "desc": "Returns a partial range up to, but not including, its upper bound."
+    },
+    {
+      "name": "static func ..< (DateInterval, DateInterval) -> Range<DateInterval>",
+      "desc": "Returns a half-open range that contains its lower bound but not its upper bound."
+    }
+  ],
+  "declaration": "struct DateInterval",
+  "conformsTo": [
+    "Comparable",
+    "CustomDebugStringConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Hashable",
+    "ReferenceConvertible"
+  ]
+}

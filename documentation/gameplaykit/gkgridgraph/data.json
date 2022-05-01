@@ -1,0 +1,47 @@
+{
+  "path": "/documentation/gameplaykit/gkgridgraph",
+  "type": "Generic Class",
+  "name": "GKGridGraph",
+  "desc": "A navigation graph for 2D game worlds where movement is constrained to an integer grid.",
+  "items": [
+    {
+      "name": "init(fromGridStartingAt: vector_int2, width: Int32, height: Int32, diagonalsAllowed: Bool, nodeClass: AnyClass)",
+      "desc": "Initializes a graph that describes an integer grid with the specified dimensions, using the specified node class."
+    },
+    {
+      "name": "init(fromGridStartingAt: vector_int2, width: Int32, height: Int32, diagonalsAllowed: Bool)",
+      "desc": "Initializes a graph that describes an integer grid with the specified dimensions."
+    },
+    {
+      "name": "func node(atGridPosition: vector_int2) -> NodeType?",
+      "desc": "Returns the node in the graph at the specified grid coordinates."
+    },
+    {
+      "name": "func connectToAdjacentNodes(node: GKGridGraphNode)",
+      "desc": "Adds the specified node to the graph, connecting it to its nearest neighbors in the grid."
+    },
+    {
+      "name": "var diagonalsAllowed: Bool",
+      "desc": "A Boolean value that indicates whether nodes in the grid are connected to their diagonal neighbors."
+    },
+    {
+      "name": "var gridOrigin: vector_int2",
+      "desc": "The lowest x- and y-coordinates that appear in the grid."
+    },
+    {
+      "name": "var gridWidth: Int",
+      "desc": "The number of possible x-coordinates in the grid."
+    },
+    {
+      "name": "var gridHeight: Int",
+      "desc": "The number of possible y-coordinates in the grid."
+    },
+    {
+      "name": "func classForGenericArgument(at: Int) -> AnyClass"
+    }
+  ],
+  "declaration": "class GKGridGraph<NodeType> : GKGraph where NodeType : GKGridGraphNode",
+  "inheritsFrom": [
+    "GKGraph"
+  ]
+}

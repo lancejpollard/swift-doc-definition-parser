@@ -1,0 +1,23 @@
+{
+  "path": "/documentation/coreservices/aedesc",
+  "type": "Structure",
+  "name": "AEDesc",
+  "desc": "Stores data and an accompanying descriptor type to formthe basic building block of all Apple Events.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(descriptorType: DescType, dataHandle: AEDataStorage!)"
+    },
+    {
+      "name": "var dataHandle: AEDataStorage!",
+      "desc": "An opaque storage type that points to the storagefor the descriptor data. Your application doesn’t access thisdata directly—rather, it calls one of the functions AEGetDescDataSize(_:), AEGetDescData(_:_:_:), or AEReplaceDescData(_:_:_:_:).See AEDataStorage."
+    },
+    {
+      "name": "var descriptorType: DescType",
+      "desc": "A four-character code of type DescType that indicates the type ofdata in the structure. See DescType."
+    }
+  ],
+  "declaration": "struct AEDesc"
+}

@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/combine/publishers/trycatch",
+  "type": "Structure",
+  "name": "Publishers.TryCatch",
+  "desc": "A publisher that handles errors from an upstream publisher by replacing the failed publisher with another publisher or producing a new error.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, handler: (Upstream.Failure) throws -> NewPublisher)",
+      "desc": "Creates a publisher that handles errors from an upstream publisher by replacing the failed publisher with another publisher or by throwing an error."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives its elements."
+    },
+    {
+      "name": "let handler: (Upstream.Failure) throws -> NewPublisher",
+      "desc": "A closure that accepts the upstream failure as input and either returns a publisher to replace the upstream publisher or throws an error."
+    }
+  ],
+  "declaration": "struct TryCatch<Upstream, NewPublisher> where Upstream : Publisher, NewPublisher : Publisher, Upstream.Output == NewPublisher.Output",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

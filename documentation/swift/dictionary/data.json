@@ -1,0 +1,322 @@
+{
+  "path": "/documentation/swift/dictionary",
+  "type": "Generic Structure",
+  "name": "Dictionary",
+  "desc": "A collection whose elements are key-value pairs.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an empty dictionary."
+    },
+    {
+      "name": "init(minimumCapacity: Int)",
+      "desc": "Creates an empty dictionary with preallocated space for at least the specified number of elements."
+    },
+    {
+      "name": "init<S>(uniqueKeysWithValues: S)",
+      "desc": "Creates a new dictionary from the key-value pairs in the given sequence."
+    },
+    {
+      "name": "init<S>(S, uniquingKeysWith: (Value, Value) -> Value)",
+      "desc": "Creates a new dictionary from the key-value pairs in the given sequence, using a combining closure to determine the value for any duplicate keys."
+    },
+    {
+      "name": "init<S>(grouping: S, by: (S.Element) -> Key)",
+      "desc": "Creates a new dictionary whose keys are the groupings returned by the given closure and whose values are arrays of the elements that returned each key."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value that indicates whether the dictionary is empty."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of key-value pairs in the dictionary."
+    },
+    {
+      "name": "var capacity: Int",
+      "desc": "The total number of key-value pairs that the dictionary can contain without allocating new storage."
+    },
+    {
+      "name": "subscript(Key) -> Value?",
+      "desc": "Accesses the value associated with the given key for reading and writing."
+    },
+    {
+      "name": "subscript(Key, default() -> Value) -> Value",
+      "desc": "Accesses the value with the given key, falling back to the given default value if the key isn’t found."
+    },
+    {
+      "name": "func index(forKey: Key) -> Dictionary<Key, Value>.Index?",
+      "desc": "Returns the index for the given key."
+    },
+    {
+      "name": "subscript(Dictionary<Key, Value>.Index) -> Dictionary<Key, Value>.Element",
+      "desc": "Accesses the key-value pair at the specified position."
+    },
+    {
+      "name": "var keys: Dictionary<Key, Value>.Keys",
+      "desc": "A collection containing just the keys of the dictionary."
+    },
+    {
+      "name": "var values: Dictionary<Key, Value>.Values",
+      "desc": "A collection containing just the values of the dictionary."
+    },
+    {
+      "name": "var first: (key: Key, value: Value)?",
+      "desc": "The first element of the collection."
+    },
+    {
+      "name": "func randomElement() -> (key: Key, value: Value)?",
+      "desc": "Returns a random element of the collection."
+    },
+    {
+      "name": "func randomElement<T>(using: inout T) -> (key: Key, value: Value)?",
+      "desc": "Returns a random element of the collection, using the given generator as a source for randomness."
+    },
+    {
+      "name": "func updateValue(Value, forKey: Key) -> Value?",
+      "desc": "Updates the value stored in the dictionary for the given key, or adds a new key-value pair if the key does not exist."
+    },
+    {
+      "name": "func merge([Key : Value], uniquingKeysWith: (Value, Value) -> Value)",
+      "desc": "Merges the given dictionary into this dictionary, using a combining closure to determine the value for any duplicate keys."
+    },
+    {
+      "name": "func merge<S>(S, uniquingKeysWith: (Value, Value) -> Value)",
+      "desc": "Merges the key-value pairs in the given sequence into the dictionary, using a combining closure to determine the value for any duplicate keys."
+    },
+    {
+      "name": "func merging([Key : Value], uniquingKeysWith: (Value, Value) -> Value) -> [Key : Value]",
+      "desc": "Creates a dictionary by merging the given dictionary into this dictionary, using a combining closure to determine the value for duplicate keys."
+    },
+    {
+      "name": "func merging<S>(S, uniquingKeysWith: (Value, Value) -> Value) -> [Key : Value]",
+      "desc": "Creates a dictionary by merging key-value pairs in a sequence into the dictionary, using a combining closure to determine the value for duplicate keys."
+    },
+    {
+      "name": "func reserveCapacity(Int)",
+      "desc": "Reserves enough space to store the specified number of key-value pairs."
+    },
+    {
+      "name": "func filter((Dictionary<Key, Value>.Element) -> Bool) -> [Key : Value]",
+      "desc": "Returns a new dictionary containing the key-value pairs of the dictionary that satisfy the given predicate."
+    },
+    {
+      "name": "func removeValue(forKey: Key) -> Value?",
+      "desc": "Removes the given key and its associated value from the dictionary."
+    },
+    {
+      "name": "func remove(at: Dictionary<Key, Value>.Index) -> Dictionary<Key, Value>.Element",
+      "desc": "Removes and returns the key-value pair at the specified index."
+    },
+    {
+      "name": "func removeAll(keepingCapacity: Bool)",
+      "desc": "Removes all key-value pairs from the dictionary."
+    },
+    {
+      "name": "static func == ([Key : Value], [Key : Value]) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "static func != (Dictionary<Key, Value>, Dictionary<Key, Value>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "func forEach(((key: Key, value: Value)) -> Void)",
+      "desc": "Calls the given closure on each element in the sequence in the same order as a for-in loop."
+    },
+    {
+      "name": "func enumerated() -> EnumeratedSequence<Dictionary<Key, Value>>",
+      "desc": "Returns a sequence of pairs (n, x), where n represents a consecutive integer starting at zero and x represents an element of the sequence."
+    },
+    {
+      "name": "var lazy: LazySequence<Dictionary<Key, Value>>",
+      "desc": "A sequence containing the same elements as this sequence, but on which some operations, such as map and filter, are implemented lazily."
+    },
+    {
+      "name": "func makeIterator() -> Dictionary<Key, Value>.Iterator",
+      "desc": "Returns an iterator over the dictionary’s key-value pairs."
+    },
+    {
+      "name": "var underestimatedCount: Int",
+      "desc": "A value less than or equal to the number of elements in the collection."
+    },
+    {
+      "name": "func contains(where: ((key: Key, value: Value)) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func allSatisfy(((key: Key, value: Value)) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether every element of a sequence satisfies a given predicate."
+    },
+    {
+      "name": "func first(where: ((key: Key, value: Value)) -> Bool) -> (key: Key, value: Value)?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func firstIndex(where: ((key: Key, value: Value)) -> Bool) -> Index?",
+      "desc": "Returns the first index in which an element of the collection satisfies the given predicate."
+    },
+    {
+      "name": "func min(by: ((key: Key, value: Value), (key: Key, value: Value)) -> Bool) -> (key: Key, value: Value)?",
+      "desc": "Returns the minimum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func max(by: ((key: Key, value: Value), (key: Key, value: Value)) -> Bool) -> (key: Key, value: Value)?",
+      "desc": "Returns the maximum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func mapValues<T>((Value) -> T) -> Dictionary<Key, T>",
+      "desc": "Returns a new dictionary containing the keys of this dictionary with the values transformed by the given closure."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, (key: Key, value: Value)) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, (key: Key, value: Value)) -> ()) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "func map<T>(((key: Key, value: Value)) -> T) -> [T]",
+      "desc": "Returns an array containing the results of mapping the given closure over the sequence’s elements."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>(((key: Key, value: Value)) -> ElementOfResult?) -> [ElementOfResult]",
+      "desc": "Returns an array containing the non-nil results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func compactMapValues<T>((Value) -> T?) -> Dictionary<Key, T>",
+      "desc": "Returns a new dictionary containing only the key-value pairs that have non-nil values as the result of transformation by the given closure."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>(((key: Key, value: Value)) -> SegmentOfResult) -> [SegmentOfResult.Element]",
+      "desc": "Returns an array containing the concatenated results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func sorted(by: ((key: Key, value: Value), (key: Key, value: Value)) -> Bool) -> [(key: Key, value: Value)]",
+      "desc": "Returns the elements of the sequence, sorted using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func shuffled() -> [(key: Key, value: Value)]",
+      "desc": "Returns the elements of the sequence, shuffled."
+    },
+    {
+      "name": "func shuffled<T>(using: inout T) -> [(key: Key, value: Value)]",
+      "desc": "Returns the elements of the sequence, shuffled using the given generator as a source for randomness."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes the contents of this dictionary into the given encoder."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a new dictionary by decoding from the given decoder."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A string that represents the contents of the dictionary."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A string that represents the contents of the dictionary, suitable for debugging."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A mirror that reflects the dictionary."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "init?(from: MLDataValue.DictionaryType)",
+      "desc": "Creates an array from a data-value dictionary."
+    },
+    {
+      "name": "class NSDictionary",
+      "desc": "An object representing a static collection of key-value pairs, for use instead of a Dictionary constant in cases that require reference semantics."
+    },
+    {
+      "name": "class NSMutableDictionary",
+      "desc": "An object representing a dynamic collection of key-value pairs, for use instead of a Dictionary variable in cases that require reference semantics."
+    },
+    {
+      "name": "struct Dictionary.Keys",
+      "desc": "A view of a dictionary’s keys."
+    },
+    {
+      "name": "struct Dictionary.Values",
+      "desc": "A view of a dictionary’s values."
+    },
+    {
+      "name": "struct Dictionary.Index",
+      "desc": "The position of a key-value pair in a dictionary."
+    },
+    {
+      "name": "typealias Dictionary.Indices",
+      "desc": "A type that represents the indices that are valid for subscripting the collection, in ascending order."
+    },
+    {
+      "name": "struct Dictionary.Iterator",
+      "desc": "An iterator over the members of a Dictionary<Key, Value>."
+    },
+    {
+      "name": "typealias Dictionary.Element",
+      "desc": "The element type of a dictionary: a tuple containing an individual key-value pair."
+    },
+    {
+      "name": "typealias Dictionary.SubSequence",
+      "desc": "A collection representing a contiguous subrange of this collection’s elements. The subsequence shares indices with the original collection."
+    },
+    {
+      "name": "typealias DictionaryIterator"
+    },
+    {
+      "name": "init?(from: MLDataValue)",
+      "desc": "Creates an array from a dictionary wrapped in a data value."
+    },
+    {
+      "name": "var dataValue: MLDataValue",
+      "desc": "The dictionary wrapped in a data value."
+    },
+    {
+      "name": "static var dataValueType: MLDataValue.ValueType",
+      "desc": "The underlying type a dictionary uses when it wraps itself in a data value."
+    },
+    {
+      "name": "init<S>(AttributeContainer, including: S.Type)",
+      "desc": "Creates a dictionary that contains the keys and values from an attribute container, using a specified attribute scope."
+    },
+    {
+      "name": "init<S>(AttributeContainer, including: KeyPath<AttributeScopes, S.Type>)",
+      "desc": "Creates a dictionary that contains the keys and values from an attribute container, using an attribute scope that a key path identifies."
+    },
+    {
+      "name": "init(AttributeContainer)",
+      "desc": "Creates an attribute container from a dictionary, using default attribute scopes."
+    },
+    {
+      "name": "init(dictionaryLiteral: (Key, Value)...)",
+      "desc": "Creates a dictionary initialized with a dictionary literal."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    }
+  ],
+  "declaration": "@frozen struct Dictionary<Key, Value> where Key : Hashable",
+  "conformsTo": [
+    "CVarArg",
+    "Collection",
+    "CustomDebugStringConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "ExpressibleByDictionaryLiteral",
+    "Hashable",
+    "MLDataValueConvertible",
+    "Sequence"
+  ]
+}

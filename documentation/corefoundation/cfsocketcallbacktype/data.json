@@ -1,0 +1,35 @@
+{
+  "path": "/documentation/corefoundation/cfsocketcallbacktype",
+  "type": "Structure",
+  "name": "CFSocketCallBackType",
+  "desc": "Types of socket activity that can cause the callback function of a CFSocket object to be called.",
+  "items": [
+    {
+      "name": "static var readCallBack: CFSocketCallBackType",
+      "desc": "The callback is called when data is available to be read or a new connection is waiting to be accepted. The data is not automatically read; the callback must read the data itself."
+    },
+    {
+      "name": "static var acceptCallBack: CFSocketCallBackType",
+      "desc": "New connections will be automatically accepted and the callback is called with the data argument being a pointer to a CFSocketNativeHandle of the child socket. This callback is usable only with listening sockets."
+    },
+    {
+      "name": "static var dataCallBack: CFSocketCallBackType",
+      "desc": "Incoming data will be read in chunks in the background and the callback is called with the data argument being a CFData object containing the read data."
+    },
+    {
+      "name": "static var connectCallBack: CFSocketCallBackType"
+    },
+    {
+      "name": "static var writeCallBack: CFSocketCallBackType",
+      "desc": "The callback is called when the socket is writable. This callback type may be useful when large amounts of data are being sent rapidly over the socket and you want a notification when there is space in the kernel buffers for more data."
+    },
+    {
+      "name": "init(rawValue: CFOptionFlags)"
+    }
+  ],
+  "declaration": "struct CFSocketCallBackType, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

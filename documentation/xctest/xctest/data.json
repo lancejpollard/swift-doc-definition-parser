@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/xctest/xctest",
+  "type": "Class",
+  "name": "XCTest",
+  "desc": "An abstract base class for creating, managing, and executing tests.",
+  "items": [
+    {
+      "name": "var name: String",
+      "desc": "The name of the test."
+    },
+    {
+      "name": "var testCaseCount: Int",
+      "desc": "The number of test cases in the test."
+    },
+    {
+      "name": "var testRun: XCTestRun?",
+      "desc": "The test run object that executes the test."
+    },
+    {
+      "name": "var testRunClass: AnyClass?",
+      "desc": "The test run subclass to instantiate when the test runs, which records the test’s results."
+    },
+    {
+      "name": "func setUp(completion: (Error?) -> Void)",
+      "desc": "Provides an opportunity to reset state asynchronously and handle errors before calling each test method in a test case."
+    },
+    {
+      "name": "func setUpWithError()",
+      "desc": "Provides an opportunity to reset state and to throw errors before calling each test method in a test case."
+    },
+    {
+      "name": "func setUp()",
+      "desc": "Provides an opportunity to reset state before calling each test method in a test case."
+    },
+    {
+      "name": "func tearDown(completion: (Error?) -> Void)",
+      "desc": "Provides an opportunity to perform cleanup asynchronously and handle errors after each test method in a test case ends."
+    },
+    {
+      "name": "func tearDownWithError()",
+      "desc": "Provides an opportunity to perform cleanup and to throw errors after each test method in a test case ends."
+    },
+    {
+      "name": "func tearDown()",
+      "desc": "Provides an opportunity to perform cleanup after each test method in a test case ends."
+    },
+    {
+      "name": "func perform(XCTestRun)",
+      "desc": "Executes a specific test."
+    },
+    {
+      "name": "func run()",
+      "desc": "Creates a test run instance and starts the test."
+    }
+  ],
+  "declaration": "class XCTest : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

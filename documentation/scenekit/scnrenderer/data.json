@@ -1,0 +1,53 @@
+{
+  "path": "/documentation/scenekit/scnrenderer",
+  "type": "Class",
+  "name": "SCNRenderer",
+  "desc": "A renderer for displaying a SceneKit scene in an existing Metal workflow or OpenGL context.",
+  "items": [
+    {
+      "name": "init(device: MTLDevice?, options: [AnyHashable : Any]?)",
+      "desc": "Creates a renderer with the specified Metal device."
+    },
+    {
+      "name": "init(context: EAGLContext?, options: [AnyHashable : Any]?)",
+      "desc": "Creates a renderer with the specified OpenGL context."
+    },
+    {
+      "name": "var scene: SCNScene?",
+      "desc": "The scene to be rendered."
+    },
+    {
+      "name": "var nextFrameTime: CFTimeInterval",
+      "desc": "The timestamp for the next frame to be rendered."
+    },
+    {
+      "name": "func render(atTime: CFTimeInterval, viewport: CGRect, commandBuffer: MTLCommandBuffer, passDescriptor: MTLRenderPassDescriptor)",
+      "desc": "Renders the scene’s contents at the specified system time in the specified Metal command buffer."
+    },
+    {
+      "name": "func render(atTime: CFTimeInterval)",
+      "desc": "Renders the scene’s contents at the specified system time in the renderer’s OpenGL context."
+    },
+    {
+      "name": "func snapshot(atTime: CFTimeInterval, with: CGSize, antialiasingMode: SCNAntialiasingMode) -> UIImage",
+      "desc": "Creates an image by drawing the renderer’s content at the specified system time."
+    },
+    {
+      "name": "func render(withViewport: CGRect, commandBuffer: MTLCommandBuffer, passDescriptor: MTLRenderPassDescriptor)"
+    },
+    {
+      "name": "func update(atTime: CFTimeInterval)"
+    },
+    {
+      "name": "func updateProbes([SCNNode], atTime: CFTimeInterval)"
+    }
+  ],
+  "declaration": "class SCNRenderer : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "SCNSceneRenderer",
+    "SCNTechniqueSupport"
+  ]
+}

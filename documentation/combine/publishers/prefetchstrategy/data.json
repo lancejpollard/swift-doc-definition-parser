@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/combine/publishers/prefetchstrategy",
+  "type": "Enumeration",
+  "name": "Publishers.PrefetchStrategy",
+  "desc": "A strategy for filling a buffer.",
+  "items": [
+    {
+      "name": "case byRequest",
+      "desc": "A strategy that avoids prefetching and instead performs requests on demand."
+    },
+    {
+      "name": "case keepFull",
+      "desc": "A strategy to fill the buffer at subscription time, and keep it full thereafter."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    },
+    {
+      "name": "static func == (Publishers.PrefetchStrategy, Publishers.PrefetchStrategy) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    }
+  ],
+  "declaration": "enum PrefetchStrategy",
+  "conformsTo": [
+    "Equatable",
+    "Hashable"
+  ]
+}

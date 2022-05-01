@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/avfoundation/avcontentkeysessiondelegate",
+  "type": "Protocol",
+  "name": "AVContentKeySessionDelegate",
+  "desc": "A protocol that handles content key requests.",
+  "items": [
+    {
+      "name": "func contentKeySession(AVContentKeySession, didProvide: AVContentKeyRequest)",
+      "desc": "Provides the receiver with a new content key request object."
+    },
+    {
+      "name": "func contentKeySession(AVContentKeySession, didProvideRenewingContentKeyRequest: AVContentKeyRequest)",
+      "desc": "Provides the receiver with a new content key request object for the renewal of an existing content key."
+    },
+    {
+      "name": "func contentKeySession(AVContentKeySession, didProvide: AVPersistableContentKeyRequest)",
+      "desc": "Provides the receiver with a new content key request object to process a persistable content key."
+    },
+    {
+      "name": "func contentKeySession(AVContentKeySession, didUpdatePersistableContentKey: Data, forContentKeyIdentifier: Any)",
+      "desc": "Provides the receiver with an updated persistable content key for a specific key request."
+    },
+    {
+      "name": "func contentKeySession(AVContentKeySession, shouldRetry: AVContentKeyRequest, reason: AVContentKeyRequest.RetryReason) -> Bool",
+      "desc": "Provides the receiver with a content key request object to retry."
+    },
+    {
+      "name": "struct AVContentKeyRequest.RetryReason",
+      "desc": "The reason for asking the client to retry a content key request."
+    },
+    {
+      "name": "func contentKeySessionContentProtectionSessionIdentifierDidChange(AVContentKeySession)",
+      "desc": "Tells the receiver the content protection session identifier changed."
+    },
+    {
+      "name": "func contentKeySession(AVContentKeySession, contentKeyRequest: AVContentKeyRequest, didFailWithError: Error)",
+      "desc": "Tells the receiver that the content key request failed."
+    },
+    {
+      "name": "func contentKeySession(AVContentKeySession, contentKeyRequestDidSucceed: AVContentKeyRequest)",
+      "desc": "Tells the content key session that the response to a content key requeset was successfully processed."
+    },
+    {
+      "name": "func contentKeySessionDidGenerateExpiredSessionReport(AVContentKeySession)",
+      "desc": "Notifies the sender that an expired session report has been generated."
+    }
+  ],
+  "declaration": "protocol AVContentKeySessionDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

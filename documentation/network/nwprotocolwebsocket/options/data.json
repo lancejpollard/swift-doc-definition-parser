@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/network/nwprotocolwebsocket/options",
+  "type": "Class",
+  "name": "NWProtocolWebSocket.Options",
+  "desc": "A container of options for configuring how WebSocket is used on a connection.",
+  "items": [
+    {
+      "name": "init(NWProtocolWebSocket.Version)",
+      "desc": "Initializes a default set of WebSocket connection options."
+    },
+    {
+      "name": "enum NWProtocolWebSocket.Version",
+      "desc": "Supported versions of the WebSocket protocol."
+    },
+    {
+      "name": "var autoReplyPing: Bool",
+      "desc": "A Boolean indicating whether the connection automatically replies to Ping messages instead of delivering them to you."
+    },
+    {
+      "name": "var maximumMessageSize: Int",
+      "desc": "The maximum allowed message size, in bytes, to be received by the WebSocket connection."
+    },
+    {
+      "name": "func setAdditionalHeaders([(name: String, value: String)])",
+      "desc": "Sets additional HTTP header fields to be sent by the client during the WebSocket handshake."
+    },
+    {
+      "name": "func setSubprotocols([String])",
+      "desc": "Adds to the list of supported application protocols that will be presented to a WebSocket server during connection establishment."
+    },
+    {
+      "name": "var skipHandshake: Bool",
+      "desc": "A Boolean indicating whether the WebSocket protocol skips its handshake and begins framing data once the underlying connection is established."
+    },
+    {
+      "name": "func setClientRequestHandler(DispatchQueue, handler: (([String], [(name: String, value: String)]) -> NWProtocolWebSocket.Response))",
+      "desc": "Sets a handler to react to as a server to inbound WebSocket client handshakes."
+    },
+    {
+      "name": "struct NWProtocolWebSocket.Response",
+      "desc": "A WebSocket handshake reponse sent from a server to a client."
+    }
+  ],
+  "declaration": "class NWProtocolWebSocket.Options : NWProtocolOptions",
+  "inheritsFrom": [
+    "NWProtocolOptions"
+  ]
+}

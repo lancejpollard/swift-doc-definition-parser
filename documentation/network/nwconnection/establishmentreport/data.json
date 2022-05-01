@@ -1,0 +1,56 @@
+{
+  "path": "/documentation/network/nwconnection/establishmentreport",
+  "type": "Structure",
+  "name": "NWConnection.EstablishmentReport",
+  "desc": "A report that provides metrics about the establishment of a connection.",
+  "items": [
+    {
+      "name": "let duration: TimeInterval",
+      "desc": "The total duration of the successful connection establishment attempt, from the preparing state to the ready state."
+    },
+    {
+      "name": "let previousAttemptCount: Int",
+      "desc": "The number of attempts made before the successful attempt, when the connection moved from the preparing state back to the waiting state."
+    },
+    {
+      "name": "let attemptStartedAfterInterval: TimeInterval",
+      "desc": "The time between the call to start and the beginning of the successful connection attempt."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "The description of the report."
+    },
+    {
+      "name": "let resolutions: [NWConnection.EstablishmentReport.Resolution]",
+      "desc": "The array of resolution steps performed during connection establishment, in order from first resolved to last resolved."
+    },
+    {
+      "name": "struct NWConnection.EstablishmentReport.Resolution",
+      "desc": "A description of a single DNS resolution step."
+    },
+    {
+      "name": "let handshakes: [NWConnection.EstablishmentReport.Handshake]",
+      "desc": "The array of protocol handshakes in order from first completed to last completed."
+    },
+    {
+      "name": "struct NWConnection.EstablishmentReport.Handshake",
+      "desc": "A description of a single protocol handshake."
+    },
+    {
+      "name": "let proxyConfigured: Bool",
+      "desc": "A Boolean indicating whether a proxy was configured on the connection."
+    },
+    {
+      "name": "let usedProxy: Bool",
+      "desc": "A Boolean indicating whether the connection used a proxy."
+    },
+    {
+      "name": "let proxyEndpoint: NWEndpoint?",
+      "desc": "The endpoint of the proxy the connection used."
+    }
+  ],
+  "declaration": "struct NWConnection.EstablishmentReport",
+  "conformsTo": [
+    "CustomDebugStringConvertible"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "path": "/documentation/coreservices/uckeytochartableindex",
+  "type": "Structure",
+  "name": "UCKeyToCharTableIndex",
+  "desc": "Provides a count of, and offsets to, key-code-to-character tables in a 'uchr' resource.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(keyToCharTableIndexFormat: UInt16, keyToCharTableSize: UInt16, keyToCharTableCount: UInt32, keyToCharTableOffsets: (UInt32))"
+    },
+    {
+      "name": "var keyToCharTableCount: UInt32",
+      "desc": "An unsigned 32-bit integer specifying the number of key-code-to-character tables, typically 6 to 12."
+    },
+    {
+      "name": "var keyToCharTableIndexFormat: UInt16",
+      "desc": "An unsigned 16-bit integer identifying the format of the UCKeyToCharTableIndex structure. Set to kUCKeyToCharTableIndexFormat."
+    },
+    {
+      "name": "var keyToCharTableOffsets: (UInt32)",
+      "desc": "An array of offsets from the beginning of the 'uchr' resource to each of the UCKeyOutput key-code-to-character tables in the keyToCharData[] array that follows this structure in the resource."
+    },
+    {
+      "name": "var keyToCharTableSize: UInt16",
+      "desc": "An unsigned 16-bit integer specifying the number of virtual key codes supported by this resource; for ADB keyboards this is 128 (with virtual key codes ranging from 0 to 127)."
+    }
+  ],
+  "declaration": "struct UCKeyToCharTableIndex"
+}

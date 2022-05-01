@@ -1,0 +1,47 @@
+{
+  "path": "/documentation/foundation/nspointerfunctions",
+  "type": "Class",
+  "name": "NSPointerFunctions",
+  "desc": "An instance of NSPointerFunctions defines callout functions appropriate for managing a pointer reference held somewhere else.",
+  "items": [
+    {
+      "name": "init(options: NSPointerFunctions.Options)",
+      "desc": "Returns an NSPointerFunctions object initialized with the given options."
+    },
+    {
+      "name": "var hashFunction: ((UnsafeRawPointer, ((UnsafeRawPointer) -> Int)?) -> Int)?",
+      "desc": "The hash function."
+    },
+    {
+      "name": "var isEqualFunction: ((UnsafeRawPointer, UnsafeRawPointer, ((UnsafeRawPointer) -> Int)?) -> ObjCBool)?",
+      "desc": "The function used to compare pointers."
+    },
+    {
+      "name": "var sizeFunction: ((UnsafeRawPointer) -> Int)?",
+      "desc": "The function used to determine the size of pointers."
+    },
+    {
+      "name": "var descriptionFunction: ((UnsafeRawPointer) -> String?)?",
+      "desc": "The function used to describe elements."
+    },
+    {
+      "name": "var acquireFunction: ((UnsafeRawPointer, ((UnsafeRawPointer) -> Int)?, ObjCBool) -> UnsafeMutableRawPointer)?",
+      "desc": "The function used to acquire memory."
+    },
+    {
+      "name": "var relinquishFunction: ((UnsafeRawPointer, ((UnsafeRawPointer) -> Int)?) -> Void)?",
+      "desc": "The function used to relinquish memory."
+    },
+    {
+      "name": "struct NSPointerFunctions.Options",
+      "desc": "Defines the memory and personality options for an NSPointerFunctions object."
+    }
+  ],
+  "declaration": "class NSPointerFunctions : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

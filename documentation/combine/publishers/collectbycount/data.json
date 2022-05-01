@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/combine/publishers/collectbycount",
+  "type": "Structure",
+  "name": "Publishers.CollectByCount",
+  "desc": "A publisher that buffers a maximum number of items.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, count: Int)",
+      "desc": "Creates a publisher that buffers a maximum number of items."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher that this publisher receives elements from."
+    },
+    {
+      "name": "let count: Int",
+      "desc": "The maximum number of received elements to buffer before publishing."
+    },
+    {
+      "name": "static func == (Publishers.CollectByCount<Upstream>, Publishers.CollectByCount<Upstream>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two publishers are equivalent."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    }
+  ],
+  "declaration": "struct CollectByCount<Upstream> where Upstream : Publisher",
+  "conformsTo": [
+    "Equatable",
+    "Publisher"
+  ]
+}

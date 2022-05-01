@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/sirikit/inplaymediaintenthandling",
+  "type": "Protocol",
+  "name": "INPlayMediaIntentHandling",
+  "desc": "The interface an object implements to confirm and handle play media intents.",
+  "items": [
+    {
+      "name": "func resolveMediaItems(for: INPlayMediaIntent, with: ([INPlayMediaMediaItemResolutionResult]) -> Void)",
+      "desc": "Resolves the media items to play."
+    },
+    {
+      "name": "func resolvePlayShuffled(for: INPlayMediaIntent, with: (INBooleanResolutionResult) -> Void)",
+      "desc": "Resolves whether to shuffle the played media."
+    },
+    {
+      "name": "func resolvePlaybackQueueLocation(for: INPlayMediaIntent, with: (INPlaybackQueueLocationResolutionResult) -> Void)",
+      "desc": "Resolves the location in the playback queue where your app plays the media."
+    },
+    {
+      "name": "func resolvePlaybackRepeatMode(for: INPlayMediaIntent, with: (INPlaybackRepeatModeResolutionResult) -> Void)",
+      "desc": "Resolves the repeat mode when playing media."
+    },
+    {
+      "name": "func resolvePlaybackSpeed(for: INPlayMediaIntent, with: (INPlayMediaPlaybackSpeedResolutionResult) -> Void)",
+      "desc": "Resolves the playback speed when playing media."
+    },
+    {
+      "name": "func resolveResumePlayback(for: INPlayMediaIntent, with: (INBooleanResolutionResult) -> Void)",
+      "desc": "Resolves whether to resume playback."
+    },
+    {
+      "name": "func confirm(intent: INPlayMediaIntent, completion: (INPlayMediaIntentResponse) -> Void)",
+      "desc": "Confirms the details of the media playback request."
+    },
+    {
+      "name": "func handle(intent: INPlayMediaIntent, completion: (INPlayMediaIntentResponse) -> Void)",
+      "desc": "Handles the media playback request."
+    }
+  ],
+  "declaration": "protocol INPlayMediaIntentHandling",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

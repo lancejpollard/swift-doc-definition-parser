@@ -1,0 +1,70 @@
+{
+  "path": "/documentation/scenekit/scngeometrysource",
+  "type": "Class",
+  "name": "SCNGeometrySource",
+  "desc": "A container for vertex data forming part of the definition for a three-dimensional object, or geometry.",
+  "items": [
+    {
+      "name": "init(data: Data, semantic: SCNGeometrySource.Semantic, vectorCount: Int, usesFloatComponents: Bool, componentsPerVector: Int, bytesPerComponent: Int, dataOffset: Int, dataStride: Int)",
+      "desc": "Creates a geometry source from the specified data and options."
+    },
+    {
+      "name": "init(vertices: [SCNVector3])",
+      "desc": "Creates a geometry source from an array of vertex positions."
+    },
+    {
+      "name": "init(normals: [SCNVector3])",
+      "desc": "Creates a geometry source from an array of normal vectors."
+    },
+    {
+      "name": "init(textureCoordinates: [CGPoint])",
+      "desc": "Creates a geometry source from an array of texture coordinate points."
+    },
+    {
+      "name": "var data: Data",
+      "desc": "The data for the geometry source."
+    },
+    {
+      "name": "var semantic: SCNGeometrySource.Semantic",
+      "desc": "The semantic value (or attribute) the geometry source describes for each vertex."
+    },
+    {
+      "name": "var vectorCount: Int",
+      "desc": "The number of vectors in the data."
+    },
+    {
+      "name": "var usesFloatComponents: Bool",
+      "desc": "A Boolean value that indicates whether vector components are floating-point values."
+    },
+    {
+      "name": "var componentsPerVector: Int",
+      "desc": "The number of scalar components in each vector."
+    },
+    {
+      "name": "var bytesPerComponent: Int",
+      "desc": "The size, in bytes, of each vector component."
+    },
+    {
+      "name": "var dataOffset: Int",
+      "desc": "The offset, in bytes, from the beginning of the data to the first vector component to be used in the geometry source."
+    },
+    {
+      "name": "var dataStride: Int",
+      "desc": "The number of bytes from a vector to the next one in the data."
+    },
+    {
+      "name": "init(buffer: MTLBuffer, vertexFormat: MTLVertexFormat, semantic: SCNGeometrySource.Semantic, vertexCount: Int, dataOffset: Int, dataStride: Int)",
+      "desc": "Creates a geometry source whose vertex data resides in the specified Metal buffer, allowing modification through a Metal compute shader."
+    },
+    {
+      "name": "struct SCNGeometrySource.Semantic"
+    }
+  ],
+  "declaration": "class SCNGeometrySource : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

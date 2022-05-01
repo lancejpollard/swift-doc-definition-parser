@@ -1,0 +1,47 @@
+{
+  "path": "/documentation/uikit/nstextcontentstorage",
+  "type": "Class",
+  "name": "NSTextContentStorage",
+  "desc": "A concrete subclass of the text content manager that provides support for attributed strings that you use as a backing store.",
+  "items": [
+    {
+      "name": "var attributedString: NSAttributedString?",
+      "desc": "The contents of a document."
+    },
+    {
+      "name": "func attributedString(for: NSTextElement) -> NSAttributedString?",
+      "desc": "Returns a new attributed string for the text element."
+    },
+    {
+      "name": "func textElement(for: NSAttributedString) -> NSTextElement?",
+      "desc": "Returns the text element corresponding to object’s attributed string."
+    },
+    {
+      "name": "var delegate: NSTextContentStorageDelegate?",
+      "desc": "The delegate for the content storage object."
+    },
+    {
+      "name": "protocol NSTextContentStorageDelegate",
+      "desc": "The optional methods that delegates of content storage objects implement to handle content processing."
+    },
+    {
+      "name": "func adjustedRange(from: NSTextRange, forEditingTextSelection: Bool) -> NSTextRange?",
+      "desc": "Returns the text range, if any, in the backing store that required manual adjustment after editing."
+    },
+    {
+      "name": "func location(NSTextLocation, offsetBy: Int) -> NSTextLocation?",
+      "desc": "Returns a new text location from an existing location and offset you provide."
+    },
+    {
+      "name": "func offset(from: NSTextLocation, to: NSTextLocation) -> Int",
+      "desc": "Returns the offset between the two specified locations."
+    }
+  ],
+  "declaration": "class NSTextContentStorage : NSTextContentManager",
+  "inheritsFrom": [
+    "NSTextContentManager"
+  ],
+  "conformsTo": [
+    "NSTextStorageObserving"
+  ]
+}

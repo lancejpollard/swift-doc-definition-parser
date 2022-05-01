@@ -1,0 +1,95 @@
+{
+  "path": "/documentation/sirikit/inperson",
+  "type": "Class",
+  "name": "INPerson",
+  "desc": "The information about a user participating in a SiriKit interaction.",
+  "items": [
+    {
+      "name": "init(personHandle: INPersonHandle, nameComponents: PersonNameComponents?, displayName: String?, image: INImage?, contactIdentifier: String?, customIdentifier: String?, isMe: Bool, suggestionType: INPersonSuggestionType)",
+      "desc": "Creates a person object with the specified information, including metadata for messaging intents."
+    },
+    {
+      "name": "init(personHandle: INPersonHandle, nameComponents: PersonNameComponents?, displayName: String?, image: INImage?, contactIdentifier: String?, customIdentifier: String?, relationship: INPersonRelationship?)",
+      "desc": "Creates a person object with the specified name and contact information."
+    },
+    {
+      "name": "init(personHandle: INPersonHandle, nameComponents: PersonNameComponents?, displayName: String?, image: INImage?, contactIdentifier: String?, customIdentifier: String?)",
+      "desc": "Creates a person object with the specified name and contact information."
+    },
+    {
+      "name": "init(personHandle: INPersonHandle, nameComponents: PersonNameComponents?, displayName: String?, image: INImage?, contactIdentifier: String?, customIdentifier: String?, isMe: Bool)",
+      "desc": "Creates a person object with the specified name, contact information, and flag indicating whether the person is the current device user."
+    },
+    {
+      "name": "init(personHandle: INPersonHandle, nameComponents: PersonNameComponents?, displayName: String?, image: INImage?, contactIdentifier: String?, customIdentifier: String?, aliases: [INPersonHandle]?, suggestionType: INPersonSuggestionType)",
+      "desc": "Creates a person object with the specified name and contact information."
+    },
+    {
+      "name": "var displayName: String",
+      "desc": "The formatted name of the user."
+    },
+    {
+      "name": "var nameComponents: PersonNameComponents?",
+      "desc": "The actual name of the user specified as a set of name components."
+    },
+    {
+      "name": "var personHandle: INPersonHandle?",
+      "desc": "The unique handle that your app assigned to the user."
+    },
+    {
+      "name": "var image: INImage?",
+      "desc": "An image of the person."
+    },
+    {
+      "name": "var isMe: Bool",
+      "desc": "A Boolean value indicating whether the person is the current user of the device."
+    },
+    {
+      "name": "var aliases: [INPersonHandle]?",
+      "desc": "An array of alternate identifiers for the user."
+    },
+    {
+      "name": "var contactIdentifier: String?",
+      "desc": "The identifier associated with a user record in the Contacts database."
+    },
+    {
+      "name": "var customIdentifier: String?",
+      "desc": "The custom identification string that your app uses to identify the user."
+    },
+    {
+      "name": "var suggestionType: INPersonSuggestionType",
+      "desc": "The type of contact information to donate with interactions."
+    },
+    {
+      "name": "enum INPersonSuggestionType",
+      "desc": "Constants indicating how to display the person’s identity."
+    },
+    {
+      "name": "var relationship: INPersonRelationship?",
+      "desc": "The relationship of this person to the current user."
+    },
+    {
+      "name": "struct INPersonRelationship",
+      "desc": "Constants indicating the relationship between the current user and another person."
+    },
+    {
+      "name": "var siriMatches: [INPerson]?",
+      "desc": "A list of possible matches suggested by Siri."
+    },
+    {
+      "name": "init(personHandle: INPersonHandle, nameComponents: PersonNameComponents?, displayName: String?, image: INImage?, contactIdentifier: String?, customIdentifier: String?, isContactSuggestion: Bool, suggestionType: INPersonSuggestionType)"
+    },
+    {
+      "name": "var isContactSuggestion: Bool"
+    }
+  ],
+  "declaration": "class INPerson : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "INSpeakable",
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

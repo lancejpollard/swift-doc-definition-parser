@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/security/authorizationflags",
+  "type": "Structure",
+  "name": "AuthorizationFlags",
+  "desc": "The flags used to specify authorization options.",
+  "items": [
+    {
+      "name": "init(rawValue: UInt32)",
+      "desc": "Initializes an authorization flags structure."
+    },
+    {
+      "name": "static var interactionAllowed: AuthorizationFlags",
+      "desc": "A flag that permits user interaction as needed."
+    },
+    {
+      "name": "static var extendRights: AuthorizationFlags",
+      "desc": "A flag that permits the Security Server to attempt to grant the rights requested."
+    },
+    {
+      "name": "static var partialRights: AuthorizationFlags",
+      "desc": "A flag that permits the Security Server to grant rights on an individual basis."
+    },
+    {
+      "name": "static var destroyRights: AuthorizationFlags",
+      "desc": "A flag that instructs the Security Server to revoke authorization."
+    },
+    {
+      "name": "static var preAuthorize: AuthorizationFlags",
+      "desc": "A flag that instructs the Security Server to preauthorize the rights requested."
+    },
+    {
+      "name": "static var noData: AuthorizationFlags",
+      "desc": "Private flag. Do not use."
+    }
+  ],
+  "declaration": "struct AuthorizationFlags, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

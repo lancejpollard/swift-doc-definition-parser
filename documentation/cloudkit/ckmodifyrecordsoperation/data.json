@@ -1,0 +1,61 @@
+{
+  "path": "/documentation/cloudkit/ckmodifyrecordsoperation",
+  "type": "Class",
+  "name": "CKModifyRecordsOperation",
+  "desc": "An operation that modifies one or more records.",
+  "items": [
+    {
+      "name": "init(recordsToSave: [CKRecord]?, recordIDsToDelete: [CKRecord.ID]?)",
+      "desc": "Creates an operation for modifying the specified records."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates an empty modify records operation."
+    },
+    {
+      "name": "var recordsToSave: [CKRecord]?",
+      "desc": "The records to save to the database."
+    },
+    {
+      "name": "var recordIDsToDelete: [CKRecord.ID]?",
+      "desc": "The IDs of the records to delete permanently from the database."
+    },
+    {
+      "name": "var clientChangeTokenData: Data?",
+      "desc": "A token that tracks local changes to records."
+    },
+    {
+      "name": "var isAtomic: Bool",
+      "desc": "A Boolean value that indicates whether the entire operation fails when CloudKit can’t update one or more records in a record zone."
+    },
+    {
+      "name": "var savePolicy: CKModifyRecordsOperation.RecordSavePolicy",
+      "desc": "The policy to use when saving changes to records."
+    },
+    {
+      "name": "enum CKModifyRecordsOperation.RecordSavePolicy",
+      "desc": "Constants that indicate which policy to apply when saving records."
+    },
+    {
+      "name": "var perRecordProgressBlock: ((CKRecord, Double) -> Void)?",
+      "desc": "The closure to execute with progress information for individual records."
+    },
+    {
+      "name": "var modifyRecordsCompletionBlock: (([CKRecord]?, [CKRecord.ID]?, Error?) -> Void)?",
+      "desc": "The closure to execute after CloudKit modifies all of the records."
+    },
+    {
+      "name": "var modifyRecordsResultBlock: ((Result<Void, Error>) -> Void)?"
+    },
+    {
+      "name": "var perRecordDeleteBlock: ((CKRecord.ID, Result<Void, Error>) -> Void)?"
+    },
+    {
+      "name": "var perRecordSaveBlock: ((CKRecord.ID, Result<CKRecord, Error>) -> Void)?"
+    }
+  ],
+  "declaration": "class CKModifyRecordsOperation : CKDatabaseOperation",
+  "inheritsFrom": [
+    "CKDatabaseOperation"
+  ]
+}

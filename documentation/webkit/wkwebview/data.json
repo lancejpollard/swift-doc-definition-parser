@@ -1,0 +1,323 @@
+{
+  "path": "/documentation/webkit/wkwebview",
+  "type": "Class",
+  "name": "WKWebView",
+  "desc": "An object that displays interactive web content, such as for an in-app browser.",
+  "items": [
+    {
+      "name": "init(frame: CGRect, configuration: WKWebViewConfiguration)",
+      "desc": "Creates a web view and initializes it with the specified frame and configuration data."
+    },
+    {
+      "name": "init?(coder: NSCoder)",
+      "desc": "Returns an object initialized from data in the specified coder object."
+    },
+    {
+      "name": "var configuration: WKWebViewConfiguration",
+      "desc": "The object that contains the configuration details for the web view."
+    },
+    {
+      "name": "class func handlesURLScheme(String) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether WebKit natively supports resources with the specified URL scheme."
+    },
+    {
+      "name": "var uiDelegate: WKUIDelegate?",
+      "desc": "The object you use to integrate custom user interface elements, such as contextual menus or panels, into web view interactions."
+    },
+    {
+      "name": "protocol WKUIDelegate",
+      "desc": "The methods for presenting native user interface elements on behalf of a webpage."
+    },
+    {
+      "name": "var navigationDelegate: WKNavigationDelegate?",
+      "desc": "The object you use to manage navigation behavior for the web view."
+    },
+    {
+      "name": "protocol WKNavigationDelegate",
+      "desc": "Methods for accepting or rejecting navigation changes, and for tracking the progress of navigation requests."
+    },
+    {
+      "name": "func load(URLRequest) -> WKNavigation?",
+      "desc": "Loads the web content that the specified URL request object references and navigates to that content."
+    },
+    {
+      "name": "func load(Data, mimeType: String, characterEncodingName: String, baseURL: URL) -> WKNavigation?",
+      "desc": "Loads the content of the specified data object and navigates to it."
+    },
+    {
+      "name": "func loadHTMLString(String, baseURL: URL?) -> WKNavigation?",
+      "desc": "Loads the contents of the specified HTML string and navigates to it."
+    },
+    {
+      "name": "func loadFileRequest(URLRequest, allowingReadAccessTo: URL) -> WKNavigation",
+      "desc": "Loads the web content from the file the URL request object specifies and navigates to that content."
+    },
+    {
+      "name": "func loadFileURL(URL, allowingReadAccessTo: URL) -> WKNavigation?",
+      "desc": "Loads the web content from the specified file and navigates to it."
+    },
+    {
+      "name": "func loadSimulatedRequest(URLRequest, response: URLResponse, responseData: Data) -> WKNavigation",
+      "desc": "Loads the web content from the data you provide as if the data were the response to the request."
+    },
+    {
+      "name": "func loadSimulatedRequest(URLRequest, responseHTML: String) -> WKNavigation",
+      "desc": "Loads the web content from the HTML you provide as if the HTML were the response to the request."
+    },
+    {
+      "name": "var isLoading: Bool",
+      "desc": "A Boolean value that indicates whether the view is currently loading content."
+    },
+    {
+      "name": "var estimatedProgress: Double",
+      "desc": "An estimate of what fraction of the current navigation has been loaded."
+    },
+    {
+      "name": "func reload() -> WKNavigation?",
+      "desc": "Reloads the current webpage."
+    },
+    {
+      "name": "func reload(Any?)",
+      "desc": "Reloads the current webpage."
+    },
+    {
+      "name": "func reloadFromOrigin() -> WKNavigation?",
+      "desc": "Reloads the current webpage, and performs end-to-end revalidation of the content using cache-validating conditionals, if possible."
+    },
+    {
+      "name": "func reloadFromOrigin(Any?)",
+      "desc": "Reloads the current webpage, and performs end-to-end revalidation of the content using cache-validating conditionals, if possible."
+    },
+    {
+      "name": "func stopLoading()",
+      "desc": "Stops loading all resources on the current page."
+    },
+    {
+      "name": "func stopLoading(Any?)",
+      "desc": "Stops loading all resources on the current page."
+    },
+    {
+      "name": "func startDownload(using: URLRequest, completionHandler: (WKDownload) -> Void)",
+      "desc": "Starts to download the resource at the URL in the request."
+    },
+    {
+      "name": "func resumeDownload(fromResumeData: Data, completionHandler: (WKDownload) -> Void)",
+      "desc": "Resumes a failed or canceled download."
+    },
+    {
+      "name": "var scrollView: UIScrollView",
+      "desc": "The scroll view associated with the web view."
+    },
+    {
+      "name": "var title: String?",
+      "desc": "The page title."
+    },
+    {
+      "name": "var url: URL?",
+      "desc": "The URL for the current webpage."
+    },
+    {
+      "name": "var mediaType: String?",
+      "desc": "The media type for the contents of the web view."
+    },
+    {
+      "name": "var customUserAgent: String?",
+      "desc": "The custom user agent string."
+    },
+    {
+      "name": "var serverTrust: SecTrust?",
+      "desc": "The trust management object you use to evaluate trust for the current webpage."
+    },
+    {
+      "name": "var hasOnlySecureContent: Bool",
+      "desc": "A Boolean value that indicates whether the web view loaded all resources on the page through securely encrypted connections."
+    },
+    {
+      "name": "var themeColor: UIColor?",
+      "desc": "The theme color that the system gets from the first valid meta tag in the webpage."
+    },
+    {
+      "name": "var underPageBackgroundColor: UIColor!",
+      "desc": "The color the web view displays behind the active page, visible when the user scrolls beyond the bounds of the page."
+    },
+    {
+      "name": "var pageZoom: CGFloat",
+      "desc": "The scale factor by which the web view scales content relative to its bounds."
+    },
+    {
+      "name": "var allowsMagnification: Bool",
+      "desc": "A Boolean value that indicates whether magnify gestures change the web view’s magnification."
+    },
+    {
+      "name": "var magnification: CGFloat",
+      "desc": "The factor by which the page content is currently scaled."
+    },
+    {
+      "name": "func setMagnification(CGFloat, centeredAt: CGPoint)",
+      "desc": "Scales the page content and centers the result on the specified point."
+    },
+    {
+      "name": "func pauseAllMediaPlayback(completionHandler: (() -> Void)?)",
+      "desc": "Pauses playback of all media in the web view."
+    },
+    {
+      "name": "func requestMediaPlaybackState(completionHandler: (WKMediaPlaybackState) -> Void)",
+      "desc": "Requests the playback status of media in the web view."
+    },
+    {
+      "name": "func setAllMediaPlaybackSuspended(Bool, completionHandler: (() -> Void)?)",
+      "desc": "Changes whether the webpage is suspending playback of all media in the page."
+    },
+    {
+      "name": "func closeAllMediaPresentations(completionHandler: (() -> Void)?)",
+      "desc": "Closes all media the web view is presenting, including picture-in-picture video and fullscreen video."
+    },
+    {
+      "name": "enum WKMediaPlaybackState",
+      "desc": "An enumeration that describes whether an audio or video presentation is playing, paused, or suspended."
+    },
+    {
+      "name": "var cameraCaptureState: WKMediaCaptureState",
+      "desc": "An enumeration case that indicates whether the webpage is using the camera to capture images or video."
+    },
+    {
+      "name": "var microphoneCaptureState: WKMediaCaptureState",
+      "desc": "An enumeration case that indicates whether the webpage is using the microphone to capture audio."
+    },
+    {
+      "name": "func setCameraCaptureState(WKMediaCaptureState, completionHandler: (() -> Void)?)",
+      "desc": "Changes whether the webpage is using the camera to capture images or video."
+    },
+    {
+      "name": "func setMicrophoneCaptureState(WKMediaCaptureState, completionHandler: (() -> Void)?)",
+      "desc": "Changes whether the webpage is using the microphone to capture audio."
+    },
+    {
+      "name": "enum WKMediaCaptureState",
+      "desc": "An enumeration that describes whether a media device, like a camera or microphone, is currently capturing audio or video."
+    },
+    {
+      "name": "func find(String, configuration: WKFindConfiguration, completionHandler: (WKFindResult) -> Void)",
+      "desc": "Searches for the specified string in the web view’s content."
+    },
+    {
+      "name": "func find(String, configuration: WKFindConfiguration) -> WKFindResult",
+      "desc": "Searches for the specified string in the web view’s content."
+    },
+    {
+      "name": "class WKFindConfiguration",
+      "desc": "The configuration parameters to use when searching the contents of the web view."
+    },
+    {
+      "name": "class WKFindResult",
+      "desc": "An object that contains the results of searching the web view’s contents."
+    },
+    {
+      "name": "var allowsBackForwardNavigationGestures: Bool",
+      "desc": "A Boolean value that indicates whether horizontal swipe gestures trigger backward and forward page navigation."
+    },
+    {
+      "name": "var backForwardList: WKBackForwardList",
+      "desc": "The web view's back-forward list."
+    },
+    {
+      "name": "func goBack(Any?)",
+      "desc": "Navigates to the back item in the back-forward list."
+    },
+    {
+      "name": "func goBack() -> WKNavigation?",
+      "desc": "Navigates to the back item in the back-forward list."
+    },
+    {
+      "name": "func goForward(Any?)",
+      "desc": "Navigates to the forward item in the back-forward list."
+    },
+    {
+      "name": "func goForward() -> WKNavigation?",
+      "desc": "Navigates to the forward item in the back-forward list."
+    },
+    {
+      "name": "func go(to: WKBackForwardListItem) -> WKNavigation?",
+      "desc": "Navigates to an item from the back-forward list and sets it as the current item."
+    },
+    {
+      "name": "var canGoBack: Bool",
+      "desc": "A Boolean value that indicates whether there is a valid back item in the back-forward list."
+    },
+    {
+      "name": "var canGoForward: Bool",
+      "desc": "A Boolean value that indicates whether there is a valid forward item in the back-forward list."
+    },
+    {
+      "name": "var allowsLinkPreview: Bool",
+      "desc": "A Boolean value that determines whether pressing a link displays a preview of the destination for the link."
+    },
+    {
+      "name": "var interactionState: Any?",
+      "desc": "An object you use to capture the current state of interaction in a web view so that you can restore that state later to another web view."
+    },
+    {
+      "name": "func evaluateJavaScript(String, completionHandler: ((Any?, Error?) -> Void)?)",
+      "desc": "Evaluates the specified JavaScript string."
+    },
+    {
+      "name": "func evaluateJavaScript(String, in: WKFrameInfo?, in: WKContentWorld, completionHandler: ((Result<Any, Error>) -> Void)?)",
+      "desc": "Evaluates a JavaScript string in the context of the specified frame and content world."
+    },
+    {
+      "name": "func evaluateJavaScript(String, in: WKFrameInfo?, contentWorld: WKContentWorld) -> Any?",
+      "desc": "Evaluates a JavaScript string in the context of the specified frame and content world."
+    },
+    {
+      "name": "func callAsyncJavaScript(String, arguments: [String : Any], in: WKFrameInfo?, in: WKContentWorld, completionHandler: ((Result<Any, Error>) -> Void)?)",
+      "desc": "Executes the specified string as an asynchronous JavaScript function."
+    },
+    {
+      "name": "func callAsyncJavaScript(String, arguments: [String : Any], in: WKFrameInfo?, contentWorld: WKContentWorld) -> Any?",
+      "desc": "Executes the specified string as an asynchronous JavaScript function."
+    },
+    {
+      "name": "func takeSnapshot(with: WKSnapshotConfiguration?, completionHandler: (UIImage?, Error?) -> Void)",
+      "desc": "Generates a platform-native image from the web view’s contents asynchronously."
+    },
+    {
+      "name": "func createPDF(configuration: WKPDFConfiguration, completionHandler: (Result<Data, Error>) -> Void)",
+      "desc": "Generates PDF data from the web view’s contents asynchronously."
+    },
+    {
+      "name": "func pdf(configuration: WKPDFConfiguration) -> Data",
+      "desc": "Generates PDF data from the web view’s contents asynchronously."
+    },
+    {
+      "name": "func createWebArchiveData(completionHandler: (Result<Data, Error>) -> Void)",
+      "desc": "Creates a web archive of the web view’s current contents asynchronously."
+    },
+    {
+      "name": "func printOperation(with: NSPrintInfo) -> NSPrintOperation",
+      "desc": "Returns the print operation object to use when printing the contents of the web view."
+    },
+    {
+      "name": "class WKSnapshotConfiguration",
+      "desc": "The configuration data to use when generating an image from a web view’s contents."
+    },
+    {
+      "name": "class WKPDFConfiguration",
+      "desc": "The configuration data to use when generating a PDF representation of a web view’s contents."
+    },
+    {
+      "name": "var fullscreenState: WKWebView.FullscreenState"
+    },
+    {
+      "name": "enum WKWebView.FullscreenState"
+    }
+  ],
+  "declaration": "class WKWebView : UIView",
+  "inheritsFrom": [
+    "NSView",
+    "UIView"
+  ],
+  "conformsTo": [
+    "NSTextFinderClient",
+    "NSUserInterfaceValidations"
+  ]
+}

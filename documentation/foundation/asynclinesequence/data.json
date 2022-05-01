@@ -1,0 +1,106 @@
+{
+  "path": "/documentation/foundation/asynclinesequence",
+  "type": "Generic Structure",
+  "name": "AsyncLineSequence",
+  "desc": "An asychronous sequence of lines of text.",
+  "items": [
+    {
+      "name": "func contains(String) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the asynchronous sequence contains the given element."
+    },
+    {
+      "name": "func contains(where: (String) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the asynchronous sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func allSatisfy((String) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether all elements produced by the asynchronous sequence satisfies the given predicate."
+    },
+    {
+      "name": "func first(where: (String) -> Bool) -> String?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func min() -> String?",
+      "desc": "Returns the minimum element in an asynchronous sequence of comparable elements."
+    },
+    {
+      "name": "func min(by: (String, String) -> Bool) -> String?",
+      "desc": "Returns the minimum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func max() -> String?",
+      "desc": "Returns the maximum element in an asynchronous sequence of comparable elements."
+    },
+    {
+      "name": "func max(by: (String, String) -> Bool) -> String?",
+      "desc": "Returns the maximum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func prefix(Int) -> AsyncPrefixSequence<AsyncLineSequence<Base>>",
+      "desc": "Returns an asynchronous sequence, up to the specified maximum length, containing the initial elements of the base asynchronous sequence."
+    },
+    {
+      "name": "func prefix(while: (String) -> Bool) -> AsyncPrefixWhileSequence<AsyncLineSequence<Base>>",
+      "desc": "Returns an asynchronous sequence, containing the initial, consecutive elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func dropFirst(Int) -> AsyncDropFirstSequence<AsyncLineSequence<Base>>",
+      "desc": "Omits a specified number of elements from the base asynchronous sequence, then passes through all remaining elements."
+    },
+    {
+      "name": "func drop(while: (String) -> Bool) -> AsyncDropWhileSequence<AsyncLineSequence<Base>>",
+      "desc": "Omits elements from the base asynchronous sequence until a given closure returns false, after which it passes through all remaining elements."
+    },
+    {
+      "name": "func filter((String) -> Bool) -> AsyncFilterSequence<AsyncLineSequence<Base>>",
+      "desc": "Creates an asynchronous sequence that contains, in order, the elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func map<Transformed>((String) -> Transformed) -> AsyncThrowingMapSequence<AsyncLineSequence<Base>, Transformed>",
+      "desc": "Creates an asynchronous sequence that maps the given error-throwing closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "func map<Transformed>((String) -> Transformed) -> AsyncMapSequence<AsyncLineSequence<Base>, Transformed>",
+      "desc": "Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((String) -> ElementOfResult?) -> AsyncThrowingCompactMapSequence<AsyncLineSequence<Base>, ElementOfResult>",
+      "desc": "Creates an asynchronous sequence that maps an error-throwing closure over the base sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((String) -> ElementOfResult?) -> AsyncCompactMapSequence<AsyncLineSequence<Base>, ElementOfResult>",
+      "desc": "Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((String) -> SegmentOfResult) -> AsyncThrowingFlatMapSequence<AsyncLineSequence<Base>, SegmentOfResult>",
+      "desc": "Creates an asynchronous sequence that concatenates the results of calling the given error-throwing transformation with each element of this sequence."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((String) -> SegmentOfResult) -> AsyncFlatMapSequence<AsyncLineSequence<Base>, SegmentOfResult>",
+      "desc": "Creates an asynchronous sequence that concatenates the results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, String) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, String) -> Void) -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure, given a mutable initial value."
+    },
+    {
+      "name": "typealias AsyncLineSequence.Element",
+      "desc": "The type of elements produced by this asynchronous sequence."
+    },
+    {
+      "name": "func makeAsyncIterator() -> AsyncLineSequence<Base>.AsyncIterator"
+    },
+    {
+      "name": "struct AsyncLineSequence.AsyncIterator"
+    }
+  ],
+  "declaration": "struct AsyncLineSequence<Base> where Base : AsyncSequence, Base.Element == UInt8",
+  "conformsTo": [
+    "AsyncSequence"
+  ]
+}

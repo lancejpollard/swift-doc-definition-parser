@@ -1,0 +1,73 @@
+{
+  "path": "/documentation/swift/unicode/utf8",
+  "type": "Enumeration",
+  "name": "Unicode.UTF8",
+  "desc": "No overview available.",
+  "items": [
+    {
+      "name": "typealias Unicode.UTF8.CodeUnit",
+      "desc": "The basic unit of encoding"
+    },
+    {
+      "name": "typealias Unicode.UTF8.EncodedScalar",
+      "desc": "A valid scalar value as represented in this encoding"
+    },
+    {
+      "name": "init()",
+      "desc": "Creates an instance of the UTF-8 codec."
+    },
+    {
+      "name": "static var encodedReplacementCharacter: Unicode.UTF8.EncodedScalar",
+      "desc": "A unicode scalar value to be used when repairing encoding/decoding errors, as represented in this encoding."
+    },
+    {
+      "name": "func decode<I>(inout I) -> UnicodeDecodingResult",
+      "desc": "Starts or continues decoding a UTF-8 sequence."
+    },
+    {
+      "name": "static func decode(Unicode.UTF8.EncodedScalar) -> Unicode.Scalar",
+      "desc": "Converts from encoded to encoding-independent representation"
+    },
+    {
+      "name": "static func encode(Unicode.Scalar) -> Unicode.UTF8.EncodedScalar?",
+      "desc": "Converts from encoding-independent to encoded representation, returning nil if the scalar can’t be represented in this encoding."
+    },
+    {
+      "name": "static func encode(Unicode.Scalar, into: (Unicode.UTF8.CodeUnit) -> Void)",
+      "desc": "Encodes a Unicode scalar as a series of code units by calling the given closure on each code unit."
+    },
+    {
+      "name": "static func isASCII(Unicode.UTF8.CodeUnit) -> Bool",
+      "desc": "Returns whether the given code unit represents an ASCII scalar"
+    },
+    {
+      "name": "static func isContinuation(Unicode.UTF8.CodeUnit) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the specified code unit is a UTF-8 continuation byte."
+    },
+    {
+      "name": "static func transcode<FromEncoding>(FromEncoding.EncodedScalar, from: FromEncoding.Type) -> Unicode.UTF8.EncodedScalar?",
+      "desc": "Converts a scalar from another encoding’s representation, returning nil if the scalar can’t be represented in this encoding."
+    },
+    {
+      "name": "static func transcode<FromEncoding>(FromEncoding.EncodedScalar, from: FromEncoding.Type) -> _ValidUTF8Buffer?",
+      "desc": "Converts a scalar from another encoding’s representation, returning nil if the scalar can’t be represented in this encoding."
+    },
+    {
+      "name": "static func width(Unicode.Scalar) -> Int",
+      "desc": "Returns the number of code units required to encode the given Unicode scalar."
+    },
+    {
+      "name": "struct Unicode.UTF8.ForwardParser",
+      "desc": "A type that can be used to parse CodeUnits into EncodedScalars."
+    },
+    {
+      "name": "struct Unicode.UTF8.ReverseParser",
+      "desc": "A type that can be used to parse a reversed sequence of CodeUnits into EncodedScalars."
+    }
+  ],
+  "declaration": "@frozen enum UTF8",
+  "conformsTo": [
+    "Sendable",
+    "UnicodeCodec"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "path": "/documentation/dispatch/dispatchsourceprotocol",
+  "type": "Protocol",
+  "name": "DispatchSourceProtocol",
+  "desc": "Defines a common set of properties and methods that are shared with all dispatch source types.",
+  "items": [
+    {
+      "name": "func activate()",
+      "desc": "Activates the dispatch source."
+    },
+    {
+      "name": "func suspend()",
+      "desc": "Suspends the dispatch source."
+    },
+    {
+      "name": "func resume()",
+      "desc": "Resumes the dispatch source."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Asynchronously cancels the dispatch source, preventing any further invocation of its event handler block."
+    },
+    {
+      "name": "var isCancelled: Bool",
+      "desc": "Returns a Boolean indicating whether the given dispatch source has been canceled."
+    },
+    {
+      "name": "func setCancelHandler(handler: DispatchWorkItem)",
+      "desc": "Sets the cancellation handler block for the dispatch source."
+    },
+    {
+      "name": "func setCancelHandler(qos: DispatchQoS, flags: DispatchWorkItemFlags, handler: Self.DispatchSourceHandler?)",
+      "desc": "Sets the cancellation handler block for the dispatch source with the specified quality-of-service class and work item options."
+    },
+    {
+      "name": "func setEventHandler(handler: DispatchWorkItem)",
+      "desc": "Sets the event handler work item for the dispatch source."
+    },
+    {
+      "name": "func setEventHandler(qos: DispatchQoS, flags: DispatchWorkItemFlags, handler: Self.DispatchSourceHandler?)"
+    },
+    {
+      "name": "func setRegistrationHandler(handler: DispatchWorkItem)",
+      "desc": "Sets the registration handler work item for the dispatch source."
+    },
+    {
+      "name": "func setRegistrationHandler(qos: DispatchQoS, flags: DispatchWorkItemFlags, handler: Self.DispatchSourceHandler?)"
+    },
+    {
+      "name": "typealias DispatchSourceProtocol.DispatchSourceHandler"
+    },
+    {
+      "name": "var handle: UInt",
+      "desc": "Returns the underlying system handle associated with the specified dispatch source."
+    },
+    {
+      "name": "var data: UInt",
+      "desc": "Returns pending data for the dispatch source."
+    },
+    {
+      "name": "var mask: UInt",
+      "desc": "Returns the mask of events monitored by the dispatch source."
+    }
+  ],
+  "declaration": "protocol DispatchSourceProtocol",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

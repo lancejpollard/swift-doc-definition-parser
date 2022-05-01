@@ -1,0 +1,152 @@
+{
+  "path": "/documentation/uikit/nstextlayoutmanager",
+  "type": "Class",
+  "name": "NSTextLayoutManager",
+  "desc": "The primary class that you use to manage text layout and presentation for custom text displays.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a new text layout manager."
+    },
+    {
+      "name": "init?(coder: NSCoder)",
+      "desc": "Creates a new text layout manager with the coder you provide."
+    },
+    {
+      "name": "var layoutQueue: OperationQueue?",
+      "desc": "The queue that the framework dispatches layout operations on."
+    },
+    {
+      "name": "var renderingAttributesValidator: ((NSTextLayoutManager, NSTextLayoutFragment) -> Void)?",
+      "desc": "A callback block that the framework invokes whenever the text layout manager needs to validate the rendering attributes for the range."
+    },
+    {
+      "name": "var usesFontLeading: Bool",
+      "desc": "A Boolean value that controls whether the framework uses the leading information specified by the font when laying out text."
+    },
+    {
+      "name": "var usesHyphenation: Bool",
+      "desc": "A Boolean values that controls whether the text layout manager attempts to hyphenate when wrapping lines."
+    },
+    {
+      "name": "var limitsLayoutForSuspiciousContents: Bool",
+      "desc": "A Boolean value that controls internal security analysis for malicious inputs and activates defensive behaviors."
+    },
+    {
+      "name": "var delegate: NSTextLayoutManagerDelegate?",
+      "desc": "The delegate for the text layout manager object."
+    },
+    {
+      "name": "protocol NSTextLayoutManagerDelegate",
+      "desc": "Optional methods that delegates implement to respond to layout changes."
+    },
+    {
+      "name": "var textContentManager: NSTextContentManager?",
+      "desc": "Returns the text content manager associated with this text layout manager."
+    },
+    {
+      "name": "var textContainer: NSTextContainer?",
+      "desc": "The text container object that provides geometric information for the layout destination."
+    },
+    {
+      "name": "var textSelectionNavigation: NSTextSelectionNavigation",
+      "desc": "Returns a text selection manager configured to have the text layout manager as its data source."
+    },
+    {
+      "name": "var textSelections: [NSTextSelection]",
+      "desc": "An array of text selections associated by the text layout manager."
+    },
+    {
+      "name": "var usageBoundsForTextContainer: CGRect",
+      "desc": "Returns the usage bounds for the text container."
+    },
+    {
+      "name": "func enumerateTextSegments(in: NSTextRange, type: NSTextLayoutManager.SegmentType, options: NSTextLayoutManager.SegmentOptions, using: (NSTextRange?, CGRect, CGFloat, NSTextContainer) -> Bool)",
+      "desc": "Enumerates text segments of a specific type and in the text range you provide."
+    },
+    {
+      "name": "func replace(NSTextContentManager)",
+      "desc": "Replaces the current text content manager with a new one you provide."
+    },
+    {
+      "name": "func replaceContents(in: NSTextRange, with: NSAttributedString)",
+      "desc": "Replaces content at the location you specify with an attributed string you provide."
+    },
+    {
+      "name": "func replaceContents(in: NSTextRange, with: [NSTextElement])",
+      "desc": "Replaces content at the location you specify with the text elements string you provide."
+    },
+    {
+      "name": "class var linkRenderingAttributes: [NSAttributedString.Key : Any]",
+      "desc": "Returns the default set of attributes for rendering a link."
+    },
+    {
+      "name": "func addRenderingAttribute(NSAttributedString.Key, value: Any?, for: NSTextRange)",
+      "desc": "Sets the rendering attribute for the value and range you specify."
+    },
+    {
+      "name": "func enumerateRenderingAttributes(from: NSTextLocation, reverse: Bool, using: (NSTextLayoutManager, [NSAttributedString.Key : Any], NSTextRange) -> Bool)",
+      "desc": "Enumerates the rendering attributes from a location you specify."
+    },
+    {
+      "name": "func renderingAttributes(forLink: Any, at: NSTextLocation) -> [NSAttributedString.Key : Any]",
+      "desc": "Returns a dictionary of rendering attributes for rendering a link."
+    },
+    {
+      "name": "func invalidateRenderingAttributes(for: NSTextRange)",
+      "desc": "Invalidates the rendering attributes of the specified text range."
+    },
+    {
+      "name": "func removeRenderingAttribute(NSAttributedString.Key, for: NSTextRange)",
+      "desc": "Removes the rendering attribute from the specified text range."
+    },
+    {
+      "name": "func setRenderingAttributes([NSAttributedString.Key : Any], for: NSTextRange)",
+      "desc": "Sets the rendering attributes for the range you specify."
+    },
+    {
+      "name": "var textViewportLayoutController: NSTextViewportLayoutController",
+      "desc": "Returns text viewport layout controller associated with the layout manager’s text container."
+    },
+    {
+      "name": "func invalidateLayout(for: NSTextRange)",
+      "desc": "Invalidates the layout information for specified text range."
+    },
+    {
+      "name": "func textLayoutFragment(for: NSTextLocation) -> NSTextLayoutFragment?",
+      "desc": "Returns the text layout fragment from the document at the specified location."
+    },
+    {
+      "name": "func textLayoutFragment(for: CGPoint) -> NSTextLayoutFragment?",
+      "desc": "Returns the text layout fragment at the position you specify in the text container."
+    },
+    {
+      "name": "func ensureLayout(for: CGRect)",
+      "desc": "Performs the layout for filling the bounds you specify inside the last text container."
+    },
+    {
+      "name": "func ensureLayout(for: NSTextRange)",
+      "desc": "Performs the layout for specified text range."
+    },
+    {
+      "name": "func enumerateTextLayoutFragments(from: NSTextLocation?, options: NSTextLayoutFragment.EnumerationOptions, using: (NSTextLayoutFragment) -> Bool) -> NSTextLocation?",
+      "desc": "Enumerates the text layout fragments starting at the specified location."
+    },
+    {
+      "name": "enum NSTextLayoutManager.SegmentType",
+      "desc": "Values that describe the rendering of selection boundaries."
+    },
+    {
+      "name": "struct NSTextLayoutManager.SegmentOptions",
+      "desc": "Values that describe where and how the framework extends segments of a selection."
+    }
+  ],
+  "declaration": "class NSTextLayoutManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding",
+    "NSTextSelectionDataSource"
+  ]
+}

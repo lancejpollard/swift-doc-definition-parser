@@ -1,0 +1,37 @@
+{
+  "path": "/documentation/security/seckeychainpromptselector",
+  "type": "Structure",
+  "name": "SecKeychainPromptSelector",
+  "desc": "Bits that define when a keychain should require a passphrase.",
+  "items": [
+    {
+      "name": "static var requirePassphase: SecKeychainPromptSelector",
+      "desc": "Indicates that a passphrase should be required for every access."
+    },
+    {
+      "name": "static var unsigned: SecKeychainPromptSelector",
+      "desc": "Indicates that a passphrase should be required when an unsigned application attempts to use the keychain, overriding the system default."
+    },
+    {
+      "name": "static var unsignedAct: SecKeychainPromptSelector",
+      "desc": "Indicates that a passphrase should be required when an unsigned application attempts to use the keychain."
+    },
+    {
+      "name": "static var invalid: SecKeychainPromptSelector",
+      "desc": "Indicates that a passphrase should be required when an application with an invalid signature attempts to use the keychain, overriding the system default."
+    },
+    {
+      "name": "static var invalidAct: SecKeychainPromptSelector",
+      "desc": "Indicates that a passphrase should be required when an application with an invalid signature attempts to use the keychain."
+    },
+    {
+      "name": "init(rawValue: uint16)",
+      "desc": "Initializes a keychain prompt selector."
+    }
+  ],
+  "declaration": "struct SecKeychainPromptSelector, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

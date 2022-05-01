@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/combine/publishers/retry",
+  "type": "Structure",
+  "name": "Publishers.Retry",
+  "desc": "A publisher that attempts to recreate its subscription to a failed upstream publisher.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, retries: Int?)",
+      "desc": "Creates a publisher that attempts to recreate its subscription to a failed upstream publisher."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    },
+    {
+      "name": "let retries: Int?",
+      "desc": "The maximum number of retry attempts to perform."
+    },
+    {
+      "name": "static func == (Publishers.Retry<Upstream>, Publishers.Retry<Upstream>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two publishers are equivalent."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    }
+  ],
+  "declaration": "struct Retry<Upstream> where Upstream : Publisher",
+  "conformsTo": [
+    "Equatable",
+    "Publisher"
+  ]
+}

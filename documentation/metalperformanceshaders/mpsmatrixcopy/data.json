@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsmatrixcopy",
+  "type": "Class",
+  "name": "MPSMatrixCopy",
+  "desc": "A class that can perform multiple matrix copy operations.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice, copyRows: Int, copyColumns: Int, sourcesAreTransposed: Bool, destinationsAreTransposed: Bool)"
+    },
+    {
+      "name": "var copyColumns: Int"
+    },
+    {
+      "name": "var copyRows: Int"
+    },
+    {
+      "name": "var destinationsAreTransposed: Bool"
+    },
+    {
+      "name": "var sourcesAreTransposed: Bool"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, copyDescriptor: MPSMatrixCopyDescriptor)"
+    },
+    {
+      "name": "func encode(commandBuffer: MTLCommandBuffer, copyDescriptor: MPSMatrixCopyDescriptor, rowPermuteIndices: MPSVector?, rowPermuteOffset: Int, columnPermuteIndices: MPSVector?, columnPermuteOffset: Int)"
+    }
+  ],
+  "declaration": "class MPSMatrixCopy : MPSKernel",
+  "inheritsFrom": [
+    "MPSKernel"
+  ]
+}

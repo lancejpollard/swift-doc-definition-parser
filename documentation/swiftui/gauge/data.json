@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/swiftui/gauge",
+  "type": "Structure",
+  "name": "Gauge",
+  "desc": "A view that shows a value within a range.",
+  "items": [
+    {
+      "name": "init<V>(value: V, in: ClosedRange<V>, label: () -> Label)",
+      "desc": "Creates a gauge showing a value within a range and describes the gauge’s purpose and current value."
+    },
+    {
+      "name": "init<V>(value: V, in: ClosedRange<V>, label: () -> Label, currentValueLabel: () -> CurrentValueLabel)",
+      "desc": "Creates a gauge showing a value within a range and that describes the gauge’s purpose and current value."
+    },
+    {
+      "name": "init<V>(value: V, in: ClosedRange<V>, label: () -> Label, currentValueLabel: () -> CurrentValueLabel, markedValueLabels: () -> MarkedValueLabels)",
+      "desc": "Creates a gauge representing a value within a range."
+    },
+    {
+      "name": "init<V>(value: V, in: ClosedRange<V>, label: () -> Label, currentValueLabel: () -> CurrentValueLabel, minimumValueLabel: () -> BoundsLabel, maximumValueLabel: () -> BoundsLabel)",
+      "desc": "Creates a gauge showing a value within a range and describes the gauge’s current, minimum, and maximum values."
+    },
+    {
+      "name": "init<V>(value: V, in: ClosedRange<V>, label: () -> Label, currentValueLabel: () -> CurrentValueLabel, minimumValueLabel: () -> BoundsLabel, maximumValueLabel: () -> BoundsLabel, markedValueLabels: () -> MarkedValueLabels)",
+      "desc": "Creates a gauge representing a value within a range."
+    },
+    {
+      "name": "func gaugeStyle<S>(S) -> some View",
+      "desc": "Sets the style for gauges within this view."
+    },
+    {
+      "name": "protocol GaugeStyle",
+      "desc": "Defines the implementation of all gauge instances within a view hierarchy."
+    },
+    {
+      "name": "struct GaugeStyleConfiguration",
+      "desc": "The properties of a gauge instance."
+    },
+    {
+      "name": "var body: some View",
+      "desc": "The content and behavior of the view."
+    },
+    {
+      "name": "typealias Body",
+      "desc": "The type of view representing the body of this view."
+    }
+  ],
+  "declaration": "struct Gauge<Label, CurrentValueLabel, BoundsLabel, MarkedValueLabels> where Label : View, CurrentValueLabel : View, BoundsLabel : View, MarkedValueLabels : View",
+  "conformsTo": [
+    "View"
+  ]
+}

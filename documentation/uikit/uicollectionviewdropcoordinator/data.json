@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/uikit/uicollectionviewdropcoordinator",
+  "type": "Protocol",
+  "name": "UICollectionViewDropCoordinator",
+  "desc": "An interface for coordinating your custom drop-related actions with the collection view.",
+  "items": [
+    {
+      "name": "var items: [UICollectionViewDropItem]",
+      "desc": "The items being dragged."
+    },
+    {
+      "name": "var destinationIndexPath: IndexPath?",
+      "desc": "The index path at which to insert the item in the collection view."
+    },
+    {
+      "name": "func drop(UIDragItem, toItemAt: IndexPath) -> UIDragAnimating",
+      "desc": "Animates the item to the specified index path in the collection view."
+    },
+    {
+      "name": "func drop(UIDragItem, intoItemAt: IndexPath, rect: CGRect) -> UIDragAnimating",
+      "desc": "Animates the item to the specified rectangle in the collection view."
+    },
+    {
+      "name": "func drop(UIDragItem, to: UIDragPreviewTarget) -> UIDragAnimating",
+      "desc": "Animates the item to an arbitrary location in your view hierarchy."
+    },
+    {
+      "name": "func drop(UIDragItem, to: UICollectionViewDropPlaceholder) -> UICollectionViewDropPlaceholderContext",
+      "desc": "Animates the item to the specified location and inserts a placeholder cell at that location."
+    },
+    {
+      "name": "var session: UIDropSession",
+      "desc": "The drop session containing information about the transaction."
+    },
+    {
+      "name": "var proposal: UICollectionViewDropProposal",
+      "desc": "The current proposal for how to incorporate the dropped items."
+    }
+  ],
+  "declaration": "@MainActor protocol UICollectionViewDropCoordinator",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/cryptokit/chachapoly",
+  "type": "Enumeration",
+  "name": "ChaChaPoly",
+  "desc": "An implementation of the ChaCha20-Poly1305 cipher.",
+  "items": [
+    {
+      "name": "struct ChaChaPoly.SealedBox",
+      "desc": "A secure container for your data that you access using a cipher."
+    },
+    {
+      "name": "struct ChaChaPoly.Nonce",
+      "desc": "A value used once during a cryptographic operation and then discarded."
+    },
+    {
+      "name": "static func seal<Plaintext>(Plaintext, using: SymmetricKey, nonce: ChaChaPoly.Nonce?) -> ChaChaPoly.SealedBox",
+      "desc": "Secures the given plaintext message with encryption and an authentication tag."
+    },
+    {
+      "name": "static func seal<Plaintext, AuthenticatedData>(Plaintext, using: SymmetricKey, nonce: ChaChaPoly.Nonce?, authenticating: AuthenticatedData) -> ChaChaPoly.SealedBox",
+      "desc": "Secures the given plaintext message with encryption and an authentication tag that covers both the encrypted data and additional data."
+    },
+    {
+      "name": "static func open(ChaChaPoly.SealedBox, using: SymmetricKey) -> Data",
+      "desc": "Decrypts the message and verifies its authenticity."
+    },
+    {
+      "name": "static func open<AuthenticatedData>(ChaChaPoly.SealedBox, using: SymmetricKey, authenticating: AuthenticatedData) -> Data",
+      "desc": "Decrypts the message and verifies the authenticity of both the encrypted message and additional data."
+    }
+  ],
+  "declaration": "enum ChaChaPoly"
+}

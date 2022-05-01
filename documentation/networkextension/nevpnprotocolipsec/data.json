@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/networkextension/nevpnprotocolipsec",
+  "type": "Class",
+  "name": "NEVPNProtocolIPSec",
+  "desc": "Settings for an IPsec VPN configuration.",
+  "items": [
+    {
+      "name": "var authenticationMethod: NEVPNIKEAuthenticationMethod",
+      "desc": "The method used to authenticate the device with the IPSec server. For IKE version 2, when using extended authentication, this authentication method only affects how the client validates the authentication payload presented by the server."
+    },
+    {
+      "name": "enum NEVPNIKEAuthenticationMethod",
+      "desc": "Internet Key Exchange (IKE) authentication methods used to authenticate with the IPSec server."
+    },
+    {
+      "name": "var useExtendedAuthentication: Bool",
+      "desc": "A flag indicating if extended authentication will be negotiated."
+    },
+    {
+      "name": "var sharedSecretReference: Data?",
+      "desc": "A persistent keychain reference to a keychain item containing the IKE shared secret."
+    },
+    {
+      "name": "var localIdentifier: String?",
+      "desc": "A string identifying the iOS or macOS device for authentication purposes"
+    },
+    {
+      "name": "var remoteIdentifier: String?",
+      "desc": "A string identifying the IPSec server for authentication purposes"
+    }
+  ],
+  "declaration": "class NEVPNProtocolIPSec : NEVPNProtocol",
+  "inheritsFrom": [
+    "NEVPNProtocol"
+  ]
+}

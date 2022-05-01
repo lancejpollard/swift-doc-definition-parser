@@ -1,0 +1,83 @@
+{
+  "path": "/documentation/iobluetooth/iobluetoothobexsession",
+  "type": "Class",
+  "name": "IOBluetoothOBEXSession",
+  "desc": "An OBEX Session with a Bluetooth RFCOMM channel as the transport.",
+  "items": [
+    {
+      "name": "init!(sdpServiceRecord: IOBluetoothSDPServiceRecord!)",
+      "desc": "Initializes a Bluetooth-based OBEX Session using an SDP service record."
+    },
+    {
+      "name": "init!(device: IOBluetoothDevice!, channelID: BluetoothRFCOMMChannelID)",
+      "desc": "Initializes a Bluetooth-based OBEX Session using a Bluetooth device."
+    },
+    {
+      "name": "init!(incomingRFCOMMChannel: IOBluetoothRFCOMMChannel!, eventSelector: Selector!, selectorTarget: Any!, refCon: UnsafeMutableRawPointer!)",
+      "desc": "Initializes a Bluetooth-based OBEX Session using an incoming RFCOMM channel."
+    },
+    {
+      "name": "func closeTransportConnection() -> OBEXError",
+      "desc": "An OBEXSession override. When this is called by the session baseclass, we will close the transport connection if it is opened. In our case, it will be the RFCOMM channel that needs closing."
+    },
+    {
+      "name": "func getDevice() -> IOBluetoothDevice!",
+      "desc": "Get the Bluetooth Device being used by the session object."
+    },
+    {
+      "name": "func getRFCOMMChannel() -> IOBluetoothRFCOMMChannel!",
+      "desc": "Get the Bluetooth RFCOMM channel being used by the session object."
+    },
+    {
+      "name": "func hasOpenTransportConnection() -> Bool",
+      "desc": "An OBEXSession override. When this is called by the session baseclass, we will return whether or not we have a transport connection established to another OBEX server/client. In our case we will tell whether or not the RFCOMM channel to a remote device is still open."
+    },
+    {
+      "name": "func isSessionTargetAMac() -> Bool",
+      "desc": "Tells whether the target device is a Mac by checking its service record."
+    },
+    {
+      "name": "func openTransportConnection(Selector!, selectorTarget: Any!, refCon: UnsafeMutableRawPointer!) -> OBEXError",
+      "desc": "An OBEXSession override. When this is called by the session baseclass, we will attempt to open the transport connection. In our case, this would be an RFCOMM channel to another Bluetooth device."
+    },
+    {
+      "name": "func restartTransmission()",
+      "desc": "If the transmission was stopped due to the lack of buffers this call restarts it."
+    },
+    {
+      "name": "func sendBufferTroughChannel() -> IOReturn",
+      "desc": "Sends the next block of data through the rfcomm channel."
+    },
+    {
+      "name": "func sendData(toTransport: UnsafeMutableRawPointer!, dataLength: Int) -> OBEXError",
+      "desc": "An OBEXSession override. When this is called by the session baseclass, we will send the data we are given over our transport connection. If none is open, we could try to open it, or just return an error. In our case, it will be sent over the RFCOMM channel."
+    },
+    {
+      "name": "func setOBEXSessionOpenConnectionCallback(IOBluetoothOBEXSessionOpenConnectionCallback!, refCon: UnsafeMutableRawPointer!)",
+      "desc": "For C API support. Allows you to set the callback to be invoked when the OBEX connection is actually opened."
+    },
+    {
+      "name": "func setOpenTransportConnectionAsyncSelector(Selector!, target: Any!, refCon: UnsafeMutableRawPointer!)",
+      "desc": "Allows you to set the selector to be used when a transport connection is opened, or fails to open."
+    },
+    {
+      "name": "class func withDevice(IOBluetoothDevice!, channelID: BluetoothRFCOMMChannelID) -> Self!",
+      "desc": "Creates a Bluetooth-based OBEX Session using a Bluetooth device and a Bluetooth RFCOMM channel ID."
+    },
+    {
+      "name": "class func withIncomingRFCOMMChannel(IOBluetoothRFCOMMChannel!, eventSelector: Selector!, selectorTarget: Any!, refCon: UnsafeMutableRawPointer!) -> Self!",
+      "desc": "Creates a Bluetooth-based OBEX Session using an incoming RFCOMM channel."
+    },
+    {
+      "name": "class func withSDPServiceRecord(IOBluetoothSDPServiceRecord!) -> Self!",
+      "desc": "Creates a Bluetooth-based OBEX Session using an SDP service record, typically obtained from a device/service browser window controller."
+    }
+  ],
+  "declaration": "class IOBluetoothOBEXSession : OBEXSession",
+  "inheritsFrom": [
+    "OBEXSession"
+  ],
+  "conformsTo": [
+    "IOBluetoothRFCOMMChannelDelegate"
+  ]
+}

@@ -1,0 +1,369 @@
+{
+  "path": "/documentation/tabulardata/column",
+  "type": "Structure",
+  "name": "Column",
+  "desc": "A column in a data frame.",
+  "items": [
+    {
+      "name": "init(name: String, capacity: Int)",
+      "desc": "Creates a column with a name and a capacity."
+    },
+    {
+      "name": "init(ColumnID<WrappedElement>, capacity: Int)",
+      "desc": "Creates a column with a column identifier and a capacity."
+    },
+    {
+      "name": "init<S>(name: String, contents: S)",
+      "desc": "Creates a column with a name and a sequence of nonoptional values."
+    },
+    {
+      "name": "init<S>(name: String, contents: S)",
+      "desc": "Creates a column with a name and a sequence of optional values."
+    },
+    {
+      "name": "init<S>(ColumnID<S.Element>, contents: S)",
+      "desc": "Creates a column with an identifier and a sequence of nonoptional values."
+    },
+    {
+      "name": "init<S>(ColumnID<S.Element>, contents: S)",
+      "desc": "Creates a column with a column identifier and a sequence of optional values."
+    },
+    {
+      "name": "init(ColumnSlice<WrappedElement>)",
+      "desc": "Creates a column from a column slice."
+    },
+    {
+      "name": "var prototype: AnyColumnPrototype",
+      "desc": "A prototype that creates type-erased columns with the same underlying type as the column slice."
+    },
+    {
+      "name": "func eraseToAnyColumn() -> AnyColumn",
+      "desc": "Generates a type-erased copy of the column."
+    },
+    {
+      "name": "func map<T>((Column<WrappedElement>.Element) throws -> T?) rethrows -> Column<T>",
+      "desc": "Creates a new column by applying a transformation to every element."
+    },
+    {
+      "name": "func mapNonNil<T>((WrappedElement) throws -> T?) rethrows -> Column<T>",
+      "desc": "Creates a new column by applying the transformation to every element that isn’t missing."
+    },
+    {
+      "name": "func filled(with: Self.WrappedElement) -> FilledColumn<Self>",
+      "desc": "Generates a filled column by replacing missing elements with a value."
+    },
+    {
+      "name": "var name: String",
+      "desc": "The name of the column."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of elements in the column."
+    },
+    {
+      "name": "typealias Element",
+      "desc": "The type of the column’s elements, which is an optional type of the column’s type."
+    },
+    {
+      "name": "var wrappedElementType: Any.Type",
+      "desc": "The underlying type of the column’s elements."
+    },
+    {
+      "name": "func transform((WrappedElement) throws -> WrappedElement) rethrows",
+      "desc": "Applies a transformation to every element that isn’t missing."
+    },
+    {
+      "name": "func transform((Column<WrappedElement>.Element) throws -> Column<WrappedElement>.Element) rethrows",
+      "desc": "Applies a transformation to every element in the column."
+    },
+    {
+      "name": "func append(WrappedElement)",
+      "desc": "Appends a nonoptional value to the column."
+    },
+    {
+      "name": "func append(Column<WrappedElement>.Element)",
+      "desc": "Appends an optional value to the column."
+    },
+    {
+      "name": "func append<S>(contentsOf: S)",
+      "desc": "Appends a sequence of nonoptional values to the column."
+    },
+    {
+      "name": "func append<S>(contentsOf: S)",
+      "desc": "Appends a sequence of optional values to the column."
+    },
+    {
+      "name": "func argmin() -> Int?",
+      "desc": "Returns the index of the element with the lowest value, ignoring missing elements."
+    },
+    {
+      "name": "func argmax() -> Int?",
+      "desc": "Returns the index of the element with the highest value, ignoring missing elements."
+    },
+    {
+      "name": "func remove(at: Int)",
+      "desc": "Removes an element from the column."
+    },
+    {
+      "name": "subscript(Int) -> Column<WrappedElement>.Element",
+      "desc": "Accesses an element at an index."
+    },
+    {
+      "name": "subscript<R>(R) -> ColumnSlice<WrappedElement>",
+      "desc": "Accesses a contiguous range of elements with a range expression."
+    },
+    {
+      "name": "subscript(Range<Int>) -> ColumnSlice<WrappedElement>",
+      "desc": "Accesses a contiguous range of elements."
+    },
+    {
+      "name": "func distinct() -> DiscontiguousColumnSlice<WrappedElement>",
+      "desc": "Generates a discontiguous slice that contains unique elements."
+    },
+    {
+      "name": "subscript<C>(C) -> DiscontiguousColumnSlice<WrappedElement>",
+      "desc": "Returns a column slice that includes elements that correspond to a collection of Booleans."
+    },
+    {
+      "name": "func encoded<Encoder>(using: Encoder) throws -> Column<Encoder.Output>",
+      "desc": "Generates a column by encoding each element’s value."
+    },
+    {
+      "name": "func decoded<T, Decoder>(T.Type, using: Decoder) throws -> Column<T>",
+      "desc": "Generates a column by decoding each element’s data."
+    },
+    {
+      "name": "func summary() -> CategoricalSummary<WrappedElement>",
+      "desc": "Generates a categorical summary of the column’s elements."
+    },
+    {
+      "name": "func numericSummary() -> NumericSummary<Double>",
+      "desc": "Generates a numeric summary of the integer column’s elements."
+    },
+    {
+      "name": "func numericSummary() -> NumericSummary<WrappedElement>",
+      "desc": "Generates a numeric summary of the floating-point column’s elements."
+    },
+    {
+      "name": "func sum() -> WrappedElement",
+      "desc": "Returns the sum of the column’s elements, ignoring missing elements."
+    },
+    {
+      "name": "func min() -> Column<WrappedElement>.Element",
+      "desc": "Returns the element with the lowest value, ignoring missing elements."
+    },
+    {
+      "name": "func max() -> Column<WrappedElement>.Element",
+      "desc": "Returns the element with the highest value, ignoring missing elements."
+    },
+    {
+      "name": "func mean() -> Double?",
+      "desc": "Returns the mean average of the integer column’s elements, ignoring missing elements."
+    },
+    {
+      "name": "func mean() -> Column<WrappedElement>.Element",
+      "desc": "Returns the mean average of the floating-point column’s elements, ignoring missing elements."
+    },
+    {
+      "name": "func standardDeviation(deltaDegreesOfFreedom: Int) -> Double?",
+      "desc": "Returns the standard deviation of the integer column’s elements, ignoring missing elements."
+    },
+    {
+      "name": "func standardDeviation(deltaDegreesOfFreedom: Int) -> Column<WrappedElement>.Element",
+      "desc": "Returns the standard deviation of the floating-point column’s elements, ignoring missing elements."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the column."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the column suitable for debugging."
+    },
+    {
+      "name": "func description(options: FormattingOptions) -> String",
+      "desc": "Generates a string description of the optional column type."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A mirror that reflects the column."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool",
+      "desc": "Returns a Boolean that indicates whether the columns are unequal."
+    },
+    {
+      "name": "static func += (inout Column<WrappedElement>, WrappedElement)",
+      "desc": "Modifies a column by adding a value to each element."
+    },
+    {
+      "name": "static func -= (inout Column<WrappedElement>, WrappedElement)",
+      "desc": "Modifies a column by subtracting a value from each element."
+    },
+    {
+      "name": "static func *= (inout Column<WrappedElement>, WrappedElement)",
+      "desc": "Modifies a column by multiplying each element by a value."
+    },
+    {
+      "name": "static func /= (inout Column<WrappedElement>, WrappedElement)",
+      "desc": "Modifies an integer column by dividing each element by a value."
+    },
+    {
+      "name": "static func /= (inout Column<WrappedElement>, WrappedElement)",
+      "desc": "Modifies a floating-point column by dividing each element by a value."
+    },
+    {
+      "name": "static func += <C>(inout Column<WrappedElement>, C)",
+      "desc": "Modifies a column by adding each value in a collection to the corresponding element in the column."
+    },
+    {
+      "name": "static func += <C>(inout Column<WrappedElement>, C)",
+      "desc": "Modifies a column by adding each optional value in a collection to the corresponding element in the column."
+    },
+    {
+      "name": "static func -= <C>(inout Column<WrappedElement>, C)",
+      "desc": "Modifies a column by subtracting each value in a collection from the corresponding element in the column."
+    },
+    {
+      "name": "static func -= <C>(inout Column<WrappedElement>, C)",
+      "desc": "Modifies a column by subtracting each optional value in a collection from the corresponding element in the column."
+    },
+    {
+      "name": "static func *= <C>(inout Column<WrappedElement>, C)",
+      "desc": "Modifies a column by multiplying each element in the column by the corresponding value in a collection."
+    },
+    {
+      "name": "static func *= <C>(inout Column<WrappedElement>, C)",
+      "desc": "Modifies a column by multiplying each element in the column by the corresponding optional value in a collection."
+    },
+    {
+      "name": "static func /= <C>(inout Column<WrappedElement>, C)",
+      "desc": "Modifies an integer column by dividing each element in the column by the corresponding value in a collection."
+    },
+    {
+      "name": "static func /= <C>(inout Column<WrappedElement>, C)",
+      "desc": "Modifies an integer column by dividing each element in the column by the corresponding optional value in a collection."
+    },
+    {
+      "name": "static func /= <C>(inout Column<WrappedElement>, C)",
+      "desc": "Modifies a floating-point column by dividing each element in the column by the corresponding value in a collection."
+    },
+    {
+      "name": "static func /= <C>(inout Column<WrappedElement>, C)",
+      "desc": "Modifies a floating-point column by dividing each element in the column by the corresponding optional value in a collection."
+    },
+    {
+      "name": "static func + (Self, Self) -> Column<Self.WrappedElement>",
+      "desc": "Generates a column by adding each element in an optional column type to the corresponding elements of another."
+    },
+    {
+      "name": "static func - (Self, Self) -> Column<Self.WrappedElement>",
+      "desc": "Generates a column by subtracting each element in an optional column type from the corresponding elements of another."
+    },
+    {
+      "name": "static func * (Self, Self) -> Column<Self.WrappedElement>",
+      "desc": "Generates a column by multiplying each element in an optional column type by the corresponding elements of another."
+    },
+    {
+      "name": "static func / (Self, Self) -> Column<Self.WrappedElement>",
+      "desc": "Generates an integer column by dividing each element in an optional column type by the corresponding elements of another."
+    },
+    {
+      "name": "static func / (Self, Self) -> Column<Self.WrappedElement>",
+      "desc": "Generates a floating-point column by dividing each element in an optional column type by the corresponding elements of another."
+    },
+    {
+      "name": "static func + (Self, Self.Element) -> Column<Self.Element>",
+      "desc": "Generates a column by adding a value to each element in a column."
+    },
+    {
+      "name": "static func + (Self.Element, Self) -> Column<Self.Element>",
+      "desc": "Generates a column by adding each element in a column to a value."
+    },
+    {
+      "name": "static func + (Self, Self.WrappedElement) -> Column<Self.WrappedElement>",
+      "desc": "Generates a column by adding a value to each element in an optional column."
+    },
+    {
+      "name": "static func + (Self.WrappedElement, Self) -> Column<Self.WrappedElement>",
+      "desc": "Generates a column by adding each element in an optional column to a value."
+    },
+    {
+      "name": "static func - (Self, Self.Element) -> Column<Self.Element>",
+      "desc": "Generates a column by subtracting a value from each element in a column."
+    },
+    {
+      "name": "static func - (Self.Element, Self) -> Column<Self.Element>",
+      "desc": "Generates a column by subtracting each element in a column from a value."
+    },
+    {
+      "name": "static func - (Self, Self.WrappedElement) -> Column<Self.WrappedElement>",
+      "desc": "Generates a column by subtracting a value from each element in an optional column type."
+    },
+    {
+      "name": "static func - (Self.WrappedElement, Self) -> Column<Self.WrappedElement>",
+      "desc": "Generates a column by subtracting each element in an optional column from a value."
+    },
+    {
+      "name": "static func * (Self, Self.WrappedElement) -> Column<Self.WrappedElement>",
+      "desc": "Generates a column by multiplying each element in an optional column by a value."
+    },
+    {
+      "name": "static func * (Self.WrappedElement, Self) -> Column<Self.WrappedElement>",
+      "desc": "Generates a column by multiplying a value by each element in an optional column type."
+    },
+    {
+      "name": "static func / (Self, Self.WrappedElement) -> Column<Self.WrappedElement>",
+      "desc": "Generates an integer column by dividing each element in an optional column by a value."
+    },
+    {
+      "name": "static func / (Self.WrappedElement, Self) -> Column<Self.WrappedElement>",
+      "desc": "Generates an integer column by dividing a value by each element in an optional column type."
+    },
+    {
+      "name": "static func / (Self, Self.WrappedElement) -> Column<Self.WrappedElement>",
+      "desc": "Generates a floating-point column by dividing each element in an optional column by a value."
+    },
+    {
+      "name": "static func / (Self.WrappedElement, Self) -> Column<Self.WrappedElement>",
+      "desc": "Generates a floating-point column by dividing a value by each element in an optional column type."
+    },
+    {
+      "name": "var missingCount: Int",
+      "desc": "The number of missing elements in the column."
+    },
+    {
+      "name": "typealias Index",
+      "desc": "A type that represents a position in the collection."
+    },
+    {
+      "name": "typealias Indices",
+      "desc": "A type that represents the indices that are valid for subscripting the collection, in ascending order."
+    },
+    {
+      "name": "typealias Iterator",
+      "desc": "A type that provides the collection’s iteration interface and encapsulates its iteration state."
+    },
+    {
+      "name": "typealias SubSequence",
+      "desc": "A collection representing a contiguous subrange of this collection’s elements. The subsequence shares indices with the original collection."
+    }
+  ],
+  "declaration": "struct Column<WrappedElement>",
+  "conformsTo": [
+    "BidirectionalCollection",
+    "Collection",
+    "ColumnProtocol",
+    "CustomDebugStringConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "Hashable",
+    "MutableCollection",
+    "OptionalColumnProtocol",
+    "RandomAccessCollection",
+    "Sequence"
+  ]
+}

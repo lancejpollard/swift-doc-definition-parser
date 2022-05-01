@@ -1,0 +1,53 @@
+{
+  "path": "/documentation/accelerate/bnnslayerparametersmultiheadattention",
+  "type": "Structure",
+  "name": "BNNSLayerParametersMultiheadAttention",
+  "desc": "A structure that contains the parameters of a multihead attention layer.",
+  "items": [
+    {
+      "name": "init(query: BNNSMHAProjectionParameters, key: BNNSMHAProjectionParameters, value: BNNSMHAProjectionParameters, add_zero_attn: Bool, key_attn_bias: BNNSNDArrayDescriptor, value_attn_bias: BNNSNDArrayDescriptor, output: BNNSMHAProjectionParameters, dropout: Float, seed: UInt32)",
+      "desc": "Returns a new multihead attention layer parameters structure from the specified parameters."
+    },
+    {
+      "name": "init()",
+      "desc": "Returns a new multihead attention layer parameters structure."
+    },
+    {
+      "name": "var query: BNNSMHAProjectionParameters",
+      "desc": "A projection parameter structure that describes the query-related input parameters and projection."
+    },
+    {
+      "name": "var key: BNNSMHAProjectionParameters",
+      "desc": "A projection parameter structure that describes the key-related input parameters and projection."
+    },
+    {
+      "name": "var value: BNNSMHAProjectionParameters",
+      "desc": "A projection parameter structure that describes the value-related input parameters and projection."
+    },
+    {
+      "name": "var add_zero_attn: Bool",
+      "desc": "A Boolean value that, if true, adds a row of zeroes to the projected K and V inputs to the calculation."
+    },
+    {
+      "name": "var key_attn_bias: BNNSNDArrayDescriptor",
+      "desc": "A 2D tensor that’s added to the value as part of the attention calculation."
+    },
+    {
+      "name": "var value_attn_bias: BNNSNDArrayDescriptor",
+      "desc": "An optional d_value x num_heads 2D tensor that’s added as part of the attention calculation."
+    },
+    {
+      "name": "var output: BNNSMHAProjectionParameters",
+      "desc": "A projection parameter structure that describes the output tensor and associated projection."
+    },
+    {
+      "name": "var dropout: Float",
+      "desc": "The seed for the dropout layer’s random number generator."
+    },
+    {
+      "name": "var seed: UInt32",
+      "desc": "A random seed for the dropout layer."
+    }
+  ],
+  "declaration": "struct BNNSLayerParametersMultiheadAttention"
+}

@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/foundation/formatter",
+  "type": "Class",
+  "name": "Formatter",
+  "desc": "An abstract class that declares an interface for objects that create, interpret, and validate the textual representation of values.",
+  "items": [
+    {
+      "name": "func string(for: Any?) -> String?",
+      "desc": "The default implementation of this method raises an exception."
+    },
+    {
+      "name": "func attributedString(for: Any, withDefaultAttributes: [NSAttributedString.Key : Any]?) -> NSAttributedString?",
+      "desc": "The default implementation returns nil to indicate that the formatter object does not provide an attributed string."
+    },
+    {
+      "name": "func editingString(for: Any) -> String?",
+      "desc": "The default implementation of this method invokes string(for:)."
+    },
+    {
+      "name": "func getObjectValue(AutoreleasingUnsafeMutablePointer<AnyObject?>?, for: String, errorDescription: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool",
+      "desc": "The default implementation of this method raises an exception."
+    },
+    {
+      "name": "func isPartialStringValid(String, newEditingString: AutoreleasingUnsafeMutablePointer<NSString?>?, errorDescription: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a partial string is valid."
+    },
+    {
+      "name": "func isPartialStringValid(AutoreleasingUnsafeMutablePointer<NSString>, proposedSelectedRange: NSRangePointer?, originalString: String, originalSelectedRange: NSRange, errorDescription: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool",
+      "desc": "This method should be implemented in subclasses that want to validate user changes to a string in a field, where the user changes are not necessarily at the end of the string, and preserve the selection (or set a different one, such as selecting the erroneous part of the string the user has typed)."
+    },
+    {
+      "name": "enum Formatter.Context",
+      "desc": "The formatting context for a formatter."
+    },
+    {
+      "name": "enum Formatter.UnitStyle",
+      "desc": "Specifies the width of the unit, determining the textual representation."
+    }
+  ],
+  "declaration": "class Formatter : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "NSCopying"
+  ]
+}

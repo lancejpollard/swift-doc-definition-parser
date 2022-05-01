@@ -1,0 +1,108 @@
+{
+  "path": "/documentation/naturallanguage/nltagger",
+  "type": "Class",
+  "name": "NLTagger",
+  "desc": "A tagger that analyzes natural language text.",
+  "items": [
+    {
+      "name": "init(tagSchemes: [NLTagScheme])",
+      "desc": "Creates a linguistic tagger instance using the specified tag schemes and options."
+    },
+    {
+      "name": "var string: String?",
+      "desc": "The string being analyzed by the linguistic tagger."
+    },
+    {
+      "name": "class func availableTagSchemes(for: NLTokenUnit, language: NLLanguage) -> [NLTagScheme]",
+      "desc": "Retrieves the tag schemes available for a particular unit (like word or sentence) and language on the current device."
+    },
+    {
+      "name": "class func requestAssets(for: NLLanguage, tagScheme: NLTagScheme, completionHandler: (NLTagger.AssetsResult, Error?) -> Void)",
+      "desc": "Asks the Natural Language framework to load any missing assets for a tag scheme onto the device for the given language."
+    },
+    {
+      "name": "enum NLTagger.AssetsResult",
+      "desc": "The response to an asset request."
+    },
+    {
+      "name": "var tagSchemes: [NLTagScheme]",
+      "desc": "The tag schemes configured for this linguistic tagger."
+    },
+    {
+      "name": "struct NLTagScheme",
+      "desc": "Constants for the tag schemes specified when initializing a linguistic tagger."
+    },
+    {
+      "name": "var dominantLanguage: NLLanguage?",
+      "desc": "The dominant language of the string set for the linguistic tagger."
+    },
+    {
+      "name": "func setLanguage(NLLanguage, range: Range<String.Index>)",
+      "desc": "Sets the language for a range of text within the tagger's string."
+    },
+    {
+      "name": "func setOrthography(NSOrthography, range: Range<String.Index>)",
+      "desc": "Sets the orthography for the specified range."
+    },
+    {
+      "name": "func enumerateTags(in: Range<String.Index>, unit: NLTokenUnit, scheme: NLTagScheme, options: NLTagger.Options, using: (NLTag?, Range<String.Index>) -> Bool)",
+      "desc": "Enumerates a block over the tagger’s string, given a range, token unit, and tag scheme."
+    },
+    {
+      "name": "struct NLTagger.Options",
+      "desc": "Constants for linguistic tagger enumeration specifying which tokens to omit and whether to join names."
+    },
+    {
+      "name": "struct NLTag",
+      "desc": "A token type, lexical class, name, lemma, language, or script returned by a linguistic tagger for natural language text."
+    },
+    {
+      "name": "func tags(in: Range<String.Index>, unit: NLTokenUnit, scheme: NLTagScheme, options: NLTagger.Options) -> [(NLTag?, Range<String.Index>)]",
+      "desc": "Finds an array of linguistic tags and token ranges for a given string range and linguistic unit."
+    },
+    {
+      "name": "func tag(at: String.Index, unit: NLTokenUnit, scheme: NLTagScheme) -> (NLTag?, Range<String.Index>)",
+      "desc": "Finds a tag for a given linguistic unit, for a single scheme, at the specified character position."
+    },
+    {
+      "name": "func tagHypotheses(at: String.Index, unit: NLTokenUnit, scheme: NLTagScheme, maximumCount: Int) -> ([String : Double], Range<String.Index>)",
+      "desc": "Finds multiple possible tags for a given linguistic unit, for a single scheme, at the specified character position."
+    },
+    {
+      "name": "func tokenRange(at: String.Index, unit: NLTokenUnit) -> Range<String.Index>",
+      "desc": "Returns the range of the linguistic unit containing the specified character index."
+    },
+    {
+      "name": "func tokenRange(for: Range<String.Index>, unit: NLTokenUnit) -> Range<String.Index>",
+      "desc": "Finds the entire range of all tokens of the specified linguistic unit contained completely or partially within the specified range."
+    },
+    {
+      "name": "enum NLTokenUnit",
+      "desc": "Constants representing linguistic units."
+    },
+    {
+      "name": "func setModels([NLModel], forTagScheme: NLTagScheme)",
+      "desc": "Assigns models for a tag scheme."
+    },
+    {
+      "name": "func models(forTagScheme: NLTagScheme) -> [NLModel]",
+      "desc": "Returns the models that apply to the given tag scheme."
+    },
+    {
+      "name": "func setGazetteers([NLGazetteer], for: NLTagScheme)",
+      "desc": "Attaches gazetteers to a tag scheme, typically one gazetteer per language or one language-independent gazetteer."
+    },
+    {
+      "name": "func gazetteers(for: NLTagScheme) -> [NLGazetteer]",
+      "desc": "Retrieves the gazetteers attached to a tag scheme."
+    },
+    {
+      "name": "class NLGazetteer",
+      "desc": "A collection of terms and their labels, which take precedence over a word tagger."
+    }
+  ],
+  "declaration": "class NLTagger : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

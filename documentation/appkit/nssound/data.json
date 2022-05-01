@@ -1,0 +1,115 @@
+{
+  "path": "/documentation/appkit/nssound",
+  "type": "Class",
+  "name": "NSSound",
+  "desc": "A simple interface for loading and playing audio files.",
+  "items": [
+    {
+      "name": "var delegate: NSSoundDelegate?",
+      "desc": "The sound’s delegate."
+    },
+    {
+      "name": "protocol NSSoundDelegate",
+      "desc": "A set of optional methods implemented by delegates of NSSound objects."
+    },
+    {
+      "name": "class func canInit(with: NSPasteboard) -> Bool",
+      "desc": "Indicates whether the receiver can create an instance of itself from the data in a pasteboard."
+    },
+    {
+      "name": "init?(contentsOfFile: String, byReference: Bool)",
+      "desc": "Initializes the receiver with the audio data located at a given filepath."
+    },
+    {
+      "name": "init?(contentsOf: URL, byReference: Bool)",
+      "desc": "Initializes the receiver with the audio data located at a given URL."
+    },
+    {
+      "name": "init?(data: Data)",
+      "desc": "Initializes the receiver with a given audio data."
+    },
+    {
+      "name": "init?(pasteboard: NSPasteboard)",
+      "desc": "Initializes the receiver with data from a pasteboard. The pasteboard should contain a type returned by NSSound. NSSound expects the data to have a proper magic number, sound header, and data for the formats it supports."
+    },
+    {
+      "name": "var name: NSSound.Name?",
+      "desc": "The name assigned to the sound."
+    },
+    {
+      "name": "typealias NSSound.Name"
+    },
+    {
+      "name": "func setName(NSSound.Name?) -> Bool"
+    },
+    {
+      "name": "var volume: Float",
+      "desc": "The volume of the sound."
+    },
+    {
+      "name": "var currentTime: TimeInterval",
+      "desc": "The sound’s playback progress, in seconds."
+    },
+    {
+      "name": "var loops: Bool",
+      "desc": "A Boolean that indicates whether the sound restarts playback when it reaches the end of its content."
+    },
+    {
+      "name": "var playbackDeviceIdentifier: NSSound.PlaybackDeviceIdentifier?",
+      "desc": "Identifies the sound’s output device"
+    },
+    {
+      "name": "typealias NSSound.PlaybackDeviceIdentifier"
+    },
+    {
+      "name": "class var soundUnfilteredTypes: [String]",
+      "desc": "Provides the file types the NSSound class understands."
+    },
+    {
+      "name": "init?(named: NSSound.Name)",
+      "desc": "Returns the NSSound instance associated with a given name."
+    },
+    {
+      "name": "var duration: TimeInterval",
+      "desc": "The duration of the sound, in seconds."
+    },
+    {
+      "name": "static func beep()",
+      "desc": "Plays the system beep."
+    },
+    {
+      "name": "var isPlaying: Bool",
+      "desc": "A Boolean that indicates whether the sound is playing its audio data."
+    },
+    {
+      "name": "func pause() -> Bool",
+      "desc": "Pauses audio playback."
+    },
+    {
+      "name": "func play() -> Bool",
+      "desc": "Initiates audio playback."
+    },
+    {
+      "name": "func resume() -> Bool",
+      "desc": "Resumes audio playback."
+    },
+    {
+      "name": "func stop() -> Bool",
+      "desc": "Concludes audio playback."
+    },
+    {
+      "name": "func write(to: NSPasteboard)",
+      "desc": "Writes the receiver’s data to a pasteboard."
+    }
+  ],
+  "declaration": "class NSSound : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSPasteboardReading",
+    "NSPasteboardWriting",
+    "NSSecureCoding"
+  ]
+}

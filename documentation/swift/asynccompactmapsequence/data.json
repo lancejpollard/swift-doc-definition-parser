@@ -1,0 +1,112 @@
+{
+  "path": "/documentation/swift/asynccompactmapsequence",
+  "type": "Generic Structure",
+  "name": "AsyncCompactMapSequence",
+  "desc": "An asynchronous sequence that maps a given closure over the asynchronous sequence’s elements, omitting results that don’t return a value.",
+  "items": [
+    {
+      "name": "typealias AsyncCompactMapSequence.AsyncIterator",
+      "desc": "The type of iterator that produces elements of the sequence."
+    },
+    {
+      "name": "typealias AsyncCompactMapSequence.Element",
+      "desc": "The type of element produced by this asynchronous sequence."
+    },
+    {
+      "name": "func allSatisfy((ElementOfResult) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether all elements produced by the asynchronous sequence satisfies the given predicate."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((ElementOfResult) -> ElementOfResult?) -> AsyncThrowingCompactMapSequence<AsyncCompactMapSequence<Base, ElementOfResult>, ElementOfResult>",
+      "desc": "Creates an asynchronous sequence that maps an error-throwing closure over the base sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((ElementOfResult) -> ElementOfResult?) -> AsyncCompactMapSequence<AsyncCompactMapSequence<Base, ElementOfResult>, ElementOfResult>",
+      "desc": "Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "func contains(ElementOfResult) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the asynchronous sequence contains the given element."
+    },
+    {
+      "name": "func contains(where: (ElementOfResult) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the asynchronous sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func drop(while: (ElementOfResult) -> Bool) -> AsyncDropWhileSequence<AsyncCompactMapSequence<Base, ElementOfResult>>",
+      "desc": "Omits elements from the base asynchronous sequence until a given closure returns false, after which it passes through all remaining elements."
+    },
+    {
+      "name": "func dropFirst(Int) -> AsyncDropFirstSequence<AsyncCompactMapSequence<Base, ElementOfResult>>",
+      "desc": "Omits a specified number of elements from the base asynchronous sequence, then passes through all remaining elements."
+    },
+    {
+      "name": "func filter((ElementOfResult) -> Bool) -> AsyncFilterSequence<AsyncCompactMapSequence<Base, ElementOfResult>>",
+      "desc": "Creates an asynchronous sequence that contains, in order, the elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func first(where: (ElementOfResult) -> Bool) -> ElementOfResult?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((ElementOfResult) -> SegmentOfResult) -> AsyncThrowingFlatMapSequence<AsyncCompactMapSequence<Base, ElementOfResult>, SegmentOfResult>",
+      "desc": "Creates an asynchronous sequence that concatenates the results of calling the given error-throwing transformation with each element of this sequence."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((ElementOfResult) -> SegmentOfResult) -> AsyncFlatMapSequence<AsyncCompactMapSequence<Base, ElementOfResult>, SegmentOfResult>",
+      "desc": "Creates an asynchronous sequence that concatenates the results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func makeAsyncIterator() -> AsyncCompactMapSequence<Base, ElementOfResult>.Iterator",
+      "desc": "Creates the asynchronous iterator that produces elements of this asynchronous sequence."
+    },
+    {
+      "name": "func map<Transformed>((ElementOfResult) -> Transformed) -> AsyncThrowingMapSequence<AsyncCompactMapSequence<Base, ElementOfResult>, Transformed>",
+      "desc": "Creates an asynchronous sequence that maps the given error-throwing closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "func map<Transformed>((ElementOfResult) -> Transformed) -> AsyncMapSequence<AsyncCompactMapSequence<Base, ElementOfResult>, Transformed>",
+      "desc": "Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "func max() -> ElementOfResult?",
+      "desc": "Returns the maximum element in an asynchronous sequence of comparable elements."
+    },
+    {
+      "name": "func max(by: (ElementOfResult, ElementOfResult) -> Bool) -> ElementOfResult?",
+      "desc": "Returns the maximum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func min() -> ElementOfResult?",
+      "desc": "Returns the minimum element in an asynchronous sequence of comparable elements."
+    },
+    {
+      "name": "func min(by: (ElementOfResult, ElementOfResult) -> Bool) -> ElementOfResult?",
+      "desc": "Returns the minimum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func prefix(Int) -> AsyncPrefixSequence<AsyncCompactMapSequence<Base, ElementOfResult>>",
+      "desc": "Returns an asynchronous sequence, up to the specified maximum length, containing the initial elements of the base asynchronous sequence."
+    },
+    {
+      "name": "func prefix(while: (ElementOfResult) -> Bool) -> AsyncPrefixWhileSequence<AsyncCompactMapSequence<Base, ElementOfResult>>",
+      "desc": "Returns an asynchronous sequence, containing the initial, consecutive elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, ElementOfResult) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, ElementOfResult) -> Void) -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure, given a mutable initial value."
+    },
+    {
+      "name": "struct AsyncCompactMapSequence.Iterator",
+      "desc": "The iterator that produces elements of the compact map sequence."
+    }
+  ],
+  "declaration": "struct AsyncCompactMapSequence<Base, ElementOfResult> where Base : AsyncSequence",
+  "conformsTo": [
+    "AsyncSequence"
+  ]
+}

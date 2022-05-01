@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/swiftui/path/element",
+  "type": "Enumeration",
+  "name": "Path.Element",
+  "desc": "An element of a path.",
+  "items": [
+    {
+      "name": "case closeSubpath",
+      "desc": "A line from the start point of the current subpath (if any) to the current point, which terminates the subpath."
+    },
+    {
+      "name": "case curve(to: CGPoint, control1: CGPoint, control2: CGPoint)",
+      "desc": "A cubic Bézier curve from the previous current point to the given end-point, using the two control points to define the curve."
+    },
+    {
+      "name": "case line(to: CGPoint)",
+      "desc": "A line from the previous current point to the given point, which becomes the new current point."
+    },
+    {
+      "name": "case move(to: CGPoint)",
+      "desc": "A path element that terminates the current subpath (without closing it) and defines a new current point."
+    },
+    {
+      "name": "case quadCurve(to: CGPoint, control: CGPoint)",
+      "desc": "A quadratic Bézier curve from the previous current point to the given end-point, using the single control point to define the curve."
+    },
+    {
+      "name": "static func == (Path.Element, Path.Element) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    }
+  ],
+  "declaration": "@frozen enum Element",
+  "conformsTo": [
+    "Equatable",
+    "Sendable"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "path": "/documentation/carekit/ockcontactcontroller",
+  "type": "Class",
+  "name": "OCKContactController",
+  "desc": "A controller that watches and updates contacts.",
+  "items": [
+    {
+      "name": "init(storeManager: OCKSynchronizedStoreManager)",
+      "desc": "Creates a new contact controller."
+    },
+    {
+      "name": "let objectWillChange: CurrentValueSubject<OCKAnyContact?, Never>",
+      "desc": "A publisher that publishes a contact when it changes in the store."
+    },
+    {
+      "name": "var store: OCKAnyContactStore",
+      "desc": "A reference to the store that fetches and updates events."
+    },
+    {
+      "name": "let storeManager: OCKSynchronizedStoreManager",
+      "desc": "The object that synchronizes between the store and controller."
+    },
+    {
+      "name": "func fetchAndObserveContact(forQuery: OCKAnyContactQuery, errorHandler: ((OCKStoreError) -> Void)?)",
+      "desc": "Retrieves and observes the first contact that matches a specific query."
+    },
+    {
+      "name": "func fetchAndObserveContact(withID: String, errorHandler: ((OCKStoreError) -> Void)?)",
+      "desc": "Retrieves and observes a contact with a specific identifier."
+    },
+    {
+      "name": "func observeContact(OCKAnyContact)",
+      "desc": "Starts observing a contact with a specific identifier."
+    },
+    {
+      "name": "func initiateAddressLookup(completion: (Result<MKMapItem, Error>) -> Void)",
+      "desc": "Initiates a map address lookup of the contact."
+    },
+    {
+      "name": "func initiateCall() -> URL",
+      "desc": "Initiates a phone call to the contact and returns the URL to be dialed."
+    },
+    {
+      "name": "func initiateEmail() -> MFMailComposeViewController",
+      "desc": "Initiates an email to the contact and returns the mail composer view controller to present to the user."
+    },
+    {
+      "name": "func initiateMessage() -> MFMessageComposeViewController",
+      "desc": "Initiates a message to the contact and returns the message compose view controller to present to the user."
+    },
+    {
+      "name": "func initiateSystemContactLookup() -> CNContactViewController",
+      "desc": "Initiates a system serch for a contact and returns a contact view controller to present to the user."
+    }
+  ],
+  "declaration": "class OCKContactController",
+  "conformsTo": [
+    "OCKContactControllerProtocol",
+    "ObservableObject"
+  ]
+}

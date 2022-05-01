@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/sms_and_call_reporting/ilmessagefiltererror/code",
+  "type": "Enumeration",
+  "name": "ILMessageFilterError.Code",
+  "desc": "IdentityLookup error codes.",
+  "items": [
+    {
+      "name": "case invalidNetworkURL",
+      "desc": "The network request URL given by the ILMessageFilterExtensionNetworkURL key in the app extension's Info.plist file is either missing or invalid."
+    },
+    {
+      "name": "case networkRequestFailed",
+      "desc": "The network request failed (the NSUnderlyingErrorKey in the errorUserInfo dictionary may have additional details)."
+    },
+    {
+      "name": "case networkURLUnauthorized",
+      "desc": "The app extension's containing app is not authorized to allow the app extension to defer network requests to the host specified in its Info.plist file."
+    },
+    {
+      "name": "case redundantNetworkDeferral",
+      "desc": "The app extension tried to defer a request to its network service more than once, which is not allowed."
+    },
+    {
+      "name": "case system",
+      "desc": "An unspecified system error occurred."
+    }
+  ],
+  "declaration": "enum ILMessageFilterError.Code : Int, _ErrorCodeProtocol, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

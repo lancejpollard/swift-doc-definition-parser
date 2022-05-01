@@ -1,0 +1,80 @@
+{
+  "path": "/documentation/foundation/nsfilecoordinator",
+  "type": "Class",
+  "name": "NSFileCoordinator",
+  "desc": "An object that coordinates the reading and writing of files and directories among file presenters.",
+  "items": [
+    {
+      "name": "init(filePresenter: NSFilePresenter?)",
+      "desc": "Initializes and returns a file coordinator object using the specified file presenter."
+    },
+    {
+      "name": "class func addFilePresenter(NSFilePresenter)",
+      "desc": "Registers the specified file presenter object so that it can receive notifications."
+    },
+    {
+      "name": "class func removeFilePresenter(NSFilePresenter)",
+      "desc": "Unregisters the specified file presenter object."
+    },
+    {
+      "name": "class var filePresenters: [NSFilePresenter]",
+      "desc": "Returns an array containing the currently registered file presenter objects."
+    },
+    {
+      "name": "var purposeIdentifier: String",
+      "desc": "A string that uniquely identifies the file access that was performed by this file coordinator."
+    },
+    {
+      "name": "func coordinate(with: [NSFileAccessIntent], queue: OperationQueue, byAccessor: (Error?) -> Void)",
+      "desc": "Performs a number of coordinated-read or -write operations asynchronously."
+    },
+    {
+      "name": "func coordinate(readingItemAt: URL, options: NSFileCoordinator.ReadingOptions, error: NSErrorPointer, byAccessor: (URL) -> Void)",
+      "desc": "Initiates a read operation on a single file or directory using the specified options."
+    },
+    {
+      "name": "func coordinate(writingItemAt: URL, options: NSFileCoordinator.WritingOptions, error: NSErrorPointer, byAccessor: (URL) -> Void)",
+      "desc": "Initiates a write operation on a single file or directory using the specified options."
+    },
+    {
+      "name": "func coordinate(readingItemAt: URL, options: NSFileCoordinator.ReadingOptions, writingItemAt: URL, options: NSFileCoordinator.WritingOptions, error: NSErrorPointer, byAccessor: (URL, URL) -> Void)",
+      "desc": "Initiates a read operation that contains a follow-up write operation."
+    },
+    {
+      "name": "func coordinate(writingItemAt: URL, options: NSFileCoordinator.WritingOptions, writingItemAt: URL, options: NSFileCoordinator.WritingOptions, error: NSErrorPointer, byAccessor: (URL, URL) -> Void)",
+      "desc": "Initiates a write operation that involves a secondary write operation."
+    },
+    {
+      "name": "func prepare(forReadingItemsAt: [URL], options: NSFileCoordinator.ReadingOptions, writingItemsAt: [URL], options: NSFileCoordinator.WritingOptions, error: NSErrorPointer, byAccessor: (() -> Void) -> Void)",
+      "desc": "Prepare to read or write from multiple files in a single batch operation."
+    },
+    {
+      "name": "func item(at: URL, willMoveTo: URL)",
+      "desc": "Announces that your app is moving a file to a new URL."
+    },
+    {
+      "name": "func item(at: URL, didMoveTo: URL)",
+      "desc": "Notifies relevant file presenters that the location of a file or directory changed."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Cancels any active file coordination calls."
+    },
+    {
+      "name": "struct NSFileCoordinator.ReadingOptions",
+      "desc": "Options to use when reading the contents or attributes of a file or directory."
+    },
+    {
+      "name": "struct NSFileCoordinator.WritingOptions",
+      "desc": "Options to use when changing the contents or attributes of a file or directory."
+    },
+    {
+      "name": "func item(at: URL, didChangeUbiquityAttributes: Set<URLResourceKey>)",
+      "desc": "Tells observing file providers that the item's ubiquity attributes have changed."
+    }
+  ],
+  "declaration": "class NSFileCoordinator : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

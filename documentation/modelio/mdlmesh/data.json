@@ -1,0 +1,185 @@
+{
+  "path": "/documentation/modelio/mdlmesh",
+  "type": "Class",
+  "name": "MDLMesh",
+  "desc": "A container for vertex buffer data to be used in rendering a 3D object.",
+  "items": [
+    {
+      "name": "init(vertexBuffer: MDLMeshBuffer, vertexCount: Int, descriptor: MDLVertexDescriptor, submeshes: [MDLSubmesh])",
+      "desc": "Creates a mesh from a single vertex buffer with the specified parameters."
+    },
+    {
+      "name": "init(vertexBuffers: [MDLMeshBuffer], vertexCount: Int, descriptor: MDLVertexDescriptor, submeshes: [MDLSubmesh])",
+      "desc": "Creates a mesh by unifying vertex data from multiple sources with the specified parameters."
+    },
+    {
+      "name": "init(bufferAllocator: MDLMeshBufferAllocator?)"
+    },
+    {
+      "name": "class func newSubdividedMesh(MDLMesh, submeshIndex: Int, subdivisionLevels: Int) -> Self?",
+      "desc": "Creates a new mesh by subdividing the specified mesh."
+    },
+    {
+      "name": "init(meshBySubdividingMesh: MDLMesh, submeshIndex: Int32, subdivisionLevels: UInt32, allocator: MDLMeshBufferAllocator?)"
+    },
+    {
+      "name": "var boundingBox: MDLAxisAlignedBoundingBox",
+      "desc": "The minimum region entirely enclosing the mesh’s vertex positions, expressed in the model coordinate system of the mesh."
+    },
+    {
+      "name": "var submeshes: NSMutableArray?",
+      "desc": "The array of submeshes to be used in rendering the mesh."
+    },
+    {
+      "name": "var vertexBuffers: [MDLMeshBuffer]",
+      "desc": "The array of buffers that provide vertex data for the mesh."
+    },
+    {
+      "name": "var vertexCount: Int",
+      "desc": "The number of vertices in the mesh."
+    },
+    {
+      "name": "var vertexDescriptor: MDLVertexDescriptor",
+      "desc": "A description of the format and layout of the mesh’s vertex buffers."
+    },
+    {
+      "name": "var allocator: MDLMeshBufferAllocator"
+    },
+    {
+      "name": "func addAttribute(withName: String, format: MDLVertexFormat)",
+      "desc": "Adds a vertex attribute to the mesh and creates a new, empty corresponding vertex buffer."
+    },
+    {
+      "name": "func addAttribute(withName: String, format: MDLVertexFormat, type: String, data: Data, stride: Int)"
+    },
+    {
+      "name": "func addAttribute(withName: String, format: MDLVertexFormat, type: String, data: Data, stride: Int, time: TimeInterval)"
+    },
+    {
+      "name": "func removeAttributeNamed(String)"
+    },
+    {
+      "name": "func replaceAttributeNamed(String, with: MDLVertexAttributeData)"
+    },
+    {
+      "name": "func updateAttributeNamed(String, with: MDLVertexAttributeData)"
+    },
+    {
+      "name": "func addUnwrappedTextureCoordinates(forAttributeNamed: String)"
+    },
+    {
+      "name": "func vertexAttributeData(forAttributeNamed: String) -> MDLVertexAttributeData?",
+      "desc": "Returns the vertex data for the specified attribute."
+    },
+    {
+      "name": "func vertexAttributeData(forAttributeNamed: String, as: MDLVertexFormat) -> MDLVertexAttributeData?"
+    },
+    {
+      "name": "func addNormals(withAttributeNamed: String?, creaseThreshold: Float)",
+      "desc": "Generates surface normal data for the mesh based on its vertex position data."
+    },
+    {
+      "name": "func addTangentBasis(forTextureCoordinateAttributeNamed: String, tangentAttributeNamed: String, bitangentAttributeNamed: String?)",
+      "desc": "Generates surface tangent and bitangent data for the mesh based on its vertex position and texture coordinate data."
+    },
+    {
+      "name": "func addTangentBasis(forTextureCoordinateAttributeNamed: String, normalAttributeNamed: String, tangentAttributeNamed: String)",
+      "desc": "Generates surface tangent data for the mesh based on its vertex position, surface normal, and texture coordinate data."
+    },
+    {
+      "name": "func generateAmbientOcclusionTexture(withQuality: Float, attenuationFactor: Float, objectsToConsider: [MDLObject], vertexAttributeNamed: String, materialPropertyNamed: String) -> Bool",
+      "desc": "Calculates ambient occlusion (AO) information for the mesh and saves it in the mesh as a material property texture."
+    },
+    {
+      "name": "func generateAmbientOcclusionTexture(withSize: vector_int2, raysPerSample: Int, attenuationFactor: Float, objectsToConsider: [MDLObject], vertexAttributeNamed: String, materialPropertyNamed: String) -> Bool",
+      "desc": "Calculates ambient occlusion (AO) information for the mesh and saves it in the mesh as a material property texture of the specified size."
+    },
+    {
+      "name": "func generateAmbientOcclusionVertexColors(withQuality: Float, attenuationFactor: Float, objectsToConsider: [MDLObject], vertexAttributeNamed: String) -> Bool",
+      "desc": "Calculates ambient occlusion (AO) information for the mesh and saves it in the mesh as a vertex color attribute."
+    },
+    {
+      "name": "func generateAmbientOcclusionVertexColors(withRaysPerSample: Int, attenuationFactor: Float, objectsToConsider: [MDLObject], vertexAttributeNamed: String) -> Bool",
+      "desc": "Calculates ambient occlusion (AO) information for the mesh, using the specified number of rays per sample, and saves it in the mesh as a vertex color attribute."
+    },
+    {
+      "name": "func generateLightMapTexture(withQuality: Float, lightsToConsider: [MDLLight], objectsToConsider: [MDLObject], vertexAttributeNamed: String, materialPropertyNamed: String) -> Bool",
+      "desc": "Calculates static lighting information for the mesh and saves it in the mesh as a material property texture."
+    },
+    {
+      "name": "func generateLightMapTexture(withTextureSize: vector_int2, lightsToConsider: [MDLLight], objectsToConsider: [MDLObject], vertexAttributeNamed: String, materialPropertyNamed: String) -> Bool",
+      "desc": "Calculates static lighting information for the mesh and saves it in the mesh as a material property texture of the specified size."
+    },
+    {
+      "name": "func generateLightMapVertexColorsWithLights(toConsider: [MDLLight], objectsToConsider: [MDLObject], vertexAttributeNamed: String) -> Bool",
+      "desc": "Calculates static lighting information for the mesh and saves it in the mesh as a vertex color attribute."
+    },
+    {
+      "name": "class func newBox(withDimensions: vector_float3, segments: vector_uint3, geometryType: MDLGeometryType, inwardNormals: Bool, allocator: MDLMeshBufferAllocator?) -> Self",
+      "desc": "Creates a mesh in the shape of a rectangular box or cube."
+    },
+    {
+      "name": "class func newEllipsoid(withRadii: vector_float3, radialSegments: Int, verticalSegments: Int, geometryType: MDLGeometryType, inwardNormals: Bool, hemisphere: Bool, allocator: MDLMeshBufferAllocator?) -> Self",
+      "desc": "Creates a mesh in the shape of an ellipsoid or sphere."
+    },
+    {
+      "name": "class func newCylinder(withHeight: Float, radii: vector_float2, radialSegments: Int, verticalSegments: Int, geometryType: MDLGeometryType, inwardNormals: Bool, allocator: MDLMeshBufferAllocator?) -> Self",
+      "desc": "Generates a mesh in the shape of a right circular or elliptical cylinder."
+    },
+    {
+      "name": "class func newEllipticalCone(withHeight: Float, radii: vector_float2, radialSegments: Int, verticalSegments: Int, geometryType: MDLGeometryType, inwardNormals: Bool, allocator: MDLMeshBufferAllocator?) -> Self",
+      "desc": "Generates a mesh in the shape of an elliptical or circular cone."
+    },
+    {
+      "name": "class func newPlane(withDimensions: vector_float2, segments: vector_uint2, geometryType: MDLGeometryType, allocator: MDLMeshBufferAllocator?) -> Self",
+      "desc": "Generates a mesh in the shape of a rectangular plane."
+    },
+    {
+      "name": "class func newCapsule(withHeight: Float, radii: vector_float2, radialSegments: Int, verticalSegments: Int, hemisphereSegments: Int, geometryType: MDLGeometryType, inwardNormals: Bool, allocator: MDLMeshBufferAllocator?) -> Self"
+    },
+    {
+      "name": "class func newIcosahedron(withRadius: Float, inwardNormals: Bool, allocator: MDLMeshBufferAllocator?) -> Self",
+      "desc": "Generates a mesh in the shape of a regular 20-sided polyhedron with triangular faces."
+    },
+    {
+      "name": "class func newIcosahedron(withRadius: Float, inwardNormals: Bool, geometryType: MDLGeometryType, allocator: MDLMeshBufferAllocator?) -> Self"
+    },
+    {
+      "name": "init(boxWithExtent: vector_float3, segments: vector_uint3, inwardNormals: Bool, geometryType: MDLGeometryType, allocator: MDLMeshBufferAllocator?)"
+    },
+    {
+      "name": "init(sphereWithExtent: vector_float3, segments: vector_uint2, inwardNormals: Bool, geometryType: MDLGeometryType, allocator: MDLMeshBufferAllocator?)"
+    },
+    {
+      "name": "init(cylinderWithExtent: vector_float3, segments: vector_uint2, inwardNormals: Bool, topCap: Bool, bottomCap: Bool, geometryType: MDLGeometryType, allocator: MDLMeshBufferAllocator?)"
+    },
+    {
+      "name": "init(coneWithExtent: vector_float3, segments: vector_uint2, inwardNormals: Bool, cap: Bool, geometryType: MDLGeometryType, allocator: MDLMeshBufferAllocator?)"
+    },
+    {
+      "name": "init(planeWithExtent: vector_float3, segments: vector_uint2, geometryType: MDLGeometryType, allocator: MDLMeshBufferAllocator?)"
+    },
+    {
+      "name": "init(icosahedronWithExtent: vector_float3, inwardNormals: Bool, geometryType: MDLGeometryType, allocator: MDLMeshBufferAllocator?)"
+    },
+    {
+      "name": "init(capsuleWithExtent: vector_float3, cylinderSegments: vector_uint2, hemisphereSegments: Int32, inwardNormals: Bool, geometryType: MDLGeometryType, allocator: MDLMeshBufferAllocator?)"
+    },
+    {
+      "name": "init(hemisphereWithExtent: vector_float3, segments: vector_uint2, inwardNormals: Bool, cap: Bool, geometryType: MDLGeometryType, allocator: MDLMeshBufferAllocator?)"
+    },
+    {
+      "name": "func addOrthTanBasis(forTextureCoordinateAttributeNamed: String, normalAttributeNamed: String, tangentAttributeNamed: String)"
+    },
+    {
+      "name": "func flipTextureCoordinates(inAttributeNamed: String)"
+    },
+    {
+      "name": "func makeVerticesUniqueAndReturnError()"
+    }
+  ],
+  "declaration": "class MDLMesh : MDLObject",
+  "inheritsFrom": [
+    "MDLObject"
+  ]
+}

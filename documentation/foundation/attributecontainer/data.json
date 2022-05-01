@@ -1,0 +1,103 @@
+{
+  "path": "/documentation/foundation/attributecontainer",
+  "type": "Structure",
+  "name": "AttributeContainer",
+  "desc": "A container for attribute keys and values.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an empty attribute container."
+    },
+    {
+      "name": "init<S>([NSAttributedString.Key : Any], including: S.Type)",
+      "desc": "Creates an attribute container from a dictionary and an attribute scope."
+    },
+    {
+      "name": "init<S>([NSAttributedString.Key : Any], including: KeyPath<AttributeScopes, S.Type>)",
+      "desc": "Creates an attribute container from a dictionary and an attribute scope that a key path identifies."
+    },
+    {
+      "name": "init([NSAttributedString.Key : Any])",
+      "desc": "Creates an attribute container from a dictionary, using default attribute scopes."
+    },
+    {
+      "name": "subscript<T>(T.Type) -> T.Value?",
+      "desc": "Returns the attribute that corresponds to a specified key."
+    },
+    {
+      "name": "subscript<K>(dynamicMember: KeyPath<AttributeDynamicLookup, K>) -> K.Value?",
+      "desc": "Returns the attribute that corresponds to a specified key path."
+    },
+    {
+      "name": "subscript<S>(dynamicMember: KeyPath<AttributeScopes, S.Type>) -> ScopedAttributeContainer<S>",
+      "desc": "Returns the attribute container that corresponds to a specified key path."
+    },
+    {
+      "name": "subscript<K>(dynamicMember: KeyPath<AttributeDynamicLookup, K>) -> AttributeContainer.Builder<K>",
+      "desc": "Returns a modified attribute container as part of building a chain of attributes."
+    },
+    {
+      "name": "static subscript<K>(dynamicMember: KeyPath<AttributeDynamicLookup, K>) -> AttributeContainer.Builder<K>",
+      "desc": "Returns a modified attribute container as part of building a chain of attributes, for use as a static method."
+    },
+    {
+      "name": "protocol AttributedStringKey",
+      "desc": "A type that defines an attribute’s name and type."
+    },
+    {
+      "name": "struct AttributeContainer.Builder",
+      "desc": "A type that iteratively builds attribute containers by setting attribute values."
+    },
+    {
+      "name": "func merge(AttributeContainer, mergePolicy: AttributedString.AttributeMergePolicy)",
+      "desc": "Merges the container’s attributes with those in another attribute container."
+    },
+    {
+      "name": "func merging(AttributeContainer, mergePolicy: AttributedString.AttributeMergePolicy) -> AttributeContainer",
+      "desc": "Returns an attribute container by merging the container’s attributes with those in another attribute container."
+    },
+    {
+      "name": "enum AttributedString.AttributeMergePolicy",
+      "desc": "An enumeration of behaviors to apply when merging attributes."
+    },
+    {
+      "name": "init(from: Decoder, configuration: AttributeScopeCodableConfiguration)",
+      "desc": "Creates a new instance by decoding from the specified decoder, with help from the provided configuration."
+    },
+    {
+      "name": "func encode(to: Encoder, configuration: AttributeScopeCodableConfiguration)",
+      "desc": "Encodes the value into the specified encoder, with help from the provided configuration."
+    },
+    {
+      "name": "typealias AttributeContainer.DecodingConfiguration",
+      "desc": "The configuration type for decoding attribute containers."
+    },
+    {
+      "name": "typealias AttributeContainer.EncodingConfiguration",
+      "desc": "The configuration type for encoding attribute containers."
+    },
+    {
+      "name": "protocol ObjectiveCConvertibleAttributedStringKey",
+      "desc": "A protocol that defines Objective-C interoperability with an attribute key’s value type."
+    },
+    {
+      "name": "static func == (AttributeContainer, AttributeContainer) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are equal."
+    },
+    {
+      "name": "static func != (AttributeContainer, AttributeContainer) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are not equal."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual representation of the instance."
+    }
+  ],
+  "declaration": "@dynamicMemberLookup struct AttributeContainer",
+  "conformsTo": [
+    "CustomStringConvertible",
+    "DecodableWithConfiguration",
+    "EncodableWithConfiguration",
+    "Equatable"
+  ]
+}

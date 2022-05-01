@@ -1,0 +1,216 @@
+{
+  "path": "/documentation/appkit/nstypesetter",
+  "type": "Class",
+  "name": "NSTypesetter",
+  "desc": "An abstract class that performs various type layout tasks.",
+  "items": [
+    {
+      "name": "class var sharedSystemTypesetter: NSTypesetter",
+      "desc": "Returns a shared instance of a reentrant typesetter."
+    },
+    {
+      "name": "class func sharedSystemTypesetter(for: NSLayoutManager.TypesetterBehavior) -> Any",
+      "desc": "Returns a shared instance of a reentrant typesetter that implements typesetting with the specified behavior."
+    },
+    {
+      "name": "class var defaultTypesetterBehavior: NSLayoutManager.TypesetterBehavior",
+      "desc": "Returns the default typesetter behavior."
+    },
+    {
+      "name": "class func printingAdjustment(in: NSLayoutManager, forNominallySpacedGlyphRange: NSRange, packedGlyphs: UnsafePointer<UInt8>, count: Int) -> NSSize",
+      "desc": "Returns the interglyph spacing in the specified range when sent to a printer."
+    },
+    {
+      "name": "func baselineOffset(in: NSLayoutManager, glyphIndex: Int) -> CGFloat",
+      "desc": "Returns the distance from the bottom of the line fragment rectangle in which the glyph resides to the glyph baseline."
+    },
+    {
+      "name": "var layoutManager: NSLayoutManager?",
+      "desc": "Returns the layout manager for the text being typeset."
+    },
+    {
+      "name": "var usesFontLeading: Bool",
+      "desc": "Returns whether the typesetter uses the leading (or line gap) value specified in the font metric information of the current font."
+    },
+    {
+      "name": "var typesetterBehavior: NSLayoutManager.TypesetterBehavior",
+      "desc": "Returns the current typesetter behavior."
+    },
+    {
+      "name": "var hyphenationFactor: Float",
+      "desc": "Returns the current hyphenation factor."
+    },
+    {
+      "name": "var currentTextContainer: NSTextContainer?",
+      "desc": "Returns the text container for the text being typeset."
+    },
+    {
+      "name": "var textContainers: NSArray?",
+      "desc": "Returns an array containing the text containers belonging to the current layout manager."
+    },
+    {
+      "name": "var lineFragmentPadding: CGFloat",
+      "desc": "Returns the current line fragment padding, in points."
+    },
+    {
+      "name": "func substituteFont(for: NSFont) -> NSFont",
+      "desc": "Returns a screen font suitable for use in place of a given font."
+    },
+    {
+      "name": "func textTab(forGlyphLocation: CGFloat, writingDirection: NSWritingDirection, maxLocation: CGFloat) -> NSTextTab?",
+      "desc": "Returns the text tab next closest to a given glyph location within the given parameters."
+    },
+    {
+      "name": "var bidiProcessingEnabled: Bool",
+      "desc": "Returns whether bidirectional text processing is enabled."
+    },
+    {
+      "name": "var currentParagraphStyle: NSParagraphStyle?",
+      "desc": "Returns the paragraph style object for the text being typeset."
+    },
+    {
+      "name": "var attributedString: NSAttributedString?",
+      "desc": "Returns the text backing store, usually an instance of NSTextStorage."
+    },
+    {
+      "name": "func setParagraphGlyphRange(NSRange, separatorGlyphRange: NSRange)",
+      "desc": "Sets the current glyph range being processed."
+    },
+    {
+      "name": "var paragraphGlyphRange: NSRange",
+      "desc": "Returns the glyph range currently being processed."
+    },
+    {
+      "name": "var paragraphSeparatorGlyphRange: NSRange",
+      "desc": "Returns the current paragraph separator range."
+    },
+    {
+      "name": "var paragraphCharacterRange: NSRange",
+      "desc": "Returns the character range currently being processed."
+    },
+    {
+      "name": "var paragraphSeparatorCharacterRange: NSRange",
+      "desc": "Returns the current paragraph separator character range."
+    },
+    {
+      "name": "var attributesForExtraLineFragment: [NSAttributedString.Key : Any]",
+      "desc": "Returns the attributes used to lay out the extra line fragment."
+    },
+    {
+      "name": "func lineSpacing(afterGlyphAt: Int, withProposedLineFragmentRect: NSRect) -> CGFloat",
+      "desc": "Returns the line spacing in effect following the specified glyph."
+    },
+    {
+      "name": "func paragraphSpacing(afterGlyphAt: Int, withProposedLineFragmentRect: NSRect) -> CGFloat",
+      "desc": "Returns the paragraph spacing that is in effect after the specified glyph."
+    },
+    {
+      "name": "func paragraphSpacing(beforeGlyphAt: Int, withProposedLineFragmentRect: NSRect) -> CGFloat",
+      "desc": "Returns the number of points of space—added before a paragraph—that is in effect before the specified glyph."
+    },
+    {
+      "name": "func layoutParagraph(at: NSPointPointer) -> Int",
+      "desc": "Lays out glyphs in the current glyph range until the next paragraph separator is reached."
+    },
+    {
+      "name": "func beginParagraph()",
+      "desc": "Sets up layout parameters at the beginning of a paragraph."
+    },
+    {
+      "name": "func endParagraph()",
+      "desc": "Sets up layout parameters at the end of a paragraph."
+    },
+    {
+      "name": "func beginLine(withGlyphAt: Int)",
+      "desc": "Sets up layout parameters at the beginning of a line during typesetting."
+    },
+    {
+      "name": "func endLine(withGlyphRange: NSRange)",
+      "desc": "Sets up layout parameters at the end of a line during typesetting."
+    },
+    {
+      "name": "func layoutCharacters(in: NSRange, for: NSLayoutManager, maximumNumberOfLineFragments: Int) -> NSRange",
+      "desc": "Lays out characters in the given character range for the specified layout manager."
+    },
+    {
+      "name": "func layoutGlyphs(in: NSLayoutManager, startingAtGlyphIndex: Int, maxNumberOfLineFragments: Int, nextGlyphIndex: UnsafeMutablePointer<Int>)",
+      "desc": "Lays out glyphs in the specified layout manager starting at a specified glyph."
+    },
+    {
+      "name": "func boundingBox(forControlGlyphAt: Int, for: NSTextContainer, proposedLineFragment: NSRect, glyphPosition: NSPoint, characterIndex: Int) -> NSRect",
+      "desc": "Returns the bounding rectangle for the specified control glyph with the specified parameters."
+    },
+    {
+      "name": "func getLineFragmentRect(NSRectPointer, usedRect: NSRectPointer, forParagraphSeparatorGlyphRange: NSRange, atProposedOrigin: NSPoint)",
+      "desc": "Calculates the line fragment rectangle and line fragment used rectangle for blank lines."
+    },
+    {
+      "name": "func getLineFragmentRect(NSRectPointer!, usedRect: NSRectPointer!, remaining: NSRectPointer!, forStartingGlyphAt: Int, proposedRect: NSRect, lineSpacing: CGFloat, paragraphSpacingBefore: CGFloat, paragraphSpacingAfter: CGFloat)",
+      "desc": "Calculates line fragment rectangle, line fragment used rectangle, and remaining rectangle for a line fragment."
+    },
+    {
+      "name": "func hyphenCharacter(forGlyphAt: Int) -> UTF32Char",
+      "desc": "Returns the hyphen character to be inserted after the specified glyph."
+    },
+    {
+      "name": "func hyphenationFactor(forGlyphAt: Int) -> Float",
+      "desc": "Returns the hyphenation factor in effect at a specified location."
+    },
+    {
+      "name": "func shouldBreakLine(byHyphenatingBeforeCharacterAt: Int) -> Bool",
+      "desc": "Returns whether the line being laid out should be broken by hyphenating at the specified character."
+    },
+    {
+      "name": "func shouldBreakLine(byWordBeforeCharacterAt: Int) -> Bool",
+      "desc": "Returns whether the line being laid out should be broken by a word break at the specified character."
+    },
+    {
+      "name": "func willSetLineFragmentRect(NSRectPointer, forGlyphRange: NSRange, usedRect: NSRectPointer, baselineOffset: UnsafeMutablePointer<CGFloat>)",
+      "desc": "Called by the typesetter just prior to storing the actual line fragment rectangle location in the layout manager."
+    },
+    {
+      "name": "func setHardInvalidation(Bool, forGlyphRange: NSRange)",
+      "desc": "Sets whether to force the layout manager to invalidate the specified portion of the glyph cache when invalidating layout."
+    },
+    {
+      "name": "func characterRange(forGlyphRange: NSRange, actualGlyphRange: NSRangePointer?) -> NSRange",
+      "desc": "Returns the range for the characters in the receiver’s text store that are mapped to the specified glyphs."
+    },
+    {
+      "name": "func glyphRange(forCharacterRange: NSRange, actualCharacterRange: NSRangePointer?) -> NSRange",
+      "desc": "Returns the range for the glyphs mapped to the characters of the text store in the specified range."
+    },
+    {
+      "name": "func setAttachmentSize(NSSize, forGlyphRange: NSRange)",
+      "desc": "Sets the size the specified glyphs (assumed to be attachments) will be asked to draw themselves at."
+    },
+    {
+      "name": "func setBidiLevels(UnsafePointer<UInt8>!, forGlyphRange: NSRange)",
+      "desc": "Sets the direction of the specified glyphs for bidirectional text."
+    },
+    {
+      "name": "func setDrawsOutsideLineFragment(Bool, forGlyphRange: NSRange)",
+      "desc": "Sets whether the specified glyphs exceed the bounds of the line fragment in which they are laid out."
+    },
+    {
+      "name": "func setLineFragmentRect(NSRect, forGlyphRange: NSRange, usedRect: NSRect, baselineOffset: CGFloat)",
+      "desc": "Sets the line fragment rectangle where the specified glyphs are laid out."
+    },
+    {
+      "name": "func setLocation(NSPoint, withAdvancements: UnsafePointer<CGFloat>!, forStartOfGlyphRange: NSRange)",
+      "desc": "Sets the location where the specified glyphs are laid out."
+    },
+    {
+      "name": "func setNotShownAttribute(Bool, forGlyphRange: NSRange)",
+      "desc": "Sets whether the specified glyphs are not shown."
+    },
+    {
+      "name": "struct NSTypesetterControlCharacterAction",
+      "desc": "The following constants are possible values returned by the actionForControlCharacter(at:) method to determine the action associated with a control character."
+    }
+  ],
+  "declaration": "class NSTypesetter : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

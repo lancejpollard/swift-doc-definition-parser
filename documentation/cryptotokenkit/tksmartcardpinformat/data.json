@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/cryptotokenkit/tksmartcardpinformat",
+  "type": "Class",
+  "name": "TKSmartCardPINFormat",
+  "desc": "The formatting properties for a PIN, such as character encoding and length constraints.",
+  "items": [
+    {
+      "name": "var charset: TKSmartCardPINFormat.Charset",
+      "desc": "The format of PIN characters. TKSmartCardPINCharsetNumeric by default."
+    },
+    {
+      "name": "var encoding: TKSmartCardPINFormat.Encoding",
+      "desc": "The encoding of PIN characters. TKSmartCardPINEncodingASCII by default."
+    },
+    {
+      "name": "var minPINLength: Int",
+      "desc": "The minimum number of characters to form a valid PIN. 4 by default."
+    },
+    {
+      "name": "var maxPINLength: Int",
+      "desc": "The maximum number of characters to form a valid PIN. 8 by default."
+    },
+    {
+      "name": "var pinBlockByteLength: Int",
+      "desc": "The total length of the PIN block in bytes. 8 by default."
+    },
+    {
+      "name": "var pinJustification: TKSmartCardPINFormat.Justification",
+      "desc": "The justification within the PIN block. TKSmartCardPINJustificationLeft by default."
+    },
+    {
+      "name": "var pinBitOffset: Int",
+      "desc": "The offset, in bits, within the PIN block to mark a location for filling in the formatted PIN, which is justified with respect to the pinJustification property value. 0 by default."
+    },
+    {
+      "name": "var pinLengthBitOffset: Int",
+      "desc": "The offset, in bits, within the PIN block to mark a location for filling in the PIN length, which is always left justified. 0 by default."
+    },
+    {
+      "name": "var pinLengthBitSize: Int",
+      "desc": "The size, in bits, of the PIN length field. If set to 0, PIN length is not written. 0 by default."
+    },
+    {
+      "name": "enum TKSmartCardPINFormat.Charset",
+      "desc": "Possible PIN character sets."
+    },
+    {
+      "name": "enum TKSmartCardPINFormat.Encoding",
+      "desc": "Possible PIN encoding types."
+    },
+    {
+      "name": "enum TKSmartCardPINFormat.Justification",
+      "desc": "Possible PIN justification types"
+    }
+  ],
+  "declaration": "class TKSmartCardPINFormat : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

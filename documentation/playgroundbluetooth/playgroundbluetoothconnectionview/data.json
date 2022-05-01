@@ -1,0 +1,69 @@
+{
+  "path": "/documentation/playgroundbluetooth/playgroundbluetoothconnectionview",
+  "type": "Class",
+  "name": "PlaygroundBluetoothConnectionView",
+  "desc": "A view that displays the connection status of a peripheral to the central manager for the current page and manages connections to other peripherals.",
+  "items": [
+    {
+      "name": "init(centralManager: PlaygroundBluetoothCentralManager, delegate: PlaygroundBluetoothConnectionViewDelegate?, dataSource: PlaygroundBluetoothConnectionViewDataSource?)",
+      "desc": "Creates a new, empty view that can be populated with items when peripherals are connected to the central manager."
+    },
+    {
+      "name": "init?(coder: NSCoder)",
+      "desc": "Creates a connection view initialized from data you supply."
+    },
+    {
+      "name": "var dataSource: PlaygroundBluetoothConnectionViewDataSource?",
+      "desc": "A data source that provides subviews for available peripherals."
+    },
+    {
+      "name": "func setItem(PlaygroundBluetoothConnectionView.Item, forPeripheral: CBPeripheral)",
+      "desc": "Sets all of the information about the specified peripheral at once."
+    },
+    {
+      "name": "struct PlaygroundBluetoothConnectionView.Item",
+      "desc": "A value that holds information about a peripheral displayed in a connection view."
+    },
+    {
+      "name": "var delegate: PlaygroundBluetoothConnectionViewDelegate?",
+      "desc": "A delegate you supply to make decisions about which peripherals are displayed in the view."
+    },
+    {
+      "name": "enum PlaygroundBluetoothConnectionView.State",
+      "desc": "The states that tell users how to proceed when connecting to and switching between peripherals in a playground page."
+    },
+    {
+      "name": "func setBatteryLevel(Double?, forPeripheral: CBPeripheral)",
+      "desc": "Displays the battery level for the specified peripheral."
+    },
+    {
+      "name": "func setFirmwareStatus(PlaygroundBluetoothConnectionView.Item.FirmwareStatus?, forPeripheral: CBPeripheral)",
+      "desc": "Displays whether or not the specified peripheral’s firmware is up-to-date."
+    },
+    {
+      "name": "func setIcon(UIImage, forPeripheral: CBPeripheral)",
+      "desc": "Displays an icon representing the specified peripheral."
+    },
+    {
+      "name": "func setIssueIcon(UIImage, forPeripheral: CBPeripheral)",
+      "desc": "Displays an icon indicating that the specified peripheral is available but may not be usable."
+    },
+    {
+      "name": "func setName(String, forPeripheral: CBPeripheral)",
+      "desc": "Displays the name of the specified peripheral."
+    }
+  ],
+  "declaration": "class PlaygroundBluetoothConnectionView : UIView",
+  "inheritsFrom": [
+    "UIView"
+  ],
+  "conformsTo": [
+    "CVarArg",
+    "Equatable",
+    "Hashable",
+    "PlaygroundLiveViewable",
+    "UIAccessibilityIdentification",
+    "UIPasteConfigurationSupporting",
+    "UIUserActivityRestoring"
+  ]
+}

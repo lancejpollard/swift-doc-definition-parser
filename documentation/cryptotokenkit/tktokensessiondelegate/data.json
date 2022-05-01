@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/cryptotokenkit/tktokensessiondelegate",
+  "type": "Protocol",
+  "name": "TKTokenSessionDelegate",
+  "desc": "The interface that a session instance delegate implements to respond to token session authentication events.",
+  "items": [
+    {
+      "name": "func tokenSession(TKTokenSession, supports: TKTokenOperation, keyObjectID: TKToken.ObjectID, algorithm: TKTokenKeyAlgorithm) -> Bool",
+      "desc": "Asks the delegate whether the token session supports a given operation using the specified key and algorithm."
+    },
+    {
+      "name": "enum TKTokenOperation",
+      "desc": "Operations that can be performed with a token's keys and certificates."
+    },
+    {
+      "name": "typealias TKToken.ObjectID",
+      "desc": "A unique and persistent identifier of a particular token object."
+    },
+    {
+      "name": "class TKTokenKeyAlgorithm",
+      "desc": "Cryptographic algorithms used by token keys."
+    },
+    {
+      "name": "func tokenSession(TKTokenSession, beginAuthFor: TKTokenOperation, constraint: Any) -> TKTokenAuthOperation",
+      "desc": "Tells the delegate that authentication has begun for the specified operation and constraint."
+    },
+    {
+      "name": "typealias TKTokenOperationConstraint",
+      "desc": "A token's authentication constraint for a specific operation."
+    },
+    {
+      "name": "class TKTokenAuthOperation",
+      "desc": "An authentication operation for a cryptographic token."
+    },
+    {
+      "name": "class TKTokenPasswordAuthOperation",
+      "desc": "A password-based authentication operation."
+    },
+    {
+      "name": "class TKTokenSmartCardPINAuthOperation",
+      "desc": "A Smart Card PIN authentication operation."
+    },
+    {
+      "name": "func tokenSession(TKTokenSession, sign: Data, keyObjectID: TKToken.ObjectID, algorithm: TKTokenKeyAlgorithm) -> Data",
+      "desc": "Tells the delegate to sign a data object using the specified key and algorithm."
+    },
+    {
+      "name": "func tokenSession(TKTokenSession, decrypt: Data, keyObjectID: TKToken.ObjectID, algorithm: TKTokenKeyAlgorithm) -> Data",
+      "desc": "Tells the delegate to decrypt a data object using the specified key and algorithm."
+    },
+    {
+      "name": "func tokenSession(TKTokenSession, performKeyExchange: Data, keyObjectID: TKToken.ObjectID, algorithm: TKTokenKeyAlgorithm, parameters: TKTokenKeyExchangeParameters) -> Data",
+      "desc": "Tells the delegate to perform a key exchange using the specified key and algorithm."
+    },
+    {
+      "name": "class TKTokenKeyExchangeParameters",
+      "desc": "Parameters used to perform specific key exchange operations."
+    }
+  ],
+  "declaration": "protocol TKTokenSessionDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

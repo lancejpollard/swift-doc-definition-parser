@@ -1,0 +1,128 @@
+{
+  "path": "/documentation/foundation/nstimezone",
+  "type": "Class",
+  "name": "NSTimeZone",
+  "desc": "Information about local time conventions that bridges to TimeZone; use NSTimeZone when you need reference semantics or other Foundation-specific behavior.",
+  "items": [
+    {
+      "name": "class var local: TimeZone",
+      "desc": "An object that tracks the current system time zone."
+    },
+    {
+      "name": "class var system: TimeZone",
+      "desc": "The time zone currently used by the system."
+    },
+    {
+      "name": "class func resetSystemTimeZone()",
+      "desc": "Clears any time zone value cached for the system property."
+    },
+    {
+      "name": "class var `default`: TimeZone",
+      "desc": "The default time zone for the current app."
+    },
+    {
+      "name": "init?(name: String)",
+      "desc": "Returns a time zone initialized with a given identifier."
+    },
+    {
+      "name": "init?(name: String, data: Data?)",
+      "desc": "Initializes a time zone with a given identifier and time zone data."
+    },
+    {
+      "name": "init?(abbreviation: String)",
+      "desc": "Returns the time zone object identified by a given abbreviation."
+    },
+    {
+      "name": "init(forSecondsFromGMT: Int)",
+      "desc": "Returns a time zone object offset from Greenwich Mean Time by a given number of seconds."
+    },
+    {
+      "name": "class var knownTimeZoneNames: [String]",
+      "desc": "Returns an array of strings listing the IDs of all the time zones known to the system."
+    },
+    {
+      "name": "class var abbreviationDictionary: [String : String]",
+      "desc": "Returns a dictionary holding the mappings of time zone abbreviations to time zone names."
+    },
+    {
+      "name": "var name: String",
+      "desc": "The geopolitical region ID that identifies the receiver."
+    },
+    {
+      "name": "var abbreviation: String?",
+      "desc": "The abbreviation for the receiver, such as “EDT” (Eastern Daylight Time)."
+    },
+    {
+      "name": "func abbreviation(for: Date) -> String?",
+      "desc": "Returns the abbreviation for the receiver at a given date."
+    },
+    {
+      "name": "var secondsFromGMT: Int",
+      "desc": "The current difference in seconds between the receiver and Greenwich Mean Time."
+    },
+    {
+      "name": "func secondsFromGMT(for: Date) -> Int",
+      "desc": "Returns the difference in seconds between the receiver and Greenwich Mean Time at a given date."
+    },
+    {
+      "name": "var data: Data",
+      "desc": "The data that stores the information used by the receiver."
+    },
+    {
+      "name": "class var timeZoneDataVersion: String",
+      "desc": "Returns the time zone data version."
+    },
+    {
+      "name": "enum NSTimeZone.NameStyle",
+      "desc": "Constants you use to specify a style when presenting time zone names."
+    },
+    {
+      "name": "var isDaylightSavingTime: Bool",
+      "desc": "A Boolean value that indicates whether the receiver is currently using daylight saving time."
+    },
+    {
+      "name": "func isDaylightSavingTime(for: Date) -> Bool",
+      "desc": "Indicates whether the receiver uses daylight saving time on a given date."
+    },
+    {
+      "name": "var daylightSavingTimeOffset: TimeInterval",
+      "desc": "The current daylight saving time offset of the receiver."
+    },
+    {
+      "name": "func daylightSavingTimeOffset(for: Date) -> TimeInterval",
+      "desc": "Returns the daylight saving time offset for a given date."
+    },
+    {
+      "name": "var nextDaylightSavingTimeTransition: Date?",
+      "desc": "The date of the next daylight saving time transition for the receiver."
+    },
+    {
+      "name": "func nextDaylightSavingTimeTransition(after: Date) -> Date?",
+      "desc": "Returns the next daylight saving time transition after a given date."
+    },
+    {
+      "name": "func isEqual(to: TimeZone) -> Bool",
+      "desc": "Indicates whether the receiver has the same name and data as the specified time zone."
+    },
+    {
+      "name": "func localizedName(NSTimeZone.NameStyle, locale: Locale?) -> String?",
+      "desc": "Returns the localized name of the time zone."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual description of the time zone including the name, abbreviation, offset from GMT, and whether or not daylight saving time is currently in effect."
+    },
+    {
+      "name": "static let NSSystemTimeZoneDidChange: NSNotification.Name",
+      "desc": "A notification posted when the time zone changes."
+    }
+  ],
+  "declaration": "class NSTimeZone : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "path": "/documentation/os/oslogmessage",
+  "type": "Structure",
+  "name": "OSLogMessage",
+  "desc": "An object that represents a log message.",
+  "items": [
+    {
+      "name": "init(extendedGraphemeClusterLiteral: String)",
+      "desc": "Creates an instance initialized to the given value."
+    },
+    {
+      "name": "init(stringInterpolation: OSLogInterpolation)",
+      "desc": "Creates a log message that contains interpolated values."
+    },
+    {
+      "name": "init(stringLiteral: String)",
+      "desc": "Creates a log message using a string literal."
+    },
+    {
+      "name": "init(unicodeScalarLiteral: String)",
+      "desc": "Creates an instance initialized to the given value."
+    },
+    {
+      "name": "typealias OSLogMessage.ExtendedGraphemeClusterLiteralType",
+      "desc": "The type that represents an extended grapheme cluster literal."
+    },
+    {
+      "name": "typealias OSLogMessage.StringInterpolation",
+      "desc": "The type that receives each segment of a string literal’s interpolations."
+    },
+    {
+      "name": "typealias OSLogMessage.StringLiteralType",
+      "desc": "The type that represents a string literal."
+    },
+    {
+      "name": "typealias OSLogMessage.UnicodeScalarLiteralType",
+      "desc": "The type that represents a Unicode scalar literal."
+    },
+    {
+      "name": "var bufferSize: Int",
+      "desc": "The byte size of the buffer that the logging system receives."
+    },
+    {
+      "name": "let interpolation: OSLogInterpolation",
+      "desc": "The log message’s string interpolation."
+    },
+    {
+      "name": "var maxOSLogArgumentCount: UInt8",
+      "desc": "The maximum number of interpolated expressions that a log message may contain."
+    }
+  ],
+  "declaration": "@frozen struct OSLogMessage",
+  "conformsTo": [
+    "ExpressibleByStringInterpolation",
+    "ExpressibleByStringLiteral"
+  ]
+}

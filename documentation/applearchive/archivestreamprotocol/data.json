@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/applearchive/archivestreamprotocol",
+  "type": "Protocol",
+  "name": "ArchiveStreamProtocol",
+  "desc": "A set of methods that defines the interface for using an archive stream that reads from and writes to data blobs.",
+  "items": [
+    {
+      "name": "func readBlob(key: ArchiveHeader.FieldKey, into: UnsafeMutableRawBufferPointer)",
+      "desc": "Reads the current entry blob data."
+    },
+    {
+      "name": "func writeBlob(key: ArchiveHeader.FieldKey, from: UnsafeRawBufferPointer)",
+      "desc": "Writes an entry blob data."
+    },
+    {
+      "name": "func readHeader() -> ArchiveHeader?",
+      "desc": "Reads the next entry header."
+    },
+    {
+      "name": "func writeHeader(ArchiveHeader)",
+      "desc": "Writes an entry header."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Cancels stream operations."
+    },
+    {
+      "name": "func close()",
+      "desc": "Closes the stream and releases associated resources."
+    }
+  ],
+  "declaration": "protocol ArchiveStreamProtocol"
+}

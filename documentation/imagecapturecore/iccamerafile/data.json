@@ -1,0 +1,124 @@
+{
+  "path": "/documentation/imagecapturecore/iccamerafile",
+  "type": "Class",
+  "name": "ICCameraFile",
+  "desc": "An object that represents a file on a camera.",
+  "items": [
+    {
+      "name": "func requestMetadataDictionary(options: [ICCameraItemMetadataOption : Any]?, completion: ([AnyHashable : Any]?, Error?) -> Void)",
+      "desc": "Requests metadata and executes the completion block in place of the delegate."
+    },
+    {
+      "name": "func requestThumbnailData(options: [ICCameraItemThumbnailOption : Any]?, completion: (Data?, Error?) -> Void)",
+      "desc": "Requests a thumbnail and executes the completion block in place of the delegate."
+    },
+    {
+      "name": "func requestDownload(options: [ICDownloadOption : Any]?, completion: (String?, Error?) -> Void) -> Progress?",
+      "desc": "Requests a download and executes the completion block in place of the delegate."
+    },
+    {
+      "name": "func requestReadData(atOffset: off_t, length: off_t, completion: (Data?, Error?) -> Void)",
+      "desc": "Requests to asynchronously read data of a specified length from a specified offset, then executes the completion block."
+    },
+    {
+      "name": "var originalFilename: String?",
+      "desc": "The original name of the file on disk."
+    },
+    {
+      "name": "var createdFilename: String?",
+      "desc": "The created name of the file."
+    },
+    {
+      "name": "var groupUUID: String?",
+      "desc": "The group UUID of the file."
+    },
+    {
+      "name": "var relatedUUID: String?",
+      "desc": "A related UUID correlating several images from an Apple device."
+    },
+    {
+      "name": "var originatingAssetID: String?",
+      "desc": "The originating asset ID of an HEIF or HVEC file."
+    },
+    {
+      "name": "var fileCreationDate: Date?",
+      "desc": "The creation date of the file."
+    },
+    {
+      "name": "var fileModificationDate: Date?",
+      "desc": "The modification date of the file."
+    },
+    {
+      "name": "var fileSize: off_t",
+      "desc": "The size of the file, in bytes."
+    },
+    {
+      "name": "var width: Int",
+      "desc": "The width of an image or movie frame."
+    },
+    {
+      "name": "var height: Int",
+      "desc": "The height of an image or movie frame."
+    },
+    {
+      "name": "var orientation: ICEXIFOrientationType",
+      "desc": "The orientation to use when downloading the image."
+    },
+    {
+      "name": "enum ICEXIFOrientationType",
+      "desc": "The file’s orientation type."
+    },
+    {
+      "name": "var exifCreationDate: Date?",
+      "desc": "The EXIF creation date of the file."
+    },
+    {
+      "name": "var exifModificationDate: Date?",
+      "desc": "The EXIF modification date of the file."
+    },
+    {
+      "name": "var gpsString: String?",
+      "desc": "The GPS String of the file in standard format."
+    },
+    {
+      "name": "var firstPicked: Bool",
+      "desc": "A Boolean value that indicates whether a file is autopicked by Photos to represent the burst."
+    },
+    {
+      "name": "var burstUUID: String?",
+      "desc": "The burst UUID of the file if it is in a burst."
+    },
+    {
+      "name": "var burstFavorite: Bool",
+      "desc": "A Boolean value that indicates this file is the burst favorite in a burst."
+    },
+    {
+      "name": "var burstPicked: Bool",
+      "desc": "A Boolean value that indicates whether this file is user picked in a burst."
+    },
+    {
+      "name": "var duration: Double",
+      "desc": "The duration, in seconds, of an audio or video file."
+    },
+    {
+      "name": "var highFramerate: Bool",
+      "desc": "A Boolean value that indicates whether the file is a slow motion or high-frame-rate video file."
+    },
+    {
+      "name": "var timeLapse: Bool",
+      "desc": "A Boolean value that indicates whether the file is a time-lapse video file."
+    },
+    {
+      "name": "var sidecarFiles: [ICCameraItem]?",
+      "desc": "An array of two camera files associated with this file."
+    },
+    {
+      "name": "var pairedRawImage: ICCameraFile?",
+      "desc": "A sidecar file containing the logical RAW compliment of a JPG or other two-format image."
+    }
+  ],
+  "declaration": "class ICCameraFile : ICCameraItem",
+  "inheritsFrom": [
+    "ICCameraItem"
+  ]
+}

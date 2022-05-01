@@ -1,0 +1,59 @@
+{
+  "path": "/documentation/forcefeedback/ffcapabilities",
+  "type": "Structure",
+  "name": "FFCAPABILITIES",
+  "desc": "Used by the FFDeviceGetForceFeedbackCapabilities method to retrieve device force-feedback capabilities.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(ffSpecVer: NumVersion, supportedEffects: UInt32, emulatedEffects: UInt32, subType: UInt32, numFfAxes: UInt32, ffAxes: (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8), storageCapacity: UInt32, playbackCapacity: UInt32, firmwareVer: NumVersion, hardwareVer: NumVersion, driverVer: NumVersion)"
+    },
+    {
+      "name": "var driverVer: NumVersion",
+      "desc": "Specifies the version number of the force-feedback device driver, using a NumVersion structure."
+    },
+    {
+      "name": "var emulatedEffects: UInt32",
+      "desc": "FFCapabilitiesEffectType flags that identify all effect types not directly supported by the device, but emulated by the plugIn."
+    },
+    {
+      "name": "var ffAxes: (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8)",
+      "desc": "An array of values that describe the axes on which force-feedback is present."
+    },
+    {
+      "name": "var ffSpecVer: NumVersion",
+      "desc": "Specifies the version number of the FF API specification supported by this plugIn. It should be specified using the fields of the NumVersion structure. The first version of the FF API specification is 1.0.0f0."
+    },
+    {
+      "name": "var firmwareVer: NumVersion",
+      "desc": "Specifies the firmware revision of the device, using a NumVersion structure."
+    },
+    {
+      "name": "var hardwareVer: NumVersion",
+      "desc": "Specifies the hardware revision of the device, using a NumVersion structure."
+    },
+    {
+      "name": "var numFfAxes: UInt32",
+      "desc": "The number of controller axes that provide force feedback. Indicates the number of valid elements in ffAxes."
+    },
+    {
+      "name": "var playbackCapacity: UInt32",
+      "desc": "The maximum number of created effects that can be simultaneously played via calls to FFEffectStart. This number will always be equal to or less than the storageCapacity. A device driver may allow more effects to be created than the physical device can actually handle. Therefore, this number is an important parameter for FF designers."
+    },
+    {
+      "name": "var storageCapacity: UInt32",
+      "desc": "The maximum number of effects that can be created via calls to FFDeviceCreateEffect and coexist at any one time. This may or may not be different from the playbackCapacity, depending on device driver complexity."
+    },
+    {
+      "name": "var subType: UInt32",
+      "desc": "The force-feedback subcategory which best identifies the device's FF capabilities."
+    },
+    {
+      "name": "var supportedEffects: UInt32",
+      "desc": "FFCapabilitiesEffectType flags that identify all effect types supported by the plugIn/device (including driver-emulated effects)."
+    }
+  ],
+  "declaration": "struct FFCAPABILITIES"
+}

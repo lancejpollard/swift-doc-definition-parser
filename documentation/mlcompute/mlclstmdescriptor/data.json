@@ -1,0 +1,71 @@
+{
+  "path": "/documentation/mlcompute/mlclstmdescriptor",
+  "type": "Class",
+  "name": "MLCLSTMDescriptor",
+  "desc": "The configuration object you use to create the LSTM layer.",
+  "items": [
+    {
+      "name": "init(inputSize: Int, hiddenSize: Int, layerCount: Int)",
+      "desc": "Creates a batch first LSTM descriptor with the input size and number of layers you specify."
+    },
+    {
+      "name": "init(inputSize: Int, hiddenSize: Int, layerCount: Int, usesBiases: Bool, isBidirectional: Bool, dropout: Float)",
+      "desc": "Creates a batch first LSTM descriptor with bias and bidirectional options you specify."
+    },
+    {
+      "name": "init(inputSize: Int, hiddenSize: Int, layerCount: Int, usesBiases: Bool, batchFirst: Bool, isBidirectional: Bool, dropout: Float)",
+      "desc": "Creates a batch first LSTM descriptor that allows you to indicate whether the input and output shape is batch first."
+    },
+    {
+      "name": "init(inputSize: Int, hiddenSize: Int, layerCount: Int, usesBiases: Bool, batchFirst: Bool, isBidirectional: Bool, returnsSequences: Bool, dropout: Float)",
+      "desc": "Creates a batch first LSTM descriptor that allows you to indicate whether the layer returns output for all sequences, or output for only the last sequence."
+    },
+    {
+      "name": "init(inputSize: Int, hiddenSize: Int, layerCount: Int, usesBiases: Bool, batchFirst: Bool, isBidirectional: Bool, returnsSequences: Bool, dropout: Float, resultMode: MLCLSTMResultMode)",
+      "desc": "Creates a descriptor with the number of features and layers, dropout, and options for use of biases, batch order, return sequences, bidirectionality, and expected tensors you specify."
+    },
+    {
+      "name": "var batchFirst: Bool",
+      "desc": "A Boolean that indicates whether the input and output shape is batch first."
+    },
+    {
+      "name": "var dropout: Float",
+      "desc": "The dropout probability."
+    },
+    {
+      "name": "var hiddenSize: Int",
+      "desc": "The number of features in the hidden state."
+    },
+    {
+      "name": "var inputSize: Int",
+      "desc": "The number of expected features in the input."
+    },
+    {
+      "name": "var isBidirectional: Bool",
+      "desc": "A Boolean that indicates whether the layer is bidirectional."
+    },
+    {
+      "name": "var layerCount: Int",
+      "desc": "The number of recurrent layers."
+    },
+    {
+      "name": "var resultMode: MLCLSTMResultMode",
+      "desc": "The mode that indicates whether the layer produces a single result tensor or three result tensors — final output, last hidden state, and the cell state."
+    },
+    {
+      "name": "var returnsSequences: Bool",
+      "desc": "A Boolean that indicates whether the layer returns output for all sequences."
+    },
+    {
+      "name": "var usesBiases: Bool",
+      "desc": "A Boolean that indicates whether you use bias weights."
+    }
+  ],
+  "declaration": "class MLCLSTMDescriptor : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

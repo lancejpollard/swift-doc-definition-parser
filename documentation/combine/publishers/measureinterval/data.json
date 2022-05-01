@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/combine/publishers/measureinterval",
+  "type": "Structure",
+  "name": "Publishers.MeasureInterval",
+  "desc": "A publisher that measures and emits the time interval between events received from an upstream publisher.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, scheduler: Context)",
+      "desc": "Creates a publisher that measures and emits the time interval between events received from an upstream publisher."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    },
+    {
+      "name": "let scheduler: Context",
+      "desc": "The scheduler used for tracking the timing of events."
+    }
+  ],
+  "declaration": "struct MeasureInterval<Upstream, Context> where Upstream : Publisher, Context : Scheduler",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

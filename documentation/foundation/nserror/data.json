@@ -1,0 +1,131 @@
+{
+  "path": "/documentation/foundation/nserror",
+  "type": "Class",
+  "name": "NSError",
+  "desc": "Information about an error condition including a domain, a domain-specific error code, and application-specific information.",
+  "items": [
+    {
+      "name": "init(domain: String, code: Int, userInfo: [String : Any]?)",
+      "desc": "Returns an NSError object initialized for a given domain and code with a given userInfo dictionary."
+    },
+    {
+      "name": "var code: Int",
+      "desc": "The error code."
+    },
+    {
+      "name": "var domain: String",
+      "desc": "A string containing the error domain."
+    },
+    {
+      "name": "var userInfo: [String : Any]",
+      "desc": "The user info dictionary."
+    },
+    {
+      "name": "var localizedDescription: String",
+      "desc": "A string containing the localized description of the error."
+    },
+    {
+      "name": "var localizedRecoveryOptions: [String]?",
+      "desc": "An array containing the localized titles of buttons appropriate for displaying in an alert panel."
+    },
+    {
+      "name": "var localizedRecoverySuggestion: String?",
+      "desc": "A string containing the localized recovery suggestion for the error."
+    },
+    {
+      "name": "var localizedFailureReason: String?",
+      "desc": "A string containing the localized explanation of the reason for the error."
+    },
+    {
+      "name": "class func setUserInfoValueProvider(forDomain: String, provider: ((Error, String) -> Any?)?)",
+      "desc": "Specifies a block to call when the corresponding property is not present in the user info dictionary."
+    },
+    {
+      "name": "class func userInfoValueProvider(forDomain: String) -> ((Error, String) -> Any?)?",
+      "desc": "Returns any user info provider specified for a given error domain."
+    },
+    {
+      "name": "struct ErrorUserInfoKey",
+      "desc": "These keys may exist in the user info dictionary."
+    },
+    {
+      "name": "var recoveryAttempter: Any?",
+      "desc": "The object in the user info dictionary corresponding to the NSRecoveryAttempterErrorKey key."
+    },
+    {
+      "name": "var helpAnchor: String?",
+      "desc": "A string to display in response to an alert panel help anchor button being pressed."
+    },
+    {
+      "name": "typealias ErrorPointer"
+    },
+    {
+      "name": "typealias NSErrorPointer"
+    },
+    {
+      "name": "typealias NSErrorDomain"
+    },
+    {
+      "name": "let NSCocoaErrorDomain: String",
+      "desc": "Cocoa errors"
+    },
+    {
+      "name": "let NSPOSIXErrorDomain: String",
+      "desc": "POSIX/BSD errors"
+    },
+    {
+      "name": "let NSOSStatusErrorDomain: String",
+      "desc": "Mac OS 9/Carbon errors"
+    },
+    {
+      "name": "let NSMachErrorDomain: String",
+      "desc": "Mach errors"
+    },
+    {
+      "name": "let NSURLErrorDomain: String",
+      "desc": "URL loading system errors"
+    },
+    {
+      "name": "let NSStreamSOCKSErrorDomain: String",
+      "desc": "The error domain used by NSError when reporting SOCKS errors."
+    },
+    {
+      "name": "let NSStreamSocketSSLErrorDomain: String",
+      "desc": "The error domain used by NSError when reporting SSL errors."
+    },
+    {
+      "name": "struct CocoaError",
+      "desc": "Describes errors within the Cocoa error domain."
+    },
+    {
+      "name": "struct MachError",
+      "desc": "Describes an error in the Mach error domain."
+    },
+    {
+      "name": "struct POSIXError",
+      "desc": "Describes an error in the POSIX error domain."
+    },
+    {
+      "name": "var underlyingErrors: [Error]"
+    },
+    {
+      "name": "class func fileProviderErrorForCollision(with: NSFileProviderItem) -> Self",
+      "desc": "Returns a properly formatted error object with a NSFileProviderItemCollisionError error code."
+    },
+    {
+      "name": "class func fileProviderErrorForNonExistentItem(withIdentifier: NSFileProviderItemIdentifier) -> Self"
+    },
+    {
+      "name": "class func fileProviderErrorForRejectedDeletion(of: NSFileProviderItem) -> Self"
+    }
+  ],
+  "declaration": "class NSError : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "Error",
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

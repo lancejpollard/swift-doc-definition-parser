@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/combine/publishers/catch",
+  "type": "Structure",
+  "name": "Publishers.Catch",
+  "desc": "A publisher that handles errors from an upstream publisher by replacing the failed publisher with another publisher.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, handler: (Upstream.Failure) -> NewPublisher)",
+      "desc": "Creates a publisher that handles errors from an upstream publisher by replacing the failed publisher with another publisher."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives its elements."
+    },
+    {
+      "name": "let handler: (Upstream.Failure) -> NewPublisher",
+      "desc": "A closure that accepts the upstream failure as input and returns a publisher to replace the upstream publisher."
+    }
+  ],
+  "declaration": "struct Catch<Upstream, NewPublisher> where Upstream : Publisher, NewPublisher : Publisher, Upstream.Output == NewPublisher.Output",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

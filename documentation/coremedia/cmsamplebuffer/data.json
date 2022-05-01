@@ -1,0 +1,192 @@
+{
+  "path": "/documentation/coremedia/cmsamplebuffer",
+  "type": "Class",
+  "name": "CMSampleBuffer",
+  "desc": "An object that models a buffer of media data.",
+  "items": [
+    {
+      "name": "var dataReadiness: CMSampleBuffer.DataReadiness",
+      "desc": "A value that indicates the status of the data the sample buffer contains."
+    },
+    {
+      "name": "func setDataReadiness(CMSampleBuffer.DataReadiness)",
+      "desc": "Sets the status of the sample buffer’s data."
+    },
+    {
+      "name": "enum CMSampleBuffer.DataReadiness",
+      "desc": "Constants that indicate the readiness of a sample buffer’s data."
+    },
+    {
+      "name": "func makeDataReady()",
+      "desc": "Makes the sample buffer’s data ready for use by calling its handler closure."
+    },
+    {
+      "name": "func trackDataReadiness(CMSampleBuffer)",
+      "desc": "Associates a sample buffer’s data readiness with that of another sample buffer."
+    },
+    {
+      "name": "var isValid: Bool",
+      "desc": "A Boolean value that indicates whether the sample buffer is valid."
+    },
+    {
+      "name": "func setInvalidateHandler((CMSampleBuffer) -> Void)",
+      "desc": "Sets a closure for the sample buffer to call when it’s invalidated."
+    },
+    {
+      "name": "func invalidate()",
+      "desc": "Invalidates a sample buffer by calling its invalidation handler."
+    },
+    {
+      "name": "var numSamples: Int",
+      "desc": "The number of media samples the buffer contains."
+    },
+    {
+      "name": "func sampleSizes() -> [Int]",
+      "desc": "Retrieves an array of sample sizes that represents each sample in a sample buffer."
+    },
+    {
+      "name": "func sampleSize(at: Int) -> Int",
+      "desc": "Returns the size of a sample in bytes."
+    },
+    {
+      "name": "var totalSampleSize: Int",
+      "desc": "The total size in bytes of sample data in the buffer."
+    },
+    {
+      "name": "var duration: CMTime",
+      "desc": "The total duration of a sample buffer."
+    },
+    {
+      "name": "var decodeTimeStamp: CMTime",
+      "desc": "The decode timestamp of the first sample in the buffer."
+    },
+    {
+      "name": "var presentationTimeStamp: CMTime",
+      "desc": "The sample presentation timestamp that’s the earliest numerically in the sample buffer."
+    },
+    {
+      "name": "var outputDuration: CMTime",
+      "desc": "The output duration of the sample buffer."
+    },
+    {
+      "name": "var outputDecodeTimeStamp: CMTime",
+      "desc": "The output decode timestamp for a sample buffer."
+    },
+    {
+      "name": "var outputPresentationTimeStamp: CMTime",
+      "desc": "The output presentation timestamp of a sample buffer."
+    },
+    {
+      "name": "func setOutputPresentationTimeStamp(CMTime)",
+      "desc": "Sets an output presentation timestamp to use in place of a calculated value."
+    },
+    {
+      "name": "func sampleTimingInfos() -> [CMSampleTimingInfo]",
+      "desc": "Retrieves an array of sample timing information structures that represents each sample in a sample buffer."
+    },
+    {
+      "name": "func sampleTimingInfo(at: CMItemIndex) -> CMSampleTimingInfo",
+      "desc": "Returns sample timing information for a sample at the specified index."
+    },
+    {
+      "name": "func outputSampleTimingInfos() -> [CMSampleTimingInfo]",
+      "desc": "Retrieves an array of output sample timing information structures that represents each sample in a sample buffer."
+    },
+    {
+      "name": "var formatDescription: CMFormatDescription?",
+      "desc": "An object that describes the details of the media data."
+    },
+    {
+      "name": "var dataBuffer: CMBlockBuffer?",
+      "desc": "A block buffer that contains the media data."
+    },
+    {
+      "name": "func setDataBuffer(CMBlockBuffer)",
+      "desc": "Associates a block buffer of media data with a sample buffer."
+    },
+    {
+      "name": "var imageBuffer: CVImageBuffer?",
+      "desc": "An image buffer that contains the media data."
+    },
+    {
+      "name": "func withAudioBufferList<R>(blockBufferMemoryAllocator: CFAllocator?, flags: CMSampleBuffer.Flags, body: (UnsafeMutableAudioBufferListPointer, CMBlockBuffer) -> R) -> R",
+      "desc": "Calls a closure with an audio buffer list that contains the data from a sample buffer and a block buffer backing the audio buffers."
+    },
+    {
+      "name": "func setDataBuffer(fromAudioBufferList: UnsafePointer<AudioBufferList>, blockBufferMemoryAllocator: CFAllocator?, flags: CMSampleBuffer.Flags)",
+      "desc": "Creates a block buffer that contains a copy of the data from an audio buffer list, and sets it as the sample buffer’s data."
+    },
+    {
+      "name": "func copyPCMData(fromRange: Range<Int>, into: UnsafeMutablePointer<AudioBufferList>)",
+      "desc": "Copies PCM audio data from a sample buffer into a prepopulated audio buffer list."
+    },
+    {
+      "name": "func audioStreamPacketDescriptions() -> [AudioStreamPacketDescription]",
+      "desc": "Creates an array of audio stream packet descriptions for the variable bytes per packet or variable frames per packet audio data in a sample buffer."
+    },
+    {
+      "name": "func withUnsafeAudioStreamPacketDescriptions<R>((UnsafeBufferPointer<AudioStreamPacketDescription>) -> R) -> R",
+      "desc": "Calls a closure with an audio stream packet description."
+    },
+    {
+      "name": "func singleSampleBuffers() -> CMSampleBuffer.SingleSampleBuffers",
+      "desc": "Returns all samples in a sample buffer."
+    },
+    {
+      "name": "struct CMSampleBuffer.SingleSampleBuffers",
+      "desc": "A structure that holds all samples in a sample buffer."
+    },
+    {
+      "name": "var attachments: CMAttachmentBearerAttachments",
+      "desc": "The attachments for this sample buffer."
+    },
+    {
+      "name": "func propagateAttachments<T>(to: T)",
+      "desc": "Copies all propagatable attachments from one attachment bearer to another."
+    },
+    {
+      "name": "struct CMSampleBuffer.AttachmentKey",
+      "desc": "Keys that identify sample buffer attachments."
+    },
+    {
+      "name": "var sampleAttachments: CMSampleBuffer.SampleAttachmentsArray",
+      "desc": "An array of sample attachments."
+    },
+    {
+      "name": "struct CMSampleBuffer.SampleAttachmentsArray",
+      "desc": "A structure that defines an array of sample attachments."
+    },
+    {
+      "name": "struct CMSampleBuffer.PerSampleAttachmentsDictionary",
+      "desc": "A structure that defines keys to identify per-sample attachments."
+    },
+    {
+      "name": "static var typeID: CFTypeID",
+      "desc": "Returns the type identifier of sample buffer objects."
+    },
+    {
+      "name": "struct CMSampleBuffer.Error",
+      "desc": "A structure that defines errors that occur during framework operations."
+    },
+    {
+      "name": "struct CMSampleBuffer.Flags",
+      "desc": "Flags that customize the behavior of framework operations."
+    },
+    {
+      "name": "struct CMSampleBuffer.NotificationKey",
+      "desc": "A key for sample buffer notifications."
+    },
+    {
+      "name": "static let dataBecameReady: NSNotification.Name",
+      "desc": "A notification the system posts when a sample buffer’s data becomes ready."
+    },
+    {
+      "name": "static let dataFailed: NSNotification.Name",
+      "desc": "A notification the system posts when a sample buffer fails to load its data."
+    }
+  ],
+  "declaration": "class CMSampleBuffer",
+  "conformsTo": [
+    "CMAttachmentBearerProtocol"
+  ]
+}

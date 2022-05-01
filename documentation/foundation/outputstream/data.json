@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/foundation/outputstream",
+  "type": "Class",
+  "name": "OutputStream",
+  "desc": "A stream that provides write-only stream functionality.",
+  "items": [
+    {
+      "name": "class func toMemory() -> Self",
+      "desc": "Creates and returns an initialized output stream that will write stream data to memory."
+    },
+    {
+      "name": "init(toMemory: ())",
+      "desc": "Returns an initialized output stream that will write to memory."
+    },
+    {
+      "name": "init(toBuffer: UnsafeMutablePointer<UInt8>, capacity: Int)",
+      "desc": "Returns an initialized output stream that can write to a provided buffer."
+    },
+    {
+      "name": "init?(toFileAtPath: String, append: Bool)",
+      "desc": "Returns an initialized output stream for writing to a specified file."
+    },
+    {
+      "name": "init?(url: URL, append: Bool)",
+      "desc": "Returns an initialized output stream for writing to a specified URL."
+    },
+    {
+      "name": "var hasSpaceAvailable: Bool",
+      "desc": "A boolean value that indicates whether the receiver can be written to."
+    },
+    {
+      "name": "func write(UnsafePointer<UInt8>, maxLength: Int) -> Int",
+      "desc": "Writes the contents of a provided data buffer to the receiver."
+    }
+  ],
+  "declaration": "class OutputStream : Stream",
+  "inheritsFrom": [
+    "Stream"
+  ]
+}

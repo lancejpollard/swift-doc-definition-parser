@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/sirikit/inaddtasksintenthandling",
+  "type": "Protocol",
+  "name": "INAddTasksIntentHandling",
+  "desc": "The handler interface for adding tasks to a task list.",
+  "items": [
+    {
+      "name": "func resolveTargetTaskList(for: INAddTasksIntent, with: (INAddTasksTargetTaskListResolutionResult) -> Void)",
+      "desc": "Resolves the task list to receive the new tasks."
+    },
+    {
+      "name": "func resolveTaskTitles(for: INAddTasksIntent, with: ([INSpeakableStringResolutionResult]) -> Void)",
+      "desc": "Resolves the titles for the tasks."
+    },
+    {
+      "name": "func resolveSpatialEventTrigger(for: INAddTasksIntent, with: (INSpatialEventTriggerResolutionResult) -> Void)",
+      "desc": "Resolves the location-based trigger associated with the new tasks."
+    },
+    {
+      "name": "func resolveTemporalEventTrigger(for: INAddTasksIntent, with: (INAddTasksTemporalEventTriggerResolutionResult) -> Void)",
+      "desc": "Resolves the time-based trigger associated with the new tasks."
+    },
+    {
+      "name": "func resolvePriority(for: INAddTasksIntent, with: (INTaskPriorityResolutionResult) -> Void)",
+      "desc": "Resolves the priority associated with the new tasks."
+    },
+    {
+      "name": "func confirm(intent: INAddTasksIntent, completion: (INAddTasksIntentResponse) -> Void)",
+      "desc": "Confirms whether you can add the tasks to the task list."
+    },
+    {
+      "name": "func handle(intent: INAddTasksIntent, completion: (INAddTasksIntentResponse) -> Void)",
+      "desc": "Handles the creation of a task list."
+    }
+  ],
+  "declaration": "protocol INAddTasksIntentHandling",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

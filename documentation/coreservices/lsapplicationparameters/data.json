@@ -1,0 +1,43 @@
+{
+  "path": "/documentation/coreservices/lsapplicationparameters",
+  "type": "Structure",
+  "name": "LSApplicationParameters",
+  "desc": "The specification that defines the app, launch flags, and additional parameters that control how an app launches.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(version: CFIndex, flags: LSLaunchFlags, application: UnsafePointer<FSRef>!, asyncLaunchRefCon: UnsafeMutableRawPointer!, environment: Unmanaged<CFDictionary>!, argv: Unmanaged<CFArray>!, initialEvent: UnsafeMutablePointer<AppleEvent>!)"
+    },
+    {
+      "name": "var application: UnsafePointer<FSRef>!",
+      "desc": "The FSRef ofthe application to open."
+    },
+    {
+      "name": "var argv: Unmanaged<CFArray>!",
+      "desc": "An array of values of type CFString that specify the arguments that are to be passed to main() in the launched process. The value of this field can be NULL. This field is ignored in macOS 10.4."
+    },
+    {
+      "name": "var asyncLaunchRefCon: UnsafeMutableRawPointer!",
+      "desc": "The client refCon thatis to appear in subsequent launch notifications."
+    },
+    {
+      "name": "var environment: Unmanaged<CFDictionary>!",
+      "desc": "A dictionary of CFStringRef keysand values for environment variables to set in the launched process.The value of this field can be NULL."
+    },
+    {
+      "name": "var flags: LSLaunchFlags",
+      "desc": "Launch flags. For possible values, see LSLaunchFlags."
+    },
+    {
+      "name": "var initialEvent: UnsafeMutablePointer<AppleEvent>!",
+      "desc": "The first Apple Event to send to the launchedprocess. The value of this field can be NULL."
+    },
+    {
+      "name": "var version: CFIndex",
+      "desc": "The version of the structure. The value of thisfield must be 0."
+    }
+  ],
+  "declaration": "struct LSApplicationParameters"
+}

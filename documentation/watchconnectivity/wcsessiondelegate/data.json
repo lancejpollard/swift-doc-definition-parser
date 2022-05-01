@@ -1,0 +1,72 @@
+{
+  "path": "/documentation/watchconnectivity/wcsessiondelegate",
+  "type": "Protocol",
+  "name": "WCSessionDelegate",
+  "desc": "A delegate protocol that defines methods for receiving messages sent by a WCSession object.",
+  "items": [
+    {
+      "name": "func session(WCSession, activationDidCompleteWith: WCSessionActivationState, error: Error?)",
+      "desc": "Tells the delegate that the session has finished activating."
+    },
+    {
+      "name": "func sessionDidBecomeInactive(WCSession)",
+      "desc": "Tells the delegate that the session will stop communicating with the current Apple Watch."
+    },
+    {
+      "name": "func sessionDidDeactivate(WCSession)",
+      "desc": "Tells the delegate that the session has delivered all the data from the previous session, and that communication with the Apple Watch has ended."
+    },
+    {
+      "name": "func sessionWatchStateDidChange(WCSession)",
+      "desc": "Indicates a change to the counterpart’s information."
+    },
+    {
+      "name": "func sessionReachabilityDidChange(WCSession)",
+      "desc": "Indicates a change to the counterpart’s reachability status."
+    },
+    {
+      "name": "func sessionCompanionAppInstalledDidChange(WCSession)",
+      "desc": "Indicates a change to the companion app’s installed state."
+    },
+    {
+      "name": "func session(WCSession, didReceiveApplicationContext: [String : Any])",
+      "desc": "Tells the delegate that the session has received context data from the counterpart."
+    },
+    {
+      "name": "func session(WCSession, didReceiveMessage: [String : Any])",
+      "desc": "Tells the delegate that an immediate message has arrived."
+    },
+    {
+      "name": "func session(WCSession, didReceiveMessage: [String : Any], replyHandler: ([String : Any]) -> Void)",
+      "desc": "Tells the delegate that an immediate message has arrived, and it requires a response."
+    },
+    {
+      "name": "func session(WCSession, didReceiveMessageData: Data)",
+      "desc": "Tells the delegate that an immediate data message has arrived."
+    },
+    {
+      "name": "func session(WCSession, didReceiveMessageData: Data, replyHandler: (Data) -> Void)",
+      "desc": "Tells the delegate that an immediate data message has arrived, and it requires a response."
+    },
+    {
+      "name": "func session(WCSession, didReceiveUserInfo: [String : Any])",
+      "desc": "Tells the delegate that the session successfully received a data directory from its counterpart."
+    },
+    {
+      "name": "func session(WCSession, didFinish: WCSessionUserInfoTransfer, error: Error?)",
+      "desc": "Tells the delegate that a data transfer operation has finished successfully or ended because of an error."
+    },
+    {
+      "name": "func session(WCSession, didReceive: WCSessionFile)",
+      "desc": "Tells the delegate that the session successfully received a file from its counterpart."
+    },
+    {
+      "name": "func session(WCSession, didFinish: WCSessionFileTransfer, error: Error?)",
+      "desc": "Tells the delegate that a file transfer has finished successfully or ended because of an error."
+    }
+  ],
+  "declaration": "protocol WCSessionDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

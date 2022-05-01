@@ -1,0 +1,196 @@
+{
+  "path": "/documentation/coregraphics/cgrect",
+  "type": "Structure",
+  "name": "CGRect",
+  "desc": "A structure that contains the location and dimensions of a rectangle.",
+  "items": [
+    {
+      "name": "init(origin: CGPoint, size: CGSize)",
+      "desc": "Creates a rectangle with the specified origin and size."
+    },
+    {
+      "name": "init(x: Double, y: Double, width: Double, height: Double)",
+      "desc": "Creates a rectangle with coordinates and dimensions specified as floating-point values."
+    },
+    {
+      "name": "init(x: Int, y: Int, width: Int, height: Int)",
+      "desc": "Creates a rectangle with coordinates and dimensions specified as integer values."
+    },
+    {
+      "name": "init(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat)",
+      "desc": "Creates a rectangle with coordinates and dimensions specified as CGFloat values."
+    },
+    {
+      "name": "static let infinite: CGRect",
+      "desc": "A rectangle that has infinite extent."
+    },
+    {
+      "name": "static let null: CGRect",
+      "desc": "The null rectangle, representing an invalid value."
+    },
+    {
+      "name": "static var zero: CGRect",
+      "desc": "The rectangle whose origin and size are both zero."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates a rectangle with origin (0,0) and size (0,0)."
+    },
+    {
+      "name": "var origin: CGPoint",
+      "desc": "A point that specifies the coordinates of the rectangle’s origin."
+    },
+    {
+      "name": "var size: CGSize",
+      "desc": "A size that specifies the height and width of the rectangle."
+    },
+    {
+      "name": "var height: CGFloat",
+      "desc": "Returns the height of a rectangle."
+    },
+    {
+      "name": "var width: CGFloat",
+      "desc": "Returns the width of a rectangle."
+    },
+    {
+      "name": "var minX: CGFloat",
+      "desc": "Returns the smallest value for the x-coordinate of the rectangle."
+    },
+    {
+      "name": "var midX: CGFloat",
+      "desc": "Returns the x- coordinate that establishes the center of a rectangle."
+    },
+    {
+      "name": "var maxX: CGFloat",
+      "desc": "Returns the largest value of the x-coordinate for the rectangle."
+    },
+    {
+      "name": "var minY: CGFloat",
+      "desc": "Returns the smallest value for the y-coordinate of the rectangle."
+    },
+    {
+      "name": "var midY: CGFloat",
+      "desc": "Returns the y-coordinate that establishes the center of the rectangle."
+    },
+    {
+      "name": "var maxY: CGFloat",
+      "desc": "Returns the largest value for the y-coordinate of the rectangle."
+    },
+    {
+      "name": "var standardized: CGRect",
+      "desc": "Returns a rectangle with a positive width and height."
+    },
+    {
+      "name": "var integral: CGRect",
+      "desc": "Returns the smallest rectangle that results from converting the source rectangle values to integers."
+    },
+    {
+      "name": "func applying(CGAffineTransform) -> CGRect",
+      "desc": "Applies an affine transform to a rectangle."
+    },
+    {
+      "name": "func insetBy(dx: CGFloat, dy: CGFloat) -> CGRect",
+      "desc": "Returns a rectangle that is smaller or larger than the source rectangle, with the same center point."
+    },
+    {
+      "name": "func offsetBy(dx: CGFloat, dy: CGFloat) -> CGRect",
+      "desc": "Returns a rectangle with an origin that is offset from that of the source rectangle."
+    },
+    {
+      "name": "func union(CGRect) -> CGRect",
+      "desc": "Returns the smallest rectangle that contains the two source rectangles."
+    },
+    {
+      "name": "func intersection(CGRect) -> CGRect",
+      "desc": "Returns the intersection of two rectangles."
+    },
+    {
+      "name": "func divided(atDistance: CGFloat, from: CGRectEdge) -> (slice: CGRect, remainder: CGRect)",
+      "desc": "Creates two rectangles by dividing the original rectangle."
+    },
+    {
+      "name": "enum CGRectEdge",
+      "desc": "Coordinates that establish the edges of a rectangle."
+    },
+    {
+      "name": "func intersects(CGRect) -> Bool",
+      "desc": "Returns whether two rectangles intersect."
+    },
+    {
+      "name": "func contains(CGPoint) -> Bool",
+      "desc": "Returns whether a rectangle contains a specified point."
+    },
+    {
+      "name": "func contains(CGRect) -> Bool",
+      "desc": "Returns whether the first rectangle contains the second rectangle."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "Returns whether a rectangle has zero width or height, or is a null rectangle."
+    },
+    {
+      "name": "var isInfinite: Bool",
+      "desc": "Returns whether a rectangle is infinite."
+    },
+    {
+      "name": "var isNull: Bool",
+      "desc": "Returns whether the rectangle is equal to the null rectangle."
+    },
+    {
+      "name": "var dictionaryRepresentation: CFDictionary",
+      "desc": "Returns a dictionary representation of the provided rectangle."
+    },
+    {
+      "name": "init?(dictionaryRepresentation: CFDictionary)",
+      "desc": "Creates a rectangle from a canonical dictionary representation."
+    },
+    {
+      "name": "var debugDescription: String"
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A representation of the rectangle’s structure and display style for use in debugging."
+    },
+    {
+      "name": "func equalTo(CGRect) -> Bool",
+      "desc": "Returns whether two rectangles are equal in size and position."
+    },
+    {
+      "name": "typealias CGRect.AnimatableData"
+    },
+    {
+      "name": "init(from: Decoder)"
+    },
+    {
+      "name": "var animatableData: CGRect.AnimatableData"
+    },
+    {
+      "name": "func clip()"
+    },
+    {
+      "name": "func encode(to: Encoder)"
+    },
+    {
+      "name": "func fill(using: NSCompositingOperation)"
+    },
+    {
+      "name": "func frame(withWidth: CGFloat, using: NSCompositingOperation)"
+    },
+    {
+      "name": "func inset(by: UIEdgeInsets) -> CGRect",
+      "desc": "Adjusts a rectangle by the given edge insets."
+    },
+    {
+      "name": "static func == (CGRect, CGRect) -> Bool"
+    }
+  ],
+  "declaration": "struct CGRect",
+  "conformsTo": [
+    "Animatable",
+    "CustomDebugStringConvertible",
+    "CustomReflectable",
+    "Decodable",
+    "Encodable",
+    "Equatable"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "path": "/documentation/foundation/timer",
+  "type": "Class",
+  "name": "Timer",
+  "desc": "A timer that fires after a certain time interval has elapsed, sending a specified message to a target object.",
+  "items": [
+    {
+      "name": "class func scheduledTimer(withTimeInterval: TimeInterval, repeats: Bool, block: (Timer) -> Void) -> Timer",
+      "desc": "Creates a timer and schedules it on the current run loop in the default mode."
+    },
+    {
+      "name": "class func scheduledTimer(timeInterval: TimeInterval, target: Any, selector: Selector, userInfo: Any?, repeats: Bool) -> Timer",
+      "desc": "Creates a timer and schedules it on the current run loop in the default mode."
+    },
+    {
+      "name": "class func scheduledTimer(timeInterval: TimeInterval, invocation: NSInvocation, repeats: Bool) -> Timer",
+      "desc": "Creates a new timer and schedules it on the current run loop in the default mode."
+    },
+    {
+      "name": "init(timeInterval: TimeInterval, repeats: Bool, block: (Timer) -> Void)",
+      "desc": "Initializes a timer object with the specified time interval and block."
+    },
+    {
+      "name": "init(timeInterval: TimeInterval, target: Any, selector: Selector, userInfo: Any?, repeats: Bool)",
+      "desc": "Initializes a timer object with the specified object and selector."
+    },
+    {
+      "name": "init(timeInterval: TimeInterval, invocation: NSInvocation, repeats: Bool)",
+      "desc": "Initializes a timer object with the specified invocation object."
+    },
+    {
+      "name": "init(fire: Date, interval: TimeInterval, repeats: Bool, block: (Timer) -> Void)",
+      "desc": "Initializes a timer for the specified date and time interval with the specified block."
+    },
+    {
+      "name": "init(fireAt: Date, interval: TimeInterval, target: Any, selector: Selector, userInfo: Any?, repeats: Bool)",
+      "desc": "Initializes a timer using the specified object and selector."
+    },
+    {
+      "name": "func fire()",
+      "desc": "Causes the timer's message to be sent to its target."
+    },
+    {
+      "name": "func invalidate()",
+      "desc": "Stops the timer from ever firing again and requests its removal from its run loop."
+    },
+    {
+      "name": "var isValid: Bool",
+      "desc": "A Boolean value that indicates whether the timer is currently valid."
+    },
+    {
+      "name": "var fireDate: Date",
+      "desc": "The date at which the timer will fire."
+    },
+    {
+      "name": "var timeInterval: TimeInterval",
+      "desc": "The timer’s time interval, in seconds."
+    },
+    {
+      "name": "var userInfo: Any?",
+      "desc": "The receiver's userInfo object."
+    },
+    {
+      "name": "var tolerance: TimeInterval",
+      "desc": "The amount of time after the scheduled fire date that the timer may fire."
+    },
+    {
+      "name": "static func publish(every: TimeInterval, tolerance: TimeInterval?, on: RunLoop, in: RunLoop.Mode, options: RunLoop.SchedulerOptions?) -> Timer.TimerPublisher",
+      "desc": "Returns a publisher that repeatedly emits the current date on the given interval."
+    },
+    {
+      "name": "class Timer.TimerPublisher",
+      "desc": "A publisher that repeatedly emits the current date on a given interval."
+    }
+  ],
+  "declaration": "class Timer : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

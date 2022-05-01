@@ -1,0 +1,51 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsmatrixneurongradient",
+  "type": "Class",
+  "name": "MPSMatrixNeuronGradient",
+  "desc": "A gradient neuron activation kernel that operates on matrices.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice)"
+    },
+    {
+      "name": "var alpha: Double"
+    },
+    {
+      "name": "var sourceInputFeatureChannels: Int"
+    },
+    {
+      "name": "var sourceNumberOfFeatureVectors: Int"
+    },
+    {
+      "name": "func copy(with: NSZone?, device: MTLDevice?) -> Self"
+    },
+    {
+      "name": "func encode(to: MTLCommandBuffer, gradientMatrix: MPSMatrix, inputMatrix: MPSMatrix, biasVector: MPSVector?, resultGradientForDataMatrix: MPSMatrix, resultGradientForBiasVector: MPSVector?)"
+    },
+    {
+      "name": "func neuronParameterA() -> Float"
+    },
+    {
+      "name": "func neuronParameterB() -> Float"
+    },
+    {
+      "name": "func neuronParameterC() -> Float"
+    },
+    {
+      "name": "func neuronType() -> MPSCNNNeuronType"
+    },
+    {
+      "name": "func setNeuronToPReLUWithParametersA(Data)"
+    },
+    {
+      "name": "func setNeuronType(MPSCNNNeuronType, parameterA: Float, parameterB: Float, parameterC: Float)"
+    }
+  ],
+  "declaration": "class MPSMatrixNeuronGradient : MPSMatrixBinaryKernel",
+  "inheritsFrom": [
+    "MPSMatrixBinaryKernel"
+  ]
+}

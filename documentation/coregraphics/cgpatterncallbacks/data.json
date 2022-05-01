@@ -1,0 +1,27 @@
+{
+  "path": "/documentation/coregraphics/cgpatterncallbacks",
+  "type": "Structure",
+  "name": "CGPatternCallbacks",
+  "desc": "A structure that holds a version and two callback functions for drawing a custom pattern.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(version: UInt32, drawPattern: CGPatternDrawPatternCallback?, releaseInfo: CGPatternReleaseInfoCallback?)"
+    },
+    {
+      "name": "var drawPattern: CGPatternDrawPatternCallback?",
+      "desc": "A pointer to a custom function that draws thepattern. For information about this callback function, see CGPatternDrawPatternCallback."
+    },
+    {
+      "name": "var releaseInfo: CGPatternReleaseInfoCallback?",
+      "desc": "An optional pointer to a custom function that’sinvoked when the pattern is released. CGPatternReleaseInfoCallback."
+    },
+    {
+      "name": "var version: UInt32",
+      "desc": "The version of the structure passed in as a parameterto the init(info:bounds:matrix:xStep:yStep:tiling:isColored:callbacks:). Forthis version of the structure, you should set this value to zero."
+    }
+  ],
+  "declaration": "struct CGPatternCallbacks"
+}

@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/applepaywebmerchantregistrationapi/registermerchantrequest",
+  "type": "Object",
+  "name": "RegisterMerchantRequest",
+  "desc": "The request body you use to register merchants.",
+  "items": [
+    {
+      "name": "domainNames",
+      "desc": "A list of fully qualified domain names for which Apple Pay will process payments for this merchant. Items must be unique. The API is limited to 99 domain names per request."
+    },
+    {
+      "name": "encryptTo",
+      "desc": "The merchant ID associated with the payment processing certificate Apple Pay will use to encrypt payment data on behalf of the merchant you’re registering. Typically, use the merchant ID of the calling e-commerce platform. If the Apple Pay data is decrypted by a party other than the e-commerce platform, use their merchant ID."
+    },
+    {
+      "name": "merchantUrl",
+      "desc": "An optional field in which you provide the website’s top-level domain. This domain doesn’t have to be affiliated with the payment transaction nor is it verified; it’s returned in Get Merchant Details."
+    },
+    {
+      "name": "partnerInternalMerchantIdentifier",
+      "desc": "A unique identifier that you create for the merchant you’re registering. Each merchant your e-commerce platform serves must have a unique identifier. This is the same identifier that you pass as the merchantIdentifier field into canMakePaymentsWithActiveCard and when requesting and Apple Pay payment session. For more information, see Requesting an Apple Pay Payment Session.The partnerInternalMerchantIdentifier value must use allowed characters only: a-zA-Z0-9~-_+&@$!|,.;"
+    },
+    {
+      "name": "partnerMerchantName",
+      "desc": "A human-readable name for the merchant; the API does not parse this name programmatically."
+    }
+  ]
+}

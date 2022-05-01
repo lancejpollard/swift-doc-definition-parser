@@ -1,0 +1,75 @@
+{
+  "path": "/documentation/carekit/ockchartviewcontroller",
+  "type": "Generic Class",
+  "name": "OCKChartViewController",
+  "desc": "A view controller that displays a chart view and synchronizes the data with a store.",
+  "items": [
+    {
+      "name": "init(controller: Controller, viewSynchronizer: ViewSynchronizer)",
+      "desc": "Creates a new chart view controller with a specific controller and synchronizer."
+    },
+    {
+      "name": "init(plotType: OCKCartesianGraphView.PlotType, selectedDate: Date, configurations: [OCKDataSeriesConfiguration], storeManager: OCKSynchronizedStoreManager)",
+      "desc": "Creates a new chart view controller with a specific plot type, date, and configuration."
+    },
+    {
+      "name": "init(viewSynchronizer: ViewSynchronizer, weekOfDate: Date, configurations: [OCKDataSeriesConfiguration], storeManager: OCKSynchronizedStoreManager)",
+      "desc": "Creates a new chart view controller with a specific date, synchronizer, and configuration."
+    },
+    {
+      "name": "var chartView: ViewSynchronizer.View",
+      "desc": "A chart view that synchronizes against the store, and contains a graph, a legend, and an axis."
+    },
+    {
+      "name": "let controller: Controller",
+      "desc": "An object that handles interacting with data from the store."
+    },
+    {
+      "name": "let viewSynchronizer: ViewSynchronizer",
+      "desc": "An object that handles updating the view when data in the store changes."
+    },
+    {
+      "name": "var delegate: OCKChartViewControllerDelegate?",
+      "desc": "The object that handles errors in the chart view controller."
+    },
+    {
+      "name": "func didSelectChartView(UIView & OCKChartDisplayable)",
+      "desc": "Notifies the delegate a chart view has been selected."
+    },
+    {
+      "name": "var hashValue: Int"
+    },
+    {
+      "name": "func contains(UIFocusEnvironment) -> Bool"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "func viewDidLoad()"
+    },
+    {
+      "name": "static func != (OCKChartViewController<Controller, ViewSynchronizer>, OCKChartViewController<Controller, ViewSynchronizer>) -> Bool"
+    },
+    {
+      "name": "static func == (NSObject, NSObject) -> Bool"
+    },
+    {
+      "name": "struct OCKChartViewController.KeyValueObservingPublisher"
+    }
+  ],
+  "declaration": "class OCKChartViewController<Controller, ViewSynchronizer> : UIViewController where Controller : OCKChartControllerProtocol, ViewSynchronizer : OCKChartViewSynchronizerProtocol",
+  "inheritsFrom": [
+    "UIViewController"
+  ],
+  "conformsTo": [
+    "CVarArg",
+    "Equatable",
+    "Hashable",
+    "NSExtensionRequestHandling",
+    "OCKChartViewDelegate",
+    "UIPasteConfigurationSupporting",
+    "UIStateRestoring",
+    "UIUserActivityRestoring"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "path": "/documentation/corefoundation/cfbinaryheapcallbacks",
+  "type": "Structure",
+  "name": "CFBinaryHeapCallBacks",
+  "desc": "Structure containing the callbacks for values for a CFBinaryHeap object.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(version: CFIndex, retain: ((CFAllocator?, UnsafeRawPointer?) -> UnsafeRawPointer?)!, release: ((CFAllocator?, UnsafeRawPointer?) -> Void)!, copyDescription: ((UnsafeRawPointer?) -> Unmanaged<CFString>?)!, compare: ((UnsafeRawPointer?, UnsafeRawPointer?, UnsafeMutableRawPointer?) -> CFComparisonResult)!)"
+    },
+    {
+      "name": "var compare: ((UnsafeRawPointer?, UnsafeRawPointer?, UnsafeMutableRawPointer?) -> CFComparisonResult)!",
+      "desc": "The callback used to compare values in the binary heap in some operations. This field cannot be NULL."
+    },
+    {
+      "name": "var copyDescription: ((UnsafeRawPointer?) -> Unmanaged<CFString>?)!",
+      "desc": "The callback used to create a descriptive string representation of each value in the binary heap. This is used by the CFCopyDescription(_:) function. If this field is NULL, the binary heap constructs a CFString object describing the value based on its pointer value."
+    },
+    {
+      "name": "var release: ((CFAllocator?, UnsafeRawPointer?) -> Void)!",
+      "desc": "The callback used to remove a retain previously added for the binary heap from values as they are removed from the binary heap. If this field is NULL, the binary heap does nothing to release a value being removed."
+    },
+    {
+      "name": "var retain: ((CFAllocator?, UnsafeRawPointer?) -> UnsafeRawPointer?)!",
+      "desc": "The callback used to add a retain for the binary heap on values as they are put into the binary heap. This callback returns the value to use as the value in the binary heap, which is usually the value parameter passed to this callback, but may be a different value if a different value should be added to the binary heap. If this field is NULL, the binary heap does nothing to retain a value being added."
+    },
+    {
+      "name": "var version: CFIndex",
+      "desc": "The version number of the structure type being passed in as a parameter to the CFBinaryHeap creation functions. This structure is version 0."
+    }
+  ],
+  "declaration": "struct CFBinaryHeapCallBacks"
+}

@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/metal/mtlrasterizationratemap",
+  "type": "Protocol",
+  "name": "MTLRasterizationRateMap",
+  "desc": "A compiled read-only object that determines how to apply variable rasterization rates when rendering.",
+  "items": [
+    {
+      "name": "var device: MTLDevice",
+      "desc": "The device object that created the rate map."
+    },
+    {
+      "name": "var label: String?",
+      "desc": "A string that identifies the rate map."
+    },
+    {
+      "name": "var layerCount: Int",
+      "desc": "The number of layers in the rate map."
+    },
+    {
+      "name": "var screenSize: MTLSize",
+      "desc": "The logical size, in pixels, of the viewport coordinate system."
+    },
+    {
+      "name": "func physicalSize(layer: Int) -> MTLSize",
+      "desc": "Returns the dimensions, in pixels, of the area in the render target affected by the rasterization rate map."
+    },
+    {
+      "name": "var physicalGranularity: MTLSize",
+      "desc": "The granularity, in physical pixels, at which the rasterization rate varies."
+    },
+    {
+      "name": "func physicalCoordinates(screenCoordinates: MTLCoordinate2D, layer: Int) -> MTLCoordinate2D",
+      "desc": "Converts a point in logical viewport coordinates to the corresponding physical coordinates in a render layer."
+    },
+    {
+      "name": "func screenCoordinates(physicalCoordinates: MTLCoordinate2D, layer: Int) -> MTLCoordinate2D",
+      "desc": "Converts a point in physical coordinates inside a layer to its corresponding logical viewport coordinates."
+    },
+    {
+      "name": "var parameterDataSizeAndAlign: MTLSizeAndAlign",
+      "desc": "The size and alignment requirements to contain the coordinate transformation information in this rate map."
+    },
+    {
+      "name": "func copyParameterData(buffer: MTLBuffer, offset: Int)",
+      "desc": "Copies the parameter data into the provided buffer."
+    }
+  ],
+  "declaration": "protocol MTLRasterizationRateMap",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

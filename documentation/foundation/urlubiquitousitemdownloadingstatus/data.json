@@ -1,0 +1,31 @@
+{
+  "path": "/documentation/foundation/urlubiquitousitemdownloadingstatus",
+  "type": "Structure",
+  "name": "URLUbiquitousItemDownloadingStatus",
+  "desc": "Values that describe the iCloud storage state of a file.",
+  "items": [
+    {
+      "name": "init(rawValue: String)",
+      "desc": "Creates a download status instance from the provided constant string."
+    },
+    {
+      "name": "static let current: URLUbiquitousItemDownloadingStatus",
+      "desc": "A local copy of this item exists and is the most up-to-date version known to the device."
+    },
+    {
+      "name": "static let downloaded: URLUbiquitousItemDownloadingStatus",
+      "desc": "A local copy of this item exists, but it is stale. The most recent version will be downloaded as soon as possible."
+    },
+    {
+      "name": "static let notDownloaded: URLUbiquitousItemDownloadingStatus",
+      "desc": "This item has not been downloaded yet. Use startDownloadingUbiquitousItem(at:) to download it."
+    }
+  ],
+  "declaration": "struct URLUbiquitousItemDownloadingStatus, @unchecked Sendable",
+  "conformsTo": [
+    "Equatable",
+    "Hashable",
+    "RawRepresentable",
+    "Sendable"
+  ]
+}

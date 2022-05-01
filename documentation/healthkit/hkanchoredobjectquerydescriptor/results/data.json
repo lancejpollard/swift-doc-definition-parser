@@ -1,0 +1,100 @@
+{
+  "path": "/documentation/healthkit/hkanchoredobjectquerydescriptor/results",
+  "type": "Structure",
+  "name": "HKAnchoredObjectQueryDescriptor.Results",
+  "desc": "An asynchronous sequence that emits updates from an anchored object query.",
+  "items": [
+    {
+      "name": "func makeAsyncIterator() -> HKAnchoredObjectQueryDescriptor<Sample>.Results.Iterator",
+      "desc": "Creates the asynchronous iterator that produces results from this asynchronous sequence."
+    },
+    {
+      "name": "struct HKAnchoredObjectQueryDescriptor.Results.Iterator",
+      "desc": "An iterator for accessing anchored object results."
+    },
+    {
+      "name": "typealias HKAnchoredObjectQueryDescriptor.Results.AsyncIterator",
+      "desc": "An iterator that returns results from an asynchronous sequence."
+    },
+    {
+      "name": "typealias HKAnchoredObjectQueryDescriptor.Results.Element",
+      "desc": "A set of results that an anchored object query returns."
+    },
+    {
+      "name": "func contains(where: (HKAnchoredObjectQueryDescriptor<Sample>.Result) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the asynchronous sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func allSatisfy((HKAnchoredObjectQueryDescriptor<Sample>.Result) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether all elements produced by the asynchronous sequence satisfies the given predicate."
+    },
+    {
+      "name": "func first(where: (HKAnchoredObjectQueryDescriptor<Sample>.Result) -> Bool) -> HKAnchoredObjectQueryDescriptor<Sample>.Result?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func max(by: (HKAnchoredObjectQueryDescriptor<Sample>.Result, HKAnchoredObjectQueryDescriptor<Sample>.Result) -> Bool) -> HKAnchoredObjectQueryDescriptor<Sample>.Result?",
+      "desc": "Returns the maximum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func min(by: (HKAnchoredObjectQueryDescriptor<Sample>.Result, HKAnchoredObjectQueryDescriptor<Sample>.Result) -> Bool) -> HKAnchoredObjectQueryDescriptor<Sample>.Result?",
+      "desc": "Returns the minimum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func prefix(Int) -> AsyncPrefixSequence<HKAnchoredObjectQueryDescriptor<Sample>.Results>",
+      "desc": "Returns an asynchronous sequence, up to the specified maximum length, containing the initial elements of the base asynchronous sequence."
+    },
+    {
+      "name": "func prefix(while: (HKAnchoredObjectQueryDescriptor<Sample>.Result) -> Bool) -> AsyncPrefixWhileSequence<HKAnchoredObjectQueryDescriptor<Sample>.Results>",
+      "desc": "Returns an asynchronous sequence, containing the initial, consecutive elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func dropFirst(Int) -> AsyncDropFirstSequence<HKAnchoredObjectQueryDescriptor<Sample>.Results>",
+      "desc": "Omits a specified number of elements from the base asynchronous sequence, then passes through all remaining elements."
+    },
+    {
+      "name": "func drop(while: (HKAnchoredObjectQueryDescriptor<Sample>.Result) -> Bool) -> AsyncDropWhileSequence<HKAnchoredObjectQueryDescriptor<Sample>.Results>",
+      "desc": "Omits elements from the base asynchronous sequence until a given closure returns false, after which it passes through all remaining elements."
+    },
+    {
+      "name": "func filter((HKAnchoredObjectQueryDescriptor<Sample>.Result) -> Bool) -> AsyncFilterSequence<HKAnchoredObjectQueryDescriptor<Sample>.Results>",
+      "desc": "Creates an asynchronous sequence that contains, in order, the elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func map<Transformed>((HKAnchoredObjectQueryDescriptor<Sample>.Result) -> Transformed) -> AsyncMapSequence<HKAnchoredObjectQueryDescriptor<Sample>.Results, Transformed>",
+      "desc": "Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "func map<Transformed>((HKAnchoredObjectQueryDescriptor<Sample>.Result) -> Transformed) -> AsyncThrowingMapSequence<HKAnchoredObjectQueryDescriptor<Sample>.Results, Transformed>",
+      "desc": "Creates an asynchronous sequence that maps the given error-throwing closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, HKAnchoredObjectQueryDescriptor<Sample>.Result) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, HKAnchoredObjectQueryDescriptor<Sample>.Result) -> Void) -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure, given a mutable initial value."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((HKAnchoredObjectQueryDescriptor<Sample>.Result) -> ElementOfResult?) -> AsyncCompactMapSequence<HKAnchoredObjectQueryDescriptor<Sample>.Results, ElementOfResult>",
+      "desc": "Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((HKAnchoredObjectQueryDescriptor<Sample>.Result) -> ElementOfResult?) -> AsyncThrowingCompactMapSequence<HKAnchoredObjectQueryDescriptor<Sample>.Results, ElementOfResult>",
+      "desc": "Creates an asynchronous sequence that maps an error-throwing closure over the base sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((HKAnchoredObjectQueryDescriptor<Sample>.Result) -> SegmentOfResult) -> AsyncThrowingFlatMapSequence<HKAnchoredObjectQueryDescriptor<Sample>.Results, SegmentOfResult>",
+      "desc": "Creates an asynchronous sequence that concatenates the results of calling the given error-throwing transformation with each element of this sequence."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((HKAnchoredObjectQueryDescriptor<Sample>.Result) -> SegmentOfResult) -> AsyncFlatMapSequence<HKAnchoredObjectQueryDescriptor<Sample>.Results, SegmentOfResult>",
+      "desc": "Creates an asynchronous sequence that concatenates the results of calling the given transformation with each element of this sequence."
+    }
+  ],
+  "declaration": "struct Results",
+  "conformsTo": [
+    "AsyncSequence"
+  ]
+}

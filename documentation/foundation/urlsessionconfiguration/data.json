@@ -1,0 +1,151 @@
+{
+  "path": "/documentation/foundation/urlsessionconfiguration",
+  "type": "Class",
+  "name": "URLSessionConfiguration",
+  "desc": "A configuration object that defines behavior and policies for a URL session.",
+  "items": [
+    {
+      "name": "class var `default`: URLSessionConfiguration",
+      "desc": "A default session configuration object."
+    },
+    {
+      "name": "class var ephemeral: URLSessionConfiguration",
+      "desc": "A session configuration that uses no persistent storage for caches, cookies, or credentials."
+    },
+    {
+      "name": "class func background(withIdentifier: String) -> URLSessionConfiguration",
+      "desc": "Creates a session configuration object that allows HTTP and HTTPS uploads or downloads to be performed in the background."
+    },
+    {
+      "name": "var identifier: String?",
+      "desc": "The background session identifier of the configuration object."
+    },
+    {
+      "name": "var httpAdditionalHeaders: [AnyHashable : Any]?",
+      "desc": "A dictionary of additional headers to send with requests."
+    },
+    {
+      "name": "var networkServiceType: NSURLRequest.NetworkServiceType",
+      "desc": "The type of network service for all tasks within sessions based on this configuration."
+    },
+    {
+      "name": "var allowsCellularAccess: Bool",
+      "desc": "A Boolean value that determines whether connections should be made over a cellular network."
+    },
+    {
+      "name": "var timeoutIntervalForRequest: TimeInterval",
+      "desc": "The timeout interval to use when waiting for additional data."
+    },
+    {
+      "name": "var timeoutIntervalForResource: TimeInterval",
+      "desc": "The maximum amount of time that a resource request should be allowed to take."
+    },
+    {
+      "name": "var sharedContainerIdentifier: String?",
+      "desc": "The identifier for the shared container into which files in background URL sessions should be downloaded."
+    },
+    {
+      "name": "var waitsForConnectivity: Bool",
+      "desc": "A Boolean value that indicates whether the session should wait for connectivity to become available, or fail immediately."
+    },
+    {
+      "name": "var httpCookieAcceptPolicy: HTTPCookie.AcceptPolicy",
+      "desc": "A policy constant that determines when cookies should be accepted."
+    },
+    {
+      "name": "var httpShouldSetCookies: Bool",
+      "desc": "A Boolean value that determines whether requests should contain cookies from the cookie store."
+    },
+    {
+      "name": "var httpCookieStorage: HTTPCookieStorage?",
+      "desc": "The cookie store for storing cookies within this session."
+    },
+    {
+      "name": "class HTTPCookieStorage",
+      "desc": "A container that manages the storage of cookies."
+    },
+    {
+      "name": "class HTTPCookie",
+      "desc": "A representation of an HTTP cookie."
+    },
+    {
+      "name": "var tlsMinimumSupportedProtocolVersion: tls_protocol_version_t",
+      "desc": "The minimum TLS protocol version that the client should accept when making connections in this session."
+    },
+    {
+      "name": "var tlsMaximumSupportedProtocolVersion: tls_protocol_version_t",
+      "desc": "The maximum TLS protocol version that the client should request when making connections in this session."
+    },
+    {
+      "name": "var urlCredentialStorage: URLCredentialStorage?",
+      "desc": "A credential store that provides credentials for authentication."
+    },
+    {
+      "name": "var urlCache: URLCache?",
+      "desc": "The URL cache for providing cached responses to requests within the session."
+    },
+    {
+      "name": "var requestCachePolicy: NSURLRequest.CachePolicy",
+      "desc": "A predefined constant that determines when to return a response from the cache."
+    },
+    {
+      "name": "var sessionSendsLaunchEvents: Bool",
+      "desc": "A Boolean value that indicates whether the app should be resumed or launched in the background when transfers finish."
+    },
+    {
+      "name": "var isDiscretionary: Bool",
+      "desc": "A Boolean value that determines whether background tasks can be scheduled at the discretion of the system for optimal performance."
+    },
+    {
+      "name": "var shouldUseExtendedBackgroundIdleMode: Bool",
+      "desc": "A Boolean value that indicates whether TCP connections should be kept open when the app moves to the background."
+    },
+    {
+      "name": "var protocolClasses: [AnyClass]?",
+      "desc": "An array of extra protocol subclasses that handle requests in a session."
+    },
+    {
+      "name": "class URLProtocol",
+      "desc": "An abstract class that handles the loading of protocol-specific URL data."
+    },
+    {
+      "name": "var multipathServiceType: URLSessionConfiguration.MultipathServiceType",
+      "desc": "A service type that specifies the Multipath TCP connection policy for transmitting data over Wi-Fi and cellular interfaces."
+    },
+    {
+      "name": "enum URLSessionConfiguration.MultipathServiceType",
+      "desc": "Constants that specify the type of service that Multipath TCP uses."
+    },
+    {
+      "name": "var httpMaximumConnectionsPerHost: Int",
+      "desc": "The maximum number of simultaneous connections to make to a given host."
+    },
+    {
+      "name": "var httpShouldUsePipelining: Bool",
+      "desc": "A Boolean value that determines whether the session should use HTTP pipelining."
+    },
+    {
+      "name": "var connectionProxyDictionary: [AnyHashable : Any]?",
+      "desc": "A dictionary containing information about the proxy to use within this session."
+    },
+    {
+      "name": "var waitsForConnectivity: Bool",
+      "desc": "A Boolean value that indicates whether the session should wait for connectivity to become available, or fail immediately."
+    },
+    {
+      "name": "var allowsConstrainedNetworkAccess: Bool",
+      "desc": "A Boolean value that indicates whether connections may use the network when the user has specified Low Data Mode."
+    },
+    {
+      "name": "var allowsExpensiveNetworkAccess: Bool",
+      "desc": "A Boolean value that indicates whether connections may use a network interface that the system considers expensive."
+    }
+  ],
+  "declaration": "class URLSessionConfiguration : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

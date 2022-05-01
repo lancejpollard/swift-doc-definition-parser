@@ -1,0 +1,70 @@
+{
+  "path": "/documentation/musickit/curator",
+  "type": "Structure",
+  "name": "Curator",
+  "desc": "A music item that represents a curator.",
+  "items": [
+    {
+      "name": "static func == (Curator, Curator) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "var artwork: Artwork?",
+      "desc": "The curator artwork."
+    },
+    {
+      "name": "var editorialNotes: EditorialNotes?",
+      "desc": "The notes about the curator that appear in the Music catalog."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "let id: MusicItemID",
+      "desc": "The unique identifier for the curator."
+    },
+    {
+      "name": "var kind: Curator.Kind",
+      "desc": "The kind of curator."
+    },
+    {
+      "name": "var name: String",
+      "desc": "The name of the curator."
+    },
+    {
+      "name": "var playlists: MusicItemCollection<Playlist>?",
+      "desc": "The curator’s associated playlists."
+    },
+    {
+      "name": "var url: URL?",
+      "desc": "The URL for the curator."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "typealias ID",
+      "desc": "A type representing the stable identity of the entity associated with an instance."
+    },
+    {
+      "name": "enum Kind",
+      "desc": "The available kinds of curators."
+    }
+  ],
+  "declaration": "struct Curator",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "FilterableMusicItem",
+    "Hashable",
+    "Identifiable",
+    "MusicCatalogSearchable",
+    "MusicItem",
+    "MusicPropertyContainer"
+  ]
+}

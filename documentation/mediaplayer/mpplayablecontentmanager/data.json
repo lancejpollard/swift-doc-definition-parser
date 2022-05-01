@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/mediaplayer/mpplayablecontentmanager",
+  "type": "Class",
+  "name": "MPPlayableContentManager",
+  "desc": "A shared content manager used to control interactions between your media app and system-provided or external media player interfaces.",
+  "items": [
+    {
+      "name": "var dataSource: MPPlayableContentDataSource?",
+      "desc": "The data source provided by the app."
+    },
+    {
+      "name": "protocol MPPlayableContentDataSource",
+      "desc": "The data source providing media metadata to external media players so they can build user interfaces displaying your app’s content."
+    },
+    {
+      "name": "var delegate: MPPlayableContentDelegate?",
+      "desc": "A delegate that lets the media player manage the app’s playback queue."
+    },
+    {
+      "name": "protocol MPPlayableContentDelegate",
+      "desc": "The protocol used to let external media players send playback commands to an app."
+    },
+    {
+      "name": "class func shared() -> Self",
+      "desc": "Returns the current content manager instance."
+    },
+    {
+      "name": "func beginUpdates()",
+      "desc": "Updates several Media Player content items at once."
+    },
+    {
+      "name": "func endUpdates()",
+      "desc": "Ends a synchronized update."
+    },
+    {
+      "name": "func reloadData()",
+      "desc": "Reloads the data from the data source."
+    },
+    {
+      "name": "var context: MPPlayableContentManagerContext",
+      "desc": "The current state of the playable content endpoint."
+    },
+    {
+      "name": "var nowPlayingIdentifiers: [String]",
+      "desc": "The content items currently playing based on their identifiers."
+    }
+  ],
+  "declaration": "class MPPlayableContentManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

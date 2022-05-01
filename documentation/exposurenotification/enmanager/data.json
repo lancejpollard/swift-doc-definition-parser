@@ -1,0 +1,104 @@
+{
+  "path": "/documentation/exposurenotification/enmanager",
+  "type": "Class",
+  "name": "ENManager",
+  "desc": "A class that manages exposure notifications.",
+  "items": [
+    {
+      "name": "func activate(completionHandler: ENErrorHandler)",
+      "desc": "Prepares the manager for use."
+    },
+    {
+      "name": "var activityHandler: ENActivityHandler?",
+      "desc": "The handler that the framework invokes when the app activates a notification manager."
+    },
+    {
+      "name": "typealias ENActivityHandler",
+      "desc": "The handler the system invokes to report activities that occurred while the app wasn’t running."
+    },
+    {
+      "name": "struct ENActivityFlags",
+      "desc": "Activities that occur while the app isn’t running."
+    },
+    {
+      "name": "func setExposureNotificationEnabled(Bool, completionHandler: ENErrorHandler)",
+      "desc": "Enables or disables exposure notification."
+    },
+    {
+      "name": "func detectExposures(configuration: ENExposureConfiguration, diagnosisKeyURLs: [URL], completionHandler: ENDetectExposuresHandler) -> Progress",
+      "desc": "Detects exposures using the configuration that you specify for controlling the scoring algorithm."
+    },
+    {
+      "name": "func detectExposures(configuration: ENExposureConfiguration, completionHandler: ENDetectExposuresHandler) -> Progress",
+      "desc": "Detects exposures using the specified configuration to control the scoring algorithm."
+    },
+    {
+      "name": "func getExposureWindows(summary: ENExposureDetectionSummary, completionHandler: ENGetExposureWindowsHandler) -> Progress",
+      "desc": "Obtains information from the provided summary about the user’s exposure within a window of time."
+    },
+    {
+      "name": "typealias ENGetExposureWindowsHandler",
+      "desc": "The handler the system invokes when the acquisition of windows completes."
+    },
+    {
+      "name": "func getUserTraveled(completionHandler: ENGetUserTraveledHandler)",
+      "desc": "Obtains information about the user’s travel within an exposure period."
+    },
+    {
+      "name": "typealias ENGetUserTraveledHandler",
+      "desc": "The handler the system invokes when acquistiion of the user’s travel status completes."
+    },
+    {
+      "name": "func getDiagnosisKeys(completionHandler: ENGetDiagnosisKeysHandler)",
+      "desc": "Requests the temporary exposure keys from the user’s device to share with a server."
+    },
+    {
+      "name": "func getTestDiagnosisKeys(completionHandler: ENGetDiagnosisKeysHandler)",
+      "desc": "Requests the temporary exposure keys, including the current key, used by this device for testing."
+    },
+    {
+      "name": "class ENTemporaryExposureKey",
+      "desc": "The key used to generate rolling proximity identifiers."
+    },
+    {
+      "name": "var exposureNotificationStatus: ENStatus",
+      "desc": "A property that indicates the status of exposure notifications."
+    },
+    {
+      "name": "var exposureNotificationEnabled: Bool",
+      "desc": "A property that indicates that a user enabled exposure notification."
+    },
+    {
+      "name": "class var authorizationStatus: ENAuthorizationStatus",
+      "desc": "A property that reports the current authorization status of the app, and never prompts the user."
+    },
+    {
+      "name": "var dispatchQueue: DispatchQueue",
+      "desc": "The dispatch queue on which to invoke handlers."
+    },
+    {
+      "name": "func requestPreAuthorizedDiagnosisKeys(completionHandler: ENErrorHandler)",
+      "desc": "Requests diagnosis keys after the user authorizes sharing them."
+    },
+    {
+      "name": "func preAuthorizeDiagnosisKeys(completionHandler: ENErrorHandler)",
+      "desc": "Allows users to authorize a one-time release of diagnosis keys within five days of the authorization."
+    },
+    {
+      "name": "typealias ENDiagnosisKeysAvailableHandler",
+      "desc": "The handler the system invokes after requesting diagnosis keys."
+    },
+    {
+      "name": "var diagnosisKeysAvailableHandler: ENDiagnosisKeysAvailableHandler?",
+      "desc": "The handler that receives available diagnosis keys after a successful preauthorization."
+    },
+    {
+      "name": "func invalidate()",
+      "desc": "Stops any outstanding operations and invalidates the manager."
+    }
+  ],
+  "declaration": "class ENManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

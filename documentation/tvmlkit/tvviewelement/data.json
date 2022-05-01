@@ -1,0 +1,78 @@
+{
+  "path": "/documentation/tvmlkit/tvviewelement",
+  "type": "Class",
+  "name": "TVViewElement",
+  "desc": "A representation of a read-only DOM node.",
+  "items": [
+    {
+      "name": "var autoHighlightIdentifier: String?",
+      "desc": "A string identifying the element that is initially in focus."
+    },
+    {
+      "name": "var attributes: [String : String]?",
+      "desc": "The attributes associated with a view element."
+    },
+    {
+      "name": "var children: [TVViewElement]?",
+      "desc": "An array containing the child elements of the element currently being inspected."
+    },
+    {
+      "name": "var isDisabled: Bool",
+      "desc": "Boolean value indicating whether the current element being inspected is disabled."
+    },
+    {
+      "name": "var identifier: String",
+      "desc": "A string containing the unique identifier for an element."
+    },
+    {
+      "name": "var name: String",
+      "desc": "A string containing the element’s name."
+    },
+    {
+      "name": "var parent: TVViewElement?",
+      "desc": "The parent of the current node."
+    },
+    {
+      "name": "var style: TVViewElementStyle?",
+      "desc": "The style applied to an element."
+    },
+    {
+      "name": "var updateType: TVElementUpdateType",
+      "desc": "The value that describes any changes to the DOM tree after it has been reparsed."
+    },
+    {
+      "name": "enum TVElementUpdateType",
+      "desc": "Describes any changes to the DOM tree after it has been reparsed."
+    },
+    {
+      "name": "func dispatchEvent(type: TVElementEventType, canBubble: Bool, cancellable: Bool, extraInfo: [String : Any]?, completion: ((Bool, Bool) -> Void)?)",
+      "desc": "Dispatches an event of a specific type to the JavaScript file."
+    },
+    {
+      "name": "enum TVElementEventType",
+      "desc": "The type of event that has been dispatched."
+    },
+    {
+      "name": "func dispatchEvent(name: String, canBubble: Bool, cancellable: Bool, extraInfo: [String : Any]?, completion: ((Bool, Bool) -> Void)?)",
+      "desc": "Dispatches a custom-named event."
+    },
+    {
+      "name": "func resetProperty(TVElementResettableProperty)",
+      "desc": "Resets the property to its default value."
+    },
+    {
+      "name": "enum TVElementResettableProperty",
+      "desc": "The types of properties that can be reset to their default values."
+    },
+    {
+      "name": "var elementData: [String : Any]"
+    }
+  ],
+  "declaration": "class TVViewElement : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

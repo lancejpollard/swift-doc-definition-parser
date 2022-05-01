@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/threadnetwork/thclient",
+  "type": "Class",
+  "name": "THClient",
+  "desc": "A class that supports safely sharing Thread credentials between multiple clients.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates the client object."
+    },
+    {
+      "name": "func retrieveAllCredentials((Set<THCredentials>?, Error?) -> Void)",
+      "desc": "Requests all Thread credentials from the framework."
+    },
+    {
+      "name": "func retrieveCredentials(forBorderAgent: Data, completion: (THCredentials?, Error?) -> Void)",
+      "desc": "Requests Thread credentials for a Border Agent."
+    },
+    {
+      "name": "func retrieveCredentials(forExtendedPANID: Data, completion: (THCredentials?, Error?) -> Void)",
+      "desc": "Requests Thread credentials for an extended Personal Area Network (PAN) ID."
+    },
+    {
+      "name": "func retrievePreferredCredentials((THCredentials?, Error?) -> Void)",
+      "desc": "Requests Thread credentials for the preferred network."
+    },
+    {
+      "name": "func deleteCredentials(forBorderAgent: Data, completion: (Error?) -> Void)",
+      "desc": "Deletes Thread network credentials from the framework database for a Border Agent."
+    },
+    {
+      "name": "func storeCredentials(forBorderAgent: Data, activeOperationalDataSet: Data, completion: (Error?) -> Void)",
+      "desc": "Stores Thread network credentials into the framework database that a Border Agent provides."
+    }
+  ],
+  "declaration": "class THClient : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

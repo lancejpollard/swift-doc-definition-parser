@@ -1,0 +1,43 @@
+{
+  "path": "/documentation/network/nwconnectiongroup/message",
+  "type": "Class",
+  "name": "NWConnectionGroup.Message",
+  "desc": "An object that represents a message that you send or receive within a group, and that contains protocol metadata and send properties.",
+  "items": [
+    {
+      "name": "var remoteEndpoint: NWEndpoint?",
+      "desc": "The endpoint that originates the message you receive."
+    },
+    {
+      "name": "var localEndpoint: NWEndpoint?",
+      "desc": "The local address and port you use to receive the message."
+    },
+    {
+      "name": "var path: NWPath?",
+      "desc": "The network path on which you receive the message."
+    },
+    {
+      "name": "func reply(content: Data?, message: NWConnectionGroup.Message)",
+      "desc": "Sends a reply to the specific endpoint that originates a group message you receive."
+    },
+    {
+      "name": "func extractConnection() -> NWConnection?",
+      "desc": "Converts a message you receive from an endpoint into a connection object that you use for long-term communication with that endpoint."
+    },
+    {
+      "name": "static let `default`: NWConnectionGroup.Message",
+      "desc": "A static object you use to send a message with default properties."
+    },
+    {
+      "name": "init(identifier: String, expiration: UInt64, priority: Double, isFinal: Bool, antecedent: NWConnection.ContentContext?, metadata: [NWProtocolMetadata]?)",
+      "desc": "Initializes a custom message context you use to send data."
+    },
+    {
+      "name": "func metadata(definition: NWProtocolDefinition) -> NWProtocolMetadata?"
+    }
+  ],
+  "declaration": "class NWConnectionGroup.Message : NWConnection.ContentContext",
+  "inheritsFrom": [
+    "NWConnection.ContentContext"
+  ]
+}

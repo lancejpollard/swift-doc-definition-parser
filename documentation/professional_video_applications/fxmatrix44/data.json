@@ -1,0 +1,66 @@
+{
+  "path": "/documentation/professional_video_applications/fxmatrix44",
+  "type": "Class",
+  "name": "FxMatrix44",
+  "desc": "The FxMatrix class encapsulates a 4x4 matrix object and provides matrix inversion and transforming of 2D and 3D points.",
+  "items": [
+    {
+      "name": "init!()",
+      "desc": "Initializes the matrix to the identity matrix."
+    },
+    {
+      "name": "init!(fxMatrix: FxMatrix44!)",
+      "desc": "Initializes the matrix using the specified matrix object."
+    },
+    {
+      "name": "init!(matrix44Data: UnsafeMutablePointer<(Double, Double, Double, Double)>!)",
+      "desc": "Initializes a matrix with the specified data."
+    },
+    {
+      "name": "init!(colorMatrix44Data: UnsafeMutablePointer<(Double, Double, Double, Double)>!)"
+    },
+    {
+      "name": "func setMatrix(UnsafeMutablePointer<(Double, Double, Double, Double)>!)",
+      "desc": "Sets the matrix to the specified values."
+    },
+    {
+      "name": "func matrix() -> UnsafeMutablePointer<Matrix44Data>!",
+      "desc": "Gets the raw matrix data."
+    },
+    {
+      "name": "func setToIdentity()",
+      "desc": "Sets the matrix to the identity matrix."
+    },
+    {
+      "name": "func invert() -> Bool",
+      "desc": "Inverts the matrix if possible."
+    },
+    {
+      "name": "func invertColorMatrix(withTolerance: Double) -> Bool",
+      "desc": "Inverts the matrix if possible."
+    },
+    {
+      "name": "func transpose()",
+      "desc": "Transposes the matrix."
+    },
+    {
+      "name": "func transform2DPoint(FxPoint2D) -> FxPoint2D",
+      "desc": "Transforms a 2D point using the matrix."
+    },
+    {
+      "name": "func transform3DPoint(FxPoint3D) -> FxPoint3D",
+      "desc": "Transforms a 3D point using the matrix."
+    },
+    {
+      "name": "typealias Matrix44Data",
+      "desc": "A matrix data type in the raw format."
+    }
+  ],
+  "declaration": "class FxMatrix44 : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

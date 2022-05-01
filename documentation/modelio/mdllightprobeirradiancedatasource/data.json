@@ -1,0 +1,24 @@
+{
+  "path": "/documentation/modelio/mdllightprobeirradiancedatasource",
+  "type": "Protocol",
+  "name": "MDLLightProbeIrradianceDataSource",
+  "desc": "Adopt this protocol to provide information for use in automatic placement of light probes around a scene.",
+  "items": [
+    {
+      "name": "var boundingBox: MDLAxisAlignedBoundingBox",
+      "desc": "The bounding region of the scene to which light probes are being added."
+    },
+    {
+      "name": "var sphericalHarmonicsLevel: Int",
+      "desc": "The number of levels of spherical harmonics information provided by the data source."
+    },
+    {
+      "name": "func sphericalHarmonicsCoefficients(atPosition: vector_float3) -> Data",
+      "desc": "Asks the data source to provide spherical harmonics coefficients that describe lighting conditions in all directions from the specified point in a scene."
+    }
+  ],
+  "declaration": "protocol MDLLightProbeIrradianceDataSource",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

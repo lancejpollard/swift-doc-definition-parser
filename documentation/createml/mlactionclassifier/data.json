@@ -1,0 +1,98 @@
+{
+  "path": "/documentation/createml/mlactionclassifier",
+  "type": "Structure",
+  "name": "MLActionClassifier",
+  "desc": "A model you train with videos to classify a person’s body movements.",
+  "items": [
+    {
+      "name": "static func train(trainingData: MLActionClassifier.DataSource, parameters: MLActionClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLJob<MLActionClassifier>",
+      "desc": "Begins an asynchronous action classifier training session."
+    },
+    {
+      "name": "static func makeTrainingSession(trainingData: MLActionClassifier.DataSource, parameters: MLActionClassifier.ModelParameters, sessionParameters: MLTrainingSessionParameters) -> MLTrainingSession<MLActionClassifier>",
+      "desc": "Creates an asynchronous training session for an action classifier."
+    },
+    {
+      "name": "static func resume(MLTrainingSession<MLActionClassifier>) -> MLJob<MLActionClassifier>",
+      "desc": "Begins or continues an asynchronous action classifier training session."
+    },
+    {
+      "name": "static func restoreTrainingSession(sessionParameters: MLTrainingSessionParameters) -> MLTrainingSession<MLActionClassifier>",
+      "desc": "Creates an asynchronous training session for an action classifier by restoring an existing training session’s state from its parameters."
+    },
+    {
+      "name": "init(checkpoint: MLCheckpoint)",
+      "desc": "Creates an action classifier from a training session checkpoint."
+    },
+    {
+      "name": "init(trainingData: MLActionClassifier.DataSource, parameters: MLActionClassifier.ModelParameters)",
+      "desc": "Creates an action classifier with a training dataset represented by a data source."
+    },
+    {
+      "name": "var trainingMetrics: MLClassifierMetrics",
+      "desc": "Measurements of the action classifier’s performance on the training dataset."
+    },
+    {
+      "name": "var validationMetrics: MLClassifierMetrics",
+      "desc": "Measurements of the action classifier’s performance on the validation dataset."
+    },
+    {
+      "name": "func evaluation(on: MLActionClassifier.DataSource) -> MLClassifierMetrics",
+      "desc": "Generates metrics describing the action classifier’s performance on labeled videos represented by a data source."
+    },
+    {
+      "name": "func prediction(from: URL) -> [MLActionClassifier.Prediction]",
+      "desc": "Generates a prediction for each action the classifier recognizes in the video."
+    },
+    {
+      "name": "func predictions(from: [URL]) -> [[MLActionClassifier.Prediction]]",
+      "desc": "Generates a sequence of predictions for each video input."
+    },
+    {
+      "name": "struct MLActionClassifier.Prediction",
+      "desc": "A collection of predictions, each paired with its confidence, for a range of video frames."
+    },
+    {
+      "name": "func write(to: URL, metadata: MLModelMetadata?)",
+      "desc": "Exports the action classifier as a Core ML model file to a location in the file system."
+    },
+    {
+      "name": "func write(toFile: String, metadata: MLModelMetadata?)",
+      "desc": "Exports the action classifier as a Core ML model file to the file path."
+    },
+    {
+      "name": "var model: MLModel",
+      "desc": "The underlying Core ML model of the action classifier stored in memory."
+    },
+    {
+      "name": "let modelParameters: MLActionClassifier.ModelParameters",
+      "desc": "The model configuration parameters the action classifier used during its training session."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the action classifier."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the action classifier that’s suitable for output during debugging."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the action classifier shown in a playground."
+    },
+    {
+      "name": "enum MLActionClassifier.DataSource",
+      "desc": "A data source for an action classifier."
+    },
+    {
+      "name": "struct MLActionClassifier.ModelParameters",
+      "desc": "Parameters that affect the training process of an action classifier."
+    }
+  ],
+  "declaration": "struct MLActionClassifier",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomStringConvertible"
+  ]
+}

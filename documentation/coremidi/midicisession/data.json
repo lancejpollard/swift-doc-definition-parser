@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/coremidi/midicisession",
+  "type": "Class",
+  "name": "MIDICISession",
+  "desc": "An object that represents a MIDI-CI session.",
+  "items": [
+    {
+      "name": "init(discoveredNode: MIDICIDiscoveredNode, dataReadyHandler: () -> Void, disconnectHandler: MIDICISessionDisconnectBlock)",
+      "desc": "Creates a MIDI-CI session."
+    },
+    {
+      "name": "func profileState(forChannel: MIDIChannelNumber) -> MIDICIProfileState",
+      "desc": "Returns the profile state for the specified MIDI channel number."
+    },
+    {
+      "name": "func enable(MIDICIProfile, onChannel: MIDIChannelNumber)",
+      "desc": "Performs an asynchronous request to enable a profile for a specific MIDI channel number."
+    },
+    {
+      "name": "func disableProfile(MIDICIProfile, onChannel: MIDIChannelNumber)",
+      "desc": "Performs an asynchronous request to disable a profile for a specific MIDI channel number."
+    },
+    {
+      "name": "typealias MIDICIProfileChangedBlock",
+      "desc": "A block the system calls to indicate it has enabled or disabled a profile."
+    },
+    {
+      "name": "var profileChangedCallback: MIDICIProfileChangedBlock?",
+      "desc": "An optional block the system calls after it enables or disables a profile."
+    },
+    {
+      "name": "func send(MIDICIProfile, onChannel: MIDIChannelNumber, profileData: Data) -> Bool",
+      "desc": "Sends profile-specific data to the MIDI-CI session."
+    },
+    {
+      "name": "typealias MIDICIProfileSpecificDataBlock",
+      "desc": "A block the system calls when a MIDI-CI session or responder receives profile-specific data."
+    },
+    {
+      "name": "var profileSpecificDataHandler: MIDICIProfileSpecificDataBlock?",
+      "desc": "An optional block the system calls when a device sends profile-specific data to the session."
+    },
+    {
+      "name": "let MIDIChannelsWholePort: MIDIChannelNumber",
+      "desc": "A constant value that indicates to use all channels of the port."
+    },
+    {
+      "name": "var deviceInfo: MIDICIDeviceInfo",
+      "desc": "Information about a MIDI-CI device."
+    },
+    {
+      "name": "var maxSysExSize: NSNumber",
+      "desc": "The maximum size of System Exclusive (SysEx) messages."
+    },
+    {
+      "name": "var midiDestination: MIDIEntityRef",
+      "desc": "The MIDI destination with which the session is communicating."
+    },
+    {
+      "name": "var maxPropertyRequests: NSNumber",
+      "desc": "The maximum number of simultaneous property exchange requests, if supported."
+    },
+    {
+      "name": "var supportsProfileCapability: Bool",
+      "desc": "A Boolean value that indicates whether the entity supports the MIDI-CI profile’s capability."
+    },
+    {
+      "name": "var supportsPropertyCapability: Bool",
+      "desc": "A Boolean value that indicates whether the entity supports the MIDI-CI property exchange capability."
+    }
+  ],
+  "declaration": "class MIDICISession : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

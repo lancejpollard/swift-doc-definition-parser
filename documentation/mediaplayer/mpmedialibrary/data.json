@@ -1,0 +1,55 @@
+{
+  "path": "/documentation/mediaplayer/mpmedialibrary",
+  "type": "Class",
+  "name": "MPMediaLibrary",
+  "desc": "An object that represents the state of synced media items on a device.",
+  "items": [
+    {
+      "name": "class func requestAuthorization((MPMediaLibraryAuthorizationStatus) -> Void)",
+      "desc": "Displays a user interface so that the user can authorize whether your app may view the media library's contents."
+    },
+    {
+      "name": "class func authorizationStatus() -> MPMediaLibraryAuthorizationStatus",
+      "desc": "Returns whether the app can access the user's media library."
+    },
+    {
+      "name": "enum MPMediaLibraryAuthorizationStatus",
+      "desc": "The list of possible states for authorization to access to the user's media library."
+    },
+    {
+      "name": "class func `default`() -> MPMediaLibrary",
+      "desc": "Returns an instance of the default media library."
+    },
+    {
+      "name": "func beginGeneratingLibraryChangeNotifications()",
+      "desc": "Asks the media library to turn on notifications for whenever the library changes."
+    },
+    {
+      "name": "func endGeneratingLibraryChangeNotifications()",
+      "desc": "Asks the media library to turn off notifications for whenever the library changes."
+    },
+    {
+      "name": "static let MPMediaLibraryDidChange: NSNotification.Name",
+      "desc": "Indicates the media library has changed."
+    },
+    {
+      "name": "var lastModifiedDate: Date",
+      "desc": "The calendar date on which the media library was last modified."
+    },
+    {
+      "name": "func getPlaylist(with: UUID, creationMetadata: MPMediaPlaylistCreationMetadata?, completionHandler: (MPMediaPlaylist?, Error?) -> Void)",
+      "desc": "Retrieves an app maintained existing playlist or creates a new playlist when no playlist exists."
+    },
+    {
+      "name": "func addItem(withProductID: String, completionHandler: (([MPMediaEntity], Error?) -> Void)?)",
+      "desc": "Adds the designated item to the user's music library."
+    }
+  ],
+  "declaration": "class MPMediaLibrary : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

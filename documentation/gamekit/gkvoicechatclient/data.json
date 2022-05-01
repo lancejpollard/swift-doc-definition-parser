@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/gamekit/gkvoicechatclient",
+  "type": "Protocol",
+  "name": "GKVoiceChatClient",
+  "desc": "The GKVoiceChatClient protocol is implemented to control the behavior of the GKVoiceChatService object. The voice chat client has a number of responsibilities:",
+  "items": [
+    {
+      "name": "func participantID() -> String",
+      "desc": "Returns a string that uniquely identifies the local user."
+    },
+    {
+      "name": "func voiceChatService(GKVoiceChatService, send: Data, toParticipantID: String)",
+      "desc": "A request for the client to send data to a participant."
+    },
+    {
+      "name": "func voiceChatService(GKVoiceChatService, sendRealTime: Data, toParticipantID: String)",
+      "desc": "Asks the client to send data to a participant that must get there quickly."
+    },
+    {
+      "name": "func voiceChatService(GKVoiceChatService, didReceiveInvitationFromParticipantID: String, callID: Int)",
+      "desc": "Asks the client to accept or reject an invitation from a remote participant."
+    },
+    {
+      "name": "func voiceChatService(GKVoiceChatService, didStartWithParticipantID: String)",
+      "desc": "Received by the client when a voice chat with another participant is established."
+    },
+    {
+      "name": "func voiceChatService(GKVoiceChatService, didNotStartWithParticipantID: String, error: Error?)",
+      "desc": "Received by the client when an attempt to establish a voice chat with another participant failed."
+    },
+    {
+      "name": "func voiceChatService(GKVoiceChatService, didStopWithParticipantID: String, error: Error?)",
+      "desc": "Received by the client when a previously established voice chat has ended."
+    }
+  ],
+  "declaration": "protocol GKVoiceChatClient",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

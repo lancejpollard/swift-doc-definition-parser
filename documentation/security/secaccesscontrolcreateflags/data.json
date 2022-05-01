@@ -1,0 +1,53 @@
+{
+  "path": "/documentation/security/secaccesscontrolcreateflags",
+  "type": "Structure",
+  "name": "SecAccessControlCreateFlags",
+  "desc": "Access control constants that dictate how a keychain item may be used.",
+  "items": [
+    {
+      "name": "static var devicePasscode: SecAccessControlCreateFlags",
+      "desc": "Constraint to access an item with a passcode."
+    },
+    {
+      "name": "static var biometryAny: SecAccessControlCreateFlags",
+      "desc": "Constraint to access an item with Touch ID for any enrolled fingers, or Face ID."
+    },
+    {
+      "name": "static var biometryCurrentSet: SecAccessControlCreateFlags",
+      "desc": "Constraint to access an item with Touch ID for currently enrolled fingers, or from Face ID with the currently enrolled user."
+    },
+    {
+      "name": "static var userPresence: SecAccessControlCreateFlags",
+      "desc": "Constraint to access an item with either biometry or passcode."
+    },
+    {
+      "name": "static var watch: SecAccessControlCreateFlags",
+      "desc": "Constraint to access an item with a watch."
+    },
+    {
+      "name": "static var and: SecAccessControlCreateFlags",
+      "desc": "Indicates that all constraints must be satisfied."
+    },
+    {
+      "name": "static var or: SecAccessControlCreateFlags",
+      "desc": "Indicates that at least one constraint must be satisfied."
+    },
+    {
+      "name": "static var applicationPassword: SecAccessControlCreateFlags",
+      "desc": "Option to use an application-provided password for data encryption key generation."
+    },
+    {
+      "name": "static var privateKeyUsage: SecAccessControlCreateFlags",
+      "desc": "Enable a private key to be used in signing a block of data or verifying a signed block."
+    },
+    {
+      "name": "init(rawValue: CFOptionFlags)",
+      "desc": "Initialize an access control creation flags object."
+    }
+  ],
+  "declaration": "struct SecAccessControlCreateFlags, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

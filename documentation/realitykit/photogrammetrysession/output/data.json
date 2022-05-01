@@ -1,0 +1,61 @@
+{
+  "path": "/documentation/realitykit/photogrammetrysession/output",
+  "type": "Enumeration",
+  "name": "PhotogrammetrySession.Output",
+  "desc": "Status updates on the object-creation process.",
+  "items": [
+    {
+      "name": "case inputComplete",
+      "desc": "The data ingestion portion of the process is complete."
+    },
+    {
+      "name": "case processingComplete",
+      "desc": "The session finished handling all pending requests."
+    },
+    {
+      "name": "case processingCancelled",
+      "desc": "All pending requests are canceled."
+    },
+    {
+      "name": "case requestProgress(PhotogrammetrySession.Request, fractionComplete: Double)",
+      "desc": "A progress update provided by the session."
+    },
+    {
+      "name": "case requestComplete(PhotogrammetrySession.Request, PhotogrammetrySession.Result)",
+      "desc": "The session completed a request successfully."
+    },
+    {
+      "name": "case requestError(PhotogrammetrySession.Request, Error)",
+      "desc": "The session aborted a request due to an error."
+    },
+    {
+      "name": "case invalidSample(id: Int, reason: String)",
+      "desc": "A provided sample was invalid."
+    },
+    {
+      "name": "case automaticDownsampling",
+      "desc": "The session reduced the image size because of memory constraints."
+    },
+    {
+      "name": "case skippedSample(id: Int)",
+      "desc": "The session couldn’t use a provided sample."
+    },
+    {
+      "name": "var localizedDescription: String",
+      "desc": "The localized name for the enumeration value."
+    },
+    {
+      "name": "typealias PhotogrammetrySession.Outputs.AsyncIterator",
+      "desc": "The type of iterator used for Object Capture updates."
+    },
+    {
+      "name": "typealias PhotogrammetrySession.Outputs.Element",
+      "desc": "The type of element used for Object Capture updates."
+    },
+    {
+      "name": "struct PhotogrammetrySession.Outputs",
+      "desc": "An asynchronous sequence of session-related updates."
+    }
+  ],
+  "declaration": "enum PhotogrammetrySession.Output"
+}

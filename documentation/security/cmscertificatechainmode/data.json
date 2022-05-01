@@ -1,0 +1,31 @@
+{
+  "path": "/documentation/security/cmscertificatechainmode",
+  "type": "Enumeration",
+  "name": "CMSCertificateChainMode",
+  "desc": "Constants that can be set to specify what certificates to include in a signed message.",
+  "items": [
+    {
+      "name": "case none",
+      "desc": "Don't include any certificates."
+    },
+    {
+      "name": "case signerOnly",
+      "desc": "Only include signer certificates."
+    },
+    {
+      "name": "case chain",
+      "desc": "Include the signer certificate chain up to but not including the root certificate."
+    },
+    {
+      "name": "case chainWithRoot",
+      "desc": "Include the entire signer certificate chain, including the root certificate."
+    },
+    {
+      "name": "case chainWithRootOrFail"
+    }
+  ],
+  "declaration": "enum CMSCertificateChainMode : UInt32, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

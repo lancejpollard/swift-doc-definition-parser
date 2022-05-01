@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/swift/numeric",
+  "type": "Protocol",
+  "name": "Numeric",
+  "desc": "A type with values that support multiplication.",
+  "items": [
+    {
+      "name": "associatedtype Magnitude",
+      "desc": "A type that can represent the absolute value of any possible value of the conforming type."
+    },
+    {
+      "name": "init?<T>(exactly: T)",
+      "desc": "Creates a new instance from the given integer, if it can be represented exactly."
+    },
+    {
+      "name": "var magnitude: Self.Magnitude",
+      "desc": "The magnitude of this value."
+    },
+    {
+      "name": "static func * (Self, Self) -> Self",
+      "desc": "Multiplies two values and produces their product."
+    },
+    {
+      "name": "static func *= (inout Self, Self)",
+      "desc": "Multiplies two values and stores the result in the left-hand-side variable."
+    }
+  ],
+  "declaration": "protocol Numeric",
+  "inheritsFrom": [
+    "AdditiveArithmetic",
+    "ExpressibleByIntegerLiteral"
+  ]
+}

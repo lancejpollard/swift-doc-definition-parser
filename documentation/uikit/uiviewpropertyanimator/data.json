@@ -1,0 +1,84 @@
+{
+  "path": "/documentation/uikit/uiviewpropertyanimator",
+  "type": "Class",
+  "name": "UIViewPropertyAnimator",
+  "desc": "A class that animates changes to views and allows the dynamic modification of those animations.",
+  "items": [
+    {
+      "name": "init(duration: TimeInterval, curve: UIView.AnimationCurve, animations: (() -> Void)?)",
+      "desc": "Initializes the animator with a built-in UIKit timing curve."
+    },
+    {
+      "name": "init(duration: TimeInterval, controlPoint1: CGPoint, controlPoint2: CGPoint, animations: (() -> Void)?)",
+      "desc": "Initializes the animator object with a cubic Bézier timing curve."
+    },
+    {
+      "name": "init(duration: TimeInterval, dampingRatio: CGFloat, animations: (() -> Void)?)",
+      "desc": "Initializes the animator object with spring-based timing information."
+    },
+    {
+      "name": "init(duration: TimeInterval, timingParameters: UITimingCurveProvider)",
+      "desc": "Initializes the animator object with a custom timing curve object."
+    },
+    {
+      "name": "class func runningPropertyAnimator(withDuration: TimeInterval, delay: TimeInterval, options: UIView.AnimationOptions, animations: () -> Void, completion: ((UIViewAnimatingPosition) -> Void)?) -> Self",
+      "desc": "Creates and returns an animator object that begins running its animations immediately."
+    },
+    {
+      "name": "func addAnimations(() -> Void)",
+      "desc": "Adds the specified animation block to the animator."
+    },
+    {
+      "name": "func addAnimations(() -> Void, delayFactor: CGFloat)",
+      "desc": "Adds the specified animation block with a delay."
+    },
+    {
+      "name": "func addCompletion((UIViewAnimatingPosition) -> Void)",
+      "desc": "Adds the specified completion block to the animator."
+    },
+    {
+      "name": "func continueAnimation(withTimingParameters: UITimingCurveProvider?, durationFactor: CGFloat)",
+      "desc": "Adjusts the timing and duration of a paused animation."
+    },
+    {
+      "name": "var duration: TimeInterval",
+      "desc": "The total duration (in seconds) of the main animations."
+    },
+    {
+      "name": "var delay: TimeInterval",
+      "desc": "The delay (in seconds) after which the animations begin."
+    },
+    {
+      "name": "var timingParameters: UITimingCurveProvider?",
+      "desc": "The information used to determine the timing curve for the animation."
+    },
+    {
+      "name": "var isInterruptible: Bool",
+      "desc": "A Boolean value indicating whether the animator is interruptible and can be paused or stopped."
+    },
+    {
+      "name": "var isUserInteractionEnabled: Bool",
+      "desc": "A Boolean value indicating whether views receive touch events while animations are running."
+    },
+    {
+      "name": "var isManualHitTestingEnabled: Bool",
+      "desc": "A Boolean value indicating whether your app manages hit-testing while animations are in progress."
+    },
+    {
+      "name": "var scrubsLinearly: Bool",
+      "desc": "A Boolean value indicating whether a paused animation scrubs linearly or uses its specified timing information."
+    },
+    {
+      "name": "var pausesOnCompletion: Bool",
+      "desc": "A Boolean value that indicates whether a completed animation remains in the active state."
+    }
+  ],
+  "declaration": "@MainActor class UIViewPropertyAnimator : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "UIViewImplicitlyAnimating"
+  ]
+}

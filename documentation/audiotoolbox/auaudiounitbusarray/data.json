@@ -1,0 +1,59 @@
+{
+  "path": "/documentation/audiotoolbox/auaudiounitbusarray",
+  "type": "Class",
+  "name": "AUAudioUnitBusArray",
+  "desc": "The AUAudioUnitBusArray class defines a container for an audio unit’s input or output busses.",
+  "items": [
+    {
+      "name": "init(audioUnit: AUAudioUnit, busType: AUAudioUnitBusType)",
+      "desc": "Initializes an empty bus array."
+    },
+    {
+      "name": "init(audioUnit: AUAudioUnit, busType: AUAudioUnitBusType, busses: [AUAudioUnitBus])",
+      "desc": "Initializes a bus array by making a copy of the supplied busses."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of busses in the array."
+    },
+    {
+      "name": "var isCountChangeable: Bool",
+      "desc": "Determines whether the array can have a variable number of busses."
+    },
+    {
+      "name": "var ownerAudioUnit: AUAudioUnit",
+      "desc": "The audio unit that owns the bus array."
+    },
+    {
+      "name": "var busType: AUAudioUnitBusType",
+      "desc": "Determines whether the bus array is for input or output."
+    },
+    {
+      "name": "subscript(Int) -> AUAudioUnitBus",
+      "desc": "Returns the bus at the specified index."
+    },
+    {
+      "name": "func setBusCount(Int)",
+      "desc": "Changes the number of busses in the array."
+    },
+    {
+      "name": "func addObserver(toAllBusses: NSObject, forKeyPath: String, options: NSKeyValueObservingOptions, context: UnsafeMutableRawPointer?)",
+      "desc": "Adds a KVO observer for a given property on all busses in the array."
+    },
+    {
+      "name": "func removeObserver(fromAllBusses: NSObject, forKeyPath: String, context: UnsafeMutableRawPointer?)",
+      "desc": "Removes a KVO observer for a given property on all busses in the array."
+    },
+    {
+      "name": "func replaceBusses([AUAudioUnitBus])",
+      "desc": "Replaces the current bus array with a copy of the supplied bus array."
+    }
+  ],
+  "declaration": "class AUAudioUnitBusArray : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSFastEnumeration"
+  ]
+}

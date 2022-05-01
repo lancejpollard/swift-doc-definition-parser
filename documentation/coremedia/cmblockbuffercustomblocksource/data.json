@@ -1,0 +1,30 @@
+{
+  "path": "/documentation/coremedia/cmblockbuffercustomblocksource",
+  "type": "Structure",
+  "name": "CMBlockBufferCustomBlockSource",
+  "desc": "A structure to support custom memory allocation and deallocation for a block used in a block buffer.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(version: UInt32, AllocateBlock: ((UnsafeMutableRawPointer?, Int) -> UnsafeMutableRawPointer?)?, FreeBlock: ((UnsafeMutableRawPointer?, UnsafeMutableRawPointer, Int) -> Void)?, refCon: UnsafeMutableRawPointer?)"
+    },
+    {
+      "name": "var AllocateBlock: ((UnsafeMutableRawPointer?, Int) -> UnsafeMutableRawPointer?)?",
+      "desc": "The function to allocate memory."
+    },
+    {
+      "name": "var FreeBlock: ((UnsafeMutableRawPointer?, UnsafeMutableRawPointer, Int) -> Void)?",
+      "desc": "A function to call once when the CMBlockBuffer is disposed."
+    },
+    {
+      "name": "var refCon: UnsafeMutableRawPointer?",
+      "desc": "Contextual information passed to both the allocate and free function calls."
+    },
+    {
+      "name": "var version: UInt32"
+    }
+  ],
+  "declaration": "struct CMBlockBufferCustomBlockSource"
+}

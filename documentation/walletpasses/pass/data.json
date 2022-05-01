@@ -1,0 +1,140 @@
+{
+  "path": "/documentation/walletpasses/pass",
+  "type": "Object",
+  "name": "Pass",
+  "desc": "An object that represents a pass.",
+  "items": [
+    {
+      "name": "appLaunchURL",
+      "desc": "A URL the system passes to the associated app from associatedStoreIdentifiers during launch.The app receives this URL in the application(_:didFinishLaunchingWithOptions:) and application(_:open:options:) methods of its app delegate.This key isn’t supported for watchOS."
+    },
+    {
+      "name": "associatedStoreIdentifiers",
+      "desc": "An array of App Store identifiers for apps associated with the pass. The associated app on a device is the first item in the array that’s compatible with that device.A link to launch the app is on the back of the pass. If the app isn’t installed, the link opens the App Store.This key works only for payment passes.This key isn’t supported for watchOS."
+    },
+    {
+      "name": "authenticationToken",
+      "desc": "The authentication token to use with the web service in the webServiceURL key."
+    },
+    {
+      "name": "backgroundColor",
+      "desc": "A background color for the pass, specified as a CSS-style RGB triple, such as rgb(23, 187, 82)."
+    },
+    {
+      "name": "barcode",
+      "desc": "An object that represents a barcode on a pass.This object is deprecated. Use barcodes instead."
+    },
+    {
+      "name": "barcodes",
+      "desc": "An array of objects that represent possible barcodes on a pass. The system uses the first displayable barcode for the device."
+    },
+    {
+      "name": "beacons",
+      "desc": "An array of objects that represents the identity of Bluetooth Low Energy beacons the system uses to show a relevant pass."
+    },
+    {
+      "name": "boardingPass",
+      "desc": "An object that contains the information for a boarding pass."
+    },
+    {
+      "name": "coupon",
+      "desc": "An object that contains the information for a coupon."
+    },
+    {
+      "name": "description",
+      "desc": "A short description that iOS accessibility technologies use for a pass."
+    },
+    {
+      "name": "eventTicket",
+      "desc": "An object that contains the information for an event ticket."
+    },
+    {
+      "name": "expirationDate",
+      "desc": "The date and time the pass expires. The value must be a complete date that includes hours and minutes, and may optionally include seconds."
+    },
+    {
+      "name": "foregroundColor",
+      "desc": "A foreground color for the pass, specified as a CSS-style RGB triple, such as rgb(100, 10, 110)."
+    },
+    {
+      "name": "formatVersion",
+      "desc": "The version of the file format. The value must be 1."
+    },
+    {
+      "name": "generic",
+      "desc": "An object that contains the information for a generic pass."
+    },
+    {
+      "name": "groupingIdentifier",
+      "desc": "An identifier the system uses to group related boarding passes or event tickets. Wallet displays passes with the same groupingIdentifier, passTypeIdentifier, and type as a group.Use this identifier to group passes that are tightly related, such as boarding passes for different connections on the same trip."
+    },
+    {
+      "name": "labelColor",
+      "desc": "A color for the label text of the pass, specified as a CSS-style RGB triple, such as rgb(100, 10, 110). If you don’t provide a value, the system determines the label color."
+    },
+    {
+      "name": "locations",
+      "desc": "An array of up to 10 objects that represent geographic locations the system uses to show a relevant pass."
+    },
+    {
+      "name": "logoText",
+      "desc": "The text to display next to the logo on the pass."
+    },
+    {
+      "name": "maxDistance",
+      "desc": "The maximum distance, in meters, from a location in the locations array at which the pass is relevant. The system uses the smaller of either this distance or the default distance."
+    },
+    {
+      "name": "nfc",
+      "desc": "An object that contains the information to use for Value Added Service Protocol transactions."
+    },
+    {
+      "name": "organizationName",
+      "desc": "The name of the organization."
+    },
+    {
+      "name": "passTypeIdentifier",
+      "desc": "The pass type identifier that’s registered with Apple. The value must be the same as the distribution certificate used to sign the pass."
+    },
+    {
+      "name": "relevantDate",
+      "desc": "The date and time when the pass becomes relevant as a W3C timestamp, such as the start time of a movie. The value must be a complete date that includes hours and minutes, and may optionally include seconds.For information about the W3C timestamp format, see Time and Date Formats on the W3C website."
+    },
+    {
+      "name": "semantics",
+      "desc": "An object that contains machine-readable metadata the system uses to offer a pass and suggest related actions. For example, setting Don’t Disturb mode for the duration of a movie."
+    },
+    {
+      "name": "serialNumber",
+      "desc": "An alphanumeric serial number. The combination of the serial number and pass type identifier must be unique for each pass."
+    },
+    {
+      "name": "sharingProhibited",
+      "desc": "A Boolean value introduced in iOS 11 that controls whether to show the Share button on the back of a pass. A value of true removes the button. The default value is false. This flag has no effect in earlier versions of iOS, nor does it prevent sharing the pass in some other way."
+    },
+    {
+      "name": "storeCard",
+      "desc": "An object that contains the information for a store card."
+    },
+    {
+      "name": "suppressStripShine",
+      "desc": "A Boolean value that controls whether to display the strip image without a shine effect. The default value is true."
+    },
+    {
+      "name": "teamIdentifier",
+      "desc": "The Team ID for the Apple Developer Program account that registered the pass type identifier."
+    },
+    {
+      "name": "userInfo",
+      "desc": "A JSON dictionary that contains any custom information for companion apps. The data doesn’t appear to the user.For example, a pass for a cafe could include information about the customer’s favorite drink and sandwich in a machine-readable form. The companion app uses the data for placing an order for “the usual.”"
+    },
+    {
+      "name": "voided",
+      "desc": "A Boolean value that indicates that the pass is void, such as a redeemed, one-time-use coupon. The default value is false."
+    },
+    {
+      "name": "webServiceURL",
+      "desc": "The URL for a web service that you use to update or personalize the pass. The URL can include an optional port number."
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "path": "/documentation/realitykit/transform",
+  "type": "Structure",
+  "name": "Transform",
+  "desc": "A component that defines the scale, rotation, and translation of an entity.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a transform with the values of the identity transform."
+    },
+    {
+      "name": "init(scale: SIMD3<Float>, rotation: simd_quatf, translation: SIMD3<Float>)",
+      "desc": "Creates a new transformation using the given values."
+    },
+    {
+      "name": "init(pitch: Float, yaw: Float, roll: Float)",
+      "desc": "Creates a new transform from the specified Euler angles."
+    },
+    {
+      "name": "init(matrix: float4x4)",
+      "desc": "Creates a new transform represented as a 4x4 matrix."
+    },
+    {
+      "name": "var scale: SIMD3<Float>",
+      "desc": "The scaling factor applied to the entity."
+    },
+    {
+      "name": "var rotation: simd_quatf",
+      "desc": "The rotation of the entity specified as a unit quaternion."
+    },
+    {
+      "name": "var translation: SIMD3<Float>",
+      "desc": "The position of the entity along the x, y, and z axes."
+    },
+    {
+      "name": "var matrix: float4x4",
+      "desc": "The transform represented as a 4x4 matrix."
+    },
+    {
+      "name": "static let identity: Transform",
+      "desc": "The identity transform."
+    },
+    {
+      "name": "static func == (Transform, Transform) -> Bool",
+      "desc": "Indicates whether two transforms are equal."
+    },
+    {
+      "name": "static func != (Transform, Transform) -> Bool",
+      "desc": "Indicates whether two transforms are not equal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the transform by feeding them into the given hash function."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hashed value of the transform."
+    },
+    {
+      "name": "static func registerComponent()",
+      "desc": "Registers a new component type."
+    }
+  ],
+  "declaration": "@frozen struct Transform",
+  "conformsTo": [
+    "Component",
+    "Hashable"
+  ]
+}

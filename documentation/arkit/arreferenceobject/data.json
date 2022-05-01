@@ -1,0 +1,62 @@
+{
+  "path": "/documentation/arkit/arreferenceobject",
+  "type": "Class",
+  "name": "ARReferenceObject",
+  "desc": "The description of a 3D object that you want ARKit to detect in the physical environment.",
+  "items": [
+    {
+      "name": "init(archiveURL: URL)",
+      "desc": "Loads a reference object from the specified file URL."
+    },
+    {
+      "name": "class func referenceObjects(inGroupNamed: String, bundle: Bundle?) -> Set<ARReferenceObject>?",
+      "desc": "Loads all reference objects in the specified AR Resource Group in your Xcode project's asset catalog."
+    },
+    {
+      "name": "var name: String?",
+      "desc": "A descriptive name for the reference object."
+    },
+    {
+      "name": "var resourceGroupName: String?"
+    },
+    {
+      "name": "var center: simd_float3",
+      "desc": "The center point of the reference object's space-mapping data."
+    },
+    {
+      "name": "var extent: simd_float3",
+      "desc": "The size of the reference object's space-mapping data."
+    },
+    {
+      "name": "var scale: simd_float3",
+      "desc": "A scale factor for the local coordinate space the reference object defines."
+    },
+    {
+      "name": "func export(to: URL, previewImage: UIImage?)",
+      "desc": "Writes a binary representation of the object to the specified file URL."
+    },
+    {
+      "name": "class let archiveExtension: String",
+      "desc": "The standard filename extension for exported ARReferenceObject instances."
+    },
+    {
+      "name": "func applyingTransform(simd_float4x4) -> ARReferenceObject",
+      "desc": "Returns a new reference object created by applying the specified transform to this reference object's geometric data."
+    },
+    {
+      "name": "func merging(ARReferenceObject) -> ARReferenceObject",
+      "desc": "Returns a new reference object that combines spatial information from both this reference object and another."
+    },
+    {
+      "name": "var rawFeaturePoints: ARPointCloud",
+      "desc": "A coarse representation of the space-mapping data contained in the reference object."
+    }
+  ],
+  "declaration": "class ARReferenceObject : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "path": "/documentation/appkit/nsanimation",
+  "type": "Class",
+  "name": "NSAnimation",
+  "desc": "An object that manages the timing and progress of animations in the user interface.",
+  "items": [
+    {
+      "name": "init(duration: TimeInterval, animationCurve: NSAnimation.Curve)",
+      "desc": "Returns an NSAnimation object initialized with the specified duration and animation-curve values."
+    },
+    {
+      "name": "var animationBlockingMode: NSAnimation.BlockingMode",
+      "desc": "The blocking mode of the animation."
+    },
+    {
+      "name": "var runLoopModesForAnimating: [RunLoop.Mode]?",
+      "desc": "An array of strings representing the run loop modes in which the animation can run."
+    },
+    {
+      "name": "var animationCurve: NSAnimation.Curve",
+      "desc": "The timing curve for the animation."
+    },
+    {
+      "name": "var duration: TimeInterval",
+      "desc": "The duration of the animation, in seconds."
+    },
+    {
+      "name": "var frameRate: Float",
+      "desc": "The number of frame updates per second to generate for the animation."
+    },
+    {
+      "name": "var delegate: NSAnimationDelegate?",
+      "desc": "The animation delegate."
+    },
+    {
+      "name": "func start()",
+      "desc": "Starts the animation represented by the receiver."
+    },
+    {
+      "name": "func stop()",
+      "desc": "Stops the animation represented by the receiver."
+    },
+    {
+      "name": "var isAnimating: Bool",
+      "desc": "A Boolean value indicating whether the animation is in progress."
+    },
+    {
+      "name": "var currentProgress: NSAnimation.Progress",
+      "desc": "The current progress of the animation."
+    },
+    {
+      "name": "var currentValue: Float",
+      "desc": "The current value of the animation effect, based on the current progress"
+    },
+    {
+      "name": "func addProgressMark(NSAnimation.Progress)",
+      "desc": "Adds the progress mark to the receiver."
+    },
+    {
+      "name": "func removeProgressMark(NSAnimation.Progress)",
+      "desc": "Removes progress mark from the receiver."
+    },
+    {
+      "name": "var progressMarks: [NSNumber]",
+      "desc": "An array of floating-point numbers representing current progress marks."
+    },
+    {
+      "name": "func start(when: NSAnimation, reachesProgress: NSAnimation.Progress)",
+      "desc": "Starts running the animation represented by the receiver when another animation reaches a specific progress mark."
+    },
+    {
+      "name": "func stop(when: NSAnimation, reachesProgress: NSAnimation.Progress)",
+      "desc": "Stops running the animation represented by the receiver when another animation reaches a specific progress mark."
+    },
+    {
+      "name": "func clearStart()",
+      "desc": "Clears linkage to another animation that causes the receiver to start."
+    },
+    {
+      "name": "func clearStop()",
+      "desc": "Clears linkage to another animation that causes the receiver to stop."
+    },
+    {
+      "name": "enum NSAnimation.Curve",
+      "desc": "These constants describe the curve of an animation—that is, the relative speed of an animation from start to finish."
+    },
+    {
+      "name": "enum NSAnimation.BlockingMode",
+      "desc": "These constants indicate the blocking mode of an NSAnimation object when it is running."
+    },
+    {
+      "name": "typealias NSAnimation.Progress",
+      "desc": "The animation progress, as a floating-point number between 0.0 and 1.0."
+    },
+    {
+      "name": "class let progressMarkNotification: NSNotification.Name",
+      "desc": "Posted when the current progress of a running animation reaches one of its progress marks."
+    },
+    {
+      "name": "init?(coder: NSCoder)"
+    }
+  ],
+  "declaration": "class NSAnimation : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "NSCopying"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "path": "/documentation/avfaudio/avaudioplayernode",
+  "type": "Class",
+  "name": "AVAudioPlayerNode",
+  "desc": "An object for scheduling the playback of buffers or segments of audio files.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an initialized audio player node."
+    },
+    {
+      "name": "func scheduleFile(AVAudioFile, at: AVAudioTime?, completionHandler: AVAudioNodeCompletionHandler?)",
+      "desc": "Schedules the playing of an entire audio file."
+    },
+    {
+      "name": "func scheduleFile(AVAudioFile, at: AVAudioTime?, completionCallbackType: AVAudioPlayerNodeCompletionCallbackType, completionHandler: AVAudioPlayerNodeCompletionHandler?)",
+      "desc": "Schedules the playing of an entire audio file with a callback option you specify."
+    },
+    {
+      "name": "func scheduleSegment(AVAudioFile, startingFrame: AVAudioFramePosition, frameCount: AVAudioFrameCount, at: AVAudioTime?, completionHandler: AVAudioNodeCompletionHandler?)",
+      "desc": "Schedules the playing of an audio file segment."
+    },
+    {
+      "name": "func scheduleSegment(AVAudioFile, startingFrame: AVAudioFramePosition, frameCount: AVAudioFrameCount, at: AVAudioTime?, completionCallbackType: AVAudioPlayerNodeCompletionCallbackType, completionHandler: AVAudioPlayerNodeCompletionHandler?)",
+      "desc": "Schedules the playing of an audio file segment with a callback option you specify."
+    },
+    {
+      "name": "func scheduleBuffer(AVAudioPCMBuffer, at: AVAudioTime?, options: AVAudioPlayerNodeBufferOptions, completionHandler: AVAudioNodeCompletionHandler?)",
+      "desc": "Schedules the playing samples from an audio buffer at the time and playback options you specify."
+    },
+    {
+      "name": "func scheduleBuffer(AVAudioPCMBuffer, completionHandler: AVAudioNodeCompletionHandler?)",
+      "desc": "Schedules the playing samples from an audio buffer."
+    },
+    {
+      "name": "func scheduleBuffer(AVAudioPCMBuffer, at: AVAudioTime?, options: AVAudioPlayerNodeBufferOptions, completionCallbackType: AVAudioPlayerNodeCompletionCallbackType, completionHandler: AVAudioPlayerNodeCompletionHandler?)",
+      "desc": "Schedules the playing samples from an audio buffer with the playback options you specify."
+    },
+    {
+      "name": "func scheduleBuffer(AVAudioPCMBuffer, completionCallbackType: AVAudioPlayerNodeCompletionCallbackType, completionHandler: AVAudioPlayerNodeCompletionHandler?)",
+      "desc": "Schedules the playing samples from an audio buffer with the callback option you specify."
+    },
+    {
+      "name": "struct AVAudioPlayerNodeBufferOptions",
+      "desc": "The buffer options that control the playback scheduling."
+    },
+    {
+      "name": "enum AVAudioPlayerNodeCompletionCallbackType",
+      "desc": "Constants that specify when the framework must invoke the completion handler."
+    },
+    {
+      "name": "typealias AVAudioPlayerNodeCompletionHandler",
+      "desc": "The callback handler for buffer or file completion."
+    },
+    {
+      "name": "func nodeTime(forPlayerTime: AVAudioTime) -> AVAudioTime?",
+      "desc": "Converts from player time to node time."
+    },
+    {
+      "name": "func playerTime(forNodeTime: AVAudioTime) -> AVAudioTime?",
+      "desc": "Converts from node time to player time."
+    },
+    {
+      "name": "func prepare(withFrameCount: AVAudioFrameCount)",
+      "desc": "Prepares the file regions or buffers you schedule for playback."
+    },
+    {
+      "name": "func play()",
+      "desc": "Starts or resumes playback immediately."
+    },
+    {
+      "name": "func play(at: AVAudioTime?)",
+      "desc": "Starts or resumes playback at a time you specify."
+    },
+    {
+      "name": "var isPlaying: Bool",
+      "desc": "A Boolean value that indicates whether the player is playing."
+    },
+    {
+      "name": "func pause()",
+      "desc": "Pauses the node’s playback."
+    },
+    {
+      "name": "func stop()",
+      "desc": "Clears all of the node’s events you schedule and stops playback."
+    }
+  ],
+  "declaration": "class AVAudioPlayerNode : AVAudioNode",
+  "inheritsFrom": [
+    "AVAudioNode"
+  ],
+  "conformsTo": [
+    "AVAudioMixing"
+  ]
+}

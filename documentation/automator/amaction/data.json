@@ -1,0 +1,100 @@
+{
+  "path": "/documentation/automator/amaction",
+  "type": "Class",
+  "name": "AMAction",
+  "desc": "An abstract class that defines the interface and general characteristics of Automator actions.",
+  "items": [
+    {
+      "name": "init?(definition: [String : Any]?, fromArchive: Bool)",
+      "desc": "Initializes the action with the specified definition."
+    },
+    {
+      "name": "init(contentsOf: URL)",
+      "desc": "Loads an Automator action from a file URL."
+    },
+    {
+      "name": "func write(to: NSMutableDictionary)",
+      "desc": "Examines the parameters and other configuration information specified in the passed dictionary and adds its own information to it if appropriate."
+    },
+    {
+      "name": "func run(withInput: Any?) -> Any",
+      "desc": "Requests the action to perform its task using the specified input."
+    },
+    {
+      "name": "func runAsynchronously(withInput: Any?)",
+      "desc": "Causes Automator to wait for notification that the action has completed execution, which allows the action to perform an asynchronous operation."
+    },
+    {
+      "name": "func finishRunningWithError(Error?)",
+      "desc": "Causes the action to stop running and return an error, which, in turn, causes the workflow to stop."
+    },
+    {
+      "name": "func willFinishRunning()",
+      "desc": "Provides an opportunity for an action to perform cleanup operations, such as closing windows and deallocating memory."
+    },
+    {
+      "name": "func stop()",
+      "desc": "Stops the action from running."
+    },
+    {
+      "name": "func reset()",
+      "desc": "Resets the action to its initial state."
+    },
+    {
+      "name": "func activated()",
+      "desc": "Allows the action to synchronize its information with settings in another app."
+    },
+    {
+      "name": "func opened()",
+      "desc": "Allows the action to initialize its user interface."
+    },
+    {
+      "name": "enum AMLogLevel",
+      "desc": "Logging levels that Automator supports."
+    },
+    {
+      "name": "func parametersUpdated()",
+      "desc": "Requests the action to update its user interface from its stored parameters, which have changed."
+    },
+    {
+      "name": "func updateParameters()",
+      "desc": "Requests the action to update its stored set of parameters from the settings in the action’s user interface."
+    },
+    {
+      "name": "var name: String",
+      "desc": "The name of the action."
+    },
+    {
+      "name": "var progressValue: CGFloat",
+      "desc": "A float value between 0 and 1, which indicates how far along the action is while processing."
+    },
+    {
+      "name": "var ignoresInput: Bool",
+      "desc": "A Boolean value that indicates whether the action acts upon its input or the input is ignored."
+    },
+    {
+      "name": "var output: Any?",
+      "desc": "The action’s output."
+    },
+    {
+      "name": "var selectedInputType: String?",
+      "desc": "The type of input, in UTI format, of the input received by the action."
+    },
+    {
+      "name": "var selectedOutputType: String?",
+      "desc": "The type of output, in UTI format, of the output to be produced by the action."
+    },
+    {
+      "name": "var isStopped: Bool",
+      "desc": "A Boolean value that indicates whether the user clicked the stop button on the parent workflow."
+    },
+    {
+      "name": "func closed()",
+      "desc": "Invoked by Automator when the receiving action is removed from a workflow, allowing it to perform cleanup operations."
+    }
+  ],
+  "declaration": "class AMAction : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

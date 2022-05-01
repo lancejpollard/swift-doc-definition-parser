@@ -1,0 +1,116 @@
+{
+  "path": "/documentation/foundation/urlsessiontask",
+  "type": "Class",
+  "name": "URLSessionTask",
+  "desc": "A task, like downloading a specific resource, performed in a URL session.",
+  "items": [
+    {
+      "name": "func cancel()",
+      "desc": "Cancels the task."
+    },
+    {
+      "name": "func resume()",
+      "desc": "Resumes the task, if it is suspended."
+    },
+    {
+      "name": "func suspend()",
+      "desc": "Temporarily suspends a task."
+    },
+    {
+      "name": "var state: URLSessionTask.State",
+      "desc": "The current state of the task—active, suspended, in the process of being canceled, or completed."
+    },
+    {
+      "name": "enum URLSessionTask.State",
+      "desc": "Constants for determining the current state of a task."
+    },
+    {
+      "name": "var priority: Float",
+      "desc": "The relative priority at which you’d like a host to handle the task, specified as a floating point value between 0.0 (lowest priority) and 1.0 (highest priority)."
+    },
+    {
+      "name": "var progress: Progress",
+      "desc": "A representation of the overall task progress."
+    },
+    {
+      "name": "var countOfBytesExpectedToReceive: Int64",
+      "desc": "The number of bytes that the task expects to receive in the response body."
+    },
+    {
+      "name": "var countOfBytesReceived: Int64",
+      "desc": "The number of bytes that the task has received from the server in the response body."
+    },
+    {
+      "name": "var countOfBytesExpectedToSend: Int64",
+      "desc": "The number of bytes that the task expects to send in the request body."
+    },
+    {
+      "name": "var countOfBytesSent: Int64",
+      "desc": "The number of bytes that the task has sent to the server in the request body."
+    },
+    {
+      "name": "let NSURLSessionTransferSizeUnknown: Int64",
+      "desc": "The total size of the transfer cannot be determined."
+    },
+    {
+      "name": "var currentRequest: URLRequest?",
+      "desc": "The URL request object currently being handled by the task."
+    },
+    {
+      "name": "var originalRequest: URLRequest?",
+      "desc": "The original request object passed when the task was created."
+    },
+    {
+      "name": "var response: URLResponse?",
+      "desc": "The server’s response to the currently active request."
+    },
+    {
+      "name": "var taskDescription: String?",
+      "desc": "An app-provided string value for the current task."
+    },
+    {
+      "name": "var taskIdentifier: Int",
+      "desc": "An identifier uniquely identifying the task within a given session."
+    },
+    {
+      "name": "var error: Error?",
+      "desc": "An error object that indicates why the task failed."
+    },
+    {
+      "name": "var prefersIncrementalDelivery: Bool",
+      "desc": "A Boolean value that determines whether to deliver a partial response body in increments."
+    },
+    {
+      "name": "var delegate: URLSessionTaskDelegate?",
+      "desc": "A delegate specific to the task."
+    },
+    {
+      "name": "protocol URLSessionTaskDelegate",
+      "desc": "A protocol that defines methods that URL session instances call on their delegates to handle task-level events."
+    },
+    {
+      "name": "var countOfBytesClientExpectsToReceive: Int64",
+      "desc": "A best-guess upper bound on the number of bytes the client expects to receive."
+    },
+    {
+      "name": "var countOfBytesClientExpectsToSend: Int64",
+      "desc": "A best-guess upper bound on the number of bytes the client expects to send."
+    },
+    {
+      "name": "let NSURLSessionTransferSizeUnknown: Int64",
+      "desc": "The total size of the transfer cannot be determined."
+    },
+    {
+      "name": "var earliestBeginDate: Date?",
+      "desc": "The earliest date at which the network load should begin."
+    }
+  ],
+  "declaration": "class URLSessionTask : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "ProgressReporting"
+  ]
+}

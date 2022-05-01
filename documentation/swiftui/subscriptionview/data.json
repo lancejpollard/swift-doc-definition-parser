@@ -1,0 +1,31 @@
+{
+  "path": "/documentation/swiftui/subscriptionview",
+  "type": "Structure",
+  "name": "SubscriptionView",
+  "desc": "A view that subscribes to a publisher with an action.",
+  "items": [
+    {
+      "name": "init(content: Content, publisher: PublisherType, action: (PublisherType.Output) -> Void)"
+    },
+    {
+      "name": "var publisher: PublisherType",
+      "desc": "The Publisher that is being subscribed."
+    },
+    {
+      "name": "var action: (PublisherType.Output) -> Void",
+      "desc": "The Action executed when publisher emits an event."
+    },
+    {
+      "name": "var content: Content",
+      "desc": "The content view."
+    },
+    {
+      "name": "typealias Body",
+      "desc": "The type of view representing the body of this view."
+    }
+  ],
+  "declaration": "@frozen struct SubscriptionView<PublisherType, Content> where PublisherType : Publisher, Content : View, PublisherType.Failure == Never",
+  "conformsTo": [
+    "View"
+  ]
+}

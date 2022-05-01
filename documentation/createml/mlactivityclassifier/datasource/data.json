@@ -1,0 +1,25 @@
+{
+  "path": "/documentation/createml/mlactivityclassifier/datasource",
+  "type": "Enumeration",
+  "name": "MLActivityClassifier.DataSource",
+  "desc": "A data source for an activity classifier.",
+  "items": [
+    {
+      "name": "case labeledDirectories(at: URL)",
+      "desc": "An activity classifier data source that uses a directory of directories that contain sensor data files."
+    },
+    {
+      "name": "case directoryWithDataAndAnnotation(at: URL, annotationFileName: String, timeStampColumn: String, labelStartTimeColumn: String, labelEndTimeColumn: String)",
+      "desc": "An activity classifier data source that uses a directory that contains sensor data files and one annotation file."
+    },
+    {
+      "name": "func labeledSensorData(featureColumns: [String], labelColumn: String?, recordingFileColumn: String?) -> MLDataTable",
+      "desc": "Generates a data table from the contents of the data source."
+    },
+    {
+      "name": "func stratifiedSplit(proportions: [Double], seed: Int, featureColumns: [String], labelColumn: String, recordingFileColumn: String) -> MLDataTable",
+      "desc": "Generates a data table by splitting the data source into strata."
+    }
+  ],
+  "declaration": "enum MLActivityClassifier.DataSource"
+}

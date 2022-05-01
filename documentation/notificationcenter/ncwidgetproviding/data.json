@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/notificationcenter/ncwidgetproviding",
+  "type": "Protocol",
+  "name": "NCWidgetProviding",
+  "desc": "The interface for customizing the appearance and behavior of a Today widget.DeprecatedUse WidgetKit instead.",
+  "items": [
+    {
+      "name": "func widgetMarginInsets(forProposedMarginInsets: UIEdgeInsets) -> UIEdgeInsets",
+      "desc": "Called to let a widget accept the default margin inset values or return custom values to use instead."
+    },
+    {
+      "name": "func widgetActiveDisplayModeDidChange(NCWidgetDisplayMode, withMaximumSize: CGSize)",
+      "desc": "Called when the active display mode changes."
+    },
+    {
+      "name": "enum NCWidgetDisplayMode",
+      "desc": "The modes that can be toggled between when the user activates the More button for a widget running in iOS."
+    },
+    {
+      "name": "func widgetPerformUpdate(completionHandler: (NCUpdateResult) -> Void)",
+      "desc": "Called to give a widget an opportunity to update its contents."
+    },
+    {
+      "name": "enum NCUpdateResult",
+      "desc": "The result of updating a widget's state."
+    },
+    {
+      "name": "var widgetAllowsEditing: Bool",
+      "desc": "A Boolean value indicating whether the widget can be edited by users."
+    },
+    {
+      "name": "func widgetDidBeginEditing()",
+      "desc": "Called when a user chooses the widget’s begin editing button."
+    },
+    {
+      "name": "func widgetDidEndEditing()",
+      "desc": "Called when a widget’s editing session ends."
+    }
+  ],
+  "declaration": "protocol NCWidgetProviding",
+  "inheritsFrom": [
+    "NSExtensionRequestHandling",
+    "NSObjectProtocol"
+  ]
+}

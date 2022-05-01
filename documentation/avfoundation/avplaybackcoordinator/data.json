@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/avfoundation/avplaybackcoordinator",
+  "type": "Class",
+  "name": "AVPlaybackCoordinator",
+  "desc": "An object that coordinates the playback of players in a connected group.",
+  "items": [
+    {
+      "name": "func participantLimitForWaitingOutSuspensions(withReason: AVCoordinatedPlaybackSuspension.Reason) -> Int",
+      "desc": "Returns the limit on the number of partipants that a group may contain before the coordinator stops waiting on suspensions that occur for a particular reason."
+    },
+    {
+      "name": "func setParticipantLimit(Int, forWaitingOutSuspensionsWithReason: AVCoordinatedPlaybackSuspension.Reason)",
+      "desc": "Sets a limit on the number of partipants that a group may contain before the coordinator stops waiting on suspensions that occur for a particular reason."
+    },
+    {
+      "name": "var suspensionReasonsThatTriggerWaiting: [AVCoordinatedPlaybackSuspension.Reason]",
+      "desc": "The reasons that cause a coordinator to suspend playback."
+    },
+    {
+      "name": "var pauseSnapsToMediaTimeOfOriginator: Bool",
+      "desc": "A Boolean value that indicates whether participants mirror the originator’s stop time when they pause."
+    },
+    {
+      "name": "func beginSuspension(for: AVCoordinatedPlaybackSuspension.Reason) -> AVCoordinatedPlaybackSuspension",
+      "desc": "Tells the coordinator to stop sending playback commands temporarily when the playback object disconnects from the group activity."
+    },
+    {
+      "name": "class AVCoordinatedPlaybackSuspension",
+      "desc": "An object that represents a temporary suspension of coordinated playback."
+    },
+    {
+      "name": "func expectedItemTime(atHostTime: CMTime) -> CMTime",
+      "desc": "Returns a time in the current item’s timeline that the coordinator expects to play at the specified host time."
+    },
+    {
+      "name": "var suspensionReasons: [AVCoordinatedPlaybackSuspension.Reason]",
+      "desc": "The reasons a coordinator is currently unable to participate in a group playback activity."
+    },
+    {
+      "name": "class let suspensionReasonsDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that the coordinator posts when its suspension reasons change."
+    },
+    {
+      "name": "var otherParticipants: [AVCoordinatedPlaybackParticipant]",
+      "desc": "The identifiers of the other participants in a group."
+    },
+    {
+      "name": "class AVCoordinatedPlaybackParticipant",
+      "desc": "An object that represents a participant in a coordinated playback session."
+    },
+    {
+      "name": "class let otherParticipantsDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that the coordinator posts when its other participants change."
+    },
+    {
+      "name": "func coordinateWithSession<T>(GroupSession<T>)",
+      "desc": "Begins coordination of a player with a group session."
+    }
+  ],
+  "declaration": "class AVPlaybackCoordinator : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

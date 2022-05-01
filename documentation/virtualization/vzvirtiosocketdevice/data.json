@@ -1,0 +1,24 @@
+{
+  "path": "/documentation/virtualization/vzvirtiosocketdevice",
+  "type": "Class",
+  "name": "VZVirtioSocketDevice",
+  "desc": "A device that manages port-based connections between the guest system and the host computer.",
+  "items": [
+    {
+      "name": "func setSocketListener(VZVirtioSocketListener, forPort: UInt32)",
+      "desc": "Configures an object to monitor the specified port for new connections."
+    },
+    {
+      "name": "func removeSocketListener(forPort: UInt32)",
+      "desc": "Removes the listener object from the specfied port."
+    },
+    {
+      "name": "func connect(toPort: UInt32, completionHandler: (Result<VZVirtioSocketConnection, Error>) -> Void)",
+      "desc": "Initiates a connection to the specified port of the guest operating system."
+    }
+  ],
+  "declaration": "class VZVirtioSocketDevice : VZSocketDevice",
+  "inheritsFrom": [
+    "VZSocketDevice"
+  ]
+}

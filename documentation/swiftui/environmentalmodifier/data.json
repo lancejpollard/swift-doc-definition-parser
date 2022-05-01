@@ -1,0 +1,20 @@
+{
+  "path": "/documentation/swiftui/environmentalmodifier",
+  "type": "Protocol",
+  "name": "EnvironmentalModifier",
+  "desc": "A modifier that must resolve to a concrete modifier in an environment before use.",
+  "items": [
+    {
+      "name": "func resolve(in: EnvironmentValues) -> Self.ResolvedModifier",
+      "desc": "Resolve to a concrete modifier in the given environment."
+    },
+    {
+      "name": "associatedtype ResolvedModifier : ViewModifier",
+      "desc": "The type of modifier to use after being resolved."
+    }
+  ],
+  "declaration": "protocol EnvironmentalModifier : ViewModifier where Self.Body == Never",
+  "inheritsFrom": [
+    "ViewModifier"
+  ]
+}

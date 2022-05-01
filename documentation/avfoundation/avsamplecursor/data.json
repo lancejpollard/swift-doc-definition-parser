@@ -1,0 +1,115 @@
+{
+  "path": "/documentation/avfoundation/avsamplecursor",
+  "type": "Class",
+  "name": "AVSampleCursor",
+  "desc": "An object that provides information about the media sample at the cursor’s current position.",
+  "items": [
+    {
+      "name": "func step(byDecodeTime: CMTime, wasPinned: UnsafeMutablePointer<ObjCBool>?) -> CMTime",
+      "desc": "Moves the cursor by a given delta time on the decode timeline."
+    },
+    {
+      "name": "func step(byPresentationTime: CMTime, wasPinned: UnsafeMutablePointer<ObjCBool>?) -> CMTime",
+      "desc": "Moves the cursor by a given delta time on the presentation timeline."
+    },
+    {
+      "name": "func stepInDecodeOrder(byCount: Int64) -> Int64",
+      "desc": "Moves the cursor a given number of samples in decode order."
+    },
+    {
+      "name": "func stepInPresentationOrder(byCount: Int64) -> Int64",
+      "desc": "Moves the cursor a given number of samples in presentation order."
+    },
+    {
+      "name": "var decodeTimeStamp: CMTime",
+      "desc": "The decode timestamp of the sample at the current position of the cursor."
+    },
+    {
+      "name": "var presentationTimeStamp: CMTime",
+      "desc": "The presentation timestamp of the sample at the current position of the cursor."
+    },
+    {
+      "name": "var currentChunkInfo: AVSampleCursorChunkInfo",
+      "desc": "A value that provides information about the chunk of samples to which the current sample belongs."
+    },
+    {
+      "name": "struct AVSampleCursorChunkInfo",
+      "desc": "A value that provides information about a chunk of media samples."
+    },
+    {
+      "name": "var currentChunkStorageRange: AVSampleCursorStorageRange",
+      "desc": "The sample range in the storage container to load together with the current sample as a chunk."
+    },
+    {
+      "name": "struct AVSampleCursorStorageRange",
+      "desc": "A structure that indicates the offset and length of storage for a media sample or its chunk."
+    },
+    {
+      "name": "var currentChunkStorageURL: URL?",
+      "desc": "The URL of the storage container of the current sample and other samples to load in the same operation as a chunk."
+    },
+    {
+      "name": "var currentSampleDependencyInfo: AVSampleCursorDependencyInfo",
+      "desc": "The dependency information that describes relationships between a media sample and other media samples in the same sample sequence."
+    },
+    {
+      "name": "struct AVSampleCursorDependencyInfo",
+      "desc": "A value for describing dependencies between a media sample and other media samples in the same sample sequence."
+    },
+    {
+      "name": "var currentSampleDuration: CMTime",
+      "desc": "The presentation duration of the sample at the cursor’s current position."
+    },
+    {
+      "name": "var currentSampleIndexInChunk: Int64",
+      "desc": "The index of the current sample within the chunk to which it belongs."
+    },
+    {
+      "name": "var currentSampleStorageRange: AVSampleCursorStorageRange",
+      "desc": "The offset and length of the current sample in the current chunk storage URL."
+    },
+    {
+      "name": "var currentSampleSyncInfo: AVSampleCursorSyncInfo",
+      "desc": "The synchronization information for the current sample for consideration when resynchronizing a decoder."
+    },
+    {
+      "name": "struct AVSampleCursorSyncInfo",
+      "desc": "A structure that describes the attributes of media samples to consider when resynchronizing a decoder."
+    },
+    {
+      "name": "func copyCurrentSampleFormatDescription() -> CMFormatDescription",
+      "desc": "Returns the format description of the sample at the cursor’s current position."
+    },
+    {
+      "name": "var currentSampleAudioDependencyInfo: AVSampleCursorAudioDependencyInfo",
+      "desc": "The independent decodability information for the audio sample."
+    },
+    {
+      "name": "var currentSampleDependencyAttachments: [AnyHashable : Any]?",
+      "desc": "A dictionary of dependency-related sample buffer attachments."
+    },
+    {
+      "name": "func maySamplesWithEarlierDecodeTimeStampsHavePresentationTimeStamps(laterThan: AVSampleCursor) -> Bool",
+      "desc": "Determines whether a sample earlier in decode order can have a presentation timestamp later than that of the specified sample cursor."
+    },
+    {
+      "name": "func maySamplesWithLaterDecodeTimeStampsHavePresentationTimeStamps(earlierThan: AVSampleCursor) -> Bool",
+      "desc": "Determines whether a sample later in decode order can have a presentation timestamp earlier than that of the specified sample cursor."
+    },
+    {
+      "name": "var samplesRequiredForDecoderRefresh: Int",
+      "desc": "The number of samples prior to the current sample, in decode order, the decoder requires to achieve a coherent output at the current decode time."
+    },
+    {
+      "name": "func comparePositionInDecodeOrder(withPositionOf: AVSampleCursor) -> ComparisonResult",
+      "desc": "Compares the relative positions of two sample cursors and returns their relative positions."
+    }
+  ],
+  "declaration": "class AVSampleCursor : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying"
+  ]
+}

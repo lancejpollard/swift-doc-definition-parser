@@ -1,0 +1,317 @@
+{
+  "path": "/documentation/foundation/calendar",
+  "type": "Structure",
+  "name": "Calendar",
+  "desc": "A definition of the relationships between calendar units (such as eras, years, and weekdays) and absolute points in time, providing features for calculation and comparison of dates.",
+  "items": [
+    {
+      "name": "enum Calendar.Identifier",
+      "desc": "An enumeration for the available calendars."
+    },
+    {
+      "name": "static var autoupdatingCurrent: Calendar",
+      "desc": "A calendar that tracks changes to user’s preferred calendar."
+    },
+    {
+      "name": "static var current: Calendar",
+      "desc": "The user’s current calendar."
+    },
+    {
+      "name": "func date(Date, matchesComponents: DateComponents) -> Bool",
+      "desc": "Determines if the date has all of the specified date components."
+    },
+    {
+      "name": "func component(Calendar.Component, from: Date) -> Int",
+      "desc": "Returns the value for one component of a date."
+    },
+    {
+      "name": "func dateComponents(Set<Calendar.Component>, from: Date) -> DateComponents",
+      "desc": "Returns all the date components of a date, using the calendar time zone."
+    },
+    {
+      "name": "func dateComponents(Set<Calendar.Component>, from: Date, to: Date) -> DateComponents",
+      "desc": "Returns the difference between two dates."
+    },
+    {
+      "name": "func dateComponents(Set<Calendar.Component>, from: DateComponents, to: DateComponents) -> DateComponents",
+      "desc": "Returns the difference between two dates specified as DateComponents."
+    },
+    {
+      "name": "func dateComponents(in: TimeZone, from: Date) -> DateComponents",
+      "desc": "Returns all the date components of a date, as if in a given time zone (instead of the Calendar time zone)."
+    },
+    {
+      "name": "enum Calendar.Component",
+      "desc": "An enumeration for the various components of a calendar date."
+    },
+    {
+      "name": "var identifier: Calendar.Identifier",
+      "desc": "The identifier of the calendar."
+    },
+    {
+      "name": "var locale: Locale?",
+      "desc": "The locale of the calendar."
+    },
+    {
+      "name": "var firstWeekday: Int",
+      "desc": "The first day of the week for the calendar."
+    },
+    {
+      "name": "var minimumDaysInFirstWeek: Int",
+      "desc": "The number of minimum days in the first week."
+    },
+    {
+      "name": "var timeZone: TimeZone",
+      "desc": "The time zone of the calendar."
+    },
+    {
+      "name": "func maximumRange(of: Calendar.Component) -> Range<Int>?",
+      "desc": "The maximum range limits of the values that a given component can take on."
+    },
+    {
+      "name": "func minimumRange(of: Calendar.Component) -> Range<Int>?",
+      "desc": "Returns the minimum range limits of the values that a given component can take on."
+    },
+    {
+      "name": "func ordinality(of: Calendar.Component, in: Calendar.Component, for: Date) -> Int?",
+      "desc": "Returns, for a given absolute time, the ordinal number of a smaller calendar component (such as a day) within a specified larger calendar component (such as a week)."
+    },
+    {
+      "name": "func range(of: Calendar.Component, in: Calendar.Component, for: Date) -> Range<Int>?",
+      "desc": "Returns the range of absolute time values that a smaller calendar component (such as a day) can take on in a larger calendar component (such as a month) that includes a specified absolute time."
+    },
+    {
+      "name": "func startOfDay(for: Date) -> Date",
+      "desc": "Returns the first moment of a given Date, as a Date."
+    },
+    {
+      "name": "func enumerateDates(startingAfter: Date, matching: DateComponents, matchingPolicy: Calendar.MatchingPolicy, repeatedTimePolicy: Calendar.RepeatedTimePolicy, direction: Calendar.SearchDirection, using: (Date?, Bool, inout Bool) -> Void)",
+      "desc": "Computes the dates which match (or most closely match) a given set of components, and calls the closure once for each of them, until the enumeration is stopped."
+    },
+    {
+      "name": "func nextDate(after: Date, matching: DateComponents, matchingPolicy: Calendar.MatchingPolicy, repeatedTimePolicy: Calendar.RepeatedTimePolicy, direction: Calendar.SearchDirection) -> Date?",
+      "desc": "Computes the next date which matches (or most closely matches) a given set of components."
+    },
+    {
+      "name": "enum Calendar.MatchingPolicy",
+      "desc": "A hint to the search algorithm to control the method used for searching for dates."
+    },
+    {
+      "name": "enum Calendar.RepeatedTimePolicy",
+      "desc": "Determines which result to use when a time is repeated on a day in a calendar (for example, during a daylight saving transition when the times between 2:00am and 3:00am may happen twice)."
+    },
+    {
+      "name": "func date(from: DateComponents) -> Date?",
+      "desc": "Returns a date created from the specified components."
+    },
+    {
+      "name": "func date(byAdding: DateComponents, to: Date, wrappingComponents: Bool) -> Date?",
+      "desc": "Returns a new Date representing the date calculated by adding components to a given date."
+    },
+    {
+      "name": "func date(byAdding: Calendar.Component, value: Int, to: Date, wrappingComponents: Bool) -> Date?",
+      "desc": "Returns a new Date representing the date calculated by adding an amount of a specific component to a given date."
+    },
+    {
+      "name": "func date(bySetting: Calendar.Component, value: Int, of: Date) -> Date?",
+      "desc": "Returns a new Date representing the date calculated by setting a specific component to a given time, and trying to keep lower components the same. If the component already has that value, this may result in a date which is the same as the given date."
+    },
+    {
+      "name": "func date(bySettingHour: Int, minute: Int, second: Int, of: Date, matchingPolicy: Calendar.MatchingPolicy, repeatedTimePolicy: Calendar.RepeatedTimePolicy, direction: Calendar.SearchDirection) -> Date?",
+      "desc": "Returns a new Date representing the date calculated by setting hour, minute, and second to a given time on a specified Date."
+    },
+    {
+      "name": "func dateInterval(of: Calendar.Component, for: Date) -> DateInterval?",
+      "desc": "Returns the starting time and duration of a given calendar component that contains a given date."
+    },
+    {
+      "name": "func dateInterval(of: Calendar.Component, start: inout Date, interval: inout TimeInterval, for: Date) -> Bool",
+      "desc": "Returns, via two inout parameters, the starting time and duration of a given calendar component that contains a given date."
+    },
+    {
+      "name": "func dateIntervalOfWeekend(containing: Date) -> DateInterval?",
+      "desc": "Returns a DateInterval of the weekend contained by the given date, or nil if the date is not in a weekend."
+    },
+    {
+      "name": "func dateIntervalOfWeekend(containing: Date, start: inout Date, interval: inout TimeInterval) -> Bool",
+      "desc": "Find the range of the weekend around the given date, returned via two by-reference parameters."
+    },
+    {
+      "name": "func nextWeekend(startingAfter: Date, direction: Calendar.SearchDirection) -> DateInterval?",
+      "desc": "Returns a DateInterval of the next weekend, which starts strictly after the given date."
+    },
+    {
+      "name": "func nextWeekend(startingAfter: Date, start: inout Date, interval: inout TimeInterval, direction: Calendar.SearchDirection) -> Bool",
+      "desc": "Returns the range of the next weekend via two inout parameters. The weekend starts strictly after the given date."
+    },
+    {
+      "name": "enum Calendar.SearchDirection",
+      "desc": "The direction in time to search."
+    },
+    {
+      "name": "func compare(Date, to: Date, toGranularity: Calendar.Component) -> ComparisonResult",
+      "desc": "Compares two dates down to the specified component."
+    },
+    {
+      "name": "func isDate(Date, equalTo: Date, toGranularity: Calendar.Component) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two dates are equal down to the specified component."
+    },
+    {
+      "name": "func isDate(Date, inSameDayAs: Date) -> Bool",
+      "desc": "Returns a Boolean value indicating whether a date is within the same day as another date."
+    },
+    {
+      "name": "func isDateInToday(Date) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the given date is within today."
+    },
+    {
+      "name": "func isDateInTomorrow(Date) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the given date is within tomorrow."
+    },
+    {
+      "name": "func isDateInYesterday(Date) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the given date is within yesterday."
+    },
+    {
+      "name": "func isDateInWeekend(Date) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the given date is within a weekend period."
+    },
+    {
+      "name": "static func == (Calendar, Calendar) -> Bool",
+      "desc": "Returns a Boolean indicating whether two calendars are the same."
+    },
+    {
+      "name": "static func != (Calendar, Calendar) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "var amSymbol: String",
+      "desc": "The symbol used to represent “AM”, localized to the Calendar’s locale."
+    },
+    {
+      "name": "var pmSymbol: String",
+      "desc": "The symbol used to represent “PM”, localized to the Calendar’s locale."
+    },
+    {
+      "name": "var weekdaySymbols: [String]",
+      "desc": "A list of weekdays in this calendar, localized to the Calendar’s locale."
+    },
+    {
+      "name": "var shortWeekdaySymbols: [String]",
+      "desc": "A list of shorter-named weekdays in this calendar, localized to the Calendar’s locale."
+    },
+    {
+      "name": "var veryShortWeekdaySymbols: [String]",
+      "desc": "A list of very-shortly-named weekdays in this calendar, localized to the Calendar’s locale."
+    },
+    {
+      "name": "var standaloneWeekdaySymbols: [String]",
+      "desc": "A list of standalone weekday names in this calendar, localized to the Calendar’s locale."
+    },
+    {
+      "name": "var shortStandaloneWeekdaySymbols: [String]",
+      "desc": "A list of shorter-named standalone weekdays in this calendar, localized to the Calendar’s locale."
+    },
+    {
+      "name": "var veryShortStandaloneWeekdaySymbols: [String]",
+      "desc": "A list of very-shortly-named weekdays in this calendar, localized to the Calendar’s locale."
+    },
+    {
+      "name": "var monthSymbols: [String]",
+      "desc": "A list of months in this calendar, localized to the Calendar’s locale."
+    },
+    {
+      "name": "var shortMonthSymbols: [String]",
+      "desc": "A list of shorter-named months in this calendar, localized to the Calendar’s locale."
+    },
+    {
+      "name": "var veryShortMonthSymbols: [String]",
+      "desc": "A list of very-shortly-named months in this calendar, localized to the Calendar’s locale."
+    },
+    {
+      "name": "var standaloneMonthSymbols: [String]",
+      "desc": "A list of standalone months in this calendar, localized to the Calendar’s locale."
+    },
+    {
+      "name": "var shortStandaloneMonthSymbols: [String]",
+      "desc": "A list of shorter-named standalone months in this calendar, localized to the Calendar’s locale."
+    },
+    {
+      "name": "var veryShortStandaloneMonthSymbols: [String]",
+      "desc": "A list of very-shortly-named standalone months in this calendar, localized to the Calendar’s locale."
+    },
+    {
+      "name": "var quarterSymbols: [String]",
+      "desc": "A list of quarter names in this calendar, localized to the Calendar’s locale."
+    },
+    {
+      "name": "var shortQuarterSymbols: [String]",
+      "desc": "A list of shorter-named quarters in this calendar, localized to the Calendar’s locale."
+    },
+    {
+      "name": "var standaloneQuarterSymbols: [String]",
+      "desc": "A list of standalone quarter names in this calendar, localized to the Calendar’s locale."
+    },
+    {
+      "name": "var shortStandaloneQuarterSymbols: [String]",
+      "desc": "A list of shorter-named standalone quarters in this calendar, localized to the Calendar’s locale."
+    },
+    {
+      "name": "var eraSymbols: [String]",
+      "desc": "A list of eras in this calendar, localized to the Calendar’s locale."
+    },
+    {
+      "name": "var longEraSymbols: [String]",
+      "desc": "A list of longer-named eras in this calendar, localized to the Calendar’s locale."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual description of the calendar."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual description of the locale suitable for debugging."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A mirror that reflects the calendar."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The computed hash value for the calendar."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes this calendar into the given encoder."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a new calendar instance by decoding from the given decoder."
+    },
+    {
+      "name": "class NSCalendar",
+      "desc": "An encapsulation of calendar information and calculations that bridges to Calendar; use NSCalendar when you need reference semantics or other Foundation-specific behavior."
+    },
+    {
+      "name": "typealias Calendar.ReferenceType",
+      "desc": "An alias for this value type's equivalent reference type."
+    },
+    {
+      "name": "init(identifier: Calendar.Identifier)"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    }
+  ],
+  "declaration": "struct Calendar",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "Hashable",
+    "ReferenceConvertible"
+  ]
+}

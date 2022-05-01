@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/cloudkit/ckrecordzone/capabilities",
+  "type": "Structure",
+  "name": "CKRecordZone.Capabilities",
+  "desc": "The capabilities that a record zone supports.",
+  "items": [
+    {
+      "name": "init(rawValue: UInt)",
+      "desc": "Creates a set of capabilities for a record zone."
+    },
+    {
+      "name": "static var atomic: CKRecordZone.Capabilities",
+      "desc": "A capability that allows atomic changes of multiple records."
+    },
+    {
+      "name": "static var fetchChanges: CKRecordZone.Capabilities",
+      "desc": "A capability for fetching only the changed records from a zone."
+    },
+    {
+      "name": "static var sharing: CKRecordZone.Capabilities",
+      "desc": "A capability for sharing a specific hierarchy of records."
+    },
+    {
+      "name": "static var zoneWideSharing: CKRecordZone.Capabilities",
+      "desc": "A capability for sharing the entire contents of a record zone."
+    }
+  ],
+  "declaration": "struct Capabilities, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "path": "/documentation/carekit/ockanyreadonlytaskstore",
+  "type": "Protocol",
+  "name": "OCKAnyReadOnlyTaskStore",
+  "desc": "A read-only custom store that fetches task-data objects.",
+  "items": [
+    {
+      "name": "var taskDelegate: OCKTaskStoreDelegate?",
+      "desc": "The object that handles task store callbacks when the contents of the task store change."
+    },
+    {
+      "name": "func fetchAnyTask(withID: String, callbackQueue: DispatchQueue, completion: (Result<OCKAnyTask, OCKStoreError>) -> Void)",
+      "desc": "Fetches a task asynchronously from the store."
+    },
+    {
+      "name": "func fetchAnyTasks(query: OCKAnyTaskQuery, callbackQueue: DispatchQueue, completion: OCKResultClosure<[OCKAnyTask]>)",
+      "desc": "Fetches an array of tasks asynchronously from the store."
+    }
+  ],
+  "declaration": "protocol OCKAnyReadOnlyTaskStore : AnyObject"
+}

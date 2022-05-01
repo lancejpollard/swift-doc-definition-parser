@@ -1,0 +1,136 @@
+{
+  "path": "/documentation/corehaptics/chhapticengine",
+  "type": "Class",
+  "name": "CHHapticEngine",
+  "desc": "An object that represents the connection to the haptic server.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an instance of the haptic engine."
+    },
+    {
+      "name": "init(audioSession: AVAudioSession?)",
+      "desc": "Creates a haptic engine from an audio session."
+    },
+    {
+      "name": "func start()",
+      "desc": "Synchronously starts the haptic engine."
+    },
+    {
+      "name": "func start(completionHandler: CHHapticEngine.CompletionHandler?)",
+      "desc": "Asynchronously starts the haptic engine."
+    },
+    {
+      "name": "func stop(completionHandler: CHHapticEngine.CompletionHandler?)",
+      "desc": "Asynchronously stops the haptic engine and executes the completion handler once the engine has stopped."
+    },
+    {
+      "name": "typealias CHHapticEngine.CompletionHandler",
+      "desc": "A typealias for a completion handler that the engine calls after starting or stopping."
+    },
+    {
+      "name": "func makePlayer(with: CHHapticPattern) -> CHHapticPatternPlayer",
+      "desc": "Creates a standard haptic pattern player from a haptic pattern."
+    },
+    {
+      "name": "func makeAdvancedPlayer(with: CHHapticPattern) -> CHHapticAdvancedPatternPlayer",
+      "desc": "Creates an advanced haptic pattern player from a haptic pattern."
+    },
+    {
+      "name": "var playsHapticsOnly: Bool",
+      "desc": "A Boolean that indicates whether the haptic engine ignores audio events."
+    },
+    {
+      "name": "var isMutedForAudio: Bool",
+      "desc": "A Boolean that indicates whether the engine mutes audio."
+    },
+    {
+      "name": "var isMutedForHaptics: Bool",
+      "desc": "A Boolean that indicates whether the engine mutes haptics."
+    },
+    {
+      "name": "func playPattern(from: URL)",
+      "desc": "Plays a pattern that’s defined in a file at the specified URL."
+    },
+    {
+      "name": "func playPattern(from: Data)",
+      "desc": "Plays a pattern from the specified data."
+    },
+    {
+      "name": "func registerAudioResource(URL, options: [AnyHashable : Any]) -> CHHapticAudioResourceID",
+      "desc": "Registers an external audio to use as a custom waveform."
+    },
+    {
+      "name": "func unregisterAudioResource(CHHapticAudioResourceID)",
+      "desc": "Unregisters an external audio file that you previously registered with the engine."
+    },
+    {
+      "name": "typealias CHHapticAudioResourceID",
+      "desc": "A type that identifies a custom audio resource."
+    },
+    {
+      "name": "func notifyWhenPlayersFinished(finishedHandler: CHHapticEngine.FinishedHandler)",
+      "desc": "Notifies you when all haptic pattern players have finished playing their haptic patterns."
+    },
+    {
+      "name": "typealias CHHapticEngine.FinishedHandler",
+      "desc": "A type alias for a completion handler to execute after finishing haptic playback."
+    },
+    {
+      "name": "enum CHHapticEngine.FinishedAction",
+      "desc": "Possible actions to take after the haptic engine finishes execution."
+    },
+    {
+      "name": "var resetHandler: CHHapticEngine.ResetHandler",
+      "desc": "A block that the haptic engine calls after recovering from a haptic server error."
+    },
+    {
+      "name": "typealias CHHapticEngine.ResetHandler",
+      "desc": "A typealias for the block that the haptic engine calls after being reset."
+    },
+    {
+      "name": "var stoppedHandler: CHHapticEngine.StoppedHandler",
+      "desc": "A closure the haptic engine calls when it stops due to external causes."
+    },
+    {
+      "name": "typealias CHHapticEngine.StoppedHandler",
+      "desc": "A typealias for the block that the haptic engine calls after it stops due to an external cause."
+    },
+    {
+      "name": "enum CHHapticEngine.StoppedReason",
+      "desc": "The enumeration of reasons the haptic engine stopped running."
+    },
+    {
+      "name": "var currentTime: TimeInterval",
+      "desc": "The absolute time, in seconds, to use for scheduling haptic and audio events."
+    },
+    {
+      "name": "var CHHapticTimeImmediate: TimeInterval",
+      "desc": "A time constant used to schedule a command immediately."
+    },
+    {
+      "name": "class func capabilitiesForHardware() -> CHHapticDeviceCapability",
+      "desc": "Returns a device capability object that describes the device’s haptic support and limitations."
+    },
+    {
+      "name": "protocol CHHapticDeviceCapability",
+      "desc": "A protocol that defines haptics and audio capabilities of a device."
+    },
+    {
+      "name": "protocol CHHapticParameterAttributes",
+      "desc": "A protocol for providing default, mininum, and maximum values of a parameter."
+    },
+    {
+      "name": "func attributes(forDynamicParameter: CHHapticDynamicParameter.ID) -> CHHapticParameterAttributes",
+      "desc": "Requests the haptic device’s attributes for a dynamic parameter."
+    },
+    {
+      "name": "var isAutoShutdownEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the haptic engine starts and stops automatically on request from one of its pattern players, or when idle."
+    }
+  ],
+  "declaration": "class CHHapticEngine : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

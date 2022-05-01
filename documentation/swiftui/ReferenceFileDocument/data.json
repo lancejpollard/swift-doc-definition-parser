@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/swiftui/referencefiledocument",
+  "type": "Protocol",
+  "name": "ReferenceFileDocument",
+  "desc": "A document model definition used to serialize reference type documents to and from file contents.",
+  "items": [
+    {
+      "name": "init(configuration: Self.ReadConfiguration) throws",
+      "desc": "Initialize self by reading from the contents of a given ReadConfiguration."
+    },
+    {
+      "name": "static var readableContentTypes: [UTType]",
+      "desc": "The types the document is able to open."
+    },
+    {
+      "name": "typealias ReadConfiguration",
+      "desc": "The configuration for reading document contents."
+    },
+    {
+      "name": "func snapshot(contentType: UTType) throws -> Self.Snapshot",
+      "desc": "Create a snapshot of the current state of the document, which will be used for serialization while self becomes editable by the user."
+    },
+    {
+      "name": "associatedtype Snapshot",
+      "desc": "A type of the document snapshot that can be used for serialization in parallel to the main document being editable."
+    },
+    {
+      "name": "func fileWrapper(snapshot: Self.Snapshot, configuration: Self.WriteConfiguration) throws -> FileWrapper",
+      "desc": "Serialize the snapshot to file contents for a specified type."
+    },
+    {
+      "name": "static var writableContentTypes: [UTType]",
+      "desc": "The types the document is able to save or export to."
+    },
+    {
+      "name": "typealias WriteConfiguration",
+      "desc": "The configurations for serializing document contents."
+    }
+  ],
+  "declaration": "protocol ReferenceFileDocument : ObservableObject",
+  "inheritsFrom": [
+    "ObservableObject"
+  ]
+}

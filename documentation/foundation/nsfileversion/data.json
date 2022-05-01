@@ -1,0 +1,100 @@
+{
+  "path": "/documentation/foundation/nsfileversion",
+  "type": "Class",
+  "name": "NSFileVersion",
+  "desc": "A snapshot of a file at a specific point in time.",
+  "items": [
+    {
+      "name": "class func currentVersionOfItem(at: URL) -> NSFileVersion?",
+      "desc": "Returns the most recent version object for the file at the specified URL."
+    },
+    {
+      "name": "class func otherVersionsOfItem(at: URL) -> [NSFileVersion]?",
+      "desc": "Returns all versions of the specified file except the current version."
+    },
+    {
+      "name": "class func version(itemAt: URL, forPersistentIdentifier: Any) -> NSFileVersion?",
+      "desc": "Returns the version of the file that has the specified persistent ID."
+    },
+    {
+      "name": "class func temporaryDirectoryURLForNewVersionOfItem(at: URL) -> URL",
+      "desc": "Creates and returns a temporary directory to use for saving the contents of the file."
+    },
+    {
+      "name": "class func addOfItem(at: URL, withContentsOf: URL, options: NSFileVersion.AddingOptions) -> NSFileVersion",
+      "desc": "Creates a version of the file at the specified location."
+    },
+    {
+      "name": "var url: URL",
+      "desc": "The URL identifying the location of the file associated with the file version object."
+    },
+    {
+      "name": "var localizedName: String?",
+      "desc": "The string containing the user-presentable name of the file version."
+    },
+    {
+      "name": "var localizedNameOfSavingComputer: String?",
+      "desc": "The user-presentable name of the computer on which the revision was saved."
+    },
+    {
+      "name": "var modificationDate: Date?",
+      "desc": "The modification date of the version."
+    },
+    {
+      "name": "var persistentIdentifier: NSCoding",
+      "desc": "The identifier for this version of the file."
+    },
+    {
+      "name": "var isDiscardable: Bool",
+      "desc": "A Boolean value that specifies whether the system can delete the associated file at some future time."
+    },
+    {
+      "name": "var isConflict: Bool",
+      "desc": "A Boolean value indicating whether the contents of the version are in conflict with the contents of another version."
+    },
+    {
+      "name": "var isResolved: Bool",
+      "desc": "A Boolean value that indicates the version object is not in conflict (true) or is in conflict (false)."
+    },
+    {
+      "name": "class func unresolvedConflictVersionsOfItem(at: URL) -> [NSFileVersion]?",
+      "desc": "Returns an array of version objects that are currently in conflict for the specified URL."
+    },
+    {
+      "name": "func replaceItem(at: URL, options: NSFileVersion.ReplacingOptions) -> URL",
+      "desc": "Replace the contents of the specified file with the contents of the current version’s file."
+    },
+    {
+      "name": "func remove()",
+      "desc": "Remove this version object and its associated file from the version store."
+    },
+    {
+      "name": "class func removeOtherVersionsOfItem(at: URL)",
+      "desc": "Removes all versions of a file, except the current one, from the version store."
+    },
+    {
+      "name": "struct NSFileVersion.AddingOptions",
+      "desc": "Options for adding a new file version."
+    },
+    {
+      "name": "struct NSFileVersion.ReplacingOptions",
+      "desc": "Options for replacing a file version."
+    },
+    {
+      "name": "var hasLocalContents: Bool"
+    },
+    {
+      "name": "var hasThumbnail: Bool"
+    },
+    {
+      "name": "var originatorNameComponents: PersonNameComponents?"
+    },
+    {
+      "name": "class func getNonlocalVersionsOfItem(at: URL, completionHandler: ([NSFileVersion]?, Error?) -> Void)"
+    }
+  ],
+  "declaration": "class NSFileVersion : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

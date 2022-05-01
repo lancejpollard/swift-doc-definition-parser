@@ -1,0 +1,156 @@
+{
+  "path": "/documentation/foundation/nstextcheckingresult",
+  "type": "Class",
+  "name": "NSTextCheckingResult",
+  "desc": "An occurrence of textual content found during the analysis of a block of text, such as when matching a regular expression.",
+  "items": [
+    {
+      "name": "var range: NSRange",
+      "desc": "Returns the range of the result that the receiver represents."
+    },
+    {
+      "name": "var resultType: NSTextCheckingResult.CheckingType",
+      "desc": "Returns the text checking result type that the receiver represents."
+    },
+    {
+      "name": "var numberOfRanges: Int",
+      "desc": "Returns the number of ranges."
+    },
+    {
+      "name": "func range(at: Int) -> NSRange",
+      "desc": "Returns the result type that the range represents."
+    },
+    {
+      "name": "class func replacementCheckingResult(range: NSRange, replacementString: String) -> NSTextCheckingResult",
+      "desc": "Creates and returns a text checking result with the specified replacement string."
+    },
+    {
+      "name": "var replacementString: String?",
+      "desc": "A replacement string from one of a number of replacement checking results."
+    },
+    {
+      "name": "class func regularExpressionCheckingResult(ranges: NSRangePointer, count: Int, regularExpression: NSRegularExpression) -> NSTextCheckingResult",
+      "desc": "Creates and returns a type checking result with the specified regular expression data."
+    },
+    {
+      "name": "var regularExpression: NSRegularExpression?",
+      "desc": "The regular expression of a type checking result."
+    },
+    {
+      "name": "var components: [NSTextCheckingKey : String]?",
+      "desc": "A dictionary containing the components of a type checking result."
+    },
+    {
+      "name": "class func linkCheckingResult(range: NSRange, url: URL) -> NSTextCheckingResult",
+      "desc": "Creates and returns a text checking result with the specified URL."
+    },
+    {
+      "name": "var url: URL?",
+      "desc": "The URL of a type checking result."
+    },
+    {
+      "name": "class func addressCheckingResult(range: NSRange, components: [NSTextCheckingKey : String]) -> NSTextCheckingResult",
+      "desc": "Creates and returns a text checking result with the specified address components."
+    },
+    {
+      "name": "var addressComponents: [NSTextCheckingKey : String]?",
+      "desc": "The address dictionary of a type checking result."
+    },
+    {
+      "name": "class func transitInformationCheckingResult(range: NSRange, components: [NSTextCheckingKey : String]) -> NSTextCheckingResult",
+      "desc": "Creates and returns a text checking result with the specified transit information."
+    },
+    {
+      "name": "class func phoneNumberCheckingResult(range: NSRange, phoneNumber: String) -> NSTextCheckingResult",
+      "desc": "Creates and returns a text checking result with the specified phone number."
+    },
+    {
+      "name": "var phoneNumber: String?",
+      "desc": "The phone number of a type checking result."
+    },
+    {
+      "name": "class func dateCheckingResult(range: NSRange, date: Date) -> NSTextCheckingResult",
+      "desc": "Creates and returns a text checking result with the specified date."
+    },
+    {
+      "name": "class func dateCheckingResult(range: NSRange, date: Date, timeZone: TimeZone, duration: TimeInterval) -> NSTextCheckingResult",
+      "desc": "Creates and returns a text checking result with the specified date, time zone, and duration."
+    },
+    {
+      "name": "var date: Date?",
+      "desc": "The date component of a type checking result."
+    },
+    {
+      "name": "var duration: TimeInterval",
+      "desc": "The duration component of a type checking result."
+    },
+    {
+      "name": "var timeZone: TimeZone?",
+      "desc": "The time zone component of a type checking result."
+    },
+    {
+      "name": "class func dashCheckingResult(range: NSRange, replacementString: String) -> NSTextCheckingResult",
+      "desc": "Creates and returns a text checking result with the specified dash corrected replacement string."
+    },
+    {
+      "name": "class func quoteCheckingResult(range: NSRange, replacementString: String) -> NSTextCheckingResult",
+      "desc": "Creates and returns a text checking result with the specified quote-balanced replacement string."
+    },
+    {
+      "name": "class func spellCheckingResult(range: NSRange) -> NSTextCheckingResult",
+      "desc": "Creates and returns a text checking result with the range of a misspelled word."
+    },
+    {
+      "name": "class func correctionCheckingResult(range: NSRange, replacementString: String) -> NSTextCheckingResult",
+      "desc": "Creates and returns a text checking result after detecting a possible correction."
+    },
+    {
+      "name": "class func orthographyCheckingResult(range: NSRange, orthography: NSOrthography) -> NSTextCheckingResult",
+      "desc": "Creates and returns a text checking result with the specified orthography."
+    },
+    {
+      "name": "var orthography: NSOrthography?",
+      "desc": "The detected orthography of a type checking result."
+    },
+    {
+      "name": "class func grammarCheckingResult(range: NSRange, details: [[String : Any]]) -> NSTextCheckingResult",
+      "desc": "Creates and returns a text checking result with the specified array of grammatical errors."
+    },
+    {
+      "name": "var grammarDetails: [[String : Any]]?",
+      "desc": "The details of a located grammatical type checking result."
+    },
+    {
+      "name": "func adjustingRanges(offset: Int) -> NSTextCheckingResult",
+      "desc": "Returns a new text checking result after adjusting the ranges as specified by the offset."
+    },
+    {
+      "name": "struct NSTextCheckingResult.CheckingType",
+      "desc": "These constants specify the type of checking the methods should do. They are returned by resultType."
+    },
+    {
+      "name": "typealias NSTextCheckingTypes",
+      "desc": "Defines the types of checking that are available. These values can be combined using the C-bitwise OR operator. The system supports its own internal types, and the user can extend those types by subclassing NSTextCheckingResult and adding their own custom types."
+    },
+    {
+      "name": "struct NSTextCheckingKey"
+    },
+    {
+      "name": "var alternativeStrings: [String]?"
+    },
+    {
+      "name": "func range(withName: String) -> NSRange"
+    },
+    {
+      "name": "class func correctionCheckingResult(range: NSRange, replacementString: String, alternativeStrings: [String]) -> NSTextCheckingResult"
+    }
+  ],
+  "declaration": "class NSTextCheckingResult : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "path": "/documentation/tabulardata/dataframe/row",
+  "type": "Structure",
+  "name": "DataFrame.Row",
+  "desc": "A single row within a data frame.",
+  "items": [
+    {
+      "name": "var count: Int",
+      "desc": "The number of columns in the row."
+    },
+    {
+      "name": "var base: DataFrame",
+      "desc": "The row’s underlying data frame."
+    },
+    {
+      "name": "subscript(Int) -> Any?",
+      "desc": "Accesses a value at a column index."
+    },
+    {
+      "name": "subscript(String) -> Any?",
+      "desc": "Accesses a value in the row you select by a column name."
+    },
+    {
+      "name": "subscript<T>(String, T.Type) -> T?",
+      "desc": "Accesses a value in the row you select by a column name and type."
+    },
+    {
+      "name": "subscript<T>(ColumnID<T>) -> T?",
+      "desc": "Accesses a value in the row you select by a column identifier."
+    },
+    {
+      "name": "subscript<T>(Int, T.Type) -> T?",
+      "desc": "Accesses a value in the row you select by a column index and type."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the row."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the row suitable for debugging."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A mirror that reflects the row."
+    },
+    {
+      "name": "static func == (DataFrame.Row, DataFrame.Row) -> Bool",
+      "desc": "Returns a Boolean that indicates whether the rows are equal."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool",
+      "desc": "Returns a Boolean that indicates whether the rows are unequal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the row by feeding them into a hasher."
+    },
+    {
+      "name": "let index: Int",
+      "desc": "The row’s index in the underlying data frame."
+    },
+    {
+      "name": "func description(options: FormattingOptions) -> String",
+      "desc": "A text representation of the row."
+    }
+  ],
+  "declaration": "struct Row",
+  "conformsTo": [
+    "BidirectionalCollection",
+    "Collection",
+    "CustomDebugStringConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "Equatable",
+    "Hashable",
+    "MutableCollection",
+    "RandomAccessCollection",
+    "Sequence"
+  ]
+}

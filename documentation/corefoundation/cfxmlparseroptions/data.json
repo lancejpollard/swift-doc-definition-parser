@@ -1,0 +1,43 @@
+{
+  "path": "/documentation/corefoundation/cfxmlparseroptions",
+  "type": "Structure",
+  "name": "CFXMLParserOptions",
+  "desc": "Options you can use to control the parser's treatment of an XML document.",
+  "items": [
+    {
+      "name": "static var validateDocument: CFXMLParserOptions",
+      "desc": "Validates the document against its grammar from the DTD, reporting any errors. Currently not supported."
+    },
+    {
+      "name": "static var skipMetaData: CFXMLParserOptions",
+      "desc": "Silently skip over metadata constructs (the DTD and comments)."
+    },
+    {
+      "name": "static var replacePhysicalEntities: CFXMLParserOptions",
+      "desc": "Replaces declared entities like &lt;. Note that other than the 5 predefined entities (lt, gt, quot, amp, apos), these must be defined in the DTD. Currently not supported."
+    },
+    {
+      "name": "static var skipWhitespace: CFXMLParserOptions"
+    },
+    {
+      "name": "static var resolveExternalEntities: CFXMLParserOptions",
+      "desc": "Resolves all external entities."
+    },
+    {
+      "name": "static var addImpliedAttributes: CFXMLParserOptions",
+      "desc": "Where the DTD specifies implied attribute-value pairs for a particular element, add those pairs to any occurrences of the element in the element tree. Currently not supported."
+    },
+    {
+      "name": "static var allOptions: CFXMLParserOptions",
+      "desc": "Makes the parser do the most work, returning only the pure elementtree."
+    },
+    {
+      "name": "init(rawValue: CFOptionFlags)"
+    }
+  ],
+  "declaration": "struct CFXMLParserOptions, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

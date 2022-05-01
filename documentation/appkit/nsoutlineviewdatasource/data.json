@@ -1,0 +1,68 @@
+{
+  "path": "/documentation/appkit/nsoutlineviewdatasource",
+  "type": "Protocol",
+  "name": "NSOutlineViewDataSource",
+  "desc": "A set of methods that an outline view calls to retrieve data and information about it from the data source delegate, and—optionally—to update data values.",
+  "items": [
+    {
+      "name": "func outlineView(NSOutlineView, acceptDrop: NSDraggingInfo, item: Any?, childIndex: Int) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a drop operation was successful."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, child: Int, ofItem: Any?) -> Any",
+      "desc": "Returns the child item at the specified index of a given item."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, draggingSession: NSDraggingSession, endedAt: NSPoint, operation: NSDragOperation)",
+      "desc": "Implement this method to know when the given dragging session has ended."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, draggingSession: NSDraggingSession, willBeginAt: NSPoint, forItems: [Any])",
+      "desc": "Implement this method know when the given dragging session is about to begin and potentially modify the dragging session."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, isItemExpandable: Any) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the a given item is expandable."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, itemForPersistentObject: Any) -> Any?",
+      "desc": "Invoked by outlineView to return the item for the archived object."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, numberOfChildrenOfItem: Any?) -> Int",
+      "desc": "Returns the number of child items encompassed by a given item."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, objectValueFor: NSTableColumn?, byItem: Any?) -> Any?",
+      "desc": "Invoked by outlineView to return the data object associated with the specified item."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, pasteboardWriterForItem: Any) -> NSPasteboardWriting?",
+      "desc": "Implement this method to enable the table to be an NSDraggingSource that supports dragging multiple items."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, persistentObjectForItem: Any?) -> Any?",
+      "desc": "Invoked by outlineView to return an archived object for item."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, setObjectValue: Any?, for: NSTableColumn?, byItem: Any?)",
+      "desc": "Set the data object for a given item in a given column."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, sortDescriptorsDidChange: [NSSortDescriptor])",
+      "desc": "Invoked by an outline view to notify the data source that the descriptors changed and the data may need to be resorted."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, updateDraggingItemsForDrag: NSDraggingInfo)",
+      "desc": "Implement this method to enable the table to update dragging items as they are dragged over the view."
+    },
+    {
+      "name": "func outlineView(NSOutlineView, validateDrop: NSDraggingInfo, proposedItem: Any?, proposedChildIndex: Int) -> NSDragOperation",
+      "desc": "Used by an outline view to determine a valid drop target."
+    }
+  ],
+  "declaration": "protocol NSOutlineViewDataSource",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

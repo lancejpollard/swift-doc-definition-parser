@@ -1,0 +1,80 @@
+{
+  "path": "/documentation/sirikit/inridecompletionstatus",
+  "type": "Class",
+  "name": "INRideCompletionStatus",
+  "desc": "Additional details about whether a ride completed successfully or someone canceled the ride.",
+  "items": [
+    {
+      "name": "class func completed() -> Self",
+      "desc": "Creates an instance of this class that indicates the ride completed successfully."
+    },
+    {
+      "name": "class func completed(settled: INCurrencyAmount) -> Self",
+      "desc": "Creates an instance of this class that indicates the ride completed successfully and with the specified cost."
+    },
+    {
+      "name": "class func completed(outstanding: INCurrencyAmount) -> Self",
+      "desc": "Creates an instance of this class that indicates the ride completed successfully but still requires payment from the user."
+    },
+    {
+      "name": "class func completed(feedbackType: INRideFeedbackTypeOptions) -> Self",
+      "desc": "Creates an instance of this class that indicates the ride completed successfully but still requires feedback from the user."
+    },
+    {
+      "name": "class func canceledByService() -> Self",
+      "desc": "Creates an instance of this class that indicates your service canceled the ride."
+    },
+    {
+      "name": "class func canceledByUser() -> Self",
+      "desc": "Creates an instance of this class that indicates the user canceled the ride."
+    },
+    {
+      "name": "class func canceledMissedPickup() -> Self",
+      "desc": "Creates an instance of this class that indicates someone canceled the ride because of a missed pickup."
+    },
+    {
+      "name": "var completionUserActivity: NSUserActivity?",
+      "desc": "The user activity object indicating any additional steps the user needs to be take in your app."
+    },
+    {
+      "name": "var isCompleted: Bool",
+      "desc": "A Boolean value indicating whether the ride completed successfully."
+    },
+    {
+      "name": "var isCanceled: Bool",
+      "desc": "A Boolean value indicating whether someone canceled the ride for any reason."
+    },
+    {
+      "name": "var isMissedPickup: Bool",
+      "desc": "A Boolean value indicating whether someone canceled the ride because the user was never picked up."
+    },
+    {
+      "name": "var isOutstanding: Bool",
+      "desc": "A Boolean indicating whether payment is still outstanding."
+    },
+    {
+      "name": "var paymentAmount: INCurrencyAmount?",
+      "desc": "The amount paid or still outstanding for the ride."
+    },
+    {
+      "name": "var feedbackType: INRideFeedbackTypeOptions",
+      "desc": "The type of feedback required for the ride before the user books a new ride can."
+    },
+    {
+      "name": "struct INRideFeedbackTypeOptions",
+      "desc": "Constants indicating the type of feedback needed."
+    },
+    {
+      "name": "var defaultTippingOptions: Set<INCurrencyAmount>?",
+      "desc": "An array of default tip amounts to display to the user."
+    }
+  ],
+  "declaration": "class INRideCompletionStatus : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

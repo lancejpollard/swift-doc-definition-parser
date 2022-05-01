@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/combine/publishers/dropwhile",
+  "type": "Structure",
+  "name": "Publishers.DropWhile",
+  "desc": "A publisher that omits elements from an upstream publisher until a given closure returns false.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, predicate: (Publishers.DropWhile<Upstream>.Output) -> Bool)",
+      "desc": "Creates a publisher that omits elements from an upstream publisher until a given closure returns false."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    },
+    {
+      "name": "let predicate: (Publishers.DropWhile<Upstream>.Output) -> Bool",
+      "desc": "The closure that indicates whether to drop the element."
+    }
+  ],
+  "declaration": "struct DropWhile<Upstream> where Upstream : Publisher",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

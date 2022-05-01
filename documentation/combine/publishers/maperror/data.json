@@ -1,0 +1,31 @@
+{
+  "path": "/documentation/combine/publishers/maperror",
+  "type": "Structure",
+  "name": "Publishers.MapError",
+  "desc": "A publisher that converts any failure from the upstream publisher into a new error.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, (Upstream.Failure) -> Failure)"
+    },
+    {
+      "name": "init(upstream: Upstream, transform: (Upstream.Failure) -> Failure)",
+      "desc": "Creates a publisher that converts any failure from the upstream publisher into a new error."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    },
+    {
+      "name": "let transform: (Upstream.Failure) -> Failure",
+      "desc": "The closure that converts the upstream failure into a new error."
+    }
+  ],
+  "declaration": "struct MapError<Upstream, Failure> where Upstream : Publisher, Failure : Error",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

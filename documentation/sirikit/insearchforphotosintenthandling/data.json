@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/sirikit/insearchforphotosintenthandling",
+  "type": "Protocol",
+  "name": "INSearchForPhotosIntentHandling",
+  "desc": "The handler interface for searching the user’s photos.DeprecatedThis intent is no longer available. You may define a custom intent instead. For more information, see Deprecated SiriKit Intent Domains.",
+  "items": [
+    {
+      "name": "func resolveDateCreated(for: INSearchForPhotosIntent, with: (INDateComponentsRangeResolutionResult) -> Void)",
+      "desc": "Resolves the taken dates for the photos."
+    },
+    {
+      "name": "func resolveLocationCreated(for: INSearchForPhotosIntent, with: (INPlacemarkResolutionResult) -> Void)",
+      "desc": "Resolves the location of the photos."
+    },
+    {
+      "name": "func resolvePeopleInPhoto(for: INSearchForPhotosIntent, with: ([INPersonResolutionResult]) -> Void)",
+      "desc": "Resolves the people in the photos."
+    },
+    {
+      "name": "func resolveAlbumName(for: INSearchForPhotosIntent, with: (INStringResolutionResult) -> Void)",
+      "desc": "Resolves the name of the photo album containing the photos."
+    },
+    {
+      "name": "func resolveSearchTerms(for: INSearchForPhotosIntent, with: ([INStringResolutionResult]) -> Void)",
+      "desc": "Resolves any search terms provided by the user."
+    },
+    {
+      "name": "func confirm(intent: INSearchForPhotosIntent, completion: (INSearchForPhotosIntentResponse) -> Void)",
+      "desc": "Confirms whether you can perform the search."
+    },
+    {
+      "name": "func handle(intent: INSearchForPhotosIntent, completion: (INSearchForPhotosIntentResponse) -> Void)",
+      "desc": "Handles searching the photos and returning the number of results."
+    }
+  ],
+  "declaration": "protocol INSearchForPhotosIntentHandling",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

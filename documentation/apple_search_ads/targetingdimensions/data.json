@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/apple_search_ads/targetingdimensions",
+  "type": "Object",
+  "name": "TargetingDimensions",
+  "desc": "The criteria to use with ad groups to narrow the audience that views the ads.",
+  "items": [
+    {
+      "name": "adminArea",
+      "desc": "The parameter to target users by adminArea. An adminArea is a state or the equivalent according to its associated country.Use Search for Geolocations with entity to search for and retrieve geolocations. Then use geotargeting dimensions country, adminArea, and locality in the TargetingDimensions payload with the Create an Ad Group  and Update an Ad Group endpoints. The following is an example of the payload format.\n{\n  \"adminArea\": {\n    \"included\": [\n      \"US|CA\"\n    ]\n  }\n}"
+    },
+    {
+      "name": "age",
+      "desc": "The parameter to target users by age demographic. Limit the age group you want to show your ad to. You must set a minimum age. To include multiple ranges, input them as a list.The following is an example of the payload format.\n{\n  \"age\": {\n    \"included\": [\n      {\n        \"minAge\": 20,\n        \"maxAge\": 25\n      }\n    ]\n  }\n}"
+    },
+    {
+      "name": "appDownloaders",
+      "desc": "The parameter to target users who download the promoted app, don’t download the promoted app, or download other apps. The organization’s linked content provider must own the promoted app.The following is an example of the payload format using an excluded list that contains the adamId of the app you’re trying to promote in your campaign.\n{\n  \"appDownloaders\": {\n    \"excluded\": 427916203\n  }\n}"
+    },
+    {
+      "name": "country",
+      "desc": "The parameter to target users by country or region.Use Search for Geolocations with entity to search for and retrieve geolocations. Then use geotargeting dimensions country, adminArea, and locality in the TargetingDimensions payload with the Create an Ad Group  and Update an Ad Group endpoints. For the country dimension, use a single country code in an ISO alpha-2 country code format. Campaigns that serve multiple countries or regions can’t use geotargeting. Use UpdateCampaignRequest to clear geotargeting from a campaign.The following is an example of the payload format, independent of adminArea and locality.\n{\n  \"country\": {\n    \"included\": [\n      \"US\"\n    ]\n  }\n}"
+    },
+    {
+      "name": "daypart",
+      "desc": "The parameter to target users by a specific time of day. Numbers ranging from 0 to 167 represent the hours of a week beginning at Sunday 12:00 midnight. For example, the hour beginning Monday at 1:00 a.m. is 25.The following is an example of the payload format. \n{\n  \"daypart\": {\n    \"userTime\": {\n      \"included\": [\n        1,\n        3,\n        22\n      ]\n    }\n  }\n}"
+    },
+    {
+      "name": "deviceClass",
+      "desc": "The parameter to target users by device class. This defaults to the device classes that the promoted app supports.The following is an example of the payload format.\n{  \"deviceClass\": {\n    \"included\": [\n      \"IPAD\",\n      \"IPHONE\"\n    ]\n  }\n}"
+    },
+    {
+      "name": "gender",
+      "desc": "The parameter to target users by gender demographic. Specify the gender you want to show your ad to. To specify all genders, set the value to null.The following is an example of the payload format.\n{\n  \"gender\": {\n    \"included\": [\n      \"F\"\n    ]\n  }\n}"
+    },
+    {
+      "name": "locality",
+      "desc": "The parameter to target users by locality. A locality is a city or the equivalent according to its associated adminArea. See Search for Geolocations to retrieve geolocations.The following is an example of the payload format.\n{\n  \"locality\": {\n    \"included\": [\n      \"US|CA|Cupertino\"\n    ]\n  }\n}"
+    }
+  ]
+}

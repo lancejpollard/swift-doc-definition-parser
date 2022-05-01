@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/appkit/nsruleeditordelegate",
+  "type": "Protocol",
+  "name": "NSRuleEditorDelegate",
+  "desc": "The NSRuleEditorDelegate protocol defines the optional methods implemented by delegates of NSRuleEditor objects.",
+  "items": [
+    {
+      "name": "func ruleEditor(NSRuleEditor, child: Int, forCriterion: Any?, with: NSRuleEditor.RowType) -> Any",
+      "desc": "Returns the child of a given item at a given index."
+    },
+    {
+      "name": "func ruleEditor(NSRuleEditor, displayValueForCriterion: Any, inRow: Int) -> Any",
+      "desc": "Returns the value for a given criterion."
+    },
+    {
+      "name": "func ruleEditor(NSRuleEditor, numberOfChildrenForCriterion: Any?, with: NSRuleEditor.RowType) -> Int",
+      "desc": "Returns the number of child items of a given criterion or row type."
+    },
+    {
+      "name": "func ruleEditor(NSRuleEditor, predicatePartsForCriterion: Any, withDisplayValue: Any, inRow: Int) -> [NSRuleEditor.PredicatePartKey : Any]?",
+      "desc": "Returns a dictionary representing the parts of the predicate determined by the given criterion and value."
+    },
+    {
+      "name": "struct NSRuleEditor.PredicatePartKey",
+      "desc": "These strings are used as keys to the dictionary returned from the delegate’s ruleEditor(_:predicatePartsForCriterion:withDisplayValue:inRow:) optional method. To construct a valid predicate, the union of the dictionaries for each item in the row must contain the required parts."
+    },
+    {
+      "name": "func ruleEditorRowsDidChange(Notification)",
+      "desc": "Notifies the receiver that a rule editor’s rows changed."
+    }
+  ],
+  "declaration": "protocol NSRuleEditorDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

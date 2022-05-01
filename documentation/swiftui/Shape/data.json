@@ -1,0 +1,85 @@
+{
+  "path": "/documentation/swiftui/shape",
+  "type": "Protocol",
+  "name": "Shape",
+  "desc": "A 2D shape that you can use when drawing a view.",
+  "items": [
+    {
+      "name": "func path(in: CGRect) -> Path",
+      "desc": "Describes this shape as a path within a rectangular frame of reference."
+    },
+    {
+      "name": "func trim(from: CGFloat, to: CGFloat) -> some Shape",
+      "desc": "Trims this shape by a fractional amount based on its representation as a path."
+    },
+    {
+      "name": "func transform(CGAffineTransform) -> TransformedShape<Self>",
+      "desc": "Applies an affine transform to this shape."
+    },
+    {
+      "name": "func size(CGSize) -> some Shape",
+      "desc": "Returns a new version of self representing the same shape, but that will ask it to create its path from a rect of size. This does not affect the layout properties of any views created from the shape (e.g. by filling it)."
+    },
+    {
+      "name": "func size(width: CGFloat, height: CGFloat) -> some Shape",
+      "desc": "Returns a new version of self representing the same shape, but that will ask it to create its path from a rect of size (width, height). This does not affect the layout properties of any views created from the shape (e.g. by filling it)."
+    },
+    {
+      "name": "func scale(CGFloat, anchor: UnitPoint) -> ScaledShape<Self>",
+      "desc": "Scales this shape without changing its bounding frame."
+    },
+    {
+      "name": "func scale(x: CGFloat, y: CGFloat, anchor: UnitPoint) -> ScaledShape<Self>",
+      "desc": "Scales this shape without changing its bounding frame."
+    },
+    {
+      "name": "func rotation(Angle, anchor: UnitPoint) -> RotatedShape<Self>",
+      "desc": "Rotates this shape around an anchor point at the angle you specify."
+    },
+    {
+      "name": "func offset(CGSize) -> OffsetShape<Self>",
+      "desc": "Changes the relative position of this shape using the specified size."
+    },
+    {
+      "name": "func offset(CGPoint) -> OffsetShape<Self>",
+      "desc": "Changes the relative position of this shape using the specified point."
+    },
+    {
+      "name": "func offset(x: CGFloat, y: CGFloat) -> OffsetShape<Self>",
+      "desc": "Changes the relative position of this shape using the specified point."
+    },
+    {
+      "name": "func stroke<S>(S, lineWidth: CGFloat) -> some View",
+      "desc": "Traces the outline of this shape with a color or gradient."
+    },
+    {
+      "name": "func stroke(lineWidth: CGFloat) -> some Shape",
+      "desc": "Returns a new shape that is a stroked copy of self with line-width defined by lineWidth and all other properties of StrokeStyle having their default values."
+    },
+    {
+      "name": "func stroke<S>(S, style: StrokeStyle) -> some View",
+      "desc": "Traces the outline of this shape with a color or gradient."
+    },
+    {
+      "name": "func stroke(style: StrokeStyle) -> some Shape",
+      "desc": "Returns a new shape that is a stroked copy of self, using the contents of style to define the stroke characteristics."
+    },
+    {
+      "name": "func fill<S>(S, style: FillStyle) -> some View",
+      "desc": "Fills this shape with a color or gradient."
+    },
+    {
+      "name": "func fill(style: FillStyle) -> some View",
+      "desc": "Fills this shape with the foreground color."
+    },
+    {
+      "name": "static var role: ShapeRole",
+      "desc": "An indication of how to style a shape."
+    }
+  ],
+  "declaration": "protocol Shape : Animatable, View",
+  "inheritsFrom": [
+    "Animatable",
+    "View"
+  ]
+}

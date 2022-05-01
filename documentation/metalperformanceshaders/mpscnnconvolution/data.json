@@ -1,0 +1,94 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpscnnconvolution",
+  "type": "Class",
+  "name": "MPSCNNConvolution",
+  "desc": "A convolution kernel that convolves the input image with a set of filters, with each producing one feature map in the output image.",
+  "items": [
+    {
+      "name": "init?(coder: NSCoder, device: MTLDevice)"
+    },
+    {
+      "name": "init(device: MTLDevice, convolutionDescriptor: MPSCNNConvolutionDescriptor, kernelWeights: UnsafePointer<Float>, biasTerms: UnsafePointer<Float>?, flags: MPSCNNConvolutionFlags)",
+      "desc": "Initializes a convolution kernel."
+    },
+    {
+      "name": "class MPSCNNConvolutionDescriptor",
+      "desc": "A description of the attributes of a convolution kernel."
+    },
+    {
+      "name": "enum MPSCNNConvolutionFlags",
+      "desc": "Options used to control how kernel weights are stored and used in the CNN kernels"
+    },
+    {
+      "name": "init(device: MTLDevice, weights: MPSCNNConvolutionDataSource)"
+    },
+    {
+      "name": "protocol MPSCNNConvolutionDataSource",
+      "desc": "The protocol that provides convolution filter weights and bias terms."
+    },
+    {
+      "name": "var inputFeatureChannels: Int",
+      "desc": "The number of feature channels per pixel in the input image."
+    },
+    {
+      "name": "var outputFeatureChannels: Int",
+      "desc": "The number of feature channels per pixel in the output image."
+    },
+    {
+      "name": "var groups: Int",
+      "desc": "The number of groups that the input and output channels are divided into."
+    },
+    {
+      "name": "var subPixelScaleFactor: Int"
+    },
+    {
+      "name": "var neuron: MPSCNNNeuron?",
+      "desc": "The neuron filter to be applied as part of the convolution operation."
+    },
+    {
+      "name": "class MPSCNNNeuron",
+      "desc": "A filter that applies a neuron activation function."
+    },
+    {
+      "name": "enum MPSCNNNeuronType",
+      "desc": "The types of neuron filter to append to a convolution."
+    },
+    {
+      "name": "var accumulatorPrecisionOption: MPSNNConvolutionAccumulatorPrecisionOption"
+    },
+    {
+      "name": "var channelMultiplier: Int"
+    },
+    {
+      "name": "var dataSource: MPSCNNConvolutionDataSource"
+    },
+    {
+      "name": "var fusedNeuronDescriptor: MPSNNNeuronDescriptor?"
+    },
+    {
+      "name": "func exportWeightsAndBiases(with: MTLCommandBuffer, resultStateCanBeTemporary: Bool) -> MPSCNNConvolutionWeightsAndBiasesState"
+    },
+    {
+      "name": "func reloadWeightsAndBiases(with: MTLCommandBuffer, state: MPSCNNConvolutionWeightsAndBiasesState)"
+    },
+    {
+      "name": "func reloadWeightsAndBiasesFromDataSource()"
+    },
+    {
+      "name": "func resultState(sourceImage: MPSImage, sourceStates: [MPSState]?, destinationImage: MPSImage) -> MPSCNNConvolutionGradientState?"
+    },
+    {
+      "name": "func resultStateBatch(sourceImage: [MPSImage], sourceStates: [[MPSState]]?, destinationImage: [MPSImage]) -> [MPSCNNConvolutionGradientState]?"
+    },
+    {
+      "name": "func temporaryResultState(commandBuffer: MTLCommandBuffer, sourceImage: MPSImage, sourceStates: [MPSState]?, destinationImage: MPSImage) -> MPSCNNConvolutionGradientState?"
+    },
+    {
+      "name": "func temporaryResultStateBatch(commandBuffer: MTLCommandBuffer, sourceImage: [MPSImage], sourceStates: [[MPSState]]?, destinationImage: [MPSImage]) -> [MPSCNNConvolutionGradientState]?"
+    }
+  ],
+  "declaration": "class MPSCNNConvolution : MPSCNNKernel",
+  "inheritsFrom": [
+    "MPSCNNKernel"
+  ]
+}

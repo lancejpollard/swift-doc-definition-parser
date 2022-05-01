@@ -1,0 +1,135 @@
+{
+  "path": "/documentation/realitykit/modelentity",
+  "type": "Class",
+  "name": "ModelEntity",
+  "desc": "A representation of a physical object that RealityKit renders and optionally simulates.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a model entity."
+    },
+    {
+      "name": "init(mesh: MeshResource, materials: [Material])",
+      "desc": "Creates a model entity with a particular mesh and set of materials."
+    },
+    {
+      "name": "init(mesh: MeshResource, materials: [Material], collisionShape: ShapeResource, mass: Float)",
+      "desc": "Creates a model entity with a particular mesh, set of materials, collision shape, and mass."
+    },
+    {
+      "name": "init(mesh: MeshResource, materials: [Material], collisionShapes: [ShapeResource], mass: Float)",
+      "desc": "Creates a model entity with a particular mesh, set of materials, a composite collision shape, and mass."
+    },
+    {
+      "name": "var model: ModelComponent?",
+      "desc": "The model component for the model entity."
+    },
+    {
+      "name": "struct ModelComponent",
+      "desc": "A collection of resources that create the visual appearance of an entity."
+    },
+    {
+      "name": "var jointNames: [String]",
+      "desc": "The names of all the joints in the model entity."
+    },
+    {
+      "name": "var jointTransforms: [Transform]",
+      "desc": "The relative joint transforms of the model entity."
+    },
+    {
+      "name": "protocol HasModel",
+      "desc": "An interface that provides meshes and materials to define the visual appearance of an entity."
+    },
+    {
+      "name": "var collision: CollisionComponent?",
+      "desc": "The collision component for the model entity."
+    },
+    {
+      "name": "struct CollisionComponent",
+      "desc": "A component that gives an entity the ability to collide with other entities that also have collision components."
+    },
+    {
+      "name": "enum CollisionEvents",
+      "desc": "Events associated with collisions."
+    },
+    {
+      "name": "protocol HasCollision",
+      "desc": "An interface used for ray casting and collision detection."
+    },
+    {
+      "name": "var physicsBody: PhysicsBodyComponent?",
+      "desc": "A component that is used for physics simulations of the model entity in accordance with the laws of Newtonian mechanics."
+    },
+    {
+      "name": "struct PhysicsBodyComponent",
+      "desc": "A component that defines an entity’s behavior in physics body simulations."
+    },
+    {
+      "name": "func addForce(SIMD3<Float>, relativeTo: Entity?)",
+      "desc": "Applies a force to the physics body at its center of mass."
+    },
+    {
+      "name": "func addForce(SIMD3<Float>, at: SIMD3<Float>, relativeTo: Entity?)",
+      "desc": "Applies a force to the physics body at the specified position."
+    },
+    {
+      "name": "func addTorque(SIMD3<Float>, relativeTo: Entity?)",
+      "desc": "Applies a torque to the physics body at its center of mass."
+    },
+    {
+      "name": "func clearForcesAndTorques()",
+      "desc": "Clears all forces previously added to the physics body."
+    },
+    {
+      "name": "func applyLinearImpulse(SIMD3<Float>, relativeTo: Entity?)",
+      "desc": "Applies an impulse to the physics body at its center of mass."
+    },
+    {
+      "name": "func applyAngularImpulse(SIMD3<Float>, relativeTo: Entity?)",
+      "desc": "Applies an angular (torque) impulse to the physics body at its center of mass."
+    },
+    {
+      "name": "func applyImpulse(SIMD3<Float>, at: SIMD3<Float>, relativeTo: Entity?)",
+      "desc": "Applies an impulse to the physics body at the specified position."
+    },
+    {
+      "name": "func resetPhysicsTransform(recursive: Bool)",
+      "desc": "Resets the position, orientation, and velocities of the simulated physics body."
+    },
+    {
+      "name": "protocol HasPhysicsBody",
+      "desc": "An interface that enables physics simulations based on the rules of Newtonian mechanics."
+    },
+    {
+      "name": "var physicsMotion: PhysicsMotionComponent?",
+      "desc": "The physics motion component used by physics simulations of the model entity."
+    },
+    {
+      "name": "struct PhysicsMotionComponent",
+      "desc": "A component that controls the motion of the body in physics simulations."
+    },
+    {
+      "name": "protocol HasPhysicsMotion",
+      "desc": "An interface that provides velocity properties for physics simulations."
+    },
+    {
+      "name": "protocol HasPhysics",
+      "desc": "An interface that combines the physics body and physics motion interfaces."
+    },
+    {
+      "name": "struct SynchronizationComponent",
+      "desc": "A component that synchronizes an entity between processes and networked applications."
+    },
+    {
+      "name": "var modelDebugOptions: ModelDebugOptionsComponent?"
+    }
+  ],
+  "declaration": "class ModelEntity : Entity",
+  "inheritsFrom": [
+    "Entity"
+  ],
+  "conformsTo": [
+    "HasModel",
+    "HasPhysics"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "path": "/documentation/network/nw_browser_t",
+  "type": "Type Alias",
+  "name": "nw_browser_t",
+  "desc": "An object you use to browse for available network services.",
+  "items": [
+    {
+      "name": "property list key NSBonjourServices",
+      "desc": "Bonjour service types browsed by the app."
+    },
+    {
+      "name": "property list key NSLocalNetworkUsageDescription",
+      "desc": "A message that tells the user why the app is requesting access to the local network."
+    },
+    {
+      "name": "func nw_browser_create(nw_browse_descriptor_t, nw_parameters_t?) -> nw_browser_t",
+      "desc": "Initializes a browser with a type of service to discover."
+    },
+    {
+      "name": "typealias nw_browse_descriptor_t",
+      "desc": "A service description used to discover Bonjour services."
+    },
+    {
+      "name": "func nw_browser_set_queue(nw_browser_t, DispatchQueue)",
+      "desc": "Sets the queue on which all browser events will be delivered."
+    },
+    {
+      "name": "func nw_browser_start(nw_browser_t)",
+      "desc": "Starts browsing for services."
+    },
+    {
+      "name": "func nw_browser_set_browse_results_changed_handler(nw_browser_t, nw_browser_browse_results_changed_handler_t?)",
+      "desc": "Sets the handler to receive updates about discovered services."
+    },
+    {
+      "name": "typealias nw_browser_browse_results_changed_handler_t",
+      "desc": "A handler that delivers updates about discovered services."
+    },
+    {
+      "name": "typealias nw_browse_result_t",
+      "desc": "A discovered service and metadata about the service."
+    },
+    {
+      "name": "func nw_browser_set_state_changed_handler(nw_browser_t, nw_browser_state_changed_handler_t?)",
+      "desc": "Sets a handler to receive browser state updates."
+    },
+    {
+      "name": "typealias nw_browser_state_changed_handler_t",
+      "desc": "A handler that delivers browser state updates with associated errors."
+    },
+    {
+      "name": "struct nw_browser_state_t",
+      "desc": "States indicating whether a browser is able to discover services."
+    },
+    {
+      "name": "func nw_browser_cancel(nw_browser_t)",
+      "desc": "Stops browsing for services."
+    },
+    {
+      "name": "func nw_browser_copy_browse_descriptor(nw_browser_t) -> nw_browse_descriptor_t",
+      "desc": "Accesses the service descriptor with which the browser was created."
+    },
+    {
+      "name": "func nw_browser_copy_parameters(nw_browser_t) -> nw_parameters_t",
+      "desc": "Accesses the parameters with which the browser was created."
+    }
+  ],
+  "declaration": "typealias nw_browser_t = OS_nw_browser"
+}

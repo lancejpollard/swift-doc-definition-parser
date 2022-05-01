@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/accelerate/bnns/rmspropoptimizer",
+  "type": "Structure",
+  "name": "BNNS.RMSPropOptimizer",
+  "desc": "An optimizer that uses the root mean square propagation (RMSProp) optimization method.",
+  "items": [
+    {
+      "name": "init(learningRate: Float, alpha: Float, epsilon: Float, centered: Bool, momentum: Float, gradientScale: Float, regularizationScale: Float, clipsGradientsTo: ClosedRange<Float>?, regularizationFunction: BNNSOptimizerRegularizationFunction)",
+      "desc": "Returns a new RMSProp optimizer object."
+    },
+    {
+      "name": "init(learningRate: Float, alpha: Float, epsilon: Float, centered: Bool, momentum: Float, gradientScale: Float, regularizationScale: Float, gradientClipping: BNNS.GradientClipping, regularizationFunction: BNNSOptimizerRegularizationFunction)",
+      "desc": "Returns a new RMSProp optimizer object with gradient clipped by value or clipped by norm."
+    },
+    {
+      "name": "var learningRate: Float",
+      "desc": "A value that specifies the learning rate."
+    },
+    {
+      "name": "var alpha: Float",
+      "desc": "A constant that specifies smoothing."
+    },
+    {
+      "name": "var epsilon: Float",
+      "desc": "A term that the optimizer adds to the denominator."
+    },
+    {
+      "name": "var centered: Bool",
+      "desc": "A Boolean value that specifies whether to use the centered variant."
+    },
+    {
+      "name": "var momentum: Float",
+      "desc": "The rate of momentum decay."
+    },
+    {
+      "name": "var gradientScale: Float",
+      "desc": "A value that specifies the gradient scaling factor."
+    },
+    {
+      "name": "var regularizationScale: Float",
+      "desc": "A value that specifies the regularization scaling factor."
+    },
+    {
+      "name": "var gradientBounds: ClosedRange<Float>?",
+      "desc": "The values for the minimum and maximum gradients."
+    },
+    {
+      "name": "var gradientClipping: BNNS.GradientClipping",
+      "desc": "The gradient clipping."
+    },
+    {
+      "name": "enum BNNS.GradientClipping",
+      "desc": "Constants that describe clipping functions."
+    },
+    {
+      "name": "var regularizationFunction: BNNSOptimizerRegularizationFunction",
+      "desc": "The variable that specifies the regularization function."
+    },
+    {
+      "name": "var accumulatorCountMultiplier: Int",
+      "desc": "The number of accumulators required for each parameter."
+    },
+    {
+      "name": "var bnnsOptimizerFunction: BNNSOptimizerFunction",
+      "desc": "The underlying optimizer function structure."
+    },
+    {
+      "name": "func step(parameters: [BNNSNDArrayDescriptor], gradients: [BNNSNDArrayDescriptor], accumulators: [BNNSNDArrayDescriptor], filterParameters: BNNSFilterParameters?)",
+      "desc": "Applies a single optimization step to one or more parameters."
+    }
+  ],
+  "declaration": "struct RMSPropOptimizer",
+  "conformsTo": [
+    "BNNSOptimizer"
+  ]
+}

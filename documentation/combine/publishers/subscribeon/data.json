@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/combine/publishers/subscribeon",
+  "type": "Structure",
+  "name": "Publishers.SubscribeOn",
+  "desc": "A publisher that receives elements from an upstream publisher on a specific scheduler.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, scheduler: Context, options: Context.SchedulerOptions?)",
+      "desc": "Creates a publisher that receives elements from an upstream publisher on a specific scheduler."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    },
+    {
+      "name": "let scheduler: Context",
+      "desc": "The scheduler the publisher should use to receive elements."
+    },
+    {
+      "name": "let options: Context.SchedulerOptions?",
+      "desc": "Scheduler options that customize the delivery of elements."
+    }
+  ],
+  "declaration": "struct SubscribeOn<Upstream, Context> where Upstream : Publisher, Context : Scheduler",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/security/sectrustsettingsresult",
+  "type": "Enumeration",
+  "name": "SecTrustSettingsResult",
+  "desc": "Trust settings returned in usage constraints dictionaries.",
+  "items": [
+    {
+      "name": "case invalid",
+      "desc": "Never valid in a trust settings array or in an API call."
+    },
+    {
+      "name": "case trustRoot",
+      "desc": "This root certificate is explicitly trusted."
+    },
+    {
+      "name": "case trustAsRoot",
+      "desc": "This non-root certificate is explicitly trusted as if it were a trusted root."
+    },
+    {
+      "name": "case deny",
+      "desc": "This certificate is explicitly distrusted."
+    },
+    {
+      "name": "case unspecified",
+      "desc": "This certificate is neither trusted nor distrusted. This value can be used to specify an \"allowed error\" without assigning trust to a specific certificate."
+    }
+  ],
+  "declaration": "enum SecTrustSettingsResult : UInt32, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

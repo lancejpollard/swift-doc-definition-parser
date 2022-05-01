@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsnnpadding",
+  "type": "Protocol",
+  "name": "MPSNNPadding",
+  "desc": "The protocol that provides a description of how kernels should pad images.",
+  "items": [
+    {
+      "name": "func destinationImageDescriptor(forSourceImages: [MPSImage], sourceStates: [MPSState]?, for: MPSKernel, suggestedDescriptor: MPSImageDescriptor) -> MPSImageDescriptor"
+    },
+    {
+      "name": "class MPSImage",
+      "desc": "A texture that may have more than four channels for use in convolutional neural networks."
+    },
+    {
+      "name": "class MPSState",
+      "desc": "An opaque data container for large storage in MPS CNN filters."
+    },
+    {
+      "name": "class MPSKernel",
+      "desc": "A standard interface for Metal Performance Shaders kernels."
+    },
+    {
+      "name": "class MPSImageDescriptor",
+      "desc": "A description of the attributes used to create an MPSImage."
+    },
+    {
+      "name": "func paddingMethod() -> MPSNNPaddingMethod"
+    },
+    {
+      "name": "func label() -> String"
+    },
+    {
+      "name": "func inverse() -> Self?"
+    }
+  ],
+  "declaration": "protocol MPSNNPadding",
+  "inheritsFrom": [
+    "NSObjectProtocol",
+    "NSSecureCoding"
+  ]
+}

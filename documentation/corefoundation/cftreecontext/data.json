@@ -1,0 +1,35 @@
+{
+  "path": "/documentation/corefoundation/cftreecontext",
+  "type": "Structure",
+  "name": "CFTreeContext",
+  "desc": "Structure containing program-defined data and callbacks for a CFTree object.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(version: CFIndex, info: UnsafeMutableRawPointer!, retain: CFTreeRetainCallBack!, release: CFTreeReleaseCallBack!, copyDescription: CFTreeCopyDescriptionCallBack!)"
+    },
+    {
+      "name": "var copyDescription: CFTreeCopyDescriptionCallBack!",
+      "desc": "The callback used to provide a description of the info field."
+    },
+    {
+      "name": "var info: UnsafeMutableRawPointer!",
+      "desc": "A C pointer to a program-defined block of data, referred to as the information pointer."
+    },
+    {
+      "name": "var release: CFTreeReleaseCallBack!",
+      "desc": "The callback used to release a previously retained info field. If this parameter is not a pointer to a function of the correct prototype, the behavior is undefined. This value may be NULL."
+    },
+    {
+      "name": "var retain: CFTreeRetainCallBack!",
+      "desc": "The callback used to retain the info field. If this parameter is not a pointer to a function of the correct prototype, the behavior is undefined. This value may be NULL."
+    },
+    {
+      "name": "var version: CFIndex",
+      "desc": "The version number of the structure type being passed in as a parameter to a CFTree creation function. This structure is version 0."
+    }
+  ],
+  "declaration": "struct CFTreeContext"
+}

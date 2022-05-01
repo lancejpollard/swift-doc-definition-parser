@@ -1,0 +1,59 @@
+{
+  "path": "/documentation/safariservices/sfsafariextensionhandling",
+  "type": "Protocol",
+  "name": "SFSafariExtensionHandling",
+  "desc": "A protocol used to implement event handling in a Safari app extension.",
+  "items": [
+    {
+      "name": "func messageReceived(withName: String, from: SFSafariPage, userInfo: [String : Any]?)",
+      "desc": "A method the system calls when the extension receives a message from an injected script."
+    },
+    {
+      "name": "func messageReceivedFromContainingApp(withName: String, userInfo: [String : Any]?)",
+      "desc": "A method the system calls when the extension receives a message from the extension’s containing app."
+    },
+    {
+      "name": "func contextMenuItemSelected(withCommand: String, in: SFSafariPage, userInfo: [String : Any]?)",
+      "desc": "A method the system calls when a user selects one of the app extension’s context menu items."
+    },
+    {
+      "name": "func validateContextMenuItem(withCommand: String, in: SFSafariPage, userInfo: [String : Any]?, validationHandler: (Bool, String?) -> Void)",
+      "desc": "Validates whether a particular contextual menu item should be displayed."
+    },
+    {
+      "name": "func toolbarItemClicked(in: SFSafariWindow)",
+      "desc": "A method the system calls when a user clicks a toolbar item associated with the app extension."
+    },
+    {
+      "name": "func validateToolbarItem(in: SFSafariWindow, validationHandler: (Bool, String) -> Void)",
+      "desc": "Determines if a toolbar menu item should be enabled or have badge text when browser state changes."
+    },
+    {
+      "name": "func popoverViewController() -> SFSafariExtensionViewController",
+      "desc": "Asks the handler to provide a popover view controller for display."
+    },
+    {
+      "name": "func popoverWillShow(in: SFSafariWindow)",
+      "desc": "Tells the handler that the app extension's popover is about to be opened."
+    },
+    {
+      "name": "func popoverDidClose(in: SFSafariWindow)",
+      "desc": "Tells the handler that the app extension's popover was closed."
+    },
+    {
+      "name": "func contentBlocker(withIdentifier: String, blockedResourcesWith: [URL], on: SFSafariPage)",
+      "desc": "Tells the handler which resources a content blocker blocked on a webpage."
+    },
+    {
+      "name": "func page(SFSafariPage, willNavigateTo: URL?)",
+      "desc": "A method the system calls when a webpage is about to navigate to a new URL."
+    },
+    {
+      "name": "func additionalRequestHeaders(for: URL, completionHandler: ([String : String]?) -> Void)"
+    }
+  ],
+  "declaration": "protocol SFSafariExtensionHandling",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

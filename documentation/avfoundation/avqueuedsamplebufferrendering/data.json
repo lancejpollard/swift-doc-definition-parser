@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/avfoundation/avqueuedsamplebufferrendering",
+  "type": "Protocol",
+  "name": "AVQueuedSampleBufferRendering",
+  "desc": "Methods you can implement to enqueue sample buffers for presentation.",
+  "items": [
+    {
+      "name": "var isReadyForMoreMediaData: Bool",
+      "desc": "A Boolean value that indicates whether the receiver is able to accept more sample buffers."
+    },
+    {
+      "name": "func enqueue(CMSampleBuffer)",
+      "desc": "Sends a sample buffer to the queue for rendering."
+    },
+    {
+      "name": "func requestMediaDataWhenReady(on: DispatchQueue, using: () -> Void)",
+      "desc": "Tells the target to invoke a client-supplied block in order to gather sample buffers for playback."
+    },
+    {
+      "name": "func stopRequestingMediaData()",
+      "desc": "Cancels any current requestMediaDataWhenReady(on:using:) call."
+    },
+    {
+      "name": "var hasSufficientMediaDataForReliablePlaybackStart: Bool",
+      "desc": "A Boolean value that indicates whether the enqued media meets the required preroll level for reliable playback."
+    },
+    {
+      "name": "func flush()",
+      "desc": "Discards all pending enqueued sample buffers."
+    },
+    {
+      "name": "var timebase: CMTimebase",
+      "desc": "The timebase for a renderer."
+    }
+  ],
+  "declaration": "protocol AVQueuedSampleBufferRendering",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

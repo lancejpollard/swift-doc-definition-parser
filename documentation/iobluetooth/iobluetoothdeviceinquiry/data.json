@@ -1,0 +1,51 @@
+{
+  "path": "/documentation/iobluetooth/iobluetoothdeviceinquiry",
+  "type": "Class",
+  "name": "IOBluetoothDeviceInquiry",
+  "desc": "Object representing a device inquiry that finds Bluetooth devices in-range of the computer, and (optionally) retrieves name information for them.",
+  "items": [
+    {
+      "name": "init!(delegate: Any!)",
+      "desc": "Initializes an alloc'd inquiry object, and sets the delegate object, as if -setDelegate: were called on it."
+    },
+    {
+      "name": "var delegate: AnyObject?"
+    },
+    {
+      "name": "var inquiryLength: UInt8",
+      "desc": "Set the length of the inquiry that is performed each time -start is used on an inquiry object."
+    },
+    {
+      "name": "var searchType: IOBluetoothDeviceSearchTypes",
+      "desc": "Set the devices that are found."
+    },
+    {
+      "name": "var updateNewDeviceNames: Bool",
+      "desc": "Sets whether or not the inquiry object will retrieve the names of devices found during the search."
+    },
+    {
+      "name": "func clearFoundDevices()",
+      "desc": "Removes all found devices from the inquiry object."
+    },
+    {
+      "name": "func foundDevices() -> [Any]!",
+      "desc": "Returns found IOBluetoothDevice objects as an array."
+    },
+    {
+      "name": "func setSearchCriteria(BluetoothServiceClassMajor, majorDeviceClass: BluetoothDeviceClassMajor, minorDeviceClass: BluetoothDeviceClassMinor)",
+      "desc": "Use this method to set the criteria for the device search."
+    },
+    {
+      "name": "func start() -> IOReturn",
+      "desc": "Tells inquiry object to begin the inquiry and name updating process, if specified."
+    },
+    {
+      "name": "func stop() -> IOReturn",
+      "desc": "Halts the inquiry object. Could either stop the search for new devices, or the updating of found device names."
+    }
+  ],
+  "declaration": "class IOBluetoothDeviceInquiry : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

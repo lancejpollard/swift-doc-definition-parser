@@ -1,0 +1,389 @@
+{
+  "path": "/documentation/applearchive/archiveheader",
+  "type": "Class",
+  "name": "ArchiveHeader",
+  "desc": "An AppleArchive entry header.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a new empty archive header."
+    },
+    {
+      "name": "init?(keySet: ArchiveHeader.FieldKeySet, directory: FilePath, path: FilePath, flags: ArchiveFlags)",
+      "desc": "Creates a new archive header with fields derived from the filesystem object, at the specified directory and path."
+    },
+    {
+      "name": "init?(withAAEncodedData: UnsafeBufferPointer<UInt8>)",
+      "desc": "Creates a new archive header from encoded data."
+    },
+    {
+      "name": "init(copying: ArchiveHeader)",
+      "desc": "Creates a copy of an archive header."
+    },
+    {
+      "name": "func field(forKey: ArchiveHeader.FieldKey) -> ArchiveHeader.Field?",
+      "desc": "Returns the field for a specified key."
+    },
+    {
+      "name": "struct ArchiveHeader.FieldKey",
+      "desc": "A type that’s an alias for the field key structure."
+    },
+    {
+      "name": "enum ArchiveHeader.Field",
+      "desc": "An enumeration that describes the type, key, and value of a header field."
+    },
+    {
+      "name": "var fieldType: ArchiveHeader._FieldTypes",
+      "desc": "The field types of the archive header."
+    },
+    {
+      "name": "struct ArchiveHeader.FieldType",
+      "desc": "Constants that specify the field type of an archive header."
+    },
+    {
+      "name": "var fieldKey: ArchiveHeader._FieldKeys",
+      "desc": "The field keys of the archive header."
+    },
+    {
+      "name": "class ArchiveHeader.FieldKeySet",
+      "desc": "An object that represents a field key set."
+    },
+    {
+      "name": "class ArchiveHeader.EntryAttributes",
+      "desc": "An object that describes archive entry attributes."
+    },
+    {
+      "name": "class ArchiveHeader.EntryXATBlob",
+      "desc": "An object that describes the extended attributes of an archive entry."
+    },
+    {
+      "name": "var entryType: ArchiveHeader.EntryType?",
+      "desc": "The entry type from TYP field, or nil if missing or invalid."
+    },
+    {
+      "name": "struct ArchiveHeader.EntryType",
+      "desc": "Constants that specify the filesystem entry types."
+    },
+    {
+      "name": "typealias ArchiveHeader.EntryFilter",
+      "desc": "A type alias for the parameters passed to an archive stream operation’s entry selection and status closure."
+    },
+    {
+      "name": "struct ArchiveHeader.EntryMessage",
+      "desc": "Constants that represent message values for the entry message filters."
+    },
+    {
+      "name": "enum ArchiveHeader.EntryFilterData",
+      "desc": "Enumerations that represent entry filter data."
+    },
+    {
+      "name": "struct ArchiveHeader.EntryMessageStatus",
+      "desc": "Statuses that you return from an archive stream operation’s entry selection and status closure."
+    },
+    {
+      "name": "var entryPath: FilePath?",
+      "desc": "The entry from the path field, or nil if missing or invalid."
+    },
+    {
+      "name": "func withAAEncodedData<R>((UnsafeBufferPointer<UInt8>) -> R) -> R",
+      "desc": "Executes a closure with encoded data."
+    },
+    {
+      "name": "typealias ArchiveHeader.Element"
+    },
+    {
+      "name": "typealias ArchiveHeader.Index"
+    },
+    {
+      "name": "typealias ArchiveHeader.Indices"
+    },
+    {
+      "name": "typealias ArchiveHeader.Iterator"
+    },
+    {
+      "name": "typealias ArchiveHeader.SubSequence"
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of elements in the collection."
+    },
+    {
+      "name": "var endIndex: Int"
+    },
+    {
+      "name": "var first: Field?",
+      "desc": "The first element of the collection."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value indicating whether the collection is empty."
+    },
+    {
+      "name": "var last: Field?",
+      "desc": "The last element of the collection."
+    },
+    {
+      "name": "var lazy: LazySequence<ArchiveHeader>",
+      "desc": "A sequence containing the same elements as this sequence, but on which some operations, such as map and filter, are implemented lazily."
+    },
+    {
+      "name": "var publisher: Publishers.Sequence<ArchiveHeader, Never>"
+    },
+    {
+      "name": "var startIndex: Int"
+    },
+    {
+      "name": "var underestimatedCount: Int",
+      "desc": "A value less than or equal to the number of elements in the collection."
+    },
+    {
+      "name": "func allSatisfy((Field) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether every element of a sequence satisfies a given predicate."
+    },
+    {
+      "name": "func append(ArchiveHeader.Field)"
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((Field) -> ElementOfResult?) -> [ElementOfResult]",
+      "desc": "Returns an array containing the non-nil results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func contains(where: (Field) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func difference<C>(from: C, by: (C.Element, Field) -> Bool) -> CollectionDifference<Field>",
+      "desc": "Returns the difference needed to produce this collection’s ordered elements from the given collection, using the given predicate as an equivalence test."
+    },
+    {
+      "name": "func drop(while: (Field) -> Bool) -> Slice<ArchiveHeader>",
+      "desc": "Returns a subsequence by skipping elements while predicate returns true and returning the remaining elements."
+    },
+    {
+      "name": "func dropFirst(Int) -> Slice<ArchiveHeader>",
+      "desc": "Returns a subsequence containing all but the given number of initial elements."
+    },
+    {
+      "name": "func dropLast(Int) -> Slice<ArchiveHeader>",
+      "desc": "Returns a subsequence containing all but the specified number of final elements."
+    },
+    {
+      "name": "func elementsEqual<OtherSequence>(OtherSequence, by: (Field, OtherSequence.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this sequence and another sequence contain equivalent elements in the same order, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func enumerated() -> EnumeratedSequence<ArchiveHeader>",
+      "desc": "Returns a sequence of pairs (n, x), where n represents a consecutive integer starting at zero and x represents an element of the sequence."
+    },
+    {
+      "name": "func filter((Field) -> Bool) -> [Field]",
+      "desc": "Returns an array containing, in order, the elements of the sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func first(where: (Field) -> Bool) -> Field?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func firstIndex(where: (Field) -> Bool) -> Int?",
+      "desc": "Returns the first index in which an element of the collection satisfies the given predicate."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((Field) -> SegmentOfResult) -> [SegmentOfResult.Element]",
+      "desc": "Returns an array containing the concatenated results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func forEach((Field) -> Void)",
+      "desc": "Calls the given closure on each element in the sequence in the same order as a for-in loop."
+    },
+    {
+      "name": "func formIndex(inout Int, offsetBy: Int)",
+      "desc": "Offsets the given index by the specified distance."
+    },
+    {
+      "name": "func formIndex(inout Int, offsetBy: Int, limitedBy: Int) -> Bool",
+      "desc": "Offsets the given index by the specified distance, or so that it equals the given limiting index."
+    },
+    {
+      "name": "func formIndex(after: inout Int)",
+      "desc": "Replaces the given index with its successor."
+    },
+    {
+      "name": "func formIndex(before: inout Int)",
+      "desc": "Replaces the given index with its predecessor."
+    },
+    {
+      "name": "func index(Int, offsetBy: Int, limitedBy: Int) -> Int?",
+      "desc": "Returns an index that is the specified distance from the given index, unless that distance is beyond a given limiting index."
+    },
+    {
+      "name": "func last(where: (Field) -> Bool) -> Field?",
+      "desc": "Returns the last element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func lastIndex(where: (Field) -> Bool) -> Int?",
+      "desc": "Returns the index of the last element in the collection that matches the given predicate."
+    },
+    {
+      "name": "func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Field, Field) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the given predicate to compare elements."
+    },
+    {
+      "name": "func makeIterator() -> IndexingIterator<ArchiveHeader>",
+      "desc": "Returns an iterator over the elements of the collection."
+    },
+    {
+      "name": "func map<T>((Field) -> T) -> [T]",
+      "desc": "Returns an array containing the results of mapping the given closure over the sequence’s elements."
+    },
+    {
+      "name": "func max(by: (Field, Field) -> Bool) -> Field?",
+      "desc": "Returns the maximum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func min(by: (Field, Field) -> Bool) -> Field?",
+      "desc": "Returns the minimum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func partition(by: (Field) -> Bool) -> Int",
+      "desc": "Reorders the elements of the collection such that all the elements that match the given predicate are after all the elements that don’t match."
+    },
+    {
+      "name": "func prefix(Int) -> Slice<ArchiveHeader>",
+      "desc": "Returns a subsequence, up to the specified maximum length, containing the initial elements of the collection."
+    },
+    {
+      "name": "func prefix(through: Int) -> Slice<ArchiveHeader>",
+      "desc": "Returns a subsequence from the start of the collection through the specified position."
+    },
+    {
+      "name": "func prefix(upTo: Int) -> Slice<ArchiveHeader>",
+      "desc": "Returns a subsequence from the start of the collection up to, but not including, the specified position."
+    },
+    {
+      "name": "func prefix(while: (Field) -> Bool) -> Slice<ArchiveHeader>",
+      "desc": "Returns a subsequence containing the initial elements until predicate returns false and skipping the remaining elements."
+    },
+    {
+      "name": "func randomElement() -> Field?",
+      "desc": "Returns a random element of the collection."
+    },
+    {
+      "name": "func randomElement<T>(using: inout T) -> Field?",
+      "desc": "Returns a random element of the collection, using the given generator as a source for randomness."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, Field) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, Field) -> ()) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "func remove(at: Int) -> ArchiveHeader.Field"
+    },
+    {
+      "name": "func removeAll()"
+    },
+    {
+      "name": "func reverse()",
+      "desc": "Reverses the elements of the collection in place."
+    },
+    {
+      "name": "func reversed() -> ReversedCollection<ArchiveHeader>",
+      "desc": "Returns a view presenting the elements of the collection in reverse order."
+    },
+    {
+      "name": "func shuffle()",
+      "desc": "Shuffles the collection in place."
+    },
+    {
+      "name": "func shuffle<T>(using: inout T)",
+      "desc": "Shuffles the collection in place, using the given generator as a source for randomness."
+    },
+    {
+      "name": "func shuffled() -> [Field]",
+      "desc": "Returns the elements of the sequence, shuffled."
+    },
+    {
+      "name": "func shuffled<T>(using: inout T) -> [Field]",
+      "desc": "Returns the elements of the sequence, shuffled using the given generator as a source for randomness."
+    },
+    {
+      "name": "func sort(by: (Field, Field) -> Bool)",
+      "desc": "Sorts the collection in place, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func sorted(by: (Field, Field) -> Bool) -> [Field]",
+      "desc": "Returns the elements of the sequence, sorted using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Field) -> Bool) -> [Slice<ArchiveHeader>]",
+      "desc": "Returns the longest possible subsequences of the collection, in order, that don’t contain elements satisfying the given predicate."
+    },
+    {
+      "name": "func starts<PossiblePrefix>(with: PossiblePrefix, by: (Field, PossiblePrefix.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the initial elements of the sequence are equivalent to the elements in another sequence, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func suffix(Int) -> Slice<ArchiveHeader>",
+      "desc": "Returns a subsequence, up to the given maximum length, containing the final elements of the collection."
+    },
+    {
+      "name": "func suffix(from: Int) -> Slice<ArchiveHeader>",
+      "desc": "Returns a subsequence from the specified position to the end of the collection."
+    },
+    {
+      "name": "func swapAt(Int, Int)",
+      "desc": "Exchanges the values at the specified indices of the collection."
+    },
+    {
+      "name": "func withContiguousMutableStorageIfAvailable<R>((inout UnsafeMutableBufferPointer<Field>) -> R) -> R?",
+      "desc": "Executes a closure on the collection’s contiguous storage."
+    },
+    {
+      "name": "func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<Field>) -> R) -> R?",
+      "desc": "Executes a closure on the sequence’s contiguous storage."
+    },
+    {
+      "name": "subscript(Int) -> ArchiveHeader.Field"
+    },
+    {
+      "name": "subscript<R>(R) -> Slice<ArchiveHeader>"
+    },
+    {
+      "name": "subscript((UnboundedRange_) -> ()) -> Slice<ArchiveHeader>"
+    },
+    {
+      "name": "subscript(Range<Int>) -> Slice<ArchiveHeader>",
+      "desc": "Accesses a contiguous subrange of the collection’s elements."
+    },
+    {
+      "name": "subscript<R>(R) -> Slice<ArchiveHeader>",
+      "desc": "Accesses the contiguous subrange of the collection’s elements specified by a range expression."
+    },
+    {
+      "name": "func compare<Comparator>(Comparator.Compared, Comparator.Compared) -> ComparisonResult"
+    },
+    {
+      "name": "func formatted<S>(S) -> S.FormatOutput"
+    },
+    {
+      "name": "func sort<Comparator>(using: Comparator)"
+    },
+    {
+      "name": "func sort<S, Comparator>(using: S)"
+    },
+    {
+      "name": "func sorted<Comparator>(using: Comparator) -> [Field]"
+    },
+    {
+      "name": "func sorted<S, Comparator>(using: S) -> [Field]"
+    }
+  ],
+  "declaration": "class ArchiveHeader",
+  "conformsTo": [
+    "MutableCollection",
+    "RandomAccessCollection"
+  ]
+}

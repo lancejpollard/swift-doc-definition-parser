@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/arkit/arsessionobserver",
+  "type": "Protocol",
+  "name": "ARSessionObserver",
+  "desc": "Methods you can implement to respond to changes in the state of an AR session.",
+  "items": [
+    {
+      "name": "func session(ARSession, cameraDidChangeTrackingState: ARCamera)",
+      "desc": "Informs the delegate of changes to the quality of ARKit's device position tracking."
+    },
+    {
+      "name": "func session(ARSession, didChange: ARGeoTrackingStatus)",
+      "desc": "Listen and react to geo-tracking state changes."
+    },
+    {
+      "name": "func sessionWasInterrupted(ARSession)",
+      "desc": "Tells the delegate that the session has temporarily stopped processing frames and tracking device position."
+    },
+    {
+      "name": "func sessionInterruptionEnded(ARSession)",
+      "desc": "Tells the delegate that the session has resumed processing frames and tracking device position."
+    },
+    {
+      "name": "func sessionShouldAttemptRelocalization(ARSession) -> Bool",
+      "desc": "Asks the delegate whether to attempt recovery of world-tracking state after an interruption."
+    },
+    {
+      "name": "func session(ARSession, didOutputAudioSampleBuffer: CMSampleBuffer)",
+      "desc": "Tells the delegate that a new sample buffer of recorded audio is available."
+    },
+    {
+      "name": "func session(ARSession, didFailWithError: Error)",
+      "desc": "Tells the delegate that the session has stopped running due to an error."
+    },
+    {
+      "name": "let ARErrorDomain: String",
+      "desc": "The error domain for NSError objects produced by an AR session."
+    },
+    {
+      "name": "func session(ARSession, didOutputCollaborationData: ARSession.CollaborationData)",
+      "desc": "Provides information for nearby users about your perspective in the environment."
+    }
+  ],
+  "declaration": "protocol ARSessionObserver",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

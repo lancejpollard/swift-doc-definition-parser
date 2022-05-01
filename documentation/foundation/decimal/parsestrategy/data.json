@@ -1,0 +1,63 @@
+{
+  "path": "/documentation/foundation/decimal/parsestrategy",
+  "type": "Generic Structure",
+  "name": "Decimal.ParseStrategy",
+  "desc": "No overview available.",
+  "items": [
+    {
+      "name": "typealias Decimal.ParseStrategy.ParseInput"
+    },
+    {
+      "name": "typealias Decimal.ParseStrategy.ParseOutput"
+    },
+    {
+      "name": "init(format: Format, lenient: Bool)",
+      "desc": "Available when Format is Decimal.FormatStyle.Percent."
+    },
+    {
+      "name": "init(format: Format, lenient: Bool)",
+      "desc": "Available when Format is Decimal.FormatStyle.Currency."
+    },
+    {
+      "name": "init(format: Format, lenient: Bool)",
+      "desc": "Available when Format is Decimal.FormatStyle."
+    },
+    {
+      "name": "init(from: Decoder)"
+    },
+    {
+      "name": "var formatStyle: Format"
+    },
+    {
+      "name": "var hashValue: Int"
+    },
+    {
+      "name": "var lenient: Bool"
+    },
+    {
+      "name": "func encode(to: Encoder)"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "func parse(String) -> Format.FormatInput"
+    },
+    {
+      "name": "static func fixed(format: Date.FormatString, timeZone: TimeZone, locale: Locale?) -> Date.ParseStrategy"
+    },
+    {
+      "name": "static func != (Decimal.ParseStrategy<Format>, Decimal.ParseStrategy<Format>) -> Bool"
+    },
+    {
+      "name": "static func == (Decimal.ParseStrategy<Format>, Decimal.ParseStrategy<Format>) -> Bool"
+    }
+  ],
+  "declaration": "struct ParseStrategy<Format> where Format : FormatStyle, Format.FormatInput == Decimal",
+  "conformsTo": [
+    "Decodable",
+    "Encodable",
+    "Hashable",
+    "ParseStrategy"
+  ]
+}

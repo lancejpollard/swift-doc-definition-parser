@@ -1,0 +1,228 @@
+{
+  "path": "/documentation/uikit/uiscrollview",
+  "type": "Class",
+  "name": "UIScrollView",
+  "desc": "A view that allows the scrolling and zooming of its contained views.",
+  "items": [
+    {
+      "name": "var delegate: UIScrollViewDelegate?",
+      "desc": "The delegate of the scroll-view object."
+    },
+    {
+      "name": "protocol UIScrollViewDelegate",
+      "desc": "The methods declared by the UIScrollViewDelegate protocol allow the adopting delegate to respond to messages from the UIScrollView class and thus respond to, and in some affect, operations such as scrolling, zooming, deceleration of scrolled content, and scrolling animations."
+    },
+    {
+      "name": "var contentSize: CGSize",
+      "desc": "The size of the content view."
+    },
+    {
+      "name": "var contentOffset: CGPoint",
+      "desc": "The point at which the origin of the content view is offset from the origin of the scroll view."
+    },
+    {
+      "name": "func setContentOffset(CGPoint, animated: Bool)",
+      "desc": "Sets the offset from the content view’s origin that corresponds to the receiver’s origin."
+    },
+    {
+      "name": "var adjustedContentInset: UIEdgeInsets",
+      "desc": "The insets derived from the content insets and the safe area of the scroll view."
+    },
+    {
+      "name": "var contentInset: UIEdgeInsets",
+      "desc": "The custom distance that the content view is inset from the safe area or scroll view edges."
+    },
+    {
+      "name": "var contentInsetAdjustmentBehavior: UIScrollView.ContentInsetAdjustmentBehavior",
+      "desc": "The behavior for determining the adjusted content offsets."
+    },
+    {
+      "name": "enum UIScrollView.ContentInsetAdjustmentBehavior",
+      "desc": "Constants indicating how safe area insets are added to the adjusted content inset."
+    },
+    {
+      "name": "func adjustedContentInsetDidChange()",
+      "desc": "Called when the adjusted content insets of the scroll view change."
+    },
+    {
+      "name": "var frameLayoutGuide: UILayoutGuide",
+      "desc": "The layout guide based on the untransformed frame rectangle of the scroll view."
+    },
+    {
+      "name": "var contentLayoutGuide: UILayoutGuide",
+      "desc": "The layout guide based on the untranslated content rectangle of the scroll view."
+    },
+    {
+      "name": "var isScrollEnabled: Bool",
+      "desc": "A Boolean value that determines whether scrolling is enabled."
+    },
+    {
+      "name": "var isDirectionalLockEnabled: Bool",
+      "desc": "A Boolean value that determines whether scrolling is disabled in a particular direction."
+    },
+    {
+      "name": "var isPagingEnabled: Bool",
+      "desc": "A Boolean value that determines whether paging is enabled for the scroll view."
+    },
+    {
+      "name": "var scrollsToTop: Bool",
+      "desc": "A Boolean value that controls whether the scroll-to-top gesture is enabled."
+    },
+    {
+      "name": "var bounces: Bool",
+      "desc": "A Boolean value that controls whether the scroll view bounces past the edge of content and back again."
+    },
+    {
+      "name": "var alwaysBounceVertical: Bool",
+      "desc": "A Boolean value that determines whether bouncing always occurs when vertical scrolling reaches the end of the content."
+    },
+    {
+      "name": "var alwaysBounceHorizontal: Bool",
+      "desc": "A Boolean value that determines whether bouncing always occurs when horizontal scrolling reaches the end of the content view."
+    },
+    {
+      "name": "var isTracking: Bool",
+      "desc": "Returns whether the user has touched the content to initiate scrolling."
+    },
+    {
+      "name": "var isDragging: Bool",
+      "desc": "A Boolean value that indicates whether the user has begun scrolling the content."
+    },
+    {
+      "name": "var isDecelerating: Bool",
+      "desc": "Returns whether the content is moving in the scroll view after the user lifted their finger."
+    },
+    {
+      "name": "var decelerationRate: UIScrollView.DecelerationRate",
+      "desc": "A floating-point value that determines the rate of deceleration after the user lifts their finger."
+    },
+    {
+      "name": "struct UIScrollView.DecelerationRate",
+      "desc": "Deceleration rates for the scroll view."
+    },
+    {
+      "name": "var indicatorStyle: UIScrollView.IndicatorStyle",
+      "desc": "The style of the scroll indicators."
+    },
+    {
+      "name": "enum UIScrollView.IndicatorStyle",
+      "desc": "The style of the scroll indicators. You use these constants to set the value of the indicatorStyle style."
+    },
+    {
+      "name": "var showsHorizontalScrollIndicator: Bool",
+      "desc": "A Boolean value that controls whether the horizontal scroll indicator is visible."
+    },
+    {
+      "name": "var showsVerticalScrollIndicator: Bool",
+      "desc": "A Boolean value that controls whether the vertical scroll indicator is visible."
+    },
+    {
+      "name": "var horizontalScrollIndicatorInsets: UIEdgeInsets",
+      "desc": "The horizontal distance the scroll indicators are inset from the edge of the scroll view."
+    },
+    {
+      "name": "var verticalScrollIndicatorInsets: UIEdgeInsets",
+      "desc": "The vertical distance the scroll indicators are inset from the edge of the scroll view."
+    },
+    {
+      "name": "var automaticallyAdjustsScrollIndicatorInsets: Bool",
+      "desc": "A Boolean value that indicates whether the system automatically adjusts the scroll indicator insets."
+    },
+    {
+      "name": "func flashScrollIndicators()",
+      "desc": "Displays the scroll indicators momentarily."
+    },
+    {
+      "name": "var refreshControl: UIRefreshControl?",
+      "desc": "The refresh control associated with the scroll view."
+    },
+    {
+      "name": "func scrollRectToVisible(CGRect, animated: Bool)",
+      "desc": "Scrolls a specific area of the content so that it is visible in the receiver."
+    },
+    {
+      "name": "func touchesShouldBegin(Set<UITouch>, with: UIEvent?, in: UIView) -> Bool",
+      "desc": "Overridden by subclasses to customize the default behavior when a finger touches down in displayed content."
+    },
+    {
+      "name": "func touchesShouldCancel(in: UIView) -> Bool",
+      "desc": "Returns whether to cancel touches related to the content subview and start dragging."
+    },
+    {
+      "name": "var canCancelContentTouches: Bool",
+      "desc": "A Boolean value that controls whether touches in the content view always lead to tracking."
+    },
+    {
+      "name": "var delaysContentTouches: Bool",
+      "desc": "A Boolean value that determines whether the scroll view delays the handling of touch-down gestures."
+    },
+    {
+      "name": "var directionalPressGestureRecognizer: UIGestureRecognizer",
+      "desc": "The underlying gesture recognizer for directional button presses."
+    },
+    {
+      "name": "var panGestureRecognizer: UIPanGestureRecognizer",
+      "desc": "The underlying gesture recognizer for pan gestures."
+    },
+    {
+      "name": "var pinchGestureRecognizer: UIPinchGestureRecognizer?",
+      "desc": "The underlying gesture recognizer for pinch gestures."
+    },
+    {
+      "name": "func zoom(to: CGRect, animated: Bool)",
+      "desc": "Zooms to a specific area of the content so that it is visible in the receiver."
+    },
+    {
+      "name": "var zoomScale: CGFloat",
+      "desc": "A floating-point value that specifies the current scale factor applied to the scroll view's content."
+    },
+    {
+      "name": "func setZoomScale(CGFloat, animated: Bool)",
+      "desc": "A floating-point value that specifies the current zoom scale."
+    },
+    {
+      "name": "var maximumZoomScale: CGFloat",
+      "desc": "A floating-point value that specifies the maximum scale factor that can be applied to the scroll view's content."
+    },
+    {
+      "name": "var minimumZoomScale: CGFloat",
+      "desc": "A floating-point value that specifies the minimum scale factor that can be applied to the scroll view's content."
+    },
+    {
+      "name": "var isZoomBouncing: Bool",
+      "desc": "A Boolean value that indicates that zooming has exceeded the scaling limits specified for the receiver."
+    },
+    {
+      "name": "var isZooming: Bool",
+      "desc": "A Boolean value that indicates whether the content view is currently zooming in or out."
+    },
+    {
+      "name": "var bouncesZoom: Bool",
+      "desc": "A Boolean value that determines whether the scroll view animates the content scaling when the scaling exceeds the maximum or minimum limits."
+    },
+    {
+      "name": "var keyboardDismissMode: UIScrollView.KeyboardDismissMode",
+      "desc": "The manner in which the keyboard is dismissed when a drag begins in the scroll view."
+    },
+    {
+      "name": "enum UIScrollView.KeyboardDismissMode",
+      "desc": "The manner in which the keyboard is dismissed when a drag begins in the scroll view."
+    },
+    {
+      "name": "var indexDisplayMode: UIScrollView.IndexDisplayMode",
+      "desc": "The manner in which the index is shown while the user is scrolling."
+    },
+    {
+      "name": "enum UIScrollView.IndexDisplayMode",
+      "desc": "The manner in which the index is shown while the user is scrolling."
+    }
+  ],
+  "declaration": "@MainActor class UIScrollView : UIView",
+  "inheritsFrom": [
+    "UIView"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "UIFocusItemScrollableContainer"
+  ]
+}

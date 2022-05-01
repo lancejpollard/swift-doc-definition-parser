@@ -1,0 +1,77 @@
+{
+  "path": "/documentation/realitykit/physicsbodycomponent",
+  "type": "Structure",
+  "name": "PhysicsBodyComponent",
+  "desc": "A component that defines an entity’s behavior in physics body simulations.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a physics body component with default settings."
+    },
+    {
+      "name": "init(massProperties: PhysicsMassProperties, material: PhysicsMaterialResource?, mode: PhysicsBodyMode)",
+      "desc": "Creates a physics body component with the given mass properties, material, and mode."
+    },
+    {
+      "name": "init(shapes: [ShapeResource], density: Float, material: PhysicsMaterialResource?, mode: PhysicsBodyMode)",
+      "desc": "Creates a physics body component deriving mass properties from shape and density."
+    },
+    {
+      "name": "init(shapes: [ShapeResource], mass: Float, material: PhysicsMaterialResource?, mode: PhysicsBodyMode)",
+      "desc": "Creates a physics body component deriving mass properties from shape and mass."
+    },
+    {
+      "name": "var isContinuousCollisionDetectionEnabled: Bool",
+      "desc": "A Boolean that controls whether the physics simulation performs continuous collision detection."
+    },
+    {
+      "name": "var isRotationLocked: (x: Bool, y: Bool, z: Bool)",
+      "desc": "A tuple of Boolean values that you use to lock rotation of the physics body around any of the three axes."
+    },
+    {
+      "name": "var isTranslationLocked: (x: Bool, y: Bool, z: Bool)",
+      "desc": "A tuple of Boolean values that you use to lock the position of the physics body along any of the three axes."
+    },
+    {
+      "name": "var mode: PhysicsBodyMode",
+      "desc": "The physics body’s mode, indicating how or if it moves."
+    },
+    {
+      "name": "enum PhysicsBodyMode",
+      "desc": "The ways that a physics body can move in response to physical forces."
+    },
+    {
+      "name": "var material: PhysicsMaterialResource",
+      "desc": "The physics body’s material properties, like friction."
+    },
+    {
+      "name": "class PhysicsMaterialResource",
+      "desc": "Material properties, like friction, of a physically simulated object."
+    },
+    {
+      "name": "var massProperties: PhysicsMassProperties",
+      "desc": "The physics body’s mass properties, like inertia and center of mass."
+    },
+    {
+      "name": "struct PhysicsMassProperties",
+      "desc": "Mass properties of a physics body."
+    },
+    {
+      "name": "static func registerComponent()",
+      "desc": "Registers a new component type."
+    },
+    {
+      "name": "static func == (PhysicsBodyComponent, PhysicsBodyComponent) -> Bool",
+      "desc": "Indicates whether two physics body components are equal."
+    },
+    {
+      "name": "static func != (PhysicsBodyComponent, PhysicsBodyComponent) -> Bool",
+      "desc": "Indicates whether two physics body components are not equal."
+    }
+  ],
+  "declaration": "struct PhysicsBodyComponent",
+  "conformsTo": [
+    "Component",
+    "Equatable"
+  ]
+}

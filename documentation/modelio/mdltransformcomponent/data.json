@@ -1,0 +1,46 @@
+{
+  "path": "/documentation/modelio/mdltransformcomponent",
+  "type": "Protocol",
+  "name": "MDLTransformComponent",
+  "desc": "The general interface for classes that manage local coordinate space transforms for 3D objects",
+  "items": [
+    {
+      "name": "var matrix: matrix_float4x4",
+      "desc": "The transform matrix that defines the local coordinate space relative to a parent coordinate space."
+    },
+    {
+      "name": "func setLocalTransform(matrix_float4x4)",
+      "desc": "Sets a new static transform matrix, overriding any time-based transform information."
+    },
+    {
+      "name": "var minimumTime: TimeInterval",
+      "desc": "The timestamp for the first timed data sample in the transform component."
+    },
+    {
+      "name": "var maximumTime: TimeInterval",
+      "desc": "The timestamp for the last timed data sample in the transform component."
+    },
+    {
+      "name": "func localTransform(atTime: TimeInterval) -> matrix_float4x4",
+      "desc": "Returns the local transform matrix as of the specified time sample."
+    },
+    {
+      "name": "func setLocalTransform(matrix_float4x4, forTime: TimeInterval)",
+      "desc": "Sets a new local transform matrix for the specified time sample."
+    },
+    {
+      "name": "static func globalTransform(with: MDLObject, atTime: TimeInterval) -> matrix_float4x4",
+      "desc": "Returns the absolute coordinate transformation for an object in a transform hierarchy."
+    },
+    {
+      "name": "var keyTimes: [NSNumber]"
+    },
+    {
+      "name": "var resetsTransform: Bool"
+    }
+  ],
+  "declaration": "protocol MDLTransformComponent",
+  "inheritsFrom": [
+    "MDLComponent"
+  ]
+}

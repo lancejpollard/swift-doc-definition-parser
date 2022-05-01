@@ -1,0 +1,104 @@
+{
+  "path": "/documentation/gamekit/gksession",
+  "type": "Class",
+  "name": "GKSession",
+  "desc": "A GKSession object provides the ability to discover and connect to nearby iOS devices using Bluetooth or Wi-fi.",
+  "items": [
+    {
+      "name": "init!(sessionID: String!, displayName: String!, sessionMode: GKSessionMode)",
+      "desc": "Initializes and returns a newly allocated session."
+    },
+    {
+      "name": "var delegate: GKSessionDelegate!",
+      "desc": "The delegate of the session object."
+    },
+    {
+      "name": "var isAvailable: Bool",
+      "desc": "A Boolean value that determines whether or not the session wants to connect to new peers."
+    },
+    {
+      "name": "func peers(with: GKPeerConnectionState) -> [Any]!",
+      "desc": "Returns a list of peers in the specified connection state."
+    },
+    {
+      "name": "func displayName(forPeer: String!) -> String!",
+      "desc": "Returns a user-readable name for a peer."
+    },
+    {
+      "name": "func connect(toPeer: String!, withTimeout: TimeInterval)",
+      "desc": "Creates a connection to another iOS device."
+    },
+    {
+      "name": "func cancelConnect(toPeer: String!)",
+      "desc": "Cancels a pending request to connect to another iOS device."
+    },
+    {
+      "name": "func acceptConnection(fromPeer: String!)",
+      "desc": "Called by the delegate to accept a connection request received from a remote peer."
+    },
+    {
+      "name": "func denyConnection(fromPeer: String!)",
+      "desc": "Called by the delegate to reject a connection request received from a remote peer."
+    },
+    {
+      "name": "func setDataReceiveHandler(Any!, withContext: UnsafeMutableRawPointer!)",
+      "desc": "Sets the object that handles data received from other peers connected to the session."
+    },
+    {
+      "name": "func send(Data!, toPeers: [Any]!, with: GKSendDataMode)",
+      "desc": "Transmits a collection of bytes to a list of connected peers."
+    },
+    {
+      "name": "func sendData(toAllPeers: Data!, with: GKSendDataMode)",
+      "desc": "Transmits a collection of bytes to all connected peers."
+    },
+    {
+      "name": "var disconnectTimeout: TimeInterval",
+      "desc": "A time interval that expresses how long the session waits before it disconnects a nonresponsive peer."
+    },
+    {
+      "name": "func disconnectFromAllPeers()",
+      "desc": "Disconnects the session from all connected peers."
+    },
+    {
+      "name": "func disconnectPeer(fromAllPeers: String!)",
+      "desc": "Disconnects a connected peer from all peers connected to the session."
+    },
+    {
+      "name": "var displayName: String!",
+      "desc": "The name of the user."
+    },
+    {
+      "name": "var peerID: String!",
+      "desc": "A string that identifies your session to other peers."
+    },
+    {
+      "name": "var sessionID: String!",
+      "desc": "A string used to filter the list of peers who are allowed to see your session."
+    },
+    {
+      "name": "var sessionMode: GKSessionMode",
+      "desc": "The mode the session uses to find other peers."
+    },
+    {
+      "name": "enum GKSendDataMode",
+      "desc": "The mechanism used to transmit data to other peers."
+    },
+    {
+      "name": "enum GKSessionMode",
+      "desc": "Modes that determine how a session interacts with other peers."
+    },
+    {
+      "name": "enum GKPeerConnectionState",
+      "desc": "The state of a peer known to the session."
+    },
+    {
+      "name": "enum GKSessionError.Code",
+      "desc": "Error codes for the GKSession error domain."
+    }
+  ],
+  "declaration": "class GKSession : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

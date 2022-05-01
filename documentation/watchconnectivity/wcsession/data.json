@@ -1,0 +1,124 @@
+{
+  "path": "/documentation/watchconnectivity/wcsession",
+  "type": "Class",
+  "name": "WCSession",
+  "desc": "The object that initiates communication between a WatchKit extension and its companion iOS app.",
+  "items": [
+    {
+      "name": "class func isSupported() -> Bool",
+      "desc": "Returns a Boolean value indicating whether the current iOS device is able to use a session object."
+    },
+    {
+      "name": "class var `default`: WCSession",
+      "desc": "Returns the singleton session object for the current device."
+    },
+    {
+      "name": "var delegate: WCSessionDelegate?",
+      "desc": "The delegate for the session object"
+    },
+    {
+      "name": "func activate()",
+      "desc": "Activates the session asynchronously."
+    },
+    {
+      "name": "var activationState: WCSessionActivationState",
+      "desc": "The current activation state of the session."
+    },
+    {
+      "name": "var isPaired: Bool",
+      "desc": "A Boolean indicating whether the current iPhone has a paired Apple Watch."
+    },
+    {
+      "name": "var iOSDeviceNeedsUnlockAfterRebootForReachability: Bool",
+      "desc": "A Boolean value indicating whether the paired iPhone must be in an unlocked state to be reachable."
+    },
+    {
+      "name": "var isWatchAppInstalled: Bool",
+      "desc": "A Boolean value indicating whether the currently paired and active Apple Watch has installed the app."
+    },
+    {
+      "name": "var isCompanionAppInstalled: Bool",
+      "desc": "A Boolean value indicating whether the companion has installed the app."
+    },
+    {
+      "name": "var isComplicationEnabled: Bool",
+      "desc": "A Boolean value indicating whether the Watch app’s complication is in use on the currently paired and active Apple Watch."
+    },
+    {
+      "name": "var watchDirectoryURL: URL?",
+      "desc": "A directory for storing information specific to the currently paired and active Apple Watch."
+    },
+    {
+      "name": "var isReachable: Bool",
+      "desc": "A Boolean value indicating whether the counterpart app is available for live messaging."
+    },
+    {
+      "name": "func updateApplicationContext([String : Any])",
+      "desc": "Sends a dictionary of values that a paired and active device can use to synchronize its state."
+    },
+    {
+      "name": "var applicationContext: [String : Any]",
+      "desc": "The most recent contextual data sent to the paired and active device."
+    },
+    {
+      "name": "var receivedApplicationContext: [String : Any]",
+      "desc": "A dictionary containing the last update data received from a paired and active device."
+    },
+    {
+      "name": "func sendMessage([String : Any], replyHandler: (([String : Any]) -> Void)?, errorHandler: ((Error) -> Void)?)",
+      "desc": "Sends a message immediately to the paired and active device and optionally handles a response."
+    },
+    {
+      "name": "func sendMessageData(Data, replyHandler: ((Data) -> Void)?, errorHandler: ((Error) -> Void)?)",
+      "desc": "Sends a data object immediately to the paired and active device and optionally handles a response."
+    },
+    {
+      "name": "var remainingComplicationUserInfoTransfers: Int",
+      "desc": "The number of remaining times you can send complication data from the iOS app to the WatchKit extension."
+    },
+    {
+      "name": "func transferCurrentComplicationUserInfo([String : Any]) -> WCSessionUserInfoTransfer",
+      "desc": "Sends complication-related data from the iOS app to the WatchKit extension."
+    },
+    {
+      "name": "func transferUserInfo([String : Any]) -> WCSessionUserInfoTransfer",
+      "desc": "Sends the specified data dictionary to the counterpart."
+    },
+    {
+      "name": "var outstandingUserInfoTransfers: [WCSessionUserInfoTransfer]",
+      "desc": "An array of in-progress data transfers."
+    },
+    {
+      "name": "func transferFile(URL, metadata: [String : Any]?) -> WCSessionFileTransfer",
+      "desc": "Sends the specified file and optional dictionary to the counterpart."
+    },
+    {
+      "name": "var outstandingFileTransfers: [WCSessionFileTransfer]",
+      "desc": "An array of in-progress file transfers."
+    },
+    {
+      "name": "var hasContentPending: Bool",
+      "desc": "A Boolean value that indicates whether the session has more content to deliver."
+    },
+    {
+      "name": "enum WCSessionActivationState",
+      "desc": "Constants indicating the activation state of a session."
+    },
+    {
+      "name": "let WCErrorDomain: String",
+      "desc": "The domain for errors associated with the Watch Connectivity framework."
+    },
+    {
+      "name": "struct WCError",
+      "desc": "A structure that contains Watch Connectivity error information."
+    },
+    {
+      "name": "enum WCError.Code",
+      "desc": "Constants for errors during a session."
+    }
+  ],
+  "declaration": "class WCSession : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

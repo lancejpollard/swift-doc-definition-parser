@@ -1,0 +1,31 @@
+{
+  "path": "/documentation/coreservices/uckeymodifierstotablenum",
+  "type": "Structure",
+  "name": "UCKeyModifiersToTableNum",
+  "desc": "Maps a modifier key combination to a particular key-code-to-character table number in a 'uchr' resource.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(keyModifiersToTableNumFormat: UInt16, defaultTableNum: UInt16, modifiersCount: UInt32, tableNum: (UInt8))"
+    },
+    {
+      "name": "var defaultTableNum: UInt16",
+      "desc": "An unsigned 16-bit integer identifying the table number to use for modifier combinations that are outside of the range included in the tableNum field."
+    },
+    {
+      "name": "var keyModifiersToTableNumFormat: UInt16",
+      "desc": "An unsigned 16-bit integer identifying the format of the UCKeyModifiersToTableNum structure. Set to kUCKeyModifiersToTableNumFormat."
+    },
+    {
+      "name": "var modifiersCount: UInt32",
+      "desc": "An unsigned 32-bit integer specifying the range of modifier bit combinations for which there are entries in the tableNum[] field."
+    },
+    {
+      "name": "var tableNum: (UInt8)",
+      "desc": "An array of unsigned 8-bit integers that map modifier bit combinations to table numbers. These values are indexes into the keyToCharTableOffsets array in a UCKeyToCharTableIndexstructure; these, in turn, are offsets to the actual key-code-to character tables, which follow the UCKeyToCharTableIndex structure in the 'uchr' resource."
+    }
+  ],
+  "declaration": "struct UCKeyModifiersToTableNum"
+}

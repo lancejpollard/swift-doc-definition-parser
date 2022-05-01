@@ -1,0 +1,35 @@
+{
+  "path": "/documentation/combine/publishers/print",
+  "type": "Structure",
+  "name": "Publishers.Print",
+  "desc": "A publisher that prints log messages for all publishing events, optionally prefixed with a given string.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, prefix: String, to: TextOutputStream?)",
+      "desc": "Creates a publisher that prints log messages for all publishing events."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher from which this publisher receives elements."
+    },
+    {
+      "name": "let prefix: String",
+      "desc": "A string with which to prefix all log messages."
+    },
+    {
+      "name": "let stream: TextOutputStream?"
+    }
+  ],
+  "declaration": "struct Print<Upstream> where Upstream : Publisher",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

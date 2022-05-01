@@ -1,0 +1,32 @@
+{
+  "path": "/documentation/uikit/uiguidedaccessrestrictiondelegate",
+  "type": "Protocol",
+  "name": "UIGuidedAccessRestrictionDelegate",
+  "desc": "A set of methods you use to add custom restrictions for the Guided Access feature in iOS.",
+  "items": [
+    {
+      "name": "var guidedAccessRestrictionIdentifiers: [String]?",
+      "desc": "An array of strings identifying custom restrictions."
+    },
+    {
+      "name": "func textForGuidedAccessRestriction(withIdentifier: String) -> String?",
+      "desc": "Provides a succinct description of the restriction for the specified identifier."
+    },
+    {
+      "name": "func detailTextForGuidedAccessRestriction(withIdentifier: String) -> String?",
+      "desc": "Provides more detailed information about the restriction for the specified identifier."
+    },
+    {
+      "name": "func guidedAccessRestriction(withIdentifier: String, didChange: UIAccessibility.GuidedAccessRestrictionState)",
+      "desc": "Tells the delegate that the restriction associated with the identifier has changed state."
+    },
+    {
+      "name": "enum UIAccessibility.GuidedAccessRestrictionState",
+      "desc": "Constants that describe the state of a restriction, either allow or deny."
+    }
+  ],
+  "declaration": "@MainActor protocol UIGuidedAccessRestrictionDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

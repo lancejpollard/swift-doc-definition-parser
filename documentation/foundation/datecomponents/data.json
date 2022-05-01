@@ -1,0 +1,159 @@
+{
+  "path": "/documentation/foundation/datecomponents",
+  "type": "Structure",
+  "name": "DateComponents",
+  "desc": "A date or time specified in terms of units (such as year, month, day, hour, and minute) to be evaluated in a calendar system and time zone.",
+  "items": [
+    {
+      "name": "init(calendar: Calendar?, timeZone: TimeZone?, era: Int?, year: Int?, month: Int?, day: Int?, hour: Int?, minute: Int?, second: Int?, nanosecond: Int?, weekday: Int?, weekdayOrdinal: Int?, quarter: Int?, weekOfMonth: Int?, weekOfYear: Int?, yearForWeekOfYear: Int?)",
+      "desc": "Initializes a date components value, optionally specifying values for its fields."
+    },
+    {
+      "name": "var calendar: Calendar?",
+      "desc": "The calendar used to interpret the other values in this structure."
+    },
+    {
+      "name": "var timeZone: TimeZone?",
+      "desc": "A time zone."
+    },
+    {
+      "name": "var isValidDate: Bool",
+      "desc": "Indicates whether the current combination of properties represents a date which exists in the current calendar."
+    },
+    {
+      "name": "func isValidDate(in: Calendar) -> Bool",
+      "desc": "Indicates whether the current combination of properties represents a date which exists in the specified calendar."
+    },
+    {
+      "name": "var date: Date?",
+      "desc": "The date calculated from the current components using the stored calendar."
+    },
+    {
+      "name": "var era: Int?",
+      "desc": "An era or count of eras."
+    },
+    {
+      "name": "var year: Int?",
+      "desc": "A year or count of years."
+    },
+    {
+      "name": "var yearForWeekOfYear: Int?",
+      "desc": "The year corresponding to a week-counting week."
+    },
+    {
+      "name": "var quarter: Int?",
+      "desc": "A quarter or count of quarters."
+    },
+    {
+      "name": "var month: Int?",
+      "desc": "A month or count of months."
+    },
+    {
+      "name": "var isLeapMonth: Bool?",
+      "desc": "Set to true if these components represent a leap month."
+    },
+    {
+      "name": "var weekOfMonth: Int?",
+      "desc": "A week of the month or a count of weeks of the month."
+    },
+    {
+      "name": "var weekOfYear: Int?",
+      "desc": "A week of the year or count of the weeks of the year."
+    },
+    {
+      "name": "var weekday: Int?",
+      "desc": "A weekday or count of weekdays."
+    },
+    {
+      "name": "var weekdayOrdinal: Int?",
+      "desc": "A weekday ordinal or count of weekday ordinals."
+    },
+    {
+      "name": "var day: Int?",
+      "desc": "A day or count of days."
+    },
+    {
+      "name": "var hour: Int?",
+      "desc": "An hour or count of hours."
+    },
+    {
+      "name": "var minute: Int?",
+      "desc": "A minute or count of minutes."
+    },
+    {
+      "name": "var second: Int?",
+      "desc": "A second or count of seconds."
+    },
+    {
+      "name": "var nanosecond: Int?",
+      "desc": "A nanosecond or count of nanoseconds."
+    },
+    {
+      "name": "func value(for: Calendar.Component) -> Int?",
+      "desc": "Returns the value of one of the properties, using an enumeration value instead of a property name."
+    },
+    {
+      "name": "func setValue(Int?, for: Calendar.Component)",
+      "desc": "Set the value of one of the properties, using an enumeration value instead of a property name."
+    },
+    {
+      "name": "enum Calendar.Component",
+      "desc": "An enumeration for the various components of a calendar date."
+    },
+    {
+      "name": "static func != (DateComponents, DateComponents) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (DateComponents, DateComponents) -> Bool",
+      "desc": "Indicates whether two date component instances are the same."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual description of the date components."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual description of the date components suitable for debugging."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A mirror that reflects the date."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The computed hash value of the date."
+    },
+    {
+      "name": "class NSDateComponents",
+      "desc": "An object that specifies a date or time in terms of calendar units that bridges to DateComponents; use NSDateComponents when you need reference semantics or other Foundation-specific behavior."
+    },
+    {
+      "name": "typealias DateComponents.ReferenceType",
+      "desc": "An alias for this value type's equivalent reference type."
+    },
+    {
+      "name": "init(from: Decoder)"
+    },
+    {
+      "name": "init(subscriptionPeriod: Product.SubscriptionPeriod)"
+    },
+    {
+      "name": "func encode(to: Encoder)"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    }
+  ],
+  "declaration": "struct DateComponents",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "Hashable",
+    "ReferenceConvertible"
+  ]
+}

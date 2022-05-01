@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/security/cmssignedattributes",
+  "type": "Structure",
+  "name": "CMSSignedAttributes",
+  "desc": "Optional attributes you can add to a signed message.",
+  "items": [
+    {
+      "name": "static var attrSmimeCapabilities: CMSSignedAttributes",
+      "desc": "Identify signature, encryption, and digest algorithms supported by the encoder."
+    },
+    {
+      "name": "static var attrSmimeEncryptionKeyPrefs: CMSSignedAttributes",
+      "desc": "Indicate that the signing certificate included with the message is the preferred one for S/MIME encryption."
+    },
+    {
+      "name": "static var attrSmimeMSEncryptionKeyPrefs: CMSSignedAttributes",
+      "desc": "Indicate that the signing certificate included with the message is the preferred one for S/MIME encryption, but using an attribute object identifier (OID) preferred by Microsoft."
+    },
+    {
+      "name": "static var attrSigningTime: CMSSignedAttributes",
+      "desc": "Include the signing time."
+    },
+    {
+      "name": "static var attrAppleCodesigningHashAgility: CMSSignedAttributes",
+      "desc": "Include Apple codesigning hash agility."
+    },
+    {
+      "name": "static var attrAppleCodesigningHashAgilityV2: CMSSignedAttributes",
+      "desc": "Include Apple codesigning hash agility, version 2."
+    },
+    {
+      "name": "static var attrAppleExpirationTime: CMSSignedAttributes",
+      "desc": "Include the expiration time."
+    },
+    {
+      "name": "init(rawValue: UInt32)",
+      "desc": "Initializes a new attributes structure."
+    }
+  ],
+  "declaration": "struct CMSSignedAttributes, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

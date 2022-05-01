@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/uikit/uimanageddocument",
+  "type": "Class",
+  "name": "UIManagedDocument",
+  "desc": "A managed document object that integrates with Core Data.",
+  "items": [
+    {
+      "name": "func configurePersistentStoreCoordinator(for: URL, ofType: String, modelConfiguration: String?, storeOptions: [AnyHashable : Any]?)",
+      "desc": "Creates or loads the document’s persistent store."
+    },
+    {
+      "name": "var managedObjectContext: NSManagedObjectContext",
+      "desc": "The document’s managed object context."
+    },
+    {
+      "name": "var managedObjectModel: NSManagedObjectModel",
+      "desc": "The document’s managed object model."
+    },
+    {
+      "name": "var persistentStoreOptions: [AnyHashable : Any]?",
+      "desc": "Options used when creating the document’s persistent store."
+    },
+    {
+      "name": "var modelConfiguration: String?",
+      "desc": "A model configuration name to be passed when configuring the persistent store."
+    },
+    {
+      "name": "func persistentStoreType(forFileType: String) -> String",
+      "desc": "Returns the Core Data store type for a given document file type."
+    },
+    {
+      "name": "func readAdditionalContent(from: URL)",
+      "desc": "Handles reading non-Core Data content in the additional content directory in the document’s file package."
+    },
+    {
+      "name": "func additionalContent(for: URL) -> Any",
+      "desc": "Handles writing non-Core Data content to the additional content directory in the document’s file package."
+    },
+    {
+      "name": "func writeAdditionalContent(Any, to: URL, originalContentsURL: URL?)",
+      "desc": "Handles writing non-Core Data content to the document’s file package."
+    },
+    {
+      "name": "class var persistentStoreName: String",
+      "desc": "Returns the name for the persistent store file inside the document’s file package."
+    }
+  ],
+  "declaration": "@MainActor class UIManagedDocument : UIDocument",
+  "inheritsFrom": [
+    "UIDocument"
+  ]
+}

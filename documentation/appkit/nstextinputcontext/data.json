@@ -1,0 +1,75 @@
+{
+  "path": "/documentation/appkit/nstextinputcontext",
+  "type": "Class",
+  "name": "NSTextInputContext",
+  "desc": "An object that represents the Cocoa text input system.",
+  "items": [
+    {
+      "name": "init(client: NSTextInputClient)",
+      "desc": "The designated initializer"
+    },
+    {
+      "name": "class var current: NSTextInputContext?",
+      "desc": "Returns the current, activated, text input context object."
+    },
+    {
+      "name": "var client: NSTextInputClient",
+      "desc": "The owner of this input context. (read-only)"
+    },
+    {
+      "name": "protocol NSTextInputClient",
+      "desc": "A set of methods that text views must implement to interact properly with the text input management system."
+    },
+    {
+      "name": "var acceptsGlyphInfo: Bool",
+      "desc": "A Boolean value that indicates whether the client handles NSGlyphInfoAttributeName or not."
+    },
+    {
+      "name": "var allowedInputSourceLocales: [String]?",
+      "desc": "The set of keyboard input source locales allowed when this input context is active."
+    },
+    {
+      "name": "func activate()",
+      "desc": "Activates the receiver."
+    },
+    {
+      "name": "func deactivate()",
+      "desc": "Deactivates the receiver."
+    },
+    {
+      "name": "func handleEvent(NSEvent) -> Bool",
+      "desc": "Tells the Cocoa text input system to handle mouse or key events."
+    },
+    {
+      "name": "func discardMarkedText()",
+      "desc": "Tells the Cocoa text input system to discard the current conversion session."
+    },
+    {
+      "name": "func invalidateCharacterCoordinates()",
+      "desc": "Notifies the Cocoa text input system that the position information previously queried via methods like firstRectForCharacterRange:actualRange: needs to be updated."
+    },
+    {
+      "name": "var keyboardInputSources: [NSTextInputSourceIdentifier]?",
+      "desc": "The array of keyboard text input source identifier strings available to the receiver. (read-only)"
+    },
+    {
+      "name": "var selectedKeyboardInputSource: NSTextInputSourceIdentifier?",
+      "desc": "The identifier string for the selected keyboard text input source."
+    },
+    {
+      "name": "class func localizedName(forInputSource: NSTextInputSourceIdentifier) -> String?",
+      "desc": "Returns the display name for the given text input source identifier."
+    },
+    {
+      "name": "typealias NSTextInputSourceIdentifier"
+    },
+    {
+      "name": "class let keyboardSelectionDidChangeNotification: NSNotification.Name",
+      "desc": "Posted after the selected text input source changes."
+    }
+  ],
+  "declaration": "class NSTextInputContext : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

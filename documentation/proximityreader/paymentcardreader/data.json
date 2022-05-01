@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/proximityreader/paymentcardreader",
+  "type": "Class",
+  "name": "PaymentCardReader",
+  "desc": "An object you use to configure Tap to Pay on iPhone on the current device.",
+  "items": [
+    {
+      "name": "init(options: PaymentCardReader.Options)",
+      "desc": "Creates a payment card reader with the specified options."
+    },
+    {
+      "name": "struct Options",
+      "desc": "Additional information you use to configure a payment card reader."
+    },
+    {
+      "name": "static let isSupported: Bool",
+      "desc": "A Boolean value that indicates whether this device supports Tap to Pay on iPhone."
+    },
+    {
+      "name": "func prepare(using: PaymentCardReader.Token, updateHandler: ((PaymentCardReader.UpdateEvent) -> Void)?) async throws -> PaymentCardReaderSession",
+      "desc": "Configures the pipeline for reading payment or loyalty cards."
+    },
+    {
+      "name": "enum UpdateEvent",
+      "desc": "An event you receive during the configuration of the payment system."
+    },
+    {
+      "name": "func linkAccount(using: PaymentCardReader.Token) async throws",
+      "desc": "Presents a sheet for the merchant to accept Tap to Pay on iPhone’s Terms and Conditions on a device."
+    },
+    {
+      "name": "struct Token",
+      "desc": "A secure token that you receive from your participating payment service provider."
+    },
+    {
+      "name": "var readerIdentifier: String",
+      "desc": "The unique identifier for this card reader."
+    },
+    {
+      "name": "let id: String",
+      "desc": "A unique identifier for this object."
+    }
+  ],
+  "declaration": "class PaymentCardReader"
+}

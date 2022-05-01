@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/appkit/nsimagedelegate",
+  "type": "Protocol",
+  "name": "NSImageDelegate",
+  "desc": "A set of optional methods that you can use to respond to drawing failures and manage incremental loads.",
+  "items": [
+    {
+      "name": "func imageDidNotDraw(NSImage, in: NSRect) -> NSImage?",
+      "desc": "Tells the delegate that the image object is unable, for whatever reason, to lock focus on its image or draw in the specified rectangle."
+    },
+    {
+      "name": "func image(NSImage, didLoadPartOfRepresentation: NSImageRep, withValidRows: Int)",
+      "desc": "Tells the delegate that part of the incrementally loaded image data is available."
+    },
+    {
+      "name": "func image(NSImage, didLoadRepresentation: NSImageRep, with: NSImage.LoadStatus)",
+      "desc": "Tells the delegate that an incrementally loaded image has been loaded and decompressed as completely as is possible."
+    },
+    {
+      "name": "func image(NSImage, didLoadRepresentationHeader: NSImageRep)",
+      "desc": "Tells the delegate that enough data has been read to determine the size of the image."
+    },
+    {
+      "name": "func image(NSImage, willLoadRepresentation: NSImageRep)",
+      "desc": "Tells the delegate that the image object is about to access its underlying bitmap data."
+    },
+    {
+      "name": "enum NSImage.LoadStatus",
+      "desc": "Status values for incremental image loading."
+    }
+  ],
+  "declaration": "protocol NSImageDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

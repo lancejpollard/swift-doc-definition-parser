@@ -1,0 +1,105 @@
+{
+  "path": "/documentation/coredata/nsmanagedobjectmodel",
+  "type": "Class",
+  "name": "NSManagedObjectModel",
+  "desc": "A programmatic representation of the .xcdatamodeld file describing your objects.",
+  "items": [
+    {
+      "name": "init?(contentsOf: URL)",
+      "desc": "Initializes the managed object model using the model file at the specified URL."
+    },
+    {
+      "name": "init()",
+      "desc": "Initializes an empty managed object model."
+    },
+    {
+      "name": "class func mergedModel(from: [Bundle]?) -> NSManagedObjectModel?",
+      "desc": "Returns a model created by merging all the models found in given bundles."
+    },
+    {
+      "name": "class func mergedModel(from: [Bundle]?, forStoreMetadata: [String : Any]) -> NSManagedObjectModel?",
+      "desc": "Returns a merged model from a specified array for the version information in provided metadata."
+    },
+    {
+      "name": "init?(byMerging: [NSManagedObjectModel]?)",
+      "desc": "Creates a single model from an array of existing models."
+    },
+    {
+      "name": "init?(byMerging: [NSManagedObjectModel], forStoreMetadata: [String : Any])",
+      "desc": "Returns, for the version information in given metadata, a model merged from a given array of models."
+    },
+    {
+      "name": "var entities: [NSEntityDescription]",
+      "desc": "The entities in the model."
+    },
+    {
+      "name": "var entitiesByName: [String : NSEntityDescription]",
+      "desc": "The entities of the model, keyed by name."
+    },
+    {
+      "name": "var configurations: [String]",
+      "desc": "All the available configuration names of the model."
+    },
+    {
+      "name": "func entities(forConfigurationName: String?) -> [NSEntityDescription]?",
+      "desc": "Returns the entities of the model for a specified configuration."
+    },
+    {
+      "name": "func setEntities([NSEntityDescription], forConfigurationName: String)",
+      "desc": "Associates the specified entities with the model using the given configuration name."
+    },
+    {
+      "name": "var fetchRequestTemplatesByName: [String : NSFetchRequest<NSFetchRequestResult>]",
+      "desc": "A dictionary of the receiver’s fetch request templates, keyed by name."
+    },
+    {
+      "name": "func fetchRequestTemplate(forName: String) -> NSFetchRequest<NSFetchRequestResult>?",
+      "desc": "Returns the fetch request with a specified name."
+    },
+    {
+      "name": "func fetchRequestFromTemplate(withName: String, substitutionVariables: [String : Any]) -> NSFetchRequest<NSFetchRequestResult>?",
+      "desc": "Returns a copy of the fetch request template with the variables substituted by values from the substitutions dictionary."
+    },
+    {
+      "name": "func setFetchRequestTemplate(NSFetchRequest<NSFetchRequestResult>?, forName: String)",
+      "desc": "Associates the specified fetch request with the receiver using the given name."
+    },
+    {
+      "name": "var localizationDictionary: [String : String]?",
+      "desc": "The localization dictionary of the model."
+    },
+    {
+      "name": "func isConfiguration(withName: String?, compatibleWithStoreMetadata: [String : Any]) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a given configuration in the model is compatible with given metadata from a persistent store."
+    },
+    {
+      "name": "var entityVersionHashesByName: [String : Data]",
+      "desc": "A dictionary of the version hashes for the entities in the model, keyed by entity name."
+    },
+    {
+      "name": "var versionIdentifiers: Set<AnyHashable>",
+      "desc": "The set of developer-defined version identifiers for the model."
+    },
+    {
+      "name": "enum NSFetchIndexElementType",
+      "desc": "Defines the possible types of index elements."
+    },
+    {
+      "name": "class NSFetchIndexDescription",
+      "desc": "The description of the index."
+    },
+    {
+      "name": "class NSFetchIndexElementDescription",
+      "desc": "Description of an Index Element"
+    }
+  ],
+  "declaration": "class NSManagedObjectModel : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCoding",
+    "NSCopying",
+    "NSFastEnumeration"
+  ]
+}

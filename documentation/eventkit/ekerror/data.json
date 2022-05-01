@@ -1,0 +1,206 @@
+{
+  "path": "/documentation/eventkit/ekerror",
+  "type": "Structure",
+  "name": "EKError",
+  "desc": "An EventKit error.",
+  "items": [
+    {
+      "name": "var errorCode: Int",
+      "desc": "The error code associated with the EventKit error."
+    },
+    {
+      "name": "var errorUserInfo: [String : Any]",
+      "desc": "A dictionary for providing additional details about the error."
+    },
+    {
+      "name": "var localizedDescription: String",
+      "desc": "A string containing the localized description of the error."
+    },
+    {
+      "name": "static var eventNotMutable: EKError.Code",
+      "desc": "The event isn't mutable and you can't save or delete it."
+    },
+    {
+      "name": "static var noCalendar: EKError.Code",
+      "desc": "The event isn't associated with a calendar."
+    },
+    {
+      "name": "static var noEndDate: EKError.Code",
+      "desc": "The event has no start date set."
+    },
+    {
+      "name": "static var noStartDate: EKError.Code",
+      "desc": "The event has no end date set."
+    },
+    {
+      "name": "static var datesInverted: EKError.Code",
+      "desc": "The event’s end date occurs before its start date."
+    },
+    {
+      "name": "static var internalFailure: EKError.Code",
+      "desc": "An internal error occurred."
+    },
+    {
+      "name": "static var calendarReadOnly: EKError.Code",
+      "desc": "The calendar is read-only and you can't add events to it."
+    },
+    {
+      "name": "static var durationGreaterThanRecurrence: EKError.Code",
+      "desc": "The duration of an event is greater than its recurrence interval."
+    },
+    {
+      "name": "static var alarmGreaterThanRecurrence: EKError.Code",
+      "desc": "The alarm interval is greater than the recurrence interval."
+    },
+    {
+      "name": "static var startDateTooFarInFuture: EKError.Code",
+      "desc": "The start date is further into the future than the calendar can display."
+    },
+    {
+      "name": "static var startDateCollidesWithOtherOccurrence: EKError.Code",
+      "desc": "The event’s start date collides with another occurrence of the event."
+    },
+    {
+      "name": "static var objectBelongsToDifferentStore: EKError.Code",
+      "desc": "The object belongs to a different calendar store."
+    },
+    {
+      "name": "static var invitesCannotBeMoved: EKError.Code",
+      "desc": "You can't move the event because it's an invitation."
+    },
+    {
+      "name": "static var invalidSpan: EKError.Code",
+      "desc": "The system encountered an invalid span during a save or deletion."
+    },
+    {
+      "name": "static var calendarHasNoSource: EKError.Code",
+      "desc": "You can't save the calendar without setting a source first."
+    },
+    {
+      "name": "static var calendarSourceCannotBeModified: EKError.Code",
+      "desc": "You can't move the calendar to another source."
+    },
+    {
+      "name": "static var calendarIsImmutable: EKError.Code",
+      "desc": "The calendar is immutable and you can't modify or delete it."
+    },
+    {
+      "name": "static var sourceDoesNotAllowCalendarAddDelete: EKError.Code",
+      "desc": "The source doesn’t allow you to add or delete calendars."
+    },
+    {
+      "name": "static var recurringReminderRequiresDueDate: EKError.Code",
+      "desc": "The recurring reminder requires a due date."
+    },
+    {
+      "name": "static var structuredLocationsNotSupported: EKError.Code",
+      "desc": "The source to which this calendar belongs doesn't support structured locations."
+    },
+    {
+      "name": "static var reminderLocationsNotSupported: EKError.Code",
+      "desc": "The source doesn't support locations on reminders."
+    },
+    {
+      "name": "static var alarmProximityNotSupported: EKError.Code",
+      "desc": "The source doesn't allow geofences on alarms."
+    },
+    {
+      "name": "static var calendarDoesNotAllowEvents: EKError.Code",
+      "desc": "The calendar doesn't allow you to add events."
+    },
+    {
+      "name": "static var calendarDoesNotAllowReminders: EKError.Code",
+      "desc": "The calendar doesn’t allow you to add reminders."
+    },
+    {
+      "name": "static var sourceDoesNotAllowReminders: EKError.Code",
+      "desc": "The source doesn't allow calendars supporting reminder entity types."
+    },
+    {
+      "name": "static var sourceDoesNotAllowEvents: EKError.Code",
+      "desc": "The source doesn't allow calendars supporting event entity types."
+    },
+    {
+      "name": "static var priorityIsInvalid: EKError.Code",
+      "desc": "The priority number for the reminder is invalid."
+    },
+    {
+      "name": "static var invalidEntityType: EKError.Code",
+      "desc": "The entity type is invalid."
+    },
+    {
+      "name": "static var procedureAlarmsNotMutable: EKError.Code",
+      "desc": "You can't create or modify procedure alarms."
+    },
+    {
+      "name": "static var eventStoreNotAuthorized: EKError.Code",
+      "desc": "The user hasn't authorized your app to access events or reminders."
+    },
+    {
+      "name": "static var osNotSupported: EKError.Code",
+      "desc": "The action isn't supported on the current operating system."
+    },
+    {
+      "name": "static var invalidInviteReplyCalendar: EKError.Code",
+      "desc": "The calendar is invalid or nil."
+    },
+    {
+      "name": "static var notificationsCollectionFlagNotSet: EKError.Code",
+      "desc": "The notification collection doesn't have the notifications collection flag."
+    },
+    {
+      "name": "static var sourceMismatch: EKError.Code",
+      "desc": "The object's source doesn't match its container's source."
+    },
+    {
+      "name": "static var notificationCollectionMismatch: EKError.Code",
+      "desc": "The notification collection that contains this notification doesn't match the collection the system is trying to save."
+    },
+    {
+      "name": "static var notificationSavedWithoutCollection: EKError.Code",
+      "desc": "The notification can't save because you haven't added it to a notification collection and saved the collection first."
+    },
+    {
+      "name": "static var last: EKError.Code",
+      "desc": "This error is for internal use."
+    },
+    {
+      "name": "static var errorDomain: String",
+      "desc": "The error domain that identifies an error as an EventKit error."
+    },
+    {
+      "name": "let EKErrorDomain: String",
+      "desc": "A string that identifies the EventKit error domain."
+    },
+    {
+      "name": "static func != (EKError, EKError) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "init(Code, userInfo: [String : Any])"
+    },
+    {
+      "name": "var code: Code"
+    },
+    {
+      "name": "var hashValue: Int"
+    },
+    {
+      "name": "var userInfo: [String : Any]"
+    },
+    {
+      "name": "static var reminderAlarmContainsEmailOrUrl: EKError.Code"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "static func == (EKError, EKError) -> Bool"
+    },
+    {
+      "name": "enum EKError.Code",
+      "desc": "Error codes for EventKit errors."
+    }
+  ],
+  "declaration": "struct EKError"
+}

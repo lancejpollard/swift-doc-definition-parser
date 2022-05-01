@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/uikit/uitextchecker",
+  "type": "Class",
+  "name": "UITextChecker",
+  "desc": "An object to check a string (usually the text of a document) for misspelled words.",
+  "items": [
+    {
+      "name": "func rangeOfMisspelledWord(in: String, range: NSRange, startingAt: Int, wrap: Bool, language: String) -> NSRange",
+      "desc": "Initiates a search of a range of a string for a misspelled word."
+    },
+    {
+      "name": "func guesses(forWordRange: NSRange, in: String, language: String) -> [String]?",
+      "desc": "Returns a list of words that are possible valid replacements for a misspelled word."
+    },
+    {
+      "name": "func completions(forPartialWordRange: NSRange, in: String, language: String) -> [String]?",
+      "desc": "Returns an array of strings that are possible completions for a partially entered word."
+    },
+    {
+      "name": "func ignoreWord(String)",
+      "desc": "Tells the text checker to ignore the specified word when spell-checking."
+    },
+    {
+      "name": "var ignoredWords: [String]?",
+      "desc": "Returns the words that the text checker ignores when spell-checking."
+    },
+    {
+      "name": "class func learnWord(String)",
+      "desc": "Tells the text checker to learn the specified word so that it doesn’t evaluate it as misspelled."
+    },
+    {
+      "name": "class func unlearnWord(String)",
+      "desc": "Tells the text checker to unlearn the specified word."
+    },
+    {
+      "name": "class func hasLearnedWord(String) -> Bool",
+      "desc": "Returns whether the text checker has learned the specified word."
+    },
+    {
+      "name": "class var availableLanguages: [String]",
+      "desc": "Returns the languages that the text checker’s class can perform spell-checking for."
+    }
+  ],
+  "declaration": "@MainActor class UITextChecker : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

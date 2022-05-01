@@ -1,0 +1,100 @@
+{
+  "path": "/documentation/arkit/arsession",
+  "type": "Class",
+  "name": "ARSession",
+  "desc": "The object that manages the major tasks associated with every AR experience, such as motion tracking, camera passthrough, and image analysis.",
+  "items": [
+    {
+      "name": "func run(ARConfiguration, options: ARSession.RunOptions)",
+      "desc": "Starts AR processing for the session with the specified configuration and options."
+    },
+    {
+      "name": "var identifier: UUID",
+      "desc": "A unique identifier of the running session."
+    },
+    {
+      "name": "struct ARSession.RunOptions",
+      "desc": "Options for transitioning an AR session's current state when you change its configuration."
+    },
+    {
+      "name": "var configuration: ARConfiguration?",
+      "desc": "An object that defines motion and scene tracking behaviors for the session."
+    },
+    {
+      "name": "func pause()",
+      "desc": "Pauses processing in the session."
+    },
+    {
+      "name": "var delegate: ARSessionDelegate?",
+      "desc": "An object you provide to receive captured video images and tracking information, or to respond to changes in session status."
+    },
+    {
+      "name": "var delegateQueue: DispatchQueue?",
+      "desc": "The dispatch queue through which the session calls your delegate methods."
+    },
+    {
+      "name": "protocol ARSessionDelegate",
+      "desc": "Methods you can implement to receive captured video frame images and tracking state from an AR session."
+    },
+    {
+      "name": "protocol ARSessionObserver",
+      "desc": "Methods you can implement to respond to changes in the state of an AR session."
+    },
+    {
+      "name": "func add(anchor: ARAnchor)",
+      "desc": "Adds the specified anchor to be tracked by the session."
+    },
+    {
+      "name": "func remove(anchor: ARAnchor)",
+      "desc": "Removes the specified anchor from tracking by the session."
+    },
+    {
+      "name": "func getCurrentWorldMap(completionHandler: (ARWorldMap?, Error?) -> Void)",
+      "desc": "Returns an object encapsulating the world-tracking session's space-mapping state and set of anchors."
+    },
+    {
+      "name": "func createReferenceObject(transform: simd_float4x4, center: simd_float3, extent: simd_float3, completionHandler: (ARReferenceObject?, Error?) -> Void)",
+      "desc": "Creates a reference object (for 3D object detection) from the specified region of the session’s world space."
+    },
+    {
+      "name": "func setWorldOrigin(relativeTransform: simd_float4x4)",
+      "desc": "Changes the basis for the AR world coordinate space using the specified transform."
+    },
+    {
+      "name": "func raycast(ARRaycastQuery) -> [ARRaycastResult]",
+      "desc": "Checks once for intersections between a ray and real-world surfaces."
+    },
+    {
+      "name": "func trackedRaycast(ARRaycastQuery, updateHandler: ([ARRaycastResult]) -> Void) -> ARTrackedRaycast?",
+      "desc": "Repeats a ray-cast query over time to notify you of updated surfaces in the physical environment."
+    },
+    {
+      "name": "func getGeoLocation(forPoint: simd_float3, completionHandler: (CLLocationCoordinate2D, CLLocationDistance, Error?) -> Void)",
+      "desc": "Converts a position in the framework’s local coordinate system to latitude, longitude and altitude."
+    },
+    {
+      "name": "var currentFrame: ARFrame?",
+      "desc": "The most recent still frame captured by the active camera feed, including ARKit's interpretation of it."
+    },
+    {
+      "name": "class ARFrame",
+      "desc": "A video image captured as part of a session with position-tracking information."
+    },
+    {
+      "name": "func update(with: ARSession.CollaborationData)",
+      "desc": "Updates your session with information about the physical environment that is collected by another user."
+    },
+    {
+      "name": "class ARSession.CollaborationData",
+      "desc": "An object that holds information that a user has collected about the physical environment."
+    },
+    {
+      "name": "protocol ARSessionProviding",
+      "desc": "An object that provides a session."
+    }
+  ],
+  "declaration": "class ARSession : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

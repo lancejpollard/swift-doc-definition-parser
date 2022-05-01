@@ -1,0 +1,86 @@
+{
+  "path": "/documentation/networkextension/nevpnprotocolikev2",
+  "type": "Class",
+  "name": "NEVPNProtocolIKEv2",
+  "desc": "Settings for an IKEv2 VPN configuration.",
+  "items": [
+    {
+      "name": "var ikeSecurityAssociationParameters: NEVPNIKEv2SecurityAssociationParameters",
+      "desc": "An NEVPNIKEv2SecurityAssociationParameters object containing the parameters for the initial IKE security association to be negotiated with the IKEv2 server."
+    },
+    {
+      "name": "var childSecurityAssociationParameters: NEVPNIKEv2SecurityAssociationParameters",
+      "desc": "An NEVPNIKEv2SecurityAssociationParameters object containing the parameters for the child IPSec security associations to be negotiated for each IKEv2 policy."
+    },
+    {
+      "name": "class NEVPNIKEv2SecurityAssociationParameters",
+      "desc": "NEVPNIKEv2SecurityAssociationParameters contains parameters for an IKEv2 Security Association."
+    },
+    {
+      "name": "var deadPeerDetectionRate: NEVPNIKEv2DeadPeerDetectionRate",
+      "desc": "The frequency at which the IKEv2 client will run the dead peer detection algorithm."
+    },
+    {
+      "name": "enum NEVPNIKEv2DeadPeerDetectionRate"
+    },
+    {
+      "name": "var serverCertificateIssuerCommonName: String?",
+      "desc": "A string containing the value of the Subject Common Name field of the Certificate Authority certificate that issued the IKEv2 server's certificate."
+    },
+    {
+      "name": "var serverCertificateCommonName: String?",
+      "desc": "A string containing the value of the Subject Common Name field of the IKEv2 server’s certificate."
+    },
+    {
+      "name": "var certificateType: NEVPNIKEv2CertificateType",
+      "desc": "The type of the certificate in the identity configured in identityReference or identityData."
+    },
+    {
+      "name": "enum NEVPNIKEv2CertificateType"
+    },
+    {
+      "name": "var useConfigurationAttributeInternalIPSubnet: Bool",
+      "desc": "A Boolean indicating whether or not the IKEv2 client should use the INTERNAL_IP4_SUBNET and/or INTERNAL_IP6_SUBNET attributes sent by the IKEv2 server. If this property is false, split tunnel configurations may still be communicated via Traffic Selectors during IKE negotiation."
+    },
+    {
+      "name": "var disableMOBIKE: Bool",
+      "desc": "A Boolean indicating whether or not MOBIKE should be disabled for the IKEv2 sessions."
+    },
+    {
+      "name": "var disableRedirect: Bool",
+      "desc": "A Boolean indicating whether or not IKEv2 server redirects are disabled."
+    },
+    {
+      "name": "var enablePFS: Bool",
+      "desc": "A Boolean indicating whether or not Perfect Forward Secrecy is enabled."
+    },
+    {
+      "name": "var enableRevocationCheck: Bool",
+      "desc": "Enable revocation checking of the IKEv2 server certificate."
+    },
+    {
+      "name": "var strictRevocationCheck: Bool",
+      "desc": "Require a \"not revoked\" result when checking if the certificate identifying the server is revoked."
+    },
+    {
+      "name": "var minimumTLSVersion: NEVPNIKEv2TLSVersion"
+    },
+    {
+      "name": "var maximumTLSVersion: NEVPNIKEv2TLSVersion"
+    },
+    {
+      "name": "enum NEVPNIKEv2TLSVersion"
+    },
+    {
+      "name": "var enableFallback: Bool",
+      "desc": "A property to enable the use of cellular data when Wi-Fi connectivity is poor."
+    },
+    {
+      "name": "var mtu: Int"
+    }
+  ],
+  "declaration": "class NEVPNProtocolIKEv2 : NEVPNProtocolIPSec",
+  "inheritsFrom": [
+    "NEVPNProtocolIPSec"
+  ]
+}

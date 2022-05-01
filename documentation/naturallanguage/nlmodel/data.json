@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/naturallanguage/nlmodel",
+  "type": "Class",
+  "name": "NLModel",
+  "desc": "A custom model trained to classify or tag natural language text.",
+  "items": [
+    {
+      "name": "init(mlModel: MLModel)",
+      "desc": "Creates a new natural language model based on the given Core ML model instance."
+    },
+    {
+      "name": "init(contentsOf: URL)",
+      "desc": "Creates a new natural language model based on a compiled Core ML model at the given URL."
+    },
+    {
+      "name": "func predictedLabel(for: String) -> String?",
+      "desc": "Predicts a label for the given input string."
+    },
+    {
+      "name": "func predictedLabels(forTokens: [String]) -> [String]",
+      "desc": "Predicts a label for each string in the given array."
+    },
+    {
+      "name": "func predictedLabelHypotheses(for: String, maximumCount: Int) -> [String : Double]",
+      "desc": "Predicts multiple possible labels for the given input string."
+    },
+    {
+      "name": "func predictedLabelHypotheses(forTokens: [String], maximumCount: Int) -> [[String : Double]]",
+      "desc": "Predicts multiple possible labels for each string in the given array."
+    },
+    {
+      "name": "var configuration: NLModelConfiguration",
+      "desc": "A configuration describing the natural language model."
+    },
+    {
+      "name": "class NLModelConfiguration",
+      "desc": "The configuration parameters of a natural language model."
+    }
+  ],
+  "declaration": "class NLModel : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

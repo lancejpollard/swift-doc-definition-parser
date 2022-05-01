@@ -1,0 +1,106 @@
+{
+  "path": "/documentation/foundation/measurement/formatstyle",
+  "type": "Structure",
+  "name": "Measurement.FormatStyle",
+  "desc": "A type that provides localized representations of measurements.",
+  "items": [
+    {
+      "name": "var width: Measurement<UnitType>.FormatStyle.UnitWidth",
+      "desc": "The width of the measurement unit."
+    },
+    {
+      "name": "struct Measurement.FormatStyle.UnitWidth",
+      "desc": "Specifies the width of the unit, determining the textual representation."
+    },
+    {
+      "name": "var usage: MeasurementFormatUnitUsage<UnitType>?",
+      "desc": "The intended purpose of the formatted measurement."
+    },
+    {
+      "name": "var hidesScaleName: Bool",
+      "desc": "The visibility of the unit name of a temperature."
+    },
+    {
+      "name": "var locale: Locale",
+      "desc": "The locale of the format style."
+    },
+    {
+      "name": "func locale(Locale) -> Measurement<UnitType>.FormatStyle",
+      "desc": "Modifies the measurement format style to use the specified locale."
+    },
+    {
+      "name": "var attributed: Measurement<UnitType>.AttributedStyle",
+      "desc": "The attributed style for the measurement format style."
+    },
+    {
+      "name": "func format(Measurement<UnitType>) -> String",
+      "desc": "Creates a string representation of a measurement."
+    },
+    {
+      "name": "static func list<MemberStyle, Base>(memberStyle: MemberStyle, type: ListFormatStyle<MemberStyle, Base>.ListType, width: ListFormatStyle<MemberStyle, Base>.Width) -> ListFormatStyle<MemberStyle, Base>",
+      "desc": "Creates a list format style using the provided format style and list style."
+    },
+    {
+      "name": "static func list<Base>(type: ListFormatStyle<StringStyle, Base>.ListType, width: ListFormatStyle<StringStyle, Base>.Width) -> ListFormatStyle<StringStyle, Base>",
+      "desc": "Creates a list format style using the provided type and width."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes the value into the specified encoder."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a new instance by decoding from the specified decoder."
+    },
+    {
+      "name": "typealias Measurement.FormatStyle.FormatInput",
+      "desc": "The type of data to format."
+    },
+    {
+      "name": "typealias Measurement.FormatStyle.FormatOutput",
+      "desc": "The type of the formatted data."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value of the style format."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the value by feeding them into the specified hasher."
+    },
+    {
+      "name": "static func != (Measurement<UnitType>.FormatStyle, Measurement<UnitType>.FormatStyle) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are unequal."
+    },
+    {
+      "name": "static func == (Measurement<UnitType>.FormatStyle, Measurement<UnitType>.FormatStyle) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are equal."
+    },
+    {
+      "name": "init(width: Measurement<UnitType>.FormatStyle.UnitWidth, locale: Locale, usage: MeasurementFormatUnitUsage<UnitType>, hidesScaleName: Bool, numberFormatStyle: FloatingPointFormatStyle<Double>?)",
+      "desc": "Available when UnitType is UnitTemperature."
+    },
+    {
+      "name": "init(width: Measurement<UnitType>.FormatStyle.UnitWidth, locale: Locale, usage: MeasurementFormatUnitUsage<UnitType>, numberFormatStyle: FloatingPointFormatStyle<Double>?)"
+    },
+    {
+      "name": "var numberFormatStyle: FloatingPointFormatStyle<Double>?"
+    },
+    {
+      "name": "static func currency<Value>(code: String) -> FloatingPointFormatStyle<Value>.Currency"
+    },
+    {
+      "name": "static func currency<V>(code: String) -> IntegerFormatStyle<V>.Currency"
+    },
+    {
+      "name": "static func measurement(width: Measurement<UnitTemperature>.FormatStyle.UnitWidth, usage: MeasurementFormatUnitUsage<UnitTemperature>, hidesScaleName: Bool, numberFormatStyle: FloatingPointFormatStyle<Double>?) -> Measurement<UnitTemperature>.FormatStyle"
+    },
+    {
+      "name": "static func measurement<UnitType>(width: Measurement<UnitType>.FormatStyle.UnitWidth, usage: MeasurementFormatUnitUsage<UnitType>, numberFormatStyle: FloatingPointFormatStyle<Double>?) -> Measurement<UnitType>.FormatStyle"
+    }
+  ],
+  "declaration": "struct FormatStyle",
+  "conformsTo": [
+    "FormatStyle"
+  ]
+}

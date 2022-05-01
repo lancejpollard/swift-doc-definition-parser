@@ -1,0 +1,23 @@
+{
+  "path": "/documentation/foundation/recoverableerror",
+  "type": "Protocol",
+  "name": "RecoverableError",
+  "desc": "A specialized error that may be recoverable by presenting several potential recovery options to the user.",
+  "items": [
+    {
+      "name": "var recoveryOptions: [String]",
+      "desc": "Provides a set of possible recovery options to present to the user."
+    },
+    {
+      "name": "func attemptRecovery(optionIndex: Int) -> Bool",
+      "desc": "Attempt to recover from this error when the user selected the option at the given index. Returns true to indicate successful recovery, and false otherwise."
+    },
+    {
+      "name": "func attemptRecovery(optionIndex: Int, resultHandler: (Bool) -> Void)"
+    }
+  ],
+  "declaration": "protocol RecoverableError",
+  "inheritsFrom": [
+    "Error"
+  ]
+}

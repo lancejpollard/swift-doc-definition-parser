@@ -1,0 +1,165 @@
+{
+  "path": "/documentation/avfoundation/avmetadataitem",
+  "type": "Class",
+  "name": "AVMetadataItem",
+  "desc": "A metadata item for an audiovisual asset or one of its tracks.",
+  "items": [
+    {
+      "name": "init(propertiesOf: AVMetadataItem, valueLoadingHandler: (AVMetadataItemValueRequest) -> Void)",
+      "desc": "Creates a metadata item whose value loads on an on-demand basis only."
+    },
+    {
+      "name": "class AVMetadataItemValueRequest",
+      "desc": "An object that responds to a request to load the value of a metadata item."
+    },
+    {
+      "name": "var identifier: AVMetadataIdentifier?",
+      "desc": "The identifier of the metadata item."
+    },
+    {
+      "name": "struct AVMetadataIdentifier",
+      "desc": "A structure that defines identifiers for metadata formats."
+    },
+    {
+      "name": "static var value: AVAsyncProperty<Root, (NSCopying & NSObjectProtocol)?>",
+      "desc": "The value of the metadata item."
+    },
+    {
+      "name": "static var extraAttributes: AVAsyncProperty<Root, [AVMetadataExtraAttributeKey : Any]?>",
+      "desc": "A dictionary of additional attributes for the item."
+    },
+    {
+      "name": "struct AVMetadataExtraAttributeKey",
+      "desc": "A structure that defines keys for extra metadata attributes."
+    },
+    {
+      "name": "static var stringValue: AVAsyncProperty<Root, String?>",
+      "desc": "The value of the metadata item as a string."
+    },
+    {
+      "name": "static var numberValue: AVAsyncProperty<Root, NSNumber?>",
+      "desc": "The value of the metadata item as a number."
+    },
+    {
+      "name": "static var dateValue: AVAsyncProperty<Root, Date?>",
+      "desc": "The value of the metadata item as a date."
+    },
+    {
+      "name": "static var dataValue: AVAsyncProperty<Root, Data?>",
+      "desc": "The value of the metadata item as a data value."
+    },
+    {
+      "name": "var key: (NSCopying & NSObjectProtocol)?",
+      "desc": "The key of the metadata item."
+    },
+    {
+      "name": "var commonKey: AVMetadataKey?",
+      "desc": "The common key of the metadata item."
+    },
+    {
+      "name": "struct AVMetadataKey",
+      "desc": "A structure that defines a metadata key."
+    },
+    {
+      "name": "var keySpace: AVMetadataKeySpace?",
+      "desc": "The key space for the metadata item’s key."
+    },
+    {
+      "name": "struct AVMetadataKeySpace",
+      "desc": "A structure that defines a metadata key space."
+    },
+    {
+      "name": "var value: (NSCopying & NSObjectProtocol)?",
+      "desc": "The value of the metadata item."
+    },
+    {
+      "name": "var extraAttributes: [AVMetadataExtraAttributeKey : Any]?",
+      "desc": "A dictionary of additional attributes for a metadata item."
+    },
+    {
+      "name": "struct AVMetadataExtraAttributeKey",
+      "desc": "A structure that defines keys for extra metadata attributes."
+    },
+    {
+      "name": "var dataType: String?",
+      "desc": "The data type of the metadata item’s value."
+    },
+    {
+      "name": "var stringValue: String?",
+      "desc": "The value of the metadata item as a string."
+    },
+    {
+      "name": "var numberValue: NSNumber?",
+      "desc": "The value of the metadata item as a number."
+    },
+    {
+      "name": "var dataValue: Data?",
+      "desc": "The value of the metadata item as a data value."
+    },
+    {
+      "name": "var dateValue: Date?",
+      "desc": "The value of the metadata item as a date."
+    },
+    {
+      "name": "var time: CMTime",
+      "desc": "The timestamp of the metadata item."
+    },
+    {
+      "name": "var startDate: Date?",
+      "desc": "The start date of the timed metadata."
+    },
+    {
+      "name": "var duration: CMTime",
+      "desc": "The duration of the metadata item."
+    },
+    {
+      "name": "var locale: Locale?",
+      "desc": "The locale of the metadata item."
+    },
+    {
+      "name": "var extendedLanguageTag: String?",
+      "desc": "The IETF BCP 47 (RFC 4646) language identifier of the metadata item."
+    },
+    {
+      "name": "class func metadataItems(from: [AVMetadataItem], filteredByIdentifier: AVMetadataIdentifier) -> [AVMetadataItem]",
+      "desc": "Returns metadata items for the specified identifier."
+    },
+    {
+      "name": "class func metadataItems(from: [AVMetadataItem], withKey: Any?, keySpace: AVMetadataKeySpace?) -> [AVMetadataItem]",
+      "desc": "Returns metadata items that match a specified key or key space."
+    },
+    {
+      "name": "class func metadataItems(from: [AVMetadataItem], with: Locale) -> [AVMetadataItem]",
+      "desc": "Returns metadata items that match a specified locale."
+    },
+    {
+      "name": "class func metadataItems(from: [AVMetadataItem], filteredAndSortedAccordingToPreferredLanguages: [String]) -> [AVMetadataItem]",
+      "desc": "Returns metadata items whose locales match one of the specified language identifiers."
+    },
+    {
+      "name": "class func metadataItems(from: [AVMetadataItem], filteredBy: AVMetadataItemFilter) -> [AVMetadataItem]",
+      "desc": "Returns filtered metadata items."
+    },
+    {
+      "name": "class func identifier(forKey: Any, keySpace: AVMetadataKeySpace) -> AVMetadataIdentifier?",
+      "desc": "Returns a metadata identifier for the specified key and key space."
+    },
+    {
+      "name": "class func key(forIdentifier: AVMetadataIdentifier) -> Any?",
+      "desc": "Returns a metadata key for the specified identifier."
+    },
+    {
+      "name": "class func keySpace(forIdentifier: AVMetadataIdentifier) -> AVMetadataKeySpace?",
+      "desc": "Returns a metadata key space for the specified identifier."
+    }
+  ],
+  "declaration": "class AVMetadataItem : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "AVAsynchronousKeyValueLoading",
+    "NSCopying",
+    "NSMutableCopying"
+  ]
+}

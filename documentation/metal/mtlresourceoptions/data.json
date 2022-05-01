@@ -1,0 +1,48 @@
+{
+  "path": "/documentation/metal/mtlresourceoptions",
+  "type": "Structure",
+  "name": "MTLResourceOptions",
+  "desc": "Optional arguments used to set the behavior of a resource.",
+  "items": [
+    {
+      "name": "init(rawValue: UInt)"
+    },
+    {
+      "name": "static var cpuCacheModeWriteCombined: MTLResourceOptions",
+      "desc": "A write-combined CPU cache mode that is optimized for resources that the CPU writes into, but never reads."
+    },
+    {
+      "name": "static var storageModeShared: MTLResourceOptions",
+      "desc": "The resource is stored in system memory and is accessible to both the CPU and the GPU."
+    },
+    {
+      "name": "static var storageModeManaged: MTLResourceOptions",
+      "desc": "The CPU and GPU may maintain separate copies of the resource, and any changes must be explicitly synchronized."
+    },
+    {
+      "name": "static var storageModePrivate: MTLResourceOptions",
+      "desc": "The resource can be accessed only by the GPU."
+    },
+    {
+      "name": "static var storageModeMemoryless: MTLResourceOptions",
+      "desc": "The resource’s contents can be accessed only by the GPU and only exist temporarily during a render pass."
+    },
+    {
+      "name": "static var hazardTrackingModeTracked: MTLResourceOptions",
+      "desc": "An option specifying that Metal prevents hazards when modifying this object's contents."
+    },
+    {
+      "name": "static var hazardTrackingModeUntracked: MTLResourceOptions",
+      "desc": "An option specifying that the app must prevent hazards when modifying this object's contents."
+    },
+    {
+      "name": "static var optionCPUCacheModeWriteCombined: MTLResourceOptions",
+      "desc": "This constant was deprecated in iOS 9.0 and macOS 10.11."
+    }
+  ],
+  "declaration": "struct MTLResourceOptions, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

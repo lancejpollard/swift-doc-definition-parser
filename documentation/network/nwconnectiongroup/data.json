@@ -1,0 +1,84 @@
+{
+  "path": "/documentation/network/nwconnectiongroup",
+  "type": "Class",
+  "name": "NWConnectionGroup",
+  "desc": "An object you use to communicate with a group of endpoints, such as an IP multicast group on a local network.",
+  "items": [
+    {
+      "name": "init(with: NWGroupDescriptor, using: NWParameters)",
+      "desc": "Initializes a new connection group with a group identifier."
+    },
+    {
+      "name": "class NWMulticastGroup",
+      "desc": "A descriptor for a group you use to join an IP multicast group on a local network."
+    },
+    {
+      "name": "protocol NWGroupDescriptor",
+      "desc": "A protocol that defines a group of endpoints with which you can communicate, such as a multicast group."
+    },
+    {
+      "name": "func start(queue: DispatchQueue)",
+      "desc": "Joins the group, registers to receive messages, and sets the queue on you handle group events."
+    },
+    {
+      "name": "func setReceiveHandler(maximumMessageSize: Int, rejectOversizedMessages: Bool, handler: ((NWConnectionGroup.Message, Data?, Bool) -> Void)?)",
+      "desc": "Sets a handler that receives inbound messages from members of the group."
+    },
+    {
+      "name": "func send(content: Data?, to: NWEndpoint?, message: NWConnectionGroup.Message, completion: (NWError?) -> Void)",
+      "desc": "Sends data to the entire group, or to a specific member of the group."
+    },
+    {
+      "name": "class NWConnectionGroup.Message",
+      "desc": "An object that represents a message that you send or receive within a group, and that contains protocol metadata and send properties."
+    },
+    {
+      "name": "var stateUpdateHandler: ((NWConnectionGroup.State) -> Void)?",
+      "desc": "A handler that receives connection group state updates."
+    },
+    {
+      "name": "enum NWConnectionGroup.State",
+      "desc": "States that indicate whether you can use a connection group to send and receive messages."
+    },
+    {
+      "name": "var state: NWConnectionGroup.State",
+      "desc": "The current state of the connection group."
+    },
+    {
+      "name": "func cancel()",
+      "desc": "Cancels the connection group object and leaves the network group."
+    },
+    {
+      "name": "let descriptor: NWGroupDescriptor",
+      "desc": "The descriptor of the group you use to initialize the connection group."
+    },
+    {
+      "name": "let parameters: NWParameters",
+      "desc": "The parameters with which you initialize the connection group."
+    },
+    {
+      "name": "var queue: DispatchQueue?",
+      "desc": "The queue on which you handle group events."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "The description of the connection group."
+    },
+    {
+      "name": "var newConnectionHandler: ((NWConnection) -> Void)?"
+    },
+    {
+      "name": "func extract(connectionTo: NWEndpoint?, using: NWProtocolOptions?) -> NWConnection?"
+    },
+    {
+      "name": "func metadata(definition: NWProtocolDefinition) -> NWProtocolMetadata?"
+    },
+    {
+      "name": "func reinsert(connection: NWConnection) -> Bool"
+    }
+  ],
+  "declaration": "final class NWConnectionGroup",
+  "conformsTo": [
+    "CustomDebugStringConvertible"
+  ]
+}

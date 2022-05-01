@@ -1,0 +1,34 @@
+{
+  "path": "/documentation/audiotoolbox/hostcallbackinfo",
+  "type": "Structure",
+  "name": "HostCallbackInfo",
+  "desc": "The time- and transport-related callback functions for an audio unit.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(hostUserData: UnsafeMutableRawPointer?, beatAndTempoProc: HostCallback_GetBeatAndTempo?, musicalTimeLocationProc: HostCallback_GetMusicalTimeLocation?, transportStateProc: HostCallback_GetTransportState?, transportStateProc2: HostCallback_GetTransportState2?)"
+    },
+    {
+      "name": "var beatAndTempoProc: HostCallback_GetBeatAndTempo?",
+      "desc": "Your callback function that provides beat and tempo information to an audio unit. May be NULL."
+    },
+    {
+      "name": "var hostUserData: UnsafeMutableRawPointer?",
+      "desc": "Custom data specified by your application. May be NULL."
+    },
+    {
+      "name": "var musicalTimeLocationProc: HostCallback_GetMusicalTimeLocation?",
+      "desc": "Your callback function that provides musical timeline information to an audio unit. May be NULL."
+    },
+    {
+      "name": "var transportStateProc: HostCallback_GetTransportState?",
+      "desc": "Your callback function that provides audio transport state information (play, rewind, and so on) to an audio unit. May be NULL."
+    },
+    {
+      "name": "var transportStateProc2: HostCallback_GetTransportState2?"
+    }
+  ],
+  "declaration": "struct HostCallbackInfo"
+}

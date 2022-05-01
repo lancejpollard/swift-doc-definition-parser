@@ -1,0 +1,131 @@
+{
+  "path": "/documentation/gamekit/gklocalplayer",
+  "type": "Class",
+  "name": "GKLocalPlayer",
+  "desc": "The local player who signs in to Game Center on the device running the game.",
+  "items": [
+    {
+      "name": "class var local: GKLocalPlayer",
+      "desc": "The shared instance of the local player."
+    },
+    {
+      "name": "var authenticateHandler: ((UIViewController?, Error?) -> Void)?",
+      "desc": "A handler that GameKit calls while authenticating the local player."
+    },
+    {
+      "name": "var isAuthenticated: Bool",
+      "desc": "A Boolean value that indicates whether a local player has signed in to Game Center."
+    },
+    {
+      "name": "func fetchItems(forIdentityVerificationSignature: ((URL?, Data?, Data?, UInt64, Error?) -> Void)?)",
+      "desc": "Generates a signature so that a third-party server can authenticate the local player."
+    },
+    {
+      "name": "static let GKPlayerAuthenticationDidChangeNotificationName: NSNotification.Name",
+      "desc": "A notification that posts after GameKit authenticates the local player."
+    },
+    {
+      "name": "var isUnderage: Bool",
+      "desc": "A Boolean value that indicates whether the local player is underage."
+    },
+    {
+      "name": "var isMultiplayerGamingRestricted: Bool",
+      "desc": "A Boolean value that indicates whether the player can join multiplayer games."
+    },
+    {
+      "name": "var isPersonalizedCommunicationRestricted: Bool",
+      "desc": "A Boolean value that indicates whether the player can use personalized communication on the device."
+    },
+    {
+      "name": "func loadFriendsAuthorizationStatus((GKFriendsAuthorizationStatus, Error?) -> Void)",
+      "desc": "Returns whether the player authorizes your game to access their friends list."
+    },
+    {
+      "name": "enum GKFriendsAuthorizationStatus",
+      "desc": "Constants that indicate if the local player grants access to their friends list."
+    },
+    {
+      "name": "func loadFriends(([GKPlayer]?, Error?) -> Void)",
+      "desc": "Loads the local player’s friends list if the local player and their friends grant access."
+    },
+    {
+      "name": "func loadFriends(identifiedBy: [String], completionHandler: ([GKPlayer]?, Error?) -> Void)",
+      "desc": "Loads the player’s friends list, scoped by the identifiers, if the player and their friends grant access."
+    },
+    {
+      "name": "property list key NSGKFriendListUsageDescription",
+      "desc": "A message that tells the user why the app needs access to their Game Center friends list."
+    },
+    {
+      "name": "func loadChallengableFriends(completionHandler: (([GKPlayer]?, Error?) -> Void)?)",
+      "desc": "Loads players to whom the local player can issue a challenge."
+    },
+    {
+      "name": "func loadRecentPlayers(completionHandler: (([GKPlayer]?, Error?) -> Void)?)",
+      "desc": "Loads players from the friends list or players that recently participated in a game with the local player."
+    },
+    {
+      "name": "var isPresentingFriendRequestViewController: Bool",
+      "desc": "A Boolean value that indicates whether your game presents the friends request view controller."
+    },
+    {
+      "name": "func presentFriendRequestCreator(from: UIViewController)",
+      "desc": "Presents a view controller with a Messages sheet for the player to request friends."
+    },
+    {
+      "name": "func presentFriendRequestCreator(from: NSWindow?)",
+      "desc": "Opens the Messages app with a sheet for the player to request friends."
+    },
+    {
+      "name": "func loadDefaultLeaderboardIdentifier(completionHandler: ((String?, Error?) -> Void)?)",
+      "desc": "Loads the identifier for the local player’s default leaderboard."
+    },
+    {
+      "name": "func setDefaultLeaderboardIdentifier(String, completionHandler: ((Error?) -> Void)?)",
+      "desc": "Sets the local player’s default leaderboard."
+    },
+    {
+      "name": "func register(GKLocalPlayerListener)",
+      "desc": "Registers a listener for a particular event."
+    },
+    {
+      "name": "func unregisterAllListeners()",
+      "desc": "Unregisters all listeners in your game."
+    },
+    {
+      "name": "func unregisterListener(GKLocalPlayerListener)",
+      "desc": "Unregisters a listener object."
+    },
+    {
+      "name": "func saveGameData(Data, withName: String, completionHandler: ((GKSavedGame?, Error?) -> Void)?)",
+      "desc": "Saves game data with the specified name."
+    },
+    {
+      "name": "func fetchSavedGames(completionHandler: (([GKSavedGame]?, Error?) -> Void)?)",
+      "desc": "Retrieves all available saved games."
+    },
+    {
+      "name": "func resolveConflictingSavedGames([GKSavedGame], with: Data, completionHandler: (([GKSavedGame]?, Error?) -> Void)?)",
+      "desc": "Replaces duplicate saved games that use the same filename with one file containing the specified game data."
+    },
+    {
+      "name": "func deleteSavedGames(withName: String, completionHandler: ((Error?) -> Void)?)",
+      "desc": "Deletes saved games with the specified filename."
+    },
+    {
+      "name": "class GKSavedGame",
+      "desc": "An object that represents a file containing saved game data."
+    },
+    {
+      "name": "protocol GKSavedGameListener",
+      "desc": "A protocol that handles events related to saving game data."
+    }
+  ],
+  "declaration": "class GKLocalPlayer : GKPlayer",
+  "inheritsFrom": [
+    "GKPlayer"
+  ],
+  "conformsTo": [
+    "GKSavedGameListener"
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "path": "/documentation/avfoundation/avsamplebufferdisplaylayer",
+  "type": "Class",
+  "name": "AVSampleBufferDisplayLayer",
+  "desc": "An object that displays compressed or uncompressed video frames.",
+  "items": [
+    {
+      "name": "func requestMediaDataWhenReady(on: DispatchQueue, using: () -> Void)",
+      "desc": "Instructs the target to invoke a client-supplied block repeatedly, at its convenience, in order to gather sample buffers for display."
+    },
+    {
+      "name": "var isReadyForMoreMediaData: Bool",
+      "desc": "A Boolean value that indicates the readiness of the layer to accept more sample buffers."
+    },
+    {
+      "name": "var requiresFlushToResumeDecoding: Bool",
+      "desc": "A Boolean value that indicates whether the layer needs to flush its state to continue decoding frames."
+    },
+    {
+      "name": "func stopRequestingMediaData()",
+      "desc": "Cancels any current media data request."
+    },
+    {
+      "name": "func flush()",
+      "desc": "Instructs the layer to discard any enqueued sample buffers that are pending."
+    },
+    {
+      "name": "func flushAndRemoveImage()",
+      "desc": "Instructs the layer to discard pending enqueued sample buffers and remove any currently displayed image."
+    },
+    {
+      "name": "var controlTimebase: CMTimebase?",
+      "desc": "The layer's control timebase, which governs how timestamps are interpreted."
+    },
+    {
+      "name": "func enqueue(CMSampleBuffer)",
+      "desc": "Sends a sample buffer for display."
+    },
+    {
+      "name": "var videoGravity: AVLayerVideoGravity",
+      "desc": "A string defining how the video is displayed within the bounds rect of a sample buffer display layer."
+    },
+    {
+      "name": "struct AVLayerVideoGravity",
+      "desc": "A structure that defines how a layer displays a player’s visual content within the layer’s bounds."
+    },
+    {
+      "name": "var status: AVQueuedSampleBufferRenderingStatus",
+      "desc": "The ability of the display layer to be used for enqueuing sample buffers."
+    },
+    {
+      "name": "enum AVQueuedSampleBufferRenderingStatus",
+      "desc": "The statuses for sample buffer rendering."
+    },
+    {
+      "name": "var preventsCapture: Bool",
+      "desc": "A Boolean value that indicates whether the layer protects against screen capture."
+    },
+    {
+      "name": "var preventsDisplaySleepDuringVideoPlayback: Bool",
+      "desc": "A Boolean value that indicates whether the layer prevents the system from sleeping during video playback."
+    },
+    {
+      "name": "var isOutputObscuredDueToInsufficientExternalProtection: Bool",
+      "desc": "A Boolean value that indicates whether the system obscures decoded output due to insufficient external protection on the current device."
+    },
+    {
+      "name": "var error: Error?",
+      "desc": "The error that caused the failure."
+    },
+    {
+      "name": "let AVSampleBufferDisplayLayerFailedToDecodeNotificationErrorKey: String",
+      "desc": "The key for the corresponding error."
+    },
+    {
+      "name": "static let AVSampleBufferDisplayLayerFailedToDecode: NSNotification.Name",
+      "desc": "A notification the system posts when a sample buffer display layer fails to decode."
+    }
+  ],
+  "declaration": "class AVSampleBufferDisplayLayer : CALayer",
+  "inheritsFrom": [
+    "CALayer"
+  ],
+  "conformsTo": [
+    "AVQueuedSampleBufferRendering"
+  ]
+}

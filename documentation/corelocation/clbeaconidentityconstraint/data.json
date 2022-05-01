@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/corelocation/clbeaconidentityconstraint",
+  "type": "Class",
+  "name": "CLBeaconIdentityConstraint",
+  "desc": "Identity characteristics that can match one or more beacons.",
+  "items": [
+    {
+      "name": "init(uuid: UUID)",
+      "desc": "Create a beacon identity constraint containing the UUID characteristic only, with wildcard values for the major and minor characteristics."
+    },
+    {
+      "name": "init(uuid: UUID, major: CLBeaconMajorValue)",
+      "desc": "Create a beacon identity constraint containing the UUID and major characteristics, with a wildcard for the minor characteristic."
+    },
+    {
+      "name": "init(uuid: UUID, major: CLBeaconMajorValue, minor: CLBeaconMinorValue)",
+      "desc": "Create a beacon identity constraint containing the UUID, major, and minor characteristics."
+    },
+    {
+      "name": "var uuid: UUID",
+      "desc": "The UUID necessary to satisfy the constraint."
+    },
+    {
+      "name": "var major: UInt16?",
+      "desc": "The constraint’s value for the major identity characteristic."
+    },
+    {
+      "name": "var minor: UInt16?",
+      "desc": "The constraint’s value for the minor identity characteristic."
+    }
+  ],
+  "declaration": "class CLBeaconIdentityConstraint : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

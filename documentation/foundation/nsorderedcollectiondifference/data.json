@@ -1,0 +1,55 @@
+{
+  "path": "/documentation/foundation/nsorderedcollectiondifference",
+  "type": "Class",
+  "name": "NSOrderedCollectionDifference",
+  "desc": "An object representing the difference between two ordered collections.",
+  "items": [
+    {
+      "name": "var hasChanges: Bool",
+      "desc": "A Boolean value that indicates if the difference has changes."
+    },
+    {
+      "name": "var insertions: [NSOrderedCollectionChange]",
+      "desc": "A collection of insertion change objects."
+    },
+    {
+      "name": "var removals: [NSOrderedCollectionChange]",
+      "desc": "A collection of removal change objects."
+    },
+    {
+      "name": "class NSOrderedCollectionChange",
+      "desc": "An object that represents an indexed change within an ordered collection."
+    },
+    {
+      "name": "enum NSCollectionChangeType",
+      "desc": "The type of change represented in computing the difference of an ordered collection."
+    },
+    {
+      "name": "func inverse() -> Self",
+      "desc": "Calculate the difference between two objects in the reverse direction of comparison."
+    },
+    {
+      "name": "init(changes: [NSOrderedCollectionChange])",
+      "desc": "Creates an ordered collection difference using an array of ordered collection changes."
+    },
+    {
+      "name": "init(insert: IndexSet, insertedObjects: [Any]?, remove: IndexSet, removedObjects: [Any]?)",
+      "desc": "Creates an ordered collection difference from arrays of inserted and removed objects with corresponding sets of indices."
+    },
+    {
+      "name": "init(insert: IndexSet, insertedObjects: [Any]?, remove: IndexSet, removedObjects: [Any]?, additionalChanges: [NSOrderedCollectionChange])",
+      "desc": "Creates an ordered collection difference from arrays of inserted and removed objects with corresponding sets of indices, in addition to an array of ordered collection changes."
+    },
+    {
+      "name": "func transformingChanges((NSOrderedCollectionChange) -> NSOrderedCollectionChange) -> CollectionDifference<Any>",
+      "desc": "Create a new ordered collection difference by mapping over this difference’s members, processing the change objects with the block provided."
+    }
+  ],
+  "declaration": "class NSOrderedCollectionDifference : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSFastEnumeration"
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "path": "/documentation/inputmethodkit/imkcandidates",
+  "type": "Class",
+  "name": "IMKCandidates",
+  "desc": "The IMKCandidates class presents candidates to users and notifies the appropriate IMKInputController object when the user selects a candidate. Candidates are alternate characters for a given input sequence. The IMKCandidates class supports using a candidates window  in your input method; using IMKCandidates is optional. Not all input methods require them.",
+  "items": [
+    {
+      "name": "init!(server: IMKServer!, panelType: IMKCandidatePanelType)",
+      "desc": "Returns the initialized IMKCandidates object."
+    },
+    {
+      "name": "func setSelectionKeys([Any]!)",
+      "desc": "Sets the selection keys for the candidates."
+    },
+    {
+      "name": "func selectionKeys() -> [Any]!",
+      "desc": "Returns an array of NSNumber objects where each NSNumber object represents a virtual key code."
+    },
+    {
+      "name": "func setSelectionKeysKeylayout(TISInputSource!)",
+      "desc": "Sets the key layout that is used to map virtual key codes to characters."
+    },
+    {
+      "name": "func selectionKeysKeylayout() -> Unmanaged<TISInputSource>!",
+      "desc": "Returns the key layout that maps virtual key codes to selection keys."
+    },
+    {
+      "name": "func show(IMKCandidatesLocationHint)",
+      "desc": "Shows the candidates window."
+    },
+    {
+      "name": "func hide()",
+      "desc": "Hides a candidates window, if it is visible."
+    },
+    {
+      "name": "func isVisible() -> Bool",
+      "desc": "Returns whether or not the candidates window is visible."
+    },
+    {
+      "name": "func setDismissesAutomatically(Bool)",
+      "desc": "Sets the state of the flag that determines whether the candidates window dismisses automatically."
+    },
+    {
+      "name": "func dismissesAutomatically() -> Bool",
+      "desc": "Returns the state of the flag that determines whether the candidates window dismisses automatically."
+    },
+    {
+      "name": "func update()",
+      "desc": "Updates the candidates that are displayed in the candidates window."
+    },
+    {
+      "name": "func panelType() -> IMKCandidatePanelType",
+      "desc": "Returns the style of the candidates window."
+    },
+    {
+      "name": "func setPanelType(IMKCandidatePanelType)",
+      "desc": "Sets the style of the candidates window."
+    },
+    {
+      "name": "func setAttributes([AnyHashable : Any]!)",
+      "desc": "Sets the style attributes for the candidates window."
+    },
+    {
+      "name": "func attributes() -> [AnyHashable : Any]!",
+      "desc": "Returns a dictionary of the style attributes used for the candidates window.."
+    },
+    {
+      "name": "func showAnnotation(NSAttributedString!)",
+      "desc": "Displays an annotation string in an annotation window."
+    },
+    {
+      "name": "typealias IMKCandidatePanelType",
+      "desc": "Types of candidates windows provide by the Input Method Kit."
+    },
+    {
+      "name": "typealias IMKCandidatesLocationHint",
+      "desc": "Hints that suggest where to place the candidates window."
+    },
+    {
+      "name": "init!(server: IMKServer!, panelType: IMKCandidatePanelType, styleType: IMKStyleType)"
+    },
+    {
+      "name": "func attachChild(IMKCandidates!, toCandidate: Int, type: IMKStyleType)"
+    },
+    {
+      "name": "func candidateFrame() -> NSRect"
+    },
+    {
+      "name": "func candidateIdentifier(atLineNumber: Int) -> Int"
+    },
+    {
+      "name": "func candidateStringIdentifier(Any!) -> Int"
+    },
+    {
+      "name": "func clearSelection()"
+    },
+    {
+      "name": "func detachChild(Int)"
+    },
+    {
+      "name": "func hideChild()"
+    },
+    {
+      "name": "func lineNumberForCandidate(withIdentifier: Int) -> Int"
+    },
+    {
+      "name": "func selectCandidate(Int)"
+    },
+    {
+      "name": "func selectCandidate(withIdentifier: Int) -> Bool"
+    },
+    {
+      "name": "func selectedCandidate() -> Int"
+    },
+    {
+      "name": "func selectedCandidateString() -> NSAttributedString!"
+    },
+    {
+      "name": "func setCandidateData([Any]!)"
+    },
+    {
+      "name": "func setCandidateFrameTopLeft(NSPoint)"
+    },
+    {
+      "name": "func show()"
+    },
+    {
+      "name": "func showChild()"
+    },
+    {
+      "name": "func showSublist([Any]!, subListDelegate: Any!)"
+    }
+  ],
+  "declaration": "class IMKCandidates : NSResponder",
+  "inheritsFrom": [
+    "NSResponder"
+  ]
+}

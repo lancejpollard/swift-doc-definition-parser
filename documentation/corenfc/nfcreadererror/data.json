@@ -1,0 +1,143 @@
+{
+  "path": "/documentation/corenfc/nfcreadererror",
+  "type": "Structure",
+  "name": "NFCReaderError",
+  "desc": "An error type that indicates problems with reader sessions or tags.",
+  "items": [
+    {
+      "name": "var errorCode: Int",
+      "desc": "The error code."
+    },
+    {
+      "name": "var errorUserInfo: [String : Any]",
+      "desc": "Additional details about an error."
+    },
+    {
+      "name": "var localizedDescription: String",
+      "desc": "A user-facing, localized string that describes the error."
+    },
+    {
+      "name": "static var readerSessionInvalidationErrorFirstNDEFTagRead: NFCReaderError.Code",
+      "desc": "The first NDEF tag read by this session is invalid."
+    },
+    {
+      "name": "static var readerSessionInvalidationErrorSessionTerminatedUnexpectedly: NFCReaderError.Code",
+      "desc": "The reader session terminated unexpectedly."
+    },
+    {
+      "name": "static var readerSessionInvalidationErrorSessionTimeout: NFCReaderError.Code",
+      "desc": "The reader session timed out."
+    },
+    {
+      "name": "static var readerSessionInvalidationErrorSystemIsBusy: NFCReaderError.Code",
+      "desc": "The reader session failed because the system is busy."
+    },
+    {
+      "name": "static var readerSessionInvalidationErrorUserCanceled: NFCReaderError.Code",
+      "desc": "The user canceled the reader session."
+    },
+    {
+      "name": "static var ndefReaderSessionErrorTagNotWritable: NFCReaderError.Code",
+      "desc": "The NDEF tag isn’t writable."
+    },
+    {
+      "name": "static var ndefReaderSessionErrorTagSizeTooSmall: NFCReaderError.Code",
+      "desc": "The NDEF tag memory size is too small to store the data."
+    },
+    {
+      "name": "static var ndefReaderSessionErrorTagUpdateFailure: NFCReaderError.Code",
+      "desc": "The reader session failed to update the NDEF tag."
+    },
+    {
+      "name": "static var ndefReaderSessionErrorZeroLengthMessage: NFCReaderError.Code",
+      "desc": "The NDEF tag doesn’t contain an NDEF message."
+    },
+    {
+      "name": "static var readerTransceiveErrorRetryExceeded: NFCReaderError.Code",
+      "desc": "Too many retries have occurred."
+    },
+    {
+      "name": "static var readerTransceiveErrorTagConnectionLost: NFCReaderError.Code",
+      "desc": "The reader lost the connection to the tag."
+    },
+    {
+      "name": "static var readerTransceiveErrorTagNotConnected: NFCReaderError.Code",
+      "desc": "The tag isn’t in the connected state."
+    },
+    {
+      "name": "static var readerTransceiveErrorTagResponseError: NFCReaderError.Code",
+      "desc": "The tag has responded with an error."
+    },
+    {
+      "name": "static var readerTransceiveErrorSessionInvalidated: NFCReaderError.Code",
+      "desc": "The reader session is invalid."
+    },
+    {
+      "name": "static var readerTransceiveErrorPacketTooLong: NFCReaderError.Code",
+      "desc": "The packet length exceeds the limit supported by the tag."
+    },
+    {
+      "name": "static var tagCommandConfigurationErrorInvalidParameters: NFCReaderError.Code",
+      "desc": "The tag has been configured with invalid parameters."
+    },
+    {
+      "name": "static var readerErrorUnsupportedFeature: NFCReaderError.Code",
+      "desc": "The reader session does not support this feature."
+    },
+    {
+      "name": "static var readerErrorInvalidParameter: NFCReaderError.Code",
+      "desc": "An input parameter is invalid."
+    },
+    {
+      "name": "static var readerErrorInvalidParameterLength: NFCReaderError.Code",
+      "desc": "The length of an input parameter is invalid."
+    },
+    {
+      "name": "static var readerErrorParameterOutOfBound: NFCReaderError.Code",
+      "desc": "A parameter value is outside of the acceptable boundary."
+    },
+    {
+      "name": "static var readerErrorRadioDisabled: NFCReaderError.Code",
+      "desc": "The NFC wireless radio on the device is disabled."
+    },
+    {
+      "name": "static var readerErrorSecurityViolation: NFCReaderError.Code",
+      "desc": "A security violation associated with the reader session has occurred."
+    },
+    {
+      "name": "static var errorDomain: String",
+      "desc": "The error domain for this error."
+    },
+    {
+      "name": "let NFCErrorDomain: String",
+      "desc": "The domain for errors associated with Core NFC APIs."
+    },
+    {
+      "name": "static func != (NFCReaderError, NFCReaderError) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "init(Code, userInfo: [String : Any])"
+    },
+    {
+      "name": "var code: Code"
+    },
+    {
+      "name": "var hashValue: Int"
+    },
+    {
+      "name": "var userInfo: [String : Any]"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "static func == (NFCReaderError, NFCReaderError) -> Bool"
+    },
+    {
+      "name": "enum NFCReaderError.Code",
+      "desc": "Reader session and tag error codes."
+    }
+  ],
+  "declaration": "struct NFCReaderError"
+}

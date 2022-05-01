@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/createml/mlsoundclassifier/datasource",
+  "type": "Enumeration",
+  "name": "MLSoundClassifier.DataSource",
+  "desc": "A representation of a sound-classifier dataset located in the file system or in a data table.",
+  "items": [
+    {
+      "name": "case labeledDirectories(at: URL)",
+      "desc": "Creates a data source from a folder with subfolders that each contain audio files."
+    },
+    {
+      "name": "case labeledFiles(at: URL)",
+      "desc": "Creates a data source from a folder that contains audio files, each named after the sound they represent."
+    },
+    {
+      "name": "case filesByLabel([String : [URL]])",
+      "desc": "Creates a data source from a dictionary."
+    },
+    {
+      "name": "case features(table: MLDataTable, featureColumn: String, labelColumn: String, parameters: MLSoundClassifier.FeatureExtractionParameters)",
+      "desc": "Creates a data source from a data table of audio features."
+    },
+    {
+      "name": "case featuresDataFrame(DataFrame, featureColumn: String, labelColumn: String, parameters: MLSoundClassifier.FeatureExtractionParameters)",
+      "desc": "Creates a data source from a data frame of audio features."
+    },
+    {
+      "name": "struct MLSoundClassifier.FeatureExtractionParameters",
+      "desc": "Parameters that affect the process of extracting sound features from audio files."
+    },
+    {
+      "name": "func labeledSounds() -> [String : [URL]]",
+      "desc": "Generates a dictionary of the data source’s labeled audio files."
+    },
+    {
+      "name": "func stratifiedSplit(proportions: [Double], seed: Int) -> [[String : [URL]]]",
+      "desc": "Generates an array of labeled audio dictionaries by splitting the data source into strata."
+    },
+    {
+      "name": "func stratifiedSplit<RNG>(proportions: [Double], generator: inout RNG) -> [[String : [URL]]]",
+      "desc": "Generates an array of labeled audio dictionaries by splitting the data source into strata using the random-number generator."
+    }
+  ],
+  "declaration": "enum DataSource"
+}

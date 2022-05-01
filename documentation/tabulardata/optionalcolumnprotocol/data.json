@@ -1,0 +1,127 @@
+{
+  "path": "/documentation/tabulardata/optionalcolumnprotocol",
+  "type": "Protocol",
+  "name": "OptionalColumnProtocol",
+  "desc": "A type that represents a column that has missing values.",
+  "items": [
+    {
+      "name": "func filled(with: Self.WrappedElement) -> FilledColumn<Self>",
+      "desc": "Generates a filled column by replacing missing elements with a value."
+    },
+    {
+      "name": "static func + (Self, Self) -> Column<Self.WrappedElement>",
+      "desc": "Generates a column by adding each element in an optional column type to the corresponding elements of another."
+    },
+    {
+      "name": "func + <L, R>(L, R) -> Column<L.Element>",
+      "desc": "Generates a column by adding each element in a column type to the corresponding elements of an optional column type."
+    },
+    {
+      "name": "func + <L, R>(L, R) -> Column<R.Element>",
+      "desc": "Generates a column by adding each element in an optional column type to the corresponding elements of a column type."
+    },
+    {
+      "name": "static func - (Self, Self) -> Column<Self.WrappedElement>",
+      "desc": "Generates a column by subtracting each element in an optional column type from the corresponding elements of another."
+    },
+    {
+      "name": "func - <L, R>(L, R) -> Column<L.Element>",
+      "desc": "Generates a column by subtracting each element in an optional column type from the corresponding elements of a column type."
+    },
+    {
+      "name": "func - <L, R>(L, R) -> Column<R.Element>",
+      "desc": "Generates a column by subtracting each element in a column type from the corresponding elements of an optional column."
+    },
+    {
+      "name": "static func * (Self, Self) -> Column<Self.WrappedElement>",
+      "desc": "Generates a column by multiplying each element in an optional column type by the corresponding elements of another."
+    },
+    {
+      "name": "func * <L, R>(L, R) -> Column<R.Element>",
+      "desc": "Generates a column by multiplying each element in an optional column type by the corresponding elements of a column type."
+    },
+    {
+      "name": "func * <L, R>(L, R) -> Column<L.Element>",
+      "desc": "Generates a column by multiplying each element in a column type by the corresponding elements of an optional column type."
+    },
+    {
+      "name": "static func / (Self, Self) -> Column<Self.WrappedElement>",
+      "desc": "Generates an integer column by dividing each element in an optional column type by the corresponding elements of another."
+    },
+    {
+      "name": "func / <L, R>(L, R) -> Column<L.Element>",
+      "desc": "Generates an integer column by dividing each element in a column type by the corresponding elements of an optional column type."
+    },
+    {
+      "name": "func / <L, R>(L, R) -> Column<R.Element>",
+      "desc": "Generates an integer column by dividing each element in an optional column type by the corresponding elements of a column type."
+    },
+    {
+      "name": "static func / (Self, Self) -> Column<Self.WrappedElement>",
+      "desc": "Generates a floating-point column by dividing each element in an optional column type by the corresponding elements of another."
+    },
+    {
+      "name": "func / <L, R>(L, R) -> Column<L.Element>",
+      "desc": "Generates a floating-point column by dividing each element in a column type by the corresponding elements of an optional column type."
+    },
+    {
+      "name": "func / <L, R>(L, R) -> Column<R.Element>",
+      "desc": "Generates a floating-point column by dividing each element in an optional column type by the corresponding elements of a column type."
+    },
+    {
+      "name": "static func + (Self, Self.WrappedElement) -> Column<Self.WrappedElement>",
+      "desc": "Generates a column by adding a value to each element in an optional column."
+    },
+    {
+      "name": "static func + (Self.WrappedElement, Self) -> Column<Self.WrappedElement>",
+      "desc": "Generates a column by adding each element in an optional column to a value."
+    },
+    {
+      "name": "static func - (Self, Self.WrappedElement) -> Column<Self.WrappedElement>",
+      "desc": "Generates a column by subtracting a value from each element in an optional column type."
+    },
+    {
+      "name": "static func - (Self.WrappedElement, Self) -> Column<Self.WrappedElement>",
+      "desc": "Generates a column by subtracting each element in an optional column from a value."
+    },
+    {
+      "name": "static func * (Self, Self.WrappedElement) -> Column<Self.WrappedElement>",
+      "desc": "Generates a column by multiplying each element in an optional column by a value."
+    },
+    {
+      "name": "static func * (Self.WrappedElement, Self) -> Column<Self.WrappedElement>",
+      "desc": "Generates a column by multiplying a value by each element in an optional column type."
+    },
+    {
+      "name": "static func / (Self, Self.WrappedElement) -> Column<Self.WrappedElement>",
+      "desc": "Generates an integer column by dividing each element in an optional column by a value."
+    },
+    {
+      "name": "static func / (Self.WrappedElement, Self) -> Column<Self.WrappedElement>",
+      "desc": "Generates an integer column by dividing a value by each element in an optional column type."
+    },
+    {
+      "name": "static func / (Self, Self.WrappedElement) -> Column<Self.WrappedElement>",
+      "desc": "Generates a floating-point column by dividing each element in an optional column by a value."
+    },
+    {
+      "name": "static func / (Self.WrappedElement, Self) -> Column<Self.WrappedElement>",
+      "desc": "Generates a floating-point column by dividing a value by each element in an optional column type."
+    },
+    {
+      "name": "func description(options: FormattingOptions) -> String",
+      "desc": "Generates a string description of the optional column type."
+    },
+    {
+      "name": "associatedtype WrappedElement",
+      "desc": "The type of the optional column type’s elements."
+    }
+  ],
+  "declaration": "protocol OptionalColumnProtocol : ColumnProtocol",
+  "inheritsFrom": [
+    "BidirectionalCollection",
+    "Collection",
+    "ColumnProtocol",
+    "Sequence"
+  ]
+}

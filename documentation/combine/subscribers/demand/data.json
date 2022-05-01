@@ -1,0 +1,197 @@
+{
+  "path": "/documentation/combine/subscribers/demand",
+  "type": "Structure",
+  "name": "Subscribers.Demand",
+  "desc": "A requested number of items, sent to a publisher from a subscriber through the subscription.",
+  "items": [
+    {
+      "name": "static func max(Int) -> Subscribers.Demand",
+      "desc": "Creates a demand for the given maximum number of elements."
+    },
+    {
+      "name": "static let unlimited: Subscribers.Demand",
+      "desc": "A request for as many values as the publisher can produce."
+    },
+    {
+      "name": "static let none: Subscribers.Demand",
+      "desc": "A request for no elements from the publisher."
+    },
+    {
+      "name": "var max: Int?",
+      "desc": "The number of requested values."
+    },
+    {
+      "name": "func encode(to: Encoder) throws",
+      "desc": "Encodes the demand to the provide encoder."
+    },
+    {
+      "name": "init(from: Decoder) throws",
+      "desc": "Creates a demand instance from a decoder."
+    },
+    {
+      "name": "static func * (Subscribers.Demand, Int) -> Subscribers.Demand",
+      "desc": "Returns the result of multiplying a demand by an integer."
+    },
+    {
+      "name": "static func *= (inout Subscribers.Demand, Int)",
+      "desc": "Multiplies a demand by an integer, and assigns the result to the demand."
+    },
+    {
+      "name": "static func + (Subscribers.Demand, Subscribers.Demand) -> Subscribers.Demand",
+      "desc": "Returns the result of adding two demands. When adding any value to .unlimited, the result is .unlimited."
+    },
+    {
+      "name": "static func + (Subscribers.Demand, Int) -> Subscribers.Demand",
+      "desc": "Returns the result of adding an integer to a demand."
+    },
+    {
+      "name": "static func += (inout Subscribers.Demand, Subscribers.Demand)",
+      "desc": "Adds two demands, and assigns the result to the first demand."
+    },
+    {
+      "name": "static func += (inout Subscribers.Demand, Int)",
+      "desc": "Adds an integer to a demand, and assigns the result to the demand."
+    },
+    {
+      "name": "static func - (Subscribers.Demand, Subscribers.Demand) -> Subscribers.Demand",
+      "desc": "Returns the result of subtracting one demand from another."
+    },
+    {
+      "name": "static func - (Subscribers.Demand, Int) -> Subscribers.Demand",
+      "desc": "Returns the result of subtracting an integer from a demand."
+    },
+    {
+      "name": "static func -= (inout Subscribers.Demand, Subscribers.Demand)",
+      "desc": "Subtracts one demand from another, and assigns the result to the first demand."
+    },
+    {
+      "name": "static func -= (inout Subscribers.Demand, Int)",
+      "desc": "Subtracts an integer from a demand, and assigns the result to the demand."
+    },
+    {
+      "name": "static func ... (Self) -> PartialRangeFrom<Self>",
+      "desc": "Returns a partial range extending upward from a lower bound."
+    },
+    {
+      "name": "static func ... (Self) -> PartialRangeThrough<Self>",
+      "desc": "Returns a partial range up to, and including, its upper bound."
+    },
+    {
+      "name": "static func ... (Self, Self) -> ClosedRange<Self>",
+      "desc": "Returns a closed range that contains both of its bounds."
+    },
+    {
+      "name": "static func == (Subscribers.Demand, Subscribers.Demand) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are equal."
+    },
+    {
+      "name": "static func == (Subscribers.Demand, Int) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a demand requests the given number of elements."
+    },
+    {
+      "name": "static func == (Int, Subscribers.Demand) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a given number of elements matches the request of a given demand."
+    },
+    {
+      "name": "static func != (Self, Self) -> Bool"
+    },
+    {
+      "name": "static func != (Subscribers.Demand, Int) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether a demand isn’t equal to an integer."
+    },
+    {
+      "name": "static func != (Int, Subscribers.Demand) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether an integer is unequal to a demand."
+    },
+    {
+      "name": "static func ..< (Self) -> PartialRangeUpTo<Self>",
+      "desc": "Returns a partial range up to, but not including, its upper bound."
+    },
+    {
+      "name": "static func ..< (Self, Self) -> Range<Self>",
+      "desc": "Returns a half-open range that contains its lower bound but not its upper bound."
+    },
+    {
+      "name": "static func < (Subscribers.Demand, Subscribers.Demand) -> Bool",
+      "desc": "Returns a Boolean that indicates whether the first demand requests fewer elements than the second."
+    },
+    {
+      "name": "static func < (Subscribers.Demand, Int) -> Bool",
+      "desc": "Returns a Boolean that indicates whether the demand requests fewer than the given number of elements."
+    },
+    {
+      "name": "static func < (Int, Subscribers.Demand) -> Bool",
+      "desc": "Returns a Boolean that indicates a given number of elements is less than the maximum specified by the demand."
+    },
+    {
+      "name": "static func <= (Subscribers.Demand, Subscribers.Demand) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the first demand requests fewer or the same number of elements as the second."
+    },
+    {
+      "name": "static func <= (Self, Self) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than or equal to that of the second argument."
+    },
+    {
+      "name": "static func <= (Subscribers.Demand, Int) -> Bool",
+      "desc": "Returns a Boolean that indicates whether the demand requests fewer or the same number of elements as the given integer."
+    },
+    {
+      "name": "static func <= (Int, Subscribers.Demand) -> Bool",
+      "desc": "Returns a Boolean value that indicates a given number of elements is less than or equal the maximum specified by the demand."
+    },
+    {
+      "name": "static func > (Subscribers.Demand, Subscribers.Demand) -> Bool",
+      "desc": "Returns a Boolean that indicates whether the first demand requests more elements than the second."
+    },
+    {
+      "name": "static func > (Self, Self) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than that of the second argument."
+    },
+    {
+      "name": "static func > (Subscribers.Demand, Int) -> Bool",
+      "desc": "Returns a Boolean that indicates whether the demand requests more than the given number of elements."
+    },
+    {
+      "name": "static func > (Int, Subscribers.Demand) -> Bool",
+      "desc": "Returns a Boolean that indicates a given number of elements is greater than the maximum specified by the demand."
+    },
+    {
+      "name": "static func >= (Subscribers.Demand, Subscribers.Demand) -> Bool",
+      "desc": "Returns a Boolean that indicates whether the first demand requests more or the same number of elements as the second."
+    },
+    {
+      "name": "static func >= (Self, Self) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than or equal to that of the second argument."
+    },
+    {
+      "name": "static func >= (Subscribers.Demand, Int) -> Bool",
+      "desc": "Returns a Boolean that indicates whether the first demand requests more or the same number of elements as the second."
+    },
+    {
+      "name": "static func >= (Int, Subscribers.Demand) -> Bool",
+      "desc": "Returns a Boolean that indicates a given number of elements is greater than or equal to the maximum specified by the demand."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual representation of this instance."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    }
+  ],
+  "declaration": "@frozen struct Demand",
+  "conformsTo": [
+    "Comparable",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "Hashable",
+    "Sendable"
+  ]
+}

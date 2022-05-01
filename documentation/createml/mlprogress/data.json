@@ -1,0 +1,97 @@
+{
+  "path": "/documentation/createml/mlprogress",
+  "type": "Structure",
+  "name": "MLProgress",
+  "desc": "A convenience type that exposes information about the progress of a training session.",
+  "items": [
+    {
+      "name": "init(phase: MLPhase)",
+      "desc": "Creates a training session progress instance from a training phase."
+    },
+    {
+      "name": "init?(progress: Progress)",
+      "desc": "Creates a training session progress instance from a foundation progress object."
+    },
+    {
+      "name": "var elapsedTime: TimeInterval",
+      "desc": "The time, in seconds, since the training session started."
+    },
+    {
+      "name": "var phase: MLPhase",
+      "desc": "The current phase of the training session."
+    },
+    {
+      "name": "var itemCount: Int",
+      "desc": "The current number of files processed during a feature extraction phase, or the completed iterations during a training phase."
+    },
+    {
+      "name": "var totalItemCount: Int?",
+      "desc": "The total number of files during a feature extraction phase, or total iterations during a training phase."
+    },
+    {
+      "name": "var metrics: [MLProgress.Metric : Any]",
+      "desc": "Measurements of the model’s performance during the training or evaluation phases of a training session."
+    },
+    {
+      "name": "enum MLProgress.Metric",
+      "desc": "Metrics you use to evaluate a model’s performance during a training session."
+    },
+    {
+      "name": "static let elapsedTimeKey: ProgressUserInfoKey",
+      "desc": "The key that accesses the elapsed time value."
+    },
+    {
+      "name": "static let phaseKey: ProgressUserInfoKey",
+      "desc": "The key that accesses the current phase value."
+    },
+    {
+      "name": "static let itemCountKey: ProgressUserInfoKey",
+      "desc": "The key that accesses the current item count value."
+    },
+    {
+      "name": "static let totalItemCountKey: ProgressUserInfoKey",
+      "desc": "The key that accesses the total item count value."
+    },
+    {
+      "name": "static let accuracyKey: ProgressUserInfoKey",
+      "desc": "The key that accesses the training accuracy value."
+    },
+    {
+      "name": "static let lossKey: ProgressUserInfoKey",
+      "desc": "The key that accesses the training loss value."
+    },
+    {
+      "name": "static let validationAccuracyKey: ProgressUserInfoKey",
+      "desc": "The key that accesses the validation accuracy value."
+    },
+    {
+      "name": "static let validationLossKey: ProgressUserInfoKey",
+      "desc": "The key that accesses the validation loss value."
+    },
+    {
+      "name": "static let contentLossKey: ProgressUserInfoKey",
+      "desc": "The key that accesses the content image loss value."
+    },
+    {
+      "name": "static let styleLossKey: ProgressUserInfoKey",
+      "desc": "The key that accesses the style image loss value."
+    },
+    {
+      "name": "static let stylizedImageKey: ProgressUserInfoKey",
+      "desc": "The key that accesses the stylized image value."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes the progress value into the given encoder."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a progress instance by decoding from the given decoder."
+    }
+  ],
+  "declaration": "struct MLProgress",
+  "conformsTo": [
+    "Decodable",
+    "Encodable"
+  ]
+}

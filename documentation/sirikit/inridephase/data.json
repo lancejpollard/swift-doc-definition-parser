@@ -1,0 +1,40 @@
+{
+  "path": "/documentation/sirikit/inridephase",
+  "type": "Enumeration",
+  "name": "INRidePhase",
+  "desc": "Constants indicating the current ride status.",
+  "items": [
+    {
+      "name": "case unknown",
+      "desc": "The state of the ride is unknown."
+    },
+    {
+      "name": "case received",
+      "desc": "You have received the booking request and are processing it, but have not yet confirmed the request or communicated the pickup information to the driver of the vehicle."
+    },
+    {
+      "name": "case confirmed",
+      "desc": "You have booked the ride and communicated the pickup information to the driver of the vehicle."
+    },
+    {
+      "name": "case ongoing",
+      "desc": "The driver has picked up the user’s party and is en route to the destination."
+    },
+    {
+      "name": "case completed",
+      "desc": "The driver has transited through all of the waypoints and is now at the ride’s destination."
+    },
+    {
+      "name": "case approachingPickup",
+      "desc": "The driver is approaching the pickup location."
+    },
+    {
+      "name": "case pickup",
+      "desc": "The driver is at the pickup location."
+    }
+  ],
+  "declaration": "enum INRidePhase : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

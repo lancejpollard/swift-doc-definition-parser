@@ -1,0 +1,252 @@
+{
+  "path": "/documentation/uikit/uiapplication",
+  "type": "Class",
+  "name": "UIApplication",
+  "desc": "The centralized point of control and coordination for apps running in iOS.",
+  "items": [
+    {
+      "name": "class var shared: UIApplication",
+      "desc": "The singleton app instance."
+    },
+    {
+      "name": "var delegate: UIApplicationDelegate?",
+      "desc": "The delegate of the app object."
+    },
+    {
+      "name": "protocol UIApplicationDelegate",
+      "desc": "A set of methods to manage shared behaviors for your app."
+    },
+    {
+      "name": "func registerForRemoteNotifications()",
+      "desc": "Registers to receive remote notifications through Apple Push Notification service."
+    },
+    {
+      "name": "func unregisterForRemoteNotifications()",
+      "desc": "Unregisters for all remote notifications received through Apple Push Notification service."
+    },
+    {
+      "name": "var isRegisteredForRemoteNotifications: Bool",
+      "desc": "A Boolean value that indicates whether the app is currently registered for remote notifications."
+    },
+    {
+      "name": "var applicationState: UIApplication.State",
+      "desc": "The app’s current state, or that of its most active scene."
+    },
+    {
+      "name": "enum UIApplication.State",
+      "desc": "Constants that indicate the running states of an app."
+    },
+    {
+      "name": "var supportsMultipleScenes: Bool",
+      "desc": "A Boolean value that indicates whether the app may display multiple scenes simultaneously."
+    },
+    {
+      "name": "var connectedScenes: Set<UIScene>",
+      "desc": "The app's currently connected scenes."
+    },
+    {
+      "name": "var openSessions: Set<UISceneSession>",
+      "desc": "The sessions whose scenes are either currently active or archived by the system."
+    },
+    {
+      "name": "func requestSceneSessionActivation(UISceneSession?, userActivity: NSUserActivity?, options: UIScene.ActivationRequestOptions?, errorHandler: ((Error) -> Void)?)",
+      "desc": "Asks the system to activate an existing scene, or create a new scene and associate it with your app."
+    },
+    {
+      "name": "func requestSceneSessionDestruction(UISceneSession, options: UISceneDestructionRequestOptions?, errorHandler: ((Error) -> Void)?)",
+      "desc": "Asks the system to dismiss an existing scene and remove it from the app switcher."
+    },
+    {
+      "name": "func requestSceneSessionRefresh(UISceneSession)",
+      "desc": "Asks the system to update any system UI associated with the specified scene."
+    },
+    {
+      "name": "class UIScene.ActivationRequestOptions",
+      "desc": "An object that contains information you want the system to use when activating the session associated with a scene."
+    },
+    {
+      "name": "class UISceneDestructionRequestOptions",
+      "desc": "An object you pass to UIKit to permanently remove a scene and its associated session from your app."
+    },
+    {
+      "name": "var backgroundRefreshStatus: UIBackgroundRefreshStatus",
+      "desc": "Indicates whether the app can refresh content when running in the background."
+    },
+    {
+      "name": "enum UIBackgroundRefreshStatus",
+      "desc": "Constants that indicate whether background execution is enabled for the app."
+    },
+    {
+      "name": "class let backgroundRefreshStatusDidChangeNotification: NSNotification.Name",
+      "desc": "A notification that posts when the app’s status for downloading content in the background changes."
+    },
+    {
+      "name": "func beginBackgroundTask(withName: String?, expirationHandler: (() -> Void)?) -> UIBackgroundTaskIdentifier",
+      "desc": "Marks the start of a task with a custom name that should continue if the app enters the background."
+    },
+    {
+      "name": "func beginBackgroundTask(expirationHandler: (() -> Void)?) -> UIBackgroundTaskIdentifier",
+      "desc": "Marks the start of a task that should continue if the app enters the background."
+    },
+    {
+      "name": "func endBackgroundTask(UIBackgroundTaskIdentifier)",
+      "desc": "Marks the end of a specific long-running background task."
+    },
+    {
+      "name": "struct UIBackgroundTaskIdentifier",
+      "desc": "A unique token that identifies a request to run in the background."
+    },
+    {
+      "name": "var backgroundTimeRemaining: TimeInterval",
+      "desc": "The maximum amount of time remaining for the app to run in the background."
+    },
+    {
+      "name": "class let backgroundFetchIntervalMinimum: TimeInterval",
+      "desc": "The smallest fetch interval supported by the system."
+    },
+    {
+      "name": "class let backgroundFetchIntervalNever: TimeInterval",
+      "desc": "A fetch interval large enough to prevent fetch operations from occurring."
+    },
+    {
+      "name": "func open(URL, options: [UIApplication.OpenExternalURLOptionsKey : Any], completionHandler: ((Bool) -> Void)?)",
+      "desc": "Attempts to asynchronously open the resource at the specified URL."
+    },
+    {
+      "name": "func canOpenURL(URL) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether an app is available to handle a URL scheme."
+    },
+    {
+      "name": "struct UIApplication.OpenExternalURLOptionsKey",
+      "desc": "Options for opening a URL."
+    },
+    {
+      "name": "class let openSettingsURLString: String",
+      "desc": "A string used to create a URL to open Settings."
+    },
+    {
+      "name": "var isIdleTimerDisabled: Bool",
+      "desc": "A Boolean value that controls whether the idle timer is disabled for the app."
+    },
+    {
+      "name": "func extendStateRestoration()",
+      "desc": "Tells the app that your code is restoring state asynchronously."
+    },
+    {
+      "name": "func completeStateRestoration()",
+      "desc": "Tells the app that your code has finished any asynchronous state restoration."
+    },
+    {
+      "name": "func ignoreSnapshotOnNextApplicationLaunch()",
+      "desc": "Prevents the app from using the recent snapshot image during the next launch cycle."
+    },
+    {
+      "name": "class func registerObject(forStateRestoration: UIStateRestoring, restorationIdentifier: String)",
+      "desc": "Registers a custom object for use with the state restoration system."
+    },
+    {
+      "name": "var shortcutItems: [UIApplicationShortcutItem]?",
+      "desc": "The Home screen dynamic quick actions for your app; available on devices that support 3D Touch."
+    },
+    {
+      "name": "var isProtectedDataAvailable: Bool",
+      "desc": "A Boolean value that indicates whether content protection is active."
+    },
+    {
+      "name": "class let protectedDataDidBecomeAvailableNotification: NSNotification.Name",
+      "desc": "A notification that posts when the protected files become available for your code to access."
+    },
+    {
+      "name": "class let protectedDataWillBecomeUnavailableNotification: NSNotification.Name",
+      "desc": "A notification that posts shortly before protected files are locked down and become inaccessible."
+    },
+    {
+      "name": "func beginReceivingRemoteControlEvents()",
+      "desc": "Tells the app to begin receiving remote-control events."
+    },
+    {
+      "name": "func endReceivingRemoteControlEvents()",
+      "desc": "Tells the app to stop receiving remote-control events."
+    },
+    {
+      "name": "var userInterfaceLayoutDirection: UIUserInterfaceLayoutDirection",
+      "desc": "The layout direction of the user interface."
+    },
+    {
+      "name": "enum UIUserInterfaceLayoutDirection",
+      "desc": "Constants that specify the directional flow of the user interface."
+    },
+    {
+      "name": "func sendEvent(UIEvent)",
+      "desc": "Dispatches an event to the appropriate responder objects in the app."
+    },
+    {
+      "name": "func sendAction(Selector, to: Any?, from: Any?, for: UIEvent?) -> Bool",
+      "desc": "Sends an action message identified by the selector to a specified target."
+    },
+    {
+      "name": "var applicationSupportsShakeToEdit: Bool",
+      "desc": "A Boolean value that determines whether shaking the device displays the undo-redo user interface."
+    },
+    {
+      "name": "var applicationIconBadgeNumber: Int",
+      "desc": "The number currently set as the badge of the app icon on the Home screen."
+    },
+    {
+      "name": "var supportsAlternateIcons: Bool",
+      "desc": "A Boolean value that indicates whether the app is allowed to change its icon."
+    },
+    {
+      "name": "var alternateIconName: String?",
+      "desc": "The name of the icon the system displays for the app."
+    },
+    {
+      "name": "func setAlternateIconName(String?, completionHandler: ((Error?) -> Void)?)",
+      "desc": "Changes the icon the system displays for the app."
+    },
+    {
+      "name": "var preferredContentSizeCategory: UIContentSizeCategory",
+      "desc": "The font sizing option preferred by the user."
+    },
+    {
+      "name": "struct UIContentSizeCategory",
+      "desc": "Constants that indicate the preferred size of your content."
+    },
+    {
+      "name": "protocol UIContentSizeCategoryAdjusting",
+      "desc": "A collection of methods that give controls an easy way to adopt automatic adjustment to content category changes."
+    },
+    {
+      "name": "static let didChangeNotification: NSNotification.Name",
+      "desc": "A notification that posts when the user changes the preferred content size setting."
+    },
+    {
+      "name": "static let newValueUserInfoKey: String",
+      "desc": "A key that reflects the new preferred content size."
+    },
+    {
+      "name": "func supportedInterfaceOrientations(for: UIWindow?) -> UIInterfaceOrientationMask",
+      "desc": "Returns the default set of interface orientations to use for the view controllers in the specified window."
+    },
+    {
+      "name": "enum UIStatusBarStyle",
+      "desc": "Constants that describe the style of the device’s status bar."
+    },
+    {
+      "name": "enum UIStatusBarAnimation",
+      "desc": "Constants that specify the animation of the status bar as it's hidden or made visible."
+    },
+    {
+      "name": "static let tracking: RunLoop.Mode",
+      "desc": "The mode set while tracking in controls takes place."
+    },
+    {
+      "name": "class let userDidTakeScreenshotNotification: NSNotification.Name",
+      "desc": "A notification that posts when the user presses the Home and Lock buttons to take a screenshot."
+    }
+  ],
+  "declaration": "@MainActor class UIApplication : UIResponder",
+  "inheritsFrom": [
+    "UIResponder"
+  ]
+}

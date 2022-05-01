@@ -1,0 +1,59 @@
+{
+  "path": "/documentation/cloudkit/ckfetchdatabasechangesoperation",
+  "type": "Class",
+  "name": "CKFetchDatabaseChangesOperation",
+  "desc": "An operation that fetches database changes.",
+  "items": [
+    {
+      "name": "init(previousServerChangeToken: CKServerChangeToken?)",
+      "desc": "Creates an operation for fetching database changes."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates an empty fetch database changes operation."
+    },
+    {
+      "name": "var fetchAllChanges: Bool",
+      "desc": "A Boolean value that indicates whether to send repeated requests to the server."
+    },
+    {
+      "name": "var previousServerChangeToken: CKServerChangeToken?",
+      "desc": "The server change token."
+    },
+    {
+      "name": "var resultsLimit: Int",
+      "desc": "The maximum number of results that the operation fetches."
+    },
+    {
+      "name": "var recordZoneWithIDChangedBlock: ((CKRecordZone.ID) -> Void)?",
+      "desc": "The closure to execute with a single record zone change."
+    },
+    {
+      "name": "var recordZoneWithIDWasDeletedBlock: ((CKRecordZone.ID) -> Void)?",
+      "desc": "The closure to execute when a record zone no longer exists."
+    },
+    {
+      "name": "var recordZoneWithIDWasDeletedDueToUserEncryptedDataResetBlock: ((CKRecordZone.ID) -> Void)?",
+      "desc": "The closure to execute when a user-invoked account reset deletes a record zone."
+    },
+    {
+      "name": "var recordZoneWithIDWasPurgedBlock: ((CKRecordZone.ID) -> Void)?",
+      "desc": "The closure to execute when CloudKit purges a record zone."
+    },
+    {
+      "name": "var changeTokenUpdatedBlock: ((CKServerChangeToken) -> Void)?",
+      "desc": "The closure to execute when the change token updates."
+    },
+    {
+      "name": "var fetchDatabaseChangesCompletionBlock: ((CKServerChangeToken?, Bool, Error?) -> Void)?",
+      "desc": "The closure to execute when the operation finishes."
+    },
+    {
+      "name": "var fetchDatabaseChangesResultBlock: ((Result<(serverChangeToken: CKServerChangeToken, moreComing: Bool), Error>) -> Void)?"
+    }
+  ],
+  "declaration": "class CKFetchDatabaseChangesOperation : CKDatabaseOperation",
+  "inheritsFrom": [
+    "CKDatabaseOperation"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/appkit/nstextfinderclient",
+  "type": "Protocol",
+  "name": "NSTextFinderClient",
+  "desc": "A set of methods implemented by objects that support searching using the NSTextFinder class and the in-window text find bar.",
+  "items": [
+    {
+      "name": "var string: String",
+      "desc": "Allows the client to specify a single string for searching."
+    },
+    {
+      "name": "func string(at: Int, effectiveRange: NSRangePointer, endsWithSearchBoundary: UnsafeMutablePointer<ObjCBool>) -> String",
+      "desc": "Returns the found string that is created by conceptually mapping its content to a single string, which is composed of a concatenation of all its substrings."
+    },
+    {
+      "name": "func stringLength() -> Int",
+      "desc": "Returns the full length of the conceptually concatenated string return by the stringAtIndex:effectiveRange:endsWithSearchBoundary: method."
+    },
+    {
+      "name": "func shouldReplaceCharacters(inRanges: [NSValue], with: [String]) -> Bool",
+      "desc": "Returns whether the specified strings should be replaced."
+    },
+    {
+      "name": "func replaceCharacters(in: NSRange, with: String)",
+      "desc": "Replaces the text in the specified range with the new string."
+    },
+    {
+      "name": "func didReplaceCharacters()",
+      "desc": "Specifies whether text characters were replaced."
+    },
+    {
+      "name": "var isSelectable: Bool",
+      "desc": "Returns whether the text is selectable."
+    },
+    {
+      "name": "var allowsMultipleSelection: Bool",
+      "desc": "Returns whether multiple items can be selected."
+    },
+    {
+      "name": "var firstSelectedRange: NSRange",
+      "desc": "Returns the currently selected range."
+    },
+    {
+      "name": "var selectedRanges: [NSValue]",
+      "desc": "Returns an array of selected ranges."
+    },
+    {
+      "name": "var isEditable: Bool",
+      "desc": "Returns whether the text is editable."
+    },
+    {
+      "name": "func contentView(at: Int, effectiveCharacterRange: NSRangePointer) -> NSView",
+      "desc": "Returns the view the context is displayed in."
+    },
+    {
+      "name": "func rects(forCharacterRange: NSRange) -> [NSValue]?",
+      "desc": "An array containing the located text in the content view’s coordinate system."
+    },
+    {
+      "name": "func scrollRangeToVisible(NSRange)",
+      "desc": "Scrolls the specified range such that it is visible."
+    },
+    {
+      "name": "var visibleCharacterRanges: [NSValue]",
+      "desc": "An array of visible character ranges."
+    },
+    {
+      "name": "func drawCharacters(in: NSRange, forContentView: NSView)",
+      "desc": "Draw the glyphs for the requested character range as they are drawn in the given content view."
+    }
+  ],
+  "declaration": "protocol NSTextFinderClient",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

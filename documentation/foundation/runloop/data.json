@@ -1,0 +1,115 @@
+{
+  "path": "/documentation/foundation/runloop",
+  "type": "Class",
+  "name": "RunLoop",
+  "desc": "The programmatic interface to objects that manage input sources.",
+  "items": [
+    {
+      "name": "class var current: RunLoop",
+      "desc": "Returns the run loop for the current thread."
+    },
+    {
+      "name": "var currentMode: RunLoop.Mode?",
+      "desc": "The receiver's current input mode."
+    },
+    {
+      "name": "func limitDate(forMode: RunLoop.Mode) -> Date?",
+      "desc": "Performs one pass through the run loop in the specified mode and returns the date at which the next timer is scheduled to fire."
+    },
+    {
+      "name": "class var main: RunLoop",
+      "desc": "Returns the run loop of the main thread."
+    },
+    {
+      "name": "func getCFRunLoop() -> CFRunLoop",
+      "desc": "Returns the receiver's underlying CFRunLoop object."
+    },
+    {
+      "name": "struct RunLoop.Mode",
+      "desc": "Modes that a run loop operates in."
+    },
+    {
+      "name": "func add(Timer, forMode: RunLoop.Mode)",
+      "desc": "Registers a given timer with a given input mode."
+    },
+    {
+      "name": "func add(Port, forMode: RunLoop.Mode)",
+      "desc": "Adds a port as an input source to the specified mode of the run loop."
+    },
+    {
+      "name": "func remove(Port, forMode: RunLoop.Mode)",
+      "desc": "Removes a port from the specified input mode of the run loop."
+    },
+    {
+      "name": "func run()",
+      "desc": "Puts the receiver into a permanent loop, during which time it processes data from all attached input sources."
+    },
+    {
+      "name": "func run(mode: RunLoop.Mode, before: Date) -> Bool",
+      "desc": "Runs the loop once, blocking for input in the specified mode until a given date."
+    },
+    {
+      "name": "func run(until: Date)",
+      "desc": "Runs the loop until the specified date, during which time it processes data from all attached input sources."
+    },
+    {
+      "name": "func acceptInput(forMode: RunLoop.Mode, before: Date)",
+      "desc": "Runs the loop once or until the specified date, accepting input only for the specified mode."
+    },
+    {
+      "name": "func perform(() -> Void)",
+      "desc": "Schedules a block that the run loop invokes."
+    },
+    {
+      "name": "func perform(inModes: [RunLoop.Mode], block: () -> Void)",
+      "desc": "Schedules a block that the run loop invokes when it’s running in any of the specified modes."
+    },
+    {
+      "name": "func perform(Selector, target: Any, argument: Any?, order: Int, modes: [RunLoop.Mode])",
+      "desc": "Schedules the sending of a message on the receiver."
+    },
+    {
+      "name": "func cancelPerform(Selector, target: Any, argument: Any?)",
+      "desc": "Cancels the sending of a previously scheduled message."
+    },
+    {
+      "name": "func cancelPerformSelectors(withTarget: Any)",
+      "desc": "Cancels all outstanding ordered performs scheduled with a given target."
+    },
+    {
+      "name": "func schedule(options: RunLoop.SchedulerOptions?, () -> Void)",
+      "desc": "Performs the action at some time after the specified date, using the scheduler’s minimum tolerance."
+    },
+    {
+      "name": "func schedule(after: RunLoop.SchedulerTimeType, tolerance: RunLoop.SchedulerTimeType.Stride, options: RunLoop.SchedulerOptions?, () -> Void)",
+      "desc": "Performs the action at some time after the specified date, using the specified tolerance and options."
+    },
+    {
+      "name": "func schedule(after: RunLoop.SchedulerTimeType, interval: RunLoop.SchedulerTimeType.Stride, tolerance: RunLoop.SchedulerTimeType.Stride, options: RunLoop.SchedulerOptions?, () -> Void) -> Cancellable",
+      "desc": "Performs the action at some time after the specified date, at the specified frequency, using the specified tolerance and options."
+    },
+    {
+      "name": "var minimumTolerance: RunLoop.SchedulerTimeType.Stride",
+      "desc": "The minimum tolerance the run loop scheduler allows."
+    },
+    {
+      "name": "var now: RunLoop.SchedulerTimeType",
+      "desc": "The run loop scheduler’s definition of the current moment in time."
+    },
+    {
+      "name": "struct RunLoop.SchedulerTimeType",
+      "desc": "The scheduler time type that the run loop uses."
+    },
+    {
+      "name": "struct RunLoop.SchedulerOptions",
+      "desc": "A set of options that affect the operation of the run loop scheduler."
+    }
+  ],
+  "declaration": "class RunLoop : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "Scheduler"
+  ]
+}

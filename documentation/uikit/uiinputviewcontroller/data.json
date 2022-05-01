@@ -1,0 +1,59 @@
+{
+  "path": "/documentation/uikit/uiinputviewcontroller",
+  "type": "Class",
+  "name": "UIInputViewController",
+  "desc": "The primary view controller for a custom keyboard app extension.",
+  "items": [
+    {
+      "name": "var inputView: UIInputView?",
+      "desc": "The primary view for the input view controller."
+    },
+    {
+      "name": "func advanceToNextInputMode()",
+      "desc": "Switches to the next keyboard in the list of user-enabled keyboards."
+    },
+    {
+      "name": "func dismissKeyboard()",
+      "desc": "Dismisses the custom keyboard from the screen."
+    },
+    {
+      "name": "func handleInputModeList(from: UIView, with: UIEvent)",
+      "desc": "Supports interaction with the list of user-enabled keyboards."
+    },
+    {
+      "name": "var textDocumentProxy: UITextDocumentProxy",
+      "desc": "A proxy to the text input object that the custom keyboard is interacting with."
+    },
+    {
+      "name": "protocol UITextDocumentProxy",
+      "desc": "An object that provides textual context to a custom keyboard."
+    },
+    {
+      "name": "func requestSupplementaryLexicon(completion: (UILexicon) -> Void)",
+      "desc": "Obtains a supplementary lexicon of term pairs in a custom keyboard."
+    },
+    {
+      "name": "var primaryLanguage: String?",
+      "desc": "The primary language for a custom keyboard."
+    },
+    {
+      "name": "var needsInputModeSwitchKey: Bool",
+      "desc": "A Boolean value that indicates whether the keyboard must display an input switcher key."
+    },
+    {
+      "name": "var hasFullAccess: Bool",
+      "desc": "A Boolean value that indicates whether the keyboard has full access."
+    },
+    {
+      "name": "var hasDictationKey: Bool",
+      "desc": "A Boolean value that indicates whether the keyboard has a dictation key."
+    }
+  ],
+  "declaration": "@MainActor class UIInputViewController : UIViewController",
+  "inheritsFrom": [
+    "UIViewController"
+  ],
+  "conformsTo": [
+    "UITextInputDelegate"
+  ]
+}

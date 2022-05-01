@@ -1,0 +1,123 @@
+{
+  "path": "/documentation/gamecontroller/gccontroller",
+  "type": "Class",
+  "name": "GCController",
+  "desc": "A representation of a real game controller, a virtual controller, or a snapshot of a controller.",
+  "items": [
+    {
+      "name": "class func controllers() -> [GCController]",
+      "desc": "Returns the connected controllers for the device."
+    },
+    {
+      "name": "class func startWirelessControllerDiscovery(completionHandler: (() -> Void)?)",
+      "desc": "Starts searching for nearby wireless controllers."
+    },
+    {
+      "name": "class func stopWirelessControllerDiscovery()",
+      "desc": "Stops searching for nearby wireless controllers."
+    },
+    {
+      "name": "static let GCControllerDidConnect: NSNotification.Name",
+      "desc": "Posts after a controller connects to the device."
+    },
+    {
+      "name": "static let GCControllerDidDisconnect: NSNotification.Name",
+      "desc": "Posts after a controller disconnects from the device."
+    },
+    {
+      "name": "class var current: GCController?",
+      "desc": "The most recently used game controller."
+    },
+    {
+      "name": "static let GCControllerDidBecomeCurrent: NSNotification.Name",
+      "desc": "Posts when a controller becomes the current controller."
+    },
+    {
+      "name": "static let GCControllerDidStopBeingCurrent: NSNotification.Name",
+      "desc": "Posts when a controller stops being the current controller."
+    },
+    {
+      "name": "var isAttachedToDevice: Bool",
+      "desc": "A Boolean value that indicates whether the controller closely integrates with the device."
+    },
+    {
+      "name": "class func supportsHIDDevice(IOHIDDevice) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the framework supports the specified human interface device."
+    },
+    {
+      "name": "class var shouldMonitorBackgroundEvents: Bool",
+      "desc": "A Boolean value that indicates whether the app needs to respond to controller events when it isn’t the frontmost app."
+    },
+    {
+      "name": "var extendedGamepad: GCExtendedGamepad?",
+      "desc": "The extended gamepad profile."
+    },
+    {
+      "name": "var microGamepad: GCMicroGamepad?",
+      "desc": "The micro gamepad profile."
+    },
+    {
+      "name": "var motion: GCMotion?",
+      "desc": "The motion input profile."
+    },
+    {
+      "name": "var playerIndex: GCControllerPlayerIndex",
+      "desc": "The player index for the controller."
+    },
+    {
+      "name": "enum GCControllerPlayerIndex",
+      "desc": "The possible values for controller player indices."
+    },
+    {
+      "name": "var battery: GCDeviceBattery?",
+      "desc": "The controller’s battery information."
+    },
+    {
+      "name": "class GCDeviceBattery",
+      "desc": "The charge level and state of a device’s battery."
+    },
+    {
+      "name": "var haptics: GCDeviceHaptics?",
+      "desc": "The controller’s haptics information."
+    },
+    {
+      "name": "class GCDeviceHaptics",
+      "desc": "The locations of haptic actuators on a game controller."
+    },
+    {
+      "name": "var light: GCDeviceLight?",
+      "desc": "The controller’s light settings."
+    },
+    {
+      "name": "class GCDeviceLight",
+      "desc": "The colored light on a device."
+    },
+    {
+      "name": "class GCColor",
+      "desc": "The color of a device light."
+    },
+    {
+      "name": "class func withExtendedGamepad() -> GCController",
+      "desc": "Returns a snapshot of a newly created controller with an extended gamepad profile."
+    },
+    {
+      "name": "class func withMicroGamepad() -> GCController",
+      "desc": "Returns a snapshot of a newly created controller with a micro gamepad profile."
+    },
+    {
+      "name": "func capture() -> GCController",
+      "desc": "Returns a snapshot of the controller with its current element values."
+    },
+    {
+      "name": "var isSnapshot: Bool",
+      "desc": "A Boolean value that indicates whether the controller is a snapshot of a controller."
+    }
+  ],
+  "declaration": "class GCController : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "GCDevice"
+  ]
+}

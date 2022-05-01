@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/foundation/stream/status",
+  "type": "Enumeration",
+  "name": "Stream.Status",
+  "desc": "The type declared for the constants listed in Stream Status Constants.",
+  "items": [
+    {
+      "name": "case atEnd",
+      "desc": "There is no more data to read, or no more data can be written to the stream. When this status is returned, the stream is in a “non-blocking” mode and no data are available."
+    },
+    {
+      "name": "case closed",
+      "desc": "The stream is closed (close() has been called on it)."
+    },
+    {
+      "name": "case error",
+      "desc": "The remote end of the connection can’t be contacted, or the connection has been severed for some other reason."
+    },
+    {
+      "name": "case notOpen",
+      "desc": "The stream is not open for reading or writing. This status is returned before the underlying call to open a stream but after it’s been created."
+    },
+    {
+      "name": "case open",
+      "desc": "The stream is open, but no reading or writing is occurring."
+    },
+    {
+      "name": "case opening",
+      "desc": "The stream is in the process of being opened for reading or for writing. For network streams, this status might include the time after the stream was opened, but while network DNS resolution is happening."
+    },
+    {
+      "name": "case reading",
+      "desc": "Data is being read from the stream. This status would be returned if code on another thread were to call streamStatus on the stream while a read(_:maxLength:) call (InputStream) was in progress."
+    },
+    {
+      "name": "case writing",
+      "desc": "Data is being written to the stream. This status would be returned if code on another thread were to call streamStatus on the stream while a write(_:maxLength:) call (OutputStream) was in progress."
+    }
+  ],
+  "declaration": "enum Status : UInt, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

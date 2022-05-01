@@ -1,0 +1,43 @@
+{
+  "path": "/documentation/managedsettings/shieldactiondelegate",
+  "type": "Class",
+  "name": "ShieldActionDelegate",
+  "desc": "A class for an extension that handles shield actions.",
+  "items": [
+    {
+      "name": "enum ShieldAction",
+      "desc": "Constants that describe a user’s action for your extension to handle."
+    },
+    {
+      "name": "enum ShieldActionResponse",
+      "desc": "Constants your extension that handles shield actions can use to tell the system how to respond to an action."
+    },
+    {
+      "name": "init()"
+    },
+    {
+      "name": "func handle(action: ShieldAction, for: ApplicationToken, completionHandler: (ShieldActionResponse) -> Void)",
+      "desc": "Allows the extension to respond to a user action when the system displays a shield over an application."
+    },
+    {
+      "name": "func handle(action: ShieldAction, for: WebDomainToken, completionHandler: (ShieldActionResponse) -> Void)",
+      "desc": "Allows the extension to respond to a user action when the system displays a shield over a website."
+    },
+    {
+      "name": "func handle(action: ShieldAction, for: ActivityCategoryToken, completionHandler: (ShieldActionResponse) -> Void)",
+      "desc": "Allows the extension to respond to a user action when the system displays a shield over an application or website because of its category."
+    }
+  ],
+  "declaration": "@objc class ShieldActionDelegate",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "CVarArg",
+    "CustomDebugStringConvertible",
+    "CustomStringConvertible",
+    "Equatable",
+    "Hashable",
+    "NSObjectProtocol"
+  ]
+}

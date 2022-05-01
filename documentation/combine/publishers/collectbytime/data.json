@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/combine/publishers/collectbytime",
+  "type": "Structure",
+  "name": "Publishers.CollectByTime",
+  "desc": "A publisher that buffers and periodically publishes its items.",
+  "items": [
+    {
+      "name": "init(upstream: Upstream, strategy: Publishers.TimeGroupingStrategy<Context>, options: Context.SchedulerOptions?)",
+      "desc": "Creates a publisher that buffers and periodically publishes its items."
+    },
+    {
+      "name": "typealias Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "typealias Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "let upstream: Upstream",
+      "desc": "The publisher that this publisher receives elements from."
+    },
+    {
+      "name": "let strategy: Publishers.TimeGroupingStrategy<Context>",
+      "desc": "The strategy with which to collect and publish elements."
+    },
+    {
+      "name": "let options: Context.SchedulerOptions?",
+      "desc": "Scheduler options to use for the strategy."
+    }
+  ],
+  "declaration": "struct CollectByTime<Upstream, Context> where Upstream : Publisher, Context : Scheduler",
+  "conformsTo": [
+    "Publisher"
+  ]
+}

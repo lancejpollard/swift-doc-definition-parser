@@ -1,0 +1,97 @@
+{
+  "path": "/documentation/imageio/cgimagedestination",
+  "type": "Class",
+  "name": "CGImageDestination",
+  "desc": "An opaque type that you use to write image data to a URL, data object, or data consumer.",
+  "items": [
+    {
+      "name": "func CGImageDestinationCreateWithURL(CFURL, CFString, Int, CFDictionary?) -> CGImageDestination?",
+      "desc": "Creates an image destination that writes image data to the specified URL."
+    },
+    {
+      "name": "func CGImageDestinationCreateWithData(CFMutableData, CFString, Int, CFDictionary?) -> CGImageDestination?",
+      "desc": "Creates an image destination that writes to a Core Foundation mutable data object."
+    },
+    {
+      "name": "func CGImageDestinationCreateWithDataConsumer(CGDataConsumer, CFString, Int, CFDictionary?) -> CGImageDestination?",
+      "desc": "Creates an image destination that writes to the specified data consumer."
+    },
+    {
+      "name": "func CGImageDestinationAddImage(CGImageDestination, CGImage, CFDictionary?)",
+      "desc": "Adds an image to an image destination."
+    },
+    {
+      "name": "func CGImageDestinationAddImageFromSource(CGImageDestination, CGImageSource, Int, CFDictionary?)",
+      "desc": "Adds an image from an image source to an image destination."
+    },
+    {
+      "name": "func CGImageDestinationSetProperties(CGImageDestination, CFDictionary?)",
+      "desc": "Applies one or more properties to all images in an image destination."
+    },
+    {
+      "name": "func CGImageDestinationAddAuxiliaryDataInfo(CGImageDestination, CFString, CFDictionary)",
+      "desc": "Sets the auxiliary data, such as mattes and depth information, that accompany the image."
+    },
+    {
+      "name": "func CGImageDestinationFinalize(CGImageDestination) -> Bool",
+      "desc": "Writes image data and properties to the data, URL, or data consumer associated with the image destination."
+    },
+    {
+      "name": "func CGImageDestinationCopyTypeIdentifiers() -> CFArray",
+      "desc": "Returns an array of the uniform type identifiers that are supported for image destinations."
+    },
+    {
+      "name": "func CGImageDestinationGetTypeID() -> CFTypeID",
+      "desc": "Returns the unique type identifier of an image destination opaque type."
+    },
+    {
+      "name": "let kCGImageDestinationLossyCompressionQuality: CFString",
+      "desc": "The desired compression quality to use when writing the image data."
+    },
+    {
+      "name": "let kCGImageDestinationBackgroundColor: CFString",
+      "desc": "The background color to use when the image has an alpha component, but the destination format doesn’t support alpha."
+    },
+    {
+      "name": "let kCGImageDestinationDateTime: CFString",
+      "desc": "The date and time information to associate with the image."
+    },
+    {
+      "name": "let kCGImageDestinationEmbedThumbnail: CFString",
+      "desc": "A Boolean value that indicates whether to embed a thumbnail for JPEG and HEIF images."
+    },
+    {
+      "name": "let kCGImageDestinationImageMaxPixelSize: CFString",
+      "desc": "The maximum width and height of the image, in pixels."
+    },
+    {
+      "name": "let kCGImageDestinationMetadata: CFString",
+      "desc": "The metadata tags to include with the image."
+    },
+    {
+      "name": "let kCGImageDestinationMergeMetadata: CFString",
+      "desc": "A Boolean value that indicates whether to merge new metadata with the image’s existing metadata."
+    },
+    {
+      "name": "let kCGImageDestinationOptimizeColorForSharing: CFString",
+      "desc": "A Boolean value that indicates whether to create the image using a colorspace."
+    },
+    {
+      "name": "let kCGImageDestinationOrientation: CFString",
+      "desc": "The orientation of the image, specified as an EXIF value in the range 1 to 8."
+    },
+    {
+      "name": "let kCGImageDestinationPreserveGainMap: CFString",
+      "desc": "A Boolean value that indicates whether to include a HEIF-embedded gain map in the image data."
+    },
+    {
+      "name": "let kCGImageMetadataShouldExcludeGPS: CFString",
+      "desc": "A Boolean value that indicates whether to exclude GPS metadata from EXIF data or the corresponding XMP tags."
+    },
+    {
+      "name": "let kCGImageMetadataShouldExcludeXMP: CFString",
+      "desc": "A Boolean value that indicates whether to exclude XMP data from the destination."
+    }
+  ],
+  "declaration": "class CGImageDestination"
+}

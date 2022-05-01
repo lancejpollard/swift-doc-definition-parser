@@ -1,0 +1,45 @@
+{
+  "path": "/documentation/cryptokit/sha256",
+  "type": "Structure",
+  "name": "SHA256",
+  "desc": "An implementation of Secure Hashing Algorithm 2 (SHA-2) hashing with a 256-bit digest.",
+  "items": [
+    {
+      "name": "typealias SHA256.Digest",
+      "desc": "The digest type for a SHA256 hash function."
+    },
+    {
+      "name": "struct SHA256Digest",
+      "desc": "The output of a Secure Hashing Algorithm 2 (SHA-2) hash with a 256-bit digest."
+    },
+    {
+      "name": "static func hash<D>(data: D) -> SHA256Digest",
+      "desc": "Computes the SHA256 digest of the bytes in the given data instance and returns the computed digest."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates a SHA256 hash function."
+    },
+    {
+      "name": "func update<D>(data: D)",
+      "desc": "Incrementally updates the hash function with the given data."
+    },
+    {
+      "name": "func update(bufferPointer: UnsafeRawBufferPointer)",
+      "desc": "Incrementally updates the hash function with the contents of the buffer."
+    },
+    {
+      "name": "func finalize() -> SHA256.Digest",
+      "desc": "Finalizes the hash function and returns the computed digest."
+    },
+    {
+      "name": "static var byteCount: Int",
+      "desc": "The number of bytes in a SHA256 digest."
+    },
+    {
+      "name": "static var blockByteCount: Int",
+      "desc": "The number of bytes that represents the hash function’s internal state."
+    }
+  ],
+  "declaration": "struct SHA256"
+}

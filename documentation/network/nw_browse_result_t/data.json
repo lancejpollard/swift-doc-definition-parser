@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/network/nw_browse_result_t",
+  "type": "Type Alias",
+  "name": "nw_browse_result_t",
+  "desc": "A discovered service and metadata about the service.",
+  "items": [
+    {
+      "name": "func nw_browse_result_copy_endpoint(nw_browse_result_t) -> nw_endpoint_t",
+      "desc": "The discovered service endpoint."
+    },
+    {
+      "name": "func nw_browse_result_enumerate_interfaces(nw_browse_result_t, (nw_interface_t) -> Bool)",
+      "desc": "Enumerates the list of interfaces on which the service was discovered."
+    },
+    {
+      "name": "typealias nw_browse_result_enumerate_interface_t",
+      "desc": "A handler that enumerates the interfaces associated with a discovered service."
+    },
+    {
+      "name": "func nw_browse_result_get_interfaces_count(nw_browse_result_t) -> Int",
+      "desc": "Accesses the number of interfaces associated with a discovered service."
+    },
+    {
+      "name": "func nw_browse_result_copy_txt_record_object(nw_browse_result_t) -> nw_txt_record_t?",
+      "desc": "Accesses the TXT record associated with a discovered service."
+    },
+    {
+      "name": "typealias nw_txt_record_t",
+      "desc": "A dictionary representing a TXT record in a DNS packet."
+    },
+    {
+      "name": "func nw_browse_result_get_changes(nw_browse_result_t?, nw_browse_result_t?) -> nw_browse_result_change_t",
+      "desc": "Compares two discovered services and calculates changes between them."
+    },
+    {
+      "name": "typealias nw_browse_result_change_t",
+      "desc": "Flags describing ways in which discovered services can change between specific results."
+    }
+  ],
+  "declaration": "typealias nw_browse_result_t = OS_nw_browse_result"
+}

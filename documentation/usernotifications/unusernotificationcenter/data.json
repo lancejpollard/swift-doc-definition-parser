@@ -1,0 +1,88 @@
+{
+  "path": "/documentation/usernotifications/unusernotificationcenter",
+  "type": "Class",
+  "name": "UNUserNotificationCenter",
+  "desc": "The central object for managing notification-related activities for your app or app extension.",
+  "items": [
+    {
+      "name": "class func current() -> UNUserNotificationCenter",
+      "desc": "Returns the shared user notification center object for your app or app extension."
+    },
+    {
+      "name": "var delegate: UNUserNotificationCenterDelegate?",
+      "desc": "The object that processes incoming notifications and notification-related actions."
+    },
+    {
+      "name": "protocol UNUserNotificationCenterDelegate",
+      "desc": "The interface for handling incoming notifications and notification-related actions."
+    },
+    {
+      "name": "func requestAuthorization(options: UNAuthorizationOptions, completionHandler: (Bool, Error?) -> Void)",
+      "desc": "Requests authorization to interact with the user when local and remote notifications are delivered to the user’s device."
+    },
+    {
+      "name": "func getNotificationSettings(completionHandler: (UNNotificationSettings) -> Void)",
+      "desc": "Requests the notification settings for this app."
+    },
+    {
+      "name": "var supportsContentExtensions: Bool",
+      "desc": "A Boolean value indicating whether the current device supports notification content extensions."
+    },
+    {
+      "name": "struct UNAuthorizationOptions",
+      "desc": "Constants for requesting authorization to interact with the user."
+    },
+    {
+      "name": "func setNotificationCategories(Set<UNNotificationCategory>)",
+      "desc": "Registers your app’s notification types and the custom actions that they support."
+    },
+    {
+      "name": "func getNotificationCategories(completionHandler: (Set<UNNotificationCategory>) -> Void)",
+      "desc": "Retrieves the app’s currently registered notification categories."
+    },
+    {
+      "name": "func add(UNNotificationRequest, withCompletionHandler: ((Error?) -> Void)?)",
+      "desc": "Schedules a local notification for delivery."
+    },
+    {
+      "name": "func getPendingNotificationRequests(completionHandler: ([UNNotificationRequest]) -> Void)",
+      "desc": "Returns a list of all notification requests that are scheduled and waiting to be delivered."
+    },
+    {
+      "name": "func removePendingNotificationRequests(withIdentifiers: [String])",
+      "desc": "Unschedules the notification requests you specify."
+    },
+    {
+      "name": "func removeAllPendingNotificationRequests()",
+      "desc": "Unschedules all pending notification requests."
+    },
+    {
+      "name": "func getDeliveredNotifications(completionHandler: ([UNNotification]) -> Void)",
+      "desc": "Returns a list of the app’s notifications that are still displayed in Notification Center."
+    },
+    {
+      "name": "func removeDeliveredNotifications(withIdentifiers: [String])",
+      "desc": "Removes the notification requests you specify from Notification Center."
+    },
+    {
+      "name": "func removeAllDeliveredNotifications()",
+      "desc": "Removes all of the app’s delivered notifications from Notification Center."
+    },
+    {
+      "name": "struct UNError",
+      "desc": "Error constants for notifications."
+    },
+    {
+      "name": "enum UNError.Code",
+      "desc": "Error constants for notifications."
+    },
+    {
+      "name": "let UNErrorDomain: String",
+      "desc": "The error domain for notifications."
+    }
+  ],
+  "declaration": "class UNUserNotificationCenter : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

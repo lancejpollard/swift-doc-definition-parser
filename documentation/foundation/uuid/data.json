@@ -1,0 +1,78 @@
+{
+  "path": "/documentation/foundation/uuid",
+  "type": "Structure",
+  "name": "UUID",
+  "desc": "A universally unique value that can be used to identify types, interfaces, and other items.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Initializes a new UUID with RFC 4122 version 4 random bytes."
+    },
+    {
+      "name": "init(uuid: uuid_t)",
+      "desc": "Create a UUID from a uuid_t."
+    },
+    {
+      "name": "var uuid: (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8)",
+      "desc": "Returns the UUID as bytes."
+    },
+    {
+      "name": "var uuidString: String",
+      "desc": "Returns a string created from the UUID, such as “E621E1F8-C36C-495A-93FC-0C247A3E6E5F”"
+    },
+    {
+      "name": "static func != (UUID, UUID) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (UUID, UUID) -> Bool",
+      "desc": "Indicates whether two UUIDs are the same."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A textual description of the UUID."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A textual description of the UUID suitable for debugging."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A mirror that reflects the UUID."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The computed hash value of the UUID."
+    },
+    {
+      "name": "class NSUUID",
+      "desc": "An object representing a universally unique value that bridges to UUID; use NSUUID when you need reference semantics or other Foundation-specific behavior."
+    },
+    {
+      "name": "typealias UUID.ReferenceType",
+      "desc": "An alias for this value type's equivalent reference type."
+    },
+    {
+      "name": "init(from: Decoder)"
+    },
+    {
+      "name": "init?(uuidString: String)"
+    },
+    {
+      "name": "func encode(to: Encoder)"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    }
+  ],
+  "declaration": "Declarationstruct UUID",
+  "conformsTo": [
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "Hashable",
+    "ReferenceConvertible"
+  ]
+}

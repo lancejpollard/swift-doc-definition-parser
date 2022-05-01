@@ -1,0 +1,24 @@
+{
+  "path": "/documentation/cloudkit/ckmodifyrecordsoperation/recordsavepolicy",
+  "type": "Enumeration",
+  "name": "CKModifyRecordsOperation.RecordSavePolicy",
+  "desc": "Constants that indicate which policy to apply when saving records.",
+  "items": [
+    {
+      "name": "case ifServerRecordUnchanged",
+      "desc": "A policy that instructs CloudKit to only proceed if the record’s change tag matches that of the server’s copy."
+    },
+    {
+      "name": "case changedKeys",
+      "desc": "A policy that instructs CloudKit to save only the fields of a record that contain changes."
+    },
+    {
+      "name": "case allKeys",
+      "desc": "A policy that instructs CloudKit to save all keys of a record, even those without changes."
+    }
+  ],
+  "declaration": "enum RecordSavePolicy : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

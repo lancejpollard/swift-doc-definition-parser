@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/webkit/wknavigationdelegate",
+  "type": "Protocol",
+  "name": "WKNavigationDelegate",
+  "desc": "Methods for accepting or rejecting navigation changes, and for tracking the progress of navigation requests.",
+  "items": [
+    {
+      "name": "func webView(WKWebView, decidePolicyFor: WKNavigationAction, preferences: WKWebpagePreferences, decisionHandler: (WKNavigationActionPolicy, WKWebpagePreferences) -> Void)",
+      "desc": "Asks the delegate for permission to navigate to new content based on the specified preferences and action information."
+    },
+    {
+      "name": "func webView(WKWebView, decidePolicyFor: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void)",
+      "desc": "Asks the delegate for permission to navigate to new content based on the specified action information."
+    },
+    {
+      "name": "enum WKNavigationActionPolicy",
+      "desc": "Constants that indicate whether to allow or cancel navigation to a webpage from an action."
+    },
+    {
+      "name": "func webView(WKWebView, decidePolicyFor: WKNavigationResponse, decisionHandler: (WKNavigationResponsePolicy) -> Void)",
+      "desc": "Asks the delegate for permission to navigate to new content after the response to the navigation request is known."
+    },
+    {
+      "name": "enum WKNavigationResponsePolicy",
+      "desc": "Constants that indicate whether to allow or cancel navigation to a webpage from a response."
+    },
+    {
+      "name": "func webView(WKWebView, didStartProvisionalNavigation: WKNavigation!)",
+      "desc": "Tells the delegate that navigation from the main frame has started."
+    },
+    {
+      "name": "func webView(WKWebView, didReceiveServerRedirectForProvisionalNavigation: WKNavigation!)",
+      "desc": "Tells the delegate that the web view received a server redirect for a request."
+    },
+    {
+      "name": "func webView(WKWebView, didCommit: WKNavigation!)",
+      "desc": "Tells the delegate that the web view has started to receive content for the main frame."
+    },
+    {
+      "name": "func webView(WKWebView, didFinish: WKNavigation!)",
+      "desc": "Tells the delegate that navigation is complete."
+    },
+    {
+      "name": "func webView(WKWebView, didReceive: URLAuthenticationChallenge, completionHandler: (URLSession.AuthChallengeDisposition, URLCredential?) -> Void)",
+      "desc": "Asks the delegate to respond to an authentication challenge."
+    },
+    {
+      "name": "func webView(WKWebView, authenticationChallenge: URLAuthenticationChallenge, shouldAllowDeprecatedTLS: (Bool) -> Void)",
+      "desc": "Asks the delegate whether to continue with a connection that uses a deprecated version of TLS."
+    },
+    {
+      "name": "func webView(WKWebView, didFail: WKNavigation!, withError: Error)",
+      "desc": "Tells the delegate that an error occurred during navigation."
+    },
+    {
+      "name": "func webView(WKWebView, didFailProvisionalNavigation: WKNavigation!, withError: Error)",
+      "desc": "Tells the delegate that an error occurred during the early navigation process."
+    },
+    {
+      "name": "func webViewWebContentProcessDidTerminate(WKWebView)",
+      "desc": "Tells the delegate that the web view’s content process was terminated."
+    },
+    {
+      "name": "func webView(WKWebView, navigationResponse: WKNavigationResponse, didBecome: WKDownload)",
+      "desc": "Tells the delegate that a navigation response became a download."
+    },
+    {
+      "name": "func webView(WKWebView, navigationAction: WKNavigationAction, didBecome: WKDownload)",
+      "desc": "Tells the delegate that a navigation action became a download."
+    }
+  ],
+  "declaration": "protocol WKNavigationDelegate",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

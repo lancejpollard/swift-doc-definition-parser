@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/networkextension/nednsproxymanager",
+  "type": "Class",
+  "name": "NEDNSProxyManager",
+  "desc": "An object to create and manage an DNS proxy provider’s configuration.",
+  "items": [
+    {
+      "name": "class func shared() -> NEDNSProxyManager",
+      "desc": "Returns a singleton DNS proxy manager instance."
+    },
+    {
+      "name": "func loadFromPreferences(completionHandler: (Error?) -> Void)",
+      "desc": "Loads the current DNS proxy configuration from the caller's DNS proxy preferences."
+    },
+    {
+      "name": "func saveToPreferences(completionHandler: (Error?) -> Void)",
+      "desc": "Saves the DNS proxy configuration in the caller's DNS proxy preferences."
+    },
+    {
+      "name": "func removeFromPreferences(completionHandler: (Error?) -> Void)",
+      "desc": "Removes the DNS proxy configuration from the caller's DNS proxy preferences."
+    },
+    {
+      "name": "var isEnabled: Bool",
+      "desc": "The status of a DNS proxy."
+    },
+    {
+      "name": "var providerProtocol: NEDNSProxyProviderProtocol?",
+      "desc": "The provider-specific portion of the DNS proxy configuration."
+    },
+    {
+      "name": "var localizedDescription: String?",
+      "desc": "A description of the DNS proxy."
+    },
+    {
+      "name": "static let NEDNSProxyConfigurationDidChange: NSNotification.Name",
+      "desc": "A notification that is posted when the DNS proxy configuration changes."
+    },
+    {
+      "name": "let NEDNSProxyErrorDomain: String",
+      "desc": "The DNS proxy error domain."
+    },
+    {
+      "name": "enum NEDNSProxyManagerError",
+      "desc": "The possible DNS proxy manager errors."
+    }
+  ],
+  "declaration": "class NEDNSProxyManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

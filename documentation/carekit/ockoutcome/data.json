@@ -1,0 +1,94 @@
+{
+  "path": "/documentation/carekit/ockoutcome",
+  "type": "Structure",
+  "name": "OCKOutcome",
+  "desc": "The result of an event that corresonds to a task.",
+  "items": [
+    {
+      "name": "init(taskID: OCKLocalVersionID, taskOccurrenceIndex: Int, values: [OCKOutcomeValue])",
+      "desc": "Creates an outcome, by specifying the version of the task that owns this outcome, how many events have occurred before this outcome, and the values."
+    },
+    {
+      "name": "var taskID: OCKLocalVersionID",
+      "desc": "The version identifier of the task to which the outcome belongs."
+    },
+    {
+      "name": "var taskOccurrenceIndex: Int",
+      "desc": "The index in the occurrences for a task, which specifies how many events have occurred before the creation of the outcome."
+    },
+    {
+      "name": "var values: [OCKOutcomeValue]",
+      "desc": "An array of values associated with an outcome."
+    },
+    {
+      "name": "var createdDate: Date? { get }",
+      "desc": "The date the database first persisted the object."
+    },
+    {
+      "name": "var updatedDate: Date? { get }",
+      "desc": "The most recent date when the store updated the object."
+    },
+    {
+      "name": "var groupIdentifier: String?",
+      "desc": "A user-defined group identifier that can be used both for querying and sorting results."
+    },
+    {
+      "name": "var tags: [String]?",
+      "desc": "An array of user-defined tags that can be used to sort or classify objects or values."
+    },
+    {
+      "name": "var localDatabaseID: OCKLocalVersionID? { get }",
+      "desc": "A unique identifier used by the local database."
+    },
+    {
+      "name": "var remoteID: String?",
+      "desc": "A string value that represents a unique identifier, which a remote database uses optionally."
+    },
+    {
+      "name": "var userInfo: [String : String]?",
+      "desc": "A dictionary of information that can be provided by developers to support their own unique use cases."
+    },
+    {
+      "name": "var source: String?",
+      "desc": "A string that specifies from where this object originated."
+    },
+    {
+      "name": "var asset: String?",
+      "desc": "A string that specifies the location of some asset associated with this object."
+    },
+    {
+      "name": "var notes: [OCKNote]?",
+      "desc": "An array of notes associated with this object."
+    },
+    {
+      "name": "var schemaVersion: OCKSemanticVersion? { get }",
+      "desc": "The semantic version of the database schema when you create this object."
+    },
+    {
+      "name": "var timezone: TimeZone",
+      "desc": "The time zone in which this record was created in."
+    },
+    {
+      "name": "var id: String",
+      "desc": "A human-readable unique identifier that is never shown to a user."
+    },
+    {
+      "name": "func belongs(to: OCKAnyTask) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether an outcome belongs to a specific task."
+    },
+    {
+      "name": "var id: ObjectIdentifier"
+    },
+    {
+      "name": "static func != (OCKOutcome, OCKOutcome) -> Bool"
+    }
+  ],
+  "declaration": "struct OCKOutcome : Codable, Equatable, Identifiable, OCKAnyOutcome, OCKObjectCompatible",
+  "conformsTo": [
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "Identifiable",
+    "OCKAnyOutcome"
+  ]
+}

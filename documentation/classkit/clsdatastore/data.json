@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/classkit/clsdatastore",
+  "type": "Class",
+  "name": "CLSDataStore",
+  "desc": "A container for all the ClassKit data in your app.",
+  "items": [
+    {
+      "name": "class var shared: CLSDataStore",
+      "desc": "The shared data store object."
+    },
+    {
+      "name": "var delegate: CLSDataStoreDelegate?",
+      "desc": "The data store delegate instance."
+    },
+    {
+      "name": "protocol CLSDataStoreDelegate",
+      "desc": "An interface the data store uses to request new contexts."
+    },
+    {
+      "name": "var mainAppContext: CLSContext",
+      "desc": "The app’s top-level context."
+    },
+    {
+      "name": "var activeContext: CLSContext?",
+      "desc": "The currently active context."
+    },
+    {
+      "name": "var runningActivity: CLSActivity?",
+      "desc": "The currently running activity within the currently active context."
+    },
+    {
+      "name": "func fetchActivity(for: URL, completion: (CLSActivity?, Error?) -> Void)",
+      "desc": "Fetches an activity for a given document so you can record progress on the associated task."
+    },
+    {
+      "name": "func completeAllAssignedActivities(matching: [String])",
+      "desc": "Marks all of the assigned and active activities for the given context path as complete."
+    },
+    {
+      "name": "func contexts(matchingIdentifierPath: [String], completion: ([CLSContext], Error?) -> Void)",
+      "desc": "Fetches all the contexts along a given identifier path."
+    },
+    {
+      "name": "func contexts(matching: NSPredicate, completion: ([CLSContext], Error?) -> Void)",
+      "desc": "Fetches all the contexts matching a predicate."
+    },
+    {
+      "name": "struct CLSPredicateKeyPath",
+      "desc": "The set of possible key paths you use to search for contexts."
+    },
+    {
+      "name": "func remove(CLSContext)",
+      "desc": "Marks a context for removal."
+    },
+    {
+      "name": "func save(completion: ((Error?) -> Void)?)",
+      "desc": "Saves any changes you’ve made in the data store."
+    }
+  ],
+  "declaration": "class CLSDataStore : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

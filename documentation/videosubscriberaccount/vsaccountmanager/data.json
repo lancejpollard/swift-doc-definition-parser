@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/videosubscriberaccount/vsaccountmanager",
+  "type": "Class",
+  "name": "VSAccountManager",
+  "desc": "The object that coordinates your app’s authentication requests with a TV provider’s authentication service.",
+  "items": [
+    {
+      "name": "var delegate: VSAccountManagerDelegate?",
+      "desc": "The delegate of the account manager object."
+    },
+    {
+      "name": "protocol VSAccountManagerDelegate",
+      "desc": "The methods you use to respond to authentication view controller requests."
+    },
+    {
+      "name": "func checkAccessStatus(options: [VSCheckAccessOption : Any], completionHandler: (VSAccountAccessStatus, Error?) -> Void)",
+      "desc": "Checks your app’s access to user subscription information, and requests access if needed."
+    },
+    {
+      "name": "struct VSCheckAccessOption",
+      "desc": "The options your app uses when checking access status."
+    },
+    {
+      "name": "enum VSAccountAccessStatus",
+      "desc": "Constants that represent your app’s access status to the user’s subscription information."
+    },
+    {
+      "name": "func enqueue(VSAccountMetadataRequest, completionHandler: (VSAccountMetadata?, Error?) -> Void) -> VSAccountManagerResult",
+      "desc": "Submits a request for subscriber account information."
+    },
+    {
+      "name": "class VSAccountMetadataRequest",
+      "desc": "An object that specifies what subscriber account information your app retrieves."
+    },
+    {
+      "name": "class VSAccountMetadata",
+      "desc": "A collection of information for a subscriber’s account."
+    },
+    {
+      "name": "class VSAccountManagerResult",
+      "desc": "An object that represents a request made for subscriber account information."
+    },
+    {
+      "name": "class VSAccountProviderResponse",
+      "desc": "An object that contains the response from the account provider."
+    },
+    {
+      "name": "struct VSAccountProviderAuthenticationScheme",
+      "desc": "Authentication schemes for account provider requests and responses."
+    },
+    {
+      "name": "let VSOpenTVProviderSettingsURLString: String",
+      "desc": "A URL string you use to deep link to the system’s TV Provider settings."
+    }
+  ],
+  "declaration": "class VSAccountManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

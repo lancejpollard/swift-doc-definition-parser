@@ -1,0 +1,65 @@
+{
+  "path": "/documentation/carekit/ockchecklisttaskview",
+  "type": "Class",
+  "name": "OCKChecklistTaskView",
+  "desc": "A view that displays multiple events for a single task, in a vertically stacked checklist of items.",
+  "items": [
+    {
+      "name": "let contentStackView: OCKStackView",
+      "desc": "The vertical stack view that contains the main content in the view."
+    },
+    {
+      "name": "let headerView: OCKHeaderView",
+      "desc": "A header view that shows an image at the trailing end of the view."
+    },
+    {
+      "name": "var items: [OCKChecklistItemButton]",
+      "desc": "An array of buttons in the checklist."
+    },
+    {
+      "name": "let instructionsLabel: OCKLabel",
+      "desc": "A multi-line label beneath the checklist items."
+    },
+    {
+      "name": "var delegate: OCKTaskViewDelegate?",
+      "desc": "The object that handles events related to changes in the task view."
+    },
+    {
+      "name": "func updateItem(at: Int, withTitle: String) -> OCKChecklistItemButton?",
+      "desc": "Updates an item with text."
+    },
+    {
+      "name": "func insertItem(withTitle: String, at: Int, animated: Bool) -> OCKChecklistItemButton",
+      "desc": "Inserts an item in the checklist."
+    },
+    {
+      "name": "func appendItem(withTitle: String, animated: Bool) -> OCKChecklistItemButton",
+      "desc": "Appends an item to the end of the checklist."
+    },
+    {
+      "name": "func removeItem(at: Int, animated: Bool) -> OCKChecklistItemButton?",
+      "desc": "Removes an item from the checkliist."
+    },
+    {
+      "name": "func clearItems(animated: Bool)",
+      "desc": "Clears all items from the checklist."
+    },
+    {
+      "name": "func styleDidChange()"
+    }
+  ],
+  "declaration": "class OCKChecklistTaskView : OCKView",
+  "inheritsFrom": [
+    "OCKView"
+  ],
+  "conformsTo": [
+    "CVarArg",
+    "Equatable",
+    "Hashable",
+    "OCKTaskDisplayable",
+    "UIAccessibilityIdentification",
+    "UILargeContentViewerItem",
+    "UIPasteConfigurationSupporting",
+    "UIUserActivityRestoring"
+  ]
+}

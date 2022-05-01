@@ -1,0 +1,747 @@
+{
+  "path": "/documentation/uikit/uiview",
+  "type": "Class",
+  "name": "UIView",
+  "desc": "An object that manages the content for a rectangular area on the screen.",
+  "items": [
+    {
+      "name": "init(frame: CGRect)",
+      "desc": "Initializes and returns a newly allocated view object with the specified frame rectangle."
+    },
+    {
+      "name": "init?(coder: NSCoder)"
+    },
+    {
+      "name": "var backgroundColor: UIColor?",
+      "desc": "The view’s background color."
+    },
+    {
+      "name": "var isHidden: Bool",
+      "desc": "A Boolean value that determines whether the view is hidden."
+    },
+    {
+      "name": "var alpha: CGFloat",
+      "desc": "The view’s alpha value."
+    },
+    {
+      "name": "var isOpaque: Bool",
+      "desc": "A Boolean value that determines whether the view is opaque."
+    },
+    {
+      "name": "var tintColor: UIColor!",
+      "desc": "The first nondefault tint color value in the view’s hierarchy, ascending from and starting with the view itself."
+    },
+    {
+      "name": "var tintAdjustmentMode: UIView.TintAdjustmentMode",
+      "desc": "The first non-default tint adjustment mode value in the view’s hierarchy, ascending from and starting with the view itself."
+    },
+    {
+      "name": "var clipsToBounds: Bool",
+      "desc": "A Boolean value that determines whether subviews are confined to the bounds of the view."
+    },
+    {
+      "name": "var clearsContextBeforeDrawing: Bool",
+      "desc": "A Boolean value that determines whether the view’s bounds should be automatically cleared before drawing."
+    },
+    {
+      "name": "var mask: UIView?",
+      "desc": "An optional view whose alpha channel is used to mask a view’s content."
+    },
+    {
+      "name": "class var layerClass: AnyClass",
+      "desc": "Returns the class used to create the layer for instances of this class."
+    },
+    {
+      "name": "var layer: CALayer",
+      "desc": "The view’s Core Animation layer used for rendering."
+    },
+    {
+      "name": "var isUserInteractionEnabled: Bool",
+      "desc": "A Boolean value that determines whether user events are ignored and removed from the event queue."
+    },
+    {
+      "name": "var isMultipleTouchEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the view receives more than one touch at a time."
+    },
+    {
+      "name": "var isExclusiveTouch: Bool",
+      "desc": "A Boolean value that indicates whether the receiver handles touch events exclusively."
+    },
+    {
+      "name": "var frame: CGRect",
+      "desc": "The frame rectangle, which describes the view’s location and size in its superview’s coordinate system."
+    },
+    {
+      "name": "var bounds: CGRect",
+      "desc": "The bounds rectangle, which describes the view’s location and size in its own coordinate system."
+    },
+    {
+      "name": "var center: CGPoint",
+      "desc": "The center point of the view's frame rectangle."
+    },
+    {
+      "name": "var transform: CGAffineTransform",
+      "desc": "Specifies the transform applied to the view, relative to the center of its bounds."
+    },
+    {
+      "name": "var transform3D: CATransform3D",
+      "desc": "The three-dimensional transform to apply to the view."
+    },
+    {
+      "name": "var superview: UIView?",
+      "desc": "The receiver’s superview, or nil if it has none."
+    },
+    {
+      "name": "var subviews: [UIView]",
+      "desc": "The receiver’s immediate subviews."
+    },
+    {
+      "name": "var window: UIWindow?",
+      "desc": "The receiver’s window object, or nil if it has none."
+    },
+    {
+      "name": "func addSubview(UIView)",
+      "desc": "Adds a view to the end of the receiver’s list of subviews."
+    },
+    {
+      "name": "func bringSubviewToFront(UIView)",
+      "desc": "Moves the specified subview so that it appears on top of its siblings."
+    },
+    {
+      "name": "func sendSubviewToBack(UIView)",
+      "desc": "Moves the specified subview so that it appears behind its siblings."
+    },
+    {
+      "name": "func removeFromSuperview()",
+      "desc": "Unlinks the view from its superview and its window, and removes it from the responder chain."
+    },
+    {
+      "name": "func insertSubview(UIView, at: Int)",
+      "desc": "Inserts a subview at the specified index."
+    },
+    {
+      "name": "func insertSubview(UIView, aboveSubview: UIView)",
+      "desc": "Inserts a view above another view in the view hierarchy."
+    },
+    {
+      "name": "func insertSubview(UIView, belowSubview: UIView)",
+      "desc": "Inserts a view below another view in the view hierarchy."
+    },
+    {
+      "name": "func exchangeSubview(at: Int, withSubviewAt: Int)",
+      "desc": "Exchanges the subviews at the specified indices."
+    },
+    {
+      "name": "func isDescendant(of: UIView) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the receiver is a subview of a given view or identical to that view."
+    },
+    {
+      "name": "func didAddSubview(UIView)",
+      "desc": "Tells the view that a subview was added."
+    },
+    {
+      "name": "func willRemoveSubview(UIView)",
+      "desc": "Tells the view that a subview is about to be removed."
+    },
+    {
+      "name": "func willMove(toSuperview: UIView?)",
+      "desc": "Tells the view that its superview is about to change to the specified superview."
+    },
+    {
+      "name": "func didMoveToSuperview()",
+      "desc": "Tells the view that its superview changed."
+    },
+    {
+      "name": "func willMove(toWindow: UIWindow?)",
+      "desc": "Tells the view that its window object is about to change."
+    },
+    {
+      "name": "func didMoveToWindow()",
+      "desc": "Tells the view that its window object changed."
+    },
+    {
+      "name": "var directionalLayoutMargins: NSDirectionalEdgeInsets",
+      "desc": "The default spacing to use when laying out content in a view, taking into account the current language direction."
+    },
+    {
+      "name": "var layoutMargins: UIEdgeInsets",
+      "desc": "The default spacing to use when laying out content in the view."
+    },
+    {
+      "name": "var preservesSuperviewLayoutMargins: Bool",
+      "desc": "A Boolean value indicating whether the current view also respects the margins of its superview."
+    },
+    {
+      "name": "func layoutMarginsDidChange()",
+      "desc": "Notifies the view that the layout margins changed."
+    },
+    {
+      "name": "var safeAreaInsets: UIEdgeInsets",
+      "desc": "The insets that you use to determine the safe area for this view."
+    },
+    {
+      "name": "var safeAreaLayoutGuide: UILayoutGuide",
+      "desc": "The layout guide representing the portion of your view that is unobscured by bars and other content."
+    },
+    {
+      "name": "func safeAreaInsetsDidChange()",
+      "desc": "Called when the safe area of the view changes."
+    },
+    {
+      "name": "var insetsLayoutMarginsFromSafeArea: Bool",
+      "desc": "A Boolean value indicating whether the view's layout margins are updated automatically to reflect the safe area."
+    },
+    {
+      "name": "var constraints: [NSLayoutConstraint]",
+      "desc": "The constraints held by the view."
+    },
+    {
+      "name": "func addConstraint(NSLayoutConstraint)",
+      "desc": "Adds a constraint on the layout of the receiving view or its subviews."
+    },
+    {
+      "name": "func addConstraints([NSLayoutConstraint])",
+      "desc": "Adds multiple constraints on the layout of the receiving view or its subviews."
+    },
+    {
+      "name": "func removeConstraint(NSLayoutConstraint)",
+      "desc": "Removes the specified constraint from the view."
+    },
+    {
+      "name": "func removeConstraints([NSLayoutConstraint])",
+      "desc": "Removes the specified constraints from the view."
+    },
+    {
+      "name": "var bottomAnchor: NSLayoutYAxisAnchor",
+      "desc": "A layout anchor representing the bottom edge of the view’s frame."
+    },
+    {
+      "name": "var centerXAnchor: NSLayoutXAxisAnchor",
+      "desc": "A layout anchor representing the horizontal center of the view’s frame."
+    },
+    {
+      "name": "var centerYAnchor: NSLayoutYAxisAnchor",
+      "desc": "A layout anchor representing the vertical center of the view’s frame."
+    },
+    {
+      "name": "var firstBaselineAnchor: NSLayoutYAxisAnchor",
+      "desc": "A layout anchor representing the baseline for the topmost line of text in the view."
+    },
+    {
+      "name": "var heightAnchor: NSLayoutDimension",
+      "desc": "A layout anchor representing the height of the view’s frame."
+    },
+    {
+      "name": "var lastBaselineAnchor: NSLayoutYAxisAnchor",
+      "desc": "A layout anchor representing the baseline for the bottommost line of text in the view."
+    },
+    {
+      "name": "var leadingAnchor: NSLayoutXAxisAnchor",
+      "desc": "A layout anchor representing the leading edge of the view’s frame."
+    },
+    {
+      "name": "var leftAnchor: NSLayoutXAxisAnchor",
+      "desc": "A layout anchor representing the left edge of the view’s frame."
+    },
+    {
+      "name": "var rightAnchor: NSLayoutXAxisAnchor",
+      "desc": "A layout anchor representing the right edge of the view’s frame."
+    },
+    {
+      "name": "var topAnchor: NSLayoutYAxisAnchor",
+      "desc": "A layout anchor representing the top edge of the view’s frame."
+    },
+    {
+      "name": "var trailingAnchor: NSLayoutXAxisAnchor",
+      "desc": "A layout anchor representing the trailing edge of the view’s frame."
+    },
+    {
+      "name": "var widthAnchor: NSLayoutDimension",
+      "desc": "A layout anchor representing the width of the view’s frame."
+    },
+    {
+      "name": "func addLayoutGuide(UILayoutGuide)",
+      "desc": "Adds the specified layout guide to the view."
+    },
+    {
+      "name": "var layoutGuides: [UILayoutGuide]",
+      "desc": "The array of layout guide objects owned by this view."
+    },
+    {
+      "name": "var layoutMarginsGuide: UILayoutGuide",
+      "desc": "A layout guide representing the view’s margins."
+    },
+    {
+      "name": "var readableContentGuide: UILayoutGuide",
+      "desc": "A layout guide representing an area with a readable width within the view."
+    },
+    {
+      "name": "func removeLayoutGuide(UILayoutGuide)",
+      "desc": "Removes the specified layout guide from the view."
+    },
+    {
+      "name": "func systemLayoutSizeFitting(CGSize) -> CGSize",
+      "desc": "Returns the optimal size of the view based on its current constraints."
+    },
+    {
+      "name": "func systemLayoutSizeFitting(CGSize, withHorizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize",
+      "desc": "Returns the optimal size of the view based on its constraints and the specified fitting priorities."
+    },
+    {
+      "name": "var intrinsicContentSize: CGSize",
+      "desc": "The natural size for the receiving view, considering only properties of the view itself."
+    },
+    {
+      "name": "func invalidateIntrinsicContentSize()",
+      "desc": "Invalidates the view’s intrinsic content size."
+    },
+    {
+      "name": "func contentCompressionResistancePriority(for: NSLayoutConstraint.Axis) -> UILayoutPriority",
+      "desc": "Returns the priority with which a view resists being made smaller than its intrinsic size."
+    },
+    {
+      "name": "func setContentCompressionResistancePriority(UILayoutPriority, for: NSLayoutConstraint.Axis)",
+      "desc": "Sets the priority with which a view resists being made smaller than its intrinsic size."
+    },
+    {
+      "name": "func contentHuggingPriority(for: NSLayoutConstraint.Axis) -> UILayoutPriority",
+      "desc": "Returns the priority with which a view resists being made larger than its intrinsic size."
+    },
+    {
+      "name": "func setContentHuggingPriority(UILayoutPriority, for: NSLayoutConstraint.Axis)",
+      "desc": "Sets the priority with which a view resists being made larger than its intrinsic size."
+    },
+    {
+      "name": "func alignmentRect(forFrame: CGRect) -> CGRect",
+      "desc": "Returns the view’s alignment rectangle for a given frame."
+    },
+    {
+      "name": "func frame(forAlignmentRect: CGRect) -> CGRect",
+      "desc": "Returns the view’s frame for a given alignment rectangle."
+    },
+    {
+      "name": "var alignmentRectInsets: UIEdgeInsets",
+      "desc": "The insets from the view’s frame that define its alignment rectangle."
+    },
+    {
+      "name": "var forFirstBaselineLayout: UIView",
+      "desc": "Returns a view used to satisfy first baseline constraints."
+    },
+    {
+      "name": "var forLastBaselineLayout: UIView",
+      "desc": "Returns a view used to satisfy last baseline constraints."
+    },
+    {
+      "name": "func needsUpdateConstraints() -> Bool",
+      "desc": "A Boolean value that determines whether the view’s constraints need updating."
+    },
+    {
+      "name": "func setNeedsUpdateConstraints()",
+      "desc": "Controls whether the view’s constraints need updating."
+    },
+    {
+      "name": "func updateConstraints()",
+      "desc": "Updates constraints for the view."
+    },
+    {
+      "name": "func updateConstraintsIfNeeded()",
+      "desc": "Updates the constraints for the receiving view and its subviews."
+    },
+    {
+      "name": "func constraintsAffectingLayout(for: NSLayoutConstraint.Axis) -> [NSLayoutConstraint]",
+      "desc": "Returns the constraints impacting the layout of the view for a given axis."
+    },
+    {
+      "name": "var hasAmbiguousLayout: Bool",
+      "desc": "A Boolean value that determines whether the constraints impacting the layout of the view incompletely specify the location of the view."
+    },
+    {
+      "name": "func exerciseAmbiguityInLayout()",
+      "desc": "Randomly changes the frame of a view with an ambiguous layout between the different valid values."
+    },
+    {
+      "name": "var contentMode: UIView.ContentMode",
+      "desc": "A flag used to determine how a view lays out its content when its bounds change."
+    },
+    {
+      "name": "enum UIView.ContentMode",
+      "desc": "Options to specify how a view adjusts its content when its size changes."
+    },
+    {
+      "name": "func sizeThatFits(CGSize) -> CGSize",
+      "desc": "Asks the view to calculate and return the size that best fits the specified size."
+    },
+    {
+      "name": "func sizeToFit()",
+      "desc": "Resizes and moves the receiver view so it just encloses its subviews."
+    },
+    {
+      "name": "var autoresizesSubviews: Bool",
+      "desc": "A Boolean value that determines whether the receiver automatically resizes its subviews when its bounds change."
+    },
+    {
+      "name": "var autoresizingMask: UIView.AutoresizingMask",
+      "desc": "An integer bit mask that determines how the receiver resizes itself when its superview’s bounds change."
+    },
+    {
+      "name": "func layoutSubviews()",
+      "desc": "Lays out subviews."
+    },
+    {
+      "name": "func setNeedsLayout()",
+      "desc": "Invalidates the current layout of the receiver and triggers a layout update during the next update cycle."
+    },
+    {
+      "name": "func layoutIfNeeded()",
+      "desc": "Lays out the subviews immediately, if layout updates are pending."
+    },
+    {
+      "name": "class var requiresConstraintBasedLayout: Bool",
+      "desc": "A Boolean value that indicates whether the receiver depends on the constraint-based layout system."
+    },
+    {
+      "name": "var translatesAutoresizingMaskIntoConstraints: Bool",
+      "desc": "A Boolean value that determines whether the view’s autoresizing mask is translated into Auto Layout constraints."
+    },
+    {
+      "name": "var overrideUserInterfaceStyle: UIUserInterfaceStyle",
+      "desc": "The user interface style adopted by the view and all of its subviews."
+    },
+    {
+      "name": "var semanticContentAttribute: UISemanticContentAttribute",
+      "desc": "A semantic description of the view’s contents, used to determine whether the view should be flipped when switching between left-to-right and right-to-left layouts."
+    },
+    {
+      "name": "var effectiveUserInterfaceLayoutDirection: UIUserInterfaceLayoutDirection",
+      "desc": "The user interface layout direction appropriate for arranging the immediate content of the view."
+    },
+    {
+      "name": "class func userInterfaceLayoutDirection(for: UISemanticContentAttribute) -> UIUserInterfaceLayoutDirection",
+      "desc": "Returns the user interface direction for the given semantic content attribute."
+    },
+    {
+      "name": "class func userInterfaceLayoutDirection(for: UISemanticContentAttribute, relativeTo: UIUserInterfaceLayoutDirection) -> UIUserInterfaceLayoutDirection",
+      "desc": "Returns the layout direction implied by the specified semantic content attribute, relative to the specified layout direction."
+    },
+    {
+      "name": "var keyboardLayoutGuide: UIKeyboardLayoutGuide",
+      "desc": "A layout guide that tracks the keyboard’s position in your app’s layout."
+    },
+    {
+      "name": "func addInteraction(UIInteraction)",
+      "desc": "Adds an interaction to the view."
+    },
+    {
+      "name": "func removeInteraction(UIInteraction)",
+      "desc": "Removes an interaction from the view."
+    },
+    {
+      "name": "var interactions: [UIInteraction]",
+      "desc": "The array of interactions for the view."
+    },
+    {
+      "name": "protocol UIInteraction",
+      "desc": "The protocol that an interaction implements to access the view that owns it."
+    },
+    {
+      "name": "func draw(CGRect)",
+      "desc": "Draws the receiver’s image within the passed-in rectangle."
+    },
+    {
+      "name": "func setNeedsDisplay()",
+      "desc": "Marks the receiver’s entire bounds rectangle as needing to be redrawn."
+    },
+    {
+      "name": "func setNeedsDisplay(CGRect)",
+      "desc": "Marks the specified rectangle of the receiver as needing to be redrawn."
+    },
+    {
+      "name": "var contentScaleFactor: CGFloat",
+      "desc": "The scale factor applied to the view."
+    },
+    {
+      "name": "func tintColorDidChange()",
+      "desc": "Called by the system when the tintColor property changes."
+    },
+    {
+      "name": "struct UIView.Invalidating",
+      "desc": "A property wrapper that notifies the system that a property value change has invalidated an aspect of the containing view."
+    },
+    {
+      "name": "protocol UIViewInvalidating",
+      "desc": "Implements a type of invalidation that can occur on a view that requires an update."
+    },
+    {
+      "name": "func viewPrintFormatter() -> UIViewPrintFormatter",
+      "desc": "Returns a print formatter for the receiving view."
+    },
+    {
+      "name": "func draw(CGRect, for: UIViewPrintFormatter)",
+      "desc": "Implemented to draw the view’s content for printing."
+    },
+    {
+      "name": "func addGestureRecognizer(UIGestureRecognizer)",
+      "desc": "Attaches a gesture recognizer to the view."
+    },
+    {
+      "name": "func removeGestureRecognizer(UIGestureRecognizer)",
+      "desc": "Detaches a gesture recognizer from the receiving view."
+    },
+    {
+      "name": "var gestureRecognizers: [UIGestureRecognizer]?",
+      "desc": "The gesture-recognizer objects currently attached to the view."
+    },
+    {
+      "name": "func gestureRecognizerShouldBegin(UIGestureRecognizer) -> Bool",
+      "desc": "Asks the view if the gesture recognizer should be allowed to continue tracking touch events."
+    },
+    {
+      "name": "var canBecomeFocused: Bool",
+      "desc": "A Boolean value that indicates whether the view is currently capable of being focused."
+    },
+    {
+      "name": "class var inheritedAnimationDuration: TimeInterval",
+      "desc": "Returns the inherited duration of the current animation."
+    },
+    {
+      "name": "var isFocused: Bool",
+      "desc": "A Boolean value that indicates whether the item is currently focused."
+    },
+    {
+      "name": "var focusGroupIdentifier: String?",
+      "desc": "The identifier of the focus group that this view belongs to."
+    },
+    {
+      "name": "func addMotionEffect(UIMotionEffect)",
+      "desc": "Begins applying a motion effect to the view."
+    },
+    {
+      "name": "var motionEffects: [UIMotionEffect]",
+      "desc": "The array of motion effects for the view."
+    },
+    {
+      "name": "func removeMotionEffect(UIMotionEffect)",
+      "desc": "Stops applying a motion effect to the view."
+    },
+    {
+      "name": "var restorationIdentifier: String?",
+      "desc": "The identifier that determines whether the view supports state restoration."
+    },
+    {
+      "name": "func encodeRestorableState(with: NSCoder)",
+      "desc": "Encodes state-related information for the view."
+    },
+    {
+      "name": "func decodeRestorableState(with: NSCoder)",
+      "desc": "Decodes and restores state-related information for the view."
+    },
+    {
+      "name": "func snapshotView(afterScreenUpdates: Bool) -> UIView?",
+      "desc": "Returns a snapshot view based on the contents of the current view."
+    },
+    {
+      "name": "func resizableSnapshotView(from: CGRect, afterScreenUpdates: Bool, withCapInsets: UIEdgeInsets) -> UIView?",
+      "desc": "Returns a snapshot view based on the specified contents of the current view, with stretchable insets."
+    },
+    {
+      "name": "func drawHierarchy(in: CGRect, afterScreenUpdates: Bool) -> Bool",
+      "desc": "Renders a snapshot of the complete view hierarchy as visible onscreen into the current context."
+    },
+    {
+      "name": "var tag: Int",
+      "desc": "An integer that you can use to identify view objects in your application."
+    },
+    {
+      "name": "func viewWithTag(Int) -> UIView?",
+      "desc": "Returns the view whose tag matches the specified value."
+    },
+    {
+      "name": "func convert(CGPoint, to: UIView?) -> CGPoint",
+      "desc": "Converts a point from the receiver’s coordinate system to that of the specified view."
+    },
+    {
+      "name": "func convert(CGPoint, from: UIView?) -> CGPoint",
+      "desc": "Converts a point from the coordinate system of a given view to that of the receiver."
+    },
+    {
+      "name": "func convert(CGRect, to: UIView?) -> CGRect",
+      "desc": "Converts a rectangle from the receiver’s coordinate system to that of another view."
+    },
+    {
+      "name": "func convert(CGRect, from: UIView?) -> CGRect",
+      "desc": "Converts a rectangle from the coordinate system of another view to that of the receiver."
+    },
+    {
+      "name": "func hitTest(CGPoint, with: UIEvent?) -> UIView?",
+      "desc": "Returns the farthest descendant of the receiver in the view hierarchy (including itself) that contains a specified point."
+    },
+    {
+      "name": "func point(inside: CGPoint, with: UIEvent?) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the receiver contains the specified point."
+    },
+    {
+      "name": "func endEditing(Bool) -> Bool",
+      "desc": "Causes the view (or one of its embedded text fields) to resign the first responder status."
+    },
+    {
+      "name": "var accessibilityIgnoresInvertColors: Bool",
+      "desc": "A Boolean value indicating whether the view ignores an accessibility request to invert its colors."
+    },
+    {
+      "name": "var largeContentImage: UIImage?",
+      "desc": "An image that represents the view in the large content viewer."
+    },
+    {
+      "name": "var largeContentImageInsets: UIEdgeInsets",
+      "desc": "Insets to adjust the position of the view’s image so it appears centered in the large content viewer."
+    },
+    {
+      "name": "var largeContentTitle: String?",
+      "desc": "A string that describes the view in the large content viewer."
+    },
+    {
+      "name": "var scalesLargeContentImage: Bool",
+      "desc": "A Boolean value that indicates whether the large content viewer scales the item’s image to a larger size."
+    },
+    {
+      "name": "var showsLargeContentViewer: Bool",
+      "desc": "A Boolean value that indicates whether to show the view in the large content viewer."
+    },
+    {
+      "name": "class func animate(withDuration: TimeInterval, delay: TimeInterval, options: UIView.AnimationOptions, animations: () -> Void, completion: ((Bool) -> Void)?)",
+      "desc": "Animate changes to one or more views using the specified duration, delay, options, and completion handler."
+    },
+    {
+      "name": "class func animate(withDuration: TimeInterval, animations: () -> Void, completion: ((Bool) -> Void)?)",
+      "desc": "Animate changes to one or more views using the specified duration and completion handler."
+    },
+    {
+      "name": "class func animate(withDuration: TimeInterval, animations: () -> Void)",
+      "desc": "Animate changes to one or more views using the specified duration."
+    },
+    {
+      "name": "class func transition(with: UIView, duration: TimeInterval, options: UIView.AnimationOptions, animations: (() -> Void)?, completion: ((Bool) -> Void)?)",
+      "desc": "Creates a transition animation for the specified container view."
+    },
+    {
+      "name": "class func transition(from: UIView, to: UIView, duration: TimeInterval, options: UIView.AnimationOptions, completion: ((Bool) -> Void)?)",
+      "desc": "Creates a transition animation between the specified views using the given parameters."
+    },
+    {
+      "name": "class func animateKeyframes(withDuration: TimeInterval, delay: TimeInterval, options: UIView.KeyframeAnimationOptions, animations: () -> Void, completion: ((Bool) -> Void)?)",
+      "desc": "Creates an animation block object that can be used to set up keyframe-based animations for the current view."
+    },
+    {
+      "name": "class func addKeyframe(withRelativeStartTime: Double, relativeDuration: Double, animations: () -> Void)",
+      "desc": "Specifies the timing and animation values for a single frame of a keyframe animation."
+    },
+    {
+      "name": "class func perform(UIView.SystemAnimation, on: [UIView], options: UIView.AnimationOptions, animations: (() -> Void)?, completion: ((Bool) -> Void)?)",
+      "desc": "Performs a specified system-provided animation on one or more views, along with optional parallel animations that you define."
+    },
+    {
+      "name": "class func animate(withDuration: TimeInterval, delay: TimeInterval, usingSpringWithDamping: CGFloat, initialSpringVelocity: CGFloat, options: UIView.AnimationOptions, animations: () -> Void, completion: ((Bool) -> Void)?)",
+      "desc": "Performs a view animation using a timing curve corresponding to the motion of a physical spring."
+    },
+    {
+      "name": "class func performWithoutAnimation(() -> Void)",
+      "desc": "Disables a view transition animation."
+    },
+    {
+      "name": "class func modifyAnimations(withRepeatCount: CGFloat, autoreverses: Bool, animations: () -> Void)",
+      "desc": "Repeats the specified animations a specific number of times, optionally running the animation forward and backward."
+    },
+    {
+      "name": "class func setAnimationsEnabled(Bool)",
+      "desc": "Sets whether animations are enabled."
+    },
+    {
+      "name": "class var areAnimationsEnabled: Bool",
+      "desc": "Returns a Boolean value indicating whether animations are enabled."
+    },
+    {
+      "name": "var playgroundLiveViewRepresentation: PlaygroundLiveViewRepresentation",
+      "desc": "The type that specifies a view or view controller to use when displaying a live view in a Swift Playground."
+    },
+    {
+      "name": "enum UIView.AnimationCurve",
+      "desc": "Specifies the supported animation curves."
+    },
+    {
+      "name": "struct UIView.AnimationOptions",
+      "desc": "Options for animating views using block objects."
+    },
+    {
+      "name": "enum UIView.AnimationTransition",
+      "desc": "Animation transition options for use in an animation block object."
+    },
+    {
+      "name": "enum UIView.SystemAnimation",
+      "desc": "Option to remove the views from the hierarchy when animation is complete."
+    },
+    {
+      "name": "struct UIView.KeyframeAnimationOptions",
+      "desc": "Key frame animation options used with the animateKeyframes(withDuration:delay:options:animations:completion:) method."
+    },
+    {
+      "name": "enum NSLayoutConstraint.Axis",
+      "desc": "Keys that specify a horizontal or vertical layout constraint between objects."
+    },
+    {
+      "name": "enum UIView.TintAdjustmentMode",
+      "desc": "The tint adjustment mode for the view."
+    },
+    {
+      "name": "class let layoutFittingCompressedSize: CGSize",
+      "desc": "The option to use the smallest possible size."
+    },
+    {
+      "name": "class let layoutFittingExpandedSize: CGSize",
+      "desc": "The option to use the largest possible size."
+    },
+    {
+      "name": "class let noIntrinsicMetric: CGFloat",
+      "desc": "The absence of an intrinsic metric for a given numeric view property."
+    },
+    {
+      "name": "struct UIView.AutoresizingMask",
+      "desc": "Options for automatic view resizing."
+    },
+    {
+      "name": "enum UISemanticContentAttribute",
+      "desc": "A semantic description of the view’s contents, used to determine whether the view should be flipped when switching between left-to-right and right-to-left layouts."
+    },
+    {
+      "name": "var appliedContentSizeCategoryLimitsDescription: String"
+    },
+    {
+      "name": "var focusEffect: UIFocusEffect?"
+    },
+    {
+      "name": "var focusGroupPriority: UIFocusGroupPriority"
+    },
+    {
+      "name": "var maximumContentSizeCategory: UIContentSizeCategory?"
+    },
+    {
+      "name": "var minimumContentSizeCategory: UIContentSizeCategory?"
+    }
+  ],
+  "declaration": "@MainActor class UIView : UIResponder",
+  "inheritsFrom": [
+    "UIResponder"
+  ],
+  "conformsTo": [
+    "CALayerDelegate",
+    "NSCoding",
+    "UIAccessibilityIdentification",
+    "UIAppearance",
+    "UIAppearanceContainer",
+    "UICoordinateSpace",
+    "UIDynamicItem",
+    "UIFocusItem",
+    "UIFocusItemContainer",
+    "UILargeContentViewerItem",
+    "UITraitEnvironment"
+  ]
+}

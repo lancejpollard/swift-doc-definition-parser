@@ -1,0 +1,29 @@
+{
+  "path": "/documentation/swiftui/uiapplicationdelegateadaptor",
+  "type": "Structure",
+  "name": "UIApplicationDelegateAdaptor",
+  "desc": "A property wrapper type that you use to create a UIKit app delegate.",
+  "items": [
+    {
+      "name": "init(DelegateType.Type)",
+      "desc": "Creates a UIKit app delegate adaptor."
+    },
+    {
+      "name": "init(DelegateType.Type)",
+      "desc": "Creates a UIKit app delegate adaptor using a delegate that’s an observable object."
+    },
+    {
+      "name": "var projectedValue: ObservedObject<DelegateType>.Wrapper",
+      "desc": "A projection of the observed object that provides bindings to its properties."
+    },
+    {
+      "name": "var wrappedValue: DelegateType",
+      "desc": "The underlying app delegate."
+    }
+  ],
+  "declaration": "@propertyWrapper struct UIApplicationDelegateAdaptor<DelegateType> where DelegateType : NSObject, DelegateType : UIApplicationDelegate",
+  "conformsTo": [
+    "DynamicProperty",
+    "Sendable"
+  ]
+}

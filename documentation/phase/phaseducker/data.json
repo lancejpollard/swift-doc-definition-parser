@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/phase/phaseducker",
+  "type": "Class",
+  "name": "PHASEDucker",
+  "desc": "An object that manages competing sounds.",
+  "items": [
+    {
+      "name": "init(engine: PHASEEngine, sourceGroups: Set<PHASEGroup>, targetGroups: Set<PHASEGroup>, gain: Double, attackTime: Double, releaseTime: Double, attackCurve: PHASECurveType, releaseCurve: PHASECurveType)",
+      "desc": "Creates an object that manages competing sounds."
+    },
+    {
+      "name": "var sourceGroups: Set<PHASEGroup>",
+      "desc": "The sounds that determine volume reduction."
+    },
+    {
+      "name": "var targetGroups: Set<PHASEGroup>",
+      "desc": "The sounds that reduce in volume."
+    },
+    {
+      "name": "var gain: Double",
+      "desc": "The amount of volume reduction."
+    },
+    {
+      "name": "var identifier: String",
+      "desc": "A unique value for the ducker."
+    },
+    {
+      "name": "var isActive: Bool",
+      "desc": "A Boolean value that determines whether the ducker reduces sound."
+    },
+    {
+      "name": "var attackTime: Double",
+      "desc": "The amount of time for sound reduction to reach maximum strength."
+    },
+    {
+      "name": "var attackCurve: PHASECurveType",
+      "desc": "A mathematical curve that shapes transition progress as sound reduction begins."
+    },
+    {
+      "name": "var releaseTime: Double",
+      "desc": "The amount of time to transition from maximum sound reduction to no reduction."
+    },
+    {
+      "name": "var releaseCurve: PHASECurveType",
+      "desc": "A mathematical curve that shapes transition progress as sound reduction ends."
+    },
+    {
+      "name": "func activate()",
+      "desc": "Instructs the ducker to begin altering sound."
+    },
+    {
+      "name": "func deactivate()",
+      "desc": "Stops the ducker from altering sound."
+    }
+  ],
+  "declaration": "class PHASEDucker : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

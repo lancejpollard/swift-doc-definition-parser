@@ -1,0 +1,60 @@
+{
+  "path": "/documentation/pencilkit/pkdrawingreference",
+  "type": "Class",
+  "name": "PKDrawingReference",
+  "desc": "A data structure that contains the drawing information captured by a canvas view.",
+  "items": [
+    {
+      "name": "init(data: Data)",
+      "desc": "Creates a drawing object and populates it with previously drawn content."
+    },
+    {
+      "name": "init(strokes: [PKStroke])",
+      "desc": "Creates a drawing object with the strokes you supply."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates an empty drawing object."
+    },
+    {
+      "name": "var bounds: CGRect",
+      "desc": "The smallest rectangle used to represent the content’s bounds, taking into account line widths of that content."
+    },
+    {
+      "name": "func image(from: CGRect, scale: CGFloat) -> UIImage",
+      "desc": "Returns an image object that contains the specified portion of the drawing."
+    },
+    {
+      "name": "var strokes: [PKStroke]",
+      "desc": "An array of strokes used to represent the drawing."
+    },
+    {
+      "name": "func dataRepresentation() -> Data",
+      "desc": "Returns a representation of the rendered content as data."
+    },
+    {
+      "name": "let PKAppleDrawingTypeIdentifier: CFString",
+      "desc": "The uniform type identifier for data associated with a drawing object."
+    },
+    {
+      "name": "func applying(CGAffineTransform) -> PKDrawing",
+      "desc": "Returns a new drawing object by applying the specified transform to a copy of the current object’s contents."
+    },
+    {
+      "name": "func appendingStrokes([PKStroke]) -> PKDrawing",
+      "desc": "Returns a copy of the current drawing with the strokes you provide appended."
+    },
+    {
+      "name": "func appending(PKDrawing) -> PKDrawing",
+      "desc": "Returns a new drawing created by appending the current drawing with another drawing you provide."
+    }
+  ],
+  "declaration": "class PKDrawingReference : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

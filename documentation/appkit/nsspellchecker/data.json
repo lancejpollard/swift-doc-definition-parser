@@ -1,0 +1,232 @@
+{
+  "path": "/documentation/appkit/nsspellchecker",
+  "type": "Class",
+  "name": "NSSpellChecker",
+  "desc": "An interface to the Cocoa spell-checking service.",
+  "items": [
+    {
+      "name": "class var shared: NSSpellChecker",
+      "desc": "Returns the NSSpellChecker (one per application)."
+    },
+    {
+      "name": "class var sharedSpellCheckerExists: Bool",
+      "desc": "Returns whether the application’s NSSpellChecker has already been created."
+    },
+    {
+      "name": "var availableLanguages: [String]",
+      "desc": "Provides a list of all available languages."
+    },
+    {
+      "name": "var userPreferredLanguages: [String]",
+      "desc": "Provides a subset of the available languages to be used for spell checking."
+    },
+    {
+      "name": "var automaticallyIdentifiesLanguages: Bool",
+      "desc": "Sets whether the spell checker will automatically identify languages."
+    },
+    {
+      "name": "func language() -> String",
+      "desc": "Returns the current language used in spell checking."
+    },
+    {
+      "name": "func setLanguage(String) -> Bool",
+      "desc": "Returns whether the specified language is in the Spelling pop-up list."
+    },
+    {
+      "name": "var spellingPanel: NSPanel",
+      "desc": "Returns the spell checker’s panel."
+    },
+    {
+      "name": "var substitutionsPanel: NSPanel",
+      "desc": "Returns the substitutions panel."
+    },
+    {
+      "name": "func updateSpellingPanel(withGrammarString: String, detail: [String : Any])",
+      "desc": "Specifies a grammar-analysis detail to highlight in the Spelling panel."
+    },
+    {
+      "name": "func updatePanels()",
+      "desc": "Updates the available panels to account for user changes."
+    },
+    {
+      "name": "var accessoryView: NSView?",
+      "desc": "Makes a view an accessory of the Spelling panel by making it a subview of the panel’s content view."
+    },
+    {
+      "name": "var substitutionsPanelAccessoryViewController: NSViewController?",
+      "desc": "Sets the substitutions panel’s accessory view."
+    },
+    {
+      "name": "func countWords(in: String, language: String?) -> Int",
+      "desc": "Returns the number of words in the specified string."
+    },
+    {
+      "name": "func checkSpelling(of: String, startingAt: Int) -> NSRange",
+      "desc": "Starts the search for a misspelled word in stringToCheck starting at startingOffset within the string object."
+    },
+    {
+      "name": "func checkSpelling(of: String, startingAt: Int, language: String?, wrap: Bool, inSpellDocumentWithTag: Int, wordCount: UnsafeMutablePointer<Int>?) -> NSRange",
+      "desc": "Starts the search for a misspelled word in a string starting at specified offset within the string."
+    },
+    {
+      "name": "func checkGrammar(of: String, startingAt: Int, language: String?, wrap: Bool, inSpellDocumentWithTag: Int, details: AutoreleasingUnsafeMutablePointer<NSArray?>?) -> NSRange",
+      "desc": "Initiates a grammatical analysis of a given string."
+    },
+    {
+      "name": "func check(String, range: NSRange, types: NSTextCheckingTypes, options: [NSSpellChecker.OptionKey : Any]?, inSpellDocumentWithTag: Int, orthography: AutoreleasingUnsafeMutablePointer<NSOrthography?>?, wordCount: UnsafeMutablePointer<Int>?) -> [NSTextCheckingResult]",
+      "desc": "Requests unified text checking for the given range of the given string."
+    },
+    {
+      "name": "func requestChecking(of: String, range: NSRange, types: NSTextCheckingTypes, options: [NSSpellChecker.OptionKey : Any]?, inSpellDocumentWithTag: Int, completionHandler: ((Int, [NSTextCheckingResult], NSOrthography, Int) -> Void)?) -> Int",
+      "desc": "Requests that the string be checked in the background."
+    },
+    {
+      "name": "func guesses(forWordRange: NSRange, in: String, language: String?, inSpellDocumentWithTag: Int) -> [String]?",
+      "desc": "Returns an array of possible substitutions for the specified string."
+    },
+    {
+      "name": "class func uniqueSpellDocumentTag() -> Int",
+      "desc": "Returns a guaranteed unique tag to use as the spell-document tag for a document."
+    },
+    {
+      "name": "func closeSpellDocument(withTag: Int)",
+      "desc": "Notifies the receiver that the user has finished with the tagged document."
+    },
+    {
+      "name": "func ignoreWord(String, inSpellDocumentWithTag: Int)",
+      "desc": "Instructs the spell checker to ignore all future occurrences of wordToIgnore in the document identified by tag."
+    },
+    {
+      "name": "func ignoredWords(inSpellDocumentWithTag: Int) -> [String]?",
+      "desc": "Returns the array of ignored words for a document identified by tag."
+    },
+    {
+      "name": "func setIgnoredWords([String], inSpellDocumentWithTag: Int)",
+      "desc": "Initializes the ignored-words document (a dictionary identified by tag with someWords), an array of words to ignore."
+    },
+    {
+      "name": "func setWordFieldStringValue(String)",
+      "desc": "Sets the string that appears in the misspelled word field, using the string object aString."
+    },
+    {
+      "name": "func updateSpellingPanel(withMisspelledWord: String)",
+      "desc": "Causes the spell checker to update the Spelling panel’s misspelled-word field to reflect word."
+    },
+    {
+      "name": "func completions(forPartialWordRange: NSRange, in: String, language: String?, inSpellDocumentWithTag: Int) -> [String]?",
+      "desc": "Provides a list of complete words that the user might be trying to type based on a partial word in a given string."
+    },
+    {
+      "name": "func hasLearnedWord(String) -> Bool",
+      "desc": "Indicates whether the spell checker has learned a given word."
+    },
+    {
+      "name": "func unlearnWord(String)",
+      "desc": "Tells the spell checker to unlearn a given word."
+    },
+    {
+      "name": "func learnWord(String)",
+      "desc": "Adds the word to the spell checker dictionary."
+    },
+    {
+      "name": "func userQuotesArray(forLanguage: String) -> [String]",
+      "desc": "Returns the default values for quote replacement."
+    },
+    {
+      "name": "var userReplacementsDictionary: [String : String]",
+      "desc": "Returns the dictionary used when replacing words."
+    },
+    {
+      "name": "func menu(for: NSTextCheckingResult, string: String, options: [NSSpellChecker.OptionKey : Any]?, atLocation: NSPoint, in: NSView) -> NSMenu?",
+      "desc": "Provides a menu containing contextual menu items suitable for certain kinds of detected results."
+    },
+    {
+      "name": "struct NSSpellChecker.OptionKey",
+      "desc": "The constants are optional keys that can be used in the options dictionary parameter of the check(_:range:types:options:inSpellDocumentWithTag:orthography:wordCount:), requestChecking(of:range:types:options:inSpellDocumentWithTag:completionHandler:), and menu(for:string:options:atLocation:in:) methods."
+    },
+    {
+      "name": "func correction(forWordRange: NSRange, in: String, language: String, inSpellDocumentWithTag: Int) -> String?",
+      "desc": "Returns a single proposed correction if a word is mis-spelled."
+    },
+    {
+      "name": "func showCorrectionIndicator(of: NSSpellChecker.CorrectionIndicatorType, primaryString: String, alternativeStrings: [String], forStringIn: NSRect, view: NSView, completionHandler: ((String?) -> Void)?)",
+      "desc": "Display a suitable user interface to indicate a correction may need to be made."
+    },
+    {
+      "name": "func record(NSSpellChecker.CorrectionResponse, toCorrection: String, forWord: String, language: String?, inSpellDocumentWithTag: Int)",
+      "desc": "Records the user response to the correction indicator being displayed."
+    },
+    {
+      "name": "func dismissCorrectionIndicator(for: NSView)",
+      "desc": "Dismisses the correction indicator for the specified view."
+    },
+    {
+      "name": "enum NSSpellChecker.CorrectionIndicatorType",
+      "desc": "Constants that allow an app to specify the correction indicator type displayed."
+    },
+    {
+      "name": "enum NSSpellChecker.CorrectionResponse",
+      "desc": "The correction response passed to therecord(_:toCorrection:forWord:language:inSpellDocumentWithTag:) method."
+    },
+    {
+      "name": "class let didChangeAutomaticSpellingCorrectionNotification: NSNotification.Name",
+      "desc": "This notification is posted when the spell checker did change text using automatic spell checking correction. The are posted to the application’s default notification center."
+    },
+    {
+      "name": "class let didChangeAutomaticTextReplacementNotification: NSNotification.Name",
+      "desc": "Posted when the spell checker changed text using automatic text replacement. This notification is posted to the app’s default notification center."
+    },
+    {
+      "name": "class let didChangeAutomaticCapitalizationNotification: NSNotification.Name"
+    },
+    {
+      "name": "class let didChangeAutomaticDashSubstitutionNotification: NSNotification.Name"
+    },
+    {
+      "name": "class let didChangeAutomaticPeriodSubstitutionNotification: NSNotification.Name"
+    },
+    {
+      "name": "class let didChangeAutomaticQuoteSubstitutionNotification: NSNotification.Name"
+    },
+    {
+      "name": "class let didChangeAutomaticTextCompletionNotification: NSNotification.Name"
+    },
+    {
+      "name": "class var isAutomaticCapitalizationEnabled: Bool"
+    },
+    {
+      "name": "class var isAutomaticDashSubstitutionEnabled: Bool"
+    },
+    {
+      "name": "class var isAutomaticPeriodSubstitutionEnabled: Bool"
+    },
+    {
+      "name": "class var isAutomaticQuoteSubstitutionEnabled: Bool"
+    },
+    {
+      "name": "class var isAutomaticSpellingCorrectionEnabled: Bool"
+    },
+    {
+      "name": "class var isAutomaticTextCompletionEnabled: Bool"
+    },
+    {
+      "name": "class var isAutomaticTextReplacementEnabled: Bool"
+    },
+    {
+      "name": "func deletesAutospaceBetweenString(String, andString: String, language: String?) -> Bool"
+    },
+    {
+      "name": "func language(forWordRange: NSRange, in: String, orthography: NSOrthography?) -> String?"
+    },
+    {
+      "name": "func preventsAutocorrection(before: String, language: String?) -> Bool"
+    },
+    {
+      "name": "func requestCandidates(forSelectedRange: NSRange, in: String, types: NSTextCheckingTypes, options: [NSSpellChecker.OptionKey : Any]?, inSpellDocumentWithTag: Int, completionHandler: ((Int, [NSTextCheckingResult]) -> Void)?) -> Int"
+    }
+  ],
+  "declaration": "class NSSpellChecker : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

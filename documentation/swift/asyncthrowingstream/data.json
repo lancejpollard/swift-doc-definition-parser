@@ -1,0 +1,124 @@
+{
+  "path": "/documentation/swift/asyncthrowingstream",
+  "type": "Generic Structure",
+  "name": "AsyncThrowingStream",
+  "desc": "An asynchronous sequence generated from an error-throwing closure that calls a continuation to produce new elements.",
+  "items": [
+    {
+      "name": "init(Element.Type, bufferingPolicy: AsyncThrowingStream<Element, Failure>.Continuation.BufferingPolicy, (AsyncThrowingStream<Element, Failure>.Continuation) -> Void)",
+      "desc": "Constructs an asynchronous stream for an element type, using the specified buffering policy and element-producing closure."
+    },
+    {
+      "name": "enum AsyncThrowingStream.Continuation.BufferingPolicy",
+      "desc": "A strategy that handles exhaustion of a buffer’s capacity."
+    },
+    {
+      "name": "struct AsyncThrowingStream.Continuation",
+      "desc": "A mechanism to interface between synchronous code and an asynchronous stream."
+    },
+    {
+      "name": "func contains(Element) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the asynchronous sequence contains the given element."
+    },
+    {
+      "name": "func contains(where: (Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the asynchronous sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func allSatisfy((Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether all elements produced by the asynchronous sequence satisfies the given predicate."
+    },
+    {
+      "name": "func first(where: (Element) -> Bool) -> Element?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func min() -> Element?",
+      "desc": "Returns the minimum element in an asynchronous sequence of comparable elements."
+    },
+    {
+      "name": "func min(by: (Element, Element) -> Bool) -> Element?",
+      "desc": "Returns the minimum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func max() -> Element?",
+      "desc": "Returns the maximum element in an asynchronous sequence of comparable elements."
+    },
+    {
+      "name": "func max(by: (Element, Element) -> Bool) -> Element?",
+      "desc": "Returns the maximum element in the asynchronous sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func prefix(Int) -> AsyncPrefixSequence<AsyncThrowingStream<Element, Failure>>",
+      "desc": "Returns an asynchronous sequence, up to the specified maximum length, containing the initial elements of the base asynchronous sequence."
+    },
+    {
+      "name": "func prefix(while: (Element) -> Bool) -> AsyncPrefixWhileSequence<AsyncThrowingStream<Element, Failure>>",
+      "desc": "Returns an asynchronous sequence, containing the initial, consecutive elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func dropFirst(Int) -> AsyncDropFirstSequence<AsyncThrowingStream<Element, Failure>>",
+      "desc": "Omits a specified number of elements from the base asynchronous sequence, then passes through all remaining elements."
+    },
+    {
+      "name": "func drop(while: (Element) -> Bool) -> AsyncDropWhileSequence<AsyncThrowingStream<Element, Failure>>",
+      "desc": "Omits elements from the base asynchronous sequence until a given closure returns false, after which it passes through all remaining elements."
+    },
+    {
+      "name": "func filter((Element) -> Bool) -> AsyncFilterSequence<AsyncThrowingStream<Element, Failure>>",
+      "desc": "Creates an asynchronous sequence that contains, in order, the elements of the base sequence that satisfy the given predicate."
+    },
+    {
+      "name": "func map<Transformed>((Element) -> Transformed) -> AsyncMapSequence<AsyncThrowingStream<Element, Failure>, Transformed>",
+      "desc": "Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "func map<Transformed>((Element) -> Transformed) -> AsyncThrowingMapSequence<AsyncThrowingStream<Element, Failure>, Transformed>",
+      "desc": "Creates an asynchronous sequence that maps the given error-throwing closure over the asynchronous sequence’s elements."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((Element) -> ElementOfResult?) -> AsyncCompactMapSequence<AsyncThrowingStream<Element, Failure>, ElementOfResult>",
+      "desc": "Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((Element) -> ElementOfResult?) -> AsyncThrowingCompactMapSequence<AsyncThrowingStream<Element, Failure>, ElementOfResult>",
+      "desc": "Creates an asynchronous sequence that maps an error-throwing closure over the base sequence’s elements, omitting results that don’t return a value."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((Element) -> SegmentOfResult) -> AsyncFlatMapSequence<AsyncThrowingStream<Element, Failure>, SegmentOfResult>",
+      "desc": "Creates an asynchronous sequence that concatenates the results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((Element) -> SegmentOfResult) -> AsyncThrowingFlatMapSequence<AsyncThrowingStream<Element, Failure>, SegmentOfResult>",
+      "desc": "Creates an asynchronous sequence that concatenates the results of calling the given error-throwing transformation with each element of this sequence."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, Element) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, Element) -> Void) -> Result",
+      "desc": "Returns the result of combining the elements of the asynchronous sequence using the given closure, given a mutable initial value."
+    },
+    {
+      "name": "func makeAsyncIterator() -> AsyncThrowingStream<Element, Failure>.Iterator",
+      "desc": "Creates the asynchronous iterator that produces elements of this asynchronous sequence."
+    },
+    {
+      "name": "struct AsyncThrowingStream.Iterator",
+      "desc": "The asynchronous iterator for iterating an asynchronous stream."
+    },
+    {
+      "name": "typealias AsyncThrowingStream.AsyncIterator",
+      "desc": "The type of asynchronous iterator that produces elements of this asynchronous sequence."
+    },
+    {
+      "name": "init(unfolding: () -> Element?)",
+      "desc": "Constructs an asynchronous throwing stream from a given element-producing closure."
+    }
+  ],
+  "declaration": "struct AsyncThrowingStream<Element, Failure> where Failure : Error",
+  "conformsTo": [
+    "AsyncSequence"
+  ]
+}

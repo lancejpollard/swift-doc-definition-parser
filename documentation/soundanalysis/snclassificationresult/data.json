@@ -1,0 +1,31 @@
+{
+  "path": "/documentation/soundanalysis/snclassificationresult",
+  "type": "Class",
+  "name": "SNClassificationResult",
+  "desc": "A result that contains the highest-ranking classifications in a time range.",
+  "items": [
+    {
+      "name": "var timeRange: CMTimeRange",
+      "desc": "The time span that corresponds to the result’s classifications."
+    },
+    {
+      "name": "var classifications: [SNClassification]",
+      "desc": "A sorted array of the request’s top classification candidates."
+    },
+    {
+      "name": "class SNClassification",
+      "desc": "A type that pairs a sound classifier’s prediction with its confidence in that prediction."
+    },
+    {
+      "name": "func classification(forIdentifier: String) -> SNClassification?",
+      "desc": "Returns the classification for an identifier."
+    }
+  ],
+  "declaration": "class SNClassificationResult : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "SNResult"
+  ]
+}

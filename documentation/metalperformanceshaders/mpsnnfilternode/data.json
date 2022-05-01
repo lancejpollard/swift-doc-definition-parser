@@ -1,0 +1,58 @@
+{
+  "path": "/documentation/metalperformanceshaders/mpsnnfilternode",
+  "type": "Class",
+  "name": "MPSNNFilterNode",
+  "desc": "A placeholder node denoting a neural network filter stage.",
+  "items": [
+    {
+      "name": "var label: String?"
+    },
+    {
+      "name": "var paddingPolicy: MPSNNPadding"
+    },
+    {
+      "name": "protocol MPSNNPadding",
+      "desc": "The protocol that provides a description of how kernels should pad images."
+    },
+    {
+      "name": "var resultImage: MPSNNImageNode"
+    },
+    {
+      "name": "var resultState: MPSNNStateNode?"
+    },
+    {
+      "name": "var resultStates: [MPSNNStateNode]?"
+    },
+    {
+      "name": "class MPSNNStateNode",
+      "desc": "A placeholder node denoting the position in the graph of a state object."
+    },
+    {
+      "name": "class MPSNNBinaryGradientStateNode",
+      "desc": "A representation of the state created to record the properties of a binary gradient kernel."
+    },
+    {
+      "name": "class MPSNNGradientStateNode",
+      "desc": "A representation of the state created to record the properties of a gradient kernel at the time it was encoded."
+    },
+    {
+      "name": "func gradientFilter(withSource: MPSNNImageNode) -> MPSNNGradientFilterNode"
+    },
+    {
+      "name": "func gradientFilter(withSources: [MPSNNImageNode]) -> MPSNNGradientFilterNode"
+    },
+    {
+      "name": "func gradientFilters(withSource: MPSNNImageNode) -> [MPSNNGradientFilterNode]"
+    },
+    {
+      "name": "func gradientFilters(withSources: [MPSNNImageNode]) -> [MPSNNGradientFilterNode]"
+    },
+    {
+      "name": "func trainingGraph(withSourceGradient: MPSNNImageNode?, nodeHandler: MPSGradientNodeBlock?) -> [MPSNNFilterNode]?"
+    }
+  ],
+  "declaration": "class MPSNNFilterNode : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

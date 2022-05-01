@@ -1,0 +1,216 @@
+{
+  "path": "/documentation/coregraphics/cgcolorspace",
+  "type": "Class",
+  "name": "CGColorSpace",
+  "desc": "A profile that specifies how to interpret a color value for display.",
+  "items": [
+    {
+      "name": "init?(calibratedGrayWhitePoint: UnsafePointer<CGFloat>, blackPoint: UnsafePointer<CGFloat>?, gamma: CGFloat)",
+      "desc": "Creates a calibrated grayscale color space."
+    },
+    {
+      "name": "init?(calibratedRGBWhitePoint: UnsafePointer<CGFloat>, blackPoint: UnsafePointer<CGFloat>?, gamma: UnsafePointer<CGFloat>?, matrix: UnsafePointer<CGFloat>?)",
+      "desc": "Creates a calibrated RGB color space."
+    },
+    {
+      "name": "init?(iccBasedNComponents: Int, range: UnsafePointer<CGFloat>?, profile: CGDataProvider, alternate: CGColorSpace?)",
+      "desc": "Creates a device-independent color space that is defined according to the ICC color profile specification."
+    },
+    {
+      "name": "init?(indexedBaseSpace: CGColorSpace, last: Int, colorTable: UnsafePointer<UInt8>)",
+      "desc": "Creates an indexed color space, consisting of colors specified by a color lookup table."
+    },
+    {
+      "name": "init?(labWhitePoint: UnsafePointer<CGFloat>, blackPoint: UnsafePointer<CGFloat>?, range: UnsafePointer<CGFloat>?)",
+      "desc": "Creates a device-independent color space that is relative to human color perception, according to the CIE L*a*b* standard."
+    },
+    {
+      "name": "init?(patternBaseSpace: CGColorSpace?)",
+      "desc": "Creates a pattern color space."
+    },
+    {
+      "name": "init?(name: CFString)",
+      "desc": "Creates a specified type of Quartz color space."
+    },
+    {
+      "name": "init?(iccData: CFTypeRef)",
+      "desc": "Creates an ICC-based color space using the ICC profile contained in the specified data."
+    },
+    {
+      "name": "init?(propertyListPlist: CFPropertyList)",
+      "desc": "Creates a color space from a property list."
+    },
+    {
+      "name": "func CGColorSpaceCreateDeviceRGB() -> CGColorSpace",
+      "desc": "Creates a device-dependent RGB color space."
+    },
+    {
+      "name": "func CGColorSpaceCreateDeviceCMYK() -> CGColorSpace",
+      "desc": "Creates a device-dependent CMYK color space."
+    },
+    {
+      "name": "func CGColorSpaceCreateDeviceGray() -> CGColorSpace",
+      "desc": "Creates a device-dependent grayscale color space."
+    },
+    {
+      "name": "var baseColorSpace: CGColorSpace?",
+      "desc": "Returns the base color space of a pattern or indexed color space."
+    },
+    {
+      "name": "var numberOfComponents: Int",
+      "desc": "Returns the number of color components in a color space."
+    },
+    {
+      "name": "var model: CGColorSpaceModel",
+      "desc": "Returns the color space model of the provided color space."
+    },
+    {
+      "name": "enum CGColorSpaceModel",
+      "desc": "Models for color spaces."
+    },
+    {
+      "name": "var colorTable: [UInt8]?",
+      "desc": "The entries in the color table of an indexed color space."
+    },
+    {
+      "name": "func copyICCData() -> CFData?",
+      "desc": "Returns a copy of the ICC profile data of the provided color space."
+    },
+    {
+      "name": "func copyPropertyList() -> CFPropertyList?",
+      "desc": "Returns a copy of the color space's properties."
+    },
+    {
+      "name": "var name: CFString?",
+      "desc": "Returns the name used to create the specified color space."
+    },
+    {
+      "name": "var supportsOutput: Bool",
+      "desc": "Returns a Boolean indicating whether the color space can be used as a destination color space."
+    },
+    {
+      "name": "var isWideGamutRGB: Bool",
+      "desc": "Returns whether the RGB color space covers a significant portion of the NTSC color gamut."
+    },
+    {
+      "name": "class let displayP3: CFString",
+      "desc": "The Display P3 color space, created by Apple."
+    },
+    {
+      "name": "class let displayP3_HLG: CFString",
+      "desc": "The Display P3 color space, using the HLG transfer function."
+    },
+    {
+      "name": "class let extendedLinearDisplayP3: CFString",
+      "desc": "The Display P3 color space with a linear transfer function and extended-range values."
+    },
+    {
+      "name": "class let sRGB: CFString",
+      "desc": "The standard Red Green Blue (sRGB) color space."
+    },
+    {
+      "name": "class let linearSRGB: CFString",
+      "desc": "The sRGB color space with a linear transfer function."
+    },
+    {
+      "name": "class let extendedSRGB: CFString",
+      "desc": "The extended sRGB color space."
+    },
+    {
+      "name": "class let extendedLinearSRGB: CFString",
+      "desc": "The sRGB color space with a linear transfer function and extended-range values."
+    },
+    {
+      "name": "class let genericGrayGamma2_2: CFString",
+      "desc": "The generic gray color space that has an exponential transfer function with a power of 2.2."
+    },
+    {
+      "name": "class let extendedGray: CFString",
+      "desc": "The extended gray color space."
+    },
+    {
+      "name": "class let linearGray: CFString",
+      "desc": "The gray color space using a linear transfer function."
+    },
+    {
+      "name": "class let extendedLinearGray: CFString",
+      "desc": "The extended gray color space with a linear transfer function."
+    },
+    {
+      "name": "class let genericCMYK: CFString",
+      "desc": "The generic CMYK color space."
+    },
+    {
+      "name": "class let genericRGBLinear: CFString",
+      "desc": "The generic RGB color space with a linear transfer function."
+    },
+    {
+      "name": "class let genericXYZ: CFString",
+      "desc": "The XYZ color space, as defined by the CIE 1931 standard."
+    },
+    {
+      "name": "class let genericLab: CFString",
+      "desc": "The generic LAB color space."
+    },
+    {
+      "name": "class let acescgLinear: CFString",
+      "desc": "The ACEScg color space."
+    },
+    {
+      "name": "class let adobeRGB1998: CFString",
+      "desc": "The Adobe RGB (1998) color space."
+    },
+    {
+      "name": "class let dcip3: CFString",
+      "desc": "The DCI P3 color space, which is the digital cinema standard."
+    },
+    {
+      "name": "class let itur_709: CFString",
+      "desc": "The recommendation of the International Telecommunication Union (ITU) Radiocommunication sector for the BT.709 color space."
+    },
+    {
+      "name": "class let rommrgb: CFString",
+      "desc": "The Reference Output Medium Metric (ROMM) RGB color space."
+    },
+    {
+      "name": "class let itur_2020: CFString",
+      "desc": "The recommendation of the International Telecommunication Union (ITU) Radiocommunication sector for the BT.2020 color space."
+    },
+    {
+      "name": "class let extendedLinearITUR_2020: CFString",
+      "desc": "The recommendation of the International Telecommunication Union (ITU) Radiocommunication sector for the BT.2020 color space, with a linear transfer function and extended range values."
+    },
+    {
+      "name": "class var typeID: CFTypeID",
+      "desc": "Returns the Core Foundation type identifier for Quartz color spaces."
+    },
+    {
+      "name": "class let displayP3_PQ: CFString"
+    },
+    {
+      "name": "class let extendedDisplayP3: CFString"
+    },
+    {
+      "name": "class let extendedITUR_2020: CFString"
+    },
+    {
+      "name": "class let itur_2020_sRGBGamma: CFString"
+    },
+    {
+      "name": "class let itur_2100_HLG: CFString"
+    },
+    {
+      "name": "class let itur_2100_PQ: CFString"
+    },
+    {
+      "name": "class let itur_709_PQ: CFString"
+    },
+    {
+      "name": "class let linearDisplayP3: CFString"
+    },
+    {
+      "name": "class let linearITUR_2020: CFString"
+    }
+  ],
+  "declaration": "class CGColorSpace"
+}

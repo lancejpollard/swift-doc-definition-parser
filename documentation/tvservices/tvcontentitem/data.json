@@ -1,0 +1,95 @@
+{
+  "path": "/documentation/tvservices/tvcontentitem",
+  "type": "Class",
+  "name": "TVContentItem",
+  "desc": "An object that describes either a piece of content or a container for other content items.",
+  "items": [
+    {
+      "name": "init(contentIdentifier: TVContentIdentifier)",
+      "desc": "Initializes a new content item."
+    },
+    {
+      "name": "init?(coder: NSCoder)",
+      "desc": "Returns an object initialized from data in a given unarchiver."
+    },
+    {
+      "name": "var contentIdentifier: TVContentIdentifier",
+      "desc": "The content identifier that uniquely identifies this item."
+    },
+    {
+      "name": "var badgeCount: NSNumber?",
+      "desc": "A badging integer for this item."
+    },
+    {
+      "name": "var title: String?",
+      "desc": "The localized string title of the item."
+    },
+    {
+      "name": "var topShelfItems: [TVContentItem]?",
+      "desc": "An array of content items that are the items of a section."
+    },
+    {
+      "name": "var imageURL: URL?",
+      "desc": "A URL giving the location of the image to be displayed for this content item."
+    },
+    {
+      "name": "func imageURL(forTraits: TVContentItemImageTrait) -> URL?",
+      "desc": "Retrieve the URL for the image that best matches the specified traits."
+    },
+    {
+      "name": "func setImageURL(URL?, forTraits: TVContentItemImageTrait)"
+    },
+    {
+      "name": "struct TVContentItemImageTrait",
+      "desc": "Traits describing the type of image you want."
+    },
+    {
+      "name": "var creationDate: Date?",
+      "desc": "The date when the content item was created, or the date when it was first broadcast, or some other kind of origination date."
+    },
+    {
+      "name": "var duration: NSNumber?",
+      "desc": "The amount of time required to play the media to completion."
+    },
+    {
+      "name": "var expirationDate: Date?",
+      "desc": "The date when the user will no longer be able to access the item."
+    },
+    {
+      "name": "var imageShape: TVContentItemImageShape",
+      "desc": "The intended aspect ratio or shape of the content image."
+    },
+    {
+      "name": "enum TVContentItemImageShape",
+      "desc": "An enumerated type that identifies the shape in which the content item should be displayed."
+    },
+    {
+      "name": "var currentPosition: NSNumber?",
+      "desc": "The index location, measured in seconds, at which the user last played this item."
+    },
+    {
+      "name": "var hasPlayedToEnd: NSNumber?",
+      "desc": "A Boolean value indicating whether the user can be considered to have finished this item."
+    },
+    {
+      "name": "var lastAccessedDate: Date?",
+      "desc": "The date when the user last accessed this item."
+    },
+    {
+      "name": "var displayURL: URL?",
+      "desc": "A URL that causes the app which created this content item to display a description screen for the item."
+    },
+    {
+      "name": "var playURL: URL?",
+      "desc": "A URL that causes the app which created this content item to begin playing the item at the user's current position."
+    }
+  ],
+  "declaration": "class TVContentItem : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

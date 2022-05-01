@@ -1,0 +1,79 @@
+{
+  "path": "/documentation/coreml/mlmodel",
+  "type": "Class",
+  "name": "MLModel",
+  "desc": "An encapsulation of all the details of your machine learning model.",
+  "items": [
+    {
+      "name": "class func load(contentsOf: URL, configuration: MLModelConfiguration, completionHandler: (Result<MLModel, Error>) -> Void)",
+      "desc": "Creates a Core ML model instance asynchronously from a compiled model file, a custom configuration, and a completion handler."
+    },
+    {
+      "name": "init(contentsOf: URL)",
+      "desc": "Creates a Core ML model instance from a compiled model file."
+    },
+    {
+      "name": "init(contentsOf: URL, configuration: MLModelConfiguration)",
+      "desc": "Creates a Core ML model instance from a compiled model file and a custom configuration."
+    },
+    {
+      "name": "class func compileModel(at: URL) -> URL",
+      "desc": "Compiles a model on the device to update the model in your app."
+    },
+    {
+      "name": "func prediction(from: MLFeatureProvider) -> MLFeatureProvider",
+      "desc": "Generates a prediction from the feature values within the input feature provider."
+    },
+    {
+      "name": "func prediction(from: MLFeatureProvider, options: MLPredictionOptions) -> MLFeatureProvider",
+      "desc": "Generates a prediction from the feature values within the input feature provider using the prediction options."
+    },
+    {
+      "name": "func predictions(fromBatch: MLBatchProvider) -> MLBatchProvider",
+      "desc": "Generates predictions for each input feature provider within the batch provider."
+    },
+    {
+      "name": "func predictions(from: MLBatchProvider, options: MLPredictionOptions) -> MLBatchProvider",
+      "desc": "Generates a prediction for each input feature provider within the batch provider using the prediction options."
+    },
+    {
+      "name": "class MLPredictionOptions",
+      "desc": "The options available when making a prediction."
+    },
+    {
+      "name": "var configuration: MLModelConfiguration",
+      "desc": "The configuration of the model set during initialization."
+    },
+    {
+      "name": "var modelDescription: MLModelDescription",
+      "desc": "Model information you use at runtime during development, which Xcode also displays in its Core ML model editor view."
+    },
+    {
+      "name": "class MLModelDescription",
+      "desc": "Information about a model, primarily the input and output format for each feature the model expects, and optional metadata."
+    },
+    {
+      "name": "func parameterValue(for: MLParameterKey) -> Any",
+      "desc": "Returns a model parameter value for a key."
+    },
+    {
+      "name": "class MLParameterKey",
+      "desc": "The keys for the parameter dictionary in a model configuration or a model update context."
+    },
+    {
+      "name": "class MLModelConfiguration",
+      "desc": "The settings for creating or updating a machine learning model."
+    },
+    {
+      "name": "class MLKey",
+      "desc": "An abstract base class for machine learning key types."
+    },
+    {
+      "name": "class func load(contentsOf: URL, configuration: MLModelConfiguration) -> MLModel"
+    }
+  ],
+  "declaration": "class MLModel : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

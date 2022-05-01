@@ -1,0 +1,172 @@
+{
+  "path": "/documentation/coremotion/cmmotionmanager",
+  "type": "Class",
+  "name": "CMMotionManager",
+  "desc": "The object for starting and managing motion services.",
+  "items": [
+    {
+      "name": "var isDeviceMotionAvailable: Bool",
+      "desc": "A Boolean value that indicates whether the device-motion service is available on the device."
+    },
+    {
+      "name": "var isAccelerometerAvailable: Bool",
+      "desc": "A Boolean value that indicates whether an accelerometer is available on the device."
+    },
+    {
+      "name": "var isGyroAvailable: Bool",
+      "desc": "A Boolean value that indicates whether a gyroscope is available on the device."
+    },
+    {
+      "name": "var isMagnetometerAvailable: Bool",
+      "desc": "A Boolean value that indicates whether a magnetometer is available on the device."
+    },
+    {
+      "name": "var isDeviceMotionActive: Bool",
+      "desc": "A Boolean value that determines whether the app is receiving updates from the device-motion service."
+    },
+    {
+      "name": "var isAccelerometerActive: Bool",
+      "desc": "A Boolean value that indicates whether accelerometer updates are currently happening."
+    },
+    {
+      "name": "var isGyroActive: Bool",
+      "desc": "A Boolean value that determines whether gyroscope updates are currently happening."
+    },
+    {
+      "name": "var isMagnetometerActive: Bool",
+      "desc": "A Boolean value that determines whether magnetometer updates are currently happening."
+    },
+    {
+      "name": "var showsDeviceMovementDisplay: Bool",
+      "desc": "Controls whether the device-movement display is shown."
+    },
+    {
+      "name": "var deviceMotionUpdateInterval: TimeInterval",
+      "desc": "The interval, in seconds, for providing device-motion updates to the block handler."
+    },
+    {
+      "name": "func startDeviceMotionUpdates(using: CMAttitudeReferenceFrame, to: OperationQueue, withHandler: CMDeviceMotionHandler)",
+      "desc": "Starts device-motion updates on an operation queue and using a specified reference frame and block handler."
+    },
+    {
+      "name": "func startDeviceMotionUpdates(to: OperationQueue, withHandler: CMDeviceMotionHandler)",
+      "desc": "Starts device-motion updates on an operation queue and using a specified block handler."
+    },
+    {
+      "name": "func startDeviceMotionUpdates(using: CMAttitudeReferenceFrame)",
+      "desc": "Starts device-motion updates using a reference frame but without a block handler."
+    },
+    {
+      "name": "func startDeviceMotionUpdates()",
+      "desc": "Starts device-motion updates without a block handler."
+    },
+    {
+      "name": "func stopDeviceMotionUpdates()",
+      "desc": "Stops device-motion updates."
+    },
+    {
+      "name": "var deviceMotion: CMDeviceMotion?",
+      "desc": "The latest sample of device-motion data."
+    },
+    {
+      "name": "typealias CMDeviceMotionHandler",
+      "desc": "The type of block callback for handling device-motion data."
+    },
+    {
+      "name": "var accelerometerUpdateInterval: TimeInterval",
+      "desc": "The interval, in seconds, for providing accelerometer updates to the block handler."
+    },
+    {
+      "name": "func startAccelerometerUpdates(to: OperationQueue, withHandler: CMAccelerometerHandler)",
+      "desc": "Starts accelerometer updates on an operation queue and with a specified handler."
+    },
+    {
+      "name": "func startAccelerometerUpdates()",
+      "desc": "Starts accelerometer updates without a handler."
+    },
+    {
+      "name": "func stopAccelerometerUpdates()",
+      "desc": "Stops accelerometer updates."
+    },
+    {
+      "name": "var accelerometerData: CMAccelerometerData?",
+      "desc": "The latest sample of accelerometer data."
+    },
+    {
+      "name": "typealias CMAccelerometerHandler",
+      "desc": "The type of block callback for handling accelerometer data."
+    },
+    {
+      "name": "var gyroUpdateInterval: TimeInterval",
+      "desc": "The interval, in seconds, for providing gyroscope updates to the block handler."
+    },
+    {
+      "name": "func startGyroUpdates(to: OperationQueue, withHandler: CMGyroHandler)",
+      "desc": "Starts gyroscope updates on an operation queue and with a specified handler."
+    },
+    {
+      "name": "func startGyroUpdates()",
+      "desc": "Starts gyroscope updates without a handler."
+    },
+    {
+      "name": "func stopGyroUpdates()",
+      "desc": "Stops gyroscope updates."
+    },
+    {
+      "name": "var gyroData: CMGyroData?",
+      "desc": "The latest sample of gyroscope data."
+    },
+    {
+      "name": "typealias CMGyroHandler",
+      "desc": "The type of block callback for handling gyroscope data."
+    },
+    {
+      "name": "var magnetometerUpdateInterval: TimeInterval",
+      "desc": "The interval, in seconds, at which the system delivers magnetometer data to the block handler."
+    },
+    {
+      "name": "func startMagnetometerUpdates(to: OperationQueue, withHandler: CMMagnetometerHandler)",
+      "desc": "Starts magnetometer updates on an operation queue and with a specified handler."
+    },
+    {
+      "name": "func startMagnetometerUpdates()",
+      "desc": "Starts magnetometer updates without a block handler."
+    },
+    {
+      "name": "func stopMagnetometerUpdates()",
+      "desc": "Stops magnetometer updates."
+    },
+    {
+      "name": "var magnetometerData: CMMagnetometerData?",
+      "desc": "The latest sample of magnetometer data."
+    },
+    {
+      "name": "typealias CMMagnetometerHandler",
+      "desc": "The type of block callback for handling magnetometer data."
+    },
+    {
+      "name": "var attitudeReferenceFrame: CMAttitudeReferenceFrame",
+      "desc": "Returns either the reference frame currently being used or the default attitude reference frame."
+    },
+    {
+      "name": "class func availableAttitudeReferenceFrames() -> CMAttitudeReferenceFrame",
+      "desc": "Returns a bitmask specifying the available attitude reference frames on the device."
+    },
+    {
+      "name": "struct CMAttitudeReferenceFrame",
+      "desc": "Enum constants for indicating the reference frames from which all attitude samples are referenced."
+    },
+    {
+      "name": "let CMErrorDomain: String",
+      "desc": "The error domain for Core Motion."
+    },
+    {
+      "name": "struct CMError",
+      "desc": "Defines motion errors."
+    }
+  ],
+  "declaration": "class CMMotionManager : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

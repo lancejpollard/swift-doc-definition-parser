@@ -1,0 +1,112 @@
+{
+  "path": "/documentation/avfaudio/avaudiosequencer",
+  "type": "Class",
+  "name": "AVAudioSequencer",
+  "desc": "An object that plays audio from a collection of MIDI events the system organizes into music tracks.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an audio sequencer object."
+    },
+    {
+      "name": "init(audioEngine: AVAudioEngine)",
+      "desc": "Creates an audio sequencer that the framework attaches to an audio engine instance."
+    },
+    {
+      "name": "func write(to: URL, smpteResolution: Int, replaceExisting: Bool)",
+      "desc": "Creates and writes a MIDI file from the events in the sequence."
+    },
+    {
+      "name": "class AVMusicTrack",
+      "desc": "A collection of music events that you can offset, set to a muted state, modify independently from other track events, and send to a specified destination."
+    },
+    {
+      "name": "enum AVMusicTrackLoopCount",
+      "desc": "Options that define the number of times a track loops."
+    },
+    {
+      "name": "func load(from: Data, options: AVMusicSequenceLoadOptions)",
+      "desc": "Parses the data and adds its events to the sequence."
+    },
+    {
+      "name": "func load(from: URL, options: AVMusicSequenceLoadOptions)",
+      "desc": "Loads the file the URL references and adds the events to the sequence."
+    },
+    {
+      "name": "struct AVMusicSequenceLoadOptions",
+      "desc": "A structure that defines whether data on different MIDI channels map to multiple tracks, or whether the framework preserves the tracks as they are."
+    },
+    {
+      "name": "func prepareToPlay()",
+      "desc": "Gets ready to play the sequence by prerolling all events."
+    },
+    {
+      "name": "func start()",
+      "desc": "Starts the sequencer’s player."
+    },
+    {
+      "name": "func stop()",
+      "desc": "Stops the sequencer’s player."
+    },
+    {
+      "name": "typealias AVMusicTimeStamp",
+      "desc": "A fractional number of beats."
+    },
+    {
+      "name": "func hostTime(forBeats: AVMusicTimeStamp, error: NSErrorPointer) -> UInt64",
+      "desc": "Gets the host time the sequence plays at the specified position."
+    },
+    {
+      "name": "func seconds(forBeats: AVMusicTimeStamp) -> TimeInterval",
+      "desc": "Gets the time for the specified beat position (timestamp) in the track, in seconds."
+    },
+    {
+      "name": "func beats(forHostTime: UInt64, error: NSErrorPointer) -> AVMusicTimeStamp",
+      "desc": "Gets the beat the system plays at the specified host time."
+    },
+    {
+      "name": "func beats(forSeconds: TimeInterval) -> AVMusicTimeStamp",
+      "desc": "Gets the beat position (timestamp) for the specified time in the track."
+    },
+    {
+      "name": "typealias AVBeatRange",
+      "desc": "A specific time range within a music track."
+    },
+    {
+      "name": "var isPlaying: Bool",
+      "desc": "A Boolean value that indicates whether the sequencer’s player is in a playing state."
+    },
+    {
+      "name": "var rate: Float",
+      "desc": "The playback rate of the sequencer’s player."
+    },
+    {
+      "name": "var tracks: [AVMusicTrack]",
+      "desc": "An array that contains all the tracks in the sequence."
+    },
+    {
+      "name": "var currentPositionInBeats: TimeInterval",
+      "desc": "The current playback position, in beats."
+    },
+    {
+      "name": "var currentPositionInSeconds: TimeInterval",
+      "desc": "The current playback position, in seconds."
+    },
+    {
+      "name": "var tempoTrack: AVMusicTrack",
+      "desc": "The track that contains tempo information about the sequence."
+    },
+    {
+      "name": "var userInfo: [String : Any]",
+      "desc": "A dictionary that contains metadata from a sequence."
+    },
+    {
+      "name": "func data(withSMPTEResolution: Int, error: NSErrorPointer) -> Data",
+      "desc": "Gets a data object that contains the events from the sequence."
+    }
+  ],
+  "declaration": "class AVAudioSequencer : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

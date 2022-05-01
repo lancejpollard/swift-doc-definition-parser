@@ -1,0 +1,86 @@
+{
+  "path": "/documentation/foundation/morphology",
+  "type": "Structure",
+  "name": "Morphology",
+  "desc": "A description of the grammatical properties of a string.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an empty morphology instance."
+    },
+    {
+      "name": "static let user: Morphology",
+      "desc": "The addressing preferences of the current user."
+    },
+    {
+      "name": "var isUnspecified: Bool",
+      "desc": "A Boolean value that indicates whether this instance specifies no particular grammar."
+    },
+    {
+      "name": "var grammaticalGender: Morphology.GrammaticalGender?",
+      "desc": "The grammatical gender used for inflecting strings with this morphology."
+    },
+    {
+      "name": "enum Morphology.GrammaticalGender",
+      "desc": "A representation of grammatical gender, used for inflecting strings."
+    },
+    {
+      "name": "var number: Morphology.GrammaticalNumber?",
+      "desc": "The grammatical number used for inflecting strings with this morphology."
+    },
+    {
+      "name": "enum Morphology.GrammaticalNumber",
+      "desc": "A representation of grammatical number, used for inflecting strings."
+    },
+    {
+      "name": "var partOfSpeech: Morphology.PartOfSpeech?",
+      "desc": "The grammatical part of speech used for inflecting strings with this morphology."
+    },
+    {
+      "name": "enum Morphology.PartOfSpeech",
+      "desc": "A representation of grammatical parts of speech, used for inflecting strings."
+    },
+    {
+      "name": "func setCustomPronoun(Morphology.CustomPronoun?, forLanguage: String)",
+      "desc": "Sets a custom pronoun behavior for this morphology to apply to the given language."
+    },
+    {
+      "name": "func customPronoun(forLanguage: String) -> Morphology.CustomPronoun?",
+      "desc": "Returns any custom pronoun behavior this morphology applies to the given language."
+    },
+    {
+      "name": "struct Morphology.CustomPronoun",
+      "desc": "A custom pronoun behavior for use in a specific langauge."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a new instance by decoding from the given decoder."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes this value into the given encoder."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "static func == (Morphology, Morphology) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are equal."
+    },
+    {
+      "name": "static func != (Morphology, Morphology) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values are not equal."
+    }
+  ],
+  "declaration": "struct Morphology",
+  "conformsTo": [
+    "Decodable",
+    "Encodable",
+    "Hashable"
+  ]
+}

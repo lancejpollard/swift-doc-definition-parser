@@ -1,0 +1,63 @@
+{
+  "path": "/documentation/coreml/mlmodeldescription",
+  "type": "Class",
+  "name": "MLModelDescription",
+  "desc": "Information about a model, primarily the input and output format for each feature the model expects, and optional metadata.",
+  "items": [
+    {
+      "name": "var inputDescriptionsByName: [String : MLFeatureDescription]",
+      "desc": "A dictionary of input feature descriptions, which the model keys by the input’s name."
+    },
+    {
+      "name": "var outputDescriptionsByName: [String : MLFeatureDescription]",
+      "desc": "A dictionary of output feature descriptions, which the model keys by the output’s name."
+    },
+    {
+      "name": "class MLFeatureDescription",
+      "desc": "The name, type, and constraints of an input or output feature."
+    },
+    {
+      "name": "var classLabels: [Any]?",
+      "desc": "An array of labels, which can be either strings or a numbers, for classifier models."
+    },
+    {
+      "name": "var metadata: [MLModelMetadataKey : Any]",
+      "desc": "A dictionary of the model’s creation information, such as its description, author, version, and license."
+    },
+    {
+      "name": "struct MLModelMetadataKey",
+      "desc": "The set of keys the model uses to store values in its metadata dictionary."
+    },
+    {
+      "name": "var predictedFeatureName: String?",
+      "desc": "The name of the primary prediction feature output description."
+    },
+    {
+      "name": "var predictedProbabilitiesName: String?",
+      "desc": "The name of the feature output description for all probabilities of a prediction."
+    },
+    {
+      "name": "var isUpdatable: Bool",
+      "desc": "A Boolean value that indicates whether you can update the model with additional training."
+    },
+    {
+      "name": "var trainingInputDescriptionsByName: [String : MLFeatureDescription]",
+      "desc": "A dictionary of the training input feature descriptions, which the model keys by the input’s name."
+    },
+    {
+      "name": "var parameterDescriptionsByKey: [MLParameterKey : MLParameterDescription]",
+      "desc": "A dictionary of the descriptions for the model’s parameters."
+    },
+    {
+      "name": "class MLParameterDescription",
+      "desc": "A description of a model parameter that includes a default value and a constraint, if applicable."
+    }
+  ],
+  "declaration": "class MLModelDescription : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

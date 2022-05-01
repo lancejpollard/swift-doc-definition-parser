@@ -1,0 +1,116 @@
+{
+  "path": "/documentation/appkit/nsgraphicscontext",
+  "type": "Class",
+  "name": "NSGraphicsContext",
+  "desc": "An object that represents a graphics context.",
+  "items": [
+    {
+      "name": "init?(attributes: [NSGraphicsContext.AttributeKey : Any])",
+      "desc": "Creates a graphics context using the specified attributes."
+    },
+    {
+      "name": "init?(bitmapImageRep: NSBitmapImageRep)",
+      "desc": "Creates a new graphics context using the specified bipmap image representation object as the context destination."
+    },
+    {
+      "name": "init(cgContext: CGContext, flipped: Bool)",
+      "desc": "Creates a new graphics context from the specified Core Graphics context and the initial flipped state."
+    },
+    {
+      "name": "init(window: NSWindow)",
+      "desc": "Creates a new graphics context for drawing into a window."
+    },
+    {
+      "name": "class var current: NSGraphicsContext?",
+      "desc": "Returns the current graphics context of the current thread."
+    },
+    {
+      "name": "var cgContext: CGContext",
+      "desc": "The Core Graphics context, which is a low-level, platform-specific graphics context."
+    },
+    {
+      "name": "class func restoreGraphicsState()",
+      "desc": "Pops a graphics context from the per-thread stack, makes it current, and sends the context a restore graphics state message."
+    },
+    {
+      "name": "func restoreGraphicsState()",
+      "desc": "Removes the context’s graphics state from the top of the graphics state stack and makes the next graphics state the current graphics state."
+    },
+    {
+      "name": "class func saveGraphicsState()",
+      "desc": "Saves the graphics state of the current graphics context."
+    },
+    {
+      "name": "func saveGraphicsState()",
+      "desc": "Saves the current graphics state and creates a new graphics state on the top of the stack."
+    },
+    {
+      "name": "class func currentContextDrawingToScreen() -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the current context is drawing to the screen."
+    },
+    {
+      "name": "var isDrawingToScreen: Bool",
+      "desc": "A Boolean value that indicates whether the drawing destination is the screen."
+    },
+    {
+      "name": "var attributes: [NSGraphicsContext.AttributeKey : Any]?",
+      "desc": "The attributes used to create this instance."
+    },
+    {
+      "name": "struct NSGraphicsContext.AttributeKey",
+      "desc": "Constants that specify the dictionary keys for the attributes of the graphics context."
+    },
+    {
+      "name": "struct NSGraphicsContext.RepresentationFormatName",
+      "desc": "Constants that specify values for the representation format name key in a graphic context’s attributes dictionary."
+    },
+    {
+      "name": "var isFlipped: Bool",
+      "desc": "A Boolean value that indicates the graphics context’s flipped state."
+    },
+    {
+      "name": "func flushGraphics()",
+      "desc": "Forces any buffered operations or data to be sent to the graphics context’s destination."
+    },
+    {
+      "name": "var compositingOperation: NSCompositingOperation",
+      "desc": "The graphics context’s global compositing operation setting."
+    },
+    {
+      "name": "enum NSCompositingOperation",
+      "desc": "Constants that describe compositing operators in terms of source and destination images, each having an opaque and transparent region."
+    },
+    {
+      "name": "var imageInterpolation: NSImageInterpolation",
+      "desc": "A constant that specifies the graphics context’s interpolation, or image smoothing, behavior."
+    },
+    {
+      "name": "enum NSImageInterpolation",
+      "desc": "Constants that specify the interpolation, or image smoothing, behavior used by the image interpolation property."
+    },
+    {
+      "name": "var shouldAntialias: Bool",
+      "desc": "A Boolean value that indicates whether the graphics context uses antialiasing."
+    },
+    {
+      "name": "var patternPhase: NSPoint",
+      "desc": "The amount to offset the pattern color when filling the graphics context."
+    },
+    {
+      "name": "var ciContext: CIContext?",
+      "desc": "A context for Core Image objects that you can use to render into the graphics context."
+    },
+    {
+      "name": "var colorRenderingIntent: NSColorRenderingIntent",
+      "desc": "The color rendering intent in the graphics context’s graphics state."
+    },
+    {
+      "name": "enum NSColorRenderingIntent",
+      "desc": "Constants that specify how Cocoa should handle colors that are not located within the destination color space of a graphics context."
+    }
+  ],
+  "declaration": "class NSGraphicsContext : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

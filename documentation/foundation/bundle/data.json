@@ -1,0 +1,308 @@
+{
+  "path": "/documentation/foundation/bundle",
+  "type": "Class",
+  "name": "Bundle",
+  "desc": "A representation of the code and resources stored in a bundle directory on disk.",
+  "items": [
+    {
+      "name": "class var main: Bundle",
+      "desc": "Returns the bundle object that contains the current executable."
+    },
+    {
+      "name": "class var allFrameworks: [Bundle]",
+      "desc": "Returns an array of all of the application’s bundles that represent frameworks."
+    },
+    {
+      "name": "class var allBundles: [Bundle]",
+      "desc": "Returns an array of all the application’s non-framework bundles."
+    },
+    {
+      "name": "init(for: AnyClass)",
+      "desc": "Returns the NSBundle object with which the specified class is associated."
+    },
+    {
+      "name": "init?(identifier: String)",
+      "desc": "Returns the NSBundle instance that has the specified bundle identifier."
+    },
+    {
+      "name": "init?(url: URL)",
+      "desc": "Returns an NSBundle object initialized to correspond to the specified file URL."
+    },
+    {
+      "name": "init?(path: String)",
+      "desc": "Returns an NSBundle object initialized to correspond to the specified directory."
+    },
+    {
+      "name": "func loadNibNamed(String, owner: Any?, options: [UINib.OptionsKey : Any]?) -> [Any]?",
+      "desc": "Unarchives the contents of a nib file located in the receiver's bundle."
+    },
+    {
+      "name": "func loadNibNamed(NSNib.Name, owner: Any?, topLevelObjects: AutoreleasingUnsafeMutablePointer<NSArray?>?) -> Bool",
+      "desc": "Loads a nib from the bundle with the specified file name and owner."
+    },
+    {
+      "name": "func url(forResource: String?, withExtension: String?, subdirectory: String?) -> URL?",
+      "desc": "Returns the file URL for the resource file identified by the specified name and extension and residing in a given bundle directory."
+    },
+    {
+      "name": "func url(forResource: String?, withExtension: String?) -> URL?",
+      "desc": "Returns the file URL for the resource identified by the specified name and file extension."
+    },
+    {
+      "name": "func urls(forResourcesWithExtension: String?, subdirectory: String?) -> [URL]?",
+      "desc": "Returns an array of file URLs for all resources identified by the specified file extension and located in the specified bundle subdirectory."
+    },
+    {
+      "name": "func url(forResource: String?, withExtension: String?, subdirectory: String?, localization: String?) -> URL?",
+      "desc": "Returns the file URL for the resource identified by the specified name and file extension, located in the specified bundle subdirectory, and limited to global resources and those associated with the specified localization."
+    },
+    {
+      "name": "func urls(forResourcesWithExtension: String?, subdirectory: String?, localization: String?) -> [URL]?",
+      "desc": "Returns an array containing the file URLs for all bundle resources having the specified filename extension, residing in the specified resource subdirectory, and limited to global resources and those associated with the specified localization."
+    },
+    {
+      "name": "class func url(forResource: String?, withExtension: String?, subdirectory: String?, in: URL) -> URL?",
+      "desc": "Creates and returns a file URL for the resource with the specified name and extension in the specified bundle."
+    },
+    {
+      "name": "class func urls(forResourcesWithExtension: String?, subdirectory: String?, in: URL) -> [URL]?",
+      "desc": "Returns an array containing the file URLs for all bundle resources having the specified filename extension, residing in the specified resource subdirectory, within the specified bundle."
+    },
+    {
+      "name": "func path(forResource: String?, ofType: String?) -> String?",
+      "desc": "Returns the full pathname for the resource identified by the specified name and file extension."
+    },
+    {
+      "name": "func path(forResource: String?, ofType: String?, inDirectory: String?) -> String?",
+      "desc": "Returns the full pathname for the resource identified by the specified name and file extension and located in the specified bundle subdirectory."
+    },
+    {
+      "name": "func path(forResource: String?, ofType: String?, inDirectory: String?, forLocalization: String?) -> String?",
+      "desc": "Returns the full pathname for the resource identified by the specified name and file extension, located in the specified bundle subdirectory, and limited to global resources and those associated with the specified localization."
+    },
+    {
+      "name": "func paths(forResourcesOfType: String?, inDirectory: String?) -> [String]",
+      "desc": "Returns an array containing the pathnames for all bundle resources having the specified filename extension and residing in the resource subdirectory."
+    },
+    {
+      "name": "func paths(forResourcesOfType: String?, inDirectory: String?, forLocalization: String?) -> [String]",
+      "desc": "Returns an array containing the file for all bundle resources having the specified filename extension, residing in the specified resource subdirectory, and limited to global resources and those associated with the specified localization."
+    },
+    {
+      "name": "class func path(forResource: String?, ofType: String?, inDirectory: String) -> String?",
+      "desc": "Returns the full pathname for the resource file identified by the specified name and extension and residing in a given bundle directory."
+    },
+    {
+      "name": "class func paths(forResourcesOfType: String?, inDirectory: String) -> [String]",
+      "desc": "Returns an array containing the pathnames for all bundle resources having the specified extension and residing in the bundle directory at the specified path."
+    },
+    {
+      "name": "func urlForImageResource(NSImage.Name) -> URL?",
+      "desc": "Returns the location of the specified image resource as an NSURL."
+    },
+    {
+      "name": "func pathForImageResource(NSImage.Name) -> String?",
+      "desc": "Returns the location of the specified image resource file."
+    },
+    {
+      "name": "func image(forResource: NSImage.Name) -> NSImage?",
+      "desc": "Returns an NSImage instance associated with the specified name, which can be backed by multiple files representing different resolution versions of the image."
+    },
+    {
+      "name": "func path(forSoundResource: NSSound.Name) -> String?",
+      "desc": "Returns the location of the specified sound resource file."
+    },
+    {
+      "name": "func localizedString(forKey: String, value: String?, table: String?) -> String",
+      "desc": "Returns a localized version of the string designated by the specified key and residing in the specified table."
+    },
+    {
+      "name": "func contextHelp(forKey: NSHelpManager.ContextHelpKey) -> NSAttributedString?",
+      "desc": "Returns the context-sensitive help for the specified key from the bundle's help file."
+    },
+    {
+      "name": "var resourceURL: URL?",
+      "desc": "The file URL of the bundle’s subdirectory containing resource files."
+    },
+    {
+      "name": "var executableURL: URL?",
+      "desc": "The file URL of the receiver's executable file."
+    },
+    {
+      "name": "var privateFrameworksURL: URL?",
+      "desc": "The file URL of the bundle’s subdirectory containing private frameworks."
+    },
+    {
+      "name": "var sharedFrameworksURL: URL?",
+      "desc": "The file URL of the receiver's subdirectory containing shared frameworks."
+    },
+    {
+      "name": "var builtInPlugInsURL: URL?",
+      "desc": "The file URL of the receiver's subdirectory containing plug-ins."
+    },
+    {
+      "name": "func url(forAuxiliaryExecutable: String) -> URL?",
+      "desc": "Returns the file URL of the executable with the specified name in the receiver’s bundle."
+    },
+    {
+      "name": "var sharedSupportURL: URL?",
+      "desc": "The file URL of the bundle’s subdirectory containing shared support files."
+    },
+    {
+      "name": "var appStoreReceiptURL: URL?",
+      "desc": "The file URL for the bundle’s App Store receipt."
+    },
+    {
+      "name": "var resourcePath: String?",
+      "desc": "The full pathname of the bundle’s subdirectory containing resources."
+    },
+    {
+      "name": "var executablePath: String?",
+      "desc": "The full pathname of the receiver's executable file."
+    },
+    {
+      "name": "var privateFrameworksPath: String?",
+      "desc": "The full pathname of the bundle’s subdirectory containing private frameworks."
+    },
+    {
+      "name": "var sharedFrameworksPath: String?",
+      "desc": "The full pathname of the bundle’s subdirectory containing shared frameworks."
+    },
+    {
+      "name": "var builtInPlugInsPath: String?",
+      "desc": "The full pathname of the receiver's subdirectory containing plug-ins."
+    },
+    {
+      "name": "func path(forAuxiliaryExecutable: String) -> String?",
+      "desc": "Returns the full pathname of the executable with the specified name in the receiver’s bundle."
+    },
+    {
+      "name": "var sharedSupportPath: String?",
+      "desc": "The full pathname of the bundle’s subdirectory containing shared support files."
+    },
+    {
+      "name": "var bundleURL: URL",
+      "desc": "The full URL of the receiver’s bundle directory."
+    },
+    {
+      "name": "var bundlePath: String",
+      "desc": "The full pathname of the receiver’s bundle directory."
+    },
+    {
+      "name": "var bundleIdentifier: String?",
+      "desc": "The receiver’s bundle identifier."
+    },
+    {
+      "name": "var infoDictionary: [String : Any]?",
+      "desc": "A dictionary, constructed from the bundle’s Info.plist file, that contains information about the receiver."
+    },
+    {
+      "name": "func object(forInfoDictionaryKey: String) -> Any?",
+      "desc": "Returns the value associated with the specified key in the receiver's information property list."
+    },
+    {
+      "name": "var localizations: [String]",
+      "desc": "A list of all the localizations contained in the bundle."
+    },
+    {
+      "name": "var preferredLocalizations: [String]",
+      "desc": "An ordered list of preferred localizations contained in the bundle."
+    },
+    {
+      "name": "var developmentLocalization: String?",
+      "desc": "The localization for the development language."
+    },
+    {
+      "name": "var localizedInfoDictionary: [String : Any]?",
+      "desc": "A dictionary with the keys from the bundle’s localized property list."
+    },
+    {
+      "name": "class func preferredLocalizations(from: [String]) -> [String]",
+      "desc": "Returns one or more localizations from the specified list that a bundle object would use to locate resources for the current user."
+    },
+    {
+      "name": "class func preferredLocalizations(from: [String], forPreferences: [String]?) -> [String]",
+      "desc": "Returns locale identifiers for which a bundle would provide localized content, given a specified list of candidates for a user's language preferences."
+    },
+    {
+      "name": "func setPreservationPriority(Double, forTags: Set<String>)",
+      "desc": "A hint to the system of the relative order for purging tagged sets of resources in the bundle."
+    },
+    {
+      "name": "func preservationPriority(forTag: String) -> Double",
+      "desc": "Returns the current preservation priority for the specified tag."
+    },
+    {
+      "name": "func classNamed(String) -> AnyClass?",
+      "desc": "Returns the Class object for the specified name."
+    },
+    {
+      "name": "var principalClass: AnyClass?",
+      "desc": "The bundle’s principal class."
+    },
+    {
+      "name": "class let didLoadNotification: NSNotification.Name",
+      "desc": "A notification that lets observers know when classes are dynamically loaded."
+    },
+    {
+      "name": "let NSLoadedClasses: String",
+      "desc": "A constant used as a key for the userInfo dictionary of a didLoadNotification notification that corresponds to an array of names of each class that was loaded."
+    },
+    {
+      "name": "var executableArchitectures: [NSNumber]?",
+      "desc": "An array of numbers indicating the architecture types supported by the bundle’s executable."
+    },
+    {
+      "name": "func preflight()",
+      "desc": "Returns a Boolean value indicating whether the bundle’s executable code could be loaded successfully."
+    },
+    {
+      "name": "func load() -> Bool",
+      "desc": "Dynamically loads the bundle’s executable code into a running program, if the code has not already been loaded."
+    },
+    {
+      "name": "func loadAndReturnError()",
+      "desc": "Loads the bundle’s executable code and returns any errors."
+    },
+    {
+      "name": "func unload() -> Bool",
+      "desc": "Unloads the code associated with the receiver."
+    },
+    {
+      "name": "var isLoaded: Bool",
+      "desc": "The load status of a bundle."
+    },
+    {
+      "name": "var NSExecutableErrorMinimum: Int",
+      "desc": "The beginning of the range of error codes reserved for errors related to executable files."
+    },
+    {
+      "name": "var NSExecutableNotLoadableError: Int",
+      "desc": "The executable type isn’t loadable in the current process."
+    },
+    {
+      "name": "var NSExecutableArchitectureMismatchError: Int",
+      "desc": "The executable doesn’t provide an architecture compatible with the current process."
+    },
+    {
+      "name": "var NSExecutableRuntimeMismatchError: Int",
+      "desc": "The executable has Objective-C runtime information that’s incompatible with the current process."
+    },
+    {
+      "name": "var NSExecutableLoadError: Int",
+      "desc": "Executable cannot be loaded for an otherwise-unspecified reason."
+    },
+    {
+      "name": "var NSExecutableLinkError: Int",
+      "desc": "The executable failed due to linking issues."
+    },
+    {
+      "name": "var NSExecutableErrorMaximum: Int",
+      "desc": "The end of the range of error codes reserved for errors related to executable files."
+    }
+  ],
+  "declaration": "class Bundle : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

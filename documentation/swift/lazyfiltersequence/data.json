@@ -1,0 +1,323 @@
+{
+  "path": "/documentation/swift/lazyfiltersequence",
+  "type": "Generic Structure",
+  "name": "LazyFilterSequence",
+  "desc": "A sequence whose elements consist of the elements of some base sequence that also satisfy a given predicate.",
+  "items": [
+    {
+      "name": "typealias LazyFilterSequence.Element",
+      "desc": "A type representing the sequence’s elements."
+    },
+    {
+      "name": "typealias LazyFilterSequence.Elements",
+      "desc": "A Sequence that can contain the same elements as this one, possibly with a simpler type."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of elements in the collection."
+    },
+    {
+      "name": "var elements: LazyFilterSequence<Base>",
+      "desc": "Identical to self."
+    },
+    {
+      "name": "var first: Base.Element?",
+      "desc": "The first element of the collection."
+    },
+    {
+      "name": "var indices: DefaultIndices<LazyFilterSequence<Base>>",
+      "desc": "The indices that are valid for subscripting the collection, in ascending order."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value indicating whether the collection is empty."
+    },
+    {
+      "name": "var last: Base.Element?",
+      "desc": "The last element of the collection."
+    },
+    {
+      "name": "var lazy: LazyFilterSequence<Base>",
+      "desc": "Identical to self."
+    },
+    {
+      "name": "var lazy: LazySequence<LazyFilterSequence<Base>>"
+    },
+    {
+      "name": "var lazy: LazyCollection<LazyFilterSequence<Base>>",
+      "desc": "Available when Base conforms to Collection."
+    },
+    {
+      "name": "var underestimatedCount: Int",
+      "desc": "A value less than or equal to the number of elements in the collection."
+    },
+    {
+      "name": "func allSatisfy((Base.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether every element of a sequence satisfies a given predicate."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((Base.Element) -> ElementOfResult?) -> LazyMapSequence<LazyFilterSequence<LazyMapSequence<LazyFilterSequence<Base>, ElementOfResult?>>, ElementOfResult>",
+      "desc": "Returns the non-nil results of mapping the given transformation over this sequence."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((Base.Element) -> ElementOfResult?) -> [ElementOfResult]",
+      "desc": "Returns an array containing the non-nil results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func contains(Base.Element) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence contains the given element."
+    },
+    {
+      "name": "func contains(where: (Base.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func difference<C>(from: C) -> CollectionDifference<Base.Element>",
+      "desc": "Returns the difference needed to produce this collection’s ordered elements from the given collection."
+    },
+    {
+      "name": "func difference<C>(from: C, by: (C.Element, Base.Element) -> Bool) -> CollectionDifference<Base.Element>",
+      "desc": "Returns the difference needed to produce this collection’s ordered elements from the given collection, using the given predicate as an equivalence test."
+    },
+    {
+      "name": "func drop(while: (Base.Element) -> Bool) -> LazyDropWhileSequence<LazyFilterSequence<Base>>",
+      "desc": "Returns a lazy sequence that skips any initial elements that satisfy predicate."
+    },
+    {
+      "name": "func dropFirst(Int) -> DropFirstSequence<LazyFilterSequence<Base>>",
+      "desc": "Returns a sequence containing all but the given number of initial elements."
+    },
+    {
+      "name": "func dropFirst(Int) -> LazyFilterCollection<Base.SubSequence>",
+      "desc": "Returns a subsequence containing all but the given number of initial elements."
+    },
+    {
+      "name": "func dropLast(Int) -> [Base.Element]",
+      "desc": "Returns a sequence containing all but the given number of final elements."
+    },
+    {
+      "name": "func dropLast(Int) -> LazyFilterCollection<Base.SubSequence>",
+      "desc": "Returns a subsequence containing all but the specified number of final elements."
+    },
+    {
+      "name": "func elementsEqual<OtherSequence>(OtherSequence) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this sequence and another sequence contain the same elements in the same order."
+    },
+    {
+      "name": "func elementsEqual<OtherSequence>(OtherSequence, by: (Base.Element, OtherSequence.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether this sequence and another sequence contain equivalent elements in the same order, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func enumerated() -> EnumeratedSequence<LazyFilterSequence<Base>>",
+      "desc": "Returns a sequence of pairs (n, x), where n represents a consecutive integer starting at zero and x represents an element of the sequence."
+    },
+    {
+      "name": "func filter((LazyFilterSequence<Base>.Element) -> Bool) -> LazyFilterSequence<Base>"
+    },
+    {
+      "name": "func first(where: (Base.Element) -> Bool) -> Base.Element?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func firstIndex(of: Base.Element) -> Base.Index?",
+      "desc": "Returns the first index where the specified value appears in the collection."
+    },
+    {
+      "name": "func firstIndex(where: (Base.Element) -> Bool) -> Base.Index?",
+      "desc": "Returns the first index in which an element of the collection satisfies the given predicate."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((Base.Element) -> SegmentOfResult) -> LazySequence<FlattenSequence<LazyMapSequence<LazyFilterSequence<Base>, SegmentOfResult>>>",
+      "desc": "Returns the concatenated results of mapping the given transformation over this sequence."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((Base.Element) -> SegmentOfResult) -> [SegmentOfResult.Element]",
+      "desc": "Returns an array containing the concatenated results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func forEach((Base.Element) -> Void)",
+      "desc": "Calls the given closure on each element in the sequence in the same order as a for-in loop."
+    },
+    {
+      "name": "func joined() -> LazySequence<FlattenSequence<LazyFilterSequence<Base>>>",
+      "desc": "Returns a lazy sequence that concatenates the elements of this sequence of sequences."
+    },
+    {
+      "name": "func joined() -> FlattenSequence<LazyFilterSequence<Base>>",
+      "desc": "Returns the elements of this sequence of sequences, concatenated."
+    },
+    {
+      "name": "func joined(separator: String) -> String",
+      "desc": "Returns a new string by concatenating the elements of the sequence, adding the given separator between each element."
+    },
+    {
+      "name": "func joined<Separator>(separator: Separator) -> JoinedSequence<LazyFilterSequence<Base>>",
+      "desc": "Returns the concatenated elements of this sequence of sequences, inserting the given separator between each element."
+    },
+    {
+      "name": "func joined(separator: String) -> String",
+      "desc": "Returns a new string by concatenating the elements of the sequence, adding the given separator between each element."
+    },
+    {
+      "name": "func last(where: (Base.Element) -> Bool) -> Base.Element?",
+      "desc": "Returns the last element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func lastIndex(of: Base.Element) -> Base.Index?",
+      "desc": "Returns the last index where the specified value appears in the collection."
+    },
+    {
+      "name": "func lastIndex(where: (Base.Element) -> Bool) -> Base.Index?",
+      "desc": "Returns the index of the last element in the collection that matches the given predicate."
+    },
+    {
+      "name": "func lexicographicallyPrecedes<OtherSequence>(OtherSequence) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the less-than operator (<) to compare elements."
+    },
+    {
+      "name": "func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Base.Element, Base.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence precedes another sequence in a lexicographical (dictionary) ordering, using the given predicate to compare elements."
+    },
+    {
+      "name": "func makeIterator() -> LazyFilterSequence<Base>.Iterator",
+      "desc": "Returns an iterator over the elements of this sequence."
+    },
+    {
+      "name": "func map<U>((Base.Element) -> U) -> LazyMapSequence<LazyFilterSequence<Base>, U>",
+      "desc": "Returns a LazyMapSequence over this Sequence. The elements of the result are computed lazily, each time they are read, by calling transform function on a base element."
+    },
+    {
+      "name": "func map<T>((Base.Element) -> T) -> [T]",
+      "desc": "Returns an array containing the results of mapping the given closure over the sequence’s elements."
+    },
+    {
+      "name": "func max() -> Base.Element?",
+      "desc": "Returns the maximum element in the sequence."
+    },
+    {
+      "name": "func max(by: (Base.Element, Base.Element) -> Bool) -> Base.Element?",
+      "desc": "Returns the maximum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func min() -> Base.Element?",
+      "desc": "Returns the minimum element in the sequence."
+    },
+    {
+      "name": "func min(by: (Base.Element, Base.Element) -> Bool) -> Base.Element?",
+      "desc": "Returns the minimum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func prefix(Int) -> PrefixSequence<LazyFilterSequence<Base>>",
+      "desc": "Returns a sequence, up to the specified maximum length, containing the initial elements of the sequence."
+    },
+    {
+      "name": "func prefix(Int) -> LazyFilterCollection<Base.SubSequence>",
+      "desc": "Returns a subsequence, up to the specified maximum length, containing the initial elements of the collection."
+    },
+    {
+      "name": "func prefix(through: Base.Index) -> LazyFilterCollection<Base.SubSequence>",
+      "desc": "Returns a subsequence from the start of the collection through the specified position."
+    },
+    {
+      "name": "func prefix(upTo: Base.Index) -> LazyFilterCollection<Base.SubSequence>",
+      "desc": "Returns a subsequence from the start of the collection up to, but not including, the specified position."
+    },
+    {
+      "name": "func prefix(while: (Base.Element) -> Bool) -> LazyPrefixWhileSequence<LazyFilterSequence<Base>>",
+      "desc": "Returns a lazy sequence of the initial consecutive elements that satisfy predicate."
+    },
+    {
+      "name": "func randomElement() -> Base.Element?",
+      "desc": "Returns a random element of the collection."
+    },
+    {
+      "name": "func randomElement<T>(using: inout T) -> Base.Element?",
+      "desc": "Returns a random element of the collection, using the given generator as a source for randomness."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, Base.Element) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, Base.Element) -> ()) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "func reversed() -> [Base.Element]",
+      "desc": "Returns an array containing the elements of this sequence in reverse order."
+    },
+    {
+      "name": "func shuffled() -> [Base.Element]",
+      "desc": "Returns the elements of the sequence, shuffled."
+    },
+    {
+      "name": "func shuffled<T>(using: inout T) -> [Base.Element]",
+      "desc": "Returns the elements of the sequence, shuffled using the given generator as a source for randomness."
+    },
+    {
+      "name": "func sorted() -> [Base.Element]",
+      "desc": "Returns the elements of the sequence, sorted."
+    },
+    {
+      "name": "func sorted(by: (Base.Element, Base.Element) -> Bool) -> [Base.Element]",
+      "desc": "Returns the elements of the sequence, sorted using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Base.Element) -> Bool) -> [ArraySlice<Base.Element>]",
+      "desc": "Returns the longest possible subsequences of the sequence, in order, that don’t contain elements satisfying the given predicate. Elements that are used to split the sequence are not returned as part of any subsequence."
+    },
+    {
+      "name": "func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator: (Base.Element) -> Bool) -> [LazyFilterCollection<Base.SubSequence>]",
+      "desc": "Returns the longest possible subsequences of the collection, in order, that don’t contain elements satisfying the given predicate."
+    },
+    {
+      "name": "func split(separator: Base.Element, maxSplits: Int, omittingEmptySubsequences: Bool) -> [ArraySlice<Base.Element>]",
+      "desc": "Returns the longest possible subsequences of the sequence, in order, around elements equal to the given element."
+    },
+    {
+      "name": "func split(separator: Base.Element, maxSplits: Int, omittingEmptySubsequences: Bool) -> [LazyFilterCollection<Base.SubSequence>]",
+      "desc": "Returns the longest possible subsequences of the collection, in order, around elements equal to the given element."
+    },
+    {
+      "name": "func starts<PossiblePrefix>(with: PossiblePrefix) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the initial elements of the sequence are the same as the elements in another sequence."
+    },
+    {
+      "name": "func starts<PossiblePrefix>(with: PossiblePrefix, by: (Base.Element, PossiblePrefix.Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the initial elements of the sequence are equivalent to the elements in another sequence, using the given predicate as the equivalence test."
+    },
+    {
+      "name": "func suffix(Int) -> [Base.Element]",
+      "desc": "Returns a subsequence, up to the given maximum length, containing the final elements of the sequence."
+    },
+    {
+      "name": "func suffix(Int) -> LazyFilterCollection<Base.SubSequence>",
+      "desc": "Returns a subsequence, up to the given maximum length, containing the final elements of the collection."
+    },
+    {
+      "name": "func suffix(from: Base.Index) -> LazyFilterCollection<Base.SubSequence>",
+      "desc": "Returns a subsequence from the specified position to the end of the collection."
+    },
+    {
+      "name": "func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<Base.Element>) -> R) -> R?",
+      "desc": "Executes a closure on the sequence’s contiguous storage."
+    },
+    {
+      "name": "subscript<R>(R) -> LazyFilterCollection<Base.SubSequence>",
+      "desc": "Accesses the contiguous subrange of the collection’s elements specified by a range expression."
+    },
+    {
+      "name": "subscript((UnboundedRange_) -> ()) -> LazyFilterCollection<Base.SubSequence>",
+      "desc": "Available when Base conforms to Collection."
+    },
+    {
+      "name": "struct LazyFilterSequence.Iterator",
+      "desc": "An iterator over the elements traversed by some base iterator that also satisfy a given predicate."
+    }
+  ],
+  "declaration": "@frozen struct LazyFilterSequence<Base> where Base : Sequence",
+  "conformsTo": [
+    "LazySequenceProtocol",
+    "Sequence"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/networkextension/nefiltercontrolverdict",
+  "type": "Class",
+  "name": "NEFilterControlVerdict",
+  "desc": "The result from a filter control provider.",
+  "items": [
+    {
+      "name": "class func allow(withUpdateRules: Bool) -> NEFilterControlVerdict",
+      "desc": "Create a verdict that indicates to the system that all of the flow’s data should be allowed to pass to its final destination, and that the filtering rules have been updated."
+    },
+    {
+      "name": "class func drop(withUpdateRules: Bool) -> NEFilterControlVerdict",
+      "desc": "Create a verdict that indicates to the system that all of the flow’s data should be dropped, and that the filtering rules have been updated."
+    },
+    {
+      "name": "class func updateRules() -> NEFilterControlVerdict",
+      "desc": "Create a verdict that indicates to the system that the filtering rules have been updated, and that the Filter Data Provider needs to make a decision about the flow’s data."
+    }
+  ],
+  "declaration": "class NEFilterControlVerdict : NEFilterNewFlowVerdict",
+  "inheritsFrom": [
+    "NEFilterNewFlowVerdict"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

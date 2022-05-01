@@ -1,0 +1,105 @@
+{
+  "path": "/documentation/healthkit/hkerror",
+  "type": "Structure",
+  "name": "HKError",
+  "desc": "An error returned from a HealthKit method.",
+  "items": [
+    {
+      "name": "init(Code, userInfo: [String : Any])",
+      "desc": "Creates a HealthKit error from a code and user info dictionary."
+    },
+    {
+      "name": "static var errorDomain: String",
+      "desc": "The domain for all HealthKit errors."
+    },
+    {
+      "name": "var errorCode: Int",
+      "desc": "A code that represents the error."
+    },
+    {
+      "name": "var code: Code",
+      "desc": "A code that represents the error."
+    },
+    {
+      "name": "var errorUserInfo: [String : Any]",
+      "desc": "A dictionary that contains additional information about the error."
+    },
+    {
+      "name": "var userInfo: [String : Any]",
+      "desc": "A dictionary that contains additional information about the error."
+    },
+    {
+      "name": "var localizedDescription: String",
+      "desc": "A localized description of the error."
+    },
+    {
+      "name": "enum HKError.Code",
+      "desc": "Error codes returned by HealthKit."
+    },
+    {
+      "name": "static var noError: HKError.Code",
+      "desc": "No error occurred."
+    },
+    {
+      "name": "static var errorHealthDataUnavailable: HKError.Code",
+      "desc": "The user accessed HealthKit on an unsupported device."
+    },
+    {
+      "name": "static var errorHealthDataRestricted: HKError.Code",
+      "desc": "A Mobile Device Management (MDM) profile restricts the use of HealthKit on this device."
+    },
+    {
+      "name": "static var errorInvalidArgument: HKError.Code",
+      "desc": "The app passed an invalid argument to the HealthKit API."
+    },
+    {
+      "name": "static var errorAuthorizationDenied: HKError.Code",
+      "desc": "The user hasn’t given the app permission to save data."
+    },
+    {
+      "name": "static var errorAuthorizationNotDetermined: HKError.Code",
+      "desc": "The app hasn’t yet asked the user for the authorization required to complete the task."
+    },
+    {
+      "name": "static var errorRequiredAuthorizationDenied: HKError.Code",
+      "desc": "The user hasn’t granted the application authorization to access all the required clinical record types."
+    },
+    {
+      "name": "static var errorDatabaseInaccessible: HKError.Code",
+      "desc": "The HealthKit data is unavailable because it’s protected and the device is locked."
+    },
+    {
+      "name": "static var errorUserCanceled: HKError.Code",
+      "desc": "The user canceled the operation."
+    },
+    {
+      "name": "static var errorAnotherWorkoutSessionStarted: HKError.Code",
+      "desc": "Another app started a workout session."
+    },
+    {
+      "name": "static var errorUserExitedWorkoutSession: HKError.Code",
+      "desc": "The user exited your application while a workout session was running."
+    },
+    {
+      "name": "static var errorNoData: HKError.Code",
+      "desc": "Data is unavailable for the requested query and predicate."
+    },
+    {
+      "name": "static func == (HKError, HKError) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two errors are the same."
+    },
+    {
+      "name": "static func != (HKError, HKError) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether two values aren’t equal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of a value by feeding them to the given hasher."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    }
+  ],
+  "declaration": "struct HKError"
+}

@@ -1,0 +1,47 @@
+{
+  "path": "/documentation/authenticationservices/asauthorizationappleidprovider",
+  "type": "Class",
+  "name": "ASAuthorizationAppleIDProvider",
+  "desc": "A mechanism for generating requests to authenticate users based on their Apple ID.",
+  "items": [
+    {
+      "name": "class ASAuthorizationAppleIDButton",
+      "desc": "A control you add to your interface that enables users to initiate the Sign In with Apple flow."
+    },
+    {
+      "name": "class WKInterfaceAuthorizationAppleIDButton",
+      "desc": "A button that you can use to trigger a Sign in with Apple request."
+    },
+    {
+      "name": "func createRequest() -> ASAuthorizationAppleIDRequest",
+      "desc": "Creates a new Apple ID authorization request."
+    },
+    {
+      "name": "class ASAuthorizationAppleIDRequest",
+      "desc": "An OpenID authorization request that relies on the user’s Apple ID."
+    },
+    {
+      "name": "class ASAuthorizationOpenIDRequest",
+      "desc": "An OpenID authorization request."
+    },
+    {
+      "name": "func getCredentialState(forUserID: String, completion: (ASAuthorizationAppleIDProvider.CredentialState, Error?) -> Void)",
+      "desc": "Returns the credential state for the given user in a completion handler."
+    },
+    {
+      "name": "enum ASAuthorizationAppleIDProvider.CredentialState",
+      "desc": "Possible values for the credential state of a user."
+    },
+    {
+      "name": "class let credentialRevokedNotification: NSNotification.Name",
+      "desc": "A notification that indicates the user’s credentials have been revoked and they should be signed out."
+    }
+  ],
+  "declaration": "class ASAuthorizationAppleIDProvider : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "ASAuthorizationProvider"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "path": "/documentation/sirikit/ininteraction",
+  "type": "Class",
+  "name": "INInteraction",
+  "desc": "An interaction between the user and your app involving an intent object.",
+  "items": [
+    {
+      "name": "init(intent: INIntent, response: INIntentResponse?)",
+      "desc": "Initializes and returns an interaction object with an intent object and your app’s response."
+    },
+    {
+      "name": "var intent: INIntent",
+      "desc": "The intent object that describes the user’s request."
+    },
+    {
+      "name": "var intentResponse: INIntentResponse?",
+      "desc": "The response object that your app created in response to the request."
+    },
+    {
+      "name": "func donate(completion: ((Error?) -> Void)?)",
+      "desc": "Donates this interaction object to the system."
+    },
+    {
+      "name": "class func deleteAll(completion: ((Error?) -> Void)?)",
+      "desc": "Deletes all interactions that you donated previously."
+    },
+    {
+      "name": "class func delete(with: [String], completion: ((Error?) -> Void)?)",
+      "desc": "Deletes the specified interactions that were donated by the calling app."
+    },
+    {
+      "name": "class func delete(with: String, completion: ((Error?) -> Void)?)",
+      "desc": "Deletes the interactions with the specified group identifier."
+    },
+    {
+      "name": "var intentHandlingStatus: INIntentHandlingStatus",
+      "desc": "The current state of the interaction."
+    },
+    {
+      "name": "var direction: INInteractionDirection",
+      "desc": "The direction in which information flowed to or from the device."
+    },
+    {
+      "name": "var dateInterval: DateInterval?",
+      "desc": "The time at which the interaction started and its duration."
+    },
+    {
+      "name": "var identifier: String",
+      "desc": "The unique identifier of the interaction."
+    },
+    {
+      "name": "var groupIdentifier: String?",
+      "desc": "The unique identifier of the interaction’s group."
+    },
+    {
+      "name": "func parameterValue(for: INParameter) -> Any?",
+      "desc": "Returns the value of the specified parameter of this interaction object."
+    },
+    {
+      "name": "enum INIntentHandlingStatus",
+      "desc": "Constants indicating the current state of the interaction."
+    },
+    {
+      "name": "enum INInteractionDirection",
+      "desc": "Constants indicating whether the app is providing or receiving information."
+    }
+  ],
+  "declaration": "class INInteraction : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding"
+  ]
+}

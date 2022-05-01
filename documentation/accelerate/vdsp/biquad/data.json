@@ -1,0 +1,21 @@
+{
+  "path": "/documentation/accelerate/vdsp/biquad",
+  "type": "Generic Structure",
+  "name": "vDSP.Biquad",
+  "desc": "A structure that applies biquadratic filters to single- and double-precision signals.",
+  "items": [
+    {
+      "name": "init?(coefficients: [Double], channelCount: vDSP_Length, sectionCount: vDSP_Length, ofType: T.Type)",
+      "desc": "Initializes a new single or multichannel cascaded biquad IIR structure."
+    },
+    {
+      "name": "func apply<U>(input: U) -> [T]",
+      "desc": "Applies a single- or double-precision single or multichannel biquad IIR filter, returning the filtered signal."
+    },
+    {
+      "name": "func apply<U, V>(input: U, output: inout V)",
+      "desc": "Applies a single- or double-precision single or multichannel biquad IIR filter, overwriting the supplied output vector."
+    }
+  ],
+  "declaration": "struct Biquad<T> where T : vDSP_FloatingPointBiquadFilterable"
+}

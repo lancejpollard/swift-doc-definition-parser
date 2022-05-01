@@ -1,0 +1,103 @@
+{
+  "path": "/documentation/systemextensions/ossystemextensionerror",
+  "type": "Structure",
+  "name": "OSSystemExtensionError",
+  "desc": "An error that describes a failed extension manager request.",
+  "items": [
+    {
+      "name": "var errorCode: Int",
+      "desc": "A numeric code that identifies the error."
+    },
+    {
+      "name": "var errorUserInfo: [String : Any]",
+      "desc": "A dictionary that provides details about the error."
+    },
+    {
+      "name": "var localizedDescription: String",
+      "desc": "A string containing the localized description of the error."
+    },
+    {
+      "name": "static var errorDomain: String",
+      "desc": "The domain of SystemExtension errors."
+    },
+    {
+      "name": "enum OSSystemExtensionError.Code",
+      "desc": "Error codes for system extensions."
+    },
+    {
+      "name": "static var unknown: OSSystemExtensionError.Code",
+      "desc": "An error code that indicates an unknown error occurred."
+    },
+    {
+      "name": "static var missingEntitlement: OSSystemExtensionError.Code",
+      "desc": "An error code that indicates the system extension lacks a required entitlement."
+    },
+    {
+      "name": "static var unsupportedParentBundleLocation: OSSystemExtensionError.Code",
+      "desc": "An error code that indicates the extension’s parent app isn’t in a valid location for activation."
+    },
+    {
+      "name": "static var extensionNotFound: OSSystemExtensionError.Code",
+      "desc": "An error code that indicates the manager can’t find the system extension."
+    },
+    {
+      "name": "static var extensionMissingIdentifier: OSSystemExtensionError.Code",
+      "desc": "An error code that indicates the extension identifier is missing."
+    },
+    {
+      "name": "static var duplicateExtensionIdentifer: OSSystemExtensionError.Code",
+      "desc": "An error code that indicates the extension identifier duplicates an existing identifier."
+    },
+    {
+      "name": "static var unknownExtensionCategory: OSSystemExtensionError.Code",
+      "desc": "An error code that indicates the extension manager can’t recognize the extension’s category identifier."
+    },
+    {
+      "name": "static var codeSignatureInvalid: OSSystemExtensionError.Code",
+      "desc": "An error code that indicates the extension’s signature is invalid."
+    },
+    {
+      "name": "static var validationFailed: OSSystemExtensionError.Code",
+      "desc": "An error code that indicates the manager can’t validate the extension."
+    },
+    {
+      "name": "static var forbiddenBySystemPolicy: OSSystemExtensionError.Code",
+      "desc": "An error code that indicates the system policy prohibits activating the system extension."
+    },
+    {
+      "name": "static var requestCanceled: OSSystemExtensionError.Code",
+      "desc": "An error code that indicates the system extension manager request was canceled."
+    },
+    {
+      "name": "static var requestSuperseded: OSSystemExtensionError.Code",
+      "desc": "An error code that indicates the system extension request failed because the system already has a pending request for the same identifier."
+    },
+    {
+      "name": "static var authorizationRequired: OSSystemExtensionError.Code",
+      "desc": "An error code that indicates the system was unable to obtain the proper authorization."
+    },
+    {
+      "name": "static func != (OSSystemExtensionError, OSSystemExtensionError) -> Bool",
+      "desc": "Evaluates whether two system extension errors are unequal."
+    },
+    {
+      "name": "init(Code, userInfo: [String : Any])"
+    },
+    {
+      "name": "var code: Code"
+    },
+    {
+      "name": "var hashValue: Int"
+    },
+    {
+      "name": "var userInfo: [String : Any]"
+    },
+    {
+      "name": "func hash(into: inout Hasher)"
+    },
+    {
+      "name": "static func == (OSSystemExtensionError, OSSystemExtensionError) -> Bool"
+    }
+  ],
+  "declaration": "struct OSSystemExtensionError"
+}

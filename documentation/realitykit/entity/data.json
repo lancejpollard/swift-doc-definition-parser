@@ -1,0 +1,233 @@
+{
+  "path": "/documentation/realitykit/entity",
+  "type": "Class",
+  "name": "Entity",
+  "desc": "An element of a RealityKit scene to which you attach components that provide appearance and behavior characteristics for the entity.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates a new entity."
+    },
+    {
+      "name": "func clone(recursive: Bool) -> Self",
+      "desc": "Duplicates an entity to create a new entity."
+    },
+    {
+      "name": "func didClone(from: Entity)",
+      "desc": "Tells a newly cloned entity that cloning is complete."
+    },
+    {
+      "name": "var scene: Scene?",
+      "desc": "The scene that owns the entity."
+    },
+    {
+      "name": "var name: String",
+      "desc": "The name of the entity."
+    },
+    {
+      "name": "func findEntity(named: String) -> Entity?",
+      "desc": "Recursively searches all descendant entities for one with the given name."
+    },
+    {
+      "name": "var id: ObjectIdentifier",
+      "desc": "The stable identity of the entity associated with this instance."
+    },
+    {
+      "name": "var id: UInt64",
+      "desc": "The stable identity of the entity."
+    },
+    {
+      "name": "typealias Entity.ID",
+      "desc": "A type of unique identifier used for an entity."
+    },
+    {
+      "name": "var isEnabled: Bool",
+      "desc": "A Boolean that you set to enable or disable the entity and its descendants."
+    },
+    {
+      "name": "var isEnabledInHierarchy: Bool",
+      "desc": "A Boolean that indicates whether the entity and all of its ancestors are enabled."
+    },
+    {
+      "name": "var isActive: Bool",
+      "desc": "A Boolean that indicates whether the entity is active."
+    },
+    {
+      "name": "var isAnchored: Bool",
+      "desc": "A Boolean that indicates whether the entity is anchored."
+    },
+    {
+      "name": "var parent: Entity?",
+      "desc": "The parent entity."
+    },
+    {
+      "name": "func setParent(Entity?, preservingWorldTransform: Bool)",
+      "desc": "Attaches the entity as a child to the specified entity."
+    },
+    {
+      "name": "func removeFromParent(preservingWorldTransform: Bool)",
+      "desc": "Removes the entity from its current parent or from the scene if it is a root entity."
+    },
+    {
+      "name": "var children: ChildCollection",
+      "desc": "The child entities that the entity manages."
+    },
+    {
+      "name": "func addChild(Entity, preservingWorldTransform: Bool)",
+      "desc": "Adds the given entity to the collection of child entities."
+    },
+    {
+      "name": "func removeChild(Entity, preservingWorldTransform: Bool)",
+      "desc": "Removes the given child from the entity."
+    },
+    {
+      "name": "struct Entity.ChildCollection",
+      "desc": "A collection of child entities."
+    },
+    {
+      "name": "protocol HasHierarchy",
+      "desc": "An interface that provides access to a parent entity and child entities."
+    },
+    {
+      "name": "var components: Entity.ComponentSet",
+      "desc": "All the components stored on the entity."
+    },
+    {
+      "name": "struct Entity.ComponentSet",
+      "desc": "A set of stored components."
+    },
+    {
+      "name": "protocol HasTransform",
+      "desc": "An interface that enables manipulating the scale, rotation, and translation of an entity."
+    },
+    {
+      "name": "var synchronization: SynchronizationComponent?",
+      "desc": "The entity’s synchronization component."
+    },
+    {
+      "name": "struct SynchronizationComponent",
+      "desc": "A component that synchronizes an entity between processes and networked applications."
+    },
+    {
+      "name": "var isOwner: Bool",
+      "desc": "A Boolean that indicates whether the calling process owns the entity."
+    },
+    {
+      "name": "func requestOwnership(timeout: TimeInterval, (SynchronizationComponent.OwnershipTransferCompletionResult) -> Void)",
+      "desc": "Requests ownership of the entity."
+    },
+    {
+      "name": "func withUnsynchronized(() -> Void)",
+      "desc": "Calls the given closure in a way such that component changes that the closure makes don’t trigger synchronization."
+    },
+    {
+      "name": "protocol HasSynchronization",
+      "desc": "An interface that enables an entity to be synchronized between processes and networked applications."
+    },
+    {
+      "name": "protocol TransientComponent",
+      "desc": "An interface for components that aren’t saved to file or cloned."
+    },
+    {
+      "name": "var anchor: HasAnchoring?",
+      "desc": "The nearest ancestor entity that can act as an anchor."
+    },
+    {
+      "name": "func generateCollisionShapes(recursive: Bool)",
+      "desc": "Creates the shape used to detect collisions between two entities that have collision components."
+    },
+    {
+      "name": "var availableAnimations: [AnimationResource]",
+      "desc": "The list of animations associated with the entity."
+    },
+    {
+      "name": "func playAnimation(AnimationResource, transitionDuration: TimeInterval, blendLayerOffset: Int, separateAnimatedValue: Bool, startsPaused: Bool, clock: CMClockOrTimebase?) -> AnimationPlaybackController",
+      "desc": "Plays an animation with the specified options."
+    },
+    {
+      "name": "func stopAllAnimations(recursive: Bool)",
+      "desc": "Stops all playing of animations on this entity."
+    },
+    {
+      "name": "func playAnimation(AnimationResource, transitionDuration: TimeInterval, startsPaused: Bool) -> AnimationPlaybackController",
+      "desc": "Plays the given animation on the entity."
+    },
+    {
+      "name": "func playAudio(AudioResource) -> AudioPlaybackController",
+      "desc": "Plays sound from an audio resource on this entity."
+    },
+    {
+      "name": "func prepareAudio(AudioResource) -> AudioPlaybackController",
+      "desc": "Prepares an audio resource for playback."
+    },
+    {
+      "name": "func stopAllAudio()",
+      "desc": "Stops audio playback."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A human readable description of the entity."
+    },
+    {
+      "name": "static func == (Entity, Entity) -> Bool",
+      "desc": "Indicates whether two entities are equal."
+    },
+    {
+      "name": "static func != (Entity, Entity) -> Bool",
+      "desc": "Indicates whether two entities are not equal."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of the entity by feeding them into the given hash function."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hashed value of the entity."
+    },
+    {
+      "name": "var isAccessibilityElement: Bool",
+      "desc": "A Boolean value indicating whether the receiver is an accessibility element that an assistive application can access."
+    },
+    {
+      "name": "var accessibilityLabel: String?",
+      "desc": "A succinct label that identifies the purpose of the image."
+    },
+    {
+      "name": "var accessibilityDescription: String?",
+      "desc": "A longer description of the entity for use by assistive technologies."
+    },
+    {
+      "name": "var bindableValues: BindableValuesReference"
+    },
+    {
+      "name": "var characterController: CharacterControllerComponent?"
+    },
+    {
+      "name": "var characterControllerState: CharacterControllerStateComponent?"
+    },
+    {
+      "name": "var defaultAnimationClock: CMClockOrTimebase"
+    },
+    {
+      "name": "var parameters: Entity.ParameterSet"
+    },
+    {
+      "name": "func moveCharacter(by: SIMD3<Float>, deltaTime: Float, relativeTo: Entity?, collisionHandler: ((CharacterControllerComponent.Collision) -> Void)?) -> CharacterControllerComponent.CollisionFlags"
+    },
+    {
+      "name": "func teleportCharacter(to: SIMD3<Float>, relativeTo: Entity?)"
+    },
+    {
+      "name": "struct Entity.ParameterSet"
+    }
+  ],
+  "declaration": "class Entity",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "HasHierarchy",
+    "HasSynchronization",
+    "HasTransform",
+    "Hashable",
+    "Identifiable"
+  ]
+}

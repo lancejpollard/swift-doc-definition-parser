@@ -1,0 +1,31 @@
+{
+  "path": "/documentation/avfoundation/avcontentkeyrequest/retryreason",
+  "type": "Structure",
+  "name": "AVContentKeyRequest.RetryReason",
+  "desc": "The reason for asking the client to retry a content key request.",
+  "items": [
+    {
+      "name": "static let receivedObsoleteContentKey: AVContentKeyRequest.RetryReason",
+      "desc": "An obsolete key response that was set on the previous content key request."
+    },
+    {
+      "name": "static let receivedResponseWithExpiredLease: AVContentKeyRequest.RetryReason",
+      "desc": "A key response with an expired lease that was set on the previous content key request."
+    },
+    {
+      "name": "static let timedOut: AVContentKeyRequest.RetryReason",
+      "desc": "A key response that wasn’t set soon enough."
+    },
+    {
+      "name": "init(rawValue: String)",
+      "desc": "Creates a retry reason with a string."
+    }
+  ],
+  "declaration": "struct RetryReason, @unchecked Sendable",
+  "conformsTo": [
+    "Equatable",
+    "Hashable",
+    "RawRepresentable",
+    "Sendable"
+  ]
+}

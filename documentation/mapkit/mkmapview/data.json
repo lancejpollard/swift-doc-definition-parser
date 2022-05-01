@@ -1,0 +1,320 @@
+{
+  "path": "/documentation/mapkit/mkmapview",
+  "type": "Class",
+  "name": "MKMapView",
+  "desc": "An embeddable map interface, similar to the one that the Maps app provides.",
+  "items": [
+    {
+      "name": "var delegate: MKMapViewDelegate?",
+      "desc": "The receiver’s delegate."
+    },
+    {
+      "name": "protocol MKMapViewDelegate",
+      "desc": "Optional methods that you use to receive map-related update messages."
+    },
+    {
+      "name": "var mapType: MKMapType",
+      "desc": "The type of data displayed by the map view."
+    },
+    {
+      "name": "enum MKMapType",
+      "desc": "The type of map to display."
+    },
+    {
+      "name": "var isZoomEnabled: Bool",
+      "desc": "A Boolean value that determines whether the user may use pinch gestures to zoom in and out of the map."
+    },
+    {
+      "name": "var isScrollEnabled: Bool",
+      "desc": "A Boolean value that determines whether the user may scroll around the map."
+    },
+    {
+      "name": "var isPitchEnabled: Bool",
+      "desc": "A Boolean value indicating whether the map camera’s pitch information is used."
+    },
+    {
+      "name": "var isRotateEnabled: Bool",
+      "desc": "A Boolean value indicating whether the map camera’s heading information is used."
+    },
+    {
+      "name": "var region: MKCoordinateRegion",
+      "desc": "The area currently displayed by the map view."
+    },
+    {
+      "name": "func setRegion(MKCoordinateRegion, animated: Bool)",
+      "desc": "Changes the currently visible region and optionally animates the change."
+    },
+    {
+      "name": "var centerCoordinate: CLLocationCoordinate2D",
+      "desc": "The map coordinate at the center of the map view."
+    },
+    {
+      "name": "func setCenter(CLLocationCoordinate2D, animated: Bool)",
+      "desc": "Changes the center coordinate of the map and optionally animates the change."
+    },
+    {
+      "name": "func showAnnotations([MKAnnotation], animated: Bool)",
+      "desc": "Sets the visible region so that the map displays the specified annotations."
+    },
+    {
+      "name": "var visibleMapRect: MKMapRect",
+      "desc": "The area currently displayed by the map view."
+    },
+    {
+      "name": "func setVisibleMapRect(MKMapRect, animated: Bool)",
+      "desc": "Changes the currently visible portion of the map and optionally animates the change."
+    },
+    {
+      "name": "func setVisibleMapRect(MKMapRect, edgePadding: UIEdgeInsets, animated: Bool)",
+      "desc": "Changes the currently visible portion of the map, allowing you to specify additional space around the edges."
+    },
+    {
+      "name": "func setCameraBoundary(MKMapView.CameraBoundary?, animated: Bool)",
+      "desc": "Set the camera boundary for the map view, specifying whether to use animation."
+    },
+    {
+      "name": "var cameraBoundary: MKMapView.CameraBoundary?",
+      "desc": "The boundary of the area within which this map view's center must remain."
+    },
+    {
+      "name": "func setCameraZoomRange(MKMapView.CameraZoomRange?, animated: Bool)",
+      "desc": "Set the camera zoom range for the map view, specifying whether to use animation."
+    },
+    {
+      "name": "var cameraZoomRange: MKMapView.CameraZoomRange!",
+      "desc": "The zoom range applied to this map view."
+    },
+    {
+      "name": "class MKMapView.CameraBoundary",
+      "desc": "A boundary of an area within which the map's center must remain."
+    },
+    {
+      "name": "class MKMapView.CameraZoomRange",
+      "desc": "A camera zoom range that limits the distances to which the user can zoom."
+    },
+    {
+      "name": "func setCamera(MKMapCamera, animated: Bool)",
+      "desc": "Changes the camera used for determining the map’s viewing parameters and optionally animates the change."
+    },
+    {
+      "name": "var camera: MKMapCamera",
+      "desc": "The camera used for determining the appearance of the map."
+    },
+    {
+      "name": "var pointOfInterestFilter: MKPointOfInterestFilter?",
+      "desc": "The filter used to determine the points of interest shown on the map."
+    },
+    {
+      "name": "var showsBuildings: Bool",
+      "desc": "A Boolean that indicates whether the map displays extruded building information on supported map types."
+    },
+    {
+      "name": "var showsCompass: Bool",
+      "desc": "A Boolean indicating whether the map displays a compass control."
+    },
+    {
+      "name": "var showsZoomControls: Bool",
+      "desc": "A Boolean indicating whether the map displays zoom controls."
+    },
+    {
+      "name": "var showsScale: Bool",
+      "desc": "A Boolean indicating whether the map shows scale information."
+    },
+    {
+      "name": "var showsTraffic: Bool",
+      "desc": "A Boolean value indicating whether the map displays traffic information."
+    },
+    {
+      "name": "var showsPitchControl: Bool",
+      "desc": "A Boolean value that indicates whether the map displays the pitch control."
+    },
+    {
+      "name": "var showsUserLocation: Bool",
+      "desc": "A Boolean value indicating whether the map should try to display the user’s location."
+    },
+    {
+      "name": "var isUserLocationVisible: Bool",
+      "desc": "A Boolean value that indicates whether the device’s current location is visible in the map view."
+    },
+    {
+      "name": "var userLocation: MKUserLocation",
+      "desc": "The annotation object representing the user’s current location."
+    },
+    {
+      "name": "var userTrackingMode: MKUserTrackingMode",
+      "desc": "The mode used to track the user location."
+    },
+    {
+      "name": "func setUserTrackingMode(MKUserTrackingMode, animated: Bool)",
+      "desc": "Sets the mode used to track the user location with optional animation."
+    },
+    {
+      "name": "enum MKUserTrackingMode",
+      "desc": "The mode used to track the user location on the map."
+    },
+    {
+      "name": "var annotations: [MKAnnotation]",
+      "desc": "The complete list of annotations associated with the receiver."
+    },
+    {
+      "name": "func addAnnotation(MKAnnotation)",
+      "desc": "Adds the specified annotation to the map view."
+    },
+    {
+      "name": "func addAnnotations([MKAnnotation])",
+      "desc": "Adds an array of annotation objects to the map view."
+    },
+    {
+      "name": "func removeAnnotation(MKAnnotation)",
+      "desc": "Removes the specified annotation object from the map view."
+    },
+    {
+      "name": "func removeAnnotations([MKAnnotation])",
+      "desc": "Removes an array of annotation objects from the map view."
+    },
+    {
+      "name": "func annotations(in: MKMapRect) -> Set<AnyHashable>",
+      "desc": "Returns the annotation objects located in the specified map rectangle."
+    },
+    {
+      "name": "var annotationVisibleRect: CGRect",
+      "desc": "The visible rectangle where annotation views are currently being displayed."
+    },
+    {
+      "name": "var selectedAnnotations: [MKAnnotation]",
+      "desc": "The annotations that are currently selected."
+    },
+    {
+      "name": "func selectAnnotation(MKAnnotation, animated: Bool)",
+      "desc": "Selects the specified annotation and displays a callout view for it."
+    },
+    {
+      "name": "func deselectAnnotation(MKAnnotation?, animated: Bool)",
+      "desc": "Deselects the specified annotation and hides its callout view."
+    },
+    {
+      "name": "func register(AnyClass?, forAnnotationViewWithReuseIdentifier: String)",
+      "desc": "Registers an annotation view class that the map can create automatically."
+    },
+    {
+      "name": "func dequeueReusableAnnotationView(withIdentifier: String, for: MKAnnotation) -> MKAnnotationView",
+      "desc": "Returns a reusable annotation view using the specified identifier."
+    },
+    {
+      "name": "func dequeueReusableAnnotationView(withIdentifier: String) -> MKAnnotationView?",
+      "desc": "Returns a reusable annotation view located by its identifier."
+    },
+    {
+      "name": "func view(for: MKAnnotation) -> MKAnnotationView?",
+      "desc": "Returns the annotation view associated with the specified annotation object, if any."
+    },
+    {
+      "name": "let MKMapViewDefaultAnnotationViewReuseIdentifier: String",
+      "desc": "The default reuse identifier for your map's annotation views."
+    },
+    {
+      "name": "let MKMapViewDefaultClusterAnnotationViewReuseIdentifier: String",
+      "desc": "The default reuse identifier for the annotation view representing a cluster of annotations."
+    },
+    {
+      "name": "var overlays: [MKOverlay]",
+      "desc": "The overlay objects currently associated with the map view."
+    },
+    {
+      "name": "func overlays(in: MKOverlayLevel) -> [MKOverlay]",
+      "desc": "The overlay objects in the specified level of the map."
+    },
+    {
+      "name": "func renderer(for: MKOverlay) -> MKOverlayRenderer?",
+      "desc": "Returns the renderer object used to draw the contents of the specified overlay object."
+    },
+    {
+      "name": "enum MKOverlayLevel",
+      "desc": "Constants that indicate the position of overlays relative to other content."
+    },
+    {
+      "name": "func addOverlay(MKOverlay, level: MKOverlayLevel)",
+      "desc": "Adds the overlay object to the map at the specified level."
+    },
+    {
+      "name": "func addOverlays([MKOverlay], level: MKOverlayLevel)",
+      "desc": "Adds an array of overlay objects to the map at the specified level."
+    },
+    {
+      "name": "func addOverlay(MKOverlay)",
+      "desc": "Adds a single overlay object to the map."
+    },
+    {
+      "name": "func addOverlays([MKOverlay])",
+      "desc": "Adds an array of overlay objects to the map."
+    },
+    {
+      "name": "func insertOverlay(MKOverlay, at: Int, level: MKOverlayLevel)",
+      "desc": "Inserts an overlay object into the level at the specified index."
+    },
+    {
+      "name": "func insertOverlay(MKOverlay, at: Int)",
+      "desc": "Inserts an overlay object into the list associated with the map."
+    },
+    {
+      "name": "func insertOverlay(MKOverlay, above: MKOverlay)",
+      "desc": "Inserts one overlay object on top of another."
+    },
+    {
+      "name": "func insertOverlay(MKOverlay, below: MKOverlay)",
+      "desc": "Inserts one overlay object below another."
+    },
+    {
+      "name": "func exchangeOverlay(MKOverlay, with: MKOverlay)",
+      "desc": "Exchanges the positions of the two overlay objects."
+    },
+    {
+      "name": "func exchangeOverlay(at: Int, withOverlayAt: Int)",
+      "desc": "Exchanges the position of two overlay objects."
+    },
+    {
+      "name": "func removeOverlay(MKOverlay)",
+      "desc": "Removes a single overlay object from the map."
+    },
+    {
+      "name": "func removeOverlays([MKOverlay])",
+      "desc": "Removes one or more overlay objects from the map."
+    },
+    {
+      "name": "func convert(CLLocationCoordinate2D, toPointTo: UIView?) -> CGPoint",
+      "desc": "Converts a map coordinate to a point in the specified view."
+    },
+    {
+      "name": "func convert(CGPoint, toCoordinateFrom: UIView?) -> CLLocationCoordinate2D",
+      "desc": "Converts a point in the specified view’s coordinate system to a map coordinate."
+    },
+    {
+      "name": "func convert(MKCoordinateRegion, toRectTo: UIView?) -> CGRect",
+      "desc": "Converts a map region to a rectangle in the specified view."
+    },
+    {
+      "name": "func convert(CGRect, toRegionFrom: UIView?) -> MKCoordinateRegion",
+      "desc": "Converts a rectangle in the specified view’s coordinate system to a map region."
+    },
+    {
+      "name": "func regionThatFits(MKCoordinateRegion) -> MKCoordinateRegion",
+      "desc": "Adjusts the aspect ratio of the specified region to ensure that it fits in the map view’s frame."
+    },
+    {
+      "name": "func mapRectThatFits(MKMapRect) -> MKMapRect",
+      "desc": "Returns a centered map rectangle with the same aspect ratio as the map view’s frame."
+    },
+    {
+      "name": "func mapRectThatFits(MKMapRect, edgePadding: UIEdgeInsets) -> MKMapRect",
+      "desc": "Returns a centered, inset map rectangle with the same aspect ratio as the map view's frame."
+    }
+  ],
+  "declaration": "class MKMapView : UIView",
+  "inheritsFrom": [
+    "NSView",
+    "UIView"
+  ],
+  "conformsTo": [
+    "NSCoding"
+  ]
+}

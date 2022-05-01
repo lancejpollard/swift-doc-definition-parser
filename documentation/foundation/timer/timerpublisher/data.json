@@ -1,0 +1,375 @@
+{
+  "path": "/documentation/foundation/timer/timerpublisher",
+  "type": "Class",
+  "name": "Timer.TimerPublisher",
+  "desc": "A publisher that repeatedly emits the current date on a given interval.",
+  "items": [
+    {
+      "name": "typealias Timer.TimerPublisher.Failure",
+      "desc": "The kind of errors this publisher might publish."
+    },
+    {
+      "name": "typealias Timer.TimerPublisher.Output",
+      "desc": "The kind of values published by this publisher."
+    },
+    {
+      "name": "init(interval: TimeInterval, tolerance: TimeInterval?, runLoop: RunLoop, mode: RunLoop.Mode, options: RunLoop.SchedulerOptions?)",
+      "desc": "Creates a publisher that repeatedly emits the current date on the given interval."
+    },
+    {
+      "name": "let interval: TimeInterval"
+    },
+    {
+      "name": "let mode: RunLoop.Mode"
+    },
+    {
+      "name": "let options: RunLoop.SchedulerOptions?"
+    },
+    {
+      "name": "let runLoop: RunLoop"
+    },
+    {
+      "name": "let tolerance: TimeInterval?"
+    },
+    {
+      "name": "var values: AsyncThrowingPublisher<Timer.TimerPublisher>"
+    },
+    {
+      "name": "var values: AsyncPublisher<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func allSatisfy((Date) -> Bool) -> Publishers.AllSatisfy<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func append(Date...) -> Publishers.Concatenate<Timer.TimerPublisher, Publishers.Sequence<[Date], Never>>"
+    },
+    {
+      "name": "func assertNoFailure(String, file: StaticString, line: UInt) -> Publishers.AssertNoFailure<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func assign(to: inout Published<Date>.Publisher)"
+    },
+    {
+      "name": "func assign<Root>(to: ReferenceWritableKeyPath<Root, Date>, on: Root) -> AnyCancellable"
+    },
+    {
+      "name": "func autoconnect() -> Publishers.Autoconnect<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func breakpoint(receiveSubscription: ((Subscription) -> Bool)?, receiveOutput: ((Date) -> Bool)?, receiveCompletion: ((Subscribers.Completion<Never>) -> Bool)?) -> Publishers.Breakpoint<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func breakpointOnError() -> Publishers.Breakpoint<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func buffer(size: Int, prefetch: Publishers.PrefetchStrategy, whenFull: Publishers.BufferingStrategy<Never>) -> Publishers.Buffer<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func `catch`<P>((Never) -> P) -> Publishers.Catch<Timer.TimerPublisher, P>"
+    },
+    {
+      "name": "func collect() -> Publishers.Collect<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func collect(Int) -> Publishers.CollectByCount<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func collect<S>(Publishers.TimeGroupingStrategy<S>, options: S.SchedulerOptions?) -> Publishers.CollectByTime<Timer.TimerPublisher, S>"
+    },
+    {
+      "name": "func combineLatest<P>(P) -> Publishers.CombineLatest<Timer.TimerPublisher, P>"
+    },
+    {
+      "name": "func combineLatest<P, Q>(P, Q) -> Publishers.CombineLatest3<Timer.TimerPublisher, P, Q>"
+    },
+    {
+      "name": "func combineLatest<P, T>(P, (Date, P.Output) -> T) -> Publishers.Map<Publishers.CombineLatest<Timer.TimerPublisher, P>, T>"
+    },
+    {
+      "name": "func combineLatest<P, Q, R>(P, Q, R) -> Publishers.CombineLatest4<Timer.TimerPublisher, P, Q, R>"
+    },
+    {
+      "name": "func combineLatest<P, Q, T>(P, Q, (Date, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.CombineLatest3<Timer.TimerPublisher, P, Q>, T>"
+    },
+    {
+      "name": "func combineLatest<P, Q, R, T>(P, Q, R, (Date, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.CombineLatest4<Timer.TimerPublisher, P, Q, R>, T>"
+    },
+    {
+      "name": "func compactMap<T>((Date) -> T?) -> Publishers.CompactMap<Timer.TimerPublisher, T>"
+    },
+    {
+      "name": "func connect() -> Cancellable"
+    },
+    {
+      "name": "func contains(Date) -> Publishers.Contains<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func contains(where: (Date) -> Bool) -> Publishers.ContainsWhere<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func count() -> Publishers.Count<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func debounce<S>(for: S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Debounce<Timer.TimerPublisher, S>"
+    },
+    {
+      "name": "func decode<Item, Coder>(type: Item.Type, decoder: Coder) -> Publishers.Decode<Timer.TimerPublisher, Item, Coder>"
+    },
+    {
+      "name": "func delay<S>(for: S.SchedulerTimeType.Stride, tolerance: S.SchedulerTimeType.Stride?, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Delay<Timer.TimerPublisher, S>"
+    },
+    {
+      "name": "func drop<P>(untilOutputFrom: P) -> Publishers.DropUntilOutput<Timer.TimerPublisher, P>"
+    },
+    {
+      "name": "func drop(while: (Date) -> Bool) -> Publishers.DropWhile<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func dropFirst(Int) -> Publishers.Drop<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func encode<Coder>(encoder: Coder) -> Publishers.Encode<Timer.TimerPublisher, Coder>"
+    },
+    {
+      "name": "func eraseToAnyPublisher() -> AnyPublisher<Date, Never>"
+    },
+    {
+      "name": "func filter((Date) -> Bool) -> Publishers.Filter<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func first() -> Publishers.First<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func first(where: (Date) -> Bool) -> Publishers.FirstWhere<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func flatMap<T, P>(maxPublishers: Subscribers.Demand, (Date) -> P) -> Publishers.FlatMap<P, Timer.TimerPublisher>"
+    },
+    {
+      "name": "func flatMap<P>(maxPublishers: Subscribers.Demand, (Date) -> P) -> Publishers.FlatMap<Publishers.SetFailureType<P, Never>, Timer.TimerPublisher>"
+    },
+    {
+      "name": "func flatMap<P>(maxPublishers: Subscribers.Demand, (Date) -> P) -> Publishers.FlatMap<P, Publishers.SetFailureType<Timer.TimerPublisher, P.Failure>>"
+    },
+    {
+      "name": "func flatMap<P>(maxPublishers: Subscribers.Demand, (Date) -> P) -> Publishers.FlatMap<P, Timer.TimerPublisher>"
+    },
+    {
+      "name": "func handleEvents(receiveSubscription: ((Subscription) -> Void)?, receiveOutput: ((Date) -> Void)?, receiveCompletion: ((Subscribers.Completion<Never>) -> Void)?, receiveCancel: (() -> Void)?, receiveRequest: ((Subscribers.Demand) -> Void)?) -> Publishers.HandleEvents<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func ignoreOutput() -> Publishers.IgnoreOutput<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func last() -> Publishers.Last<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func last(where: (Date) -> Bool) -> Publishers.LastWhere<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func makeConnectable() -> Publishers.MakeConnectable<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func map<T>((Date) -> T) -> Publishers.Map<Timer.TimerPublisher, T>"
+    },
+    {
+      "name": "func map<T>(KeyPath<Date, T>) -> Publishers.MapKeyPath<Timer.TimerPublisher, T>"
+    },
+    {
+      "name": "func map<T0, T1>(KeyPath<Date, T0>, KeyPath<Date, T1>) -> Publishers.MapKeyPath2<Timer.TimerPublisher, T0, T1>"
+    },
+    {
+      "name": "func map<T0, T1, T2>(KeyPath<Date, T0>, KeyPath<Date, T1>, KeyPath<Date, T2>) -> Publishers.MapKeyPath3<Timer.TimerPublisher, T0, T1, T2>"
+    },
+    {
+      "name": "func mapError<E>((Never) -> E) -> Publishers.MapError<Timer.TimerPublisher, E>"
+    },
+    {
+      "name": "func max() -> Publishers.Comparison<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func max(by: (Date, Date) -> Bool) -> Publishers.Comparison<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func measureInterval<S>(using: S, options: S.SchedulerOptions?) -> Publishers.MeasureInterval<Timer.TimerPublisher, S>"
+    },
+    {
+      "name": "func merge(with: Timer.TimerPublisher) -> Publishers.MergeMany<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func merge<B, C>(with: B, C) -> Publishers.Merge3<Timer.TimerPublisher, B, C>"
+    },
+    {
+      "name": "func merge<B, C, D>(with: B, C, D) -> Publishers.Merge4<Timer.TimerPublisher, B, C, D>"
+    },
+    {
+      "name": "func merge<B, C, D, E>(with: B, C, D, E) -> Publishers.Merge5<Timer.TimerPublisher, B, C, D, E>"
+    },
+    {
+      "name": "func merge<B, C, D, E, F>(with: B, C, D, E, F) -> Publishers.Merge6<Timer.TimerPublisher, B, C, D, E, F>"
+    },
+    {
+      "name": "func merge<B, C, D, E, F, G>(with: B, C, D, E, F, G) -> Publishers.Merge7<Timer.TimerPublisher, B, C, D, E, F, G>"
+    },
+    {
+      "name": "func merge<B, C, D, E, F, G, H>(with: B, C, D, E, F, G, H) -> Publishers.Merge8<Timer.TimerPublisher, B, C, D, E, F, G, H>"
+    },
+    {
+      "name": "func min() -> Publishers.Comparison<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func min(by: (Date, Date) -> Bool) -> Publishers.Comparison<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func multicast<S>(() -> S) -> Publishers.Multicast<Timer.TimerPublisher, S>"
+    },
+    {
+      "name": "func multicast<S>(subject: S) -> Publishers.Multicast<Timer.TimerPublisher, S>"
+    },
+    {
+      "name": "func output(at: Int) -> Publishers.Output<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func output<R>(in: R) -> Publishers.Output<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func prefix(Int) -> Publishers.Output<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func prefix<P>(untilOutputFrom: P) -> Publishers.PrefixUntilOutput<Timer.TimerPublisher, P>"
+    },
+    {
+      "name": "func prefix(while: (Date) -> Bool) -> Publishers.PrefixWhile<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func prepend(Date...) -> Publishers.Concatenate<Publishers.Sequence<[Date], Never>, Timer.TimerPublisher>"
+    },
+    {
+      "name": "func print(String, to: TextOutputStream?) -> Publishers.Print<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func receive<S>(on: S, options: S.SchedulerOptions?) -> Publishers.ReceiveOn<Timer.TimerPublisher, S>"
+    },
+    {
+      "name": "func receive<S>(subscriber: S)"
+    },
+    {
+      "name": "func reduce<T>(T, (T, Date) -> T) -> Publishers.Reduce<Timer.TimerPublisher, T>"
+    },
+    {
+      "name": "func removeDuplicates() -> Publishers.RemoveDuplicates<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func removeDuplicates(by: (Date, Date) -> Bool) -> Publishers.RemoveDuplicates<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func replaceEmpty(with: Date) -> Publishers.ReplaceEmpty<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func replaceError(with: Date) -> Publishers.ReplaceError<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func replaceNil<T>(with: T) -> Publishers.Map<Timer.TimerPublisher, T>"
+    },
+    {
+      "name": "func retry(Int) -> Publishers.Retry<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func scan<T>(T, (T, Date) -> T) -> Publishers.Scan<Timer.TimerPublisher, T>"
+    },
+    {
+      "name": "func setFailureType<E>(to: E.Type) -> Publishers.SetFailureType<Timer.TimerPublisher, E>"
+    },
+    {
+      "name": "func share() -> Publishers.Share<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func sink(receiveCompletion: ((Subscribers.Completion<Never>) -> Void), receiveValue: ((Date) -> Void)) -> AnyCancellable"
+    },
+    {
+      "name": "func sink(receiveValue: ((Date) -> Void)) -> AnyCancellable"
+    },
+    {
+      "name": "func subscribe<S>(S) -> AnyCancellable"
+    },
+    {
+      "name": "func subscribe<S>(S)"
+    },
+    {
+      "name": "func subscribe<S>(on: S, options: S.SchedulerOptions?) -> Publishers.SubscribeOn<Timer.TimerPublisher, S>"
+    },
+    {
+      "name": "func throttle<S>(for: S.SchedulerTimeType.Stride, scheduler: S, latest: Bool) -> Publishers.Throttle<Timer.TimerPublisher, S>"
+    },
+    {
+      "name": "func timeout<S>(S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?, customError: (() -> Never)?) -> Publishers.Timeout<Timer.TimerPublisher, S>"
+    },
+    {
+      "name": "func tryAllSatisfy((Date) -> Bool) -> Publishers.TryAllSatisfy<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func tryCatch<P>((Never) -> P) -> Publishers.TryCatch<Timer.TimerPublisher, P>"
+    },
+    {
+      "name": "func tryCompactMap<T>((Date) -> T?) -> Publishers.TryCompactMap<Timer.TimerPublisher, T>"
+    },
+    {
+      "name": "func tryContains(where: (Date) -> Bool) -> Publishers.TryContainsWhere<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func tryDrop(while: (Date) -> Bool) -> Publishers.TryDropWhile<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func tryFilter((Date) -> Bool) -> Publishers.TryFilter<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func tryFirst(where: (Date) -> Bool) -> Publishers.TryFirstWhere<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func tryLast(where: (Date) -> Bool) -> Publishers.TryLastWhere<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func tryMap<T>((Date) -> T) -> Publishers.TryMap<Timer.TimerPublisher, T>"
+    },
+    {
+      "name": "func tryMax(by: (Date, Date) -> Bool) -> Publishers.TryComparison<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func tryMin(by: (Date, Date) -> Bool) -> Publishers.TryComparison<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func tryPrefix(while: (Date) -> Bool) -> Publishers.TryPrefixWhile<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func tryReduce<T>(T, (T, Date) -> T) -> Publishers.TryReduce<Timer.TimerPublisher, T>"
+    },
+    {
+      "name": "func tryRemoveDuplicates(by: (Date, Date) -> Bool) -> Publishers.TryRemoveDuplicates<Timer.TimerPublisher>"
+    },
+    {
+      "name": "func tryScan<T>(T, (T, Date) -> T) -> Publishers.TryScan<Timer.TimerPublisher, T>"
+    },
+    {
+      "name": "func zip<P>(P) -> Publishers.Zip<Timer.TimerPublisher, P>"
+    },
+    {
+      "name": "func zip<P, Q>(P, Q) -> Publishers.Zip3<Timer.TimerPublisher, P, Q>"
+    },
+    {
+      "name": "func zip<P, T>(P, (Date, P.Output) -> T) -> Publishers.Map<Publishers.Zip<Timer.TimerPublisher, P>, T>"
+    },
+    {
+      "name": "func zip<P, Q, R>(P, Q, R) -> Publishers.Zip4<Timer.TimerPublisher, P, Q, R>"
+    },
+    {
+      "name": "func zip<P, Q, T>(P, Q, (Date, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.Zip3<Timer.TimerPublisher, P, Q>, T>"
+    },
+    {
+      "name": "func zip<P, Q, R, T>(P, Q, R, (Date, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.Zip4<Timer.TimerPublisher, P, Q, R>, T>"
+    }
+  ],
+  "declaration": "final class TimerPublisher",
+  "conformsTo": [
+    "ConnectablePublisher"
+  ]
+}

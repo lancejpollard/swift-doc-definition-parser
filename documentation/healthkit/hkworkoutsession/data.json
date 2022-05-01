@@ -1,0 +1,71 @@
+{
+  "path": "/documentation/healthkit/hkworkoutsession",
+  "type": "Class",
+  "name": "HKWorkoutSession",
+  "desc": "A session that tracks the user’s workout on Apple Watch.",
+  "items": [
+    {
+      "name": "init(healthStore: HKHealthStore, configuration: HKWorkoutConfiguration)",
+      "desc": "Returns a newly instantiated workout session with an associated workout builder."
+    },
+    {
+      "name": "var delegate: HKWorkoutSessionDelegate?",
+      "desc": "The workout session’s delegate."
+    },
+    {
+      "name": "protocol HKWorkoutSessionDelegate",
+      "desc": "The session delegate protocol defines an interface for receiving notifications about errors and changes in the workout session’s state."
+    },
+    {
+      "name": "func associatedWorkoutBuilder() -> HKLiveWorkoutBuilder",
+      "desc": "Returns the live workout builder associated with the workout session."
+    },
+    {
+      "name": "func prepare()",
+      "desc": "Prepares the workout session."
+    },
+    {
+      "name": "func startActivity(with: Date?)",
+      "desc": "Starts the workout session activity, and sets the start date."
+    },
+    {
+      "name": "func pause()",
+      "desc": "Pauses the workout session."
+    },
+    {
+      "name": "func resume()",
+      "desc": "Resumes the workout session."
+    },
+    {
+      "name": "func stopActivity(with: Date?)",
+      "desc": "Stops the workout session activity, and sets the end date."
+    },
+    {
+      "name": "func end()",
+      "desc": "Ends the workout session."
+    },
+    {
+      "name": "var endDate: Date?",
+      "desc": "The ending time and date for this workout session."
+    },
+    {
+      "name": "var startDate: Date?",
+      "desc": "The starting time and date for this workout session."
+    },
+    {
+      "name": "var state: HKWorkoutSessionState",
+      "desc": "The workout session’s current state."
+    },
+    {
+      "name": "var workoutConfiguration: HKWorkoutConfiguration",
+      "desc": "The configuration object that describes this workout."
+    }
+  ],
+  "declaration": "class HKWorkoutSession : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSSecureCoding"
+  ]
+}

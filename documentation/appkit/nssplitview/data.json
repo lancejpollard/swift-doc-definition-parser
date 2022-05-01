@@ -1,0 +1,108 @@
+{
+  "path": "/documentation/appkit/nssplitview",
+  "type": "Class",
+  "name": "NSSplitView",
+  "desc": "A view that arranges two or more views in a linear stack running horizontally or vertically.",
+  "items": [
+    {
+      "name": "var delegate: NSSplitViewDelegate?",
+      "desc": "The split view’s delegate."
+    },
+    {
+      "name": "protocol NSSplitViewDelegate",
+      "desc": "A set of optional methods that a delegate of a split view implements."
+    },
+    {
+      "name": "var arrangesAllSubviews: Bool",
+      "desc": "A Boolean value that determines whether the split view arranges all of its subviews as split panes."
+    },
+    {
+      "name": "var arrangedSubviews: [NSView]",
+      "desc": "The array of views that the split view arranges as its split panes."
+    },
+    {
+      "name": "func addArrangedSubview(NSView)",
+      "desc": "Adds a view as an arranged split pane."
+    },
+    {
+      "name": "func insertArrangedSubview(NSView, at: Int)",
+      "desc": "Adds a view as an arranged split pane at the specified index."
+    },
+    {
+      "name": "func removeArrangedSubview(NSView)",
+      "desc": "Removes a view as an arranged split pane."
+    },
+    {
+      "name": "func adjustSubviews()",
+      "desc": "Adjusts the sizes of the split view’s subviews so they (plus the dividers) fill the split view."
+    },
+    {
+      "name": "func isSubviewCollapsed(NSView) -> Bool",
+      "desc": "Returns whether the specified view is in a collapsed state."
+    },
+    {
+      "name": "func holdingPriorityForSubview(at: Int) -> NSLayoutConstraint.Priority",
+      "desc": "Returns the priority of the subview’s width or height when resizing."
+    },
+    {
+      "name": "func setHoldingPriority(NSLayoutConstraint.Priority, forSubviewAt: Int)",
+      "desc": "Sets the priority for split view subviews to maintain their width or height."
+    },
+    {
+      "name": "var isVertical: Bool",
+      "desc": "A Boolean value that determines the geometric orientation of the split view's dividers."
+    },
+    {
+      "name": "var dividerStyle: NSSplitView.DividerStyle",
+      "desc": "The style of divider between views."
+    },
+    {
+      "name": "enum NSSplitView.DividerStyle",
+      "desc": "Constants that specify the style of the split view’s dividers."
+    },
+    {
+      "name": "var dividerColor: NSColor",
+      "desc": "The color of the dividers that the split view draws between subviews."
+    },
+    {
+      "name": "var dividerThickness: CGFloat",
+      "desc": "The thickness of the dividers for the split view."
+    },
+    {
+      "name": "func drawDivider(in: NSRect)",
+      "desc": "Draws a divider between two of the split view’s subviews."
+    },
+    {
+      "name": "var autosaveName: NSSplitView.AutosaveName?",
+      "desc": "The name to use when the system automatically saves the split view’s divider configuration."
+    },
+    {
+      "name": "typealias NSSplitView.AutosaveName",
+      "desc": "The type that specifies the split view’s autosave name."
+    },
+    {
+      "name": "func minPossiblePositionOfDivider(at: Int) -> CGFloat",
+      "desc": "Returns the minimum possible position of the divider at the specified index."
+    },
+    {
+      "name": "func maxPossiblePositionOfDivider(at: Int) -> CGFloat",
+      "desc": "Returns the maximum possible position of the divider at the specified index."
+    },
+    {
+      "name": "func setPosition(CGFloat, ofDividerAt: Int)",
+      "desc": "Updates the location of a divider you specify by index."
+    },
+    {
+      "name": "class let willResizeSubviewsNotification: NSNotification.Name",
+      "desc": "A notification that posts before a change to the size of some or all subviews of a split view."
+    },
+    {
+      "name": "class let didResizeSubviewsNotification: NSNotification.Name",
+      "desc": "A notification that posts after a change to the size of some or all subviews of a split view."
+    }
+  ],
+  "declaration": "class NSSplitView : NSView",
+  "inheritsFrom": [
+    "NSView"
+  ]
+}

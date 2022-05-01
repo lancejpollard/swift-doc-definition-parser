@@ -1,0 +1,35 @@
+{
+  "path": "/documentation/coregraphics/cgdataprovidersequentialcallbacks",
+  "type": "Structure",
+  "name": "CGDataProviderSequentialCallbacks",
+  "desc": "Defines a structure containing pointers to client-defined callback functions that manage the sending of data for a sequential-access data provider.",
+  "items": [
+    {
+      "name": "init()"
+    },
+    {
+      "name": "init(version: UInt32, getBytes: CGDataProviderGetBytesCallback?, skipForward: CGDataProviderSkipForwardCallback?, rewind: CGDataProviderRewindCallback?, releaseInfo: CGDataProviderReleaseInfoCallback?)"
+    },
+    {
+      "name": "var getBytes: CGDataProviderGetBytesCallback?",
+      "desc": "A pointer to a function that copies data from the provider. For more information, see CGDataProviderGetBytesCallback."
+    },
+    {
+      "name": "var releaseInfo: CGDataProviderReleaseInfoCallback?",
+      "desc": "A pointer to a function that handles clean-up for the data provider, or NULL. For more information, see CGDataProviderReleaseInfoCallback."
+    },
+    {
+      "name": "var rewind: CGDataProviderRewindCallback?",
+      "desc": "A pointer to a function Core Graphics calls to return the provider to the beginning of the data stream. For more information, see CGDataProviderRewindCallback."
+    },
+    {
+      "name": "var skipForward: CGDataProviderSkipForwardCallback?",
+      "desc": "A pointer to a function that Core Graphics calls to advance the stream of data supplied by the provider."
+    },
+    {
+      "name": "var version: UInt32",
+      "desc": "The version of this structure. It should be set to 0."
+    }
+  ],
+  "declaration": "struct CGDataProviderSequentialCallbacks"
+}

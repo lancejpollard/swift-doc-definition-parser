@@ -1,0 +1,140 @@
+{
+  "path": "/documentation/avfaudio/avaudioplayer",
+  "type": "Class",
+  "name": "AVAudioPlayer",
+  "desc": "An object that plays audio data from a file or buffer.",
+  "items": [
+    {
+      "name": "init(contentsOf: URL)",
+      "desc": "Creates a player to play audio from a file."
+    },
+    {
+      "name": "init(contentsOf: URL, fileTypeHint: String?)",
+      "desc": "Creates a player to play audio from a file of a particular type."
+    },
+    {
+      "name": "init(data: Data)",
+      "desc": "Creates a player to play in-memory audio data."
+    },
+    {
+      "name": "init(data: Data, fileTypeHint: String?)",
+      "desc": "Creates a player to play in-memory audio data of a particular type."
+    },
+    {
+      "name": "func prepareToPlay() -> Bool",
+      "desc": "Prepares the player for audio playback."
+    },
+    {
+      "name": "func play() -> Bool",
+      "desc": "Plays audio asynchronously."
+    },
+    {
+      "name": "func play(atTime: TimeInterval) -> Bool",
+      "desc": "Plays audio asynchronously, starting at a specified point in the audio output device’s timeline."
+    },
+    {
+      "name": "func pause()",
+      "desc": "Pauses audio playback."
+    },
+    {
+      "name": "func stop()",
+      "desc": "Stops playback and undoes the setup the system requires for playback."
+    },
+    {
+      "name": "var isPlaying: Bool",
+      "desc": "A Boolean value that indicates whether the player is currently playing audio."
+    },
+    {
+      "name": "var volume: Float",
+      "desc": "The audio player’s volume relative to other audio output."
+    },
+    {
+      "name": "func setVolume(Float, fadeDuration: TimeInterval)",
+      "desc": "Changes the audio player’s volume over a duration of time."
+    },
+    {
+      "name": "var pan: Float",
+      "desc": "The audio player’s stereo pan position."
+    },
+    {
+      "name": "var enableRate: Bool",
+      "desc": "A Boolean value that indicates whether you can adjust the playback rate of the audio player."
+    },
+    {
+      "name": "var rate: Float",
+      "desc": "The audio player’s playback rate."
+    },
+    {
+      "name": "var numberOfLoops: Int",
+      "desc": "The number of times the audio repeats playback."
+    },
+    {
+      "name": "var currentTime: TimeInterval",
+      "desc": "The current playback time, in seconds, within the audio timeline."
+    },
+    {
+      "name": "var duration: TimeInterval",
+      "desc": "The total duration, in seconds, of the player’s audio."
+    },
+    {
+      "name": "var numberOfChannels: Int",
+      "desc": "The number of audio channels in the player’s audio."
+    },
+    {
+      "name": "var channelAssignments: [AVAudioSessionChannelDescription]?",
+      "desc": "An array of channel descriptions for the audio player."
+    },
+    {
+      "name": "var isMeteringEnabled: Bool",
+      "desc": "A Boolean value that indicates whether the player is able to generate audio-level metering data."
+    },
+    {
+      "name": "func updateMeters()",
+      "desc": "Refreshes the average and peak power values for all channels of an audio player."
+    },
+    {
+      "name": "func averagePower(forChannel: Int) -> Float",
+      "desc": "Returns the average power, in decibels full-scale (dBFS), for an audio channel."
+    },
+    {
+      "name": "func peakPower(forChannel: Int) -> Float",
+      "desc": "Returns the peak power, in decibels full-scale (dBFS), for an audio channel."
+    },
+    {
+      "name": "var delegate: AVAudioPlayerDelegate?",
+      "desc": "The delegate object for the audio player."
+    },
+    {
+      "name": "protocol AVAudioPlayerDelegate",
+      "desc": "A protocol that defines the methods to respond to audio playback events and decoding errors."
+    },
+    {
+      "name": "var url: URL?",
+      "desc": "The URL of the audio file."
+    },
+    {
+      "name": "var data: Data?",
+      "desc": "The audio data associated with the player."
+    },
+    {
+      "name": "var format: AVAudioFormat",
+      "desc": "The format of the player’s audio data."
+    },
+    {
+      "name": "var settings: [String : Any]",
+      "desc": "A dictionary that provides information about the player’s audio data."
+    },
+    {
+      "name": "var currentDevice: String?",
+      "desc": "The unique identifier of the current audio player."
+    },
+    {
+      "name": "var deviceCurrentTime: TimeInterval",
+      "desc": "The time value, in seconds, of the audio output device’s clock."
+    }
+  ],
+  "declaration": "class AVAudioPlayer : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

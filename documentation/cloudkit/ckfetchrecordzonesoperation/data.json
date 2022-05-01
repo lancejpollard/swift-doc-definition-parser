@@ -1,0 +1,38 @@
+{
+  "path": "/documentation/cloudkit/ckfetchrecordzonesoperation",
+  "type": "Class",
+  "name": "CKFetchRecordZonesOperation",
+  "desc": "An operation for retrieving record zones from a database.",
+  "items": [
+    {
+      "name": "init(recordZoneIDs: [CKRecordZone.ID])",
+      "desc": "Creates an operation for fetching the specified record zones."
+    },
+    {
+      "name": "init()",
+      "desc": "Creates an empty fetch zones operation."
+    },
+    {
+      "name": "class func fetchAllRecordZonesOperation() -> Self",
+      "desc": "Returns an operation for fetching all record zones in the current database."
+    },
+    {
+      "name": "var recordZoneIDs: [CKRecordZone.ID]?",
+      "desc": "The IDs of the record zones to retrieve."
+    },
+    {
+      "name": "var fetchRecordZonesCompletionBlock: (([CKRecordZone.ID : CKRecordZone]?, Error?) -> Void)?",
+      "desc": "The closure to execute after CloudKit retrieves all of the record zones."
+    },
+    {
+      "name": "var fetchRecordZonesResultBlock: ((Result<Void, Error>) -> Void)?"
+    },
+    {
+      "name": "var perRecordZoneResultBlock: ((CKRecordZone.ID, Result<CKRecordZone, Error>) -> Void)?"
+    }
+  ],
+  "declaration": "class CKFetchRecordZonesOperation : CKDatabaseOperation",
+  "inheritsFrom": [
+    "CKDatabaseOperation"
+  ]
+}

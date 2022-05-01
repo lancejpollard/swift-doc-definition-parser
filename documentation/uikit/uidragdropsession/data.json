@@ -1,0 +1,36 @@
+{
+  "path": "/documentation/uikit/uidragdropsession",
+  "type": "Protocol",
+  "name": "UIDragDropSession",
+  "desc": "The common interface for querying the state of both drag sessions and drop sessions.",
+  "items": [
+    {
+      "name": "func canLoadObjects(ofClass: NSItemProviderReading.Type) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether at least one drag item in the session can create an instance of the specified class."
+    },
+    {
+      "name": "func hasItemsConforming(toTypeIdentifiers: [String]) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether at least one drag item in the session conforms to at least one of the specified UTIs."
+    },
+    {
+      "name": "var items: [UIDragItem]",
+      "desc": "An array of drag items in the drag session or drop session."
+    },
+    {
+      "name": "var allowsMoveOperation: Bool",
+      "desc": "A Boolean value that indicates whether the drag session permits moving drag items within the same app."
+    },
+    {
+      "name": "var isRestrictedToDraggingApplication: Bool",
+      "desc": "A Boolean value that indicates whether the drag session is confined to the app that started the drag activity."
+    },
+    {
+      "name": "func location(in: UIView) -> CGPoint",
+      "desc": "Returns the geometrical location of the user’s drag activity within the specified view."
+    }
+  ],
+  "declaration": "@MainActor protocol UIDragDropSession",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

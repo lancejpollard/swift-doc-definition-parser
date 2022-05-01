@@ -1,0 +1,50 @@
+{
+  "path": "/documentation/createml/mlclassifiermetrics",
+  "type": "Structure",
+  "name": "MLClassifierMetrics",
+  "desc": "Metrics you use to evaluate a classifier’s performance.",
+  "items": [
+    {
+      "name": "var classificationError: Double",
+      "desc": "The fraction of incorrectly labeled examples."
+    },
+    {
+      "name": "var precisionRecall: MLDataTable",
+      "desc": "A data table listing the precision and recall percentages for each category."
+    },
+    {
+      "name": "var confusion: MLDataTable",
+      "desc": "A table comparing the actual and predicted labels for each classification category."
+    },
+    {
+      "name": "var isValid: Bool",
+      "desc": "A Boolean value indicating whether the classifier model was able to calculate metrics."
+    },
+    {
+      "name": "var error: Error?",
+      "desc": "The underlying error present when the metrics are invalid."
+    },
+    {
+      "name": "init(classificationError: Double, confusion: MLDataTable, precisionRecall: MLDataTable)",
+      "desc": "Creates classifier metrics describing the quality of your model."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A text representation of the classifier metrics."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A text representation of the classifier metrics that’s suitable for output during debugging."
+    },
+    {
+      "name": "var playgroundDescription: Any",
+      "desc": "A description of the classifier metrics shown in a playground."
+    }
+  ],
+  "declaration": "struct MLClassifierMetrics",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "CustomPlaygroundDisplayConvertible",
+    "CustomStringConvertible"
+  ]
+}

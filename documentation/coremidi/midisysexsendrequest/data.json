@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/coremidi/midisysexsendrequest",
+  "type": "Structure",
+  "name": "MIDISysexSendRequest",
+  "desc": "A request to asynchronously transmit a single System Exclusive (SysEx) event to a destination.",
+  "items": [
+    {
+      "name": "var destination: MIDIEndpointRef",
+      "desc": "The endpoint to send the event to."
+    },
+    {
+      "name": "var data: UnsafePointer<UInt8>",
+      "desc": "The request’s data."
+    },
+    {
+      "name": "var bytesToSend: UInt32",
+      "desc": "The number of bytes to send."
+    },
+    {
+      "name": "var complete: DarwinBoolean",
+      "desc": "A Boolean value that indicates whether the transmission is complete."
+    },
+    {
+      "name": "typealias MIDICompletionProc",
+      "desc": "A function the system calls after it has completed sending a System Exclusive (SysEx) event."
+    },
+    {
+      "name": "var completionProc: MIDICompletionProc",
+      "desc": "A function the system calls after it has sent all bytes for the request, or after the client has marked the request as complete."
+    },
+    {
+      "name": "var completionRefCon: UnsafeMutableRawPointer?",
+      "desc": "Data passed to the completion function pointer."
+    },
+    {
+      "name": "var reserved: (UInt8, UInt8, UInt8)",
+      "desc": "A field that’s reserved for future use."
+    },
+    {
+      "name": "init(destination: MIDIEndpointRef, data: UnsafePointer<UInt8>, bytesToSend: UInt32, complete: DarwinBoolean, reserved: (UInt8, UInt8, UInt8), completionProc: MIDICompletionProc, completionRefCon: UnsafeMutableRawPointer?)"
+    }
+  ],
+  "declaration": "struct MIDISysexSendRequest"
+}

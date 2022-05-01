@@ -1,0 +1,56 @@
+{
+  "path": "/documentation/uikit/uiactivity",
+  "type": "Class",
+  "name": "UIActivity",
+  "desc": "An abstract class that you subclass to implement app-specific services.",
+  "items": [
+    {
+      "name": "class var activityCategory: UIActivity.Category",
+      "desc": "The category of the activity, which may be used to group activities in the UI."
+    },
+    {
+      "name": "enum UIActivity.Category",
+      "desc": "An enumeration that defines categories of activities."
+    },
+    {
+      "name": "var activityType: UIActivity.ActivityType?",
+      "desc": "The type of service being provided."
+    },
+    {
+      "name": "struct UIActivity.ActivityType",
+      "desc": "A structure that describes the types of acitivities for which the system has built-in support."
+    },
+    {
+      "name": "var activityTitle: String?",
+      "desc": "A user-readable string that describes the service."
+    },
+    {
+      "name": "var activityImage: UIImage?",
+      "desc": "An image that identifies the service to the user."
+    },
+    {
+      "name": "func canPerform(withActivityItems: [Any]) -> Bool",
+      "desc": "Queries whether the service can act on the specified data items."
+    },
+    {
+      "name": "func prepare(withActivityItems: [Any])",
+      "desc": "Prepares your service to act on the specified data."
+    },
+    {
+      "name": "var activityViewController: UIViewController?",
+      "desc": "The view controller to present to the user."
+    },
+    {
+      "name": "func perform()",
+      "desc": "Performs the service when no custom view controller is provided."
+    },
+    {
+      "name": "func activityDidFinish(Bool)",
+      "desc": "Notifies the system that your activity object has completed its work."
+    }
+  ],
+  "declaration": "class UIActivity : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "path": "/documentation/foundation/parseableformatstyle",
+  "type": "Protocol",
+  "name": "ParseableFormatStyle",
+  "desc": "A type that can convert a given input data type into a representation in an output type.",
+  "items": [
+    {
+      "name": "var parseStrategy: Self.Strategy"
+    },
+    {
+      "name": "associatedtype Strategy"
+    },
+    {
+      "name": "static var dateTime: Date.FormatStyle",
+      "desc": "Available when Self is Date.FormatStyle."
+    },
+    {
+      "name": "static var iso8601: Date.ISO8601FormatStyle",
+      "desc": "Available when Self is Date.ISO8601FormatStyle."
+    },
+    {
+      "name": "static var number: Decimal.FormatStyle",
+      "desc": "Available when Self is Decimal.FormatStyle."
+    },
+    {
+      "name": "static var percent: Decimal.FormatStyle.Percent",
+      "desc": "Available when Self is Decimal.FormatStyle.Percent."
+    },
+    {
+      "name": "static func currency(code: String) -> Self",
+      "desc": "Available when Self is Decimal.FormatStyle.Currency."
+    },
+    {
+      "name": "static func name(style: PersonNameComponents.FormatStyle.Style) -> Self",
+      "desc": "Available when Self is PersonNameComponents.FormatStyle."
+    }
+  ],
+  "declaration": "protocol ParseableFormatStyle",
+  "inheritsFrom": [
+    "FormatStyle"
+  ]
+}

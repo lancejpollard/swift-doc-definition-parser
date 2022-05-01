@@ -1,0 +1,82 @@
+{
+  "path": "/documentation/dispatch/dispatchwalltime",
+  "type": "Structure",
+  "name": "DispatchWallTime",
+  "desc": "An absolute point in time according to the wall clock, with microsecond precision.",
+  "items": [
+    {
+      "name": "static func now() -> DispatchWallTime",
+      "desc": "Returns the current time."
+    },
+    {
+      "name": "static let distantFuture: DispatchWallTime",
+      "desc": "A time in the distant future."
+    },
+    {
+      "name": "init(timespec: timespec)",
+      "desc": "Creates an absolute time for a specified value."
+    },
+    {
+      "name": "let rawValue: dispatch_time_t",
+      "desc": "The underlying time value."
+    },
+    {
+      "name": "static func != (DispatchWallTime, DispatchWallTime) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func ... (DispatchWallTime) -> PartialRangeFrom<DispatchWallTime>",
+      "desc": "Returns a partial range extending upward from a lower bound."
+    },
+    {
+      "name": "static func ... (DispatchWallTime) -> PartialRangeThrough<DispatchWallTime>",
+      "desc": "Returns a partial range up to, and including, its upper bound."
+    },
+    {
+      "name": "static func ... (DispatchWallTime, DispatchWallTime) -> ClosedRange<DispatchWallTime>",
+      "desc": "Returns a closed range that contains both of its bounds."
+    },
+    {
+      "name": "static func ..< (DispatchWallTime) -> PartialRangeUpTo<DispatchWallTime>",
+      "desc": "Returns a partial range up to, but not including, its upper bound."
+    },
+    {
+      "name": "static func ..< (DispatchWallTime, DispatchWallTime) -> Range<DispatchWallTime>",
+      "desc": "Returns a half-open range that contains its lower bound but not its upper bound."
+    },
+    {
+      "name": "static func < (DispatchWallTime, DispatchWallTime) -> Bool"
+    },
+    {
+      "name": "static func <= (DispatchWallTime, DispatchWallTime) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is less than or equal to that of the second argument."
+    },
+    {
+      "name": "static func == (DispatchWallTime, DispatchWallTime) -> Bool"
+    },
+    {
+      "name": "static func > (DispatchWallTime, DispatchWallTime) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than that of the second argument."
+    },
+    {
+      "name": "static func >= (DispatchWallTime, DispatchWallTime) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the value of the first argument is greater than or equal to that of the second argument."
+    },
+    {
+      "name": "func + (DispatchWallTime, DispatchTimeInterval) -> DispatchWallTime"
+    },
+    {
+      "name": "func + (DispatchWallTime, Double) -> DispatchWallTime"
+    },
+    {
+      "name": "func - (DispatchWallTime, Double) -> DispatchWallTime"
+    },
+    {
+      "name": "func - (DispatchWallTime, DispatchTimeInterval) -> DispatchWallTime"
+    }
+  ],
+  "declaration": "struct DispatchWallTime",
+  "conformsTo": [
+    "Comparable"
+  ]
+}

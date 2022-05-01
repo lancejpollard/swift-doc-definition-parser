@@ -1,0 +1,78 @@
+{
+  "path": "/documentation/foundation/nsbundleresourcerequest",
+  "type": "Class",
+  "name": "NSBundleResourceRequest",
+  "desc": "A resource manager you use to download content hosted on the App Store at the time your app needs it.",
+  "items": [
+    {
+      "name": "init(tags: Set<String>)",
+      "desc": "Initializes a resource request for managing the on-demand resources marked with any of the set of specified tags. The managed resources are loaded into the main bundle."
+    },
+    {
+      "name": "init(tags: Set<String>, bundle: Bundle)",
+      "desc": "Initializes a resource request for managing the on-demand resources marked with any of the set of specified tags. The managed resources are loaded into the specified bundle."
+    },
+    {
+      "name": "var bundle: Bundle",
+      "desc": "A reference to the bundle used for storing the downloaded resources. (read-only)"
+    },
+    {
+      "name": "var tags: Set<String>",
+      "desc": "A set of strings, with each string specifying a tag used to mark on-demand resources managed by the request. (read-only)"
+    },
+    {
+      "name": "func beginAccessingResources(completionHandler: (Error?) -> Void)",
+      "desc": "Requests access to the resources marked with the managed tags. If any of the resources are not on the device, they are requested from the App Store."
+    },
+    {
+      "name": "func conditionallyBeginAccessingResources(completionHandler: (Bool) -> Void)",
+      "desc": "Checks whether the resources marked with the tags managed by the request are already on the device. If all of the resources are on the device, you can begin accessing those resources."
+    },
+    {
+      "name": "func endAccessingResources()",
+      "desc": "Informs the system that you have finished accessing the resources marked with the tags managed by the request."
+    },
+    {
+      "name": "var loadingPriority: Double",
+      "desc": "A hint to the system of the relative priority of the resource request."
+    },
+    {
+      "name": "let NSBundleResourceRequestLoadingPriorityUrgent: Double"
+    },
+    {
+      "name": "var progress: Progress",
+      "desc": "A reference to the progress object associated with the specified resource request. (read-only)"
+    },
+    {
+      "name": "var NSBundleErrorMaximum: Int",
+      "desc": "The end of the range of error codes reserved for bundle errors."
+    },
+    {
+      "name": "var NSBundleErrorMinimum: Int",
+      "desc": "The start of the range of error codes reserved for bundle errors."
+    },
+    {
+      "name": "var NSBundleOnDemandResourceExceededMaximumSizeError: Int",
+      "desc": "The application exceeded the amount of on-demand resources content in use at one time."
+    },
+    {
+      "name": "var NSBundleOnDemandResourceInvalidTagError: Int",
+      "desc": "The application specified a tag that the system couldn’t find in the application tag manifest."
+    },
+    {
+      "name": "var NSBundleOnDemandResourceOutOfSpaceError: Int",
+      "desc": "Insufficient space available to download the requested on-demand resources."
+    },
+    {
+      "name": "static let NSBundleResourceRequestLowDiskSpace: NSNotification.Name",
+      "desc": "Posted after the system detects that the amount of available disk space is getting low. The notification is posted to the default notification center."
+    }
+  ],
+  "declaration": "class NSBundleResourceRequest : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "ProgressReporting"
+  ]
+}

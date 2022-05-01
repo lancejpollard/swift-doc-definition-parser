@@ -1,0 +1,52 @@
+{
+  "path": "/documentation/appkit/nstableviewdatasource",
+  "type": "Protocol",
+  "name": "NSTableViewDataSource",
+  "desc": "A set of methods that a table view uses to provide data to a table view and to allow the editing of the table view's data source object.",
+  "items": [
+    {
+      "name": "func numberOfRows(in: NSTableView) -> Int",
+      "desc": "Returns the number of records managed for aTableView by the data source object."
+    },
+    {
+      "name": "func tableView(NSTableView, objectValueFor: NSTableColumn?, row: Int) -> Any?",
+      "desc": "Called by the table view to return the data object associated with the specified row and column."
+    },
+    {
+      "name": "func tableView(NSTableView, setObjectValue: Any?, for: NSTableColumn?, row: Int)",
+      "desc": "Sets the data object for an item in the specified row and column."
+    },
+    {
+      "name": "func tableView(NSTableView, pasteboardWriterForRow: Int) -> NSPasteboardWriting?",
+      "desc": "Called to allow the table to support multiple item dragging."
+    },
+    {
+      "name": "func tableView(NSTableView, acceptDrop: NSDraggingInfo, row: Int, dropOperation: NSTableView.DropOperation) -> Bool",
+      "desc": "Called by aTableView when the mouse button is released over a table view that previously decided to allow a drop."
+    },
+    {
+      "name": "func tableView(NSTableView, validateDrop: NSDraggingInfo, proposedRow: Int, proposedDropOperation: NSTableView.DropOperation) -> NSDragOperation",
+      "desc": "Used by aTableView to determine a valid drop target."
+    },
+    {
+      "name": "func tableView(NSTableView, draggingSession: NSDraggingSession, willBeginAt: NSPoint, forRowIndexes: IndexSet)",
+      "desc": "Implement this method to determine when a dragging session will begin."
+    },
+    {
+      "name": "func tableView(NSTableView, updateDraggingItemsForDrag: NSDraggingInfo)",
+      "desc": "Implement this method to allow the table to update dragging items as they are dragged over a view."
+    },
+    {
+      "name": "func tableView(NSTableView, draggingSession: NSDraggingSession, endedAt: NSPoint, operation: NSDragOperation)",
+      "desc": "Implement this method to determine when a dragging session has ended."
+    },
+    {
+      "name": "func tableView(NSTableView, sortDescriptorsDidChange: [NSSortDescriptor])",
+      "desc": "Called by aTableView to indicate that sorting may need to be done."
+    }
+  ],
+  "declaration": "protocol NSTableViewDataSource",
+  "inheritsFrom": [
+    "NSObjectProtocol"
+  ]
+}

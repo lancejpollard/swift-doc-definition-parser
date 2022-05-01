@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/homekit/hmservice",
+  "type": "Class",
+  "name": "HMService",
+  "desc": "A controllable feature of an accessory, like a light attached to a garage door opener.",
+  "items": [
+    {
+      "name": "var characteristics: [HMCharacteristic]",
+      "desc": "An array of characteristics for the service."
+    },
+    {
+      "name": "class HMCharacteristic",
+      "desc": "A specific characteristic of a service, like the brightness of a dimmable light, or its color temperature."
+    },
+    {
+      "name": "var name: String",
+      "desc": "The user specified name of the service."
+    },
+    {
+      "name": "func updateName(String, completionHandler: (Error?) -> Void)",
+      "desc": "Updates the name of the service to the specified string."
+    },
+    {
+      "name": "var uniqueIdentifier: UUID",
+      "desc": "A unique identifier for the service."
+    },
+    {
+      "name": "var serviceType: String",
+      "desc": "The type of the service."
+    },
+    {
+      "name": "var localizedDescription: String",
+      "desc": "The localized description of the service."
+    },
+    {
+      "name": "var isPrimaryService: Bool",
+      "desc": "A Boolean value that indicates whether this service is the primary service on the accessory."
+    },
+    {
+      "name": "var isUserInteractive: Bool",
+      "desc": "A Boolean value that indicates whether this service supports user interaction."
+    },
+    {
+      "name": "var associatedServiceType: String?",
+      "desc": "The type of the service associated with an outlet or a switch."
+    },
+    {
+      "name": "func updateAssociatedServiceType(String?, completionHandler: (Error?) -> Void)",
+      "desc": "Associates the service type of the plugged-in device with a switch or an outlet service."
+    },
+    {
+      "name": "var linkedServices: [HMService]?",
+      "desc": "An array of service objects that represents all the services to which the service links."
+    },
+    {
+      "name": "var accessory: HMAccessory?",
+      "desc": "The accessory that provides this service."
+    }
+  ],
+  "declaration": "class HMService : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

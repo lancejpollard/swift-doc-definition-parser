@@ -1,0 +1,30 @@
+{
+  "path": "/documentation/foundation/distributednotificationcenter/options",
+  "type": "Structure",
+  "name": "DistributedNotificationCenter.Options",
+  "desc": "These constants specify the behavior of notifications posted using the postNotificationName(_:object:userInfo:options:) method.",
+  "items": [
+    {
+      "name": "let NSNotificationDeliverImmediately: DistributedNotificationCenter.Options",
+      "desc": "When set, the notification is delivered immediately to all observers, regardless of their suspension behavior or suspension state. When not set, allows the normal suspension behavior of notification observers to take place."
+    },
+    {
+      "name": "let NSNotificationPostToAllSessions: DistributedNotificationCenter.Options",
+      "desc": "When set, the notification is posted to all sessions. When not set, the notification is sent only to applications within the same login session as the posting task."
+    },
+    {
+      "name": "init(rawValue: UInt)"
+    },
+    {
+      "name": "static var deliverImmediately: DistributedNotificationCenter.Options"
+    },
+    {
+      "name": "static var postToAllSessions: DistributedNotificationCenter.Options"
+    }
+  ],
+  "declaration": "struct Options, @unchecked Sendable",
+  "conformsTo": [
+    "OptionSet",
+    "Sendable"
+  ]
+}

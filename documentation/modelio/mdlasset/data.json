@@ -1,0 +1,126 @@
+{
+  "path": "/documentation/modelio/mdlasset",
+  "type": "Class",
+  "name": "MDLAsset",
+  "desc": "An indexed container for 3D objects and associated information, such as transform hierarchies, meshes, cameras, and lights.",
+  "items": [
+    {
+      "name": "class func canImportFileExtension(String) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the MDLAsset class can read asset data from files with the specified extension."
+    },
+    {
+      "name": "init(url: URL)",
+      "desc": "Initializes an asset from the file at the specified URL."
+    },
+    {
+      "name": "init(bufferAllocator: MDLMeshBufferAllocator?)",
+      "desc": "Initializes an empty asset, using the specified buffer allocator."
+    },
+    {
+      "name": "init(url: URL?, vertexDescriptor: MDLVertexDescriptor?, bufferAllocator: MDLMeshBufferAllocator?)",
+      "desc": "Initializes an asset from the file at the specified URL, using the specified vertex descriptor and buffer allocator."
+    },
+    {
+      "name": "init(url: URL, vertexDescriptor: MDLVertexDescriptor?, bufferAllocator: MDLMeshBufferAllocator?, preserveTopology: Bool, error: NSErrorPointer)",
+      "desc": "Initializes an asset from the file at the specified URL, using the specified options for allocating and transforming data during import."
+    },
+    {
+      "name": "class func canExportFileExtension(String) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the MDLAsset class can write asset data as a file with the specified format extension."
+    },
+    {
+      "name": "func export(to: URL)",
+      "desc": "Writes asset data to a file at the specified URL and reports errors that occur during export."
+    },
+    {
+      "name": "func object(at: Int) -> MDLObject",
+      "desc": "Returns the top-level object at the specified index in the asset."
+    },
+    {
+      "name": "subscript(Int) -> MDLObject?",
+      "desc": "Returns the top-level object at the specified index in the asset, using subscript syntax."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of top-level objects in the asset."
+    },
+    {
+      "name": "func childObjects(of: AnyClass) -> [MDLObject]",
+      "desc": "Returns all objects contained in the asset of the specified class."
+    },
+    {
+      "name": "func add(MDLObject)",
+      "desc": "Adds the specified object to the asset’s list of top-level objects."
+    },
+    {
+      "name": "func remove(MDLObject)",
+      "desc": "Removes the specified object from the asset’s list of top-level objects."
+    },
+    {
+      "name": "var boundingBox: MDLAxisAlignedBoundingBox",
+      "desc": "The minimum region entirely enclosing the asset’s contents."
+    },
+    {
+      "name": "func boundingBox(atTime: TimeInterval) -> MDLAxisAlignedBoundingBox",
+      "desc": "Returns the minimum region entirely enclosing the asset’s contents at the specified time sample."
+    },
+    {
+      "name": "var url: URL?",
+      "desc": "The URL from which the asset was loaded, if available."
+    },
+    {
+      "name": "var bufferAllocator: MDLMeshBufferAllocator",
+      "desc": "An object responsible for allocating mesh vertex data loaded from the asset."
+    },
+    {
+      "name": "var vertexDescriptor: MDLVertexDescriptor?",
+      "desc": "The description of the vertex data format to be used for loading mesh data from the asset."
+    },
+    {
+      "name": "var frameInterval: TimeInterval",
+      "desc": "The time interval between data samples in the asset."
+    },
+    {
+      "name": "var startTime: TimeInterval",
+      "desc": "The timestamp for the first timed data sample in the asset."
+    },
+    {
+      "name": "var endTime: TimeInterval",
+      "desc": "The timestamp for the last timed data sample in the asset."
+    },
+    {
+      "name": "class func placeLightProbes(withDensity: Float, heuristic: MDLProbePlacement, using: MDLLightProbeIrradianceDataSource) -> [MDLLightProbe]",
+      "desc": "Automatically creates and places light probes for use in illuminating a scene."
+    },
+    {
+      "name": "enum MDLProbePlacement",
+      "desc": "Options affecting automatic placement of light probes in a scene, used with the placeLightProbes(withDensity:heuristic:using:) method."
+    },
+    {
+      "name": "var animations: MDLObjectContainerComponent"
+    },
+    {
+      "name": "var originals: MDLObjectContainerComponent"
+    },
+    {
+      "name": "var resolver: MDLAssetResolver?"
+    },
+    {
+      "name": "var upAxis: vector_float3"
+    },
+    {
+      "name": "func loadTextures()"
+    },
+    {
+      "name": "func object(atPath: String) -> MDLObject"
+    }
+  ],
+  "declaration": "class MDLAsset : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSFastEnumeration"
+  ]
+}

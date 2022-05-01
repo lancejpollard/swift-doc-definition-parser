@@ -1,0 +1,49 @@
+{
+  "path": "/documentation/groupactivities/groupsessionmessenger",
+  "type": "Class",
+  "name": "GroupSessionMessenger",
+  "desc": "An object that transfers app-specific data between the devices joined in a group session.",
+  "items": [
+    {
+      "name": "init<Activity>(session: GroupSession<Activity>)",
+      "desc": "Creates a new group session messenger and associates it with the specified session object."
+    },
+    {
+      "name": "func send(Data, to: Participants) async throws",
+      "desc": "Sends a standard data object asynchronously to other participants in the group session."
+    },
+    {
+      "name": "func send<Message>(Message, to: Participants) async throws",
+      "desc": "Sends a custom type asynchronously to other participants in the group session."
+    },
+    {
+      "name": "func send(Data, to: Participants, completion: (Error?) -> Void)",
+      "desc": "Sends a standard data object to other participants in the group session."
+    },
+    {
+      "name": "func send<Message>(Message, to: Participants, completion: (Error?) -> Void)",
+      "desc": "Sends a custom type to other participants in the group session."
+    },
+    {
+      "name": "enum Participants",
+      "desc": "The set of participants to include in messages."
+    },
+    {
+      "name": "func messages(of: Data.Type) -> GroupSessionMessenger.Messages<Data>",
+      "desc": "Returns the asynchronous sequence of messages that contain a generic data object."
+    },
+    {
+      "name": "func messages<Message>(of: Message.Type) -> GroupSessionMessenger.Messages<Message>",
+      "desc": "Returns the asynchronous sequence of messages that match the app-specific type."
+    },
+    {
+      "name": "struct Messages",
+      "desc": "An asynchronous sequence of messages sent to the session."
+    },
+    {
+      "name": "struct MessageContext",
+      "desc": "A structure that contains additional information about an incoming message, such as which device sent it."
+    }
+  ],
+  "declaration": "final class GroupSessionMessenger"
+}

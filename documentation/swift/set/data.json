@@ -1,0 +1,367 @@
+{
+  "path": "/documentation/swift/set",
+  "type": "Generic Structure",
+  "name": "Set",
+  "desc": "An unordered collection of unique elements.",
+  "items": [
+    {
+      "name": "init()",
+      "desc": "Creates an empty set."
+    },
+    {
+      "name": "init(minimumCapacity: Int)",
+      "desc": "Creates an empty set with preallocated space for at least the specified number of elements."
+    },
+    {
+      "name": "init<S>(S)",
+      "desc": "Creates a new set from a finite sequence of items."
+    },
+    {
+      "name": "init<Source>(Source)",
+      "desc": "Creates a new set from a finite sequence of items."
+    },
+    {
+      "name": "var isEmpty: Bool",
+      "desc": "A Boolean value that indicates whether the set is empty."
+    },
+    {
+      "name": "var count: Int",
+      "desc": "The number of elements in the set."
+    },
+    {
+      "name": "var capacity: Int",
+      "desc": "The total number of elements that the set can contain without allocating new storage."
+    },
+    {
+      "name": "func contains(Element) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the given element exists in the set."
+    },
+    {
+      "name": "func insert(Element) -> (inserted: Bool, memberAfterInsert: Element)",
+      "desc": "Inserts the given element in the set if it is not already present."
+    },
+    {
+      "name": "func insert<ConcreteElement>(ConcreteElement) -> (inserted: Bool, memberAfterInsert: ConcreteElement)",
+      "desc": "Available when Element is AnyHashable."
+    },
+    {
+      "name": "func update(with: Element) -> Element?",
+      "desc": "Inserts the given element into the set unconditionally."
+    },
+    {
+      "name": "func update<ConcreteElement>(with: ConcreteElement) -> ConcreteElement?",
+      "desc": "Available when Element is AnyHashable."
+    },
+    {
+      "name": "func reserveCapacity(Int)",
+      "desc": "Reserves enough space to store the specified number of elements."
+    },
+    {
+      "name": "func filter((Element) -> Bool) -> Set<Element>",
+      "desc": "Returns a new set containing the elements of the set that satisfy the given predicate."
+    },
+    {
+      "name": "func remove(Element) -> Element?",
+      "desc": "Removes the specified element from the set."
+    },
+    {
+      "name": "func remove<ConcreteElement>(ConcreteElement) -> ConcreteElement?",
+      "desc": "Available when Element is AnyHashable."
+    },
+    {
+      "name": "func removeFirst() -> Element",
+      "desc": "Removes the first element of the set."
+    },
+    {
+      "name": "func remove(at: Set<Element>.Index) -> Element",
+      "desc": "Removes the element at the given index of the set."
+    },
+    {
+      "name": "func removeAll(keepingCapacity: Bool)",
+      "desc": "Removes all members from the set."
+    },
+    {
+      "name": "func union<S>(S) -> Set<Element>",
+      "desc": "Returns a new set with the elements of both this set and the given sequence."
+    },
+    {
+      "name": "func formUnion<S>(S)",
+      "desc": "Inserts the elements of the given sequence into the set."
+    },
+    {
+      "name": "func intersection(Set<Element>) -> Set<Element>",
+      "desc": "Returns a new set with the elements that are common to both this set and the given sequence."
+    },
+    {
+      "name": "func intersection<S>(S) -> Set<Element>",
+      "desc": "Returns a new set with the elements that are common to both this set and the given sequence."
+    },
+    {
+      "name": "func formIntersection<S>(S)",
+      "desc": "Removes the elements of the set that aren’t also in the given sequence."
+    },
+    {
+      "name": "func symmetricDifference<S>(S) -> Set<Element>",
+      "desc": "Returns a new set with the elements that are either in this set or in the given sequence, but not in both."
+    },
+    {
+      "name": "func formSymmetricDifference(Set<Element>)",
+      "desc": "Removes the elements of the set that are also in the given sequence and adds the members of the sequence that are not already in the set."
+    },
+    {
+      "name": "func formSymmetricDifference<S>(S)",
+      "desc": "Replace this set with the elements contained in this set or the given set, but not both."
+    },
+    {
+      "name": "func subtract(Set<Element>)",
+      "desc": "Removes the elements of the given set from this set."
+    },
+    {
+      "name": "func subtract<S>(S)",
+      "desc": "Removes the elements of the given sequence from the set."
+    },
+    {
+      "name": "func subtracting(Set<Element>) -> Set<Element>",
+      "desc": "Returns a new set containing the elements of this set that do not occur in the given set."
+    },
+    {
+      "name": "func subtracting<S>(S) -> Set<Element>",
+      "desc": "Returns a new set containing the elements of this set that do not occur in the given sequence."
+    },
+    {
+      "name": "static func == (Set<Element>, Set<Element>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two sets have equal elements."
+    },
+    {
+      "name": "static func != (Set<Element>, Set<Element>) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "func isSubset(of: Set<Element>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether this set is a subset of the given set."
+    },
+    {
+      "name": "func isSubset<S>(of: S) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the set is a subset of the given sequence."
+    },
+    {
+      "name": "func isStrictSubset(of: Set<Element>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the set is a strict subset of the given sequence."
+    },
+    {
+      "name": "func isStrictSubset<S>(of: S) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the set is a strict subset of the given sequence."
+    },
+    {
+      "name": "func isSuperset(of: Set<Element>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether this set is a superset of the given set."
+    },
+    {
+      "name": "func isSuperset<S>(of: S) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the set is a superset of the given sequence."
+    },
+    {
+      "name": "func isStrictSuperset(of: Set<Element>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the set is a strict superset of the given sequence."
+    },
+    {
+      "name": "func isStrictSuperset<S>(of: S) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the set is a strict superset of the given sequence."
+    },
+    {
+      "name": "func isDisjoint(with: Set<Element>) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether this set has no members in common with the given set."
+    },
+    {
+      "name": "func isDisjoint<S>(with: S) -> Bool",
+      "desc": "Returns a Boolean value that indicates whether the set has no members in common with the given sequence."
+    },
+    {
+      "name": "var first: Element?",
+      "desc": "The first element of the collection."
+    },
+    {
+      "name": "func randomElement() -> Element?",
+      "desc": "Returns a random element of the collection."
+    },
+    {
+      "name": "func randomElement<T>(using: inout T) -> Element?",
+      "desc": "Returns a random element of the collection, using the given generator as a source for randomness."
+    },
+    {
+      "name": "subscript(Set<Element>.Index) -> Element",
+      "desc": "Accesses the member at the given position."
+    },
+    {
+      "name": "func contains(where: (Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether the sequence contains an element that satisfies the given predicate."
+    },
+    {
+      "name": "func allSatisfy((Element) -> Bool) -> Bool",
+      "desc": "Returns a Boolean value indicating whether every element of a sequence satisfies a given predicate."
+    },
+    {
+      "name": "func first(where: (Element) -> Bool) -> Element?",
+      "desc": "Returns the first element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func firstIndex(of: Element) -> Set<Element>.Index?",
+      "desc": "Returns the index of the given element in the set, or nil if the element is not a member of the set."
+    },
+    {
+      "name": "func firstIndex(where: (Element) -> Bool) -> Index?",
+      "desc": "Returns the first index in which an element of the collection satisfies the given predicate."
+    },
+    {
+      "name": "func min() -> Element?",
+      "desc": "Returns the minimum element in the sequence."
+    },
+    {
+      "name": "func min(by: (Element, Element) -> Bool) -> Element?",
+      "desc": "Returns the minimum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func max() -> Element?",
+      "desc": "Returns the maximum element in the sequence."
+    },
+    {
+      "name": "func max(by: (Element, Element) -> Bool) -> Element?",
+      "desc": "Returns the maximum element in the sequence, using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func map<T>((Element) -> T) -> [T]",
+      "desc": "Returns an array containing the results of mapping the given closure over the sequence’s elements."
+    },
+    {
+      "name": "func compactMap<ElementOfResult>((Element) -> ElementOfResult?) -> [ElementOfResult]",
+      "desc": "Returns an array containing the non-nil results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func flatMap<SegmentOfResult>((Element) -> SegmentOfResult) -> [SegmentOfResult.Element]",
+      "desc": "Returns an array containing the concatenated results of calling the given transformation with each element of this sequence."
+    },
+    {
+      "name": "func reduce<Result>(Result, (Result, Element) -> Result) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "func reduce<Result>(into: Result, (inout Result, Element) -> ()) -> Result",
+      "desc": "Returns the result of combining the elements of the sequence using the given closure."
+    },
+    {
+      "name": "func sorted() -> [Element]",
+      "desc": "Returns the elements of the sequence, sorted."
+    },
+    {
+      "name": "func sorted(by: (Element, Element) -> Bool) -> [Element]",
+      "desc": "Returns the elements of the sequence, sorted using the given predicate as the comparison between elements."
+    },
+    {
+      "name": "func shuffled() -> [Element]",
+      "desc": "Returns the elements of the sequence, shuffled."
+    },
+    {
+      "name": "func shuffled<T>(using: inout T) -> [Element]",
+      "desc": "Returns the elements of the sequence, shuffled using the given generator as a source for randomness."
+    },
+    {
+      "name": "var lazy: LazySequence<Set<Element>>",
+      "desc": "A sequence containing the same elements as this sequence, but on which some operations, such as map and filter, are implemented lazily."
+    },
+    {
+      "name": "func enumerated() -> EnumeratedSequence<Set<Element>>",
+      "desc": "Returns a sequence of pairs (n, x), where n represents a consecutive integer starting at zero and x represents an element of the sequence."
+    },
+    {
+      "name": "func forEach((Element) -> Void)",
+      "desc": "Calls the given closure on each element in the sequence in the same order as a for-in loop."
+    },
+    {
+      "name": "func makeIterator() -> Set<Element>.Iterator",
+      "desc": "Returns an iterator over the members of the set."
+    },
+    {
+      "name": "var underestimatedCount: Int",
+      "desc": "A value less than or equal to the number of elements in the collection."
+    },
+    {
+      "name": "func encode(to: Encoder)",
+      "desc": "Encodes the elements of this set into the given encoder in an unkeyed container."
+    },
+    {
+      "name": "init(from: Decoder)",
+      "desc": "Creates a new set by decoding from the given decoder."
+    },
+    {
+      "name": "func hash(into: inout Hasher)",
+      "desc": "Hashes the essential components of this value by feeding them into the given hasher."
+    },
+    {
+      "name": "var description: String",
+      "desc": "A string that represents the contents of the set."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "A string that represents the contents of the set, suitable for debugging."
+    },
+    {
+      "name": "var customMirror: Mirror",
+      "desc": "A mirror that reflects the set."
+    },
+    {
+      "name": "class NSSet",
+      "desc": "An object representing a static, unordered collection of unique objects."
+    },
+    {
+      "name": "class NSMutableSet",
+      "desc": "An object representing a dynamic, unordered, uniquing collection, for use instead of a Set variable in cases that require reference semantics."
+    },
+    {
+      "name": "struct Set.Index",
+      "desc": "The position of an element in a set."
+    },
+    {
+      "name": "struct Set.Iterator",
+      "desc": "An iterator over the members of a Set<Element>."
+    },
+    {
+      "name": "init(arrayLiteral: Element...)",
+      "desc": "Creates a set containing the elements of the given array literal."
+    },
+    {
+      "name": "func withContiguousStorageIfAvailable<R>((UnsafeBufferPointer<Element>) -> R) -> R?",
+      "desc": "Executes a closure on the sequence’s contiguous storage."
+    },
+    {
+      "name": "typealias Set.ArrayLiteralElement",
+      "desc": "The type of the elements of an array literal."
+    },
+    {
+      "name": "typealias Set.Indices",
+      "desc": "A type that represents the indices that are valid for subscripting the collection, in ascending order."
+    },
+    {
+      "name": "typealias Set.SubSequence",
+      "desc": "A collection representing a contiguous subrange of this collection’s elements. The subsequence shares indices with the original collection."
+    },
+    {
+      "name": "var hashValue: Int",
+      "desc": "The hash value."
+    }
+  ],
+  "declaration": "@frozen struct Set<Element> where Element : Hashable",
+  "conformsTo": [
+    "CVarArg",
+    "Collection",
+    "CustomDebugStringConvertible",
+    "CustomReflectable",
+    "CustomStringConvertible",
+    "Decodable",
+    "Encodable",
+    "Equatable",
+    "ExpressibleByArrayLiteral",
+    "Hashable",
+    "Sequence",
+    "SetAlgebra"
+  ]
+}

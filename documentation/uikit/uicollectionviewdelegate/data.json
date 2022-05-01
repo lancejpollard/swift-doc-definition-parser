@@ -1,0 +1,135 @@
+{
+  "path": "/documentation/uikit/uicollectionviewdelegate",
+  "type": "Protocol",
+  "name": "UICollectionViewDelegate",
+  "desc": "The methods adopted by the object you use to manage user interactions with items in a collection view.",
+  "items": [
+    {
+      "name": "func collectionView(UICollectionView, shouldSelectItemAt: IndexPath) -> Bool",
+      "desc": "Asks the delegate if the specified item should be selected."
+    },
+    {
+      "name": "func collectionView(UICollectionView, didSelectItemAt: IndexPath)",
+      "desc": "Tells the delegate that the item at the specified index path was selected."
+    },
+    {
+      "name": "func collectionView(UICollectionView, shouldDeselectItemAt: IndexPath) -> Bool",
+      "desc": "Asks the delegate if the specified item should be deselected."
+    },
+    {
+      "name": "func collectionView(UICollectionView, didDeselectItemAt: IndexPath)",
+      "desc": "Tells the delegate that the item at the specified path was deselected."
+    },
+    {
+      "name": "func collectionView(UICollectionView, shouldBeginMultipleSelectionInteractionAt: IndexPath) -> Bool",
+      "desc": "Asks the delegate whether the user can select multiple items using a two-finger pan gesture in a collection view."
+    },
+    {
+      "name": "func collectionView(UICollectionView, didBeginMultipleSelectionInteractionAt: IndexPath)",
+      "desc": "Tells the delegate when the user starts using a two-finger pan gesture to select multiple items in a collection view."
+    },
+    {
+      "name": "func collectionViewDidEndMultipleSelectionInteraction(UICollectionView)",
+      "desc": "Tells the delegate when the user stops using a two-finger pan gesture to select multiple items in a collection view."
+    },
+    {
+      "name": "func collectionView(UICollectionView, shouldHighlightItemAt: IndexPath) -> Bool",
+      "desc": "Asks the delegate if the item should be highlighted during tracking."
+    },
+    {
+      "name": "func collectionView(UICollectionView, didHighlightItemAt: IndexPath)",
+      "desc": "Tells the delegate that the item at the specified index path was highlighted."
+    },
+    {
+      "name": "func collectionView(UICollectionView, didUnhighlightItemAt: IndexPath)",
+      "desc": "Tells the delegate that the highlight was removed from the item at the specified index path."
+    },
+    {
+      "name": "func collectionView(UICollectionView, willDisplay: UICollectionViewCell, forItemAt: IndexPath)",
+      "desc": "Tells the delegate that the specified cell is about to be displayed in the collection view."
+    },
+    {
+      "name": "func collectionView(UICollectionView, willDisplaySupplementaryView: UICollectionReusableView, forElementKind: String, at: IndexPath)",
+      "desc": "Tells the delegate that the specified supplementary view is about to be displayed in the collection view."
+    },
+    {
+      "name": "func collectionView(UICollectionView, didEndDisplaying: UICollectionViewCell, forItemAt: IndexPath)",
+      "desc": "Tells the delegate that the specified cell was removed from the collection view."
+    },
+    {
+      "name": "func collectionView(UICollectionView, didEndDisplayingSupplementaryView: UICollectionReusableView, forElementOfKind: String, at: IndexPath)",
+      "desc": "Tells the delegate that the specified supplementary view was removed from the collection view."
+    },
+    {
+      "name": "func collectionView(UICollectionView, transitionLayoutForOldLayout: UICollectionViewLayout, newLayout: UICollectionViewLayout) -> UICollectionViewTransitionLayout",
+      "desc": "Asks for the custom transition layout to use when moving between the specified layouts."
+    },
+    {
+      "name": "func collectionView(UICollectionView, targetContentOffsetForProposedContentOffset: CGPoint) -> CGPoint",
+      "desc": "Gives the delegate an opportunity to customize the content offset for layout changes and animated updates."
+    },
+    {
+      "name": "func collectionView(UICollectionView, contextMenuConfigurationForItemAt: IndexPath, point: CGPoint) -> UIContextMenuConfiguration?",
+      "desc": "Returns a context menu configuration for the item at a point."
+    },
+    {
+      "name": "func collectionView(UICollectionView, previewForDismissingContextMenuWithConfiguration: UIContextMenuConfiguration) -> UITargetedPreview?",
+      "desc": "Returns the destination view when dismissing a context menu."
+    },
+    {
+      "name": "func collectionView(UICollectionView, previewForHighlightingContextMenuWithConfiguration: UIContextMenuConfiguration) -> UITargetedPreview?",
+      "desc": "Returns a view to override the default preview the collection view created."
+    },
+    {
+      "name": "func collectionView(UICollectionView, willDisplayContextMenu: UIContextMenuConfiguration, animator: UIContextMenuInteractionAnimating?)",
+      "desc": "Informs the delegate when a context menu will appear."
+    },
+    {
+      "name": "func collectionView(UICollectionView, willEndContextMenuInteraction: UIContextMenuConfiguration, animator: UIContextMenuInteractionAnimating?)",
+      "desc": "Informs the delegate when a context menu will disappear."
+    },
+    {
+      "name": "func collectionView(UICollectionView, willPerformPreviewActionForMenuWith: UIContextMenuConfiguration, animator: UIContextMenuInteractionCommitAnimating)",
+      "desc": "Informs the delegate when a user triggers a commit by tapping the preview."
+    },
+    {
+      "name": "func collectionView(UICollectionView, canFocusItemAt: IndexPath) -> Bool",
+      "desc": "Asks the delegate whether the item at the specified index path can be focused."
+    },
+    {
+      "name": "func indexPathForPreferredFocusedView(in: UICollectionView) -> IndexPath?",
+      "desc": "Asks the delegate for the index path of the cell that should be focused."
+    },
+    {
+      "name": "func collectionView(UICollectionView, shouldUpdateFocusIn: UICollectionViewFocusUpdateContext) -> Bool",
+      "desc": "Asks the delegate whether a change in focus should occur."
+    },
+    {
+      "name": "func collectionView(UICollectionView, didUpdateFocusIn: UICollectionViewFocusUpdateContext, with: UIFocusAnimationCoordinator)",
+      "desc": "Tells the delegate that a focus update occurred."
+    },
+    {
+      "name": "func collectionView(UICollectionView, canEditItemAt: IndexPath) -> Bool",
+      "desc": "Determines whether the specified item is editable."
+    },
+    {
+      "name": "func collectionView(UICollectionView, shouldSpringLoadItemAt: IndexPath, with: UISpringLoadedInteractionContext) -> Bool",
+      "desc": "Determines whether the spring-loading interaction effect is displayed for the specified item."
+    },
+    {
+      "name": "func collectionView(UICollectionView, sceneActivationConfigurationForItemAt: IndexPath, point: CGPoint) -> UIWindowScene.ActivationConfiguration?"
+    },
+    {
+      "name": "func collectionView(UICollectionView, selectionFollowsFocusForItemAt: IndexPath) -> Bool",
+      "desc": "Asks the delegate whether to relate selection and focus behavior for the cell at the corresponding index path."
+    },
+    {
+      "name": "func collectionView(UICollectionView, targetIndexPathForMoveOfItemFromOriginalIndexPath: IndexPath, atCurrentIndexPath: IndexPath, toProposedIndexPath: IndexPath) -> IndexPath",
+      "desc": "Asks the delegate for the index path to use when moving an item."
+    }
+  ],
+  "declaration": "@MainActor protocol UICollectionViewDelegate",
+  "inheritsFrom": [
+    "UIScrollViewDelegate"
+  ]
+}

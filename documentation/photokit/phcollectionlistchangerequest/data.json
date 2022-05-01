@@ -1,0 +1,64 @@
+{
+  "path": "/documentation/photokit/phcollectionlistchangerequest",
+  "type": "Class",
+  "name": "PHCollectionListChangeRequest",
+  "desc": "A request to create, delete, or modify a Photos collection list, for use in a photo library change block.",
+  "items": [
+    {
+      "name": "init?(for: PHCollectionList)",
+      "desc": "Creates a request for modifying the specified collection list."
+    },
+    {
+      "name": "init?(for: PHCollectionList, childCollections: PHFetchResult<PHCollection>)",
+      "desc": "Creates a request for modifying the specified collection list, with a fetch result for tracking changes."
+    },
+    {
+      "name": "init?(forTopLevelCollectionListUserCollections: PHFetchResult<PHCollection>)",
+      "desc": "Creates a request to add, remove, or rearrange child collections in the top-level collection list."
+    },
+    {
+      "name": "class func creationRequestForCollectionList(withTitle: String) -> Self",
+      "desc": "Creates a request for adding a new collection list to the Photos library."
+    },
+    {
+      "name": "var placeholderForCreatedCollectionList: PHObjectPlaceholder",
+      "desc": "A placeholder object for the collection list that the change request creates."
+    },
+    {
+      "name": "class func deleteCollectionLists(NSFastEnumeration)",
+      "desc": "Requests to delete the specified asset collections."
+    },
+    {
+      "name": "func addChildCollections(NSFastEnumeration)",
+      "desc": "Adds the specified collections as children of the collection list."
+    },
+    {
+      "name": "func insertChildCollections(NSFastEnumeration, at: IndexSet)",
+      "desc": "Inserts the specified collections into the collection list at the specified indexes."
+    },
+    {
+      "name": "func moveChildCollections(at: IndexSet, to: Int)",
+      "desc": "Moves the child collections at the specified indexes in the collection list to a new index."
+    },
+    {
+      "name": "func replaceChildCollections(at: IndexSet, withChildCollections: NSFastEnumeration)",
+      "desc": "Replaces the child collections at the specified indexes in the collection list with the specified collections."
+    },
+    {
+      "name": "func removeChildCollections(NSFastEnumeration)",
+      "desc": "Removes the specified child collections from the collection list."
+    },
+    {
+      "name": "func removeChildCollections(at: IndexSet)",
+      "desc": "Removes the child collections at the specified indexes from the collection list."
+    },
+    {
+      "name": "var title: String",
+      "desc": "The displayed name of the collection list."
+    }
+  ],
+  "declaration": "class PHCollectionListChangeRequest : PHChangeRequest",
+  "inheritsFrom": [
+    "PHChangeRequest"
+  ]
+}

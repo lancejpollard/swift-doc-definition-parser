@@ -1,0 +1,123 @@
+{
+  "path": "/documentation/swift/bidirectionalcollection",
+  "type": "Protocol",
+  "name": "BidirectionalCollection",
+  "desc": "A collection that supports backward as well as forward traversal.",
+  "items": [
+    {
+      "name": "associatedtype Element"
+    },
+    {
+      "name": "associatedtype Index"
+    },
+    {
+      "name": "associatedtype Indices",
+      "desc": "A type that represents the indices that are valid for subscripting the collection, in ascending order."
+    },
+    {
+      "name": "associatedtype SubSequence",
+      "desc": "A sequence that can represent a contiguous subrange of the collection’s elements."
+    },
+    {
+      "name": "var endIndex: Self.Index"
+    },
+    {
+      "name": "var indices: Self.Indices",
+      "desc": "The indices that are valid for subscripting the collection, in ascending order."
+    },
+    {
+      "name": "var last: Self.Element?",
+      "desc": "The last element of the collection."
+    },
+    {
+      "name": "var startIndex: Self.Index"
+    },
+    {
+      "name": "func difference<C>(from: C) -> CollectionDifference<Self.Element>",
+      "desc": "Returns the difference needed to produce this collection’s ordered elements from the given collection."
+    },
+    {
+      "name": "func difference<C>(from: C, by: (C.Element, Self.Element) -> Bool) -> CollectionDifference<Self.Element>",
+      "desc": "Returns the difference needed to produce this collection’s ordered elements from the given collection, using the given predicate as an equivalence test."
+    },
+    {
+      "name": "func distance(from: Self.Index, to: Self.Index) -> Int",
+      "desc": "Returns the distance between two indices."
+    },
+    {
+      "name": "func dropLast(Int) -> Self.SubSequence",
+      "desc": "Returns a subsequence containing all but the specified number of final elements."
+    },
+    {
+      "name": "func formIndex(after: inout Self.Index)",
+      "desc": "Replaces the given index with its successor."
+    },
+    {
+      "name": "func formIndex(before: inout Self.Index)",
+      "desc": "Replaces the given index with its predecessor."
+    },
+    {
+      "name": "func index(Self.Index, offsetBy: Int) -> Self.Index",
+      "desc": "Returns an index that is the specified distance from the given index."
+    },
+    {
+      "name": "func index(Self.Index, offsetBy: Int, limitedBy: Self.Index) -> Self.Index?",
+      "desc": "Returns an index that is the specified distance from the given index, unless that distance is beyond a given limiting index."
+    },
+    {
+      "name": "func index(after: Self.Index) -> Self.Index",
+      "desc": "Returns the position immediately after the given index."
+    },
+    {
+      "name": "func index(before: Self.Index) -> Self.Index",
+      "desc": "Returns the position immediately before the given index."
+    },
+    {
+      "name": "func joined(separator: String) -> String",
+      "desc": "Returns a new string by concatenating the elements of the sequence, adding the given separator between each element."
+    },
+    {
+      "name": "func last(where: (Self.Element) -> Bool) -> Self.Element?",
+      "desc": "Returns the last element of the sequence that satisfies the given predicate."
+    },
+    {
+      "name": "func lastIndex(of: Self.Element) -> Self.Index?",
+      "desc": "Returns the last index where the specified value appears in the collection."
+    },
+    {
+      "name": "func lastIndex(where: (Self.Element) -> Bool) -> Self.Index?",
+      "desc": "Returns the index of the last element in the collection that matches the given predicate."
+    },
+    {
+      "name": "func popLast() -> Self.Element?",
+      "desc": "Removes and returns the last element of the collection."
+    },
+    {
+      "name": "func removeLast() -> Self.Element",
+      "desc": "Removes and returns the last element of the collection."
+    },
+    {
+      "name": "func removeLast(Int)",
+      "desc": "Removes the given number of elements from the end of the collection."
+    },
+    {
+      "name": "func reversed() -> ReversedCollection<Self>",
+      "desc": "Returns a view presenting the elements of the collection in reverse order."
+    },
+    {
+      "name": "func suffix(Int) -> Self.SubSequence",
+      "desc": "Returns a subsequence, up to the given maximum length, containing the final elements of the collection."
+    },
+    {
+      "name": "subscript(Range<Self.Index>) -> Self.SubSequence",
+      "desc": "Accesses a contiguous subrange of the collection’s elements."
+    },
+    {
+      "name": "subscript(Self.Index) -> Self.Element"
+    }
+  ],
+  "declaration": "protocol BidirectionalCollection where Self.Indices : BidirectionalCollection, Self.SubSequence : BidirectionalCollection",
+  "inheritsFrom": [
+    "Collection"
+  ]
+}

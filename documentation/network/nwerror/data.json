@@ -1,0 +1,41 @@
+{
+  "path": "/documentation/network/nwerror",
+  "type": "Enumeration",
+  "name": "NWError",
+  "desc": "The errors returned by objects in the Network framework.",
+  "items": [
+    {
+      "name": "case posix(POSIXErrorCode)",
+      "desc": "A POSIX error, which is used for most network protocol and routing errors."
+    },
+    {
+      "name": "case dns(DNSServiceErrorType)",
+      "desc": "A DNS error encountered in resolving, browsing, or advertising."
+    },
+    {
+      "name": "case tls(OSStatus)",
+      "desc": "A TLS error reported by a TLS connection or listener."
+    },
+    {
+      "name": "var debugDescription: String",
+      "desc": "The description of the error."
+    },
+    {
+      "name": "var localizedDescription: String",
+      "desc": "The localized description of the error."
+    },
+    {
+      "name": "static func != (NWError, NWError) -> Bool",
+      "desc": "Returns a Boolean value indicating whether two values are not equal."
+    },
+    {
+      "name": "static func == (NWError, NWError) -> Bool"
+    }
+  ],
+  "declaration": "enum NWError",
+  "conformsTo": [
+    "CustomDebugStringConvertible",
+    "Equatable",
+    "Error"
+  ]
+}

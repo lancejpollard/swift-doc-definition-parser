@@ -1,0 +1,28 @@
+{
+  "path": "/documentation/avfaudio/avaudio3dmixingsourcemode",
+  "type": "Enumeration",
+  "name": "AVAudio3DMixingSourceMode",
+  "desc": "The source modes for the input bus of the audio environment node.",
+  "items": [
+    {
+      "name": "case spatializeIfMono",
+      "desc": "A mono input bus that renders as a point source at the location of the source node."
+    },
+    {
+      "name": "case bypass",
+      "desc": "A mode that does no spatial rendering."
+    },
+    {
+      "name": "case pointSource",
+      "desc": "All channels of the bus render as a single source at the location of the source node."
+    },
+    {
+      "name": "case ambienceBed",
+      "desc": "The input channels spread around the listener as far-field sources that anchor to global space."
+    }
+  ],
+  "declaration": "enum AVAudio3DMixingSourceMode : Int, @unchecked Sendable",
+  "conformsTo": [
+    "Sendable"
+  ]
+}

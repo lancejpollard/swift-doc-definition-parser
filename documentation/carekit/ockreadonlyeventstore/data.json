@@ -1,0 +1,25 @@
+{
+  "path": "/documentation/carekit/ockreadonlyeventstore",
+  "type": "Protocol",
+  "name": "OCKReadOnlyEventStore",
+  "desc": "A read-only store that fetches event data objects.",
+  "items": [
+    {
+      "name": "func fetchEvent(forTask: Self.Task, occurrence: Int, callbackQueue: DispatchQueue, completion: OCKResultClosure<Self.Event>)",
+      "desc": "Fetches a single occurrence of a specific task asynchronously from the store."
+    },
+    {
+      "name": "func fetchEvents(taskID: String, query: OCKEventQuery, callbackQueue: DispatchQueue, completion: OCKResultClosure<[Self.Event]>)",
+      "desc": "Fetches all occurrences of a specific task asynchronously from the store."
+    },
+    {
+      "name": "typealias OCKReadOnlyEventStore.Event"
+    }
+  ],
+  "declaration": "protocol OCKReadOnlyEventStore",
+  "inheritsFrom": [
+    "OCKAnyReadOnlyEventStore",
+    "OCKReadableOutcomeStore",
+    "OCKReadableTaskStore"
+  ]
+}

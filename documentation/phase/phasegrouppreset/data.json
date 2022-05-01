@@ -1,0 +1,44 @@
+{
+  "path": "/documentation/phase/phasegrouppreset",
+  "type": "Class",
+  "name": "PHASEGroupPreset",
+  "desc": "A collection of settings for groups.",
+  "items": [
+    {
+      "name": "init(engine: PHASEEngine, settings: [String : PHASEGroupPresetSetting], timeToTarget: Double, timeToReset: Double)",
+      "desc": "Creates a group preset with the designated engine, settings, and fade parameters."
+    },
+    {
+      "name": "var settings: [String : PHASEGroupPresetSetting]",
+      "desc": "A dictionary with preset setting values and group objects as keys."
+    },
+    {
+      "name": "var timeToTarget: Double",
+      "desc": "A duration in which the engine fades the settings from their original value to their new value."
+    },
+    {
+      "name": "var timeToReset: Double",
+      "desc": "A duration in which the framework restores the group’s original state."
+    },
+    {
+      "name": "func activate()",
+      "desc": "Applies settings to the designated groups."
+    },
+    {
+      "name": "func activate(timeToTargetOverride: Double)",
+      "desc": "Applies settings with an overriden fade duration."
+    },
+    {
+      "name": "func deactivate()",
+      "desc": "Reverts settings for the preset's groups."
+    },
+    {
+      "name": "func deactivate(timeToResetOverride: Double)",
+      "desc": "Reverts settings for the preset’s groups using a timed adjustment."
+    }
+  ],
+  "declaration": "class PHASEGroupPreset : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ]
+}

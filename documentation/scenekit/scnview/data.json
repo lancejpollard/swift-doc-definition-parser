@@ -1,0 +1,86 @@
+{
+  "path": "/documentation/scenekit/scnview",
+  "type": "Class",
+  "name": "SCNView",
+  "desc": "A view for displaying 3D SceneKit content.",
+  "items": [
+    {
+      "name": "init(frame: CGRect, options: [String : Any]?)",
+      "desc": "Initializes and returns a newly allocated SceneKit view object with the specified frame rectangle and options."
+    },
+    {
+      "name": "struct SCNView.Option",
+      "desc": "Dictionary keys specifying initialization options, used when initializing a SceneKit view."
+    },
+    {
+      "name": "var scene: SCNScene?",
+      "desc": "The scene to be displayed in the view."
+    },
+    {
+      "name": "var backgroundColor: NSColor",
+      "desc": "The background color of the view."
+    },
+    {
+      "name": "var preferredFramesPerSecond: Int",
+      "desc": "The animation frame rate that the view uses to render its scene."
+    },
+    {
+      "name": "var rendersContinuously: Bool",
+      "desc": "A Boolean value that determines whether the view always renders at its preferred frame rate or only when its visible content changes."
+    },
+    {
+      "name": "var antialiasingMode: SCNAntialiasingMode",
+      "desc": "The antialiasing mode used for rendering the view’s scene."
+    },
+    {
+      "name": "enum SCNAntialiasingMode",
+      "desc": "Modes for antialiased rendering of the view’s scene, used by the SCNView property."
+    },
+    {
+      "name": "var allowsCameraControl: Bool",
+      "desc": "A Boolean value that determines whether the user can manipulate the current point of view that is used to render the scene."
+    },
+    {
+      "name": "var cameraControlConfiguration: SCNCameraControlConfiguration",
+      "desc": "The current configuration for the camera controller's event-handling behavior."
+    },
+    {
+      "name": "protocol SCNCameraControlConfiguration",
+      "desc": "Properties affecting the behavior of a camera controller."
+    },
+    {
+      "name": "var defaultCameraController: SCNCameraController"
+    },
+    {
+      "name": "class SCNCameraController"
+    },
+    {
+      "name": "func pause(Any?)",
+      "desc": "Pauses playback of the view’s scene."
+    },
+    {
+      "name": "func play(Any?)",
+      "desc": "Resumes playback of the view’s scene."
+    },
+    {
+      "name": "func stop(Any?)",
+      "desc": "Stops playback of the view’s scene and resets the scene time to its start time."
+    },
+    {
+      "name": "func snapshot() -> UIImage",
+      "desc": "Renders the view’s scene into a new image object."
+    },
+    {
+      "name": "var drawableResizesAsynchronously: Bool"
+    }
+  ],
+  "declaration": "class SCNView : UIView",
+  "inheritsFrom": [
+    "NSView",
+    "UIView"
+  ],
+  "conformsTo": [
+    "SCNSceneRenderer",
+    "SCNTechniqueSupport"
+  ]
+}

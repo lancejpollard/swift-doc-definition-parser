@@ -1,0 +1,33 @@
+{
+  "path": "/documentation/vision/vnobservation",
+  "type": "Class",
+  "name": "VNObservation",
+  "desc": "The abstract superclass for analysis results.",
+  "items": [
+    {
+      "name": "var uuid: UUID",
+      "desc": "A unique identifier assigned to the Vision observation."
+    },
+    {
+      "name": "var timeRange: CMTimeRange",
+      "desc": "The time range of the reported observation."
+    },
+    {
+      "name": "var confidence: VNConfidence",
+      "desc": "The level of confidence in the observation's accuracy, normalized to [0, 1.0]."
+    },
+    {
+      "name": "typealias VNConfidence",
+      "desc": "A type alias for the confidence value of an observation."
+    }
+  ],
+  "declaration": "class VNObservation : NSObject",
+  "inheritsFrom": [
+    "NSObject"
+  ],
+  "conformsTo": [
+    "NSCopying",
+    "NSSecureCoding",
+    "VNRequestRevisionProviding"
+  ]
+}
